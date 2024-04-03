@@ -121,6 +121,18 @@ DescribeContactResult& DescribeContactResult::operator =(const Aws::AmazonWebSer
     }
   }
 
+  if(jsonValue.ValueExists("visibilityEndTime"))
+  {
+    m_visibilityEndTime = jsonValue.GetDouble("visibilityEndTime");
+
+  }
+
+  if(jsonValue.ValueExists("visibilityStartTime"))
+  {
+    m_visibilityStartTime = jsonValue.GetDouble("visibilityStartTime");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

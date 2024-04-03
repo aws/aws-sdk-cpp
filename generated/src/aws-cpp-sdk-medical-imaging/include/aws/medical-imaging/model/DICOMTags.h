@@ -203,124 +203,124 @@ namespace Model
 
 
     /**
-     * <p>The DICOM provided identifier for studyInstanceUid.&gt;</p>
+     * <p>The DICOM provided identifier for the Study Instance UID.</p>
      */
     inline const Aws::String& GetDICOMStudyInstanceUID() const{ return m_dICOMStudyInstanceUID; }
 
     /**
-     * <p>The DICOM provided identifier for studyInstanceUid.&gt;</p>
+     * <p>The DICOM provided identifier for the Study Instance UID.</p>
      */
     inline bool DICOMStudyInstanceUIDHasBeenSet() const { return m_dICOMStudyInstanceUIDHasBeenSet; }
 
     /**
-     * <p>The DICOM provided identifier for studyInstanceUid.&gt;</p>
+     * <p>The DICOM provided identifier for the Study Instance UID.</p>
      */
     inline void SetDICOMStudyInstanceUID(const Aws::String& value) { m_dICOMStudyInstanceUIDHasBeenSet = true; m_dICOMStudyInstanceUID = value; }
 
     /**
-     * <p>The DICOM provided identifier for studyInstanceUid.&gt;</p>
+     * <p>The DICOM provided identifier for the Study Instance UID.</p>
      */
     inline void SetDICOMStudyInstanceUID(Aws::String&& value) { m_dICOMStudyInstanceUIDHasBeenSet = true; m_dICOMStudyInstanceUID = std::move(value); }
 
     /**
-     * <p>The DICOM provided identifier for studyInstanceUid.&gt;</p>
+     * <p>The DICOM provided identifier for the Study Instance UID.</p>
      */
     inline void SetDICOMStudyInstanceUID(const char* value) { m_dICOMStudyInstanceUIDHasBeenSet = true; m_dICOMStudyInstanceUID.assign(value); }
 
     /**
-     * <p>The DICOM provided identifier for studyInstanceUid.&gt;</p>
+     * <p>The DICOM provided identifier for the Study Instance UID.</p>
      */
     inline DICOMTags& WithDICOMStudyInstanceUID(const Aws::String& value) { SetDICOMStudyInstanceUID(value); return *this;}
 
     /**
-     * <p>The DICOM provided identifier for studyInstanceUid.&gt;</p>
+     * <p>The DICOM provided identifier for the Study Instance UID.</p>
      */
     inline DICOMTags& WithDICOMStudyInstanceUID(Aws::String&& value) { SetDICOMStudyInstanceUID(std::move(value)); return *this;}
 
     /**
-     * <p>The DICOM provided identifier for studyInstanceUid.&gt;</p>
+     * <p>The DICOM provided identifier for the Study Instance UID.</p>
      */
     inline DICOMTags& WithDICOMStudyInstanceUID(const char* value) { SetDICOMStudyInstanceUID(value); return *this;}
 
 
     /**
-     * <p>The DICOM provided studyId.</p>
+     * <p>The DICOM provided identifier for the Study ID.</p>
      */
     inline const Aws::String& GetDICOMStudyId() const{ return m_dICOMStudyId; }
 
     /**
-     * <p>The DICOM provided studyId.</p>
+     * <p>The DICOM provided identifier for the Study ID.</p>
      */
     inline bool DICOMStudyIdHasBeenSet() const { return m_dICOMStudyIdHasBeenSet; }
 
     /**
-     * <p>The DICOM provided studyId.</p>
+     * <p>The DICOM provided identifier for the Study ID.</p>
      */
     inline void SetDICOMStudyId(const Aws::String& value) { m_dICOMStudyIdHasBeenSet = true; m_dICOMStudyId = value; }
 
     /**
-     * <p>The DICOM provided studyId.</p>
+     * <p>The DICOM provided identifier for the Study ID.</p>
      */
     inline void SetDICOMStudyId(Aws::String&& value) { m_dICOMStudyIdHasBeenSet = true; m_dICOMStudyId = std::move(value); }
 
     /**
-     * <p>The DICOM provided studyId.</p>
+     * <p>The DICOM provided identifier for the Study ID.</p>
      */
     inline void SetDICOMStudyId(const char* value) { m_dICOMStudyIdHasBeenSet = true; m_dICOMStudyId.assign(value); }
 
     /**
-     * <p>The DICOM provided studyId.</p>
+     * <p>The DICOM provided identifier for the Study ID.</p>
      */
     inline DICOMTags& WithDICOMStudyId(const Aws::String& value) { SetDICOMStudyId(value); return *this;}
 
     /**
-     * <p>The DICOM provided studyId.</p>
+     * <p>The DICOM provided identifier for the Study ID.</p>
      */
     inline DICOMTags& WithDICOMStudyId(Aws::String&& value) { SetDICOMStudyId(std::move(value)); return *this;}
 
     /**
-     * <p>The DICOM provided studyId.</p>
+     * <p>The DICOM provided identifier for the Study ID.</p>
      */
     inline DICOMTags& WithDICOMStudyId(const char* value) { SetDICOMStudyId(value); return *this;}
 
 
     /**
-     * <p>The description of the study.</p>
+     * <p>The DICOM provided Study Description.</p>
      */
     inline const Aws::String& GetDICOMStudyDescription() const{ return m_dICOMStudyDescription; }
 
     /**
-     * <p>The description of the study.</p>
+     * <p>The DICOM provided Study Description.</p>
      */
     inline bool DICOMStudyDescriptionHasBeenSet() const { return m_dICOMStudyDescriptionHasBeenSet; }
 
     /**
-     * <p>The description of the study.</p>
+     * <p>The DICOM provided Study Description.</p>
      */
     inline void SetDICOMStudyDescription(const Aws::String& value) { m_dICOMStudyDescriptionHasBeenSet = true; m_dICOMStudyDescription = value; }
 
     /**
-     * <p>The description of the study.</p>
+     * <p>The DICOM provided Study Description.</p>
      */
     inline void SetDICOMStudyDescription(Aws::String&& value) { m_dICOMStudyDescriptionHasBeenSet = true; m_dICOMStudyDescription = std::move(value); }
 
     /**
-     * <p>The description of the study.</p>
+     * <p>The DICOM provided Study Description.</p>
      */
     inline void SetDICOMStudyDescription(const char* value) { m_dICOMStudyDescriptionHasBeenSet = true; m_dICOMStudyDescription.assign(value); }
 
     /**
-     * <p>The description of the study.</p>
+     * <p>The DICOM provided Study Description.</p>
      */
     inline DICOMTags& WithDICOMStudyDescription(const Aws::String& value) { SetDICOMStudyDescription(value); return *this;}
 
     /**
-     * <p>The description of the study.</p>
+     * <p>The DICOM provided Study Description.</p>
      */
     inline DICOMTags& WithDICOMStudyDescription(Aws::String&& value) { SetDICOMStudyDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description of the study.</p>
+     * <p>The DICOM provided Study Description.</p>
      */
     inline DICOMTags& WithDICOMStudyDescription(const char* value) { SetDICOMStudyDescription(value); return *this;}
 
@@ -406,6 +406,150 @@ namespace Model
      * <p>The accession number for the DICOM study.</p>
      */
     inline DICOMTags& WithDICOMAccessionNumber(const char* value) { SetDICOMAccessionNumber(value); return *this;}
+
+
+    /**
+     * <p>The DICOM provided identifier for the Series Instance UID.</p>
+     */
+    inline const Aws::String& GetDICOMSeriesInstanceUID() const{ return m_dICOMSeriesInstanceUID; }
+
+    /**
+     * <p>The DICOM provided identifier for the Series Instance UID.</p>
+     */
+    inline bool DICOMSeriesInstanceUIDHasBeenSet() const { return m_dICOMSeriesInstanceUIDHasBeenSet; }
+
+    /**
+     * <p>The DICOM provided identifier for the Series Instance UID.</p>
+     */
+    inline void SetDICOMSeriesInstanceUID(const Aws::String& value) { m_dICOMSeriesInstanceUIDHasBeenSet = true; m_dICOMSeriesInstanceUID = value; }
+
+    /**
+     * <p>The DICOM provided identifier for the Series Instance UID.</p>
+     */
+    inline void SetDICOMSeriesInstanceUID(Aws::String&& value) { m_dICOMSeriesInstanceUIDHasBeenSet = true; m_dICOMSeriesInstanceUID = std::move(value); }
+
+    /**
+     * <p>The DICOM provided identifier for the Series Instance UID.</p>
+     */
+    inline void SetDICOMSeriesInstanceUID(const char* value) { m_dICOMSeriesInstanceUIDHasBeenSet = true; m_dICOMSeriesInstanceUID.assign(value); }
+
+    /**
+     * <p>The DICOM provided identifier for the Series Instance UID.</p>
+     */
+    inline DICOMTags& WithDICOMSeriesInstanceUID(const Aws::String& value) { SetDICOMSeriesInstanceUID(value); return *this;}
+
+    /**
+     * <p>The DICOM provided identifier for the Series Instance UID.</p>
+     */
+    inline DICOMTags& WithDICOMSeriesInstanceUID(Aws::String&& value) { SetDICOMSeriesInstanceUID(std::move(value)); return *this;}
+
+    /**
+     * <p>The DICOM provided identifier for the Series Instance UID.</p>
+     */
+    inline DICOMTags& WithDICOMSeriesInstanceUID(const char* value) { SetDICOMSeriesInstanceUID(value); return *this;}
+
+
+    /**
+     * <p>The DICOM provided identifier for the series Modality.</p>
+     */
+    inline const Aws::String& GetDICOMSeriesModality() const{ return m_dICOMSeriesModality; }
+
+    /**
+     * <p>The DICOM provided identifier for the series Modality.</p>
+     */
+    inline bool DICOMSeriesModalityHasBeenSet() const { return m_dICOMSeriesModalityHasBeenSet; }
+
+    /**
+     * <p>The DICOM provided identifier for the series Modality.</p>
+     */
+    inline void SetDICOMSeriesModality(const Aws::String& value) { m_dICOMSeriesModalityHasBeenSet = true; m_dICOMSeriesModality = value; }
+
+    /**
+     * <p>The DICOM provided identifier for the series Modality.</p>
+     */
+    inline void SetDICOMSeriesModality(Aws::String&& value) { m_dICOMSeriesModalityHasBeenSet = true; m_dICOMSeriesModality = std::move(value); }
+
+    /**
+     * <p>The DICOM provided identifier for the series Modality.</p>
+     */
+    inline void SetDICOMSeriesModality(const char* value) { m_dICOMSeriesModalityHasBeenSet = true; m_dICOMSeriesModality.assign(value); }
+
+    /**
+     * <p>The DICOM provided identifier for the series Modality.</p>
+     */
+    inline DICOMTags& WithDICOMSeriesModality(const Aws::String& value) { SetDICOMSeriesModality(value); return *this;}
+
+    /**
+     * <p>The DICOM provided identifier for the series Modality.</p>
+     */
+    inline DICOMTags& WithDICOMSeriesModality(Aws::String&& value) { SetDICOMSeriesModality(std::move(value)); return *this;}
+
+    /**
+     * <p>The DICOM provided identifier for the series Modality.</p>
+     */
+    inline DICOMTags& WithDICOMSeriesModality(const char* value) { SetDICOMSeriesModality(value); return *this;}
+
+
+    /**
+     * <p>The DICOM provided identifier for the series Body Part Examined.</p>
+     */
+    inline const Aws::String& GetDICOMSeriesBodyPart() const{ return m_dICOMSeriesBodyPart; }
+
+    /**
+     * <p>The DICOM provided identifier for the series Body Part Examined.</p>
+     */
+    inline bool DICOMSeriesBodyPartHasBeenSet() const { return m_dICOMSeriesBodyPartHasBeenSet; }
+
+    /**
+     * <p>The DICOM provided identifier for the series Body Part Examined.</p>
+     */
+    inline void SetDICOMSeriesBodyPart(const Aws::String& value) { m_dICOMSeriesBodyPartHasBeenSet = true; m_dICOMSeriesBodyPart = value; }
+
+    /**
+     * <p>The DICOM provided identifier for the series Body Part Examined.</p>
+     */
+    inline void SetDICOMSeriesBodyPart(Aws::String&& value) { m_dICOMSeriesBodyPartHasBeenSet = true; m_dICOMSeriesBodyPart = std::move(value); }
+
+    /**
+     * <p>The DICOM provided identifier for the series Body Part Examined.</p>
+     */
+    inline void SetDICOMSeriesBodyPart(const char* value) { m_dICOMSeriesBodyPartHasBeenSet = true; m_dICOMSeriesBodyPart.assign(value); }
+
+    /**
+     * <p>The DICOM provided identifier for the series Body Part Examined.</p>
+     */
+    inline DICOMTags& WithDICOMSeriesBodyPart(const Aws::String& value) { SetDICOMSeriesBodyPart(value); return *this;}
+
+    /**
+     * <p>The DICOM provided identifier for the series Body Part Examined.</p>
+     */
+    inline DICOMTags& WithDICOMSeriesBodyPart(Aws::String&& value) { SetDICOMSeriesBodyPart(std::move(value)); return *this;}
+
+    /**
+     * <p>The DICOM provided identifier for the series Body Part Examined.</p>
+     */
+    inline DICOMTags& WithDICOMSeriesBodyPart(const char* value) { SetDICOMSeriesBodyPart(value); return *this;}
+
+
+    /**
+     * <p>The DICOM provided identifier for the Series Number.</p>
+     */
+    inline int GetDICOMSeriesNumber() const{ return m_dICOMSeriesNumber; }
+
+    /**
+     * <p>The DICOM provided identifier for the Series Number.</p>
+     */
+    inline bool DICOMSeriesNumberHasBeenSet() const { return m_dICOMSeriesNumberHasBeenSet; }
+
+    /**
+     * <p>The DICOM provided identifier for the Series Number.</p>
+     */
+    inline void SetDICOMSeriesNumber(int value) { m_dICOMSeriesNumberHasBeenSet = true; m_dICOMSeriesNumber = value; }
+
+    /**
+     * <p>The DICOM provided identifier for the Series Number.</p>
+     */
+    inline DICOMTags& WithDICOMSeriesNumber(int value) { SetDICOMSeriesNumber(value); return *this;}
 
 
     /**
@@ -520,6 +664,18 @@ namespace Model
 
     Aws::String m_dICOMAccessionNumber;
     bool m_dICOMAccessionNumberHasBeenSet = false;
+
+    Aws::String m_dICOMSeriesInstanceUID;
+    bool m_dICOMSeriesInstanceUIDHasBeenSet = false;
+
+    Aws::String m_dICOMSeriesModality;
+    bool m_dICOMSeriesModalityHasBeenSet = false;
+
+    Aws::String m_dICOMSeriesBodyPart;
+    bool m_dICOMSeriesBodyPartHasBeenSet = false;
+
+    int m_dICOMSeriesNumber;
+    bool m_dICOMSeriesNumberHasBeenSet = false;
 
     Aws::String m_dICOMStudyDate;
     bool m_dICOMStudyDateHasBeenSet = false;

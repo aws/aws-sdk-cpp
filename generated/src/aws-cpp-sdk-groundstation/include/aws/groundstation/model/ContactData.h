@@ -550,6 +550,128 @@ namespace Model
      */
     inline ContactData& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p> Projected time in UTC your satellite will set below the <a
+     * href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive
+     * mask</a>. This time is based on the satellite's current active ephemeris for
+     * future contacts and the ephemeris that was active during contact execution for
+     * completed contacts. <i>This field is not present for contacts with a
+     * <code>SCHEDULING</code> or <code>SCHEDULED</code> status.</i> </p>
+     */
+    inline const Aws::Utils::DateTime& GetVisibilityEndTime() const{ return m_visibilityEndTime; }
+
+    /**
+     * <p> Projected time in UTC your satellite will set below the <a
+     * href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive
+     * mask</a>. This time is based on the satellite's current active ephemeris for
+     * future contacts and the ephemeris that was active during contact execution for
+     * completed contacts. <i>This field is not present for contacts with a
+     * <code>SCHEDULING</code> or <code>SCHEDULED</code> status.</i> </p>
+     */
+    inline bool VisibilityEndTimeHasBeenSet() const { return m_visibilityEndTimeHasBeenSet; }
+
+    /**
+     * <p> Projected time in UTC your satellite will set below the <a
+     * href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive
+     * mask</a>. This time is based on the satellite's current active ephemeris for
+     * future contacts and the ephemeris that was active during contact execution for
+     * completed contacts. <i>This field is not present for contacts with a
+     * <code>SCHEDULING</code> or <code>SCHEDULED</code> status.</i> </p>
+     */
+    inline void SetVisibilityEndTime(const Aws::Utils::DateTime& value) { m_visibilityEndTimeHasBeenSet = true; m_visibilityEndTime = value; }
+
+    /**
+     * <p> Projected time in UTC your satellite will set below the <a
+     * href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive
+     * mask</a>. This time is based on the satellite's current active ephemeris for
+     * future contacts and the ephemeris that was active during contact execution for
+     * completed contacts. <i>This field is not present for contacts with a
+     * <code>SCHEDULING</code> or <code>SCHEDULED</code> status.</i> </p>
+     */
+    inline void SetVisibilityEndTime(Aws::Utils::DateTime&& value) { m_visibilityEndTimeHasBeenSet = true; m_visibilityEndTime = std::move(value); }
+
+    /**
+     * <p> Projected time in UTC your satellite will set below the <a
+     * href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive
+     * mask</a>. This time is based on the satellite's current active ephemeris for
+     * future contacts and the ephemeris that was active during contact execution for
+     * completed contacts. <i>This field is not present for contacts with a
+     * <code>SCHEDULING</code> or <code>SCHEDULED</code> status.</i> </p>
+     */
+    inline ContactData& WithVisibilityEndTime(const Aws::Utils::DateTime& value) { SetVisibilityEndTime(value); return *this;}
+
+    /**
+     * <p> Projected time in UTC your satellite will set below the <a
+     * href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive
+     * mask</a>. This time is based on the satellite's current active ephemeris for
+     * future contacts and the ephemeris that was active during contact execution for
+     * completed contacts. <i>This field is not present for contacts with a
+     * <code>SCHEDULING</code> or <code>SCHEDULED</code> status.</i> </p>
+     */
+    inline ContactData& WithVisibilityEndTime(Aws::Utils::DateTime&& value) { SetVisibilityEndTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Projected time in UTC your satellite will rise above the <a
+     * href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive
+     * mask</a>. This time is based on the satellite's current active ephemeris for
+     * future contacts and the ephemeris that was active during contact execution for
+     * completed contacts. <i>This field is not present for contacts with a
+     * <code>SCHEDULING</code> or <code>SCHEDULED</code> status.</i> </p>
+     */
+    inline const Aws::Utils::DateTime& GetVisibilityStartTime() const{ return m_visibilityStartTime; }
+
+    /**
+     * <p> Projected time in UTC your satellite will rise above the <a
+     * href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive
+     * mask</a>. This time is based on the satellite's current active ephemeris for
+     * future contacts and the ephemeris that was active during contact execution for
+     * completed contacts. <i>This field is not present for contacts with a
+     * <code>SCHEDULING</code> or <code>SCHEDULED</code> status.</i> </p>
+     */
+    inline bool VisibilityStartTimeHasBeenSet() const { return m_visibilityStartTimeHasBeenSet; }
+
+    /**
+     * <p> Projected time in UTC your satellite will rise above the <a
+     * href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive
+     * mask</a>. This time is based on the satellite's current active ephemeris for
+     * future contacts and the ephemeris that was active during contact execution for
+     * completed contacts. <i>This field is not present for contacts with a
+     * <code>SCHEDULING</code> or <code>SCHEDULED</code> status.</i> </p>
+     */
+    inline void SetVisibilityStartTime(const Aws::Utils::DateTime& value) { m_visibilityStartTimeHasBeenSet = true; m_visibilityStartTime = value; }
+
+    /**
+     * <p> Projected time in UTC your satellite will rise above the <a
+     * href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive
+     * mask</a>. This time is based on the satellite's current active ephemeris for
+     * future contacts and the ephemeris that was active during contact execution for
+     * completed contacts. <i>This field is not present for contacts with a
+     * <code>SCHEDULING</code> or <code>SCHEDULED</code> status.</i> </p>
+     */
+    inline void SetVisibilityStartTime(Aws::Utils::DateTime&& value) { m_visibilityStartTimeHasBeenSet = true; m_visibilityStartTime = std::move(value); }
+
+    /**
+     * <p> Projected time in UTC your satellite will rise above the <a
+     * href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive
+     * mask</a>. This time is based on the satellite's current active ephemeris for
+     * future contacts and the ephemeris that was active during contact execution for
+     * completed contacts. <i>This field is not present for contacts with a
+     * <code>SCHEDULING</code> or <code>SCHEDULED</code> status.</i> </p>
+     */
+    inline ContactData& WithVisibilityStartTime(const Aws::Utils::DateTime& value) { SetVisibilityStartTime(value); return *this;}
+
+    /**
+     * <p> Projected time in UTC your satellite will rise above the <a
+     * href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive
+     * mask</a>. This time is based on the satellite's current active ephemeris for
+     * future contacts and the ephemeris that was active during contact execution for
+     * completed contacts. <i>This field is not present for contacts with a
+     * <code>SCHEDULING</code> or <code>SCHEDULED</code> status.</i> </p>
+     */
+    inline ContactData& WithVisibilityStartTime(Aws::Utils::DateTime&& value) { SetVisibilityStartTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_contactId;
@@ -590,6 +712,12 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::Utils::DateTime m_visibilityEndTime;
+    bool m_visibilityEndTimeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_visibilityStartTime;
+    bool m_visibilityStartTimeHasBeenSet = false;
   };
 
 } // namespace Model

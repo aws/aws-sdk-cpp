@@ -21,6 +21,8 @@ namespace Model
 {
 
 ResourceChange::ResourceChange() : 
+    m_policyAction(PolicyAction::NOT_SET),
+    m_policyActionHasBeenSet(false),
     m_action(ChangeAction::NOT_SET),
     m_actionHasBeenSet(false),
     m_logicalResourceIdHasBeenSet(false),
@@ -36,6 +38,8 @@ ResourceChange::ResourceChange() :
 }
 
 ResourceChange::ResourceChange(const XmlNode& xmlNode) : 
+    m_policyAction(PolicyAction::NOT_SET),
+    m_policyActionHasBeenSet(false),
     m_action(ChangeAction::NOT_SET),
     m_actionHasBeenSet(false),
     m_logicalResourceIdHasBeenSet(false),
@@ -57,6 +61,12 @@ ResourceChange& ResourceChange::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
+    XmlNode policyActionNode = resultNode.FirstChild("PolicyAction");
+    if(!policyActionNode.IsNull())
+    {
+      m_policyAction = PolicyActionMapper::GetPolicyActionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(policyActionNode.GetText()).c_str()).c_str());
+      m_policyActionHasBeenSet = true;
+    }
     XmlNode actionNode = resultNode.FirstChild("Action");
     if(!actionNode.IsNull())
     {
@@ -130,6 +140,11 @@ ResourceChange& ResourceChange::operator =(const XmlNode& xmlNode)
 
 void ResourceChange::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_policyActionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PolicyAction=" << PolicyActionMapper::GetNameForPolicyAction(m_policyAction) << "&";
+  }
+
   if(m_actionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Action=" << ChangeActionMapper::GetNameForChangeAction(m_action) << "&";
@@ -191,6 +206,10 @@ void ResourceChange::OutputToStream(Aws::OStream& oStream, const char* location,
 
 void ResourceChange::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_policyActionHasBeenSet)
+  {
+      oStream << location << ".PolicyAction=" << PolicyActionMapper::GetNameForPolicyAction(m_policyAction) << "&";
+  }
   if(m_actionHasBeenSet)
   {
       oStream << location << ".Action=" << ChangeActionMapper::GetNameForChangeAction(m_action) << "&";

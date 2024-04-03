@@ -204,6 +204,47 @@ namespace Model
 
 
     /**
+     * <p>The Series Instance UID input for search.</p>
+     */
+    inline const Aws::String& GetDICOMSeriesInstanceUID() const{ return m_dICOMSeriesInstanceUID; }
+
+    /**
+     * <p>The Series Instance UID input for search.</p>
+     */
+    inline bool DICOMSeriesInstanceUIDHasBeenSet() const { return m_dICOMSeriesInstanceUIDHasBeenSet; }
+
+    /**
+     * <p>The Series Instance UID input for search.</p>
+     */
+    inline void SetDICOMSeriesInstanceUID(const Aws::String& value) { m_dICOMSeriesInstanceUIDHasBeenSet = true; m_dICOMSeriesInstanceUID = value; }
+
+    /**
+     * <p>The Series Instance UID input for search.</p>
+     */
+    inline void SetDICOMSeriesInstanceUID(Aws::String&& value) { m_dICOMSeriesInstanceUIDHasBeenSet = true; m_dICOMSeriesInstanceUID = std::move(value); }
+
+    /**
+     * <p>The Series Instance UID input for search.</p>
+     */
+    inline void SetDICOMSeriesInstanceUID(const char* value) { m_dICOMSeriesInstanceUIDHasBeenSet = true; m_dICOMSeriesInstanceUID.assign(value); }
+
+    /**
+     * <p>The Series Instance UID input for search.</p>
+     */
+    inline SearchByAttributeValue& WithDICOMSeriesInstanceUID(const Aws::String& value) { SetDICOMSeriesInstanceUID(value); return *this;}
+
+    /**
+     * <p>The Series Instance UID input for search.</p>
+     */
+    inline SearchByAttributeValue& WithDICOMSeriesInstanceUID(Aws::String&& value) { SetDICOMSeriesInstanceUID(std::move(value)); return *this;}
+
+    /**
+     * <p>The Series Instance UID input for search.</p>
+     */
+    inline SearchByAttributeValue& WithDICOMSeriesInstanceUID(const char* value) { SetDICOMSeriesInstanceUID(value); return *this;}
+
+
+    /**
      * <p>The created at time of the image set provided for search.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
@@ -232,6 +273,37 @@ namespace Model
      * <p>The created at time of the image set provided for search.</p>
      */
     inline SearchByAttributeValue& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The timestamp input for search.</p>
+     */
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+
+    /**
+     * <p>The timestamp input for search.</p>
+     */
+    inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
+
+    /**
+     * <p>The timestamp input for search.</p>
+     */
+    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
+
+    /**
+     * <p>The timestamp input for search.</p>
+     */
+    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
+
+    /**
+     * <p>The timestamp input for search.</p>
+     */
+    inline SearchByAttributeValue& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
+
+    /**
+     * <p>The timestamp input for search.</p>
+     */
+    inline SearchByAttributeValue& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
 
     /**
@@ -284,8 +356,14 @@ namespace Model
     Aws::String m_dICOMStudyInstanceUID;
     bool m_dICOMStudyInstanceUIDHasBeenSet = false;
 
+    Aws::String m_dICOMSeriesInstanceUID;
+    bool m_dICOMSeriesInstanceUIDHasBeenSet = false;
+
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet = false;
+
+    Aws::Utils::DateTime m_updatedAt;
+    bool m_updatedAtHasBeenSet = false;
 
     DICOMStudyDateAndTime m_dICOMStudyDateAndTime;
     bool m_dICOMStudyDateAndTimeHasBeenSet = false;

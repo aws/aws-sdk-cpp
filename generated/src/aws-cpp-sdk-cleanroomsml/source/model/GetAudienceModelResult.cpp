@@ -55,15 +55,6 @@ GetAudienceModelResult& GetAudienceModelResult::operator =(const Aws::AmazonWebS
 
   }
 
-  if(jsonValue.ValueExists("metrics"))
-  {
-    Aws::Utils::Array<JsonView> metricsJsonList = jsonValue.GetArray("metrics");
-    for(unsigned metricsIndex = 0; metricsIndex < metricsJsonList.GetLength(); ++metricsIndex)
-    {
-      m_metrics.push_back(metricsJsonList[metricsIndex].AsObject());
-    }
-  }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");

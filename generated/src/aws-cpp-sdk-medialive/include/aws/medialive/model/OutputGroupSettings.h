@@ -13,6 +13,7 @@
 #include <aws/medialive/model/MultiplexGroupSettings.h>
 #include <aws/medialive/model/RtmpGroupSettings.h>
 #include <aws/medialive/model/UdpGroupSettings.h>
+#include <aws/medialive/model/CmafIngestGroupSettings.h>
 #include <utility>
 
 namespace Aws
@@ -195,6 +196,25 @@ namespace Model
     
     inline OutputGroupSettings& WithUdpGroupSettings(UdpGroupSettings&& value) { SetUdpGroupSettings(std::move(value)); return *this;}
 
+
+    
+    inline const CmafIngestGroupSettings& GetCmafIngestGroupSettings() const{ return m_cmafIngestGroupSettings; }
+
+    
+    inline bool CmafIngestGroupSettingsHasBeenSet() const { return m_cmafIngestGroupSettingsHasBeenSet; }
+
+    
+    inline void SetCmafIngestGroupSettings(const CmafIngestGroupSettings& value) { m_cmafIngestGroupSettingsHasBeenSet = true; m_cmafIngestGroupSettings = value; }
+
+    
+    inline void SetCmafIngestGroupSettings(CmafIngestGroupSettings&& value) { m_cmafIngestGroupSettingsHasBeenSet = true; m_cmafIngestGroupSettings = std::move(value); }
+
+    
+    inline OutputGroupSettings& WithCmafIngestGroupSettings(const CmafIngestGroupSettings& value) { SetCmafIngestGroupSettings(value); return *this;}
+
+    
+    inline OutputGroupSettings& WithCmafIngestGroupSettings(CmafIngestGroupSettings&& value) { SetCmafIngestGroupSettings(std::move(value)); return *this;}
+
   private:
 
     ArchiveGroupSettings m_archiveGroupSettings;
@@ -220,6 +240,9 @@ namespace Model
 
     UdpGroupSettings m_udpGroupSettings;
     bool m_udpGroupSettingsHasBeenSet = false;
+
+    CmafIngestGroupSettings m_cmafIngestGroupSettings;
+    bool m_cmafIngestGroupSettingsHasBeenSet = false;
   };
 
 } // namespace Model

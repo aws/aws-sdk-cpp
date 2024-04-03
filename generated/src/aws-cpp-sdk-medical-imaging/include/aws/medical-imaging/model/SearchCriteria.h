@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/medical-imaging/MedicalImaging_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/medical-imaging/model/Sort.h>
 #include <aws/medical-imaging/model/SearchFilter.h>
 #include <utility>
 
@@ -78,10 +79,44 @@ namespace Model
      */
     inline SearchCriteria& AddFilters(SearchFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The sort input for search criteria.</p>
+     */
+    inline const Sort& GetSort() const{ return m_sort; }
+
+    /**
+     * <p>The sort input for search criteria.</p>
+     */
+    inline bool SortHasBeenSet() const { return m_sortHasBeenSet; }
+
+    /**
+     * <p>The sort input for search criteria.</p>
+     */
+    inline void SetSort(const Sort& value) { m_sortHasBeenSet = true; m_sort = value; }
+
+    /**
+     * <p>The sort input for search criteria.</p>
+     */
+    inline void SetSort(Sort&& value) { m_sortHasBeenSet = true; m_sort = std::move(value); }
+
+    /**
+     * <p>The sort input for search criteria.</p>
+     */
+    inline SearchCriteria& WithSort(const Sort& value) { SetSort(value); return *this;}
+
+    /**
+     * <p>The sort input for search criteria.</p>
+     */
+    inline SearchCriteria& WithSort(Sort&& value) { SetSort(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<SearchFilter> m_filters;
     bool m_filtersHasBeenSet = false;
+
+    Sort m_sort;
+    bool m_sortHasBeenSet = false;
   };
 
 } // namespace Model

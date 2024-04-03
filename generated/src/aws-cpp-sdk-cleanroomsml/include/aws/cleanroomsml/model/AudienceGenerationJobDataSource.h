@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Defines the Amazon S3 bucket where the training data for the configured
+   * <p>Defines the Amazon S3 bucket where the seed audience for the generating
    * audience is stored.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/AudienceGenerationJobDataSource">AWS
    * API Reference</a></p>
@@ -40,38 +40,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon S3 bucket where the training data for the configured audience is
-     * stored.</p>
+     * <p>Defines the Amazon S3 bucket where the seed audience for the generating
+     * audience is stored. A valid data source is a JSON line file in the following
+     * format:</p> <p> <code>{"user_id": "111111"}</code> </p> <p> <code>{"user_id":
+     * "222222"}</code> </p> <p> <code>...</code> </p>
      */
     inline const S3ConfigMap& GetDataSource() const{ return m_dataSource; }
 
     /**
-     * <p>The Amazon S3 bucket where the training data for the configured audience is
-     * stored.</p>
+     * <p>Defines the Amazon S3 bucket where the seed audience for the generating
+     * audience is stored. A valid data source is a JSON line file in the following
+     * format:</p> <p> <code>{"user_id": "111111"}</code> </p> <p> <code>{"user_id":
+     * "222222"}</code> </p> <p> <code>...</code> </p>
      */
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
 
     /**
-     * <p>The Amazon S3 bucket where the training data for the configured audience is
-     * stored.</p>
+     * <p>Defines the Amazon S3 bucket where the seed audience for the generating
+     * audience is stored. A valid data source is a JSON line file in the following
+     * format:</p> <p> <code>{"user_id": "111111"}</code> </p> <p> <code>{"user_id":
+     * "222222"}</code> </p> <p> <code>...</code> </p>
      */
     inline void SetDataSource(const S3ConfigMap& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
 
     /**
-     * <p>The Amazon S3 bucket where the training data for the configured audience is
-     * stored.</p>
+     * <p>Defines the Amazon S3 bucket where the seed audience for the generating
+     * audience is stored. A valid data source is a JSON line file in the following
+     * format:</p> <p> <code>{"user_id": "111111"}</code> </p> <p> <code>{"user_id":
+     * "222222"}</code> </p> <p> <code>...</code> </p>
      */
     inline void SetDataSource(S3ConfigMap&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
 
     /**
-     * <p>The Amazon S3 bucket where the training data for the configured audience is
-     * stored.</p>
+     * <p>Defines the Amazon S3 bucket where the seed audience for the generating
+     * audience is stored. A valid data source is a JSON line file in the following
+     * format:</p> <p> <code>{"user_id": "111111"}</code> </p> <p> <code>{"user_id":
+     * "222222"}</code> </p> <p> <code>...</code> </p>
      */
     inline AudienceGenerationJobDataSource& WithDataSource(const S3ConfigMap& value) { SetDataSource(value); return *this;}
 
     /**
-     * <p>The Amazon S3 bucket where the training data for the configured audience is
-     * stored.</p>
+     * <p>Defines the Amazon S3 bucket where the seed audience for the generating
+     * audience is stored. A valid data source is a JSON line file in the following
+     * format:</p> <p> <code>{"user_id": "111111"}</code> </p> <p> <code>{"user_id":
+     * "222222"}</code> </p> <p> <code>...</code> </p>
      */
     inline AudienceGenerationJobDataSource& WithDataSource(S3ConfigMap&& value) { SetDataSource(std::move(value)); return *this;}
 

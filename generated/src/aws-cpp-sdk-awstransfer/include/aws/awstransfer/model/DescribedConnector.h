@@ -604,6 +604,47 @@ namespace Model
      */
     inline DescribedConnector& AddServiceManagedEgressIpAddresses(const char* value) { m_serviceManagedEgressIpAddressesHasBeenSet = true; m_serviceManagedEgressIpAddresses.push_back(value); return *this; }
 
+
+    /**
+     * <p>The text name of the security policy for the specified connector.</p>
+     */
+    inline const Aws::String& GetSecurityPolicyName() const{ return m_securityPolicyName; }
+
+    /**
+     * <p>The text name of the security policy for the specified connector.</p>
+     */
+    inline bool SecurityPolicyNameHasBeenSet() const { return m_securityPolicyNameHasBeenSet; }
+
+    /**
+     * <p>The text name of the security policy for the specified connector.</p>
+     */
+    inline void SetSecurityPolicyName(const Aws::String& value) { m_securityPolicyNameHasBeenSet = true; m_securityPolicyName = value; }
+
+    /**
+     * <p>The text name of the security policy for the specified connector.</p>
+     */
+    inline void SetSecurityPolicyName(Aws::String&& value) { m_securityPolicyNameHasBeenSet = true; m_securityPolicyName = std::move(value); }
+
+    /**
+     * <p>The text name of the security policy for the specified connector.</p>
+     */
+    inline void SetSecurityPolicyName(const char* value) { m_securityPolicyNameHasBeenSet = true; m_securityPolicyName.assign(value); }
+
+    /**
+     * <p>The text name of the security policy for the specified connector.</p>
+     */
+    inline DescribedConnector& WithSecurityPolicyName(const Aws::String& value) { SetSecurityPolicyName(value); return *this;}
+
+    /**
+     * <p>The text name of the security policy for the specified connector.</p>
+     */
+    inline DescribedConnector& WithSecurityPolicyName(Aws::String&& value) { SetSecurityPolicyName(std::move(value)); return *this;}
+
+    /**
+     * <p>The text name of the security policy for the specified connector.</p>
+     */
+    inline DescribedConnector& WithSecurityPolicyName(const char* value) { SetSecurityPolicyName(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -632,6 +673,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_serviceManagedEgressIpAddresses;
     bool m_serviceManagedEgressIpAddressesHasBeenSet = false;
+
+    Aws::String m_securityPolicyName;
+    bool m_securityPolicyNameHasBeenSet = false;
   };
 
 } // namespace Model

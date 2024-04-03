@@ -7,11 +7,9 @@
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cleanroomsml/model/AudienceModelStatus.h>
 #include <aws/cleanroomsml/model/StatusDetails.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/cleanroomsml/model/AudienceModelMetric.h>
 #include <utility>
 
 namespace Aws
@@ -170,42 +168,6 @@ namespace Model
      * <p>The KMS key ARN used for the audience model.</p>
      */
     inline GetAudienceModelResult& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
-
-
-    /**
-     * <p>Accuracy metrics for the model.</p>
-     */
-    inline const Aws::Vector<AudienceModelMetric>& GetMetrics() const{ return m_metrics; }
-
-    /**
-     * <p>Accuracy metrics for the model.</p>
-     */
-    inline void SetMetrics(const Aws::Vector<AudienceModelMetric>& value) { m_metrics = value; }
-
-    /**
-     * <p>Accuracy metrics for the model.</p>
-     */
-    inline void SetMetrics(Aws::Vector<AudienceModelMetric>&& value) { m_metrics = std::move(value); }
-
-    /**
-     * <p>Accuracy metrics for the model.</p>
-     */
-    inline GetAudienceModelResult& WithMetrics(const Aws::Vector<AudienceModelMetric>& value) { SetMetrics(value); return *this;}
-
-    /**
-     * <p>Accuracy metrics for the model.</p>
-     */
-    inline GetAudienceModelResult& WithMetrics(Aws::Vector<AudienceModelMetric>&& value) { SetMetrics(std::move(value)); return *this;}
-
-    /**
-     * <p>Accuracy metrics for the model.</p>
-     */
-    inline GetAudienceModelResult& AddMetrics(const AudienceModelMetric& value) { m_metrics.push_back(value); return *this; }
-
-    /**
-     * <p>Accuracy metrics for the model.</p>
-     */
-    inline GetAudienceModelResult& AddMetrics(AudienceModelMetric&& value) { m_metrics.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -508,8 +470,6 @@ namespace Model
     Aws::String m_description;
 
     Aws::String m_kmsKeyArn;
-
-    Aws::Vector<AudienceModelMetric> m_metrics;
 
     Aws::String m_name;
 

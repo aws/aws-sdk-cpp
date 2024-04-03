@@ -928,7 +928,7 @@ namespace Model
 
     /**
      * <p> <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">Container
      * image configuration values</a> that override the values in the container image
      * Docker file.</p>
      */
@@ -936,7 +936,7 @@ namespace Model
 
     /**
      * <p> <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">Container
      * image configuration values</a> that override the values in the container image
      * Docker file.</p>
      */
@@ -944,7 +944,7 @@ namespace Model
 
     /**
      * <p> <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">Container
      * image configuration values</a> that override the values in the container image
      * Docker file.</p>
      */
@@ -952,7 +952,7 @@ namespace Model
 
     /**
      * <p> <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">Container
      * image configuration values</a> that override the values in the container image
      * Docker file.</p>
      */
@@ -960,7 +960,7 @@ namespace Model
 
     /**
      * <p> <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">Container
      * image configuration values</a> that override the values in the container image
      * Docker file.</p>
      */
@@ -968,7 +968,7 @@ namespace Model
 
     /**
      * <p> <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">Container
      * image configuration values</a> that override the values in the container image
      * Docker file.</p>
      */

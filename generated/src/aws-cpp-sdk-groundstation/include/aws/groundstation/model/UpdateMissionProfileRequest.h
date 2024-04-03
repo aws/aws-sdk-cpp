@@ -38,51 +38,51 @@ namespace Model
 
 
     /**
-     * <p>Amount of time after a contact ends that you’d like to receive a CloudWatch
-     * event indicating the pass has finished.</p>
+     * <p>Amount of time after a contact ends that you’d like to receive a Ground
+     * Station Contact State Change event indicating the pass has finished.</p>
      */
     inline int GetContactPostPassDurationSeconds() const{ return m_contactPostPassDurationSeconds; }
 
     /**
-     * <p>Amount of time after a contact ends that you’d like to receive a CloudWatch
-     * event indicating the pass has finished.</p>
+     * <p>Amount of time after a contact ends that you’d like to receive a Ground
+     * Station Contact State Change event indicating the pass has finished.</p>
      */
     inline bool ContactPostPassDurationSecondsHasBeenSet() const { return m_contactPostPassDurationSecondsHasBeenSet; }
 
     /**
-     * <p>Amount of time after a contact ends that you’d like to receive a CloudWatch
-     * event indicating the pass has finished.</p>
+     * <p>Amount of time after a contact ends that you’d like to receive a Ground
+     * Station Contact State Change event indicating the pass has finished.</p>
      */
     inline void SetContactPostPassDurationSeconds(int value) { m_contactPostPassDurationSecondsHasBeenSet = true; m_contactPostPassDurationSeconds = value; }
 
     /**
-     * <p>Amount of time after a contact ends that you’d like to receive a CloudWatch
-     * event indicating the pass has finished.</p>
+     * <p>Amount of time after a contact ends that you’d like to receive a Ground
+     * Station Contact State Change event indicating the pass has finished.</p>
      */
     inline UpdateMissionProfileRequest& WithContactPostPassDurationSeconds(int value) { SetContactPostPassDurationSeconds(value); return *this;}
 
 
     /**
-     * <p>Amount of time after a contact ends that you’d like to receive a CloudWatch
-     * event indicating the pass has finished.</p>
+     * <p>Amount of time after a contact ends that you’d like to receive a Ground
+     * Station Contact State Change event indicating the pass has finished.</p>
      */
     inline int GetContactPrePassDurationSeconds() const{ return m_contactPrePassDurationSeconds; }
 
     /**
-     * <p>Amount of time after a contact ends that you’d like to receive a CloudWatch
-     * event indicating the pass has finished.</p>
+     * <p>Amount of time after a contact ends that you’d like to receive a Ground
+     * Station Contact State Change event indicating the pass has finished.</p>
      */
     inline bool ContactPrePassDurationSecondsHasBeenSet() const { return m_contactPrePassDurationSecondsHasBeenSet; }
 
     /**
-     * <p>Amount of time after a contact ends that you’d like to receive a CloudWatch
-     * event indicating the pass has finished.</p>
+     * <p>Amount of time after a contact ends that you’d like to receive a Ground
+     * Station Contact State Change event indicating the pass has finished.</p>
      */
     inline void SetContactPrePassDurationSeconds(int value) { m_contactPrePassDurationSecondsHasBeenSet = true; m_contactPrePassDurationSeconds = value; }
 
     /**
-     * <p>Amount of time after a contact ends that you’d like to receive a CloudWatch
-     * event indicating the pass has finished.</p>
+     * <p>Amount of time after a contact ends that you’d like to receive a Ground
+     * Station Contact State Change event indicating the pass has finished.</p>
      */
     inline UpdateMissionProfileRequest& WithContactPrePassDurationSeconds(int value) { SetContactPrePassDurationSeconds(value); return *this;}
 

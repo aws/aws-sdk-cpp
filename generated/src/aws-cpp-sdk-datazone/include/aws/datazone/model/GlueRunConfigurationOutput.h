@@ -90,6 +90,31 @@ namespace Model
 
 
     /**
+     * <p>Specifies whether to automatically import data quality metrics as part of the
+     * data source run.</p>
+     */
+    inline bool GetAutoImportDataQualityResult() const{ return m_autoImportDataQualityResult; }
+
+    /**
+     * <p>Specifies whether to automatically import data quality metrics as part of the
+     * data source run.</p>
+     */
+    inline bool AutoImportDataQualityResultHasBeenSet() const { return m_autoImportDataQualityResultHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to automatically import data quality metrics as part of the
+     * data source run.</p>
+     */
+    inline void SetAutoImportDataQualityResult(bool value) { m_autoImportDataQualityResultHasBeenSet = true; m_autoImportDataQualityResult = value; }
+
+    /**
+     * <p>Specifies whether to automatically import data quality metrics as part of the
+     * data source run.</p>
+     */
+    inline GlueRunConfigurationOutput& WithAutoImportDataQualityResult(bool value) { SetAutoImportDataQualityResult(value); return *this;}
+
+
+    /**
      * <p>The data access role included in the configuration details of the Amazon Web
      * Services Glue data source. </p>
      */
@@ -239,6 +264,9 @@ namespace Model
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
+
+    bool m_autoImportDataQualityResult;
+    bool m_autoImportDataQualityResultHasBeenSet = false;
 
     Aws::String m_dataAccessRole;
     bool m_dataAccessRoleHasBeenSet = false;

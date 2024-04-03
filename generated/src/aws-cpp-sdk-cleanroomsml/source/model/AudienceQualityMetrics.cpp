@@ -19,11 +19,15 @@ namespace Model
 {
 
 AudienceQualityMetrics::AudienceQualityMetrics() : 
+    m_recallMetric(0.0),
+    m_recallMetricHasBeenSet(false),
     m_relevanceMetricsHasBeenSet(false)
 {
 }
 
 AudienceQualityMetrics::AudienceQualityMetrics(JsonView jsonValue) : 
+    m_recallMetric(0.0),
+    m_recallMetricHasBeenSet(false),
     m_relevanceMetricsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -31,6 +35,13 @@ AudienceQualityMetrics::AudienceQualityMetrics(JsonView jsonValue) :
 
 AudienceQualityMetrics& AudienceQualityMetrics::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("recallMetric"))
+  {
+    m_recallMetric = jsonValue.GetDouble("recallMetric");
+
+    m_recallMetricHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("relevanceMetrics"))
   {
     Aws::Utils::Array<JsonView> relevanceMetricsJsonList = jsonValue.GetArray("relevanceMetrics");
@@ -47,6 +58,12 @@ AudienceQualityMetrics& AudienceQualityMetrics::operator =(JsonView jsonValue)
 JsonValue AudienceQualityMetrics::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_recallMetricHasBeenSet)
+  {
+   payload.WithDouble("recallMetric", m_recallMetric);
+
+  }
 
   if(m_relevanceMetricsHasBeenSet)
   {

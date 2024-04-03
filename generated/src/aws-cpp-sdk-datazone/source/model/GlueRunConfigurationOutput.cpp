@@ -20,6 +20,8 @@ namespace Model
 
 GlueRunConfigurationOutput::GlueRunConfigurationOutput() : 
     m_accountIdHasBeenSet(false),
+    m_autoImportDataQualityResult(false),
+    m_autoImportDataQualityResultHasBeenSet(false),
     m_dataAccessRoleHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_relationalFilterConfigurationsHasBeenSet(false)
@@ -28,6 +30,8 @@ GlueRunConfigurationOutput::GlueRunConfigurationOutput() :
 
 GlueRunConfigurationOutput::GlueRunConfigurationOutput(JsonView jsonValue) : 
     m_accountIdHasBeenSet(false),
+    m_autoImportDataQualityResult(false),
+    m_autoImportDataQualityResultHasBeenSet(false),
     m_dataAccessRoleHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_relationalFilterConfigurationsHasBeenSet(false)
@@ -42,6 +46,13 @@ GlueRunConfigurationOutput& GlueRunConfigurationOutput::operator =(JsonView json
     m_accountId = jsonValue.GetString("accountId");
 
     m_accountIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("autoImportDataQualityResult"))
+  {
+    m_autoImportDataQualityResult = jsonValue.GetBool("autoImportDataQualityResult");
+
+    m_autoImportDataQualityResultHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("dataAccessRole"))
@@ -78,6 +89,12 @@ JsonValue GlueRunConfigurationOutput::Jsonize() const
   if(m_accountIdHasBeenSet)
   {
    payload.WithString("accountId", m_accountId);
+
+  }
+
+  if(m_autoImportDataQualityResultHasBeenSet)
+  {
+   payload.WithBool("autoImportDataQualityResult", m_autoImportDataQualityResult);
 
   }
 

@@ -1090,7 +1090,7 @@ namespace Model
      * extension, use <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration">Configuring
      * extensions at the account level</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline const Aws::String& GetConfigurationSchema() const{ return m_configurationSchema; }
@@ -1101,7 +1101,7 @@ namespace Model
      * extension, use <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration">Configuring
      * extensions at the account level</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline void SetConfigurationSchema(const Aws::String& value) { m_configurationSchema = value; }
@@ -1112,7 +1112,7 @@ namespace Model
      * extension, use <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration">Configuring
      * extensions at the account level</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline void SetConfigurationSchema(Aws::String&& value) { m_configurationSchema = std::move(value); }
@@ -1123,7 +1123,7 @@ namespace Model
      * extension, use <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration">Configuring
      * extensions at the account level</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline void SetConfigurationSchema(const char* value) { m_configurationSchema.assign(value); }
@@ -1134,7 +1134,7 @@ namespace Model
      * extension, use <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration">Configuring
      * extensions at the account level</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline DescribeTypeResult& WithConfigurationSchema(const Aws::String& value) { SetConfigurationSchema(value); return *this;}
@@ -1145,7 +1145,7 @@ namespace Model
      * extension, use <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration">Configuring
      * extensions at the account level</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline DescribeTypeResult& WithConfigurationSchema(Aws::String&& value) { SetConfigurationSchema(std::move(value)); return *this;}
@@ -1156,7 +1156,7 @@ namespace Model
      * extension, use <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration">Configuring
      * extensions at the account level</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline DescribeTypeResult& WithConfigurationSchema(const char* value) { SetConfigurationSchema(value); return *this;}

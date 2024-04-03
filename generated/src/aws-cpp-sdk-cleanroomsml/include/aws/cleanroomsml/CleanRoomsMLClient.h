@@ -145,9 +145,9 @@ namespace CleanRoomsML
         }
 
         /**
-         * <p>Defines the information necessary to create a training dataset, or seed
-         * audience. In Clean Rooms ML, the <code>TrainingDataset</code> is metadata that
-         * points to a Glue table, which is read only during <code>AudienceModel</code>
+         * <p>Defines the information necessary to create a training dataset. In Clean
+         * Rooms ML, the <code>TrainingDataset</code> is metadata that points to a Glue
+         * table, which is read only during <code>AudienceModel</code>
          * creation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateTrainingDataset">AWS
          * API Reference</a></p>

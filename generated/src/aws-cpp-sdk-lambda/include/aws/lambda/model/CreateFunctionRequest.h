@@ -1056,42 +1056,42 @@ namespace Model
 
     /**
      * <p>Container image <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings">configuration
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">configuration
      * values</a> that override the values in the container image Dockerfile.</p>
      */
     inline const ImageConfig& GetImageConfig() const{ return m_imageConfig; }
 
     /**
      * <p>Container image <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings">configuration
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">configuration
      * values</a> that override the values in the container image Dockerfile.</p>
      */
     inline bool ImageConfigHasBeenSet() const { return m_imageConfigHasBeenSet; }
 
     /**
      * <p>Container image <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings">configuration
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">configuration
      * values</a> that override the values in the container image Dockerfile.</p>
      */
     inline void SetImageConfig(const ImageConfig& value) { m_imageConfigHasBeenSet = true; m_imageConfig = value; }
 
     /**
      * <p>Container image <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings">configuration
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">configuration
      * values</a> that override the values in the container image Dockerfile.</p>
      */
     inline void SetImageConfig(ImageConfig&& value) { m_imageConfigHasBeenSet = true; m_imageConfig = std::move(value); }
 
     /**
      * <p>Container image <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings">configuration
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">configuration
      * values</a> that override the values in the container image Dockerfile.</p>
      */
     inline CreateFunctionRequest& WithImageConfig(const ImageConfig& value) { SetImageConfig(value); return *this;}
 
     /**
      * <p>Container image <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings">configuration
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">configuration
      * values</a> that override the values in the container image Dockerfile.</p>
      */
     inline CreateFunctionRequest& WithImageConfig(ImageConfig&& value) { SetImageConfig(std::move(value)); return *this;}

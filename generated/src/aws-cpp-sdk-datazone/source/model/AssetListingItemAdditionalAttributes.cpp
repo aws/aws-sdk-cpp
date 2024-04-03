@@ -19,12 +19,14 @@ namespace Model
 {
 
 AssetListingItemAdditionalAttributes::AssetListingItemAdditionalAttributes() : 
-    m_formsHasBeenSet(false)
+    m_formsHasBeenSet(false),
+    m_latestTimeSeriesDataPointFormsHasBeenSet(false)
 {
 }
 
 AssetListingItemAdditionalAttributes::AssetListingItemAdditionalAttributes(JsonView jsonValue) : 
-    m_formsHasBeenSet(false)
+    m_formsHasBeenSet(false),
+    m_latestTimeSeriesDataPointFormsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,16 @@ AssetListingItemAdditionalAttributes& AssetListingItemAdditionalAttributes::oper
     m_formsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("latestTimeSeriesDataPointForms"))
+  {
+    Aws::Utils::Array<JsonView> latestTimeSeriesDataPointFormsJsonList = jsonValue.GetArray("latestTimeSeriesDataPointForms");
+    for(unsigned latestTimeSeriesDataPointFormsIndex = 0; latestTimeSeriesDataPointFormsIndex < latestTimeSeriesDataPointFormsJsonList.GetLength(); ++latestTimeSeriesDataPointFormsIndex)
+    {
+      m_latestTimeSeriesDataPointForms.push_back(latestTimeSeriesDataPointFormsJsonList[latestTimeSeriesDataPointFormsIndex].AsObject());
+    }
+    m_latestTimeSeriesDataPointFormsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +60,17 @@ JsonValue AssetListingItemAdditionalAttributes::Jsonize() const
   if(m_formsHasBeenSet)
   {
    payload.WithString("forms", m_forms);
+
+  }
+
+  if(m_latestTimeSeriesDataPointFormsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> latestTimeSeriesDataPointFormsJsonList(m_latestTimeSeriesDataPointForms.size());
+   for(unsigned latestTimeSeriesDataPointFormsIndex = 0; latestTimeSeriesDataPointFormsIndex < latestTimeSeriesDataPointFormsJsonList.GetLength(); ++latestTimeSeriesDataPointFormsIndex)
+   {
+     latestTimeSeriesDataPointFormsJsonList[latestTimeSeriesDataPointFormsIndex].AsObject(m_latestTimeSeriesDataPointForms[latestTimeSeriesDataPointFormsIndex].Jsonize());
+   }
+   payload.WithArray("latestTimeSeriesDataPointForms", std::move(latestTimeSeriesDataPointFormsJsonList));
 
   }
 

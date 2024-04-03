@@ -189,9 +189,9 @@ namespace Model
      * aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys
      * as it is reserved for AWS use. You cannot edit or delete tag keys with this
      * prefix. Values can have this prefix. If a tag value has aws as its prefix but
-     * the key does not, then Forecast considers it to be a user tag and will count
-     * against the limit of 50 tags. Tags with only the key prefix of aws do not count
-     * against your tags per resource limit.</p> </li> </ul>
+     * the key does not, then Clean Rooms ML considers it to be a user tag and will
+     * count against the limit of 50 tags. Tags with only the key prefix of aws do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
@@ -211,9 +211,9 @@ namespace Model
      * aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys
      * as it is reserved for AWS use. You cannot edit or delete tag keys with this
      * prefix. Values can have this prefix. If a tag value has aws as its prefix but
-     * the key does not, then Forecast considers it to be a user tag and will count
-     * against the limit of 50 tags. Tags with only the key prefix of aws do not count
-     * against your tags per resource limit.</p> </li> </ul>
+     * the key does not, then Clean Rooms ML considers it to be a user tag and will
+     * count against the limit of 50 tags. Tags with only the key prefix of aws do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -233,9 +233,9 @@ namespace Model
      * aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys
      * as it is reserved for AWS use. You cannot edit or delete tag keys with this
      * prefix. Values can have this prefix. If a tag value has aws as its prefix but
-     * the key does not, then Forecast considers it to be a user tag and will count
-     * against the limit of 50 tags. Tags with only the key prefix of aws do not count
-     * against your tags per resource limit.</p> </li> </ul>
+     * the key does not, then Clean Rooms ML considers it to be a user tag and will
+     * count against the limit of 50 tags. Tags with only the key prefix of aws do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -255,9 +255,9 @@ namespace Model
      * aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys
      * as it is reserved for AWS use. You cannot edit or delete tag keys with this
      * prefix. Values can have this prefix. If a tag value has aws as its prefix but
-     * the key does not, then Forecast considers it to be a user tag and will count
-     * against the limit of 50 tags. Tags with only the key prefix of aws do not count
-     * against your tags per resource limit.</p> </li> </ul>
+     * the key does not, then Clean Rooms ML considers it to be a user tag and will
+     * count against the limit of 50 tags. Tags with only the key prefix of aws do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -277,9 +277,9 @@ namespace Model
      * aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys
      * as it is reserved for AWS use. You cannot edit or delete tag keys with this
      * prefix. Values can have this prefix. If a tag value has aws as its prefix but
-     * the key does not, then Forecast considers it to be a user tag and will count
-     * against the limit of 50 tags. Tags with only the key prefix of aws do not count
-     * against your tags per resource limit.</p> </li> </ul>
+     * the key does not, then Clean Rooms ML considers it to be a user tag and will
+     * count against the limit of 50 tags. Tags with only the key prefix of aws do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline CreateAudienceModelRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
@@ -299,9 +299,9 @@ namespace Model
      * aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys
      * as it is reserved for AWS use. You cannot edit or delete tag keys with this
      * prefix. Values can have this prefix. If a tag value has aws as its prefix but
-     * the key does not, then Forecast considers it to be a user tag and will count
-     * against the limit of 50 tags. Tags with only the key prefix of aws do not count
-     * against your tags per resource limit.</p> </li> </ul>
+     * the key does not, then Clean Rooms ML considers it to be a user tag and will
+     * count against the limit of 50 tags. Tags with only the key prefix of aws do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline CreateAudienceModelRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -321,9 +321,9 @@ namespace Model
      * aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys
      * as it is reserved for AWS use. You cannot edit or delete tag keys with this
      * prefix. Values can have this prefix. If a tag value has aws as its prefix but
-     * the key does not, then Forecast considers it to be a user tag and will count
-     * against the limit of 50 tags. Tags with only the key prefix of aws do not count
-     * against your tags per resource limit.</p> </li> </ul>
+     * the key does not, then Clean Rooms ML considers it to be a user tag and will
+     * count against the limit of 50 tags. Tags with only the key prefix of aws do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline CreateAudienceModelRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -343,9 +343,9 @@ namespace Model
      * aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys
      * as it is reserved for AWS use. You cannot edit or delete tag keys with this
      * prefix. Values can have this prefix. If a tag value has aws as its prefix but
-     * the key does not, then Forecast considers it to be a user tag and will count
-     * against the limit of 50 tags. Tags with only the key prefix of aws do not count
-     * against your tags per resource limit.</p> </li> </ul>
+     * the key does not, then Clean Rooms ML considers it to be a user tag and will
+     * count against the limit of 50 tags. Tags with only the key prefix of aws do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline CreateAudienceModelRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -365,9 +365,9 @@ namespace Model
      * aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys
      * as it is reserved for AWS use. You cannot edit or delete tag keys with this
      * prefix. Values can have this prefix. If a tag value has aws as its prefix but
-     * the key does not, then Forecast considers it to be a user tag and will count
-     * against the limit of 50 tags. Tags with only the key prefix of aws do not count
-     * against your tags per resource limit.</p> </li> </ul>
+     * the key does not, then Clean Rooms ML considers it to be a user tag and will
+     * count against the limit of 50 tags. Tags with only the key prefix of aws do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline CreateAudienceModelRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -387,9 +387,9 @@ namespace Model
      * aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys
      * as it is reserved for AWS use. You cannot edit or delete tag keys with this
      * prefix. Values can have this prefix. If a tag value has aws as its prefix but
-     * the key does not, then Forecast considers it to be a user tag and will count
-     * against the limit of 50 tags. Tags with only the key prefix of aws do not count
-     * against your tags per resource limit.</p> </li> </ul>
+     * the key does not, then Clean Rooms ML considers it to be a user tag and will
+     * count against the limit of 50 tags. Tags with only the key prefix of aws do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline CreateAudienceModelRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -409,9 +409,9 @@ namespace Model
      * aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys
      * as it is reserved for AWS use. You cannot edit or delete tag keys with this
      * prefix. Values can have this prefix. If a tag value has aws as its prefix but
-     * the key does not, then Forecast considers it to be a user tag and will count
-     * against the limit of 50 tags. Tags with only the key prefix of aws do not count
-     * against your tags per resource limit.</p> </li> </ul>
+     * the key does not, then Clean Rooms ML considers it to be a user tag and will
+     * count against the limit of 50 tags. Tags with only the key prefix of aws do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline CreateAudienceModelRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -431,9 +431,9 @@ namespace Model
      * aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys
      * as it is reserved for AWS use. You cannot edit or delete tag keys with this
      * prefix. Values can have this prefix. If a tag value has aws as its prefix but
-     * the key does not, then Forecast considers it to be a user tag and will count
-     * against the limit of 50 tags. Tags with only the key prefix of aws do not count
-     * against your tags per resource limit.</p> </li> </ul>
+     * the key does not, then Clean Rooms ML considers it to be a user tag and will
+     * count against the limit of 50 tags. Tags with only the key prefix of aws do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline CreateAudienceModelRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -453,9 +453,9 @@ namespace Model
      * aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys
      * as it is reserved for AWS use. You cannot edit or delete tag keys with this
      * prefix. Values can have this prefix. If a tag value has aws as its prefix but
-     * the key does not, then Forecast considers it to be a user tag and will count
-     * against the limit of 50 tags. Tags with only the key prefix of aws do not count
-     * against your tags per resource limit.</p> </li> </ul>
+     * the key does not, then Clean Rooms ML considers it to be a user tag and will
+     * count against the limit of 50 tags. Tags with only the key prefix of aws do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline CreateAudienceModelRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

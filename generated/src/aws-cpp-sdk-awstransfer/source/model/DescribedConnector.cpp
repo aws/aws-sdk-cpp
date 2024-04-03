@@ -27,7 +27,8 @@ DescribedConnector::DescribedConnector() :
     m_loggingRoleHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_sftpConfigHasBeenSet(false),
-    m_serviceManagedEgressIpAddressesHasBeenSet(false)
+    m_serviceManagedEgressIpAddressesHasBeenSet(false),
+    m_securityPolicyNameHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ DescribedConnector::DescribedConnector(JsonView jsonValue) :
     m_loggingRoleHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_sftpConfigHasBeenSet(false),
-    m_serviceManagedEgressIpAddressesHasBeenSet(false)
+    m_serviceManagedEgressIpAddressesHasBeenSet(false),
+    m_securityPolicyNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -116,6 +118,13 @@ DescribedConnector& DescribedConnector::operator =(JsonView jsonValue)
     m_serviceManagedEgressIpAddressesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SecurityPolicyName"))
+  {
+    m_securityPolicyName = jsonValue.GetString("SecurityPolicyName");
+
+    m_securityPolicyNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -184,6 +193,12 @@ JsonValue DescribedConnector::Jsonize() const
      serviceManagedEgressIpAddressesJsonList[serviceManagedEgressIpAddressesIndex].AsString(m_serviceManagedEgressIpAddresses[serviceManagedEgressIpAddressesIndex]);
    }
    payload.WithArray("ServiceManagedEgressIpAddresses", std::move(serviceManagedEgressIpAddressesJsonList));
+
+  }
+
+  if(m_securityPolicyNameHasBeenSet)
+  {
+   payload.WithString("SecurityPolicyName", m_securityPolicyName);
 
   }
 

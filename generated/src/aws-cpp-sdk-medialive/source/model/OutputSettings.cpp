@@ -26,7 +26,8 @@ OutputSettings::OutputSettings() :
     m_msSmoothOutputSettingsHasBeenSet(false),
     m_multiplexOutputSettingsHasBeenSet(false),
     m_rtmpOutputSettingsHasBeenSet(false),
-    m_udpOutputSettingsHasBeenSet(false)
+    m_udpOutputSettingsHasBeenSet(false),
+    m_cmafIngestOutputSettingsHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ OutputSettings::OutputSettings(JsonView jsonValue) :
     m_msSmoothOutputSettingsHasBeenSet(false),
     m_multiplexOutputSettingsHasBeenSet(false),
     m_rtmpOutputSettingsHasBeenSet(false),
-    m_udpOutputSettingsHasBeenSet(false)
+    m_udpOutputSettingsHasBeenSet(false),
+    m_cmafIngestOutputSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -101,6 +103,13 @@ OutputSettings& OutputSettings::operator =(JsonView jsonValue)
     m_udpOutputSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("cmafIngestOutputSettings"))
+  {
+    m_cmafIngestOutputSettings = jsonValue.GetObject("cmafIngestOutputSettings");
+
+    m_cmafIngestOutputSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -153,6 +162,12 @@ JsonValue OutputSettings::Jsonize() const
   if(m_udpOutputSettingsHasBeenSet)
   {
    payload.WithObject("udpOutputSettings", m_udpOutputSettings.Jsonize());
+
+  }
+
+  if(m_cmafIngestOutputSettingsHasBeenSet)
+  {
+   payload.WithObject("cmafIngestOutputSettings", m_cmafIngestOutputSettings.Jsonize());
 
   }
 

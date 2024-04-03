@@ -40,6 +40,47 @@ namespace Model
 
 
     /**
+     * <p>The recall score of the generated audience. Recall is the percentage of the
+     * most similar users (by default, the most similar 20%) from a sample of the
+     * training data that are included in the seed audience by the audience generation
+     * job. Values range from 0-1, larger values indicate a better audience. A recall
+     * value approximately equal to the maximum bin size indicates that the audience
+     * model is equivalent to random selection. </p>
+     */
+    inline double GetRecallMetric() const{ return m_recallMetric; }
+
+    /**
+     * <p>The recall score of the generated audience. Recall is the percentage of the
+     * most similar users (by default, the most similar 20%) from a sample of the
+     * training data that are included in the seed audience by the audience generation
+     * job. Values range from 0-1, larger values indicate a better audience. A recall
+     * value approximately equal to the maximum bin size indicates that the audience
+     * model is equivalent to random selection. </p>
+     */
+    inline bool RecallMetricHasBeenSet() const { return m_recallMetricHasBeenSet; }
+
+    /**
+     * <p>The recall score of the generated audience. Recall is the percentage of the
+     * most similar users (by default, the most similar 20%) from a sample of the
+     * training data that are included in the seed audience by the audience generation
+     * job. Values range from 0-1, larger values indicate a better audience. A recall
+     * value approximately equal to the maximum bin size indicates that the audience
+     * model is equivalent to random selection. </p>
+     */
+    inline void SetRecallMetric(double value) { m_recallMetricHasBeenSet = true; m_recallMetric = value; }
+
+    /**
+     * <p>The recall score of the generated audience. Recall is the percentage of the
+     * most similar users (by default, the most similar 20%) from a sample of the
+     * training data that are included in the seed audience by the audience generation
+     * job. Values range from 0-1, larger values indicate a better audience. A recall
+     * value approximately equal to the maximum bin size indicates that the audience
+     * model is equivalent to random selection. </p>
+     */
+    inline AudienceQualityMetrics& WithRecallMetric(double value) { SetRecallMetric(value); return *this;}
+
+
+    /**
      * <p>The relevance scores of the generated audience.</p>
      */
     inline const Aws::Vector<RelevanceMetric>& GetRelevanceMetrics() const{ return m_relevanceMetrics; }
@@ -80,6 +121,9 @@ namespace Model
     inline AudienceQualityMetrics& AddRelevanceMetrics(RelevanceMetric&& value) { m_relevanceMetricsHasBeenSet = true; m_relevanceMetrics.push_back(std::move(value)); return *this; }
 
   private:
+
+    double m_recallMetric;
+    bool m_recallMetricHasBeenSet = false;
 
     Aws::Vector<RelevanceMetric> m_relevanceMetrics;
     bool m_relevanceMetricsHasBeenSet = false;

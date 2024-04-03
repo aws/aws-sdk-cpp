@@ -52,6 +52,7 @@
 #include <aws/datazone/model/DeleteProjectResult.h>
 #include <aws/datazone/model/DeleteProjectMembershipResult.h>
 #include <aws/datazone/model/DeleteSubscriptionGrantResult.h>
+#include <aws/datazone/model/DeleteTimeSeriesDataPointsResult.h>
 #include <aws/datazone/model/GetAssetResult.h>
 #include <aws/datazone/model/GetAssetTypeResult.h>
 #include <aws/datazone/model/GetDataSourceResult.h>
@@ -73,6 +74,7 @@
 #include <aws/datazone/model/GetSubscriptionGrantResult.h>
 #include <aws/datazone/model/GetSubscriptionRequestDetailsResult.h>
 #include <aws/datazone/model/GetSubscriptionTargetResult.h>
+#include <aws/datazone/model/GetTimeSeriesDataPointResult.h>
 #include <aws/datazone/model/GetUserProfileResult.h>
 #include <aws/datazone/model/ListAssetRevisionsResult.h>
 #include <aws/datazone/model/ListDataSourceRunActivitiesResult.h>
@@ -92,6 +94,8 @@
 #include <aws/datazone/model/ListSubscriptionTargetsResult.h>
 #include <aws/datazone/model/ListSubscriptionsResult.h>
 #include <aws/datazone/model/ListTagsForResourceResult.h>
+#include <aws/datazone/model/ListTimeSeriesDataPointsResult.h>
+#include <aws/datazone/model/PostTimeSeriesDataPointsResult.h>
 #include <aws/datazone/model/PutEnvironmentBlueprintConfigurationResult.h>
 #include <aws/datazone/model/RejectPredictionsResult.h>
 #include <aws/datazone/model/RejectSubscriptionRequestResult.h>
@@ -196,6 +200,7 @@ namespace Aws
       class DeleteSubscriptionGrantRequest;
       class DeleteSubscriptionRequestRequest;
       class DeleteSubscriptionTargetRequest;
+      class DeleteTimeSeriesDataPointsRequest;
       class GetAssetRequest;
       class GetAssetTypeRequest;
       class GetDataSourceRequest;
@@ -217,6 +222,7 @@ namespace Aws
       class GetSubscriptionGrantRequest;
       class GetSubscriptionRequestDetailsRequest;
       class GetSubscriptionTargetRequest;
+      class GetTimeSeriesDataPointRequest;
       class GetUserProfileRequest;
       class ListAssetRevisionsRequest;
       class ListDataSourceRunActivitiesRequest;
@@ -236,6 +242,8 @@ namespace Aws
       class ListSubscriptionTargetsRequest;
       class ListSubscriptionsRequest;
       class ListTagsForResourceRequest;
+      class ListTimeSeriesDataPointsRequest;
+      class PostTimeSeriesDataPointsRequest;
       class PutEnvironmentBlueprintConfigurationRequest;
       class RejectPredictionsRequest;
       class RejectSubscriptionRequestRequest;
@@ -302,6 +310,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteSubscriptionGrantResult, DataZoneError> DeleteSubscriptionGrantOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, DataZoneError> DeleteSubscriptionRequestOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, DataZoneError> DeleteSubscriptionTargetOutcome;
+      typedef Aws::Utils::Outcome<DeleteTimeSeriesDataPointsResult, DataZoneError> DeleteTimeSeriesDataPointsOutcome;
       typedef Aws::Utils::Outcome<GetAssetResult, DataZoneError> GetAssetOutcome;
       typedef Aws::Utils::Outcome<GetAssetTypeResult, DataZoneError> GetAssetTypeOutcome;
       typedef Aws::Utils::Outcome<GetDataSourceResult, DataZoneError> GetDataSourceOutcome;
@@ -323,6 +332,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetSubscriptionGrantResult, DataZoneError> GetSubscriptionGrantOutcome;
       typedef Aws::Utils::Outcome<GetSubscriptionRequestDetailsResult, DataZoneError> GetSubscriptionRequestDetailsOutcome;
       typedef Aws::Utils::Outcome<GetSubscriptionTargetResult, DataZoneError> GetSubscriptionTargetOutcome;
+      typedef Aws::Utils::Outcome<GetTimeSeriesDataPointResult, DataZoneError> GetTimeSeriesDataPointOutcome;
       typedef Aws::Utils::Outcome<GetUserProfileResult, DataZoneError> GetUserProfileOutcome;
       typedef Aws::Utils::Outcome<ListAssetRevisionsResult, DataZoneError> ListAssetRevisionsOutcome;
       typedef Aws::Utils::Outcome<ListDataSourceRunActivitiesResult, DataZoneError> ListDataSourceRunActivitiesOutcome;
@@ -342,6 +352,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListSubscriptionTargetsResult, DataZoneError> ListSubscriptionTargetsOutcome;
       typedef Aws::Utils::Outcome<ListSubscriptionsResult, DataZoneError> ListSubscriptionsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, DataZoneError> ListTagsForResourceOutcome;
+      typedef Aws::Utils::Outcome<ListTimeSeriesDataPointsResult, DataZoneError> ListTimeSeriesDataPointsOutcome;
+      typedef Aws::Utils::Outcome<PostTimeSeriesDataPointsResult, DataZoneError> PostTimeSeriesDataPointsOutcome;
       typedef Aws::Utils::Outcome<PutEnvironmentBlueprintConfigurationResult, DataZoneError> PutEnvironmentBlueprintConfigurationOutcome;
       typedef Aws::Utils::Outcome<RejectPredictionsResult, DataZoneError> RejectPredictionsOutcome;
       typedef Aws::Utils::Outcome<RejectSubscriptionRequestResult, DataZoneError> RejectSubscriptionRequestOutcome;
@@ -408,6 +420,7 @@ namespace Aws
       typedef std::future<DeleteSubscriptionGrantOutcome> DeleteSubscriptionGrantOutcomeCallable;
       typedef std::future<DeleteSubscriptionRequestOutcome> DeleteSubscriptionRequestOutcomeCallable;
       typedef std::future<DeleteSubscriptionTargetOutcome> DeleteSubscriptionTargetOutcomeCallable;
+      typedef std::future<DeleteTimeSeriesDataPointsOutcome> DeleteTimeSeriesDataPointsOutcomeCallable;
       typedef std::future<GetAssetOutcome> GetAssetOutcomeCallable;
       typedef std::future<GetAssetTypeOutcome> GetAssetTypeOutcomeCallable;
       typedef std::future<GetDataSourceOutcome> GetDataSourceOutcomeCallable;
@@ -429,6 +442,7 @@ namespace Aws
       typedef std::future<GetSubscriptionGrantOutcome> GetSubscriptionGrantOutcomeCallable;
       typedef std::future<GetSubscriptionRequestDetailsOutcome> GetSubscriptionRequestDetailsOutcomeCallable;
       typedef std::future<GetSubscriptionTargetOutcome> GetSubscriptionTargetOutcomeCallable;
+      typedef std::future<GetTimeSeriesDataPointOutcome> GetTimeSeriesDataPointOutcomeCallable;
       typedef std::future<GetUserProfileOutcome> GetUserProfileOutcomeCallable;
       typedef std::future<ListAssetRevisionsOutcome> ListAssetRevisionsOutcomeCallable;
       typedef std::future<ListDataSourceRunActivitiesOutcome> ListDataSourceRunActivitiesOutcomeCallable;
@@ -448,6 +462,8 @@ namespace Aws
       typedef std::future<ListSubscriptionTargetsOutcome> ListSubscriptionTargetsOutcomeCallable;
       typedef std::future<ListSubscriptionsOutcome> ListSubscriptionsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+      typedef std::future<ListTimeSeriesDataPointsOutcome> ListTimeSeriesDataPointsOutcomeCallable;
+      typedef std::future<PostTimeSeriesDataPointsOutcome> PostTimeSeriesDataPointsOutcomeCallable;
       typedef std::future<PutEnvironmentBlueprintConfigurationOutcome> PutEnvironmentBlueprintConfigurationOutcomeCallable;
       typedef std::future<RejectPredictionsOutcome> RejectPredictionsOutcomeCallable;
       typedef std::future<RejectSubscriptionRequestOutcome> RejectSubscriptionRequestOutcomeCallable;
@@ -517,6 +533,7 @@ namespace Aws
     typedef std::function<void(const DataZoneClient*, const Model::DeleteSubscriptionGrantRequest&, const Model::DeleteSubscriptionGrantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSubscriptionGrantResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::DeleteSubscriptionRequestRequest&, const Model::DeleteSubscriptionRequestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSubscriptionRequestResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::DeleteSubscriptionTargetRequest&, const Model::DeleteSubscriptionTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSubscriptionTargetResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::DeleteTimeSeriesDataPointsRequest&, const Model::DeleteTimeSeriesDataPointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTimeSeriesDataPointsResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetAssetRequest&, const Model::GetAssetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssetResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetAssetTypeRequest&, const Model::GetAssetTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssetTypeResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetDataSourceRequest&, const Model::GetDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataSourceResponseReceivedHandler;
@@ -538,6 +555,7 @@ namespace Aws
     typedef std::function<void(const DataZoneClient*, const Model::GetSubscriptionGrantRequest&, const Model::GetSubscriptionGrantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSubscriptionGrantResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetSubscriptionRequestDetailsRequest&, const Model::GetSubscriptionRequestDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSubscriptionRequestDetailsResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetSubscriptionTargetRequest&, const Model::GetSubscriptionTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSubscriptionTargetResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::GetTimeSeriesDataPointRequest&, const Model::GetTimeSeriesDataPointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTimeSeriesDataPointResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::GetUserProfileRequest&, const Model::GetUserProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserProfileResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::ListAssetRevisionsRequest&, const Model::ListAssetRevisionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssetRevisionsResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::ListDataSourceRunActivitiesRequest&, const Model::ListDataSourceRunActivitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataSourceRunActivitiesResponseReceivedHandler;
@@ -557,6 +575,8 @@ namespace Aws
     typedef std::function<void(const DataZoneClient*, const Model::ListSubscriptionTargetsRequest&, const Model::ListSubscriptionTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSubscriptionTargetsResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::ListSubscriptionsRequest&, const Model::ListSubscriptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSubscriptionsResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::ListTimeSeriesDataPointsRequest&, const Model::ListTimeSeriesDataPointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTimeSeriesDataPointsResponseReceivedHandler;
+    typedef std::function<void(const DataZoneClient*, const Model::PostTimeSeriesDataPointsRequest&, const Model::PostTimeSeriesDataPointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PostTimeSeriesDataPointsResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::PutEnvironmentBlueprintConfigurationRequest&, const Model::PutEnvironmentBlueprintConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEnvironmentBlueprintConfigurationResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::RejectPredictionsRequest&, const Model::RejectPredictionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectPredictionsResponseReceivedHandler;
     typedef std::function<void(const DataZoneClient*, const Model::RejectSubscriptionRequestRequest&, const Model::RejectSubscriptionRequestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectSubscriptionRequestResponseReceivedHandler;
