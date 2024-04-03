@@ -18,7 +18,8 @@ UpdateConnectorRequest::UpdateConnectorRequest() :
     m_as2ConfigHasBeenSet(false),
     m_accessRoleHasBeenSet(false),
     m_loggingRoleHasBeenSet(false),
-    m_sftpConfigHasBeenSet(false)
+    m_sftpConfigHasBeenSet(false),
+    m_securityPolicyNameHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,12 @@ Aws::String UpdateConnectorRequest::SerializePayload() const
   if(m_sftpConfigHasBeenSet)
   {
    payload.WithObject("SftpConfig", m_sftpConfig.Jsonize());
+
+  }
+
+  if(m_securityPolicyNameHasBeenSet)
+  {
+   payload.WithString("SecurityPolicyName", m_securityPolicyName);
 
   }
 

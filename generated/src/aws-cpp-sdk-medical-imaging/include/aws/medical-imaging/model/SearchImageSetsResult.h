@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/medical-imaging/MedicalImaging_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/medical-imaging/model/Sort.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/medical-imaging/model/ImageSetsMetadataSummary.h>
 #include <utility>
@@ -71,6 +72,32 @@ namespace Model
 
 
     /**
+     * <p>The sort order for image set search results.</p>
+     */
+    inline const Sort& GetSort() const{ return m_sort; }
+
+    /**
+     * <p>The sort order for image set search results.</p>
+     */
+    inline void SetSort(const Sort& value) { m_sort = value; }
+
+    /**
+     * <p>The sort order for image set search results.</p>
+     */
+    inline void SetSort(Sort&& value) { m_sort = std::move(value); }
+
+    /**
+     * <p>The sort order for image set search results.</p>
+     */
+    inline SearchImageSetsResult& WithSort(const Sort& value) { SetSort(value); return *this;}
+
+    /**
+     * <p>The sort order for image set search results.</p>
+     */
+    inline SearchImageSetsResult& WithSort(Sort&& value) { SetSort(std::move(value)); return *this;}
+
+
+    /**
      * <p>The token for pagination results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -130,6 +157,8 @@ namespace Model
   private:
 
     Aws::Vector<ImageSetsMetadataSummary> m_imageSetsMetadataSummaries;
+
+    Sort m_sort;
 
     Aws::String m_nextToken;
 

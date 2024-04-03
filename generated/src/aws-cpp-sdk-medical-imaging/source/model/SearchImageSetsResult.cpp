@@ -38,6 +38,12 @@ SearchImageSetsResult& SearchImageSetsResult::operator =(const Aws::AmazonWebSer
     }
   }
 
+  if(jsonValue.ValueExists("sort"))
+  {
+    m_sort = jsonValue.GetObject("sort");
+
+  }
+
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");

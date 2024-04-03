@@ -67,6 +67,7 @@
 #include <aws/docdb/model/RestoreDBClusterToPointInTimeResult.h>
 #include <aws/docdb/model/StartDBClusterResult.h>
 #include <aws/docdb/model/StopDBClusterResult.h>
+#include <aws/docdb/model/SwitchoverGlobalClusterResult.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in DocDBClient header */
 
@@ -161,6 +162,7 @@ namespace Aws
       class RestoreDBClusterToPointInTimeRequest;
       class StartDBClusterRequest;
       class StopDBClusterRequest;
+      class SwitchoverGlobalClusterRequest;
       /* End of service model forward declarations required in DocDBClient header */
 
       /* Service model Outcome class definitions */
@@ -217,6 +219,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<RestoreDBClusterToPointInTimeResult, DocDBError> RestoreDBClusterToPointInTimeOutcome;
       typedef Aws::Utils::Outcome<StartDBClusterResult, DocDBError> StartDBClusterOutcome;
       typedef Aws::Utils::Outcome<StopDBClusterResult, DocDBError> StopDBClusterOutcome;
+      typedef Aws::Utils::Outcome<SwitchoverGlobalClusterResult, DocDBError> SwitchoverGlobalClusterOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
@@ -273,6 +276,7 @@ namespace Aws
       typedef std::future<RestoreDBClusterToPointInTimeOutcome> RestoreDBClusterToPointInTimeOutcomeCallable;
       typedef std::future<StartDBClusterOutcome> StartDBClusterOutcomeCallable;
       typedef std::future<StopDBClusterOutcome> StopDBClusterOutcomeCallable;
+      typedef std::future<SwitchoverGlobalClusterOutcome> SwitchoverGlobalClusterOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -332,6 +336,7 @@ namespace Aws
     typedef std::function<void(const DocDBClient*, const Model::RestoreDBClusterToPointInTimeRequest&, const Model::RestoreDBClusterToPointInTimeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreDBClusterToPointInTimeResponseReceivedHandler;
     typedef std::function<void(const DocDBClient*, const Model::StartDBClusterRequest&, const Model::StartDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDBClusterResponseReceivedHandler;
     typedef std::function<void(const DocDBClient*, const Model::StopDBClusterRequest&, const Model::StopDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopDBClusterResponseReceivedHandler;
+    typedef std::function<void(const DocDBClient*, const Model::SwitchoverGlobalClusterRequest&, const Model::SwitchoverGlobalClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SwitchoverGlobalClusterResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace DocDB
 } // namespace Aws

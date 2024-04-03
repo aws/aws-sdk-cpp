@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datazone/model/DetailedGlossaryTerm.h>
+#include <aws/datazone/model/TimeSeriesDataPointSummaryFormOutput.h>
 #include <utility>
 
 namespace Aws
@@ -300,6 +301,55 @@ namespace Model
 
 
     /**
+     * <p>The latest time series data points forms included in the additional
+     * attributes of an asset.</p>
+     */
+    inline const Aws::Vector<TimeSeriesDataPointSummaryFormOutput>& GetLatestTimeSeriesDataPointForms() const{ return m_latestTimeSeriesDataPointForms; }
+
+    /**
+     * <p>The latest time series data points forms included in the additional
+     * attributes of an asset.</p>
+     */
+    inline bool LatestTimeSeriesDataPointFormsHasBeenSet() const { return m_latestTimeSeriesDataPointFormsHasBeenSet; }
+
+    /**
+     * <p>The latest time series data points forms included in the additional
+     * attributes of an asset.</p>
+     */
+    inline void SetLatestTimeSeriesDataPointForms(const Aws::Vector<TimeSeriesDataPointSummaryFormOutput>& value) { m_latestTimeSeriesDataPointFormsHasBeenSet = true; m_latestTimeSeriesDataPointForms = value; }
+
+    /**
+     * <p>The latest time series data points forms included in the additional
+     * attributes of an asset.</p>
+     */
+    inline void SetLatestTimeSeriesDataPointForms(Aws::Vector<TimeSeriesDataPointSummaryFormOutput>&& value) { m_latestTimeSeriesDataPointFormsHasBeenSet = true; m_latestTimeSeriesDataPointForms = std::move(value); }
+
+    /**
+     * <p>The latest time series data points forms included in the additional
+     * attributes of an asset.</p>
+     */
+    inline AssetListing& WithLatestTimeSeriesDataPointForms(const Aws::Vector<TimeSeriesDataPointSummaryFormOutput>& value) { SetLatestTimeSeriesDataPointForms(value); return *this;}
+
+    /**
+     * <p>The latest time series data points forms included in the additional
+     * attributes of an asset.</p>
+     */
+    inline AssetListing& WithLatestTimeSeriesDataPointForms(Aws::Vector<TimeSeriesDataPointSummaryFormOutput>&& value) { SetLatestTimeSeriesDataPointForms(std::move(value)); return *this;}
+
+    /**
+     * <p>The latest time series data points forms included in the additional
+     * attributes of an asset.</p>
+     */
+    inline AssetListing& AddLatestTimeSeriesDataPointForms(const TimeSeriesDataPointSummaryFormOutput& value) { m_latestTimeSeriesDataPointFormsHasBeenSet = true; m_latestTimeSeriesDataPointForms.push_back(value); return *this; }
+
+    /**
+     * <p>The latest time series data points forms included in the additional
+     * attributes of an asset.</p>
+     */
+    inline AssetListing& AddLatestTimeSeriesDataPointForms(TimeSeriesDataPointSummaryFormOutput&& value) { m_latestTimeSeriesDataPointFormsHasBeenSet = true; m_latestTimeSeriesDataPointForms.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The identifier of the project where an asset published in an Amazon DataZone
      * catalog exists. </p>
      */
@@ -366,6 +416,9 @@ namespace Model
 
     Aws::Vector<DetailedGlossaryTerm> m_glossaryTerms;
     bool m_glossaryTermsHasBeenSet = false;
+
+    Aws::Vector<TimeSeriesDataPointSummaryFormOutput> m_latestTimeSeriesDataPointForms;
+    bool m_latestTimeSeriesDataPointFormsHasBeenSet = false;
 
     Aws::String m_owningProjectId;
     bool m_owningProjectIdHasBeenSet = false;

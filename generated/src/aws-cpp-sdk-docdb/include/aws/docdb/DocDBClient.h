@@ -1603,6 +1603,33 @@ namespace DocDB
             return SubmitAsync(&DocDBClient::StopDBCluster, request, handler, context);
         }
 
+        /**
+         * <p>Switches over the specified secondary Amazon DocumentDB cluster to be the new
+         * primary Amazon DocumentDB cluster in the global database cluster.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/SwitchoverGlobalCluster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SwitchoverGlobalClusterOutcome SwitchoverGlobalCluster(const Model::SwitchoverGlobalClusterRequest& request) const;
+
+        /**
+         * A Callable wrapper for SwitchoverGlobalCluster that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SwitchoverGlobalClusterRequestT = Model::SwitchoverGlobalClusterRequest>
+        Model::SwitchoverGlobalClusterOutcomeCallable SwitchoverGlobalClusterCallable(const SwitchoverGlobalClusterRequestT& request) const
+        {
+            return SubmitCallable(&DocDBClient::SwitchoverGlobalCluster, request);
+        }
+
+        /**
+         * An Async wrapper for SwitchoverGlobalCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SwitchoverGlobalClusterRequestT = Model::SwitchoverGlobalClusterRequest>
+        void SwitchoverGlobalClusterAsync(const SwitchoverGlobalClusterRequestT& request, const SwitchoverGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DocDBClient::SwitchoverGlobalCluster, request, handler, context);
+        }
+
 
         void OverrideEndpoint(const Aws::String& endpoint);
         std::shared_ptr<DocDBEndpointProviderBase>& accessEndpointProvider();

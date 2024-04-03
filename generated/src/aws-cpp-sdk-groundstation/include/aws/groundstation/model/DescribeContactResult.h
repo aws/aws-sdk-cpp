@@ -522,6 +522,98 @@ namespace Model
     inline DescribeContactResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
 
+    /**
+     * <p> Projected time in UTC your satellite will set below the <a
+     * href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive
+     * mask</a>. This time is based on the satellite's current active ephemeris for
+     * future contacts and the ephemeris that was active during contact execution for
+     * completed contacts. </p>
+     */
+    inline const Aws::Utils::DateTime& GetVisibilityEndTime() const{ return m_visibilityEndTime; }
+
+    /**
+     * <p> Projected time in UTC your satellite will set below the <a
+     * href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive
+     * mask</a>. This time is based on the satellite's current active ephemeris for
+     * future contacts and the ephemeris that was active during contact execution for
+     * completed contacts. </p>
+     */
+    inline void SetVisibilityEndTime(const Aws::Utils::DateTime& value) { m_visibilityEndTime = value; }
+
+    /**
+     * <p> Projected time in UTC your satellite will set below the <a
+     * href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive
+     * mask</a>. This time is based on the satellite's current active ephemeris for
+     * future contacts and the ephemeris that was active during contact execution for
+     * completed contacts. </p>
+     */
+    inline void SetVisibilityEndTime(Aws::Utils::DateTime&& value) { m_visibilityEndTime = std::move(value); }
+
+    /**
+     * <p> Projected time in UTC your satellite will set below the <a
+     * href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive
+     * mask</a>. This time is based on the satellite's current active ephemeris for
+     * future contacts and the ephemeris that was active during contact execution for
+     * completed contacts. </p>
+     */
+    inline DescribeContactResult& WithVisibilityEndTime(const Aws::Utils::DateTime& value) { SetVisibilityEndTime(value); return *this;}
+
+    /**
+     * <p> Projected time in UTC your satellite will set below the <a
+     * href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive
+     * mask</a>. This time is based on the satellite's current active ephemeris for
+     * future contacts and the ephemeris that was active during contact execution for
+     * completed contacts. </p>
+     */
+    inline DescribeContactResult& WithVisibilityEndTime(Aws::Utils::DateTime&& value) { SetVisibilityEndTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Projected time in UTC your satellite will rise above the <a
+     * href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive
+     * mask</a>. This time is based on the satellite's current active ephemeris for
+     * future contacts and the ephemeris that was active during contact execution for
+     * completed contacts. </p>
+     */
+    inline const Aws::Utils::DateTime& GetVisibilityStartTime() const{ return m_visibilityStartTime; }
+
+    /**
+     * <p> Projected time in UTC your satellite will rise above the <a
+     * href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive
+     * mask</a>. This time is based on the satellite's current active ephemeris for
+     * future contacts and the ephemeris that was active during contact execution for
+     * completed contacts. </p>
+     */
+    inline void SetVisibilityStartTime(const Aws::Utils::DateTime& value) { m_visibilityStartTime = value; }
+
+    /**
+     * <p> Projected time in UTC your satellite will rise above the <a
+     * href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive
+     * mask</a>. This time is based on the satellite's current active ephemeris for
+     * future contacts and the ephemeris that was active during contact execution for
+     * completed contacts. </p>
+     */
+    inline void SetVisibilityStartTime(Aws::Utils::DateTime&& value) { m_visibilityStartTime = std::move(value); }
+
+    /**
+     * <p> Projected time in UTC your satellite will rise above the <a
+     * href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive
+     * mask</a>. This time is based on the satellite's current active ephemeris for
+     * future contacts and the ephemeris that was active during contact execution for
+     * completed contacts. </p>
+     */
+    inline DescribeContactResult& WithVisibilityStartTime(const Aws::Utils::DateTime& value) { SetVisibilityStartTime(value); return *this;}
+
+    /**
+     * <p> Projected time in UTC your satellite will rise above the <a
+     * href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive
+     * mask</a>. This time is based on the satellite's current active ephemeris for
+     * future contacts and the ephemeris that was active during contact execution for
+     * completed contacts. </p>
+     */
+    inline DescribeContactResult& WithVisibilityStartTime(Aws::Utils::DateTime&& value) { SetVisibilityStartTime(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -572,6 +664,10 @@ namespace Model
     Aws::Utils::DateTime m_startTime;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+
+    Aws::Utils::DateTime m_visibilityEndTime;
+
+    Aws::Utils::DateTime m_visibilityStartTime;
 
     Aws::String m_requestId;
   };

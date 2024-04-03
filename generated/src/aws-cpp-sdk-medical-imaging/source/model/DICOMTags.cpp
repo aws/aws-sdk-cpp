@@ -31,6 +31,11 @@ DICOMTags::DICOMTags() :
     m_dICOMNumberOfStudyRelatedInstances(0),
     m_dICOMNumberOfStudyRelatedInstancesHasBeenSet(false),
     m_dICOMAccessionNumberHasBeenSet(false),
+    m_dICOMSeriesInstanceUIDHasBeenSet(false),
+    m_dICOMSeriesModalityHasBeenSet(false),
+    m_dICOMSeriesBodyPartHasBeenSet(false),
+    m_dICOMSeriesNumber(0),
+    m_dICOMSeriesNumberHasBeenSet(false),
     m_dICOMStudyDateHasBeenSet(false),
     m_dICOMStudyTimeHasBeenSet(false)
 {
@@ -49,6 +54,11 @@ DICOMTags::DICOMTags(JsonView jsonValue) :
     m_dICOMNumberOfStudyRelatedInstances(0),
     m_dICOMNumberOfStudyRelatedInstancesHasBeenSet(false),
     m_dICOMAccessionNumberHasBeenSet(false),
+    m_dICOMSeriesInstanceUIDHasBeenSet(false),
+    m_dICOMSeriesModalityHasBeenSet(false),
+    m_dICOMSeriesBodyPartHasBeenSet(false),
+    m_dICOMSeriesNumber(0),
+    m_dICOMSeriesNumberHasBeenSet(false),
     m_dICOMStudyDateHasBeenSet(false),
     m_dICOMStudyTimeHasBeenSet(false)
 {
@@ -125,6 +135,34 @@ DICOMTags& DICOMTags::operator =(JsonView jsonValue)
     m_dICOMAccessionNumber = jsonValue.GetString("DICOMAccessionNumber");
 
     m_dICOMAccessionNumberHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DICOMSeriesInstanceUID"))
+  {
+    m_dICOMSeriesInstanceUID = jsonValue.GetString("DICOMSeriesInstanceUID");
+
+    m_dICOMSeriesInstanceUIDHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DICOMSeriesModality"))
+  {
+    m_dICOMSeriesModality = jsonValue.GetString("DICOMSeriesModality");
+
+    m_dICOMSeriesModalityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DICOMSeriesBodyPart"))
+  {
+    m_dICOMSeriesBodyPart = jsonValue.GetString("DICOMSeriesBodyPart");
+
+    m_dICOMSeriesBodyPartHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DICOMSeriesNumber"))
+  {
+    m_dICOMSeriesNumber = jsonValue.GetInteger("DICOMSeriesNumber");
+
+    m_dICOMSeriesNumberHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DICOMStudyDate"))
@@ -205,6 +243,30 @@ JsonValue DICOMTags::Jsonize() const
   if(m_dICOMAccessionNumberHasBeenSet)
   {
    payload.WithString("DICOMAccessionNumber", m_dICOMAccessionNumber);
+
+  }
+
+  if(m_dICOMSeriesInstanceUIDHasBeenSet)
+  {
+   payload.WithString("DICOMSeriesInstanceUID", m_dICOMSeriesInstanceUID);
+
+  }
+
+  if(m_dICOMSeriesModalityHasBeenSet)
+  {
+   payload.WithString("DICOMSeriesModality", m_dICOMSeriesModality);
+
+  }
+
+  if(m_dICOMSeriesBodyPartHasBeenSet)
+  {
+   payload.WithString("DICOMSeriesBodyPart", m_dICOMSeriesBodyPart);
+
+  }
+
+  if(m_dICOMSeriesNumberHasBeenSet)
+  {
+   payload.WithInteger("DICOMSeriesNumber", m_dICOMSeriesNumber);
 
   }
 

@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int FORMS_HASH = HashingUtils::HashString("FORMS");
+        static const int TIME_SERIES_DATA_POINT_FORMS_HASH = HashingUtils::HashString("TIME_SERIES_DATA_POINT_FORMS");
 
 
         SearchOutputAdditionalAttribute GetSearchOutputAdditionalAttributeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == FORMS_HASH)
           {
             return SearchOutputAdditionalAttribute::FORMS;
+          }
+          else if (hashCode == TIME_SERIES_DATA_POINT_FORMS_HASH)
+          {
+            return SearchOutputAdditionalAttribute::TIME_SERIES_DATA_POINT_FORMS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case SearchOutputAdditionalAttribute::FORMS:
             return "FORMS";
+          case SearchOutputAdditionalAttribute::TIME_SERIES_DATA_POINT_FORMS:
+            return "TIME_SERIES_DATA_POINT_FORMS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

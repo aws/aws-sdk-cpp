@@ -254,27 +254,32 @@ namespace Model
 
 
     /**
-     * <p>The relevance scores for different audience sizes. </p>
+     * <p>The relevance scores for different audience sizes and the recall score of the
+     * generated audience. </p>
      */
     inline const AudienceQualityMetrics& GetMetrics() const{ return m_metrics; }
 
     /**
-     * <p>The relevance scores for different audience sizes. </p>
+     * <p>The relevance scores for different audience sizes and the recall score of the
+     * generated audience. </p>
      */
     inline void SetMetrics(const AudienceQualityMetrics& value) { m_metrics = value; }
 
     /**
-     * <p>The relevance scores for different audience sizes. </p>
+     * <p>The relevance scores for different audience sizes and the recall score of the
+     * generated audience. </p>
      */
     inline void SetMetrics(AudienceQualityMetrics&& value) { m_metrics = std::move(value); }
 
     /**
-     * <p>The relevance scores for different audience sizes. </p>
+     * <p>The relevance scores for different audience sizes and the recall score of the
+     * generated audience. </p>
      */
     inline GetAudienceGenerationJobResult& WithMetrics(const AudienceQualityMetrics& value) { SetMetrics(value); return *this;}
 
     /**
-     * <p>The relevance scores for different audience sizes. </p>
+     * <p>The relevance scores for different audience sizes and the recall score of the
+     * generated audience. </p>
      */
     inline GetAudienceGenerationJobResult& WithMetrics(AudienceQualityMetrics&& value) { SetMetrics(std::move(value)); return *this;}
 

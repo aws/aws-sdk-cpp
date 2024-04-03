@@ -1048,6 +1048,32 @@ namespace DataZone
         }
 
         /**
+         * <p>Deletes the specified time series form for the specified asset.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteTimeSeriesDataPoints">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteTimeSeriesDataPointsOutcome DeleteTimeSeriesDataPoints(const Model::DeleteTimeSeriesDataPointsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteTimeSeriesDataPoints that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteTimeSeriesDataPointsRequestT = Model::DeleteTimeSeriesDataPointsRequest>
+        Model::DeleteTimeSeriesDataPointsOutcomeCallable DeleteTimeSeriesDataPointsCallable(const DeleteTimeSeriesDataPointsRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::DeleteTimeSeriesDataPoints, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteTimeSeriesDataPoints that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteTimeSeriesDataPointsRequestT = Model::DeleteTimeSeriesDataPointsRequest>
+        void DeleteTimeSeriesDataPointsAsync(const DeleteTimeSeriesDataPointsRequestT& request, const DeleteTimeSeriesDataPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::DeleteTimeSeriesDataPoints, request, handler, context);
+        }
+
+        /**
          * <p>Gets an Amazon DataZone asset.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetAsset">AWS
          * API Reference</a></p>
@@ -1580,6 +1606,31 @@ namespace DataZone
         }
 
         /**
+         * <p>Gets the existing data point for the asset.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetTimeSeriesDataPoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetTimeSeriesDataPointOutcome GetTimeSeriesDataPoint(const Model::GetTimeSeriesDataPointRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetTimeSeriesDataPoint that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetTimeSeriesDataPointRequestT = Model::GetTimeSeriesDataPointRequest>
+        Model::GetTimeSeriesDataPointOutcomeCallable GetTimeSeriesDataPointCallable(const GetTimeSeriesDataPointRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::GetTimeSeriesDataPoint, request);
+        }
+
+        /**
+         * An Async wrapper for GetTimeSeriesDataPoint that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetTimeSeriesDataPointRequestT = Model::GetTimeSeriesDataPointRequest>
+        void GetTimeSeriesDataPointAsync(const GetTimeSeriesDataPointRequestT& request, const GetTimeSeriesDataPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::GetTimeSeriesDataPoint, request, handler, context);
+        }
+
+        /**
          * <p>Gets a user profile in Amazon DataZone.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetUserProfile">AWS
          * API Reference</a></p>
@@ -2055,6 +2106,57 @@ namespace DataZone
         void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataZoneClient::ListTagsForResource, request, handler, context);
+        }
+
+        /**
+         * <p>Lists time series data points.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListTimeSeriesDataPoints">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTimeSeriesDataPointsOutcome ListTimeSeriesDataPoints(const Model::ListTimeSeriesDataPointsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTimeSeriesDataPoints that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTimeSeriesDataPointsRequestT = Model::ListTimeSeriesDataPointsRequest>
+        Model::ListTimeSeriesDataPointsOutcomeCallable ListTimeSeriesDataPointsCallable(const ListTimeSeriesDataPointsRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::ListTimeSeriesDataPoints, request);
+        }
+
+        /**
+         * An Async wrapper for ListTimeSeriesDataPoints that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTimeSeriesDataPointsRequestT = Model::ListTimeSeriesDataPointsRequest>
+        void ListTimeSeriesDataPointsAsync(const ListTimeSeriesDataPointsRequestT& request, const ListTimeSeriesDataPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::ListTimeSeriesDataPoints, request, handler, context);
+        }
+
+        /**
+         * <p>Posts time series data points to Amazon DataZone for the specified
+         * asset.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/PostTimeSeriesDataPoints">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PostTimeSeriesDataPointsOutcome PostTimeSeriesDataPoints(const Model::PostTimeSeriesDataPointsRequest& request) const;
+
+        /**
+         * A Callable wrapper for PostTimeSeriesDataPoints that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PostTimeSeriesDataPointsRequestT = Model::PostTimeSeriesDataPointsRequest>
+        Model::PostTimeSeriesDataPointsOutcomeCallable PostTimeSeriesDataPointsCallable(const PostTimeSeriesDataPointsRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::PostTimeSeriesDataPoints, request);
+        }
+
+        /**
+         * An Async wrapper for PostTimeSeriesDataPoints that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PostTimeSeriesDataPointsRequestT = Model::PostTimeSeriesDataPointsRequest>
+        void PostTimeSeriesDataPointsAsync(const PostTimeSeriesDataPointsRequestT& request, const PostTimeSeriesDataPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::PostTimeSeriesDataPoints, request, handler, context);
         }
 
         /**

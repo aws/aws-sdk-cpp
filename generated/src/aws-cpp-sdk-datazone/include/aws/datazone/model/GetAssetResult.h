@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datazone/model/AssetListingDetails.h>
 #include <aws/datazone/model/FormOutput.h>
+#include <aws/datazone/model/TimeSeriesDataPointSummaryFormOutput.h>
 #include <utility>
 
 namespace Aws
@@ -382,6 +383,49 @@ namespace Model
 
 
     /**
+     * <p>The latest data point that was imported into the time series form for the
+     * asset. </p>
+     */
+    inline const Aws::Vector<TimeSeriesDataPointSummaryFormOutput>& GetLatestTimeSeriesDataPointFormsOutput() const{ return m_latestTimeSeriesDataPointFormsOutput; }
+
+    /**
+     * <p>The latest data point that was imported into the time series form for the
+     * asset. </p>
+     */
+    inline void SetLatestTimeSeriesDataPointFormsOutput(const Aws::Vector<TimeSeriesDataPointSummaryFormOutput>& value) { m_latestTimeSeriesDataPointFormsOutput = value; }
+
+    /**
+     * <p>The latest data point that was imported into the time series form for the
+     * asset. </p>
+     */
+    inline void SetLatestTimeSeriesDataPointFormsOutput(Aws::Vector<TimeSeriesDataPointSummaryFormOutput>&& value) { m_latestTimeSeriesDataPointFormsOutput = std::move(value); }
+
+    /**
+     * <p>The latest data point that was imported into the time series form for the
+     * asset. </p>
+     */
+    inline GetAssetResult& WithLatestTimeSeriesDataPointFormsOutput(const Aws::Vector<TimeSeriesDataPointSummaryFormOutput>& value) { SetLatestTimeSeriesDataPointFormsOutput(value); return *this;}
+
+    /**
+     * <p>The latest data point that was imported into the time series form for the
+     * asset. </p>
+     */
+    inline GetAssetResult& WithLatestTimeSeriesDataPointFormsOutput(Aws::Vector<TimeSeriesDataPointSummaryFormOutput>&& value) { SetLatestTimeSeriesDataPointFormsOutput(std::move(value)); return *this;}
+
+    /**
+     * <p>The latest data point that was imported into the time series form for the
+     * asset. </p>
+     */
+    inline GetAssetResult& AddLatestTimeSeriesDataPointFormsOutput(const TimeSeriesDataPointSummaryFormOutput& value) { m_latestTimeSeriesDataPointFormsOutput.push_back(value); return *this; }
+
+    /**
+     * <p>The latest data point that was imported into the time series form for the
+     * asset. </p>
+     */
+    inline GetAssetResult& AddLatestTimeSeriesDataPointFormsOutput(TimeSeriesDataPointSummaryFormOutput&& value) { m_latestTimeSeriesDataPointFormsOutput.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The listing of the asset.</p>
      */
     inline const AssetListingDetails& GetListing() const{ return m_listing; }
@@ -665,6 +709,8 @@ namespace Model
     Aws::Vector<Aws::String> m_glossaryTerms;
 
     Aws::String m_id;
+
+    Aws::Vector<TimeSeriesDataPointSummaryFormOutput> m_latestTimeSeriesDataPointFormsOutput;
 
     AssetListingDetails m_listing;
 

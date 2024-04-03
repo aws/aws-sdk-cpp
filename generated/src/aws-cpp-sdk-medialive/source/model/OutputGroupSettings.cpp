@@ -26,7 +26,8 @@ OutputGroupSettings::OutputGroupSettings() :
     m_msSmoothGroupSettingsHasBeenSet(false),
     m_multiplexGroupSettingsHasBeenSet(false),
     m_rtmpGroupSettingsHasBeenSet(false),
-    m_udpGroupSettingsHasBeenSet(false)
+    m_udpGroupSettingsHasBeenSet(false),
+    m_cmafIngestGroupSettingsHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ OutputGroupSettings::OutputGroupSettings(JsonView jsonValue) :
     m_msSmoothGroupSettingsHasBeenSet(false),
     m_multiplexGroupSettingsHasBeenSet(false),
     m_rtmpGroupSettingsHasBeenSet(false),
-    m_udpGroupSettingsHasBeenSet(false)
+    m_udpGroupSettingsHasBeenSet(false),
+    m_cmafIngestGroupSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -101,6 +103,13 @@ OutputGroupSettings& OutputGroupSettings::operator =(JsonView jsonValue)
     m_udpGroupSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("cmafIngestGroupSettings"))
+  {
+    m_cmafIngestGroupSettings = jsonValue.GetObject("cmafIngestGroupSettings");
+
+    m_cmafIngestGroupSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -153,6 +162,12 @@ JsonValue OutputGroupSettings::Jsonize() const
   if(m_udpGroupSettingsHasBeenSet)
   {
    payload.WithObject("udpGroupSettings", m_udpGroupSettings.Jsonize());
+
+  }
+
+  if(m_cmafIngestGroupSettingsHasBeenSet)
+  {
+   payload.WithObject("cmafIngestGroupSettings", m_cmafIngestGroupSettings.Jsonize());
 
   }
 

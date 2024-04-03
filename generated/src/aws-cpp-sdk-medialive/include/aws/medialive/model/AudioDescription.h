@@ -13,6 +13,9 @@
 #include <aws/medialive/model/AudioCodecSettings.h>
 #include <aws/medialive/model/AudioDescriptionLanguageCodeControl.h>
 #include <aws/medialive/model/RemixSettings.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/medialive/model/DvbDashAccessibility.h>
+#include <aws/medialive/model/DashRoleAudio.h>
 #include <utility>
 
 namespace Aws
@@ -548,6 +551,98 @@ Note
      */
     inline AudioDescription& WithStreamName(const char* value) { SetStreamName(value); return *this;}
 
+
+    /**
+     * Identifies the DASH roles to assign to this audio output. Applies only when the
+     * audio output is configured for DVB DASH accessibility signaling.
+     */
+    inline const Aws::Vector<DashRoleAudio>& GetAudioDashRoles() const{ return m_audioDashRoles; }
+
+    /**
+     * Identifies the DASH roles to assign to this audio output. Applies only when the
+     * audio output is configured for DVB DASH accessibility signaling.
+     */
+    inline bool AudioDashRolesHasBeenSet() const { return m_audioDashRolesHasBeenSet; }
+
+    /**
+     * Identifies the DASH roles to assign to this audio output. Applies only when the
+     * audio output is configured for DVB DASH accessibility signaling.
+     */
+    inline void SetAudioDashRoles(const Aws::Vector<DashRoleAudio>& value) { m_audioDashRolesHasBeenSet = true; m_audioDashRoles = value; }
+
+    /**
+     * Identifies the DASH roles to assign to this audio output. Applies only when the
+     * audio output is configured for DVB DASH accessibility signaling.
+     */
+    inline void SetAudioDashRoles(Aws::Vector<DashRoleAudio>&& value) { m_audioDashRolesHasBeenSet = true; m_audioDashRoles = std::move(value); }
+
+    /**
+     * Identifies the DASH roles to assign to this audio output. Applies only when the
+     * audio output is configured for DVB DASH accessibility signaling.
+     */
+    inline AudioDescription& WithAudioDashRoles(const Aws::Vector<DashRoleAudio>& value) { SetAudioDashRoles(value); return *this;}
+
+    /**
+     * Identifies the DASH roles to assign to this audio output. Applies only when the
+     * audio output is configured for DVB DASH accessibility signaling.
+     */
+    inline AudioDescription& WithAudioDashRoles(Aws::Vector<DashRoleAudio>&& value) { SetAudioDashRoles(std::move(value)); return *this;}
+
+    /**
+     * Identifies the DASH roles to assign to this audio output. Applies only when the
+     * audio output is configured for DVB DASH accessibility signaling.
+     */
+    inline AudioDescription& AddAudioDashRoles(const DashRoleAudio& value) { m_audioDashRolesHasBeenSet = true; m_audioDashRoles.push_back(value); return *this; }
+
+    /**
+     * Identifies the DASH roles to assign to this audio output. Applies only when the
+     * audio output is configured for DVB DASH accessibility signaling.
+     */
+    inline AudioDescription& AddAudioDashRoles(DashRoleAudio&& value) { m_audioDashRolesHasBeenSet = true; m_audioDashRoles.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * Identifies DVB DASH accessibility signaling in this audio output. Used in
+     * Microsoft Smooth Streaming outputs to signal accessibility information to
+     * packagers.
+     */
+    inline const DvbDashAccessibility& GetDvbDashAccessibility() const{ return m_dvbDashAccessibility; }
+
+    /**
+     * Identifies DVB DASH accessibility signaling in this audio output. Used in
+     * Microsoft Smooth Streaming outputs to signal accessibility information to
+     * packagers.
+     */
+    inline bool DvbDashAccessibilityHasBeenSet() const { return m_dvbDashAccessibilityHasBeenSet; }
+
+    /**
+     * Identifies DVB DASH accessibility signaling in this audio output. Used in
+     * Microsoft Smooth Streaming outputs to signal accessibility information to
+     * packagers.
+     */
+    inline void SetDvbDashAccessibility(const DvbDashAccessibility& value) { m_dvbDashAccessibilityHasBeenSet = true; m_dvbDashAccessibility = value; }
+
+    /**
+     * Identifies DVB DASH accessibility signaling in this audio output. Used in
+     * Microsoft Smooth Streaming outputs to signal accessibility information to
+     * packagers.
+     */
+    inline void SetDvbDashAccessibility(DvbDashAccessibility&& value) { m_dvbDashAccessibilityHasBeenSet = true; m_dvbDashAccessibility = std::move(value); }
+
+    /**
+     * Identifies DVB DASH accessibility signaling in this audio output. Used in
+     * Microsoft Smooth Streaming outputs to signal accessibility information to
+     * packagers.
+     */
+    inline AudioDescription& WithDvbDashAccessibility(const DvbDashAccessibility& value) { SetDvbDashAccessibility(value); return *this;}
+
+    /**
+     * Identifies DVB DASH accessibility signaling in this audio output. Used in
+     * Microsoft Smooth Streaming outputs to signal accessibility information to
+     * packagers.
+     */
+    inline AudioDescription& WithDvbDashAccessibility(DvbDashAccessibility&& value) { SetDvbDashAccessibility(std::move(value)); return *this;}
+
   private:
 
     AudioNormalizationSettings m_audioNormalizationSettings;
@@ -582,6 +677,12 @@ Note
 
     Aws::String m_streamName;
     bool m_streamNameHasBeenSet = false;
+
+    Aws::Vector<DashRoleAudio> m_audioDashRoles;
+    bool m_audioDashRolesHasBeenSet = false;
+
+    DvbDashAccessibility m_dvbDashAccessibility;
+    bool m_dvbDashAccessibilityHasBeenSet = false;
   };
 
 } // namespace Model

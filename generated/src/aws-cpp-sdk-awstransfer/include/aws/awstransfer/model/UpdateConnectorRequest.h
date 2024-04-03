@@ -461,6 +461,47 @@ namespace Model
      */
     inline UpdateConnectorRequest& WithSftpConfig(SftpConnectorConfig&& value) { SetSftpConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies the name of the security policy for the connector.</p>
+     */
+    inline const Aws::String& GetSecurityPolicyName() const{ return m_securityPolicyName; }
+
+    /**
+     * <p>Specifies the name of the security policy for the connector.</p>
+     */
+    inline bool SecurityPolicyNameHasBeenSet() const { return m_securityPolicyNameHasBeenSet; }
+
+    /**
+     * <p>Specifies the name of the security policy for the connector.</p>
+     */
+    inline void SetSecurityPolicyName(const Aws::String& value) { m_securityPolicyNameHasBeenSet = true; m_securityPolicyName = value; }
+
+    /**
+     * <p>Specifies the name of the security policy for the connector.</p>
+     */
+    inline void SetSecurityPolicyName(Aws::String&& value) { m_securityPolicyNameHasBeenSet = true; m_securityPolicyName = std::move(value); }
+
+    /**
+     * <p>Specifies the name of the security policy for the connector.</p>
+     */
+    inline void SetSecurityPolicyName(const char* value) { m_securityPolicyNameHasBeenSet = true; m_securityPolicyName.assign(value); }
+
+    /**
+     * <p>Specifies the name of the security policy for the connector.</p>
+     */
+    inline UpdateConnectorRequest& WithSecurityPolicyName(const Aws::String& value) { SetSecurityPolicyName(value); return *this;}
+
+    /**
+     * <p>Specifies the name of the security policy for the connector.</p>
+     */
+    inline UpdateConnectorRequest& WithSecurityPolicyName(Aws::String&& value) { SetSecurityPolicyName(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the name of the security policy for the connector.</p>
+     */
+    inline UpdateConnectorRequest& WithSecurityPolicyName(const char* value) { SetSecurityPolicyName(value); return *this;}
+
   private:
 
     Aws::String m_connectorId;
@@ -480,6 +521,9 @@ namespace Model
 
     SftpConnectorConfig m_sftpConfig;
     bool m_sftpConfigHasBeenSet = false;
+
+    Aws::String m_securityPolicyName;
+    bool m_securityPolicyNameHasBeenSet = false;
   };
 
 } // namespace Model

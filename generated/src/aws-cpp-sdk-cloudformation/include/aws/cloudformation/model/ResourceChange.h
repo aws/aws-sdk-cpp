@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/cloudformation/model/PolicyAction.h>
 #include <aws/cloudformation/model/ChangeAction.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudformation/model/Replacement.h>
@@ -45,6 +46,85 @@ namespace Model
 
     AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+
+    /**
+     * <p>The action that will be taken on the physical resource when the change set is
+     * executed.</p> <ul> <li> <p> <code>Delete</code> The resource will be
+     * deleted.</p> </li> <li> <p> <code>Retain</code> The resource will be
+     * retained.</p> </li> <li> <p> <code>Snapshot</code> The resource will have a
+     * snapshot taken.</p> </li> <li> <p> <code>ReplaceAndDelete</code> The resource
+     * will be replaced and then deleted.</p> </li> <li> <p>
+     * <code>ReplaceAndRetain</code> The resource will be replaced and then
+     * retained.</p> </li> <li> <p> <code>ReplaceAndSnapshot</code> The resource will
+     * be replaced and then have a snapshot taken.</p> </li> </ul>
+     */
+    inline const PolicyAction& GetPolicyAction() const{ return m_policyAction; }
+
+    /**
+     * <p>The action that will be taken on the physical resource when the change set is
+     * executed.</p> <ul> <li> <p> <code>Delete</code> The resource will be
+     * deleted.</p> </li> <li> <p> <code>Retain</code> The resource will be
+     * retained.</p> </li> <li> <p> <code>Snapshot</code> The resource will have a
+     * snapshot taken.</p> </li> <li> <p> <code>ReplaceAndDelete</code> The resource
+     * will be replaced and then deleted.</p> </li> <li> <p>
+     * <code>ReplaceAndRetain</code> The resource will be replaced and then
+     * retained.</p> </li> <li> <p> <code>ReplaceAndSnapshot</code> The resource will
+     * be replaced and then have a snapshot taken.</p> </li> </ul>
+     */
+    inline bool PolicyActionHasBeenSet() const { return m_policyActionHasBeenSet; }
+
+    /**
+     * <p>The action that will be taken on the physical resource when the change set is
+     * executed.</p> <ul> <li> <p> <code>Delete</code> The resource will be
+     * deleted.</p> </li> <li> <p> <code>Retain</code> The resource will be
+     * retained.</p> </li> <li> <p> <code>Snapshot</code> The resource will have a
+     * snapshot taken.</p> </li> <li> <p> <code>ReplaceAndDelete</code> The resource
+     * will be replaced and then deleted.</p> </li> <li> <p>
+     * <code>ReplaceAndRetain</code> The resource will be replaced and then
+     * retained.</p> </li> <li> <p> <code>ReplaceAndSnapshot</code> The resource will
+     * be replaced and then have a snapshot taken.</p> </li> </ul>
+     */
+    inline void SetPolicyAction(const PolicyAction& value) { m_policyActionHasBeenSet = true; m_policyAction = value; }
+
+    /**
+     * <p>The action that will be taken on the physical resource when the change set is
+     * executed.</p> <ul> <li> <p> <code>Delete</code> The resource will be
+     * deleted.</p> </li> <li> <p> <code>Retain</code> The resource will be
+     * retained.</p> </li> <li> <p> <code>Snapshot</code> The resource will have a
+     * snapshot taken.</p> </li> <li> <p> <code>ReplaceAndDelete</code> The resource
+     * will be replaced and then deleted.</p> </li> <li> <p>
+     * <code>ReplaceAndRetain</code> The resource will be replaced and then
+     * retained.</p> </li> <li> <p> <code>ReplaceAndSnapshot</code> The resource will
+     * be replaced and then have a snapshot taken.</p> </li> </ul>
+     */
+    inline void SetPolicyAction(PolicyAction&& value) { m_policyActionHasBeenSet = true; m_policyAction = std::move(value); }
+
+    /**
+     * <p>The action that will be taken on the physical resource when the change set is
+     * executed.</p> <ul> <li> <p> <code>Delete</code> The resource will be
+     * deleted.</p> </li> <li> <p> <code>Retain</code> The resource will be
+     * retained.</p> </li> <li> <p> <code>Snapshot</code> The resource will have a
+     * snapshot taken.</p> </li> <li> <p> <code>ReplaceAndDelete</code> The resource
+     * will be replaced and then deleted.</p> </li> <li> <p>
+     * <code>ReplaceAndRetain</code> The resource will be replaced and then
+     * retained.</p> </li> <li> <p> <code>ReplaceAndSnapshot</code> The resource will
+     * be replaced and then have a snapshot taken.</p> </li> </ul>
+     */
+    inline ResourceChange& WithPolicyAction(const PolicyAction& value) { SetPolicyAction(value); return *this;}
+
+    /**
+     * <p>The action that will be taken on the physical resource when the change set is
+     * executed.</p> <ul> <li> <p> <code>Delete</code> The resource will be
+     * deleted.</p> </li> <li> <p> <code>Retain</code> The resource will be
+     * retained.</p> </li> <li> <p> <code>Snapshot</code> The resource will have a
+     * snapshot taken.</p> </li> <li> <p> <code>ReplaceAndDelete</code> The resource
+     * will be replaced and then deleted.</p> </li> <li> <p>
+     * <code>ReplaceAndRetain</code> The resource will be replaced and then
+     * retained.</p> </li> <li> <p> <code>ReplaceAndSnapshot</code> The resource will
+     * be replaced and then have a snapshot taken.</p> </li> </ul>
+     */
+    inline ResourceChange& WithPolicyAction(PolicyAction&& value) { SetPolicyAction(std::move(value)); return *this;}
 
 
     /**
@@ -542,6 +622,9 @@ namespace Model
     inline ResourceChange& WithModuleInfo(ModuleInfo&& value) { SetModuleInfo(std::move(value)); return *this;}
 
   private:
+
+    PolicyAction m_policyAction;
+    bool m_policyActionHasBeenSet = false;
 
     ChangeAction m_action;
     bool m_actionHasBeenSet = false;

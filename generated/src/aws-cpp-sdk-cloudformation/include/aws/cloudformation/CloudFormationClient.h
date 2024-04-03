@@ -136,7 +136,7 @@ namespace CloudFormation
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
          * to specify configuration properties for the extension. For more information, see
          * <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration">Configuring
          * extensions at the account level</a> in the <i>CloudFormation User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ActivateType">AWS
@@ -166,7 +166,7 @@ namespace CloudFormation
          * <p>Returns configuration data for the specified CloudFormation extensions, from
          * the CloudFormation registry for the account and Region.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration">Configuring
          * extensions at the account level</a> in the <i>CloudFormation User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/BatchDescribeTypeConfigurations">AWS
@@ -2154,7 +2154,7 @@ namespace CloudFormation
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
          * to specify configuration properties for the extension. For more information, see
          * <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration">Configuring
          * extensions at the account level</a> in the <i>CloudFormation User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RegisterType">AWS
@@ -2248,7 +2248,7 @@ namespace CloudFormation
          * for an extension, refer to the <code>ConfigurationSchema</code> element of <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
          * For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration">Configuring
          * extensions at the account level</a> in the <i>CloudFormation User Guide</i>.</p>
          *  <p>It's strongly recommended that you use dynamic references to
          * restrict sensitive configuration definitions, such as third-party credentials.

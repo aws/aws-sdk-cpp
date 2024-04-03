@@ -8,6 +8,9 @@
 #include <aws/medialive/model/AccessibilityType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/medialive/model/CaptionDestinationSettings.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/medialive/model/DvbDashAccessibility.h>
+#include <aws/medialive/model/DashRoleCaption.h>
 #include <utility>
 
 namespace Aws
@@ -306,6 +309,98 @@ namespace Model
      */
     inline CaptionDescription& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * Identifies the DASH roles to assign to this captions output. Applies only when
+     * the captions output is configured for DVB DASH accessibility signaling.
+     */
+    inline const Aws::Vector<DashRoleCaption>& GetCaptionDashRoles() const{ return m_captionDashRoles; }
+
+    /**
+     * Identifies the DASH roles to assign to this captions output. Applies only when
+     * the captions output is configured for DVB DASH accessibility signaling.
+     */
+    inline bool CaptionDashRolesHasBeenSet() const { return m_captionDashRolesHasBeenSet; }
+
+    /**
+     * Identifies the DASH roles to assign to this captions output. Applies only when
+     * the captions output is configured for DVB DASH accessibility signaling.
+     */
+    inline void SetCaptionDashRoles(const Aws::Vector<DashRoleCaption>& value) { m_captionDashRolesHasBeenSet = true; m_captionDashRoles = value; }
+
+    /**
+     * Identifies the DASH roles to assign to this captions output. Applies only when
+     * the captions output is configured for DVB DASH accessibility signaling.
+     */
+    inline void SetCaptionDashRoles(Aws::Vector<DashRoleCaption>&& value) { m_captionDashRolesHasBeenSet = true; m_captionDashRoles = std::move(value); }
+
+    /**
+     * Identifies the DASH roles to assign to this captions output. Applies only when
+     * the captions output is configured for DVB DASH accessibility signaling.
+     */
+    inline CaptionDescription& WithCaptionDashRoles(const Aws::Vector<DashRoleCaption>& value) { SetCaptionDashRoles(value); return *this;}
+
+    /**
+     * Identifies the DASH roles to assign to this captions output. Applies only when
+     * the captions output is configured for DVB DASH accessibility signaling.
+     */
+    inline CaptionDescription& WithCaptionDashRoles(Aws::Vector<DashRoleCaption>&& value) { SetCaptionDashRoles(std::move(value)); return *this;}
+
+    /**
+     * Identifies the DASH roles to assign to this captions output. Applies only when
+     * the captions output is configured for DVB DASH accessibility signaling.
+     */
+    inline CaptionDescription& AddCaptionDashRoles(const DashRoleCaption& value) { m_captionDashRolesHasBeenSet = true; m_captionDashRoles.push_back(value); return *this; }
+
+    /**
+     * Identifies the DASH roles to assign to this captions output. Applies only when
+     * the captions output is configured for DVB DASH accessibility signaling.
+     */
+    inline CaptionDescription& AddCaptionDashRoles(DashRoleCaption&& value) { m_captionDashRolesHasBeenSet = true; m_captionDashRoles.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * Identifies DVB DASH accessibility signaling in this captions output. Used in
+     * Microsoft Smooth Streaming outputs to signal accessibility information to
+     * packagers.
+     */
+    inline const DvbDashAccessibility& GetDvbDashAccessibility() const{ return m_dvbDashAccessibility; }
+
+    /**
+     * Identifies DVB DASH accessibility signaling in this captions output. Used in
+     * Microsoft Smooth Streaming outputs to signal accessibility information to
+     * packagers.
+     */
+    inline bool DvbDashAccessibilityHasBeenSet() const { return m_dvbDashAccessibilityHasBeenSet; }
+
+    /**
+     * Identifies DVB DASH accessibility signaling in this captions output. Used in
+     * Microsoft Smooth Streaming outputs to signal accessibility information to
+     * packagers.
+     */
+    inline void SetDvbDashAccessibility(const DvbDashAccessibility& value) { m_dvbDashAccessibilityHasBeenSet = true; m_dvbDashAccessibility = value; }
+
+    /**
+     * Identifies DVB DASH accessibility signaling in this captions output. Used in
+     * Microsoft Smooth Streaming outputs to signal accessibility information to
+     * packagers.
+     */
+    inline void SetDvbDashAccessibility(DvbDashAccessibility&& value) { m_dvbDashAccessibilityHasBeenSet = true; m_dvbDashAccessibility = std::move(value); }
+
+    /**
+     * Identifies DVB DASH accessibility signaling in this captions output. Used in
+     * Microsoft Smooth Streaming outputs to signal accessibility information to
+     * packagers.
+     */
+    inline CaptionDescription& WithDvbDashAccessibility(const DvbDashAccessibility& value) { SetDvbDashAccessibility(value); return *this;}
+
+    /**
+     * Identifies DVB DASH accessibility signaling in this captions output. Used in
+     * Microsoft Smooth Streaming outputs to signal accessibility information to
+     * packagers.
+     */
+    inline CaptionDescription& WithDvbDashAccessibility(DvbDashAccessibility&& value) { SetDvbDashAccessibility(std::move(value)); return *this;}
+
   private:
 
     AccessibilityType m_accessibility;
@@ -325,6 +420,12 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::Vector<DashRoleCaption> m_captionDashRoles;
+    bool m_captionDashRolesHasBeenSet = false;
+
+    DvbDashAccessibility m_dvbDashAccessibility;
+    bool m_dvbDashAccessibilityHasBeenSet = false;
   };
 
 } // namespace Model

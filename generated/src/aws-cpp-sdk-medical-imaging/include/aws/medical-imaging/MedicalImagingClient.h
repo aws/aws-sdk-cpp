@@ -17,23 +17,21 @@ namespace MedicalImaging
 {
   /**
    * <p>This is the <i>AWS HealthImaging API Reference</i>. AWS HealthImaging is a
-   * HIPAA-eligible service that helps health care providers and their medical
-   * imaging ISV partners store, transform, and apply machine learning to medical
-   * images. For an introduction to the service, see the <a
+   * HIPAA eligible service that empowers healthcare providers, life science
+   * organizations, and their software partners to store, analyze, and share medical
+   * images in the cloud at petabyte scale. For an introduction to the service, see
+   * the <a
    * href="https://docs.aws.amazon.com/healthimaging/latest/devguide/what-is.html">
    * <i>AWS HealthImaging Developer Guide</i> </a>.</p>  <p>We recommend using
    * one of the AWS Software Development Kits (SDKs) for your programming language,
    * as they take care of request authentication, serialization, and connection
    * management. For more information, see <a
    * href="http://aws.amazon.com/developer/tools">Tools to build on AWS</a>.</p>
-   * <p>For information about using HealthImaging API actions in one of the
-   * language-specific AWS SDKs, refer to the <i>See Also</i> link at the end of each
-   * section that describes an API action or data type.</p>  <p>The following
-   * sections list AWS HealthImaging API actions categorized according to
-   * functionality. Links are provided to actions within this Reference, along with
-   * links back to corresponding sections in the <i>AWS HealthImaging Developer
-   * Guide</i> where you can view console procedures and CLI/SDK code examples.</p>
-   * <p class="title"> <b>Data store actions</b> </p> <ul> <li> <p> <a
+   *  <p>The following sections list AWS HealthImaging API actions categorized
+   * according to functionality. Links are provided to actions within this Reference,
+   * along with links back to corresponding sections in the <i>AWS HealthImaging
+   * Developer Guide</i> where you can view tested code examples.</p> <p
+   * class="title"> <b>Data store actions</b> </p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_CreateDatastore.html">CreateDatastore</a>
    * – See <a
    * href="https://docs.aws.amazon.com/healthimaging/latest/devguide/create-data-store.html">Creating
@@ -100,22 +98,16 @@ namespace MedicalImaging
    * <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_TagResource.html">TagResource</a>
    * – See <a
-   * href="https://docs.aws.amazon.com/healthimaging/latest/devguide/tag-list-untag-data-store.html">Tagging
-   * a data store</a> and <a
-   * href="https://docs.aws.amazon.com/healthimaging/latest/devguide/tag-list-untag-image-set.html">Tagging
-   * an image set</a>.</p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/healthimaging/latest/devguide/tag-resource.html">Tagging
+   * a resource</a>.</p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>
    * – See <a
-   * href="https://docs.aws.amazon.com/healthimaging/latest/devguide/tag-list-untag-data-store.html">Tagging
-   * a data store</a> and <a
-   * href="https://docs.aws.amazon.com/healthimaging/latest/devguide/tag-list-untag-image-set.html">Tagging
-   * an image set</a>.</p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/healthimaging/latest/devguide/list-tag-resource.html">Listing
+   * tags for a resource</a>.</p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_UntagResource.html">UntagResource</a>
    * – See <a
-   * href="https://docs.aws.amazon.com/healthimaging/latest/devguide/tag-list-untag-data-store.html">Tagging
-   * a data store</a> and <a
-   * href="https://docs.aws.amazon.com/healthimaging/latest/devguide/tag-list-untag-image-set.html">Tagging
-   * an image set</a>.</p> </li> </ul>
+   * href="https://docs.aws.amazon.com/healthimaging/latest/devguide/untag-resource.html">Untagging
+   * a resource</a>.</p> </li> </ul>
    */
   class AWS_MEDICALIMAGING_API MedicalImagingClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MedicalImagingClient>
   {
@@ -279,7 +271,13 @@ namespace MedicalImaging
 
         /**
          * <p>Get the import job properties to learn more about the job or job
-         * progress.</p><p><h3>See Also:</h3>   <a
+         * progress.</p>  <p>The <code>jobStatus</code> refers to the execution of
+         * the import job. Therefore, an import job can return a <code>jobStatus</code> as
+         * <code>COMPLETED</code> even if validation issues are discovered during the
+         * import process. If a <code>jobStatus</code> returns as <code>COMPLETED</code>,
+         * we still recommend you review the output manifests written to S3, as they
+         * provide details on the success or failure of individual P10 object imports.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/GetDICOMImportJob">AWS
          * API Reference</a></p>
          */

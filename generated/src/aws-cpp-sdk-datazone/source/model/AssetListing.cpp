@@ -25,6 +25,7 @@ AssetListing::AssetListing() :
     m_createdAtHasBeenSet(false),
     m_formsHasBeenSet(false),
     m_glossaryTermsHasBeenSet(false),
+    m_latestTimeSeriesDataPointFormsHasBeenSet(false),
     m_owningProjectIdHasBeenSet(false)
 {
 }
@@ -36,6 +37,7 @@ AssetListing::AssetListing(JsonView jsonValue) :
     m_createdAtHasBeenSet(false),
     m_formsHasBeenSet(false),
     m_glossaryTermsHasBeenSet(false),
+    m_latestTimeSeriesDataPointFormsHasBeenSet(false),
     m_owningProjectIdHasBeenSet(false)
 {
   *this = jsonValue;
@@ -86,6 +88,16 @@ AssetListing& AssetListing::operator =(JsonView jsonValue)
       m_glossaryTerms.push_back(glossaryTermsJsonList[glossaryTermsIndex].AsObject());
     }
     m_glossaryTermsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("latestTimeSeriesDataPointForms"))
+  {
+    Aws::Utils::Array<JsonView> latestTimeSeriesDataPointFormsJsonList = jsonValue.GetArray("latestTimeSeriesDataPointForms");
+    for(unsigned latestTimeSeriesDataPointFormsIndex = 0; latestTimeSeriesDataPointFormsIndex < latestTimeSeriesDataPointFormsJsonList.GetLength(); ++latestTimeSeriesDataPointFormsIndex)
+    {
+      m_latestTimeSeriesDataPointForms.push_back(latestTimeSeriesDataPointFormsJsonList[latestTimeSeriesDataPointFormsIndex].AsObject());
+    }
+    m_latestTimeSeriesDataPointFormsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("owningProjectId"))
@@ -139,6 +151,17 @@ JsonValue AssetListing::Jsonize() const
      glossaryTermsJsonList[glossaryTermsIndex].AsObject(m_glossaryTerms[glossaryTermsIndex].Jsonize());
    }
    payload.WithArray("glossaryTerms", std::move(glossaryTermsJsonList));
+
+  }
+
+  if(m_latestTimeSeriesDataPointFormsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> latestTimeSeriesDataPointFormsJsonList(m_latestTimeSeriesDataPointForms.size());
+   for(unsigned latestTimeSeriesDataPointFormsIndex = 0; latestTimeSeriesDataPointFormsIndex < latestTimeSeriesDataPointFormsJsonList.GetLength(); ++latestTimeSeriesDataPointFormsIndex)
+   {
+     latestTimeSeriesDataPointFormsJsonList[latestTimeSeriesDataPointFormsIndex].AsObject(m_latestTimeSeriesDataPointForms[latestTimeSeriesDataPointFormsIndex].Jsonize());
+   }
+   payload.WithArray("latestTimeSeriesDataPointForms", std::move(latestTimeSeriesDataPointFormsJsonList));
 
   }
 
