@@ -99,7 +99,7 @@ namespace
     //windows won't let you hard code unicode strings in a source file and assign them to a char*. Every other compiler does and I need to test this.
     //to get around this, this string is url encoded version of "TestUnicode中国Key". At test time, we'll convert it to the unicode string
     static const char* URLENCODED_UNICODE_KEY = "TestUnicode%E4%B8%AD%E5%9B%BDKey";
-    static const char* URIESCAPE_KEY = "Esc ape+Me$";
+    static const char* URIESCAPE_KEY = "Esc a=pe+Me$";
     static const char* CUSTOM_ENDPOINT_OVERRIDE = "beta.example.com";
     static const char* TEST_BUCKET_TAG = "IntegrationTestResource";
 
