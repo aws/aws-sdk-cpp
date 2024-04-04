@@ -32,7 +32,8 @@ Schema::Schema() :
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_type(SchemaType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_schemaStatusDetailsHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ Schema::Schema(JsonView jsonValue) :
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_type(SchemaType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_schemaStatusDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -150,6 +152,16 @@ Schema& Schema::operator =(JsonView jsonValue)
     m_typeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("schemaStatusDetails"))
+  {
+    Aws::Utils::Array<JsonView> schemaStatusDetailsJsonList = jsonValue.GetArray("schemaStatusDetails");
+    for(unsigned schemaStatusDetailsIndex = 0; schemaStatusDetailsIndex < schemaStatusDetailsJsonList.GetLength(); ++schemaStatusDetailsIndex)
+    {
+      m_schemaStatusDetails.push_back(schemaStatusDetailsJsonList[schemaStatusDetailsIndex].AsObject());
+    }
+    m_schemaStatusDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -238,6 +250,17 @@ JsonValue Schema::Jsonize() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("type", SchemaTypeMapper::GetNameForSchemaType(m_type));
+  }
+
+  if(m_schemaStatusDetailsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> schemaStatusDetailsJsonList(m_schemaStatusDetails.size());
+   for(unsigned schemaStatusDetailsIndex = 0; schemaStatusDetailsIndex < schemaStatusDetailsJsonList.GetLength(); ++schemaStatusDetailsIndex)
+   {
+     schemaStatusDetailsJsonList[schemaStatusDetailsIndex].AsObject(m_schemaStatusDetails[schemaStatusDetailsIndex].Jsonize());
+   }
+   payload.WithArray("schemaStatusDetails", std::move(schemaStatusDetailsJsonList));
+
   }
 
   return payload;

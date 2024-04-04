@@ -21,14 +21,16 @@ namespace Model
 CognitoUserPoolConfigurationItem::CognitoUserPoolConfigurationItem() : 
     m_userPoolArnHasBeenSet(false),
     m_clientIdsHasBeenSet(false),
-    m_issuerHasBeenSet(false)
+    m_issuerHasBeenSet(false),
+    m_groupConfigurationHasBeenSet(false)
 {
 }
 
 CognitoUserPoolConfigurationItem::CognitoUserPoolConfigurationItem(JsonView jsonValue) : 
     m_userPoolArnHasBeenSet(false),
     m_clientIdsHasBeenSet(false),
-    m_issuerHasBeenSet(false)
+    m_issuerHasBeenSet(false),
+    m_groupConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +61,13 @@ CognitoUserPoolConfigurationItem& CognitoUserPoolConfigurationItem::operator =(J
     m_issuerHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("groupConfiguration"))
+  {
+    m_groupConfiguration = jsonValue.GetObject("groupConfiguration");
+
+    m_groupConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -86,6 +95,12 @@ JsonValue CognitoUserPoolConfigurationItem::Jsonize() const
   if(m_issuerHasBeenSet)
   {
    payload.WithString("issuer", m_issuer);
+
+  }
+
+  if(m_groupConfigurationHasBeenSet)
+  {
+   payload.WithObject("groupConfiguration", m_groupConfiguration.Jsonize());
 
   }
 

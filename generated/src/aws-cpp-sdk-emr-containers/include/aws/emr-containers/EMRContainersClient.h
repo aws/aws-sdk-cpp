@@ -23,10 +23,10 @@ namespace EMRContainers
    * open-source applications. For more information about Amazon EMR on EKS concepts
    * and tasks, see <a
    * href="https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/emr-eks.html">What
-   * is shared id="EMR-EKS"/&gt;</a>.</p> <p> <i>Amazon EMR containers</i> is the API
-   * name for Amazon EMR on EKS. The <code>emr-containers</code> prefix is used in
-   * the following scenarios: </p> <ul> <li> <p>It is the prefix in the CLI commands
-   * for Amazon EMR on EKS. For example, <code>aws emr-containers
+   * is Amazon EMR on EKS</a>.</p> <p> <i>Amazon EMR containers</i> is the API name
+   * for Amazon EMR on EKS. The <code>emr-containers</code> prefix is used in the
+   * following scenarios: </p> <ul> <li> <p>It is the prefix in the CLI commands for
+   * Amazon EMR on EKS. For example, <code>aws emr-containers
    * start-job-run</code>.</p> </li> <li> <p>It is the prefix before IAM policy
    * actions for Amazon EMR on EKS. For example, <code>"Action": [
    * "emr-containers:StartJobRun"]</code>. For more information, see <a

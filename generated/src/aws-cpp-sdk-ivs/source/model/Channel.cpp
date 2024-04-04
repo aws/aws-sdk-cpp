@@ -33,6 +33,7 @@ Channel::Channel() :
     m_preset(TranscodePreset::NOT_SET),
     m_presetHasBeenSet(false),
     m_recordingConfigurationArnHasBeenSet(false),
+    m_srtHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_type(ChannelType::NOT_SET),
     m_typeHasBeenSet(false)
@@ -54,6 +55,7 @@ Channel::Channel(JsonView jsonValue) :
     m_preset(TranscodePreset::NOT_SET),
     m_presetHasBeenSet(false),
     m_recordingConfigurationArnHasBeenSet(false),
+    m_srtHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_type(ChannelType::NOT_SET),
     m_typeHasBeenSet(false)
@@ -131,6 +133,13 @@ Channel& Channel::operator =(JsonView jsonValue)
     m_recordingConfigurationArn = jsonValue.GetString("recordingConfigurationArn");
 
     m_recordingConfigurationArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("srt"))
+  {
+    m_srt = jsonValue.GetObject("srt");
+
+    m_srtHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -212,6 +221,12 @@ JsonValue Channel::Jsonize() const
   if(m_recordingConfigurationArnHasBeenSet)
   {
    payload.WithString("recordingConfigurationArn", m_recordingConfigurationArn);
+
+  }
+
+  if(m_srtHasBeenSet)
+  {
+   payload.WithObject("srt", m_srt.Jsonize());
 
   }
 

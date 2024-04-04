@@ -193,58 +193,58 @@ namespace Model
 
 
     /**
-     * <p>Errors that occurred while making an authorization decision, for example, a
-     * policy references an Entity or entity Attribute that does not exist in the
-     * slice.</p>
+     * <p>Errors that occurred while making an authorization decision. For example, a
+     * policy might reference an entity or attribute that doesn't exist in the
+     * request.</p>
      */
     inline const Aws::Vector<EvaluationErrorItem>& GetErrors() const{ return m_errors; }
 
     /**
-     * <p>Errors that occurred while making an authorization decision, for example, a
-     * policy references an Entity or entity Attribute that does not exist in the
-     * slice.</p>
+     * <p>Errors that occurred while making an authorization decision. For example, a
+     * policy might reference an entity or attribute that doesn't exist in the
+     * request.</p>
      */
     inline bool ErrorsHasBeenSet() const { return m_errorsHasBeenSet; }
 
     /**
-     * <p>Errors that occurred while making an authorization decision, for example, a
-     * policy references an Entity or entity Attribute that does not exist in the
-     * slice.</p>
+     * <p>Errors that occurred while making an authorization decision. For example, a
+     * policy might reference an entity or attribute that doesn't exist in the
+     * request.</p>
      */
     inline void SetErrors(const Aws::Vector<EvaluationErrorItem>& value) { m_errorsHasBeenSet = true; m_errors = value; }
 
     /**
-     * <p>Errors that occurred while making an authorization decision, for example, a
-     * policy references an Entity or entity Attribute that does not exist in the
-     * slice.</p>
+     * <p>Errors that occurred while making an authorization decision. For example, a
+     * policy might reference an entity or attribute that doesn't exist in the
+     * request.</p>
      */
     inline void SetErrors(Aws::Vector<EvaluationErrorItem>&& value) { m_errorsHasBeenSet = true; m_errors = std::move(value); }
 
     /**
-     * <p>Errors that occurred while making an authorization decision, for example, a
-     * policy references an Entity or entity Attribute that does not exist in the
-     * slice.</p>
+     * <p>Errors that occurred while making an authorization decision. For example, a
+     * policy might reference an entity or attribute that doesn't exist in the
+     * request.</p>
      */
     inline BatchIsAuthorizedOutputItem& WithErrors(const Aws::Vector<EvaluationErrorItem>& value) { SetErrors(value); return *this;}
 
     /**
-     * <p>Errors that occurred while making an authorization decision, for example, a
-     * policy references an Entity or entity Attribute that does not exist in the
-     * slice.</p>
+     * <p>Errors that occurred while making an authorization decision. For example, a
+     * policy might reference an entity or attribute that doesn't exist in the
+     * request.</p>
      */
     inline BatchIsAuthorizedOutputItem& WithErrors(Aws::Vector<EvaluationErrorItem>&& value) { SetErrors(std::move(value)); return *this;}
 
     /**
-     * <p>Errors that occurred while making an authorization decision, for example, a
-     * policy references an Entity or entity Attribute that does not exist in the
-     * slice.</p>
+     * <p>Errors that occurred while making an authorization decision. For example, a
+     * policy might reference an entity or attribute that doesn't exist in the
+     * request.</p>
      */
     inline BatchIsAuthorizedOutputItem& AddErrors(const EvaluationErrorItem& value) { m_errorsHasBeenSet = true; m_errors.push_back(value); return *this; }
 
     /**
-     * <p>Errors that occurred while making an authorization decision, for example, a
-     * policy references an Entity or entity Attribute that does not exist in the
-     * slice.</p>
+     * <p>Errors that occurred while making an authorization decision. For example, a
+     * policy might reference an entity or attribute that doesn't exist in the
+     * request.</p>
      */
     inline BatchIsAuthorizedOutputItem& AddErrors(EvaluationErrorItem&& value) { m_errorsHasBeenSet = true; m_errors.push_back(std::move(value)); return *this; }
 

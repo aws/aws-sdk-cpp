@@ -806,6 +806,16 @@ namespace Aws
         static const int c7gd_metal_HASH = HashingUtils::HashString("c7gd.metal");
         static const int m7gd_metal_HASH = HashingUtils::HashString("m7gd.metal");
         static const int r7gd_metal_HASH = HashingUtils::HashString("r7gd.metal");
+        static const int g6_xlarge_HASH = HashingUtils::HashString("g6.xlarge");
+        static const int g6_2xlarge_HASH = HashingUtils::HashString("g6.2xlarge");
+        static const int g6_4xlarge_HASH = HashingUtils::HashString("g6.4xlarge");
+        static const int g6_8xlarge_HASH = HashingUtils::HashString("g6.8xlarge");
+        static const int g6_12xlarge_HASH = HashingUtils::HashString("g6.12xlarge");
+        static const int g6_16xlarge_HASH = HashingUtils::HashString("g6.16xlarge");
+        static const int g6_24xlarge_HASH = HashingUtils::HashString("g6.24xlarge");
+        static const int g6_48xlarge_HASH = HashingUtils::HashString("g6.48xlarge");
+        static const int gr6_4xlarge_HASH = HashingUtils::HashString("gr6.4xlarge");
+        static const int gr6_8xlarge_HASH = HashingUtils::HashString("gr6.8xlarge");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -4768,6 +4778,56 @@ namespace Aws
             enumValue = InstanceType::r7gd_metal;
             return true;
           }
+          else if (hashCode == g6_xlarge_HASH)
+          {
+            enumValue = InstanceType::g6_xlarge;
+            return true;
+          }
+          else if (hashCode == g6_2xlarge_HASH)
+          {
+            enumValue = InstanceType::g6_2xlarge;
+            return true;
+          }
+          else if (hashCode == g6_4xlarge_HASH)
+          {
+            enumValue = InstanceType::g6_4xlarge;
+            return true;
+          }
+          else if (hashCode == g6_8xlarge_HASH)
+          {
+            enumValue = InstanceType::g6_8xlarge;
+            return true;
+          }
+          else if (hashCode == g6_12xlarge_HASH)
+          {
+            enumValue = InstanceType::g6_12xlarge;
+            return true;
+          }
+          else if (hashCode == g6_16xlarge_HASH)
+          {
+            enumValue = InstanceType::g6_16xlarge;
+            return true;
+          }
+          else if (hashCode == g6_24xlarge_HASH)
+          {
+            enumValue = InstanceType::g6_24xlarge;
+            return true;
+          }
+          else if (hashCode == g6_48xlarge_HASH)
+          {
+            enumValue = InstanceType::g6_48xlarge;
+            return true;
+          }
+          else if (hashCode == gr6_4xlarge_HASH)
+          {
+            enumValue = InstanceType::gr6_4xlarge;
+            return true;
+          }
+          else if (hashCode == gr6_8xlarge_HASH)
+          {
+            enumValue = InstanceType::gr6_8xlarge;
+            return true;
+          }
           return false;
         }
 
@@ -7180,6 +7240,36 @@ namespace Aws
             return true;
           case InstanceType::r7gd_metal:
             value = "r7gd.metal";
+            return true;
+          case InstanceType::g6_xlarge:
+            value = "g6.xlarge";
+            return true;
+          case InstanceType::g6_2xlarge:
+            value = "g6.2xlarge";
+            return true;
+          case InstanceType::g6_4xlarge:
+            value = "g6.4xlarge";
+            return true;
+          case InstanceType::g6_8xlarge:
+            value = "g6.8xlarge";
+            return true;
+          case InstanceType::g6_12xlarge:
+            value = "g6.12xlarge";
+            return true;
+          case InstanceType::g6_16xlarge:
+            value = "g6.16xlarge";
+            return true;
+          case InstanceType::g6_24xlarge:
+            value = "g6.24xlarge";
+            return true;
+          case InstanceType::g6_48xlarge:
+            value = "g6.48xlarge";
+            return true;
+          case InstanceType::gr6_4xlarge:
+            value = "gr6.4xlarge";
+            return true;
+          case InstanceType::gr6_8xlarge:
+            value = "gr6.8xlarge";
             return true;
           default:
             return false;

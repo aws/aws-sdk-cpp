@@ -12,6 +12,7 @@
 #include <aws/cleanrooms/model/SchemaType.h>
 #include <aws/cleanrooms/model/Column.h>
 #include <aws/cleanrooms/model/AnalysisRuleType.h>
+#include <aws/cleanrooms/model/SchemaStatusDetail.h>
 #include <utility>
 
 namespace Aws
@@ -524,6 +525,55 @@ namespace Model
      */
     inline Schema& WithType(SchemaType&& value) { SetType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Details about the status of the schema. Currently, only one entry is
+     * present.</p>
+     */
+    inline const Aws::Vector<SchemaStatusDetail>& GetSchemaStatusDetails() const{ return m_schemaStatusDetails; }
+
+    /**
+     * <p>Details about the status of the schema. Currently, only one entry is
+     * present.</p>
+     */
+    inline bool SchemaStatusDetailsHasBeenSet() const { return m_schemaStatusDetailsHasBeenSet; }
+
+    /**
+     * <p>Details about the status of the schema. Currently, only one entry is
+     * present.</p>
+     */
+    inline void SetSchemaStatusDetails(const Aws::Vector<SchemaStatusDetail>& value) { m_schemaStatusDetailsHasBeenSet = true; m_schemaStatusDetails = value; }
+
+    /**
+     * <p>Details about the status of the schema. Currently, only one entry is
+     * present.</p>
+     */
+    inline void SetSchemaStatusDetails(Aws::Vector<SchemaStatusDetail>&& value) { m_schemaStatusDetailsHasBeenSet = true; m_schemaStatusDetails = std::move(value); }
+
+    /**
+     * <p>Details about the status of the schema. Currently, only one entry is
+     * present.</p>
+     */
+    inline Schema& WithSchemaStatusDetails(const Aws::Vector<SchemaStatusDetail>& value) { SetSchemaStatusDetails(value); return *this;}
+
+    /**
+     * <p>Details about the status of the schema. Currently, only one entry is
+     * present.</p>
+     */
+    inline Schema& WithSchemaStatusDetails(Aws::Vector<SchemaStatusDetail>&& value) { SetSchemaStatusDetails(std::move(value)); return *this;}
+
+    /**
+     * <p>Details about the status of the schema. Currently, only one entry is
+     * present.</p>
+     */
+    inline Schema& AddSchemaStatusDetails(const SchemaStatusDetail& value) { m_schemaStatusDetailsHasBeenSet = true; m_schemaStatusDetails.push_back(value); return *this; }
+
+    /**
+     * <p>Details about the status of the schema. Currently, only one entry is
+     * present.</p>
+     */
+    inline Schema& AddSchemaStatusDetails(SchemaStatusDetail&& value) { m_schemaStatusDetailsHasBeenSet = true; m_schemaStatusDetails.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<Column> m_columns;
@@ -561,6 +611,9 @@ namespace Model
 
     SchemaType m_type;
     bool m_typeHasBeenSet = false;
+
+    Aws::Vector<SchemaStatusDetail> m_schemaStatusDetails;
+    bool m_schemaStatusDetailsHasBeenSet = false;
   };
 
 } // namespace Model

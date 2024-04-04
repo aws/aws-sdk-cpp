@@ -24,7 +24,9 @@ ListVirtualClustersRequest::ListVirtualClustersRequest() :
     m_statesHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_eksAccessEntryIntegrated(false),
+    m_eksAccessEntryIntegratedHasBeenSet(false)
 {
 }
 
@@ -85,6 +87,13 @@ void ListVirtualClustersRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_nextToken;
       uri.AddQueryStringParameter("nextToken", ss.str());
+      ss.str("");
+    }
+
+    if(m_eksAccessEntryIntegratedHasBeenSet)
+    {
+      ss << m_eksAccessEntryIntegrated;
+      uri.AddQueryStringParameter("eksAccessEntryIntegrated", ss.str());
       ss.str("");
     }
 

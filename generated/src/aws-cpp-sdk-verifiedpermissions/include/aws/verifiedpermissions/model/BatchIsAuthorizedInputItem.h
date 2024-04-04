@@ -78,75 +78,75 @@ namespace Model
 
 
     /**
-     * <p>Specifies the requested action to be authorized. For example, is the
-     * principal authorized to perform this action on the resource?</p>
+     * <p>Specifies the requested action to be authorized. For example,
+     * <code>PhotoFlash::ReadPhoto</code>.</p>
      */
     inline const ActionIdentifier& GetAction() const{ return m_action; }
 
     /**
-     * <p>Specifies the requested action to be authorized. For example, is the
-     * principal authorized to perform this action on the resource?</p>
+     * <p>Specifies the requested action to be authorized. For example,
+     * <code>PhotoFlash::ReadPhoto</code>.</p>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
-     * <p>Specifies the requested action to be authorized. For example, is the
-     * principal authorized to perform this action on the resource?</p>
+     * <p>Specifies the requested action to be authorized. For example,
+     * <code>PhotoFlash::ReadPhoto</code>.</p>
      */
     inline void SetAction(const ActionIdentifier& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
-     * <p>Specifies the requested action to be authorized. For example, is the
-     * principal authorized to perform this action on the resource?</p>
+     * <p>Specifies the requested action to be authorized. For example,
+     * <code>PhotoFlash::ReadPhoto</code>.</p>
      */
     inline void SetAction(ActionIdentifier&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
-     * <p>Specifies the requested action to be authorized. For example, is the
-     * principal authorized to perform this action on the resource?</p>
+     * <p>Specifies the requested action to be authorized. For example,
+     * <code>PhotoFlash::ReadPhoto</code>.</p>
      */
     inline BatchIsAuthorizedInputItem& WithAction(const ActionIdentifier& value) { SetAction(value); return *this;}
 
     /**
-     * <p>Specifies the requested action to be authorized. For example, is the
-     * principal authorized to perform this action on the resource?</p>
+     * <p>Specifies the requested action to be authorized. For example,
+     * <code>PhotoFlash::ReadPhoto</code>.</p>
      */
     inline BatchIsAuthorizedInputItem& WithAction(ActionIdentifier&& value) { SetAction(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specifies the resource for which the authorization decision is to be
-     * made.</p>
+     * <p>Specifies the resource that you want an authorization decision for. For
+     * example, <code>PhotoFlash::Photo</code>.</p>
      */
     inline const EntityIdentifier& GetResource() const{ return m_resource; }
 
     /**
-     * <p>Specifies the resource for which the authorization decision is to be
-     * made.</p>
+     * <p>Specifies the resource that you want an authorization decision for. For
+     * example, <code>PhotoFlash::Photo</code>.</p>
      */
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
 
     /**
-     * <p>Specifies the resource for which the authorization decision is to be
-     * made.</p>
+     * <p>Specifies the resource that you want an authorization decision for. For
+     * example, <code>PhotoFlash::Photo</code>.</p>
      */
     inline void SetResource(const EntityIdentifier& value) { m_resourceHasBeenSet = true; m_resource = value; }
 
     /**
-     * <p>Specifies the resource for which the authorization decision is to be
-     * made.</p>
+     * <p>Specifies the resource that you want an authorization decision for. For
+     * example, <code>PhotoFlash::Photo</code>.</p>
      */
     inline void SetResource(EntityIdentifier&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
 
     /**
-     * <p>Specifies the resource for which the authorization decision is to be
-     * made.</p>
+     * <p>Specifies the resource that you want an authorization decision for. For
+     * example, <code>PhotoFlash::Photo</code>.</p>
      */
     inline BatchIsAuthorizedInputItem& WithResource(const EntityIdentifier& value) { SetResource(value); return *this;}
 
     /**
-     * <p>Specifies the resource for which the authorization decision is to be
-     * made.</p>
+     * <p>Specifies the resource that you want an authorization decision for. For
+     * example, <code>PhotoFlash::Photo</code>.</p>
      */
     inline BatchIsAuthorizedInputItem& WithResource(EntityIdentifier&& value) { SetResource(std::move(value)); return *this;}
 
