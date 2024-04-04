@@ -98,25 +98,25 @@ namespace Model
 
 
     /**
-     * <p>Whether the channel allows insecure RTMP ingest. Default:
+     * <p>Whether the channel allows insecure RTMP and SRT ingest. Default:
      * <code>false</code>.</p>
      */
     inline bool GetInsecureIngest() const{ return m_insecureIngest; }
 
     /**
-     * <p>Whether the channel allows insecure RTMP ingest. Default:
+     * <p>Whether the channel allows insecure RTMP and SRT ingest. Default:
      * <code>false</code>.</p>
      */
     inline bool InsecureIngestHasBeenSet() const { return m_insecureIngestHasBeenSet; }
 
     /**
-     * <p>Whether the channel allows insecure RTMP ingest. Default:
+     * <p>Whether the channel allows insecure RTMP and SRT ingest. Default:
      * <code>false</code>.</p>
      */
     inline void SetInsecureIngest(bool value) { m_insecureIngestHasBeenSet = true; m_insecureIngest = value; }
 
     /**
-     * <p>Whether the channel allows insecure RTMP ingest. Default:
+     * <p>Whether the channel allows insecure RTMP and SRT ingest. Default:
      * <code>false</code>.</p>
      */
     inline UpdateChannelRequest& WithInsecureIngest(bool value) { SetInsecureIngest(value); return *this;}

@@ -7,6 +7,7 @@
 #include <aws/verifiedpermissions/VerifiedPermissions_EXPORTS.h>
 #include <aws/verifiedpermissions/model/Decision.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/verifiedpermissions/model/EntityIdentifier.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/verifiedpermissions/model/DeterminingPolicyItem.h>
 #include <aws/verifiedpermissions/model/EvaluationErrorItem.h>
@@ -188,6 +189,32 @@ namespace Model
     inline IsAuthorizedWithTokenResult& AddErrors(EvaluationErrorItem&& value) { m_errors.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>The identifier of the principal in the ID or access token.</p>
+     */
+    inline const EntityIdentifier& GetPrincipal() const{ return m_principal; }
+
+    /**
+     * <p>The identifier of the principal in the ID or access token.</p>
+     */
+    inline void SetPrincipal(const EntityIdentifier& value) { m_principal = value; }
+
+    /**
+     * <p>The identifier of the principal in the ID or access token.</p>
+     */
+    inline void SetPrincipal(EntityIdentifier&& value) { m_principal = std::move(value); }
+
+    /**
+     * <p>The identifier of the principal in the ID or access token.</p>
+     */
+    inline IsAuthorizedWithTokenResult& WithPrincipal(const EntityIdentifier& value) { SetPrincipal(value); return *this;}
+
+    /**
+     * <p>The identifier of the principal in the ID or access token.</p>
+     */
+    inline IsAuthorizedWithTokenResult& WithPrincipal(EntityIdentifier&& value) { SetPrincipal(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -216,6 +243,8 @@ namespace Model
     Aws::Vector<DeterminingPolicyItem> m_determiningPolicies;
 
     Aws::Vector<EvaluationErrorItem> m_errors;
+
+    EntityIdentifier m_principal;
 
     Aws::String m_requestId;
   };

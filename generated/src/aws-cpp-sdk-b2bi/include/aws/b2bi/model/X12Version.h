@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     VERSION_4010,
     VERSION_4030,
-    VERSION_5010
+    VERSION_5010,
+    VERSION_5010_HIPAA
   };
 
 namespace X12VersionMapper

@@ -29,32 +29,28 @@ namespace IVS
    * Document History</a>.</p> <p> <b>Allowed Header Values</b> </p> <ul> <li> <p>
    * <code> <b>Accept:</b> </code> application/json</p> </li> <li> <p> <code>
    * <b>Accept-Encoding:</b> </code> gzip, deflate</p> </li> <li> <p> <code>
-   * <b>Content-Type:</b> </code>application/json</p> </li> </ul> <p>
-   * <b>Resources</b> </p> <p>The following resources contain information about your
-   * IVS live stream (see <a
-   * href="https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html">
-   * Getting Started with Amazon IVS</a>):</p> <ul> <li> <p> <b>Channel</b> — Stores
-   * configuration data related to your live stream. You first create a channel and
-   * then use the channel’s stream key to start your live stream. See the Channel
-   * endpoints for more information. </p> </li> <li> <p> <b>Stream key</b> — An
-   * identifier assigned by Amazon IVS when you create a channel, which is then used
-   * to authorize streaming. See the StreamKey endpoints for more information. <i>
-   * <b>Treat the stream key like a secret, since it allows anyone to stream to the
-   * channel.</b> </i> </p> </li> <li> <p> <b>Playback key pair</b> — Video playback
-   * may be restricted using playback-authorization tokens, which use public-key
-   * encryption. A playback key pair is the public-private pair of keys used to sign
-   * and validate the playback-authorization token. See the PlaybackKeyPair endpoints
-   * for more information.</p> </li> <li> <p> <b>Recording configuration</b> — Stores
-   * configuration related to recording a live stream and where to store the recorded
-   * content. Multiple channels can reference the same recording configuration. See
-   * the Recording Configuration endpoints for more information.</p> </li> <li> <p>
-   * <b>Playback restriction policy</b> — Restricts playback by countries and/or
-   * origin sites. See the Playback Restriction Policy endpoints for more
-   * information.</p> </li> </ul> <p> <b>Tagging</b> </p> <p>A <i>tag</i> is a
-   * metadata label that you assign to an Amazon Web Services resource. A tag
-   * comprises a <i>key</i> and a <i>value</i>, both set by you. For example, you
-   * might set a tag as <code>topic:nature</code> to label a particular video
-   * category. See <a
+   * <b>Content-Type:</b> </code>application/json</p> </li> </ul> <p> <b>Key
+   * Concepts</b> </p> <ul> <li> <p> <b>Channel</b> — Stores configuration data
+   * related to your live stream. You first create a channel and then use the
+   * channel’s stream key to start your live stream.</p> </li> <li> <p> <b>Stream
+   * key</b> — An identifier assigned by Amazon IVS when you create a channel, which
+   * is then used to authorize streaming. <i> <b>Treat the stream key like a secret,
+   * since it allows anyone to stream to the channel.</b> </i> </p> </li> <li> <p>
+   * <b>Playback key pair</b> — Video playback may be restricted using
+   * playback-authorization tokens, which use public-key encryption. A playback key
+   * pair is the public-private pair of keys used to sign and validate the
+   * playback-authorization token.</p> </li> <li> <p> <b>Recording configuration</b>
+   * — Stores configuration related to recording a live stream and where to store the
+   * recorded content. Multiple channels can reference the same recording
+   * configuration.</p> </li> <li> <p> <b>Playback restriction policy</b> — Restricts
+   * playback by countries and/or origin sites.</p> </li> </ul> <p>For more
+   * information about your IVS live stream, also see <a
+   * href="https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/getting-started.html">Getting
+   * Started with IVS Low-Latency Streaming</a>.</p> <p> <b>Tagging</b> </p> <p>A
+   * <i>tag</i> is a metadata label that you assign to an Amazon Web Services
+   * resource. A tag comprises a <i>key</i> and a <i>value</i>, both set by you. For
+   * example, you might set a tag as <code>topic:nature</code> to label a particular
+   * video category. See <a
    * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
    * Amazon Web Services Resources</a> for more information, including restrictions
    * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
@@ -141,8 +137,8 @@ namespace IVS
    * viewer sessions less than and including that version.</p> </li> <li> <p>
    * <a>BatchStartViewerSessionRevocation</a> — Performs
    * <a>StartViewerSessionRevocation</a> on multiple channel ARN and viewer ID pairs
-   * simultaneously.</p> </li> </ul> <p> <b>RecordingConfiguration Endpoints</b> </p>
-   * <ul> <li> <p> <a>CreateRecordingConfiguration</a> — Creates a new recording
+   * simultaneously.</p> </li> </ul> <p> <b>Recording Configuration Endpoints</b>
+   * </p> <ul> <li> <p> <a>CreateRecordingConfiguration</a> — Creates a new recording
    * configuration, used to enable recording to Amazon S3.</p> </li> <li> <p>
    * <a>GetRecordingConfiguration</a> — Gets the recording-configuration metadata for
    * the specified ARN.</p> </li> <li> <p> <a>ListRecordingConfigurations</a> — Gets
@@ -164,7 +160,7 @@ namespace IVS
    * specified channel. At most 5 requests per second per channel are allowed, each
    * with a maximum 1 KB payload. (If 5 TPS is not sufficient for your needs, we
    * recommend batching your data into a single PutMetadata call.) At most 155
-   * requests per second per account are allowed.</p> </li> </ul> <p> <b>StreamKey
+   * requests per second per account are allowed.</p> </li> </ul> <p> <b>Stream Key
    * Endpoints</b> </p> <ul> <li> <p> <a>CreateStreamKey</a> — Creates a stream key,
    * used to initiate a stream, for the specified channel ARN.</p> </li> <li> <p>
    * <a>GetStreamKey</a> — Gets stream key information for the specified ARN.</p>

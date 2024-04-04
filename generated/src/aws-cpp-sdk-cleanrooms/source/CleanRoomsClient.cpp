@@ -23,6 +23,7 @@
 #include <aws/cleanrooms/CleanRoomsEndpointProvider.h>
 #include <aws/cleanrooms/model/BatchGetCollaborationAnalysisTemplateRequest.h>
 #include <aws/cleanrooms/model/BatchGetSchemaRequest.h>
+#include <aws/cleanrooms/model/BatchGetSchemaAnalysisRuleRequest.h>
 #include <aws/cleanrooms/model/CreateAnalysisTemplateRequest.h>
 #include <aws/cleanrooms/model/CreateCollaborationRequest.h>
 #include <aws/cleanrooms/model/CreateConfiguredAudienceModelAssociationRequest.h>
@@ -286,6 +287,40 @@ BatchGetSchemaOutcome CleanRoomsClient::BatchGetSchema(const BatchGetSchemaReque
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCollaborationIdentifier());
       endpointResolutionOutcome.GetResult().AddPathSegments("/batch-schema");
       return BatchGetSchemaOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+BatchGetSchemaAnalysisRuleOutcome CleanRoomsClient::BatchGetSchemaAnalysisRule(const BatchGetSchemaAnalysisRuleRequest& request) const
+{
+  AWS_OPERATION_GUARD(BatchGetSchemaAnalysisRule);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetSchemaAnalysisRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.CollaborationIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchGetSchemaAnalysisRule", "Required field: CollaborationIdentifier, is not set");
+    return BatchGetSchemaAnalysisRuleOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CollaborationIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, BatchGetSchemaAnalysisRule, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, BatchGetSchemaAnalysisRule, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".BatchGetSchemaAnalysisRule",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<BatchGetSchemaAnalysisRuleOutcome>(
+    [&]()-> BatchGetSchemaAnalysisRuleOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchGetSchemaAnalysisRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/collaborations/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCollaborationIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/batch-schema-analysis-rule");
+      return BatchGetSchemaAnalysisRuleOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

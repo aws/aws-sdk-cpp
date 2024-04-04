@@ -801,7 +801,17 @@ namespace Model
     r7iz_metal_32xl,
     c7gd_metal,
     m7gd_metal,
-    r7gd_metal
+    r7gd_metal,
+    g6_xlarge,
+    g6_2xlarge,
+    g6_4xlarge,
+    g6_8xlarge,
+    g6_12xlarge,
+    g6_16xlarge,
+    g6_24xlarge,
+    g6_48xlarge,
+    gr6_4xlarge,
+    gr6_8xlarge
   };
 
 namespace InstanceTypeMapper

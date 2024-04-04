@@ -140,6 +140,31 @@ namespace CleanRooms
         }
 
         /**
+         * <p>Retrieves multiple analysis rule schemas.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/BatchGetSchemaAnalysisRule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetSchemaAnalysisRuleOutcome BatchGetSchemaAnalysisRule(const Model::BatchGetSchemaAnalysisRuleRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchGetSchemaAnalysisRule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchGetSchemaAnalysisRuleRequestT = Model::BatchGetSchemaAnalysisRuleRequest>
+        Model::BatchGetSchemaAnalysisRuleOutcomeCallable BatchGetSchemaAnalysisRuleCallable(const BatchGetSchemaAnalysisRuleRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsClient::BatchGetSchemaAnalysisRule, request);
+        }
+
+        /**
+         * An Async wrapper for BatchGetSchemaAnalysisRule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchGetSchemaAnalysisRuleRequestT = Model::BatchGetSchemaAnalysisRuleRequest>
+        void BatchGetSchemaAnalysisRuleAsync(const BatchGetSchemaAnalysisRuleRequestT& request, const BatchGetSchemaAnalysisRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsClient::BatchGetSchemaAnalysisRule, request, handler, context);
+        }
+
+        /**
          * <p>Creates a new analysis template.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateAnalysisTemplate">AWS
          * API Reference</a></p>

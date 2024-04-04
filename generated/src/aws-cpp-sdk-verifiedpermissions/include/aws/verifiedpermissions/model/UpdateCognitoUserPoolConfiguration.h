@@ -7,6 +7,7 @@
 #include <aws/verifiedpermissions/VerifiedPermissions_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/verifiedpermissions/model/UpdateCognitoGroupConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -158,6 +159,43 @@ namespace Model
      */
     inline UpdateCognitoUserPoolConfiguration& AddClientIds(const char* value) { m_clientIdsHasBeenSet = true; m_clientIds.push_back(value); return *this; }
 
+
+    /**
+     * <p>The configuration of the user groups from an Amazon Cognito user pool
+     * identity source.</p>
+     */
+    inline const UpdateCognitoGroupConfiguration& GetGroupConfiguration() const{ return m_groupConfiguration; }
+
+    /**
+     * <p>The configuration of the user groups from an Amazon Cognito user pool
+     * identity source.</p>
+     */
+    inline bool GroupConfigurationHasBeenSet() const { return m_groupConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration of the user groups from an Amazon Cognito user pool
+     * identity source.</p>
+     */
+    inline void SetGroupConfiguration(const UpdateCognitoGroupConfiguration& value) { m_groupConfigurationHasBeenSet = true; m_groupConfiguration = value; }
+
+    /**
+     * <p>The configuration of the user groups from an Amazon Cognito user pool
+     * identity source.</p>
+     */
+    inline void SetGroupConfiguration(UpdateCognitoGroupConfiguration&& value) { m_groupConfigurationHasBeenSet = true; m_groupConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration of the user groups from an Amazon Cognito user pool
+     * identity source.</p>
+     */
+    inline UpdateCognitoUserPoolConfiguration& WithGroupConfiguration(const UpdateCognitoGroupConfiguration& value) { SetGroupConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration of the user groups from an Amazon Cognito user pool
+     * identity source.</p>
+     */
+    inline UpdateCognitoUserPoolConfiguration& WithGroupConfiguration(UpdateCognitoGroupConfiguration&& value) { SetGroupConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_userPoolArn;
@@ -165,6 +203,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_clientIds;
     bool m_clientIdsHasBeenSet = false;
+
+    UpdateCognitoGroupConfiguration m_groupConfiguration;
+    bool m_groupConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

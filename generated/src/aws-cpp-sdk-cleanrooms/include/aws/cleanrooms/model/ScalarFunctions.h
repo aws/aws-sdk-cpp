@@ -16,19 +16,30 @@ namespace Model
   enum class ScalarFunctions
   {
     NOT_SET,
-    TRUNC,
     ABS,
+    CAST,
     CEILING,
+    COALESCE,
+    CONVERT,
+    CURRENT_DATE,
+    DATEADD,
+    EXTRACT,
     FLOOR,
+    GETDATE,
     LN,
     LOG,
-    ROUND,
-    SQRT,
-    CAST,
     LOWER,
+    ROUND,
     RTRIM,
-    UPPER,
-    COALESCE
+    SQRT,
+    SUBSTRING,
+    TO_CHAR,
+    TO_DATE,
+    TO_NUMBER,
+    TO_TIMESTAMP,
+    TRIM,
+    TRUNC,
+    UPPER
   };
 
 namespace ScalarFunctionsMapper

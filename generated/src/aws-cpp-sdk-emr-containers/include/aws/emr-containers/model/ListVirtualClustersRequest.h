@@ -284,6 +284,35 @@ namespace Model
      */
     inline ListVirtualClustersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>Optional Boolean that specifies whether the operation should return the
+     * virtual clusters that have the access entry integration enabled or disabled. If
+     * not specified, the operation returns all applicable virtual clusters.</p>
+     */
+    inline bool GetEksAccessEntryIntegrated() const{ return m_eksAccessEntryIntegrated; }
+
+    /**
+     * <p>Optional Boolean that specifies whether the operation should return the
+     * virtual clusters that have the access entry integration enabled or disabled. If
+     * not specified, the operation returns all applicable virtual clusters.</p>
+     */
+    inline bool EksAccessEntryIntegratedHasBeenSet() const { return m_eksAccessEntryIntegratedHasBeenSet; }
+
+    /**
+     * <p>Optional Boolean that specifies whether the operation should return the
+     * virtual clusters that have the access entry integration enabled or disabled. If
+     * not specified, the operation returns all applicable virtual clusters.</p>
+     */
+    inline void SetEksAccessEntryIntegrated(bool value) { m_eksAccessEntryIntegratedHasBeenSet = true; m_eksAccessEntryIntegrated = value; }
+
+    /**
+     * <p>Optional Boolean that specifies whether the operation should return the
+     * virtual clusters that have the access entry integration enabled or disabled. If
+     * not specified, the operation returns all applicable virtual clusters.</p>
+     */
+    inline ListVirtualClustersRequest& WithEksAccessEntryIntegrated(bool value) { SetEksAccessEntryIntegrated(value); return *this;}
+
   private:
 
     Aws::String m_containerProviderId;
@@ -306,6 +335,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    bool m_eksAccessEntryIntegrated;
+    bool m_eksAccessEntryIntegratedHasBeenSet = false;
   };
 
 } // namespace Model

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ivs/model/ChannelLatencyMode.h>
 #include <aws/ivs/model/TranscodePreset.h>
+#include <aws/ivs/model/Srt.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/ivs/model/ChannelType.h>
 #include <utility>
@@ -474,6 +475,43 @@ namespace Model
 
 
     /**
+     * <p>Specifies the endpoint and optional passphrase for streaming with the SRT
+     * protocol.</p>
+     */
+    inline const Srt& GetSrt() const{ return m_srt; }
+
+    /**
+     * <p>Specifies the endpoint and optional passphrase for streaming with the SRT
+     * protocol.</p>
+     */
+    inline bool SrtHasBeenSet() const { return m_srtHasBeenSet; }
+
+    /**
+     * <p>Specifies the endpoint and optional passphrase for streaming with the SRT
+     * protocol.</p>
+     */
+    inline void SetSrt(const Srt& value) { m_srtHasBeenSet = true; m_srt = value; }
+
+    /**
+     * <p>Specifies the endpoint and optional passphrase for streaming with the SRT
+     * protocol.</p>
+     */
+    inline void SetSrt(Srt&& value) { m_srtHasBeenSet = true; m_srt = std::move(value); }
+
+    /**
+     * <p>Specifies the endpoint and optional passphrase for streaming with the SRT
+     * protocol.</p>
+     */
+    inline Channel& WithSrt(const Srt& value) { SetSrt(value); return *this;}
+
+    /**
+     * <p>Specifies the endpoint and optional passphrase for streaming with the SRT
+     * protocol.</p>
+     */
+    inline Channel& WithSrt(Srt&& value) { SetSrt(std::move(value)); return *this;}
+
+
+    /**
      * <p>Tags attached to the resource. Array of 1-50 maps, each of the form
      * <code>string:string (key:value)</code>. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
@@ -689,6 +727,9 @@ namespace Model
 
     Aws::String m_recordingConfigurationArn;
     bool m_recordingConfigurationArnHasBeenSet = false;
+
+    Srt m_srt;
+    bool m_srtHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

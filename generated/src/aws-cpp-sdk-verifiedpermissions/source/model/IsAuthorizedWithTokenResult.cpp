@@ -55,6 +55,12 @@ IsAuthorizedWithTokenResult& IsAuthorizedWithTokenResult::operator =(const Aws::
     }
   }
 
+  if(jsonValue.ValueExists("principal"))
+  {
+    m_principal = jsonValue.GetObject("principal");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

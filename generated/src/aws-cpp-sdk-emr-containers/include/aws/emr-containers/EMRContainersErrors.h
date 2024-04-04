@@ -47,7 +47,8 @@ enum class EMRContainersErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INTERNAL_SERVER= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1
+  E_K_S_REQUEST_THROTTLED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INTERNAL_SERVER
 };
 
 class AWS_EMRCONTAINERS_API EMRContainersError : public Aws::Client::AWSError<EMRContainersErrors>

@@ -20,6 +20,7 @@
 /* Service model headers required in CleanRoomsClient header */
 #include <aws/cleanrooms/model/BatchGetCollaborationAnalysisTemplateResult.h>
 #include <aws/cleanrooms/model/BatchGetSchemaResult.h>
+#include <aws/cleanrooms/model/BatchGetSchemaAnalysisRuleResult.h>
 #include <aws/cleanrooms/model/CreateAnalysisTemplateResult.h>
 #include <aws/cleanrooms/model/CreateCollaborationResult.h>
 #include <aws/cleanrooms/model/CreateConfiguredAudienceModelAssociationResult.h>
@@ -122,6 +123,7 @@ namespace Aws
       /* Service model forward declarations required in CleanRoomsClient header */
       class BatchGetCollaborationAnalysisTemplateRequest;
       class BatchGetSchemaRequest;
+      class BatchGetSchemaAnalysisRuleRequest;
       class CreateAnalysisTemplateRequest;
       class CreateCollaborationRequest;
       class CreateConfiguredAudienceModelAssociationRequest;
@@ -187,6 +189,7 @@ namespace Aws
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<BatchGetCollaborationAnalysisTemplateResult, CleanRoomsError> BatchGetCollaborationAnalysisTemplateOutcome;
       typedef Aws::Utils::Outcome<BatchGetSchemaResult, CleanRoomsError> BatchGetSchemaOutcome;
+      typedef Aws::Utils::Outcome<BatchGetSchemaAnalysisRuleResult, CleanRoomsError> BatchGetSchemaAnalysisRuleOutcome;
       typedef Aws::Utils::Outcome<CreateAnalysisTemplateResult, CleanRoomsError> CreateAnalysisTemplateOutcome;
       typedef Aws::Utils::Outcome<CreateCollaborationResult, CleanRoomsError> CreateCollaborationOutcome;
       typedef Aws::Utils::Outcome<CreateConfiguredAudienceModelAssociationResult, CleanRoomsError> CreateConfiguredAudienceModelAssociationOutcome;
@@ -252,6 +255,7 @@ namespace Aws
       /* Service model Outcome callable definitions */
       typedef std::future<BatchGetCollaborationAnalysisTemplateOutcome> BatchGetCollaborationAnalysisTemplateOutcomeCallable;
       typedef std::future<BatchGetSchemaOutcome> BatchGetSchemaOutcomeCallable;
+      typedef std::future<BatchGetSchemaAnalysisRuleOutcome> BatchGetSchemaAnalysisRuleOutcomeCallable;
       typedef std::future<CreateAnalysisTemplateOutcome> CreateAnalysisTemplateOutcomeCallable;
       typedef std::future<CreateCollaborationOutcome> CreateCollaborationOutcomeCallable;
       typedef std::future<CreateConfiguredAudienceModelAssociationOutcome> CreateConfiguredAudienceModelAssociationOutcomeCallable;
@@ -320,6 +324,7 @@ namespace Aws
     /* Service model async handlers definitions */
     typedef std::function<void(const CleanRoomsClient*, const Model::BatchGetCollaborationAnalysisTemplateRequest&, const Model::BatchGetCollaborationAnalysisTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetCollaborationAnalysisTemplateResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::BatchGetSchemaRequest&, const Model::BatchGetSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetSchemaResponseReceivedHandler;
+    typedef std::function<void(const CleanRoomsClient*, const Model::BatchGetSchemaAnalysisRuleRequest&, const Model::BatchGetSchemaAnalysisRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetSchemaAnalysisRuleResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::CreateAnalysisTemplateRequest&, const Model::CreateAnalysisTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAnalysisTemplateResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::CreateCollaborationRequest&, const Model::CreateCollaborationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCollaborationResponseReceivedHandler;
     typedef std::function<void(const CleanRoomsClient*, const Model::CreateConfiguredAudienceModelAssociationRequest&, const Model::CreateConfiguredAudienceModelAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConfiguredAudienceModelAssociationResponseReceivedHandler;
