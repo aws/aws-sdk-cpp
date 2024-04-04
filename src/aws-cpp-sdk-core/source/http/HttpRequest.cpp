@@ -77,8 +77,16 @@ namespace Aws
                 port << ":" << uri.GetPort();
             }
 
+            // Note: GetURLEncodedPathRFC3986 does legacy mode by default, which
+            // leaves some reserved delimeter characters unencoded (things like
+            // = or , in RFC 3986 parlance). This mode can be adjusted using
+            // flag to use a modern GetURLEncodedPath encoding approach (i.e.
+            // encode everything except for a couple of known safe chars). In
+            // practice however CRT will never support legacy mode and will
+            // always need modern encoding, so be explicit here about which mode
+            // we use.
             ss << SchemeMapper::ToString(uri.GetScheme()) << SEPARATOR << uri.GetAuthority() << port.str()
-                << ((uri.GetPath() == "/") ? "" : uri.GetURLEncodedPathRFC3986())
+                << ((uri.GetPath() == "/") ? "" : uri.GetURLEncodedPath())
                 << uri.GetQueryString();
 
             request->SetPath(Aws::Crt::ByteCursorFromCString(ss.str().c_str()));
