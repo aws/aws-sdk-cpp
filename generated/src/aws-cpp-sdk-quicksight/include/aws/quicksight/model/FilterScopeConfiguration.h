@@ -72,32 +72,50 @@ namespace Model
 
 
     /**
-     * <p>The configuration for applying a filter to all sheets.</p>
+     * <p>The configuration that applies a filter to all sheets. When you choose
+     * <code>AllSheets</code> as the value for a <code>FilterScopeConfiguration</code>,
+     * this filter is applied to all visuals of all sheets in an Analysis, Dashboard,
+     * or Template. The <code>AllSheetsFilterScopeConfiguration</code> is chosen.</p>
      */
     inline const AllSheetsFilterScopeConfiguration& GetAllSheets() const{ return m_allSheets; }
 
     /**
-     * <p>The configuration for applying a filter to all sheets.</p>
+     * <p>The configuration that applies a filter to all sheets. When you choose
+     * <code>AllSheets</code> as the value for a <code>FilterScopeConfiguration</code>,
+     * this filter is applied to all visuals of all sheets in an Analysis, Dashboard,
+     * or Template. The <code>AllSheetsFilterScopeConfiguration</code> is chosen.</p>
      */
     inline bool AllSheetsHasBeenSet() const { return m_allSheetsHasBeenSet; }
 
     /**
-     * <p>The configuration for applying a filter to all sheets.</p>
+     * <p>The configuration that applies a filter to all sheets. When you choose
+     * <code>AllSheets</code> as the value for a <code>FilterScopeConfiguration</code>,
+     * this filter is applied to all visuals of all sheets in an Analysis, Dashboard,
+     * or Template. The <code>AllSheetsFilterScopeConfiguration</code> is chosen.</p>
      */
     inline void SetAllSheets(const AllSheetsFilterScopeConfiguration& value) { m_allSheetsHasBeenSet = true; m_allSheets = value; }
 
     /**
-     * <p>The configuration for applying a filter to all sheets.</p>
+     * <p>The configuration that applies a filter to all sheets. When you choose
+     * <code>AllSheets</code> as the value for a <code>FilterScopeConfiguration</code>,
+     * this filter is applied to all visuals of all sheets in an Analysis, Dashboard,
+     * or Template. The <code>AllSheetsFilterScopeConfiguration</code> is chosen.</p>
      */
     inline void SetAllSheets(AllSheetsFilterScopeConfiguration&& value) { m_allSheetsHasBeenSet = true; m_allSheets = std::move(value); }
 
     /**
-     * <p>The configuration for applying a filter to all sheets.</p>
+     * <p>The configuration that applies a filter to all sheets. When you choose
+     * <code>AllSheets</code> as the value for a <code>FilterScopeConfiguration</code>,
+     * this filter is applied to all visuals of all sheets in an Analysis, Dashboard,
+     * or Template. The <code>AllSheetsFilterScopeConfiguration</code> is chosen.</p>
      */
     inline FilterScopeConfiguration& WithAllSheets(const AllSheetsFilterScopeConfiguration& value) { SetAllSheets(value); return *this;}
 
     /**
-     * <p>The configuration for applying a filter to all sheets.</p>
+     * <p>The configuration that applies a filter to all sheets. When you choose
+     * <code>AllSheets</code> as the value for a <code>FilterScopeConfiguration</code>,
+     * this filter is applied to all visuals of all sheets in an Analysis, Dashboard,
+     * or Template. The <code>AllSheetsFilterScopeConfiguration</code> is chosen.</p>
      */
     inline FilterScopeConfiguration& WithAllSheets(AllSheetsFilterScopeConfiguration&& value) { SetAllSheets(std::move(value)); return *this;}
 

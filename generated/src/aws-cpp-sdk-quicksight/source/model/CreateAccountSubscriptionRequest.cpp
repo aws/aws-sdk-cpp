@@ -29,7 +29,8 @@ CreateAccountSubscriptionRequest::CreateAccountSubscriptionRequest() :
     m_firstNameHasBeenSet(false),
     m_lastNameHasBeenSet(false),
     m_emailAddressHasBeenSet(false),
-    m_contactNumberHasBeenSet(false)
+    m_contactNumberHasBeenSet(false),
+    m_iAMIdentityCenterInstanceArnHasBeenSet(false)
 {
 }
 
@@ -131,6 +132,12 @@ Aws::String CreateAccountSubscriptionRequest::SerializePayload() const
   if(m_contactNumberHasBeenSet)
   {
    payload.WithString("ContactNumber", m_contactNumber);
+
+  }
+
+  if(m_iAMIdentityCenterInstanceArnHasBeenSet)
+  {
+   payload.WithString("IAMIdentityCenterInstanceArn", m_iAMIdentityCenterInstanceArn);
 
   }
 

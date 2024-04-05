@@ -40,9 +40,10 @@ namespace Model
      * <p>The name of the group, which is the identifier of the group in other
      * operations. You can't change the name of a resource group after you create it. A
      * resource group name can consist of letters, numbers, hyphens, periods, and
-     * underscores. The name cannot start with <code>AWS</code> or <code>aws</code>;
-     * these are reserved. A resource group name must be unique within each Amazon Web
-     * Services Region in your Amazon Web Services account.</p>
+     * underscores. The name cannot start with <code>AWS</code>, <code>aws</code>, or
+     * any other possible capitalization; these are reserved. A resource group name
+     * must be unique within each Amazon Web Services Region in your Amazon Web
+     * Services account.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -50,9 +51,10 @@ namespace Model
      * <p>The name of the group, which is the identifier of the group in other
      * operations. You can't change the name of a resource group after you create it. A
      * resource group name can consist of letters, numbers, hyphens, periods, and
-     * underscores. The name cannot start with <code>AWS</code> or <code>aws</code>;
-     * these are reserved. A resource group name must be unique within each Amazon Web
-     * Services Region in your Amazon Web Services account.</p>
+     * underscores. The name cannot start with <code>AWS</code>, <code>aws</code>, or
+     * any other possible capitalization; these are reserved. A resource group name
+     * must be unique within each Amazon Web Services Region in your Amazon Web
+     * Services account.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
@@ -60,9 +62,10 @@ namespace Model
      * <p>The name of the group, which is the identifier of the group in other
      * operations. You can't change the name of a resource group after you create it. A
      * resource group name can consist of letters, numbers, hyphens, periods, and
-     * underscores. The name cannot start with <code>AWS</code> or <code>aws</code>;
-     * these are reserved. A resource group name must be unique within each Amazon Web
-     * Services Region in your Amazon Web Services account.</p>
+     * underscores. The name cannot start with <code>AWS</code>, <code>aws</code>, or
+     * any other possible capitalization; these are reserved. A resource group name
+     * must be unique within each Amazon Web Services Region in your Amazon Web
+     * Services account.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -70,9 +73,10 @@ namespace Model
      * <p>The name of the group, which is the identifier of the group in other
      * operations. You can't change the name of a resource group after you create it. A
      * resource group name can consist of letters, numbers, hyphens, periods, and
-     * underscores. The name cannot start with <code>AWS</code> or <code>aws</code>;
-     * these are reserved. A resource group name must be unique within each Amazon Web
-     * Services Region in your Amazon Web Services account.</p>
+     * underscores. The name cannot start with <code>AWS</code>, <code>aws</code>, or
+     * any other possible capitalization; these are reserved. A resource group name
+     * must be unique within each Amazon Web Services Region in your Amazon Web
+     * Services account.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
@@ -80,9 +84,10 @@ namespace Model
      * <p>The name of the group, which is the identifier of the group in other
      * operations. You can't change the name of a resource group after you create it. A
      * resource group name can consist of letters, numbers, hyphens, periods, and
-     * underscores. The name cannot start with <code>AWS</code> or <code>aws</code>;
-     * these are reserved. A resource group name must be unique within each Amazon Web
-     * Services Region in your Amazon Web Services account.</p>
+     * underscores. The name cannot start with <code>AWS</code>, <code>aws</code>, or
+     * any other possible capitalization; these are reserved. A resource group name
+     * must be unique within each Amazon Web Services Region in your Amazon Web
+     * Services account.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
@@ -90,9 +95,10 @@ namespace Model
      * <p>The name of the group, which is the identifier of the group in other
      * operations. You can't change the name of a resource group after you create it. A
      * resource group name can consist of letters, numbers, hyphens, periods, and
-     * underscores. The name cannot start with <code>AWS</code> or <code>aws</code>;
-     * these are reserved. A resource group name must be unique within each Amazon Web
-     * Services Region in your Amazon Web Services account.</p>
+     * underscores. The name cannot start with <code>AWS</code>, <code>aws</code>, or
+     * any other possible capitalization; these are reserved. A resource group name
+     * must be unique within each Amazon Web Services Region in your Amazon Web
+     * Services account.</p>
      */
     inline CreateGroupRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
@@ -100,9 +106,10 @@ namespace Model
      * <p>The name of the group, which is the identifier of the group in other
      * operations. You can't change the name of a resource group after you create it. A
      * resource group name can consist of letters, numbers, hyphens, periods, and
-     * underscores. The name cannot start with <code>AWS</code> or <code>aws</code>;
-     * these are reserved. A resource group name must be unique within each Amazon Web
-     * Services Region in your Amazon Web Services account.</p>
+     * underscores. The name cannot start with <code>AWS</code>, <code>aws</code>, or
+     * any other possible capitalization; these are reserved. A resource group name
+     * must be unique within each Amazon Web Services Region in your Amazon Web
+     * Services account.</p>
      */
     inline CreateGroupRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
@@ -110,9 +117,10 @@ namespace Model
      * <p>The name of the group, which is the identifier of the group in other
      * operations. You can't change the name of a resource group after you create it. A
      * resource group name can consist of letters, numbers, hyphens, periods, and
-     * underscores. The name cannot start with <code>AWS</code> or <code>aws</code>;
-     * these are reserved. A resource group name must be unique within each Amazon Web
-     * Services Region in your Amazon Web Services account.</p>
+     * underscores. The name cannot start with <code>AWS</code>, <code>aws</code>, or
+     * any other possible capitalization; these are reserved. A resource group name
+     * must be unique within each Amazon Web Services Region in your Amazon Web
+     * Services account.</p>
      */
     inline CreateGroupRequest& WithName(const char* value) { SetName(value); return *this;}
 

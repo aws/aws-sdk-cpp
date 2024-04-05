@@ -19,6 +19,7 @@
 
 /* Service model headers required in VerifiedPermissionsClient header */
 #include <aws/verifiedpermissions/model/BatchIsAuthorizedResult.h>
+#include <aws/verifiedpermissions/model/BatchIsAuthorizedWithTokenResult.h>
 #include <aws/verifiedpermissions/model/CreateIdentitySourceResult.h>
 #include <aws/verifiedpermissions/model/CreatePolicyResult.h>
 #include <aws/verifiedpermissions/model/CreatePolicyStoreResult.h>
@@ -84,6 +85,7 @@ namespace Aws
     {
       /* Service model forward declarations required in VerifiedPermissionsClient header */
       class BatchIsAuthorizedRequest;
+      class BatchIsAuthorizedWithTokenRequest;
       class CreateIdentitySourceRequest;
       class CreatePolicyRequest;
       class CreatePolicyStoreRequest;
@@ -112,6 +114,7 @@ namespace Aws
 
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<BatchIsAuthorizedResult, VerifiedPermissionsError> BatchIsAuthorizedOutcome;
+      typedef Aws::Utils::Outcome<BatchIsAuthorizedWithTokenResult, VerifiedPermissionsError> BatchIsAuthorizedWithTokenOutcome;
       typedef Aws::Utils::Outcome<CreateIdentitySourceResult, VerifiedPermissionsError> CreateIdentitySourceOutcome;
       typedef Aws::Utils::Outcome<CreatePolicyResult, VerifiedPermissionsError> CreatePolicyOutcome;
       typedef Aws::Utils::Outcome<CreatePolicyStoreResult, VerifiedPermissionsError> CreatePolicyStoreOutcome;
@@ -140,6 +143,7 @@ namespace Aws
 
       /* Service model Outcome callable definitions */
       typedef std::future<BatchIsAuthorizedOutcome> BatchIsAuthorizedOutcomeCallable;
+      typedef std::future<BatchIsAuthorizedWithTokenOutcome> BatchIsAuthorizedWithTokenOutcomeCallable;
       typedef std::future<CreateIdentitySourceOutcome> CreateIdentitySourceOutcomeCallable;
       typedef std::future<CreatePolicyOutcome> CreatePolicyOutcomeCallable;
       typedef std::future<CreatePolicyStoreOutcome> CreatePolicyStoreOutcomeCallable;
@@ -171,6 +175,7 @@ namespace Aws
 
     /* Service model async handlers definitions */
     typedef std::function<void(const VerifiedPermissionsClient*, const Model::BatchIsAuthorizedRequest&, const Model::BatchIsAuthorizedOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchIsAuthorizedResponseReceivedHandler;
+    typedef std::function<void(const VerifiedPermissionsClient*, const Model::BatchIsAuthorizedWithTokenRequest&, const Model::BatchIsAuthorizedWithTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchIsAuthorizedWithTokenResponseReceivedHandler;
     typedef std::function<void(const VerifiedPermissionsClient*, const Model::CreateIdentitySourceRequest&, const Model::CreateIdentitySourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIdentitySourceResponseReceivedHandler;
     typedef std::function<void(const VerifiedPermissionsClient*, const Model::CreatePolicyRequest&, const Model::CreatePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePolicyResponseReceivedHandler;
     typedef std::function<void(const VerifiedPermissionsClient*, const Model::CreatePolicyStoreRequest&, const Model::CreatePolicyStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePolicyStoreResponseReceivedHandler;

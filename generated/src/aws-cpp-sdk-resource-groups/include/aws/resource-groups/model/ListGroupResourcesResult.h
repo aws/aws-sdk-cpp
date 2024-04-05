@@ -143,58 +143,72 @@ namespace Model
 
 
     /**
-     * <p>A list of <code>QueryError</code> objects. Each error is an object that
-     * contains <code>ErrorCode</code> and <code>Message</code> structures. Possible
-     * values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code>
-     * and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+     * <p>A list of <code>QueryError</code> objects. Each error contains an
+     * <code>ErrorCode</code> and <code>Message</code>. Possible values for ErrorCode
+     * are <code>CLOUDFORMATION_STACK_INACTIVE</code>,
+     * <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>,
+     * <code>CLOUDFORMATION_STACK_UNASSUMABLE_ROLE</code> and
+     * <code>RESOURCE_TYPE_NOT_SUPPORTED</code>. </p>
      */
     inline const Aws::Vector<QueryError>& GetQueryErrors() const{ return m_queryErrors; }
 
     /**
-     * <p>A list of <code>QueryError</code> objects. Each error is an object that
-     * contains <code>ErrorCode</code> and <code>Message</code> structures. Possible
-     * values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code>
-     * and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+     * <p>A list of <code>QueryError</code> objects. Each error contains an
+     * <code>ErrorCode</code> and <code>Message</code>. Possible values for ErrorCode
+     * are <code>CLOUDFORMATION_STACK_INACTIVE</code>,
+     * <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>,
+     * <code>CLOUDFORMATION_STACK_UNASSUMABLE_ROLE</code> and
+     * <code>RESOURCE_TYPE_NOT_SUPPORTED</code>. </p>
      */
     inline void SetQueryErrors(const Aws::Vector<QueryError>& value) { m_queryErrors = value; }
 
     /**
-     * <p>A list of <code>QueryError</code> objects. Each error is an object that
-     * contains <code>ErrorCode</code> and <code>Message</code> structures. Possible
-     * values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code>
-     * and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+     * <p>A list of <code>QueryError</code> objects. Each error contains an
+     * <code>ErrorCode</code> and <code>Message</code>. Possible values for ErrorCode
+     * are <code>CLOUDFORMATION_STACK_INACTIVE</code>,
+     * <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>,
+     * <code>CLOUDFORMATION_STACK_UNASSUMABLE_ROLE</code> and
+     * <code>RESOURCE_TYPE_NOT_SUPPORTED</code>. </p>
      */
     inline void SetQueryErrors(Aws::Vector<QueryError>&& value) { m_queryErrors = std::move(value); }
 
     /**
-     * <p>A list of <code>QueryError</code> objects. Each error is an object that
-     * contains <code>ErrorCode</code> and <code>Message</code> structures. Possible
-     * values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code>
-     * and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+     * <p>A list of <code>QueryError</code> objects. Each error contains an
+     * <code>ErrorCode</code> and <code>Message</code>. Possible values for ErrorCode
+     * are <code>CLOUDFORMATION_STACK_INACTIVE</code>,
+     * <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>,
+     * <code>CLOUDFORMATION_STACK_UNASSUMABLE_ROLE</code> and
+     * <code>RESOURCE_TYPE_NOT_SUPPORTED</code>. </p>
      */
     inline ListGroupResourcesResult& WithQueryErrors(const Aws::Vector<QueryError>& value) { SetQueryErrors(value); return *this;}
 
     /**
-     * <p>A list of <code>QueryError</code> objects. Each error is an object that
-     * contains <code>ErrorCode</code> and <code>Message</code> structures. Possible
-     * values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code>
-     * and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+     * <p>A list of <code>QueryError</code> objects. Each error contains an
+     * <code>ErrorCode</code> and <code>Message</code>. Possible values for ErrorCode
+     * are <code>CLOUDFORMATION_STACK_INACTIVE</code>,
+     * <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>,
+     * <code>CLOUDFORMATION_STACK_UNASSUMABLE_ROLE</code> and
+     * <code>RESOURCE_TYPE_NOT_SUPPORTED</code>. </p>
      */
     inline ListGroupResourcesResult& WithQueryErrors(Aws::Vector<QueryError>&& value) { SetQueryErrors(std::move(value)); return *this;}
 
     /**
-     * <p>A list of <code>QueryError</code> objects. Each error is an object that
-     * contains <code>ErrorCode</code> and <code>Message</code> structures. Possible
-     * values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code>
-     * and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+     * <p>A list of <code>QueryError</code> objects. Each error contains an
+     * <code>ErrorCode</code> and <code>Message</code>. Possible values for ErrorCode
+     * are <code>CLOUDFORMATION_STACK_INACTIVE</code>,
+     * <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>,
+     * <code>CLOUDFORMATION_STACK_UNASSUMABLE_ROLE</code> and
+     * <code>RESOURCE_TYPE_NOT_SUPPORTED</code>. </p>
      */
     inline ListGroupResourcesResult& AddQueryErrors(const QueryError& value) { m_queryErrors.push_back(value); return *this; }
 
     /**
-     * <p>A list of <code>QueryError</code> objects. Each error is an object that
-     * contains <code>ErrorCode</code> and <code>Message</code> structures. Possible
-     * values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code>
-     * and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+     * <p>A list of <code>QueryError</code> objects. Each error contains an
+     * <code>ErrorCode</code> and <code>Message</code>. Possible values for ErrorCode
+     * are <code>CLOUDFORMATION_STACK_INACTIVE</code>,
+     * <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>,
+     * <code>CLOUDFORMATION_STACK_UNASSUMABLE_ROLE</code> and
+     * <code>RESOURCE_TYPE_NOT_SUPPORTED</code>. </p>
      */
     inline ListGroupResourcesResult& AddQueryErrors(QueryError&& value) { m_queryErrors.push_back(std::move(value)); return *this; }
 
