@@ -836,6 +836,12 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
             }
         }
 
+        // read error info from buffer
+        char errbuf[CURL_ERROR_SIZE];
+        curl_easy_setopt(connectionHandle, CURLOPT_ERRORBUFFER, errbuf);
+        // set the error buffer as empty before performing a request
+        errbuf[0] = 0;
+
         OverrideOptionsOnConnectionHandle(connectionHandle);
         Aws::Utils::DateTime startTransmissionTime = Aws::Utils::DateTime::Now();
         CURLcode curlResponseCode = curl_easy_perform(connectionHandle);
@@ -844,7 +850,15 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
         {
             response->SetClientErrorType(CoreErrors::NETWORK_CONNECTION);
             Aws::StringStream ss;
-            ss << "curlCode: " << curlResponseCode << ", " << curl_easy_strerror(curlResponseCode);
+            size_t len = strlen(errbuf);
+            if (len)
+            {
+                ss << errbuf;
+            }
+            else
+            {
+                ss << "curlCode: " << curlResponseCode << ", " << curl_easy_strerror(curlResponseCode);
+            }
             response->SetClientErrorMessage(ss.str());
             AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Curl returned error code " << curlResponseCode
                     << " - " << curl_easy_strerror(curlResponseCode));
