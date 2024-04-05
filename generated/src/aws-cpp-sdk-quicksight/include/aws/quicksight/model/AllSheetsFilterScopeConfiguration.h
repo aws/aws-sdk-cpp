@@ -22,10 +22,12 @@ namespace Model
 {
 
   /**
-   * <p>The configuration for applying a filter to all sheets. You can apply this
-   * filter to all visuals on every sheet.</p> <p>This is a union type structure. For
-   * this structure to be valid, only one of the attributes can be
-   * defined.</p><p><h3>See Also:</h3>   <a
+   * <p>An empty object that represents that the <code>AllSheets</code> option is the
+   * chosen value for the <code>FilterScopeConfiguration</code> parameter. This
+   * structure applies the filter to all visuals on all sheets of an Analysis,
+   * Dashboard, or Template.</p> <p>This is a union type structure. For this
+   * structure to be valid, only one of the attributes can be defined.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AllSheetsFilterScopeConfiguration">AWS
    * API Reference</a></p>
    */

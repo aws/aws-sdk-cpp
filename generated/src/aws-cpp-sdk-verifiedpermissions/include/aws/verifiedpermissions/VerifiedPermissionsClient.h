@@ -168,6 +168,48 @@ namespace VerifiedPermissions
         }
 
         /**
+         * <p>Makes a series of decisions about multiple authorization requests for one
+         * token. The principal in this request comes from an external identity source in
+         * the form of an identity or access token, formatted as a <a
+         * href="https://wikipedia.org/wiki/JSON_Web_Token">JSON web token (JWT)</a>. The
+         * information in the parameters can also define additional context that Verified
+         * Permissions can include in the evaluations.</p> <p>The request is evaluated
+         * against all policies in the specified policy store that match the entities that
+         * you provide in the entities declaration and in the token. The result of the
+         * decisions is a series of <code>Allow</code> or <code>Deny</code> responses,
+         * along with the IDs of the policies that produced each decision.</p> <p>The
+         * <code>entities</code> of a <code>BatchIsAuthorizedWithToken</code> API request
+         * can contain up to 100 resources and up to 99 user groups. The
+         * <code>requests</code> of a <code>BatchIsAuthorizedWithToken</code> API request
+         * can contain up to 30 requests.</p>  <p>The
+         * <code>BatchIsAuthorizedWithToken</code> operation doesn't have its own IAM
+         * permission. To authorize this operation for Amazon Web Services principals,
+         * include the permission <code>verifiedpermissions:IsAuthorizedWithToken</code> in
+         * their IAM policies.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/BatchIsAuthorizedWithToken">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchIsAuthorizedWithTokenOutcome BatchIsAuthorizedWithToken(const Model::BatchIsAuthorizedWithTokenRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchIsAuthorizedWithToken that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchIsAuthorizedWithTokenRequestT = Model::BatchIsAuthorizedWithTokenRequest>
+        Model::BatchIsAuthorizedWithTokenOutcomeCallable BatchIsAuthorizedWithTokenCallable(const BatchIsAuthorizedWithTokenRequestT& request) const
+        {
+            return SubmitCallable(&VerifiedPermissionsClient::BatchIsAuthorizedWithToken, request);
+        }
+
+        /**
+         * An Async wrapper for BatchIsAuthorizedWithToken that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchIsAuthorizedWithTokenRequestT = Model::BatchIsAuthorizedWithTokenRequest>
+        void BatchIsAuthorizedWithTokenAsync(const BatchIsAuthorizedWithTokenRequestT& request, const BatchIsAuthorizedWithTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&VerifiedPermissionsClient::BatchIsAuthorizedWithToken, request, handler, context);
+        }
+
+        /**
          * <p>Creates a reference to an Amazon Cognito user pool as an external identity
          * provider (IdP). </p> <p>After you create an identity source, you can use the
          * identities provided by the IdP as proxies for the principal in authorization
@@ -611,19 +653,12 @@ namespace VerifiedPermissions
          * Permissions can include in the evaluation. The request is evaluated against all
          * matching policies in the specified policy store. The result of the decision is
          * either <code>Allow</code> or <code>Deny</code>, along with a list of the
-         * policies that resulted in the decision.</p>  <p>If you specify the
-         * <code>identityToken</code> parameter, then this operation derives the principal
-         * from that token. You must not also include that principal in the
-         * <code>entities</code> parameter or the operation fails and reports a conflict
-         * between the two entity sources.</p> <p>If you provide only an
-         * <code>accessToken</code>, then you can include the entity as part of the
-         * <code>entities</code> parameter to provide additional attributes.</p>
-         *  <p>At this time, Verified Permissions accepts tokens from only
-         * Amazon Cognito.</p> <p>Verified Permissions validates each token that is
-         * specified in a request by checking its expiration date and its signature.</p>
-         *  <p>If you delete a Amazon Cognito user pool or user, tokens from
-         * that deleted pool or that deleted user continue to be usable until they
-         * expire.</p> <p><h3>See Also:</h3>   <a
+         * policies that resulted in the decision.</p> <p>At this time, Verified
+         * Permissions accepts tokens from only Amazon Cognito.</p> <p>Verified Permissions
+         * validates each token that is specified in a request by checking its expiration
+         * date and its signature.</p>  <p>If you delete a Amazon Cognito user
+         * pool or user, tokens from that deleted pool or that deleted user continue to be
+         * usable until they expire.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/IsAuthorizedWithToken">AWS
          * API Reference</a></p>
          */

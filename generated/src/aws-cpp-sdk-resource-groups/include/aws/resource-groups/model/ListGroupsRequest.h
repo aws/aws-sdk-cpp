@@ -43,120 +43,160 @@ namespace Model
     /**
      * <p>Filters, formatted as <a>GroupFilter</a> objects, that you want to apply to a
      * <code>ListGroups</code> operation.</p> <ul> <li> <p> <code>resource-type</code>
-     * - Filter the results to include only those of the specified resource types.
-     * Specify up to five resource types in the format
-     * <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example,
-     * <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.</p> </li> <li>
-     * <p> <code>configuration-type</code> - Filter the results to include only those
+     * - Filter the results to include only those resource groups that have the
+     * specified resource type in their <code>ResourceTypeFilter</code>. For example,
+     * <code>AWS::EC2::Instance</code> would return any resource group with a
+     * <code>ResourceTypeFilter</code> that includes
+     * <code>AWS::EC2::Instance</code>.</p> </li> <li> <p>
+     * <code>configuration-type</code> - Filter the results to include only those
      * groups that have the specified configuration types attached. The current
      * supported values are:</p> <ul> <li> <p>
+     * <code>AWS::AppRegistry::Application</code> </p> </li> <li> <p>
+     * <code>AWS::AppRegistry::ApplicationResourceGroups</code> </p> </li> <li> <p>
+     * <code>AWS::CloudFormation::Stack</code> </p> </li> <li> <p>
      * <code>AWS::EC2::CapacityReservationPool</code> </p> </li> <li> <p>
-     * <code>AWS::EC2::HostManagement</code> </p> </li> </ul> </li> </ul>
+     * <code>AWS::EC2::HostManagement</code> </p> </li> <li> <p>
+     * <code>AWS::NetworkFirewall::RuleGroup</code> </p> </li> </ul> </li> </ul>
      */
     inline const Aws::Vector<GroupFilter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>Filters, formatted as <a>GroupFilter</a> objects, that you want to apply to a
      * <code>ListGroups</code> operation.</p> <ul> <li> <p> <code>resource-type</code>
-     * - Filter the results to include only those of the specified resource types.
-     * Specify up to five resource types in the format
-     * <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example,
-     * <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.</p> </li> <li>
-     * <p> <code>configuration-type</code> - Filter the results to include only those
+     * - Filter the results to include only those resource groups that have the
+     * specified resource type in their <code>ResourceTypeFilter</code>. For example,
+     * <code>AWS::EC2::Instance</code> would return any resource group with a
+     * <code>ResourceTypeFilter</code> that includes
+     * <code>AWS::EC2::Instance</code>.</p> </li> <li> <p>
+     * <code>configuration-type</code> - Filter the results to include only those
      * groups that have the specified configuration types attached. The current
      * supported values are:</p> <ul> <li> <p>
+     * <code>AWS::AppRegistry::Application</code> </p> </li> <li> <p>
+     * <code>AWS::AppRegistry::ApplicationResourceGroups</code> </p> </li> <li> <p>
+     * <code>AWS::CloudFormation::Stack</code> </p> </li> <li> <p>
      * <code>AWS::EC2::CapacityReservationPool</code> </p> </li> <li> <p>
-     * <code>AWS::EC2::HostManagement</code> </p> </li> </ul> </li> </ul>
+     * <code>AWS::EC2::HostManagement</code> </p> </li> <li> <p>
+     * <code>AWS::NetworkFirewall::RuleGroup</code> </p> </li> </ul> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>Filters, formatted as <a>GroupFilter</a> objects, that you want to apply to a
      * <code>ListGroups</code> operation.</p> <ul> <li> <p> <code>resource-type</code>
-     * - Filter the results to include only those of the specified resource types.
-     * Specify up to five resource types in the format
-     * <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example,
-     * <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.</p> </li> <li>
-     * <p> <code>configuration-type</code> - Filter the results to include only those
+     * - Filter the results to include only those resource groups that have the
+     * specified resource type in their <code>ResourceTypeFilter</code>. For example,
+     * <code>AWS::EC2::Instance</code> would return any resource group with a
+     * <code>ResourceTypeFilter</code> that includes
+     * <code>AWS::EC2::Instance</code>.</p> </li> <li> <p>
+     * <code>configuration-type</code> - Filter the results to include only those
      * groups that have the specified configuration types attached. The current
      * supported values are:</p> <ul> <li> <p>
+     * <code>AWS::AppRegistry::Application</code> </p> </li> <li> <p>
+     * <code>AWS::AppRegistry::ApplicationResourceGroups</code> </p> </li> <li> <p>
+     * <code>AWS::CloudFormation::Stack</code> </p> </li> <li> <p>
      * <code>AWS::EC2::CapacityReservationPool</code> </p> </li> <li> <p>
-     * <code>AWS::EC2::HostManagement</code> </p> </li> </ul> </li> </ul>
+     * <code>AWS::EC2::HostManagement</code> </p> </li> <li> <p>
+     * <code>AWS::NetworkFirewall::RuleGroup</code> </p> </li> </ul> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<GroupFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>Filters, formatted as <a>GroupFilter</a> objects, that you want to apply to a
      * <code>ListGroups</code> operation.</p> <ul> <li> <p> <code>resource-type</code>
-     * - Filter the results to include only those of the specified resource types.
-     * Specify up to five resource types in the format
-     * <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example,
-     * <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.</p> </li> <li>
-     * <p> <code>configuration-type</code> - Filter the results to include only those
+     * - Filter the results to include only those resource groups that have the
+     * specified resource type in their <code>ResourceTypeFilter</code>. For example,
+     * <code>AWS::EC2::Instance</code> would return any resource group with a
+     * <code>ResourceTypeFilter</code> that includes
+     * <code>AWS::EC2::Instance</code>.</p> </li> <li> <p>
+     * <code>configuration-type</code> - Filter the results to include only those
      * groups that have the specified configuration types attached. The current
      * supported values are:</p> <ul> <li> <p>
+     * <code>AWS::AppRegistry::Application</code> </p> </li> <li> <p>
+     * <code>AWS::AppRegistry::ApplicationResourceGroups</code> </p> </li> <li> <p>
+     * <code>AWS::CloudFormation::Stack</code> </p> </li> <li> <p>
      * <code>AWS::EC2::CapacityReservationPool</code> </p> </li> <li> <p>
-     * <code>AWS::EC2::HostManagement</code> </p> </li> </ul> </li> </ul>
+     * <code>AWS::EC2::HostManagement</code> </p> </li> <li> <p>
+     * <code>AWS::NetworkFirewall::RuleGroup</code> </p> </li> </ul> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<GroupFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>Filters, formatted as <a>GroupFilter</a> objects, that you want to apply to a
      * <code>ListGroups</code> operation.</p> <ul> <li> <p> <code>resource-type</code>
-     * - Filter the results to include only those of the specified resource types.
-     * Specify up to five resource types in the format
-     * <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example,
-     * <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.</p> </li> <li>
-     * <p> <code>configuration-type</code> - Filter the results to include only those
+     * - Filter the results to include only those resource groups that have the
+     * specified resource type in their <code>ResourceTypeFilter</code>. For example,
+     * <code>AWS::EC2::Instance</code> would return any resource group with a
+     * <code>ResourceTypeFilter</code> that includes
+     * <code>AWS::EC2::Instance</code>.</p> </li> <li> <p>
+     * <code>configuration-type</code> - Filter the results to include only those
      * groups that have the specified configuration types attached. The current
      * supported values are:</p> <ul> <li> <p>
+     * <code>AWS::AppRegistry::Application</code> </p> </li> <li> <p>
+     * <code>AWS::AppRegistry::ApplicationResourceGroups</code> </p> </li> <li> <p>
+     * <code>AWS::CloudFormation::Stack</code> </p> </li> <li> <p>
      * <code>AWS::EC2::CapacityReservationPool</code> </p> </li> <li> <p>
-     * <code>AWS::EC2::HostManagement</code> </p> </li> </ul> </li> </ul>
+     * <code>AWS::EC2::HostManagement</code> </p> </li> <li> <p>
+     * <code>AWS::NetworkFirewall::RuleGroup</code> </p> </li> </ul> </li> </ul>
      */
     inline ListGroupsRequest& WithFilters(const Aws::Vector<GroupFilter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>Filters, formatted as <a>GroupFilter</a> objects, that you want to apply to a
      * <code>ListGroups</code> operation.</p> <ul> <li> <p> <code>resource-type</code>
-     * - Filter the results to include only those of the specified resource types.
-     * Specify up to five resource types in the format
-     * <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example,
-     * <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.</p> </li> <li>
-     * <p> <code>configuration-type</code> - Filter the results to include only those
+     * - Filter the results to include only those resource groups that have the
+     * specified resource type in their <code>ResourceTypeFilter</code>. For example,
+     * <code>AWS::EC2::Instance</code> would return any resource group with a
+     * <code>ResourceTypeFilter</code> that includes
+     * <code>AWS::EC2::Instance</code>.</p> </li> <li> <p>
+     * <code>configuration-type</code> - Filter the results to include only those
      * groups that have the specified configuration types attached. The current
      * supported values are:</p> <ul> <li> <p>
+     * <code>AWS::AppRegistry::Application</code> </p> </li> <li> <p>
+     * <code>AWS::AppRegistry::ApplicationResourceGroups</code> </p> </li> <li> <p>
+     * <code>AWS::CloudFormation::Stack</code> </p> </li> <li> <p>
      * <code>AWS::EC2::CapacityReservationPool</code> </p> </li> <li> <p>
-     * <code>AWS::EC2::HostManagement</code> </p> </li> </ul> </li> </ul>
+     * <code>AWS::EC2::HostManagement</code> </p> </li> <li> <p>
+     * <code>AWS::NetworkFirewall::RuleGroup</code> </p> </li> </ul> </li> </ul>
      */
     inline ListGroupsRequest& WithFilters(Aws::Vector<GroupFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>Filters, formatted as <a>GroupFilter</a> objects, that you want to apply to a
      * <code>ListGroups</code> operation.</p> <ul> <li> <p> <code>resource-type</code>
-     * - Filter the results to include only those of the specified resource types.
-     * Specify up to five resource types in the format
-     * <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example,
-     * <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.</p> </li> <li>
-     * <p> <code>configuration-type</code> - Filter the results to include only those
+     * - Filter the results to include only those resource groups that have the
+     * specified resource type in their <code>ResourceTypeFilter</code>. For example,
+     * <code>AWS::EC2::Instance</code> would return any resource group with a
+     * <code>ResourceTypeFilter</code> that includes
+     * <code>AWS::EC2::Instance</code>.</p> </li> <li> <p>
+     * <code>configuration-type</code> - Filter the results to include only those
      * groups that have the specified configuration types attached. The current
      * supported values are:</p> <ul> <li> <p>
+     * <code>AWS::AppRegistry::Application</code> </p> </li> <li> <p>
+     * <code>AWS::AppRegistry::ApplicationResourceGroups</code> </p> </li> <li> <p>
+     * <code>AWS::CloudFormation::Stack</code> </p> </li> <li> <p>
      * <code>AWS::EC2::CapacityReservationPool</code> </p> </li> <li> <p>
-     * <code>AWS::EC2::HostManagement</code> </p> </li> </ul> </li> </ul>
+     * <code>AWS::EC2::HostManagement</code> </p> </li> <li> <p>
+     * <code>AWS::NetworkFirewall::RuleGroup</code> </p> </li> </ul> </li> </ul>
      */
     inline ListGroupsRequest& AddFilters(const GroupFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>Filters, formatted as <a>GroupFilter</a> objects, that you want to apply to a
      * <code>ListGroups</code> operation.</p> <ul> <li> <p> <code>resource-type</code>
-     * - Filter the results to include only those of the specified resource types.
-     * Specify up to five resource types in the format
-     * <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example,
-     * <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.</p> </li> <li>
-     * <p> <code>configuration-type</code> - Filter the results to include only those
+     * - Filter the results to include only those resource groups that have the
+     * specified resource type in their <code>ResourceTypeFilter</code>. For example,
+     * <code>AWS::EC2::Instance</code> would return any resource group with a
+     * <code>ResourceTypeFilter</code> that includes
+     * <code>AWS::EC2::Instance</code>.</p> </li> <li> <p>
+     * <code>configuration-type</code> - Filter the results to include only those
      * groups that have the specified configuration types attached. The current
      * supported values are:</p> <ul> <li> <p>
+     * <code>AWS::AppRegistry::Application</code> </p> </li> <li> <p>
+     * <code>AWS::AppRegistry::ApplicationResourceGroups</code> </p> </li> <li> <p>
+     * <code>AWS::CloudFormation::Stack</code> </p> </li> <li> <p>
      * <code>AWS::EC2::CapacityReservationPool</code> </p> </li> <li> <p>
-     * <code>AWS::EC2::HostManagement</code> </p> </li> </ul> </li> </ul>
+     * <code>AWS::EC2::HostManagement</code> </p> </li> <li> <p>
+     * <code>AWS::NetworkFirewall::RuleGroup</code> </p> </li> </ul> </li> </ul>
      */
     inline ListGroupsRequest& AddFilters(GroupFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
