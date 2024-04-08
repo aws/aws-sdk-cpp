@@ -166,8 +166,7 @@ if (LEGACY_BUILD)
     # build the sdk targets
     project("aws-cpp-sdk-all" VERSION "${PROJECT_VERSION}" LANGUAGES CXX)
 
-    set(Python_ADDITIONAL_VERSIONS 3.7 3.8 3.9 3.10)
-    find_package(PythonInterp)
+    find_package(Python3 COMPONENTS Interpreter Development)
     set(PYTHON3_CMD ${PYTHON_EXECUTABLE})
 
     # ENABLE_ZLIB_REQUEST_COMPRESSION should be ON by default if ZLIB is available
