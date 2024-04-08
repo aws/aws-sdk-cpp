@@ -81,49 +81,49 @@ namespace Model
 
 
     /**
-     * <p>The destination IP address. This will be either <code>IPV4</code> or
+     * <p>The destination IP address. This must be either <code>IPV4</code> or
      * <code>IPV6</code>.</p>
      */
     inline const Aws::String& GetDestination() const{ return m_destination; }
 
     /**
-     * <p>The destination IP address. This will be either <code>IPV4</code> or
+     * <p>The destination IP address. This must be either <code>IPV4</code> or
      * <code>IPV6</code>.</p>
      */
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
 
     /**
-     * <p>The destination IP address. This will be either <code>IPV4</code> or
+     * <p>The destination IP address. This must be either <code>IPV4</code> or
      * <code>IPV6</code>.</p>
      */
     inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
-     * <p>The destination IP address. This will be either <code>IPV4</code> or
+     * <p>The destination IP address. This must be either <code>IPV4</code> or
      * <code>IPV6</code>.</p>
      */
     inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
 
     /**
-     * <p>The destination IP address. This will be either <code>IPV4</code> or
+     * <p>The destination IP address. This must be either <code>IPV4</code> or
      * <code>IPV6</code>.</p>
      */
     inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
 
     /**
-     * <p>The destination IP address. This will be either <code>IPV4</code> or
+     * <p>The destination IP address. This must be either <code>IPV4</code> or
      * <code>IPV6</code>.</p>
      */
     inline CreateMonitorProbeInput& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
 
     /**
-     * <p>The destination IP address. This will be either <code>IPV4</code> or
+     * <p>The destination IP address. This must be either <code>IPV4</code> or
      * <code>IPV6</code>.</p>
      */
     inline CreateMonitorProbeInput& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
 
     /**
-     * <p>The destination IP address. This will be either <code>IPV4</code> or
+     * <p>The destination IP address. This must be either <code>IPV4</code> or
      * <code>IPV6</code>.</p>
      */
     inline CreateMonitorProbeInput& WithDestination(const char* value) { SetDestination(value); return *this;}
@@ -160,67 +160,67 @@ namespace Model
 
     /**
      * <p>The protocol used for the network traffic between the <code>source</code> and
-     * <code>destination</code>. This will be either <code>TCP</code> or
+     * <code>destination</code>. This must be either <code>TCP</code> or
      * <code>ICMP</code>.</p>
      */
     inline const Protocol& GetProtocol() const{ return m_protocol; }
 
     /**
      * <p>The protocol used for the network traffic between the <code>source</code> and
-     * <code>destination</code>. This will be either <code>TCP</code> or
+     * <code>destination</code>. This must be either <code>TCP</code> or
      * <code>ICMP</code>.</p>
      */
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
      * <p>The protocol used for the network traffic between the <code>source</code> and
-     * <code>destination</code>. This will be either <code>TCP</code> or
+     * <code>destination</code>. This must be either <code>TCP</code> or
      * <code>ICMP</code>.</p>
      */
     inline void SetProtocol(const Protocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
      * <p>The protocol used for the network traffic between the <code>source</code> and
-     * <code>destination</code>. This will be either <code>TCP</code> or
+     * <code>destination</code>. This must be either <code>TCP</code> or
      * <code>ICMP</code>.</p>
      */
     inline void SetProtocol(Protocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
      * <p>The protocol used for the network traffic between the <code>source</code> and
-     * <code>destination</code>. This will be either <code>TCP</code> or
+     * <code>destination</code>. This must be either <code>TCP</code> or
      * <code>ICMP</code>.</p>
      */
     inline CreateMonitorProbeInput& WithProtocol(const Protocol& value) { SetProtocol(value); return *this;}
 
     /**
      * <p>The protocol used for the network traffic between the <code>source</code> and
-     * <code>destination</code>. This will be either <code>TCP</code> or
+     * <code>destination</code>. This must be either <code>TCP</code> or
      * <code>ICMP</code>.</p>
      */
     inline CreateMonitorProbeInput& WithProtocol(Protocol&& value) { SetProtocol(std::move(value)); return *this;}
 
 
     /**
-     * <p>The size of the packets sent between the source and destination. This will be
+     * <p>The size of the packets sent between the source and destination. This must be
      * a number between <code>56</code> and <code>8500</code>.</p>
      */
     inline int GetPacketSize() const{ return m_packetSize; }
 
     /**
-     * <p>The size of the packets sent between the source and destination. This will be
+     * <p>The size of the packets sent between the source and destination. This must be
      * a number between <code>56</code> and <code>8500</code>.</p>
      */
     inline bool PacketSizeHasBeenSet() const { return m_packetSizeHasBeenSet; }
 
     /**
-     * <p>The size of the packets sent between the source and destination. This will be
+     * <p>The size of the packets sent between the source and destination. This must be
      * a number between <code>56</code> and <code>8500</code>.</p>
      */
     inline void SetPacketSize(int value) { m_packetSizeHasBeenSet = true; m_packetSize = value; }
 
     /**
-     * <p>The size of the packets sent between the source and destination. This will be
+     * <p>The size of the packets sent between the source and destination. This must be
      * a number between <code>56</code> and <code>8500</code>.</p>
      */
     inline CreateMonitorProbeInput& WithPacketSize(int value) { SetPacketSize(value); return *this;}

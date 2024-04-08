@@ -134,19 +134,19 @@ namespace Model
 
     /**
      * <p>The number of seconds that metrics are aggregated by and sent to Amazon
-     * CloudWatch. This will be either <code>30</code> or <code>60</code>. </p>
+     * CloudWatch. This must be either <code>30</code> or <code>60</code>. </p>
      */
     inline long long GetAggregationPeriod() const{ return m_aggregationPeriod; }
 
     /**
      * <p>The number of seconds that metrics are aggregated by and sent to Amazon
-     * CloudWatch. This will be either <code>30</code> or <code>60</code>. </p>
+     * CloudWatch. This must be either <code>30</code> or <code>60</code>. </p>
      */
     inline void SetAggregationPeriod(long long value) { m_aggregationPeriod = value; }
 
     /**
      * <p>The number of seconds that metrics are aggregated by and sent to Amazon
-     * CloudWatch. This will be either <code>30</code> or <code>60</code>. </p>
+     * CloudWatch. This must be either <code>30</code> or <code>60</code>. </p>
      */
     inline CreateMonitorResult& WithAggregationPeriod(long long value) { SetAggregationPeriod(value); return *this;}
 

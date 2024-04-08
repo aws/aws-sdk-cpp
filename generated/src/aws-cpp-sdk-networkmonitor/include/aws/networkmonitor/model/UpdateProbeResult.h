@@ -182,19 +182,19 @@ namespace Model
 
 
     /**
-     * <p>The updated destination port. This will be a number between <code>1</code>
+     * <p>The updated destination port. This must be a number between <code>1</code>
      * and <code>65536</code>.</p>
      */
     inline int GetDestinationPort() const{ return m_destinationPort; }
 
     /**
-     * <p>The updated destination port. This will be a number between <code>1</code>
+     * <p>The updated destination port. This must be a number between <code>1</code>
      * and <code>65536</code>.</p>
      */
     inline void SetDestinationPort(int value) { m_destinationPort = value; }
 
     /**
-     * <p>The updated destination port. This will be a number between <code>1</code>
+     * <p>The updated destination port. This must be a number between <code>1</code>
      * and <code>65536</code>.</p>
      */
     inline UpdateProbeResult& WithDestinationPort(int value) { SetDestinationPort(value); return *this;}
@@ -243,31 +243,31 @@ namespace Model
 
 
     /**
-     * <p>The updated IP address family. This will be either <code>IPV4</code> or
+     * <p>The updated IP address family. This must be either <code>IPV4</code> or
      * <code>IPV6</code>.</p>
      */
     inline const AddressFamily& GetAddressFamily() const{ return m_addressFamily; }
 
     /**
-     * <p>The updated IP address family. This will be either <code>IPV4</code> or
+     * <p>The updated IP address family. This must be either <code>IPV4</code> or
      * <code>IPV6</code>.</p>
      */
     inline void SetAddressFamily(const AddressFamily& value) { m_addressFamily = value; }
 
     /**
-     * <p>The updated IP address family. This will be either <code>IPV4</code> or
+     * <p>The updated IP address family. This must be either <code>IPV4</code> or
      * <code>IPV6</code>.</p>
      */
     inline void SetAddressFamily(AddressFamily&& value) { m_addressFamily = std::move(value); }
 
     /**
-     * <p>The updated IP address family. This will be either <code>IPV4</code> or
+     * <p>The updated IP address family. This must be either <code>IPV4</code> or
      * <code>IPV6</code>.</p>
      */
     inline UpdateProbeResult& WithAddressFamily(const AddressFamily& value) { SetAddressFamily(value); return *this;}
 
     /**
-     * <p>The updated IP address family. This will be either <code>IPV4</code> or
+     * <p>The updated IP address family. This must be either <code>IPV4</code> or
      * <code>IPV6</code>.</p>
      */
     inline UpdateProbeResult& WithAddressFamily(AddressFamily&& value) { SetAddressFamily(std::move(value)); return *this;}

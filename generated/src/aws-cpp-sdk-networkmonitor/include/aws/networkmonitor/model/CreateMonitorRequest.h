@@ -38,49 +38,49 @@ namespace Model
 
     /**
      * <p>The name identifying the monitor. It can contain only letters, underscores
-     * (_), or dashes (-), and can be up to 255 characters.</p>
+     * (_), or dashes (-), and can be up to 200 characters.</p>
      */
     inline const Aws::String& GetMonitorName() const{ return m_monitorName; }
 
     /**
      * <p>The name identifying the monitor. It can contain only letters, underscores
-     * (_), or dashes (-), and can be up to 255 characters.</p>
+     * (_), or dashes (-), and can be up to 200 characters.</p>
      */
     inline bool MonitorNameHasBeenSet() const { return m_monitorNameHasBeenSet; }
 
     /**
      * <p>The name identifying the monitor. It can contain only letters, underscores
-     * (_), or dashes (-), and can be up to 255 characters.</p>
+     * (_), or dashes (-), and can be up to 200 characters.</p>
      */
     inline void SetMonitorName(const Aws::String& value) { m_monitorNameHasBeenSet = true; m_monitorName = value; }
 
     /**
      * <p>The name identifying the monitor. It can contain only letters, underscores
-     * (_), or dashes (-), and can be up to 255 characters.</p>
+     * (_), or dashes (-), and can be up to 200 characters.</p>
      */
     inline void SetMonitorName(Aws::String&& value) { m_monitorNameHasBeenSet = true; m_monitorName = std::move(value); }
 
     /**
      * <p>The name identifying the monitor. It can contain only letters, underscores
-     * (_), or dashes (-), and can be up to 255 characters.</p>
+     * (_), or dashes (-), and can be up to 200 characters.</p>
      */
     inline void SetMonitorName(const char* value) { m_monitorNameHasBeenSet = true; m_monitorName.assign(value); }
 
     /**
      * <p>The name identifying the monitor. It can contain only letters, underscores
-     * (_), or dashes (-), and can be up to 255 characters.</p>
+     * (_), or dashes (-), and can be up to 200 characters.</p>
      */
     inline CreateMonitorRequest& WithMonitorName(const Aws::String& value) { SetMonitorName(value); return *this;}
 
     /**
      * <p>The name identifying the monitor. It can contain only letters, underscores
-     * (_), or dashes (-), and can be up to 255 characters.</p>
+     * (_), or dashes (-), and can be up to 200 characters.</p>
      */
     inline CreateMonitorRequest& WithMonitorName(Aws::String&& value) { SetMonitorName(std::move(value)); return *this;}
 
     /**
      * <p>The name identifying the monitor. It can contain only letters, underscores
-     * (_), or dashes (-), and can be up to 255 characters.</p>
+     * (_), or dashes (-), and can be up to 200 characters.</p>
      */
     inline CreateMonitorRequest& WithMonitorName(const char* value) { SetMonitorName(value); return *this;}
 

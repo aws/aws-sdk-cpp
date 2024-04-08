@@ -1711,8 +1711,9 @@ namespace mgn
         }
 
         /**
-         * <p>Updates multiple LaunchConfigurations by Source Server ID.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates multiple LaunchConfigurations by Source Server ID.</p> 
+         * <p>bootMode valid values are <code>LEGACY_BIOS | UEFI</code> </p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateLaunchConfiguration">AWS
          * API Reference</a></p>
          */
