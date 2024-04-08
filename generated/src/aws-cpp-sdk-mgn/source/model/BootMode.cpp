@@ -22,6 +22,7 @@ namespace Aws
 
         static const int LEGACY_BIOS_HASH = HashingUtils::HashString("LEGACY_BIOS");
         static const int UEFI_HASH = HashingUtils::HashString("UEFI");
+        static const int USE_SOURCE_HASH = HashingUtils::HashString("USE_SOURCE");
 
 
         BootMode GetBootModeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == UEFI_HASH)
           {
             return BootMode::UEFI;
+          }
+          else if (hashCode == USE_SOURCE_HASH)
+          {
+            return BootMode::USE_SOURCE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "LEGACY_BIOS";
           case BootMode::UEFI:
             return "UEFI";
+          case BootMode::USE_SOURCE:
+            return "USE_SOURCE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

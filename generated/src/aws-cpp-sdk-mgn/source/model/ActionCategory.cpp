@@ -25,6 +25,7 @@ namespace Aws
         static const int LICENSE_AND_SUBSCRIPTION_HASH = HashingUtils::HashString("LICENSE_AND_SUBSCRIPTION");
         static const int VALIDATION_HASH = HashingUtils::HashString("VALIDATION");
         static const int OBSERVABILITY_HASH = HashingUtils::HashString("OBSERVABILITY");
+        static const int REFACTORING_HASH = HashingUtils::HashString("REFACTORING");
         static const int SECURITY_HASH = HashingUtils::HashString("SECURITY");
         static const int NETWORKING_HASH = HashingUtils::HashString("NETWORKING");
         static const int CONFIGURATION_HASH = HashingUtils::HashString("CONFIGURATION");
@@ -54,6 +55,10 @@ namespace Aws
           else if (hashCode == OBSERVABILITY_HASH)
           {
             return ActionCategory::OBSERVABILITY;
+          }
+          else if (hashCode == REFACTORING_HASH)
+          {
+            return ActionCategory::REFACTORING;
           }
           else if (hashCode == SECURITY_HASH)
           {
@@ -101,6 +106,8 @@ namespace Aws
             return "VALIDATION";
           case ActionCategory::OBSERVABILITY:
             return "OBSERVABILITY";
+          case ActionCategory::REFACTORING:
+            return "REFACTORING";
           case ActionCategory::SECURITY:
             return "SECURITY";
           case ActionCategory::NETWORKING:

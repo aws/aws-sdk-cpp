@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     LEGACY_BIOS,
-    UEFI
+    UEFI,
+    USE_SOURCE
   };
 
 namespace BootModeMapper

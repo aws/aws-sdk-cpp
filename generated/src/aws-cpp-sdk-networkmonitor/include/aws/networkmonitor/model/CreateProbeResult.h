@@ -146,43 +146,43 @@ namespace Model
 
 
     /**
-     * <p>The destination IP address for the monitor. This will be either an IPv4 or
+     * <p>The destination IP address for the monitor. This must be either an IPv4 or
      * IPv6 address.</p>
      */
     inline const Aws::String& GetDestination() const{ return m_destination; }
 
     /**
-     * <p>The destination IP address for the monitor. This will be either an IPv4 or
+     * <p>The destination IP address for the monitor. This must be either an IPv4 or
      * IPv6 address.</p>
      */
     inline void SetDestination(const Aws::String& value) { m_destination = value; }
 
     /**
-     * <p>The destination IP address for the monitor. This will be either an IPv4 or
+     * <p>The destination IP address for the monitor. This must be either an IPv4 or
      * IPv6 address.</p>
      */
     inline void SetDestination(Aws::String&& value) { m_destination = std::move(value); }
 
     /**
-     * <p>The destination IP address for the monitor. This will be either an IPv4 or
+     * <p>The destination IP address for the monitor. This must be either an IPv4 or
      * IPv6 address.</p>
      */
     inline void SetDestination(const char* value) { m_destination.assign(value); }
 
     /**
-     * <p>The destination IP address for the monitor. This will be either an IPv4 or
+     * <p>The destination IP address for the monitor. This must be either an IPv4 or
      * IPv6 address.</p>
      */
     inline CreateProbeResult& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
 
     /**
-     * <p>The destination IP address for the monitor. This will be either an IPv4 or
+     * <p>The destination IP address for the monitor. This must be either an IPv4 or
      * IPv6 address.</p>
      */
     inline CreateProbeResult& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
 
     /**
-     * <p>The destination IP address for the monitor. This will be either an IPv4 or
+     * <p>The destination IP address for the monitor. This must be either an IPv4 or
      * IPv6 address.</p>
      */
     inline CreateProbeResult& WithDestination(const char* value) { SetDestination(value); return *this;}
@@ -212,54 +212,54 @@ namespace Model
 
     /**
      * <p>The protocol used for the network traffic between the <code>source</code> and
-     * <code>destination</code>. This will be either <code>TCP</code> or
+     * <code>destination</code>. This must be either <code>TCP</code> or
      * <code>ICMP</code>.</p>
      */
     inline const Protocol& GetProtocol() const{ return m_protocol; }
 
     /**
      * <p>The protocol used for the network traffic between the <code>source</code> and
-     * <code>destination</code>. This will be either <code>TCP</code> or
+     * <code>destination</code>. This must be either <code>TCP</code> or
      * <code>ICMP</code>.</p>
      */
     inline void SetProtocol(const Protocol& value) { m_protocol = value; }
 
     /**
      * <p>The protocol used for the network traffic between the <code>source</code> and
-     * <code>destination</code>. This will be either <code>TCP</code> or
+     * <code>destination</code>. This must be either <code>TCP</code> or
      * <code>ICMP</code>.</p>
      */
     inline void SetProtocol(Protocol&& value) { m_protocol = std::move(value); }
 
     /**
      * <p>The protocol used for the network traffic between the <code>source</code> and
-     * <code>destination</code>. This will be either <code>TCP</code> or
+     * <code>destination</code>. This must be either <code>TCP</code> or
      * <code>ICMP</code>.</p>
      */
     inline CreateProbeResult& WithProtocol(const Protocol& value) { SetProtocol(value); return *this;}
 
     /**
      * <p>The protocol used for the network traffic between the <code>source</code> and
-     * <code>destination</code>. This will be either <code>TCP</code> or
+     * <code>destination</code>. This must be either <code>TCP</code> or
      * <code>ICMP</code>.</p>
      */
     inline CreateProbeResult& WithProtocol(Protocol&& value) { SetProtocol(std::move(value)); return *this;}
 
 
     /**
-     * <p>The size of the packets sent between the source and destination. This will be
+     * <p>The size of the packets sent between the source and destination. This must be
      * a number between <code>56</code> and <code>8500</code>.</p>
      */
     inline int GetPacketSize() const{ return m_packetSize; }
 
     /**
-     * <p>The size of the packets sent between the source and destination. This will be
+     * <p>The size of the packets sent between the source and destination. This must be
      * a number between <code>56</code> and <code>8500</code>.</p>
      */
     inline void SetPacketSize(int value) { m_packetSize = value; }
 
     /**
-     * <p>The size of the packets sent between the source and destination. This will be
+     * <p>The size of the packets sent between the source and destination. This must be
      * a number between <code>56</code> and <code>8500</code>.</p>
      */
     inline CreateProbeResult& WithPacketSize(int value) { SetPacketSize(value); return *this;}
