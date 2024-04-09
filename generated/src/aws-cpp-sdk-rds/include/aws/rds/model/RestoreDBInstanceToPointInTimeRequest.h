@@ -2662,6 +2662,111 @@ namespace Model
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDedicatedLogVolume(bool value) { SetDedicatedLogVolume(value); return *this;}
 
+
+    /**
+     * <p>The CA certificate identifier to use for the DB instance's server
+     * certificate.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html">
+     * Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon
+     * Aurora User Guide</i>.</p>
+     */
+    inline const Aws::String& GetCACertificateIdentifier() const{ return m_cACertificateIdentifier; }
+
+    /**
+     * <p>The CA certificate identifier to use for the DB instance's server
+     * certificate.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html">
+     * Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon
+     * Aurora User Guide</i>.</p>
+     */
+    inline bool CACertificateIdentifierHasBeenSet() const { return m_cACertificateIdentifierHasBeenSet; }
+
+    /**
+     * <p>The CA certificate identifier to use for the DB instance's server
+     * certificate.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html">
+     * Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon
+     * Aurora User Guide</i>.</p>
+     */
+    inline void SetCACertificateIdentifier(const Aws::String& value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier = value; }
+
+    /**
+     * <p>The CA certificate identifier to use for the DB instance's server
+     * certificate.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html">
+     * Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon
+     * Aurora User Guide</i>.</p>
+     */
+    inline void SetCACertificateIdentifier(Aws::String&& value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier = std::move(value); }
+
+    /**
+     * <p>The CA certificate identifier to use for the DB instance's server
+     * certificate.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html">
+     * Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon
+     * Aurora User Guide</i>.</p>
+     */
+    inline void SetCACertificateIdentifier(const char* value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier.assign(value); }
+
+    /**
+     * <p>The CA certificate identifier to use for the DB instance's server
+     * certificate.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html">
+     * Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon
+     * Aurora User Guide</i>.</p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithCACertificateIdentifier(const Aws::String& value) { SetCACertificateIdentifier(value); return *this;}
+
+    /**
+     * <p>The CA certificate identifier to use for the DB instance's server
+     * certificate.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html">
+     * Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon
+     * Aurora User Guide</i>.</p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithCACertificateIdentifier(Aws::String&& value) { SetCACertificateIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>The CA certificate identifier to use for the DB instance's server
+     * certificate.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html">
+     * Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon
+     * Aurora User Guide</i>.</p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithCACertificateIdentifier(const char* value) { SetCACertificateIdentifier(value); return *this;}
+
   private:
 
     Aws::String m_sourceDBInstanceIdentifier;
@@ -2795,6 +2900,9 @@ namespace Model
 
     bool m_dedicatedLogVolume;
     bool m_dedicatedLogVolumeHasBeenSet = false;
+
+    Aws::String m_cACertificateIdentifier;
+    bool m_cACertificateIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

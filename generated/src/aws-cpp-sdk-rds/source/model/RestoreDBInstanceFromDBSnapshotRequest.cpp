@@ -63,7 +63,8 @@ RestoreDBInstanceFromDBSnapshotRequest::RestoreDBInstanceFromDBSnapshotRequest()
     m_allocatedStorage(0),
     m_allocatedStorageHasBeenSet(false),
     m_dedicatedLogVolume(false),
-    m_dedicatedLogVolumeHasBeenSet(false)
+    m_dedicatedLogVolumeHasBeenSet(false),
+    m_cACertificateIdentifierHasBeenSet(false)
 {
 }
 
@@ -297,6 +298,11 @@ Aws::String RestoreDBInstanceFromDBSnapshotRequest::SerializePayload() const
   if(m_dedicatedLogVolumeHasBeenSet)
   {
     ss << "DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
+  }
+
+  if(m_cACertificateIdentifierHasBeenSet)
+  {
+    ss << "CACertificateIdentifier=" << StringUtils::URLEncode(m_cACertificateIdentifier.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

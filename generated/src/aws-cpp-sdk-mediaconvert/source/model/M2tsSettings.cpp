@@ -68,6 +68,8 @@ M2tsSettings::M2tsSettings() :
     m_pmtIntervalHasBeenSet(false),
     m_pmtPid(0),
     m_pmtPidHasBeenSet(false),
+    m_preventBufferUnderflow(M2tsPreventBufferUnderflow::NOT_SET),
+    m_preventBufferUnderflowHasBeenSet(false),
     m_privateMetadataPid(0),
     m_privateMetadataPidHasBeenSet(false),
     m_programNumber(0),
@@ -148,6 +150,8 @@ M2tsSettings::M2tsSettings(JsonView jsonValue) :
     m_pmtIntervalHasBeenSet(false),
     m_pmtPid(0),
     m_pmtPidHasBeenSet(false),
+    m_preventBufferUnderflow(M2tsPreventBufferUnderflow::NOT_SET),
+    m_preventBufferUnderflowHasBeenSet(false),
     m_privateMetadataPid(0),
     m_privateMetadataPidHasBeenSet(false),
     m_programNumber(0),
@@ -374,6 +378,13 @@ M2tsSettings& M2tsSettings::operator =(JsonView jsonValue)
     m_pmtPid = jsonValue.GetInteger("pmtPid");
 
     m_pmtPidHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("preventBufferUnderflow"))
+  {
+    m_preventBufferUnderflow = M2tsPreventBufferUnderflowMapper::GetM2tsPreventBufferUnderflowForName(jsonValue.GetString("preventBufferUnderflow"));
+
+    m_preventBufferUnderflowHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("privateMetadataPid"))
@@ -640,6 +651,11 @@ JsonValue M2tsSettings::Jsonize() const
   {
    payload.WithInteger("pmtPid", m_pmtPid);
 
+  }
+
+  if(m_preventBufferUnderflowHasBeenSet)
+  {
+   payload.WithString("preventBufferUnderflow", M2tsPreventBufferUnderflowMapper::GetNameForM2tsPreventBufferUnderflow(m_preventBufferUnderflow));
   }
 
   if(m_privateMetadataPidHasBeenSet)

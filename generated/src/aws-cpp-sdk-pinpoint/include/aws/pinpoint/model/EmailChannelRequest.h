@@ -286,6 +286,55 @@ namespace Model
      */
     inline EmailChannelRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
+    /**
+     * <p>The ARN of an IAM role for Amazon Pinpoint to use to send email from your
+     * campaigns or journeys through Amazon SES.</p>
+     */
+    inline const Aws::String& GetOrchestrationSendingRoleArn() const{ return m_orchestrationSendingRoleArn; }
+
+    /**
+     * <p>The ARN of an IAM role for Amazon Pinpoint to use to send email from your
+     * campaigns or journeys through Amazon SES.</p>
+     */
+    inline bool OrchestrationSendingRoleArnHasBeenSet() const { return m_orchestrationSendingRoleArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of an IAM role for Amazon Pinpoint to use to send email from your
+     * campaigns or journeys through Amazon SES.</p>
+     */
+    inline void SetOrchestrationSendingRoleArn(const Aws::String& value) { m_orchestrationSendingRoleArnHasBeenSet = true; m_orchestrationSendingRoleArn = value; }
+
+    /**
+     * <p>The ARN of an IAM role for Amazon Pinpoint to use to send email from your
+     * campaigns or journeys through Amazon SES.</p>
+     */
+    inline void SetOrchestrationSendingRoleArn(Aws::String&& value) { m_orchestrationSendingRoleArnHasBeenSet = true; m_orchestrationSendingRoleArn = std::move(value); }
+
+    /**
+     * <p>The ARN of an IAM role for Amazon Pinpoint to use to send email from your
+     * campaigns or journeys through Amazon SES.</p>
+     */
+    inline void SetOrchestrationSendingRoleArn(const char* value) { m_orchestrationSendingRoleArnHasBeenSet = true; m_orchestrationSendingRoleArn.assign(value); }
+
+    /**
+     * <p>The ARN of an IAM role for Amazon Pinpoint to use to send email from your
+     * campaigns or journeys through Amazon SES.</p>
+     */
+    inline EmailChannelRequest& WithOrchestrationSendingRoleArn(const Aws::String& value) { SetOrchestrationSendingRoleArn(value); return *this;}
+
+    /**
+     * <p>The ARN of an IAM role for Amazon Pinpoint to use to send email from your
+     * campaigns or journeys through Amazon SES.</p>
+     */
+    inline EmailChannelRequest& WithOrchestrationSendingRoleArn(Aws::String&& value) { SetOrchestrationSendingRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of an IAM role for Amazon Pinpoint to use to send email from your
+     * campaigns or journeys through Amazon SES.</p>
+     */
+    inline EmailChannelRequest& WithOrchestrationSendingRoleArn(const char* value) { SetOrchestrationSendingRoleArn(value); return *this;}
+
   private:
 
     Aws::String m_configurationSet;
@@ -302,6 +351,9 @@ namespace Model
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
+
+    Aws::String m_orchestrationSendingRoleArn;
+    bool m_orchestrationSendingRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

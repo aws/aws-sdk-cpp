@@ -2290,7 +2290,8 @@ namespace Model
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
      * <code>serverless</code>.</p> <p>The <code>serverless</code> engine mode only
-     * applies for Aurora Serverless v1 DB clusters.</p> <p>For information about
+     * applies for Aurora Serverless v1 DB clusters. Aurora Serverless v2 DB clusters
+     * use the <code>provisioned</code> engine mode.</p> <p>For information about
      * limitations and requirements for Serverless DB clusters, see the following
      * sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">Limitations
@@ -2304,7 +2305,8 @@ namespace Model
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
      * <code>serverless</code>.</p> <p>The <code>serverless</code> engine mode only
-     * applies for Aurora Serverless v1 DB clusters.</p> <p>For information about
+     * applies for Aurora Serverless v1 DB clusters. Aurora Serverless v2 DB clusters
+     * use the <code>provisioned</code> engine mode.</p> <p>For information about
      * limitations and requirements for Serverless DB clusters, see the following
      * sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">Limitations
@@ -2318,7 +2320,8 @@ namespace Model
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
      * <code>serverless</code>.</p> <p>The <code>serverless</code> engine mode only
-     * applies for Aurora Serverless v1 DB clusters.</p> <p>For information about
+     * applies for Aurora Serverless v1 DB clusters. Aurora Serverless v2 DB clusters
+     * use the <code>provisioned</code> engine mode.</p> <p>For information about
      * limitations and requirements for Serverless DB clusters, see the following
      * sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">Limitations
@@ -2332,7 +2335,8 @@ namespace Model
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
      * <code>serverless</code>.</p> <p>The <code>serverless</code> engine mode only
-     * applies for Aurora Serverless v1 DB clusters.</p> <p>For information about
+     * applies for Aurora Serverless v1 DB clusters. Aurora Serverless v2 DB clusters
+     * use the <code>provisioned</code> engine mode.</p> <p>For information about
      * limitations and requirements for Serverless DB clusters, see the following
      * sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">Limitations
@@ -2346,7 +2350,8 @@ namespace Model
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
      * <code>serverless</code>.</p> <p>The <code>serverless</code> engine mode only
-     * applies for Aurora Serverless v1 DB clusters.</p> <p>For information about
+     * applies for Aurora Serverless v1 DB clusters. Aurora Serverless v2 DB clusters
+     * use the <code>provisioned</code> engine mode.</p> <p>For information about
      * limitations and requirements for Serverless DB clusters, see the following
      * sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">Limitations
@@ -2360,7 +2365,8 @@ namespace Model
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
      * <code>serverless</code>.</p> <p>The <code>serverless</code> engine mode only
-     * applies for Aurora Serverless v1 DB clusters.</p> <p>For information about
+     * applies for Aurora Serverless v1 DB clusters. Aurora Serverless v2 DB clusters
+     * use the <code>provisioned</code> engine mode.</p> <p>For information about
      * limitations and requirements for Serverless DB clusters, see the following
      * sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">Limitations
@@ -2374,7 +2380,8 @@ namespace Model
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
      * <code>serverless</code>.</p> <p>The <code>serverless</code> engine mode only
-     * applies for Aurora Serverless v1 DB clusters.</p> <p>For information about
+     * applies for Aurora Serverless v1 DB clusters. Aurora Serverless v2 DB clusters
+     * use the <code>provisioned</code> engine mode.</p> <p>For information about
      * limitations and requirements for Serverless DB clusters, see the following
      * sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">Limitations
@@ -2388,7 +2395,8 @@ namespace Model
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
      * <code>serverless</code>.</p> <p>The <code>serverless</code> engine mode only
-     * applies for Aurora Serverless v1 DB clusters.</p> <p>For information about
+     * applies for Aurora Serverless v1 DB clusters. Aurora Serverless v2 DB clusters
+     * use the <code>provisioned</code> engine mode.</p> <p>For information about
      * limitations and requirements for Serverless DB clusters, see the following
      * sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">Limitations

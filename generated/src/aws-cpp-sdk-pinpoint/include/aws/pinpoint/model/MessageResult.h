@@ -52,9 +52,7 @@ namespace Model
      * <li><p>TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint won't
      * attempt to send the message again.</p></li> <li><p>THROTTLED - Amazon Pinpoint
      * throttled the operation to send the message to the endpoint address.</p></li>
-     * <li><p>TIMEOUT - The message couldn't be sent within the timeout
-     * period.</p></li> <li><p>UNKNOWN_FAILURE - An unknown error
-     * occurred.</p></li></ul>
+     * <li><p>UNKNOWN_FAILURE - An unknown error occurred.</p></li></ul>
      */
     inline const DeliveryStatus& GetDeliveryStatus() const{ return m_deliveryStatus; }
 
@@ -71,9 +69,7 @@ namespace Model
      * <li><p>TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint won't
      * attempt to send the message again.</p></li> <li><p>THROTTLED - Amazon Pinpoint
      * throttled the operation to send the message to the endpoint address.</p></li>
-     * <li><p>TIMEOUT - The message couldn't be sent within the timeout
-     * period.</p></li> <li><p>UNKNOWN_FAILURE - An unknown error
-     * occurred.</p></li></ul>
+     * <li><p>UNKNOWN_FAILURE - An unknown error occurred.</p></li></ul>
      */
     inline bool DeliveryStatusHasBeenSet() const { return m_deliveryStatusHasBeenSet; }
 
@@ -90,9 +86,7 @@ namespace Model
      * <li><p>TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint won't
      * attempt to send the message again.</p></li> <li><p>THROTTLED - Amazon Pinpoint
      * throttled the operation to send the message to the endpoint address.</p></li>
-     * <li><p>TIMEOUT - The message couldn't be sent within the timeout
-     * period.</p></li> <li><p>UNKNOWN_FAILURE - An unknown error
-     * occurred.</p></li></ul>
+     * <li><p>UNKNOWN_FAILURE - An unknown error occurred.</p></li></ul>
      */
     inline void SetDeliveryStatus(const DeliveryStatus& value) { m_deliveryStatusHasBeenSet = true; m_deliveryStatus = value; }
 
@@ -109,9 +103,7 @@ namespace Model
      * <li><p>TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint won't
      * attempt to send the message again.</p></li> <li><p>THROTTLED - Amazon Pinpoint
      * throttled the operation to send the message to the endpoint address.</p></li>
-     * <li><p>TIMEOUT - The message couldn't be sent within the timeout
-     * period.</p></li> <li><p>UNKNOWN_FAILURE - An unknown error
-     * occurred.</p></li></ul>
+     * <li><p>UNKNOWN_FAILURE - An unknown error occurred.</p></li></ul>
      */
     inline void SetDeliveryStatus(DeliveryStatus&& value) { m_deliveryStatusHasBeenSet = true; m_deliveryStatus = std::move(value); }
 
@@ -128,9 +120,7 @@ namespace Model
      * <li><p>TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint won't
      * attempt to send the message again.</p></li> <li><p>THROTTLED - Amazon Pinpoint
      * throttled the operation to send the message to the endpoint address.</p></li>
-     * <li><p>TIMEOUT - The message couldn't be sent within the timeout
-     * period.</p></li> <li><p>UNKNOWN_FAILURE - An unknown error
-     * occurred.</p></li></ul>
+     * <li><p>UNKNOWN_FAILURE - An unknown error occurred.</p></li></ul>
      */
     inline MessageResult& WithDeliveryStatus(const DeliveryStatus& value) { SetDeliveryStatus(value); return *this;}
 
@@ -147,9 +137,7 @@ namespace Model
      * <li><p>TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint won't
      * attempt to send the message again.</p></li> <li><p>THROTTLED - Amazon Pinpoint
      * throttled the operation to send the message to the endpoint address.</p></li>
-     * <li><p>TIMEOUT - The message couldn't be sent within the timeout
-     * period.</p></li> <li><p>UNKNOWN_FAILURE - An unknown error
-     * occurred.</p></li></ul>
+     * <li><p>UNKNOWN_FAILURE - An unknown error occurred.</p></li></ul>
      */
     inline MessageResult& WithDeliveryStatus(DeliveryStatus&& value) { SetDeliveryStatus(std::move(value)); return *this;}
 

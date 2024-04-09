@@ -114,49 +114,65 @@ namespace Model
 
     /**
      * Use 3D LUTs to specify custom color mapping behavior when you convert from one
-     * color space into another. You can include up to 8 different 3D LUTs.
+     * color space into another. You can include up to 8 different 3D LUTs. For more
+     * information, see:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/3d-luts.html
      */
     inline const Aws::Vector<ColorConversion3DLUTSetting>& GetColorConversion3DLUTSettings() const{ return m_colorConversion3DLUTSettings; }
 
     /**
      * Use 3D LUTs to specify custom color mapping behavior when you convert from one
-     * color space into another. You can include up to 8 different 3D LUTs.
+     * color space into another. You can include up to 8 different 3D LUTs. For more
+     * information, see:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/3d-luts.html
      */
     inline bool ColorConversion3DLUTSettingsHasBeenSet() const { return m_colorConversion3DLUTSettingsHasBeenSet; }
 
     /**
      * Use 3D LUTs to specify custom color mapping behavior when you convert from one
-     * color space into another. You can include up to 8 different 3D LUTs.
+     * color space into another. You can include up to 8 different 3D LUTs. For more
+     * information, see:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/3d-luts.html
      */
     inline void SetColorConversion3DLUTSettings(const Aws::Vector<ColorConversion3DLUTSetting>& value) { m_colorConversion3DLUTSettingsHasBeenSet = true; m_colorConversion3DLUTSettings = value; }
 
     /**
      * Use 3D LUTs to specify custom color mapping behavior when you convert from one
-     * color space into another. You can include up to 8 different 3D LUTs.
+     * color space into another. You can include up to 8 different 3D LUTs. For more
+     * information, see:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/3d-luts.html
      */
     inline void SetColorConversion3DLUTSettings(Aws::Vector<ColorConversion3DLUTSetting>&& value) { m_colorConversion3DLUTSettingsHasBeenSet = true; m_colorConversion3DLUTSettings = std::move(value); }
 
     /**
      * Use 3D LUTs to specify custom color mapping behavior when you convert from one
-     * color space into another. You can include up to 8 different 3D LUTs.
+     * color space into another. You can include up to 8 different 3D LUTs. For more
+     * information, see:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/3d-luts.html
      */
     inline JobTemplateSettings& WithColorConversion3DLUTSettings(const Aws::Vector<ColorConversion3DLUTSetting>& value) { SetColorConversion3DLUTSettings(value); return *this;}
 
     /**
      * Use 3D LUTs to specify custom color mapping behavior when you convert from one
-     * color space into another. You can include up to 8 different 3D LUTs.
+     * color space into another. You can include up to 8 different 3D LUTs. For more
+     * information, see:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/3d-luts.html
      */
     inline JobTemplateSettings& WithColorConversion3DLUTSettings(Aws::Vector<ColorConversion3DLUTSetting>&& value) { SetColorConversion3DLUTSettings(std::move(value)); return *this;}
 
     /**
      * Use 3D LUTs to specify custom color mapping behavior when you convert from one
-     * color space into another. You can include up to 8 different 3D LUTs.
+     * color space into another. You can include up to 8 different 3D LUTs. For more
+     * information, see:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/3d-luts.html
      */
     inline JobTemplateSettings& AddColorConversion3DLUTSettings(const ColorConversion3DLUTSetting& value) { m_colorConversion3DLUTSettingsHasBeenSet = true; m_colorConversion3DLUTSettings.push_back(value); return *this; }
 
     /**
      * Use 3D LUTs to specify custom color mapping behavior when you convert from one
-     * color space into another. You can include up to 8 different 3D LUTs.
+     * color space into another. You can include up to 8 different 3D LUTs. For more
+     * information, see:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/3d-luts.html
      */
     inline JobTemplateSettings& AddColorConversion3DLUTSettings(ColorConversion3DLUTSetting&& value) { m_colorConversion3DLUTSettingsHasBeenSet = true; m_colorConversion3DLUTSettings.push_back(std::move(value)); return *this; }
 

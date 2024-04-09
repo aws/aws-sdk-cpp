@@ -74,6 +74,7 @@ CreateDBInstanceReadReplicaRequest::CreateDBInstanceReadReplicaRequest() :
     m_dedicatedLogVolumeHasBeenSet(false),
     m_upgradeStorageConfig(false),
     m_upgradeStorageConfigHasBeenSet(false),
+    m_cACertificateIdentifierHasBeenSet(false),
     m_sourceRegionHasBeenSet(false)
 {
 }
@@ -328,6 +329,11 @@ Aws::String CreateDBInstanceReadReplicaRequest::SerializePayload() const
   if(m_upgradeStorageConfigHasBeenSet)
   {
     ss << "UpgradeStorageConfig=" << std::boolalpha << m_upgradeStorageConfig << "&";
+  }
+
+  if(m_cACertificateIdentifierHasBeenSet)
+  {
+    ss << "CACertificateIdentifier=" << StringUtils::URLEncode(m_cACertificateIdentifier.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";
