@@ -26,6 +26,9 @@ namespace Aws
         static const int ACTOR_ACCOUNT_ID_HASH = HashingUtils::HashString("ACTOR_ACCOUNT_ID");
         static const int FILE_PATH_HASH = HashingUtils::HashString("FILE_PATH");
         static const int COMMIT_MESSAGE_HASH = HashingUtils::HashString("COMMIT_MESSAGE");
+        static const int WORKFLOW_NAME_HASH = HashingUtils::HashString("WORKFLOW_NAME");
+        static const int TAG_NAME_HASH = HashingUtils::HashString("TAG_NAME");
+        static const int RELEASE_NAME_HASH = HashingUtils::HashString("RELEASE_NAME");
 
 
         WebhookFilterType GetWebhookFilterTypeForName(const Aws::String& name)
@@ -55,6 +58,18 @@ namespace Aws
           {
             return WebhookFilterType::COMMIT_MESSAGE;
           }
+          else if (hashCode == WORKFLOW_NAME_HASH)
+          {
+            return WebhookFilterType::WORKFLOW_NAME;
+          }
+          else if (hashCode == TAG_NAME_HASH)
+          {
+            return WebhookFilterType::TAG_NAME;
+          }
+          else if (hashCode == RELEASE_NAME_HASH)
+          {
+            return WebhookFilterType::RELEASE_NAME;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -83,6 +98,12 @@ namespace Aws
             return "FILE_PATH";
           case WebhookFilterType::COMMIT_MESSAGE:
             return "COMMIT_MESSAGE";
+          case WebhookFilterType::WORKFLOW_NAME:
+            return "WORKFLOW_NAME";
+          case WebhookFilterType::TAG_NAME:
+            return "TAG_NAME";
+          case WebhookFilterType::RELEASE_NAME:
+            return "RELEASE_NAME";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

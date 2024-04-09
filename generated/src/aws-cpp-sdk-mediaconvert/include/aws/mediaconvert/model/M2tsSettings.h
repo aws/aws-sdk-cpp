@@ -20,6 +20,7 @@
 #include <aws/mediaconvert/model/M2tsKlvMetadata.h>
 #include <aws/mediaconvert/model/M2tsNielsenId3.h>
 #include <aws/mediaconvert/model/M2tsPcrControl.h>
+#include <aws/mediaconvert/model/M2tsPreventBufferUnderflow.h>
 #include <aws/mediaconvert/model/TsPtsOffset.h>
 #include <aws/mediaconvert/model/M2tsRateMode.h>
 #include <aws/mediaconvert/model/M2tsScte35Esam.h>
@@ -1105,6 +1106,79 @@ namespace Model
 
 
     /**
+     * Specify whether MediaConvert automatically attempts to prevent decoder buffer
+     * underflows in your transport stream output. Use if you are seeing decoder buffer
+     * underflows in your output and are unable to increase your transport stream's
+     * bitrate. For most workflows: We recommend that you keep the default value,
+     * Disabled. To prevent decoder buffer underflows in your output, when possible:
+     * Choose Enabled. Note that if MediaConvert prevents a decoder buffer underflow in
+     * your output, output video quality is reduced and your job will take longer to
+     * complete.
+     */
+    inline const M2tsPreventBufferUnderflow& GetPreventBufferUnderflow() const{ return m_preventBufferUnderflow; }
+
+    /**
+     * Specify whether MediaConvert automatically attempts to prevent decoder buffer
+     * underflows in your transport stream output. Use if you are seeing decoder buffer
+     * underflows in your output and are unable to increase your transport stream's
+     * bitrate. For most workflows: We recommend that you keep the default value,
+     * Disabled. To prevent decoder buffer underflows in your output, when possible:
+     * Choose Enabled. Note that if MediaConvert prevents a decoder buffer underflow in
+     * your output, output video quality is reduced and your job will take longer to
+     * complete.
+     */
+    inline bool PreventBufferUnderflowHasBeenSet() const { return m_preventBufferUnderflowHasBeenSet; }
+
+    /**
+     * Specify whether MediaConvert automatically attempts to prevent decoder buffer
+     * underflows in your transport stream output. Use if you are seeing decoder buffer
+     * underflows in your output and are unable to increase your transport stream's
+     * bitrate. For most workflows: We recommend that you keep the default value,
+     * Disabled. To prevent decoder buffer underflows in your output, when possible:
+     * Choose Enabled. Note that if MediaConvert prevents a decoder buffer underflow in
+     * your output, output video quality is reduced and your job will take longer to
+     * complete.
+     */
+    inline void SetPreventBufferUnderflow(const M2tsPreventBufferUnderflow& value) { m_preventBufferUnderflowHasBeenSet = true; m_preventBufferUnderflow = value; }
+
+    /**
+     * Specify whether MediaConvert automatically attempts to prevent decoder buffer
+     * underflows in your transport stream output. Use if you are seeing decoder buffer
+     * underflows in your output and are unable to increase your transport stream's
+     * bitrate. For most workflows: We recommend that you keep the default value,
+     * Disabled. To prevent decoder buffer underflows in your output, when possible:
+     * Choose Enabled. Note that if MediaConvert prevents a decoder buffer underflow in
+     * your output, output video quality is reduced and your job will take longer to
+     * complete.
+     */
+    inline void SetPreventBufferUnderflow(M2tsPreventBufferUnderflow&& value) { m_preventBufferUnderflowHasBeenSet = true; m_preventBufferUnderflow = std::move(value); }
+
+    /**
+     * Specify whether MediaConvert automatically attempts to prevent decoder buffer
+     * underflows in your transport stream output. Use if you are seeing decoder buffer
+     * underflows in your output and are unable to increase your transport stream's
+     * bitrate. For most workflows: We recommend that you keep the default value,
+     * Disabled. To prevent decoder buffer underflows in your output, when possible:
+     * Choose Enabled. Note that if MediaConvert prevents a decoder buffer underflow in
+     * your output, output video quality is reduced and your job will take longer to
+     * complete.
+     */
+    inline M2tsSettings& WithPreventBufferUnderflow(const M2tsPreventBufferUnderflow& value) { SetPreventBufferUnderflow(value); return *this;}
+
+    /**
+     * Specify whether MediaConvert automatically attempts to prevent decoder buffer
+     * underflows in your transport stream output. Use if you are seeing decoder buffer
+     * underflows in your output and are unable to increase your transport stream's
+     * bitrate. For most workflows: We recommend that you keep the default value,
+     * Disabled. To prevent decoder buffer underflows in your output, when possible:
+     * Choose Enabled. Note that if MediaConvert prevents a decoder buffer underflow in
+     * your output, output video quality is reduced and your job will take longer to
+     * complete.
+     */
+    inline M2tsSettings& WithPreventBufferUnderflow(M2tsPreventBufferUnderflow&& value) { SetPreventBufferUnderflow(std::move(value)); return *this;}
+
+
+    /**
      * Specify the packet identifier (PID) of the private metadata stream. Default is
      * 503.
      */
@@ -1765,6 +1839,9 @@ namespace Model
 
     int m_pmtPid;
     bool m_pmtPidHasBeenSet = false;
+
+    M2tsPreventBufferUnderflow m_preventBufferUnderflow;
+    bool m_preventBufferUnderflowHasBeenSet = false;
 
     int m_privateMetadataPid;
     bool m_privateMetadataPidHasBeenSet = false;

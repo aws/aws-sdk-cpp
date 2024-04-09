@@ -37,6 +37,10 @@ DvbSubDestinationSettings::DvbSubDestinationSettings() :
     m_fallbackFontHasBeenSet(false),
     m_fontColor(DvbSubtitleFontColor::NOT_SET),
     m_fontColorHasBeenSet(false),
+    m_fontFileBoldHasBeenSet(false),
+    m_fontFileBoldItalicHasBeenSet(false),
+    m_fontFileItalicHasBeenSet(false),
+    m_fontFileRegularHasBeenSet(false),
     m_fontOpacity(0),
     m_fontOpacityHasBeenSet(false),
     m_fontResolution(0),
@@ -94,6 +98,10 @@ DvbSubDestinationSettings::DvbSubDestinationSettings(JsonView jsonValue) :
     m_fallbackFontHasBeenSet(false),
     m_fontColor(DvbSubtitleFontColor::NOT_SET),
     m_fontColorHasBeenSet(false),
+    m_fontFileBoldHasBeenSet(false),
+    m_fontFileBoldItalicHasBeenSet(false),
+    m_fontFileItalicHasBeenSet(false),
+    m_fontFileRegularHasBeenSet(false),
     m_fontOpacity(0),
     m_fontOpacityHasBeenSet(false),
     m_fontResolution(0),
@@ -196,6 +204,34 @@ DvbSubDestinationSettings& DvbSubDestinationSettings::operator =(JsonView jsonVa
     m_fontColor = DvbSubtitleFontColorMapper::GetDvbSubtitleFontColorForName(jsonValue.GetString("fontColor"));
 
     m_fontColorHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fontFileBold"))
+  {
+    m_fontFileBold = jsonValue.GetString("fontFileBold");
+
+    m_fontFileBoldHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fontFileBoldItalic"))
+  {
+    m_fontFileBoldItalic = jsonValue.GetString("fontFileBoldItalic");
+
+    m_fontFileBoldItalicHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fontFileItalic"))
+  {
+    m_fontFileItalic = jsonValue.GetString("fontFileItalic");
+
+    m_fontFileItalicHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fontFileRegular"))
+  {
+    m_fontFileRegular = jsonValue.GetString("fontFileRegular");
+
+    m_fontFileRegularHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("fontOpacity"))
@@ -377,6 +413,30 @@ JsonValue DvbSubDestinationSettings::Jsonize() const
   if(m_fontColorHasBeenSet)
   {
    payload.WithString("fontColor", DvbSubtitleFontColorMapper::GetNameForDvbSubtitleFontColor(m_fontColor));
+  }
+
+  if(m_fontFileBoldHasBeenSet)
+  {
+   payload.WithString("fontFileBold", m_fontFileBold);
+
+  }
+
+  if(m_fontFileBoldItalicHasBeenSet)
+  {
+   payload.WithString("fontFileBoldItalic", m_fontFileBoldItalic);
+
+  }
+
+  if(m_fontFileItalicHasBeenSet)
+  {
+   payload.WithString("fontFileItalic", m_fontFileItalic);
+
+  }
+
+  if(m_fontFileRegularHasBeenSet)
+  {
+   payload.WithString("fontFileRegular", m_fontFileRegular);
+
   }
 
   if(m_fontOpacityHasBeenSet)

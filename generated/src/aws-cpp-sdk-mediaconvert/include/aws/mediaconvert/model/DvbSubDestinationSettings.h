@@ -11,8 +11,8 @@
 #include <aws/mediaconvert/model/DvbddsHandling.h>
 #include <aws/mediaconvert/model/DvbSubSubtitleFallbackFont.h>
 #include <aws/mediaconvert/model/DvbSubtitleFontColor.h>
-#include <aws/mediaconvert/model/FontScript.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/model/FontScript.h>
 #include <aws/mediaconvert/model/DvbSubtitleOutlineColor.h>
 #include <aws/mediaconvert/model/DvbSubtitleShadowColor.h>
 #include <aws/mediaconvert/model/DvbSubtitleStylePassthrough.h>
@@ -584,6 +584,250 @@ namespace Model
 
 
     /**
+     * Specify a bold TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * regular, an italic, and a bold italic font file.
+     */
+    inline const Aws::String& GetFontFileBold() const{ return m_fontFileBold; }
+
+    /**
+     * Specify a bold TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * regular, an italic, and a bold italic font file.
+     */
+    inline bool FontFileBoldHasBeenSet() const { return m_fontFileBoldHasBeenSet; }
+
+    /**
+     * Specify a bold TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * regular, an italic, and a bold italic font file.
+     */
+    inline void SetFontFileBold(const Aws::String& value) { m_fontFileBoldHasBeenSet = true; m_fontFileBold = value; }
+
+    /**
+     * Specify a bold TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * regular, an italic, and a bold italic font file.
+     */
+    inline void SetFontFileBold(Aws::String&& value) { m_fontFileBoldHasBeenSet = true; m_fontFileBold = std::move(value); }
+
+    /**
+     * Specify a bold TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * regular, an italic, and a bold italic font file.
+     */
+    inline void SetFontFileBold(const char* value) { m_fontFileBoldHasBeenSet = true; m_fontFileBold.assign(value); }
+
+    /**
+     * Specify a bold TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * regular, an italic, and a bold italic font file.
+     */
+    inline DvbSubDestinationSettings& WithFontFileBold(const Aws::String& value) { SetFontFileBold(value); return *this;}
+
+    /**
+     * Specify a bold TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * regular, an italic, and a bold italic font file.
+     */
+    inline DvbSubDestinationSettings& WithFontFileBold(Aws::String&& value) { SetFontFileBold(std::move(value)); return *this;}
+
+    /**
+     * Specify a bold TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * regular, an italic, and a bold italic font file.
+     */
+    inline DvbSubDestinationSettings& WithFontFileBold(const char* value) { SetFontFileBold(value); return *this;}
+
+
+    /**
+     * Specify a bold italic TrueType font file to use when rendering your output
+     * captions.
+Enter an S3, HTTP, or HTTPS URL.
+When you do, you must also separately
+     * specify a regular, a bold, and an italic font file.
+     */
+    inline const Aws::String& GetFontFileBoldItalic() const{ return m_fontFileBoldItalic; }
+
+    /**
+     * Specify a bold italic TrueType font file to use when rendering your output
+     * captions.
+Enter an S3, HTTP, or HTTPS URL.
+When you do, you must also separately
+     * specify a regular, a bold, and an italic font file.
+     */
+    inline bool FontFileBoldItalicHasBeenSet() const { return m_fontFileBoldItalicHasBeenSet; }
+
+    /**
+     * Specify a bold italic TrueType font file to use when rendering your output
+     * captions.
+Enter an S3, HTTP, or HTTPS URL.
+When you do, you must also separately
+     * specify a regular, a bold, and an italic font file.
+     */
+    inline void SetFontFileBoldItalic(const Aws::String& value) { m_fontFileBoldItalicHasBeenSet = true; m_fontFileBoldItalic = value; }
+
+    /**
+     * Specify a bold italic TrueType font file to use when rendering your output
+     * captions.
+Enter an S3, HTTP, or HTTPS URL.
+When you do, you must also separately
+     * specify a regular, a bold, and an italic font file.
+     */
+    inline void SetFontFileBoldItalic(Aws::String&& value) { m_fontFileBoldItalicHasBeenSet = true; m_fontFileBoldItalic = std::move(value); }
+
+    /**
+     * Specify a bold italic TrueType font file to use when rendering your output
+     * captions.
+Enter an S3, HTTP, or HTTPS URL.
+When you do, you must also separately
+     * specify a regular, a bold, and an italic font file.
+     */
+    inline void SetFontFileBoldItalic(const char* value) { m_fontFileBoldItalicHasBeenSet = true; m_fontFileBoldItalic.assign(value); }
+
+    /**
+     * Specify a bold italic TrueType font file to use when rendering your output
+     * captions.
+Enter an S3, HTTP, or HTTPS URL.
+When you do, you must also separately
+     * specify a regular, a bold, and an italic font file.
+     */
+    inline DvbSubDestinationSettings& WithFontFileBoldItalic(const Aws::String& value) { SetFontFileBoldItalic(value); return *this;}
+
+    /**
+     * Specify a bold italic TrueType font file to use when rendering your output
+     * captions.
+Enter an S3, HTTP, or HTTPS URL.
+When you do, you must also separately
+     * specify a regular, a bold, and an italic font file.
+     */
+    inline DvbSubDestinationSettings& WithFontFileBoldItalic(Aws::String&& value) { SetFontFileBoldItalic(std::move(value)); return *this;}
+
+    /**
+     * Specify a bold italic TrueType font file to use when rendering your output
+     * captions.
+Enter an S3, HTTP, or HTTPS URL.
+When you do, you must also separately
+     * specify a regular, a bold, and an italic font file.
+     */
+    inline DvbSubDestinationSettings& WithFontFileBoldItalic(const char* value) { SetFontFileBoldItalic(value); return *this;}
+
+
+    /**
+     * Specify an italic TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * regular, a bold, and a bold italic font file.
+     */
+    inline const Aws::String& GetFontFileItalic() const{ return m_fontFileItalic; }
+
+    /**
+     * Specify an italic TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * regular, a bold, and a bold italic font file.
+     */
+    inline bool FontFileItalicHasBeenSet() const { return m_fontFileItalicHasBeenSet; }
+
+    /**
+     * Specify an italic TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * regular, a bold, and a bold italic font file.
+     */
+    inline void SetFontFileItalic(const Aws::String& value) { m_fontFileItalicHasBeenSet = true; m_fontFileItalic = value; }
+
+    /**
+     * Specify an italic TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * regular, a bold, and a bold italic font file.
+     */
+    inline void SetFontFileItalic(Aws::String&& value) { m_fontFileItalicHasBeenSet = true; m_fontFileItalic = std::move(value); }
+
+    /**
+     * Specify an italic TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * regular, a bold, and a bold italic font file.
+     */
+    inline void SetFontFileItalic(const char* value) { m_fontFileItalicHasBeenSet = true; m_fontFileItalic.assign(value); }
+
+    /**
+     * Specify an italic TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * regular, a bold, and a bold italic font file.
+     */
+    inline DvbSubDestinationSettings& WithFontFileItalic(const Aws::String& value) { SetFontFileItalic(value); return *this;}
+
+    /**
+     * Specify an italic TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * regular, a bold, and a bold italic font file.
+     */
+    inline DvbSubDestinationSettings& WithFontFileItalic(Aws::String&& value) { SetFontFileItalic(std::move(value)); return *this;}
+
+    /**
+     * Specify an italic TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * regular, a bold, and a bold italic font file.
+     */
+    inline DvbSubDestinationSettings& WithFontFileItalic(const char* value) { SetFontFileItalic(value); return *this;}
+
+
+    /**
+     * Specify a regular TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * bold, an italic, and a bold italic font file.
+     */
+    inline const Aws::String& GetFontFileRegular() const{ return m_fontFileRegular; }
+
+    /**
+     * Specify a regular TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * bold, an italic, and a bold italic font file.
+     */
+    inline bool FontFileRegularHasBeenSet() const { return m_fontFileRegularHasBeenSet; }
+
+    /**
+     * Specify a regular TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * bold, an italic, and a bold italic font file.
+     */
+    inline void SetFontFileRegular(const Aws::String& value) { m_fontFileRegularHasBeenSet = true; m_fontFileRegular = value; }
+
+    /**
+     * Specify a regular TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * bold, an italic, and a bold italic font file.
+     */
+    inline void SetFontFileRegular(Aws::String&& value) { m_fontFileRegularHasBeenSet = true; m_fontFileRegular = std::move(value); }
+
+    /**
+     * Specify a regular TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * bold, an italic, and a bold italic font file.
+     */
+    inline void SetFontFileRegular(const char* value) { m_fontFileRegularHasBeenSet = true; m_fontFileRegular.assign(value); }
+
+    /**
+     * Specify a regular TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * bold, an italic, and a bold italic font file.
+     */
+    inline DvbSubDestinationSettings& WithFontFileRegular(const Aws::String& value) { SetFontFileRegular(value); return *this;}
+
+    /**
+     * Specify a regular TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * bold, an italic, and a bold italic font file.
+     */
+    inline DvbSubDestinationSettings& WithFontFileRegular(Aws::String&& value) { SetFontFileRegular(std::move(value)); return *this;}
+
+    /**
+     * Specify a regular TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * bold, an italic, and a bold italic font file.
+     */
+    inline DvbSubDestinationSettings& WithFontFileRegular(const char* value) { SetFontFileRegular(value); return *this;}
+
+
+    /**
      * Specify the opacity of the burned-in captions. 255 is opaque; 0 is
      * transparent.
 Within your job settings, all of your DVB-Sub settings must be
@@ -1066,74 +1310,86 @@ Within your job settings,
 
 
     /**
-     * Set Style passthrough to ENABLED to use the available style, color, and position
-     * information from your input captions. MediaConvert uses default settings for any
-     * missing style and position information in your input captions. Set Style
-     * passthrough to DISABLED, or leave blank, to ignore the style and position
-     * information from your input captions and use default settings: white text with
-     * black outlining, bottom-center positioning, and automatic sizing. Whether you
-     * set Style passthrough to enabled or not, you can also choose to manually
-     * override any of the individual style and position settings.
+     * To use the available style, color, and position information from your input
+     * captions: Set Style passthrough to Enabled. Note that MediaConvert uses default
+     * settings for any missing style or position information in your input captions To
+     * ignore the style and position information from your input captions and use
+     * default settings: Leave blank or keep the default value, Disabled. Default
+     * settings include white text with black outlining, bottom-center positioning, and
+     * automatic sizing. Whether you set Style passthrough to enabled or not, you can
+     * also choose to manually override any of the individual style and position
+     * settings. You can also override any fonts by manually specifying custom font
+     * files.
      */
     inline const DvbSubtitleStylePassthrough& GetStylePassthrough() const{ return m_stylePassthrough; }
 
     /**
-     * Set Style passthrough to ENABLED to use the available style, color, and position
-     * information from your input captions. MediaConvert uses default settings for any
-     * missing style and position information in your input captions. Set Style
-     * passthrough to DISABLED, or leave blank, to ignore the style and position
-     * information from your input captions and use default settings: white text with
-     * black outlining, bottom-center positioning, and automatic sizing. Whether you
-     * set Style passthrough to enabled or not, you can also choose to manually
-     * override any of the individual style and position settings.
+     * To use the available style, color, and position information from your input
+     * captions: Set Style passthrough to Enabled. Note that MediaConvert uses default
+     * settings for any missing style or position information in your input captions To
+     * ignore the style and position information from your input captions and use
+     * default settings: Leave blank or keep the default value, Disabled. Default
+     * settings include white text with black outlining, bottom-center positioning, and
+     * automatic sizing. Whether you set Style passthrough to enabled or not, you can
+     * also choose to manually override any of the individual style and position
+     * settings. You can also override any fonts by manually specifying custom font
+     * files.
      */
     inline bool StylePassthroughHasBeenSet() const { return m_stylePassthroughHasBeenSet; }
 
     /**
-     * Set Style passthrough to ENABLED to use the available style, color, and position
-     * information from your input captions. MediaConvert uses default settings for any
-     * missing style and position information in your input captions. Set Style
-     * passthrough to DISABLED, or leave blank, to ignore the style and position
-     * information from your input captions and use default settings: white text with
-     * black outlining, bottom-center positioning, and automatic sizing. Whether you
-     * set Style passthrough to enabled or not, you can also choose to manually
-     * override any of the individual style and position settings.
+     * To use the available style, color, and position information from your input
+     * captions: Set Style passthrough to Enabled. Note that MediaConvert uses default
+     * settings for any missing style or position information in your input captions To
+     * ignore the style and position information from your input captions and use
+     * default settings: Leave blank or keep the default value, Disabled. Default
+     * settings include white text with black outlining, bottom-center positioning, and
+     * automatic sizing. Whether you set Style passthrough to enabled or not, you can
+     * also choose to manually override any of the individual style and position
+     * settings. You can also override any fonts by manually specifying custom font
+     * files.
      */
     inline void SetStylePassthrough(const DvbSubtitleStylePassthrough& value) { m_stylePassthroughHasBeenSet = true; m_stylePassthrough = value; }
 
     /**
-     * Set Style passthrough to ENABLED to use the available style, color, and position
-     * information from your input captions. MediaConvert uses default settings for any
-     * missing style and position information in your input captions. Set Style
-     * passthrough to DISABLED, or leave blank, to ignore the style and position
-     * information from your input captions and use default settings: white text with
-     * black outlining, bottom-center positioning, and automatic sizing. Whether you
-     * set Style passthrough to enabled or not, you can also choose to manually
-     * override any of the individual style and position settings.
+     * To use the available style, color, and position information from your input
+     * captions: Set Style passthrough to Enabled. Note that MediaConvert uses default
+     * settings for any missing style or position information in your input captions To
+     * ignore the style and position information from your input captions and use
+     * default settings: Leave blank or keep the default value, Disabled. Default
+     * settings include white text with black outlining, bottom-center positioning, and
+     * automatic sizing. Whether you set Style passthrough to enabled or not, you can
+     * also choose to manually override any of the individual style and position
+     * settings. You can also override any fonts by manually specifying custom font
+     * files.
      */
     inline void SetStylePassthrough(DvbSubtitleStylePassthrough&& value) { m_stylePassthroughHasBeenSet = true; m_stylePassthrough = std::move(value); }
 
     /**
-     * Set Style passthrough to ENABLED to use the available style, color, and position
-     * information from your input captions. MediaConvert uses default settings for any
-     * missing style and position information in your input captions. Set Style
-     * passthrough to DISABLED, or leave blank, to ignore the style and position
-     * information from your input captions and use default settings: white text with
-     * black outlining, bottom-center positioning, and automatic sizing. Whether you
-     * set Style passthrough to enabled or not, you can also choose to manually
-     * override any of the individual style and position settings.
+     * To use the available style, color, and position information from your input
+     * captions: Set Style passthrough to Enabled. Note that MediaConvert uses default
+     * settings for any missing style or position information in your input captions To
+     * ignore the style and position information from your input captions and use
+     * default settings: Leave blank or keep the default value, Disabled. Default
+     * settings include white text with black outlining, bottom-center positioning, and
+     * automatic sizing. Whether you set Style passthrough to enabled or not, you can
+     * also choose to manually override any of the individual style and position
+     * settings. You can also override any fonts by manually specifying custom font
+     * files.
      */
     inline DvbSubDestinationSettings& WithStylePassthrough(const DvbSubtitleStylePassthrough& value) { SetStylePassthrough(value); return *this;}
 
     /**
-     * Set Style passthrough to ENABLED to use the available style, color, and position
-     * information from your input captions. MediaConvert uses default settings for any
-     * missing style and position information in your input captions. Set Style
-     * passthrough to DISABLED, or leave blank, to ignore the style and position
-     * information from your input captions and use default settings: white text with
-     * black outlining, bottom-center positioning, and automatic sizing. Whether you
-     * set Style passthrough to enabled or not, you can also choose to manually
-     * override any of the individual style and position settings.
+     * To use the available style, color, and position information from your input
+     * captions: Set Style passthrough to Enabled. Note that MediaConvert uses default
+     * settings for any missing style or position information in your input captions To
+     * ignore the style and position information from your input captions and use
+     * default settings: Leave blank or keep the default value, Disabled. Default
+     * settings include white text with black outlining, bottom-center positioning, and
+     * automatic sizing. Whether you set Style passthrough to enabled or not, you can
+     * also choose to manually override any of the individual style and position
+     * settings. You can also override any fonts by manually specifying custom font
+     * files.
      */
     inline DvbSubDestinationSettings& WithStylePassthrough(DvbSubtitleStylePassthrough&& value) { SetStylePassthrough(std::move(value)); return *this;}
 
@@ -1370,6 +1626,18 @@ Within your job settings,
 
     DvbSubtitleFontColor m_fontColor;
     bool m_fontColorHasBeenSet = false;
+
+    Aws::String m_fontFileBold;
+    bool m_fontFileBoldHasBeenSet = false;
+
+    Aws::String m_fontFileBoldItalic;
+    bool m_fontFileBoldItalicHasBeenSet = false;
+
+    Aws::String m_fontFileItalic;
+    bool m_fontFileItalicHasBeenSet = false;
+
+    Aws::String m_fontFileRegular;
+    bool m_fontFileRegularHasBeenSet = false;
 
     int m_fontOpacity;
     bool m_fontOpacityHasBeenSet = false;

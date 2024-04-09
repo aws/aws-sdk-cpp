@@ -24,7 +24,8 @@ EmailChannelRequest::EmailChannelRequest() :
     m_enabledHasBeenSet(false),
     m_fromAddressHasBeenSet(false),
     m_identityHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_orchestrationSendingRoleArnHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ EmailChannelRequest::EmailChannelRequest(JsonView jsonValue) :
     m_enabledHasBeenSet(false),
     m_fromAddressHasBeenSet(false),
     m_identityHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_orchestrationSendingRoleArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +78,13 @@ EmailChannelRequest& EmailChannelRequest::operator =(JsonView jsonValue)
     m_roleArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OrchestrationSendingRoleArn"))
+  {
+    m_orchestrationSendingRoleArn = jsonValue.GetString("OrchestrationSendingRoleArn");
+
+    m_orchestrationSendingRoleArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -110,6 +119,12 @@ JsonValue EmailChannelRequest::Jsonize() const
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("RoleArn", m_roleArn);
+
+  }
+
+  if(m_orchestrationSendingRoleArnHasBeenSet)
+  {
+   payload.WithString("OrchestrationSendingRoleArn", m_orchestrationSendingRoleArn);
 
   }
 

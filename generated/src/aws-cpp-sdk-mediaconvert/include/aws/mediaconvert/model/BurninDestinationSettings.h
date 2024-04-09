@@ -10,8 +10,8 @@
 #include <aws/mediaconvert/model/BurninSubtitleBackgroundColor.h>
 #include <aws/mediaconvert/model/BurninSubtitleFallbackFont.h>
 #include <aws/mediaconvert/model/BurninSubtitleFontColor.h>
-#include <aws/mediaconvert/model/FontScript.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/model/FontScript.h>
 #include <aws/mediaconvert/model/BurninSubtitleOutlineColor.h>
 #include <aws/mediaconvert/model/BurninSubtitleShadowColor.h>
 #include <aws/mediaconvert/model/BurnInSubtitleStylePassthrough.h>
@@ -384,6 +384,250 @@ namespace Model
      * captions, if present.
      */
     inline BurninDestinationSettings& WithFontColor(BurninSubtitleFontColor&& value) { SetFontColor(std::move(value)); return *this;}
+
+
+    /**
+     * Specify a bold TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * regular, an italic, and a bold italic font file.
+     */
+    inline const Aws::String& GetFontFileBold() const{ return m_fontFileBold; }
+
+    /**
+     * Specify a bold TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * regular, an italic, and a bold italic font file.
+     */
+    inline bool FontFileBoldHasBeenSet() const { return m_fontFileBoldHasBeenSet; }
+
+    /**
+     * Specify a bold TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * regular, an italic, and a bold italic font file.
+     */
+    inline void SetFontFileBold(const Aws::String& value) { m_fontFileBoldHasBeenSet = true; m_fontFileBold = value; }
+
+    /**
+     * Specify a bold TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * regular, an italic, and a bold italic font file.
+     */
+    inline void SetFontFileBold(Aws::String&& value) { m_fontFileBoldHasBeenSet = true; m_fontFileBold = std::move(value); }
+
+    /**
+     * Specify a bold TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * regular, an italic, and a bold italic font file.
+     */
+    inline void SetFontFileBold(const char* value) { m_fontFileBoldHasBeenSet = true; m_fontFileBold.assign(value); }
+
+    /**
+     * Specify a bold TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * regular, an italic, and a bold italic font file.
+     */
+    inline BurninDestinationSettings& WithFontFileBold(const Aws::String& value) { SetFontFileBold(value); return *this;}
+
+    /**
+     * Specify a bold TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * regular, an italic, and a bold italic font file.
+     */
+    inline BurninDestinationSettings& WithFontFileBold(Aws::String&& value) { SetFontFileBold(std::move(value)); return *this;}
+
+    /**
+     * Specify a bold TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * regular, an italic, and a bold italic font file.
+     */
+    inline BurninDestinationSettings& WithFontFileBold(const char* value) { SetFontFileBold(value); return *this;}
+
+
+    /**
+     * Specify a bold italic TrueType font file to use when rendering your output
+     * captions.
+Enter an S3, HTTP, or HTTPS URL.
+When you do, you must also separately
+     * specify a regular, a bold, and an italic font file.
+     */
+    inline const Aws::String& GetFontFileBoldItalic() const{ return m_fontFileBoldItalic; }
+
+    /**
+     * Specify a bold italic TrueType font file to use when rendering your output
+     * captions.
+Enter an S3, HTTP, or HTTPS URL.
+When you do, you must also separately
+     * specify a regular, a bold, and an italic font file.
+     */
+    inline bool FontFileBoldItalicHasBeenSet() const { return m_fontFileBoldItalicHasBeenSet; }
+
+    /**
+     * Specify a bold italic TrueType font file to use when rendering your output
+     * captions.
+Enter an S3, HTTP, or HTTPS URL.
+When you do, you must also separately
+     * specify a regular, a bold, and an italic font file.
+     */
+    inline void SetFontFileBoldItalic(const Aws::String& value) { m_fontFileBoldItalicHasBeenSet = true; m_fontFileBoldItalic = value; }
+
+    /**
+     * Specify a bold italic TrueType font file to use when rendering your output
+     * captions.
+Enter an S3, HTTP, or HTTPS URL.
+When you do, you must also separately
+     * specify a regular, a bold, and an italic font file.
+     */
+    inline void SetFontFileBoldItalic(Aws::String&& value) { m_fontFileBoldItalicHasBeenSet = true; m_fontFileBoldItalic = std::move(value); }
+
+    /**
+     * Specify a bold italic TrueType font file to use when rendering your output
+     * captions.
+Enter an S3, HTTP, or HTTPS URL.
+When you do, you must also separately
+     * specify a regular, a bold, and an italic font file.
+     */
+    inline void SetFontFileBoldItalic(const char* value) { m_fontFileBoldItalicHasBeenSet = true; m_fontFileBoldItalic.assign(value); }
+
+    /**
+     * Specify a bold italic TrueType font file to use when rendering your output
+     * captions.
+Enter an S3, HTTP, or HTTPS URL.
+When you do, you must also separately
+     * specify a regular, a bold, and an italic font file.
+     */
+    inline BurninDestinationSettings& WithFontFileBoldItalic(const Aws::String& value) { SetFontFileBoldItalic(value); return *this;}
+
+    /**
+     * Specify a bold italic TrueType font file to use when rendering your output
+     * captions.
+Enter an S3, HTTP, or HTTPS URL.
+When you do, you must also separately
+     * specify a regular, a bold, and an italic font file.
+     */
+    inline BurninDestinationSettings& WithFontFileBoldItalic(Aws::String&& value) { SetFontFileBoldItalic(std::move(value)); return *this;}
+
+    /**
+     * Specify a bold italic TrueType font file to use when rendering your output
+     * captions.
+Enter an S3, HTTP, or HTTPS URL.
+When you do, you must also separately
+     * specify a regular, a bold, and an italic font file.
+     */
+    inline BurninDestinationSettings& WithFontFileBoldItalic(const char* value) { SetFontFileBoldItalic(value); return *this;}
+
+
+    /**
+     * Specify an italic TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * regular, a bold, and a bold italic font file.
+     */
+    inline const Aws::String& GetFontFileItalic() const{ return m_fontFileItalic; }
+
+    /**
+     * Specify an italic TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * regular, a bold, and a bold italic font file.
+     */
+    inline bool FontFileItalicHasBeenSet() const { return m_fontFileItalicHasBeenSet; }
+
+    /**
+     * Specify an italic TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * regular, a bold, and a bold italic font file.
+     */
+    inline void SetFontFileItalic(const Aws::String& value) { m_fontFileItalicHasBeenSet = true; m_fontFileItalic = value; }
+
+    /**
+     * Specify an italic TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * regular, a bold, and a bold italic font file.
+     */
+    inline void SetFontFileItalic(Aws::String&& value) { m_fontFileItalicHasBeenSet = true; m_fontFileItalic = std::move(value); }
+
+    /**
+     * Specify an italic TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * regular, a bold, and a bold italic font file.
+     */
+    inline void SetFontFileItalic(const char* value) { m_fontFileItalicHasBeenSet = true; m_fontFileItalic.assign(value); }
+
+    /**
+     * Specify an italic TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * regular, a bold, and a bold italic font file.
+     */
+    inline BurninDestinationSettings& WithFontFileItalic(const Aws::String& value) { SetFontFileItalic(value); return *this;}
+
+    /**
+     * Specify an italic TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * regular, a bold, and a bold italic font file.
+     */
+    inline BurninDestinationSettings& WithFontFileItalic(Aws::String&& value) { SetFontFileItalic(std::move(value)); return *this;}
+
+    /**
+     * Specify an italic TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * regular, a bold, and a bold italic font file.
+     */
+    inline BurninDestinationSettings& WithFontFileItalic(const char* value) { SetFontFileItalic(value); return *this;}
+
+
+    /**
+     * Specify a regular TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * bold, an italic, and a bold italic font file.
+     */
+    inline const Aws::String& GetFontFileRegular() const{ return m_fontFileRegular; }
+
+    /**
+     * Specify a regular TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * bold, an italic, and a bold italic font file.
+     */
+    inline bool FontFileRegularHasBeenSet() const { return m_fontFileRegularHasBeenSet; }
+
+    /**
+     * Specify a regular TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * bold, an italic, and a bold italic font file.
+     */
+    inline void SetFontFileRegular(const Aws::String& value) { m_fontFileRegularHasBeenSet = true; m_fontFileRegular = value; }
+
+    /**
+     * Specify a regular TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * bold, an italic, and a bold italic font file.
+     */
+    inline void SetFontFileRegular(Aws::String&& value) { m_fontFileRegularHasBeenSet = true; m_fontFileRegular = std::move(value); }
+
+    /**
+     * Specify a regular TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * bold, an italic, and a bold italic font file.
+     */
+    inline void SetFontFileRegular(const char* value) { m_fontFileRegularHasBeenSet = true; m_fontFileRegular.assign(value); }
+
+    /**
+     * Specify a regular TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * bold, an italic, and a bold italic font file.
+     */
+    inline BurninDestinationSettings& WithFontFileRegular(const Aws::String& value) { SetFontFileRegular(value); return *this;}
+
+    /**
+     * Specify a regular TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * bold, an italic, and a bold italic font file.
+     */
+    inline BurninDestinationSettings& WithFontFileRegular(Aws::String&& value) { SetFontFileRegular(std::move(value)); return *this;}
+
+    /**
+     * Specify a regular TrueType font file to use when rendering your output captions.
+     * Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a
+     * bold, an italic, and a bold italic font file.
+     */
+    inline BurninDestinationSettings& WithFontFileRegular(const char* value) { SetFontFileRegular(value); return *this;}
 
 
     /**
@@ -778,74 +1022,86 @@ namespace Model
 
 
     /**
-     * Set Style passthrough to ENABLED to use the available style, color, and position
-     * information from your input captions. MediaConvert uses default settings for any
-     * missing style and position information in your input captions. Set Style
-     * passthrough to DISABLED, or leave blank, to ignore the style and position
-     * information from your input captions and use default settings: white text with
-     * black outlining, bottom-center positioning, and automatic sizing. Whether you
-     * set Style passthrough to enabled or not, you can also choose to manually
-     * override any of the individual style and position settings.
+     * To use the available style, color, and position information from your input
+     * captions: Set Style passthrough to Enabled. Note that MediaConvert uses default
+     * settings for any missing style or position information in your input captions To
+     * ignore the style and position information from your input captions and use
+     * default settings: Leave blank or keep the default value, Disabled. Default
+     * settings include white text with black outlining, bottom-center positioning, and
+     * automatic sizing. Whether you set Style passthrough to enabled or not, you can
+     * also choose to manually override any of the individual style and position
+     * settings. You can also override any fonts by manually specifying custom font
+     * files.
      */
     inline const BurnInSubtitleStylePassthrough& GetStylePassthrough() const{ return m_stylePassthrough; }
 
     /**
-     * Set Style passthrough to ENABLED to use the available style, color, and position
-     * information from your input captions. MediaConvert uses default settings for any
-     * missing style and position information in your input captions. Set Style
-     * passthrough to DISABLED, or leave blank, to ignore the style and position
-     * information from your input captions and use default settings: white text with
-     * black outlining, bottom-center positioning, and automatic sizing. Whether you
-     * set Style passthrough to enabled or not, you can also choose to manually
-     * override any of the individual style and position settings.
+     * To use the available style, color, and position information from your input
+     * captions: Set Style passthrough to Enabled. Note that MediaConvert uses default
+     * settings for any missing style or position information in your input captions To
+     * ignore the style and position information from your input captions and use
+     * default settings: Leave blank or keep the default value, Disabled. Default
+     * settings include white text with black outlining, bottom-center positioning, and
+     * automatic sizing. Whether you set Style passthrough to enabled or not, you can
+     * also choose to manually override any of the individual style and position
+     * settings. You can also override any fonts by manually specifying custom font
+     * files.
      */
     inline bool StylePassthroughHasBeenSet() const { return m_stylePassthroughHasBeenSet; }
 
     /**
-     * Set Style passthrough to ENABLED to use the available style, color, and position
-     * information from your input captions. MediaConvert uses default settings for any
-     * missing style and position information in your input captions. Set Style
-     * passthrough to DISABLED, or leave blank, to ignore the style and position
-     * information from your input captions and use default settings: white text with
-     * black outlining, bottom-center positioning, and automatic sizing. Whether you
-     * set Style passthrough to enabled or not, you can also choose to manually
-     * override any of the individual style and position settings.
+     * To use the available style, color, and position information from your input
+     * captions: Set Style passthrough to Enabled. Note that MediaConvert uses default
+     * settings for any missing style or position information in your input captions To
+     * ignore the style and position information from your input captions and use
+     * default settings: Leave blank or keep the default value, Disabled. Default
+     * settings include white text with black outlining, bottom-center positioning, and
+     * automatic sizing. Whether you set Style passthrough to enabled or not, you can
+     * also choose to manually override any of the individual style and position
+     * settings. You can also override any fonts by manually specifying custom font
+     * files.
      */
     inline void SetStylePassthrough(const BurnInSubtitleStylePassthrough& value) { m_stylePassthroughHasBeenSet = true; m_stylePassthrough = value; }
 
     /**
-     * Set Style passthrough to ENABLED to use the available style, color, and position
-     * information from your input captions. MediaConvert uses default settings for any
-     * missing style and position information in your input captions. Set Style
-     * passthrough to DISABLED, or leave blank, to ignore the style and position
-     * information from your input captions and use default settings: white text with
-     * black outlining, bottom-center positioning, and automatic sizing. Whether you
-     * set Style passthrough to enabled or not, you can also choose to manually
-     * override any of the individual style and position settings.
+     * To use the available style, color, and position information from your input
+     * captions: Set Style passthrough to Enabled. Note that MediaConvert uses default
+     * settings for any missing style or position information in your input captions To
+     * ignore the style and position information from your input captions and use
+     * default settings: Leave blank or keep the default value, Disabled. Default
+     * settings include white text with black outlining, bottom-center positioning, and
+     * automatic sizing. Whether you set Style passthrough to enabled or not, you can
+     * also choose to manually override any of the individual style and position
+     * settings. You can also override any fonts by manually specifying custom font
+     * files.
      */
     inline void SetStylePassthrough(BurnInSubtitleStylePassthrough&& value) { m_stylePassthroughHasBeenSet = true; m_stylePassthrough = std::move(value); }
 
     /**
-     * Set Style passthrough to ENABLED to use the available style, color, and position
-     * information from your input captions. MediaConvert uses default settings for any
-     * missing style and position information in your input captions. Set Style
-     * passthrough to DISABLED, or leave blank, to ignore the style and position
-     * information from your input captions and use default settings: white text with
-     * black outlining, bottom-center positioning, and automatic sizing. Whether you
-     * set Style passthrough to enabled or not, you can also choose to manually
-     * override any of the individual style and position settings.
+     * To use the available style, color, and position information from your input
+     * captions: Set Style passthrough to Enabled. Note that MediaConvert uses default
+     * settings for any missing style or position information in your input captions To
+     * ignore the style and position information from your input captions and use
+     * default settings: Leave blank or keep the default value, Disabled. Default
+     * settings include white text with black outlining, bottom-center positioning, and
+     * automatic sizing. Whether you set Style passthrough to enabled or not, you can
+     * also choose to manually override any of the individual style and position
+     * settings. You can also override any fonts by manually specifying custom font
+     * files.
      */
     inline BurninDestinationSettings& WithStylePassthrough(const BurnInSubtitleStylePassthrough& value) { SetStylePassthrough(value); return *this;}
 
     /**
-     * Set Style passthrough to ENABLED to use the available style, color, and position
-     * information from your input captions. MediaConvert uses default settings for any
-     * missing style and position information in your input captions. Set Style
-     * passthrough to DISABLED, or leave blank, to ignore the style and position
-     * information from your input captions and use default settings: white text with
-     * black outlining, bottom-center positioning, and automatic sizing. Whether you
-     * set Style passthrough to enabled or not, you can also choose to manually
-     * override any of the individual style and position settings.
+     * To use the available style, color, and position information from your input
+     * captions: Set Style passthrough to Enabled. Note that MediaConvert uses default
+     * settings for any missing style or position information in your input captions To
+     * ignore the style and position information from your input captions and use
+     * default settings: Leave blank or keep the default value, Disabled. Default
+     * settings include white text with black outlining, bottom-center positioning, and
+     * automatic sizing. Whether you set Style passthrough to enabled or not, you can
+     * also choose to manually override any of the individual style and position
+     * settings. You can also override any fonts by manually specifying custom font
+     * files.
      */
     inline BurninDestinationSettings& WithStylePassthrough(BurnInSubtitleStylePassthrough&& value) { SetStylePassthrough(std::move(value)); return *this;}
 
@@ -983,6 +1239,18 @@ namespace Model
 
     BurninSubtitleFontColor m_fontColor;
     bool m_fontColorHasBeenSet = false;
+
+    Aws::String m_fontFileBold;
+    bool m_fontFileBoldHasBeenSet = false;
+
+    Aws::String m_fontFileBoldItalic;
+    bool m_fontFileBoldItalicHasBeenSet = false;
+
+    Aws::String m_fontFileItalic;
+    bool m_fontFileItalicHasBeenSet = false;
+
+    Aws::String m_fontFileRegular;
+    bool m_fontFileRegularHasBeenSet = false;
 
     int m_fontOpacity;
     bool m_fontOpacityHasBeenSet = false;
