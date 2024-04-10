@@ -5,11 +5,17 @@
 
 
 #include <aws/core/utils/crypto/PrecalculatedHash.h>
-#include <aws/core/utils/HashingUtils.h>
+#include <aws/crt/Types.h>
 
 using namespace Aws::Utils::Crypto;
+using namespace Aws::Crt;
 
-PrecalculatedHash::PrecalculatedHash(const Aws::String &hash) : m_hashString(hash), m_decodedHashString(HashingUtils::Base64Decode(hash)) {}
+PrecalculatedHash::PrecalculatedHash(const Aws::String &hash) : m_hashString(hash)
+{
+    const auto decoded = Base64Decode(hash.c_str());
+    ByteBuffer buf{decoded.data(), decoded.size()};
+    m_decodedHashString = std::move(buf);
+}
 
 PrecalculatedHash::~PrecalculatedHash() = default;
 
