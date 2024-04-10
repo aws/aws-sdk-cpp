@@ -33,50 +33,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the monitor to update. Run <code>ListMonitors</code> to get a
-     * list of monitor names.</p>
+     * <p>The name of the monitor to update. </p>
      */
     inline const Aws::String& GetMonitorName() const{ return m_monitorName; }
 
     /**
-     * <p>The name of the monitor to update. Run <code>ListMonitors</code> to get a
-     * list of monitor names.</p>
+     * <p>The name of the monitor to update. </p>
      */
     inline bool MonitorNameHasBeenSet() const { return m_monitorNameHasBeenSet; }
 
     /**
-     * <p>The name of the monitor to update. Run <code>ListMonitors</code> to get a
-     * list of monitor names.</p>
+     * <p>The name of the monitor to update. </p>
      */
     inline void SetMonitorName(const Aws::String& value) { m_monitorNameHasBeenSet = true; m_monitorName = value; }
 
     /**
-     * <p>The name of the monitor to update. Run <code>ListMonitors</code> to get a
-     * list of monitor names.</p>
+     * <p>The name of the monitor to update. </p>
      */
     inline void SetMonitorName(Aws::String&& value) { m_monitorNameHasBeenSet = true; m_monitorName = std::move(value); }
 
     /**
-     * <p>The name of the monitor to update. Run <code>ListMonitors</code> to get a
-     * list of monitor names.</p>
+     * <p>The name of the monitor to update. </p>
      */
     inline void SetMonitorName(const char* value) { m_monitorNameHasBeenSet = true; m_monitorName.assign(value); }
 
     /**
-     * <p>The name of the monitor to update. Run <code>ListMonitors</code> to get a
-     * list of monitor names.</p>
+     * <p>The name of the monitor to update. </p>
      */
     inline UpdateMonitorRequest& WithMonitorName(const Aws::String& value) { SetMonitorName(value); return *this;}
 
     /**
-     * <p>The name of the monitor to update. Run <code>ListMonitors</code> to get a
-     * list of monitor names.</p>
+     * <p>The name of the monitor to update. </p>
      */
     inline UpdateMonitorRequest& WithMonitorName(Aws::String&& value) { SetMonitorName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the monitor to update. Run <code>ListMonitors</code> to get a
-     * list of monitor names.</p>
+     * <p>The name of the monitor to update. </p>
      */
     inline UpdateMonitorRequest& WithMonitorName(const char* value) { SetMonitorName(value); return *this;}
 

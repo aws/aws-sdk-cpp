@@ -35,42 +35,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the Amazon Q assistant.</p>
+     * <p>The identifier of the Amazon Q in Connect assistant.</p>
      */
     inline const Aws::String& GetAssistantId() const{ return m_assistantId; }
 
     /**
-     * <p>The identifier of the Amazon Q assistant.</p>
+     * <p>The identifier of the Amazon Q in Connect assistant.</p>
      */
     inline bool AssistantIdHasBeenSet() const { return m_assistantIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the Amazon Q assistant.</p>
+     * <p>The identifier of the Amazon Q in Connect assistant.</p>
      */
     inline void SetAssistantId(const Aws::String& value) { m_assistantIdHasBeenSet = true; m_assistantId = value; }
 
     /**
-     * <p>The identifier of the Amazon Q assistant.</p>
+     * <p>The identifier of the Amazon Q in Connect assistant.</p>
      */
     inline void SetAssistantId(Aws::String&& value) { m_assistantIdHasBeenSet = true; m_assistantId = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon Q assistant.</p>
+     * <p>The identifier of the Amazon Q in Connect assistant.</p>
      */
     inline void SetAssistantId(const char* value) { m_assistantIdHasBeenSet = true; m_assistantId.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon Q assistant.</p>
+     * <p>The identifier of the Amazon Q in Connect assistant.</p>
      */
     inline PutFeedbackRequest& WithAssistantId(const Aws::String& value) { SetAssistantId(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q assistant.</p>
+     * <p>The identifier of the Amazon Q in Connect assistant.</p>
      */
     inline PutFeedbackRequest& WithAssistantId(Aws::String&& value) { SetAssistantId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q assistant.</p>
+     * <p>The identifier of the Amazon Q in Connect assistant.</p>
      */
     inline PutFeedbackRequest& WithAssistantId(const char* value) { SetAssistantId(value); return *this;}
 

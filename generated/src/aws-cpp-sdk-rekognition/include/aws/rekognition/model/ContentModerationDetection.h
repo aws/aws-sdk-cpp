@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/rekognition/model/ModerationLabel.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rekognition/model/ContentType.h>
 #include <utility>
 
 namespace Aws
@@ -176,6 +178,55 @@ namespace Model
      */
     inline ContentModerationDetection& WithDurationMillis(long long value) { SetDurationMillis(value); return *this;}
 
+
+    /**
+     * <p>A list of predicted results for the type of content an image contains. For
+     * example, the image content might be from animation, sports, or a video game.</p>
+     */
+    inline const Aws::Vector<ContentType>& GetContentTypes() const{ return m_contentTypes; }
+
+    /**
+     * <p>A list of predicted results for the type of content an image contains. For
+     * example, the image content might be from animation, sports, or a video game.</p>
+     */
+    inline bool ContentTypesHasBeenSet() const { return m_contentTypesHasBeenSet; }
+
+    /**
+     * <p>A list of predicted results for the type of content an image contains. For
+     * example, the image content might be from animation, sports, or a video game.</p>
+     */
+    inline void SetContentTypes(const Aws::Vector<ContentType>& value) { m_contentTypesHasBeenSet = true; m_contentTypes = value; }
+
+    /**
+     * <p>A list of predicted results for the type of content an image contains. For
+     * example, the image content might be from animation, sports, or a video game.</p>
+     */
+    inline void SetContentTypes(Aws::Vector<ContentType>&& value) { m_contentTypesHasBeenSet = true; m_contentTypes = std::move(value); }
+
+    /**
+     * <p>A list of predicted results for the type of content an image contains. For
+     * example, the image content might be from animation, sports, or a video game.</p>
+     */
+    inline ContentModerationDetection& WithContentTypes(const Aws::Vector<ContentType>& value) { SetContentTypes(value); return *this;}
+
+    /**
+     * <p>A list of predicted results for the type of content an image contains. For
+     * example, the image content might be from animation, sports, or a video game.</p>
+     */
+    inline ContentModerationDetection& WithContentTypes(Aws::Vector<ContentType>&& value) { SetContentTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of predicted results for the type of content an image contains. For
+     * example, the image content might be from animation, sports, or a video game.</p>
+     */
+    inline ContentModerationDetection& AddContentTypes(const ContentType& value) { m_contentTypesHasBeenSet = true; m_contentTypes.push_back(value); return *this; }
+
+    /**
+     * <p>A list of predicted results for the type of content an image contains. For
+     * example, the image content might be from animation, sports, or a video game.</p>
+     */
+    inline ContentModerationDetection& AddContentTypes(ContentType&& value) { m_contentTypesHasBeenSet = true; m_contentTypes.push_back(std::move(value)); return *this; }
+
   private:
 
     long long m_timestamp;
@@ -192,6 +243,9 @@ namespace Model
 
     long long m_durationMillis;
     bool m_durationMillisHasBeenSet = false;
+
+    Aws::Vector<ContentType> m_contentTypes;
+    bool m_contentTypesHasBeenSet = false;
   };
 
 } // namespace Model

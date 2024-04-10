@@ -7,6 +7,7 @@
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/qconnect/QConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qconnect/model/TagFilter.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -35,50 +36,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the Amazon Q assistant. Can be either the ID or the ARN.
-     * URLs cannot contain the ARN.</p>
+     * <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or
+     * the ARN. URLs cannot contain the ARN.</p>
      */
     inline const Aws::String& GetAssistantId() const{ return m_assistantId; }
 
     /**
-     * <p>The identifier of the Amazon Q assistant. Can be either the ID or the ARN.
-     * URLs cannot contain the ARN.</p>
+     * <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or
+     * the ARN. URLs cannot contain the ARN.</p>
      */
     inline bool AssistantIdHasBeenSet() const { return m_assistantIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the Amazon Q assistant. Can be either the ID or the ARN.
-     * URLs cannot contain the ARN.</p>
+     * <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or
+     * the ARN. URLs cannot contain the ARN.</p>
      */
     inline void SetAssistantId(const Aws::String& value) { m_assistantIdHasBeenSet = true; m_assistantId = value; }
 
     /**
-     * <p>The identifier of the Amazon Q assistant. Can be either the ID or the ARN.
-     * URLs cannot contain the ARN.</p>
+     * <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or
+     * the ARN. URLs cannot contain the ARN.</p>
      */
     inline void SetAssistantId(Aws::String&& value) { m_assistantIdHasBeenSet = true; m_assistantId = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon Q assistant. Can be either the ID or the ARN.
-     * URLs cannot contain the ARN.</p>
+     * <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or
+     * the ARN. URLs cannot contain the ARN.</p>
      */
     inline void SetAssistantId(const char* value) { m_assistantIdHasBeenSet = true; m_assistantId.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon Q assistant. Can be either the ID or the ARN.
-     * URLs cannot contain the ARN.</p>
+     * <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or
+     * the ARN. URLs cannot contain the ARN.</p>
      */
     inline CreateSessionRequest& WithAssistantId(const Aws::String& value) { SetAssistantId(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q assistant. Can be either the ID or the ARN.
-     * URLs cannot contain the ARN.</p>
+     * <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or
+     * the ARN. URLs cannot contain the ARN.</p>
      */
     inline CreateSessionRequest& WithAssistantId(Aws::String&& value) { SetAssistantId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q assistant. Can be either the ID or the ARN.
-     * URLs cannot contain the ARN.</p>
+     * <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or
+     * the ARN. URLs cannot contain the ARN.</p>
      */
     inline CreateSessionRequest& WithAssistantId(const char* value) { SetAssistantId(value); return *this;}
 
@@ -239,6 +240,37 @@ namespace Model
 
 
     /**
+     * <p>An object that can be used to specify Tag conditions. </p>
+     */
+    inline const TagFilter& GetTagFilter() const{ return m_tagFilter; }
+
+    /**
+     * <p>An object that can be used to specify Tag conditions. </p>
+     */
+    inline bool TagFilterHasBeenSet() const { return m_tagFilterHasBeenSet; }
+
+    /**
+     * <p>An object that can be used to specify Tag conditions. </p>
+     */
+    inline void SetTagFilter(const TagFilter& value) { m_tagFilterHasBeenSet = true; m_tagFilter = value; }
+
+    /**
+     * <p>An object that can be used to specify Tag conditions. </p>
+     */
+    inline void SetTagFilter(TagFilter&& value) { m_tagFilterHasBeenSet = true; m_tagFilter = std::move(value); }
+
+    /**
+     * <p>An object that can be used to specify Tag conditions. </p>
+     */
+    inline CreateSessionRequest& WithTagFilter(const TagFilter& value) { SetTagFilter(value); return *this;}
+
+    /**
+     * <p>An object that can be used to specify Tag conditions. </p>
+     */
+    inline CreateSessionRequest& WithTagFilter(TagFilter&& value) { SetTagFilter(std::move(value)); return *this;}
+
+
+    /**
      * <p>The tags used to organize, track, or control access for this resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -316,6 +348,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    TagFilter m_tagFilter;
+    bool m_tagFilterHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

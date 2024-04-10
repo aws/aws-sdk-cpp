@@ -152,140 +152,132 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
-     * type knowledge base if you're storing Amazon Q Content resource to it. Can be
-     * either the ID or the ARN. URLs cannot contain the ARN.</p> <ul> <li> <p>For
-     * importing Amazon Q quick responses, this should be a
-     * <code>QUICK_RESPONSES</code> type knowledge base.</p> </li> </ul>
+     * <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs
+     * cannot contain the ARN.</p> <ul> <li> <p>For importing Amazon Q in Connect quick
+     * responses, this should be a <code>QUICK_RESPONSES</code> type knowledge
+     * base.</p> </li> </ul>
      */
     inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
 
     /**
-     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
-     * type knowledge base if you're storing Amazon Q Content resource to it. Can be
-     * either the ID or the ARN. URLs cannot contain the ARN.</p> <ul> <li> <p>For
-     * importing Amazon Q quick responses, this should be a
-     * <code>QUICK_RESPONSES</code> type knowledge base.</p> </li> </ul>
+     * <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs
+     * cannot contain the ARN.</p> <ul> <li> <p>For importing Amazon Q in Connect quick
+     * responses, this should be a <code>QUICK_RESPONSES</code> type knowledge
+     * base.</p> </li> </ul>
      */
     inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
-     * type knowledge base if you're storing Amazon Q Content resource to it. Can be
-     * either the ID or the ARN. URLs cannot contain the ARN.</p> <ul> <li> <p>For
-     * importing Amazon Q quick responses, this should be a
-     * <code>QUICK_RESPONSES</code> type knowledge base.</p> </li> </ul>
+     * <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs
+     * cannot contain the ARN.</p> <ul> <li> <p>For importing Amazon Q in Connect quick
+     * responses, this should be a <code>QUICK_RESPONSES</code> type knowledge
+     * base.</p> </li> </ul>
      */
     inline void SetKnowledgeBaseId(const Aws::String& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = value; }
 
     /**
-     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
-     * type knowledge base if you're storing Amazon Q Content resource to it. Can be
-     * either the ID or the ARN. URLs cannot contain the ARN.</p> <ul> <li> <p>For
-     * importing Amazon Q quick responses, this should be a
-     * <code>QUICK_RESPONSES</code> type knowledge base.</p> </li> </ul>
+     * <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs
+     * cannot contain the ARN.</p> <ul> <li> <p>For importing Amazon Q in Connect quick
+     * responses, this should be a <code>QUICK_RESPONSES</code> type knowledge
+     * base.</p> </li> </ul>
      */
     inline void SetKnowledgeBaseId(Aws::String&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::move(value); }
 
     /**
-     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
-     * type knowledge base if you're storing Amazon Q Content resource to it. Can be
-     * either the ID or the ARN. URLs cannot contain the ARN.</p> <ul> <li> <p>For
-     * importing Amazon Q quick responses, this should be a
-     * <code>QUICK_RESPONSES</code> type knowledge base.</p> </li> </ul>
+     * <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs
+     * cannot contain the ARN.</p> <ul> <li> <p>For importing Amazon Q in Connect quick
+     * responses, this should be a <code>QUICK_RESPONSES</code> type knowledge
+     * base.</p> </li> </ul>
      */
     inline void SetKnowledgeBaseId(const char* value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId.assign(value); }
 
     /**
-     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
-     * type knowledge base if you're storing Amazon Q Content resource to it. Can be
-     * either the ID or the ARN. URLs cannot contain the ARN.</p> <ul> <li> <p>For
-     * importing Amazon Q quick responses, this should be a
-     * <code>QUICK_RESPONSES</code> type knowledge base.</p> </li> </ul>
+     * <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs
+     * cannot contain the ARN.</p> <ul> <li> <p>For importing Amazon Q in Connect quick
+     * responses, this should be a <code>QUICK_RESPONSES</code> type knowledge
+     * base.</p> </li> </ul>
      */
     inline StartImportJobRequest& WithKnowledgeBaseId(const Aws::String& value) { SetKnowledgeBaseId(value); return *this;}
 
     /**
-     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
-     * type knowledge base if you're storing Amazon Q Content resource to it. Can be
-     * either the ID or the ARN. URLs cannot contain the ARN.</p> <ul> <li> <p>For
-     * importing Amazon Q quick responses, this should be a
-     * <code>QUICK_RESPONSES</code> type knowledge base.</p> </li> </ul>
+     * <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs
+     * cannot contain the ARN.</p> <ul> <li> <p>For importing Amazon Q in Connect quick
+     * responses, this should be a <code>QUICK_RESPONSES</code> type knowledge
+     * base.</p> </li> </ul>
      */
     inline StartImportJobRequest& WithKnowledgeBaseId(Aws::String&& value) { SetKnowledgeBaseId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
-     * type knowledge base if you're storing Amazon Q Content resource to it. Can be
-     * either the ID or the ARN. URLs cannot contain the ARN.</p> <ul> <li> <p>For
-     * importing Amazon Q quick responses, this should be a
-     * <code>QUICK_RESPONSES</code> type knowledge base.</p> </li> </ul>
+     * <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs
+     * cannot contain the ARN.</p> <ul> <li> <p>For importing Amazon Q in Connect quick
+     * responses, this should be a <code>QUICK_RESPONSES</code> type knowledge
+     * base.</p> </li> </ul>
      */
     inline StartImportJobRequest& WithKnowledgeBaseId(const char* value) { SetKnowledgeBaseId(value); return *this;}
 
 
     /**
-     * <p>The metadata fields of the imported Amazon Q resources.</p>
+     * <p>The metadata fields of the imported Amazon Q in Connect resources.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const{ return m_metadata; }
 
     /**
-     * <p>The metadata fields of the imported Amazon Q resources.</p>
+     * <p>The metadata fields of the imported Amazon Q in Connect resources.</p>
      */
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
 
     /**
-     * <p>The metadata fields of the imported Amazon Q resources.</p>
+     * <p>The metadata fields of the imported Amazon Q in Connect resources.</p>
      */
     inline void SetMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_metadataHasBeenSet = true; m_metadata = value; }
 
     /**
-     * <p>The metadata fields of the imported Amazon Q resources.</p>
+     * <p>The metadata fields of the imported Amazon Q in Connect resources.</p>
      */
     inline void SetMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
 
     /**
-     * <p>The metadata fields of the imported Amazon Q resources.</p>
+     * <p>The metadata fields of the imported Amazon Q in Connect resources.</p>
      */
     inline StartImportJobRequest& WithMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetMetadata(value); return *this;}
 
     /**
-     * <p>The metadata fields of the imported Amazon Q resources.</p>
+     * <p>The metadata fields of the imported Amazon Q in Connect resources.</p>
      */
     inline StartImportJobRequest& WithMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetMetadata(std::move(value)); return *this;}
 
     /**
-     * <p>The metadata fields of the imported Amazon Q resources.</p>
+     * <p>The metadata fields of the imported Amazon Q in Connect resources.</p>
      */
     inline StartImportJobRequest& AddMetadata(const Aws::String& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
 
     /**
-     * <p>The metadata fields of the imported Amazon Q resources.</p>
+     * <p>The metadata fields of the imported Amazon Q in Connect resources.</p>
      */
     inline StartImportJobRequest& AddMetadata(Aws::String&& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The metadata fields of the imported Amazon Q resources.</p>
+     * <p>The metadata fields of the imported Amazon Q in Connect resources.</p>
      */
     inline StartImportJobRequest& AddMetadata(const Aws::String& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The metadata fields of the imported Amazon Q resources.</p>
+     * <p>The metadata fields of the imported Amazon Q in Connect resources.</p>
      */
     inline StartImportJobRequest& AddMetadata(Aws::String&& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The metadata fields of the imported Amazon Q resources.</p>
+     * <p>The metadata fields of the imported Amazon Q in Connect resources.</p>
      */
     inline StartImportJobRequest& AddMetadata(const char* key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The metadata fields of the imported Amazon Q resources.</p>
+     * <p>The metadata fields of the imported Amazon Q in Connect resources.</p>
      */
     inline StartImportJobRequest& AddMetadata(Aws::String&& key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The metadata fields of the imported Amazon Q resources.</p>
+     * <p>The metadata fields of the imported Amazon Q in Connect resources.</p>
      */
     inline StartImportJobRequest& AddMetadata(const char* key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
 

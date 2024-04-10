@@ -12,6 +12,7 @@
 #include <aws/cleanrooms/model/AnalysisSource.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cleanrooms/model/AnalysisParameter.h>
+#include <aws/cleanrooms/model/AnalysisTemplateValidationStatusDetail.h>
 #include <utility>
 
 namespace Aws
@@ -574,6 +575,47 @@ namespace Model
      */
     inline AnalysisTemplate& AddAnalysisParameters(AnalysisParameter&& value) { m_analysisParametersHasBeenSet = true; m_analysisParameters.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Information about the validations performed on the analysis template.</p>
+     */
+    inline const Aws::Vector<AnalysisTemplateValidationStatusDetail>& GetValidations() const{ return m_validations; }
+
+    /**
+     * <p>Information about the validations performed on the analysis template.</p>
+     */
+    inline bool ValidationsHasBeenSet() const { return m_validationsHasBeenSet; }
+
+    /**
+     * <p>Information about the validations performed on the analysis template.</p>
+     */
+    inline void SetValidations(const Aws::Vector<AnalysisTemplateValidationStatusDetail>& value) { m_validationsHasBeenSet = true; m_validations = value; }
+
+    /**
+     * <p>Information about the validations performed on the analysis template.</p>
+     */
+    inline void SetValidations(Aws::Vector<AnalysisTemplateValidationStatusDetail>&& value) { m_validationsHasBeenSet = true; m_validations = std::move(value); }
+
+    /**
+     * <p>Information about the validations performed on the analysis template.</p>
+     */
+    inline AnalysisTemplate& WithValidations(const Aws::Vector<AnalysisTemplateValidationStatusDetail>& value) { SetValidations(value); return *this;}
+
+    /**
+     * <p>Information about the validations performed on the analysis template.</p>
+     */
+    inline AnalysisTemplate& WithValidations(Aws::Vector<AnalysisTemplateValidationStatusDetail>&& value) { SetValidations(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the validations performed on the analysis template.</p>
+     */
+    inline AnalysisTemplate& AddValidations(const AnalysisTemplateValidationStatusDetail& value) { m_validationsHasBeenSet = true; m_validations.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the validations performed on the analysis template.</p>
+     */
+    inline AnalysisTemplate& AddValidations(AnalysisTemplateValidationStatusDetail&& value) { m_validationsHasBeenSet = true; m_validations.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_id;
@@ -617,6 +659,9 @@ namespace Model
 
     Aws::Vector<AnalysisParameter> m_analysisParameters;
     bool m_analysisParametersHasBeenSet = false;
+
+    Aws::Vector<AnalysisTemplateValidationStatusDetail> m_validations;
+    bool m_validationsHasBeenSet = false;
   };
 
 } // namespace Model

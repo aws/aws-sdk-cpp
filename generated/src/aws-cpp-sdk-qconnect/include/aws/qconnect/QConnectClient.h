@@ -24,14 +24,15 @@ namespace QConnect
    * (AI).</p>  <p>Amazon Q in Connect is a generative AI customer service
    * assistant. It is an LLM-enhanced evolution of Amazon Connect Wisdom that
    * delivers real-time recommendations to help contact center agents resolve
-   * customer issues quickly and accurately.</p> <p>Amazon Q automatically detects
-   * customer intent during calls and chats using conversational analytics and
-   * natural language understanding (NLU). It then provides agents with immediate,
-   * real-time generative responses and suggested actions, and links to relevant
-   * documents and articles. Agents can also query Amazon Q directly using natural
-   * language or keywords to answer customer requests.</p> <p>Use the Amazon Q in
-   * Connect APIs to create an assistant and a knowledge base, for example, or manage
-   * content by uploading custom files.</p> <p>For more information, see <a
+   * customer issues quickly and accurately.</p> <p>Amazon Q in Connect automatically
+   * detects customer intent during calls and chats using conversational analytics
+   * and natural language understanding (NLU). It then provides agents with
+   * immediate, real-time generative responses and suggested actions, and links to
+   * relevant documents and articles. Agents can also query Amazon Q in Connect
+   * directly using natural language or keywords to answer customer requests.</p>
+   * <p>Use the Amazon Q in Connect APIs to create an assistant and a knowledge base,
+   * for example, or manage content by uploading custom files.</p> <p>For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-q-connect.html">Use
    * Amazon Q in Connect for generative AI powered agent assistance in real-time</a>
    * in the <i>Amazon Connect Administrator Guide</i>.</p>
@@ -147,7 +148,7 @@ namespace QConnect
         }
 
         /**
-         * <p>Creates Amazon Q content. Before to calling this API, use <a
+         * <p>Creates Amazon Q in Connect content. Before to calling this API, use <a
          * href="https://docs.aws.amazon.com/amazon-q-connect/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>
          * to upload an asset.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateContent">AWS
@@ -214,7 +215,7 @@ namespace QConnect
         }
 
         /**
-         * <p>Creates an Amazon Q quick response.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an Amazon Q in Connect quick response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateQuickResponse">AWS
          * API Reference</a></p>
          */
@@ -240,8 +241,9 @@ namespace QConnect
 
         /**
          * <p>Creates a session. A session is a contextual container used for generating
-         * recommendations. Amazon Connect creates a new Amazon Q session for each contact
-         * on which Amazon Q is enabled.</p><p><h3>See Also:</h3>   <a
+         * recommendations. Amazon Connect creates a new Amazon Q in Connect session for
+         * each contact on which Amazon Q in Connect is enabled.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateSession">AWS
          * API Reference</a></p>
          */
@@ -911,8 +913,8 @@ namespace QConnect
         }
 
         /**
-         * <p>Searches existing Amazon Q quick responses in an Amazon Q knowledge
-         * base.</p><p><h3>See Also:</h3>   <a
+         * <p>Searches existing Amazon Q in Connect quick responses in an Amazon Q in
+         * Connect knowledge base.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/SearchQuickResponses">AWS
          * API Reference</a></p>
          */
@@ -994,13 +996,13 @@ namespace QConnect
         }
 
         /**
-         * <p>Start an asynchronous job to import Amazon Q resources from an uploaded
-         * source file. Before calling this API, use <a
+         * <p>Start an asynchronous job to import Amazon Q in Connect resources from an
+         * uploaded source file. Before calling this API, use <a
          * href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>
          * to upload an asset that contains the resource data.</p> <ul> <li> <p>For
-         * importing Amazon Q quick responses, you need to upload a csv file including the
-         * quick responses. For information about how to format the csv file for importing
-         * quick responses, see <a
+         * importing Amazon Q in Connect quick responses, you need to upload a csv file
+         * including the quick responses. For information about how to format the csv file
+         * for importing quick responses, see <a
          * href="https://docs.aws.amazon.com/console/connect/quick-responses/add-data">Import
          * quick responses</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/StartImportJob">AWS
@@ -1106,8 +1108,8 @@ namespace QConnect
         /**
          * <p>Updates the template URI of a knowledge base. This is only supported for
          * knowledge bases of type EXTERNAL. Include a single variable in
-         * <code>${variable}</code> format; this interpolated by Amazon Q using ingested
-         * content. For example, if you ingest a Salesforce article, it has an
+         * <code>${variable}</code> format; this interpolated by Amazon Q in Connect using
+         * ingested content. For example, if you ingest a Salesforce article, it has an
          * <code>Id</code> value, and you can set the template URI to
          * <code>https://myInstanceName.lightning.force.com/lightning/r/Knowledge__kav/ *${Id}* /view</code>.
          * </p><p><h3>See Also:</h3>   <a
@@ -1135,7 +1137,8 @@ namespace QConnect
         }
 
         /**
-         * <p>Updates an existing Amazon Q quick response.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing Amazon Q in Connect quick response.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateQuickResponse">AWS
          * API Reference</a></p>
          */
@@ -1157,6 +1160,34 @@ namespace QConnect
         void UpdateQuickResponseAsync(const UpdateQuickResponseRequestT& request, const UpdateQuickResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QConnectClient::UpdateQuickResponse, request, handler, context);
+        }
+
+        /**
+         * <p>Updates a session. A session is a contextual container used for generating
+         * recommendations. Amazon Connect updates the existing Amazon Q in Connect session
+         * for each contact on which Amazon Q in Connect is enabled.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateSession">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSessionOutcome UpdateSession(const Model::UpdateSessionRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateSession that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateSessionRequestT = Model::UpdateSessionRequest>
+        Model::UpdateSessionOutcomeCallable UpdateSessionCallable(const UpdateSessionRequestT& request) const
+        {
+            return SubmitCallable(&QConnectClient::UpdateSession, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateSession that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateSessionRequestT = Model::UpdateSessionRequest>
+        void UpdateSessionAsync(const UpdateSessionRequestT& request, const UpdateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QConnectClient::UpdateSession, request, handler, context);
         }
 
 

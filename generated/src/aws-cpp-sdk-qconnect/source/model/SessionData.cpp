@@ -24,6 +24,7 @@ SessionData::SessionData() :
     m_nameHasBeenSet(false),
     m_sessionArnHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
+    m_tagFilterHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -34,6 +35,7 @@ SessionData::SessionData(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_sessionArnHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
+    m_tagFilterHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -74,6 +76,13 @@ SessionData& SessionData::operator =(JsonView jsonValue)
     m_sessionId = jsonValue.GetString("sessionId");
 
     m_sessionIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("tagFilter"))
+  {
+    m_tagFilter = jsonValue.GetObject("tagFilter");
+
+    m_tagFilterHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -120,6 +129,12 @@ JsonValue SessionData::Jsonize() const
   if(m_sessionIdHasBeenSet)
   {
    payload.WithString("sessionId", m_sessionId);
+
+  }
+
+  if(m_tagFilterHasBeenSet)
+  {
+   payload.WithObject("tagFilter", m_tagFilter.Jsonize());
 
   }
 

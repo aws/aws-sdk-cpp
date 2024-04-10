@@ -35,73 +35,73 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Q assistant.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Q in Connect assistant.</p>
      */
     inline const Aws::String& GetAssistantArn() const{ return m_assistantArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Q assistant.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Q in Connect assistant.</p>
      */
     inline void SetAssistantArn(const Aws::String& value) { m_assistantArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Q assistant.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Q in Connect assistant.</p>
      */
     inline void SetAssistantArn(Aws::String&& value) { m_assistantArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Q assistant.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Q in Connect assistant.</p>
      */
     inline void SetAssistantArn(const char* value) { m_assistantArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Q assistant.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Q in Connect assistant.</p>
      */
     inline PutFeedbackResult& WithAssistantArn(const Aws::String& value) { SetAssistantArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Q assistant.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Q in Connect assistant.</p>
      */
     inline PutFeedbackResult& WithAssistantArn(Aws::String&& value) { SetAssistantArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Q assistant.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Q in Connect assistant.</p>
      */
     inline PutFeedbackResult& WithAssistantArn(const char* value) { SetAssistantArn(value); return *this;}
 
 
     /**
-     * <p>The identifier of the Amazon Q assistant.</p>
+     * <p>The identifier of the Amazon Q in Connect assistant.</p>
      */
     inline const Aws::String& GetAssistantId() const{ return m_assistantId; }
 
     /**
-     * <p>The identifier of the Amazon Q assistant.</p>
+     * <p>The identifier of the Amazon Q in Connect assistant.</p>
      */
     inline void SetAssistantId(const Aws::String& value) { m_assistantId = value; }
 
     /**
-     * <p>The identifier of the Amazon Q assistant.</p>
+     * <p>The identifier of the Amazon Q in Connect assistant.</p>
      */
     inline void SetAssistantId(Aws::String&& value) { m_assistantId = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon Q assistant.</p>
+     * <p>The identifier of the Amazon Q in Connect assistant.</p>
      */
     inline void SetAssistantId(const char* value) { m_assistantId.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon Q assistant.</p>
+     * <p>The identifier of the Amazon Q in Connect assistant.</p>
      */
     inline PutFeedbackResult& WithAssistantId(const Aws::String& value) { SetAssistantId(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q assistant.</p>
+     * <p>The identifier of the Amazon Q in Connect assistant.</p>
      */
     inline PutFeedbackResult& WithAssistantId(Aws::String&& value) { SetAssistantId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q assistant.</p>
+     * <p>The identifier of the Amazon Q in Connect assistant.</p>
      */
     inline PutFeedbackResult& WithAssistantId(const char* value) { SetAssistantId(value); return *this;}
 

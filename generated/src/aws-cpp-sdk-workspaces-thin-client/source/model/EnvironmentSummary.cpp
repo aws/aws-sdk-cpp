@@ -35,8 +35,7 @@ EnvironmentSummary::EnvironmentSummary() :
     m_pendingSoftwareSetIdHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_arnHasBeenSet(false)
 {
 }
 
@@ -57,8 +56,7 @@ EnvironmentSummary::EnvironmentSummary(JsonView jsonValue) :
     m_pendingSoftwareSetIdHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_arnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -163,13 +161,6 @@ EnvironmentSummary& EnvironmentSummary::operator =(JsonView jsonValue)
     m_arnHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("tags"))
-  {
-    m_tags = jsonValue.GetObject("tags");
-
-    m_tagsHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -253,12 +244,6 @@ JsonValue EnvironmentSummary::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
-
-  }
-
-  if(m_tagsHasBeenSet)
-  {
-   payload.WithObject("tags", m_tags.Jsonize());
 
   }
 

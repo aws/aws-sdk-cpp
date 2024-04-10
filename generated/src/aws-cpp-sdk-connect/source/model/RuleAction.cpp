@@ -27,7 +27,8 @@ RuleAction::RuleAction() :
     m_sendNotificationActionHasBeenSet(false),
     m_createCaseActionHasBeenSet(false),
     m_updateCaseActionHasBeenSet(false),
-    m_endAssociatedTasksActionHasBeenSet(false)
+    m_endAssociatedTasksActionHasBeenSet(false),
+    m_submitAutoEvaluationActionHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ RuleAction::RuleAction(JsonView jsonValue) :
     m_sendNotificationActionHasBeenSet(false),
     m_createCaseActionHasBeenSet(false),
     m_updateCaseActionHasBeenSet(false),
-    m_endAssociatedTasksActionHasBeenSet(false)
+    m_endAssociatedTasksActionHasBeenSet(false),
+    m_submitAutoEvaluationActionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -103,6 +105,13 @@ RuleAction& RuleAction::operator =(JsonView jsonValue)
     m_endAssociatedTasksActionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SubmitAutoEvaluationAction"))
+  {
+    m_submitAutoEvaluationAction = jsonValue.GetObject("SubmitAutoEvaluationAction");
+
+    m_submitAutoEvaluationActionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -154,6 +163,12 @@ JsonValue RuleAction::Jsonize() const
   if(m_endAssociatedTasksActionHasBeenSet)
   {
    payload.WithObject("EndAssociatedTasksAction", m_endAssociatedTasksAction.Jsonize());
+
+  }
+
+  if(m_submitAutoEvaluationActionHasBeenSet)
+  {
+   payload.WithObject("SubmitAutoEvaluationAction", m_submitAutoEvaluationAction.Jsonize());
 
   }
 

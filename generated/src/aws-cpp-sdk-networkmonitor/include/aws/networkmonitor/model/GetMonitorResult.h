@@ -74,70 +74,63 @@ namespace Model
 
 
     /**
-     * <p>The name of the monitor. To get a list of the current monitors and their
-     * names, use the <code>ListMonitors</code> action.</p>
+     * <p>The name of the monitor. </p>
      */
     inline const Aws::String& GetMonitorName() const{ return m_monitorName; }
 
     /**
-     * <p>The name of the monitor. To get a list of the current monitors and their
-     * names, use the <code>ListMonitors</code> action.</p>
+     * <p>The name of the monitor. </p>
      */
     inline void SetMonitorName(const Aws::String& value) { m_monitorName = value; }
 
     /**
-     * <p>The name of the monitor. To get a list of the current monitors and their
-     * names, use the <code>ListMonitors</code> action.</p>
+     * <p>The name of the monitor. </p>
      */
     inline void SetMonitorName(Aws::String&& value) { m_monitorName = std::move(value); }
 
     /**
-     * <p>The name of the monitor. To get a list of the current monitors and their
-     * names, use the <code>ListMonitors</code> action.</p>
+     * <p>The name of the monitor. </p>
      */
     inline void SetMonitorName(const char* value) { m_monitorName.assign(value); }
 
     /**
-     * <p>The name of the monitor. To get a list of the current monitors and their
-     * names, use the <code>ListMonitors</code> action.</p>
+     * <p>The name of the monitor. </p>
      */
     inline GetMonitorResult& WithMonitorName(const Aws::String& value) { SetMonitorName(value); return *this;}
 
     /**
-     * <p>The name of the monitor. To get a list of the current monitors and their
-     * names, use the <code>ListMonitors</code> action.</p>
+     * <p>The name of the monitor. </p>
      */
     inline GetMonitorResult& WithMonitorName(Aws::String&& value) { SetMonitorName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the monitor. To get a list of the current monitors and their
-     * names, use the <code>ListMonitors</code> action.</p>
+     * <p>The name of the monitor. </p>
      */
     inline GetMonitorResult& WithMonitorName(const char* value) { SetMonitorName(value); return *this;}
 
 
     /**
-     * <p>Returns a list of the state of each monitor. </p>
+     * <p>Lists the status of the <code>state</code> of each monitor. </p>
      */
     inline const MonitorState& GetState() const{ return m_state; }
 
     /**
-     * <p>Returns a list of the state of each monitor. </p>
+     * <p>Lists the status of the <code>state</code> of each monitor. </p>
      */
     inline void SetState(const MonitorState& value) { m_state = value; }
 
     /**
-     * <p>Returns a list of the state of each monitor. </p>
+     * <p>Lists the status of the <code>state</code> of each monitor. </p>
      */
     inline void SetState(MonitorState&& value) { m_state = std::move(value); }
 
     /**
-     * <p>Returns a list of the state of each monitor. </p>
+     * <p>Lists the status of the <code>state</code> of each monitor. </p>
      */
     inline GetMonitorResult& WithState(const MonitorState& value) { SetState(value); return *this;}
 
     /**
-     * <p>Returns a list of the state of each monitor. </p>
+     * <p>Lists the status of the <code>state</code> of each monitor. </p>
      */
     inline GetMonitorResult& WithState(MonitorState&& value) { SetState(std::move(value)); return *this;}
 
