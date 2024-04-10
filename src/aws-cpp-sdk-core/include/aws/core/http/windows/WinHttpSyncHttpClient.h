@@ -55,6 +55,8 @@ namespace Aws
             bool DoReadData(void* hHttpRequest, char* body, uint64_t size, uint64_t& read) const override;
             void* GetClientModule() const override;
 
+            const char* GetActualHttpVersionUsed(void* hHttpRequest) const override;
+
             bool m_usingProxy = false;
             bool m_verifySSL = true;
             Aws::Http::Version m_version = Aws::Http::Version::HTTP_VERSION_2TLS;

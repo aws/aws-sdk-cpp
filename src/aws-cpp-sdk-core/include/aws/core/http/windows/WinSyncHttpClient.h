@@ -82,6 +82,8 @@ namespace Aws
              */
             bool m_allowRedirects;
 
+            bool m_enableHttpClientTrace = false;
+
         private:
             virtual void* OpenRequest(const std::shared_ptr<HttpRequest>& request, void* connection, const Aws::StringStream& ss) const = 0;
             virtual void DoAddHeaders(void* hHttpRequest, Aws::String& headerStr) const = 0;
@@ -93,6 +95,8 @@ namespace Aws
             virtual bool DoQueryDataAvailable(void* hHttpRequest, uint64_t& available) const = 0;
             virtual bool DoReadData(void* hHttpRequest, char* body, uint64_t size, uint64_t& read) const = 0;
             virtual void* GetClientModule() const = 0;
+
+            virtual const char* GetActualHttpVersionUsed(void* hHttpRequest) const = 0;
 
             bool StreamPayloadToRequest(const std::shared_ptr<HttpRequest>& request, void* hHttpRequest, Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const;
             void LogRequestInternalFailure() const;
