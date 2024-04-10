@@ -255,6 +255,12 @@ bool WinINetSyncHttpClient::DoReadData(void* hHttpRequest, char* body, uint64_t 
     return (InternetReadFile(hHttpRequest, body, (DWORD)size, (LPDWORD)&read) != 0);
 }
 
+const char* WinINetSyncHttpClient::GetActualHttpVersionUsed(void* hHttpRequest) const
+{
+    AWS_UNREFERENCED_PARAM(hHttpRequest);
+    return "Unknown";
+}
+
 void* WinINetSyncHttpClient::GetClientModule() const
 {
     return GetModuleHandle(TEXT("wininet.dll"));

@@ -39,7 +39,7 @@
         // MSVC
         "msvc", "MSFT", "LPDWORD", "DATAW", "mkgmtime", "vscprintf", "wtoi", "msxml", "runtimeobject", "winhttp",
         "Wininet", "HINTERNET", "ADDREQ", "LPCSTR", "MAKELANGID", "SUBLANG", "WSADATA", "Initate", "ioctlsocket",
-        "dupenv", "USERPROFILE", "subblock", "LANGANDCODEPAGE", "CPPUNWIND",
+        "dupenv", "USERPROFILE", "subblock", "LANGANDCODEPAGE", "CPPUNWIND", "keepalivetime", "keepaliveinterval",
         // Crypto
         "decryptor", "encryptor", "NTSTATUS", "PBYTE", "PUCHAR", "noconf", "HAMC", "PBCRYPT", "BCRYPT", "libcrypto",
         "AWSLC", "CBCCTS", "tweaklen", "taglen", "blockcipher", "AESGCM", "compated", "outdata", "Decrypto", "GCMAAD",

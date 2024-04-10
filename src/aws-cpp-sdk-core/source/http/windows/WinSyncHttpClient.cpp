@@ -74,7 +74,15 @@ void WinSyncHttpClient::AddHeadersToRequest(const std::shared_ptr<HttpRequest>& 
         AWS_LOGSTREAM_DEBUG(GetLogTag(), "with headers:");
         for (auto& header : request->GetHeaders())
         {
-            ss << header.first << ": " << header.second << "\r\n";
+            if (!header.first.empty() && !header.second.empty())
+            {
+                ss << header.first << ": " << header.second << "\r\n";
+            }
+            else
+            {
+                // WinHttp does not accept empty header key or value
+                AWS_LOGSTREAM_DEBUG(GetLogTag(), "Empty header is ignored: " << header.first << ": " << header.second);
+            }
         }
 
         Aws::String headerString = ss.str();
@@ -402,6 +410,7 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::MakeRequest(const std::shared_p
     }
     else if(!success)
     {
+        AWS_LOGSTREAM_INFO(GetLogTag(), "Actual HTTP Version used " <<  GetActualHttpVersionUsed(hHttpRequest));
         LogRequestInternalFailure();
     }
 

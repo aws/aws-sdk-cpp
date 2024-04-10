@@ -53,6 +53,8 @@ namespace Aws
             bool DoReadData(void* hHttpRequest, char* body, uint64_t size, uint64_t& read) const override;
             void* GetClientModule() const override;
 
+            const char* GetActualHttpVersionUsed(void* hHttpRequest) const override;
+
             WinINetSyncHttpClient &operator =(const WinINetSyncHttpClient &rhs);
 
             bool m_usingProxy;
