@@ -126,50 +126,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
-     * type knowledge base if you're storing Amazon Q Content resource to it.</p>
+     * <p>The identifier of the knowledge base.</p>
      */
     inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
 
     /**
-     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
-     * type knowledge base if you're storing Amazon Q Content resource to it.</p>
+     * <p>The identifier of the knowledge base.</p>
      */
     inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
-     * type knowledge base if you're storing Amazon Q Content resource to it.</p>
+     * <p>The identifier of the knowledge base.</p>
      */
     inline void SetKnowledgeBaseId(const Aws::String& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = value; }
 
     /**
-     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
-     * type knowledge base if you're storing Amazon Q Content resource to it.</p>
+     * <p>The identifier of the knowledge base.</p>
      */
     inline void SetKnowledgeBaseId(Aws::String&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::move(value); }
 
     /**
-     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
-     * type knowledge base if you're storing Amazon Q Content resource to it.</p>
+     * <p>The identifier of the knowledge base.</p>
      */
     inline void SetKnowledgeBaseId(const char* value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId.assign(value); }
 
     /**
-     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
-     * type knowledge base if you're storing Amazon Q Content resource to it.</p>
+     * <p>The identifier of the knowledge base.</p>
      */
     inline KnowledgeBaseSummary& WithKnowledgeBaseId(const Aws::String& value) { SetKnowledgeBaseId(value); return *this;}
 
     /**
-     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
-     * type knowledge base if you're storing Amazon Q Content resource to it.</p>
+     * <p>The identifier of the knowledge base.</p>
      */
     inline KnowledgeBaseSummary& WithKnowledgeBaseId(Aws::String&& value) { SetKnowledgeBaseId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
-     * type knowledge base if you're storing Amazon Q Content resource to it.</p>
+     * <p>The identifier of the knowledge base.</p>
      */
     inline KnowledgeBaseSummary& WithKnowledgeBaseId(const char* value) { SetKnowledgeBaseId(value); return *this;}
 
@@ -282,8 +274,9 @@ namespace Model
      * encryption. </p> <p>This KMS key must have a policy that allows
      * <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>,
      * <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to
-     * the IAM identity using the key to invoke Amazon Q. </p> <p>For more information
-     * about setting up a customer managed key for Amazon Q, see <a
+     * the IAM identity using the key to invoke Amazon Q in Connect. </p> <p>For more
+     * information about setting up a customer managed key for Amazon Q in Connect, see
+     * <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable
      * Amazon Q in Connect for your instance</a>.</p>
      */
@@ -294,8 +287,9 @@ namespace Model
      * encryption. </p> <p>This KMS key must have a policy that allows
      * <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>,
      * <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to
-     * the IAM identity using the key to invoke Amazon Q. </p> <p>For more information
-     * about setting up a customer managed key for Amazon Q, see <a
+     * the IAM identity using the key to invoke Amazon Q in Connect. </p> <p>For more
+     * information about setting up a customer managed key for Amazon Q in Connect, see
+     * <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable
      * Amazon Q in Connect for your instance</a>.</p>
      */
@@ -306,8 +300,9 @@ namespace Model
      * encryption. </p> <p>This KMS key must have a policy that allows
      * <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>,
      * <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to
-     * the IAM identity using the key to invoke Amazon Q. </p> <p>For more information
-     * about setting up a customer managed key for Amazon Q, see <a
+     * the IAM identity using the key to invoke Amazon Q in Connect. </p> <p>For more
+     * information about setting up a customer managed key for Amazon Q in Connect, see
+     * <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable
      * Amazon Q in Connect for your instance</a>.</p>
      */
@@ -318,8 +313,9 @@ namespace Model
      * encryption. </p> <p>This KMS key must have a policy that allows
      * <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>,
      * <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to
-     * the IAM identity using the key to invoke Amazon Q. </p> <p>For more information
-     * about setting up a customer managed key for Amazon Q, see <a
+     * the IAM identity using the key to invoke Amazon Q in Connect. </p> <p>For more
+     * information about setting up a customer managed key for Amazon Q in Connect, see
+     * <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable
      * Amazon Q in Connect for your instance</a>.</p>
      */
@@ -330,8 +326,9 @@ namespace Model
      * encryption. </p> <p>This KMS key must have a policy that allows
      * <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>,
      * <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to
-     * the IAM identity using the key to invoke Amazon Q. </p> <p>For more information
-     * about setting up a customer managed key for Amazon Q, see <a
+     * the IAM identity using the key to invoke Amazon Q in Connect. </p> <p>For more
+     * information about setting up a customer managed key for Amazon Q in Connect, see
+     * <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable
      * Amazon Q in Connect for your instance</a>.</p>
      */
@@ -342,8 +339,9 @@ namespace Model
      * encryption. </p> <p>This KMS key must have a policy that allows
      * <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>,
      * <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to
-     * the IAM identity using the key to invoke Amazon Q. </p> <p>For more information
-     * about setting up a customer managed key for Amazon Q, see <a
+     * the IAM identity using the key to invoke Amazon Q in Connect. </p> <p>For more
+     * information about setting up a customer managed key for Amazon Q in Connect, see
+     * <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable
      * Amazon Q in Connect for your instance</a>.</p>
      */

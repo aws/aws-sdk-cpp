@@ -29,7 +29,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes information about a monitor probe.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes information about a network monitor probe.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmonitor-2023-08-01/Probe">AWS
    * API Reference</a></p>
    */

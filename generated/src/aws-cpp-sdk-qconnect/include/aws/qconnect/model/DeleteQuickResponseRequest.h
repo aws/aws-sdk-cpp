@@ -34,57 +34,49 @@ namespace Model
 
     /**
      * <p>The knowledge base from which the quick response is deleted. The identifier
-     * of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base
-     * if you're storing Amazon Q Content resource to it.</p>
+     * of the knowledge base.</p>
      */
     inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
 
     /**
      * <p>The knowledge base from which the quick response is deleted. The identifier
-     * of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base
-     * if you're storing Amazon Q Content resource to it.</p>
+     * of the knowledge base.</p>
      */
     inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
 
     /**
      * <p>The knowledge base from which the quick response is deleted. The identifier
-     * of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base
-     * if you're storing Amazon Q Content resource to it.</p>
+     * of the knowledge base.</p>
      */
     inline void SetKnowledgeBaseId(const Aws::String& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = value; }
 
     /**
      * <p>The knowledge base from which the quick response is deleted. The identifier
-     * of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base
-     * if you're storing Amazon Q Content resource to it.</p>
+     * of the knowledge base.</p>
      */
     inline void SetKnowledgeBaseId(Aws::String&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::move(value); }
 
     /**
      * <p>The knowledge base from which the quick response is deleted. The identifier
-     * of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base
-     * if you're storing Amazon Q Content resource to it.</p>
+     * of the knowledge base.</p>
      */
     inline void SetKnowledgeBaseId(const char* value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId.assign(value); }
 
     /**
      * <p>The knowledge base from which the quick response is deleted. The identifier
-     * of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base
-     * if you're storing Amazon Q Content resource to it.</p>
+     * of the knowledge base.</p>
      */
     inline DeleteQuickResponseRequest& WithKnowledgeBaseId(const Aws::String& value) { SetKnowledgeBaseId(value); return *this;}
 
     /**
      * <p>The knowledge base from which the quick response is deleted. The identifier
-     * of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base
-     * if you're storing Amazon Q Content resource to it.</p>
+     * of the knowledge base.</p>
      */
     inline DeleteQuickResponseRequest& WithKnowledgeBaseId(Aws::String&& value) { SetKnowledgeBaseId(std::move(value)); return *this;}
 
     /**
      * <p>The knowledge base from which the quick response is deleted. The identifier
-     * of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base
-     * if you're storing Amazon Q Content resource to it.</p>
+     * of the knowledge base.</p>
      */
     inline DeleteQuickResponseRequest& WithKnowledgeBaseId(const char* value) { SetKnowledgeBaseId(value); return *this;}
 

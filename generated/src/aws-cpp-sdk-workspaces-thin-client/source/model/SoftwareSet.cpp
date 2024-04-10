@@ -26,7 +26,8 @@ SoftwareSet::SoftwareSet() :
     m_validationStatus(SoftwareSetValidationStatus::NOT_SET),
     m_validationStatusHasBeenSet(false),
     m_softwareHasBeenSet(false),
-    m_arnHasBeenSet(false)
+    m_arnHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ SoftwareSet::SoftwareSet(JsonView jsonValue) :
     m_validationStatus(SoftwareSetValidationStatus::NOT_SET),
     m_validationStatusHasBeenSet(false),
     m_softwareHasBeenSet(false),
-    m_arnHasBeenSet(false)
+    m_arnHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -97,6 +99,16 @@ SoftwareSet& SoftwareSet::operator =(JsonView jsonValue)
     m_arnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -145,6 +157,17 @@ JsonValue SoftwareSet::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

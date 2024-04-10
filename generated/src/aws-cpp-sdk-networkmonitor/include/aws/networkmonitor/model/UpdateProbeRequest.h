@@ -76,42 +76,42 @@ namespace Model
 
 
     /**
-     * <p>Run <code>GetMonitor</code> to get a list of probes and probe IDs.</p>
+     * <p>The ID of the probe to update.</p>
      */
     inline const Aws::String& GetProbeId() const{ return m_probeId; }
 
     /**
-     * <p>Run <code>GetMonitor</code> to get a list of probes and probe IDs.</p>
+     * <p>The ID of the probe to update.</p>
      */
     inline bool ProbeIdHasBeenSet() const { return m_probeIdHasBeenSet; }
 
     /**
-     * <p>Run <code>GetMonitor</code> to get a list of probes and probe IDs.</p>
+     * <p>The ID of the probe to update.</p>
      */
     inline void SetProbeId(const Aws::String& value) { m_probeIdHasBeenSet = true; m_probeId = value; }
 
     /**
-     * <p>Run <code>GetMonitor</code> to get a list of probes and probe IDs.</p>
+     * <p>The ID of the probe to update.</p>
      */
     inline void SetProbeId(Aws::String&& value) { m_probeIdHasBeenSet = true; m_probeId = std::move(value); }
 
     /**
-     * <p>Run <code>GetMonitor</code> to get a list of probes and probe IDs.</p>
+     * <p>The ID of the probe to update.</p>
      */
     inline void SetProbeId(const char* value) { m_probeIdHasBeenSet = true; m_probeId.assign(value); }
 
     /**
-     * <p>Run <code>GetMonitor</code> to get a list of probes and probe IDs.</p>
+     * <p>The ID of the probe to update.</p>
      */
     inline UpdateProbeRequest& WithProbeId(const Aws::String& value) { SetProbeId(value); return *this;}
 
     /**
-     * <p>Run <code>GetMonitor</code> to get a list of probes and probe IDs.</p>
+     * <p>The ID of the probe to update.</p>
      */
     inline UpdateProbeRequest& WithProbeId(Aws::String&& value) { SetProbeId(std::move(value)); return *this;}
 
     /**
-     * <p>Run <code>GetMonitor</code> to get a list of probes and probe IDs.</p>
+     * <p>The ID of the probe to update.</p>
      */
     inline UpdateProbeRequest& WithProbeId(const char* value) { SetProbeId(value); return *this;}
 

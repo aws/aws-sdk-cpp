@@ -13,6 +13,7 @@
 #include <aws/connect/model/CreateCaseActionDefinition.h>
 #include <aws/connect/model/UpdateCaseActionDefinition.h>
 #include <aws/connect/model/EndAssociatedTasksActionDefinition.h>
+#include <aws/connect/model/SubmitAutoEvaluationActionDefinition.h>
 #include <utility>
 
 namespace Aws
@@ -436,6 +437,37 @@ namespace Model
      */
     inline RuleAction& WithEndAssociatedTasksAction(EndAssociatedTasksActionDefinition&& value) { SetEndAssociatedTasksAction(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information about the submit automated evaluation action.</p>
+     */
+    inline const SubmitAutoEvaluationActionDefinition& GetSubmitAutoEvaluationAction() const{ return m_submitAutoEvaluationAction; }
+
+    /**
+     * <p>Information about the submit automated evaluation action.</p>
+     */
+    inline bool SubmitAutoEvaluationActionHasBeenSet() const { return m_submitAutoEvaluationActionHasBeenSet; }
+
+    /**
+     * <p>Information about the submit automated evaluation action.</p>
+     */
+    inline void SetSubmitAutoEvaluationAction(const SubmitAutoEvaluationActionDefinition& value) { m_submitAutoEvaluationActionHasBeenSet = true; m_submitAutoEvaluationAction = value; }
+
+    /**
+     * <p>Information about the submit automated evaluation action.</p>
+     */
+    inline void SetSubmitAutoEvaluationAction(SubmitAutoEvaluationActionDefinition&& value) { m_submitAutoEvaluationActionHasBeenSet = true; m_submitAutoEvaluationAction = std::move(value); }
+
+    /**
+     * <p>Information about the submit automated evaluation action.</p>
+     */
+    inline RuleAction& WithSubmitAutoEvaluationAction(const SubmitAutoEvaluationActionDefinition& value) { SetSubmitAutoEvaluationAction(value); return *this;}
+
+    /**
+     * <p>Information about the submit automated evaluation action.</p>
+     */
+    inline RuleAction& WithSubmitAutoEvaluationAction(SubmitAutoEvaluationActionDefinition&& value) { SetSubmitAutoEvaluationAction(std::move(value)); return *this;}
+
   private:
 
     ActionType m_actionType;
@@ -461,6 +493,9 @@ namespace Model
 
     EndAssociatedTasksActionDefinition m_endAssociatedTasksAction;
     bool m_endAssociatedTasksActionHasBeenSet = false;
+
+    SubmitAutoEvaluationActionDefinition m_submitAutoEvaluationAction;
+    bool m_submitAutoEvaluationActionHasBeenSet = false;
   };
 
 } // namespace Model

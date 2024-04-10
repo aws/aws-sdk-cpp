@@ -128,25 +128,29 @@ namespace Model
 
     /**
      * <p>The time, in seconds, that metrics are aggregated and sent to Amazon
-     * CloudWatch. Valid values are either <code>30</code> or <code>60</code>. </p>
+     * CloudWatch. Valid values are either <code>30</code> or <code>60</code>.
+     * <code>60</code> is the default if no period is chosen.</p>
      */
     inline long long GetAggregationPeriod() const{ return m_aggregationPeriod; }
 
     /**
      * <p>The time, in seconds, that metrics are aggregated and sent to Amazon
-     * CloudWatch. Valid values are either <code>30</code> or <code>60</code>. </p>
+     * CloudWatch. Valid values are either <code>30</code> or <code>60</code>.
+     * <code>60</code> is the default if no period is chosen.</p>
      */
     inline bool AggregationPeriodHasBeenSet() const { return m_aggregationPeriodHasBeenSet; }
 
     /**
      * <p>The time, in seconds, that metrics are aggregated and sent to Amazon
-     * CloudWatch. Valid values are either <code>30</code> or <code>60</code>. </p>
+     * CloudWatch. Valid values are either <code>30</code> or <code>60</code>.
+     * <code>60</code> is the default if no period is chosen.</p>
      */
     inline void SetAggregationPeriod(long long value) { m_aggregationPeriodHasBeenSet = true; m_aggregationPeriod = value; }
 
     /**
      * <p>The time, in seconds, that metrics are aggregated and sent to Amazon
-     * CloudWatch. Valid values are either <code>30</code> or <code>60</code>. </p>
+     * CloudWatch. Valid values are either <code>30</code> or <code>60</code>.
+     * <code>60</code> is the default if no period is chosen.</p>
      */
     inline CreateMonitorRequest& WithAggregationPeriod(long long value) { SetAggregationPeriod(value); return *this;}
 

@@ -35,8 +35,7 @@ DeviceSummary::DeviceSummary() :
     m_lastPostureAtHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_arnHasBeenSet(false)
 {
 }
 
@@ -57,8 +56,7 @@ DeviceSummary::DeviceSummary(JsonView jsonValue) :
     m_lastPostureAtHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_arnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -170,13 +168,6 @@ DeviceSummary& DeviceSummary::operator =(JsonView jsonValue)
     m_arnHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("tags"))
-  {
-    m_tags = jsonValue.GetObject("tags");
-
-    m_tagsHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -265,12 +256,6 @@ JsonValue DeviceSummary::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
-
-  }
-
-  if(m_tagsHasBeenSet)
-  {
-   payload.WithObject("tags", m_tags.Jsonize());
 
   }
 

@@ -25,7 +25,11 @@ namespace NetworkMonitor
    * creates a monitor containing all the possible source and destination
    * combinations, each of which is called a probe, within a single monitor. These
    * probes then monitor network traffic to help you identify where network issues
-   * might be affecting your traffic.</p> <p>For more information, see <a
+   * might be affecting your traffic.</p> <p>Before you begin, ensure the Amazon Web
+   * Services CLI is configured in the Amazon Web Services Account where you will
+   * create the Network Monitor resource. Network Monitor doesn’t support creation on
+   * cross-account resources, but you can create a Network Monitor in any subnet
+   * belonging to a VPC owned by your Account.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/what-is-network-monitor.html">Using
    * Amazon CloudWatch Network Monitor</a> in the <i>Amazon CloudWatch User
    * Guide</i>.</p>
@@ -92,8 +96,19 @@ namespace NetworkMonitor
          * <p>Creates a monitor between a source subnet and destination IP address. Within
          * a monitor you'll create one or more probes that monitor network traffic between
          * your source Amazon Web Services VPC subnets and your destination IP addresses.
-         * Each probe then aggregates and sends metrics to Amazon CloudWatch.</p><p><h3>See
-         * Also:</h3>   <a
+         * Each probe then aggregates and sends metrics to Amazon CloudWatch.</p> <p>You
+         * can also create a monitor with probes using this command. For each probe, you
+         * define the following:</p> <ul> <li> <p> <code>source</code>—The subnet IDs where
+         * the probes will be created.</p> </li> <li> <p> <code>destination</code>— The
+         * target destination IP address for the probe.</p> </li> <li> <p>
+         * <code>destinationPort</code>—Required only if the protocol is
+         * <code>TCP</code>.</p> </li> <li> <p> <code>protocol</code>—The communication
+         * protocol between the source and destination. This will be either
+         * <code>TCP</code> or <code>ICMP</code>.</p> </li> <li> <p>
+         * <code>packetSize</code>—The size of the packets. This must be a number between
+         * <code>56</code> and <code>8500</code>.</p> </li> <li> <p>(Optional)
+         * <code>tags</code> —Key-value pairs created and assigned to the probe.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkmonitor-2023-08-01/CreateMonitor">AWS
          * API Reference</a></p>
          */
@@ -120,7 +135,10 @@ namespace NetworkMonitor
         /**
          * <p>Create a probe within a monitor. Once you create a probe, and it begins
          * monitoring your network traffic, you'll incur billing charges for that probe.
-         * </p><p><h3>See Also:</h3>   <a
+         * This action requires the <code>monitorName</code> parameter. Run
+         * <code>ListMonitors</code> to get a list of monitor names. Note the name of the
+         * <code>monitorName</code> you want to create the probe for.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkmonitor-2023-08-01/CreateProbe">AWS
          * API Reference</a></p>
          */
@@ -145,7 +163,9 @@ namespace NetworkMonitor
         }
 
         /**
-         * <p>Deletes a specified monitor.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a specified monitor.</p> <p>This action requires the
+         * <code>monitorName</code> parameter. Run <code>ListMonitors</code> to get a list
+         * of monitor names. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkmonitor-2023-08-01/DeleteMonitor">AWS
          * API Reference</a></p>
          */
@@ -170,8 +190,13 @@ namespace NetworkMonitor
         }
 
         /**
-         * <p>Deletes the specified monitor. Once a probe is deleted you'll no longer incur
-         * any billing fees for that probe.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified probe. Once a probe is deleted you'll no longer incur
+         * any billing fees for that probe.</p> <p>This action requires both the
+         * <code>monitorName</code> and <code>probeId</code> parameters. Run
+         * <code>ListMonitors</code> to get a list of monitor names. Run
+         * <code>GetMonitor</code> to get a list of probes and probe IDs. You can only
+         * delete a single probe at a time using this action. </p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkmonitor-2023-08-01/DeleteProbe">AWS
          * API Reference</a></p>
          */
@@ -196,7 +221,9 @@ namespace NetworkMonitor
         }
 
         /**
-         * <p>Returns details about a specific monitor.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns details about a specific monitor. </p> <p>This action requires the
+         * <code>monitorName</code> parameter. Run <code>ListMonitors</code> to get a list
+         * of monitor names. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkmonitor-2023-08-01/GetMonitor">AWS
          * API Reference</a></p>
          */
@@ -221,9 +248,11 @@ namespace NetworkMonitor
         }
 
         /**
-         * <p>Returns the details about a probe. You'll need both the
-         * <code>monitorName</code> and <code>probeId</code>. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Returns the details about a probe. This action requires both the
+         * <code>monitorName</code> and <code>probeId</code> parameters. Run
+         * <code>ListMonitors</code> to get a list of monitor names. Run
+         * <code>GetMonitor</code> to get a list of probes and probe IDs. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkmonitor-2023-08-01/GetProbe">AWS
          * API Reference</a></p>
          */
@@ -351,7 +380,9 @@ namespace NetworkMonitor
         /**
          * <p>Updates the <code>aggregationPeriod</code> for a monitor. Monitors support an
          * <code>aggregationPeriod</code> of either <code>30</code> or <code>60</code>
-         * seconds.</p><p><h3>See Also:</h3>   <a
+         * seconds. This action requires the <code>monitorName</code> and
+         * <code>probeId</code> parameter. Run <code>ListMonitors</code> to get a list of
+         * monitor names. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkmonitor-2023-08-01/UpdateMonitor">AWS
          * API Reference</a></p>
          */
@@ -379,8 +410,19 @@ namespace NetworkMonitor
          * <p>Updates a monitor probe. This action requires both the
          * <code>monitorName</code> and <code>probeId</code> parameters. Run
          * <code>ListMonitors</code> to get a list of monitor names. Run
-         * <code>GetMonitor</code> to get a list of probes and probe IDs. </p><p><h3>See
-         * Also:</h3>   <a
+         * <code>GetMonitor</code> to get a list of probes and probe IDs. </p> <p>You can
+         * update the following para create a monitor with probes using this command. For
+         * each probe, you define the following:</p> <ul> <li> <p> <code>state</code>—The
+         * state of the probe.</p> </li> <li> <p> <code>destination</code>— The target
+         * destination IP address for the probe.</p> </li> <li> <p>
+         * <code>destinationPort</code>—Required only if the protocol is
+         * <code>TCP</code>.</p> </li> <li> <p> <code>protocol</code>—The communication
+         * protocol between the source and destination. This will be either
+         * <code>TCP</code> or <code>ICMP</code>.</p> </li> <li> <p>
+         * <code>packetSize</code>—The size of the packets. This must be a number between
+         * <code>56</code> and <code>8500</code>.</p> </li> <li> <p>(Optional)
+         * <code>tags</code> —Key-value pairs created and assigned to the probe.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkmonitor-2023-08-01/UpdateProbe">AWS
          * API Reference</a></p>
          */

@@ -12,7 +12,6 @@
 #include <aws/workspaces-thin-client/model/ResourceNotFoundException.h>
 #include <aws/workspaces-thin-client/model/InternalServerException.h>
 #include <aws/workspaces-thin-client/model/ValidationException.h>
-#include <aws/workspaces-thin-client/model/InternalServiceException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
@@ -59,19 +58,12 @@ template<> AWS_WORKSPACESTHINCLIENT_API ValidationException WorkSpacesThinClient
   return ValidationException(this->GetJsonPayload().View());
 }
 
-template<> AWS_WORKSPACESTHINCLIENT_API InternalServiceException WorkSpacesThinClientError::GetModeledError()
-{
-  assert(this->GetErrorType() == WorkSpacesThinClientErrors::INTERNAL_SERVICE);
-  return InternalServiceException(this->GetJsonPayload().View());
-}
-
 namespace WorkSpacesThinClientErrorMapper
 {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
-static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -89,10 +81,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesThinClientErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INTERNAL_SERVICE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesThinClientErrors::INTERNAL_SERVICE), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

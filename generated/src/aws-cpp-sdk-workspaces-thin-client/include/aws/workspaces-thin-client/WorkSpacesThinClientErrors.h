@@ -49,7 +49,6 @@ enum class WorkSpacesThinClientErrors
 
   CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER,
-  INTERNAL_SERVICE,
   SERVICE_QUOTA_EXCEEDED
 };
 

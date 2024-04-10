@@ -205,50 +205,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
-     * type knowledge base if you're storing Amazon Q Content resource to it.</p>
+     * <p>The identifier of the knowledge base.</p>
      */
     inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
 
     /**
-     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
-     * type knowledge base if you're storing Amazon Q Content resource to it.</p>
+     * <p>The identifier of the knowledge base.</p>
      */
     inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
-     * type knowledge base if you're storing Amazon Q Content resource to it.</p>
+     * <p>The identifier of the knowledge base.</p>
      */
     inline void SetKnowledgeBaseId(const Aws::String& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = value; }
 
     /**
-     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
-     * type knowledge base if you're storing Amazon Q Content resource to it.</p>
+     * <p>The identifier of the knowledge base.</p>
      */
     inline void SetKnowledgeBaseId(Aws::String&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::move(value); }
 
     /**
-     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
-     * type knowledge base if you're storing Amazon Q Content resource to it.</p>
+     * <p>The identifier of the knowledge base.</p>
      */
     inline void SetKnowledgeBaseId(const char* value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId.assign(value); }
 
     /**
-     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
-     * type knowledge base if you're storing Amazon Q Content resource to it.</p>
+     * <p>The identifier of the knowledge base.</p>
      */
     inline ContentData& WithKnowledgeBaseId(const Aws::String& value) { SetKnowledgeBaseId(value); return *this;}
 
     /**
-     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
-     * type knowledge base if you're storing Amazon Q Content resource to it.</p>
+     * <p>The identifier of the knowledge base.</p>
      */
     inline ContentData& WithKnowledgeBaseId(Aws::String&& value) { SetKnowledgeBaseId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
-     * type knowledge base if you're storing Amazon Q Content resource to it.</p>
+     * <p>The identifier of the knowledge base.</p>
      */
     inline ContentData& WithKnowledgeBaseId(const char* value) { SetKnowledgeBaseId(value); return *this;}
 
@@ -297,104 +289,104 @@ namespace Model
     /**
      * <p>A key/value map to store attributes without affecting tagging or
      * recommendations. For example, when synchronizing data between an external system
-     * and Amazon Q, you can store an external version identifier as metadata to
-     * utilize for determining drift.</p>
+     * and Amazon Q in Connect, you can store an external version identifier as
+     * metadata to utilize for determining drift.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const{ return m_metadata; }
 
     /**
      * <p>A key/value map to store attributes without affecting tagging or
      * recommendations. For example, when synchronizing data between an external system
-     * and Amazon Q, you can store an external version identifier as metadata to
-     * utilize for determining drift.</p>
+     * and Amazon Q in Connect, you can store an external version identifier as
+     * metadata to utilize for determining drift.</p>
      */
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
 
     /**
      * <p>A key/value map to store attributes without affecting tagging or
      * recommendations. For example, when synchronizing data between an external system
-     * and Amazon Q, you can store an external version identifier as metadata to
-     * utilize for determining drift.</p>
+     * and Amazon Q in Connect, you can store an external version identifier as
+     * metadata to utilize for determining drift.</p>
      */
     inline void SetMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_metadataHasBeenSet = true; m_metadata = value; }
 
     /**
      * <p>A key/value map to store attributes without affecting tagging or
      * recommendations. For example, when synchronizing data between an external system
-     * and Amazon Q, you can store an external version identifier as metadata to
-     * utilize for determining drift.</p>
+     * and Amazon Q in Connect, you can store an external version identifier as
+     * metadata to utilize for determining drift.</p>
      */
     inline void SetMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
 
     /**
      * <p>A key/value map to store attributes without affecting tagging or
      * recommendations. For example, when synchronizing data between an external system
-     * and Amazon Q, you can store an external version identifier as metadata to
-     * utilize for determining drift.</p>
+     * and Amazon Q in Connect, you can store an external version identifier as
+     * metadata to utilize for determining drift.</p>
      */
     inline ContentData& WithMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetMetadata(value); return *this;}
 
     /**
      * <p>A key/value map to store attributes without affecting tagging or
      * recommendations. For example, when synchronizing data between an external system
-     * and Amazon Q, you can store an external version identifier as metadata to
-     * utilize for determining drift.</p>
+     * and Amazon Q in Connect, you can store an external version identifier as
+     * metadata to utilize for determining drift.</p>
      */
     inline ContentData& WithMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetMetadata(std::move(value)); return *this;}
 
     /**
      * <p>A key/value map to store attributes without affecting tagging or
      * recommendations. For example, when synchronizing data between an external system
-     * and Amazon Q, you can store an external version identifier as metadata to
-     * utilize for determining drift.</p>
+     * and Amazon Q in Connect, you can store an external version identifier as
+     * metadata to utilize for determining drift.</p>
      */
     inline ContentData& AddMetadata(const Aws::String& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
 
     /**
      * <p>A key/value map to store attributes without affecting tagging or
      * recommendations. For example, when synchronizing data between an external system
-     * and Amazon Q, you can store an external version identifier as metadata to
-     * utilize for determining drift.</p>
+     * and Amazon Q in Connect, you can store an external version identifier as
+     * metadata to utilize for determining drift.</p>
      */
     inline ContentData& AddMetadata(Aws::String&& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A key/value map to store attributes without affecting tagging or
      * recommendations. For example, when synchronizing data between an external system
-     * and Amazon Q, you can store an external version identifier as metadata to
-     * utilize for determining drift.</p>
+     * and Amazon Q in Connect, you can store an external version identifier as
+     * metadata to utilize for determining drift.</p>
      */
     inline ContentData& AddMetadata(const Aws::String& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A key/value map to store attributes without affecting tagging or
      * recommendations. For example, when synchronizing data between an external system
-     * and Amazon Q, you can store an external version identifier as metadata to
-     * utilize for determining drift.</p>
+     * and Amazon Q in Connect, you can store an external version identifier as
+     * metadata to utilize for determining drift.</p>
      */
     inline ContentData& AddMetadata(Aws::String&& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A key/value map to store attributes without affecting tagging or
      * recommendations. For example, when synchronizing data between an external system
-     * and Amazon Q, you can store an external version identifier as metadata to
-     * utilize for determining drift.</p>
+     * and Amazon Q in Connect, you can store an external version identifier as
+     * metadata to utilize for determining drift.</p>
      */
     inline ContentData& AddMetadata(const char* key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A key/value map to store attributes without affecting tagging or
      * recommendations. For example, when synchronizing data between an external system
-     * and Amazon Q, you can store an external version identifier as metadata to
-     * utilize for determining drift.</p>
+     * and Amazon Q in Connect, you can store an external version identifier as
+     * metadata to utilize for determining drift.</p>
      */
     inline ContentData& AddMetadata(Aws::String&& key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A key/value map to store attributes without affecting tagging or
      * recommendations. For example, when synchronizing data between an external system
-     * and Amazon Q, you can store an external version identifier as metadata to
-     * utilize for determining drift.</p>
+     * and Amazon Q in Connect, you can store an external version identifier as
+     * metadata to utilize for determining drift.</p>
      */
     inline ContentData& AddMetadata(const char* key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
 

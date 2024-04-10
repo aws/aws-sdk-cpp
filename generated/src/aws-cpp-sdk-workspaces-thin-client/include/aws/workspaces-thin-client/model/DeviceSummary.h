@@ -9,7 +9,6 @@
 #include <aws/workspaces-thin-client/model/DeviceStatus.h>
 #include <aws/workspaces-thin-client/model/SoftwareSetUpdateSchedule.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/workspaces-thin-client/model/EmbeddedTag.h>
 #include <utility>
 
 namespace Aws
@@ -601,37 +600,6 @@ namespace Model
      */
     inline DeviceSummary& WithArn(const char* value) { SetArn(value); return *this;}
 
-
-    /**
-     * <p>The tag keys and optional values for the resource.</p>
-     */
-    inline const EmbeddedTag& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The tag keys and optional values for the resource.</p>
-     */
-    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>The tag keys and optional values for the resource.</p>
-     */
-    inline void SetTags(const EmbeddedTag& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>The tag keys and optional values for the resource.</p>
-     */
-    inline void SetTags(EmbeddedTag&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>The tag keys and optional values for the resource.</p>
-     */
-    inline DeviceSummary& WithTags(const EmbeddedTag& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The tag keys and optional values for the resource.</p>
-     */
-    inline DeviceSummary& WithTags(EmbeddedTag&& value) { SetTags(std::move(value)); return *this;}
-
   private:
 
     Aws::String m_id;
@@ -678,9 +646,6 @@ namespace Model
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
-
-    EmbeddedTag m_tags;
-    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

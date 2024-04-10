@@ -40,7 +40,7 @@ namespace Model
 
     /**
      * <p>The customer managed key used for encryption. For more information about
-     * setting up a customer managed key for Amazon Q, see <a
+     * setting up a customer managed key for Amazon Q in Connect, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable
      * Amazon Q in Connect for your instance</a>. For information about valid ID
      * values, see <a
@@ -51,7 +51,7 @@ namespace Model
 
     /**
      * <p>The customer managed key used for encryption. For more information about
-     * setting up a customer managed key for Amazon Q, see <a
+     * setting up a customer managed key for Amazon Q in Connect, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable
      * Amazon Q in Connect for your instance</a>. For information about valid ID
      * values, see <a
@@ -62,7 +62,7 @@ namespace Model
 
     /**
      * <p>The customer managed key used for encryption. For more information about
-     * setting up a customer managed key for Amazon Q, see <a
+     * setting up a customer managed key for Amazon Q in Connect, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable
      * Amazon Q in Connect for your instance</a>. For information about valid ID
      * values, see <a
@@ -73,7 +73,7 @@ namespace Model
 
     /**
      * <p>The customer managed key used for encryption. For more information about
-     * setting up a customer managed key for Amazon Q, see <a
+     * setting up a customer managed key for Amazon Q in Connect, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable
      * Amazon Q in Connect for your instance</a>. For information about valid ID
      * values, see <a
@@ -84,7 +84,7 @@ namespace Model
 
     /**
      * <p>The customer managed key used for encryption. For more information about
-     * setting up a customer managed key for Amazon Q, see <a
+     * setting up a customer managed key for Amazon Q in Connect, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable
      * Amazon Q in Connect for your instance</a>. For information about valid ID
      * values, see <a
@@ -95,7 +95,7 @@ namespace Model
 
     /**
      * <p>The customer managed key used for encryption. For more information about
-     * setting up a customer managed key for Amazon Q, see <a
+     * setting up a customer managed key for Amazon Q in Connect, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable
      * Amazon Q in Connect for your instance</a>. For information about valid ID
      * values, see <a
@@ -106,7 +106,7 @@ namespace Model
 
     /**
      * <p>The customer managed key used for encryption. For more information about
-     * setting up a customer managed key for Amazon Q, see <a
+     * setting up a customer managed key for Amazon Q in Connect, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable
      * Amazon Q in Connect for your instance</a>. For information about valid ID
      * values, see <a
@@ -117,7 +117,7 @@ namespace Model
 
     /**
      * <p>The customer managed key used for encryption. For more information about
-     * setting up a customer managed key for Amazon Q, see <a
+     * setting up a customer managed key for Amazon Q in Connect, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable
      * Amazon Q in Connect for your instance</a>. For information about valid ID
      * values, see <a

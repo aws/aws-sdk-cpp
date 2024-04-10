@@ -329,9 +329,9 @@ namespace Model
 
 
     /**
-     * <p>The fields from the source that are made available to your agents in Amazon
-     * Q. Optional if ObjectConfiguration is included in the provided DataIntegration.
-     * </p> <ul> <li> <p> For <a
+     * <p>The fields from the source that are made available to your agents in Amazon Q
+     * in Connect. Optional if ObjectConfiguration is included in the provided
+     * DataIntegration. </p> <ul> <li> <p> For <a
      * href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm">
      * Salesforce</a>, you must include at least <code>Id</code>,
      * <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>,
@@ -350,9 +350,9 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetObjectFields() const{ return m_objectFields; }
 
     /**
-     * <p>The fields from the source that are made available to your agents in Amazon
-     * Q. Optional if ObjectConfiguration is included in the provided DataIntegration.
-     * </p> <ul> <li> <p> For <a
+     * <p>The fields from the source that are made available to your agents in Amazon Q
+     * in Connect. Optional if ObjectConfiguration is included in the provided
+     * DataIntegration. </p> <ul> <li> <p> For <a
      * href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm">
      * Salesforce</a>, you must include at least <code>Id</code>,
      * <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>,
@@ -371,9 +371,9 @@ namespace Model
     inline bool ObjectFieldsHasBeenSet() const { return m_objectFieldsHasBeenSet; }
 
     /**
-     * <p>The fields from the source that are made available to your agents in Amazon
-     * Q. Optional if ObjectConfiguration is included in the provided DataIntegration.
-     * </p> <ul> <li> <p> For <a
+     * <p>The fields from the source that are made available to your agents in Amazon Q
+     * in Connect. Optional if ObjectConfiguration is included in the provided
+     * DataIntegration. </p> <ul> <li> <p> For <a
      * href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm">
      * Salesforce</a>, you must include at least <code>Id</code>,
      * <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>,
@@ -392,9 +392,9 @@ namespace Model
     inline void SetObjectFields(const Aws::Vector<Aws::String>& value) { m_objectFieldsHasBeenSet = true; m_objectFields = value; }
 
     /**
-     * <p>The fields from the source that are made available to your agents in Amazon
-     * Q. Optional if ObjectConfiguration is included in the provided DataIntegration.
-     * </p> <ul> <li> <p> For <a
+     * <p>The fields from the source that are made available to your agents in Amazon Q
+     * in Connect. Optional if ObjectConfiguration is included in the provided
+     * DataIntegration. </p> <ul> <li> <p> For <a
      * href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm">
      * Salesforce</a>, you must include at least <code>Id</code>,
      * <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>,
@@ -413,9 +413,9 @@ namespace Model
     inline void SetObjectFields(Aws::Vector<Aws::String>&& value) { m_objectFieldsHasBeenSet = true; m_objectFields = std::move(value); }
 
     /**
-     * <p>The fields from the source that are made available to your agents in Amazon
-     * Q. Optional if ObjectConfiguration is included in the provided DataIntegration.
-     * </p> <ul> <li> <p> For <a
+     * <p>The fields from the source that are made available to your agents in Amazon Q
+     * in Connect. Optional if ObjectConfiguration is included in the provided
+     * DataIntegration. </p> <ul> <li> <p> For <a
      * href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm">
      * Salesforce</a>, you must include at least <code>Id</code>,
      * <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>,
@@ -434,9 +434,9 @@ namespace Model
     inline AppIntegrationsConfiguration& WithObjectFields(const Aws::Vector<Aws::String>& value) { SetObjectFields(value); return *this;}
 
     /**
-     * <p>The fields from the source that are made available to your agents in Amazon
-     * Q. Optional if ObjectConfiguration is included in the provided DataIntegration.
-     * </p> <ul> <li> <p> For <a
+     * <p>The fields from the source that are made available to your agents in Amazon Q
+     * in Connect. Optional if ObjectConfiguration is included in the provided
+     * DataIntegration. </p> <ul> <li> <p> For <a
      * href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm">
      * Salesforce</a>, you must include at least <code>Id</code>,
      * <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>,
@@ -455,9 +455,9 @@ namespace Model
     inline AppIntegrationsConfiguration& WithObjectFields(Aws::Vector<Aws::String>&& value) { SetObjectFields(std::move(value)); return *this;}
 
     /**
-     * <p>The fields from the source that are made available to your agents in Amazon
-     * Q. Optional if ObjectConfiguration is included in the provided DataIntegration.
-     * </p> <ul> <li> <p> For <a
+     * <p>The fields from the source that are made available to your agents in Amazon Q
+     * in Connect. Optional if ObjectConfiguration is included in the provided
+     * DataIntegration. </p> <ul> <li> <p> For <a
      * href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm">
      * Salesforce</a>, you must include at least <code>Id</code>,
      * <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>,
@@ -476,9 +476,9 @@ namespace Model
     inline AppIntegrationsConfiguration& AddObjectFields(const Aws::String& value) { m_objectFieldsHasBeenSet = true; m_objectFields.push_back(value); return *this; }
 
     /**
-     * <p>The fields from the source that are made available to your agents in Amazon
-     * Q. Optional if ObjectConfiguration is included in the provided DataIntegration.
-     * </p> <ul> <li> <p> For <a
+     * <p>The fields from the source that are made available to your agents in Amazon Q
+     * in Connect. Optional if ObjectConfiguration is included in the provided
+     * DataIntegration. </p> <ul> <li> <p> For <a
      * href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm">
      * Salesforce</a>, you must include at least <code>Id</code>,
      * <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>,
@@ -497,9 +497,9 @@ namespace Model
     inline AppIntegrationsConfiguration& AddObjectFields(Aws::String&& value) { m_objectFieldsHasBeenSet = true; m_objectFields.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The fields from the source that are made available to your agents in Amazon
-     * Q. Optional if ObjectConfiguration is included in the provided DataIntegration.
-     * </p> <ul> <li> <p> For <a
+     * <p>The fields from the source that are made available to your agents in Amazon Q
+     * in Connect. Optional if ObjectConfiguration is included in the provided
+     * DataIntegration. </p> <ul> <li> <p> For <a
      * href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm">
      * Salesforce</a>, you must include at least <code>Id</code>,
      * <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>,

@@ -7,6 +7,7 @@
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qconnect/model/SessionIntegrationConfiguration.h>
+#include <aws/qconnect/model/TagFilter.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -235,6 +236,37 @@ namespace Model
 
 
     /**
+     * <p>An object that can be used to specify Tag conditions.</p>
+     */
+    inline const TagFilter& GetTagFilter() const{ return m_tagFilter; }
+
+    /**
+     * <p>An object that can be used to specify Tag conditions.</p>
+     */
+    inline bool TagFilterHasBeenSet() const { return m_tagFilterHasBeenSet; }
+
+    /**
+     * <p>An object that can be used to specify Tag conditions.</p>
+     */
+    inline void SetTagFilter(const TagFilter& value) { m_tagFilterHasBeenSet = true; m_tagFilter = value; }
+
+    /**
+     * <p>An object that can be used to specify Tag conditions.</p>
+     */
+    inline void SetTagFilter(TagFilter&& value) { m_tagFilterHasBeenSet = true; m_tagFilter = std::move(value); }
+
+    /**
+     * <p>An object that can be used to specify Tag conditions.</p>
+     */
+    inline SessionData& WithTagFilter(const TagFilter& value) { SetTagFilter(value); return *this;}
+
+    /**
+     * <p>An object that can be used to specify Tag conditions.</p>
+     */
+    inline SessionData& WithTagFilter(TagFilter&& value) { SetTagFilter(std::move(value)); return *this;}
+
+
+    /**
      * <p>The tags used to organize, track, or control access for this resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -315,6 +347,9 @@ namespace Model
 
     Aws::String m_sessionId;
     bool m_sessionIdHasBeenSet = false;
+
+    TagFilter m_tagFilter;
+    bool m_tagFilterHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

@@ -33,7 +33,8 @@ AnalysisTemplate::AnalysisTemplate() :
     m_format(AnalysisFormat::NOT_SET),
     m_formatHasBeenSet(false),
     m_sourceHasBeenSet(false),
-    m_analysisParametersHasBeenSet(false)
+    m_analysisParametersHasBeenSet(false),
+    m_validationsHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ AnalysisTemplate::AnalysisTemplate(JsonView jsonValue) :
     m_format(AnalysisFormat::NOT_SET),
     m_formatHasBeenSet(false),
     m_sourceHasBeenSet(false),
-    m_analysisParametersHasBeenSet(false)
+    m_analysisParametersHasBeenSet(false),
+    m_validationsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -160,6 +162,16 @@ AnalysisTemplate& AnalysisTemplate::operator =(JsonView jsonValue)
     m_analysisParametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("validations"))
+  {
+    Aws::Utils::Array<JsonView> validationsJsonList = jsonValue.GetArray("validations");
+    for(unsigned validationsIndex = 0; validationsIndex < validationsJsonList.GetLength(); ++validationsIndex)
+    {
+      m_validations.push_back(validationsJsonList[validationsIndex].AsObject());
+    }
+    m_validationsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -250,6 +262,17 @@ JsonValue AnalysisTemplate::Jsonize() const
      analysisParametersJsonList[analysisParametersIndex].AsObject(m_analysisParameters[analysisParametersIndex].Jsonize());
    }
    payload.WithArray("analysisParameters", std::move(analysisParametersJsonList));
+
+  }
+
+  if(m_validationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> validationsJsonList(m_validations.size());
+   for(unsigned validationsIndex = 0; validationsIndex < validationsJsonList.GetLength(); ++validationsIndex)
+   {
+     validationsJsonList[validationsIndex].AsObject(m_validations[validationsIndex].Jsonize());
+   }
+   payload.WithArray("validations", std::move(validationsJsonList));
 
   }
 

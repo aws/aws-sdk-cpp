@@ -221,8 +221,11 @@ Device& Device::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    m_tags = jsonValue.GetObject("tags");
-
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
     m_tagsHasBeenSet = true;
   }
 
@@ -347,7 +350,12 @@ JsonValue Device::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   payload.WithObject("tags", m_tags.Jsonize());
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

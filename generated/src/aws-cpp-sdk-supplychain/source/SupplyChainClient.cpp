@@ -23,6 +23,7 @@
 #include <aws/supplychain/SupplyChainEndpointProvider.h>
 #include <aws/supplychain/model/CreateBillOfMaterialsImportJobRequest.h>
 #include <aws/supplychain/model/GetBillOfMaterialsImportJobRequest.h>
+#include <aws/supplychain/model/SendDataIntegrationEventRequest.h>
 
 #include <smithy/tracing/TracingUtils.h>
 
@@ -232,6 +233,40 @@ GetBillOfMaterialsImportJobOutcome SupplyChainClient::GetBillOfMaterialsImportJo
       endpointResolutionOutcome.GetResult().AddPathSegments("/bill-of-materials-import-jobs/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
       return GetBillOfMaterialsImportJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+SendDataIntegrationEventOutcome SupplyChainClient::SendDataIntegrationEvent(const SendDataIntegrationEventRequest& request) const
+{
+  AWS_OPERATION_GUARD(SendDataIntegrationEvent);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendDataIntegrationEvent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SendDataIntegrationEvent", "Required field: InstanceId, is not set");
+    return SendDataIntegrationEventOutcome(Aws::Client::AWSError<SupplyChainErrors>(SupplyChainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, SendDataIntegrationEvent, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, SendDataIntegrationEvent, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".SendDataIntegrationEvent",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<SendDataIntegrationEventOutcome>(
+    [&]()-> SendDataIntegrationEventOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SendDataIntegrationEvent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/api-data/data-integration/instance/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/data-integration-events");
+      return SendDataIntegrationEventOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

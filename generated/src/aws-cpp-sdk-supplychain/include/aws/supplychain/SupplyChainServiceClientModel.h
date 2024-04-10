@@ -20,6 +20,7 @@
 /* Service model headers required in SupplyChainClient header */
 #include <aws/supplychain/model/CreateBillOfMaterialsImportJobResult.h>
 #include <aws/supplychain/model/GetBillOfMaterialsImportJobResult.h>
+#include <aws/supplychain/model/SendDataIntegrationEventResult.h>
 /* End of service model headers required in SupplyChainClient header */
 
 namespace Aws
@@ -62,16 +63,19 @@ namespace Aws
       /* Service model forward declarations required in SupplyChainClient header */
       class CreateBillOfMaterialsImportJobRequest;
       class GetBillOfMaterialsImportJobRequest;
+      class SendDataIntegrationEventRequest;
       /* End of service model forward declarations required in SupplyChainClient header */
 
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<CreateBillOfMaterialsImportJobResult, SupplyChainError> CreateBillOfMaterialsImportJobOutcome;
       typedef Aws::Utils::Outcome<GetBillOfMaterialsImportJobResult, SupplyChainError> GetBillOfMaterialsImportJobOutcome;
+      typedef Aws::Utils::Outcome<SendDataIntegrationEventResult, SupplyChainError> SendDataIntegrationEventOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
       typedef std::future<CreateBillOfMaterialsImportJobOutcome> CreateBillOfMaterialsImportJobOutcomeCallable;
       typedef std::future<GetBillOfMaterialsImportJobOutcome> GetBillOfMaterialsImportJobOutcomeCallable;
+      typedef std::future<SendDataIntegrationEventOutcome> SendDataIntegrationEventOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -80,6 +84,7 @@ namespace Aws
     /* Service model async handlers definitions */
     typedef std::function<void(const SupplyChainClient*, const Model::CreateBillOfMaterialsImportJobRequest&, const Model::CreateBillOfMaterialsImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBillOfMaterialsImportJobResponseReceivedHandler;
     typedef std::function<void(const SupplyChainClient*, const Model::GetBillOfMaterialsImportJobRequest&, const Model::GetBillOfMaterialsImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBillOfMaterialsImportJobResponseReceivedHandler;
+    typedef std::function<void(const SupplyChainClient*, const Model::SendDataIntegrationEventRequest&, const Model::SendDataIntegrationEventOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendDataIntegrationEventResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace SupplyChain
 } // namespace Aws

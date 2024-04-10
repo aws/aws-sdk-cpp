@@ -58,6 +58,7 @@
 #include <aws/qconnect/model/UpdateContentResult.h>
 #include <aws/qconnect/model/UpdateKnowledgeBaseTemplateUriResult.h>
 #include <aws/qconnect/model/UpdateQuickResponseResult.h>
+#include <aws/qconnect/model/UpdateSessionResult.h>
 /* End of service model headers required in QConnectClient header */
 
 namespace Aws
@@ -138,6 +139,7 @@ namespace Aws
       class UpdateContentRequest;
       class UpdateKnowledgeBaseTemplateUriRequest;
       class UpdateQuickResponseRequest;
+      class UpdateSessionRequest;
       /* End of service model forward declarations required in QConnectClient header */
 
       /* Service model Outcome class definitions */
@@ -181,6 +183,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateContentResult, QConnectError> UpdateContentOutcome;
       typedef Aws::Utils::Outcome<UpdateKnowledgeBaseTemplateUriResult, QConnectError> UpdateKnowledgeBaseTemplateUriOutcome;
       typedef Aws::Utils::Outcome<UpdateQuickResponseResult, QConnectError> UpdateQuickResponseOutcome;
+      typedef Aws::Utils::Outcome<UpdateSessionResult, QConnectError> UpdateSessionOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
@@ -224,6 +227,7 @@ namespace Aws
       typedef std::future<UpdateContentOutcome> UpdateContentOutcomeCallable;
       typedef std::future<UpdateKnowledgeBaseTemplateUriOutcome> UpdateKnowledgeBaseTemplateUriOutcomeCallable;
       typedef std::future<UpdateQuickResponseOutcome> UpdateQuickResponseOutcomeCallable;
+      typedef std::future<UpdateSessionOutcome> UpdateSessionOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -270,6 +274,7 @@ namespace Aws
     typedef std::function<void(const QConnectClient*, const Model::UpdateContentRequest&, const Model::UpdateContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContentResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::UpdateKnowledgeBaseTemplateUriRequest&, const Model::UpdateKnowledgeBaseTemplateUriOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateKnowledgeBaseTemplateUriResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::UpdateQuickResponseRequest&, const Model::UpdateQuickResponseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateQuickResponseResponseReceivedHandler;
+    typedef std::function<void(const QConnectClient*, const Model::UpdateSessionRequest&, const Model::UpdateSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSessionResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace QConnect
 } // namespace Aws
