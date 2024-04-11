@@ -84,37 +84,37 @@ namespace Model
 
     /**
      * <p>The state of the job needed to trigger the action. The only supported value
-     * is "<code>RUNNABLE</code>".</p>
+     * is <code>RUNNABLE</code>.</p>
      */
     inline const JobStateTimeLimitActionsState& GetState() const{ return m_state; }
 
     /**
      * <p>The state of the job needed to trigger the action. The only supported value
-     * is "<code>RUNNABLE</code>".</p>
+     * is <code>RUNNABLE</code>.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The state of the job needed to trigger the action. The only supported value
-     * is "<code>RUNNABLE</code>".</p>
+     * is <code>RUNNABLE</code>.</p>
      */
     inline void SetState(const JobStateTimeLimitActionsState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
      * <p>The state of the job needed to trigger the action. The only supported value
-     * is "<code>RUNNABLE</code>".</p>
+     * is <code>RUNNABLE</code>.</p>
      */
     inline void SetState(JobStateTimeLimitActionsState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The state of the job needed to trigger the action. The only supported value
-     * is "<code>RUNNABLE</code>".</p>
+     * is <code>RUNNABLE</code>.</p>
      */
     inline JobStateTimeLimitAction& WithState(const JobStateTimeLimitActionsState& value) { SetState(value); return *this;}
 
     /**
      * <p>The state of the job needed to trigger the action. The only supported value
-     * is "<code>RUNNABLE</code>".</p>
+     * is <code>RUNNABLE</code>.</p>
      */
     inline JobStateTimeLimitAction& WithState(JobStateTimeLimitActionsState&& value) { SetState(std::move(value)); return *this;}
 
@@ -151,42 +151,42 @@ namespace Model
     /**
      * <p>The action to take when a job is at the head of the job queue in the
      * specified state for the specified period of time. The only supported value is
-     * "<code>CANCEL</code>", which will cancel the job.</p>
+     * <code>CANCEL</code>, which will cancel the job.</p>
      */
     inline const JobStateTimeLimitActionsAction& GetAction() const{ return m_action; }
 
     /**
      * <p>The action to take when a job is at the head of the job queue in the
      * specified state for the specified period of time. The only supported value is
-     * "<code>CANCEL</code>", which will cancel the job.</p>
+     * <code>CANCEL</code>, which will cancel the job.</p>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
      * <p>The action to take when a job is at the head of the job queue in the
      * specified state for the specified period of time. The only supported value is
-     * "<code>CANCEL</code>", which will cancel the job.</p>
+     * <code>CANCEL</code>, which will cancel the job.</p>
      */
     inline void SetAction(const JobStateTimeLimitActionsAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
      * <p>The action to take when a job is at the head of the job queue in the
      * specified state for the specified period of time. The only supported value is
-     * "<code>CANCEL</code>", which will cancel the job.</p>
+     * <code>CANCEL</code>, which will cancel the job.</p>
      */
     inline void SetAction(JobStateTimeLimitActionsAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
      * <p>The action to take when a job is at the head of the job queue in the
      * specified state for the specified period of time. The only supported value is
-     * "<code>CANCEL</code>", which will cancel the job.</p>
+     * <code>CANCEL</code>, which will cancel the job.</p>
      */
     inline JobStateTimeLimitAction& WithAction(const JobStateTimeLimitActionsAction& value) { SetAction(value); return *this;}
 
     /**
      * <p>The action to take when a job is at the head of the job queue in the
      * specified state for the specified period of time. The only supported value is
-     * "<code>CANCEL</code>", which will cancel the job.</p>
+     * <code>CANCEL</code>, which will cancel the job.</p>
      */
     inline JobStateTimeLimitAction& WithAction(JobStateTimeLimitActionsAction&& value) { SetAction(std::move(value)); return *this;}
 

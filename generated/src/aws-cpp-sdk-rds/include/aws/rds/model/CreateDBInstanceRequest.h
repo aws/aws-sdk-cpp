@@ -902,18 +902,21 @@ namespace Model
      * PostgreSQL DB instances)</p> </li> <li> <p> <code>custom-oracle-ee</code> (for
      * RDS Custom for Oracle DB instances)</p> </li> <li> <p>
      * <code>custom-oracle-ee-cdb</code> (for RDS Custom for Oracle DB instances)</p>
-     * </li> <li> <p> <code>custom-sqlserver-ee</code> (for RDS Custom for SQL Server
-     * DB instances)</p> </li> <li> <p> <code>custom-sqlserver-se</code> (for RDS
-     * Custom for SQL Server DB instances)</p> </li> <li> <p>
-     * <code>custom-sqlserver-web</code> (for RDS Custom for SQL Server DB
-     * instances)</p> </li> <li> <p> <code>db2-ae</code> </p> </li> <li> <p>
-     * <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p>
-     * <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li>
-     * <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
-     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
-     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
-     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
-     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
+     * </li> <li> <p> <code>custom-oracle-se2</code> (for RDS Custom for Oracle DB
+     * instances)</p> </li> <li> <p> <code>custom-oracle-se2-cdb</code> (for RDS Custom
+     * for Oracle DB instances)</p> </li> <li> <p> <code>custom-sqlserver-ee</code>
+     * (for RDS Custom for SQL Server DB instances)</p> </li> <li> <p>
+     * <code>custom-sqlserver-se</code> (for RDS Custom for SQL Server DB
+     * instances)</p> </li> <li> <p> <code>custom-sqlserver-web</code> (for RDS Custom
+     * for SQL Server DB instances)</p> </li> <li> <p> <code>db2-ae</code> </p> </li>
+     * <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code> </p> </li>
+     * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
+     * </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
@@ -925,18 +928,21 @@ namespace Model
      * PostgreSQL DB instances)</p> </li> <li> <p> <code>custom-oracle-ee</code> (for
      * RDS Custom for Oracle DB instances)</p> </li> <li> <p>
      * <code>custom-oracle-ee-cdb</code> (for RDS Custom for Oracle DB instances)</p>
-     * </li> <li> <p> <code>custom-sqlserver-ee</code> (for RDS Custom for SQL Server
-     * DB instances)</p> </li> <li> <p> <code>custom-sqlserver-se</code> (for RDS
-     * Custom for SQL Server DB instances)</p> </li> <li> <p>
-     * <code>custom-sqlserver-web</code> (for RDS Custom for SQL Server DB
-     * instances)</p> </li> <li> <p> <code>db2-ae</code> </p> </li> <li> <p>
-     * <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p>
-     * <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li>
-     * <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
-     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
-     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
-     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
-     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
+     * </li> <li> <p> <code>custom-oracle-se2</code> (for RDS Custom for Oracle DB
+     * instances)</p> </li> <li> <p> <code>custom-oracle-se2-cdb</code> (for RDS Custom
+     * for Oracle DB instances)</p> </li> <li> <p> <code>custom-sqlserver-ee</code>
+     * (for RDS Custom for SQL Server DB instances)</p> </li> <li> <p>
+     * <code>custom-sqlserver-se</code> (for RDS Custom for SQL Server DB
+     * instances)</p> </li> <li> <p> <code>custom-sqlserver-web</code> (for RDS Custom
+     * for SQL Server DB instances)</p> </li> <li> <p> <code>db2-ae</code> </p> </li>
+     * <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code> </p> </li>
+     * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
+     * </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
@@ -948,18 +954,21 @@ namespace Model
      * PostgreSQL DB instances)</p> </li> <li> <p> <code>custom-oracle-ee</code> (for
      * RDS Custom for Oracle DB instances)</p> </li> <li> <p>
      * <code>custom-oracle-ee-cdb</code> (for RDS Custom for Oracle DB instances)</p>
-     * </li> <li> <p> <code>custom-sqlserver-ee</code> (for RDS Custom for SQL Server
-     * DB instances)</p> </li> <li> <p> <code>custom-sqlserver-se</code> (for RDS
-     * Custom for SQL Server DB instances)</p> </li> <li> <p>
-     * <code>custom-sqlserver-web</code> (for RDS Custom for SQL Server DB
-     * instances)</p> </li> <li> <p> <code>db2-ae</code> </p> </li> <li> <p>
-     * <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p>
-     * <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li>
-     * <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
-     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
-     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
-     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
-     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
+     * </li> <li> <p> <code>custom-oracle-se2</code> (for RDS Custom for Oracle DB
+     * instances)</p> </li> <li> <p> <code>custom-oracle-se2-cdb</code> (for RDS Custom
+     * for Oracle DB instances)</p> </li> <li> <p> <code>custom-sqlserver-ee</code>
+     * (for RDS Custom for SQL Server DB instances)</p> </li> <li> <p>
+     * <code>custom-sqlserver-se</code> (for RDS Custom for SQL Server DB
+     * instances)</p> </li> <li> <p> <code>custom-sqlserver-web</code> (for RDS Custom
+     * for SQL Server DB instances)</p> </li> <li> <p> <code>db2-ae</code> </p> </li>
+     * <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code> </p> </li>
+     * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
+     * </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
@@ -971,18 +980,21 @@ namespace Model
      * PostgreSQL DB instances)</p> </li> <li> <p> <code>custom-oracle-ee</code> (for
      * RDS Custom for Oracle DB instances)</p> </li> <li> <p>
      * <code>custom-oracle-ee-cdb</code> (for RDS Custom for Oracle DB instances)</p>
-     * </li> <li> <p> <code>custom-sqlserver-ee</code> (for RDS Custom for SQL Server
-     * DB instances)</p> </li> <li> <p> <code>custom-sqlserver-se</code> (for RDS
-     * Custom for SQL Server DB instances)</p> </li> <li> <p>
-     * <code>custom-sqlserver-web</code> (for RDS Custom for SQL Server DB
-     * instances)</p> </li> <li> <p> <code>db2-ae</code> </p> </li> <li> <p>
-     * <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p>
-     * <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li>
-     * <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
-     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
-     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
-     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
-     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
+     * </li> <li> <p> <code>custom-oracle-se2</code> (for RDS Custom for Oracle DB
+     * instances)</p> </li> <li> <p> <code>custom-oracle-se2-cdb</code> (for RDS Custom
+     * for Oracle DB instances)</p> </li> <li> <p> <code>custom-sqlserver-ee</code>
+     * (for RDS Custom for SQL Server DB instances)</p> </li> <li> <p>
+     * <code>custom-sqlserver-se</code> (for RDS Custom for SQL Server DB
+     * instances)</p> </li> <li> <p> <code>custom-sqlserver-web</code> (for RDS Custom
+     * for SQL Server DB instances)</p> </li> <li> <p> <code>db2-ae</code> </p> </li>
+     * <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code> </p> </li>
+     * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
+     * </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
@@ -994,18 +1006,21 @@ namespace Model
      * PostgreSQL DB instances)</p> </li> <li> <p> <code>custom-oracle-ee</code> (for
      * RDS Custom for Oracle DB instances)</p> </li> <li> <p>
      * <code>custom-oracle-ee-cdb</code> (for RDS Custom for Oracle DB instances)</p>
-     * </li> <li> <p> <code>custom-sqlserver-ee</code> (for RDS Custom for SQL Server
-     * DB instances)</p> </li> <li> <p> <code>custom-sqlserver-se</code> (for RDS
-     * Custom for SQL Server DB instances)</p> </li> <li> <p>
-     * <code>custom-sqlserver-web</code> (for RDS Custom for SQL Server DB
-     * instances)</p> </li> <li> <p> <code>db2-ae</code> </p> </li> <li> <p>
-     * <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p>
-     * <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li>
-     * <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
-     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
-     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
-     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
-     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
+     * </li> <li> <p> <code>custom-oracle-se2</code> (for RDS Custom for Oracle DB
+     * instances)</p> </li> <li> <p> <code>custom-oracle-se2-cdb</code> (for RDS Custom
+     * for Oracle DB instances)</p> </li> <li> <p> <code>custom-sqlserver-ee</code>
+     * (for RDS Custom for SQL Server DB instances)</p> </li> <li> <p>
+     * <code>custom-sqlserver-se</code> (for RDS Custom for SQL Server DB
+     * instances)</p> </li> <li> <p> <code>custom-sqlserver-web</code> (for RDS Custom
+     * for SQL Server DB instances)</p> </li> <li> <p> <code>db2-ae</code> </p> </li>
+     * <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code> </p> </li>
+     * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
+     * </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
@@ -1017,18 +1032,21 @@ namespace Model
      * PostgreSQL DB instances)</p> </li> <li> <p> <code>custom-oracle-ee</code> (for
      * RDS Custom for Oracle DB instances)</p> </li> <li> <p>
      * <code>custom-oracle-ee-cdb</code> (for RDS Custom for Oracle DB instances)</p>
-     * </li> <li> <p> <code>custom-sqlserver-ee</code> (for RDS Custom for SQL Server
-     * DB instances)</p> </li> <li> <p> <code>custom-sqlserver-se</code> (for RDS
-     * Custom for SQL Server DB instances)</p> </li> <li> <p>
-     * <code>custom-sqlserver-web</code> (for RDS Custom for SQL Server DB
-     * instances)</p> </li> <li> <p> <code>db2-ae</code> </p> </li> <li> <p>
-     * <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p>
-     * <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li>
-     * <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
-     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
-     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
-     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
-     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
+     * </li> <li> <p> <code>custom-oracle-se2</code> (for RDS Custom for Oracle DB
+     * instances)</p> </li> <li> <p> <code>custom-oracle-se2-cdb</code> (for RDS Custom
+     * for Oracle DB instances)</p> </li> <li> <p> <code>custom-sqlserver-ee</code>
+     * (for RDS Custom for SQL Server DB instances)</p> </li> <li> <p>
+     * <code>custom-sqlserver-se</code> (for RDS Custom for SQL Server DB
+     * instances)</p> </li> <li> <p> <code>custom-sqlserver-web</code> (for RDS Custom
+     * for SQL Server DB instances)</p> </li> <li> <p> <code>db2-ae</code> </p> </li>
+     * <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code> </p> </li>
+     * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
+     * </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
@@ -1040,18 +1058,21 @@ namespace Model
      * PostgreSQL DB instances)</p> </li> <li> <p> <code>custom-oracle-ee</code> (for
      * RDS Custom for Oracle DB instances)</p> </li> <li> <p>
      * <code>custom-oracle-ee-cdb</code> (for RDS Custom for Oracle DB instances)</p>
-     * </li> <li> <p> <code>custom-sqlserver-ee</code> (for RDS Custom for SQL Server
-     * DB instances)</p> </li> <li> <p> <code>custom-sqlserver-se</code> (for RDS
-     * Custom for SQL Server DB instances)</p> </li> <li> <p>
-     * <code>custom-sqlserver-web</code> (for RDS Custom for SQL Server DB
-     * instances)</p> </li> <li> <p> <code>db2-ae</code> </p> </li> <li> <p>
-     * <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p>
-     * <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li>
-     * <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
-     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
-     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
-     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
-     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
+     * </li> <li> <p> <code>custom-oracle-se2</code> (for RDS Custom for Oracle DB
+     * instances)</p> </li> <li> <p> <code>custom-oracle-se2-cdb</code> (for RDS Custom
+     * for Oracle DB instances)</p> </li> <li> <p> <code>custom-sqlserver-ee</code>
+     * (for RDS Custom for SQL Server DB instances)</p> </li> <li> <p>
+     * <code>custom-sqlserver-se</code> (for RDS Custom for SQL Server DB
+     * instances)</p> </li> <li> <p> <code>custom-sqlserver-web</code> (for RDS Custom
+     * for SQL Server DB instances)</p> </li> <li> <p> <code>db2-ae</code> </p> </li>
+     * <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code> </p> </li>
+     * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
+     * </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
@@ -1063,18 +1084,21 @@ namespace Model
      * PostgreSQL DB instances)</p> </li> <li> <p> <code>custom-oracle-ee</code> (for
      * RDS Custom for Oracle DB instances)</p> </li> <li> <p>
      * <code>custom-oracle-ee-cdb</code> (for RDS Custom for Oracle DB instances)</p>
-     * </li> <li> <p> <code>custom-sqlserver-ee</code> (for RDS Custom for SQL Server
-     * DB instances)</p> </li> <li> <p> <code>custom-sqlserver-se</code> (for RDS
-     * Custom for SQL Server DB instances)</p> </li> <li> <p>
-     * <code>custom-sqlserver-web</code> (for RDS Custom for SQL Server DB
-     * instances)</p> </li> <li> <p> <code>db2-ae</code> </p> </li> <li> <p>
-     * <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p>
-     * <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li>
-     * <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
-     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
-     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
-     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
-     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
+     * </li> <li> <p> <code>custom-oracle-se2</code> (for RDS Custom for Oracle DB
+     * instances)</p> </li> <li> <p> <code>custom-oracle-se2-cdb</code> (for RDS Custom
+     * for Oracle DB instances)</p> </li> <li> <p> <code>custom-sqlserver-ee</code>
+     * (for RDS Custom for SQL Server DB instances)</p> </li> <li> <p>
+     * <code>custom-sqlserver-se</code> (for RDS Custom for SQL Server DB
+     * instances)</p> </li> <li> <p> <code>custom-sqlserver-web</code> (for RDS Custom
+     * for SQL Server DB instances)</p> </li> <li> <p> <code>db2-ae</code> </p> </li>
+     * <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code> </p> </li>
+     * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
+     * </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 

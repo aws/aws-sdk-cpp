@@ -133,7 +133,9 @@ namespace Model
      * when you use those operations to create a console URL. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
-     * IAM roles</a> in the <i>IAM User Guide</i>.</p>
+     * IAM roles</a> in the <i>IAM User Guide</i>.</p>  <p>IAM role credentials
+     * provided by Amazon EC2 instances assigned to the role are not subject to the
+     * specified maximum session duration.</p> 
      */
     inline int GetMaxSessionDuration() const{ return m_maxSessionDuration; }
 
@@ -152,7 +154,9 @@ namespace Model
      * when you use those operations to create a console URL. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
-     * IAM roles</a> in the <i>IAM User Guide</i>.</p>
+     * IAM roles</a> in the <i>IAM User Guide</i>.</p>  <p>IAM role credentials
+     * provided by Amazon EC2 instances assigned to the role are not subject to the
+     * specified maximum session duration.</p> 
      */
     inline bool MaxSessionDurationHasBeenSet() const { return m_maxSessionDurationHasBeenSet; }
 
@@ -171,7 +175,9 @@ namespace Model
      * when you use those operations to create a console URL. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
-     * IAM roles</a> in the <i>IAM User Guide</i>.</p>
+     * IAM roles</a> in the <i>IAM User Guide</i>.</p>  <p>IAM role credentials
+     * provided by Amazon EC2 instances assigned to the role are not subject to the
+     * specified maximum session duration.</p> 
      */
     inline void SetMaxSessionDuration(int value) { m_maxSessionDurationHasBeenSet = true; m_maxSessionDuration = value; }
 
@@ -190,7 +196,9 @@ namespace Model
      * when you use those operations to create a console URL. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
-     * IAM roles</a> in the <i>IAM User Guide</i>.</p>
+     * IAM roles</a> in the <i>IAM User Guide</i>.</p>  <p>IAM role credentials
+     * provided by Amazon EC2 instances assigned to the role are not subject to the
+     * specified maximum session duration.</p> 
      */
     inline UpdateRoleRequest& WithMaxSessionDuration(int value) { SetMaxSessionDuration(value); return *this;}
 

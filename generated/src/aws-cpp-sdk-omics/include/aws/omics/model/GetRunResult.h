@@ -810,27 +810,27 @@ namespace Model
 
 
     /**
-     * <p> The computational accelerator used to run the workflow. </p>
+     * <p>The computational accelerator used to run the workflow.</p>
      */
     inline const Accelerators& GetAccelerators() const{ return m_accelerators; }
 
     /**
-     * <p> The computational accelerator used to run the workflow. </p>
+     * <p>The computational accelerator used to run the workflow.</p>
      */
     inline void SetAccelerators(const Accelerators& value) { m_accelerators = value; }
 
     /**
-     * <p> The computational accelerator used to run the workflow. </p>
+     * <p>The computational accelerator used to run the workflow.</p>
      */
     inline void SetAccelerators(Accelerators&& value) { m_accelerators = std::move(value); }
 
     /**
-     * <p> The computational accelerator used to run the workflow. </p>
+     * <p>The computational accelerator used to run the workflow.</p>
      */
     inline GetRunResult& WithAccelerators(const Accelerators& value) { SetAccelerators(value); return *this;}
 
     /**
-     * <p> The computational accelerator used to run the workflow. </p>
+     * <p>The computational accelerator used to run the workflow.</p>
      */
     inline GetRunResult& WithAccelerators(Accelerators&& value) { SetAccelerators(std::move(value)); return *this;}
 
@@ -862,135 +862,135 @@ namespace Model
 
 
     /**
-     * <p> The reason a run has failed. </p>
+     * <p>The reason a run has failed.</p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
 
     /**
-     * <p> The reason a run has failed. </p>
+     * <p>The reason a run has failed.</p>
      */
     inline void SetFailureReason(const Aws::String& value) { m_failureReason = value; }
 
     /**
-     * <p> The reason a run has failed. </p>
+     * <p>The reason a run has failed.</p>
      */
     inline void SetFailureReason(Aws::String&& value) { m_failureReason = std::move(value); }
 
     /**
-     * <p> The reason a run has failed. </p>
+     * <p>The reason a run has failed.</p>
      */
     inline void SetFailureReason(const char* value) { m_failureReason.assign(value); }
 
     /**
-     * <p> The reason a run has failed. </p>
+     * <p>The reason a run has failed.</p>
      */
     inline GetRunResult& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
 
     /**
-     * <p> The reason a run has failed. </p>
+     * <p>The reason a run has failed.</p>
      */
     inline GetRunResult& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
 
     /**
-     * <p> The reason a run has failed. </p>
+     * <p>The reason a run has failed.</p>
      */
     inline GetRunResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 
 
     /**
-     * <p> The location of the run log. </p>
+     * <p>The location of the run log.</p>
      */
     inline const RunLogLocation& GetLogLocation() const{ return m_logLocation; }
 
     /**
-     * <p> The location of the run log. </p>
+     * <p>The location of the run log.</p>
      */
     inline void SetLogLocation(const RunLogLocation& value) { m_logLocation = value; }
 
     /**
-     * <p> The location of the run log. </p>
+     * <p>The location of the run log.</p>
      */
     inline void SetLogLocation(RunLogLocation&& value) { m_logLocation = std::move(value); }
 
     /**
-     * <p> The location of the run log. </p>
+     * <p>The location of the run log.</p>
      */
     inline GetRunResult& WithLogLocation(const RunLogLocation& value) { SetLogLocation(value); return *this;}
 
     /**
-     * <p> The location of the run log. </p>
+     * <p>The location of the run log.</p>
      */
     inline GetRunResult& WithLogLocation(RunLogLocation&& value) { SetLogLocation(std::move(value)); return *this;}
 
 
     /**
-     * <p> The universally unique identifier for a run. </p>
+     * <p>The universally unique identifier for a run.</p>
      */
     inline const Aws::String& GetUuid() const{ return m_uuid; }
 
     /**
-     * <p> The universally unique identifier for a run. </p>
+     * <p>The universally unique identifier for a run.</p>
      */
     inline void SetUuid(const Aws::String& value) { m_uuid = value; }
 
     /**
-     * <p> The universally unique identifier for a run. </p>
+     * <p>The universally unique identifier for a run.</p>
      */
     inline void SetUuid(Aws::String&& value) { m_uuid = std::move(value); }
 
     /**
-     * <p> The universally unique identifier for a run. </p>
+     * <p>The universally unique identifier for a run.</p>
      */
     inline void SetUuid(const char* value) { m_uuid.assign(value); }
 
     /**
-     * <p> The universally unique identifier for a run. </p>
+     * <p>The universally unique identifier for a run.</p>
      */
     inline GetRunResult& WithUuid(const Aws::String& value) { SetUuid(value); return *this;}
 
     /**
-     * <p> The universally unique identifier for a run. </p>
+     * <p>The universally unique identifier for a run.</p>
      */
     inline GetRunResult& WithUuid(Aws::String&& value) { SetUuid(std::move(value)); return *this;}
 
     /**
-     * <p> The universally unique identifier for a run. </p>
+     * <p>The universally unique identifier for a run.</p>
      */
     inline GetRunResult& WithUuid(const char* value) { SetUuid(value); return *this;}
 
 
     /**
-     * <p> The destination for workflow outputs. </p>
+     * <p>The destination for workflow outputs.</p>
      */
     inline const Aws::String& GetRunOutputUri() const{ return m_runOutputUri; }
 
     /**
-     * <p> The destination for workflow outputs. </p>
+     * <p>The destination for workflow outputs.</p>
      */
     inline void SetRunOutputUri(const Aws::String& value) { m_runOutputUri = value; }
 
     /**
-     * <p> The destination for workflow outputs. </p>
+     * <p>The destination for workflow outputs.</p>
      */
     inline void SetRunOutputUri(Aws::String&& value) { m_runOutputUri = std::move(value); }
 
     /**
-     * <p> The destination for workflow outputs. </p>
+     * <p>The destination for workflow outputs.</p>
      */
     inline void SetRunOutputUri(const char* value) { m_runOutputUri.assign(value); }
 
     /**
-     * <p> The destination for workflow outputs. </p>
+     * <p>The destination for workflow outputs.</p>
      */
     inline GetRunResult& WithRunOutputUri(const Aws::String& value) { SetRunOutputUri(value); return *this;}
 
     /**
-     * <p> The destination for workflow outputs. </p>
+     * <p>The destination for workflow outputs.</p>
      */
     inline GetRunResult& WithRunOutputUri(Aws::String&& value) { SetRunOutputUri(std::move(value)); return *this;}
 
     /**
-     * <p> The destination for workflow outputs. </p>
+     * <p>The destination for workflow outputs.</p>
      */
     inline GetRunResult& WithRunOutputUri(const char* value) { SetRunOutputUri(value); return *this;}
 

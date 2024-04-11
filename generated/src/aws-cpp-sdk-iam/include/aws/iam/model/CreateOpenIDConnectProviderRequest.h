@@ -274,16 +274,17 @@ namespace Model
      * identity provider's server certificates. Typically this list includes only one
      * entry. However, IAM lets you have up to five thumbprints for an OIDC provider.
      * This lets you maintain multiple thumbprints if the identity provider is rotating
-     * certificates.</p> <p>The server certificate thumbprint is the hex-encoded SHA-1
-     * hash value of the X.509 certificate used by the domain where the OpenID Connect
-     * provider makes its keys available. It is always a 40-character string.</p>
-     * <p>You must provide at least one thumbprint when creating an IAM OIDC provider.
-     * For example, assume that the OIDC provider is <code>server.example.com</code>
-     * and the provider stores its keys at
-     * https://keys.server.example.com/openid-connect. In that case, the thumbprint
-     * string would be the hex-encoded SHA-1 hash value of the certificate used by
-     * <code>https://keys.server.example.com.</code> </p> <p>For more information about
-     * obtaining the OIDC provider thumbprint, see <a
+     * certificates.</p> <p>This parameter is optional. If it is not included, IAM will
+     * retrieve and use the top intermediate certificate authority (CA) thumbprint of
+     * the OpenID Connect identity provider server certificate.</p> <p>The server
+     * certificate thumbprint is the hex-encoded SHA-1 hash value of the X.509
+     * certificate used by the domain where the OpenID Connect provider makes its keys
+     * available. It is always a 40-character string.</p> <p>For example, assume that
+     * the OIDC provider is <code>server.example.com</code> and the provider stores its
+     * keys at https://keys.server.example.com/openid-connect. In that case, the
+     * thumbprint string would be the hex-encoded SHA-1 hash value of the certificate
+     * used by <code>https://keys.server.example.com.</code> </p> <p>For more
+     * information about obtaining the OIDC provider thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
      * the thumbprint for an OpenID Connect provider</a> in the <i>IAM user
      * Guide</i>.</p>
@@ -295,16 +296,17 @@ namespace Model
      * identity provider's server certificates. Typically this list includes only one
      * entry. However, IAM lets you have up to five thumbprints for an OIDC provider.
      * This lets you maintain multiple thumbprints if the identity provider is rotating
-     * certificates.</p> <p>The server certificate thumbprint is the hex-encoded SHA-1
-     * hash value of the X.509 certificate used by the domain where the OpenID Connect
-     * provider makes its keys available. It is always a 40-character string.</p>
-     * <p>You must provide at least one thumbprint when creating an IAM OIDC provider.
-     * For example, assume that the OIDC provider is <code>server.example.com</code>
-     * and the provider stores its keys at
-     * https://keys.server.example.com/openid-connect. In that case, the thumbprint
-     * string would be the hex-encoded SHA-1 hash value of the certificate used by
-     * <code>https://keys.server.example.com.</code> </p> <p>For more information about
-     * obtaining the OIDC provider thumbprint, see <a
+     * certificates.</p> <p>This parameter is optional. If it is not included, IAM will
+     * retrieve and use the top intermediate certificate authority (CA) thumbprint of
+     * the OpenID Connect identity provider server certificate.</p> <p>The server
+     * certificate thumbprint is the hex-encoded SHA-1 hash value of the X.509
+     * certificate used by the domain where the OpenID Connect provider makes its keys
+     * available. It is always a 40-character string.</p> <p>For example, assume that
+     * the OIDC provider is <code>server.example.com</code> and the provider stores its
+     * keys at https://keys.server.example.com/openid-connect. In that case, the
+     * thumbprint string would be the hex-encoded SHA-1 hash value of the certificate
+     * used by <code>https://keys.server.example.com.</code> </p> <p>For more
+     * information about obtaining the OIDC provider thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
      * the thumbprint for an OpenID Connect provider</a> in the <i>IAM user
      * Guide</i>.</p>
@@ -316,16 +318,17 @@ namespace Model
      * identity provider's server certificates. Typically this list includes only one
      * entry. However, IAM lets you have up to five thumbprints for an OIDC provider.
      * This lets you maintain multiple thumbprints if the identity provider is rotating
-     * certificates.</p> <p>The server certificate thumbprint is the hex-encoded SHA-1
-     * hash value of the X.509 certificate used by the domain where the OpenID Connect
-     * provider makes its keys available. It is always a 40-character string.</p>
-     * <p>You must provide at least one thumbprint when creating an IAM OIDC provider.
-     * For example, assume that the OIDC provider is <code>server.example.com</code>
-     * and the provider stores its keys at
-     * https://keys.server.example.com/openid-connect. In that case, the thumbprint
-     * string would be the hex-encoded SHA-1 hash value of the certificate used by
-     * <code>https://keys.server.example.com.</code> </p> <p>For more information about
-     * obtaining the OIDC provider thumbprint, see <a
+     * certificates.</p> <p>This parameter is optional. If it is not included, IAM will
+     * retrieve and use the top intermediate certificate authority (CA) thumbprint of
+     * the OpenID Connect identity provider server certificate.</p> <p>The server
+     * certificate thumbprint is the hex-encoded SHA-1 hash value of the X.509
+     * certificate used by the domain where the OpenID Connect provider makes its keys
+     * available. It is always a 40-character string.</p> <p>For example, assume that
+     * the OIDC provider is <code>server.example.com</code> and the provider stores its
+     * keys at https://keys.server.example.com/openid-connect. In that case, the
+     * thumbprint string would be the hex-encoded SHA-1 hash value of the certificate
+     * used by <code>https://keys.server.example.com.</code> </p> <p>For more
+     * information about obtaining the OIDC provider thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
      * the thumbprint for an OpenID Connect provider</a> in the <i>IAM user
      * Guide</i>.</p>
@@ -337,16 +340,17 @@ namespace Model
      * identity provider's server certificates. Typically this list includes only one
      * entry. However, IAM lets you have up to five thumbprints for an OIDC provider.
      * This lets you maintain multiple thumbprints if the identity provider is rotating
-     * certificates.</p> <p>The server certificate thumbprint is the hex-encoded SHA-1
-     * hash value of the X.509 certificate used by the domain where the OpenID Connect
-     * provider makes its keys available. It is always a 40-character string.</p>
-     * <p>You must provide at least one thumbprint when creating an IAM OIDC provider.
-     * For example, assume that the OIDC provider is <code>server.example.com</code>
-     * and the provider stores its keys at
-     * https://keys.server.example.com/openid-connect. In that case, the thumbprint
-     * string would be the hex-encoded SHA-1 hash value of the certificate used by
-     * <code>https://keys.server.example.com.</code> </p> <p>For more information about
-     * obtaining the OIDC provider thumbprint, see <a
+     * certificates.</p> <p>This parameter is optional. If it is not included, IAM will
+     * retrieve and use the top intermediate certificate authority (CA) thumbprint of
+     * the OpenID Connect identity provider server certificate.</p> <p>The server
+     * certificate thumbprint is the hex-encoded SHA-1 hash value of the X.509
+     * certificate used by the domain where the OpenID Connect provider makes its keys
+     * available. It is always a 40-character string.</p> <p>For example, assume that
+     * the OIDC provider is <code>server.example.com</code> and the provider stores its
+     * keys at https://keys.server.example.com/openid-connect. In that case, the
+     * thumbprint string would be the hex-encoded SHA-1 hash value of the certificate
+     * used by <code>https://keys.server.example.com.</code> </p> <p>For more
+     * information about obtaining the OIDC provider thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
      * the thumbprint for an OpenID Connect provider</a> in the <i>IAM user
      * Guide</i>.</p>
@@ -358,16 +362,17 @@ namespace Model
      * identity provider's server certificates. Typically this list includes only one
      * entry. However, IAM lets you have up to five thumbprints for an OIDC provider.
      * This lets you maintain multiple thumbprints if the identity provider is rotating
-     * certificates.</p> <p>The server certificate thumbprint is the hex-encoded SHA-1
-     * hash value of the X.509 certificate used by the domain where the OpenID Connect
-     * provider makes its keys available. It is always a 40-character string.</p>
-     * <p>You must provide at least one thumbprint when creating an IAM OIDC provider.
-     * For example, assume that the OIDC provider is <code>server.example.com</code>
-     * and the provider stores its keys at
-     * https://keys.server.example.com/openid-connect. In that case, the thumbprint
-     * string would be the hex-encoded SHA-1 hash value of the certificate used by
-     * <code>https://keys.server.example.com.</code> </p> <p>For more information about
-     * obtaining the OIDC provider thumbprint, see <a
+     * certificates.</p> <p>This parameter is optional. If it is not included, IAM will
+     * retrieve and use the top intermediate certificate authority (CA) thumbprint of
+     * the OpenID Connect identity provider server certificate.</p> <p>The server
+     * certificate thumbprint is the hex-encoded SHA-1 hash value of the X.509
+     * certificate used by the domain where the OpenID Connect provider makes its keys
+     * available. It is always a 40-character string.</p> <p>For example, assume that
+     * the OIDC provider is <code>server.example.com</code> and the provider stores its
+     * keys at https://keys.server.example.com/openid-connect. In that case, the
+     * thumbprint string would be the hex-encoded SHA-1 hash value of the certificate
+     * used by <code>https://keys.server.example.com.</code> </p> <p>For more
+     * information about obtaining the OIDC provider thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
      * the thumbprint for an OpenID Connect provider</a> in the <i>IAM user
      * Guide</i>.</p>
@@ -379,16 +384,17 @@ namespace Model
      * identity provider's server certificates. Typically this list includes only one
      * entry. However, IAM lets you have up to five thumbprints for an OIDC provider.
      * This lets you maintain multiple thumbprints if the identity provider is rotating
-     * certificates.</p> <p>The server certificate thumbprint is the hex-encoded SHA-1
-     * hash value of the X.509 certificate used by the domain where the OpenID Connect
-     * provider makes its keys available. It is always a 40-character string.</p>
-     * <p>You must provide at least one thumbprint when creating an IAM OIDC provider.
-     * For example, assume that the OIDC provider is <code>server.example.com</code>
-     * and the provider stores its keys at
-     * https://keys.server.example.com/openid-connect. In that case, the thumbprint
-     * string would be the hex-encoded SHA-1 hash value of the certificate used by
-     * <code>https://keys.server.example.com.</code> </p> <p>For more information about
-     * obtaining the OIDC provider thumbprint, see <a
+     * certificates.</p> <p>This parameter is optional. If it is not included, IAM will
+     * retrieve and use the top intermediate certificate authority (CA) thumbprint of
+     * the OpenID Connect identity provider server certificate.</p> <p>The server
+     * certificate thumbprint is the hex-encoded SHA-1 hash value of the X.509
+     * certificate used by the domain where the OpenID Connect provider makes its keys
+     * available. It is always a 40-character string.</p> <p>For example, assume that
+     * the OIDC provider is <code>server.example.com</code> and the provider stores its
+     * keys at https://keys.server.example.com/openid-connect. In that case, the
+     * thumbprint string would be the hex-encoded SHA-1 hash value of the certificate
+     * used by <code>https://keys.server.example.com.</code> </p> <p>For more
+     * information about obtaining the OIDC provider thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
      * the thumbprint for an OpenID Connect provider</a> in the <i>IAM user
      * Guide</i>.</p>
@@ -400,16 +406,17 @@ namespace Model
      * identity provider's server certificates. Typically this list includes only one
      * entry. However, IAM lets you have up to five thumbprints for an OIDC provider.
      * This lets you maintain multiple thumbprints if the identity provider is rotating
-     * certificates.</p> <p>The server certificate thumbprint is the hex-encoded SHA-1
-     * hash value of the X.509 certificate used by the domain where the OpenID Connect
-     * provider makes its keys available. It is always a 40-character string.</p>
-     * <p>You must provide at least one thumbprint when creating an IAM OIDC provider.
-     * For example, assume that the OIDC provider is <code>server.example.com</code>
-     * and the provider stores its keys at
-     * https://keys.server.example.com/openid-connect. In that case, the thumbprint
-     * string would be the hex-encoded SHA-1 hash value of the certificate used by
-     * <code>https://keys.server.example.com.</code> </p> <p>For more information about
-     * obtaining the OIDC provider thumbprint, see <a
+     * certificates.</p> <p>This parameter is optional. If it is not included, IAM will
+     * retrieve and use the top intermediate certificate authority (CA) thumbprint of
+     * the OpenID Connect identity provider server certificate.</p> <p>The server
+     * certificate thumbprint is the hex-encoded SHA-1 hash value of the X.509
+     * certificate used by the domain where the OpenID Connect provider makes its keys
+     * available. It is always a 40-character string.</p> <p>For example, assume that
+     * the OIDC provider is <code>server.example.com</code> and the provider stores its
+     * keys at https://keys.server.example.com/openid-connect. In that case, the
+     * thumbprint string would be the hex-encoded SHA-1 hash value of the certificate
+     * used by <code>https://keys.server.example.com.</code> </p> <p>For more
+     * information about obtaining the OIDC provider thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
      * the thumbprint for an OpenID Connect provider</a> in the <i>IAM user
      * Guide</i>.</p>
@@ -421,16 +428,17 @@ namespace Model
      * identity provider's server certificates. Typically this list includes only one
      * entry. However, IAM lets you have up to five thumbprints for an OIDC provider.
      * This lets you maintain multiple thumbprints if the identity provider is rotating
-     * certificates.</p> <p>The server certificate thumbprint is the hex-encoded SHA-1
-     * hash value of the X.509 certificate used by the domain where the OpenID Connect
-     * provider makes its keys available. It is always a 40-character string.</p>
-     * <p>You must provide at least one thumbprint when creating an IAM OIDC provider.
-     * For example, assume that the OIDC provider is <code>server.example.com</code>
-     * and the provider stores its keys at
-     * https://keys.server.example.com/openid-connect. In that case, the thumbprint
-     * string would be the hex-encoded SHA-1 hash value of the certificate used by
-     * <code>https://keys.server.example.com.</code> </p> <p>For more information about
-     * obtaining the OIDC provider thumbprint, see <a
+     * certificates.</p> <p>This parameter is optional. If it is not included, IAM will
+     * retrieve and use the top intermediate certificate authority (CA) thumbprint of
+     * the OpenID Connect identity provider server certificate.</p> <p>The server
+     * certificate thumbprint is the hex-encoded SHA-1 hash value of the X.509
+     * certificate used by the domain where the OpenID Connect provider makes its keys
+     * available. It is always a 40-character string.</p> <p>For example, assume that
+     * the OIDC provider is <code>server.example.com</code> and the provider stores its
+     * keys at https://keys.server.example.com/openid-connect. In that case, the
+     * thumbprint string would be the hex-encoded SHA-1 hash value of the certificate
+     * used by <code>https://keys.server.example.com.</code> </p> <p>For more
+     * information about obtaining the OIDC provider thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
      * the thumbprint for an OpenID Connect provider</a> in the <i>IAM user
      * Guide</i>.</p>
@@ -442,16 +450,17 @@ namespace Model
      * identity provider's server certificates. Typically this list includes only one
      * entry. However, IAM lets you have up to five thumbprints for an OIDC provider.
      * This lets you maintain multiple thumbprints if the identity provider is rotating
-     * certificates.</p> <p>The server certificate thumbprint is the hex-encoded SHA-1
-     * hash value of the X.509 certificate used by the domain where the OpenID Connect
-     * provider makes its keys available. It is always a 40-character string.</p>
-     * <p>You must provide at least one thumbprint when creating an IAM OIDC provider.
-     * For example, assume that the OIDC provider is <code>server.example.com</code>
-     * and the provider stores its keys at
-     * https://keys.server.example.com/openid-connect. In that case, the thumbprint
-     * string would be the hex-encoded SHA-1 hash value of the certificate used by
-     * <code>https://keys.server.example.com.</code> </p> <p>For more information about
-     * obtaining the OIDC provider thumbprint, see <a
+     * certificates.</p> <p>This parameter is optional. If it is not included, IAM will
+     * retrieve and use the top intermediate certificate authority (CA) thumbprint of
+     * the OpenID Connect identity provider server certificate.</p> <p>The server
+     * certificate thumbprint is the hex-encoded SHA-1 hash value of the X.509
+     * certificate used by the domain where the OpenID Connect provider makes its keys
+     * available. It is always a 40-character string.</p> <p>For example, assume that
+     * the OIDC provider is <code>server.example.com</code> and the provider stores its
+     * keys at https://keys.server.example.com/openid-connect. In that case, the
+     * thumbprint string would be the hex-encoded SHA-1 hash value of the certificate
+     * used by <code>https://keys.server.example.com.</code> </p> <p>For more
+     * information about obtaining the OIDC provider thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
      * the thumbprint for an OpenID Connect provider</a> in the <i>IAM user
      * Guide</i>.</p>

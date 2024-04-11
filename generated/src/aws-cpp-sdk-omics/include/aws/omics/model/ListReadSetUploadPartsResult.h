@@ -35,80 +35,80 @@ namespace Model
 
 
     /**
-     * <p> Next token returned in the response of a previous ListReadSetUploadParts
-     * call. Used to get the next page of results. </p>
+     * <p>Next token returned in the response of a previous ListReadSetUploadParts
+     * call. Used to get the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p> Next token returned in the response of a previous ListReadSetUploadParts
-     * call. Used to get the next page of results. </p>
+     * <p>Next token returned in the response of a previous ListReadSetUploadParts
+     * call. Used to get the next page of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p> Next token returned in the response of a previous ListReadSetUploadParts
-     * call. Used to get the next page of results. </p>
+     * <p>Next token returned in the response of a previous ListReadSetUploadParts
+     * call. Used to get the next page of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p> Next token returned in the response of a previous ListReadSetUploadParts
-     * call. Used to get the next page of results. </p>
+     * <p>Next token returned in the response of a previous ListReadSetUploadParts
+     * call. Used to get the next page of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p> Next token returned in the response of a previous ListReadSetUploadParts
-     * call. Used to get the next page of results. </p>
+     * <p>Next token returned in the response of a previous ListReadSetUploadParts
+     * call. Used to get the next page of results.</p>
      */
     inline ListReadSetUploadPartsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p> Next token returned in the response of a previous ListReadSetUploadParts
-     * call. Used to get the next page of results. </p>
+     * <p>Next token returned in the response of a previous ListReadSetUploadParts
+     * call. Used to get the next page of results.</p>
      */
     inline ListReadSetUploadPartsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p> Next token returned in the response of a previous ListReadSetUploadParts
-     * call. Used to get the next page of results. </p>
+     * <p>Next token returned in the response of a previous ListReadSetUploadParts
+     * call. Used to get the next page of results.</p>
      */
     inline ListReadSetUploadPartsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * <p> An array of upload parts. </p>
+     * <p>An array of upload parts.</p>
      */
     inline const Aws::Vector<ReadSetUploadPartListItem>& GetParts() const{ return m_parts; }
 
     /**
-     * <p> An array of upload parts. </p>
+     * <p>An array of upload parts.</p>
      */
     inline void SetParts(const Aws::Vector<ReadSetUploadPartListItem>& value) { m_parts = value; }
 
     /**
-     * <p> An array of upload parts. </p>
+     * <p>An array of upload parts.</p>
      */
     inline void SetParts(Aws::Vector<ReadSetUploadPartListItem>&& value) { m_parts = std::move(value); }
 
     /**
-     * <p> An array of upload parts. </p>
+     * <p>An array of upload parts.</p>
      */
     inline ListReadSetUploadPartsResult& WithParts(const Aws::Vector<ReadSetUploadPartListItem>& value) { SetParts(value); return *this;}
 
     /**
-     * <p> An array of upload parts. </p>
+     * <p>An array of upload parts.</p>
      */
     inline ListReadSetUploadPartsResult& WithParts(Aws::Vector<ReadSetUploadPartListItem>&& value) { SetParts(std::move(value)); return *this;}
 
     /**
-     * <p> An array of upload parts. </p>
+     * <p>An array of upload parts.</p>
      */
     inline ListReadSetUploadPartsResult& AddParts(const ReadSetUploadPartListItem& value) { m_parts.push_back(value); return *this; }
 
     /**
-     * <p> An array of upload parts. </p>
+     * <p>An array of upload parts.</p>
      */
     inline ListReadSetUploadPartsResult& AddParts(ReadSetUploadPartListItem&& value) { m_parts.push_back(std::move(value)); return *this; }
 

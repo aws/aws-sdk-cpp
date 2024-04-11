@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/omics/model/SseConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/omics/model/ETagAlgorithmFamily.h>
 #include <utility>
 
 namespace Aws
@@ -263,52 +264,83 @@ namespace Model
 
 
     /**
-     * <p> An S3 location that is used to store files that have failed a direct upload.
-     * </p>
+     * <p>An S3 location that is used to store files that have failed a direct
+     * upload.</p>
      */
     inline const Aws::String& GetFallbackLocation() const{ return m_fallbackLocation; }
 
     /**
-     * <p> An S3 location that is used to store files that have failed a direct upload.
-     * </p>
+     * <p>An S3 location that is used to store files that have failed a direct
+     * upload.</p>
      */
     inline bool FallbackLocationHasBeenSet() const { return m_fallbackLocationHasBeenSet; }
 
     /**
-     * <p> An S3 location that is used to store files that have failed a direct upload.
-     * </p>
+     * <p>An S3 location that is used to store files that have failed a direct
+     * upload.</p>
      */
     inline void SetFallbackLocation(const Aws::String& value) { m_fallbackLocationHasBeenSet = true; m_fallbackLocation = value; }
 
     /**
-     * <p> An S3 location that is used to store files that have failed a direct upload.
-     * </p>
+     * <p>An S3 location that is used to store files that have failed a direct
+     * upload.</p>
      */
     inline void SetFallbackLocation(Aws::String&& value) { m_fallbackLocationHasBeenSet = true; m_fallbackLocation = std::move(value); }
 
     /**
-     * <p> An S3 location that is used to store files that have failed a direct upload.
-     * </p>
+     * <p>An S3 location that is used to store files that have failed a direct
+     * upload.</p>
      */
     inline void SetFallbackLocation(const char* value) { m_fallbackLocationHasBeenSet = true; m_fallbackLocation.assign(value); }
 
     /**
-     * <p> An S3 location that is used to store files that have failed a direct upload.
-     * </p>
+     * <p>An S3 location that is used to store files that have failed a direct
+     * upload.</p>
      */
     inline CreateSequenceStoreRequest& WithFallbackLocation(const Aws::String& value) { SetFallbackLocation(value); return *this;}
 
     /**
-     * <p> An S3 location that is used to store files that have failed a direct upload.
-     * </p>
+     * <p>An S3 location that is used to store files that have failed a direct
+     * upload.</p>
      */
     inline CreateSequenceStoreRequest& WithFallbackLocation(Aws::String&& value) { SetFallbackLocation(std::move(value)); return *this;}
 
     /**
-     * <p> An S3 location that is used to store files that have failed a direct upload.
-     * </p>
+     * <p>An S3 location that is used to store files that have failed a direct
+     * upload.</p>
      */
     inline CreateSequenceStoreRequest& WithFallbackLocation(const char* value) { SetFallbackLocation(value); return *this;}
+
+
+    /**
+     * <p>The ETag algorithm family to use for ingested read sets.</p>
+     */
+    inline const ETagAlgorithmFamily& GetETagAlgorithmFamily() const{ return m_eTagAlgorithmFamily; }
+
+    /**
+     * <p>The ETag algorithm family to use for ingested read sets.</p>
+     */
+    inline bool ETagAlgorithmFamilyHasBeenSet() const { return m_eTagAlgorithmFamilyHasBeenSet; }
+
+    /**
+     * <p>The ETag algorithm family to use for ingested read sets.</p>
+     */
+    inline void SetETagAlgorithmFamily(const ETagAlgorithmFamily& value) { m_eTagAlgorithmFamilyHasBeenSet = true; m_eTagAlgorithmFamily = value; }
+
+    /**
+     * <p>The ETag algorithm family to use for ingested read sets.</p>
+     */
+    inline void SetETagAlgorithmFamily(ETagAlgorithmFamily&& value) { m_eTagAlgorithmFamilyHasBeenSet = true; m_eTagAlgorithmFamily = std::move(value); }
+
+    /**
+     * <p>The ETag algorithm family to use for ingested read sets.</p>
+     */
+    inline CreateSequenceStoreRequest& WithETagAlgorithmFamily(const ETagAlgorithmFamily& value) { SetETagAlgorithmFamily(value); return *this;}
+
+    /**
+     * <p>The ETag algorithm family to use for ingested read sets.</p>
+     */
+    inline CreateSequenceStoreRequest& WithETagAlgorithmFamily(ETagAlgorithmFamily&& value) { SetETagAlgorithmFamily(std::move(value)); return *this;}
 
   private:
 
@@ -329,6 +361,9 @@ namespace Model
 
     Aws::String m_fallbackLocation;
     bool m_fallbackLocationHasBeenSet = false;
+
+    ETagAlgorithmFamily m_eTagAlgorithmFamily;
+    bool m_eTagAlgorithmFamilyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -394,42 +394,50 @@ namespace Model
 
 
     /**
-     * <p>Displays the reference pointer to the Kubernetes secret resource.</p>
+     * <p>Displays the reference pointer to the Kubernetes secret resource. These
+     * secrets help to gain access to pull an images from a private registry.</p>
      */
     inline const Aws::Vector<ImagePullSecret>& GetImagePullSecrets() const{ return m_imagePullSecrets; }
 
     /**
-     * <p>Displays the reference pointer to the Kubernetes secret resource.</p>
+     * <p>Displays the reference pointer to the Kubernetes secret resource. These
+     * secrets help to gain access to pull an images from a private registry.</p>
      */
     inline bool ImagePullSecretsHasBeenSet() const { return m_imagePullSecretsHasBeenSet; }
 
     /**
-     * <p>Displays the reference pointer to the Kubernetes secret resource.</p>
+     * <p>Displays the reference pointer to the Kubernetes secret resource. These
+     * secrets help to gain access to pull an images from a private registry.</p>
      */
     inline void SetImagePullSecrets(const Aws::Vector<ImagePullSecret>& value) { m_imagePullSecretsHasBeenSet = true; m_imagePullSecrets = value; }
 
     /**
-     * <p>Displays the reference pointer to the Kubernetes secret resource.</p>
+     * <p>Displays the reference pointer to the Kubernetes secret resource. These
+     * secrets help to gain access to pull an images from a private registry.</p>
      */
     inline void SetImagePullSecrets(Aws::Vector<ImagePullSecret>&& value) { m_imagePullSecretsHasBeenSet = true; m_imagePullSecrets = std::move(value); }
 
     /**
-     * <p>Displays the reference pointer to the Kubernetes secret resource.</p>
+     * <p>Displays the reference pointer to the Kubernetes secret resource. These
+     * secrets help to gain access to pull an images from a private registry.</p>
      */
     inline EksPodPropertiesDetail& WithImagePullSecrets(const Aws::Vector<ImagePullSecret>& value) { SetImagePullSecrets(value); return *this;}
 
     /**
-     * <p>Displays the reference pointer to the Kubernetes secret resource.</p>
+     * <p>Displays the reference pointer to the Kubernetes secret resource. These
+     * secrets help to gain access to pull an images from a private registry.</p>
      */
     inline EksPodPropertiesDetail& WithImagePullSecrets(Aws::Vector<ImagePullSecret>&& value) { SetImagePullSecrets(std::move(value)); return *this;}
 
     /**
-     * <p>Displays the reference pointer to the Kubernetes secret resource.</p>
+     * <p>Displays the reference pointer to the Kubernetes secret resource. These
+     * secrets help to gain access to pull an images from a private registry.</p>
      */
     inline EksPodPropertiesDetail& AddImagePullSecrets(const ImagePullSecret& value) { m_imagePullSecretsHasBeenSet = true; m_imagePullSecrets.push_back(value); return *this; }
 
     /**
-     * <p>Displays the reference pointer to the Kubernetes secret resource.</p>
+     * <p>Displays the reference pointer to the Kubernetes secret resource. These
+     * secrets help to gain access to pull an images from a private registry.</p>
      */
     inline EksPodPropertiesDetail& AddImagePullSecrets(ImagePullSecret&& value) { m_imagePullSecretsHasBeenSet = true; m_imagePullSecrets.push_back(std::move(value)); return *this; }
 

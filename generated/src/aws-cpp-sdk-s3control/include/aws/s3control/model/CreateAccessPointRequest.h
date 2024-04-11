@@ -339,49 +339,81 @@ namespace Model
 
     /**
      * <p>The Amazon Web Services account ID associated with the S3 bucket associated
-     * with this access point.</p>
+     * with this access point.</p> <p>For same account access point when your bucket
+     * and access point belong to the same account owner, the
+     * <code>BucketAccountId</code> is not required. For cross-account access point
+     * when your bucket and access point are not in the same account, the
+     * <code>BucketAccountId</code> is required. </p>
      */
     inline const Aws::String& GetBucketAccountId() const{ return m_bucketAccountId; }
 
     /**
      * <p>The Amazon Web Services account ID associated with the S3 bucket associated
-     * with this access point.</p>
+     * with this access point.</p> <p>For same account access point when your bucket
+     * and access point belong to the same account owner, the
+     * <code>BucketAccountId</code> is not required. For cross-account access point
+     * when your bucket and access point are not in the same account, the
+     * <code>BucketAccountId</code> is required. </p>
      */
     inline bool BucketAccountIdHasBeenSet() const { return m_bucketAccountIdHasBeenSet; }
 
     /**
      * <p>The Amazon Web Services account ID associated with the S3 bucket associated
-     * with this access point.</p>
+     * with this access point.</p> <p>For same account access point when your bucket
+     * and access point belong to the same account owner, the
+     * <code>BucketAccountId</code> is not required. For cross-account access point
+     * when your bucket and access point are not in the same account, the
+     * <code>BucketAccountId</code> is required. </p>
      */
     inline void SetBucketAccountId(const Aws::String& value) { m_bucketAccountIdHasBeenSet = true; m_bucketAccountId = value; }
 
     /**
      * <p>The Amazon Web Services account ID associated with the S3 bucket associated
-     * with this access point.</p>
+     * with this access point.</p> <p>For same account access point when your bucket
+     * and access point belong to the same account owner, the
+     * <code>BucketAccountId</code> is not required. For cross-account access point
+     * when your bucket and access point are not in the same account, the
+     * <code>BucketAccountId</code> is required. </p>
      */
     inline void SetBucketAccountId(Aws::String&& value) { m_bucketAccountIdHasBeenSet = true; m_bucketAccountId = std::move(value); }
 
     /**
      * <p>The Amazon Web Services account ID associated with the S3 bucket associated
-     * with this access point.</p>
+     * with this access point.</p> <p>For same account access point when your bucket
+     * and access point belong to the same account owner, the
+     * <code>BucketAccountId</code> is not required. For cross-account access point
+     * when your bucket and access point are not in the same account, the
+     * <code>BucketAccountId</code> is required. </p>
      */
     inline void SetBucketAccountId(const char* value) { m_bucketAccountIdHasBeenSet = true; m_bucketAccountId.assign(value); }
 
     /**
      * <p>The Amazon Web Services account ID associated with the S3 bucket associated
-     * with this access point.</p>
+     * with this access point.</p> <p>For same account access point when your bucket
+     * and access point belong to the same account owner, the
+     * <code>BucketAccountId</code> is not required. For cross-account access point
+     * when your bucket and access point are not in the same account, the
+     * <code>BucketAccountId</code> is required. </p>
      */
     inline CreateAccessPointRequest& WithBucketAccountId(const Aws::String& value) { SetBucketAccountId(value); return *this;}
 
     /**
      * <p>The Amazon Web Services account ID associated with the S3 bucket associated
-     * with this access point.</p>
+     * with this access point.</p> <p>For same account access point when your bucket
+     * and access point belong to the same account owner, the
+     * <code>BucketAccountId</code> is not required. For cross-account access point
+     * when your bucket and access point are not in the same account, the
+     * <code>BucketAccountId</code> is required. </p>
      */
     inline CreateAccessPointRequest& WithBucketAccountId(Aws::String&& value) { SetBucketAccountId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Web Services account ID associated with the S3 bucket associated
-     * with this access point.</p>
+     * with this access point.</p> <p>For same account access point when your bucket
+     * and access point belong to the same account owner, the
+     * <code>BucketAccountId</code> is not required. For cross-account access point
+     * when your bucket and access point are not in the same account, the
+     * <code>BucketAccountId</code> is required. </p>
      */
     inline CreateAccessPointRequest& WithBucketAccountId(const char* value) { SetBucketAccountId(value); return *this;}
 

@@ -38,50 +38,74 @@ namespace Model
   public:
 
     /**
-     * <p>The DB engine. The only supported values are <code>custom-oracle-ee</code>
-     * and <code>custom-oracle-ee-cdb</code>.</p>
+     * <p>The database engine. RDS Custom for Oracle supports the following values:</p>
+     * <ul> <li> <p> <code>custom-oracle-ee</code> </p> </li> <li> <p>
+     * <code>custom-oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>custom-oracle-se2</code> </p> </li> <li> <p>
+     * <code>custom-oracle-se2-cdb</code> </p> </li> </ul>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p>The DB engine. The only supported values are <code>custom-oracle-ee</code>
-     * and <code>custom-oracle-ee-cdb</code>.</p>
+     * <p>The database engine. RDS Custom for Oracle supports the following values:</p>
+     * <ul> <li> <p> <code>custom-oracle-ee</code> </p> </li> <li> <p>
+     * <code>custom-oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>custom-oracle-se2</code> </p> </li> <li> <p>
+     * <code>custom-oracle-se2-cdb</code> </p> </li> </ul>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
-     * <p>The DB engine. The only supported values are <code>custom-oracle-ee</code>
-     * and <code>custom-oracle-ee-cdb</code>.</p>
+     * <p>The database engine. RDS Custom for Oracle supports the following values:</p>
+     * <ul> <li> <p> <code>custom-oracle-ee</code> </p> </li> <li> <p>
+     * <code>custom-oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>custom-oracle-se2</code> </p> </li> <li> <p>
+     * <code>custom-oracle-se2-cdb</code> </p> </li> </ul>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p>The DB engine. The only supported values are <code>custom-oracle-ee</code>
-     * and <code>custom-oracle-ee-cdb</code>.</p>
+     * <p>The database engine. RDS Custom for Oracle supports the following values:</p>
+     * <ul> <li> <p> <code>custom-oracle-ee</code> </p> </li> <li> <p>
+     * <code>custom-oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>custom-oracle-se2</code> </p> </li> <li> <p>
+     * <code>custom-oracle-se2-cdb</code> </p> </li> </ul>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
-     * <p>The DB engine. The only supported values are <code>custom-oracle-ee</code>
-     * and <code>custom-oracle-ee-cdb</code>.</p>
+     * <p>The database engine. RDS Custom for Oracle supports the following values:</p>
+     * <ul> <li> <p> <code>custom-oracle-ee</code> </p> </li> <li> <p>
+     * <code>custom-oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>custom-oracle-se2</code> </p> </li> <li> <p>
+     * <code>custom-oracle-se2-cdb</code> </p> </li> </ul>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
-     * <p>The DB engine. The only supported values are <code>custom-oracle-ee</code>
-     * and <code>custom-oracle-ee-cdb</code>.</p>
+     * <p>The database engine. RDS Custom for Oracle supports the following values:</p>
+     * <ul> <li> <p> <code>custom-oracle-ee</code> </p> </li> <li> <p>
+     * <code>custom-oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>custom-oracle-se2</code> </p> </li> <li> <p>
+     * <code>custom-oracle-se2-cdb</code> </p> </li> </ul>
      */
     inline ModifyCustomDBEngineVersionRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p>The DB engine. The only supported values are <code>custom-oracle-ee</code>
-     * and <code>custom-oracle-ee-cdb</code>.</p>
+     * <p>The database engine. RDS Custom for Oracle supports the following values:</p>
+     * <ul> <li> <p> <code>custom-oracle-ee</code> </p> </li> <li> <p>
+     * <code>custom-oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>custom-oracle-se2</code> </p> </li> <li> <p>
+     * <code>custom-oracle-se2-cdb</code> </p> </li> </ul>
      */
     inline ModifyCustomDBEngineVersionRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
-     * <p>The DB engine. The only supported values are <code>custom-oracle-ee</code>
-     * and <code>custom-oracle-ee-cdb</code>.</p>
+     * <p>The database engine. RDS Custom for Oracle supports the following values:</p>
+     * <ul> <li> <p> <code>custom-oracle-ee</code> </p> </li> <li> <p>
+     * <code>custom-oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>custom-oracle-se2</code> </p> </li> <li> <p>
+     * <code>custom-oracle-se2-cdb</code> </p> </li> </ul>
      */
     inline ModifyCustomDBEngineVersionRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 

@@ -41,8 +41,10 @@ namespace Model
    * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
    * in the <i>Amazon CloudFront Developer Guide</i>.</p> <p>If you don't want to
    * specify any cache behaviors, include only an empty <code>CacheBehaviors</code>
-   * element. Don't include an empty <code>CacheBehavior</code> element because this
-   * is invalid.</p> <p>To delete all cache behaviors in an existing distribution,
+   * element. For more information, see <a
+   * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CacheBehaviors.html">CacheBehaviors</a>.
+   * Don't include an empty <code>CacheBehavior</code> element because this is
+   * invalid.</p> <p>To delete all cache behaviors in an existing distribution,
    * update the distribution configuration and include only an empty
    * <code>CacheBehaviors</code> element.</p> <p>To add, change, or remove one or
    * more cache behaviors, update the distribution configuration and specify all of

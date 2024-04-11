@@ -17,7 +17,9 @@ namespace Model
   {
     NOT_SET,
     s3,
-    mediastore
+    mediastore,
+    mediapackagev2,
+    lambda
   };
 
 namespace OriginAccessControlOriginTypesMapper

@@ -20,7 +20,9 @@ namespace CloudFront
    * <fullname>Amazon CloudFront</fullname> <p>This is the <i>Amazon CloudFront API
    * Reference</i>. This guide is for developers who need detailed information about
    * CloudFront API actions, data types, and errors. For detailed information about
-   * CloudFront features, see the <i>Amazon CloudFront Developer Guide</i>.</p>
+   * CloudFront features, see the <a
+   * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html">Amazon
+   * CloudFront Developer Guide</a>.</p>
    */
   class AWS_CLOUDFRONT_API CloudFrontClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<CloudFrontClient>
   {
@@ -404,7 +406,10 @@ namespace CloudFront
         }
 
         /**
-         * <p>Create a new invalidation.</p><p><h3>See Also:</h3>   <a
+         * <p>Create a new invalidation. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html">Invalidating
+         * files</a> in the <i>Amazon CloudFront Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateInvalidation2020_05_31">AWS
          * API Reference</a></p>
          */
@@ -466,9 +471,9 @@ namespace CloudFront
         }
 
         /**
-         * <p>Specifies the Key Value Store resource to add to your account. In your
-         * account, the Key Value Store names must be unique. You can also import Key Value
-         * Store data in JSON format from an S3 bucket by providing a valid
+         * <p>Specifies the key value store resource to add to your account. In your
+         * account, the key value store names must be unique. You can also import key value
+         * store data in JSON format from an S3 bucket by providing a valid
          * <code>ImportSource</code> that you own.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateKeyValueStore2020_05_31">AWS
          * API Reference</a></p>
@@ -974,7 +979,7 @@ namespace CloudFront
         }
 
         /**
-         * <p>Specifies the Key Value Store to delete.</p><p><h3>See Also:</h3>   <a
+         * <p>Specifies the key value store to delete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteKeyValueStore2020_05_31">AWS
          * API Reference</a></p>
          */
@@ -1255,7 +1260,7 @@ namespace CloudFront
         }
 
         /**
-         * <p>Specifies the Key Value Store and its configuration.</p><p><h3>See Also:</h3>
+         * <p>Specifies the key value store and its configuration.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DescribeKeyValueStore2020_05_31">AWS
          * API Reference</a></p>
@@ -2550,7 +2555,7 @@ namespace CloudFront
         }
 
         /**
-         * <p>Specifies the Key Value Stores to list.</p><p><h3>See Also:</h3>   <a
+         * <p>Specifies the key value stores to list.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListKeyValueStores2020_05_31">AWS
          * API Reference</a></p>
          */
@@ -3191,7 +3196,7 @@ namespace CloudFront
         }
 
         /**
-         * <p>Specifies the Key Value Store to update.</p><p><h3>See Also:</h3>   <a
+         * <p>Specifies the key value store to update.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateKeyValueStore2020_05_31">AWS
          * API Reference</a></p>
          */

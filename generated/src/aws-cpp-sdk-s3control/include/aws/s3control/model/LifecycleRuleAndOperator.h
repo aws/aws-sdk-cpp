@@ -131,43 +131,59 @@ namespace Model
 
 
     /**
-     * <p>Minimum object size to which the rule applies.</p>
+     * <p>The non-inclusive minimum object size for the lifecycle rule. Setting this
+     * property to 7 means the rule applies to objects with a size that is greater than
+     * 7. </p>
      */
     inline long long GetObjectSizeGreaterThan() const{ return m_objectSizeGreaterThan; }
 
     /**
-     * <p>Minimum object size to which the rule applies.</p>
+     * <p>The non-inclusive minimum object size for the lifecycle rule. Setting this
+     * property to 7 means the rule applies to objects with a size that is greater than
+     * 7. </p>
      */
     inline bool ObjectSizeGreaterThanHasBeenSet() const { return m_objectSizeGreaterThanHasBeenSet; }
 
     /**
-     * <p>Minimum object size to which the rule applies.</p>
+     * <p>The non-inclusive minimum object size for the lifecycle rule. Setting this
+     * property to 7 means the rule applies to objects with a size that is greater than
+     * 7. </p>
      */
     inline void SetObjectSizeGreaterThan(long long value) { m_objectSizeGreaterThanHasBeenSet = true; m_objectSizeGreaterThan = value; }
 
     /**
-     * <p>Minimum object size to which the rule applies.</p>
+     * <p>The non-inclusive minimum object size for the lifecycle rule. Setting this
+     * property to 7 means the rule applies to objects with a size that is greater than
+     * 7. </p>
      */
     inline LifecycleRuleAndOperator& WithObjectSizeGreaterThan(long long value) { SetObjectSizeGreaterThan(value); return *this;}
 
 
     /**
-     * <p>Maximum object size to which the rule applies.</p>
+     * <p>The non-inclusive maximum object size for the lifecycle rule. Setting this
+     * property to 77 means the rule applies to objects with a size that is less than
+     * 77. </p>
      */
     inline long long GetObjectSizeLessThan() const{ return m_objectSizeLessThan; }
 
     /**
-     * <p>Maximum object size to which the rule applies.</p>
+     * <p>The non-inclusive maximum object size for the lifecycle rule. Setting this
+     * property to 77 means the rule applies to objects with a size that is less than
+     * 77. </p>
      */
     inline bool ObjectSizeLessThanHasBeenSet() const { return m_objectSizeLessThanHasBeenSet; }
 
     /**
-     * <p>Maximum object size to which the rule applies.</p>
+     * <p>The non-inclusive maximum object size for the lifecycle rule. Setting this
+     * property to 77 means the rule applies to objects with a size that is less than
+     * 77. </p>
      */
     inline void SetObjectSizeLessThan(long long value) { m_objectSizeLessThanHasBeenSet = true; m_objectSizeLessThan = value; }
 
     /**
-     * <p>Maximum object size to which the rule applies.</p>
+     * <p>The non-inclusive maximum object size for the lifecycle rule. Setting this
+     * property to 77 means the rule applies to objects with a size that is less than
+     * 77. </p>
      */
     inline LifecycleRuleAndOperator& WithObjectSizeLessThan(long long value) { SetObjectSizeLessThan(value); return *this;}
 

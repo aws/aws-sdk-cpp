@@ -113,32 +113,32 @@ namespace Model
 
 
     /**
-     * <p>The configuration for the Key Value Store associations.</p>
+     * <p>The configuration for the key value store associations.</p>
      */
     inline const KeyValueStoreAssociations& GetKeyValueStoreAssociations() const{ return m_keyValueStoreAssociations; }
 
     /**
-     * <p>The configuration for the Key Value Store associations.</p>
+     * <p>The configuration for the key value store associations.</p>
      */
     inline bool KeyValueStoreAssociationsHasBeenSet() const { return m_keyValueStoreAssociationsHasBeenSet; }
 
     /**
-     * <p>The configuration for the Key Value Store associations.</p>
+     * <p>The configuration for the key value store associations.</p>
      */
     inline void SetKeyValueStoreAssociations(const KeyValueStoreAssociations& value) { m_keyValueStoreAssociationsHasBeenSet = true; m_keyValueStoreAssociations = value; }
 
     /**
-     * <p>The configuration for the Key Value Store associations.</p>
+     * <p>The configuration for the key value store associations.</p>
      */
     inline void SetKeyValueStoreAssociations(KeyValueStoreAssociations&& value) { m_keyValueStoreAssociationsHasBeenSet = true; m_keyValueStoreAssociations = std::move(value); }
 
     /**
-     * <p>The configuration for the Key Value Store associations.</p>
+     * <p>The configuration for the key value store associations.</p>
      */
     inline FunctionConfig& WithKeyValueStoreAssociations(const KeyValueStoreAssociations& value) { SetKeyValueStoreAssociations(value); return *this;}
 
     /**
-     * <p>The configuration for the Key Value Store associations.</p>
+     * <p>The configuration for the key value store associations.</p>
      */
     inline FunctionConfig& WithKeyValueStoreAssociations(KeyValueStoreAssociations&& value) { SetKeyValueStoreAssociations(std::move(value)); return *this;}
 

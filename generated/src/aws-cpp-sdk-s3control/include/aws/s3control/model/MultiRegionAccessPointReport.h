@@ -88,8 +88,8 @@ namespace Model
      * <p>The alias for the Multi-Region Access Point. For more information about the
      * distinction between the name and the alias of an Multi-Region Access Point, see
      * <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing
-     * Multi-Region Access Points</a>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Rules
+     * for naming Amazon S3 Multi-Region Access Points</a>.</p>
      */
     inline const Aws::String& GetAlias() const{ return m_alias; }
 
@@ -97,8 +97,8 @@ namespace Model
      * <p>The alias for the Multi-Region Access Point. For more information about the
      * distinction between the name and the alias of an Multi-Region Access Point, see
      * <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing
-     * Multi-Region Access Points</a>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Rules
+     * for naming Amazon S3 Multi-Region Access Points</a>.</p>
      */
     inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }
 
@@ -106,8 +106,8 @@ namespace Model
      * <p>The alias for the Multi-Region Access Point. For more information about the
      * distinction between the name and the alias of an Multi-Region Access Point, see
      * <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing
-     * Multi-Region Access Points</a>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Rules
+     * for naming Amazon S3 Multi-Region Access Points</a>.</p>
      */
     inline void SetAlias(const Aws::String& value) { m_aliasHasBeenSet = true; m_alias = value; }
 
@@ -115,8 +115,8 @@ namespace Model
      * <p>The alias for the Multi-Region Access Point. For more information about the
      * distinction between the name and the alias of an Multi-Region Access Point, see
      * <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing
-     * Multi-Region Access Points</a>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Rules
+     * for naming Amazon S3 Multi-Region Access Points</a>.</p>
      */
     inline void SetAlias(Aws::String&& value) { m_aliasHasBeenSet = true; m_alias = std::move(value); }
 
@@ -124,8 +124,8 @@ namespace Model
      * <p>The alias for the Multi-Region Access Point. For more information about the
      * distinction between the name and the alias of an Multi-Region Access Point, see
      * <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing
-     * Multi-Region Access Points</a>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Rules
+     * for naming Amazon S3 Multi-Region Access Points</a>.</p>
      */
     inline void SetAlias(const char* value) { m_aliasHasBeenSet = true; m_alias.assign(value); }
 
@@ -133,8 +133,8 @@ namespace Model
      * <p>The alias for the Multi-Region Access Point. For more information about the
      * distinction between the name and the alias of an Multi-Region Access Point, see
      * <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing
-     * Multi-Region Access Points</a>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Rules
+     * for naming Amazon S3 Multi-Region Access Points</a>.</p>
      */
     inline MultiRegionAccessPointReport& WithAlias(const Aws::String& value) { SetAlias(value); return *this;}
 
@@ -142,8 +142,8 @@ namespace Model
      * <p>The alias for the Multi-Region Access Point. For more information about the
      * distinction between the name and the alias of an Multi-Region Access Point, see
      * <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing
-     * Multi-Region Access Points</a>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Rules
+     * for naming Amazon S3 Multi-Region Access Points</a>.</p>
      */
     inline MultiRegionAccessPointReport& WithAlias(Aws::String&& value) { SetAlias(std::move(value)); return *this;}
 
@@ -151,8 +151,8 @@ namespace Model
      * <p>The alias for the Multi-Region Access Point. For more information about the
      * distinction between the name and the alias of an Multi-Region Access Point, see
      * <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing
-     * Multi-Region Access Points</a>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Rules
+     * for naming Amazon S3 Multi-Region Access Points</a>.</p>
      */
     inline MultiRegionAccessPointReport& WithAlias(const char* value) { SetAlias(value); return *this;}
 

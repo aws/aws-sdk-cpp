@@ -35,80 +35,80 @@ namespace Model
 
 
     /**
-     * <p> Next token returned in the response of a previous
-     * ListMultipartReadSetUploads call. Used to get the next page of results. </p>
+     * <p>Next token returned in the response of a previous ListMultipartReadSetUploads
+     * call. Used to get the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p> Next token returned in the response of a previous
-     * ListMultipartReadSetUploads call. Used to get the next page of results. </p>
+     * <p>Next token returned in the response of a previous ListMultipartReadSetUploads
+     * call. Used to get the next page of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p> Next token returned in the response of a previous
-     * ListMultipartReadSetUploads call. Used to get the next page of results. </p>
+     * <p>Next token returned in the response of a previous ListMultipartReadSetUploads
+     * call. Used to get the next page of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p> Next token returned in the response of a previous
-     * ListMultipartReadSetUploads call. Used to get the next page of results. </p>
+     * <p>Next token returned in the response of a previous ListMultipartReadSetUploads
+     * call. Used to get the next page of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p> Next token returned in the response of a previous
-     * ListMultipartReadSetUploads call. Used to get the next page of results. </p>
+     * <p>Next token returned in the response of a previous ListMultipartReadSetUploads
+     * call. Used to get the next page of results.</p>
      */
     inline ListMultipartReadSetUploadsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p> Next token returned in the response of a previous
-     * ListMultipartReadSetUploads call. Used to get the next page of results. </p>
+     * <p>Next token returned in the response of a previous ListMultipartReadSetUploads
+     * call. Used to get the next page of results.</p>
      */
     inline ListMultipartReadSetUploadsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p> Next token returned in the response of a previous
-     * ListMultipartReadSetUploads call. Used to get the next page of results. </p>
+     * <p>Next token returned in the response of a previous ListMultipartReadSetUploads
+     * call. Used to get the next page of results.</p>
      */
     inline ListMultipartReadSetUploadsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * <p> An array of multipart uploads. </p>
+     * <p>An array of multipart uploads.</p>
      */
     inline const Aws::Vector<MultipartReadSetUploadListItem>& GetUploads() const{ return m_uploads; }
 
     /**
-     * <p> An array of multipart uploads. </p>
+     * <p>An array of multipart uploads.</p>
      */
     inline void SetUploads(const Aws::Vector<MultipartReadSetUploadListItem>& value) { m_uploads = value; }
 
     /**
-     * <p> An array of multipart uploads. </p>
+     * <p>An array of multipart uploads.</p>
      */
     inline void SetUploads(Aws::Vector<MultipartReadSetUploadListItem>&& value) { m_uploads = std::move(value); }
 
     /**
-     * <p> An array of multipart uploads. </p>
+     * <p>An array of multipart uploads.</p>
      */
     inline ListMultipartReadSetUploadsResult& WithUploads(const Aws::Vector<MultipartReadSetUploadListItem>& value) { SetUploads(value); return *this;}
 
     /**
-     * <p> An array of multipart uploads. </p>
+     * <p>An array of multipart uploads.</p>
      */
     inline ListMultipartReadSetUploadsResult& WithUploads(Aws::Vector<MultipartReadSetUploadListItem>&& value) { SetUploads(std::move(value)); return *this;}
 
     /**
-     * <p> An array of multipart uploads. </p>
+     * <p>An array of multipart uploads.</p>
      */
     inline ListMultipartReadSetUploadsResult& AddUploads(const MultipartReadSetUploadListItem& value) { m_uploads.push_back(value); return *this; }
 
     /**
-     * <p> An array of multipart uploads. </p>
+     * <p>An array of multipart uploads.</p>
      */
     inline ListMultipartReadSetUploadsResult& AddUploads(MultipartReadSetUploadListItem&& value) { m_uploads.push_back(std::move(value)); return *this; }
 

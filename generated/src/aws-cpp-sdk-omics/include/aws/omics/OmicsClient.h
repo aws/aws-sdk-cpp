@@ -79,7 +79,7 @@ namespace Omics
         virtual ~OmicsClient();
 
         /**
-         * <p> Stops a multipart upload. </p><p><h3>See Also:</h3>   <a
+         * <p>Stops a multipart upload.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/AbortMultipartReadSetUpload">AWS
          * API Reference</a></p>
          */
@@ -229,8 +229,8 @@ namespace Omics
         }
 
         /**
-         * <p> Concludes a multipart upload once you have uploaded all the components.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Concludes a multipart upload once you have uploaded all the
+         * components.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CompleteMultipartReadSetUpload">AWS
          * API Reference</a></p>
          */
@@ -305,7 +305,7 @@ namespace Omics
         }
 
         /**
-         * <p> Begins a multipart read set upload. </p><p><h3>See Also:</h3>   <a
+         * <p>Begins a multipart read set upload.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateMultipartReadSetUpload">AWS
          * API Reference</a></p>
          */
@@ -1312,9 +1312,9 @@ namespace Omics
         }
 
         /**
-         * <p> Lists multipart read set uploads and for in progress uploads. Once the
-         * upload is completed, a read set is created and the upload will no longer be
-         * returned in the respone. </p><p><h3>See Also:</h3>   <a
+         * <p>Lists multipart read set uploads and for in progress uploads. Once the upload
+         * is completed, a read set is created and the upload will no longer be returned in
+         * the response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListMultipartReadSetUploads">AWS
          * API Reference</a></p>
          */
@@ -1414,8 +1414,8 @@ namespace Omics
         }
 
         /**
-         * <p> This operation will list all parts in a requested multipart upload for a
-         * sequence store. </p><p><h3>See Also:</h3>   <a
+         * <p>This operation will list all parts in a requested multipart upload for a
+         * sequence store.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReadSetUploadParts">AWS
          * API Reference</a></p>
          */
@@ -2122,9 +2122,9 @@ namespace Omics
         }
 
         /**
-         * <p> This operation uploads a specific part of a read set. If you upload a new
+         * <p>This operation uploads a specific part of a read set. If you upload a new
          * part using a previously used part number, the previously uploaded part will be
-         * overwritten. </p><p><h3>See Also:</h3>   <a
+         * overwritten.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UploadReadSetPart">AWS
          * API Reference</a></p>
          */

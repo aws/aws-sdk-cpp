@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
+#include <aws/omics/model/ReadSetS3Access.h>
+#include <utility>
 
 namespace Aws
 {
@@ -97,6 +99,37 @@ namespace Model
      */
     inline FileInformation& WithContentLength(long long value) { SetContentLength(value); return *this;}
 
+
+    /**
+     * <p>The S3 URI metadata of a sequence store.</p>
+     */
+    inline const ReadSetS3Access& GetS3Access() const{ return m_s3Access; }
+
+    /**
+     * <p>The S3 URI metadata of a sequence store.</p>
+     */
+    inline bool S3AccessHasBeenSet() const { return m_s3AccessHasBeenSet; }
+
+    /**
+     * <p>The S3 URI metadata of a sequence store.</p>
+     */
+    inline void SetS3Access(const ReadSetS3Access& value) { m_s3AccessHasBeenSet = true; m_s3Access = value; }
+
+    /**
+     * <p>The S3 URI metadata of a sequence store.</p>
+     */
+    inline void SetS3Access(ReadSetS3Access&& value) { m_s3AccessHasBeenSet = true; m_s3Access = std::move(value); }
+
+    /**
+     * <p>The S3 URI metadata of a sequence store.</p>
+     */
+    inline FileInformation& WithS3Access(const ReadSetS3Access& value) { SetS3Access(value); return *this;}
+
+    /**
+     * <p>The S3 URI metadata of a sequence store.</p>
+     */
+    inline FileInformation& WithS3Access(ReadSetS3Access&& value) { SetS3Access(std::move(value)); return *this;}
+
   private:
 
     int m_totalParts;
@@ -107,6 +140,9 @@ namespace Model
 
     long long m_contentLength;
     bool m_contentLengthHasBeenSet = false;
+
+    ReadSetS3Access m_s3Access;
+    bool m_s3AccessHasBeenSet = false;
   };
 
 } // namespace Model
