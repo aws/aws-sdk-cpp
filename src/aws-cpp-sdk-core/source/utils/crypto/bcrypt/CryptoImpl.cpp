@@ -86,34 +86,58 @@ namespace Aws
             {
             public:
 
-                BCryptHashContext(void* algorithmHandle, PBYTE hashObject, DWORD hashObjectLength) :
+                BCryptHashContext(void* algorithmHandle, DWORD hashObjectLength) :
                     m_hashHandle(nullptr),
-                    m_isValid(false)
+                    m_isValid(false),
+                    m_hashBufferLength(hashObjectLength),
+                    m_hashObject(nullptr)
                 {
-                    NTSTATUS status = BCryptCreateHash(algorithmHandle, &m_hashHandle, hashObject, hashObjectLength, nullptr, 0, 0);
+                    m_hashObject = Aws::NewArray<BYTE>(m_hashObjectLength, logTag);
+                    if (!m_hashObject)
+                    {
+                        AWS_LOGSTREAM_ERROR(logTag, "Error allocating hash object.");
+                        return;
+                    }
+
+                    NTSTATUS status = BCryptCreateHash(algorithmHandle, &m_hashHandle, m_hashObject, m_hashObjectLength, nullptr, 0, 0);
                     m_isValid = NT_SUCCESS(status);
                 }
 
-                BCryptHashContext(void* algorithmHandle, PBYTE hashObject, DWORD hashObjectLength, const ByteBuffer& secret) :
+                BCryptHashContext(void* algorithmHandle, DWORD hashObjectLength, const ByteBuffer& secret) :
                     m_hashHandle(nullptr),
-                    m_isValid(false)
+                    m_isValid(false),
+                    m_hashBufferLength(hashObjectLength),
+                    m_hashObject(nullptr)
                 {
-                    NTSTATUS status = BCryptCreateHash(algorithmHandle, &m_hashHandle, hashObject, hashObjectLength, secret.GetUnderlyingData(), (ULONG)secret.GetLength(), 0);
+                    m_hashObject = Aws::NewArray<BYTE>(m_hashObjectLength, logTag);
+                    if (!m_hashObject)
+                    {
+                        AWS_LOGSTREAM_ERROR(logTag, "Error allocating hash object.");
+                        return;
+                    }
+
+                    NTSTATUS status = BCryptCreateHash(algorithmHandle, &m_hashHandle, m_hashObject, m_hashObjectLength, secret.GetUnderlyingData(), (ULONG)secret.GetLength(), 0);
                     m_isValid = NT_SUCCESS(status);
                 }
 
                 ~BCryptHashContext()
                 {
+                    // Destruct in inverted order
                     if (m_hashHandle)
                     {
                         BCryptDestroyHash(m_hashHandle);
+                        m_hashHandle = nullptr;
                     }
+
+                    Aws::DeleteArray(m_hashObject);
                 }
 
                 bool IsValid() const { return m_isValid; }
 
                 BCRYPT_HASH_HANDLE m_hashHandle;
                 bool m_isValid;
+                DWORD m_hashObjectLength;
+                PBYTE m_hashObject;
             };
 
             BCryptHashImpl::BCryptHashImpl(LPCWSTR algorithmName, bool isHMAC) :
@@ -177,7 +201,15 @@ namespace Aws
 
             BCryptHashImpl::~BCryptHashImpl()
             {
+                // Destruct in inverted order
+                if (m_hashHandle)
+                {
+                    BCryptDestroyHash(m_hashHandle);
+                    m_hashHandle = nullptr;
+                }
+
                 Aws::DeleteArray(m_hashObject);
+                
                 Aws::DeleteArray(m_hashBuffer);
 
                 if (m_algorithmHandle)
