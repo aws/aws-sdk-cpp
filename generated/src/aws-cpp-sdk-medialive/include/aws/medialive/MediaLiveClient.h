@@ -281,6 +281,112 @@ namespace MediaLive
         }
 
         /**
+         * Creates a cloudwatch alarm template to dynamically generate cloudwatch metric
+         * alarms on targeted resource types.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateCloudWatchAlarmTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateCloudWatchAlarmTemplateOutcome CreateCloudWatchAlarmTemplate(const Model::CreateCloudWatchAlarmTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateCloudWatchAlarmTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateCloudWatchAlarmTemplateRequestT = Model::CreateCloudWatchAlarmTemplateRequest>
+        Model::CreateCloudWatchAlarmTemplateOutcomeCallable CreateCloudWatchAlarmTemplateCallable(const CreateCloudWatchAlarmTemplateRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::CreateCloudWatchAlarmTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for CreateCloudWatchAlarmTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateCloudWatchAlarmTemplateRequestT = Model::CreateCloudWatchAlarmTemplateRequest>
+        void CreateCloudWatchAlarmTemplateAsync(const CreateCloudWatchAlarmTemplateRequestT& request, const CreateCloudWatchAlarmTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::CreateCloudWatchAlarmTemplate, request, handler, context);
+        }
+
+        /**
+         * Creates a cloudwatch alarm template group to group your cloudwatch alarm
+         * templates and to attach to signal maps for dynamically creating
+         * alarms.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateCloudWatchAlarmTemplateGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateCloudWatchAlarmTemplateGroupOutcome CreateCloudWatchAlarmTemplateGroup(const Model::CreateCloudWatchAlarmTemplateGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateCloudWatchAlarmTemplateGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateCloudWatchAlarmTemplateGroupRequestT = Model::CreateCloudWatchAlarmTemplateGroupRequest>
+        Model::CreateCloudWatchAlarmTemplateGroupOutcomeCallable CreateCloudWatchAlarmTemplateGroupCallable(const CreateCloudWatchAlarmTemplateGroupRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::CreateCloudWatchAlarmTemplateGroup, request);
+        }
+
+        /**
+         * An Async wrapper for CreateCloudWatchAlarmTemplateGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateCloudWatchAlarmTemplateGroupRequestT = Model::CreateCloudWatchAlarmTemplateGroupRequest>
+        void CreateCloudWatchAlarmTemplateGroupAsync(const CreateCloudWatchAlarmTemplateGroupRequestT& request, const CreateCloudWatchAlarmTemplateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::CreateCloudWatchAlarmTemplateGroup, request, handler, context);
+        }
+
+        /**
+         * Creates an eventbridge rule template to monitor events and send notifications to
+         * your targeted resources.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateEventBridgeRuleTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateEventBridgeRuleTemplateOutcome CreateEventBridgeRuleTemplate(const Model::CreateEventBridgeRuleTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateEventBridgeRuleTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateEventBridgeRuleTemplateRequestT = Model::CreateEventBridgeRuleTemplateRequest>
+        Model::CreateEventBridgeRuleTemplateOutcomeCallable CreateEventBridgeRuleTemplateCallable(const CreateEventBridgeRuleTemplateRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::CreateEventBridgeRuleTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for CreateEventBridgeRuleTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateEventBridgeRuleTemplateRequestT = Model::CreateEventBridgeRuleTemplateRequest>
+        void CreateEventBridgeRuleTemplateAsync(const CreateEventBridgeRuleTemplateRequestT& request, const CreateEventBridgeRuleTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::CreateEventBridgeRuleTemplate, request, handler, context);
+        }
+
+        /**
+         * Creates an eventbridge rule template group to group your eventbridge rule
+         * templates and to attach to signal maps for dynamically creating notification
+         * rules.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateEventBridgeRuleTemplateGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateEventBridgeRuleTemplateGroupOutcome CreateEventBridgeRuleTemplateGroup(const Model::CreateEventBridgeRuleTemplateGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateEventBridgeRuleTemplateGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateEventBridgeRuleTemplateGroupRequestT = Model::CreateEventBridgeRuleTemplateGroupRequest>
+        Model::CreateEventBridgeRuleTemplateGroupOutcomeCallable CreateEventBridgeRuleTemplateGroupCallable(const CreateEventBridgeRuleTemplateGroupRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::CreateEventBridgeRuleTemplateGroup, request);
+        }
+
+        /**
+         * An Async wrapper for CreateEventBridgeRuleTemplateGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateEventBridgeRuleTemplateGroupRequestT = Model::CreateEventBridgeRuleTemplateGroupRequest>
+        void CreateEventBridgeRuleTemplateGroupAsync(const CreateEventBridgeRuleTemplateGroupRequestT& request, const CreateEventBridgeRuleTemplateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::CreateEventBridgeRuleTemplateGroup, request, handler, context);
+        }
+
+        /**
          * Create an input<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateInput">AWS
          * API Reference</a></p>
@@ -406,6 +512,32 @@ namespace MediaLive
         }
 
         /**
+         * Initiates the creation of a new signal map. Will discover a new mediaResourceMap
+         * based on the provided discoveryEntryPointArn.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateSignalMap">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateSignalMapOutcome CreateSignalMap(const Model::CreateSignalMapRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateSignalMap that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateSignalMapRequestT = Model::CreateSignalMapRequest>
+        Model::CreateSignalMapOutcomeCallable CreateSignalMapCallable(const CreateSignalMapRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::CreateSignalMap, request);
+        }
+
+        /**
+         * An Async wrapper for CreateSignalMap that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateSignalMapRequestT = Model::CreateSignalMapRequest>
+        void CreateSignalMapAsync(const CreateSignalMapRequestT& request, const CreateSignalMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::CreateSignalMap, request, handler, context);
+        }
+
+        /**
          * Create tags for a resource<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateTags">AWS
          * API Reference</a></p>
@@ -454,6 +586,110 @@ namespace MediaLive
         void DeleteChannelAsync(const DeleteChannelRequestT& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MediaLiveClient::DeleteChannel, request, handler, context);
+        }
+
+        /**
+         * Deletes a cloudwatch alarm template.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteCloudWatchAlarmTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteCloudWatchAlarmTemplateOutcome DeleteCloudWatchAlarmTemplate(const Model::DeleteCloudWatchAlarmTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteCloudWatchAlarmTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteCloudWatchAlarmTemplateRequestT = Model::DeleteCloudWatchAlarmTemplateRequest>
+        Model::DeleteCloudWatchAlarmTemplateOutcomeCallable DeleteCloudWatchAlarmTemplateCallable(const DeleteCloudWatchAlarmTemplateRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::DeleteCloudWatchAlarmTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteCloudWatchAlarmTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteCloudWatchAlarmTemplateRequestT = Model::DeleteCloudWatchAlarmTemplateRequest>
+        void DeleteCloudWatchAlarmTemplateAsync(const DeleteCloudWatchAlarmTemplateRequestT& request, const DeleteCloudWatchAlarmTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::DeleteCloudWatchAlarmTemplate, request, handler, context);
+        }
+
+        /**
+         * Deletes a cloudwatch alarm template group. You must detach this group from all
+         * signal maps and ensure its existing templates are moved to another group or
+         * deleted.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteCloudWatchAlarmTemplateGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteCloudWatchAlarmTemplateGroupOutcome DeleteCloudWatchAlarmTemplateGroup(const Model::DeleteCloudWatchAlarmTemplateGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteCloudWatchAlarmTemplateGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteCloudWatchAlarmTemplateGroupRequestT = Model::DeleteCloudWatchAlarmTemplateGroupRequest>
+        Model::DeleteCloudWatchAlarmTemplateGroupOutcomeCallable DeleteCloudWatchAlarmTemplateGroupCallable(const DeleteCloudWatchAlarmTemplateGroupRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::DeleteCloudWatchAlarmTemplateGroup, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteCloudWatchAlarmTemplateGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteCloudWatchAlarmTemplateGroupRequestT = Model::DeleteCloudWatchAlarmTemplateGroupRequest>
+        void DeleteCloudWatchAlarmTemplateGroupAsync(const DeleteCloudWatchAlarmTemplateGroupRequestT& request, const DeleteCloudWatchAlarmTemplateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::DeleteCloudWatchAlarmTemplateGroup, request, handler, context);
+        }
+
+        /**
+         * Deletes an eventbridge rule template.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteEventBridgeRuleTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteEventBridgeRuleTemplateOutcome DeleteEventBridgeRuleTemplate(const Model::DeleteEventBridgeRuleTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteEventBridgeRuleTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteEventBridgeRuleTemplateRequestT = Model::DeleteEventBridgeRuleTemplateRequest>
+        Model::DeleteEventBridgeRuleTemplateOutcomeCallable DeleteEventBridgeRuleTemplateCallable(const DeleteEventBridgeRuleTemplateRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::DeleteEventBridgeRuleTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteEventBridgeRuleTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteEventBridgeRuleTemplateRequestT = Model::DeleteEventBridgeRuleTemplateRequest>
+        void DeleteEventBridgeRuleTemplateAsync(const DeleteEventBridgeRuleTemplateRequestT& request, const DeleteEventBridgeRuleTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::DeleteEventBridgeRuleTemplate, request, handler, context);
+        }
+
+        /**
+         * Deletes an eventbridge rule template group. You must detach this group from all
+         * signal maps and ensure its existing templates are moved to another group or
+         * deleted.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteEventBridgeRuleTemplateGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteEventBridgeRuleTemplateGroupOutcome DeleteEventBridgeRuleTemplateGroup(const Model::DeleteEventBridgeRuleTemplateGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteEventBridgeRuleTemplateGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteEventBridgeRuleTemplateGroupRequestT = Model::DeleteEventBridgeRuleTemplateGroupRequest>
+        Model::DeleteEventBridgeRuleTemplateGroupOutcomeCallable DeleteEventBridgeRuleTemplateGroupCallable(const DeleteEventBridgeRuleTemplateGroupRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::DeleteEventBridgeRuleTemplateGroup, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteEventBridgeRuleTemplateGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteEventBridgeRuleTemplateGroupRequestT = Model::DeleteEventBridgeRuleTemplateGroupRequest>
+        void DeleteEventBridgeRuleTemplateGroupAsync(const DeleteEventBridgeRuleTemplateGroupRequestT& request, const DeleteEventBridgeRuleTemplateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::DeleteEventBridgeRuleTemplateGroup, request, handler, context);
         }
 
         /**
@@ -604,6 +840,31 @@ namespace MediaLive
         void DeleteScheduleAsync(const DeleteScheduleRequestT& request, const DeleteScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MediaLiveClient::DeleteSchedule, request, handler, context);
+        }
+
+        /**
+         * Deletes the specified signal map.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteSignalMap">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteSignalMapOutcome DeleteSignalMap(const Model::DeleteSignalMapRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteSignalMap that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteSignalMapRequestT = Model::DeleteSignalMapRequest>
+        Model::DeleteSignalMapOutcomeCallable DeleteSignalMapCallable(const DeleteSignalMapRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::DeleteSignalMap, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteSignalMap that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteSignalMapRequestT = Model::DeleteSignalMapRequest>
+        void DeleteSignalMapAsync(const DeleteSignalMapRequestT& request, const DeleteSignalMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::DeleteSignalMap, request, handler, context);
         }
 
         /**
@@ -932,6 +1193,133 @@ namespace MediaLive
         }
 
         /**
+         * Retrieves the specified cloudwatch alarm template.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetCloudWatchAlarmTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCloudWatchAlarmTemplateOutcome GetCloudWatchAlarmTemplate(const Model::GetCloudWatchAlarmTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetCloudWatchAlarmTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetCloudWatchAlarmTemplateRequestT = Model::GetCloudWatchAlarmTemplateRequest>
+        Model::GetCloudWatchAlarmTemplateOutcomeCallable GetCloudWatchAlarmTemplateCallable(const GetCloudWatchAlarmTemplateRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::GetCloudWatchAlarmTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for GetCloudWatchAlarmTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetCloudWatchAlarmTemplateRequestT = Model::GetCloudWatchAlarmTemplateRequest>
+        void GetCloudWatchAlarmTemplateAsync(const GetCloudWatchAlarmTemplateRequestT& request, const GetCloudWatchAlarmTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::GetCloudWatchAlarmTemplate, request, handler, context);
+        }
+
+        /**
+         * Retrieves the specified cloudwatch alarm template group.<p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetCloudWatchAlarmTemplateGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCloudWatchAlarmTemplateGroupOutcome GetCloudWatchAlarmTemplateGroup(const Model::GetCloudWatchAlarmTemplateGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetCloudWatchAlarmTemplateGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetCloudWatchAlarmTemplateGroupRequestT = Model::GetCloudWatchAlarmTemplateGroupRequest>
+        Model::GetCloudWatchAlarmTemplateGroupOutcomeCallable GetCloudWatchAlarmTemplateGroupCallable(const GetCloudWatchAlarmTemplateGroupRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::GetCloudWatchAlarmTemplateGroup, request);
+        }
+
+        /**
+         * An Async wrapper for GetCloudWatchAlarmTemplateGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetCloudWatchAlarmTemplateGroupRequestT = Model::GetCloudWatchAlarmTemplateGroupRequest>
+        void GetCloudWatchAlarmTemplateGroupAsync(const GetCloudWatchAlarmTemplateGroupRequestT& request, const GetCloudWatchAlarmTemplateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::GetCloudWatchAlarmTemplateGroup, request, handler, context);
+        }
+
+        /**
+         * Retrieves the specified eventbridge rule template.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetEventBridgeRuleTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetEventBridgeRuleTemplateOutcome GetEventBridgeRuleTemplate(const Model::GetEventBridgeRuleTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetEventBridgeRuleTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetEventBridgeRuleTemplateRequestT = Model::GetEventBridgeRuleTemplateRequest>
+        Model::GetEventBridgeRuleTemplateOutcomeCallable GetEventBridgeRuleTemplateCallable(const GetEventBridgeRuleTemplateRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::GetEventBridgeRuleTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for GetEventBridgeRuleTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetEventBridgeRuleTemplateRequestT = Model::GetEventBridgeRuleTemplateRequest>
+        void GetEventBridgeRuleTemplateAsync(const GetEventBridgeRuleTemplateRequestT& request, const GetEventBridgeRuleTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::GetEventBridgeRuleTemplate, request, handler, context);
+        }
+
+        /**
+         * Retrieves the specified eventbridge rule template group.<p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetEventBridgeRuleTemplateGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetEventBridgeRuleTemplateGroupOutcome GetEventBridgeRuleTemplateGroup(const Model::GetEventBridgeRuleTemplateGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetEventBridgeRuleTemplateGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetEventBridgeRuleTemplateGroupRequestT = Model::GetEventBridgeRuleTemplateGroupRequest>
+        Model::GetEventBridgeRuleTemplateGroupOutcomeCallable GetEventBridgeRuleTemplateGroupCallable(const GetEventBridgeRuleTemplateGroupRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::GetEventBridgeRuleTemplateGroup, request);
+        }
+
+        /**
+         * An Async wrapper for GetEventBridgeRuleTemplateGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetEventBridgeRuleTemplateGroupRequestT = Model::GetEventBridgeRuleTemplateGroupRequest>
+        void GetEventBridgeRuleTemplateGroupAsync(const GetEventBridgeRuleTemplateGroupRequestT& request, const GetEventBridgeRuleTemplateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::GetEventBridgeRuleTemplateGroup, request, handler, context);
+        }
+
+        /**
+         * Retrieves the specified signal map.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetSignalMap">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSignalMapOutcome GetSignalMap(const Model::GetSignalMapRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetSignalMap that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetSignalMapRequestT = Model::GetSignalMapRequest>
+        Model::GetSignalMapOutcomeCallable GetSignalMapCallable(const GetSignalMapRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::GetSignalMap, request);
+        }
+
+        /**
+         * An Async wrapper for GetSignalMap that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetSignalMapRequestT = Model::GetSignalMapRequest>
+        void GetSignalMapAsync(const GetSignalMapRequestT& request, const GetSignalMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::GetSignalMap, request, handler, context);
+        }
+
+        /**
          * Produces list of channels that have been created<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListChannels">AWS
          * API Reference</a></p>
@@ -954,6 +1342,106 @@ namespace MediaLive
         void ListChannelsAsync(const ListChannelsRequestT& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MediaLiveClient::ListChannels, request, handler, context);
+        }
+
+        /**
+         * Lists cloudwatch alarm template groups.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListCloudWatchAlarmTemplateGroups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCloudWatchAlarmTemplateGroupsOutcome ListCloudWatchAlarmTemplateGroups(const Model::ListCloudWatchAlarmTemplateGroupsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCloudWatchAlarmTemplateGroups that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListCloudWatchAlarmTemplateGroupsRequestT = Model::ListCloudWatchAlarmTemplateGroupsRequest>
+        Model::ListCloudWatchAlarmTemplateGroupsOutcomeCallable ListCloudWatchAlarmTemplateGroupsCallable(const ListCloudWatchAlarmTemplateGroupsRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::ListCloudWatchAlarmTemplateGroups, request);
+        }
+
+        /**
+         * An Async wrapper for ListCloudWatchAlarmTemplateGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListCloudWatchAlarmTemplateGroupsRequestT = Model::ListCloudWatchAlarmTemplateGroupsRequest>
+        void ListCloudWatchAlarmTemplateGroupsAsync(const ListCloudWatchAlarmTemplateGroupsRequestT& request, const ListCloudWatchAlarmTemplateGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::ListCloudWatchAlarmTemplateGroups, request, handler, context);
+        }
+
+        /**
+         * Lists cloudwatch alarm templates.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListCloudWatchAlarmTemplates">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCloudWatchAlarmTemplatesOutcome ListCloudWatchAlarmTemplates(const Model::ListCloudWatchAlarmTemplatesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCloudWatchAlarmTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListCloudWatchAlarmTemplatesRequestT = Model::ListCloudWatchAlarmTemplatesRequest>
+        Model::ListCloudWatchAlarmTemplatesOutcomeCallable ListCloudWatchAlarmTemplatesCallable(const ListCloudWatchAlarmTemplatesRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::ListCloudWatchAlarmTemplates, request);
+        }
+
+        /**
+         * An Async wrapper for ListCloudWatchAlarmTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListCloudWatchAlarmTemplatesRequestT = Model::ListCloudWatchAlarmTemplatesRequest>
+        void ListCloudWatchAlarmTemplatesAsync(const ListCloudWatchAlarmTemplatesRequestT& request, const ListCloudWatchAlarmTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::ListCloudWatchAlarmTemplates, request, handler, context);
+        }
+
+        /**
+         * Lists eventbridge rule template groups.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListEventBridgeRuleTemplateGroups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListEventBridgeRuleTemplateGroupsOutcome ListEventBridgeRuleTemplateGroups(const Model::ListEventBridgeRuleTemplateGroupsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListEventBridgeRuleTemplateGroups that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListEventBridgeRuleTemplateGroupsRequestT = Model::ListEventBridgeRuleTemplateGroupsRequest>
+        Model::ListEventBridgeRuleTemplateGroupsOutcomeCallable ListEventBridgeRuleTemplateGroupsCallable(const ListEventBridgeRuleTemplateGroupsRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::ListEventBridgeRuleTemplateGroups, request);
+        }
+
+        /**
+         * An Async wrapper for ListEventBridgeRuleTemplateGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListEventBridgeRuleTemplateGroupsRequestT = Model::ListEventBridgeRuleTemplateGroupsRequest>
+        void ListEventBridgeRuleTemplateGroupsAsync(const ListEventBridgeRuleTemplateGroupsRequestT& request, const ListEventBridgeRuleTemplateGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::ListEventBridgeRuleTemplateGroups, request, handler, context);
+        }
+
+        /**
+         * Lists eventbridge rule templates.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListEventBridgeRuleTemplates">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListEventBridgeRuleTemplatesOutcome ListEventBridgeRuleTemplates(const Model::ListEventBridgeRuleTemplatesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListEventBridgeRuleTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListEventBridgeRuleTemplatesRequestT = Model::ListEventBridgeRuleTemplatesRequest>
+        Model::ListEventBridgeRuleTemplatesOutcomeCallable ListEventBridgeRuleTemplatesCallable(const ListEventBridgeRuleTemplatesRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::ListEventBridgeRuleTemplates, request);
+        }
+
+        /**
+         * An Async wrapper for ListEventBridgeRuleTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListEventBridgeRuleTemplatesRequestT = Model::ListEventBridgeRuleTemplatesRequest>
+        void ListEventBridgeRuleTemplatesAsync(const ListEventBridgeRuleTemplatesRequestT& request, const ListEventBridgeRuleTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::ListEventBridgeRuleTemplates, request, handler, context);
         }
 
         /**
@@ -1161,6 +1649,31 @@ namespace MediaLive
         }
 
         /**
+         * Lists signal maps.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListSignalMaps">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSignalMapsOutcome ListSignalMaps(const Model::ListSignalMapsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListSignalMaps that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListSignalMapsRequestT = Model::ListSignalMapsRequest>
+        Model::ListSignalMapsOutcomeCallable ListSignalMapsCallable(const ListSignalMapsRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::ListSignalMaps, request);
+        }
+
+        /**
+         * An Async wrapper for ListSignalMaps that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListSignalMapsRequestT = Model::ListSignalMapsRequest>
+        void ListSignalMapsAsync(const ListSignalMapsRequestT& request, const ListSignalMapsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::ListSignalMaps, request, handler, context);
+        }
+
+        /**
          * Produces list of tags that have been created for a resource<p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListTagsForResource">AWS
@@ -1317,6 +1830,32 @@ namespace MediaLive
         }
 
         /**
+         * Initiates a deployment to delete the monitor of the specified signal
+         * map.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartDeleteMonitorDeployment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartDeleteMonitorDeploymentOutcome StartDeleteMonitorDeployment(const Model::StartDeleteMonitorDeploymentRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartDeleteMonitorDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartDeleteMonitorDeploymentRequestT = Model::StartDeleteMonitorDeploymentRequest>
+        Model::StartDeleteMonitorDeploymentOutcomeCallable StartDeleteMonitorDeploymentCallable(const StartDeleteMonitorDeploymentRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::StartDeleteMonitorDeployment, request);
+        }
+
+        /**
+         * An Async wrapper for StartDeleteMonitorDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartDeleteMonitorDeploymentRequestT = Model::StartDeleteMonitorDeploymentRequest>
+        void StartDeleteMonitorDeploymentAsync(const StartDeleteMonitorDeploymentRequestT& request, const StartDeleteMonitorDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::StartDeleteMonitorDeployment, request, handler, context);
+        }
+
+        /**
          * Start an input device that is attached to a MediaConnect flow. (There is no need
          * to start a device that is attached to a MediaLive input; MediaLive starts the
          * device when the channel starts.)<p><h3>See Also:</h3>   <a
@@ -1376,6 +1915,32 @@ namespace MediaLive
         }
 
         /**
+         * Initiates a deployment to deploy the latest monitor of the specified signal
+         * map.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartMonitorDeployment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartMonitorDeploymentOutcome StartMonitorDeployment(const Model::StartMonitorDeploymentRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartMonitorDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartMonitorDeploymentRequestT = Model::StartMonitorDeploymentRequest>
+        Model::StartMonitorDeploymentOutcomeCallable StartMonitorDeploymentCallable(const StartMonitorDeploymentRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::StartMonitorDeployment, request);
+        }
+
+        /**
+         * An Async wrapper for StartMonitorDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartMonitorDeploymentRequestT = Model::StartMonitorDeploymentRequest>
+        void StartMonitorDeploymentAsync(const StartMonitorDeploymentRequestT& request, const StartMonitorDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::StartMonitorDeployment, request, handler, context);
+        }
+
+        /**
          * Start (run) the multiplex. Starting the multiplex does not start the channels.
          * You must explicitly start each channel.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartMultiplex">AWS
@@ -1399,6 +1964,32 @@ namespace MediaLive
         void StartMultiplexAsync(const StartMultiplexRequestT& request, const StartMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MediaLiveClient::StartMultiplex, request, handler, context);
+        }
+
+        /**
+         * Initiates an update for the specified signal map. Will discover a new signal map
+         * if a changed discoveryEntryPointArn is provided.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartUpdateSignalMap">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartUpdateSignalMapOutcome StartUpdateSignalMap(const Model::StartUpdateSignalMapRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartUpdateSignalMap that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartUpdateSignalMapRequestT = Model::StartUpdateSignalMapRequest>
+        Model::StartUpdateSignalMapOutcomeCallable StartUpdateSignalMapCallable(const StartUpdateSignalMapRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::StartUpdateSignalMap, request);
+        }
+
+        /**
+         * An Async wrapper for StartUpdateSignalMap that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartUpdateSignalMapRequestT = Model::StartUpdateSignalMapRequest>
+        void StartUpdateSignalMapAsync(const StartUpdateSignalMapRequestT& request, const StartUpdateSignalMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::StartUpdateSignalMap, request, handler, context);
         }
 
         /**
@@ -1579,6 +2170,106 @@ namespace MediaLive
         void UpdateChannelClassAsync(const UpdateChannelClassRequestT& request, const UpdateChannelClassResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MediaLiveClient::UpdateChannelClass, request, handler, context);
+        }
+
+        /**
+         * Updates the specified cloudwatch alarm template.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateCloudWatchAlarmTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateCloudWatchAlarmTemplateOutcome UpdateCloudWatchAlarmTemplate(const Model::UpdateCloudWatchAlarmTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateCloudWatchAlarmTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateCloudWatchAlarmTemplateRequestT = Model::UpdateCloudWatchAlarmTemplateRequest>
+        Model::UpdateCloudWatchAlarmTemplateOutcomeCallable UpdateCloudWatchAlarmTemplateCallable(const UpdateCloudWatchAlarmTemplateRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::UpdateCloudWatchAlarmTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateCloudWatchAlarmTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateCloudWatchAlarmTemplateRequestT = Model::UpdateCloudWatchAlarmTemplateRequest>
+        void UpdateCloudWatchAlarmTemplateAsync(const UpdateCloudWatchAlarmTemplateRequestT& request, const UpdateCloudWatchAlarmTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::UpdateCloudWatchAlarmTemplate, request, handler, context);
+        }
+
+        /**
+         * Updates the specified cloudwatch alarm template group.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateCloudWatchAlarmTemplateGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateCloudWatchAlarmTemplateGroupOutcome UpdateCloudWatchAlarmTemplateGroup(const Model::UpdateCloudWatchAlarmTemplateGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateCloudWatchAlarmTemplateGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateCloudWatchAlarmTemplateGroupRequestT = Model::UpdateCloudWatchAlarmTemplateGroupRequest>
+        Model::UpdateCloudWatchAlarmTemplateGroupOutcomeCallable UpdateCloudWatchAlarmTemplateGroupCallable(const UpdateCloudWatchAlarmTemplateGroupRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::UpdateCloudWatchAlarmTemplateGroup, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateCloudWatchAlarmTemplateGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateCloudWatchAlarmTemplateGroupRequestT = Model::UpdateCloudWatchAlarmTemplateGroupRequest>
+        void UpdateCloudWatchAlarmTemplateGroupAsync(const UpdateCloudWatchAlarmTemplateGroupRequestT& request, const UpdateCloudWatchAlarmTemplateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::UpdateCloudWatchAlarmTemplateGroup, request, handler, context);
+        }
+
+        /**
+         * Updates the specified eventbridge rule template.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateEventBridgeRuleTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateEventBridgeRuleTemplateOutcome UpdateEventBridgeRuleTemplate(const Model::UpdateEventBridgeRuleTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateEventBridgeRuleTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateEventBridgeRuleTemplateRequestT = Model::UpdateEventBridgeRuleTemplateRequest>
+        Model::UpdateEventBridgeRuleTemplateOutcomeCallable UpdateEventBridgeRuleTemplateCallable(const UpdateEventBridgeRuleTemplateRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::UpdateEventBridgeRuleTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateEventBridgeRuleTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateEventBridgeRuleTemplateRequestT = Model::UpdateEventBridgeRuleTemplateRequest>
+        void UpdateEventBridgeRuleTemplateAsync(const UpdateEventBridgeRuleTemplateRequestT& request, const UpdateEventBridgeRuleTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::UpdateEventBridgeRuleTemplate, request, handler, context);
+        }
+
+        /**
+         * Updates the specified eventbridge rule template group.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateEventBridgeRuleTemplateGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateEventBridgeRuleTemplateGroupOutcome UpdateEventBridgeRuleTemplateGroup(const Model::UpdateEventBridgeRuleTemplateGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateEventBridgeRuleTemplateGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateEventBridgeRuleTemplateGroupRequestT = Model::UpdateEventBridgeRuleTemplateGroupRequest>
+        Model::UpdateEventBridgeRuleTemplateGroupOutcomeCallable UpdateEventBridgeRuleTemplateGroupCallable(const UpdateEventBridgeRuleTemplateGroupRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::UpdateEventBridgeRuleTemplateGroup, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateEventBridgeRuleTemplateGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateEventBridgeRuleTemplateGroupRequestT = Model::UpdateEventBridgeRuleTemplateGroupRequest>
+        void UpdateEventBridgeRuleTemplateGroupAsync(const UpdateEventBridgeRuleTemplateGroupRequestT& request, const UpdateEventBridgeRuleTemplateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::UpdateEventBridgeRuleTemplateGroup, request, handler, context);
         }
 
         /**

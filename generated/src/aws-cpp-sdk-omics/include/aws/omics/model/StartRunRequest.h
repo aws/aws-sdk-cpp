@@ -327,22 +327,22 @@ namespace Model
 
 
     /**
-     * <p>A storage capacity for the run in gigabytes.</p>
+     * <p>A storage capacity for the run in gibibytes.</p>
      */
     inline int GetStorageCapacity() const{ return m_storageCapacity; }
 
     /**
-     * <p>A storage capacity for the run in gigabytes.</p>
+     * <p>A storage capacity for the run in gibibytes.</p>
      */
     inline bool StorageCapacityHasBeenSet() const { return m_storageCapacityHasBeenSet; }
 
     /**
-     * <p>A storage capacity for the run in gigabytes.</p>
+     * <p>A storage capacity for the run in gibibytes.</p>
      */
     inline void SetStorageCapacity(int value) { m_storageCapacityHasBeenSet = true; m_storageCapacity = value; }
 
     /**
-     * <p>A storage capacity for the run in gigabytes.</p>
+     * <p>A storage capacity for the run in gibibytes.</p>
      */
     inline StartRunRequest& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
 

@@ -458,44 +458,44 @@ namespace Model
 
 
     /**
-     * <p> The status message for a read set. It provides more detail as to why the
-     * read set has a status. </p>
+     * <p>The status message for a read set. It provides more detail as to why the read
+     * set has a status. </p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
 
     /**
-     * <p> The status message for a read set. It provides more detail as to why the
-     * read set has a status. </p>
+     * <p>The status message for a read set. It provides more detail as to why the read
+     * set has a status. </p>
      */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessage = value; }
 
     /**
-     * <p> The status message for a read set. It provides more detail as to why the
-     * read set has a status. </p>
+     * <p>The status message for a read set. It provides more detail as to why the read
+     * set has a status. </p>
      */
     inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = std::move(value); }
 
     /**
-     * <p> The status message for a read set. It provides more detail as to why the
-     * read set has a status. </p>
+     * <p>The status message for a read set. It provides more detail as to why the read
+     * set has a status. </p>
      */
     inline void SetStatusMessage(const char* value) { m_statusMessage.assign(value); }
 
     /**
-     * <p> The status message for a read set. It provides more detail as to why the
-     * read set has a status. </p>
+     * <p>The status message for a read set. It provides more detail as to why the read
+     * set has a status. </p>
      */
     inline GetReadSetMetadataResult& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
 
     /**
-     * <p> The status message for a read set. It provides more detail as to why the
-     * read set has a status. </p>
+     * <p>The status message for a read set. It provides more detail as to why the read
+     * set has a status. </p>
      */
     inline GetReadSetMetadataResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
 
     /**
-     * <p> The status message for a read set. It provides more detail as to why the
-     * read set has a status. </p>
+     * <p>The status message for a read set. It provides more detail as to why the read
+     * set has a status. </p>
      */
     inline GetReadSetMetadataResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
@@ -527,32 +527,32 @@ namespace Model
 
 
     /**
-     * <p> The entity tag (ETag) is a hash of the object meant to represent its
-     * semantic content. </p>
+     * <p>The entity tag (ETag) is a hash of the object meant to represent its semantic
+     * content.</p>
      */
     inline const ETag& GetEtag() const{ return m_etag; }
 
     /**
-     * <p> The entity tag (ETag) is a hash of the object meant to represent its
-     * semantic content. </p>
+     * <p>The entity tag (ETag) is a hash of the object meant to represent its semantic
+     * content.</p>
      */
     inline void SetEtag(const ETag& value) { m_etag = value; }
 
     /**
-     * <p> The entity tag (ETag) is a hash of the object meant to represent its
-     * semantic content. </p>
+     * <p>The entity tag (ETag) is a hash of the object meant to represent its semantic
+     * content.</p>
      */
     inline void SetEtag(ETag&& value) { m_etag = std::move(value); }
 
     /**
-     * <p> The entity tag (ETag) is a hash of the object meant to represent its
-     * semantic content. </p>
+     * <p>The entity tag (ETag) is a hash of the object meant to represent its semantic
+     * content.</p>
      */
     inline GetReadSetMetadataResult& WithEtag(const ETag& value) { SetEtag(value); return *this;}
 
     /**
-     * <p> The entity tag (ETag) is a hash of the object meant to represent its
-     * semantic content. </p>
+     * <p>The entity tag (ETag) is a hash of the object meant to represent its semantic
+     * content.</p>
      */
     inline GetReadSetMetadataResult& WithEtag(ETag&& value) { SetEtag(std::move(value)); return *this;}
 

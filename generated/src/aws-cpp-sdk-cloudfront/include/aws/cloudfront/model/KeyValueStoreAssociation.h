@@ -23,7 +23,7 @@ namespace Model
 {
 
   /**
-   * <p>The Key Value Store association.</p><p><h3>See Also:</h3>   <a
+   * <p>The key value store association.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/KeyValueStoreAssociation">AWS
    * API Reference</a></p>
    */
@@ -38,42 +38,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Key Value Store association.</p>
+     * <p>The Amazon Resource Name (ARN) of the key value store association.</p>
      */
     inline const Aws::String& GetKeyValueStoreARN() const{ return m_keyValueStoreARN; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Key Value Store association.</p>
+     * <p>The Amazon Resource Name (ARN) of the key value store association.</p>
      */
     inline bool KeyValueStoreARNHasBeenSet() const { return m_keyValueStoreARNHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Key Value Store association.</p>
+     * <p>The Amazon Resource Name (ARN) of the key value store association.</p>
      */
     inline void SetKeyValueStoreARN(const Aws::String& value) { m_keyValueStoreARNHasBeenSet = true; m_keyValueStoreARN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Key Value Store association.</p>
+     * <p>The Amazon Resource Name (ARN) of the key value store association.</p>
      */
     inline void SetKeyValueStoreARN(Aws::String&& value) { m_keyValueStoreARNHasBeenSet = true; m_keyValueStoreARN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Key Value Store association.</p>
+     * <p>The Amazon Resource Name (ARN) of the key value store association.</p>
      */
     inline void SetKeyValueStoreARN(const char* value) { m_keyValueStoreARNHasBeenSet = true; m_keyValueStoreARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Key Value Store association.</p>
+     * <p>The Amazon Resource Name (ARN) of the key value store association.</p>
      */
     inline KeyValueStoreAssociation& WithKeyValueStoreARN(const Aws::String& value) { SetKeyValueStoreARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Key Value Store association.</p>
+     * <p>The Amazon Resource Name (ARN) of the key value store association.</p>
      */
     inline KeyValueStoreAssociation& WithKeyValueStoreARN(Aws::String&& value) { SetKeyValueStoreARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Key Value Store association.</p>
+     * <p>The Amazon Resource Name (ARN) of the key value store association.</p>
      */
     inline KeyValueStoreAssociation& WithKeyValueStoreARN(const char* value) { SetKeyValueStoreARN(value); return *this;}
 

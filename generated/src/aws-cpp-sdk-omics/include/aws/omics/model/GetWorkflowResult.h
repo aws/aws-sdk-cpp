@@ -565,88 +565,88 @@ namespace Model
 
 
     /**
-     * <p> Gets metadata for workflow. </p>
+     * <p>Gets metadata for workflow.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const{ return m_metadata; }
 
     /**
-     * <p> Gets metadata for workflow. </p>
+     * <p>Gets metadata for workflow.</p>
      */
     inline void SetMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_metadata = value; }
 
     /**
-     * <p> Gets metadata for workflow. </p>
+     * <p>Gets metadata for workflow.</p>
      */
     inline void SetMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_metadata = std::move(value); }
 
     /**
-     * <p> Gets metadata for workflow. </p>
+     * <p>Gets metadata for workflow.</p>
      */
     inline GetWorkflowResult& WithMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetMetadata(value); return *this;}
 
     /**
-     * <p> Gets metadata for workflow. </p>
+     * <p>Gets metadata for workflow.</p>
      */
     inline GetWorkflowResult& WithMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetMetadata(std::move(value)); return *this;}
 
     /**
-     * <p> Gets metadata for workflow. </p>
+     * <p>Gets metadata for workflow.</p>
      */
     inline GetWorkflowResult& AddMetadata(const Aws::String& key, const Aws::String& value) { m_metadata.emplace(key, value); return *this; }
 
     /**
-     * <p> Gets metadata for workflow. </p>
+     * <p>Gets metadata for workflow.</p>
      */
     inline GetWorkflowResult& AddMetadata(Aws::String&& key, const Aws::String& value) { m_metadata.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p> Gets metadata for workflow. </p>
+     * <p>Gets metadata for workflow.</p>
      */
     inline GetWorkflowResult& AddMetadata(const Aws::String& key, Aws::String&& value) { m_metadata.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p> Gets metadata for workflow. </p>
+     * <p>Gets metadata for workflow.</p>
      */
     inline GetWorkflowResult& AddMetadata(Aws::String&& key, Aws::String&& value) { m_metadata.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p> Gets metadata for workflow. </p>
+     * <p>Gets metadata for workflow.</p>
      */
     inline GetWorkflowResult& AddMetadata(const char* key, Aws::String&& value) { m_metadata.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p> Gets metadata for workflow. </p>
+     * <p>Gets metadata for workflow.</p>
      */
     inline GetWorkflowResult& AddMetadata(Aws::String&& key, const char* value) { m_metadata.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p> Gets metadata for workflow. </p>
+     * <p>Gets metadata for workflow.</p>
      */
     inline GetWorkflowResult& AddMetadata(const char* key, const char* value) { m_metadata.emplace(key, value); return *this; }
 
 
     /**
-     * <p> The computational accelerator specified to run the workflow. </p>
+     * <p>The computational accelerator specified to run the workflow. </p>
      */
     inline const Accelerators& GetAccelerators() const{ return m_accelerators; }
 
     /**
-     * <p> The computational accelerator specified to run the workflow. </p>
+     * <p>The computational accelerator specified to run the workflow. </p>
      */
     inline void SetAccelerators(const Accelerators& value) { m_accelerators = value; }
 
     /**
-     * <p> The computational accelerator specified to run the workflow. </p>
+     * <p>The computational accelerator specified to run the workflow. </p>
      */
     inline void SetAccelerators(Accelerators&& value) { m_accelerators = std::move(value); }
 
     /**
-     * <p> The computational accelerator specified to run the workflow. </p>
+     * <p>The computational accelerator specified to run the workflow. </p>
      */
     inline GetWorkflowResult& WithAccelerators(const Accelerators& value) { SetAccelerators(value); return *this;}
 
     /**
-     * <p> The computational accelerator specified to run the workflow. </p>
+     * <p>The computational accelerator specified to run the workflow. </p>
      */
     inline GetWorkflowResult& WithAccelerators(Accelerators&& value) { SetAccelerators(std::move(value)); return *this;}
 

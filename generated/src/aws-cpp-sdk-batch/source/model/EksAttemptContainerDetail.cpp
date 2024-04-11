@@ -19,6 +19,7 @@ namespace Model
 {
 
 EksAttemptContainerDetail::EksAttemptContainerDetail() : 
+    m_nameHasBeenSet(false),
     m_exitCode(0),
     m_exitCodeHasBeenSet(false),
     m_reasonHasBeenSet(false)
@@ -26,6 +27,7 @@ EksAttemptContainerDetail::EksAttemptContainerDetail() :
 }
 
 EksAttemptContainerDetail::EksAttemptContainerDetail(JsonView jsonValue) : 
+    m_nameHasBeenSet(false),
     m_exitCode(0),
     m_exitCodeHasBeenSet(false),
     m_reasonHasBeenSet(false)
@@ -35,6 +37,13 @@ EksAttemptContainerDetail::EksAttemptContainerDetail(JsonView jsonValue) :
 
 EksAttemptContainerDetail& EksAttemptContainerDetail::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+
+    m_nameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("exitCode"))
   {
     m_exitCode = jsonValue.GetInteger("exitCode");
@@ -55,6 +64,12 @@ EksAttemptContainerDetail& EksAttemptContainerDetail::operator =(JsonView jsonVa
 JsonValue EksAttemptContainerDetail::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
+
+  }
 
   if(m_exitCodeHasBeenSet)
   {

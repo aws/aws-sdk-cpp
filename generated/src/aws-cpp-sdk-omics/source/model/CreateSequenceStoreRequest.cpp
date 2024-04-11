@@ -18,7 +18,9 @@ CreateSequenceStoreRequest::CreateSequenceStoreRequest() :
     m_sseConfigHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
-    m_fallbackLocationHasBeenSet(false)
+    m_fallbackLocationHasBeenSet(false),
+    m_eTagAlgorithmFamily(ETagAlgorithmFamily::NOT_SET),
+    m_eTagAlgorithmFamilyHasBeenSet(false)
 {
 }
 
@@ -65,6 +67,11 @@ Aws::String CreateSequenceStoreRequest::SerializePayload() const
   {
    payload.WithString("fallbackLocation", m_fallbackLocation);
 
+  }
+
+  if(m_eTagAlgorithmFamilyHasBeenSet)
+  {
+   payload.WithString("eTagAlgorithmFamily", ETagAlgorithmFamilyMapper::GetNameForETagAlgorithmFamily(m_eTagAlgorithmFamily));
   }
 
   return payload.View().WriteReadable();

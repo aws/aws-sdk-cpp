@@ -207,34 +207,30 @@ namespace Model
 
 
     /**
-     * <p>The sampling rate for this real-time log configuration. The sampling rate
-     * determines the percentage of viewer requests that are represented in the
-     * real-time log data. You must provide an integer between 1 and 100,
-     * inclusive.</p>
+     * <p>The sampling rate for this real-time log configuration. You can specify a
+     * whole number between 1 and 100 (inclusive) to determine the percentage of viewer
+     * requests that are represented in the real-time log data.</p>
      */
     inline long long GetSamplingRate() const{ return m_samplingRate; }
 
     /**
-     * <p>The sampling rate for this real-time log configuration. The sampling rate
-     * determines the percentage of viewer requests that are represented in the
-     * real-time log data. You must provide an integer between 1 and 100,
-     * inclusive.</p>
+     * <p>The sampling rate for this real-time log configuration. You can specify a
+     * whole number between 1 and 100 (inclusive) to determine the percentage of viewer
+     * requests that are represented in the real-time log data.</p>
      */
     inline bool SamplingRateHasBeenSet() const { return m_samplingRateHasBeenSet; }
 
     /**
-     * <p>The sampling rate for this real-time log configuration. The sampling rate
-     * determines the percentage of viewer requests that are represented in the
-     * real-time log data. You must provide an integer between 1 and 100,
-     * inclusive.</p>
+     * <p>The sampling rate for this real-time log configuration. You can specify a
+     * whole number between 1 and 100 (inclusive) to determine the percentage of viewer
+     * requests that are represented in the real-time log data.</p>
      */
     inline void SetSamplingRate(long long value) { m_samplingRateHasBeenSet = true; m_samplingRate = value; }
 
     /**
-     * <p>The sampling rate for this real-time log configuration. The sampling rate
-     * determines the percentage of viewer requests that are represented in the
-     * real-time log data. You must provide an integer between 1 and 100,
-     * inclusive.</p>
+     * <p>The sampling rate for this real-time log configuration. You can specify a
+     * whole number between 1 and 100 (inclusive) to determine the percentage of viewer
+     * requests that are represented in the real-time log data.</p>
      */
     inline CreateRealtimeLogConfig2020_05_31Request& WithSamplingRate(long long value) { SetSamplingRate(value); return *this;}
 

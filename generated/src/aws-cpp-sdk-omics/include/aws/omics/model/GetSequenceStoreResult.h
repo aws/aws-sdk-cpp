@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/omics/model/SseConfig.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/omics/model/SequenceStoreS3Access.h>
+#include <aws/omics/model/ETagAlgorithmFamily.h>
 #include <utility>
 
 namespace Aws
@@ -231,46 +233,103 @@ namespace Model
 
 
     /**
-     * <p> An S3 location that is used to store files that have failed a direct upload.
-     * </p>
+     * <p>An S3 location that is used to store files that have failed a direct
+     * upload.</p>
      */
     inline const Aws::String& GetFallbackLocation() const{ return m_fallbackLocation; }
 
     /**
-     * <p> An S3 location that is used to store files that have failed a direct upload.
-     * </p>
+     * <p>An S3 location that is used to store files that have failed a direct
+     * upload.</p>
      */
     inline void SetFallbackLocation(const Aws::String& value) { m_fallbackLocation = value; }
 
     /**
-     * <p> An S3 location that is used to store files that have failed a direct upload.
-     * </p>
+     * <p>An S3 location that is used to store files that have failed a direct
+     * upload.</p>
      */
     inline void SetFallbackLocation(Aws::String&& value) { m_fallbackLocation = std::move(value); }
 
     /**
-     * <p> An S3 location that is used to store files that have failed a direct upload.
-     * </p>
+     * <p>An S3 location that is used to store files that have failed a direct
+     * upload.</p>
      */
     inline void SetFallbackLocation(const char* value) { m_fallbackLocation.assign(value); }
 
     /**
-     * <p> An S3 location that is used to store files that have failed a direct upload.
-     * </p>
+     * <p>An S3 location that is used to store files that have failed a direct
+     * upload.</p>
      */
     inline GetSequenceStoreResult& WithFallbackLocation(const Aws::String& value) { SetFallbackLocation(value); return *this;}
 
     /**
-     * <p> An S3 location that is used to store files that have failed a direct upload.
-     * </p>
+     * <p>An S3 location that is used to store files that have failed a direct
+     * upload.</p>
      */
     inline GetSequenceStoreResult& WithFallbackLocation(Aws::String&& value) { SetFallbackLocation(std::move(value)); return *this;}
 
     /**
-     * <p> An S3 location that is used to store files that have failed a direct upload.
-     * </p>
+     * <p>An S3 location that is used to store files that have failed a direct
+     * upload.</p>
      */
     inline GetSequenceStoreResult& WithFallbackLocation(const char* value) { SetFallbackLocation(value); return *this;}
+
+
+    /**
+     * <p>The S3 metadata of a sequence store, including the ARN and S3 URI of the S3
+     * bucket.</p>
+     */
+    inline const SequenceStoreS3Access& GetS3Access() const{ return m_s3Access; }
+
+    /**
+     * <p>The S3 metadata of a sequence store, including the ARN and S3 URI of the S3
+     * bucket.</p>
+     */
+    inline void SetS3Access(const SequenceStoreS3Access& value) { m_s3Access = value; }
+
+    /**
+     * <p>The S3 metadata of a sequence store, including the ARN and S3 URI of the S3
+     * bucket.</p>
+     */
+    inline void SetS3Access(SequenceStoreS3Access&& value) { m_s3Access = std::move(value); }
+
+    /**
+     * <p>The S3 metadata of a sequence store, including the ARN and S3 URI of the S3
+     * bucket.</p>
+     */
+    inline GetSequenceStoreResult& WithS3Access(const SequenceStoreS3Access& value) { SetS3Access(value); return *this;}
+
+    /**
+     * <p>The S3 metadata of a sequence store, including the ARN and S3 URI of the S3
+     * bucket.</p>
+     */
+    inline GetSequenceStoreResult& WithS3Access(SequenceStoreS3Access&& value) { SetS3Access(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The algorithm family of the ETag.</p>
+     */
+    inline const ETagAlgorithmFamily& GetETagAlgorithmFamily() const{ return m_eTagAlgorithmFamily; }
+
+    /**
+     * <p>The algorithm family of the ETag.</p>
+     */
+    inline void SetETagAlgorithmFamily(const ETagAlgorithmFamily& value) { m_eTagAlgorithmFamily = value; }
+
+    /**
+     * <p>The algorithm family of the ETag.</p>
+     */
+    inline void SetETagAlgorithmFamily(ETagAlgorithmFamily&& value) { m_eTagAlgorithmFamily = std::move(value); }
+
+    /**
+     * <p>The algorithm family of the ETag.</p>
+     */
+    inline GetSequenceStoreResult& WithETagAlgorithmFamily(const ETagAlgorithmFamily& value) { SetETagAlgorithmFamily(value); return *this;}
+
+    /**
+     * <p>The algorithm family of the ETag.</p>
+     */
+    inline GetSequenceStoreResult& WithETagAlgorithmFamily(ETagAlgorithmFamily&& value) { SetETagAlgorithmFamily(std::move(value)); return *this;}
 
 
     
@@ -309,6 +368,10 @@ namespace Model
     Aws::Utils::DateTime m_creationTime;
 
     Aws::String m_fallbackLocation;
+
+    SequenceStoreS3Access m_s3Access;
+
+    ETagAlgorithmFamily m_eTagAlgorithmFamily;
 
     Aws::String m_requestId;
   };

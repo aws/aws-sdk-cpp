@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p> The read set ID created for an uploaded read set. </p>
+     * <p>The read set ID created for an uploaded read set.</p>
      */
     inline const Aws::String& GetReadSetId() const{ return m_readSetId; }
 
     /**
-     * <p> The read set ID created for an uploaded read set. </p>
+     * <p>The read set ID created for an uploaded read set.</p>
      */
     inline void SetReadSetId(const Aws::String& value) { m_readSetId = value; }
 
     /**
-     * <p> The read set ID created for an uploaded read set. </p>
+     * <p>The read set ID created for an uploaded read set.</p>
      */
     inline void SetReadSetId(Aws::String&& value) { m_readSetId = std::move(value); }
 
     /**
-     * <p> The read set ID created for an uploaded read set. </p>
+     * <p>The read set ID created for an uploaded read set.</p>
      */
     inline void SetReadSetId(const char* value) { m_readSetId.assign(value); }
 
     /**
-     * <p> The read set ID created for an uploaded read set. </p>
+     * <p>The read set ID created for an uploaded read set.</p>
      */
     inline CompleteMultipartReadSetUploadResult& WithReadSetId(const Aws::String& value) { SetReadSetId(value); return *this;}
 
     /**
-     * <p> The read set ID created for an uploaded read set. </p>
+     * <p>The read set ID created for an uploaded read set.</p>
      */
     inline CompleteMultipartReadSetUploadResult& WithReadSetId(Aws::String&& value) { SetReadSetId(std::move(value)); return *this;}
 
     /**
-     * <p> The read set ID created for an uploaded read set. </p>
+     * <p>The read set ID created for an uploaded read set.</p>
      */
     inline CompleteMultipartReadSetUploadResult& WithReadSetId(const char* value) { SetReadSetId(value); return *this;}
 

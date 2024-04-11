@@ -314,65 +314,57 @@ namespace Model
 
 
     /**
-     * <p>References a Kubernetes secret resource. This object must start and end with
-     * an alphanumeric character, is required to be lowercase, can include periods (.)
-     * and hyphens (-), and can't contain more than 253 characters.</p> <p>
+     * <p>References a Kubernetes secret resource. It holds a list of secrets. These
+     * secrets help to gain access to pull an images from a private registry.</p> <p>
      * <code>ImagePullSecret$name</code> is required when this object is used.</p>
      */
     inline const Aws::Vector<ImagePullSecret>& GetImagePullSecrets() const{ return m_imagePullSecrets; }
 
     /**
-     * <p>References a Kubernetes secret resource. This object must start and end with
-     * an alphanumeric character, is required to be lowercase, can include periods (.)
-     * and hyphens (-), and can't contain more than 253 characters.</p> <p>
+     * <p>References a Kubernetes secret resource. It holds a list of secrets. These
+     * secrets help to gain access to pull an images from a private registry.</p> <p>
      * <code>ImagePullSecret$name</code> is required when this object is used.</p>
      */
     inline bool ImagePullSecretsHasBeenSet() const { return m_imagePullSecretsHasBeenSet; }
 
     /**
-     * <p>References a Kubernetes secret resource. This object must start and end with
-     * an alphanumeric character, is required to be lowercase, can include periods (.)
-     * and hyphens (-), and can't contain more than 253 characters.</p> <p>
+     * <p>References a Kubernetes secret resource. It holds a list of secrets. These
+     * secrets help to gain access to pull an images from a private registry.</p> <p>
      * <code>ImagePullSecret$name</code> is required when this object is used.</p>
      */
     inline void SetImagePullSecrets(const Aws::Vector<ImagePullSecret>& value) { m_imagePullSecretsHasBeenSet = true; m_imagePullSecrets = value; }
 
     /**
-     * <p>References a Kubernetes secret resource. This object must start and end with
-     * an alphanumeric character, is required to be lowercase, can include periods (.)
-     * and hyphens (-), and can't contain more than 253 characters.</p> <p>
+     * <p>References a Kubernetes secret resource. It holds a list of secrets. These
+     * secrets help to gain access to pull an images from a private registry.</p> <p>
      * <code>ImagePullSecret$name</code> is required when this object is used.</p>
      */
     inline void SetImagePullSecrets(Aws::Vector<ImagePullSecret>&& value) { m_imagePullSecretsHasBeenSet = true; m_imagePullSecrets = std::move(value); }
 
     /**
-     * <p>References a Kubernetes secret resource. This object must start and end with
-     * an alphanumeric character, is required to be lowercase, can include periods (.)
-     * and hyphens (-), and can't contain more than 253 characters.</p> <p>
+     * <p>References a Kubernetes secret resource. It holds a list of secrets. These
+     * secrets help to gain access to pull an images from a private registry.</p> <p>
      * <code>ImagePullSecret$name</code> is required when this object is used.</p>
      */
     inline EksPodProperties& WithImagePullSecrets(const Aws::Vector<ImagePullSecret>& value) { SetImagePullSecrets(value); return *this;}
 
     /**
-     * <p>References a Kubernetes secret resource. This object must start and end with
-     * an alphanumeric character, is required to be lowercase, can include periods (.)
-     * and hyphens (-), and can't contain more than 253 characters.</p> <p>
+     * <p>References a Kubernetes secret resource. It holds a list of secrets. These
+     * secrets help to gain access to pull an images from a private registry.</p> <p>
      * <code>ImagePullSecret$name</code> is required when this object is used.</p>
      */
     inline EksPodProperties& WithImagePullSecrets(Aws::Vector<ImagePullSecret>&& value) { SetImagePullSecrets(std::move(value)); return *this;}
 
     /**
-     * <p>References a Kubernetes secret resource. This object must start and end with
-     * an alphanumeric character, is required to be lowercase, can include periods (.)
-     * and hyphens (-), and can't contain more than 253 characters.</p> <p>
+     * <p>References a Kubernetes secret resource. It holds a list of secrets. These
+     * secrets help to gain access to pull an images from a private registry.</p> <p>
      * <code>ImagePullSecret$name</code> is required when this object is used.</p>
      */
     inline EksPodProperties& AddImagePullSecrets(const ImagePullSecret& value) { m_imagePullSecretsHasBeenSet = true; m_imagePullSecrets.push_back(value); return *this; }
 
     /**
-     * <p>References a Kubernetes secret resource. This object must start and end with
-     * an alphanumeric character, is required to be lowercase, can include periods (.)
-     * and hyphens (-), and can't contain more than 253 characters.</p> <p>
+     * <p>References a Kubernetes secret resource. It holds a list of secrets. These
+     * secrets help to gain access to pull an images from a private registry.</p> <p>
      * <code>ImagePullSecret$name</code> is required when this object is used.</p>
      */
     inline EksPodProperties& AddImagePullSecrets(ImagePullSecret&& value) { m_imagePullSecretsHasBeenSet = true; m_imagePullSecrets.push_back(std::move(value)); return *this; }

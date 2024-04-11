@@ -108,7 +108,11 @@ namespace Model
      * current value. Values that are not at least 10% greater than the existing value
      * are rounded up so that they are 10% greater than the current value.</p> <p>For
      * the valid values for allocated storage for each engine, see
-     * <code>CreateDBInstance</code>.</p>
+     * <code>CreateDBInstance</code>.</p> <p>Constraints:</p> <ul> <li> <p>When you
+     * increase the allocated storage for a DB instance that uses Provisioned IOPS
+     * (<code>gp3</code>, <code>io1</code>, or <code>io2</code> storage type), you must
+     * also specify the <code>Iops</code> parameter. You can use the current value for
+     * <code>Iops</code>.</p> </li> </ul>
      */
     inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
@@ -119,7 +123,11 @@ namespace Model
      * current value. Values that are not at least 10% greater than the existing value
      * are rounded up so that they are 10% greater than the current value.</p> <p>For
      * the valid values for allocated storage for each engine, see
-     * <code>CreateDBInstance</code>.</p>
+     * <code>CreateDBInstance</code>.</p> <p>Constraints:</p> <ul> <li> <p>When you
+     * increase the allocated storage for a DB instance that uses Provisioned IOPS
+     * (<code>gp3</code>, <code>io1</code>, or <code>io2</code> storage type), you must
+     * also specify the <code>Iops</code> parameter. You can use the current value for
+     * <code>Iops</code>.</p> </li> </ul>
      */
     inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
 
@@ -130,7 +138,11 @@ namespace Model
      * current value. Values that are not at least 10% greater than the existing value
      * are rounded up so that they are 10% greater than the current value.</p> <p>For
      * the valid values for allocated storage for each engine, see
-     * <code>CreateDBInstance</code>.</p>
+     * <code>CreateDBInstance</code>.</p> <p>Constraints:</p> <ul> <li> <p>When you
+     * increase the allocated storage for a DB instance that uses Provisioned IOPS
+     * (<code>gp3</code>, <code>io1</code>, or <code>io2</code> storage type), you must
+     * also specify the <code>Iops</code> parameter. You can use the current value for
+     * <code>Iops</code>.</p> </li> </ul>
      */
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
@@ -141,7 +153,11 @@ namespace Model
      * current value. Values that are not at least 10% greater than the existing value
      * are rounded up so that they are 10% greater than the current value.</p> <p>For
      * the valid values for allocated storage for each engine, see
-     * <code>CreateDBInstance</code>.</p>
+     * <code>CreateDBInstance</code>.</p> <p>Constraints:</p> <ul> <li> <p>When you
+     * increase the allocated storage for a DB instance that uses Provisioned IOPS
+     * (<code>gp3</code>, <code>io1</code>, or <code>io2</code> storage type), you must
+     * also specify the <code>Iops</code> parameter. You can use the current value for
+     * <code>Iops</code>.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
@@ -1920,8 +1936,10 @@ namespace Model
      * MariaDB, RDS for MySQL, RDS for Oracle, and RDS for PostgreSQL - The value
      * supplied must be at least 10% greater than the current value. Values that are
      * not at least 10% greater than the existing value are rounded up so that they are
-     * 10% greater than the current value.</p> </li> </ul> <p>Default: Uses existing
-     * setting</p>
+     * 10% greater than the current value.</p> </li> <li> <p>When you increase the
+     * Provisioned IOPS, you must also specify the <code>AllocatedStorage</code>
+     * parameter. You can use the current value for <code>AllocatedStorage</code>.</p>
+     * </li> </ul> <p>Default: Uses existing setting</p>
      */
     inline int GetIops() const{ return m_iops; }
 
@@ -1948,8 +1966,10 @@ namespace Model
      * MariaDB, RDS for MySQL, RDS for Oracle, and RDS for PostgreSQL - The value
      * supplied must be at least 10% greater than the current value. Values that are
      * not at least 10% greater than the existing value are rounded up so that they are
-     * 10% greater than the current value.</p> </li> </ul> <p>Default: Uses existing
-     * setting</p>
+     * 10% greater than the current value.</p> </li> <li> <p>When you increase the
+     * Provisioned IOPS, you must also specify the <code>AllocatedStorage</code>
+     * parameter. You can use the current value for <code>AllocatedStorage</code>.</p>
+     * </li> </ul> <p>Default: Uses existing setting</p>
      */
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
 
@@ -1976,8 +1996,10 @@ namespace Model
      * MariaDB, RDS for MySQL, RDS for Oracle, and RDS for PostgreSQL - The value
      * supplied must be at least 10% greater than the current value. Values that are
      * not at least 10% greater than the existing value are rounded up so that they are
-     * 10% greater than the current value.</p> </li> </ul> <p>Default: Uses existing
-     * setting</p>
+     * 10% greater than the current value.</p> </li> <li> <p>When you increase the
+     * Provisioned IOPS, you must also specify the <code>AllocatedStorage</code>
+     * parameter. You can use the current value for <code>AllocatedStorage</code>.</p>
+     * </li> </ul> <p>Default: Uses existing setting</p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
@@ -2004,8 +2026,10 @@ namespace Model
      * MariaDB, RDS for MySQL, RDS for Oracle, and RDS for PostgreSQL - The value
      * supplied must be at least 10% greater than the current value. Values that are
      * not at least 10% greater than the existing value are rounded up so that they are
-     * 10% greater than the current value.</p> </li> </ul> <p>Default: Uses existing
-     * setting</p>
+     * 10% greater than the current value.</p> </li> <li> <p>When you increase the
+     * Provisioned IOPS, you must also specify the <code>AllocatedStorage</code>
+     * parameter. You can use the current value for <code>AllocatedStorage</code>.</p>
+     * </li> </ul> <p>Default: Uses existing setting</p>
      */
     inline ModifyDBInstanceRequest& WithIops(int value) { SetIops(value); return *this;}
 

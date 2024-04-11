@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/monitoring/model/AnomalyDetectorConfiguration.h>
 #include <aws/monitoring/model/AnomalyDetectorStateValue.h>
+#include <aws/monitoring/model/MetricCharacteristics.h>
 #include <aws/monitoring/model/SingleMetricAnomalyDetector.h>
 #include <aws/monitoring/model/MetricMathAnomalyDetector.h>
 #include <utility>
@@ -91,40 +92,77 @@ namespace Model
 
 
     /**
-     * <p>The current status of the anomaly detector's training. The possible values
-     * are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>
+     * <p>The current status of the anomaly detector's training.</p>
      */
     inline const AnomalyDetectorStateValue& GetStateValue() const{ return m_stateValue; }
 
     /**
-     * <p>The current status of the anomaly detector's training. The possible values
-     * are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>
+     * <p>The current status of the anomaly detector's training.</p>
      */
     inline bool StateValueHasBeenSet() const { return m_stateValueHasBeenSet; }
 
     /**
-     * <p>The current status of the anomaly detector's training. The possible values
-     * are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>
+     * <p>The current status of the anomaly detector's training.</p>
      */
     inline void SetStateValue(const AnomalyDetectorStateValue& value) { m_stateValueHasBeenSet = true; m_stateValue = value; }
 
     /**
-     * <p>The current status of the anomaly detector's training. The possible values
-     * are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>
+     * <p>The current status of the anomaly detector's training.</p>
      */
     inline void SetStateValue(AnomalyDetectorStateValue&& value) { m_stateValueHasBeenSet = true; m_stateValue = std::move(value); }
 
     /**
-     * <p>The current status of the anomaly detector's training. The possible values
-     * are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>
+     * <p>The current status of the anomaly detector's training.</p>
      */
     inline AnomalyDetector& WithStateValue(const AnomalyDetectorStateValue& value) { SetStateValue(value); return *this;}
 
     /**
-     * <p>The current status of the anomaly detector's training. The possible values
-     * are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>
+     * <p>The current status of the anomaly detector's training.</p>
      */
     inline AnomalyDetector& WithStateValue(AnomalyDetectorStateValue&& value) { SetStateValue(std::move(value)); return *this;}
+
+
+    /**
+     * <p>This object includes parameters that you can use to provide information about
+     * your metric to CloudWatch to help it build more accurate anomaly detection
+     * models. Currently, it includes the <code>PeriodicSpikes</code> parameter.</p>
+     */
+    inline const MetricCharacteristics& GetMetricCharacteristics() const{ return m_metricCharacteristics; }
+
+    /**
+     * <p>This object includes parameters that you can use to provide information about
+     * your metric to CloudWatch to help it build more accurate anomaly detection
+     * models. Currently, it includes the <code>PeriodicSpikes</code> parameter.</p>
+     */
+    inline bool MetricCharacteristicsHasBeenSet() const { return m_metricCharacteristicsHasBeenSet; }
+
+    /**
+     * <p>This object includes parameters that you can use to provide information about
+     * your metric to CloudWatch to help it build more accurate anomaly detection
+     * models. Currently, it includes the <code>PeriodicSpikes</code> parameter.</p>
+     */
+    inline void SetMetricCharacteristics(const MetricCharacteristics& value) { m_metricCharacteristicsHasBeenSet = true; m_metricCharacteristics = value; }
+
+    /**
+     * <p>This object includes parameters that you can use to provide information about
+     * your metric to CloudWatch to help it build more accurate anomaly detection
+     * models. Currently, it includes the <code>PeriodicSpikes</code> parameter.</p>
+     */
+    inline void SetMetricCharacteristics(MetricCharacteristics&& value) { m_metricCharacteristicsHasBeenSet = true; m_metricCharacteristics = std::move(value); }
+
+    /**
+     * <p>This object includes parameters that you can use to provide information about
+     * your metric to CloudWatch to help it build more accurate anomaly detection
+     * models. Currently, it includes the <code>PeriodicSpikes</code> parameter.</p>
+     */
+    inline AnomalyDetector& WithMetricCharacteristics(const MetricCharacteristics& value) { SetMetricCharacteristics(value); return *this;}
+
+    /**
+     * <p>This object includes parameters that you can use to provide information about
+     * your metric to CloudWatch to help it build more accurate anomaly detection
+     * models. Currently, it includes the <code>PeriodicSpikes</code> parameter.</p>
+     */
+    inline AnomalyDetector& WithMetricCharacteristics(MetricCharacteristics&& value) { SetMetricCharacteristics(std::move(value)); return *this;}
 
 
     /**
@@ -195,6 +233,9 @@ namespace Model
 
     AnomalyDetectorStateValue m_stateValue;
     bool m_stateValueHasBeenSet = false;
+
+    MetricCharacteristics m_metricCharacteristics;
+    bool m_metricCharacteristicsHasBeenSet = false;
 
     SingleMetricAnomalyDetector m_singleMetricAnomalyDetector;
     bool m_singleMetricAnomalyDetectorHasBeenSet = false;

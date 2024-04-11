@@ -315,89 +315,89 @@ namespace Model
 
 
     /**
-     * <p> The number of Graphics Processing Units (GPU) specified in the task. </p>
+     * <p>The number of Graphics Processing Units (GPU) specified in the task.</p>
      */
     inline int GetGpus() const{ return m_gpus; }
 
     /**
-     * <p> The number of Graphics Processing Units (GPU) specified in the task. </p>
+     * <p>The number of Graphics Processing Units (GPU) specified in the task.</p>
      */
     inline void SetGpus(int value) { m_gpus = value; }
 
     /**
-     * <p> The number of Graphics Processing Units (GPU) specified in the task. </p>
+     * <p>The number of Graphics Processing Units (GPU) specified in the task.</p>
      */
     inline GetRunTaskResult& WithGpus(int value) { SetGpus(value); return *this;}
 
 
     /**
-     * <p> The instance type for a task. </p>
+     * <p>The instance type for a task.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p> The instance type for a task. </p>
+     * <p>The instance type for a task.</p>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceType = value; }
 
     /**
-     * <p> The instance type for a task. </p>
+     * <p>The instance type for a task.</p>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceType = std::move(value); }
 
     /**
-     * <p> The instance type for a task. </p>
+     * <p>The instance type for a task.</p>
      */
     inline void SetInstanceType(const char* value) { m_instanceType.assign(value); }
 
     /**
-     * <p> The instance type for a task. </p>
+     * <p>The instance type for a task.</p>
      */
     inline GetRunTaskResult& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p> The instance type for a task. </p>
+     * <p>The instance type for a task.</p>
      */
     inline GetRunTaskResult& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
-     * <p> The instance type for a task. </p>
+     * <p>The instance type for a task.</p>
      */
     inline GetRunTaskResult& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
 
     /**
-     * <p> The reason a task has failed. </p>
+     * <p>The reason a task has failed.</p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
 
     /**
-     * <p> The reason a task has failed. </p>
+     * <p>The reason a task has failed.</p>
      */
     inline void SetFailureReason(const Aws::String& value) { m_failureReason = value; }
 
     /**
-     * <p> The reason a task has failed. </p>
+     * <p>The reason a task has failed.</p>
      */
     inline void SetFailureReason(Aws::String&& value) { m_failureReason = std::move(value); }
 
     /**
-     * <p> The reason a task has failed. </p>
+     * <p>The reason a task has failed.</p>
      */
     inline void SetFailureReason(const char* value) { m_failureReason.assign(value); }
 
     /**
-     * <p> The reason a task has failed. </p>
+     * <p>The reason a task has failed.</p>
      */
     inline GetRunTaskResult& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
 
     /**
-     * <p> The reason a task has failed. </p>
+     * <p>The reason a task has failed.</p>
      */
     inline GetRunTaskResult& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
 
     /**
-     * <p> The reason a task has failed. </p>
+     * <p>The reason a task has failed.</p>
      */
     inline GetRunTaskResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 

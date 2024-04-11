@@ -7,6 +7,8 @@
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/batch/model/AttemptContainerDetail.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/batch/model/AttemptEcsTaskDetails.h>
 #include <utility>
 
 namespace Aws
@@ -175,6 +177,55 @@ namespace Model
      */
     inline AttemptDetail& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
 
+
+    /**
+     * <p>The properties for a task definition that describes the container and volume
+     * definitions of an Amazon ECS task.</p>
+     */
+    inline const Aws::Vector<AttemptEcsTaskDetails>& GetTaskProperties() const{ return m_taskProperties; }
+
+    /**
+     * <p>The properties for a task definition that describes the container and volume
+     * definitions of an Amazon ECS task.</p>
+     */
+    inline bool TaskPropertiesHasBeenSet() const { return m_taskPropertiesHasBeenSet; }
+
+    /**
+     * <p>The properties for a task definition that describes the container and volume
+     * definitions of an Amazon ECS task.</p>
+     */
+    inline void SetTaskProperties(const Aws::Vector<AttemptEcsTaskDetails>& value) { m_taskPropertiesHasBeenSet = true; m_taskProperties = value; }
+
+    /**
+     * <p>The properties for a task definition that describes the container and volume
+     * definitions of an Amazon ECS task.</p>
+     */
+    inline void SetTaskProperties(Aws::Vector<AttemptEcsTaskDetails>&& value) { m_taskPropertiesHasBeenSet = true; m_taskProperties = std::move(value); }
+
+    /**
+     * <p>The properties for a task definition that describes the container and volume
+     * definitions of an Amazon ECS task.</p>
+     */
+    inline AttemptDetail& WithTaskProperties(const Aws::Vector<AttemptEcsTaskDetails>& value) { SetTaskProperties(value); return *this;}
+
+    /**
+     * <p>The properties for a task definition that describes the container and volume
+     * definitions of an Amazon ECS task.</p>
+     */
+    inline AttemptDetail& WithTaskProperties(Aws::Vector<AttemptEcsTaskDetails>&& value) { SetTaskProperties(std::move(value)); return *this;}
+
+    /**
+     * <p>The properties for a task definition that describes the container and volume
+     * definitions of an Amazon ECS task.</p>
+     */
+    inline AttemptDetail& AddTaskProperties(const AttemptEcsTaskDetails& value) { m_taskPropertiesHasBeenSet = true; m_taskProperties.push_back(value); return *this; }
+
+    /**
+     * <p>The properties for a task definition that describes the container and volume
+     * definitions of an Amazon ECS task.</p>
+     */
+    inline AttemptDetail& AddTaskProperties(AttemptEcsTaskDetails&& value) { m_taskPropertiesHasBeenSet = true; m_taskProperties.push_back(std::move(value)); return *this; }
+
   private:
 
     AttemptContainerDetail m_container;
@@ -188,6 +239,9 @@ namespace Model
 
     Aws::String m_statusReason;
     bool m_statusReasonHasBeenSet = false;
+
+    Aws::Vector<AttemptEcsTaskDetails> m_taskProperties;
+    bool m_taskPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

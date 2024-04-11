@@ -564,38 +564,38 @@ namespace Model
 
 
     /**
-     * <p> The entity tag (ETag) is a hash of the object representing its semantic
-     * content. </p>
+     * <p>The entity tag (ETag) is a hash of the object representing its semantic
+     * content.</p>
      */
     inline const ETag& GetEtag() const{ return m_etag; }
 
     /**
-     * <p> The entity tag (ETag) is a hash of the object representing its semantic
-     * content. </p>
+     * <p>The entity tag (ETag) is a hash of the object representing its semantic
+     * content.</p>
      */
     inline bool EtagHasBeenSet() const { return m_etagHasBeenSet; }
 
     /**
-     * <p> The entity tag (ETag) is a hash of the object representing its semantic
-     * content. </p>
+     * <p>The entity tag (ETag) is a hash of the object representing its semantic
+     * content.</p>
      */
     inline void SetEtag(const ETag& value) { m_etagHasBeenSet = true; m_etag = value; }
 
     /**
-     * <p> The entity tag (ETag) is a hash of the object representing its semantic
-     * content. </p>
+     * <p>The entity tag (ETag) is a hash of the object representing its semantic
+     * content.</p>
      */
     inline void SetEtag(ETag&& value) { m_etagHasBeenSet = true; m_etag = std::move(value); }
 
     /**
-     * <p> The entity tag (ETag) is a hash of the object representing its semantic
-     * content. </p>
+     * <p>The entity tag (ETag) is a hash of the object representing its semantic
+     * content.</p>
      */
     inline ReadSetListItem& WithEtag(const ETag& value) { SetEtag(value); return *this;}
 
     /**
-     * <p> The entity tag (ETag) is a hash of the object representing its semantic
-     * content. </p>
+     * <p>The entity tag (ETag) is a hash of the object representing its semantic
+     * content.</p>
      */
     inline ReadSetListItem& WithEtag(ETag&& value) { SetEtag(std::move(value)); return *this;}
 
