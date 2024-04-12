@@ -100,8 +100,6 @@ namespace Aws
                     const Aws::String& simpleDate, const Aws::String& region, const Aws::String& serviceName) const;
             const Aws::String m_serviceName;
             const Aws::String m_region;
-            mutable Aws::Utils::Crypto::Sha256 m_hash;
-            mutable Aws::Utils::Crypto::Sha256HMAC m_HMAC;
             mutable Utils::Threading::ReaderWriterLock m_derivedKeyLock;
             mutable Aws::Utils::ByteBuffer m_derivedKey;
             mutable Aws::String m_currentDateStr;
