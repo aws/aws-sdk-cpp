@@ -12,6 +12,7 @@
 #include <aws/mediatailor/model/CdnConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/mediatailor/model/DashConfigurationForPut.h>
+#include <aws/mediatailor/model/InsertionMode.h>
 #include <aws/mediatailor/model/LivePreRollConfiguration.h>
 #include <aws/mediatailor/model/ManifestProcessingRules.h>
 #include <utility>
@@ -373,6 +374,67 @@ namespace Model
      * <p>The configuration for DASH content.</p>
      */
     inline PutPlaybackConfigurationRequest& WithDashConfiguration(DashConfigurationForPut&& value) { SetDashConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The setting that controls whether players can use stitched or guided ad
+     * insertion. The default, <code>STITCHED_ONLY</code>, forces all player sessions
+     * to use stitched (server-side) ad insertion. Choosing <code>PLAYER_SELECT</code>
+     * allows players to select either stitched or guided ad insertion at
+     * session-initialization time. The default for players that do not specify an
+     * insertion mode is stitched.</p>
+     */
+    inline const InsertionMode& GetInsertionMode() const{ return m_insertionMode; }
+
+    /**
+     * <p>The setting that controls whether players can use stitched or guided ad
+     * insertion. The default, <code>STITCHED_ONLY</code>, forces all player sessions
+     * to use stitched (server-side) ad insertion. Choosing <code>PLAYER_SELECT</code>
+     * allows players to select either stitched or guided ad insertion at
+     * session-initialization time. The default for players that do not specify an
+     * insertion mode is stitched.</p>
+     */
+    inline bool InsertionModeHasBeenSet() const { return m_insertionModeHasBeenSet; }
+
+    /**
+     * <p>The setting that controls whether players can use stitched or guided ad
+     * insertion. The default, <code>STITCHED_ONLY</code>, forces all player sessions
+     * to use stitched (server-side) ad insertion. Choosing <code>PLAYER_SELECT</code>
+     * allows players to select either stitched or guided ad insertion at
+     * session-initialization time. The default for players that do not specify an
+     * insertion mode is stitched.</p>
+     */
+    inline void SetInsertionMode(const InsertionMode& value) { m_insertionModeHasBeenSet = true; m_insertionMode = value; }
+
+    /**
+     * <p>The setting that controls whether players can use stitched or guided ad
+     * insertion. The default, <code>STITCHED_ONLY</code>, forces all player sessions
+     * to use stitched (server-side) ad insertion. Choosing <code>PLAYER_SELECT</code>
+     * allows players to select either stitched or guided ad insertion at
+     * session-initialization time. The default for players that do not specify an
+     * insertion mode is stitched.</p>
+     */
+    inline void SetInsertionMode(InsertionMode&& value) { m_insertionModeHasBeenSet = true; m_insertionMode = std::move(value); }
+
+    /**
+     * <p>The setting that controls whether players can use stitched or guided ad
+     * insertion. The default, <code>STITCHED_ONLY</code>, forces all player sessions
+     * to use stitched (server-side) ad insertion. Choosing <code>PLAYER_SELECT</code>
+     * allows players to select either stitched or guided ad insertion at
+     * session-initialization time. The default for players that do not specify an
+     * insertion mode is stitched.</p>
+     */
+    inline PutPlaybackConfigurationRequest& WithInsertionMode(const InsertionMode& value) { SetInsertionMode(value); return *this;}
+
+    /**
+     * <p>The setting that controls whether players can use stitched or guided ad
+     * insertion. The default, <code>STITCHED_ONLY</code>, forces all player sessions
+     * to use stitched (server-side) ad insertion. Choosing <code>PLAYER_SELECT</code>
+     * allows players to select either stitched or guided ad insertion at
+     * session-initialization time. The default for players that do not specify an
+     * insertion mode is stitched.</p>
+     */
+    inline PutPlaybackConfigurationRequest& WithInsertionMode(InsertionMode&& value) { SetInsertionMode(std::move(value)); return *this;}
 
 
     /**
@@ -868,6 +930,9 @@ namespace Model
 
     DashConfigurationForPut m_dashConfiguration;
     bool m_dashConfigurationHasBeenSet = false;
+
+    InsertionMode m_insertionMode;
+    bool m_insertionModeHasBeenSet = false;
 
     LivePreRollConfiguration m_livePreRollConfiguration;
     bool m_livePreRollConfigurationHasBeenSet = false;

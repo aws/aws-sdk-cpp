@@ -30,7 +30,8 @@ DatastoreProperties::DatastoreProperties() :
     m_datastoreEndpointHasBeenSet(false),
     m_sseConfigurationHasBeenSet(false),
     m_preloadDataConfigHasBeenSet(false),
-    m_identityProviderConfigurationHasBeenSet(false)
+    m_identityProviderConfigurationHasBeenSet(false),
+    m_errorCauseHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ DatastoreProperties::DatastoreProperties(JsonView jsonValue) :
     m_datastoreEndpointHasBeenSet(false),
     m_sseConfigurationHasBeenSet(false),
     m_preloadDataConfigHasBeenSet(false),
-    m_identityProviderConfigurationHasBeenSet(false)
+    m_identityProviderConfigurationHasBeenSet(false),
+    m_errorCauseHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -123,6 +125,13 @@ DatastoreProperties& DatastoreProperties::operator =(JsonView jsonValue)
     m_identityProviderConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ErrorCause"))
+  {
+    m_errorCause = jsonValue.GetObject("ErrorCause");
+
+    m_errorCauseHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -184,6 +193,12 @@ JsonValue DatastoreProperties::Jsonize() const
   if(m_identityProviderConfigurationHasBeenSet)
   {
    payload.WithObject("IdentityProviderConfiguration", m_identityProviderConfiguration.Jsonize());
+
+  }
+
+  if(m_errorCauseHasBeenSet)
+  {
+   payload.WithObject("ErrorCause", m_errorCause.Jsonize());
 
   }
 

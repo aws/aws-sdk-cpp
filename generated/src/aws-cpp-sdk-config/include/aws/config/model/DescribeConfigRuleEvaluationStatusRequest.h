@@ -154,7 +154,7 @@ namespace Model
     /**
      * <p>The number of rule evaluation results that you want returned.</p> <p>This
      * parameter is required if the rule limit for your account is more than the
-     * default of 150 rules.</p> <p>For information about requesting a rule limit
+     * default of 1000 rules.</p> <p>For information about requesting a rule limit
      * increase, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config
      * Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
@@ -164,7 +164,7 @@ namespace Model
     /**
      * <p>The number of rule evaluation results that you want returned.</p> <p>This
      * parameter is required if the rule limit for your account is more than the
-     * default of 150 rules.</p> <p>For information about requesting a rule limit
+     * default of 1000 rules.</p> <p>For information about requesting a rule limit
      * increase, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config
      * Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
@@ -174,7 +174,7 @@ namespace Model
     /**
      * <p>The number of rule evaluation results that you want returned.</p> <p>This
      * parameter is required if the rule limit for your account is more than the
-     * default of 150 rules.</p> <p>For information about requesting a rule limit
+     * default of 1000 rules.</p> <p>For information about requesting a rule limit
      * increase, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config
      * Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
@@ -184,7 +184,7 @@ namespace Model
     /**
      * <p>The number of rule evaluation results that you want returned.</p> <p>This
      * parameter is required if the rule limit for your account is more than the
-     * default of 150 rules.</p> <p>For information about requesting a rule limit
+     * default of 1000 rules.</p> <p>For information about requesting a rule limit
      * increase, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config
      * Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>

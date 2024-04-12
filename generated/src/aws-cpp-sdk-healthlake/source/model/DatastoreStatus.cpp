@@ -24,6 +24,7 @@ namespace Aws
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int DELETED_HASH = HashingUtils::HashString("DELETED");
+        static const int CREATE_FAILED_HASH = HashingUtils::HashString("CREATE_FAILED");
 
 
         DatastoreStatus GetDatastoreStatusForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == DELETED_HASH)
           {
             return DatastoreStatus::DELETED;
+          }
+          else if (hashCode == CREATE_FAILED_HASH)
+          {
+            return DatastoreStatus::CREATE_FAILED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "DELETING";
           case DatastoreStatus::DELETED:
             return "DELETED";
+          case DatastoreStatus::CREATE_FAILED:
+            return "CREATE_FAILED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

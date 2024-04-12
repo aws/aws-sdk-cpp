@@ -621,6 +621,104 @@ namespace Model
      */
     inline ResourceChange& WithModuleInfo(ModuleInfo&& value) { SetModuleInfo(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An encoded JSON string containing the context of the resource before the
+     * change is executed.</p>
+     */
+    inline const Aws::String& GetBeforeContext() const{ return m_beforeContext; }
+
+    /**
+     * <p>An encoded JSON string containing the context of the resource before the
+     * change is executed.</p>
+     */
+    inline bool BeforeContextHasBeenSet() const { return m_beforeContextHasBeenSet; }
+
+    /**
+     * <p>An encoded JSON string containing the context of the resource before the
+     * change is executed.</p>
+     */
+    inline void SetBeforeContext(const Aws::String& value) { m_beforeContextHasBeenSet = true; m_beforeContext = value; }
+
+    /**
+     * <p>An encoded JSON string containing the context of the resource before the
+     * change is executed.</p>
+     */
+    inline void SetBeforeContext(Aws::String&& value) { m_beforeContextHasBeenSet = true; m_beforeContext = std::move(value); }
+
+    /**
+     * <p>An encoded JSON string containing the context of the resource before the
+     * change is executed.</p>
+     */
+    inline void SetBeforeContext(const char* value) { m_beforeContextHasBeenSet = true; m_beforeContext.assign(value); }
+
+    /**
+     * <p>An encoded JSON string containing the context of the resource before the
+     * change is executed.</p>
+     */
+    inline ResourceChange& WithBeforeContext(const Aws::String& value) { SetBeforeContext(value); return *this;}
+
+    /**
+     * <p>An encoded JSON string containing the context of the resource before the
+     * change is executed.</p>
+     */
+    inline ResourceChange& WithBeforeContext(Aws::String&& value) { SetBeforeContext(std::move(value)); return *this;}
+
+    /**
+     * <p>An encoded JSON string containing the context of the resource before the
+     * change is executed.</p>
+     */
+    inline ResourceChange& WithBeforeContext(const char* value) { SetBeforeContext(value); return *this;}
+
+
+    /**
+     * <p>An encoded JSON string containing the context of the resource after the
+     * change is executed.</p>
+     */
+    inline const Aws::String& GetAfterContext() const{ return m_afterContext; }
+
+    /**
+     * <p>An encoded JSON string containing the context of the resource after the
+     * change is executed.</p>
+     */
+    inline bool AfterContextHasBeenSet() const { return m_afterContextHasBeenSet; }
+
+    /**
+     * <p>An encoded JSON string containing the context of the resource after the
+     * change is executed.</p>
+     */
+    inline void SetAfterContext(const Aws::String& value) { m_afterContextHasBeenSet = true; m_afterContext = value; }
+
+    /**
+     * <p>An encoded JSON string containing the context of the resource after the
+     * change is executed.</p>
+     */
+    inline void SetAfterContext(Aws::String&& value) { m_afterContextHasBeenSet = true; m_afterContext = std::move(value); }
+
+    /**
+     * <p>An encoded JSON string containing the context of the resource after the
+     * change is executed.</p>
+     */
+    inline void SetAfterContext(const char* value) { m_afterContextHasBeenSet = true; m_afterContext.assign(value); }
+
+    /**
+     * <p>An encoded JSON string containing the context of the resource after the
+     * change is executed.</p>
+     */
+    inline ResourceChange& WithAfterContext(const Aws::String& value) { SetAfterContext(value); return *this;}
+
+    /**
+     * <p>An encoded JSON string containing the context of the resource after the
+     * change is executed.</p>
+     */
+    inline ResourceChange& WithAfterContext(Aws::String&& value) { SetAfterContext(std::move(value)); return *this;}
+
+    /**
+     * <p>An encoded JSON string containing the context of the resource after the
+     * change is executed.</p>
+     */
+    inline ResourceChange& WithAfterContext(const char* value) { SetAfterContext(value); return *this;}
+
   private:
 
     PolicyAction m_policyAction;
@@ -652,6 +750,12 @@ namespace Model
 
     ModuleInfo m_moduleInfo;
     bool m_moduleInfoHasBeenSet = false;
+
+    Aws::String m_beforeContext;
+    bool m_beforeContextHasBeenSet = false;
+
+    Aws::String m_afterContext;
+    bool m_afterContextHasBeenSet = false;
   };
 
 } // namespace Model

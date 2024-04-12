@@ -252,44 +252,310 @@ namespace Model
 
 
     /**
-     * <p>(Required) A list of supported permission types. </p>
+     * <p>Indicates the level of filtering a third-party analytical engine is capable
+     * of enforcing when calling the <code>GetUnfilteredTableMetadata</code> API
+     * operation. Accepted values are:</p> <ul> <li> <p> <code>COLUMN_PERMISSION</code>
+     * - Column permissions ensure that users can access only specific columns in the
+     * table. If there are particular columns contain sensitive data, data lake
+     * administrators can define column filters that exclude access to specific
+     * columns.</p> </li> <li> <p> <code>CELL_FILTER_PERMISSION</code> - Cell-level
+     * filtering combines column filtering (include or exclude columns) and row filter
+     * expressions to restrict access to individual elements in the table.</p> </li>
+     * <li> <p> <code>NESTED_PERMISSION</code> - Nested permissions combines cell-level
+     * filtering and nested column filtering to restrict access to columns and/or
+     * nested columns in specific rows based on row filter expressions.</p> </li> <li>
+     * <p> <code>NESTED_CELL_PERMISSION</code> - Nested cell permissions combines
+     * nested permission with nested cell-level filtering. This allows different
+     * subsets of nested columns to be restricted based on an array of row filter
+     * expressions. </p> </li> </ul> <p>Note: Each of these permission types follows a
+     * hierarchical order where each subsequent permission type includes all permission
+     * of the previous type.</p> <p>Important: If you provide a supported permission
+     * type that doesn't match the user's level of permissions on the table, then Lake
+     * Formation raises an exception. For example, if the third-party engine calling
+     * the <code>GetUnfilteredTableMetadata</code> operation can enforce only
+     * column-level filtering, and the user has nested cell filtering applied on the
+     * table, Lake Formation throws an exception, and will not return unfiltered table
+     * metadata and data access credentials.</p>
      */
     inline const Aws::Vector<PermissionType>& GetSupportedPermissionTypes() const{ return m_supportedPermissionTypes; }
 
     /**
-     * <p>(Required) A list of supported permission types. </p>
+     * <p>Indicates the level of filtering a third-party analytical engine is capable
+     * of enforcing when calling the <code>GetUnfilteredTableMetadata</code> API
+     * operation. Accepted values are:</p> <ul> <li> <p> <code>COLUMN_PERMISSION</code>
+     * - Column permissions ensure that users can access only specific columns in the
+     * table. If there are particular columns contain sensitive data, data lake
+     * administrators can define column filters that exclude access to specific
+     * columns.</p> </li> <li> <p> <code>CELL_FILTER_PERMISSION</code> - Cell-level
+     * filtering combines column filtering (include or exclude columns) and row filter
+     * expressions to restrict access to individual elements in the table.</p> </li>
+     * <li> <p> <code>NESTED_PERMISSION</code> - Nested permissions combines cell-level
+     * filtering and nested column filtering to restrict access to columns and/or
+     * nested columns in specific rows based on row filter expressions.</p> </li> <li>
+     * <p> <code>NESTED_CELL_PERMISSION</code> - Nested cell permissions combines
+     * nested permission with nested cell-level filtering. This allows different
+     * subsets of nested columns to be restricted based on an array of row filter
+     * expressions. </p> </li> </ul> <p>Note: Each of these permission types follows a
+     * hierarchical order where each subsequent permission type includes all permission
+     * of the previous type.</p> <p>Important: If you provide a supported permission
+     * type that doesn't match the user's level of permissions on the table, then Lake
+     * Formation raises an exception. For example, if the third-party engine calling
+     * the <code>GetUnfilteredTableMetadata</code> operation can enforce only
+     * column-level filtering, and the user has nested cell filtering applied on the
+     * table, Lake Formation throws an exception, and will not return unfiltered table
+     * metadata and data access credentials.</p>
      */
     inline bool SupportedPermissionTypesHasBeenSet() const { return m_supportedPermissionTypesHasBeenSet; }
 
     /**
-     * <p>(Required) A list of supported permission types. </p>
+     * <p>Indicates the level of filtering a third-party analytical engine is capable
+     * of enforcing when calling the <code>GetUnfilteredTableMetadata</code> API
+     * operation. Accepted values are:</p> <ul> <li> <p> <code>COLUMN_PERMISSION</code>
+     * - Column permissions ensure that users can access only specific columns in the
+     * table. If there are particular columns contain sensitive data, data lake
+     * administrators can define column filters that exclude access to specific
+     * columns.</p> </li> <li> <p> <code>CELL_FILTER_PERMISSION</code> - Cell-level
+     * filtering combines column filtering (include or exclude columns) and row filter
+     * expressions to restrict access to individual elements in the table.</p> </li>
+     * <li> <p> <code>NESTED_PERMISSION</code> - Nested permissions combines cell-level
+     * filtering and nested column filtering to restrict access to columns and/or
+     * nested columns in specific rows based on row filter expressions.</p> </li> <li>
+     * <p> <code>NESTED_CELL_PERMISSION</code> - Nested cell permissions combines
+     * nested permission with nested cell-level filtering. This allows different
+     * subsets of nested columns to be restricted based on an array of row filter
+     * expressions. </p> </li> </ul> <p>Note: Each of these permission types follows a
+     * hierarchical order where each subsequent permission type includes all permission
+     * of the previous type.</p> <p>Important: If you provide a supported permission
+     * type that doesn't match the user's level of permissions on the table, then Lake
+     * Formation raises an exception. For example, if the third-party engine calling
+     * the <code>GetUnfilteredTableMetadata</code> operation can enforce only
+     * column-level filtering, and the user has nested cell filtering applied on the
+     * table, Lake Formation throws an exception, and will not return unfiltered table
+     * metadata and data access credentials.</p>
      */
     inline void SetSupportedPermissionTypes(const Aws::Vector<PermissionType>& value) { m_supportedPermissionTypesHasBeenSet = true; m_supportedPermissionTypes = value; }
 
     /**
-     * <p>(Required) A list of supported permission types. </p>
+     * <p>Indicates the level of filtering a third-party analytical engine is capable
+     * of enforcing when calling the <code>GetUnfilteredTableMetadata</code> API
+     * operation. Accepted values are:</p> <ul> <li> <p> <code>COLUMN_PERMISSION</code>
+     * - Column permissions ensure that users can access only specific columns in the
+     * table. If there are particular columns contain sensitive data, data lake
+     * administrators can define column filters that exclude access to specific
+     * columns.</p> </li> <li> <p> <code>CELL_FILTER_PERMISSION</code> - Cell-level
+     * filtering combines column filtering (include or exclude columns) and row filter
+     * expressions to restrict access to individual elements in the table.</p> </li>
+     * <li> <p> <code>NESTED_PERMISSION</code> - Nested permissions combines cell-level
+     * filtering and nested column filtering to restrict access to columns and/or
+     * nested columns in specific rows based on row filter expressions.</p> </li> <li>
+     * <p> <code>NESTED_CELL_PERMISSION</code> - Nested cell permissions combines
+     * nested permission with nested cell-level filtering. This allows different
+     * subsets of nested columns to be restricted based on an array of row filter
+     * expressions. </p> </li> </ul> <p>Note: Each of these permission types follows a
+     * hierarchical order where each subsequent permission type includes all permission
+     * of the previous type.</p> <p>Important: If you provide a supported permission
+     * type that doesn't match the user's level of permissions on the table, then Lake
+     * Formation raises an exception. For example, if the third-party engine calling
+     * the <code>GetUnfilteredTableMetadata</code> operation can enforce only
+     * column-level filtering, and the user has nested cell filtering applied on the
+     * table, Lake Formation throws an exception, and will not return unfiltered table
+     * metadata and data access credentials.</p>
      */
     inline void SetSupportedPermissionTypes(Aws::Vector<PermissionType>&& value) { m_supportedPermissionTypesHasBeenSet = true; m_supportedPermissionTypes = std::move(value); }
 
     /**
-     * <p>(Required) A list of supported permission types. </p>
+     * <p>Indicates the level of filtering a third-party analytical engine is capable
+     * of enforcing when calling the <code>GetUnfilteredTableMetadata</code> API
+     * operation. Accepted values are:</p> <ul> <li> <p> <code>COLUMN_PERMISSION</code>
+     * - Column permissions ensure that users can access only specific columns in the
+     * table. If there are particular columns contain sensitive data, data lake
+     * administrators can define column filters that exclude access to specific
+     * columns.</p> </li> <li> <p> <code>CELL_FILTER_PERMISSION</code> - Cell-level
+     * filtering combines column filtering (include or exclude columns) and row filter
+     * expressions to restrict access to individual elements in the table.</p> </li>
+     * <li> <p> <code>NESTED_PERMISSION</code> - Nested permissions combines cell-level
+     * filtering and nested column filtering to restrict access to columns and/or
+     * nested columns in specific rows based on row filter expressions.</p> </li> <li>
+     * <p> <code>NESTED_CELL_PERMISSION</code> - Nested cell permissions combines
+     * nested permission with nested cell-level filtering. This allows different
+     * subsets of nested columns to be restricted based on an array of row filter
+     * expressions. </p> </li> </ul> <p>Note: Each of these permission types follows a
+     * hierarchical order where each subsequent permission type includes all permission
+     * of the previous type.</p> <p>Important: If you provide a supported permission
+     * type that doesn't match the user's level of permissions on the table, then Lake
+     * Formation raises an exception. For example, if the third-party engine calling
+     * the <code>GetUnfilteredTableMetadata</code> operation can enforce only
+     * column-level filtering, and the user has nested cell filtering applied on the
+     * table, Lake Formation throws an exception, and will not return unfiltered table
+     * metadata and data access credentials.</p>
      */
     inline GetUnfilteredTableMetadataRequest& WithSupportedPermissionTypes(const Aws::Vector<PermissionType>& value) { SetSupportedPermissionTypes(value); return *this;}
 
     /**
-     * <p>(Required) A list of supported permission types. </p>
+     * <p>Indicates the level of filtering a third-party analytical engine is capable
+     * of enforcing when calling the <code>GetUnfilteredTableMetadata</code> API
+     * operation. Accepted values are:</p> <ul> <li> <p> <code>COLUMN_PERMISSION</code>
+     * - Column permissions ensure that users can access only specific columns in the
+     * table. If there are particular columns contain sensitive data, data lake
+     * administrators can define column filters that exclude access to specific
+     * columns.</p> </li> <li> <p> <code>CELL_FILTER_PERMISSION</code> - Cell-level
+     * filtering combines column filtering (include or exclude columns) and row filter
+     * expressions to restrict access to individual elements in the table.</p> </li>
+     * <li> <p> <code>NESTED_PERMISSION</code> - Nested permissions combines cell-level
+     * filtering and nested column filtering to restrict access to columns and/or
+     * nested columns in specific rows based on row filter expressions.</p> </li> <li>
+     * <p> <code>NESTED_CELL_PERMISSION</code> - Nested cell permissions combines
+     * nested permission with nested cell-level filtering. This allows different
+     * subsets of nested columns to be restricted based on an array of row filter
+     * expressions. </p> </li> </ul> <p>Note: Each of these permission types follows a
+     * hierarchical order where each subsequent permission type includes all permission
+     * of the previous type.</p> <p>Important: If you provide a supported permission
+     * type that doesn't match the user's level of permissions on the table, then Lake
+     * Formation raises an exception. For example, if the third-party engine calling
+     * the <code>GetUnfilteredTableMetadata</code> operation can enforce only
+     * column-level filtering, and the user has nested cell filtering applied on the
+     * table, Lake Formation throws an exception, and will not return unfiltered table
+     * metadata and data access credentials.</p>
      */
     inline GetUnfilteredTableMetadataRequest& WithSupportedPermissionTypes(Aws::Vector<PermissionType>&& value) { SetSupportedPermissionTypes(std::move(value)); return *this;}
 
     /**
-     * <p>(Required) A list of supported permission types. </p>
+     * <p>Indicates the level of filtering a third-party analytical engine is capable
+     * of enforcing when calling the <code>GetUnfilteredTableMetadata</code> API
+     * operation. Accepted values are:</p> <ul> <li> <p> <code>COLUMN_PERMISSION</code>
+     * - Column permissions ensure that users can access only specific columns in the
+     * table. If there are particular columns contain sensitive data, data lake
+     * administrators can define column filters that exclude access to specific
+     * columns.</p> </li> <li> <p> <code>CELL_FILTER_PERMISSION</code> - Cell-level
+     * filtering combines column filtering (include or exclude columns) and row filter
+     * expressions to restrict access to individual elements in the table.</p> </li>
+     * <li> <p> <code>NESTED_PERMISSION</code> - Nested permissions combines cell-level
+     * filtering and nested column filtering to restrict access to columns and/or
+     * nested columns in specific rows based on row filter expressions.</p> </li> <li>
+     * <p> <code>NESTED_CELL_PERMISSION</code> - Nested cell permissions combines
+     * nested permission with nested cell-level filtering. This allows different
+     * subsets of nested columns to be restricted based on an array of row filter
+     * expressions. </p> </li> </ul> <p>Note: Each of these permission types follows a
+     * hierarchical order where each subsequent permission type includes all permission
+     * of the previous type.</p> <p>Important: If you provide a supported permission
+     * type that doesn't match the user's level of permissions on the table, then Lake
+     * Formation raises an exception. For example, if the third-party engine calling
+     * the <code>GetUnfilteredTableMetadata</code> operation can enforce only
+     * column-level filtering, and the user has nested cell filtering applied on the
+     * table, Lake Formation throws an exception, and will not return unfiltered table
+     * metadata and data access credentials.</p>
      */
     inline GetUnfilteredTableMetadataRequest& AddSupportedPermissionTypes(const PermissionType& value) { m_supportedPermissionTypesHasBeenSet = true; m_supportedPermissionTypes.push_back(value); return *this; }
 
     /**
-     * <p>(Required) A list of supported permission types. </p>
+     * <p>Indicates the level of filtering a third-party analytical engine is capable
+     * of enforcing when calling the <code>GetUnfilteredTableMetadata</code> API
+     * operation. Accepted values are:</p> <ul> <li> <p> <code>COLUMN_PERMISSION</code>
+     * - Column permissions ensure that users can access only specific columns in the
+     * table. If there are particular columns contain sensitive data, data lake
+     * administrators can define column filters that exclude access to specific
+     * columns.</p> </li> <li> <p> <code>CELL_FILTER_PERMISSION</code> - Cell-level
+     * filtering combines column filtering (include or exclude columns) and row filter
+     * expressions to restrict access to individual elements in the table.</p> </li>
+     * <li> <p> <code>NESTED_PERMISSION</code> - Nested permissions combines cell-level
+     * filtering and nested column filtering to restrict access to columns and/or
+     * nested columns in specific rows based on row filter expressions.</p> </li> <li>
+     * <p> <code>NESTED_CELL_PERMISSION</code> - Nested cell permissions combines
+     * nested permission with nested cell-level filtering. This allows different
+     * subsets of nested columns to be restricted based on an array of row filter
+     * expressions. </p> </li> </ul> <p>Note: Each of these permission types follows a
+     * hierarchical order where each subsequent permission type includes all permission
+     * of the previous type.</p> <p>Important: If you provide a supported permission
+     * type that doesn't match the user's level of permissions on the table, then Lake
+     * Formation raises an exception. For example, if the third-party engine calling
+     * the <code>GetUnfilteredTableMetadata</code> operation can enforce only
+     * column-level filtering, and the user has nested cell filtering applied on the
+     * table, Lake Formation throws an exception, and will not return unfiltered table
+     * metadata and data access credentials.</p>
      */
     inline GetUnfilteredTableMetadataRequest& AddSupportedPermissionTypes(PermissionType&& value) { m_supportedPermissionTypesHasBeenSet = true; m_supportedPermissionTypes.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The resource ARN of the view.</p>
+     */
+    inline const Aws::String& GetParentResourceArn() const{ return m_parentResourceArn; }
+
+    /**
+     * <p>The resource ARN of the view.</p>
+     */
+    inline bool ParentResourceArnHasBeenSet() const { return m_parentResourceArnHasBeenSet; }
+
+    /**
+     * <p>The resource ARN of the view.</p>
+     */
+    inline void SetParentResourceArn(const Aws::String& value) { m_parentResourceArnHasBeenSet = true; m_parentResourceArn = value; }
+
+    /**
+     * <p>The resource ARN of the view.</p>
+     */
+    inline void SetParentResourceArn(Aws::String&& value) { m_parentResourceArnHasBeenSet = true; m_parentResourceArn = std::move(value); }
+
+    /**
+     * <p>The resource ARN of the view.</p>
+     */
+    inline void SetParentResourceArn(const char* value) { m_parentResourceArnHasBeenSet = true; m_parentResourceArn.assign(value); }
+
+    /**
+     * <p>The resource ARN of the view.</p>
+     */
+    inline GetUnfilteredTableMetadataRequest& WithParentResourceArn(const Aws::String& value) { SetParentResourceArn(value); return *this;}
+
+    /**
+     * <p>The resource ARN of the view.</p>
+     */
+    inline GetUnfilteredTableMetadataRequest& WithParentResourceArn(Aws::String&& value) { SetParentResourceArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The resource ARN of the view.</p>
+     */
+    inline GetUnfilteredTableMetadataRequest& WithParentResourceArn(const char* value) { SetParentResourceArn(value); return *this;}
+
+
+    /**
+     * <p>The resource ARN of the root view in a chain of nested views.</p>
+     */
+    inline const Aws::String& GetRootResourceArn() const{ return m_rootResourceArn; }
+
+    /**
+     * <p>The resource ARN of the root view in a chain of nested views.</p>
+     */
+    inline bool RootResourceArnHasBeenSet() const { return m_rootResourceArnHasBeenSet; }
+
+    /**
+     * <p>The resource ARN of the root view in a chain of nested views.</p>
+     */
+    inline void SetRootResourceArn(const Aws::String& value) { m_rootResourceArnHasBeenSet = true; m_rootResourceArn = value; }
+
+    /**
+     * <p>The resource ARN of the root view in a chain of nested views.</p>
+     */
+    inline void SetRootResourceArn(Aws::String&& value) { m_rootResourceArnHasBeenSet = true; m_rootResourceArn = std::move(value); }
+
+    /**
+     * <p>The resource ARN of the root view in a chain of nested views.</p>
+     */
+    inline void SetRootResourceArn(const char* value) { m_rootResourceArnHasBeenSet = true; m_rootResourceArn.assign(value); }
+
+    /**
+     * <p>The resource ARN of the root view in a chain of nested views.</p>
+     */
+    inline GetUnfilteredTableMetadataRequest& WithRootResourceArn(const Aws::String& value) { SetRootResourceArn(value); return *this;}
+
+    /**
+     * <p>The resource ARN of the root view in a chain of nested views.</p>
+     */
+    inline GetUnfilteredTableMetadataRequest& WithRootResourceArn(Aws::String&& value) { SetRootResourceArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The resource ARN of the root view in a chain of nested views.</p>
+     */
+    inline GetUnfilteredTableMetadataRequest& WithRootResourceArn(const char* value) { SetRootResourceArn(value); return *this;}
 
 
     /**
@@ -439,6 +705,12 @@ namespace Model
 
     Aws::Vector<PermissionType> m_supportedPermissionTypes;
     bool m_supportedPermissionTypesHasBeenSet = false;
+
+    Aws::String m_parentResourceArn;
+    bool m_parentResourceArnHasBeenSet = false;
+
+    Aws::String m_rootResourceArn;
+    bool m_rootResourceArnHasBeenSet = false;
 
     SupportedDialect m_supportedDialect;
     bool m_supportedDialectHasBeenSet = false;

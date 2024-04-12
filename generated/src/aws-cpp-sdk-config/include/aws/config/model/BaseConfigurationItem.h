@@ -716,31 +716,73 @@ namespace Model
 
     /**
      * <p>The time when configuration changes for the resource were delivered.</p>
+     *  <p>This field is optional and is not guaranteed to be present in a
+     * configuration item (CI). If you are using daily recording, this field will be
+     * populated. However, if you are using continuous recording, this field will be
+     * omitted since the delivery time is instantaneous as the CI is available right
+     * away. For more information on daily recording and continuous recording, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-recording-frequency">Recording
+     * Frequency</a> in the <i>Config Developer Guide</i>.</p> 
      */
     inline const Aws::Utils::DateTime& GetConfigurationItemDeliveryTime() const{ return m_configurationItemDeliveryTime; }
 
     /**
      * <p>The time when configuration changes for the resource were delivered.</p>
+     *  <p>This field is optional and is not guaranteed to be present in a
+     * configuration item (CI). If you are using daily recording, this field will be
+     * populated. However, if you are using continuous recording, this field will be
+     * omitted since the delivery time is instantaneous as the CI is available right
+     * away. For more information on daily recording and continuous recording, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-recording-frequency">Recording
+     * Frequency</a> in the <i>Config Developer Guide</i>.</p> 
      */
     inline bool ConfigurationItemDeliveryTimeHasBeenSet() const { return m_configurationItemDeliveryTimeHasBeenSet; }
 
     /**
      * <p>The time when configuration changes for the resource were delivered.</p>
+     *  <p>This field is optional and is not guaranteed to be present in a
+     * configuration item (CI). If you are using daily recording, this field will be
+     * populated. However, if you are using continuous recording, this field will be
+     * omitted since the delivery time is instantaneous as the CI is available right
+     * away. For more information on daily recording and continuous recording, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-recording-frequency">Recording
+     * Frequency</a> in the <i>Config Developer Guide</i>.</p> 
      */
     inline void SetConfigurationItemDeliveryTime(const Aws::Utils::DateTime& value) { m_configurationItemDeliveryTimeHasBeenSet = true; m_configurationItemDeliveryTime = value; }
 
     /**
      * <p>The time when configuration changes for the resource were delivered.</p>
+     *  <p>This field is optional and is not guaranteed to be present in a
+     * configuration item (CI). If you are using daily recording, this field will be
+     * populated. However, if you are using continuous recording, this field will be
+     * omitted since the delivery time is instantaneous as the CI is available right
+     * away. For more information on daily recording and continuous recording, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-recording-frequency">Recording
+     * Frequency</a> in the <i>Config Developer Guide</i>.</p> 
      */
     inline void SetConfigurationItemDeliveryTime(Aws::Utils::DateTime&& value) { m_configurationItemDeliveryTimeHasBeenSet = true; m_configurationItemDeliveryTime = std::move(value); }
 
     /**
      * <p>The time when configuration changes for the resource were delivered.</p>
+     *  <p>This field is optional and is not guaranteed to be present in a
+     * configuration item (CI). If you are using daily recording, this field will be
+     * populated. However, if you are using continuous recording, this field will be
+     * omitted since the delivery time is instantaneous as the CI is available right
+     * away. For more information on daily recording and continuous recording, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-recording-frequency">Recording
+     * Frequency</a> in the <i>Config Developer Guide</i>.</p> 
      */
     inline BaseConfigurationItem& WithConfigurationItemDeliveryTime(const Aws::Utils::DateTime& value) { SetConfigurationItemDeliveryTime(value); return *this;}
 
     /**
      * <p>The time when configuration changes for the resource were delivered.</p>
+     *  <p>This field is optional and is not guaranteed to be present in a
+     * configuration item (CI). If you are using daily recording, this field will be
+     * populated. However, if you are using continuous recording, this field will be
+     * omitted since the delivery time is instantaneous as the CI is available right
+     * away. For more information on daily recording and continuous recording, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-recording-frequency">Recording
+     * Frequency</a> in the <i>Config Developer Guide</i>.</p> 
      */
     inline BaseConfigurationItem& WithConfigurationItemDeliveryTime(Aws::Utils::DateTime&& value) { SetConfigurationItemDeliveryTime(std::move(value)); return *this;}
 

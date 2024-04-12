@@ -19,7 +19,8 @@ namespace Model
     DHL,
     DBS,
     FEDEX,
-    UPS
+    UPS,
+    EXPEDITORS
   };
 
 namespace ShipmentCarrierMapper

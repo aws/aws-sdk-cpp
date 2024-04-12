@@ -299,25 +299,33 @@ namespace Model
 
     /**
      * <p>The number of replicas in other AZs to provision on the new graph after
-     * import. Default = 0, Min = 0, Max = 2.</p>
+     * import. Default = 0, Min = 0, Max = 2.</p>  <p> Additional charges
+     * equivalent to the m-NCUs selected for the graph apply for each replica. </p>
+     * 
      */
     inline int GetReplicaCount() const{ return m_replicaCount; }
 
     /**
      * <p>The number of replicas in other AZs to provision on the new graph after
-     * import. Default = 0, Min = 0, Max = 2.</p>
+     * import. Default = 0, Min = 0, Max = 2.</p>  <p> Additional charges
+     * equivalent to the m-NCUs selected for the graph apply for each replica. </p>
+     * 
      */
     inline bool ReplicaCountHasBeenSet() const { return m_replicaCountHasBeenSet; }
 
     /**
      * <p>The number of replicas in other AZs to provision on the new graph after
-     * import. Default = 0, Min = 0, Max = 2.</p>
+     * import. Default = 0, Min = 0, Max = 2.</p>  <p> Additional charges
+     * equivalent to the m-NCUs selected for the graph apply for each replica. </p>
+     * 
      */
     inline void SetReplicaCount(int value) { m_replicaCountHasBeenSet = true; m_replicaCount = value; }
 
     /**
      * <p>The number of replicas in other AZs to provision on the new graph after
-     * import. Default = 0, Min = 0, Max = 2.</p>
+     * import. Default = 0, Min = 0, Max = 2.</p>  <p> Additional charges
+     * equivalent to the m-NCUs selected for the graph apply for each replica. </p>
+     * 
      */
     inline CreateGraphUsingImportTaskRequest& WithReplicaCount(int value) { SetReplicaCount(value); return *this;}
 

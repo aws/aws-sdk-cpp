@@ -19,7 +19,8 @@ namespace Model
     CREATING,
     ACTIVE,
     DELETING,
-    DELETED
+    DELETED,
+    CREATE_FAILED
   };
 
 namespace DatastoreStatusMapper

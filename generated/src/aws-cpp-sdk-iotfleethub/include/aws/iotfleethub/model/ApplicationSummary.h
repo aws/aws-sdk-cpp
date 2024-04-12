@@ -25,9 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>A summary of information about a AWS IoT Device Management web
-   * application.</p>  <p>Fleet Hub for AWS IoT Device Management is in public
-   * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
+   * <p>A summary of information about a Fleet Hub for IoT Device Management web
+   * application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleethub-2020-11-03/ApplicationSummary">AWS
    * API Reference</a></p>
    */

@@ -175,57 +175,57 @@ namespace Model
 
     /**
      * <p>The ARN of the role that the web application assumes when it interacts with
-     * AWS IoT Core.</p>  <p>The name of the role must be in the form
-     * <code>AWSIotFleetHub_<i>random_string</i> </code>.</p> 
+     * Amazon Web Services IoT Core.</p>  <p>The name of the role must be in the
+     * form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p> 
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>The ARN of the role that the web application assumes when it interacts with
-     * AWS IoT Core.</p>  <p>The name of the role must be in the form
-     * <code>AWSIotFleetHub_<i>random_string</i> </code>.</p> 
+     * Amazon Web Services IoT Core.</p>  <p>The name of the role must be in the
+     * form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p> 
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The ARN of the role that the web application assumes when it interacts with
-     * AWS IoT Core.</p>  <p>The name of the role must be in the form
-     * <code>AWSIotFleetHub_<i>random_string</i> </code>.</p> 
+     * Amazon Web Services IoT Core.</p>  <p>The name of the role must be in the
+     * form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p> 
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
      * <p>The ARN of the role that the web application assumes when it interacts with
-     * AWS IoT Core.</p>  <p>The name of the role must be in the form
-     * <code>AWSIotFleetHub_<i>random_string</i> </code>.</p> 
+     * Amazon Web Services IoT Core.</p>  <p>The name of the role must be in the
+     * form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p> 
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The ARN of the role that the web application assumes when it interacts with
-     * AWS IoT Core.</p>  <p>The name of the role must be in the form
-     * <code>AWSIotFleetHub_<i>random_string</i> </code>.</p> 
+     * Amazon Web Services IoT Core.</p>  <p>The name of the role must be in the
+     * form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p> 
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
      * <p>The ARN of the role that the web application assumes when it interacts with
-     * AWS IoT Core.</p>  <p>The name of the role must be in the form
-     * <code>AWSIotFleetHub_<i>random_string</i> </code>.</p> 
+     * Amazon Web Services IoT Core.</p>  <p>The name of the role must be in the
+     * form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p> 
      */
     inline CreateApplicationRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The ARN of the role that the web application assumes when it interacts with
-     * AWS IoT Core.</p>  <p>The name of the role must be in the form
-     * <code>AWSIotFleetHub_<i>random_string</i> </code>.</p> 
+     * Amazon Web Services IoT Core.</p>  <p>The name of the role must be in the
+     * form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p> 
      */
     inline CreateApplicationRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the role that the web application assumes when it interacts with
-     * AWS IoT Core.</p>  <p>The name of the role must be in the form
-     * <code>AWSIotFleetHub_<i>random_string</i> </code>.</p> 
+     * Amazon Web Services IoT Core.</p>  <p>The name of the role must be in the
+     * form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p> 
      */
     inline CreateApplicationRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

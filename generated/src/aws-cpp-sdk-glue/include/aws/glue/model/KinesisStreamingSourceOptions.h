@@ -278,55 +278,75 @@ namespace Model
 
 
     /**
-     * <p>The maximum time spent in the job executor to fetch a record from the Kinesis
-     * data stream per shard, specified in milliseconds (ms). The default value is
-     * <code>1000</code>.</p>
+     * <p>The maximum time spent for the job executor to read records for the current
+     * batch from the Kinesis data stream, specified in milliseconds (ms). Multiple
+     * <code>GetRecords</code> API calls may be made within this time. The default
+     * value is <code>1000</code>.</p>
      */
     inline long long GetMaxFetchTimeInMs() const{ return m_maxFetchTimeInMs; }
 
     /**
-     * <p>The maximum time spent in the job executor to fetch a record from the Kinesis
-     * data stream per shard, specified in milliseconds (ms). The default value is
-     * <code>1000</code>.</p>
+     * <p>The maximum time spent for the job executor to read records for the current
+     * batch from the Kinesis data stream, specified in milliseconds (ms). Multiple
+     * <code>GetRecords</code> API calls may be made within this time. The default
+     * value is <code>1000</code>.</p>
      */
     inline bool MaxFetchTimeInMsHasBeenSet() const { return m_maxFetchTimeInMsHasBeenSet; }
 
     /**
-     * <p>The maximum time spent in the job executor to fetch a record from the Kinesis
-     * data stream per shard, specified in milliseconds (ms). The default value is
-     * <code>1000</code>.</p>
+     * <p>The maximum time spent for the job executor to read records for the current
+     * batch from the Kinesis data stream, specified in milliseconds (ms). Multiple
+     * <code>GetRecords</code> API calls may be made within this time. The default
+     * value is <code>1000</code>.</p>
      */
     inline void SetMaxFetchTimeInMs(long long value) { m_maxFetchTimeInMsHasBeenSet = true; m_maxFetchTimeInMs = value; }
 
     /**
-     * <p>The maximum time spent in the job executor to fetch a record from the Kinesis
-     * data stream per shard, specified in milliseconds (ms). The default value is
-     * <code>1000</code>.</p>
+     * <p>The maximum time spent for the job executor to read records for the current
+     * batch from the Kinesis data stream, specified in milliseconds (ms). Multiple
+     * <code>GetRecords</code> API calls may be made within this time. The default
+     * value is <code>1000</code>.</p>
      */
     inline KinesisStreamingSourceOptions& WithMaxFetchTimeInMs(long long value) { SetMaxFetchTimeInMs(value); return *this;}
 
 
     /**
-     * <p>The maximum number of records to fetch per shard in the Kinesis data stream.
-     * The default value is <code>100000</code>.</p>
+     * <p>The maximum number of records to fetch per shard in the Kinesis data stream
+     * per microbatch. Note: The client can exceed this limit if the streaming job has
+     * already read extra records from Kinesis (in the same get-records call). If
+     * <code>MaxFetchRecordsPerShard</code> needs to be strict then it needs to be a
+     * multiple of <code>MaxRecordPerRead</code>. The default value is
+     * <code>100000</code>.</p>
      */
     inline long long GetMaxFetchRecordsPerShard() const{ return m_maxFetchRecordsPerShard; }
 
     /**
-     * <p>The maximum number of records to fetch per shard in the Kinesis data stream.
-     * The default value is <code>100000</code>.</p>
+     * <p>The maximum number of records to fetch per shard in the Kinesis data stream
+     * per microbatch. Note: The client can exceed this limit if the streaming job has
+     * already read extra records from Kinesis (in the same get-records call). If
+     * <code>MaxFetchRecordsPerShard</code> needs to be strict then it needs to be a
+     * multiple of <code>MaxRecordPerRead</code>. The default value is
+     * <code>100000</code>.</p>
      */
     inline bool MaxFetchRecordsPerShardHasBeenSet() const { return m_maxFetchRecordsPerShardHasBeenSet; }
 
     /**
-     * <p>The maximum number of records to fetch per shard in the Kinesis data stream.
-     * The default value is <code>100000</code>.</p>
+     * <p>The maximum number of records to fetch per shard in the Kinesis data stream
+     * per microbatch. Note: The client can exceed this limit if the streaming job has
+     * already read extra records from Kinesis (in the same get-records call). If
+     * <code>MaxFetchRecordsPerShard</code> needs to be strict then it needs to be a
+     * multiple of <code>MaxRecordPerRead</code>. The default value is
+     * <code>100000</code>.</p>
      */
     inline void SetMaxFetchRecordsPerShard(long long value) { m_maxFetchRecordsPerShardHasBeenSet = true; m_maxFetchRecordsPerShard = value; }
 
     /**
-     * <p>The maximum number of records to fetch per shard in the Kinesis data stream.
-     * The default value is <code>100000</code>.</p>
+     * <p>The maximum number of records to fetch per shard in the Kinesis data stream
+     * per microbatch. Note: The client can exceed this limit if the streaming job has
+     * already read extra records from Kinesis (in the same get-records call). If
+     * <code>MaxFetchRecordsPerShard</code> needs to be strict then it needs to be a
+     * multiple of <code>MaxRecordPerRead</code>. The default value is
+     * <code>100000</code>.</p>
      */
     inline KinesisStreamingSourceOptions& WithMaxFetchRecordsPerShard(long long value) { SetMaxFetchRecordsPerShard(value); return *this;}
 

@@ -18,11 +18,13 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetPlaybackConfigurationResult::GetPlaybackConfigurationResult() : 
+    m_insertionMode(InsertionMode::NOT_SET),
     m_personalizationThresholdSeconds(0)
 {
 }
 
 GetPlaybackConfigurationResult::GetPlaybackConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_insertionMode(InsertionMode::NOT_SET),
     m_personalizationThresholdSeconds(0)
 {
   *this = result;
@@ -79,6 +81,12 @@ GetPlaybackConfigurationResult& GetPlaybackConfigurationResult::operator =(const
   if(jsonValue.ValueExists("HlsConfiguration"))
   {
     m_hlsConfiguration = jsonValue.GetObject("HlsConfiguration");
+
+  }
+
+  if(jsonValue.ValueExists("InsertionMode"))
+  {
+    m_insertionMode = InsertionModeMapper::GetInsertionModeForName(jsonValue.GetString("InsertionMode"));
 
   }
 

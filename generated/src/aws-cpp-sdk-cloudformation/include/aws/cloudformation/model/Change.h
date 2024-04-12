@@ -42,38 +42,38 @@ namespace Model
 
 
     /**
-     * <p>The type of entity that CloudFormation changes. Currently, the only entity
-     * type is <code>Resource</code>.</p>
+     * <p>The type of entity that CloudFormation changes.</p> <ul> <li> <p>
+     * <code>Resource</code> This change is for a resource.</p> </li> </ul>
      */
     inline const ChangeType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of entity that CloudFormation changes. Currently, the only entity
-     * type is <code>Resource</code>.</p>
+     * <p>The type of entity that CloudFormation changes.</p> <ul> <li> <p>
+     * <code>Resource</code> This change is for a resource.</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of entity that CloudFormation changes. Currently, the only entity
-     * type is <code>Resource</code>.</p>
+     * <p>The type of entity that CloudFormation changes.</p> <ul> <li> <p>
+     * <code>Resource</code> This change is for a resource.</p> </li> </ul>
      */
     inline void SetType(const ChangeType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of entity that CloudFormation changes. Currently, the only entity
-     * type is <code>Resource</code>.</p>
+     * <p>The type of entity that CloudFormation changes.</p> <ul> <li> <p>
+     * <code>Resource</code> This change is for a resource.</p> </li> </ul>
      */
     inline void SetType(ChangeType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of entity that CloudFormation changes. Currently, the only entity
-     * type is <code>Resource</code>.</p>
+     * <p>The type of entity that CloudFormation changes.</p> <ul> <li> <p>
+     * <code>Resource</code> This change is for a resource.</p> </li> </ul>
      */
     inline Change& WithType(const ChangeType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of entity that CloudFormation changes. Currently, the only entity
-     * type is <code>Resource</code>.</p>
+     * <p>The type of entity that CloudFormation changes.</p> <ul> <li> <p>
+     * <code>Resource</code> This change is for a resource.</p> </li> </ul>
      */
     inline Change& WithType(ChangeType&& value) { SetType(std::move(value)); return *this;}
 

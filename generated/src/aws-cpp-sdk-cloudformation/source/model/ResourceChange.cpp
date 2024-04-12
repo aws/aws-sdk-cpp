@@ -33,7 +33,9 @@ ResourceChange::ResourceChange() :
     m_scopeHasBeenSet(false),
     m_detailsHasBeenSet(false),
     m_changeSetIdHasBeenSet(false),
-    m_moduleInfoHasBeenSet(false)
+    m_moduleInfoHasBeenSet(false),
+    m_beforeContextHasBeenSet(false),
+    m_afterContextHasBeenSet(false)
 {
 }
 
@@ -50,7 +52,9 @@ ResourceChange::ResourceChange(const XmlNode& xmlNode) :
     m_scopeHasBeenSet(false),
     m_detailsHasBeenSet(false),
     m_changeSetIdHasBeenSet(false),
-    m_moduleInfoHasBeenSet(false)
+    m_moduleInfoHasBeenSet(false),
+    m_beforeContextHasBeenSet(false),
+    m_afterContextHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -133,6 +137,18 @@ ResourceChange& ResourceChange::operator =(const XmlNode& xmlNode)
       m_moduleInfo = moduleInfoNode;
       m_moduleInfoHasBeenSet = true;
     }
+    XmlNode beforeContextNode = resultNode.FirstChild("BeforeContext");
+    if(!beforeContextNode.IsNull())
+    {
+      m_beforeContext = Aws::Utils::Xml::DecodeEscapedXmlText(beforeContextNode.GetText());
+      m_beforeContextHasBeenSet = true;
+    }
+    XmlNode afterContextNode = resultNode.FirstChild("AfterContext");
+    if(!afterContextNode.IsNull())
+    {
+      m_afterContext = Aws::Utils::Xml::DecodeEscapedXmlText(afterContextNode.GetText());
+      m_afterContextHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -202,6 +218,16 @@ void ResourceChange::OutputToStream(Aws::OStream& oStream, const char* location,
       m_moduleInfo.OutputToStream(oStream, moduleInfoLocationAndMemberSs.str().c_str());
   }
 
+  if(m_beforeContextHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".BeforeContext=" << StringUtils::URLEncode(m_beforeContext.c_str()) << "&";
+  }
+
+  if(m_afterContextHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AfterContext=" << StringUtils::URLEncode(m_afterContext.c_str()) << "&";
+  }
+
 }
 
 void ResourceChange::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -257,6 +283,14 @@ void ResourceChange::OutputToStream(Aws::OStream& oStream, const char* location)
       Aws::String moduleInfoLocationAndMember(location);
       moduleInfoLocationAndMember += ".ModuleInfo";
       m_moduleInfo.OutputToStream(oStream, moduleInfoLocationAndMember.c_str());
+  }
+  if(m_beforeContextHasBeenSet)
+  {
+      oStream << location << ".BeforeContext=" << StringUtils::URLEncode(m_beforeContext.c_str()) << "&";
+  }
+  if(m_afterContextHasBeenSet)
+  {
+      oStream << location << ".AfterContext=" << StringUtils::URLEncode(m_afterContext.c_str()) << "&";
   }
 }
 

@@ -202,10 +202,66 @@ namespace Model
      */
     inline EnableKeyRotationRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
+
+    /**
+     * <p>Use this parameter to specify a custom period of time between each rotation
+     * date. If no value is specified, the default value is 365 days.</p> <p>The
+     * rotation period defines the number of days after you enable automatic key
+     * rotation that KMS will rotate your key material, and the number of days between
+     * each automatic rotation thereafter.</p> <p>You can use the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-rotation-period-in-days">
+     * <code>kms:RotationPeriodInDays</code> </a> condition key to further constrain
+     * the values that principals can specify in the <code>RotationPeriodInDays</code>
+     * parameter.</p> <p> </p>
+     */
+    inline int GetRotationPeriodInDays() const{ return m_rotationPeriodInDays; }
+
+    /**
+     * <p>Use this parameter to specify a custom period of time between each rotation
+     * date. If no value is specified, the default value is 365 days.</p> <p>The
+     * rotation period defines the number of days after you enable automatic key
+     * rotation that KMS will rotate your key material, and the number of days between
+     * each automatic rotation thereafter.</p> <p>You can use the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-rotation-period-in-days">
+     * <code>kms:RotationPeriodInDays</code> </a> condition key to further constrain
+     * the values that principals can specify in the <code>RotationPeriodInDays</code>
+     * parameter.</p> <p> </p>
+     */
+    inline bool RotationPeriodInDaysHasBeenSet() const { return m_rotationPeriodInDaysHasBeenSet; }
+
+    /**
+     * <p>Use this parameter to specify a custom period of time between each rotation
+     * date. If no value is specified, the default value is 365 days.</p> <p>The
+     * rotation period defines the number of days after you enable automatic key
+     * rotation that KMS will rotate your key material, and the number of days between
+     * each automatic rotation thereafter.</p> <p>You can use the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-rotation-period-in-days">
+     * <code>kms:RotationPeriodInDays</code> </a> condition key to further constrain
+     * the values that principals can specify in the <code>RotationPeriodInDays</code>
+     * parameter.</p> <p> </p>
+     */
+    inline void SetRotationPeriodInDays(int value) { m_rotationPeriodInDaysHasBeenSet = true; m_rotationPeriodInDays = value; }
+
+    /**
+     * <p>Use this parameter to specify a custom period of time between each rotation
+     * date. If no value is specified, the default value is 365 days.</p> <p>The
+     * rotation period defines the number of days after you enable automatic key
+     * rotation that KMS will rotate your key material, and the number of days between
+     * each automatic rotation thereafter.</p> <p>You can use the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-rotation-period-in-days">
+     * <code>kms:RotationPeriodInDays</code> </a> condition key to further constrain
+     * the values that principals can specify in the <code>RotationPeriodInDays</code>
+     * parameter.</p> <p> </p>
+     */
+    inline EnableKeyRotationRequest& WithRotationPeriodInDays(int value) { SetRotationPeriodInDays(value); return *this;}
+
   private:
 
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet = false;
+
+    int m_rotationPeriodInDays;
+    bool m_rotationPeriodInDaysHasBeenSet = false;
   };
 
 } // namespace Model

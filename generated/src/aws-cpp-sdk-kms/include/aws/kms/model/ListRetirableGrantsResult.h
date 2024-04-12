@@ -116,7 +116,7 @@ namespace Model
     /**
      * <p>A flag that indicates whether there are more items in the list. When this
      * value is true, the list in this response is truncated. To get more items, pass
-     * the value of the <code>NextMarker</code> element in thisresponse to the
+     * the value of the <code>NextMarker</code> element in this response to the
      * <code>Marker</code> parameter in a subsequent request.</p>
      */
     inline bool GetTruncated() const{ return m_truncated; }
@@ -124,7 +124,7 @@ namespace Model
     /**
      * <p>A flag that indicates whether there are more items in the list. When this
      * value is true, the list in this response is truncated. To get more items, pass
-     * the value of the <code>NextMarker</code> element in thisresponse to the
+     * the value of the <code>NextMarker</code> element in this response to the
      * <code>Marker</code> parameter in a subsequent request.</p>
      */
     inline void SetTruncated(bool value) { m_truncated = value; }
@@ -132,7 +132,7 @@ namespace Model
     /**
      * <p>A flag that indicates whether there are more items in the list. When this
      * value is true, the list in this response is truncated. To get more items, pass
-     * the value of the <code>NextMarker</code> element in thisresponse to the
+     * the value of the <code>NextMarker</code> element in this response to the
      * <code>Marker</code> parameter in a subsequent request.</p>
      */
     inline ListRetirableGrantsResult& WithTruncated(bool value) { SetTruncated(value); return *this;}

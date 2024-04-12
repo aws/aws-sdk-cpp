@@ -274,43 +274,43 @@ namespace Model
 
     /**
      * <p>The ARN of the role that the web application assumes when it interacts with
-     * AWS IoT Core.</p>
+     * Amazon Web Services IoT Core.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>The ARN of the role that the web application assumes when it interacts with
-     * AWS IoT Core.</p>
+     * Amazon Web Services IoT Core.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
 
     /**
      * <p>The ARN of the role that the web application assumes when it interacts with
-     * AWS IoT Core.</p>
+     * Amazon Web Services IoT Core.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
 
     /**
      * <p>The ARN of the role that the web application assumes when it interacts with
-     * AWS IoT Core.</p>
+     * Amazon Web Services IoT Core.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
 
     /**
      * <p>The ARN of the role that the web application assumes when it interacts with
-     * AWS IoT Core.</p>
+     * Amazon Web Services IoT Core.</p>
      */
     inline DescribeApplicationResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The ARN of the role that the web application assumes when it interacts with
-     * AWS IoT Core.</p>
+     * Amazon Web Services IoT Core.</p>
      */
     inline DescribeApplicationResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the role that the web application assumes when it interacts with
-     * AWS IoT Core.</p>
+     * Amazon Web Services IoT Core.</p>
      */
     inline DescribeApplicationResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
@@ -359,37 +359,58 @@ namespace Model
 
 
     /**
-     * <p>A message indicating why the <code>DescribeApplication</code> API failed.</p>
+     * <p>A message that explains any failures included in the
+     * <code>applicationState</code> response field. This message explains failures in
+     * the <code>CreateApplication</code> and <code>DeleteApplication</code>
+     * actions.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
 
     /**
-     * <p>A message indicating why the <code>DescribeApplication</code> API failed.</p>
+     * <p>A message that explains any failures included in the
+     * <code>applicationState</code> response field. This message explains failures in
+     * the <code>CreateApplication</code> and <code>DeleteApplication</code>
+     * actions.</p>
      */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessage = value; }
 
     /**
-     * <p>A message indicating why the <code>DescribeApplication</code> API failed.</p>
+     * <p>A message that explains any failures included in the
+     * <code>applicationState</code> response field. This message explains failures in
+     * the <code>CreateApplication</code> and <code>DeleteApplication</code>
+     * actions.</p>
      */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessage = std::move(value); }
 
     /**
-     * <p>A message indicating why the <code>DescribeApplication</code> API failed.</p>
+     * <p>A message that explains any failures included in the
+     * <code>applicationState</code> response field. This message explains failures in
+     * the <code>CreateApplication</code> and <code>DeleteApplication</code>
+     * actions.</p>
      */
     inline void SetErrorMessage(const char* value) { m_errorMessage.assign(value); }
 
     /**
-     * <p>A message indicating why the <code>DescribeApplication</code> API failed.</p>
+     * <p>A message that explains any failures included in the
+     * <code>applicationState</code> response field. This message explains failures in
+     * the <code>CreateApplication</code> and <code>DeleteApplication</code>
+     * actions.</p>
      */
     inline DescribeApplicationResult& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
 
     /**
-     * <p>A message indicating why the <code>DescribeApplication</code> API failed.</p>
+     * <p>A message that explains any failures included in the
+     * <code>applicationState</code> response field. This message explains failures in
+     * the <code>CreateApplication</code> and <code>DeleteApplication</code>
+     * actions.</p>
      */
     inline DescribeApplicationResult& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
 
     /**
-     * <p>A message indicating why the <code>DescribeApplication</code> API failed.</p>
+     * <p>A message that explains any failures included in the
+     * <code>applicationState</code> response field. This message explains failures in
+     * the <code>CreateApplication</code> and <code>DeleteApplication</code>
+     * actions.</p>
      */
     inline DescribeApplicationResult& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 
