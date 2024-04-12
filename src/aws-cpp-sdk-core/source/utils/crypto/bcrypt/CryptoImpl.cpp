@@ -89,7 +89,7 @@ namespace Aws
                 BCryptHashContext(void* algorithmHandle, DWORD hashObjectLength) :
                     m_hashHandle(nullptr),
                     m_isValid(false),
-                    m_hashBufferLength(hashObjectLength),
+                    m_hashObjectLength(hashObjectLength),
                     m_hashObject(nullptr)
                 {
                     m_hashObject = Aws::NewArray<BYTE>(m_hashObjectLength, logTag);
@@ -106,7 +106,7 @@ namespace Aws
                 BCryptHashContext(void* algorithmHandle, DWORD hashObjectLength, const ByteBuffer& secret) :
                     m_hashHandle(nullptr),
                     m_isValid(false),
-                    m_hashBufferLength(hashObjectLength),
+                    m_hashObjectLength(hashObjectLength),
                     m_hashObject(nullptr)
                 {
                     m_hashObject = Aws::NewArray<BYTE>(m_hashObjectLength, logTag);
@@ -246,7 +246,7 @@ namespace Aws
 
                 std::lock_guard<std::mutex> locker(m_algorithmMutex);
 
-                BCryptHashContext context(m_algorithmHandle, m_hashObject, m_hashObjectLength);
+                BCryptHashContext context(m_algorithmHandle, m_hashObjectLength);
                 if (!context.IsValid())
                 {
                     AWS_LOGSTREAM_ERROR(logTag, "Error creating hash handle.");
@@ -265,7 +265,7 @@ namespace Aws
 
                 std::lock_guard<std::mutex> locker(m_algorithmMutex);
 
-                BCryptHashContext context(m_algorithmHandle, m_hashObject, m_hashObjectLength, secret);
+                BCryptHashContext context(m_algorithmHandle, m_hashObjectLength, secret);
                 if (!context.IsValid())
                 {
                     AWS_LOGSTREAM_ERROR(logTag, "Error creating hash handle.");
