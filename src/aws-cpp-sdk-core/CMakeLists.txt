@@ -247,16 +247,10 @@ else()
     file(GLOB NET_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/net/*.cpp")
 endif()
 
-# encryption implementations
-if(ENABLE_BCRYPT_ENCRYPTION)
-    file(GLOB UTILS_CRYPTO_BCRYPT_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/utils/crypto/bcrypt/*.h")
-    file(GLOB UTILS_CRYPTO_BCRYPT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/crypto/bcrypt/*.cpp")
-elseif(ENABLE_OPENSSL_ENCRYPTION)
-    file(GLOB UTILS_CRYPTO_OPENSSL_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/utils/crypto/openssl/*.h")
-    file(GLOB UTILS_CRYPTO_OPENSSL_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/crypto/openssl/*.cpp")
-elseif(ENABLE_COMMONCRYPTO_ENCRYPTION)
-    file(GLOB UTILS_CRYPTO_COMMONCRYPTO_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/utils/crypto/commoncrypto/*.h")
-    file(GLOB UTILS_CRYPTO_COMMONCRYPTO_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/crypto/commoncrypto/*.cpp")
+# encryption implementation
+if (NOT NO_ENCRYPTION)
+    file(GLOB UTILS_CRYPTO_CRT_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/utils/crypto/crt/*.h")
+    file(GLOB UTILS_CRYPTO_CRT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/crypto/crt/*.cpp")
 endif()
 
 if (BUILD_OPTEL)
@@ -287,8 +281,7 @@ file(GLOB AWS_NATIVE_SDK_COMMON_SRC
     ${UTILS_MEMORY_SOURCE}
     ${UTILS_COMPONENT_REGISTRY_SOURCE}
     ${UTILS_MEMORY_STL_SOURCE}
-    ${UTILS_CRYPTO_OPENSSL_SOURCE}
-    ${UTILS_CRYPTO_COMMONCRYPTO_SOURCE}
+    ${UTILS_CRYPTO_CRT_SOURCE}
     ${SMITHY_SOURCE}
     ${SMITHY_TRACING_SOURCE}
 )
@@ -329,9 +322,6 @@ file(GLOB AWS_NATIVE_SDK_COMMON_HEADERS
   ${TINYXML2_HEADERS}
   ${HTTP_CURL_CLIENT_HEADERS}
   ${HTTP_WINDOWS_CLIENT_HEADERS}
-  ${UTILS_CRYPTO_BCRYPT_HEADERS}
-  ${UTILS_CRYPTO_OPENSSL_HEADERS}
-  ${UTILS_CRYPTO_COMMONCRYPTO_HEADERS}
   ${SMITHY_HEADERS}
   ${SMITHY_TRACING_HEADERS}
   ${OPTEL_HEADERS}
@@ -435,6 +425,7 @@ if(MSVC)
     source_group("Header Files\\aws\\core\\utils" FILES ${UTILS_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\base64" FILES ${UTILS_BASE64_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\crypto" FILES ${UTILS_CRYPTO_HEADERS})
+    source_group("Header Files\\aws\\core\\utils\\crypto\\crt" FILES ${UTILS_CRYPTO_CRT_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\event" FILES ${UTILS_EVENT_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\exceptions" FILES ${UTILS_EXCEPTIONS_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\json" FILES ${UTILS_JSON_HEADERS})
@@ -458,16 +449,6 @@ if(MSVC)
         source_group("Header Files\\aws\\core\\http\\windows" FILES ${HTTP_WINDOWS_CLIENT_HEADERS})
     endif()
         source_group("Header Files\\aws\\core\\http\\crt" FILES ${CRT_HTTP_HEADERS})
-
-
-    # encryption conditional headers
-    if(ENABLE_BCRYPT_ENCRYPTION)
-        source_group("Header Files\\aws\\core\\utils\\crypto\\bcrypt" FILES ${UTILS_CRYPTO_BCRYPT_HEADERS})
-    elseif(ENABLE_OPENSSL_ENCRYPTION)
-        source_group("Header Files\\aws\\core\\utils\\crypto\\openssl" FILES ${UTILS_CRYPTO_OPENSSL_HEADERS})
-    elseif(ENABLE_COMMONCRYPTO_ENCRYPTION)
-        source_group("Header Files\\aws\\core\\utils\\crypto\\commoncrypto" FILES ${UTILS_CRYPTO_COMMONCRYPTO_HEADERS})
-    endif()
 
     if (BUILD_OPTEL)
         source_group("Header Files\\smithy\\tracing\\impl\\opentelemetry" FILES ${OPTEL_HEADERS})
@@ -519,19 +500,13 @@ if(MSVC)
 
 
     # encryption conditional source
-    if(ENABLE_BCRYPT_ENCRYPTION)
-        source_group("Source Files\\utils\\crypto\\bcrypt" FILES ${UTILS_CRYPTO_BCRYPT_SOURCE})
-    elseif(ENABLE_OPENSSL_ENCRYPTION)
-        source_group("Source Files\\utils\\crypto\\openssl" FILES ${UTILS_CRYPTO_OPENSSL_SOURCE})
-    elseif(ENABLE_COMMONCRYPTO_ENCRYPTION)
-            source_group("Source Files\\utils\\crypto\\commoncrypto" FILES ${UTILS_CRYPTO_COMMONCRYPTO_SOURCE})
+    if (NOT NO_ENCRYPTION)
+        source_group("Source Files\\utils\\crypto\\crt" FILES ${UTILS_CRYPTO_CRT_SOURCE})
     endif()
 
     if (BUILD_OPTEL)
         source_group("Source Files\\smithy\\tracing\\impl\\opentelemetry" FILES ${OPTEL_SOURCE})
     endif ()
-
-
 endif(MSVC)
 
 check_cxx_source_compiles("
@@ -568,6 +543,10 @@ if (CURL_HAS_TLS_PROXY)
     target_compile_definitions(${PROJECT_NAME} PRIVATE "CURL_HAS_TLS_PROXY")
 endif()
 
+if (NO_ENCRYPTION)
+    target_compile_definitions(${PROJECT_NAME} PRIVATE "NO_ENCRYPTION")
+endif()
+
 if (AWS_HAS_ALIGNED_ALLOC)
     target_compile_definitions(${PROJECT_NAME} PRIVATE "AWS_HAS_ALIGNED_ALLOC")
 endif()
@@ -592,10 +571,6 @@ endif()
 
 if(BUILD_CURL)
     target_include_directories(${PROJECT_NAME} PRIVATE "${CURL_INCLUDE_DIR}")
-endif()
-
-if(BUILD_OPENSSL)
-    target_include_directories(${PROJECT_NAME} PRIVATE "${OPENSSL_INCLUDE_DIR}")
 endif()
 
 if (BUILD_OPTEL)
@@ -743,13 +718,7 @@ endif()
 
 
 # encryption headers
-if(ENABLE_BCRYPT_ENCRYPTION)
-  install (FILES ${UTILS_CRYPTO_BCRYPT_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/crypto/bcrypt)
-elseif(ENABLE_OPENSSL_ENCRYPTION)
-  install (FILES ${UTILS_CRYPTO_OPENSSL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/crypto/openssl)
-elseif(ENABLE_COMMONCRYPTO_ENCRYPTION)
-  install (FILES ${UTILS_CRYPTO_COMMONCRYPTO_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/crypto/commoncrypto)
-endif()
+install (FILES ${UTILS_CRYPTO_CRT_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/crypto/crt)
 
 do_packaging()
 

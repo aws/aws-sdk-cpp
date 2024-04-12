@@ -289,27 +289,24 @@ namespace Aws
                         m_isFinalized = true;
                     }
 
-                    if (m_cipher)
+                    if(cryptoBuf.GetLength())
                     {
-                        if(cryptoBuf.GetLength())
+                        //allow mid block decryption. We have to decrypt it, but we don't have to write it to the stream.
+                        //the assumption here is that tellp() will always be 0 or >= 16 bytes. The block offset should only
+                        //be the offset of the first block read.
+                        size_t len = cryptoBuf.GetLength();
+                        size_t blockOffset = m_stream.good() && m_stream.tellp() > m_blockOffset ? 0 : m_blockOffset;
+                        if (len > blockOffset)
                         {
-                            //allow mid block decryption. We have to decrypt it, but we don't have to write it to the stream.
-                            //the assumption here is that tellp() will always be 0 or >= 16 bytes. The block offset should only
-                            //be the offset of the first block read.
-                            size_t len = cryptoBuf.GetLength();
-                            size_t blockOffset = m_stream.tellp() > m_blockOffset ? 0 : m_blockOffset;
-                            if (len > blockOffset)
-                            {
-                                m_stream.write(reinterpret_cast<char*>(cryptoBuf.GetUnderlyingData() + blockOffset), len - blockOffset);
-                                m_blockOffset = 0;
-                            }
-                            else
-                            {
-                                m_blockOffset -= static_cast<int16_t>(len);
-                            }
+                            m_stream.write(reinterpret_cast<char*>(cryptoBuf.GetUnderlyingData() + blockOffset), len - blockOffset);
+                            m_blockOffset = 0;
                         }
-                        return true;
+                        else
+                        {
+                            m_blockOffset -= static_cast<int16_t>(len);
+                        }
                     }
+                    return true;
                 }
 
                 return false;
