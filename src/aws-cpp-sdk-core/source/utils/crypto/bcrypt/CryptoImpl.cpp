@@ -329,7 +329,7 @@ namespace Aws
 
             bool BCryptHashImpl::HashStream(Aws::IStream& stream)
             {
-                BCryptHashContext context(m_algorithmHandle, m_hashObject, m_hashObjectLength);
+                BCryptHashContext context(m_algorithmHandle, m_hashObjectLength);
                 if (!context.IsValid())
                 {
                     AWS_LOGSTREAM_ERROR(logTag, "Error creating hash handle.");
