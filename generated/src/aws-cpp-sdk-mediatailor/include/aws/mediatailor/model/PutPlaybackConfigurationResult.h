@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/mediatailor/model/DashConfiguration.h>
 #include <aws/mediatailor/model/HlsConfiguration.h>
+#include <aws/mediatailor/model/InsertionMode.h>
 #include <aws/mediatailor/model/LivePreRollConfiguration.h>
 #include <aws/mediatailor/model/LogConfiguration.h>
 #include <aws/mediatailor/model/ManifestProcessingRules.h>
@@ -357,6 +358,57 @@ namespace Model
      * <p>The configuration for HLS content.</p>
      */
     inline PutPlaybackConfigurationResult& WithHlsConfiguration(HlsConfiguration&& value) { SetHlsConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The setting that controls whether players can use stitched or guided ad
+     * insertion. The default, <code>STITCHED_ONLY</code>, forces all player sessions
+     * to use stitched (server-side) ad insertion. Choosing <code>PLAYER_SELECT</code>
+     * allows players to select either stitched or guided ad insertion at
+     * session-initialization time. The default for players that do not specify an
+     * insertion mode is stitched.</p>
+     */
+    inline const InsertionMode& GetInsertionMode() const{ return m_insertionMode; }
+
+    /**
+     * <p>The setting that controls whether players can use stitched or guided ad
+     * insertion. The default, <code>STITCHED_ONLY</code>, forces all player sessions
+     * to use stitched (server-side) ad insertion. Choosing <code>PLAYER_SELECT</code>
+     * allows players to select either stitched or guided ad insertion at
+     * session-initialization time. The default for players that do not specify an
+     * insertion mode is stitched.</p>
+     */
+    inline void SetInsertionMode(const InsertionMode& value) { m_insertionMode = value; }
+
+    /**
+     * <p>The setting that controls whether players can use stitched or guided ad
+     * insertion. The default, <code>STITCHED_ONLY</code>, forces all player sessions
+     * to use stitched (server-side) ad insertion. Choosing <code>PLAYER_SELECT</code>
+     * allows players to select either stitched or guided ad insertion at
+     * session-initialization time. The default for players that do not specify an
+     * insertion mode is stitched.</p>
+     */
+    inline void SetInsertionMode(InsertionMode&& value) { m_insertionMode = std::move(value); }
+
+    /**
+     * <p>The setting that controls whether players can use stitched or guided ad
+     * insertion. The default, <code>STITCHED_ONLY</code>, forces all player sessions
+     * to use stitched (server-side) ad insertion. Choosing <code>PLAYER_SELECT</code>
+     * allows players to select either stitched or guided ad insertion at
+     * session-initialization time. The default for players that do not specify an
+     * insertion mode is stitched.</p>
+     */
+    inline PutPlaybackConfigurationResult& WithInsertionMode(const InsertionMode& value) { SetInsertionMode(value); return *this;}
+
+    /**
+     * <p>The setting that controls whether players can use stitched or guided ad
+     * insertion. The default, <code>STITCHED_ONLY</code>, forces all player sessions
+     * to use stitched (server-side) ad insertion. Choosing <code>PLAYER_SELECT</code>
+     * allows players to select either stitched or guided ad insertion at
+     * session-initialization time. The default for players that do not specify an
+     * insertion mode is stitched.</p>
+     */
+    inline PutPlaybackConfigurationResult& WithInsertionMode(InsertionMode&& value) { SetInsertionMode(std::move(value)); return *this;}
 
 
     /**
@@ -956,6 +1008,8 @@ namespace Model
     DashConfiguration m_dashConfiguration;
 
     HlsConfiguration m_hlsConfiguration;
+
+    InsertionMode m_insertionMode;
 
     LivePreRollConfiguration m_livePreRollConfiguration;
 

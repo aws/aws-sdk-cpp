@@ -12,6 +12,7 @@
 #include <aws/healthlake/model/SseConfiguration.h>
 #include <aws/healthlake/model/PreloadDataConfig.h>
 #include <aws/healthlake/model/IdentityProviderConfiguration.h>
+#include <aws/healthlake/model/ErrorCause.h>
 #include <utility>
 
 namespace Aws
@@ -413,6 +414,37 @@ namespace Model
      */
     inline DatastoreProperties& WithIdentityProviderConfiguration(IdentityProviderConfiguration&& value) { SetIdentityProviderConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The error cause for the current data store operation.</p>
+     */
+    inline const ErrorCause& GetErrorCause() const{ return m_errorCause; }
+
+    /**
+     * <p>The error cause for the current data store operation.</p>
+     */
+    inline bool ErrorCauseHasBeenSet() const { return m_errorCauseHasBeenSet; }
+
+    /**
+     * <p>The error cause for the current data store operation.</p>
+     */
+    inline void SetErrorCause(const ErrorCause& value) { m_errorCauseHasBeenSet = true; m_errorCause = value; }
+
+    /**
+     * <p>The error cause for the current data store operation.</p>
+     */
+    inline void SetErrorCause(ErrorCause&& value) { m_errorCauseHasBeenSet = true; m_errorCause = std::move(value); }
+
+    /**
+     * <p>The error cause for the current data store operation.</p>
+     */
+    inline DatastoreProperties& WithErrorCause(const ErrorCause& value) { SetErrorCause(value); return *this;}
+
+    /**
+     * <p>The error cause for the current data store operation.</p>
+     */
+    inline DatastoreProperties& WithErrorCause(ErrorCause&& value) { SetErrorCause(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_datastoreId;
@@ -444,6 +476,9 @@ namespace Model
 
     IdentityProviderConfiguration m_identityProviderConfiguration;
     bool m_identityProviderConfigurationHasBeenSet = false;
+
+    ErrorCause m_errorCause;
+    bool m_errorCauseHasBeenSet = false;
   };
 
 } // namespace Model

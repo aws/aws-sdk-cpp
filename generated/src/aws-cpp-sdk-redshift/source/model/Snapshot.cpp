@@ -69,7 +69,8 @@ Snapshot::Snapshot() :
     m_manualSnapshotRemainingDaysHasBeenSet(false),
     m_snapshotRetentionStartTimeHasBeenSet(false),
     m_masterPasswordSecretArnHasBeenSet(false),
-    m_masterPasswordSecretKmsKeyIdHasBeenSet(false)
+    m_masterPasswordSecretKmsKeyIdHasBeenSet(false),
+    m_snapshotArnHasBeenSet(false)
 {
 }
 
@@ -122,7 +123,8 @@ Snapshot::Snapshot(const XmlNode& xmlNode) :
     m_manualSnapshotRemainingDaysHasBeenSet(false),
     m_snapshotRetentionStartTimeHasBeenSet(false),
     m_masterPasswordSecretArnHasBeenSet(false),
-    m_masterPasswordSecretKmsKeyIdHasBeenSet(false)
+    m_masterPasswordSecretKmsKeyIdHasBeenSet(false),
+    m_snapshotArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -367,6 +369,12 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
       m_masterPasswordSecretKmsKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(masterPasswordSecretKmsKeyIdNode.GetText());
       m_masterPasswordSecretKmsKeyIdHasBeenSet = true;
     }
+    XmlNode snapshotArnNode = resultNode.FirstChild("SnapshotArn");
+    if(!snapshotArnNode.IsNull())
+    {
+      m_snapshotArn = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotArnNode.GetText());
+      m_snapshotArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -570,6 +578,11 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       oStream << location << index << locationValue << ".MasterPasswordSecretKmsKeyId=" << StringUtils::URLEncode(m_masterPasswordSecretKmsKeyId.c_str()) << "&";
   }
 
+  if(m_snapshotArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SnapshotArn=" << StringUtils::URLEncode(m_snapshotArn.c_str()) << "&";
+  }
+
 }
 
 void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -733,6 +746,10 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_masterPasswordSecretKmsKeyIdHasBeenSet)
   {
       oStream << location << ".MasterPasswordSecretKmsKeyId=" << StringUtils::URLEncode(m_masterPasswordSecretKmsKeyId.c_str()) << "&";
+  }
+  if(m_snapshotArnHasBeenSet)
+  {
+      oStream << location << ".SnapshotArn=" << StringUtils::URLEncode(m_snapshotArn.c_str()) << "&";
   }
 }
 

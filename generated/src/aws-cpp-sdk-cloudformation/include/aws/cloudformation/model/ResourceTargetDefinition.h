@@ -9,6 +9,7 @@
 #include <aws/cloudformation/model/ResourceAttribute.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudformation/model/RequiresRecreation.h>
+#include <aws/cloudformation/model/AttributeChangeType.h>
 #include <utility>
 
 namespace Aws
@@ -201,6 +202,194 @@ namespace Model
      */
     inline ResourceTargetDefinition& WithRequiresRecreation(RequiresRecreation&& value) { SetRequiresRecreation(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The property path of the property.</p>
+     */
+    inline const Aws::String& GetPath() const{ return m_path; }
+
+    /**
+     * <p>The property path of the property.</p>
+     */
+    inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
+
+    /**
+     * <p>The property path of the property.</p>
+     */
+    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
+
+    /**
+     * <p>The property path of the property.</p>
+     */
+    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
+
+    /**
+     * <p>The property path of the property.</p>
+     */
+    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
+
+    /**
+     * <p>The property path of the property.</p>
+     */
+    inline ResourceTargetDefinition& WithPath(const Aws::String& value) { SetPath(value); return *this;}
+
+    /**
+     * <p>The property path of the property.</p>
+     */
+    inline ResourceTargetDefinition& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
+
+    /**
+     * <p>The property path of the property.</p>
+     */
+    inline ResourceTargetDefinition& WithPath(const char* value) { SetPath(value); return *this;}
+
+
+    /**
+     * <p>The value of the property before the change is executed. Large values can be
+     * truncated.</p>
+     */
+    inline const Aws::String& GetBeforeValue() const{ return m_beforeValue; }
+
+    /**
+     * <p>The value of the property before the change is executed. Large values can be
+     * truncated.</p>
+     */
+    inline bool BeforeValueHasBeenSet() const { return m_beforeValueHasBeenSet; }
+
+    /**
+     * <p>The value of the property before the change is executed. Large values can be
+     * truncated.</p>
+     */
+    inline void SetBeforeValue(const Aws::String& value) { m_beforeValueHasBeenSet = true; m_beforeValue = value; }
+
+    /**
+     * <p>The value of the property before the change is executed. Large values can be
+     * truncated.</p>
+     */
+    inline void SetBeforeValue(Aws::String&& value) { m_beforeValueHasBeenSet = true; m_beforeValue = std::move(value); }
+
+    /**
+     * <p>The value of the property before the change is executed. Large values can be
+     * truncated.</p>
+     */
+    inline void SetBeforeValue(const char* value) { m_beforeValueHasBeenSet = true; m_beforeValue.assign(value); }
+
+    /**
+     * <p>The value of the property before the change is executed. Large values can be
+     * truncated.</p>
+     */
+    inline ResourceTargetDefinition& WithBeforeValue(const Aws::String& value) { SetBeforeValue(value); return *this;}
+
+    /**
+     * <p>The value of the property before the change is executed. Large values can be
+     * truncated.</p>
+     */
+    inline ResourceTargetDefinition& WithBeforeValue(Aws::String&& value) { SetBeforeValue(std::move(value)); return *this;}
+
+    /**
+     * <p>The value of the property before the change is executed. Large values can be
+     * truncated.</p>
+     */
+    inline ResourceTargetDefinition& WithBeforeValue(const char* value) { SetBeforeValue(value); return *this;}
+
+
+    /**
+     * <p>The value of the property after the change is executed. Large values can be
+     * truncated.</p>
+     */
+    inline const Aws::String& GetAfterValue() const{ return m_afterValue; }
+
+    /**
+     * <p>The value of the property after the change is executed. Large values can be
+     * truncated.</p>
+     */
+    inline bool AfterValueHasBeenSet() const { return m_afterValueHasBeenSet; }
+
+    /**
+     * <p>The value of the property after the change is executed. Large values can be
+     * truncated.</p>
+     */
+    inline void SetAfterValue(const Aws::String& value) { m_afterValueHasBeenSet = true; m_afterValue = value; }
+
+    /**
+     * <p>The value of the property after the change is executed. Large values can be
+     * truncated.</p>
+     */
+    inline void SetAfterValue(Aws::String&& value) { m_afterValueHasBeenSet = true; m_afterValue = std::move(value); }
+
+    /**
+     * <p>The value of the property after the change is executed. Large values can be
+     * truncated.</p>
+     */
+    inline void SetAfterValue(const char* value) { m_afterValueHasBeenSet = true; m_afterValue.assign(value); }
+
+    /**
+     * <p>The value of the property after the change is executed. Large values can be
+     * truncated.</p>
+     */
+    inline ResourceTargetDefinition& WithAfterValue(const Aws::String& value) { SetAfterValue(value); return *this;}
+
+    /**
+     * <p>The value of the property after the change is executed. Large values can be
+     * truncated.</p>
+     */
+    inline ResourceTargetDefinition& WithAfterValue(Aws::String&& value) { SetAfterValue(std::move(value)); return *this;}
+
+    /**
+     * <p>The value of the property after the change is executed. Large values can be
+     * truncated.</p>
+     */
+    inline ResourceTargetDefinition& WithAfterValue(const char* value) { SetAfterValue(value); return *this;}
+
+
+    /**
+     * <p>The type of change to be made to the property if the change is executed.</p>
+     * <ul> <li> <p> <code>Add</code> The item will be added.</p> </li> <li> <p>
+     * <code>Remove</code> The item will be removed.</p> </li> <li> <p>
+     * <code>Modify</code> The item will be modified.</p> </li> </ul>
+     */
+    inline const AttributeChangeType& GetAttributeChangeType() const{ return m_attributeChangeType; }
+
+    /**
+     * <p>The type of change to be made to the property if the change is executed.</p>
+     * <ul> <li> <p> <code>Add</code> The item will be added.</p> </li> <li> <p>
+     * <code>Remove</code> The item will be removed.</p> </li> <li> <p>
+     * <code>Modify</code> The item will be modified.</p> </li> </ul>
+     */
+    inline bool AttributeChangeTypeHasBeenSet() const { return m_attributeChangeTypeHasBeenSet; }
+
+    /**
+     * <p>The type of change to be made to the property if the change is executed.</p>
+     * <ul> <li> <p> <code>Add</code> The item will be added.</p> </li> <li> <p>
+     * <code>Remove</code> The item will be removed.</p> </li> <li> <p>
+     * <code>Modify</code> The item will be modified.</p> </li> </ul>
+     */
+    inline void SetAttributeChangeType(const AttributeChangeType& value) { m_attributeChangeTypeHasBeenSet = true; m_attributeChangeType = value; }
+
+    /**
+     * <p>The type of change to be made to the property if the change is executed.</p>
+     * <ul> <li> <p> <code>Add</code> The item will be added.</p> </li> <li> <p>
+     * <code>Remove</code> The item will be removed.</p> </li> <li> <p>
+     * <code>Modify</code> The item will be modified.</p> </li> </ul>
+     */
+    inline void SetAttributeChangeType(AttributeChangeType&& value) { m_attributeChangeTypeHasBeenSet = true; m_attributeChangeType = std::move(value); }
+
+    /**
+     * <p>The type of change to be made to the property if the change is executed.</p>
+     * <ul> <li> <p> <code>Add</code> The item will be added.</p> </li> <li> <p>
+     * <code>Remove</code> The item will be removed.</p> </li> <li> <p>
+     * <code>Modify</code> The item will be modified.</p> </li> </ul>
+     */
+    inline ResourceTargetDefinition& WithAttributeChangeType(const AttributeChangeType& value) { SetAttributeChangeType(value); return *this;}
+
+    /**
+     * <p>The type of change to be made to the property if the change is executed.</p>
+     * <ul> <li> <p> <code>Add</code> The item will be added.</p> </li> <li> <p>
+     * <code>Remove</code> The item will be removed.</p> </li> <li> <p>
+     * <code>Modify</code> The item will be modified.</p> </li> </ul>
+     */
+    inline ResourceTargetDefinition& WithAttributeChangeType(AttributeChangeType&& value) { SetAttributeChangeType(std::move(value)); return *this;}
+
   private:
 
     ResourceAttribute m_attribute;
@@ -211,6 +400,18 @@ namespace Model
 
     RequiresRecreation m_requiresRecreation;
     bool m_requiresRecreationHasBeenSet = false;
+
+    Aws::String m_path;
+    bool m_pathHasBeenSet = false;
+
+    Aws::String m_beforeValue;
+    bool m_beforeValueHasBeenSet = false;
+
+    Aws::String m_afterValue;
+    bool m_afterValueHasBeenSet = false;
+
+    AttributeChangeType m_attributeChangeType;
+    bool m_attributeChangeTypeHasBeenSet = false;
   };
 
 } // namespace Model

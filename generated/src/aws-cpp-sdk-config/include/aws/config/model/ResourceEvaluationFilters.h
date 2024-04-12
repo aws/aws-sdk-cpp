@@ -41,38 +41,44 @@ namespace Model
 
 
     /**
-     * <p>Filters all resource evaluations results based on an evaluation mode. the
-     * valid value for this API is <code>Proactive</code>.</p>
+     * <p>Filters all resource evaluations results based on an evaluation mode.</p>
+     *  <p>Currently, <code>DECTECTIVE</code> is not supported as a valid
+     * value. Ignore other documentation stating otherwise.</p> 
      */
     inline const EvaluationMode& GetEvaluationMode() const{ return m_evaluationMode; }
 
     /**
-     * <p>Filters all resource evaluations results based on an evaluation mode. the
-     * valid value for this API is <code>Proactive</code>.</p>
+     * <p>Filters all resource evaluations results based on an evaluation mode.</p>
+     *  <p>Currently, <code>DECTECTIVE</code> is not supported as a valid
+     * value. Ignore other documentation stating otherwise.</p> 
      */
     inline bool EvaluationModeHasBeenSet() const { return m_evaluationModeHasBeenSet; }
 
     /**
-     * <p>Filters all resource evaluations results based on an evaluation mode. the
-     * valid value for this API is <code>Proactive</code>.</p>
+     * <p>Filters all resource evaluations results based on an evaluation mode.</p>
+     *  <p>Currently, <code>DECTECTIVE</code> is not supported as a valid
+     * value. Ignore other documentation stating otherwise.</p> 
      */
     inline void SetEvaluationMode(const EvaluationMode& value) { m_evaluationModeHasBeenSet = true; m_evaluationMode = value; }
 
     /**
-     * <p>Filters all resource evaluations results based on an evaluation mode. the
-     * valid value for this API is <code>Proactive</code>.</p>
+     * <p>Filters all resource evaluations results based on an evaluation mode.</p>
+     *  <p>Currently, <code>DECTECTIVE</code> is not supported as a valid
+     * value. Ignore other documentation stating otherwise.</p> 
      */
     inline void SetEvaluationMode(EvaluationMode&& value) { m_evaluationModeHasBeenSet = true; m_evaluationMode = std::move(value); }
 
     /**
-     * <p>Filters all resource evaluations results based on an evaluation mode. the
-     * valid value for this API is <code>Proactive</code>.</p>
+     * <p>Filters all resource evaluations results based on an evaluation mode.</p>
+     *  <p>Currently, <code>DECTECTIVE</code> is not supported as a valid
+     * value. Ignore other documentation stating otherwise.</p> 
      */
     inline ResourceEvaluationFilters& WithEvaluationMode(const EvaluationMode& value) { SetEvaluationMode(value); return *this;}
 
     /**
-     * <p>Filters all resource evaluations results based on an evaluation mode. the
-     * valid value for this API is <code>Proactive</code>.</p>
+     * <p>Filters all resource evaluations results based on an evaluation mode.</p>
+     *  <p>Currently, <code>DECTECTIVE</code> is not supported as a valid
+     * value. Ignore other documentation stating otherwise.</p> 
      */
     inline ResourceEvaluationFilters& WithEvaluationMode(EvaluationMode&& value) { SetEvaluationMode(std::move(value)); return *this;}
 

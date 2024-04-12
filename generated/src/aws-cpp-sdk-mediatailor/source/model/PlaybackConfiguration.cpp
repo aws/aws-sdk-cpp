@@ -26,6 +26,8 @@ PlaybackConfiguration::PlaybackConfiguration() :
     m_configurationAliasesHasBeenSet(false),
     m_dashConfigurationHasBeenSet(false),
     m_hlsConfigurationHasBeenSet(false),
+    m_insertionMode(InsertionMode::NOT_SET),
+    m_insertionModeHasBeenSet(false),
     m_livePreRollConfigurationHasBeenSet(false),
     m_logConfigurationHasBeenSet(false),
     m_manifestProcessingRulesHasBeenSet(false),
@@ -50,6 +52,8 @@ PlaybackConfiguration::PlaybackConfiguration(JsonView jsonValue) :
     m_configurationAliasesHasBeenSet(false),
     m_dashConfigurationHasBeenSet(false),
     m_hlsConfigurationHasBeenSet(false),
+    m_insertionMode(InsertionMode::NOT_SET),
+    m_insertionModeHasBeenSet(false),
     m_livePreRollConfigurationHasBeenSet(false),
     m_logConfigurationHasBeenSet(false),
     m_manifestProcessingRulesHasBeenSet(false),
@@ -125,6 +129,13 @@ PlaybackConfiguration& PlaybackConfiguration::operator =(JsonView jsonValue)
     m_hlsConfiguration = jsonValue.GetObject("HlsConfiguration");
 
     m_hlsConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InsertionMode"))
+  {
+    m_insertionMode = InsertionModeMapper::GetInsertionModeForName(jsonValue.GetString("InsertionMode"));
+
+    m_insertionModeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("LivePreRollConfiguration"))
@@ -271,6 +282,11 @@ JsonValue PlaybackConfiguration::Jsonize() const
   {
    payload.WithObject("HlsConfiguration", m_hlsConfiguration.Jsonize());
 
+  }
+
+  if(m_insertionModeHasBeenSet)
+  {
+   payload.WithString("InsertionMode", InsertionModeMapper::GetNameForInsertionMode(m_insertionMode));
   }
 
   if(m_livePreRollConfigurationHasBeenSet)

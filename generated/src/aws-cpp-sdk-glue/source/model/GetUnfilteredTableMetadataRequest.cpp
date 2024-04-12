@@ -19,6 +19,8 @@ GetUnfilteredTableMetadataRequest::GetUnfilteredTableMetadataRequest() :
     m_nameHasBeenSet(false),
     m_auditContextHasBeenSet(false),
     m_supportedPermissionTypesHasBeenSet(false),
+    m_parentResourceArnHasBeenSet(false),
+    m_rootResourceArnHasBeenSet(false),
     m_supportedDialectHasBeenSet(false),
     m_permissionsHasBeenSet(false),
     m_querySessionContextHasBeenSet(false)
@@ -67,6 +69,18 @@ Aws::String GetUnfilteredTableMetadataRequest::SerializePayload() const
      supportedPermissionTypesJsonList[supportedPermissionTypesIndex].AsString(PermissionTypeMapper::GetNameForPermissionType(m_supportedPermissionTypes[supportedPermissionTypesIndex]));
    }
    payload.WithArray("SupportedPermissionTypes", std::move(supportedPermissionTypesJsonList));
+
+  }
+
+  if(m_parentResourceArnHasBeenSet)
+  {
+   payload.WithString("ParentResourceArn", m_parentResourceArn);
+
+  }
+
+  if(m_rootResourceArnHasBeenSet)
+  {
+   payload.WithString("RootResourceArn", m_rootResourceArn);
 
   }
 

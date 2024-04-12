@@ -13,7 +13,9 @@ using namespace Aws::Utils;
 DescribeChangeSetRequest::DescribeChangeSetRequest() : 
     m_changeSetNameHasBeenSet(false),
     m_stackNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_includePropertyValues(false),
+    m_includePropertyValuesHasBeenSet(false)
 {
 }
 
@@ -34,6 +36,11 @@ Aws::String DescribeChangeSetRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
+  }
+
+  if(m_includePropertyValuesHasBeenSet)
+  {
+    ss << "IncludePropertyValues=" << std::boolalpha << m_includePropertyValues << "&";
   }
 
   ss << "Version=2010-05-15";

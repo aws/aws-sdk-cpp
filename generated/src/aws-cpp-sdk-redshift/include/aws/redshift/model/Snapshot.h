@@ -1446,6 +1446,47 @@ namespace Model
      */
     inline Snapshot& WithMasterPasswordSecretKmsKeyId(const char* value) { SetMasterPasswordSecretKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot.</p>
+     */
+    inline const Aws::String& GetSnapshotArn() const{ return m_snapshotArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot.</p>
+     */
+    inline bool SnapshotArnHasBeenSet() const { return m_snapshotArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot.</p>
+     */
+    inline void SetSnapshotArn(const Aws::String& value) { m_snapshotArnHasBeenSet = true; m_snapshotArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot.</p>
+     */
+    inline void SetSnapshotArn(Aws::String&& value) { m_snapshotArnHasBeenSet = true; m_snapshotArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot.</p>
+     */
+    inline void SetSnapshotArn(const char* value) { m_snapshotArnHasBeenSet = true; m_snapshotArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot.</p>
+     */
+    inline Snapshot& WithSnapshotArn(const Aws::String& value) { SetSnapshotArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot.</p>
+     */
+    inline Snapshot& WithSnapshotArn(Aws::String&& value) { SetSnapshotArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot.</p>
+     */
+    inline Snapshot& WithSnapshotArn(const char* value) { SetSnapshotArn(value); return *this;}
+
   private:
 
     Aws::String m_snapshotIdentifier;
@@ -1555,6 +1596,9 @@ namespace Model
 
     Aws::String m_masterPasswordSecretKmsKeyId;
     bool m_masterPasswordSecretKmsKeyIdHasBeenSet = false;
+
+    Aws::String m_snapshotArn;
+    bool m_snapshotArnHasBeenSet = false;
   };
 
 } // namespace Model

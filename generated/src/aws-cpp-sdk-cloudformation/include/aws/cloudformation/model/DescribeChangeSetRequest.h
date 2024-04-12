@@ -186,6 +186,31 @@ namespace Model
      */
     inline DescribeChangeSetRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>If <code>true</code>, the returned changes include detailed changes in the
+     * property values.</p>
+     */
+    inline bool GetIncludePropertyValues() const{ return m_includePropertyValues; }
+
+    /**
+     * <p>If <code>true</code>, the returned changes include detailed changes in the
+     * property values.</p>
+     */
+    inline bool IncludePropertyValuesHasBeenSet() const { return m_includePropertyValuesHasBeenSet; }
+
+    /**
+     * <p>If <code>true</code>, the returned changes include detailed changes in the
+     * property values.</p>
+     */
+    inline void SetIncludePropertyValues(bool value) { m_includePropertyValuesHasBeenSet = true; m_includePropertyValues = value; }
+
+    /**
+     * <p>If <code>true</code>, the returned changes include detailed changes in the
+     * property values.</p>
+     */
+    inline DescribeChangeSetRequest& WithIncludePropertyValues(bool value) { SetIncludePropertyValues(value); return *this;}
+
   private:
 
     Aws::String m_changeSetName;
@@ -196,6 +221,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    bool m_includePropertyValues;
+    bool m_includePropertyValuesHasBeenSet = false;
   };
 
 } // namespace Model

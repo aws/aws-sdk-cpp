@@ -24,6 +24,7 @@ namespace Aws
         static const int DBS_HASH = HashingUtils::HashString("DBS");
         static const int FEDEX_HASH = HashingUtils::HashString("FEDEX");
         static const int UPS_HASH = HashingUtils::HashString("UPS");
+        static const int EXPEDITORS_HASH = HashingUtils::HashString("EXPEDITORS");
 
 
         ShipmentCarrier GetShipmentCarrierForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == UPS_HASH)
           {
             return ShipmentCarrier::UPS;
+          }
+          else if (hashCode == EXPEDITORS_HASH)
+          {
+            return ShipmentCarrier::EXPEDITORS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "FEDEX";
           case ShipmentCarrier::UPS:
             return "UPS";
+          case ShipmentCarrier::EXPEDITORS:
+            return "EXPEDITORS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

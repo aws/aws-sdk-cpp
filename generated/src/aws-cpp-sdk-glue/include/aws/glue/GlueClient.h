@@ -3591,9 +3591,10 @@ namespace Glue
         }
 
         /**
-         * <p>Retrieves table metadata from the Data Catalog that contains unfiltered
-         * metadata.</p> <p>For IAM authorization, the public IAM action associated with
-         * this API is <code>glue:GetTable</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Allows a third-party analytical engine to retrieve unfiltered table metadata
+         * from the Data Catalog.</p> <p>For IAM authorization, the public IAM action
+         * associated with this API is <code>glue:GetTable</code>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUnfilteredTableMetadata">AWS
          * API Reference</a></p>
          */
