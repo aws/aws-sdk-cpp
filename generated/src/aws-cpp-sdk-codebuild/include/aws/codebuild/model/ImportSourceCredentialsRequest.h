@@ -87,49 +87,49 @@ namespace Model
 
     /**
      * <p> For GitHub or GitHub Enterprise, this is the personal access token. For
-     * Bitbucket, this is the app password. </p>
+     * Bitbucket, this is either the access token or the app password. </p>
      */
     inline const Aws::String& GetToken() const{ return m_token; }
 
     /**
      * <p> For GitHub or GitHub Enterprise, this is the personal access token. For
-     * Bitbucket, this is the app password. </p>
+     * Bitbucket, this is either the access token or the app password. </p>
      */
     inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
 
     /**
      * <p> For GitHub or GitHub Enterprise, this is the personal access token. For
-     * Bitbucket, this is the app password. </p>
+     * Bitbucket, this is either the access token or the app password. </p>
      */
     inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
 
     /**
      * <p> For GitHub or GitHub Enterprise, this is the personal access token. For
-     * Bitbucket, this is the app password. </p>
+     * Bitbucket, this is either the access token or the app password. </p>
      */
     inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = std::move(value); }
 
     /**
      * <p> For GitHub or GitHub Enterprise, this is the personal access token. For
-     * Bitbucket, this is the app password. </p>
+     * Bitbucket, this is either the access token or the app password. </p>
      */
     inline void SetToken(const char* value) { m_tokenHasBeenSet = true; m_token.assign(value); }
 
     /**
      * <p> For GitHub or GitHub Enterprise, this is the personal access token. For
-     * Bitbucket, this is the app password. </p>
+     * Bitbucket, this is either the access token or the app password. </p>
      */
     inline ImportSourceCredentialsRequest& WithToken(const Aws::String& value) { SetToken(value); return *this;}
 
     /**
      * <p> For GitHub or GitHub Enterprise, this is the personal access token. For
-     * Bitbucket, this is the app password. </p>
+     * Bitbucket, this is either the access token or the app password. </p>
      */
     inline ImportSourceCredentialsRequest& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
 
     /**
      * <p> For GitHub or GitHub Enterprise, this is the personal access token. For
-     * Bitbucket, this is the app password. </p>
+     * Bitbucket, this is either the access token or the app password. </p>
      */
     inline ImportSourceCredentialsRequest& WithToken(const char* value) { SetToken(value); return *this;}
 

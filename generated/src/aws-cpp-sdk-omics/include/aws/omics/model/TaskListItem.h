@@ -309,42 +309,42 @@ namespace Model
 
 
     /**
-     * <p> The instance type for a task. </p>
+     * <p> The instance type for a task.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p> The instance type for a task. </p>
+     * <p> The instance type for a task.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
-     * <p> The instance type for a task. </p>
+     * <p> The instance type for a task.</p>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p> The instance type for a task. </p>
+     * <p> The instance type for a task.</p>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p> The instance type for a task. </p>
+     * <p> The instance type for a task.</p>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
-     * <p> The instance type for a task. </p>
+     * <p> The instance type for a task.</p>
      */
     inline TaskListItem& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p> The instance type for a task. </p>
+     * <p> The instance type for a task.</p>
      */
     inline TaskListItem& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
-     * <p> The instance type for a task. </p>
+     * <p> The instance type for a task.</p>
      */
     inline TaskListItem& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 

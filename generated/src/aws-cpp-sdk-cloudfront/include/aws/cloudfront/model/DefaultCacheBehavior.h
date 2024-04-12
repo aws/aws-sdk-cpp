@@ -558,43 +558,43 @@ namespace Model
 
     /**
      * <p>A list of CloudFront functions that are associated with this cache behavior.
-     * CloudFront functions must be published to the <code>LIVE</code> stage to
-     * associate them with a cache behavior.</p>
+     * Your functions must be published to the <code>LIVE</code> stage to associate
+     * them with a cache behavior.</p>
      */
     inline const FunctionAssociations& GetFunctionAssociations() const{ return m_functionAssociations; }
 
     /**
      * <p>A list of CloudFront functions that are associated with this cache behavior.
-     * CloudFront functions must be published to the <code>LIVE</code> stage to
-     * associate them with a cache behavior.</p>
+     * Your functions must be published to the <code>LIVE</code> stage to associate
+     * them with a cache behavior.</p>
      */
     inline bool FunctionAssociationsHasBeenSet() const { return m_functionAssociationsHasBeenSet; }
 
     /**
      * <p>A list of CloudFront functions that are associated with this cache behavior.
-     * CloudFront functions must be published to the <code>LIVE</code> stage to
-     * associate them with a cache behavior.</p>
+     * Your functions must be published to the <code>LIVE</code> stage to associate
+     * them with a cache behavior.</p>
      */
     inline void SetFunctionAssociations(const FunctionAssociations& value) { m_functionAssociationsHasBeenSet = true; m_functionAssociations = value; }
 
     /**
      * <p>A list of CloudFront functions that are associated with this cache behavior.
-     * CloudFront functions must be published to the <code>LIVE</code> stage to
-     * associate them with a cache behavior.</p>
+     * Your functions must be published to the <code>LIVE</code> stage to associate
+     * them with a cache behavior.</p>
      */
     inline void SetFunctionAssociations(FunctionAssociations&& value) { m_functionAssociationsHasBeenSet = true; m_functionAssociations = std::move(value); }
 
     /**
      * <p>A list of CloudFront functions that are associated with this cache behavior.
-     * CloudFront functions must be published to the <code>LIVE</code> stage to
-     * associate them with a cache behavior.</p>
+     * Your functions must be published to the <code>LIVE</code> stage to associate
+     * them with a cache behavior.</p>
      */
     inline DefaultCacheBehavior& WithFunctionAssociations(const FunctionAssociations& value) { SetFunctionAssociations(value); return *this;}
 
     /**
      * <p>A list of CloudFront functions that are associated with this cache behavior.
-     * CloudFront functions must be published to the <code>LIVE</code> stage to
-     * associate them with a cache behavior.</p>
+     * Your functions must be published to the <code>LIVE</code> stage to associate
+     * them with a cache behavior.</p>
      */
     inline DefaultCacheBehavior& WithFunctionAssociations(FunctionAssociations&& value) { SetFunctionAssociations(std::move(value)); return *this;}
 

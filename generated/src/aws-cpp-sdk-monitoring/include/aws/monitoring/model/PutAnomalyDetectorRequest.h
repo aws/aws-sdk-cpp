@@ -7,6 +7,7 @@
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
 #include <aws/monitoring/CloudWatchRequest.h>
 #include <aws/monitoring/model/AnomalyDetectorConfiguration.h>
+#include <aws/monitoring/model/MetricCharacteristics.h>
 #include <aws/monitoring/model/SingleMetricAnomalyDetector.h>
 #include <aws/monitoring/model/MetricMathAnomalyDetector.h>
 #include <utility>
@@ -85,6 +86,49 @@ namespace Model
      * also include the time zone to use for the metric.</p>
      */
     inline PutAnomalyDetectorRequest& WithConfiguration(AnomalyDetectorConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Use this object to include parameters to provide information about your
+     * metric to CloudWatch to help it build more accurate anomaly detection models.
+     * Currently, it includes the <code>PeriodicSpikes</code> parameter.</p>
+     */
+    inline const MetricCharacteristics& GetMetricCharacteristics() const{ return m_metricCharacteristics; }
+
+    /**
+     * <p>Use this object to include parameters to provide information about your
+     * metric to CloudWatch to help it build more accurate anomaly detection models.
+     * Currently, it includes the <code>PeriodicSpikes</code> parameter.</p>
+     */
+    inline bool MetricCharacteristicsHasBeenSet() const { return m_metricCharacteristicsHasBeenSet; }
+
+    /**
+     * <p>Use this object to include parameters to provide information about your
+     * metric to CloudWatch to help it build more accurate anomaly detection models.
+     * Currently, it includes the <code>PeriodicSpikes</code> parameter.</p>
+     */
+    inline void SetMetricCharacteristics(const MetricCharacteristics& value) { m_metricCharacteristicsHasBeenSet = true; m_metricCharacteristics = value; }
+
+    /**
+     * <p>Use this object to include parameters to provide information about your
+     * metric to CloudWatch to help it build more accurate anomaly detection models.
+     * Currently, it includes the <code>PeriodicSpikes</code> parameter.</p>
+     */
+    inline void SetMetricCharacteristics(MetricCharacteristics&& value) { m_metricCharacteristicsHasBeenSet = true; m_metricCharacteristics = std::move(value); }
+
+    /**
+     * <p>Use this object to include parameters to provide information about your
+     * metric to CloudWatch to help it build more accurate anomaly detection models.
+     * Currently, it includes the <code>PeriodicSpikes</code> parameter.</p>
+     */
+    inline PutAnomalyDetectorRequest& WithMetricCharacteristics(const MetricCharacteristics& value) { SetMetricCharacteristics(value); return *this;}
+
+    /**
+     * <p>Use this object to include parameters to provide information about your
+     * metric to CloudWatch to help it build more accurate anomaly detection models.
+     * Currently, it includes the <code>PeriodicSpikes</code> parameter.</p>
+     */
+    inline PutAnomalyDetectorRequest& WithMetricCharacteristics(MetricCharacteristics&& value) { SetMetricCharacteristics(std::move(value)); return *this;}
 
 
     /**
@@ -248,6 +292,9 @@ namespace Model
 
     AnomalyDetectorConfiguration m_configuration;
     bool m_configurationHasBeenSet = false;
+
+    MetricCharacteristics m_metricCharacteristics;
+    bool m_metricCharacteristicsHasBeenSet = false;
 
     SingleMetricAnomalyDetector m_singleMetricAnomalyDetector;
     bool m_singleMetricAnomalyDetectorHasBeenSet = false;

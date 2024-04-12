@@ -462,32 +462,32 @@ namespace Model
 
 
     /**
-     * <p> The computational accelerator specified to run the workflow. </p>
+     * <p>The computational accelerator specified to run the workflow.</p>
      */
     inline const Accelerators& GetAccelerators() const{ return m_accelerators; }
 
     /**
-     * <p> The computational accelerator specified to run the workflow. </p>
+     * <p>The computational accelerator specified to run the workflow.</p>
      */
     inline bool AcceleratorsHasBeenSet() const { return m_acceleratorsHasBeenSet; }
 
     /**
-     * <p> The computational accelerator specified to run the workflow. </p>
+     * <p>The computational accelerator specified to run the workflow.</p>
      */
     inline void SetAccelerators(const Accelerators& value) { m_acceleratorsHasBeenSet = true; m_accelerators = value; }
 
     /**
-     * <p> The computational accelerator specified to run the workflow. </p>
+     * <p>The computational accelerator specified to run the workflow.</p>
      */
     inline void SetAccelerators(Accelerators&& value) { m_acceleratorsHasBeenSet = true; m_accelerators = std::move(value); }
 
     /**
-     * <p> The computational accelerator specified to run the workflow. </p>
+     * <p>The computational accelerator specified to run the workflow.</p>
      */
     inline CreateWorkflowRequest& WithAccelerators(const Accelerators& value) { SetAccelerators(value); return *this;}
 
     /**
-     * <p> The computational accelerator specified to run the workflow. </p>
+     * <p>The computational accelerator specified to run the workflow.</p>
      */
     inline CreateWorkflowRequest& WithAccelerators(Accelerators&& value) { SetAccelerators(std::move(value)); return *this;}
 

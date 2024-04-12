@@ -175,56 +175,88 @@ namespace Model
     /**
      * <p>The ID of the WAF web ACL that you want to list the associated distributions.
      * If you specify "null" for the ID, the request returns a list of the
-     * distributions that aren't associated with a web ACL.</p>
+     * distributions that aren't associated with a web ACL. </p> <p>For WAFV2, this is
+     * the ARN of the web ACL, such as
+     * <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
+     * <p>For WAF Classic, this is the ID of the web ACL, such as
+     * <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
      */
     inline const Aws::String& GetWebACLId() const{ return m_webACLId; }
 
     /**
      * <p>The ID of the WAF web ACL that you want to list the associated distributions.
      * If you specify "null" for the ID, the request returns a list of the
-     * distributions that aren't associated with a web ACL.</p>
+     * distributions that aren't associated with a web ACL. </p> <p>For WAFV2, this is
+     * the ARN of the web ACL, such as
+     * <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
+     * <p>For WAF Classic, this is the ID of the web ACL, such as
+     * <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
      */
     inline bool WebACLIdHasBeenSet() const { return m_webACLIdHasBeenSet; }
 
     /**
      * <p>The ID of the WAF web ACL that you want to list the associated distributions.
      * If you specify "null" for the ID, the request returns a list of the
-     * distributions that aren't associated with a web ACL.</p>
+     * distributions that aren't associated with a web ACL. </p> <p>For WAFV2, this is
+     * the ARN of the web ACL, such as
+     * <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
+     * <p>For WAF Classic, this is the ID of the web ACL, such as
+     * <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
      */
     inline void SetWebACLId(const Aws::String& value) { m_webACLIdHasBeenSet = true; m_webACLId = value; }
 
     /**
      * <p>The ID of the WAF web ACL that you want to list the associated distributions.
      * If you specify "null" for the ID, the request returns a list of the
-     * distributions that aren't associated with a web ACL.</p>
+     * distributions that aren't associated with a web ACL. </p> <p>For WAFV2, this is
+     * the ARN of the web ACL, such as
+     * <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
+     * <p>For WAF Classic, this is the ID of the web ACL, such as
+     * <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
      */
     inline void SetWebACLId(Aws::String&& value) { m_webACLIdHasBeenSet = true; m_webACLId = std::move(value); }
 
     /**
      * <p>The ID of the WAF web ACL that you want to list the associated distributions.
      * If you specify "null" for the ID, the request returns a list of the
-     * distributions that aren't associated with a web ACL.</p>
+     * distributions that aren't associated with a web ACL. </p> <p>For WAFV2, this is
+     * the ARN of the web ACL, such as
+     * <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
+     * <p>For WAF Classic, this is the ID of the web ACL, such as
+     * <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
      */
     inline void SetWebACLId(const char* value) { m_webACLIdHasBeenSet = true; m_webACLId.assign(value); }
 
     /**
      * <p>The ID of the WAF web ACL that you want to list the associated distributions.
      * If you specify "null" for the ID, the request returns a list of the
-     * distributions that aren't associated with a web ACL.</p>
+     * distributions that aren't associated with a web ACL. </p> <p>For WAFV2, this is
+     * the ARN of the web ACL, such as
+     * <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
+     * <p>For WAF Classic, this is the ID of the web ACL, such as
+     * <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
      */
     inline ListDistributionsByWebACLId2020_05_31Request& WithWebACLId(const Aws::String& value) { SetWebACLId(value); return *this;}
 
     /**
      * <p>The ID of the WAF web ACL that you want to list the associated distributions.
      * If you specify "null" for the ID, the request returns a list of the
-     * distributions that aren't associated with a web ACL.</p>
+     * distributions that aren't associated with a web ACL. </p> <p>For WAFV2, this is
+     * the ARN of the web ACL, such as
+     * <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
+     * <p>For WAF Classic, this is the ID of the web ACL, such as
+     * <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
      */
     inline ListDistributionsByWebACLId2020_05_31Request& WithWebACLId(Aws::String&& value) { SetWebACLId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the WAF web ACL that you want to list the associated distributions.
      * If you specify "null" for the ID, the request returns a list of the
-     * distributions that aren't associated with a web ACL.</p>
+     * distributions that aren't associated with a web ACL. </p> <p>For WAFV2, this is
+     * the ARN of the web ACL, such as
+     * <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
+     * <p>For WAF Classic, this is the ID of the web ACL, such as
+     * <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
      */
     inline ListDistributionsByWebACLId2020_05_31Request& WithWebACLId(const char* value) { SetWebACLId(value); return *this;}
 

@@ -192,32 +192,32 @@ namespace Model
 
 
     /**
-     * <p> The status of a run. </p>
+     * <p>The status of a run.</p>
      */
     inline const RunStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p> The status of a run. </p>
+     * <p>The status of a run.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p> The status of a run. </p>
+     * <p>The status of a run.</p>
      */
     inline void SetStatus(const RunStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p> The status of a run. </p>
+     * <p>The status of a run.</p>
      */
     inline void SetStatus(RunStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p> The status of a run. </p>
+     * <p>The status of a run.</p>
      */
     inline ListRunsRequest& WithStatus(const RunStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p> The status of a run. </p>
+     * <p>The status of a run.</p>
      */
     inline ListRunsRequest& WithStatus(RunStatus&& value) { SetStatus(std::move(value)); return *this;}
 

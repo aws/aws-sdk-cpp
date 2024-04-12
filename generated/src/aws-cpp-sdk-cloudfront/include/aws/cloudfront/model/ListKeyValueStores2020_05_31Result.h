@@ -34,27 +34,27 @@ namespace Model
 
 
     /**
-     * <p>The resulting Key Value Stores list.</p>
+     * <p>The resulting key value stores list.</p>
      */
     inline const KeyValueStoreList& GetKeyValueStoreList() const{ return m_keyValueStoreList; }
 
     /**
-     * <p>The resulting Key Value Stores list.</p>
+     * <p>The resulting key value stores list.</p>
      */
     inline void SetKeyValueStoreList(const KeyValueStoreList& value) { m_keyValueStoreList = value; }
 
     /**
-     * <p>The resulting Key Value Stores list.</p>
+     * <p>The resulting key value stores list.</p>
      */
     inline void SetKeyValueStoreList(KeyValueStoreList&& value) { m_keyValueStoreList = std::move(value); }
 
     /**
-     * <p>The resulting Key Value Stores list.</p>
+     * <p>The resulting key value stores list.</p>
      */
     inline ListKeyValueStores2020_05_31Result& WithKeyValueStoreList(const KeyValueStoreList& value) { SetKeyValueStoreList(value); return *this;}
 
     /**
-     * <p>The resulting Key Value Stores list.</p>
+     * <p>The resulting key value stores list.</p>
      */
     inline ListKeyValueStores2020_05_31Result& WithKeyValueStoreList(KeyValueStoreList&& value) { SetKeyValueStoreList(std::move(value)); return *this;}
 

@@ -914,22 +914,30 @@ namespace Model
 
 
     /**
-     * <p>Whether the primary distribution has a staging distribution enabled.</p>
+     * <p>A Boolean that indicates whether this is a staging distribution. When this
+     * value is <code>true</code>, this is a staging distribution. When this value is
+     * <code>false</code>, this is not a staging distribution.</p>
      */
     inline bool GetStaging() const{ return m_staging; }
 
     /**
-     * <p>Whether the primary distribution has a staging distribution enabled.</p>
+     * <p>A Boolean that indicates whether this is a staging distribution. When this
+     * value is <code>true</code>, this is a staging distribution. When this value is
+     * <code>false</code>, this is not a staging distribution.</p>
      */
     inline bool StagingHasBeenSet() const { return m_stagingHasBeenSet; }
 
     /**
-     * <p>Whether the primary distribution has a staging distribution enabled.</p>
+     * <p>A Boolean that indicates whether this is a staging distribution. When this
+     * value is <code>true</code>, this is a staging distribution. When this value is
+     * <code>false</code>, this is not a staging distribution.</p>
      */
     inline void SetStaging(bool value) { m_stagingHasBeenSet = true; m_staging = value; }
 
     /**
-     * <p>Whether the primary distribution has a staging distribution enabled.</p>
+     * <p>A Boolean that indicates whether this is a staging distribution. When this
+     * value is <code>true</code>, this is a staging distribution. When this value is
+     * <code>false</code>, this is not a staging distribution.</p>
      */
     inline DistributionSummary& WithStaging(bool value) { SetStaging(value); return *this;}
 

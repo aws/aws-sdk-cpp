@@ -23,6 +23,12 @@ namespace Aws
         static const int FASTQ_MD5up_HASH = HashingUtils::HashString("FASTQ_MD5up");
         static const int BAM_MD5up_HASH = HashingUtils::HashString("BAM_MD5up");
         static const int CRAM_MD5up_HASH = HashingUtils::HashString("CRAM_MD5up");
+        static const int FASTQ_SHA256up_HASH = HashingUtils::HashString("FASTQ_SHA256up");
+        static const int BAM_SHA256up_HASH = HashingUtils::HashString("BAM_SHA256up");
+        static const int CRAM_SHA256up_HASH = HashingUtils::HashString("CRAM_SHA256up");
+        static const int FASTQ_SHA512up_HASH = HashingUtils::HashString("FASTQ_SHA512up");
+        static const int BAM_SHA512up_HASH = HashingUtils::HashString("BAM_SHA512up");
+        static const int CRAM_SHA512up_HASH = HashingUtils::HashString("CRAM_SHA512up");
 
 
         ETagAlgorithm GetETagAlgorithmForName(const Aws::String& name)
@@ -39,6 +45,30 @@ namespace Aws
           else if (hashCode == CRAM_MD5up_HASH)
           {
             return ETagAlgorithm::CRAM_MD5up;
+          }
+          else if (hashCode == FASTQ_SHA256up_HASH)
+          {
+            return ETagAlgorithm::FASTQ_SHA256up;
+          }
+          else if (hashCode == BAM_SHA256up_HASH)
+          {
+            return ETagAlgorithm::BAM_SHA256up;
+          }
+          else if (hashCode == CRAM_SHA256up_HASH)
+          {
+            return ETagAlgorithm::CRAM_SHA256up;
+          }
+          else if (hashCode == FASTQ_SHA512up_HASH)
+          {
+            return ETagAlgorithm::FASTQ_SHA512up;
+          }
+          else if (hashCode == BAM_SHA512up_HASH)
+          {
+            return ETagAlgorithm::BAM_SHA512up;
+          }
+          else if (hashCode == CRAM_SHA512up_HASH)
+          {
+            return ETagAlgorithm::CRAM_SHA512up;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +92,18 @@ namespace Aws
             return "BAM_MD5up";
           case ETagAlgorithm::CRAM_MD5up:
             return "CRAM_MD5up";
+          case ETagAlgorithm::FASTQ_SHA256up:
+            return "FASTQ_SHA256up";
+          case ETagAlgorithm::BAM_SHA256up:
+            return "BAM_SHA256up";
+          case ETagAlgorithm::CRAM_SHA256up:
+            return "CRAM_SHA256up";
+          case ETagAlgorithm::FASTQ_SHA512up:
+            return "FASTQ_SHA512up";
+          case ETagAlgorithm::BAM_SHA512up:
+            return "BAM_SHA512up";
+          case ETagAlgorithm::CRAM_SHA512up:
+            return "CRAM_SHA512up";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

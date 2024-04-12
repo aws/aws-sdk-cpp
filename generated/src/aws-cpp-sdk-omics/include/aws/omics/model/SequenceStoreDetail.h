@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/omics/model/SseConfig.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/omics/model/ETagAlgorithmFamily.h>
 #include <utility>
 
 namespace Aws
@@ -313,6 +314,37 @@ namespace Model
      */
     inline SequenceStoreDetail& WithFallbackLocation(const char* value) { SetFallbackLocation(value); return *this;}
 
+
+    /**
+     * <p>The algorithm family of the ETag.</p>
+     */
+    inline const ETagAlgorithmFamily& GetETagAlgorithmFamily() const{ return m_eTagAlgorithmFamily; }
+
+    /**
+     * <p>The algorithm family of the ETag.</p>
+     */
+    inline bool ETagAlgorithmFamilyHasBeenSet() const { return m_eTagAlgorithmFamilyHasBeenSet; }
+
+    /**
+     * <p>The algorithm family of the ETag.</p>
+     */
+    inline void SetETagAlgorithmFamily(const ETagAlgorithmFamily& value) { m_eTagAlgorithmFamilyHasBeenSet = true; m_eTagAlgorithmFamily = value; }
+
+    /**
+     * <p>The algorithm family of the ETag.</p>
+     */
+    inline void SetETagAlgorithmFamily(ETagAlgorithmFamily&& value) { m_eTagAlgorithmFamilyHasBeenSet = true; m_eTagAlgorithmFamily = std::move(value); }
+
+    /**
+     * <p>The algorithm family of the ETag.</p>
+     */
+    inline SequenceStoreDetail& WithETagAlgorithmFamily(const ETagAlgorithmFamily& value) { SetETagAlgorithmFamily(value); return *this;}
+
+    /**
+     * <p>The algorithm family of the ETag.</p>
+     */
+    inline SequenceStoreDetail& WithETagAlgorithmFamily(ETagAlgorithmFamily&& value) { SetETagAlgorithmFamily(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -335,6 +367,9 @@ namespace Model
 
     Aws::String m_fallbackLocation;
     bool m_fallbackLocationHasBeenSet = false;
+
+    ETagAlgorithmFamily m_eTagAlgorithmFamily;
+    bool m_eTagAlgorithmFamilyHasBeenSet = false;
   };
 
 } // namespace Model

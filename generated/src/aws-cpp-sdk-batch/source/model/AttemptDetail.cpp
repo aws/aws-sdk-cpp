@@ -24,7 +24,8 @@ AttemptDetail::AttemptDetail() :
     m_startedAtHasBeenSet(false),
     m_stoppedAt(0),
     m_stoppedAtHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
+    m_statusReasonHasBeenSet(false),
+    m_taskPropertiesHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ AttemptDetail::AttemptDetail(JsonView jsonValue) :
     m_startedAtHasBeenSet(false),
     m_stoppedAt(0),
     m_stoppedAtHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
+    m_statusReasonHasBeenSet(false),
+    m_taskPropertiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -69,6 +71,16 @@ AttemptDetail& AttemptDetail::operator =(JsonView jsonValue)
     m_statusReasonHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("taskProperties"))
+  {
+    Aws::Utils::Array<JsonView> taskPropertiesJsonList = jsonValue.GetArray("taskProperties");
+    for(unsigned taskPropertiesIndex = 0; taskPropertiesIndex < taskPropertiesJsonList.GetLength(); ++taskPropertiesIndex)
+    {
+      m_taskProperties.push_back(taskPropertiesJsonList[taskPropertiesIndex].AsObject());
+    }
+    m_taskPropertiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -97,6 +109,17 @@ JsonValue AttemptDetail::Jsonize() const
   if(m_statusReasonHasBeenSet)
   {
    payload.WithString("statusReason", m_statusReason);
+
+  }
+
+  if(m_taskPropertiesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> taskPropertiesJsonList(m_taskProperties.size());
+   for(unsigned taskPropertiesIndex = 0; taskPropertiesIndex < taskPropertiesJsonList.GetLength(); ++taskPropertiesIndex)
+   {
+     taskPropertiesJsonList[taskPropertiesIndex].AsObject(m_taskProperties[taskPropertiesIndex].Jsonize());
+   }
+   payload.WithArray("taskProperties", std::move(taskPropertiesJsonList));
 
   }
 

@@ -94,16 +94,16 @@ namespace Model
      * <code>2.0</code> is required when you use Batch Operations to invoke Lambda
      * functions that act on directory buckets, or if you need to specify
      * <code>UserArguments</code>. For more information, see <a
-     * href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using
-     * Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the
-     * <i>Amazon Web Services Storage Blog</i>.</p>  <p>Ensure that your
-     * Lambda function code expects <code>InvocationSchemaVersion</code> <b>2.0</b> and
-     * uses bucket name rather than bucket ARN. If the
-     * <code>InvocationSchemaVersion</code> does not match what your Lambda function
-     * expects, your function might not work as expected.</p>   <p>
-     * <b>Directory buckets</b> - To initiate Amazon Web Services Lambda function to
-     * perform custom actions on objects in directory buckets, you must specify
-     * <code>2.0</code>.</p> 
+     * href="https://aws.amazon.com/blogs/storage/automate-object-processing-in-amazon-s3-directory-buckets-with-s3-batch-operations-and-aws-lambda/">Automate
+     * object processing in Amazon S3 directory buckets with S3 Batch Operations and
+     * Lambda</a> in the <i>Amazon Web Services Storage Blog</i>.</p> 
+     * <p>Ensure that your Lambda function code expects
+     * <code>InvocationSchemaVersion</code> <b>2.0</b> and uses bucket name rather than
+     * bucket ARN. If the <code>InvocationSchemaVersion</code> does not match what your
+     * Lambda function expects, your function might not work as expected.</p>
+     *   <p> <b>Directory buckets</b> - To initiate Amazon Web
+     * Services Lambda function to perform custom actions on objects in directory
+     * buckets, you must specify <code>2.0</code>.</p> 
      */
     inline const Aws::String& GetInvocationSchemaVersion() const{ return m_invocationSchemaVersion; }
 
@@ -113,16 +113,16 @@ namespace Model
      * <code>2.0</code> is required when you use Batch Operations to invoke Lambda
      * functions that act on directory buckets, or if you need to specify
      * <code>UserArguments</code>. For more information, see <a
-     * href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using
-     * Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the
-     * <i>Amazon Web Services Storage Blog</i>.</p>  <p>Ensure that your
-     * Lambda function code expects <code>InvocationSchemaVersion</code> <b>2.0</b> and
-     * uses bucket name rather than bucket ARN. If the
-     * <code>InvocationSchemaVersion</code> does not match what your Lambda function
-     * expects, your function might not work as expected.</p>   <p>
-     * <b>Directory buckets</b> - To initiate Amazon Web Services Lambda function to
-     * perform custom actions on objects in directory buckets, you must specify
-     * <code>2.0</code>.</p> 
+     * href="https://aws.amazon.com/blogs/storage/automate-object-processing-in-amazon-s3-directory-buckets-with-s3-batch-operations-and-aws-lambda/">Automate
+     * object processing in Amazon S3 directory buckets with S3 Batch Operations and
+     * Lambda</a> in the <i>Amazon Web Services Storage Blog</i>.</p> 
+     * <p>Ensure that your Lambda function code expects
+     * <code>InvocationSchemaVersion</code> <b>2.0</b> and uses bucket name rather than
+     * bucket ARN. If the <code>InvocationSchemaVersion</code> does not match what your
+     * Lambda function expects, your function might not work as expected.</p>
+     *   <p> <b>Directory buckets</b> - To initiate Amazon Web
+     * Services Lambda function to perform custom actions on objects in directory
+     * buckets, you must specify <code>2.0</code>.</p> 
      */
     inline bool InvocationSchemaVersionHasBeenSet() const { return m_invocationSchemaVersionHasBeenSet; }
 
@@ -132,16 +132,16 @@ namespace Model
      * <code>2.0</code> is required when you use Batch Operations to invoke Lambda
      * functions that act on directory buckets, or if you need to specify
      * <code>UserArguments</code>. For more information, see <a
-     * href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using
-     * Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the
-     * <i>Amazon Web Services Storage Blog</i>.</p>  <p>Ensure that your
-     * Lambda function code expects <code>InvocationSchemaVersion</code> <b>2.0</b> and
-     * uses bucket name rather than bucket ARN. If the
-     * <code>InvocationSchemaVersion</code> does not match what your Lambda function
-     * expects, your function might not work as expected.</p>   <p>
-     * <b>Directory buckets</b> - To initiate Amazon Web Services Lambda function to
-     * perform custom actions on objects in directory buckets, you must specify
-     * <code>2.0</code>.</p> 
+     * href="https://aws.amazon.com/blogs/storage/automate-object-processing-in-amazon-s3-directory-buckets-with-s3-batch-operations-and-aws-lambda/">Automate
+     * object processing in Amazon S3 directory buckets with S3 Batch Operations and
+     * Lambda</a> in the <i>Amazon Web Services Storage Blog</i>.</p> 
+     * <p>Ensure that your Lambda function code expects
+     * <code>InvocationSchemaVersion</code> <b>2.0</b> and uses bucket name rather than
+     * bucket ARN. If the <code>InvocationSchemaVersion</code> does not match what your
+     * Lambda function expects, your function might not work as expected.</p>
+     *   <p> <b>Directory buckets</b> - To initiate Amazon Web
+     * Services Lambda function to perform custom actions on objects in directory
+     * buckets, you must specify <code>2.0</code>.</p> 
      */
     inline void SetInvocationSchemaVersion(const Aws::String& value) { m_invocationSchemaVersionHasBeenSet = true; m_invocationSchemaVersion = value; }
 
@@ -151,16 +151,16 @@ namespace Model
      * <code>2.0</code> is required when you use Batch Operations to invoke Lambda
      * functions that act on directory buckets, or if you need to specify
      * <code>UserArguments</code>. For more information, see <a
-     * href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using
-     * Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the
-     * <i>Amazon Web Services Storage Blog</i>.</p>  <p>Ensure that your
-     * Lambda function code expects <code>InvocationSchemaVersion</code> <b>2.0</b> and
-     * uses bucket name rather than bucket ARN. If the
-     * <code>InvocationSchemaVersion</code> does not match what your Lambda function
-     * expects, your function might not work as expected.</p>   <p>
-     * <b>Directory buckets</b> - To initiate Amazon Web Services Lambda function to
-     * perform custom actions on objects in directory buckets, you must specify
-     * <code>2.0</code>.</p> 
+     * href="https://aws.amazon.com/blogs/storage/automate-object-processing-in-amazon-s3-directory-buckets-with-s3-batch-operations-and-aws-lambda/">Automate
+     * object processing in Amazon S3 directory buckets with S3 Batch Operations and
+     * Lambda</a> in the <i>Amazon Web Services Storage Blog</i>.</p> 
+     * <p>Ensure that your Lambda function code expects
+     * <code>InvocationSchemaVersion</code> <b>2.0</b> and uses bucket name rather than
+     * bucket ARN. If the <code>InvocationSchemaVersion</code> does not match what your
+     * Lambda function expects, your function might not work as expected.</p>
+     *   <p> <b>Directory buckets</b> - To initiate Amazon Web
+     * Services Lambda function to perform custom actions on objects in directory
+     * buckets, you must specify <code>2.0</code>.</p> 
      */
     inline void SetInvocationSchemaVersion(Aws::String&& value) { m_invocationSchemaVersionHasBeenSet = true; m_invocationSchemaVersion = std::move(value); }
 
@@ -170,16 +170,16 @@ namespace Model
      * <code>2.0</code> is required when you use Batch Operations to invoke Lambda
      * functions that act on directory buckets, or if you need to specify
      * <code>UserArguments</code>. For more information, see <a
-     * href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using
-     * Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the
-     * <i>Amazon Web Services Storage Blog</i>.</p>  <p>Ensure that your
-     * Lambda function code expects <code>InvocationSchemaVersion</code> <b>2.0</b> and
-     * uses bucket name rather than bucket ARN. If the
-     * <code>InvocationSchemaVersion</code> does not match what your Lambda function
-     * expects, your function might not work as expected.</p>   <p>
-     * <b>Directory buckets</b> - To initiate Amazon Web Services Lambda function to
-     * perform custom actions on objects in directory buckets, you must specify
-     * <code>2.0</code>.</p> 
+     * href="https://aws.amazon.com/blogs/storage/automate-object-processing-in-amazon-s3-directory-buckets-with-s3-batch-operations-and-aws-lambda/">Automate
+     * object processing in Amazon S3 directory buckets with S3 Batch Operations and
+     * Lambda</a> in the <i>Amazon Web Services Storage Blog</i>.</p> 
+     * <p>Ensure that your Lambda function code expects
+     * <code>InvocationSchemaVersion</code> <b>2.0</b> and uses bucket name rather than
+     * bucket ARN. If the <code>InvocationSchemaVersion</code> does not match what your
+     * Lambda function expects, your function might not work as expected.</p>
+     *   <p> <b>Directory buckets</b> - To initiate Amazon Web
+     * Services Lambda function to perform custom actions on objects in directory
+     * buckets, you must specify <code>2.0</code>.</p> 
      */
     inline void SetInvocationSchemaVersion(const char* value) { m_invocationSchemaVersionHasBeenSet = true; m_invocationSchemaVersion.assign(value); }
 
@@ -189,16 +189,16 @@ namespace Model
      * <code>2.0</code> is required when you use Batch Operations to invoke Lambda
      * functions that act on directory buckets, or if you need to specify
      * <code>UserArguments</code>. For more information, see <a
-     * href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using
-     * Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the
-     * <i>Amazon Web Services Storage Blog</i>.</p>  <p>Ensure that your
-     * Lambda function code expects <code>InvocationSchemaVersion</code> <b>2.0</b> and
-     * uses bucket name rather than bucket ARN. If the
-     * <code>InvocationSchemaVersion</code> does not match what your Lambda function
-     * expects, your function might not work as expected.</p>   <p>
-     * <b>Directory buckets</b> - To initiate Amazon Web Services Lambda function to
-     * perform custom actions on objects in directory buckets, you must specify
-     * <code>2.0</code>.</p> 
+     * href="https://aws.amazon.com/blogs/storage/automate-object-processing-in-amazon-s3-directory-buckets-with-s3-batch-operations-and-aws-lambda/">Automate
+     * object processing in Amazon S3 directory buckets with S3 Batch Operations and
+     * Lambda</a> in the <i>Amazon Web Services Storage Blog</i>.</p> 
+     * <p>Ensure that your Lambda function code expects
+     * <code>InvocationSchemaVersion</code> <b>2.0</b> and uses bucket name rather than
+     * bucket ARN. If the <code>InvocationSchemaVersion</code> does not match what your
+     * Lambda function expects, your function might not work as expected.</p>
+     *   <p> <b>Directory buckets</b> - To initiate Amazon Web
+     * Services Lambda function to perform custom actions on objects in directory
+     * buckets, you must specify <code>2.0</code>.</p> 
      */
     inline LambdaInvokeOperation& WithInvocationSchemaVersion(const Aws::String& value) { SetInvocationSchemaVersion(value); return *this;}
 
@@ -208,16 +208,16 @@ namespace Model
      * <code>2.0</code> is required when you use Batch Operations to invoke Lambda
      * functions that act on directory buckets, or if you need to specify
      * <code>UserArguments</code>. For more information, see <a
-     * href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using
-     * Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the
-     * <i>Amazon Web Services Storage Blog</i>.</p>  <p>Ensure that your
-     * Lambda function code expects <code>InvocationSchemaVersion</code> <b>2.0</b> and
-     * uses bucket name rather than bucket ARN. If the
-     * <code>InvocationSchemaVersion</code> does not match what your Lambda function
-     * expects, your function might not work as expected.</p>   <p>
-     * <b>Directory buckets</b> - To initiate Amazon Web Services Lambda function to
-     * perform custom actions on objects in directory buckets, you must specify
-     * <code>2.0</code>.</p> 
+     * href="https://aws.amazon.com/blogs/storage/automate-object-processing-in-amazon-s3-directory-buckets-with-s3-batch-operations-and-aws-lambda/">Automate
+     * object processing in Amazon S3 directory buckets with S3 Batch Operations and
+     * Lambda</a> in the <i>Amazon Web Services Storage Blog</i>.</p> 
+     * <p>Ensure that your Lambda function code expects
+     * <code>InvocationSchemaVersion</code> <b>2.0</b> and uses bucket name rather than
+     * bucket ARN. If the <code>InvocationSchemaVersion</code> does not match what your
+     * Lambda function expects, your function might not work as expected.</p>
+     *   <p> <b>Directory buckets</b> - To initiate Amazon Web
+     * Services Lambda function to perform custom actions on objects in directory
+     * buckets, you must specify <code>2.0</code>.</p> 
      */
     inline LambdaInvokeOperation& WithInvocationSchemaVersion(Aws::String&& value) { SetInvocationSchemaVersion(std::move(value)); return *this;}
 
@@ -227,16 +227,16 @@ namespace Model
      * <code>2.0</code> is required when you use Batch Operations to invoke Lambda
      * functions that act on directory buckets, or if you need to specify
      * <code>UserArguments</code>. For more information, see <a
-     * href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using
-     * Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the
-     * <i>Amazon Web Services Storage Blog</i>.</p>  <p>Ensure that your
-     * Lambda function code expects <code>InvocationSchemaVersion</code> <b>2.0</b> and
-     * uses bucket name rather than bucket ARN. If the
-     * <code>InvocationSchemaVersion</code> does not match what your Lambda function
-     * expects, your function might not work as expected.</p>   <p>
-     * <b>Directory buckets</b> - To initiate Amazon Web Services Lambda function to
-     * perform custom actions on objects in directory buckets, you must specify
-     * <code>2.0</code>.</p> 
+     * href="https://aws.amazon.com/blogs/storage/automate-object-processing-in-amazon-s3-directory-buckets-with-s3-batch-operations-and-aws-lambda/">Automate
+     * object processing in Amazon S3 directory buckets with S3 Batch Operations and
+     * Lambda</a> in the <i>Amazon Web Services Storage Blog</i>.</p> 
+     * <p>Ensure that your Lambda function code expects
+     * <code>InvocationSchemaVersion</code> <b>2.0</b> and uses bucket name rather than
+     * bucket ARN. If the <code>InvocationSchemaVersion</code> does not match what your
+     * Lambda function expects, your function might not work as expected.</p>
+     *   <p> <b>Directory buckets</b> - To initiate Amazon Web
+     * Services Lambda function to perform custom actions on objects in directory
+     * buckets, you must specify <code>2.0</code>.</p> 
      */
     inline LambdaInvokeOperation& WithInvocationSchemaVersion(const char* value) { SetInvocationSchemaVersion(value); return *this;}
 
@@ -246,9 +246,9 @@ namespace Model
      * when invoking an Lambda function. You must specify
      * <code>InvocationSchemaVersion</code> <b>2.0</b> for <code>LambdaInvoke</code>
      * operations that include <code>UserArguments</code>. For more information, see <a
-     * href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using
-     * Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the
-     * <i>Amazon Web Services Storage Blog</i>.</p>
+     * href="https://aws.amazon.com/blogs/storage/automate-object-processing-in-amazon-s3-directory-buckets-with-s3-batch-operations-and-aws-lambda/">Automate
+     * object processing in Amazon S3 directory buckets with S3 Batch Operations and
+     * Lambda</a> in the <i>Amazon Web Services Storage Blog</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetUserArguments() const{ return m_userArguments; }
 
@@ -257,9 +257,9 @@ namespace Model
      * when invoking an Lambda function. You must specify
      * <code>InvocationSchemaVersion</code> <b>2.0</b> for <code>LambdaInvoke</code>
      * operations that include <code>UserArguments</code>. For more information, see <a
-     * href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using
-     * Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the
-     * <i>Amazon Web Services Storage Blog</i>.</p>
+     * href="https://aws.amazon.com/blogs/storage/automate-object-processing-in-amazon-s3-directory-buckets-with-s3-batch-operations-and-aws-lambda/">Automate
+     * object processing in Amazon S3 directory buckets with S3 Batch Operations and
+     * Lambda</a> in the <i>Amazon Web Services Storage Blog</i>.</p>
      */
     inline bool UserArgumentsHasBeenSet() const { return m_userArgumentsHasBeenSet; }
 
@@ -268,9 +268,9 @@ namespace Model
      * when invoking an Lambda function. You must specify
      * <code>InvocationSchemaVersion</code> <b>2.0</b> for <code>LambdaInvoke</code>
      * operations that include <code>UserArguments</code>. For more information, see <a
-     * href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using
-     * Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the
-     * <i>Amazon Web Services Storage Blog</i>.</p>
+     * href="https://aws.amazon.com/blogs/storage/automate-object-processing-in-amazon-s3-directory-buckets-with-s3-batch-operations-and-aws-lambda/">Automate
+     * object processing in Amazon S3 directory buckets with S3 Batch Operations and
+     * Lambda</a> in the <i>Amazon Web Services Storage Blog</i>.</p>
      */
     inline void SetUserArguments(const Aws::Map<Aws::String, Aws::String>& value) { m_userArgumentsHasBeenSet = true; m_userArguments = value; }
 
@@ -279,9 +279,9 @@ namespace Model
      * when invoking an Lambda function. You must specify
      * <code>InvocationSchemaVersion</code> <b>2.0</b> for <code>LambdaInvoke</code>
      * operations that include <code>UserArguments</code>. For more information, see <a
-     * href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using
-     * Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the
-     * <i>Amazon Web Services Storage Blog</i>.</p>
+     * href="https://aws.amazon.com/blogs/storage/automate-object-processing-in-amazon-s3-directory-buckets-with-s3-batch-operations-and-aws-lambda/">Automate
+     * object processing in Amazon S3 directory buckets with S3 Batch Operations and
+     * Lambda</a> in the <i>Amazon Web Services Storage Blog</i>.</p>
      */
     inline void SetUserArguments(Aws::Map<Aws::String, Aws::String>&& value) { m_userArgumentsHasBeenSet = true; m_userArguments = std::move(value); }
 
@@ -290,9 +290,9 @@ namespace Model
      * when invoking an Lambda function. You must specify
      * <code>InvocationSchemaVersion</code> <b>2.0</b> for <code>LambdaInvoke</code>
      * operations that include <code>UserArguments</code>. For more information, see <a
-     * href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using
-     * Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the
-     * <i>Amazon Web Services Storage Blog</i>.</p>
+     * href="https://aws.amazon.com/blogs/storage/automate-object-processing-in-amazon-s3-directory-buckets-with-s3-batch-operations-and-aws-lambda/">Automate
+     * object processing in Amazon S3 directory buckets with S3 Batch Operations and
+     * Lambda</a> in the <i>Amazon Web Services Storage Blog</i>.</p>
      */
     inline LambdaInvokeOperation& WithUserArguments(const Aws::Map<Aws::String, Aws::String>& value) { SetUserArguments(value); return *this;}
 
@@ -301,9 +301,9 @@ namespace Model
      * when invoking an Lambda function. You must specify
      * <code>InvocationSchemaVersion</code> <b>2.0</b> for <code>LambdaInvoke</code>
      * operations that include <code>UserArguments</code>. For more information, see <a
-     * href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using
-     * Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the
-     * <i>Amazon Web Services Storage Blog</i>.</p>
+     * href="https://aws.amazon.com/blogs/storage/automate-object-processing-in-amazon-s3-directory-buckets-with-s3-batch-operations-and-aws-lambda/">Automate
+     * object processing in Amazon S3 directory buckets with S3 Batch Operations and
+     * Lambda</a> in the <i>Amazon Web Services Storage Blog</i>.</p>
      */
     inline LambdaInvokeOperation& WithUserArguments(Aws::Map<Aws::String, Aws::String>&& value) { SetUserArguments(std::move(value)); return *this;}
 
@@ -312,9 +312,9 @@ namespace Model
      * when invoking an Lambda function. You must specify
      * <code>InvocationSchemaVersion</code> <b>2.0</b> for <code>LambdaInvoke</code>
      * operations that include <code>UserArguments</code>. For more information, see <a
-     * href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using
-     * Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the
-     * <i>Amazon Web Services Storage Blog</i>.</p>
+     * href="https://aws.amazon.com/blogs/storage/automate-object-processing-in-amazon-s3-directory-buckets-with-s3-batch-operations-and-aws-lambda/">Automate
+     * object processing in Amazon S3 directory buckets with S3 Batch Operations and
+     * Lambda</a> in the <i>Amazon Web Services Storage Blog</i>.</p>
      */
     inline LambdaInvokeOperation& AddUserArguments(const Aws::String& key, const Aws::String& value) { m_userArgumentsHasBeenSet = true; m_userArguments.emplace(key, value); return *this; }
 
@@ -323,9 +323,9 @@ namespace Model
      * when invoking an Lambda function. You must specify
      * <code>InvocationSchemaVersion</code> <b>2.0</b> for <code>LambdaInvoke</code>
      * operations that include <code>UserArguments</code>. For more information, see <a
-     * href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using
-     * Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the
-     * <i>Amazon Web Services Storage Blog</i>.</p>
+     * href="https://aws.amazon.com/blogs/storage/automate-object-processing-in-amazon-s3-directory-buckets-with-s3-batch-operations-and-aws-lambda/">Automate
+     * object processing in Amazon S3 directory buckets with S3 Batch Operations and
+     * Lambda</a> in the <i>Amazon Web Services Storage Blog</i>.</p>
      */
     inline LambdaInvokeOperation& AddUserArguments(Aws::String&& key, const Aws::String& value) { m_userArgumentsHasBeenSet = true; m_userArguments.emplace(std::move(key), value); return *this; }
 
@@ -334,9 +334,9 @@ namespace Model
      * when invoking an Lambda function. You must specify
      * <code>InvocationSchemaVersion</code> <b>2.0</b> for <code>LambdaInvoke</code>
      * operations that include <code>UserArguments</code>. For more information, see <a
-     * href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using
-     * Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the
-     * <i>Amazon Web Services Storage Blog</i>.</p>
+     * href="https://aws.amazon.com/blogs/storage/automate-object-processing-in-amazon-s3-directory-buckets-with-s3-batch-operations-and-aws-lambda/">Automate
+     * object processing in Amazon S3 directory buckets with S3 Batch Operations and
+     * Lambda</a> in the <i>Amazon Web Services Storage Blog</i>.</p>
      */
     inline LambdaInvokeOperation& AddUserArguments(const Aws::String& key, Aws::String&& value) { m_userArgumentsHasBeenSet = true; m_userArguments.emplace(key, std::move(value)); return *this; }
 
@@ -345,9 +345,9 @@ namespace Model
      * when invoking an Lambda function. You must specify
      * <code>InvocationSchemaVersion</code> <b>2.0</b> for <code>LambdaInvoke</code>
      * operations that include <code>UserArguments</code>. For more information, see <a
-     * href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using
-     * Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the
-     * <i>Amazon Web Services Storage Blog</i>.</p>
+     * href="https://aws.amazon.com/blogs/storage/automate-object-processing-in-amazon-s3-directory-buckets-with-s3-batch-operations-and-aws-lambda/">Automate
+     * object processing in Amazon S3 directory buckets with S3 Batch Operations and
+     * Lambda</a> in the <i>Amazon Web Services Storage Blog</i>.</p>
      */
     inline LambdaInvokeOperation& AddUserArguments(Aws::String&& key, Aws::String&& value) { m_userArgumentsHasBeenSet = true; m_userArguments.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -356,9 +356,9 @@ namespace Model
      * when invoking an Lambda function. You must specify
      * <code>InvocationSchemaVersion</code> <b>2.0</b> for <code>LambdaInvoke</code>
      * operations that include <code>UserArguments</code>. For more information, see <a
-     * href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using
-     * Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the
-     * <i>Amazon Web Services Storage Blog</i>.</p>
+     * href="https://aws.amazon.com/blogs/storage/automate-object-processing-in-amazon-s3-directory-buckets-with-s3-batch-operations-and-aws-lambda/">Automate
+     * object processing in Amazon S3 directory buckets with S3 Batch Operations and
+     * Lambda</a> in the <i>Amazon Web Services Storage Blog</i>.</p>
      */
     inline LambdaInvokeOperation& AddUserArguments(const char* key, Aws::String&& value) { m_userArgumentsHasBeenSet = true; m_userArguments.emplace(key, std::move(value)); return *this; }
 
@@ -367,9 +367,9 @@ namespace Model
      * when invoking an Lambda function. You must specify
      * <code>InvocationSchemaVersion</code> <b>2.0</b> for <code>LambdaInvoke</code>
      * operations that include <code>UserArguments</code>. For more information, see <a
-     * href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using
-     * Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the
-     * <i>Amazon Web Services Storage Blog</i>.</p>
+     * href="https://aws.amazon.com/blogs/storage/automate-object-processing-in-amazon-s3-directory-buckets-with-s3-batch-operations-and-aws-lambda/">Automate
+     * object processing in Amazon S3 directory buckets with S3 Batch Operations and
+     * Lambda</a> in the <i>Amazon Web Services Storage Blog</i>.</p>
      */
     inline LambdaInvokeOperation& AddUserArguments(Aws::String&& key, const char* value) { m_userArgumentsHasBeenSet = true; m_userArguments.emplace(std::move(key), value); return *this; }
 
@@ -378,9 +378,9 @@ namespace Model
      * when invoking an Lambda function. You must specify
      * <code>InvocationSchemaVersion</code> <b>2.0</b> for <code>LambdaInvoke</code>
      * operations that include <code>UserArguments</code>. For more information, see <a
-     * href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using
-     * Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the
-     * <i>Amazon Web Services Storage Blog</i>.</p>
+     * href="https://aws.amazon.com/blogs/storage/automate-object-processing-in-amazon-s3-directory-buckets-with-s3-batch-operations-and-aws-lambda/">Automate
+     * object processing in Amazon S3 directory buckets with S3 Batch Operations and
+     * Lambda</a> in the <i>Amazon Web Services Storage Blog</i>.</p>
      */
     inline LambdaInvokeOperation& AddUserArguments(const char* key, const char* value) { m_userArgumentsHasBeenSet = true; m_userArguments.emplace(key, value); return *this; }
 

@@ -61,8 +61,8 @@ namespace Model
      * <code>arn:aws:s3:::destinationBucket</code>.</p> </li> <li> <p> <b>Directory
      * buckets</b> - For example, to copy objects to a directory bucket named
      * <code>destinationBucket</code> in the Availability Zone; identified by the AZ ID
-     * <code>usw2-az2</code>, set the <code>TargetResource</code> property to
-     * <code>arn:aws:s3express:<i>region</i>:<i>account_id</i>:/bucket/<i>destination_bucket_base_name</i>--<i>usw2-az2</i>--x-s3</code>.</p>
+     * <code>usw2-az1</code>, set the <code>TargetResource</code> property to
+     * <code>arn:aws:s3express:<i>region</i>:<i>account_id</i>:/bucket/<i>destination_bucket_base_name</i>--<i>usw2-az1</i>--x-s3</code>.</p>
      * </li> </ul>
      */
     inline const Aws::String& GetTargetResource() const{ return m_targetResource; }
@@ -75,8 +75,8 @@ namespace Model
      * <code>arn:aws:s3:::destinationBucket</code>.</p> </li> <li> <p> <b>Directory
      * buckets</b> - For example, to copy objects to a directory bucket named
      * <code>destinationBucket</code> in the Availability Zone; identified by the AZ ID
-     * <code>usw2-az2</code>, set the <code>TargetResource</code> property to
-     * <code>arn:aws:s3express:<i>region</i>:<i>account_id</i>:/bucket/<i>destination_bucket_base_name</i>--<i>usw2-az2</i>--x-s3</code>.</p>
+     * <code>usw2-az1</code>, set the <code>TargetResource</code> property to
+     * <code>arn:aws:s3express:<i>region</i>:<i>account_id</i>:/bucket/<i>destination_bucket_base_name</i>--<i>usw2-az1</i>--x-s3</code>.</p>
      * </li> </ul>
      */
     inline bool TargetResourceHasBeenSet() const { return m_targetResourceHasBeenSet; }
@@ -89,8 +89,8 @@ namespace Model
      * <code>arn:aws:s3:::destinationBucket</code>.</p> </li> <li> <p> <b>Directory
      * buckets</b> - For example, to copy objects to a directory bucket named
      * <code>destinationBucket</code> in the Availability Zone; identified by the AZ ID
-     * <code>usw2-az2</code>, set the <code>TargetResource</code> property to
-     * <code>arn:aws:s3express:<i>region</i>:<i>account_id</i>:/bucket/<i>destination_bucket_base_name</i>--<i>usw2-az2</i>--x-s3</code>.</p>
+     * <code>usw2-az1</code>, set the <code>TargetResource</code> property to
+     * <code>arn:aws:s3express:<i>region</i>:<i>account_id</i>:/bucket/<i>destination_bucket_base_name</i>--<i>usw2-az1</i>--x-s3</code>.</p>
      * </li> </ul>
      */
     inline void SetTargetResource(const Aws::String& value) { m_targetResourceHasBeenSet = true; m_targetResource = value; }
@@ -103,8 +103,8 @@ namespace Model
      * <code>arn:aws:s3:::destinationBucket</code>.</p> </li> <li> <p> <b>Directory
      * buckets</b> - For example, to copy objects to a directory bucket named
      * <code>destinationBucket</code> in the Availability Zone; identified by the AZ ID
-     * <code>usw2-az2</code>, set the <code>TargetResource</code> property to
-     * <code>arn:aws:s3express:<i>region</i>:<i>account_id</i>:/bucket/<i>destination_bucket_base_name</i>--<i>usw2-az2</i>--x-s3</code>.</p>
+     * <code>usw2-az1</code>, set the <code>TargetResource</code> property to
+     * <code>arn:aws:s3express:<i>region</i>:<i>account_id</i>:/bucket/<i>destination_bucket_base_name</i>--<i>usw2-az1</i>--x-s3</code>.</p>
      * </li> </ul>
      */
     inline void SetTargetResource(Aws::String&& value) { m_targetResourceHasBeenSet = true; m_targetResource = std::move(value); }
@@ -117,8 +117,8 @@ namespace Model
      * <code>arn:aws:s3:::destinationBucket</code>.</p> </li> <li> <p> <b>Directory
      * buckets</b> - For example, to copy objects to a directory bucket named
      * <code>destinationBucket</code> in the Availability Zone; identified by the AZ ID
-     * <code>usw2-az2</code>, set the <code>TargetResource</code> property to
-     * <code>arn:aws:s3express:<i>region</i>:<i>account_id</i>:/bucket/<i>destination_bucket_base_name</i>--<i>usw2-az2</i>--x-s3</code>.</p>
+     * <code>usw2-az1</code>, set the <code>TargetResource</code> property to
+     * <code>arn:aws:s3express:<i>region</i>:<i>account_id</i>:/bucket/<i>destination_bucket_base_name</i>--<i>usw2-az1</i>--x-s3</code>.</p>
      * </li> </ul>
      */
     inline void SetTargetResource(const char* value) { m_targetResourceHasBeenSet = true; m_targetResource.assign(value); }
@@ -131,8 +131,8 @@ namespace Model
      * <code>arn:aws:s3:::destinationBucket</code>.</p> </li> <li> <p> <b>Directory
      * buckets</b> - For example, to copy objects to a directory bucket named
      * <code>destinationBucket</code> in the Availability Zone; identified by the AZ ID
-     * <code>usw2-az2</code>, set the <code>TargetResource</code> property to
-     * <code>arn:aws:s3express:<i>region</i>:<i>account_id</i>:/bucket/<i>destination_bucket_base_name</i>--<i>usw2-az2</i>--x-s3</code>.</p>
+     * <code>usw2-az1</code>, set the <code>TargetResource</code> property to
+     * <code>arn:aws:s3express:<i>region</i>:<i>account_id</i>:/bucket/<i>destination_bucket_base_name</i>--<i>usw2-az1</i>--x-s3</code>.</p>
      * </li> </ul>
      */
     inline S3CopyObjectOperation& WithTargetResource(const Aws::String& value) { SetTargetResource(value); return *this;}
@@ -145,8 +145,8 @@ namespace Model
      * <code>arn:aws:s3:::destinationBucket</code>.</p> </li> <li> <p> <b>Directory
      * buckets</b> - For example, to copy objects to a directory bucket named
      * <code>destinationBucket</code> in the Availability Zone; identified by the AZ ID
-     * <code>usw2-az2</code>, set the <code>TargetResource</code> property to
-     * <code>arn:aws:s3express:<i>region</i>:<i>account_id</i>:/bucket/<i>destination_bucket_base_name</i>--<i>usw2-az2</i>--x-s3</code>.</p>
+     * <code>usw2-az1</code>, set the <code>TargetResource</code> property to
+     * <code>arn:aws:s3express:<i>region</i>:<i>account_id</i>:/bucket/<i>destination_bucket_base_name</i>--<i>usw2-az1</i>--x-s3</code>.</p>
      * </li> </ul>
      */
     inline S3CopyObjectOperation& WithTargetResource(Aws::String&& value) { SetTargetResource(std::move(value)); return *this;}
@@ -159,8 +159,8 @@ namespace Model
      * <code>arn:aws:s3:::destinationBucket</code>.</p> </li> <li> <p> <b>Directory
      * buckets</b> - For example, to copy objects to a directory bucket named
      * <code>destinationBucket</code> in the Availability Zone; identified by the AZ ID
-     * <code>usw2-az2</code>, set the <code>TargetResource</code> property to
-     * <code>arn:aws:s3express:<i>region</i>:<i>account_id</i>:/bucket/<i>destination_bucket_base_name</i>--<i>usw2-az2</i>--x-s3</code>.</p>
+     * <code>usw2-az1</code>, set the <code>TargetResource</code> property to
+     * <code>arn:aws:s3express:<i>region</i>:<i>account_id</i>:/bucket/<i>destination_bucket_base_name</i>--<i>usw2-az1</i>--x-s3</code>.</p>
      * </li> </ul>
      */
     inline S3CopyObjectOperation& WithTargetResource(const char* value) { SetTargetResource(value); return *this;}

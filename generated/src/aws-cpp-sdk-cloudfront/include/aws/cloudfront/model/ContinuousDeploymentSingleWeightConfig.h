@@ -40,25 +40,29 @@ namespace Model
 
     /**
      * <p>The percentage of traffic to send to a staging distribution, expressed as a
-     * decimal number between 0 and .15.</p>
+     * decimal number between 0 and 0.15. For example, a value of 0.10 means 10% of
+     * traffic is sent to the staging distribution.</p>
      */
     inline double GetWeight() const{ return m_weight; }
 
     /**
      * <p>The percentage of traffic to send to a staging distribution, expressed as a
-     * decimal number between 0 and .15.</p>
+     * decimal number between 0 and 0.15. For example, a value of 0.10 means 10% of
+     * traffic is sent to the staging distribution.</p>
      */
     inline bool WeightHasBeenSet() const { return m_weightHasBeenSet; }
 
     /**
      * <p>The percentage of traffic to send to a staging distribution, expressed as a
-     * decimal number between 0 and .15.</p>
+     * decimal number between 0 and 0.15. For example, a value of 0.10 means 10% of
+     * traffic is sent to the staging distribution.</p>
      */
     inline void SetWeight(double value) { m_weightHasBeenSet = true; m_weight = value; }
 
     /**
      * <p>The percentage of traffic to send to a staging distribution, expressed as a
-     * decimal number between 0 and .15.</p>
+     * decimal number between 0 and 0.15. For example, a value of 0.10 means 10% of
+     * traffic is sent to the staging distribution.</p>
      */
     inline ContinuousDeploymentSingleWeightConfig& WithWeight(double value) { SetWeight(value); return *this;}
 

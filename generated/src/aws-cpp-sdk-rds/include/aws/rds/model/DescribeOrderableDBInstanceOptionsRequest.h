@@ -42,122 +42,146 @@ namespace Model
   public:
 
     /**
-     * <p>The name of the engine to describe DB instance options for.</p> <p>Valid
-     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
+     * <p>The name of the database engine to describe DB instance options for.</p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee</code>
-     * </p> </li> <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code>
-     * </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code>
-     * </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
-     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
-     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
-     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
-     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
-     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
+     * </p> </li> <li> <p> <code>custom-oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>custom-oracle-se2</code> </p> </li> <li> <p>
+     * <code>custom-oracle-se2-cdb</code> </p> </li> <li> <p> <code>db2-ae</code> </p>
+     * </li> <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p>The name of the engine to describe DB instance options for.</p> <p>Valid
-     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
+     * <p>The name of the database engine to describe DB instance options for.</p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee</code>
-     * </p> </li> <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code>
-     * </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code>
-     * </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
-     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
-     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
-     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
-     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
-     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
+     * </p> </li> <li> <p> <code>custom-oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>custom-oracle-se2</code> </p> </li> <li> <p>
+     * <code>custom-oracle-se2-cdb</code> </p> </li> <li> <p> <code>db2-ae</code> </p>
+     * </li> <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
-     * <p>The name of the engine to describe DB instance options for.</p> <p>Valid
-     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
+     * <p>The name of the database engine to describe DB instance options for.</p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee</code>
-     * </p> </li> <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code>
-     * </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code>
-     * </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
-     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
-     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
-     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
-     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
-     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
+     * </p> </li> <li> <p> <code>custom-oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>custom-oracle-se2</code> </p> </li> <li> <p>
+     * <code>custom-oracle-se2-cdb</code> </p> </li> <li> <p> <code>db2-ae</code> </p>
+     * </li> <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p>The name of the engine to describe DB instance options for.</p> <p>Valid
-     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
+     * <p>The name of the database engine to describe DB instance options for.</p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee</code>
-     * </p> </li> <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code>
-     * </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code>
-     * </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
-     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
-     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
-     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
-     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
-     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
+     * </p> </li> <li> <p> <code>custom-oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>custom-oracle-se2</code> </p> </li> <li> <p>
+     * <code>custom-oracle-se2-cdb</code> </p> </li> <li> <p> <code>db2-ae</code> </p>
+     * </li> <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
-     * <p>The name of the engine to describe DB instance options for.</p> <p>Valid
-     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
+     * <p>The name of the database engine to describe DB instance options for.</p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee</code>
-     * </p> </li> <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code>
-     * </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code>
-     * </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
-     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
-     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
-     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
-     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
-     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
+     * </p> </li> <li> <p> <code>custom-oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>custom-oracle-se2</code> </p> </li> <li> <p>
+     * <code>custom-oracle-se2-cdb</code> </p> </li> <li> <p> <code>db2-ae</code> </p>
+     * </li> <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
-     * <p>The name of the engine to describe DB instance options for.</p> <p>Valid
-     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
+     * <p>The name of the database engine to describe DB instance options for.</p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee</code>
-     * </p> </li> <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code>
-     * </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code>
-     * </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
-     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
-     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
-     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
-     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
-     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
+     * </p> </li> <li> <p> <code>custom-oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>custom-oracle-se2</code> </p> </li> <li> <p>
+     * <code>custom-oracle-se2-cdb</code> </p> </li> <li> <p> <code>db2-ae</code> </p>
+     * </li> <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p>The name of the engine to describe DB instance options for.</p> <p>Valid
-     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
+     * <p>The name of the database engine to describe DB instance options for.</p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee</code>
-     * </p> </li> <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code>
-     * </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code>
-     * </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
-     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
-     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
-     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
-     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
-     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
+     * </p> </li> <li> <p> <code>custom-oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>custom-oracle-se2</code> </p> </li> <li> <p>
+     * <code>custom-oracle-se2-cdb</code> </p> </li> <li> <p> <code>db2-ae</code> </p>
+     * </li> <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the engine to describe DB instance options for.</p> <p>Valid
-     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
+     * <p>The name of the database engine to describe DB instance options for.</p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee</code>
-     * </p> </li> <li> <p> <code>db2-ae</code> </p> </li> <li> <p> <code>db2-se</code>
-     * </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code>
-     * </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
-     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
-     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
-     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
-     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
-     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
+     * </p> </li> <li> <p> <code>custom-oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>custom-oracle-se2</code> </p> </li> <li> <p>
+     * <code>custom-oracle-se2-cdb</code> </p> </li> <li> <p> <code>db2-ae</code> </p>
+     * </li> <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 
@@ -457,7 +481,7 @@ namespace Model
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
      * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
-     * 10000.</p>
+     * 1000.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
 
@@ -466,7 +490,7 @@ namespace Model
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
      * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
-     * 10000.</p>
+     * 1000.</p>
      */
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
 
@@ -475,7 +499,7 @@ namespace Model
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
      * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
-     * 10000.</p>
+     * 1000.</p>
      */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
@@ -484,7 +508,7 @@ namespace Model
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
      * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
-     * 10000.</p>
+     * 1000.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 

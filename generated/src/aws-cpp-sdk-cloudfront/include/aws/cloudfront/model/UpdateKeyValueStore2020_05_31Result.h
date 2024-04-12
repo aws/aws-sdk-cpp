@@ -34,63 +34,63 @@ namespace Model
 
 
     /**
-     * <p>The resulting Key Value Store to update.</p>
+     * <p>The resulting key value store to update.</p>
      */
     inline const KeyValueStore& GetKeyValueStore() const{ return m_keyValueStore; }
 
     /**
-     * <p>The resulting Key Value Store to update.</p>
+     * <p>The resulting key value store to update.</p>
      */
     inline void SetKeyValueStore(const KeyValueStore& value) { m_keyValueStore = value; }
 
     /**
-     * <p>The resulting Key Value Store to update.</p>
+     * <p>The resulting key value store to update.</p>
      */
     inline void SetKeyValueStore(KeyValueStore&& value) { m_keyValueStore = std::move(value); }
 
     /**
-     * <p>The resulting Key Value Store to update.</p>
+     * <p>The resulting key value store to update.</p>
      */
     inline UpdateKeyValueStore2020_05_31Result& WithKeyValueStore(const KeyValueStore& value) { SetKeyValueStore(value); return *this;}
 
     /**
-     * <p>The resulting Key Value Store to update.</p>
+     * <p>The resulting key value store to update.</p>
      */
     inline UpdateKeyValueStore2020_05_31Result& WithKeyValueStore(KeyValueStore&& value) { SetKeyValueStore(std::move(value)); return *this;}
 
 
     /**
-     * <p>The ETag of the resulting Key Value Store.</p>
+     * <p>The <code>ETag</code> of the resulting key value store.</p>
      */
     inline const Aws::String& GetETag() const{ return m_eTag; }
 
     /**
-     * <p>The ETag of the resulting Key Value Store.</p>
+     * <p>The <code>ETag</code> of the resulting key value store.</p>
      */
     inline void SetETag(const Aws::String& value) { m_eTag = value; }
 
     /**
-     * <p>The ETag of the resulting Key Value Store.</p>
+     * <p>The <code>ETag</code> of the resulting key value store.</p>
      */
     inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
 
     /**
-     * <p>The ETag of the resulting Key Value Store.</p>
+     * <p>The <code>ETag</code> of the resulting key value store.</p>
      */
     inline void SetETag(const char* value) { m_eTag.assign(value); }
 
     /**
-     * <p>The ETag of the resulting Key Value Store.</p>
+     * <p>The <code>ETag</code> of the resulting key value store.</p>
      */
     inline UpdateKeyValueStore2020_05_31Result& WithETag(const Aws::String& value) { SetETag(value); return *this;}
 
     /**
-     * <p>The ETag of the resulting Key Value Store.</p>
+     * <p>The <code>ETag</code> of the resulting key value store.</p>
      */
     inline UpdateKeyValueStore2020_05_31Result& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
 
     /**
-     * <p>The ETag of the resulting Key Value Store.</p>
+     * <p>The <code>ETag</code> of the resulting key value store.</p>
      */
     inline UpdateKeyValueStore2020_05_31Result& WithETag(const char* value) { SetETag(value); return *this;}
 

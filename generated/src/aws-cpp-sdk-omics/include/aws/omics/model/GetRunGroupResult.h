@@ -278,17 +278,17 @@ namespace Model
 
 
     /**
-     * <p> The maximum GPUs that can be used by a run group. </p>
+     * <p>The maximum GPUs that can be used by a run group.</p>
      */
     inline int GetMaxGpus() const{ return m_maxGpus; }
 
     /**
-     * <p> The maximum GPUs that can be used by a run group. </p>
+     * <p>The maximum GPUs that can be used by a run group.</p>
      */
     inline void SetMaxGpus(int value) { m_maxGpus = value; }
 
     /**
-     * <p> The maximum GPUs that can be used by a run group. </p>
+     * <p>The maximum GPUs that can be used by a run group.</p>
      */
     inline GetRunGroupResult& WithMaxGpus(int value) { SetMaxGpus(value); return *this;}
 

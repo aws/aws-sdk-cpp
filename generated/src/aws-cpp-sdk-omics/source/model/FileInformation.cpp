@@ -24,7 +24,8 @@ FileInformation::FileInformation() :
     m_partSize(0),
     m_partSizeHasBeenSet(false),
     m_contentLength(0),
-    m_contentLengthHasBeenSet(false)
+    m_contentLengthHasBeenSet(false),
+    m_s3AccessHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ FileInformation::FileInformation(JsonView jsonValue) :
     m_partSize(0),
     m_partSizeHasBeenSet(false),
     m_contentLength(0),
-    m_contentLengthHasBeenSet(false)
+    m_contentLengthHasBeenSet(false),
+    m_s3AccessHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -62,6 +64,13 @@ FileInformation& FileInformation::operator =(JsonView jsonValue)
     m_contentLengthHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("s3Access"))
+  {
+    m_s3Access = jsonValue.GetObject("s3Access");
+
+    m_s3AccessHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -84,6 +93,12 @@ JsonValue FileInformation::Jsonize() const
   if(m_contentLengthHasBeenSet)
   {
    payload.WithInt64("contentLength", m_contentLength);
+
+  }
+
+  if(m_s3AccessHasBeenSet)
+  {
+   payload.WithObject("s3Access", m_s3Access.Jsonize());
 
   }
 
