@@ -63,7 +63,6 @@ ByteBuffer HashingUtils::CalculateSHA256(Aws::IOStream& stream)
  */
 static ByteBuffer TreeHashFinalCompute(Aws::List<ByteBuffer>& input)
 {
-    Sha256 hash;
     assert(input.size() != 0);
 
     // O(n) time complexity of merging (n + n/2 + n/4 + n/8 +...+ 1)
@@ -73,6 +72,7 @@ static ByteBuffer TreeHashFinalCompute(Aws::List<ByteBuffer>& input)
         // if only one element left, just left it there
         while (std::next(iter) != input.end())
         {
+            Sha256 hash;
             // if >= two elements
             Aws::String str(reinterpret_cast<char*>(iter->GetUnderlyingData()), iter->GetLength());
             // list erase returns iterator of next element next to the erased element or end() if erased the last one
@@ -91,9 +91,9 @@ static ByteBuffer TreeHashFinalCompute(Aws::List<ByteBuffer>& input)
 
 ByteBuffer HashingUtils::CalculateSHA256TreeHash(const Aws::String& str)
 {
-    Sha256 hash;
     if (str.size() == 0)
     {
+        Sha256 hash;
         return hash.Calculate(str).GetResult();
     }
 
@@ -101,6 +101,7 @@ ByteBuffer HashingUtils::CalculateSHA256TreeHash(const Aws::String& str)
     size_t pos = 0;
     while (pos < str.size())
     {
+        Sha256 hash;
         input.push_back(hash.Calculate(Aws::String(str, pos, TREE_HASH_ONE_MB)).GetResult());
         pos += TREE_HASH_ONE_MB;
     }
@@ -110,7 +111,6 @@ ByteBuffer HashingUtils::CalculateSHA256TreeHash(const Aws::String& str)
 
 ByteBuffer HashingUtils::CalculateSHA256TreeHash(Aws::IOStream& stream)
 {
-    Sha256 hash;
     Aws::List<ByteBuffer> input;
     auto currentPos = stream.tellg();
     if (currentPos == std::ios::pos_type(-1))
@@ -126,6 +126,7 @@ ByteBuffer HashingUtils::CalculateSHA256TreeHash(Aws::IOStream& stream)
         auto bytesRead = stream.gcount();
         if (bytesRead > 0)
         {
+            Sha256 hash;
             input.push_back(hash.Calculate(Aws::String(reinterpret_cast<char*>(streamBuffer.GetUnderlyingData()), static_cast<size_t>(bytesRead))).GetResult());
         }
     }
@@ -134,6 +135,7 @@ ByteBuffer HashingUtils::CalculateSHA256TreeHash(Aws::IOStream& stream)
 
     if (input.size() == 0)
     {
+        Sha256 hash;
         return hash.Calculate("").GetResult();
     }
     return TreeHashFinalCompute(input);
