@@ -152,7 +152,7 @@ def build_generator(generator_dir: str, max_workers: int) -> None:
     """
 
     mvn_cmd = [shutil.which("mvn"), "package", "-q"]  # subprocess.run does expand Path by default
-    process = subprocess.run(mvn_cmd, cwd=generator_dir, timeout=5*60, check=True)
+    process = subprocess.run(mvn_cmd, cwd=generator_dir, timeout=6*60, check=True)
     process.check_returncode()
 
 
@@ -166,7 +166,7 @@ def run_generator_once(service_name: str, run_command: list, output_filename: st
     """
     # run_command_str = str(run_command).replace(', ', ' ').replace('\'','')
     # print(f"RUNNING COMMAND\n{run_command_str}\n")
-    process = subprocess.run(run_command, timeout=5 * 60, check=True, capture_output=True)
+    process = subprocess.run(run_command, timeout=6*60, check=True, capture_output=True)
     process.check_returncode()
 
     if output_filename != "STDOUT":
