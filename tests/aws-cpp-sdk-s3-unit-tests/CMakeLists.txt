@@ -26,6 +26,7 @@ target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
 
 if(MSVC AND BUILD_SHARED_LIBS)
     set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS "/DELAYLOAD:aws-cpp-sdk-s3.dll /DELAYLOAD:aws-cpp-sdk-core.dll")
+    target_link_libraries(${PROJECT_NAME} delayimp.lib)
 endif()
 
 include(GoogleTest)
