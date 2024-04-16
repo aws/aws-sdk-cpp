@@ -33,37 +33,44 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the integrated application.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lake Formation application integrated
+     * with IAM Identity Center.</p>
      */
     inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the integrated application.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lake Formation application integrated
+     * with IAM Identity Center.</p>
      */
     inline void SetApplicationArn(const Aws::String& value) { m_applicationArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the integrated application.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lake Formation application integrated
+     * with IAM Identity Center.</p>
      */
     inline void SetApplicationArn(Aws::String&& value) { m_applicationArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the integrated application.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lake Formation application integrated
+     * with IAM Identity Center.</p>
      */
     inline void SetApplicationArn(const char* value) { m_applicationArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the integrated application.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lake Formation application integrated
+     * with IAM Identity Center.</p>
      */
     inline CreateLakeFormationIdentityCenterConfigurationResult& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the integrated application.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lake Formation application integrated
+     * with IAM Identity Center.</p>
      */
     inline CreateLakeFormationIdentityCenterConfigurationResult& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the integrated application.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lake Formation application integrated
+     * with IAM Identity Center.</p>
      */
     inline CreateLakeFormationIdentityCenterConfigurationResult& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
 

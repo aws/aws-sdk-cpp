@@ -34,6 +34,43 @@ namespace Model
 
 
     /**
+     * <p>Normalizes the attributes defined in the schema in the input data. For
+     * example, if an attribute has an <code>AttributeType</code> of
+     * <code>PHONE_NUMBER</code>, and the data in the input table is in a format of
+     * 1234567890, Entity Resolution will normalize this field in the output to
+     * (123)-456-7890.</p>
+     */
+    inline bool GetApplyNormalization() const{ return m_applyNormalization; }
+
+    /**
+     * <p>Normalizes the attributes defined in the schema in the input data. For
+     * example, if an attribute has an <code>AttributeType</code> of
+     * <code>PHONE_NUMBER</code>, and the data in the input table is in a format of
+     * 1234567890, Entity Resolution will normalize this field in the output to
+     * (123)-456-7890.</p>
+     */
+    inline bool ApplyNormalizationHasBeenSet() const { return m_applyNormalizationHasBeenSet; }
+
+    /**
+     * <p>Normalizes the attributes defined in the schema in the input data. For
+     * example, if an attribute has an <code>AttributeType</code> of
+     * <code>PHONE_NUMBER</code>, and the data in the input table is in a format of
+     * 1234567890, Entity Resolution will normalize this field in the output to
+     * (123)-456-7890.</p>
+     */
+    inline void SetApplyNormalization(bool value) { m_applyNormalizationHasBeenSet = true; m_applyNormalization = value; }
+
+    /**
+     * <p>Normalizes the attributes defined in the schema in the input data. For
+     * example, if an attribute has an <code>AttributeType</code> of
+     * <code>PHONE_NUMBER</code>, and the data in the input table is in a format of
+     * 1234567890, Entity Resolution will normalize this field in the output to
+     * (123)-456-7890.</p>
+     */
+    inline GetMatchIdRequest& WithApplyNormalization(bool value) { SetApplyNormalization(value); return *this;}
+
+
+    /**
      * <p>The record to fetch the Match ID for.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetRecord() const{ return m_record; }
@@ -140,6 +177,9 @@ namespace Model
     inline GetMatchIdRequest& WithWorkflowName(const char* value) { SetWorkflowName(value); return *this;}
 
   private:
+
+    bool m_applyNormalization;
+    bool m_applyNormalizationHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_record;
     bool m_recordHasBeenSet = false;

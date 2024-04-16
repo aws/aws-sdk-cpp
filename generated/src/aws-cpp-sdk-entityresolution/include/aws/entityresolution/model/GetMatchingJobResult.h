@@ -9,7 +9,9 @@
 #include <aws/entityresolution/model/ErrorDetails.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/entityresolution/model/JobMetrics.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/entityresolution/model/JobStatus.h>
+#include <aws/entityresolution/model/JobOutputSource.h>
 #include <utility>
 
 namespace Aws
@@ -156,6 +158,42 @@ namespace Model
 
 
     /**
+     * <p>A list of <code>OutputSource</code> objects.</p>
+     */
+    inline const Aws::Vector<JobOutputSource>& GetOutputSourceConfig() const{ return m_outputSourceConfig; }
+
+    /**
+     * <p>A list of <code>OutputSource</code> objects.</p>
+     */
+    inline void SetOutputSourceConfig(const Aws::Vector<JobOutputSource>& value) { m_outputSourceConfig = value; }
+
+    /**
+     * <p>A list of <code>OutputSource</code> objects.</p>
+     */
+    inline void SetOutputSourceConfig(Aws::Vector<JobOutputSource>&& value) { m_outputSourceConfig = std::move(value); }
+
+    /**
+     * <p>A list of <code>OutputSource</code> objects.</p>
+     */
+    inline GetMatchingJobResult& WithOutputSourceConfig(const Aws::Vector<JobOutputSource>& value) { SetOutputSourceConfig(value); return *this;}
+
+    /**
+     * <p>A list of <code>OutputSource</code> objects.</p>
+     */
+    inline GetMatchingJobResult& WithOutputSourceConfig(Aws::Vector<JobOutputSource>&& value) { SetOutputSourceConfig(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of <code>OutputSource</code> objects.</p>
+     */
+    inline GetMatchingJobResult& AddOutputSourceConfig(const JobOutputSource& value) { m_outputSourceConfig.push_back(value); return *this; }
+
+    /**
+     * <p>A list of <code>OutputSource</code> objects.</p>
+     */
+    inline GetMatchingJobResult& AddOutputSourceConfig(JobOutputSource&& value) { m_outputSourceConfig.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The time at which the job was started.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
@@ -237,6 +275,8 @@ namespace Model
     Aws::String m_jobId;
 
     JobMetrics m_metrics;
+
+    Aws::Vector<JobOutputSource> m_outputSourceConfig;
 
     Aws::Utils::DateTime m_startTime;
 

@@ -39,50 +39,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the model used to create vector embeddings for the knowledge
-     * base.</p>
+     * <p>The Amazon Resource Name (ARN) of the model used to create vector embeddings
+     * for the knowledge base.</p>
      */
     inline const Aws::String& GetEmbeddingModelArn() const{ return m_embeddingModelArn; }
 
     /**
-     * <p>The ARN of the model used to create vector embeddings for the knowledge
-     * base.</p>
+     * <p>The Amazon Resource Name (ARN) of the model used to create vector embeddings
+     * for the knowledge base.</p>
      */
     inline bool EmbeddingModelArnHasBeenSet() const { return m_embeddingModelArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the model used to create vector embeddings for the knowledge
-     * base.</p>
+     * <p>The Amazon Resource Name (ARN) of the model used to create vector embeddings
+     * for the knowledge base.</p>
      */
     inline void SetEmbeddingModelArn(const Aws::String& value) { m_embeddingModelArnHasBeenSet = true; m_embeddingModelArn = value; }
 
     /**
-     * <p>The ARN of the model used to create vector embeddings for the knowledge
-     * base.</p>
+     * <p>The Amazon Resource Name (ARN) of the model used to create vector embeddings
+     * for the knowledge base.</p>
      */
     inline void SetEmbeddingModelArn(Aws::String&& value) { m_embeddingModelArnHasBeenSet = true; m_embeddingModelArn = std::move(value); }
 
     /**
-     * <p>The ARN of the model used to create vector embeddings for the knowledge
-     * base.</p>
+     * <p>The Amazon Resource Name (ARN) of the model used to create vector embeddings
+     * for the knowledge base.</p>
      */
     inline void SetEmbeddingModelArn(const char* value) { m_embeddingModelArnHasBeenSet = true; m_embeddingModelArn.assign(value); }
 
     /**
-     * <p>The ARN of the model used to create vector embeddings for the knowledge
-     * base.</p>
+     * <p>The Amazon Resource Name (ARN) of the model used to create vector embeddings
+     * for the knowledge base.</p>
      */
     inline VectorKnowledgeBaseConfiguration& WithEmbeddingModelArn(const Aws::String& value) { SetEmbeddingModelArn(value); return *this;}
 
     /**
-     * <p>The ARN of the model used to create vector embeddings for the knowledge
-     * base.</p>
+     * <p>The Amazon Resource Name (ARN) of the model used to create vector embeddings
+     * for the knowledge base.</p>
      */
     inline VectorKnowledgeBaseConfiguration& WithEmbeddingModelArn(Aws::String&& value) { SetEmbeddingModelArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the model used to create vector embeddings for the knowledge
-     * base.</p>
+     * <p>The Amazon Resource Name (ARN) of the model used to create vector embeddings
+     * for the knowledge base.</p>
      */
     inline VectorKnowledgeBaseConfiguration& WithEmbeddingModelArn(const char* value) { SetEmbeddingModelArn(value); return *this;}
 

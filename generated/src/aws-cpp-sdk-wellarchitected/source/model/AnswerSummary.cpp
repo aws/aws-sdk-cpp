@@ -32,7 +32,8 @@ AnswerSummary::AnswerSummary() :
     m_reason(AnswerReason::NOT_SET),
     m_reasonHasBeenSet(false),
     m_questionType(QuestionType::NOT_SET),
-    m_questionTypeHasBeenSet(false)
+    m_questionTypeHasBeenSet(false),
+    m_jiraConfigurationHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ AnswerSummary::AnswerSummary(JsonView jsonValue) :
     m_reason(AnswerReason::NOT_SET),
     m_reasonHasBeenSet(false),
     m_questionType(QuestionType::NOT_SET),
-    m_questionTypeHasBeenSet(false)
+    m_questionTypeHasBeenSet(false),
+    m_jiraConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -136,6 +138,13 @@ AnswerSummary& AnswerSummary::operator =(JsonView jsonValue)
     m_questionTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("JiraConfiguration"))
+  {
+    m_jiraConfiguration = jsonValue.GetObject("JiraConfiguration");
+
+    m_jiraConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -213,6 +222,12 @@ JsonValue AnswerSummary::Jsonize() const
   if(m_questionTypeHasBeenSet)
   {
    payload.WithString("QuestionType", QuestionTypeMapper::GetNameForQuestionType(m_questionType));
+  }
+
+  if(m_jiraConfigurationHasBeenSet)
+  {
+   payload.WithObject("JiraConfiguration", m_jiraConfiguration.Jsonize());
+
   }
 
   return payload;

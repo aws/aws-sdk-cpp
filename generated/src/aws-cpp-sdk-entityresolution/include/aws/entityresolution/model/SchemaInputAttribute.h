@@ -26,7 +26,8 @@ namespace Model
 
   /**
    * <p>An object containing <code>FieldName</code>, <code>Type</code>,
-   * <code>GroupName</code>, and <code>MatchKey</code>.</p><p><h3>See Also:</h3>   <a
+   * <code>GroupName</code>, <code>MatchKey</code>, and
+   * <code>SubType</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/SchemaInputAttribute">AWS
    * API Reference</a></p>
    */
@@ -81,170 +82,170 @@ namespace Model
 
 
     /**
-     * <p>Instruct Entity Resolution to combine several columns into a unified column
-     * with the identical attribute type. For example, when working with columns such
-     * as first_name, middle_name, and last_name, assigning them a common
-     * <code>GroupName</code> will prompt Entity Resolution to concatenate them into a
-     * single value.</p>
+     * <p>A string that instructs Entity Resolution to combine several columns into a
+     * unified column with the identical attribute type. </p> <p>For example, when
+     * working with columns such as <code>first_name</code>, <code>middle_name</code>,
+     * and <code>last_name</code>, assigning them a common <code>groupName</code> will
+     * prompt Entity Resolution to concatenate them into a single value.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
 
     /**
-     * <p>Instruct Entity Resolution to combine several columns into a unified column
-     * with the identical attribute type. For example, when working with columns such
-     * as first_name, middle_name, and last_name, assigning them a common
-     * <code>GroupName</code> will prompt Entity Resolution to concatenate them into a
-     * single value.</p>
+     * <p>A string that instructs Entity Resolution to combine several columns into a
+     * unified column with the identical attribute type. </p> <p>For example, when
+     * working with columns such as <code>first_name</code>, <code>middle_name</code>,
+     * and <code>last_name</code>, assigning them a common <code>groupName</code> will
+     * prompt Entity Resolution to concatenate them into a single value.</p>
      */
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
 
     /**
-     * <p>Instruct Entity Resolution to combine several columns into a unified column
-     * with the identical attribute type. For example, when working with columns such
-     * as first_name, middle_name, and last_name, assigning them a common
-     * <code>GroupName</code> will prompt Entity Resolution to concatenate them into a
-     * single value.</p>
+     * <p>A string that instructs Entity Resolution to combine several columns into a
+     * unified column with the identical attribute type. </p> <p>For example, when
+     * working with columns such as <code>first_name</code>, <code>middle_name</code>,
+     * and <code>last_name</code>, assigning them a common <code>groupName</code> will
+     * prompt Entity Resolution to concatenate them into a single value.</p>
      */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
-     * <p>Instruct Entity Resolution to combine several columns into a unified column
-     * with the identical attribute type. For example, when working with columns such
-     * as first_name, middle_name, and last_name, assigning them a common
-     * <code>GroupName</code> will prompt Entity Resolution to concatenate them into a
-     * single value.</p>
+     * <p>A string that instructs Entity Resolution to combine several columns into a
+     * unified column with the identical attribute type. </p> <p>For example, when
+     * working with columns such as <code>first_name</code>, <code>middle_name</code>,
+     * and <code>last_name</code>, assigning them a common <code>groupName</code> will
+     * prompt Entity Resolution to concatenate them into a single value.</p>
      */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
-     * <p>Instruct Entity Resolution to combine several columns into a unified column
-     * with the identical attribute type. For example, when working with columns such
-     * as first_name, middle_name, and last_name, assigning them a common
-     * <code>GroupName</code> will prompt Entity Resolution to concatenate them into a
-     * single value.</p>
+     * <p>A string that instructs Entity Resolution to combine several columns into a
+     * unified column with the identical attribute type. </p> <p>For example, when
+     * working with columns such as <code>first_name</code>, <code>middle_name</code>,
+     * and <code>last_name</code>, assigning them a common <code>groupName</code> will
+     * prompt Entity Resolution to concatenate them into a single value.</p>
      */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
     /**
-     * <p>Instruct Entity Resolution to combine several columns into a unified column
-     * with the identical attribute type. For example, when working with columns such
-     * as first_name, middle_name, and last_name, assigning them a common
-     * <code>GroupName</code> will prompt Entity Resolution to concatenate them into a
-     * single value.</p>
+     * <p>A string that instructs Entity Resolution to combine several columns into a
+     * unified column with the identical attribute type. </p> <p>For example, when
+     * working with columns such as <code>first_name</code>, <code>middle_name</code>,
+     * and <code>last_name</code>, assigning them a common <code>groupName</code> will
+     * prompt Entity Resolution to concatenate them into a single value.</p>
      */
     inline SchemaInputAttribute& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
 
     /**
-     * <p>Instruct Entity Resolution to combine several columns into a unified column
-     * with the identical attribute type. For example, when working with columns such
-     * as first_name, middle_name, and last_name, assigning them a common
-     * <code>GroupName</code> will prompt Entity Resolution to concatenate them into a
-     * single value.</p>
+     * <p>A string that instructs Entity Resolution to combine several columns into a
+     * unified column with the identical attribute type. </p> <p>For example, when
+     * working with columns such as <code>first_name</code>, <code>middle_name</code>,
+     * and <code>last_name</code>, assigning them a common <code>groupName</code> will
+     * prompt Entity Resolution to concatenate them into a single value.</p>
      */
     inline SchemaInputAttribute& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>Instruct Entity Resolution to combine several columns into a unified column
-     * with the identical attribute type. For example, when working with columns such
-     * as first_name, middle_name, and last_name, assigning them a common
-     * <code>GroupName</code> will prompt Entity Resolution to concatenate them into a
-     * single value.</p>
+     * <p>A string that instructs Entity Resolution to combine several columns into a
+     * unified column with the identical attribute type. </p> <p>For example, when
+     * working with columns such as <code>first_name</code>, <code>middle_name</code>,
+     * and <code>last_name</code>, assigning them a common <code>groupName</code> will
+     * prompt Entity Resolution to concatenate them into a single value.</p>
      */
     inline SchemaInputAttribute& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
 
     /**
      * <p>A key that allows grouping of multiple input attributes into a unified
-     * matching group. For example, let's consider a scenario where the source table
-     * contains various addresses, such as <code>business_address</code> and
-     * <code>shipping_address</code>. By assigning the <code>MatchKey</code>
-     * <i>Address</i> to both attributes, Entity Resolution will match records across
-     * these fields to create a consolidated matching group. If no
-     * <code>MatchKey</code> is specified for a column, it won't be utilized for
+     * matching group. For example, consider a scenario where the source table contains
+     * various addresses, such as <code>business_address</code> and
+     * <code>shipping_address</code>. By assigning a <code>matchKey</code> called
+     * <code>address</code> to both attributes, Entity Resolution will match records
+     * across these fields to create a consolidated matching group. If no
+     * <code>matchKey</code> is specified for a column, it won't be utilized for
      * matching purposes but will still be included in the output table.</p>
      */
     inline const Aws::String& GetMatchKey() const{ return m_matchKey; }
 
     /**
      * <p>A key that allows grouping of multiple input attributes into a unified
-     * matching group. For example, let's consider a scenario where the source table
-     * contains various addresses, such as <code>business_address</code> and
-     * <code>shipping_address</code>. By assigning the <code>MatchKey</code>
-     * <i>Address</i> to both attributes, Entity Resolution will match records across
-     * these fields to create a consolidated matching group. If no
-     * <code>MatchKey</code> is specified for a column, it won't be utilized for
+     * matching group. For example, consider a scenario where the source table contains
+     * various addresses, such as <code>business_address</code> and
+     * <code>shipping_address</code>. By assigning a <code>matchKey</code> called
+     * <code>address</code> to both attributes, Entity Resolution will match records
+     * across these fields to create a consolidated matching group. If no
+     * <code>matchKey</code> is specified for a column, it won't be utilized for
      * matching purposes but will still be included in the output table.</p>
      */
     inline bool MatchKeyHasBeenSet() const { return m_matchKeyHasBeenSet; }
 
     /**
      * <p>A key that allows grouping of multiple input attributes into a unified
-     * matching group. For example, let's consider a scenario where the source table
-     * contains various addresses, such as <code>business_address</code> and
-     * <code>shipping_address</code>. By assigning the <code>MatchKey</code>
-     * <i>Address</i> to both attributes, Entity Resolution will match records across
-     * these fields to create a consolidated matching group. If no
-     * <code>MatchKey</code> is specified for a column, it won't be utilized for
+     * matching group. For example, consider a scenario where the source table contains
+     * various addresses, such as <code>business_address</code> and
+     * <code>shipping_address</code>. By assigning a <code>matchKey</code> called
+     * <code>address</code> to both attributes, Entity Resolution will match records
+     * across these fields to create a consolidated matching group. If no
+     * <code>matchKey</code> is specified for a column, it won't be utilized for
      * matching purposes but will still be included in the output table.</p>
      */
     inline void SetMatchKey(const Aws::String& value) { m_matchKeyHasBeenSet = true; m_matchKey = value; }
 
     /**
      * <p>A key that allows grouping of multiple input attributes into a unified
-     * matching group. For example, let's consider a scenario where the source table
-     * contains various addresses, such as <code>business_address</code> and
-     * <code>shipping_address</code>. By assigning the <code>MatchKey</code>
-     * <i>Address</i> to both attributes, Entity Resolution will match records across
-     * these fields to create a consolidated matching group. If no
-     * <code>MatchKey</code> is specified for a column, it won't be utilized for
+     * matching group. For example, consider a scenario where the source table contains
+     * various addresses, such as <code>business_address</code> and
+     * <code>shipping_address</code>. By assigning a <code>matchKey</code> called
+     * <code>address</code> to both attributes, Entity Resolution will match records
+     * across these fields to create a consolidated matching group. If no
+     * <code>matchKey</code> is specified for a column, it won't be utilized for
      * matching purposes but will still be included in the output table.</p>
      */
     inline void SetMatchKey(Aws::String&& value) { m_matchKeyHasBeenSet = true; m_matchKey = std::move(value); }
 
     /**
      * <p>A key that allows grouping of multiple input attributes into a unified
-     * matching group. For example, let's consider a scenario where the source table
-     * contains various addresses, such as <code>business_address</code> and
-     * <code>shipping_address</code>. By assigning the <code>MatchKey</code>
-     * <i>Address</i> to both attributes, Entity Resolution will match records across
-     * these fields to create a consolidated matching group. If no
-     * <code>MatchKey</code> is specified for a column, it won't be utilized for
+     * matching group. For example, consider a scenario where the source table contains
+     * various addresses, such as <code>business_address</code> and
+     * <code>shipping_address</code>. By assigning a <code>matchKey</code> called
+     * <code>address</code> to both attributes, Entity Resolution will match records
+     * across these fields to create a consolidated matching group. If no
+     * <code>matchKey</code> is specified for a column, it won't be utilized for
      * matching purposes but will still be included in the output table.</p>
      */
     inline void SetMatchKey(const char* value) { m_matchKeyHasBeenSet = true; m_matchKey.assign(value); }
 
     /**
      * <p>A key that allows grouping of multiple input attributes into a unified
-     * matching group. For example, let's consider a scenario where the source table
-     * contains various addresses, such as <code>business_address</code> and
-     * <code>shipping_address</code>. By assigning the <code>MatchKey</code>
-     * <i>Address</i> to both attributes, Entity Resolution will match records across
-     * these fields to create a consolidated matching group. If no
-     * <code>MatchKey</code> is specified for a column, it won't be utilized for
+     * matching group. For example, consider a scenario where the source table contains
+     * various addresses, such as <code>business_address</code> and
+     * <code>shipping_address</code>. By assigning a <code>matchKey</code> called
+     * <code>address</code> to both attributes, Entity Resolution will match records
+     * across these fields to create a consolidated matching group. If no
+     * <code>matchKey</code> is specified for a column, it won't be utilized for
      * matching purposes but will still be included in the output table.</p>
      */
     inline SchemaInputAttribute& WithMatchKey(const Aws::String& value) { SetMatchKey(value); return *this;}
 
     /**
      * <p>A key that allows grouping of multiple input attributes into a unified
-     * matching group. For example, let's consider a scenario where the source table
-     * contains various addresses, such as <code>business_address</code> and
-     * <code>shipping_address</code>. By assigning the <code>MatchKey</code>
-     * <i>Address</i> to both attributes, Entity Resolution will match records across
-     * these fields to create a consolidated matching group. If no
-     * <code>MatchKey</code> is specified for a column, it won't be utilized for
+     * matching group. For example, consider a scenario where the source table contains
+     * various addresses, such as <code>business_address</code> and
+     * <code>shipping_address</code>. By assigning a <code>matchKey</code> called
+     * <code>address</code> to both attributes, Entity Resolution will match records
+     * across these fields to create a consolidated matching group. If no
+     * <code>matchKey</code> is specified for a column, it won't be utilized for
      * matching purposes but will still be included in the output table.</p>
      */
     inline SchemaInputAttribute& WithMatchKey(Aws::String&& value) { SetMatchKey(std::move(value)); return *this;}
 
     /**
      * <p>A key that allows grouping of multiple input attributes into a unified
-     * matching group. For example, let's consider a scenario where the source table
-     * contains various addresses, such as <code>business_address</code> and
-     * <code>shipping_address</code>. By assigning the <code>MatchKey</code>
-     * <i>Address</i> to both attributes, Entity Resolution will match records across
-     * these fields to create a consolidated matching group. If no
-     * <code>MatchKey</code> is specified for a column, it won't be utilized for
+     * matching group. For example, consider a scenario where the source table contains
+     * various addresses, such as <code>business_address</code> and
+     * <code>shipping_address</code>. By assigning a <code>matchKey</code> called
+     * <code>address</code> to both attributes, Entity Resolution will match records
+     * across these fields to create a consolidated matching group. If no
+     * <code>matchKey</code> is specified for a column, it won't be utilized for
      * matching purposes but will still be included in the output table.</p>
      */
     inline SchemaInputAttribute& WithMatchKey(const char* value) { SetMatchKey(value); return *this;}

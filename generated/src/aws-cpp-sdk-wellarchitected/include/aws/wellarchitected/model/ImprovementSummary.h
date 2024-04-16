@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/wellarchitected/model/Risk.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/wellarchitected/model/JiraConfiguration.h>
 #include <aws/wellarchitected/model/ChoiceImprovementPlan.h>
 #include <utility>
 
@@ -200,6 +201,37 @@ namespace Model
      */
     inline ImprovementSummary& AddImprovementPlans(ChoiceImprovementPlan&& value) { m_improvementPlansHasBeenSet = true; m_improvementPlans.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Configuration of the Jira integration.</p>
+     */
+    inline const JiraConfiguration& GetJiraConfiguration() const{ return m_jiraConfiguration; }
+
+    /**
+     * <p>Configuration of the Jira integration.</p>
+     */
+    inline bool JiraConfigurationHasBeenSet() const { return m_jiraConfigurationHasBeenSet; }
+
+    /**
+     * <p>Configuration of the Jira integration.</p>
+     */
+    inline void SetJiraConfiguration(const JiraConfiguration& value) { m_jiraConfigurationHasBeenSet = true; m_jiraConfiguration = value; }
+
+    /**
+     * <p>Configuration of the Jira integration.</p>
+     */
+    inline void SetJiraConfiguration(JiraConfiguration&& value) { m_jiraConfigurationHasBeenSet = true; m_jiraConfiguration = std::move(value); }
+
+    /**
+     * <p>Configuration of the Jira integration.</p>
+     */
+    inline ImprovementSummary& WithJiraConfiguration(const JiraConfiguration& value) { SetJiraConfiguration(value); return *this;}
+
+    /**
+     * <p>Configuration of the Jira integration.</p>
+     */
+    inline ImprovementSummary& WithJiraConfiguration(JiraConfiguration&& value) { SetJiraConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_questionId;
@@ -219,6 +251,9 @@ namespace Model
 
     Aws::Vector<ChoiceImprovementPlan> m_improvementPlans;
     bool m_improvementPlansHasBeenSet = false;
+
+    JiraConfiguration m_jiraConfiguration;
+    bool m_jiraConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

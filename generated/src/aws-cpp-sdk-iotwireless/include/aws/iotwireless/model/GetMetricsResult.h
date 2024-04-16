@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>The list of retrieved metrics.</p>
+     * <p>The list of summary metrics that were retrieved.</p>
      */
     inline const Aws::Vector<SummaryMetricQueryResult>& GetSummaryMetricQueryResults() const{ return m_summaryMetricQueryResults; }
 
     /**
-     * <p>The list of retrieved metrics.</p>
+     * <p>The list of summary metrics that were retrieved.</p>
      */
     inline void SetSummaryMetricQueryResults(const Aws::Vector<SummaryMetricQueryResult>& value) { m_summaryMetricQueryResults = value; }
 
     /**
-     * <p>The list of retrieved metrics.</p>
+     * <p>The list of summary metrics that were retrieved.</p>
      */
     inline void SetSummaryMetricQueryResults(Aws::Vector<SummaryMetricQueryResult>&& value) { m_summaryMetricQueryResults = std::move(value); }
 
     /**
-     * <p>The list of retrieved metrics.</p>
+     * <p>The list of summary metrics that were retrieved.</p>
      */
     inline GetMetricsResult& WithSummaryMetricQueryResults(const Aws::Vector<SummaryMetricQueryResult>& value) { SetSummaryMetricQueryResults(value); return *this;}
 
     /**
-     * <p>The list of retrieved metrics.</p>
+     * <p>The list of summary metrics that were retrieved.</p>
      */
     inline GetMetricsResult& WithSummaryMetricQueryResults(Aws::Vector<SummaryMetricQueryResult>&& value) { SetSummaryMetricQueryResults(std::move(value)); return *this;}
 
     /**
-     * <p>The list of retrieved metrics.</p>
+     * <p>The list of summary metrics that were retrieved.</p>
      */
     inline GetMetricsResult& AddSummaryMetricQueryResults(const SummaryMetricQueryResult& value) { m_summaryMetricQueryResults.push_back(value); return *this; }
 
     /**
-     * <p>The list of retrieved metrics.</p>
+     * <p>The list of summary metrics that were retrieved.</p>
      */
     inline GetMetricsResult& AddSummaryMetricQueryResults(SummaryMetricQueryResult&& value) { m_summaryMetricQueryResults.push_back(std::move(value)); return *this; }
 

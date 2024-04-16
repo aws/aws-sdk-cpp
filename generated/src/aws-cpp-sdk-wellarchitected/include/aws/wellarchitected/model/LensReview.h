@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/wellarchitected/model/LensStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/wellarchitected/model/JiraSelectedQuestionConfiguration.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/wellarchitected/model/PillarReviewSummary.h>
@@ -232,6 +233,37 @@ namespace Model
     inline LensReview& AddPillarReviewSummaries(PillarReviewSummary&& value) { m_pillarReviewSummariesHasBeenSet = true; m_pillarReviewSummaries.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>Jira configuration status of the Lens review.</p>
+     */
+    inline const JiraSelectedQuestionConfiguration& GetJiraConfiguration() const{ return m_jiraConfiguration; }
+
+    /**
+     * <p>Jira configuration status of the Lens review.</p>
+     */
+    inline bool JiraConfigurationHasBeenSet() const { return m_jiraConfigurationHasBeenSet; }
+
+    /**
+     * <p>Jira configuration status of the Lens review.</p>
+     */
+    inline void SetJiraConfiguration(const JiraSelectedQuestionConfiguration& value) { m_jiraConfigurationHasBeenSet = true; m_jiraConfiguration = value; }
+
+    /**
+     * <p>Jira configuration status of the Lens review.</p>
+     */
+    inline void SetJiraConfiguration(JiraSelectedQuestionConfiguration&& value) { m_jiraConfigurationHasBeenSet = true; m_jiraConfiguration = std::move(value); }
+
+    /**
+     * <p>Jira configuration status of the Lens review.</p>
+     */
+    inline LensReview& WithJiraConfiguration(const JiraSelectedQuestionConfiguration& value) { SetJiraConfiguration(value); return *this;}
+
+    /**
+     * <p>Jira configuration status of the Lens review.</p>
+     */
+    inline LensReview& WithJiraConfiguration(JiraSelectedQuestionConfiguration&& value) { SetJiraConfiguration(std::move(value)); return *this;}
+
+
     
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
 
@@ -410,6 +442,9 @@ namespace Model
 
     Aws::Vector<PillarReviewSummary> m_pillarReviewSummaries;
     bool m_pillarReviewSummariesHasBeenSet = false;
+
+    JiraSelectedQuestionConfiguration m_jiraConfiguration;
+    bool m_jiraConfigurationHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
     bool m_updatedAtHasBeenSet = false;

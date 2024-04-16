@@ -42,50 +42,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the secret that you created in Secrets Manager that is linked to
-     * your Amazon RDS database.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets
+     * Manager that is linked to your Amazon RDS database.</p>
      */
     inline const Aws::String& GetCredentialsSecretArn() const{ return m_credentialsSecretArn; }
 
     /**
-     * <p>The ARN of the secret that you created in Secrets Manager that is linked to
-     * your Amazon RDS database.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets
+     * Manager that is linked to your Amazon RDS database.</p>
      */
     inline bool CredentialsSecretArnHasBeenSet() const { return m_credentialsSecretArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the secret that you created in Secrets Manager that is linked to
-     * your Amazon RDS database.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets
+     * Manager that is linked to your Amazon RDS database.</p>
      */
     inline void SetCredentialsSecretArn(const Aws::String& value) { m_credentialsSecretArnHasBeenSet = true; m_credentialsSecretArn = value; }
 
     /**
-     * <p>The ARN of the secret that you created in Secrets Manager that is linked to
-     * your Amazon RDS database.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets
+     * Manager that is linked to your Amazon RDS database.</p>
      */
     inline void SetCredentialsSecretArn(Aws::String&& value) { m_credentialsSecretArnHasBeenSet = true; m_credentialsSecretArn = std::move(value); }
 
     /**
-     * <p>The ARN of the secret that you created in Secrets Manager that is linked to
-     * your Amazon RDS database.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets
+     * Manager that is linked to your Amazon RDS database.</p>
      */
     inline void SetCredentialsSecretArn(const char* value) { m_credentialsSecretArnHasBeenSet = true; m_credentialsSecretArn.assign(value); }
 
     /**
-     * <p>The ARN of the secret that you created in Secrets Manager that is linked to
-     * your Amazon RDS database.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets
+     * Manager that is linked to your Amazon RDS database.</p>
      */
     inline RdsConfiguration& WithCredentialsSecretArn(const Aws::String& value) { SetCredentialsSecretArn(value); return *this;}
 
     /**
-     * <p>The ARN of the secret that you created in Secrets Manager that is linked to
-     * your Amazon RDS database.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets
+     * Manager that is linked to your Amazon RDS database.</p>
      */
     inline RdsConfiguration& WithCredentialsSecretArn(Aws::String&& value) { SetCredentialsSecretArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the secret that you created in Secrets Manager that is linked to
-     * your Amazon RDS database.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets
+     * Manager that is linked to your Amazon RDS database.</p>
      */
     inline RdsConfiguration& WithCredentialsSecretArn(const char* value) { SetCredentialsSecretArn(value); return *this;}
 
@@ -169,42 +169,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the vector store.</p>
+     * <p>The Amazon Resource Name (ARN) of the vector store.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
-     * <p>The ARN of the vector store.</p>
+     * <p>The Amazon Resource Name (ARN) of the vector store.</p>
      */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the vector store.</p>
+     * <p>The Amazon Resource Name (ARN) of the vector store.</p>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
-     * <p>The ARN of the vector store.</p>
+     * <p>The Amazon Resource Name (ARN) of the vector store.</p>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
-     * <p>The ARN of the vector store.</p>
+     * <p>The Amazon Resource Name (ARN) of the vector store.</p>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     /**
-     * <p>The ARN of the vector store.</p>
+     * <p>The Amazon Resource Name (ARN) of the vector store.</p>
      */
     inline RdsConfiguration& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
     /**
-     * <p>The ARN of the vector store.</p>
+     * <p>The Amazon Resource Name (ARN) of the vector store.</p>
      */
     inline RdsConfiguration& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the vector store.</p>
+     * <p>The Amazon Resource Name (ARN) of the vector store.</p>
      */
     inline RdsConfiguration& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 

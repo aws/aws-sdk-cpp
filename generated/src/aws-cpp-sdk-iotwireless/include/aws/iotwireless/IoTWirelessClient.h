@@ -471,7 +471,13 @@ namespace IoTWireless
         }
 
         /**
-         * <p>Provisions a wireless gateway.</p><p><h3>See Also:</h3>   <a
+         * <p>Provisions a wireless gateway.</p>  <p>When provisioning a wireless
+         * gateway, you might run into duplication errors for the following reasons.</p>
+         * <ul> <li> <p>If you specify a <code>GatewayEui</code> value that already
+         * exists.</p> </li> <li> <p>If you used a <code>ClientRequestToken</code> with the
+         * same parameters within the last 10 minutes.</p> </li> </ul> <p>To avoid this
+         * error, make sure that you use unique identifiers and parameters for each request
+         * within the specified time period.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateWirelessGateway">AWS
          * API Reference</a></p>
          */
@@ -772,7 +778,13 @@ namespace IoTWireless
         }
 
         /**
-         * <p>Deletes a wireless gateway.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a wireless gateway.</p>  <p>When deleting a wireless gateway,
+         * you might run into duplication errors for the following reasons.</p> <ul> <li>
+         * <p>If you specify a <code>GatewayEui</code> value that already exists.</p> </li>
+         * <li> <p>If you used a <code>ClientRequestToken</code> with the same parameters
+         * within the last 10 minutes.</p> </li> </ul> <p>To avoid this error, make sure
+         * that you use unique identifiers and parameters for each request within the
+         * specified time period.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteWirelessGateway">AWS
          * API Reference</a></p>
          */
@@ -1187,7 +1199,7 @@ namespace IoTWireless
         }
 
         /**
-         * <p>Get the metric configuration status for this account.</p><p><h3>See
+         * <p>Get the metric configuration status for this AWS account.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMetricConfiguration">AWS
          * API Reference</a></p>
@@ -1213,7 +1225,7 @@ namespace IoTWireless
         }
 
         /**
-         * <p>Get metrics.</p><p><h3>See Also:</h3>   <a
+         * <p>Get the summary metrics for this AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMetrics">AWS
          * API Reference</a></p>
          */
@@ -2610,7 +2622,7 @@ namespace IoTWireless
         }
 
         /**
-         * <p>Update the metric configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Update the summary metric configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateMetricConfiguration">AWS
          * API Reference</a></p>
          */

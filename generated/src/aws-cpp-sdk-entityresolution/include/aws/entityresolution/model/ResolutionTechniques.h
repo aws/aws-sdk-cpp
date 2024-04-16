@@ -72,38 +72,44 @@ namespace Model
 
 
     /**
-     * <p>The type of matching. There are two types of matching:
-     * <code>RULE_MATCHING</code> and <code>ML_MATCHING</code>.</p>
+     * <p>The type of matching. There are three types of matching:
+     * <code>RULE_MATCHING</code>, <code>ML_MATCHING</code>, and
+     * <code>PROVIDER</code>.</p>
      */
     inline const ResolutionType& GetResolutionType() const{ return m_resolutionType; }
 
     /**
-     * <p>The type of matching. There are two types of matching:
-     * <code>RULE_MATCHING</code> and <code>ML_MATCHING</code>.</p>
+     * <p>The type of matching. There are three types of matching:
+     * <code>RULE_MATCHING</code>, <code>ML_MATCHING</code>, and
+     * <code>PROVIDER</code>.</p>
      */
     inline bool ResolutionTypeHasBeenSet() const { return m_resolutionTypeHasBeenSet; }
 
     /**
-     * <p>The type of matching. There are two types of matching:
-     * <code>RULE_MATCHING</code> and <code>ML_MATCHING</code>.</p>
+     * <p>The type of matching. There are three types of matching:
+     * <code>RULE_MATCHING</code>, <code>ML_MATCHING</code>, and
+     * <code>PROVIDER</code>.</p>
      */
     inline void SetResolutionType(const ResolutionType& value) { m_resolutionTypeHasBeenSet = true; m_resolutionType = value; }
 
     /**
-     * <p>The type of matching. There are two types of matching:
-     * <code>RULE_MATCHING</code> and <code>ML_MATCHING</code>.</p>
+     * <p>The type of matching. There are three types of matching:
+     * <code>RULE_MATCHING</code>, <code>ML_MATCHING</code>, and
+     * <code>PROVIDER</code>.</p>
      */
     inline void SetResolutionType(ResolutionType&& value) { m_resolutionTypeHasBeenSet = true; m_resolutionType = std::move(value); }
 
     /**
-     * <p>The type of matching. There are two types of matching:
-     * <code>RULE_MATCHING</code> and <code>ML_MATCHING</code>.</p>
+     * <p>The type of matching. There are three types of matching:
+     * <code>RULE_MATCHING</code>, <code>ML_MATCHING</code>, and
+     * <code>PROVIDER</code>.</p>
      */
     inline ResolutionTechniques& WithResolutionType(const ResolutionType& value) { SetResolutionType(value); return *this;}
 
     /**
-     * <p>The type of matching. There are two types of matching:
-     * <code>RULE_MATCHING</code> and <code>ML_MATCHING</code>.</p>
+     * <p>The type of matching. There are three types of matching:
+     * <code>RULE_MATCHING</code>, <code>ML_MATCHING</code>, and
+     * <code>PROVIDER</code>.</p>
      */
     inline ResolutionTechniques& WithResolutionType(ResolutionType&& value) { SetResolutionType(std::move(value)); return *this;}
 

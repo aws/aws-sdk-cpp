@@ -9,7 +9,9 @@
 #include <aws/entityresolution/model/ErrorDetails.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/entityresolution/model/IdMappingJobMetrics.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/entityresolution/model/JobStatus.h>
+#include <aws/entityresolution/model/IdMappingJobOutputSource.h>
 #include <utility>
 
 namespace Aws
@@ -146,6 +148,42 @@ namespace Model
 
 
     /**
+     * <p>A list of <code>OutputSource</code> objects.</p>
+     */
+    inline const Aws::Vector<IdMappingJobOutputSource>& GetOutputSourceConfig() const{ return m_outputSourceConfig; }
+
+    /**
+     * <p>A list of <code>OutputSource</code> objects.</p>
+     */
+    inline void SetOutputSourceConfig(const Aws::Vector<IdMappingJobOutputSource>& value) { m_outputSourceConfig = value; }
+
+    /**
+     * <p>A list of <code>OutputSource</code> objects.</p>
+     */
+    inline void SetOutputSourceConfig(Aws::Vector<IdMappingJobOutputSource>&& value) { m_outputSourceConfig = std::move(value); }
+
+    /**
+     * <p>A list of <code>OutputSource</code> objects.</p>
+     */
+    inline GetIdMappingJobResult& WithOutputSourceConfig(const Aws::Vector<IdMappingJobOutputSource>& value) { SetOutputSourceConfig(value); return *this;}
+
+    /**
+     * <p>A list of <code>OutputSource</code> objects.</p>
+     */
+    inline GetIdMappingJobResult& WithOutputSourceConfig(Aws::Vector<IdMappingJobOutputSource>&& value) { SetOutputSourceConfig(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of <code>OutputSource</code> objects.</p>
+     */
+    inline GetIdMappingJobResult& AddOutputSourceConfig(const IdMappingJobOutputSource& value) { m_outputSourceConfig.push_back(value); return *this; }
+
+    /**
+     * <p>A list of <code>OutputSource</code> objects.</p>
+     */
+    inline GetIdMappingJobResult& AddOutputSourceConfig(IdMappingJobOutputSource&& value) { m_outputSourceConfig.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The time at which the job was started.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
@@ -227,6 +265,8 @@ namespace Model
     Aws::String m_jobId;
 
     IdMappingJobMetrics m_metrics;
+
+    Aws::Vector<IdMappingJobOutputSource> m_outputSourceConfig;
 
     Aws::Utils::DateTime m_startTime;
 

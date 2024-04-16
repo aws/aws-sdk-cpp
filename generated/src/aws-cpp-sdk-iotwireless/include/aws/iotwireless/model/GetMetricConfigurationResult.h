@@ -34,27 +34,32 @@ namespace Model
 
 
     /**
-     * <p>The account's configuration status for summary metric aggregation.</p>
+     * <p>The configuration status of the AWS account for summary metric
+     * aggregation.</p>
      */
     inline const SummaryMetricConfiguration& GetSummaryMetric() const{ return m_summaryMetric; }
 
     /**
-     * <p>The account's configuration status for summary metric aggregation.</p>
+     * <p>The configuration status of the AWS account for summary metric
+     * aggregation.</p>
      */
     inline void SetSummaryMetric(const SummaryMetricConfiguration& value) { m_summaryMetric = value; }
 
     /**
-     * <p>The account's configuration status for summary metric aggregation.</p>
+     * <p>The configuration status of the AWS account for summary metric
+     * aggregation.</p>
      */
     inline void SetSummaryMetric(SummaryMetricConfiguration&& value) { m_summaryMetric = std::move(value); }
 
     /**
-     * <p>The account's configuration status for summary metric aggregation.</p>
+     * <p>The configuration status of the AWS account for summary metric
+     * aggregation.</p>
      */
     inline GetMetricConfigurationResult& WithSummaryMetric(const SummaryMetricConfiguration& value) { SetSummaryMetric(value); return *this;}
 
     /**
-     * <p>The account's configuration status for summary metric aggregation.</p>
+     * <p>The configuration status of the AWS account for summary metric
+     * aggregation.</p>
      */
     inline GetMetricConfigurationResult& WithSummaryMetric(SummaryMetricConfiguration&& value) { SetSummaryMetric(std::move(value)); return *this;}
 

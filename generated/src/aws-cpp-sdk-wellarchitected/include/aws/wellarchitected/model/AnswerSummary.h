@@ -10,6 +10,7 @@
 #include <aws/wellarchitected/model/Risk.h>
 #include <aws/wellarchitected/model/AnswerReason.h>
 #include <aws/wellarchitected/model/QuestionType.h>
+#include <aws/wellarchitected/model/JiraConfiguration.h>
 #include <aws/wellarchitected/model/Choice.h>
 #include <aws/wellarchitected/model/ChoiceAnswerSummary.h>
 #include <utility>
@@ -306,6 +307,37 @@ namespace Model
      */
     inline AnswerSummary& WithQuestionType(QuestionType&& value) { SetQuestionType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Configuration of the Jira integration.</p>
+     */
+    inline const JiraConfiguration& GetJiraConfiguration() const{ return m_jiraConfiguration; }
+
+    /**
+     * <p>Configuration of the Jira integration.</p>
+     */
+    inline bool JiraConfigurationHasBeenSet() const { return m_jiraConfigurationHasBeenSet; }
+
+    /**
+     * <p>Configuration of the Jira integration.</p>
+     */
+    inline void SetJiraConfiguration(const JiraConfiguration& value) { m_jiraConfigurationHasBeenSet = true; m_jiraConfiguration = value; }
+
+    /**
+     * <p>Configuration of the Jira integration.</p>
+     */
+    inline void SetJiraConfiguration(JiraConfiguration&& value) { m_jiraConfigurationHasBeenSet = true; m_jiraConfiguration = std::move(value); }
+
+    /**
+     * <p>Configuration of the Jira integration.</p>
+     */
+    inline AnswerSummary& WithJiraConfiguration(const JiraConfiguration& value) { SetJiraConfiguration(value); return *this;}
+
+    /**
+     * <p>Configuration of the Jira integration.</p>
+     */
+    inline AnswerSummary& WithJiraConfiguration(JiraConfiguration&& value) { SetJiraConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_questionId;
@@ -337,6 +369,9 @@ namespace Model
 
     QuestionType m_questionType;
     bool m_questionTypeHasBeenSet = false;
+
+    JiraConfiguration m_jiraConfiguration;
+    bool m_jiraConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

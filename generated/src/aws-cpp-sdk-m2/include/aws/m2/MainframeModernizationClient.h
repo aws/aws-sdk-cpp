@@ -608,6 +608,33 @@ namespace MainframeModernization
         }
 
         /**
+         * <p>Lists all the job steps for JCL files to restart a batch job. This is only
+         * applicable for Micro Focus engine with versions 8.0.6 and above.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListBatchJobRestartPoints">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListBatchJobRestartPointsOutcome ListBatchJobRestartPoints(const Model::ListBatchJobRestartPointsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListBatchJobRestartPoints that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListBatchJobRestartPointsRequestT = Model::ListBatchJobRestartPointsRequest>
+        Model::ListBatchJobRestartPointsOutcomeCallable ListBatchJobRestartPointsCallable(const ListBatchJobRestartPointsRequestT& request) const
+        {
+            return SubmitCallable(&MainframeModernizationClient::ListBatchJobRestartPoints, request);
+        }
+
+        /**
+         * An Async wrapper for ListBatchJobRestartPoints that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListBatchJobRestartPointsRequestT = Model::ListBatchJobRestartPointsRequest>
+        void ListBatchJobRestartPointsAsync(const ListBatchJobRestartPointsRequestT& request, const ListBatchJobRestartPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MainframeModernizationClient::ListBatchJobRestartPoints, request, handler, context);
+        }
+
+        /**
          * <p>Lists the data set imports for the specified application.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListDataSetImportHistory">AWS

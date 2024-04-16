@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
+#include <aws/entityresolution/model/ProviderComponentSchema.h>
 #include <aws/core/utils/Document.h>
 #include <aws/entityresolution/model/ProviderEndpointConfiguration.h>
+#include <aws/entityresolution/model/ProviderIdNameSpaceConfiguration.h>
 #include <aws/entityresolution/model/ProviderIntermediateDataAccessConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/entityresolution/model/ServiceType.h>
@@ -62,6 +64,32 @@ namespace Model
      * data that comes back from the provider to your source data. </p>
      */
     inline GetProviderServiceResult& WithAnonymizedOutput(bool value) { SetAnonymizedOutput(value); return *this;}
+
+
+    /**
+     * <p>Input schema for the provider service.</p>
+     */
+    inline const ProviderComponentSchema& GetProviderComponentSchema() const{ return m_providerComponentSchema; }
+
+    /**
+     * <p>Input schema for the provider service.</p>
+     */
+    inline void SetProviderComponentSchema(const ProviderComponentSchema& value) { m_providerComponentSchema = value; }
+
+    /**
+     * <p>Input schema for the provider service.</p>
+     */
+    inline void SetProviderComponentSchema(ProviderComponentSchema&& value) { m_providerComponentSchema = std::move(value); }
+
+    /**
+     * <p>Input schema for the provider service.</p>
+     */
+    inline GetProviderServiceResult& WithProviderComponentSchema(const ProviderComponentSchema& value) { SetProviderComponentSchema(value); return *this;}
+
+    /**
+     * <p>Input schema for the provider service.</p>
+     */
+    inline GetProviderServiceResult& WithProviderComponentSchema(ProviderComponentSchema&& value) { SetProviderComponentSchema(std::move(value)); return *this;}
 
 
     /**
@@ -143,6 +171,32 @@ namespace Model
 
 
     /**
+     * <p>The provider configuration required for different ID namespace types.</p>
+     */
+    inline const ProviderIdNameSpaceConfiguration& GetProviderIdNameSpaceConfiguration() const{ return m_providerIdNameSpaceConfiguration; }
+
+    /**
+     * <p>The provider configuration required for different ID namespace types.</p>
+     */
+    inline void SetProviderIdNameSpaceConfiguration(const ProviderIdNameSpaceConfiguration& value) { m_providerIdNameSpaceConfiguration = value; }
+
+    /**
+     * <p>The provider configuration required for different ID namespace types.</p>
+     */
+    inline void SetProviderIdNameSpaceConfiguration(ProviderIdNameSpaceConfiguration&& value) { m_providerIdNameSpaceConfiguration = std::move(value); }
+
+    /**
+     * <p>The provider configuration required for different ID namespace types.</p>
+     */
+    inline GetProviderServiceResult& WithProviderIdNameSpaceConfiguration(const ProviderIdNameSpaceConfiguration& value) { SetProviderIdNameSpaceConfiguration(value); return *this;}
+
+    /**
+     * <p>The provider configuration required for different ID namespace types.</p>
+     */
+    inline GetProviderServiceResult& WithProviderIdNameSpaceConfiguration(ProviderIdNameSpaceConfiguration&& value) { SetProviderIdNameSpaceConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>The Amazon Web Services accounts and the S3 permissions that are required by
      * some providers to create an S3 bucket for intermediate data storage.</p>
      */
@@ -171,6 +225,32 @@ namespace Model
      * some providers to create an S3 bucket for intermediate data storage.</p>
      */
     inline GetProviderServiceResult& WithProviderIntermediateDataAccessConfiguration(ProviderIntermediateDataAccessConfiguration&& value) { SetProviderIntermediateDataAccessConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Provider service job configurations.</p>
+     */
+    inline Aws::Utils::DocumentView GetProviderJobConfiguration() const{ return m_providerJobConfiguration; }
+
+    /**
+     * <p>Provider service job configurations.</p>
+     */
+    inline void SetProviderJobConfiguration(const Aws::Utils::Document& value) { m_providerJobConfiguration = value; }
+
+    /**
+     * <p>Provider service job configurations.</p>
+     */
+    inline void SetProviderJobConfiguration(Aws::Utils::Document&& value) { m_providerJobConfiguration = std::move(value); }
+
+    /**
+     * <p>Provider service job configurations.</p>
+     */
+    inline GetProviderServiceResult& WithProviderJobConfiguration(const Aws::Utils::Document& value) { SetProviderJobConfiguration(value); return *this;}
+
+    /**
+     * <p>Provider service job configurations.</p>
+     */
+    inline GetProviderServiceResult& WithProviderJobConfiguration(Aws::Utils::Document&& value) { SetProviderJobConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -375,13 +455,19 @@ namespace Model
 
     bool m_anonymizedOutput;
 
+    ProviderComponentSchema m_providerComponentSchema;
+
     Aws::Utils::Document m_providerConfigurationDefinition;
 
     ProviderEndpointConfiguration m_providerEndpointConfiguration;
 
     Aws::Utils::Document m_providerEntityOutputDefinition;
 
+    ProviderIdNameSpaceConfiguration m_providerIdNameSpaceConfiguration;
+
     ProviderIntermediateDataAccessConfiguration m_providerIntermediateDataAccessConfiguration;
+
+    Aws::Utils::Document m_providerJobConfiguration;
 
     Aws::String m_providerName;
 

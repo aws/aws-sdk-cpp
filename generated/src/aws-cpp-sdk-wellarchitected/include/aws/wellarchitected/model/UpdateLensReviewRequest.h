@@ -8,6 +8,7 @@
 #include <aws/wellarchitected/WellArchitectedRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/wellarchitected/model/JiraSelectedQuestionConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -150,6 +151,37 @@ namespace Model
     
     inline UpdateLensReviewRequest& AddPillarNotes(const char* key, const char* value) { m_pillarNotesHasBeenSet = true; m_pillarNotes.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Configuration of the Jira integration.</p>
+     */
+    inline const JiraSelectedQuestionConfiguration& GetJiraConfiguration() const{ return m_jiraConfiguration; }
+
+    /**
+     * <p>Configuration of the Jira integration.</p>
+     */
+    inline bool JiraConfigurationHasBeenSet() const { return m_jiraConfigurationHasBeenSet; }
+
+    /**
+     * <p>Configuration of the Jira integration.</p>
+     */
+    inline void SetJiraConfiguration(const JiraSelectedQuestionConfiguration& value) { m_jiraConfigurationHasBeenSet = true; m_jiraConfiguration = value; }
+
+    /**
+     * <p>Configuration of the Jira integration.</p>
+     */
+    inline void SetJiraConfiguration(JiraSelectedQuestionConfiguration&& value) { m_jiraConfigurationHasBeenSet = true; m_jiraConfiguration = std::move(value); }
+
+    /**
+     * <p>Configuration of the Jira integration.</p>
+     */
+    inline UpdateLensReviewRequest& WithJiraConfiguration(const JiraSelectedQuestionConfiguration& value) { SetJiraConfiguration(value); return *this;}
+
+    /**
+     * <p>Configuration of the Jira integration.</p>
+     */
+    inline UpdateLensReviewRequest& WithJiraConfiguration(JiraSelectedQuestionConfiguration&& value) { SetJiraConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_workloadId;
@@ -163,6 +195,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_pillarNotes;
     bool m_pillarNotesHasBeenSet = false;
+
+    JiraSelectedQuestionConfiguration m_jiraConfiguration;
+    bool m_jiraConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

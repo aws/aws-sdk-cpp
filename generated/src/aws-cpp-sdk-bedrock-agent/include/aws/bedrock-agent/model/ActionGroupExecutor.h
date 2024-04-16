@@ -39,50 +39,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the Lambda function containing the business logic that is carried
-     * out upon invoking the action.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lambda function containing the business
+     * logic that is carried out upon invoking the action.</p>
      */
     inline const Aws::String& GetLambda() const{ return m_lambda; }
 
     /**
-     * <p>The ARN of the Lambda function containing the business logic that is carried
-     * out upon invoking the action.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lambda function containing the business
+     * logic that is carried out upon invoking the action.</p>
      */
     inline bool LambdaHasBeenSet() const { return m_lambdaHasBeenSet; }
 
     /**
-     * <p>The ARN of the Lambda function containing the business logic that is carried
-     * out upon invoking the action.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lambda function containing the business
+     * logic that is carried out upon invoking the action.</p>
      */
     inline void SetLambda(const Aws::String& value) { m_lambdaHasBeenSet = true; m_lambda = value; }
 
     /**
-     * <p>The ARN of the Lambda function containing the business logic that is carried
-     * out upon invoking the action.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lambda function containing the business
+     * logic that is carried out upon invoking the action.</p>
      */
     inline void SetLambda(Aws::String&& value) { m_lambdaHasBeenSet = true; m_lambda = std::move(value); }
 
     /**
-     * <p>The ARN of the Lambda function containing the business logic that is carried
-     * out upon invoking the action.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lambda function containing the business
+     * logic that is carried out upon invoking the action.</p>
      */
     inline void SetLambda(const char* value) { m_lambdaHasBeenSet = true; m_lambda.assign(value); }
 
     /**
-     * <p>The ARN of the Lambda function containing the business logic that is carried
-     * out upon invoking the action.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lambda function containing the business
+     * logic that is carried out upon invoking the action.</p>
      */
     inline ActionGroupExecutor& WithLambda(const Aws::String& value) { SetLambda(value); return *this;}
 
     /**
-     * <p>The ARN of the Lambda function containing the business logic that is carried
-     * out upon invoking the action.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lambda function containing the business
+     * logic that is carried out upon invoking the action.</p>
      */
     inline ActionGroupExecutor& WithLambda(Aws::String&& value) { SetLambda(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the Lambda function containing the business logic that is carried
-     * out upon invoking the action.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lambda function containing the business
+     * logic that is carried out upon invoking the action.</p>
      */
     inline ActionGroupExecutor& WithLambda(const char* value) { SetLambda(value); return *this;}
 

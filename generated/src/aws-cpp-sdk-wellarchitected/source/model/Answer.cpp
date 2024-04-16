@@ -35,7 +35,8 @@ Answer::Answer() :
     m_riskHasBeenSet(false),
     m_notesHasBeenSet(false),
     m_reason(AnswerReason::NOT_SET),
-    m_reasonHasBeenSet(false)
+    m_reasonHasBeenSet(false),
+    m_jiraConfigurationHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ Answer::Answer(JsonView jsonValue) :
     m_riskHasBeenSet(false),
     m_notesHasBeenSet(false),
     m_reason(AnswerReason::NOT_SET),
-    m_reasonHasBeenSet(false)
+    m_reasonHasBeenSet(false),
+    m_jiraConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -170,6 +172,13 @@ Answer& Answer::operator =(JsonView jsonValue)
     m_reasonHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("JiraConfiguration"))
+  {
+    m_jiraConfiguration = jsonValue.GetObject("JiraConfiguration");
+
+    m_jiraConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -272,6 +281,12 @@ JsonValue Answer::Jsonize() const
   if(m_reasonHasBeenSet)
   {
    payload.WithString("Reason", AnswerReasonMapper::GetNameForAnswerReason(m_reason));
+  }
+
+  if(m_jiraConfigurationHasBeenSet)
+  {
+   payload.WithObject("JiraConfiguration", m_jiraConfiguration.Jsonize());
+
   }
 
   return payload;

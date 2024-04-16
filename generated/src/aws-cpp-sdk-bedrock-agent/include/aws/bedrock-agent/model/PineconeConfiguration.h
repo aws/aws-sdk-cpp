@@ -83,50 +83,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the secret that you created in Secrets Manager that is linked to
-     * your Pinecone API key.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets
+     * Manager that is linked to your Pinecone API key.</p>
      */
     inline const Aws::String& GetCredentialsSecretArn() const{ return m_credentialsSecretArn; }
 
     /**
-     * <p>The ARN of the secret that you created in Secrets Manager that is linked to
-     * your Pinecone API key.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets
+     * Manager that is linked to your Pinecone API key.</p>
      */
     inline bool CredentialsSecretArnHasBeenSet() const { return m_credentialsSecretArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the secret that you created in Secrets Manager that is linked to
-     * your Pinecone API key.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets
+     * Manager that is linked to your Pinecone API key.</p>
      */
     inline void SetCredentialsSecretArn(const Aws::String& value) { m_credentialsSecretArnHasBeenSet = true; m_credentialsSecretArn = value; }
 
     /**
-     * <p>The ARN of the secret that you created in Secrets Manager that is linked to
-     * your Pinecone API key.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets
+     * Manager that is linked to your Pinecone API key.</p>
      */
     inline void SetCredentialsSecretArn(Aws::String&& value) { m_credentialsSecretArnHasBeenSet = true; m_credentialsSecretArn = std::move(value); }
 
     /**
-     * <p>The ARN of the secret that you created in Secrets Manager that is linked to
-     * your Pinecone API key.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets
+     * Manager that is linked to your Pinecone API key.</p>
      */
     inline void SetCredentialsSecretArn(const char* value) { m_credentialsSecretArnHasBeenSet = true; m_credentialsSecretArn.assign(value); }
 
     /**
-     * <p>The ARN of the secret that you created in Secrets Manager that is linked to
-     * your Pinecone API key.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets
+     * Manager that is linked to your Pinecone API key.</p>
      */
     inline PineconeConfiguration& WithCredentialsSecretArn(const Aws::String& value) { SetCredentialsSecretArn(value); return *this;}
 
     /**
-     * <p>The ARN of the secret that you created in Secrets Manager that is linked to
-     * your Pinecone API key.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets
+     * Manager that is linked to your Pinecone API key.</p>
      */
     inline PineconeConfiguration& WithCredentialsSecretArn(Aws::String&& value) { SetCredentialsSecretArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the secret that you created in Secrets Manager that is linked to
-     * your Pinecone API key.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets
+     * Manager that is linked to your Pinecone API key.</p>
      */
     inline PineconeConfiguration& WithCredentialsSecretArn(const char* value) { SetCredentialsSecretArn(value); return *this;}
 

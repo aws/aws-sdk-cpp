@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/m2/MainframeModernization_EXPORTS.h>
 #include <aws/m2/model/FileBatchJobIdentifier.h>
+#include <aws/m2/model/RestartBatchJobIdentifier.h>
 #include <aws/m2/model/S3BatchJobIdentifier.h>
 #include <aws/m2/model/ScriptBatchJobIdentifier.h>
 #include <utility>
@@ -68,6 +69,43 @@ namespace Model
      * <p>Specifies a file associated with a specific batch job.</p>
      */
     inline BatchJobIdentifier& WithFileBatchJobIdentifier(FileBatchJobIdentifier&& value) { SetFileBatchJobIdentifier(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies the required information for restart, including execution ID and
+     * jobsteprestartmarker.</p>
+     */
+    inline const RestartBatchJobIdentifier& GetRestartBatchJobIdentifier() const{ return m_restartBatchJobIdentifier; }
+
+    /**
+     * <p>Specifies the required information for restart, including execution ID and
+     * jobsteprestartmarker.</p>
+     */
+    inline bool RestartBatchJobIdentifierHasBeenSet() const { return m_restartBatchJobIdentifierHasBeenSet; }
+
+    /**
+     * <p>Specifies the required information for restart, including execution ID and
+     * jobsteprestartmarker.</p>
+     */
+    inline void SetRestartBatchJobIdentifier(const RestartBatchJobIdentifier& value) { m_restartBatchJobIdentifierHasBeenSet = true; m_restartBatchJobIdentifier = value; }
+
+    /**
+     * <p>Specifies the required information for restart, including execution ID and
+     * jobsteprestartmarker.</p>
+     */
+    inline void SetRestartBatchJobIdentifier(RestartBatchJobIdentifier&& value) { m_restartBatchJobIdentifierHasBeenSet = true; m_restartBatchJobIdentifier = std::move(value); }
+
+    /**
+     * <p>Specifies the required information for restart, including execution ID and
+     * jobsteprestartmarker.</p>
+     */
+    inline BatchJobIdentifier& WithRestartBatchJobIdentifier(const RestartBatchJobIdentifier& value) { SetRestartBatchJobIdentifier(value); return *this;}
+
+    /**
+     * <p>Specifies the required information for restart, including execution ID and
+     * jobsteprestartmarker.</p>
+     */
+    inline BatchJobIdentifier& WithRestartBatchJobIdentifier(RestartBatchJobIdentifier&& value) { SetRestartBatchJobIdentifier(std::move(value)); return *this;}
 
 
     /**
@@ -147,6 +185,9 @@ namespace Model
 
     FileBatchJobIdentifier m_fileBatchJobIdentifier;
     bool m_fileBatchJobIdentifierHasBeenSet = false;
+
+    RestartBatchJobIdentifier m_restartBatchJobIdentifier;
+    bool m_restartBatchJobIdentifierHasBeenSet = false;
 
     S3BatchJobIdentifier m_s3BatchJobIdentifier;
     bool m_s3BatchJobIdentifierHasBeenSet = false;

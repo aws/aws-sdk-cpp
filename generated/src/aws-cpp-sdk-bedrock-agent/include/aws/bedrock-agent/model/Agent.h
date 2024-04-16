@@ -42,42 +42,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the agent.</p>
+     * <p>The Amazon Resource Name (ARN) of the agent.</p>
      */
     inline const Aws::String& GetAgentArn() const{ return m_agentArn; }
 
     /**
-     * <p>The ARN of the agent.</p>
+     * <p>The Amazon Resource Name (ARN) of the agent.</p>
      */
     inline bool AgentArnHasBeenSet() const { return m_agentArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the agent.</p>
+     * <p>The Amazon Resource Name (ARN) of the agent.</p>
      */
     inline void SetAgentArn(const Aws::String& value) { m_agentArnHasBeenSet = true; m_agentArn = value; }
 
     /**
-     * <p>The ARN of the agent.</p>
+     * <p>The Amazon Resource Name (ARN) of the agent.</p>
      */
     inline void SetAgentArn(Aws::String&& value) { m_agentArnHasBeenSet = true; m_agentArn = std::move(value); }
 
     /**
-     * <p>The ARN of the agent.</p>
+     * <p>The Amazon Resource Name (ARN) of the agent.</p>
      */
     inline void SetAgentArn(const char* value) { m_agentArnHasBeenSet = true; m_agentArn.assign(value); }
 
     /**
-     * <p>The ARN of the agent.</p>
+     * <p>The Amazon Resource Name (ARN) of the agent.</p>
      */
     inline Agent& WithAgentArn(const Aws::String& value) { SetAgentArn(value); return *this;}
 
     /**
-     * <p>The ARN of the agent.</p>
+     * <p>The Amazon Resource Name (ARN) of the agent.</p>
      */
     inline Agent& WithAgentArn(Aws::String&& value) { SetAgentArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the agent.</p>
+     * <p>The Amazon Resource Name (ARN) of the agent.</p>
      */
     inline Agent& WithAgentArn(const char* value) { SetAgentArn(value); return *this;}
 
@@ -165,50 +165,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the IAM role with permissions to call API operations on the agent.
-     * The ARN must begin with <code>AmazonBedrockExecutionRoleForAgents_</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API
+     * operations on the agent.</p>
      */
     inline const Aws::String& GetAgentResourceRoleArn() const{ return m_agentResourceRoleArn; }
 
     /**
-     * <p>The ARN of the IAM role with permissions to call API operations on the agent.
-     * The ARN must begin with <code>AmazonBedrockExecutionRoleForAgents_</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API
+     * operations on the agent.</p>
      */
     inline bool AgentResourceRoleArnHasBeenSet() const { return m_agentResourceRoleArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the IAM role with permissions to call API operations on the agent.
-     * The ARN must begin with <code>AmazonBedrockExecutionRoleForAgents_</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API
+     * operations on the agent.</p>
      */
     inline void SetAgentResourceRoleArn(const Aws::String& value) { m_agentResourceRoleArnHasBeenSet = true; m_agentResourceRoleArn = value; }
 
     /**
-     * <p>The ARN of the IAM role with permissions to call API operations on the agent.
-     * The ARN must begin with <code>AmazonBedrockExecutionRoleForAgents_</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API
+     * operations on the agent.</p>
      */
     inline void SetAgentResourceRoleArn(Aws::String&& value) { m_agentResourceRoleArnHasBeenSet = true; m_agentResourceRoleArn = std::move(value); }
 
     /**
-     * <p>The ARN of the IAM role with permissions to call API operations on the agent.
-     * The ARN must begin with <code>AmazonBedrockExecutionRoleForAgents_</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API
+     * operations on the agent.</p>
      */
     inline void SetAgentResourceRoleArn(const char* value) { m_agentResourceRoleArnHasBeenSet = true; m_agentResourceRoleArn.assign(value); }
 
     /**
-     * <p>The ARN of the IAM role with permissions to call API operations on the agent.
-     * The ARN must begin with <code>AmazonBedrockExecutionRoleForAgents_</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API
+     * operations on the agent.</p>
      */
     inline Agent& WithAgentResourceRoleArn(const Aws::String& value) { SetAgentResourceRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of the IAM role with permissions to call API operations on the agent.
-     * The ARN must begin with <code>AmazonBedrockExecutionRoleForAgents_</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API
+     * operations on the agent.</p>
      */
     inline Agent& WithAgentResourceRoleArn(Aws::String&& value) { SetAgentResourceRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the IAM role with permissions to call API operations on the agent.
-     * The ARN must begin with <code>AmazonBedrockExecutionRoleForAgents_</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API
+     * operations on the agent.</p>
      */
     inline Agent& WithAgentResourceRoleArn(const char* value) { SetAgentResourceRoleArn(value); return *this;}
 
@@ -219,7 +219,7 @@ namespace Model
      * created.</p> </li> <li> <p>PREPARING – The agent is being prepared.</p> </li>
      * <li> <p>PREPARED – The agent is prepared and ready to be invoked.</p> </li> <li>
      * <p>NOT_PREPARED – The agent has been created but not yet prepared.</p> </li>
-     * <li> <p>FAILED – The agent API operation failed.</p> </li> <li> <p>UPDATING –
+     * <li> <p>FAILED ��� The agent API operation failed.</p> </li> <li> <p>UPDATING –
      * The agent is being updated.</p> </li> <li> <p>DELETING – The agent is being
      * deleted.</p> </li> </ul>
      */
@@ -231,7 +231,7 @@ namespace Model
      * created.</p> </li> <li> <p>PREPARING – The agent is being prepared.</p> </li>
      * <li> <p>PREPARED – The agent is prepared and ready to be invoked.</p> </li> <li>
      * <p>NOT_PREPARED – The agent has been created but not yet prepared.</p> </li>
-     * <li> <p>FAILED – The agent API operation failed.</p> </li> <li> <p>UPDATING –
+     * <li> <p>FAILED ��� The agent API operation failed.</p> </li> <li> <p>UPDATING –
      * The agent is being updated.</p> </li> <li> <p>DELETING – The agent is being
      * deleted.</p> </li> </ul>
      */
@@ -243,7 +243,7 @@ namespace Model
      * created.</p> </li> <li> <p>PREPARING – The agent is being prepared.</p> </li>
      * <li> <p>PREPARED – The agent is prepared and ready to be invoked.</p> </li> <li>
      * <p>NOT_PREPARED – The agent has been created but not yet prepared.</p> </li>
-     * <li> <p>FAILED – The agent API operation failed.</p> </li> <li> <p>UPDATING –
+     * <li> <p>FAILED ��� The agent API operation failed.</p> </li> <li> <p>UPDATING –
      * The agent is being updated.</p> </li> <li> <p>DELETING – The agent is being
      * deleted.</p> </li> </ul>
      */
@@ -255,7 +255,7 @@ namespace Model
      * created.</p> </li> <li> <p>PREPARING – The agent is being prepared.</p> </li>
      * <li> <p>PREPARED – The agent is prepared and ready to be invoked.</p> </li> <li>
      * <p>NOT_PREPARED – The agent has been created but not yet prepared.</p> </li>
-     * <li> <p>FAILED – The agent API operation failed.</p> </li> <li> <p>UPDATING –
+     * <li> <p>FAILED ��� The agent API operation failed.</p> </li> <li> <p>UPDATING –
      * The agent is being updated.</p> </li> <li> <p>DELETING – The agent is being
      * deleted.</p> </li> </ul>
      */
@@ -267,7 +267,7 @@ namespace Model
      * created.</p> </li> <li> <p>PREPARING – The agent is being prepared.</p> </li>
      * <li> <p>PREPARED – The agent is prepared and ready to be invoked.</p> </li> <li>
      * <p>NOT_PREPARED – The agent has been created but not yet prepared.</p> </li>
-     * <li> <p>FAILED – The agent API operation failed.</p> </li> <li> <p>UPDATING –
+     * <li> <p>FAILED ��� The agent API operation failed.</p> </li> <li> <p>UPDATING –
      * The agent is being updated.</p> </li> <li> <p>DELETING – The agent is being
      * deleted.</p> </li> </ul>
      */
@@ -279,7 +279,7 @@ namespace Model
      * created.</p> </li> <li> <p>PREPARING – The agent is being prepared.</p> </li>
      * <li> <p>PREPARED – The agent is prepared and ready to be invoked.</p> </li> <li>
      * <p>NOT_PREPARED – The agent has been created but not yet prepared.</p> </li>
-     * <li> <p>FAILED – The agent API operation failed.</p> </li> <li> <p>UPDATING –
+     * <li> <p>FAILED ��� The agent API operation failed.</p> </li> <li> <p>UPDATING –
      * The agent is being updated.</p> </li> <li> <p>DELETING – The agent is being
      * deleted.</p> </li> </ul>
      */
@@ -432,42 +432,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the KMS key that encrypts the agent.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key that encrypts the agent.</p>
      */
     inline const Aws::String& GetCustomerEncryptionKeyArn() const{ return m_customerEncryptionKeyArn; }
 
     /**
-     * <p>The ARN of the KMS key that encrypts the agent.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key that encrypts the agent.</p>
      */
     inline bool CustomerEncryptionKeyArnHasBeenSet() const { return m_customerEncryptionKeyArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the KMS key that encrypts the agent.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key that encrypts the agent.</p>
      */
     inline void SetCustomerEncryptionKeyArn(const Aws::String& value) { m_customerEncryptionKeyArnHasBeenSet = true; m_customerEncryptionKeyArn = value; }
 
     /**
-     * <p>The ARN of the KMS key that encrypts the agent.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key that encrypts the agent.</p>
      */
     inline void SetCustomerEncryptionKeyArn(Aws::String&& value) { m_customerEncryptionKeyArnHasBeenSet = true; m_customerEncryptionKeyArn = std::move(value); }
 
     /**
-     * <p>The ARN of the KMS key that encrypts the agent.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key that encrypts the agent.</p>
      */
     inline void SetCustomerEncryptionKeyArn(const char* value) { m_customerEncryptionKeyArnHasBeenSet = true; m_customerEncryptionKeyArn.assign(value); }
 
     /**
-     * <p>The ARN of the KMS key that encrypts the agent.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key that encrypts the agent.</p>
      */
     inline Agent& WithCustomerEncryptionKeyArn(const Aws::String& value) { SetCustomerEncryptionKeyArn(value); return *this;}
 
     /**
-     * <p>The ARN of the KMS key that encrypts the agent.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key that encrypts the agent.</p>
      */
     inline Agent& WithCustomerEncryptionKeyArn(Aws::String&& value) { SetCustomerEncryptionKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the KMS key that encrypts the agent.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key that encrypts the agent.</p>
      */
     inline Agent& WithCustomerEncryptionKeyArn(const char* value) { SetCustomerEncryptionKeyArn(value); return *this;}
 

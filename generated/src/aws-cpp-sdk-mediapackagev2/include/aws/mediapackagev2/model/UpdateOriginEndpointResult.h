@@ -13,6 +13,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/mediapackagev2/model/GetHlsManifestConfiguration.h>
 #include <aws/mediapackagev2/model/GetLowLatencyHlsManifestConfiguration.h>
+#include <aws/mediapackagev2/model/GetDashManifestConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -580,6 +581,42 @@ namespace Model
     inline UpdateOriginEndpointResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
 
+    /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline const Aws::Vector<GetDashManifestConfiguration>& GetGetDashManifests() const{ return m_dashManifests; }
+
+    /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline void SetDashManifests(const Aws::Vector<GetDashManifestConfiguration>& value) { m_dashManifests = value; }
+
+    /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline void SetDashManifests(Aws::Vector<GetDashManifestConfiguration>&& value) { m_dashManifests = std::move(value); }
+
+    /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline UpdateOriginEndpointResult& WithDashManifests(const Aws::Vector<GetDashManifestConfiguration>& value) { SetDashManifests(value); return *this;}
+
+    /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline UpdateOriginEndpointResult& WithDashManifests(Aws::Vector<GetDashManifestConfiguration>&& value) { SetDashManifests(std::move(value)); return *this;}
+
+    /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline UpdateOriginEndpointResult& AddDashManifests(const GetDashManifestConfiguration& value) { m_dashManifests.push_back(value); return *this; }
+
+    /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline UpdateOriginEndpointResult& AddDashManifests(GetDashManifestConfiguration&& value) { m_dashManifests.push_back(std::move(value)); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -630,6 +667,8 @@ namespace Model
     Aws::String m_eTag;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+
+    Aws::Vector<GetDashManifestConfiguration> m_dashManifests;
 
     Aws::String m_requestId;
   };

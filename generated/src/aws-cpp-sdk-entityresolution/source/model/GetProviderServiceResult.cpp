@@ -39,6 +39,12 @@ GetProviderServiceResult& GetProviderServiceResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("providerComponentSchema"))
+  {
+    m_providerComponentSchema = jsonValue.GetObject("providerComponentSchema");
+
+  }
+
   if(jsonValue.ValueExists("providerConfigurationDefinition"))
   {
     m_providerConfigurationDefinition = jsonValue.GetObject("providerConfigurationDefinition");
@@ -57,9 +63,21 @@ GetProviderServiceResult& GetProviderServiceResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("providerIdNameSpaceConfiguration"))
+  {
+    m_providerIdNameSpaceConfiguration = jsonValue.GetObject("providerIdNameSpaceConfiguration");
+
+  }
+
   if(jsonValue.ValueExists("providerIntermediateDataAccessConfiguration"))
   {
     m_providerIntermediateDataAccessConfiguration = jsonValue.GetObject("providerIntermediateDataAccessConfiguration");
+
+  }
+
+  if(jsonValue.ValueExists("providerJobConfiguration"))
+  {
+    m_providerJobConfiguration = jsonValue.GetObject("providerJobConfiguration");
 
   }
 

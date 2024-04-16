@@ -42,50 +42,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the secret that you created in Secrets Manager that is linked to
-     * your Redis Enterprise Cloud database.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets
+     * Manager that is linked to your Redis Enterprise Cloud database.</p>
      */
     inline const Aws::String& GetCredentialsSecretArn() const{ return m_credentialsSecretArn; }
 
     /**
-     * <p>The ARN of the secret that you created in Secrets Manager that is linked to
-     * your Redis Enterprise Cloud database.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets
+     * Manager that is linked to your Redis Enterprise Cloud database.</p>
      */
     inline bool CredentialsSecretArnHasBeenSet() const { return m_credentialsSecretArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the secret that you created in Secrets Manager that is linked to
-     * your Redis Enterprise Cloud database.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets
+     * Manager that is linked to your Redis Enterprise Cloud database.</p>
      */
     inline void SetCredentialsSecretArn(const Aws::String& value) { m_credentialsSecretArnHasBeenSet = true; m_credentialsSecretArn = value; }
 
     /**
-     * <p>The ARN of the secret that you created in Secrets Manager that is linked to
-     * your Redis Enterprise Cloud database.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets
+     * Manager that is linked to your Redis Enterprise Cloud database.</p>
      */
     inline void SetCredentialsSecretArn(Aws::String&& value) { m_credentialsSecretArnHasBeenSet = true; m_credentialsSecretArn = std::move(value); }
 
     /**
-     * <p>The ARN of the secret that you created in Secrets Manager that is linked to
-     * your Redis Enterprise Cloud database.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets
+     * Manager that is linked to your Redis Enterprise Cloud database.</p>
      */
     inline void SetCredentialsSecretArn(const char* value) { m_credentialsSecretArnHasBeenSet = true; m_credentialsSecretArn.assign(value); }
 
     /**
-     * <p>The ARN of the secret that you created in Secrets Manager that is linked to
-     * your Redis Enterprise Cloud database.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets
+     * Manager that is linked to your Redis Enterprise Cloud database.</p>
      */
     inline RedisEnterpriseCloudConfiguration& WithCredentialsSecretArn(const Aws::String& value) { SetCredentialsSecretArn(value); return *this;}
 
     /**
-     * <p>The ARN of the secret that you created in Secrets Manager that is linked to
-     * your Redis Enterprise Cloud database.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets
+     * Manager that is linked to your Redis Enterprise Cloud database.</p>
      */
     inline RedisEnterpriseCloudConfiguration& WithCredentialsSecretArn(Aws::String&& value) { SetCredentialsSecretArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the secret that you created in Secrets Manager that is linked to
-     * your Redis Enterprise Cloud database.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets
+     * Manager that is linked to your Redis Enterprise Cloud database.</p>
      */
     inline RedisEnterpriseCloudConfiguration& WithCredentialsSecretArn(const char* value) { SetCredentialsSecretArn(value); return *this;}
 

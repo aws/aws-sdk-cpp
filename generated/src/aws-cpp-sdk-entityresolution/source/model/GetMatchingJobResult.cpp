@@ -55,6 +55,15 @@ GetMatchingJobResult& GetMatchingJobResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("outputSourceConfig"))
+  {
+    Aws::Utils::Array<JsonView> outputSourceConfigJsonList = jsonValue.GetArray("outputSourceConfig");
+    for(unsigned outputSourceConfigIndex = 0; outputSourceConfigIndex < outputSourceConfigJsonList.GetLength(); ++outputSourceConfigIndex)
+    {
+      m_outputSourceConfig.push_back(outputSourceConfigJsonList[outputSourceConfigIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");

@@ -35,6 +35,12 @@ GetMatchIdResult& GetMatchIdResult::operator =(const Aws::AmazonWebServiceResult
 
   }
 
+  if(jsonValue.ValueExists("matchRule"))
+  {
+    m_matchRule = jsonValue.GetString("matchRule");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

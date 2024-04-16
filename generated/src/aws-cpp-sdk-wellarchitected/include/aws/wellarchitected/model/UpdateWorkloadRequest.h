@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wellarchitected/model/WorkloadImprovementStatus.h>
 #include <aws/wellarchitected/model/WorkloadDiscoveryConfig.h>
+#include <aws/wellarchitected/model/WorkloadJiraConfigurationInput.h>
 #include <utility>
 
 namespace Aws
@@ -504,6 +505,37 @@ namespace Model
      */
     inline UpdateWorkloadRequest& AddApplications(const char* value) { m_applicationsHasBeenSet = true; m_applications.push_back(value); return *this; }
 
+
+    /**
+     * <p>Configuration of the Jira integration.</p>
+     */
+    inline const WorkloadJiraConfigurationInput& GetJiraConfiguration() const{ return m_jiraConfiguration; }
+
+    /**
+     * <p>Configuration of the Jira integration.</p>
+     */
+    inline bool JiraConfigurationHasBeenSet() const { return m_jiraConfigurationHasBeenSet; }
+
+    /**
+     * <p>Configuration of the Jira integration.</p>
+     */
+    inline void SetJiraConfiguration(const WorkloadJiraConfigurationInput& value) { m_jiraConfigurationHasBeenSet = true; m_jiraConfiguration = value; }
+
+    /**
+     * <p>Configuration of the Jira integration.</p>
+     */
+    inline void SetJiraConfiguration(WorkloadJiraConfigurationInput&& value) { m_jiraConfigurationHasBeenSet = true; m_jiraConfiguration = std::move(value); }
+
+    /**
+     * <p>Configuration of the Jira integration.</p>
+     */
+    inline UpdateWorkloadRequest& WithJiraConfiguration(const WorkloadJiraConfigurationInput& value) { SetJiraConfiguration(value); return *this;}
+
+    /**
+     * <p>Configuration of the Jira integration.</p>
+     */
+    inline UpdateWorkloadRequest& WithJiraConfiguration(WorkloadJiraConfigurationInput&& value) { SetJiraConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_workloadId;
@@ -556,6 +588,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_applications;
     bool m_applicationsHasBeenSet = false;
+
+    WorkloadJiraConfigurationInput m_jiraConfiguration;
+    bool m_jiraConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediapackagev2/model/ListHlsManifestConfiguration.h>
 #include <aws/mediapackagev2/model/ListLowLatencyHlsManifestConfiguration.h>
+#include <aws/mediapackagev2/model/ListDashManifestConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -489,6 +490,47 @@ namespace Model
      */
     inline OriginEndpointListConfiguration& AddLowLatencyHlsManifests(ListLowLatencyHlsManifestConfiguration&& value) { m_lowLatencyHlsManifestsHasBeenSet = true; m_lowLatencyHlsManifests.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline const Aws::Vector<ListDashManifestConfiguration>& GetDashManifests() const{ return m_dashManifests; }
+
+    /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline bool DashManifestsHasBeenSet() const { return m_dashManifestsHasBeenSet; }
+
+    /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline void SetDashManifests(const Aws::Vector<ListDashManifestConfiguration>& value) { m_dashManifestsHasBeenSet = true; m_dashManifests = value; }
+
+    /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline void SetDashManifests(Aws::Vector<ListDashManifestConfiguration>&& value) { m_dashManifestsHasBeenSet = true; m_dashManifests = std::move(value); }
+
+    /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline OriginEndpointListConfiguration& WithDashManifests(const Aws::Vector<ListDashManifestConfiguration>& value) { SetDashManifests(value); return *this;}
+
+    /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline OriginEndpointListConfiguration& WithDashManifests(Aws::Vector<ListDashManifestConfiguration>&& value) { SetDashManifests(std::move(value)); return *this;}
+
+    /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline OriginEndpointListConfiguration& AddDashManifests(const ListDashManifestConfiguration& value) { m_dashManifestsHasBeenSet = true; m_dashManifests.push_back(value); return *this; }
+
+    /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline OriginEndpointListConfiguration& AddDashManifests(ListDashManifestConfiguration&& value) { m_dashManifestsHasBeenSet = true; m_dashManifests.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_arn;
@@ -520,6 +562,9 @@ namespace Model
 
     Aws::Vector<ListLowLatencyHlsManifestConfiguration> m_lowLatencyHlsManifests;
     bool m_lowLatencyHlsManifestsHasBeenSet = false;
+
+    Aws::Vector<ListDashManifestConfiguration> m_dashManifests;
+    bool m_dashManifestsHasBeenSet = false;
   };
 
 } // namespace Model

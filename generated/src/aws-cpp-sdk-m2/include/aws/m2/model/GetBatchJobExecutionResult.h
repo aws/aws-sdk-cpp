@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/m2/model/BatchJobIdentifier.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/m2/model/JobStepRestartMarker.h>
 #include <aws/m2/model/BatchJobType.h>
 #include <aws/m2/model/BatchJobExecutionStatus.h>
 #include <utility>
@@ -230,6 +231,32 @@ namespace Model
      * <p>The name of this batch job.</p>
      */
     inline GetBatchJobExecutionResult& WithJobName(const char* value) { SetJobName(value); return *this;}
+
+
+    /**
+     * <p>The restart steps information for the most recent restart operation.</p>
+     */
+    inline const JobStepRestartMarker& GetJobStepRestartMarker() const{ return m_jobStepRestartMarker; }
+
+    /**
+     * <p>The restart steps information for the most recent restart operation.</p>
+     */
+    inline void SetJobStepRestartMarker(const JobStepRestartMarker& value) { m_jobStepRestartMarker = value; }
+
+    /**
+     * <p>The restart steps information for the most recent restart operation.</p>
+     */
+    inline void SetJobStepRestartMarker(JobStepRestartMarker&& value) { m_jobStepRestartMarker = std::move(value); }
+
+    /**
+     * <p>The restart steps information for the most recent restart operation.</p>
+     */
+    inline GetBatchJobExecutionResult& WithJobStepRestartMarker(const JobStepRestartMarker& value) { SetJobStepRestartMarker(value); return *this;}
+
+    /**
+     * <p>The restart steps information for the most recent restart operation.</p>
+     */
+    inline GetBatchJobExecutionResult& WithJobStepRestartMarker(JobStepRestartMarker&& value) { SetJobStepRestartMarker(std::move(value)); return *this;}
 
 
     /**
@@ -480,6 +507,8 @@ namespace Model
     Aws::String m_jobId;
 
     Aws::String m_jobName;
+
+    JobStepRestartMarker m_jobStepRestartMarker;
 
     BatchJobType m_jobType;
 

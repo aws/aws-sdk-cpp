@@ -160,6 +160,63 @@ namespace Model
      */
     inline WorkerResourceConfig& WithDisk(const char* value) { SetDisk(value); return *this;}
 
+
+    /**
+     * <p>The disk type for every worker instance of the work type. Shuffle optimized
+     * disks have higher performance characteristics and are better for shuffle heavy
+     * workloads. Default is <code>STANDARD</code>.</p>
+     */
+    inline const Aws::String& GetDiskType() const{ return m_diskType; }
+
+    /**
+     * <p>The disk type for every worker instance of the work type. Shuffle optimized
+     * disks have higher performance characteristics and are better for shuffle heavy
+     * workloads. Default is <code>STANDARD</code>.</p>
+     */
+    inline bool DiskTypeHasBeenSet() const { return m_diskTypeHasBeenSet; }
+
+    /**
+     * <p>The disk type for every worker instance of the work type. Shuffle optimized
+     * disks have higher performance characteristics and are better for shuffle heavy
+     * workloads. Default is <code>STANDARD</code>.</p>
+     */
+    inline void SetDiskType(const Aws::String& value) { m_diskTypeHasBeenSet = true; m_diskType = value; }
+
+    /**
+     * <p>The disk type for every worker instance of the work type. Shuffle optimized
+     * disks have higher performance characteristics and are better for shuffle heavy
+     * workloads. Default is <code>STANDARD</code>.</p>
+     */
+    inline void SetDiskType(Aws::String&& value) { m_diskTypeHasBeenSet = true; m_diskType = std::move(value); }
+
+    /**
+     * <p>The disk type for every worker instance of the work type. Shuffle optimized
+     * disks have higher performance characteristics and are better for shuffle heavy
+     * workloads. Default is <code>STANDARD</code>.</p>
+     */
+    inline void SetDiskType(const char* value) { m_diskTypeHasBeenSet = true; m_diskType.assign(value); }
+
+    /**
+     * <p>The disk type for every worker instance of the work type. Shuffle optimized
+     * disks have higher performance characteristics and are better for shuffle heavy
+     * workloads. Default is <code>STANDARD</code>.</p>
+     */
+    inline WorkerResourceConfig& WithDiskType(const Aws::String& value) { SetDiskType(value); return *this;}
+
+    /**
+     * <p>The disk type for every worker instance of the work type. Shuffle optimized
+     * disks have higher performance characteristics and are better for shuffle heavy
+     * workloads. Default is <code>STANDARD</code>.</p>
+     */
+    inline WorkerResourceConfig& WithDiskType(Aws::String&& value) { SetDiskType(std::move(value)); return *this;}
+
+    /**
+     * <p>The disk type for every worker instance of the work type. Shuffle optimized
+     * disks have higher performance characteristics and are better for shuffle heavy
+     * workloads. Default is <code>STANDARD</code>.</p>
+     */
+    inline WorkerResourceConfig& WithDiskType(const char* value) { SetDiskType(value); return *this;}
+
   private:
 
     Aws::String m_cpu;
@@ -170,6 +227,9 @@ namespace Model
 
     Aws::String m_disk;
     bool m_diskHasBeenSet = false;
+
+    Aws::String m_diskType;
+    bool m_diskTypeHasBeenSet = false;
   };
 
 } // namespace Model
