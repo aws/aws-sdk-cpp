@@ -6,7 +6,9 @@
 #pragma once
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
 #include <aws/entityresolution/EntityResolutionRequest.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/entityresolution/model/IdMappingJobOutputSource.h>
 #include <utility>
 
 namespace Aws
@@ -30,6 +32,47 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "StartIdMappingJob"; }
 
     AWS_ENTITYRESOLUTION_API Aws::String SerializePayload() const override;
+
+
+    /**
+     * <p>A list of <code>OutputSource</code> objects.</p>
+     */
+    inline const Aws::Vector<IdMappingJobOutputSource>& GetOutputSourceConfig() const{ return m_outputSourceConfig; }
+
+    /**
+     * <p>A list of <code>OutputSource</code> objects.</p>
+     */
+    inline bool OutputSourceConfigHasBeenSet() const { return m_outputSourceConfigHasBeenSet; }
+
+    /**
+     * <p>A list of <code>OutputSource</code> objects.</p>
+     */
+    inline void SetOutputSourceConfig(const Aws::Vector<IdMappingJobOutputSource>& value) { m_outputSourceConfigHasBeenSet = true; m_outputSourceConfig = value; }
+
+    /**
+     * <p>A list of <code>OutputSource</code> objects.</p>
+     */
+    inline void SetOutputSourceConfig(Aws::Vector<IdMappingJobOutputSource>&& value) { m_outputSourceConfigHasBeenSet = true; m_outputSourceConfig = std::move(value); }
+
+    /**
+     * <p>A list of <code>OutputSource</code> objects.</p>
+     */
+    inline StartIdMappingJobRequest& WithOutputSourceConfig(const Aws::Vector<IdMappingJobOutputSource>& value) { SetOutputSourceConfig(value); return *this;}
+
+    /**
+     * <p>A list of <code>OutputSource</code> objects.</p>
+     */
+    inline StartIdMappingJobRequest& WithOutputSourceConfig(Aws::Vector<IdMappingJobOutputSource>&& value) { SetOutputSourceConfig(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of <code>OutputSource</code> objects.</p>
+     */
+    inline StartIdMappingJobRequest& AddOutputSourceConfig(const IdMappingJobOutputSource& value) { m_outputSourceConfigHasBeenSet = true; m_outputSourceConfig.push_back(value); return *this; }
+
+    /**
+     * <p>A list of <code>OutputSource</code> objects.</p>
+     */
+    inline StartIdMappingJobRequest& AddOutputSourceConfig(IdMappingJobOutputSource&& value) { m_outputSourceConfigHasBeenSet = true; m_outputSourceConfig.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -73,6 +116,9 @@ namespace Model
     inline StartIdMappingJobRequest& WithWorkflowName(const char* value) { SetWorkflowName(value); return *this;}
 
   private:
+
+    Aws::Vector<IdMappingJobOutputSource> m_outputSourceConfig;
+    bool m_outputSourceConfigHasBeenSet = false;
 
     Aws::String m_workflowName;
     bool m_workflowNameHasBeenSet = false;

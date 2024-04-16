@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The configuration of summary metric.</p><p><h3>See Also:</h3>   <a
+   * <p>The configuration of summary metrics.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/SummaryMetricConfiguration">AWS
    * API Reference</a></p>
    */
@@ -38,32 +38,32 @@ namespace Model
 
 
     /**
-     * <p>The configuration of summary metric.</p>
+     * <p>The status of the configuration of summary metrics.</p>
      */
     inline const SummaryMetricConfigurationStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The configuration of summary metric.</p>
+     * <p>The status of the configuration of summary metrics.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The configuration of summary metric.</p>
+     * <p>The status of the configuration of summary metrics.</p>
      */
     inline void SetStatus(const SummaryMetricConfigurationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The configuration of summary metric.</p>
+     * <p>The status of the configuration of summary metrics.</p>
      */
     inline void SetStatus(SummaryMetricConfigurationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The configuration of summary metric.</p>
+     * <p>The status of the configuration of summary metrics.</p>
      */
     inline SummaryMetricConfiguration& WithStatus(const SummaryMetricConfigurationStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The configuration of summary metric.</p>
+     * <p>The status of the configuration of summary metrics.</p>
      */
     inline SummaryMetricConfiguration& WithStatus(SummaryMetricConfigurationStatus&& value) { SetStatus(std::move(value)); return *this;}
 

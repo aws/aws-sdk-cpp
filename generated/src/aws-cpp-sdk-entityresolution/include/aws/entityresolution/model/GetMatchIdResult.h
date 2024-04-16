@@ -68,6 +68,42 @@ namespace Model
     inline GetMatchIdResult& WithMatchId(const char* value) { SetMatchId(value); return *this;}
 
 
+    /**
+     * <p>The rule the record matched on.</p>
+     */
+    inline const Aws::String& GetMatchRule() const{ return m_matchRule; }
+
+    /**
+     * <p>The rule the record matched on.</p>
+     */
+    inline void SetMatchRule(const Aws::String& value) { m_matchRule = value; }
+
+    /**
+     * <p>The rule the record matched on.</p>
+     */
+    inline void SetMatchRule(Aws::String&& value) { m_matchRule = std::move(value); }
+
+    /**
+     * <p>The rule the record matched on.</p>
+     */
+    inline void SetMatchRule(const char* value) { m_matchRule.assign(value); }
+
+    /**
+     * <p>The rule the record matched on.</p>
+     */
+    inline GetMatchIdResult& WithMatchRule(const Aws::String& value) { SetMatchRule(value); return *this;}
+
+    /**
+     * <p>The rule the record matched on.</p>
+     */
+    inline GetMatchIdResult& WithMatchRule(Aws::String&& value) { SetMatchRule(std::move(value)); return *this;}
+
+    /**
+     * <p>The rule the record matched on.</p>
+     */
+    inline GetMatchIdResult& WithMatchRule(const char* value) { SetMatchRule(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -92,6 +128,8 @@ namespace Model
   private:
 
     Aws::String m_matchId;
+
+    Aws::String m_matchRule;
 
     Aws::String m_requestId;
   };

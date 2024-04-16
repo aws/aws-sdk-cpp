@@ -8,6 +8,8 @@
 #include <aws/lakeformation/LakeFormationRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lakeformation/model/ExternalFilteringConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lakeformation/model/DataLakePrincipal.h>
 #include <utility>
 
 namespace Aws
@@ -199,6 +201,87 @@ namespace Model
      */
     inline CreateLakeFormationIdentityCenterConfigurationRequest& WithExternalFiltering(ExternalFilteringConfiguration&& value) { SetExternalFiltering(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A list of Amazon Web Services account IDs and/or Amazon Web Services
+     * organization/organizational unit ARNs that are allowed to access data managed by
+     * Lake Formation. </p> <p>If the <code>ShareRecipients</code> list includes valid
+     * values, a resource share is created with the principals you want to have access
+     * to the resources.</p> <p>If the <code>ShareRecipients</code> value is null or
+     * the list is empty, no resource share is created.</p>
+     */
+    inline const Aws::Vector<DataLakePrincipal>& GetShareRecipients() const{ return m_shareRecipients; }
+
+    /**
+     * <p>A list of Amazon Web Services account IDs and/or Amazon Web Services
+     * organization/organizational unit ARNs that are allowed to access data managed by
+     * Lake Formation. </p> <p>If the <code>ShareRecipients</code> list includes valid
+     * values, a resource share is created with the principals you want to have access
+     * to the resources.</p> <p>If the <code>ShareRecipients</code> value is null or
+     * the list is empty, no resource share is created.</p>
+     */
+    inline bool ShareRecipientsHasBeenSet() const { return m_shareRecipientsHasBeenSet; }
+
+    /**
+     * <p>A list of Amazon Web Services account IDs and/or Amazon Web Services
+     * organization/organizational unit ARNs that are allowed to access data managed by
+     * Lake Formation. </p> <p>If the <code>ShareRecipients</code> list includes valid
+     * values, a resource share is created with the principals you want to have access
+     * to the resources.</p> <p>If the <code>ShareRecipients</code> value is null or
+     * the list is empty, no resource share is created.</p>
+     */
+    inline void SetShareRecipients(const Aws::Vector<DataLakePrincipal>& value) { m_shareRecipientsHasBeenSet = true; m_shareRecipients = value; }
+
+    /**
+     * <p>A list of Amazon Web Services account IDs and/or Amazon Web Services
+     * organization/organizational unit ARNs that are allowed to access data managed by
+     * Lake Formation. </p> <p>If the <code>ShareRecipients</code> list includes valid
+     * values, a resource share is created with the principals you want to have access
+     * to the resources.</p> <p>If the <code>ShareRecipients</code> value is null or
+     * the list is empty, no resource share is created.</p>
+     */
+    inline void SetShareRecipients(Aws::Vector<DataLakePrincipal>&& value) { m_shareRecipientsHasBeenSet = true; m_shareRecipients = std::move(value); }
+
+    /**
+     * <p>A list of Amazon Web Services account IDs and/or Amazon Web Services
+     * organization/organizational unit ARNs that are allowed to access data managed by
+     * Lake Formation. </p> <p>If the <code>ShareRecipients</code> list includes valid
+     * values, a resource share is created with the principals you want to have access
+     * to the resources.</p> <p>If the <code>ShareRecipients</code> value is null or
+     * the list is empty, no resource share is created.</p>
+     */
+    inline CreateLakeFormationIdentityCenterConfigurationRequest& WithShareRecipients(const Aws::Vector<DataLakePrincipal>& value) { SetShareRecipients(value); return *this;}
+
+    /**
+     * <p>A list of Amazon Web Services account IDs and/or Amazon Web Services
+     * organization/organizational unit ARNs that are allowed to access data managed by
+     * Lake Formation. </p> <p>If the <code>ShareRecipients</code> list includes valid
+     * values, a resource share is created with the principals you want to have access
+     * to the resources.</p> <p>If the <code>ShareRecipients</code> value is null or
+     * the list is empty, no resource share is created.</p>
+     */
+    inline CreateLakeFormationIdentityCenterConfigurationRequest& WithShareRecipients(Aws::Vector<DataLakePrincipal>&& value) { SetShareRecipients(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of Amazon Web Services account IDs and/or Amazon Web Services
+     * organization/organizational unit ARNs that are allowed to access data managed by
+     * Lake Formation. </p> <p>If the <code>ShareRecipients</code> list includes valid
+     * values, a resource share is created with the principals you want to have access
+     * to the resources.</p> <p>If the <code>ShareRecipients</code> value is null or
+     * the list is empty, no resource share is created.</p>
+     */
+    inline CreateLakeFormationIdentityCenterConfigurationRequest& AddShareRecipients(const DataLakePrincipal& value) { m_shareRecipientsHasBeenSet = true; m_shareRecipients.push_back(value); return *this; }
+
+    /**
+     * <p>A list of Amazon Web Services account IDs and/or Amazon Web Services
+     * organization/organizational unit ARNs that are allowed to access data managed by
+     * Lake Formation. </p> <p>If the <code>ShareRecipients</code> list includes valid
+     * values, a resource share is created with the principals you want to have access
+     * to the resources.</p> <p>If the <code>ShareRecipients</code> value is null or
+     * the list is empty, no resource share is created.</p>
+     */
+    inline CreateLakeFormationIdentityCenterConfigurationRequest& AddShareRecipients(DataLakePrincipal&& value) { m_shareRecipientsHasBeenSet = true; m_shareRecipients.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_catalogId;
@@ -209,6 +292,9 @@ namespace Model
 
     ExternalFilteringConfiguration m_externalFiltering;
     bool m_externalFilteringHasBeenSet = false;
+
+    Aws::Vector<DataLakePrincipal> m_shareRecipients;
+    bool m_shareRecipientsHasBeenSet = false;
   };
 
 } // namespace Model

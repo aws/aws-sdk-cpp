@@ -26,6 +26,7 @@ LensReview::LensReview() :
     m_lensStatus(LensStatus::NOT_SET),
     m_lensStatusHasBeenSet(false),
     m_pillarReviewSummariesHasBeenSet(false),
+    m_jiraConfigurationHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
     m_notesHasBeenSet(false),
     m_riskCountsHasBeenSet(false),
@@ -43,6 +44,7 @@ LensReview::LensReview(JsonView jsonValue) :
     m_lensStatus(LensStatus::NOT_SET),
     m_lensStatusHasBeenSet(false),
     m_pillarReviewSummariesHasBeenSet(false),
+    m_jiraConfigurationHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
     m_notesHasBeenSet(false),
     m_riskCountsHasBeenSet(false),
@@ -98,6 +100,13 @@ LensReview& LensReview::operator =(JsonView jsonValue)
       m_pillarReviewSummaries.push_back(pillarReviewSummariesJsonList[pillarReviewSummariesIndex].AsObject());
     }
     m_pillarReviewSummariesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("JiraConfiguration"))
+  {
+    m_jiraConfiguration = jsonValue.GetObject("JiraConfiguration");
+
+    m_jiraConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("UpdatedAt"))
@@ -195,6 +204,12 @@ JsonValue LensReview::Jsonize() const
      pillarReviewSummariesJsonList[pillarReviewSummariesIndex].AsObject(m_pillarReviewSummaries[pillarReviewSummariesIndex].Jsonize());
    }
    payload.WithArray("PillarReviewSummaries", std::move(pillarReviewSummariesJsonList));
+
+  }
+
+  if(m_jiraConfigurationHasBeenSet)
+  {
+   payload.WithObject("JiraConfiguration", m_jiraConfiguration.Jsonize());
 
   }
 

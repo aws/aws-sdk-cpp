@@ -40,42 +40,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the bucket that contains the data source.</p>
+     * <p>The Amazon Resource Name (ARN) of the bucket that contains the data
+     * source.</p>
      */
     inline const Aws::String& GetBucketArn() const{ return m_bucketArn; }
 
     /**
-     * <p>The ARN of the bucket that contains the data source.</p>
+     * <p>The Amazon Resource Name (ARN) of the bucket that contains the data
+     * source.</p>
      */
     inline bool BucketArnHasBeenSet() const { return m_bucketArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the bucket that contains the data source.</p>
+     * <p>The Amazon Resource Name (ARN) of the bucket that contains the data
+     * source.</p>
      */
     inline void SetBucketArn(const Aws::String& value) { m_bucketArnHasBeenSet = true; m_bucketArn = value; }
 
     /**
-     * <p>The ARN of the bucket that contains the data source.</p>
+     * <p>The Amazon Resource Name (ARN) of the bucket that contains the data
+     * source.</p>
      */
     inline void SetBucketArn(Aws::String&& value) { m_bucketArnHasBeenSet = true; m_bucketArn = std::move(value); }
 
     /**
-     * <p>The ARN of the bucket that contains the data source.</p>
+     * <p>The Amazon Resource Name (ARN) of the bucket that contains the data
+     * source.</p>
      */
     inline void SetBucketArn(const char* value) { m_bucketArnHasBeenSet = true; m_bucketArn.assign(value); }
 
     /**
-     * <p>The ARN of the bucket that contains the data source.</p>
+     * <p>The Amazon Resource Name (ARN) of the bucket that contains the data
+     * source.</p>
      */
     inline S3DataSourceConfiguration& WithBucketArn(const Aws::String& value) { SetBucketArn(value); return *this;}
 
     /**
-     * <p>The ARN of the bucket that contains the data source.</p>
+     * <p>The Amazon Resource Name (ARN) of the bucket that contains the data
+     * source.</p>
      */
     inline S3DataSourceConfiguration& WithBucketArn(Aws::String&& value) { SetBucketArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the bucket that contains the data source.</p>
+     * <p>The Amazon Resource Name (ARN) of the bucket that contains the data
+     * source.</p>
      */
     inline S3DataSourceConfiguration& WithBucketArn(const char* value) { SetBucketArn(value); return *this;}
 

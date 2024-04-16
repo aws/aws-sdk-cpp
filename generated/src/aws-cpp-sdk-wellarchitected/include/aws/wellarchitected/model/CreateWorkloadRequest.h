@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/wellarchitected/model/WorkloadDiscoveryConfig.h>
+#include <aws/wellarchitected/model/WorkloadJiraConfigurationInput.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -639,6 +640,37 @@ namespace Model
      */
     inline CreateWorkloadRequest& AddReviewTemplateArns(const char* value) { m_reviewTemplateArnsHasBeenSet = true; m_reviewTemplateArns.push_back(value); return *this; }
 
+
+    /**
+     * <p>Jira configuration settings when creating a workload.</p>
+     */
+    inline const WorkloadJiraConfigurationInput& GetJiraConfiguration() const{ return m_jiraConfiguration; }
+
+    /**
+     * <p>Jira configuration settings when creating a workload.</p>
+     */
+    inline bool JiraConfigurationHasBeenSet() const { return m_jiraConfigurationHasBeenSet; }
+
+    /**
+     * <p>Jira configuration settings when creating a workload.</p>
+     */
+    inline void SetJiraConfiguration(const WorkloadJiraConfigurationInput& value) { m_jiraConfigurationHasBeenSet = true; m_jiraConfiguration = value; }
+
+    /**
+     * <p>Jira configuration settings when creating a workload.</p>
+     */
+    inline void SetJiraConfiguration(WorkloadJiraConfigurationInput&& value) { m_jiraConfigurationHasBeenSet = true; m_jiraConfiguration = std::move(value); }
+
+    /**
+     * <p>Jira configuration settings when creating a workload.</p>
+     */
+    inline CreateWorkloadRequest& WithJiraConfiguration(const WorkloadJiraConfigurationInput& value) { SetJiraConfiguration(value); return *this;}
+
+    /**
+     * <p>Jira configuration settings when creating a workload.</p>
+     */
+    inline CreateWorkloadRequest& WithJiraConfiguration(WorkloadJiraConfigurationInput&& value) { SetJiraConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_workloadName;
@@ -697,6 +729,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_reviewTemplateArns;
     bool m_reviewTemplateArnsHasBeenSet = false;
+
+    WorkloadJiraConfigurationInput m_jiraConfiguration;
+    bool m_jiraConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

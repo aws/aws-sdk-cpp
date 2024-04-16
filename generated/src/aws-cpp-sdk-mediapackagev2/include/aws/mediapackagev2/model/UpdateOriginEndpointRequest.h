@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediapackagev2/model/CreateHlsManifestConfiguration.h>
 #include <aws/mediapackagev2/model/CreateLowLatencyHlsManifestConfiguration.h>
+#include <aws/mediapackagev2/model/CreateDashManifestConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -455,6 +456,47 @@ namespace Model
 
 
     /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline const Aws::Vector<CreateDashManifestConfiguration>& GetDashManifests() const{ return m_dashManifests; }
+
+    /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline bool DashManifestsHasBeenSet() const { return m_dashManifestsHasBeenSet; }
+
+    /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline void SetDashManifests(const Aws::Vector<CreateDashManifestConfiguration>& value) { m_dashManifestsHasBeenSet = true; m_dashManifests = value; }
+
+    /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline void SetDashManifests(Aws::Vector<CreateDashManifestConfiguration>&& value) { m_dashManifestsHasBeenSet = true; m_dashManifests = std::move(value); }
+
+    /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline UpdateOriginEndpointRequest& WithDashManifests(const Aws::Vector<CreateDashManifestConfiguration>& value) { SetDashManifests(value); return *this;}
+
+    /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline UpdateOriginEndpointRequest& WithDashManifests(Aws::Vector<CreateDashManifestConfiguration>&& value) { SetDashManifests(std::move(value)); return *this;}
+
+    /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline UpdateOriginEndpointRequest& AddDashManifests(const CreateDashManifestConfiguration& value) { m_dashManifestsHasBeenSet = true; m_dashManifests.push_back(value); return *this; }
+
+    /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline UpdateOriginEndpointRequest& AddDashManifests(CreateDashManifestConfiguration&& value) { m_dashManifestsHasBeenSet = true; m_dashManifests.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The expected current Entity Tag (ETag) for the resource. If the specified
      * ETag does not match the resource's current entity tag, the update request will
      * be rejected.</p>
@@ -538,6 +580,9 @@ namespace Model
 
     Aws::Vector<CreateLowLatencyHlsManifestConfiguration> m_lowLatencyHlsManifests;
     bool m_lowLatencyHlsManifestsHasBeenSet = false;
+
+    Aws::Vector<CreateDashManifestConfiguration> m_dashManifests;
+    bool m_dashManifestsHasBeenSet = false;
 
     Aws::String m_eTag;
     bool m_eTagHasBeenSet = false;

@@ -41,6 +41,7 @@
 #include <aws/m2/model/ListApplicationsRequest.h>
 #include <aws/m2/model/ListBatchJobDefinitionsRequest.h>
 #include <aws/m2/model/ListBatchJobExecutionsRequest.h>
+#include <aws/m2/model/ListBatchJobRestartPointsRequest.h>
 #include <aws/m2/model/ListDataSetImportHistoryRequest.h>
 #include <aws/m2/model/ListDataSetsRequest.h>
 #include <aws/m2/model/ListDeploymentsRequest.h>
@@ -880,6 +881,47 @@ ListBatchJobExecutionsOutcome MainframeModernizationClient::ListBatchJobExecutio
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/batch-job-executions");
       return ListBatchJobExecutionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListBatchJobRestartPointsOutcome MainframeModernizationClient::ListBatchJobRestartPoints(const ListBatchJobRestartPointsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListBatchJobRestartPoints);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBatchJobRestartPoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListBatchJobRestartPoints", "Required field: ApplicationId, is not set");
+    return ListBatchJobRestartPointsOutcome(Aws::Client::AWSError<MainframeModernizationErrors>(MainframeModernizationErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.ExecutionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListBatchJobRestartPoints", "Required field: ExecutionId, is not set");
+    return ListBatchJobRestartPointsOutcome(Aws::Client::AWSError<MainframeModernizationErrors>(MainframeModernizationErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExecutionId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListBatchJobRestartPoints, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListBatchJobRestartPoints, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListBatchJobRestartPoints",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListBatchJobRestartPointsOutcome>(
+    [&]()-> ListBatchJobRestartPointsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListBatchJobRestartPoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/batch-job-executions/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExecutionId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/steps");
+      return ListBatchJobRestartPointsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

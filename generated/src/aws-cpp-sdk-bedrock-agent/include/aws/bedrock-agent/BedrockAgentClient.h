@@ -109,16 +109,17 @@ namespace BedrockAgent
          * <p>Creates an agent that orchestrates interactions between foundation models,
          * data sources, software applications, user conversations, and APIs to carry out
          * tasks to help customers.</p> <ul> <li> <p>Specify the following fields for
-         * security purposes.</p> <ul> <li> <p> <code>agentResourceRoleArn</code> – The ARN
-         * of the role with permissions to create an agent.</p> </li> <li> <p>(Optional)
-         * <code>customerEncryptionKeyArn</code> – The ARN of a KMS key to encrypt the
-         * creation of the agent.</p> </li> <li> <p>(Optional)
-         * <code>idleSessionTTLinSeconds</code> – Specify the number of seconds for which
-         * the agent should maintain session information. After this time expires, the
-         * subsequent <code>InvokeAgent</code> request begins a new session.</p> </li>
-         * </ul> </li> <li> <p>To override the default prompt behavior for agent
-         * orchestration and to use advanced prompts, include a
-         * <code>promptOverrideConfiguration</code> object. For more information, see <a
+         * security purposes.</p> <ul> <li> <p> <code>agentResourceRoleArn</code> – The
+         * Amazon Resource Name (ARN) of the role with permissions to invoke API operations
+         * on an agent.</p> </li> <li> <p>(Optional) <code>customerEncryptionKeyArn</code>
+         * – The Amazon Resource Name (ARN) of a KMS key to encrypt the creation of the
+         * agent.</p> </li> <li> <p>(Optional) <code>idleSessionTTLinSeconds</code> –
+         * Specify the number of seconds for which the agent should maintain session
+         * information. After this time expires, the subsequent <code>InvokeAgent</code>
+         * request begins a new session.</p> </li> </ul> </li> <li> <p>To override the
+         * default prompt behavior for agent orchestration and to use advanced prompts,
+         * include a <code>promptOverrideConfiguration</code> object. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html">Advanced
          * prompts</a>.</p> </li> <li> <p>If you agent fails to be created, the response
          * returns a list of <code>failureReasons</code> alongside a list of
@@ -248,10 +249,10 @@ namespace BedrockAgent
          * use the console. For more information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-create">Create
          * a knowledge base</a>.</p>  <ul> <li> <p>Provide the <code>name</code> and
-         * an optional <code>description</code>.</p> </li> <li> <p>Provide the ARN with
-         * permissions to create a knowledge base in the <code>roleArn</code> field.</p>
-         * </li> <li> <p>Provide the embedding model to use in the
-         * <code>embeddingModelArn</code> field in the
+         * an optional <code>description</code>.</p> </li> <li> <p>Provide the Amazon
+         * Resource Name (ARN) with permissions to create a knowledge base in the
+         * <code>roleArn</code> field.</p> </li> <li> <p>Provide the embedding model to use
+         * in the <code>embeddingModelArn</code> field in the
          * <code>knowledgeBaseConfiguration</code> object.</p> </li> <li> <p>Provide the
          * configuration for your vector store in the <code>storageConfiguration</code>
          * object.</p> <ul> <li> <p>For an Amazon OpenSearch Service database, use the

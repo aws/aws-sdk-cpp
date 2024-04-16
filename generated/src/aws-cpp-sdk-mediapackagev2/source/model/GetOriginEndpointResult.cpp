@@ -126,6 +126,15 @@ GetOriginEndpointResult& GetOriginEndpointResult::operator =(const Aws::AmazonWe
     }
   }
 
+  if(jsonValue.ValueExists("DashManifests"))
+  {
+    Aws::Utils::Array<JsonView> dashManifestsJsonList = jsonValue.GetArray("DashManifests");
+    for(unsigned dashManifestsIndex = 0; dashManifestsIndex < dashManifestsJsonList.GetLength(); ++dashManifestsIndex)
+    {
+      m_dashManifests.push_back(dashManifestsJsonList[dashManifestsIndex].AsObject());
+    }
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

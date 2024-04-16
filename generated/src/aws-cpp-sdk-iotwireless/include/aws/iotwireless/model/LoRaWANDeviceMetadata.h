@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iotwireless/model/LoRaWANGatewayMetadata.h>
+#include <aws/iotwireless/model/LoRaWANPublicGatewayMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -224,6 +225,47 @@ namespace Model
      */
     inline LoRaWANDeviceMetadata& AddGateways(LoRaWANGatewayMetadata&& value) { m_gatewaysHasBeenSet = true; m_gateways.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Information about the LoRaWAN public network accessed by the device.</p>
+     */
+    inline const Aws::Vector<LoRaWANPublicGatewayMetadata>& GetPublicGateways() const{ return m_publicGateways; }
+
+    /**
+     * <p>Information about the LoRaWAN public network accessed by the device.</p>
+     */
+    inline bool PublicGatewaysHasBeenSet() const { return m_publicGatewaysHasBeenSet; }
+
+    /**
+     * <p>Information about the LoRaWAN public network accessed by the device.</p>
+     */
+    inline void SetPublicGateways(const Aws::Vector<LoRaWANPublicGatewayMetadata>& value) { m_publicGatewaysHasBeenSet = true; m_publicGateways = value; }
+
+    /**
+     * <p>Information about the LoRaWAN public network accessed by the device.</p>
+     */
+    inline void SetPublicGateways(Aws::Vector<LoRaWANPublicGatewayMetadata>&& value) { m_publicGatewaysHasBeenSet = true; m_publicGateways = std::move(value); }
+
+    /**
+     * <p>Information about the LoRaWAN public network accessed by the device.</p>
+     */
+    inline LoRaWANDeviceMetadata& WithPublicGateways(const Aws::Vector<LoRaWANPublicGatewayMetadata>& value) { SetPublicGateways(value); return *this;}
+
+    /**
+     * <p>Information about the LoRaWAN public network accessed by the device.</p>
+     */
+    inline LoRaWANDeviceMetadata& WithPublicGateways(Aws::Vector<LoRaWANPublicGatewayMetadata>&& value) { SetPublicGateways(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the LoRaWAN public network accessed by the device.</p>
+     */
+    inline LoRaWANDeviceMetadata& AddPublicGateways(const LoRaWANPublicGatewayMetadata& value) { m_publicGatewaysHasBeenSet = true; m_publicGateways.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the LoRaWAN public network accessed by the device.</p>
+     */
+    inline LoRaWANDeviceMetadata& AddPublicGateways(LoRaWANPublicGatewayMetadata&& value) { m_publicGatewaysHasBeenSet = true; m_publicGateways.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_devEui;
@@ -243,6 +285,9 @@ namespace Model
 
     Aws::Vector<LoRaWANGatewayMetadata> m_gateways;
     bool m_gatewaysHasBeenSet = false;
+
+    Aws::Vector<LoRaWANPublicGatewayMetadata> m_publicGateways;
+    bool m_publicGatewaysHasBeenSet = false;
   };
 
 } // namespace Model

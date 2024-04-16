@@ -116,91 +116,99 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the IAM role with permissions to update the agent. The ARN must
-     * begin with <code>AmazonBedrockExecutionRoleForAgents_</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API
+     * operations on the agent.</p>
      */
     inline const Aws::String& GetAgentResourceRoleArn() const{ return m_agentResourceRoleArn; }
 
     /**
-     * <p>The ARN of the IAM role with permissions to update the agent. The ARN must
-     * begin with <code>AmazonBedrockExecutionRoleForAgents_</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API
+     * operations on the agent.</p>
      */
     inline bool AgentResourceRoleArnHasBeenSet() const { return m_agentResourceRoleArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the IAM role with permissions to update the agent. The ARN must
-     * begin with <code>AmazonBedrockExecutionRoleForAgents_</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API
+     * operations on the agent.</p>
      */
     inline void SetAgentResourceRoleArn(const Aws::String& value) { m_agentResourceRoleArnHasBeenSet = true; m_agentResourceRoleArn = value; }
 
     /**
-     * <p>The ARN of the IAM role with permissions to update the agent. The ARN must
-     * begin with <code>AmazonBedrockExecutionRoleForAgents_</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API
+     * operations on the agent.</p>
      */
     inline void SetAgentResourceRoleArn(Aws::String&& value) { m_agentResourceRoleArnHasBeenSet = true; m_agentResourceRoleArn = std::move(value); }
 
     /**
-     * <p>The ARN of the IAM role with permissions to update the agent. The ARN must
-     * begin with <code>AmazonBedrockExecutionRoleForAgents_</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API
+     * operations on the agent.</p>
      */
     inline void SetAgentResourceRoleArn(const char* value) { m_agentResourceRoleArnHasBeenSet = true; m_agentResourceRoleArn.assign(value); }
 
     /**
-     * <p>The ARN of the IAM role with permissions to update the agent. The ARN must
-     * begin with <code>AmazonBedrockExecutionRoleForAgents_</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API
+     * operations on the agent.</p>
      */
     inline UpdateAgentRequest& WithAgentResourceRoleArn(const Aws::String& value) { SetAgentResourceRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of the IAM role with permissions to update the agent. The ARN must
-     * begin with <code>AmazonBedrockExecutionRoleForAgents_</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API
+     * operations on the agent.</p>
      */
     inline UpdateAgentRequest& WithAgentResourceRoleArn(Aws::String&& value) { SetAgentResourceRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the IAM role with permissions to update the agent. The ARN must
-     * begin with <code>AmazonBedrockExecutionRoleForAgents_</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API
+     * operations on the agent.</p>
      */
     inline UpdateAgentRequest& WithAgentResourceRoleArn(const char* value) { SetAgentResourceRoleArn(value); return *this;}
 
 
     /**
-     * <p>The ARN of the KMS key with which to encrypt the agent.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key with which to encrypt the
+     * agent.</p>
      */
     inline const Aws::String& GetCustomerEncryptionKeyArn() const{ return m_customerEncryptionKeyArn; }
 
     /**
-     * <p>The ARN of the KMS key with which to encrypt the agent.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key with which to encrypt the
+     * agent.</p>
      */
     inline bool CustomerEncryptionKeyArnHasBeenSet() const { return m_customerEncryptionKeyArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the KMS key with which to encrypt the agent.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key with which to encrypt the
+     * agent.</p>
      */
     inline void SetCustomerEncryptionKeyArn(const Aws::String& value) { m_customerEncryptionKeyArnHasBeenSet = true; m_customerEncryptionKeyArn = value; }
 
     /**
-     * <p>The ARN of the KMS key with which to encrypt the agent.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key with which to encrypt the
+     * agent.</p>
      */
     inline void SetCustomerEncryptionKeyArn(Aws::String&& value) { m_customerEncryptionKeyArnHasBeenSet = true; m_customerEncryptionKeyArn = std::move(value); }
 
     /**
-     * <p>The ARN of the KMS key with which to encrypt the agent.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key with which to encrypt the
+     * agent.</p>
      */
     inline void SetCustomerEncryptionKeyArn(const char* value) { m_customerEncryptionKeyArnHasBeenSet = true; m_customerEncryptionKeyArn.assign(value); }
 
     /**
-     * <p>The ARN of the KMS key with which to encrypt the agent.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key with which to encrypt the
+     * agent.</p>
      */
     inline UpdateAgentRequest& WithCustomerEncryptionKeyArn(const Aws::String& value) { SetCustomerEncryptionKeyArn(value); return *this;}
 
     /**
-     * <p>The ARN of the KMS key with which to encrypt the agent.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key with which to encrypt the
+     * agent.</p>
      */
     inline UpdateAgentRequest& WithCustomerEncryptionKeyArn(Aws::String&& value) { SetCustomerEncryptionKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the KMS key with which to encrypt the agent.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key with which to encrypt the
+     * agent.</p>
      */
     inline UpdateAgentRequest& WithCustomerEncryptionKeyArn(const char* value) { SetCustomerEncryptionKeyArn(value); return *this;}
 

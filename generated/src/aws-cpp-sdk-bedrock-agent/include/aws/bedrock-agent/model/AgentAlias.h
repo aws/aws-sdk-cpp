@@ -43,42 +43,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the alias of the agent.</p>
+     * <p>The Amazon Resource Name (ARN) of the alias of the agent.</p>
      */
     inline const Aws::String& GetAgentAliasArn() const{ return m_agentAliasArn; }
 
     /**
-     * <p>The ARN of the alias of the agent.</p>
+     * <p>The Amazon Resource Name (ARN) of the alias of the agent.</p>
      */
     inline bool AgentAliasArnHasBeenSet() const { return m_agentAliasArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the alias of the agent.</p>
+     * <p>The Amazon Resource Name (ARN) of the alias of the agent.</p>
      */
     inline void SetAgentAliasArn(const Aws::String& value) { m_agentAliasArnHasBeenSet = true; m_agentAliasArn = value; }
 
     /**
-     * <p>The ARN of the alias of the agent.</p>
+     * <p>The Amazon Resource Name (ARN) of the alias of the agent.</p>
      */
     inline void SetAgentAliasArn(Aws::String&& value) { m_agentAliasArnHasBeenSet = true; m_agentAliasArn = std::move(value); }
 
     /**
-     * <p>The ARN of the alias of the agent.</p>
+     * <p>The Amazon Resource Name (ARN) of the alias of the agent.</p>
      */
     inline void SetAgentAliasArn(const char* value) { m_agentAliasArnHasBeenSet = true; m_agentAliasArn.assign(value); }
 
     /**
-     * <p>The ARN of the alias of the agent.</p>
+     * <p>The Amazon Resource Name (ARN) of the alias of the agent.</p>
      */
     inline AgentAlias& WithAgentAliasArn(const Aws::String& value) { SetAgentAliasArn(value); return *this;}
 
     /**
-     * <p>The ARN of the alias of the agent.</p>
+     * <p>The Amazon Resource Name (ARN) of the alias of the agent.</p>
      */
     inline AgentAlias& WithAgentAliasArn(Aws::String&& value) { SetAgentAliasArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the alias of the agent.</p>
+     * <p>The Amazon Resource Name (ARN) of the alias of the agent.</p>
      */
     inline AgentAlias& WithAgentAliasArn(const char* value) { SetAgentAliasArn(value); return *this;}
 

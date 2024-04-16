@@ -33,7 +33,8 @@ CreateWorkloadRequest::CreateWorkloadRequest() :
     m_discoveryConfigHasBeenSet(false),
     m_applicationsHasBeenSet(false),
     m_profileArnsHasBeenSet(false),
-    m_reviewTemplateArnsHasBeenSet(false)
+    m_reviewTemplateArnsHasBeenSet(false),
+    m_jiraConfigurationHasBeenSet(false)
 {
 }
 
@@ -196,6 +197,12 @@ Aws::String CreateWorkloadRequest::SerializePayload() const
      reviewTemplateArnsJsonList[reviewTemplateArnsIndex].AsString(m_reviewTemplateArns[reviewTemplateArnsIndex]);
    }
    payload.WithArray("ReviewTemplateArns", std::move(reviewTemplateArnsJsonList));
+
+  }
+
+  if(m_jiraConfigurationHasBeenSet)
+  {
+   payload.WithObject("JiraConfiguration", m_jiraConfiguration.Jsonize());
 
   }
 

@@ -8,6 +8,7 @@
 #include <aws/wellarchitected/WellArchitectedRequest.h>
 #include <aws/wellarchitected/model/OrganizationSharingStatus.h>
 #include <aws/wellarchitected/model/DiscoveryIntegrationStatus.h>
+#include <aws/wellarchitected/model/AccountJiraConfigurationInput.h>
 #include <utility>
 
 namespace Aws
@@ -94,6 +95,37 @@ namespace Model
      */
     inline UpdateGlobalSettingsRequest& WithDiscoveryIntegrationStatus(DiscoveryIntegrationStatus&& value) { SetDiscoveryIntegrationStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The status of Jira integration settings.</p>
+     */
+    inline const AccountJiraConfigurationInput& GetJiraConfiguration() const{ return m_jiraConfiguration; }
+
+    /**
+     * <p>The status of Jira integration settings.</p>
+     */
+    inline bool JiraConfigurationHasBeenSet() const { return m_jiraConfigurationHasBeenSet; }
+
+    /**
+     * <p>The status of Jira integration settings.</p>
+     */
+    inline void SetJiraConfiguration(const AccountJiraConfigurationInput& value) { m_jiraConfigurationHasBeenSet = true; m_jiraConfiguration = value; }
+
+    /**
+     * <p>The status of Jira integration settings.</p>
+     */
+    inline void SetJiraConfiguration(AccountJiraConfigurationInput&& value) { m_jiraConfigurationHasBeenSet = true; m_jiraConfiguration = std::move(value); }
+
+    /**
+     * <p>The status of Jira integration settings.</p>
+     */
+    inline UpdateGlobalSettingsRequest& WithJiraConfiguration(const AccountJiraConfigurationInput& value) { SetJiraConfiguration(value); return *this;}
+
+    /**
+     * <p>The status of Jira integration settings.</p>
+     */
+    inline UpdateGlobalSettingsRequest& WithJiraConfiguration(AccountJiraConfigurationInput&& value) { SetJiraConfiguration(std::move(value)); return *this;}
+
   private:
 
     OrganizationSharingStatus m_organizationSharingStatus;
@@ -101,6 +133,9 @@ namespace Model
 
     DiscoveryIntegrationStatus m_discoveryIntegrationStatus;
     bool m_discoveryIntegrationStatusHasBeenSet = false;
+
+    AccountJiraConfigurationInput m_jiraConfiguration;
+    bool m_jiraConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

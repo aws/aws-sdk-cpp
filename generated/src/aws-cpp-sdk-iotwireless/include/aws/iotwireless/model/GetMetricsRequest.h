@@ -34,42 +34,42 @@ namespace Model
 
 
     /**
-     * <p>The list of queries to retrieve summary metrics.</p>
+     * <p>The list of queries to retrieve the summary metrics.</p>
      */
     inline const Aws::Vector<SummaryMetricQuery>& GetSummaryMetricQueries() const{ return m_summaryMetricQueries; }
 
     /**
-     * <p>The list of queries to retrieve summary metrics.</p>
+     * <p>The list of queries to retrieve the summary metrics.</p>
      */
     inline bool SummaryMetricQueriesHasBeenSet() const { return m_summaryMetricQueriesHasBeenSet; }
 
     /**
-     * <p>The list of queries to retrieve summary metrics.</p>
+     * <p>The list of queries to retrieve the summary metrics.</p>
      */
     inline void SetSummaryMetricQueries(const Aws::Vector<SummaryMetricQuery>& value) { m_summaryMetricQueriesHasBeenSet = true; m_summaryMetricQueries = value; }
 
     /**
-     * <p>The list of queries to retrieve summary metrics.</p>
+     * <p>The list of queries to retrieve the summary metrics.</p>
      */
     inline void SetSummaryMetricQueries(Aws::Vector<SummaryMetricQuery>&& value) { m_summaryMetricQueriesHasBeenSet = true; m_summaryMetricQueries = std::move(value); }
 
     /**
-     * <p>The list of queries to retrieve summary metrics.</p>
+     * <p>The list of queries to retrieve the summary metrics.</p>
      */
     inline GetMetricsRequest& WithSummaryMetricQueries(const Aws::Vector<SummaryMetricQuery>& value) { SetSummaryMetricQueries(value); return *this;}
 
     /**
-     * <p>The list of queries to retrieve summary metrics.</p>
+     * <p>The list of queries to retrieve the summary metrics.</p>
      */
     inline GetMetricsRequest& WithSummaryMetricQueries(Aws::Vector<SummaryMetricQuery>&& value) { SetSummaryMetricQueries(std::move(value)); return *this;}
 
     /**
-     * <p>The list of queries to retrieve summary metrics.</p>
+     * <p>The list of queries to retrieve the summary metrics.</p>
      */
     inline GetMetricsRequest& AddSummaryMetricQueries(const SummaryMetricQuery& value) { m_summaryMetricQueriesHasBeenSet = true; m_summaryMetricQueries.push_back(value); return *this; }
 
     /**
-     * <p>The list of queries to retrieve summary metrics.</p>
+     * <p>The list of queries to retrieve the summary metrics.</p>
      */
     inline GetMetricsRequest& AddSummaryMetricQueries(SummaryMetricQuery&& value) { m_summaryMetricQueriesHasBeenSet = true; m_summaryMetricQueries.push_back(std::move(value)); return *this; }
 

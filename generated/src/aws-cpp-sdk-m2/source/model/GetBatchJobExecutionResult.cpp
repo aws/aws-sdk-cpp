@@ -69,6 +69,12 @@ GetBatchJobExecutionResult& GetBatchJobExecutionResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("jobStepRestartMarker"))
+  {
+    m_jobStepRestartMarker = jsonValue.GetObject("jobStepRestartMarker");
+
+  }
+
   if(jsonValue.ValueExists("jobType"))
   {
     m_jobType = BatchJobTypeMapper::GetBatchJobTypeForName(jsonValue.GetString("jobType"));

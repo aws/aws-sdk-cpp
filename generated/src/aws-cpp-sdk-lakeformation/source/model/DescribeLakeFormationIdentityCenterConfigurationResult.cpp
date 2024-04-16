@@ -53,6 +53,21 @@ DescribeLakeFormationIdentityCenterConfigurationResult& DescribeLakeFormationIde
 
   }
 
+  if(jsonValue.ValueExists("ShareRecipients"))
+  {
+    Aws::Utils::Array<JsonView> shareRecipientsJsonList = jsonValue.GetArray("ShareRecipients");
+    for(unsigned shareRecipientsIndex = 0; shareRecipientsIndex < shareRecipientsJsonList.GetLength(); ++shareRecipientsIndex)
+    {
+      m_shareRecipients.push_back(shareRecipientsJsonList[shareRecipientsIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("ResourceShare"))
+  {
+    m_resourceShare = jsonValue.GetString("ResourceShare");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

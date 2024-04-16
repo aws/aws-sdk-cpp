@@ -10,6 +10,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/wellarchitected/WellArchitectedServiceClientModel.h>
+#include <aws/wellarchitected/model/GetGlobalSettingsRequest.h>
 
 namespace Aws
 {
@@ -797,6 +798,31 @@ namespace WellArchitected
         }
 
         /**
+         * <p>Global settings for all workloads.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetGlobalSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetGlobalSettingsOutcome GetGlobalSettings(const Model::GetGlobalSettingsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for GetGlobalSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetGlobalSettingsRequestT = Model::GetGlobalSettingsRequest>
+        Model::GetGlobalSettingsOutcomeCallable GetGlobalSettingsCallable(const GetGlobalSettingsRequestT& request = {}) const
+        {
+            return SubmitCallable(&WellArchitectedClient::GetGlobalSettings, request);
+        }
+
+        /**
+         * An Async wrapper for GetGlobalSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetGlobalSettingsRequestT = Model::GetGlobalSettingsRequest>
+        void GetGlobalSettingsAsync(const GetGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetGlobalSettingsRequestT& request = {}) const
+        {
+            return SubmitAsync(&WellArchitectedClient::GetGlobalSettings, request, handler, context);
+        }
+
+        /**
          * <p>Get an existing lens.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetLens">AWS
          * API Reference</a></p>
@@ -1192,7 +1218,8 @@ namespace WellArchitected
         }
 
         /**
-         * <p>List lens review improvements.</p><p><h3>See Also:</h3>   <a
+         * <p>List the improvements of a particular lens review.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListLensReviewImprovements">AWS
          * API Reference</a></p>
          */
@@ -1681,7 +1708,7 @@ namespace WellArchitected
         }
 
         /**
-         * <p>Updates whether the Amazon Web Services account is opted into organization
+         * <p>Update whether the Amazon Web Services account is opted into organization
          * sharing and discovery integration features.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateGlobalSettings">AWS
          * API Reference</a></p>
@@ -1704,6 +1731,31 @@ namespace WellArchitected
         void UpdateGlobalSettingsAsync(const UpdateGlobalSettingsRequestT& request, const UpdateGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&WellArchitectedClient::UpdateGlobalSettings, request, handler, context);
+        }
+
+        /**
+         * <p>Update integration features.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateIntegration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateIntegrationOutcome UpdateIntegration(const Model::UpdateIntegrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateIntegration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateIntegrationRequestT = Model::UpdateIntegrationRequest>
+        Model::UpdateIntegrationOutcomeCallable UpdateIntegrationCallable(const UpdateIntegrationRequestT& request) const
+        {
+            return SubmitCallable(&WellArchitectedClient::UpdateIntegration, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateIntegration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateIntegrationRequestT = Model::UpdateIntegrationRequest>
+        void UpdateIntegrationAsync(const UpdateIntegrationRequestT& request, const UpdateIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WellArchitectedClient::UpdateIntegration, request, handler, context);
         }
 
         /**

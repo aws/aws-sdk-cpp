@@ -48,7 +48,8 @@ Workload::Workload() :
     m_discoveryConfigHasBeenSet(false),
     m_applicationsHasBeenSet(false),
     m_profilesHasBeenSet(false),
-    m_prioritizedRiskCountsHasBeenSet(false)
+    m_prioritizedRiskCountsHasBeenSet(false),
+    m_jiraConfigurationHasBeenSet(false)
 {
 }
 
@@ -82,7 +83,8 @@ Workload::Workload(JsonView jsonValue) :
     m_discoveryConfigHasBeenSet(false),
     m_applicationsHasBeenSet(false),
     m_profilesHasBeenSet(false),
-    m_prioritizedRiskCountsHasBeenSet(false)
+    m_prioritizedRiskCountsHasBeenSet(false),
+    m_jiraConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -308,6 +310,13 @@ Workload& Workload::operator =(JsonView jsonValue)
     m_prioritizedRiskCountsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("JiraConfiguration"))
+  {
+    m_jiraConfiguration = jsonValue.GetObject("JiraConfiguration");
+
+    m_jiraConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -520,6 +529,12 @@ JsonValue Workload::Jsonize() const
      prioritizedRiskCountsJsonMap.WithInteger(RiskMapper::GetNameForRisk(prioritizedRiskCountsItem.first), prioritizedRiskCountsItem.second);
    }
    payload.WithObject("PrioritizedRiskCounts", std::move(prioritizedRiskCountsJsonMap));
+
+  }
+
+  if(m_jiraConfigurationHasBeenSet)
+  {
+   payload.WithObject("JiraConfiguration", m_jiraConfiguration.Jsonize());
 
   }
 

@@ -12,6 +12,7 @@
 #include <aws/wellarchitected/model/WorkloadImprovementStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/wellarchitected/model/WorkloadDiscoveryConfig.h>
+#include <aws/wellarchitected/model/WorkloadJiraConfigurationOutput.h>
 #include <aws/wellarchitected/model/Risk.h>
 #include <aws/wellarchitected/model/WorkloadProfile.h>
 #include <utility>
@@ -818,6 +819,37 @@ namespace Model
     
     inline Workload& AddPrioritizedRiskCounts(Risk&& key, int value) { m_prioritizedRiskCountsHasBeenSet = true; m_prioritizedRiskCounts.emplace(std::move(key), value); return *this; }
 
+
+    /**
+     * <p>Jira configuration for a specific workload.</p>
+     */
+    inline const WorkloadJiraConfigurationOutput& GetJiraConfiguration() const{ return m_jiraConfiguration; }
+
+    /**
+     * <p>Jira configuration for a specific workload.</p>
+     */
+    inline bool JiraConfigurationHasBeenSet() const { return m_jiraConfigurationHasBeenSet; }
+
+    /**
+     * <p>Jira configuration for a specific workload.</p>
+     */
+    inline void SetJiraConfiguration(const WorkloadJiraConfigurationOutput& value) { m_jiraConfigurationHasBeenSet = true; m_jiraConfiguration = value; }
+
+    /**
+     * <p>Jira configuration for a specific workload.</p>
+     */
+    inline void SetJiraConfiguration(WorkloadJiraConfigurationOutput&& value) { m_jiraConfigurationHasBeenSet = true; m_jiraConfiguration = std::move(value); }
+
+    /**
+     * <p>Jira configuration for a specific workload.</p>
+     */
+    inline Workload& WithJiraConfiguration(const WorkloadJiraConfigurationOutput& value) { SetJiraConfiguration(value); return *this;}
+
+    /**
+     * <p>Jira configuration for a specific workload.</p>
+     */
+    inline Workload& WithJiraConfiguration(WorkloadJiraConfigurationOutput&& value) { SetJiraConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_workloadId;
@@ -900,6 +932,9 @@ namespace Model
 
     Aws::Map<Risk, int> m_prioritizedRiskCounts;
     bool m_prioritizedRiskCountsHasBeenSet = false;
+
+    WorkloadJiraConfigurationOutput m_jiraConfiguration;
+    bool m_jiraConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

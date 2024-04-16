@@ -13,6 +13,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/mediapackagev2/model/GetHlsManifestConfiguration.h>
 #include <aws/mediapackagev2/model/GetLowLatencyHlsManifestConfiguration.h>
+#include <aws/mediapackagev2/model/GetDashManifestConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -465,6 +466,42 @@ namespace Model
 
 
     /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline const Aws::Vector<GetDashManifestConfiguration>& GetGetDashManifests() const{ return m_dashManifests; }
+
+    /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline void SetDashManifests(const Aws::Vector<GetDashManifestConfiguration>& value) { m_dashManifests = value; }
+
+    /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline void SetDashManifests(Aws::Vector<GetDashManifestConfiguration>&& value) { m_dashManifests = std::move(value); }
+
+    /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline CreateOriginEndpointResult& WithDashManifests(const Aws::Vector<GetDashManifestConfiguration>& value) { SetDashManifests(value); return *this;}
+
+    /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline CreateOriginEndpointResult& WithDashManifests(Aws::Vector<GetDashManifestConfiguration>&& value) { SetDashManifests(std::move(value)); return *this;}
+
+    /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline CreateOriginEndpointResult& AddDashManifests(const GetDashManifestConfiguration& value) { m_dashManifests.push_back(value); return *this; }
+
+    /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline CreateOriginEndpointResult& AddDashManifests(GetDashManifestConfiguration&& value) { m_dashManifests.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The current Entity Tag (ETag) associated with this resource. The entity tag
      * can be used to safely make concurrent updates to the resource.</p>
      */
@@ -626,6 +663,8 @@ namespace Model
     Aws::Vector<GetHlsManifestConfiguration> m_hlsManifests;
 
     Aws::Vector<GetLowLatencyHlsManifestConfiguration> m_lowLatencyHlsManifests;
+
+    Aws::Vector<GetDashManifestConfiguration> m_dashManifests;
 
     Aws::String m_eTag;
 

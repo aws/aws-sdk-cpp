@@ -38,38 +38,38 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the Lambda function containing the business logic that is carried
-     * out upon invoking the action.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lambda function containing the business
+     * logic that is carried out upon invoking the action.</p>
      */
     inline const ActionGroupExecutor& GetActionGroupExecutor() const{ return m_actionGroupExecutor; }
 
     /**
-     * <p>The ARN of the Lambda function containing the business logic that is carried
-     * out upon invoking the action.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lambda function containing the business
+     * logic that is carried out upon invoking the action.</p>
      */
     inline bool ActionGroupExecutorHasBeenSet() const { return m_actionGroupExecutorHasBeenSet; }
 
     /**
-     * <p>The ARN of the Lambda function containing the business logic that is carried
-     * out upon invoking the action.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lambda function containing the business
+     * logic that is carried out upon invoking the action.</p>
      */
     inline void SetActionGroupExecutor(const ActionGroupExecutor& value) { m_actionGroupExecutorHasBeenSet = true; m_actionGroupExecutor = value; }
 
     /**
-     * <p>The ARN of the Lambda function containing the business logic that is carried
-     * out upon invoking the action.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lambda function containing the business
+     * logic that is carried out upon invoking the action.</p>
      */
     inline void SetActionGroupExecutor(ActionGroupExecutor&& value) { m_actionGroupExecutorHasBeenSet = true; m_actionGroupExecutor = std::move(value); }
 
     /**
-     * <p>The ARN of the Lambda function containing the business logic that is carried
-     * out upon invoking the action.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lambda function containing the business
+     * logic that is carried out upon invoking the action.</p>
      */
     inline CreateAgentActionGroupRequest& WithActionGroupExecutor(const ActionGroupExecutor& value) { SetActionGroupExecutor(value); return *this;}
 
     /**
-     * <p>The ARN of the Lambda function containing the business logic that is carried
-     * out upon invoking the action.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lambda function containing the business
+     * logic that is carried out upon invoking the action.</p>
      */
     inline CreateAgentActionGroupRequest& WithActionGroupExecutor(ActionGroupExecutor&& value) { SetActionGroupExecutor(std::move(value)); return *this;}
 

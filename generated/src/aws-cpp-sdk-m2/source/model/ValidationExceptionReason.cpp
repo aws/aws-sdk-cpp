@@ -22,6 +22,8 @@ namespace Aws
 
         static const int unknownOperation_HASH = HashingUtils::HashString("unknownOperation");
         static const int cannotParse_HASH = HashingUtils::HashString("cannotParse");
+        static const int featureNotAvailable_HASH = HashingUtils::HashString("featureNotAvailable");
+        static const int unsupportedEngineVersion_HASH = HashingUtils::HashString("unsupportedEngineVersion");
         static const int fieldValidationFailed_HASH = HashingUtils::HashString("fieldValidationFailed");
         static const int other_HASH = HashingUtils::HashString("other");
 
@@ -36,6 +38,14 @@ namespace Aws
           else if (hashCode == cannotParse_HASH)
           {
             return ValidationExceptionReason::cannotParse;
+          }
+          else if (hashCode == featureNotAvailable_HASH)
+          {
+            return ValidationExceptionReason::featureNotAvailable;
+          }
+          else if (hashCode == unsupportedEngineVersion_HASH)
+          {
+            return ValidationExceptionReason::unsupportedEngineVersion;
           }
           else if (hashCode == fieldValidationFailed_HASH)
           {
@@ -65,6 +75,10 @@ namespace Aws
             return "unknownOperation";
           case ValidationExceptionReason::cannotParse:
             return "cannotParse";
+          case ValidationExceptionReason::featureNotAvailable:
+            return "featureNotAvailable";
+          case ValidationExceptionReason::unsupportedEngineVersion:
+            return "unsupportedEngineVersion";
           case ValidationExceptionReason::fieldValidationFailed:
             return "fieldValidationFailed";
           case ValidationExceptionReason::other:

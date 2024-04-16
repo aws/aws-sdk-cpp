@@ -223,42 +223,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the IAM role with permissions to create the knowledge base.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API
+     * operations on the knowledge base.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The ARN of the IAM role with permissions to create the knowledge base.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API
+     * operations on the knowledge base.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the IAM role with permissions to create the knowledge base.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API
+     * operations on the knowledge base.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The ARN of the IAM role with permissions to create the knowledge base.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API
+     * operations on the knowledge base.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The ARN of the IAM role with permissions to create the knowledge base.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API
+     * operations on the knowledge base.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The ARN of the IAM role with permissions to create the knowledge base.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API
+     * operations on the knowledge base.</p>
      */
     inline CreateKnowledgeBaseRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of the IAM role with permissions to create the knowledge base.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API
+     * operations on the knowledge base.</p>
      */
     inline CreateKnowledgeBaseRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the IAM role with permissions to create the knowledge base.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API
+     * operations on the knowledge base.</p>
      */
     inline CreateKnowledgeBaseRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

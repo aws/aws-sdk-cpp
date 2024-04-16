@@ -7,8 +7,10 @@
 #include <aws/lakeformation/LakeFormation_EXPORTS.h>
 #include <aws/lakeformation/LakeFormationRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lakeformation/model/ApplicationStatus.h>
 #include <aws/lakeformation/model/ExternalFilteringConfiguration.h>
+#include <aws/lakeformation/model/DataLakePrincipal.h>
 #include <utility>
 
 namespace Aws
@@ -100,6 +102,111 @@ namespace Model
 
 
     /**
+     * <p>A list of Amazon Web Services account IDs or Amazon Web Services
+     * organization/organizational unit ARNs that are allowed to access to access data
+     * managed by Lake Formation. </p> <p>If the <code>ShareRecipients</code> list
+     * includes valid values, then the resource share is updated with the principals
+     * you want to have access to the resources.</p> <p>If the
+     * <code>ShareRecipients</code> value is null, both the list of share recipients
+     * and the resource share remain unchanged.</p> <p>If the
+     * <code>ShareRecipients</code> value is an empty list, then the existing share
+     * recipients list will be cleared, and the resource share will be deleted.</p>
+     */
+    inline const Aws::Vector<DataLakePrincipal>& GetShareRecipients() const{ return m_shareRecipients; }
+
+    /**
+     * <p>A list of Amazon Web Services account IDs or Amazon Web Services
+     * organization/organizational unit ARNs that are allowed to access to access data
+     * managed by Lake Formation. </p> <p>If the <code>ShareRecipients</code> list
+     * includes valid values, then the resource share is updated with the principals
+     * you want to have access to the resources.</p> <p>If the
+     * <code>ShareRecipients</code> value is null, both the list of share recipients
+     * and the resource share remain unchanged.</p> <p>If the
+     * <code>ShareRecipients</code> value is an empty list, then the existing share
+     * recipients list will be cleared, and the resource share will be deleted.</p>
+     */
+    inline bool ShareRecipientsHasBeenSet() const { return m_shareRecipientsHasBeenSet; }
+
+    /**
+     * <p>A list of Amazon Web Services account IDs or Amazon Web Services
+     * organization/organizational unit ARNs that are allowed to access to access data
+     * managed by Lake Formation. </p> <p>If the <code>ShareRecipients</code> list
+     * includes valid values, then the resource share is updated with the principals
+     * you want to have access to the resources.</p> <p>If the
+     * <code>ShareRecipients</code> value is null, both the list of share recipients
+     * and the resource share remain unchanged.</p> <p>If the
+     * <code>ShareRecipients</code> value is an empty list, then the existing share
+     * recipients list will be cleared, and the resource share will be deleted.</p>
+     */
+    inline void SetShareRecipients(const Aws::Vector<DataLakePrincipal>& value) { m_shareRecipientsHasBeenSet = true; m_shareRecipients = value; }
+
+    /**
+     * <p>A list of Amazon Web Services account IDs or Amazon Web Services
+     * organization/organizational unit ARNs that are allowed to access to access data
+     * managed by Lake Formation. </p> <p>If the <code>ShareRecipients</code> list
+     * includes valid values, then the resource share is updated with the principals
+     * you want to have access to the resources.</p> <p>If the
+     * <code>ShareRecipients</code> value is null, both the list of share recipients
+     * and the resource share remain unchanged.</p> <p>If the
+     * <code>ShareRecipients</code> value is an empty list, then the existing share
+     * recipients list will be cleared, and the resource share will be deleted.</p>
+     */
+    inline void SetShareRecipients(Aws::Vector<DataLakePrincipal>&& value) { m_shareRecipientsHasBeenSet = true; m_shareRecipients = std::move(value); }
+
+    /**
+     * <p>A list of Amazon Web Services account IDs or Amazon Web Services
+     * organization/organizational unit ARNs that are allowed to access to access data
+     * managed by Lake Formation. </p> <p>If the <code>ShareRecipients</code> list
+     * includes valid values, then the resource share is updated with the principals
+     * you want to have access to the resources.</p> <p>If the
+     * <code>ShareRecipients</code> value is null, both the list of share recipients
+     * and the resource share remain unchanged.</p> <p>If the
+     * <code>ShareRecipients</code> value is an empty list, then the existing share
+     * recipients list will be cleared, and the resource share will be deleted.</p>
+     */
+    inline UpdateLakeFormationIdentityCenterConfigurationRequest& WithShareRecipients(const Aws::Vector<DataLakePrincipal>& value) { SetShareRecipients(value); return *this;}
+
+    /**
+     * <p>A list of Amazon Web Services account IDs or Amazon Web Services
+     * organization/organizational unit ARNs that are allowed to access to access data
+     * managed by Lake Formation. </p> <p>If the <code>ShareRecipients</code> list
+     * includes valid values, then the resource share is updated with the principals
+     * you want to have access to the resources.</p> <p>If the
+     * <code>ShareRecipients</code> value is null, both the list of share recipients
+     * and the resource share remain unchanged.</p> <p>If the
+     * <code>ShareRecipients</code> value is an empty list, then the existing share
+     * recipients list will be cleared, and the resource share will be deleted.</p>
+     */
+    inline UpdateLakeFormationIdentityCenterConfigurationRequest& WithShareRecipients(Aws::Vector<DataLakePrincipal>&& value) { SetShareRecipients(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of Amazon Web Services account IDs or Amazon Web Services
+     * organization/organizational unit ARNs that are allowed to access to access data
+     * managed by Lake Formation. </p> <p>If the <code>ShareRecipients</code> list
+     * includes valid values, then the resource share is updated with the principals
+     * you want to have access to the resources.</p> <p>If the
+     * <code>ShareRecipients</code> value is null, both the list of share recipients
+     * and the resource share remain unchanged.</p> <p>If the
+     * <code>ShareRecipients</code> value is an empty list, then the existing share
+     * recipients list will be cleared, and the resource share will be deleted.</p>
+     */
+    inline UpdateLakeFormationIdentityCenterConfigurationRequest& AddShareRecipients(const DataLakePrincipal& value) { m_shareRecipientsHasBeenSet = true; m_shareRecipients.push_back(value); return *this; }
+
+    /**
+     * <p>A list of Amazon Web Services account IDs or Amazon Web Services
+     * organization/organizational unit ARNs that are allowed to access to access data
+     * managed by Lake Formation. </p> <p>If the <code>ShareRecipients</code> list
+     * includes valid values, then the resource share is updated with the principals
+     * you want to have access to the resources.</p> <p>If the
+     * <code>ShareRecipients</code> value is null, both the list of share recipients
+     * and the resource share remain unchanged.</p> <p>If the
+     * <code>ShareRecipients</code> value is an empty list, then the existing share
+     * recipients list will be cleared, and the resource share will be deleted.</p>
+     */
+    inline UpdateLakeFormationIdentityCenterConfigurationRequest& AddShareRecipients(DataLakePrincipal&& value) { m_shareRecipientsHasBeenSet = true; m_shareRecipients.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>Allows to enable or disable the IAM Identity Center connection.</p>
      */
     inline const ApplicationStatus& GetApplicationStatus() const{ return m_applicationStatus; }
@@ -170,6 +277,9 @@ namespace Model
 
     Aws::String m_catalogId;
     bool m_catalogIdHasBeenSet = false;
+
+    Aws::Vector<DataLakePrincipal> m_shareRecipients;
+    bool m_shareRecipientsHasBeenSet = false;
 
     ApplicationStatus m_applicationStatus;
     bool m_applicationStatusHasBeenSet = false;

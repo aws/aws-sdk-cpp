@@ -20,6 +20,7 @@ namespace Model
 
 BatchJobIdentifier::BatchJobIdentifier() : 
     m_fileBatchJobIdentifierHasBeenSet(false),
+    m_restartBatchJobIdentifierHasBeenSet(false),
     m_s3BatchJobIdentifierHasBeenSet(false),
     m_scriptBatchJobIdentifierHasBeenSet(false)
 {
@@ -27,6 +28,7 @@ BatchJobIdentifier::BatchJobIdentifier() :
 
 BatchJobIdentifier::BatchJobIdentifier(JsonView jsonValue) : 
     m_fileBatchJobIdentifierHasBeenSet(false),
+    m_restartBatchJobIdentifierHasBeenSet(false),
     m_s3BatchJobIdentifierHasBeenSet(false),
     m_scriptBatchJobIdentifierHasBeenSet(false)
 {
@@ -40,6 +42,13 @@ BatchJobIdentifier& BatchJobIdentifier::operator =(JsonView jsonValue)
     m_fileBatchJobIdentifier = jsonValue.GetObject("fileBatchJobIdentifier");
 
     m_fileBatchJobIdentifierHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("restartBatchJobIdentifier"))
+  {
+    m_restartBatchJobIdentifier = jsonValue.GetObject("restartBatchJobIdentifier");
+
+    m_restartBatchJobIdentifierHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("s3BatchJobIdentifier"))
@@ -66,6 +75,12 @@ JsonValue BatchJobIdentifier::Jsonize() const
   if(m_fileBatchJobIdentifierHasBeenSet)
   {
    payload.WithObject("fileBatchJobIdentifier", m_fileBatchJobIdentifier.Jsonize());
+
+  }
+
+  if(m_restartBatchJobIdentifierHasBeenSet)
+  {
+   payload.WithObject("restartBatchJobIdentifier", m_restartBatchJobIdentifier.Jsonize());
 
   }
 

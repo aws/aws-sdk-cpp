@@ -28,6 +28,7 @@ namespace Aws
         static const int Cancelled_HASH = HashingUtils::HashString("Cancelled");
         static const int Succeeded_HASH = HashingUtils::HashString("Succeeded");
         static const int Failed_HASH = HashingUtils::HashString("Failed");
+        static const int Purged_HASH = HashingUtils::HashString("Purged");
         static const int Succeeded_With_Warning_HASH = HashingUtils::HashString("Succeeded With Warning");
 
 
@@ -66,6 +67,10 @@ namespace Aws
           {
             return BatchJobExecutionStatus::Failed;
           }
+          else if (hashCode == Purged_HASH)
+          {
+            return BatchJobExecutionStatus::Purged;
+          }
           else if (hashCode == Succeeded_With_Warning_HASH)
           {
             return BatchJobExecutionStatus::Succeeded_With_Warning;
@@ -102,6 +107,8 @@ namespace Aws
             return "Succeeded";
           case BatchJobExecutionStatus::Failed:
             return "Failed";
+          case BatchJobExecutionStatus::Purged:
+            return "Purged";
           case BatchJobExecutionStatus::Succeeded_With_Warning:
             return "Succeeded With Warning";
           default:

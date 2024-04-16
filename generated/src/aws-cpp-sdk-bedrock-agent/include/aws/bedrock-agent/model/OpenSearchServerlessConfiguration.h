@@ -42,42 +42,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the OpenSearch Service vector store.</p>
+     * <p>The Amazon Resource Name (ARN) of the OpenSearch Service vector store.</p>
      */
     inline const Aws::String& GetCollectionArn() const{ return m_collectionArn; }
 
     /**
-     * <p>The ARN of the OpenSearch Service vector store.</p>
+     * <p>The Amazon Resource Name (ARN) of the OpenSearch Service vector store.</p>
      */
     inline bool CollectionArnHasBeenSet() const { return m_collectionArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the OpenSearch Service vector store.</p>
+     * <p>The Amazon Resource Name (ARN) of the OpenSearch Service vector store.</p>
      */
     inline void SetCollectionArn(const Aws::String& value) { m_collectionArnHasBeenSet = true; m_collectionArn = value; }
 
     /**
-     * <p>The ARN of the OpenSearch Service vector store.</p>
+     * <p>The Amazon Resource Name (ARN) of the OpenSearch Service vector store.</p>
      */
     inline void SetCollectionArn(Aws::String&& value) { m_collectionArnHasBeenSet = true; m_collectionArn = std::move(value); }
 
     /**
-     * <p>The ARN of the OpenSearch Service vector store.</p>
+     * <p>The Amazon Resource Name (ARN) of the OpenSearch Service vector store.</p>
      */
     inline void SetCollectionArn(const char* value) { m_collectionArnHasBeenSet = true; m_collectionArn.assign(value); }
 
     /**
-     * <p>The ARN of the OpenSearch Service vector store.</p>
+     * <p>The Amazon Resource Name (ARN) of the OpenSearch Service vector store.</p>
      */
     inline OpenSearchServerlessConfiguration& WithCollectionArn(const Aws::String& value) { SetCollectionArn(value); return *this;}
 
     /**
-     * <p>The ARN of the OpenSearch Service vector store.</p>
+     * <p>The Amazon Resource Name (ARN) of the OpenSearch Service vector store.</p>
      */
     inline OpenSearchServerlessConfiguration& WithCollectionArn(Aws::String&& value) { SetCollectionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the OpenSearch Service vector store.</p>
+     * <p>The Amazon Resource Name (ARN) of the OpenSearch Service vector store.</p>
      */
     inline OpenSearchServerlessConfiguration& WithCollectionArn(const char* value) { SetCollectionArn(value); return *this;}
 

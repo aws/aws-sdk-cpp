@@ -13,6 +13,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/mediapackagev2/model/CreateHlsManifestConfiguration.h>
 #include <aws/mediapackagev2/model/CreateLowLatencyHlsManifestConfiguration.h>
+#include <aws/mediapackagev2/model/CreateDashManifestConfiguration.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -520,6 +521,47 @@ namespace Model
 
 
     /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline const Aws::Vector<CreateDashManifestConfiguration>& GetDashManifests() const{ return m_dashManifests; }
+
+    /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline bool DashManifestsHasBeenSet() const { return m_dashManifestsHasBeenSet; }
+
+    /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline void SetDashManifests(const Aws::Vector<CreateDashManifestConfiguration>& value) { m_dashManifestsHasBeenSet = true; m_dashManifests = value; }
+
+    /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline void SetDashManifests(Aws::Vector<CreateDashManifestConfiguration>&& value) { m_dashManifestsHasBeenSet = true; m_dashManifests = std::move(value); }
+
+    /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline CreateOriginEndpointRequest& WithDashManifests(const Aws::Vector<CreateDashManifestConfiguration>& value) { SetDashManifests(value); return *this;}
+
+    /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline CreateOriginEndpointRequest& WithDashManifests(Aws::Vector<CreateDashManifestConfiguration>&& value) { SetDashManifests(std::move(value)); return *this;}
+
+    /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline CreateOriginEndpointRequest& AddDashManifests(const CreateDashManifestConfiguration& value) { m_dashManifestsHasBeenSet = true; m_dashManifests.push_back(value); return *this; }
+
+    /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline CreateOriginEndpointRequest& AddDashManifests(CreateDashManifestConfiguration&& value) { m_dashManifestsHasBeenSet = true; m_dashManifests.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>A comma-separated list of tag key:value pairs that you define. For
      * example:</p> <p> <code>"Key1": "Value1",</code> </p> <p> <code>"Key2":
      * "Value2"</code> </p>
@@ -641,6 +683,9 @@ namespace Model
 
     Aws::Vector<CreateLowLatencyHlsManifestConfiguration> m_lowLatencyHlsManifests;
     bool m_lowLatencyHlsManifestsHasBeenSet = false;
+
+    Aws::Vector<CreateDashManifestConfiguration> m_dashManifests;
+    bool m_dashManifestsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

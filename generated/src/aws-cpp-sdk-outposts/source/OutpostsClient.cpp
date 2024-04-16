@@ -21,25 +21,30 @@
 #include <aws/outposts/OutpostsClient.h>
 #include <aws/outposts/OutpostsErrorMarshaller.h>
 #include <aws/outposts/OutpostsEndpointProvider.h>
+#include <aws/outposts/model/CancelCapacityTaskRequest.h>
 #include <aws/outposts/model/CancelOrderRequest.h>
 #include <aws/outposts/model/CreateOrderRequest.h>
 #include <aws/outposts/model/CreateOutpostRequest.h>
 #include <aws/outposts/model/CreateSiteRequest.h>
 #include <aws/outposts/model/DeleteOutpostRequest.h>
 #include <aws/outposts/model/DeleteSiteRequest.h>
+#include <aws/outposts/model/GetCapacityTaskRequest.h>
 #include <aws/outposts/model/GetCatalogItemRequest.h>
 #include <aws/outposts/model/GetConnectionRequest.h>
 #include <aws/outposts/model/GetOrderRequest.h>
 #include <aws/outposts/model/GetOutpostRequest.h>
 #include <aws/outposts/model/GetOutpostInstanceTypesRequest.h>
+#include <aws/outposts/model/GetOutpostSupportedInstanceTypesRequest.h>
 #include <aws/outposts/model/GetSiteRequest.h>
 #include <aws/outposts/model/GetSiteAddressRequest.h>
 #include <aws/outposts/model/ListAssetsRequest.h>
+#include <aws/outposts/model/ListCapacityTasksRequest.h>
 #include <aws/outposts/model/ListCatalogItemsRequest.h>
 #include <aws/outposts/model/ListOrdersRequest.h>
 #include <aws/outposts/model/ListOutpostsRequest.h>
 #include <aws/outposts/model/ListSitesRequest.h>
 #include <aws/outposts/model/ListTagsForResourceRequest.h>
+#include <aws/outposts/model/StartCapacityTaskRequest.h>
 #include <aws/outposts/model/StartConnectionRequest.h>
 #include <aws/outposts/model/TagResourceRequest.h>
 #include <aws/outposts/model/UntagResourceRequest.h>
@@ -186,6 +191,46 @@ void OutpostsClient::OverrideEndpoint(const Aws::String& endpoint)
 {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->OverrideEndpoint(endpoint);
+}
+
+CancelCapacityTaskOutcome OutpostsClient::CancelCapacityTask(const CancelCapacityTaskRequest& request) const
+{
+  AWS_OPERATION_GUARD(CancelCapacityTask);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelCapacityTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.CapacityTaskIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CancelCapacityTask", "Required field: CapacityTaskId, is not set");
+    return CancelCapacityTaskOutcome(Aws::Client::AWSError<OutpostsErrors>(OutpostsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CapacityTaskId]", false));
+  }
+  if (!request.OutpostIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CancelCapacityTask", "Required field: OutpostIdentifier, is not set");
+    return CancelCapacityTaskOutcome(Aws::Client::AWSError<OutpostsErrors>(OutpostsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OutpostIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CancelCapacityTask, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CancelCapacityTask, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CancelCapacityTask",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CancelCapacityTaskOutcome>(
+    [&]()-> CancelCapacityTaskOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CancelCapacityTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/outposts/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOutpostIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/capacity/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCapacityTaskId());
+      return CancelCapacityTaskOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
 CancelOrderOutcome OutpostsClient::CancelOrder(const CancelOrderRequest& request) const
@@ -369,6 +414,46 @@ DeleteSiteOutcome OutpostsClient::DeleteSite(const DeleteSiteRequest& request) c
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetCapacityTaskOutcome OutpostsClient::GetCapacityTask(const GetCapacityTaskRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetCapacityTask);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCapacityTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.CapacityTaskIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetCapacityTask", "Required field: CapacityTaskId, is not set");
+    return GetCapacityTaskOutcome(Aws::Client::AWSError<OutpostsErrors>(OutpostsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CapacityTaskId]", false));
+  }
+  if (!request.OutpostIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetCapacityTask", "Required field: OutpostIdentifier, is not set");
+    return GetCapacityTaskOutcome(Aws::Client::AWSError<OutpostsErrors>(OutpostsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OutpostIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetCapacityTask, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetCapacityTask, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetCapacityTask",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetCapacityTaskOutcome>(
+    [&]()-> GetCapacityTaskOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetCapacityTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/outposts/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOutpostIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/capacity/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCapacityTaskId());
+      return GetCapacityTaskOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetCatalogItemOutcome OutpostsClient::GetCatalogItem(const GetCatalogItemRequest& request) const
 {
   AWS_OPERATION_GUARD(GetCatalogItem);
@@ -535,6 +620,45 @@ GetOutpostInstanceTypesOutcome OutpostsClient::GetOutpostInstanceTypes(const Get
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetOutpostSupportedInstanceTypesOutcome OutpostsClient::GetOutpostSupportedInstanceTypes(const GetOutpostSupportedInstanceTypesRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetOutpostSupportedInstanceTypes);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetOutpostSupportedInstanceTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.OutpostIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetOutpostSupportedInstanceTypes", "Required field: OutpostIdentifier, is not set");
+    return GetOutpostSupportedInstanceTypesOutcome(Aws::Client::AWSError<OutpostsErrors>(OutpostsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OutpostIdentifier]", false));
+  }
+  if (!request.OrderIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetOutpostSupportedInstanceTypes", "Required field: OrderId, is not set");
+    return GetOutpostSupportedInstanceTypesOutcome(Aws::Client::AWSError<OutpostsErrors>(OutpostsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OrderId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetOutpostSupportedInstanceTypes, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetOutpostSupportedInstanceTypes, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetOutpostSupportedInstanceTypes",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetOutpostSupportedInstanceTypesOutcome>(
+    [&]()-> GetOutpostSupportedInstanceTypesOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetOutpostSupportedInstanceTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/outposts/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOutpostIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/supportedInstanceTypes");
+      return GetOutpostSupportedInstanceTypesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetSiteOutcome OutpostsClient::GetSite(const GetSiteRequest& request) const
 {
   AWS_OPERATION_GUARD(GetSite);
@@ -635,6 +759,33 @@ ListAssetsOutcome OutpostsClient::ListAssets(const ListAssetsRequest& request) c
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOutpostIdentifier());
       endpointResolutionOutcome.GetResult().AddPathSegments("/assets");
       return ListAssetsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListCapacityTasksOutcome OutpostsClient::ListCapacityTasks(const ListCapacityTasksRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListCapacityTasks);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCapacityTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListCapacityTasks, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListCapacityTasks, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListCapacityTasks",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListCapacityTasksOutcome>(
+    [&]()-> ListCapacityTasksOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCapacityTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/capacity/tasks");
+      return ListCapacityTasksOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -776,6 +927,40 @@ ListTagsForResourceOutcome OutpostsClient::ListTagsForResource(const ListTagsFor
       endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
       return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+StartCapacityTaskOutcome OutpostsClient::StartCapacityTask(const StartCapacityTaskRequest& request) const
+{
+  AWS_OPERATION_GUARD(StartCapacityTask);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartCapacityTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.OutpostIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartCapacityTask", "Required field: OutpostIdentifier, is not set");
+    return StartCapacityTaskOutcome(Aws::Client::AWSError<OutpostsErrors>(OutpostsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OutpostIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StartCapacityTask, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, StartCapacityTask, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StartCapacityTask",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<StartCapacityTaskOutcome>(
+    [&]()-> StartCapacityTaskOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartCapacityTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/outposts/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOutpostIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/capacity");
+      return StartCapacityTaskOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

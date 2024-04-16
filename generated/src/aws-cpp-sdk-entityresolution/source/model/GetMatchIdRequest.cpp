@@ -13,6 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 GetMatchIdRequest::GetMatchIdRequest() : 
+    m_applyNormalization(false),
+    m_applyNormalizationHasBeenSet(false),
     m_recordHasBeenSet(false),
     m_workflowNameHasBeenSet(false)
 {
@@ -21,6 +23,12 @@ GetMatchIdRequest::GetMatchIdRequest() :
 Aws::String GetMatchIdRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_applyNormalizationHasBeenSet)
+  {
+   payload.WithBool("applyNormalization", m_applyNormalization);
+
+  }
 
   if(m_recordHasBeenSet)
   {
