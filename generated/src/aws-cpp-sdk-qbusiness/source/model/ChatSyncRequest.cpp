@@ -20,6 +20,9 @@ ChatSyncRequest::ChatSyncRequest() :
     m_applicationIdHasBeenSet(false),
     m_attachmentsHasBeenSet(false),
     m_attributeFilterHasBeenSet(false),
+    m_chatMode(ChatMode::NOT_SET),
+    m_chatModeHasBeenSet(false),
+    m_chatModeConfigurationHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_conversationIdHasBeenSet(false),
@@ -54,6 +57,17 @@ Aws::String ChatSyncRequest::SerializePayload() const
   if(m_attributeFilterHasBeenSet)
   {
    payload.WithObject("attributeFilter", m_attributeFilter.Jsonize());
+
+  }
+
+  if(m_chatModeHasBeenSet)
+  {
+   payload.WithString("chatMode", ChatModeMapper::GetNameForChatMode(m_chatMode));
+  }
+
+  if(m_chatModeConfigurationHasBeenSet)
+  {
+   payload.WithObject("chatModeConfiguration", m_chatModeConfiguration.Jsonize());
 
   }
 

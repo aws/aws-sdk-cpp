@@ -742,7 +742,7 @@ namespace Model
      * <p>The IDs of the security groups. You can create a security group using <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
      * <p>If you specify a network interface, you must specify any security groups as
-     * part of the network interface.</p>
+     * part of the network interface instead of using this parameter.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
@@ -750,7 +750,7 @@ namespace Model
      * <p>The IDs of the security groups. You can create a security group using <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
      * <p>If you specify a network interface, you must specify any security groups as
-     * part of the network interface.</p>
+     * part of the network interface instead of using this parameter.</p>
      */
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
@@ -758,7 +758,7 @@ namespace Model
      * <p>The IDs of the security groups. You can create a security group using <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
      * <p>If you specify a network interface, you must specify any security groups as
-     * part of the network interface.</p>
+     * part of the network interface instead of using this parameter.</p>
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
@@ -766,7 +766,7 @@ namespace Model
      * <p>The IDs of the security groups. You can create a security group using <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
      * <p>If you specify a network interface, you must specify any security groups as
-     * part of the network interface.</p>
+     * part of the network interface instead of using this parameter.</p>
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
@@ -774,7 +774,7 @@ namespace Model
      * <p>The IDs of the security groups. You can create a security group using <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
      * <p>If you specify a network interface, you must specify any security groups as
-     * part of the network interface.</p>
+     * part of the network interface instead of using this parameter.</p>
      */
     inline RunInstancesRequest& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
@@ -782,7 +782,7 @@ namespace Model
      * <p>The IDs of the security groups. You can create a security group using <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
      * <p>If you specify a network interface, you must specify any security groups as
-     * part of the network interface.</p>
+     * part of the network interface instead of using this parameter.</p>
      */
     inline RunInstancesRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
@@ -790,7 +790,7 @@ namespace Model
      * <p>The IDs of the security groups. You can create a security group using <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
      * <p>If you specify a network interface, you must specify any security groups as
-     * part of the network interface.</p>
+     * part of the network interface instead of using this parameter.</p>
      */
     inline RunInstancesRequest& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
@@ -798,7 +798,7 @@ namespace Model
      * <p>The IDs of the security groups. You can create a security group using <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
      * <p>If you specify a network interface, you must specify any security groups as
-     * part of the network interface.</p>
+     * part of the network interface instead of using this parameter.</p>
      */
     inline RunInstancesRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
@@ -806,7 +806,7 @@ namespace Model
      * <p>The IDs of the security groups. You can create a security group using <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
      * <p>If you specify a network interface, you must specify any security groups as
-     * part of the network interface.</p>
+     * part of the network interface instead of using this parameter.</p>
      */
     inline RunInstancesRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
@@ -814,120 +814,129 @@ namespace Model
     /**
      * <p>[Default VPC] The names of the security groups.</p> <p>If you specify a
      * network interface, you must specify any security groups as part of the network
-     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
+     * interface instead of using this parameter.</p> <p>Default: Amazon EC2 uses the
+     * default security group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
 
     /**
      * <p>[Default VPC] The names of the security groups.</p> <p>If you specify a
      * network interface, you must specify any security groups as part of the network
-     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
+     * interface instead of using this parameter.</p> <p>Default: Amazon EC2 uses the
+     * default security group.</p>
      */
     inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
 
     /**
      * <p>[Default VPC] The names of the security groups.</p> <p>If you specify a
      * network interface, you must specify any security groups as part of the network
-     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
+     * interface instead of using this parameter.</p> <p>Default: Amazon EC2 uses the
+     * default security group.</p>
      */
     inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
     /**
      * <p>[Default VPC] The names of the security groups.</p> <p>If you specify a
      * network interface, you must specify any security groups as part of the network
-     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
+     * interface instead of using this parameter.</p> <p>Default: Amazon EC2 uses the
+     * default security group.</p>
      */
     inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
 
     /**
      * <p>[Default VPC] The names of the security groups.</p> <p>If you specify a
      * network interface, you must specify any security groups as part of the network
-     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
+     * interface instead of using this parameter.</p> <p>Default: Amazon EC2 uses the
+     * default security group.</p>
      */
     inline RunInstancesRequest& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
 
     /**
      * <p>[Default VPC] The names of the security groups.</p> <p>If you specify a
      * network interface, you must specify any security groups as part of the network
-     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
+     * interface instead of using this parameter.</p> <p>Default: Amazon EC2 uses the
+     * default security group.</p>
      */
     inline RunInstancesRequest& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
 
     /**
      * <p>[Default VPC] The names of the security groups.</p> <p>If you specify a
      * network interface, you must specify any security groups as part of the network
-     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
+     * interface instead of using this parameter.</p> <p>Default: Amazon EC2 uses the
+     * default security group.</p>
      */
     inline RunInstancesRequest& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
     /**
      * <p>[Default VPC] The names of the security groups.</p> <p>If you specify a
      * network interface, you must specify any security groups as part of the network
-     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
+     * interface instead of using this parameter.</p> <p>Default: Amazon EC2 uses the
+     * default security group.</p>
      */
     inline RunInstancesRequest& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>[Default VPC] The names of the security groups.</p> <p>If you specify a
      * network interface, you must specify any security groups as part of the network
-     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
+     * interface instead of using this parameter.</p> <p>Default: Amazon EC2 uses the
+     * default security group.</p>
      */
     inline RunInstancesRequest& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
 
     /**
      * <p>The ID of the subnet to launch the instance into.</p> <p>If you specify a
-     * network interface, you must specify any subnets as part of the network
-     * interface.</p>
+     * network interface, you must specify any subnets as part of the network interface
+     * instead of using this parameter.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
 
     /**
      * <p>The ID of the subnet to launch the instance into.</p> <p>If you specify a
-     * network interface, you must specify any subnets as part of the network
-     * interface.</p>
+     * network interface, you must specify any subnets as part of the network interface
+     * instead of using this parameter.</p>
      */
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
 
     /**
      * <p>The ID of the subnet to launch the instance into.</p> <p>If you specify a
-     * network interface, you must specify any subnets as part of the network
-     * interface.</p>
+     * network interface, you must specify any subnets as part of the network interface
+     * instead of using this parameter.</p>
      */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
      * <p>The ID of the subnet to launch the instance into.</p> <p>If you specify a
-     * network interface, you must specify any subnets as part of the network
-     * interface.</p>
+     * network interface, you must specify any subnets as part of the network interface
+     * instead of using this parameter.</p>
      */
     inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
      * <p>The ID of the subnet to launch the instance into.</p> <p>If you specify a
-     * network interface, you must specify any subnets as part of the network
-     * interface.</p>
+     * network interface, you must specify any subnets as part of the network interface
+     * instead of using this parameter.</p>
      */
     inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
 
     /**
      * <p>The ID of the subnet to launch the instance into.</p> <p>If you specify a
-     * network interface, you must specify any subnets as part of the network
-     * interface.</p>
+     * network interface, you must specify any subnets as part of the network interface
+     * instead of using this parameter.</p>
      */
     inline RunInstancesRequest& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
 
     /**
      * <p>The ID of the subnet to launch the instance into.</p> <p>If you specify a
-     * network interface, you must specify any subnets as part of the network
-     * interface.</p>
+     * network interface, you must specify any subnets as part of the network interface
+     * instead of using this parameter.</p>
      */
     inline RunInstancesRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the subnet to launch the instance into.</p> <p>If you specify a
-     * network interface, you must specify any subnets as part of the network
-     * interface.</p>
+     * network interface, you must specify any subnets as part of the network interface
+     * instead of using this parameter.</p>
      */
     inline RunInstancesRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
@@ -1345,58 +1354,42 @@ namespace Model
 
 
     /**
-     * <p>The network interfaces to associate with the instance. If you specify a
-     * network interface, you must specify any security groups and subnets as part of
-     * the network interface.</p>
+     * <p>The network interfaces to associate with the instance.</p>
      */
     inline const Aws::Vector<InstanceNetworkInterfaceSpecification>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
 
     /**
-     * <p>The network interfaces to associate with the instance. If you specify a
-     * network interface, you must specify any security groups and subnets as part of
-     * the network interface.</p>
+     * <p>The network interfaces to associate with the instance.</p>
      */
     inline bool NetworkInterfacesHasBeenSet() const { return m_networkInterfacesHasBeenSet; }
 
     /**
-     * <p>The network interfaces to associate with the instance. If you specify a
-     * network interface, you must specify any security groups and subnets as part of
-     * the network interface.</p>
+     * <p>The network interfaces to associate with the instance.</p>
      */
     inline void SetNetworkInterfaces(const Aws::Vector<InstanceNetworkInterfaceSpecification>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
 
     /**
-     * <p>The network interfaces to associate with the instance. If you specify a
-     * network interface, you must specify any security groups and subnets as part of
-     * the network interface.</p>
+     * <p>The network interfaces to associate with the instance.</p>
      */
     inline void SetNetworkInterfaces(Aws::Vector<InstanceNetworkInterfaceSpecification>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
 
     /**
-     * <p>The network interfaces to associate with the instance. If you specify a
-     * network interface, you must specify any security groups and subnets as part of
-     * the network interface.</p>
+     * <p>The network interfaces to associate with the instance.</p>
      */
     inline RunInstancesRequest& WithNetworkInterfaces(const Aws::Vector<InstanceNetworkInterfaceSpecification>& value) { SetNetworkInterfaces(value); return *this;}
 
     /**
-     * <p>The network interfaces to associate with the instance. If you specify a
-     * network interface, you must specify any security groups and subnets as part of
-     * the network interface.</p>
+     * <p>The network interfaces to associate with the instance.</p>
      */
     inline RunInstancesRequest& WithNetworkInterfaces(Aws::Vector<InstanceNetworkInterfaceSpecification>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
 
     /**
-     * <p>The network interfaces to associate with the instance. If you specify a
-     * network interface, you must specify any security groups and subnets as part of
-     * the network interface.</p>
+     * <p>The network interfaces to associate with the instance.</p>
      */
     inline RunInstancesRequest& AddNetworkInterfaces(const InstanceNetworkInterfaceSpecification& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
 
     /**
-     * <p>The network interfaces to associate with the instance. If you specify a
-     * network interface, you must specify any security groups and subnets as part of
-     * the network interface.</p>
+     * <p>The network interfaces to associate with the instance.</p>
      */
     inline RunInstancesRequest& AddNetworkInterfaces(InstanceNetworkInterfaceSpecification&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
 
@@ -1491,187 +1484,123 @@ namespace Model
 
 
     /**
-     * <p>Deprecated.</p>  <p>Amazon Elastic Graphics reached end of life on
-     * January 8, 2024. For workloads that require graphics acceleration, we recommend
-     * that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p> 
+     * <p>An elastic GPU to associate with the instance.</p>  <p>Amazon Elastic
+     * Graphics reached end of life on January 8, 2024.</p> 
      */
     inline const Aws::Vector<ElasticGpuSpecification>& GetElasticGpuSpecification() const{ return m_elasticGpuSpecification; }
 
     /**
-     * <p>Deprecated.</p>  <p>Amazon Elastic Graphics reached end of life on
-     * January 8, 2024. For workloads that require graphics acceleration, we recommend
-     * that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p> 
+     * <p>An elastic GPU to associate with the instance.</p>  <p>Amazon Elastic
+     * Graphics reached end of life on January 8, 2024.</p> 
      */
     inline bool ElasticGpuSpecificationHasBeenSet() const { return m_elasticGpuSpecificationHasBeenSet; }
 
     /**
-     * <p>Deprecated.</p>  <p>Amazon Elastic Graphics reached end of life on
-     * January 8, 2024. For workloads that require graphics acceleration, we recommend
-     * that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p> 
+     * <p>An elastic GPU to associate with the instance.</p>  <p>Amazon Elastic
+     * Graphics reached end of life on January 8, 2024.</p> 
      */
     inline void SetElasticGpuSpecification(const Aws::Vector<ElasticGpuSpecification>& value) { m_elasticGpuSpecificationHasBeenSet = true; m_elasticGpuSpecification = value; }
 
     /**
-     * <p>Deprecated.</p>  <p>Amazon Elastic Graphics reached end of life on
-     * January 8, 2024. For workloads that require graphics acceleration, we recommend
-     * that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p> 
+     * <p>An elastic GPU to associate with the instance.</p>  <p>Amazon Elastic
+     * Graphics reached end of life on January 8, 2024.</p> 
      */
     inline void SetElasticGpuSpecification(Aws::Vector<ElasticGpuSpecification>&& value) { m_elasticGpuSpecificationHasBeenSet = true; m_elasticGpuSpecification = std::move(value); }
 
     /**
-     * <p>Deprecated.</p>  <p>Amazon Elastic Graphics reached end of life on
-     * January 8, 2024. For workloads that require graphics acceleration, we recommend
-     * that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p> 
+     * <p>An elastic GPU to associate with the instance.</p>  <p>Amazon Elastic
+     * Graphics reached end of life on January 8, 2024.</p> 
      */
     inline RunInstancesRequest& WithElasticGpuSpecification(const Aws::Vector<ElasticGpuSpecification>& value) { SetElasticGpuSpecification(value); return *this;}
 
     /**
-     * <p>Deprecated.</p>  <p>Amazon Elastic Graphics reached end of life on
-     * January 8, 2024. For workloads that require graphics acceleration, we recommend
-     * that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p> 
+     * <p>An elastic GPU to associate with the instance.</p>  <p>Amazon Elastic
+     * Graphics reached end of life on January 8, 2024.</p> 
      */
     inline RunInstancesRequest& WithElasticGpuSpecification(Aws::Vector<ElasticGpuSpecification>&& value) { SetElasticGpuSpecification(std::move(value)); return *this;}
 
     /**
-     * <p>Deprecated.</p>  <p>Amazon Elastic Graphics reached end of life on
-     * January 8, 2024. For workloads that require graphics acceleration, we recommend
-     * that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p> 
+     * <p>An elastic GPU to associate with the instance.</p>  <p>Amazon Elastic
+     * Graphics reached end of life on January 8, 2024.</p> 
      */
     inline RunInstancesRequest& AddElasticGpuSpecification(const ElasticGpuSpecification& value) { m_elasticGpuSpecificationHasBeenSet = true; m_elasticGpuSpecification.push_back(value); return *this; }
 
     /**
-     * <p>Deprecated.</p>  <p>Amazon Elastic Graphics reached end of life on
-     * January 8, 2024. For workloads that require graphics acceleration, we recommend
-     * that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p> 
+     * <p>An elastic GPU to associate with the instance.</p>  <p>Amazon Elastic
+     * Graphics reached end of life on January 8, 2024.</p> 
      */
     inline RunInstancesRequest& AddElasticGpuSpecification(ElasticGpuSpecification&& value) { m_elasticGpuSpecificationHasBeenSet = true; m_elasticGpuSpecification.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>An elastic inference accelerator to associate with the instance. Elastic
-     * inference accelerators are a resource you can attach to your Amazon EC2
-     * instances to accelerate your Deep Learning (DL) inference workloads.</p> <p>You
-     * cannot specify accelerators from different generations in the same request.</p>
-     *  <p>Starting April 15, 2023, Amazon Web Services will not onboard new
-     * customers to Amazon Elastic Inference (EI), and will help current customers
-     * migrate their workloads to options that offer better price and performance.
-     * After April 15, 2023, new customers will not be able to launch instances with
-     * Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However,
-     * customers who have used Amazon EI at least once during the past 30-day period
-     * are considered current customers and will be able to continue using the
-     * service.</p> 
+     * <p>An elastic inference accelerator to associate with the instance.</p> 
+     * <p>Amazon Elastic Inference (EI) is no longer available to new customers. For
+     * more information, see <a
+     * href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon
+     * Elastic Inference FAQs</a>.</p> 
      */
     inline const Aws::Vector<ElasticInferenceAccelerator>& GetElasticInferenceAccelerators() const{ return m_elasticInferenceAccelerators; }
 
     /**
-     * <p>An elastic inference accelerator to associate with the instance. Elastic
-     * inference accelerators are a resource you can attach to your Amazon EC2
-     * instances to accelerate your Deep Learning (DL) inference workloads.</p> <p>You
-     * cannot specify accelerators from different generations in the same request.</p>
-     *  <p>Starting April 15, 2023, Amazon Web Services will not onboard new
-     * customers to Amazon Elastic Inference (EI), and will help current customers
-     * migrate their workloads to options that offer better price and performance.
-     * After April 15, 2023, new customers will not be able to launch instances with
-     * Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However,
-     * customers who have used Amazon EI at least once during the past 30-day period
-     * are considered current customers and will be able to continue using the
-     * service.</p> 
+     * <p>An elastic inference accelerator to associate with the instance.</p> 
+     * <p>Amazon Elastic Inference (EI) is no longer available to new customers. For
+     * more information, see <a
+     * href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon
+     * Elastic Inference FAQs</a>.</p> 
      */
     inline bool ElasticInferenceAcceleratorsHasBeenSet() const { return m_elasticInferenceAcceleratorsHasBeenSet; }
 
     /**
-     * <p>An elastic inference accelerator to associate with the instance. Elastic
-     * inference accelerators are a resource you can attach to your Amazon EC2
-     * instances to accelerate your Deep Learning (DL) inference workloads.</p> <p>You
-     * cannot specify accelerators from different generations in the same request.</p>
-     *  <p>Starting April 15, 2023, Amazon Web Services will not onboard new
-     * customers to Amazon Elastic Inference (EI), and will help current customers
-     * migrate their workloads to options that offer better price and performance.
-     * After April 15, 2023, new customers will not be able to launch instances with
-     * Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However,
-     * customers who have used Amazon EI at least once during the past 30-day period
-     * are considered current customers and will be able to continue using the
-     * service.</p> 
+     * <p>An elastic inference accelerator to associate with the instance.</p> 
+     * <p>Amazon Elastic Inference (EI) is no longer available to new customers. For
+     * more information, see <a
+     * href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon
+     * Elastic Inference FAQs</a>.</p> 
      */
     inline void SetElasticInferenceAccelerators(const Aws::Vector<ElasticInferenceAccelerator>& value) { m_elasticInferenceAcceleratorsHasBeenSet = true; m_elasticInferenceAccelerators = value; }
 
     /**
-     * <p>An elastic inference accelerator to associate with the instance. Elastic
-     * inference accelerators are a resource you can attach to your Amazon EC2
-     * instances to accelerate your Deep Learning (DL) inference workloads.</p> <p>You
-     * cannot specify accelerators from different generations in the same request.</p>
-     *  <p>Starting April 15, 2023, Amazon Web Services will not onboard new
-     * customers to Amazon Elastic Inference (EI), and will help current customers
-     * migrate their workloads to options that offer better price and performance.
-     * After April 15, 2023, new customers will not be able to launch instances with
-     * Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However,
-     * customers who have used Amazon EI at least once during the past 30-day period
-     * are considered current customers and will be able to continue using the
-     * service.</p> 
+     * <p>An elastic inference accelerator to associate with the instance.</p> 
+     * <p>Amazon Elastic Inference (EI) is no longer available to new customers. For
+     * more information, see <a
+     * href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon
+     * Elastic Inference FAQs</a>.</p> 
      */
     inline void SetElasticInferenceAccelerators(Aws::Vector<ElasticInferenceAccelerator>&& value) { m_elasticInferenceAcceleratorsHasBeenSet = true; m_elasticInferenceAccelerators = std::move(value); }
 
     /**
-     * <p>An elastic inference accelerator to associate with the instance. Elastic
-     * inference accelerators are a resource you can attach to your Amazon EC2
-     * instances to accelerate your Deep Learning (DL) inference workloads.</p> <p>You
-     * cannot specify accelerators from different generations in the same request.</p>
-     *  <p>Starting April 15, 2023, Amazon Web Services will not onboard new
-     * customers to Amazon Elastic Inference (EI), and will help current customers
-     * migrate their workloads to options that offer better price and performance.
-     * After April 15, 2023, new customers will not be able to launch instances with
-     * Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However,
-     * customers who have used Amazon EI at least once during the past 30-day period
-     * are considered current customers and will be able to continue using the
-     * service.</p> 
+     * <p>An elastic inference accelerator to associate with the instance.</p> 
+     * <p>Amazon Elastic Inference (EI) is no longer available to new customers. For
+     * more information, see <a
+     * href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon
+     * Elastic Inference FAQs</a>.</p> 
      */
     inline RunInstancesRequest& WithElasticInferenceAccelerators(const Aws::Vector<ElasticInferenceAccelerator>& value) { SetElasticInferenceAccelerators(value); return *this;}
 
     /**
-     * <p>An elastic inference accelerator to associate with the instance. Elastic
-     * inference accelerators are a resource you can attach to your Amazon EC2
-     * instances to accelerate your Deep Learning (DL) inference workloads.</p> <p>You
-     * cannot specify accelerators from different generations in the same request.</p>
-     *  <p>Starting April 15, 2023, Amazon Web Services will not onboard new
-     * customers to Amazon Elastic Inference (EI), and will help current customers
-     * migrate their workloads to options that offer better price and performance.
-     * After April 15, 2023, new customers will not be able to launch instances with
-     * Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However,
-     * customers who have used Amazon EI at least once during the past 30-day period
-     * are considered current customers and will be able to continue using the
-     * service.</p> 
+     * <p>An elastic inference accelerator to associate with the instance.</p> 
+     * <p>Amazon Elastic Inference (EI) is no longer available to new customers. For
+     * more information, see <a
+     * href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon
+     * Elastic Inference FAQs</a>.</p> 
      */
     inline RunInstancesRequest& WithElasticInferenceAccelerators(Aws::Vector<ElasticInferenceAccelerator>&& value) { SetElasticInferenceAccelerators(std::move(value)); return *this;}
 
     /**
-     * <p>An elastic inference accelerator to associate with the instance. Elastic
-     * inference accelerators are a resource you can attach to your Amazon EC2
-     * instances to accelerate your Deep Learning (DL) inference workloads.</p> <p>You
-     * cannot specify accelerators from different generations in the same request.</p>
-     *  <p>Starting April 15, 2023, Amazon Web Services will not onboard new
-     * customers to Amazon Elastic Inference (EI), and will help current customers
-     * migrate their workloads to options that offer better price and performance.
-     * After April 15, 2023, new customers will not be able to launch instances with
-     * Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However,
-     * customers who have used Amazon EI at least once during the past 30-day period
-     * are considered current customers and will be able to continue using the
-     * service.</p> 
+     * <p>An elastic inference accelerator to associate with the instance.</p> 
+     * <p>Amazon Elastic Inference (EI) is no longer available to new customers. For
+     * more information, see <a
+     * href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon
+     * Elastic Inference FAQs</a>.</p> 
      */
     inline RunInstancesRequest& AddElasticInferenceAccelerators(const ElasticInferenceAccelerator& value) { m_elasticInferenceAcceleratorsHasBeenSet = true; m_elasticInferenceAccelerators.push_back(value); return *this; }
 
     /**
-     * <p>An elastic inference accelerator to associate with the instance. Elastic
-     * inference accelerators are a resource you can attach to your Amazon EC2
-     * instances to accelerate your Deep Learning (DL) inference workloads.</p> <p>You
-     * cannot specify accelerators from different generations in the same request.</p>
-     *  <p>Starting April 15, 2023, Amazon Web Services will not onboard new
-     * customers to Amazon Elastic Inference (EI), and will help current customers
-     * migrate their workloads to options that offer better price and performance.
-     * After April 15, 2023, new customers will not be able to launch instances with
-     * Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However,
-     * customers who have used Amazon EI at least once during the past 30-day period
-     * are considered current customers and will be able to continue using the
-     * service.</p> 
+     * <p>An elastic inference accelerator to associate with the instance.</p> 
+     * <p>Amazon Elastic Inference (EI) is no longer available to new customers. For
+     * more information, see <a
+     * href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon
+     * Elastic Inference FAQs</a>.</p> 
      */
     inline RunInstancesRequest& AddElasticInferenceAccelerators(ElasticInferenceAccelerator&& value) { m_elasticInferenceAcceleratorsHasBeenSet = true; m_elasticInferenceAccelerators.push_back(std::move(value)); return *this; }
 

@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Information required for Amazon Q to find a specific file in an Amazon S3
-   * bucket.</p><p><h3>See Also:</h3>   <a
+   * <p>Information required for Amazon Q Business to find a specific file in an
+   * Amazon S3 bucket.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/S3">AWS API
    * Reference</a></p>
    */

@@ -27,19 +27,20 @@ namespace Model
 {
 
   /**
-   * <p>Provides information on boosting supported Amazon Q document attribute types.
-   * When an end user chat query matches document attributes that have been boosted,
-   * Amazon Q prioritizes generating responses from content that matches the boosted
-   * document attributes.</p>  <p>For <code>STRING</code> and
-   * <code>STRING_LIST</code> type document attributes to be used for boosting on the
-   * console and the API, they must be enabled for search using the <a
+   * <p>Provides information on boosting supported Amazon Q Business document
+   * attribute types. When an end user chat query matches document attributes that
+   * have been boosted, Amazon Q Business prioritizes generating responses from
+   * content that matches the boosted document attributes.</p>  <p>For
+   * <code>STRING</code> and <code>STRING_LIST</code> type document attributes to be
+   * used for boosting on the console and the API, they must be enabled for search
+   * using the <a
    * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeConfiguration.html">DocumentAttributeConfiguration</a>
    * object of the <a
    * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UpdateIndex.html">UpdateIndex</a>
    * API. If you haven't enabled searching on these attributes, you can't boost
    * attributes of these data types on either the console or the API.</p> 
-   * <p>For more information on how boosting document attributes work in Amazon Q,
-   * see <a
+   * <p>For more information on how boosting document attributes work in Amazon Q
+   * Business, see <a
    * href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/metadata-boosting.html">Boosting
    * using document attributes</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DocumentAttributeBoostingConfiguration">AWS

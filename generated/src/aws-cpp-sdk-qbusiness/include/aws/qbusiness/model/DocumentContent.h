@@ -42,8 +42,8 @@ namespace Model
      * <p>The contents of the document. Documents passed to the <code>blob</code>
      * parameter must be base64 encoded. Your code might not need to encode the
      * document file bytes if you're using an Amazon Web Services SDK to call Amazon Q
-     * APIs. If you are calling the Amazon Q endpoint directly using REST, you must
-     * base64 encode the contents before sending.</p>
+     * Business APIs. If you are calling the Amazon Q Business endpoint directly using
+     * REST, you must base64 encode the contents before sending.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetBlob() const{ return m_blob; }
 
@@ -51,8 +51,8 @@ namespace Model
      * <p>The contents of the document. Documents passed to the <code>blob</code>
      * parameter must be base64 encoded. Your code might not need to encode the
      * document file bytes if you're using an Amazon Web Services SDK to call Amazon Q
-     * APIs. If you are calling the Amazon Q endpoint directly using REST, you must
-     * base64 encode the contents before sending.</p>
+     * Business APIs. If you are calling the Amazon Q Business endpoint directly using
+     * REST, you must base64 encode the contents before sending.</p>
      */
     inline bool BlobHasBeenSet() const { return m_blobHasBeenSet; }
 
@@ -60,8 +60,8 @@ namespace Model
      * <p>The contents of the document. Documents passed to the <code>blob</code>
      * parameter must be base64 encoded. Your code might not need to encode the
      * document file bytes if you're using an Amazon Web Services SDK to call Amazon Q
-     * APIs. If you are calling the Amazon Q endpoint directly using REST, you must
-     * base64 encode the contents before sending.</p>
+     * Business APIs. If you are calling the Amazon Q Business endpoint directly using
+     * REST, you must base64 encode the contents before sending.</p>
      */
     inline void SetBlob(const Aws::Utils::ByteBuffer& value) { m_blobHasBeenSet = true; m_blob = value; }
 
@@ -69,8 +69,8 @@ namespace Model
      * <p>The contents of the document. Documents passed to the <code>blob</code>
      * parameter must be base64 encoded. Your code might not need to encode the
      * document file bytes if you're using an Amazon Web Services SDK to call Amazon Q
-     * APIs. If you are calling the Amazon Q endpoint directly using REST, you must
-     * base64 encode the contents before sending.</p>
+     * Business APIs. If you are calling the Amazon Q Business endpoint directly using
+     * REST, you must base64 encode the contents before sending.</p>
      */
     inline void SetBlob(Aws::Utils::ByteBuffer&& value) { m_blobHasBeenSet = true; m_blob = std::move(value); }
 
@@ -78,8 +78,8 @@ namespace Model
      * <p>The contents of the document. Documents passed to the <code>blob</code>
      * parameter must be base64 encoded. Your code might not need to encode the
      * document file bytes if you're using an Amazon Web Services SDK to call Amazon Q
-     * APIs. If you are calling the Amazon Q endpoint directly using REST, you must
-     * base64 encode the contents before sending.</p>
+     * Business APIs. If you are calling the Amazon Q Business endpoint directly using
+     * REST, you must base64 encode the contents before sending.</p>
      */
     inline DocumentContent& WithBlob(const Aws::Utils::ByteBuffer& value) { SetBlob(value); return *this;}
 
@@ -87,8 +87,8 @@ namespace Model
      * <p>The contents of the document. Documents passed to the <code>blob</code>
      * parameter must be base64 encoded. Your code might not need to encode the
      * document file bytes if you're using an Amazon Web Services SDK to call Amazon Q
-     * APIs. If you are calling the Amazon Q endpoint directly using REST, you must
-     * base64 encode the contents before sending.</p>
+     * Business APIs. If you are calling the Amazon Q Business endpoint directly using
+     * REST, you must base64 encode the contents before sending.</p>
      */
     inline DocumentContent& WithBlob(Aws::Utils::ByteBuffer&& value) { SetBlob(std::move(value)); return *this;}
 

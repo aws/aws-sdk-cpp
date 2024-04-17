@@ -39,37 +39,37 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the Amazon Q application.</p>
+     * <p>The identifier of the Amazon Q Business application.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * <p>The identifier of the Amazon Q application.</p>
+     * <p>The identifier of the Amazon Q Business application.</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationId = value; }
 
     /**
-     * <p>The identifier of the Amazon Q application.</p>
+     * <p>The identifier of the Amazon Q Business application.</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationId = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon Q application.</p>
+     * <p>The identifier of the Amazon Q Business application.</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationId.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon Q application.</p>
+     * <p>The identifier of the Amazon Q Business application.</p>
      */
     inline GetDataSourceResult& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q application.</p>
+     * <p>The identifier of the Amazon Q Business application.</p>
      */
     inline GetDataSourceResult& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q application.</p>
+     * <p>The identifier of the Amazon Q Business application.</p>
      */
     inline GetDataSourceResult& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
@@ -438,37 +438,37 @@ namespace Model
 
 
     /**
-     * <p>The schedule for Amazon Q to update the index.</p>
+     * <p>The schedule for Amazon Q Business to update the index.</p>
      */
     inline const Aws::String& GetSyncSchedule() const{ return m_syncSchedule; }
 
     /**
-     * <p>The schedule for Amazon Q to update the index.</p>
+     * <p>The schedule for Amazon Q Business to update the index.</p>
      */
     inline void SetSyncSchedule(const Aws::String& value) { m_syncSchedule = value; }
 
     /**
-     * <p>The schedule for Amazon Q to update the index.</p>
+     * <p>The schedule for Amazon Q Business to update the index.</p>
      */
     inline void SetSyncSchedule(Aws::String&& value) { m_syncSchedule = std::move(value); }
 
     /**
-     * <p>The schedule for Amazon Q to update the index.</p>
+     * <p>The schedule for Amazon Q Business to update the index.</p>
      */
     inline void SetSyncSchedule(const char* value) { m_syncSchedule.assign(value); }
 
     /**
-     * <p>The schedule for Amazon Q to update the index.</p>
+     * <p>The schedule for Amazon Q Business to update the index.</p>
      */
     inline GetDataSourceResult& WithSyncSchedule(const Aws::String& value) { SetSyncSchedule(value); return *this;}
 
     /**
-     * <p>The schedule for Amazon Q to update the index.</p>
+     * <p>The schedule for Amazon Q Business to update the index.</p>
      */
     inline GetDataSourceResult& WithSyncSchedule(Aws::String&& value) { SetSyncSchedule(std::move(value)); return *this;}
 
     /**
-     * <p>The schedule for Amazon Q to update the index.</p>
+     * <p>The schedule for Amazon Q Business to update the index.</p>
      */
     inline GetDataSourceResult& WithSyncSchedule(const char* value) { SetSyncSchedule(value); return *this;}
 

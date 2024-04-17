@@ -26,7 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Summary information for your Amazon Q index.</p><p><h3>See Also:</h3>   <a
+   * <p>Summary information for your Amazon Q Business index.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/Index">AWS API
    * Reference</a></p>
    */

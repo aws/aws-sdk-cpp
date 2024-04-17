@@ -33,50 +33,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the Amazon Q application that the data source is connected
-     * to.</p>
+     * <p>The identifier of the Amazon Q Business application that the data source is
+     * connected to.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * <p>The identifier of the Amazon Q application that the data source is connected
-     * to.</p>
+     * <p>The identifier of the Amazon Q Business application that the data source is
+     * connected to.</p>
      */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the Amazon Q application that the data source is connected
-     * to.</p>
+     * <p>The identifier of the Amazon Q Business application that the data source is
+     * connected to.</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * <p>The identifier of the Amazon Q application that the data source is connected
-     * to.</p>
+     * <p>The identifier of the Amazon Q Business application that the data source is
+     * connected to.</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon Q application that the data source is connected
-     * to.</p>
+     * <p>The identifier of the Amazon Q Business application that the data source is
+     * connected to.</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon Q application that the data source is connected
-     * to.</p>
+     * <p>The identifier of the Amazon Q Business application that the data source is
+     * connected to.</p>
      */
     inline StopDataSourceSyncJobRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q application that the data source is connected
-     * to.</p>
+     * <p>The identifier of the Amazon Q Business application that the data source is
+     * connected to.</p>
      */
     inline StopDataSourceSyncJobRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q application that the data source is connected
-     * to.</p>
+     * <p>The identifier of the Amazon Q Business application that the data source is
+     * connected to.</p>
      */
     inline StopDataSourceSyncJobRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
@@ -123,42 +123,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the index used with the Amazon Q data source connector.</p>
+     * <p>The identifier of the index used with the Amazon Q Business data source
+     * connector.</p>
      */
     inline const Aws::String& GetIndexId() const{ return m_indexId; }
 
     /**
-     * <p>The identifier of the index used with the Amazon Q data source connector.</p>
+     * <p>The identifier of the index used with the Amazon Q Business data source
+     * connector.</p>
      */
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the index used with the Amazon Q data source connector.</p>
+     * <p>The identifier of the index used with the Amazon Q Business data source
+     * connector.</p>
      */
     inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
 
     /**
-     * <p>The identifier of the index used with the Amazon Q data source connector.</p>
+     * <p>The identifier of the index used with the Amazon Q Business data source
+     * connector.</p>
      */
     inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
 
     /**
-     * <p>The identifier of the index used with the Amazon Q data source connector.</p>
+     * <p>The identifier of the index used with the Amazon Q Business data source
+     * connector.</p>
      */
     inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
 
     /**
-     * <p>The identifier of the index used with the Amazon Q data source connector.</p>
+     * <p>The identifier of the index used with the Amazon Q Business data source
+     * connector.</p>
      */
     inline StopDataSourceSyncJobRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
 
     /**
-     * <p>The identifier of the index used with the Amazon Q data source connector.</p>
+     * <p>The identifier of the index used with the Amazon Q Business data source
+     * connector.</p>
      */
     inline StopDataSourceSyncJobRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the index used with the Amazon Q data source connector.</p>
+     * <p>The identifier of the index used with the Amazon Q Business data source
+     * connector.</p>
      */
     inline StopDataSourceSyncJobRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
 

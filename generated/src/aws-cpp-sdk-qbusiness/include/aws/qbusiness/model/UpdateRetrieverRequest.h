@@ -34,42 +34,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier of your Amazon Q application.</p>
+     * <p>The identifier of your Amazon Q Business application.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * <p>The identifier of your Amazon Q application.</p>
+     * <p>The identifier of your Amazon Q Business application.</p>
      */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
 
     /**
-     * <p>The identifier of your Amazon Q application.</p>
+     * <p>The identifier of your Amazon Q Business application.</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * <p>The identifier of your Amazon Q application.</p>
+     * <p>The identifier of your Amazon Q Business application.</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * <p>The identifier of your Amazon Q application.</p>
+     * <p>The identifier of your Amazon Q Business application.</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * <p>The identifier of your Amazon Q application.</p>
+     * <p>The identifier of your Amazon Q Business application.</p>
      */
     inline UpdateRetrieverRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * <p>The identifier of your Amazon Q application.</p>
+     * <p>The identifier of your Amazon Q Business application.</p>
      */
     inline UpdateRetrieverRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of your Amazon Q application.</p>
+     * <p>The identifier of your Amazon Q Business application.</p>
      */
     inline UpdateRetrieverRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 

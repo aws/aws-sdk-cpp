@@ -25,8 +25,8 @@ namespace Model
 
   /**
    * <p>Provides the SAML 2.0 compliant identity provider (IdP) configuration
-   * information Amazon Q needs to deploy a Amazon Q web experience.</p><p><h3>See
-   * Also:</h3>   <a
+   * information Amazon Q Business needs to deploy a Amazon Q Business web
+   * experience.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/SamlConfiguration">AWS
    * API Reference</a></p>
    */
@@ -82,57 +82,65 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role assumed by users when they
-     * authenticate into their Amazon Q web experience, containing the relevant Amazon
-     * Q permissions for conversing with Amazon Q.</p>
+     * authenticate into their Amazon Q Business web experience, containing the
+     * relevant Amazon Q Business permissions for conversing with Amazon Q
+     * Business.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role assumed by users when they
-     * authenticate into their Amazon Q web experience, containing the relevant Amazon
-     * Q permissions for conversing with Amazon Q.</p>
+     * authenticate into their Amazon Q Business web experience, containing the
+     * relevant Amazon Q Business permissions for conversing with Amazon Q
+     * Business.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role assumed by users when they
-     * authenticate into their Amazon Q web experience, containing the relevant Amazon
-     * Q permissions for conversing with Amazon Q.</p>
+     * authenticate into their Amazon Q Business web experience, containing the
+     * relevant Amazon Q Business permissions for conversing with Amazon Q
+     * Business.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role assumed by users when they
-     * authenticate into their Amazon Q web experience, containing the relevant Amazon
-     * Q permissions for conversing with Amazon Q.</p>
+     * authenticate into their Amazon Q Business web experience, containing the
+     * relevant Amazon Q Business permissions for conversing with Amazon Q
+     * Business.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role assumed by users when they
-     * authenticate into their Amazon Q web experience, containing the relevant Amazon
-     * Q permissions for conversing with Amazon Q.</p>
+     * authenticate into their Amazon Q Business web experience, containing the
+     * relevant Amazon Q Business permissions for conversing with Amazon Q
+     * Business.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role assumed by users when they
-     * authenticate into their Amazon Q web experience, containing the relevant Amazon
-     * Q permissions for conversing with Amazon Q.</p>
+     * authenticate into their Amazon Q Business web experience, containing the
+     * relevant Amazon Q Business permissions for conversing with Amazon Q
+     * Business.</p>
      */
     inline SamlConfiguration& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role assumed by users when they
-     * authenticate into their Amazon Q web experience, containing the relevant Amazon
-     * Q permissions for conversing with Amazon Q.</p>
+     * authenticate into their Amazon Q Business web experience, containing the
+     * relevant Amazon Q Business permissions for conversing with Amazon Q
+     * Business.</p>
      */
     inline SamlConfiguration& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role assumed by users when they
-     * authenticate into their Amazon Q web experience, containing the relevant Amazon
-     * Q permissions for conversing with Amazon Q.</p>
+     * authenticate into their Amazon Q Business web experience, containing the
+     * relevant Amazon Q Business permissions for conversing with Amazon Q
+     * Business.</p>
      */
     inline SamlConfiguration& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

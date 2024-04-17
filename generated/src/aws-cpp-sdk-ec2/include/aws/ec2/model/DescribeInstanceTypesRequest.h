@@ -73,58 +73,42 @@ namespace Model
 
 
     /**
-     * <p>The instance types. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>The instance types.</p>
      */
     inline const Aws::Vector<InstanceType>& GetInstanceTypes() const{ return m_instanceTypes; }
 
     /**
-     * <p>The instance types. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>The instance types.</p>
      */
     inline bool InstanceTypesHasBeenSet() const { return m_instanceTypesHasBeenSet; }
 
     /**
-     * <p>The instance types. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>The instance types.</p>
      */
     inline void SetInstanceTypes(const Aws::Vector<InstanceType>& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = value; }
 
     /**
-     * <p>The instance types. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>The instance types.</p>
      */
     inline void SetInstanceTypes(Aws::Vector<InstanceType>&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = std::move(value); }
 
     /**
-     * <p>The instance types. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>The instance types.</p>
      */
     inline DescribeInstanceTypesRequest& WithInstanceTypes(const Aws::Vector<InstanceType>& value) { SetInstanceTypes(value); return *this;}
 
     /**
-     * <p>The instance types. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>The instance types.</p>
      */
     inline DescribeInstanceTypesRequest& WithInstanceTypes(Aws::Vector<InstanceType>&& value) { SetInstanceTypes(std::move(value)); return *this;}
 
     /**
-     * <p>The instance types. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>The instance types.</p>
      */
     inline DescribeInstanceTypesRequest& AddInstanceTypes(const InstanceType& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
 
     /**
-     * <p>The instance types. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>The instance types.</p>
      */
     inline DescribeInstanceTypesRequest& AddInstanceTypes(InstanceType&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(std::move(value)); return *this; }
 

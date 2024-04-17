@@ -273,22 +273,26 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of routes to return.</p>
+     * <p>The maximum number of routes to return. If a value is not provided, the
+     * default is 1000.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of routes to return.</p>
+     * <p>The maximum number of routes to return. If a value is not provided, the
+     * default is 1000.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of routes to return.</p>
+     * <p>The maximum number of routes to return. If a value is not provided, the
+     * default is 1000.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of routes to return.</p>
+     * <p>The maximum number of routes to return. If a value is not provided, the
+     * default is 1000.</p>
      */
     inline SearchTransitGatewayRoutesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

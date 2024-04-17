@@ -39,49 +39,49 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the Amazon Q application linked to the data source
+     * <p>The identifier of the Amazon Q Business application linked to the data source
      * connectors.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * <p>The identifier of the Amazon Q application linked to the data source
+     * <p>The identifier of the Amazon Q Business application linked to the data source
      * connectors.</p>
      */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the Amazon Q application linked to the data source
+     * <p>The identifier of the Amazon Q Business application linked to the data source
      * connectors.</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * <p>The identifier of the Amazon Q application linked to the data source
+     * <p>The identifier of the Amazon Q Business application linked to the data source
      * connectors.</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon Q application linked to the data source
+     * <p>The identifier of the Amazon Q Business application linked to the data source
      * connectors.</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon Q application linked to the data source
+     * <p>The identifier of the Amazon Q Business application linked to the data source
      * connectors.</p>
      */
     inline ListDataSourcesRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q application linked to the data source
+     * <p>The identifier of the Amazon Q Business application linked to the data source
      * connectors.</p>
      */
     inline ListDataSourcesRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q application linked to the data source
+     * <p>The identifier of the Amazon Q Business application linked to the data source
      * connectors.</p>
      */
     inline ListDataSourcesRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
@@ -151,65 +151,65 @@ namespace Model
 
     /**
      * <p>If the <code>maxResults</code> response was incomplete because there is more
-     * data to retrieve, Amazon Q returns a pagination token in the response. You can
-     * use this pagination token to retrieve the next set of Amazon Q data source
-     * connectors.</p>
+     * data to retrieve, Amazon Q Business returns a pagination token in the response.
+     * You can use this pagination token to retrieve the next set of Amazon Q Business
+     * data source connectors.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>If the <code>maxResults</code> response was incomplete because there is more
-     * data to retrieve, Amazon Q returns a pagination token in the response. You can
-     * use this pagination token to retrieve the next set of Amazon Q data source
-     * connectors.</p>
+     * data to retrieve, Amazon Q Business returns a pagination token in the response.
+     * You can use this pagination token to retrieve the next set of Amazon Q Business
+     * data source connectors.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>If the <code>maxResults</code> response was incomplete because there is more
-     * data to retrieve, Amazon Q returns a pagination token in the response. You can
-     * use this pagination token to retrieve the next set of Amazon Q data source
-     * connectors.</p>
+     * data to retrieve, Amazon Q Business returns a pagination token in the response.
+     * You can use this pagination token to retrieve the next set of Amazon Q Business
+     * data source connectors.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
      * <p>If the <code>maxResults</code> response was incomplete because there is more
-     * data to retrieve, Amazon Q returns a pagination token in the response. You can
-     * use this pagination token to retrieve the next set of Amazon Q data source
-     * connectors.</p>
+     * data to retrieve, Amazon Q Business returns a pagination token in the response.
+     * You can use this pagination token to retrieve the next set of Amazon Q Business
+     * data source connectors.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>If the <code>maxResults</code> response was incomplete because there is more
-     * data to retrieve, Amazon Q returns a pagination token in the response. You can
-     * use this pagination token to retrieve the next set of Amazon Q data source
-     * connectors.</p>
+     * data to retrieve, Amazon Q Business returns a pagination token in the response.
+     * You can use this pagination token to retrieve the next set of Amazon Q Business
+     * data source connectors.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
      * <p>If the <code>maxResults</code> response was incomplete because there is more
-     * data to retrieve, Amazon Q returns a pagination token in the response. You can
-     * use this pagination token to retrieve the next set of Amazon Q data source
-     * connectors.</p>
+     * data to retrieve, Amazon Q Business returns a pagination token in the response.
+     * You can use this pagination token to retrieve the next set of Amazon Q Business
+     * data source connectors.</p>
      */
     inline ListDataSourcesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>If the <code>maxResults</code> response was incomplete because there is more
-     * data to retrieve, Amazon Q returns a pagination token in the response. You can
-     * use this pagination token to retrieve the next set of Amazon Q data source
-     * connectors.</p>
+     * data to retrieve, Amazon Q Business returns a pagination token in the response.
+     * You can use this pagination token to retrieve the next set of Amazon Q Business
+     * data source connectors.</p>
      */
     inline ListDataSourcesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If the <code>maxResults</code> response was incomplete because there is more
-     * data to retrieve, Amazon Q returns a pagination token in the response. You can
-     * use this pagination token to retrieve the next set of Amazon Q data source
-     * connectors.</p>
+     * data to retrieve, Amazon Q Business returns a pagination token in the response.
+     * You can use this pagination token to retrieve the next set of Amazon Q Business
+     * data source connectors.</p>
      */
     inline ListDataSourcesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/qconnect/model/ContentDataDetails.h>
-#include <aws/qconnect/model/GenerativeDataDetails.h>
 #include <aws/qconnect/model/SourceContentDataDetails.h>
 #include <utility>
+#include <memory>
 
 namespace Aws
 {
@@ -24,6 +24,7 @@ namespace QConnect
 {
 namespace Model
 {
+  class GenerativeDataDetails;
 
   /**
    * <p>Details about the data.</p><p><h3>See Also:</h3>   <a
@@ -73,32 +74,32 @@ namespace Model
     /**
      * <p> Details about the generative data.</p>
      */
-    inline const GenerativeDataDetails& GetGenerativeData() const{ return m_generativeData; }
+    AWS_QCONNECT_API const GenerativeDataDetails& GetGenerativeData() const;
 
     /**
      * <p> Details about the generative data.</p>
      */
-    inline bool GenerativeDataHasBeenSet() const { return m_generativeDataHasBeenSet; }
+    AWS_QCONNECT_API bool GenerativeDataHasBeenSet() const;
 
     /**
      * <p> Details about the generative data.</p>
      */
-    inline void SetGenerativeData(const GenerativeDataDetails& value) { m_generativeDataHasBeenSet = true; m_generativeData = value; }
+    AWS_QCONNECT_API void SetGenerativeData(const GenerativeDataDetails& value);
 
     /**
      * <p> Details about the generative data.</p>
      */
-    inline void SetGenerativeData(GenerativeDataDetails&& value) { m_generativeDataHasBeenSet = true; m_generativeData = std::move(value); }
+    AWS_QCONNECT_API void SetGenerativeData(GenerativeDataDetails&& value);
 
     /**
      * <p> Details about the generative data.</p>
      */
-    inline DataDetails& WithGenerativeData(const GenerativeDataDetails& value) { SetGenerativeData(value); return *this;}
+    AWS_QCONNECT_API DataDetails& WithGenerativeData(const GenerativeDataDetails& value);
 
     /**
      * <p> Details about the generative data.</p>
      */
-    inline DataDetails& WithGenerativeData(GenerativeDataDetails&& value) { SetGenerativeData(std::move(value)); return *this;}
+    AWS_QCONNECT_API DataDetails& WithGenerativeData(GenerativeDataDetails&& value);
 
 
     /**
@@ -136,7 +137,7 @@ namespace Model
     ContentDataDetails m_contentData;
     bool m_contentDataHasBeenSet = false;
 
-    GenerativeDataDetails m_generativeData;
+    std::shared_ptr<GenerativeDataDetails> m_generativeData;
     bool m_generativeDataHasBeenSet = false;
 
     SourceContentDataDetails m_sourceContentData;

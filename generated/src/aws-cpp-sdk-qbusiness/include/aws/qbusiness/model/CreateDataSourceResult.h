@@ -33,44 +33,44 @@ namespace Model
 
 
     /**
-     * <p> The Amazon Resource Name (ARN) of a data source in an Amazon Q application.
-     * </p>
+     * <p> The Amazon Resource Name (ARN) of a data source in an Amazon Q Business
+     * application. </p>
      */
     inline const Aws::String& GetDataSourceArn() const{ return m_dataSourceArn; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of a data source in an Amazon Q application.
-     * </p>
+     * <p> The Amazon Resource Name (ARN) of a data source in an Amazon Q Business
+     * application. </p>
      */
     inline void SetDataSourceArn(const Aws::String& value) { m_dataSourceArn = value; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of a data source in an Amazon Q application.
-     * </p>
+     * <p> The Amazon Resource Name (ARN) of a data source in an Amazon Q Business
+     * application. </p>
      */
     inline void SetDataSourceArn(Aws::String&& value) { m_dataSourceArn = std::move(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of a data source in an Amazon Q application.
-     * </p>
+     * <p> The Amazon Resource Name (ARN) of a data source in an Amazon Q Business
+     * application. </p>
      */
     inline void SetDataSourceArn(const char* value) { m_dataSourceArn.assign(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of a data source in an Amazon Q application.
-     * </p>
+     * <p> The Amazon Resource Name (ARN) of a data source in an Amazon Q Business
+     * application. </p>
      */
     inline CreateDataSourceResult& WithDataSourceArn(const Aws::String& value) { SetDataSourceArn(value); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of a data source in an Amazon Q application.
-     * </p>
+     * <p> The Amazon Resource Name (ARN) of a data source in an Amazon Q Business
+     * application. </p>
      */
     inline CreateDataSourceResult& WithDataSourceArn(Aws::String&& value) { SetDataSourceArn(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of a data source in an Amazon Q application.
-     * </p>
+     * <p> The Amazon Resource Name (ARN) of a data source in an Amazon Q Business
+     * application. </p>
      */
     inline CreateDataSourceResult& WithDataSourceArn(const char* value) { SetDataSourceArn(value); return *this;}
 

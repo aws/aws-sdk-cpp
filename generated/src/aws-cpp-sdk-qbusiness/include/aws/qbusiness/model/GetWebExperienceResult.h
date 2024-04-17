@@ -38,67 +38,74 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the Amazon Q application linked to the web experience.</p>
+     * <p>The identifier of the Amazon Q Business application linked to the web
+     * experience.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * <p>The identifier of the Amazon Q application linked to the web experience.</p>
+     * <p>The identifier of the Amazon Q Business application linked to the web
+     * experience.</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationId = value; }
 
     /**
-     * <p>The identifier of the Amazon Q application linked to the web experience.</p>
+     * <p>The identifier of the Amazon Q Business application linked to the web
+     * experience.</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationId = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon Q application linked to the web experience.</p>
+     * <p>The identifier of the Amazon Q Business application linked to the web
+     * experience.</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationId.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon Q application linked to the web experience.</p>
+     * <p>The identifier of the Amazon Q Business application linked to the web
+     * experience.</p>
      */
     inline GetWebExperienceResult& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q application linked to the web experience.</p>
+     * <p>The identifier of the Amazon Q Business application linked to the web
+     * experience.</p>
      */
     inline GetWebExperienceResult& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q application linked to the web experience.</p>
+     * <p>The identifier of the Amazon Q Business application linked to the web
+     * experience.</p>
      */
     inline GetWebExperienceResult& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
     /**
-     * <p>The authentication configuration information for your Amazon Q web
+     * <p>The authentication configuration information for your Amazon Q Business web
      * experience.</p>
      */
     inline const WebExperienceAuthConfiguration& GetAuthenticationConfiguration() const{ return m_authenticationConfiguration; }
 
     /**
-     * <p>The authentication configuration information for your Amazon Q web
+     * <p>The authentication configuration information for your Amazon Q Business web
      * experience.</p>
      */
     inline void SetAuthenticationConfiguration(const WebExperienceAuthConfiguration& value) { m_authenticationConfiguration = value; }
 
     /**
-     * <p>The authentication configuration information for your Amazon Q web
+     * <p>The authentication configuration information for your Amazon Q Business web
      * experience.</p>
      */
     inline void SetAuthenticationConfiguration(WebExperienceAuthConfiguration&& value) { m_authenticationConfiguration = std::move(value); }
 
     /**
-     * <p>The authentication configuration information for your Amazon Q web
+     * <p>The authentication configuration information for your Amazon Q Business web
      * experience.</p>
      */
     inline GetWebExperienceResult& WithAuthenticationConfiguration(const WebExperienceAuthConfiguration& value) { SetAuthenticationConfiguration(value); return *this;}
 
     /**
-     * <p>The authentication configuration information for your Amazon Q web
+     * <p>The authentication configuration information for your Amazon Q Business web
      * experience.</p>
      */
     inline GetWebExperienceResult& WithAuthenticationConfiguration(WebExperienceAuthConfiguration&& value) { SetAuthenticationConfiguration(std::move(value)); return *this;}
@@ -131,37 +138,37 @@ namespace Model
 
 
     /**
-     * <p>The endpoint of your Amazon Q web experience.</p>
+     * <p>The endpoint of your Amazon Q Business web experience.</p>
      */
     inline const Aws::String& GetDefaultEndpoint() const{ return m_defaultEndpoint; }
 
     /**
-     * <p>The endpoint of your Amazon Q web experience.</p>
+     * <p>The endpoint of your Amazon Q Business web experience.</p>
      */
     inline void SetDefaultEndpoint(const Aws::String& value) { m_defaultEndpoint = value; }
 
     /**
-     * <p>The endpoint of your Amazon Q web experience.</p>
+     * <p>The endpoint of your Amazon Q Business web experience.</p>
      */
     inline void SetDefaultEndpoint(Aws::String&& value) { m_defaultEndpoint = std::move(value); }
 
     /**
-     * <p>The endpoint of your Amazon Q web experience.</p>
+     * <p>The endpoint of your Amazon Q Business web experience.</p>
      */
     inline void SetDefaultEndpoint(const char* value) { m_defaultEndpoint.assign(value); }
 
     /**
-     * <p>The endpoint of your Amazon Q web experience.</p>
+     * <p>The endpoint of your Amazon Q Business web experience.</p>
      */
     inline GetWebExperienceResult& WithDefaultEndpoint(const Aws::String& value) { SetDefaultEndpoint(value); return *this;}
 
     /**
-     * <p>The endpoint of your Amazon Q web experience.</p>
+     * <p>The endpoint of your Amazon Q Business web experience.</p>
      */
     inline GetWebExperienceResult& WithDefaultEndpoint(Aws::String&& value) { SetDefaultEndpoint(std::move(value)); return *this;}
 
     /**
-     * <p>The endpoint of your Amazon Q web experience.</p>
+     * <p>The endpoint of your Amazon Q Business web experience.</p>
      */
     inline GetWebExperienceResult& WithDefaultEndpoint(const char* value) { SetDefaultEndpoint(value); return *this;}
 
@@ -203,6 +210,49 @@ namespace Model
 
 
     /**
+     * <p> The Amazon Resource Name (ARN) of the service role attached to your web
+     * experience.</p>
+     */
+    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the service role attached to your web
+     * experience.</p>
+     */
+    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the service role attached to your web
+     * experience.</p>
+     */
+    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the service role attached to your web
+     * experience.</p>
+     */
+    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the service role attached to your web
+     * experience.</p>
+     */
+    inline GetWebExperienceResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the service role attached to your web
+     * experience.</p>
+     */
+    inline GetWebExperienceResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the service role attached to your web
+     * experience.</p>
+     */
+    inline GetWebExperienceResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
+
+    /**
      * <p>Determines whether sample prompts are enabled in the web experience for an
      * end user.</p>
      */
@@ -234,7 +284,7 @@ namespace Model
 
 
     /**
-     * <p>The current status of the Amazon Q web experience. When the
+     * <p>The current status of the Amazon Q Business web experience. When the
      * <code>Status</code> field value is <code>FAILED</code>, the
      * <code>ErrorMessage</code> field contains a description of the error that caused
      * the data source connector to fail. </p>
@@ -242,7 +292,7 @@ namespace Model
     inline const WebExperienceStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The current status of the Amazon Q web experience. When the
+     * <p>The current status of the Amazon Q Business web experience. When the
      * <code>Status</code> field value is <code>FAILED</code>, the
      * <code>ErrorMessage</code> field contains a description of the error that caused
      * the data source connector to fail. </p>
@@ -250,7 +300,7 @@ namespace Model
     inline void SetStatus(const WebExperienceStatus& value) { m_status = value; }
 
     /**
-     * <p>The current status of the Amazon Q web experience. When the
+     * <p>The current status of the Amazon Q Business web experience. When the
      * <code>Status</code> field value is <code>FAILED</code>, the
      * <code>ErrorMessage</code> field contains a description of the error that caused
      * the data source connector to fail. </p>
@@ -258,7 +308,7 @@ namespace Model
     inline void SetStatus(WebExperienceStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>The current status of the Amazon Q web experience. When the
+     * <p>The current status of the Amazon Q Business web experience. When the
      * <code>Status</code> field value is <code>FAILED</code>, the
      * <code>ErrorMessage</code> field contains a description of the error that caused
      * the data source connector to fail. </p>
@@ -266,7 +316,7 @@ namespace Model
     inline GetWebExperienceResult& WithStatus(const WebExperienceStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The current status of the Amazon Q web experience. When the
+     * <p>The current status of the Amazon Q Business web experience. When the
      * <code>Status</code> field value is <code>FAILED</code>, the
      * <code>ErrorMessage</code> field contains a description of the error that caused
      * the data source connector to fail. </p>
@@ -275,73 +325,73 @@ namespace Model
 
 
     /**
-     * <p>The subtitle for your Amazon Q web experience. </p>
+     * <p>The subtitle for your Amazon Q Business web experience. </p>
      */
     inline const Aws::String& GetSubtitle() const{ return m_subtitle; }
 
     /**
-     * <p>The subtitle for your Amazon Q web experience. </p>
+     * <p>The subtitle for your Amazon Q Business web experience. </p>
      */
     inline void SetSubtitle(const Aws::String& value) { m_subtitle = value; }
 
     /**
-     * <p>The subtitle for your Amazon Q web experience. </p>
+     * <p>The subtitle for your Amazon Q Business web experience. </p>
      */
     inline void SetSubtitle(Aws::String&& value) { m_subtitle = std::move(value); }
 
     /**
-     * <p>The subtitle for your Amazon Q web experience. </p>
+     * <p>The subtitle for your Amazon Q Business web experience. </p>
      */
     inline void SetSubtitle(const char* value) { m_subtitle.assign(value); }
 
     /**
-     * <p>The subtitle for your Amazon Q web experience. </p>
+     * <p>The subtitle for your Amazon Q Business web experience. </p>
      */
     inline GetWebExperienceResult& WithSubtitle(const Aws::String& value) { SetSubtitle(value); return *this;}
 
     /**
-     * <p>The subtitle for your Amazon Q web experience. </p>
+     * <p>The subtitle for your Amazon Q Business web experience. </p>
      */
     inline GetWebExperienceResult& WithSubtitle(Aws::String&& value) { SetSubtitle(std::move(value)); return *this;}
 
     /**
-     * <p>The subtitle for your Amazon Q web experience. </p>
+     * <p>The subtitle for your Amazon Q Business web experience. </p>
      */
     inline GetWebExperienceResult& WithSubtitle(const char* value) { SetSubtitle(value); return *this;}
 
 
     /**
-     * <p>The title for your Amazon Q web experience. </p>
+     * <p>The title for your Amazon Q Business web experience. </p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
 
     /**
-     * <p>The title for your Amazon Q web experience. </p>
+     * <p>The title for your Amazon Q Business web experience. </p>
      */
     inline void SetTitle(const Aws::String& value) { m_title = value; }
 
     /**
-     * <p>The title for your Amazon Q web experience. </p>
+     * <p>The title for your Amazon Q Business web experience. </p>
      */
     inline void SetTitle(Aws::String&& value) { m_title = std::move(value); }
 
     /**
-     * <p>The title for your Amazon Q web experience. </p>
+     * <p>The title for your Amazon Q Business web experience. </p>
      */
     inline void SetTitle(const char* value) { m_title.assign(value); }
 
     /**
-     * <p>The title for your Amazon Q web experience. </p>
+     * <p>The title for your Amazon Q Business web experience. </p>
      */
     inline GetWebExperienceResult& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
 
     /**
-     * <p>The title for your Amazon Q web experience. </p>
+     * <p>The title for your Amazon Q Business web experience. </p>
      */
     inline GetWebExperienceResult& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
 
     /**
-     * <p>The title for your Amazon Q web experience. </p>
+     * <p>The title for your Amazon Q Business web experience. </p>
      */
     inline GetWebExperienceResult& WithTitle(const char* value) { SetTitle(value); return *this;}
 
@@ -374,121 +424,121 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the role with the permission to access the
-     * Amazon Q web experience and required resources.</p>
+     * Amazon Q Business web experience and required resources.</p>
      */
     inline const Aws::String& GetWebExperienceArn() const{ return m_webExperienceArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the role with the permission to access the
-     * Amazon Q web experience and required resources.</p>
+     * Amazon Q Business web experience and required resources.</p>
      */
     inline void SetWebExperienceArn(const Aws::String& value) { m_webExperienceArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the role with the permission to access the
-     * Amazon Q web experience and required resources.</p>
+     * Amazon Q Business web experience and required resources.</p>
      */
     inline void SetWebExperienceArn(Aws::String&& value) { m_webExperienceArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the role with the permission to access the
-     * Amazon Q web experience and required resources.</p>
+     * Amazon Q Business web experience and required resources.</p>
      */
     inline void SetWebExperienceArn(const char* value) { m_webExperienceArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the role with the permission to access the
-     * Amazon Q web experience and required resources.</p>
+     * Amazon Q Business web experience and required resources.</p>
      */
     inline GetWebExperienceResult& WithWebExperienceArn(const Aws::String& value) { SetWebExperienceArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the role with the permission to access the
-     * Amazon Q web experience and required resources.</p>
+     * Amazon Q Business web experience and required resources.</p>
      */
     inline GetWebExperienceResult& WithWebExperienceArn(Aws::String&& value) { SetWebExperienceArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the role with the permission to access the
-     * Amazon Q web experience and required resources.</p>
+     * Amazon Q Business web experience and required resources.</p>
      */
     inline GetWebExperienceResult& WithWebExperienceArn(const char* value) { SetWebExperienceArn(value); return *this;}
 
 
     /**
-     * <p>The identifier of the Amazon Q web experience.</p>
+     * <p>The identifier of the Amazon Q Business web experience.</p>
      */
     inline const Aws::String& GetWebExperienceId() const{ return m_webExperienceId; }
 
     /**
-     * <p>The identifier of the Amazon Q web experience.</p>
+     * <p>The identifier of the Amazon Q Business web experience.</p>
      */
     inline void SetWebExperienceId(const Aws::String& value) { m_webExperienceId = value; }
 
     /**
-     * <p>The identifier of the Amazon Q web experience.</p>
+     * <p>The identifier of the Amazon Q Business web experience.</p>
      */
     inline void SetWebExperienceId(Aws::String&& value) { m_webExperienceId = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon Q web experience.</p>
+     * <p>The identifier of the Amazon Q Business web experience.</p>
      */
     inline void SetWebExperienceId(const char* value) { m_webExperienceId.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon Q web experience.</p>
+     * <p>The identifier of the Amazon Q Business web experience.</p>
      */
     inline GetWebExperienceResult& WithWebExperienceId(const Aws::String& value) { SetWebExperienceId(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q web experience.</p>
+     * <p>The identifier of the Amazon Q Business web experience.</p>
      */
     inline GetWebExperienceResult& WithWebExperienceId(Aws::String&& value) { SetWebExperienceId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q web experience.</p>
+     * <p>The identifier of the Amazon Q Business web experience.</p>
      */
     inline GetWebExperienceResult& WithWebExperienceId(const char* value) { SetWebExperienceId(value); return *this;}
 
 
     /**
-     * <p>The customized welcome message for end users of an Amazon Q web
+     * <p>The customized welcome message for end users of an Amazon Q Business web
      * experience.</p>
      */
     inline const Aws::String& GetWelcomeMessage() const{ return m_welcomeMessage; }
 
     /**
-     * <p>The customized welcome message for end users of an Amazon Q web
+     * <p>The customized welcome message for end users of an Amazon Q Business web
      * experience.</p>
      */
     inline void SetWelcomeMessage(const Aws::String& value) { m_welcomeMessage = value; }
 
     /**
-     * <p>The customized welcome message for end users of an Amazon Q web
+     * <p>The customized welcome message for end users of an Amazon Q Business web
      * experience.</p>
      */
     inline void SetWelcomeMessage(Aws::String&& value) { m_welcomeMessage = std::move(value); }
 
     /**
-     * <p>The customized welcome message for end users of an Amazon Q web
+     * <p>The customized welcome message for end users of an Amazon Q Business web
      * experience.</p>
      */
     inline void SetWelcomeMessage(const char* value) { m_welcomeMessage.assign(value); }
 
     /**
-     * <p>The customized welcome message for end users of an Amazon Q web
+     * <p>The customized welcome message for end users of an Amazon Q Business web
      * experience.</p>
      */
     inline GetWebExperienceResult& WithWelcomeMessage(const Aws::String& value) { SetWelcomeMessage(value); return *this;}
 
     /**
-     * <p>The customized welcome message for end users of an Amazon Q web
+     * <p>The customized welcome message for end users of an Amazon Q Business web
      * experience.</p>
      */
     inline GetWebExperienceResult& WithWelcomeMessage(Aws::String&& value) { SetWelcomeMessage(std::move(value)); return *this;}
 
     /**
-     * <p>The customized welcome message for end users of an Amazon Q web
+     * <p>The customized welcome message for end users of an Amazon Q Business web
      * experience.</p>
      */
     inline GetWebExperienceResult& WithWelcomeMessage(const char* value) { SetWelcomeMessage(value); return *this;}
@@ -526,6 +576,8 @@ namespace Model
     Aws::String m_defaultEndpoint;
 
     ErrorDetail m_error;
+
+    Aws::String m_roleArn;
 
     WebExperienceSamplePromptsControlMode m_samplePromptsControlMode;
 

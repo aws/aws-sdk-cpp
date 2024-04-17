@@ -37,42 +37,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the Amazon Q application using the index.</p>
+     * <p>The identifier of the Amazon Q Business application using the index.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * <p>The identifier of the Amazon Q application using the index.</p>
+     * <p>The identifier of the Amazon Q Business application using the index.</p>
      */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the Amazon Q application using the index.</p>
+     * <p>The identifier of the Amazon Q Business application using the index.</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * <p>The identifier of the Amazon Q application using the index.</p>
+     * <p>The identifier of the Amazon Q Business application using the index.</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon Q application using the index.</p>
+     * <p>The identifier of the Amazon Q Business application using the index.</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon Q application using the index.</p>
+     * <p>The identifier of the Amazon Q Business application using the index.</p>
      */
     inline CreateIndexRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q application using the index.</p>
+     * <p>The identifier of the Amazon Q Business application using the index.</p>
      */
     inline CreateIndexRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q application using the index.</p>
+     * <p>The identifier of the Amazon Q Business application using the index.</p>
      */
     inline CreateIndexRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
@@ -172,83 +172,83 @@ namespace Model
 
 
     /**
-     * <p>A description for the Amazon Q index.</p>
+     * <p>A description for the Amazon Q Business index.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A description for the Amazon Q index.</p>
+     * <p>A description for the Amazon Q Business index.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A description for the Amazon Q index.</p>
+     * <p>A description for the Amazon Q Business index.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A description for the Amazon Q index.</p>
+     * <p>A description for the Amazon Q Business index.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A description for the Amazon Q index.</p>
+     * <p>A description for the Amazon Q Business index.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A description for the Amazon Q index.</p>
+     * <p>A description for the Amazon Q Business index.</p>
      */
     inline CreateIndexRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A description for the Amazon Q index.</p>
+     * <p>A description for the Amazon Q Business index.</p>
      */
     inline CreateIndexRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A description for the Amazon Q index.</p>
+     * <p>A description for the Amazon Q Business index.</p>
      */
     inline CreateIndexRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>A name for the Amazon Q index.</p>
+     * <p>A name for the Amazon Q Business index.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
     /**
-     * <p>A name for the Amazon Q index.</p>
+     * <p>A name for the Amazon Q Business index.</p>
      */
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
 
     /**
-     * <p>A name for the Amazon Q index.</p>
+     * <p>A name for the Amazon Q Business index.</p>
      */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
-     * <p>A name for the Amazon Q index.</p>
+     * <p>A name for the Amazon Q Business index.</p>
      */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
-     * <p>A name for the Amazon Q index.</p>
+     * <p>A name for the Amazon Q Business index.</p>
      */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
     /**
-     * <p>A name for the Amazon Q index.</p>
+     * <p>A name for the Amazon Q Business index.</p>
      */
     inline CreateIndexRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
 
     /**
-     * <p>A name for the Amazon Q index.</p>
+     * <p>A name for the Amazon Q Business index.</p>
      */
     inline CreateIndexRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
-     * <p>A name for the Amazon Q index.</p>
+     * <p>A name for the Amazon Q Business index.</p>
      */
     inline CreateIndexRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 

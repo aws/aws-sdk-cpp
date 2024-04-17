@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The input failed to meet the constraints specified by Amazon Q in a specified
-   * field.</p><p><h3>See Also:</h3>   <a
+   * <p>The input failed to meet the constraints specified by Amazon Q Business in a
+   * specified field.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ValidationExceptionField">AWS
    * API Reference</a></p>
    */

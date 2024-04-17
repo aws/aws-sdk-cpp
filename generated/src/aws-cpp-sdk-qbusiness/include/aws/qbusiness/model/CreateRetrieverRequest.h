@@ -38,91 +38,91 @@ namespace Model
 
 
     /**
-     * <p>The identifier of your Amazon Q application.</p>
+     * <p>The identifier of your Amazon Q Business application.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * <p>The identifier of your Amazon Q application.</p>
+     * <p>The identifier of your Amazon Q Business application.</p>
      */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
 
     /**
-     * <p>The identifier of your Amazon Q application.</p>
+     * <p>The identifier of your Amazon Q Business application.</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * <p>The identifier of your Amazon Q application.</p>
+     * <p>The identifier of your Amazon Q Business application.</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * <p>The identifier of your Amazon Q application.</p>
+     * <p>The identifier of your Amazon Q Business application.</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * <p>The identifier of your Amazon Q application.</p>
+     * <p>The identifier of your Amazon Q Business application.</p>
      */
     inline CreateRetrieverRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * <p>The identifier of your Amazon Q application.</p>
+     * <p>The identifier of your Amazon Q Business application.</p>
      */
     inline CreateRetrieverRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of your Amazon Q application.</p>
+     * <p>The identifier of your Amazon Q Business application.</p>
      */
     inline CreateRetrieverRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
     /**
      * <p>A token that you provide to identify the request to create your Amazon Q
-     * application retriever.</p>
+     * Business application retriever.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
      * <p>A token that you provide to identify the request to create your Amazon Q
-     * application retriever.</p>
+     * Business application retriever.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>A token that you provide to identify the request to create your Amazon Q
-     * application retriever.</p>
+     * Business application retriever.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
      * <p>A token that you provide to identify the request to create your Amazon Q
-     * application retriever.</p>
+     * Business application retriever.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>A token that you provide to identify the request to create your Amazon Q
-     * application retriever.</p>
+     * Business application retriever.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
      * <p>A token that you provide to identify the request to create your Amazon Q
-     * application retriever.</p>
+     * Business application retriever.</p>
      */
     inline CreateRetrieverRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
      * <p>A token that you provide to identify the request to create your Amazon Q
-     * application retriever.</p>
+     * Business application retriever.</p>
      */
     inline CreateRetrieverRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>A token that you provide to identify the request to create your Amazon Q
-     * application retriever.</p>
+     * Business application retriever.</p>
      */
     inline CreateRetrieverRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
@@ -188,50 +188,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of an IAM role used by Amazon Q to access the basic authentication
-     * credentials stored in a Secrets Manager secret.</p>
+     * <p>The ARN of an IAM role used by Amazon Q Business to access the basic
+     * authentication credentials stored in a Secrets Manager secret.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The ARN of an IAM role used by Amazon Q to access the basic authentication
-     * credentials stored in a Secrets Manager secret.</p>
+     * <p>The ARN of an IAM role used by Amazon Q Business to access the basic
+     * authentication credentials stored in a Secrets Manager secret.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The ARN of an IAM role used by Amazon Q to access the basic authentication
-     * credentials stored in a Secrets Manager secret.</p>
+     * <p>The ARN of an IAM role used by Amazon Q Business to access the basic
+     * authentication credentials stored in a Secrets Manager secret.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The ARN of an IAM role used by Amazon Q to access the basic authentication
-     * credentials stored in a Secrets Manager secret.</p>
+     * <p>The ARN of an IAM role used by Amazon Q Business to access the basic
+     * authentication credentials stored in a Secrets Manager secret.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The ARN of an IAM role used by Amazon Q to access the basic authentication
-     * credentials stored in a Secrets Manager secret.</p>
+     * <p>The ARN of an IAM role used by Amazon Q Business to access the basic
+     * authentication credentials stored in a Secrets Manager secret.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The ARN of an IAM role used by Amazon Q to access the basic authentication
-     * credentials stored in a Secrets Manager secret.</p>
+     * <p>The ARN of an IAM role used by Amazon Q Business to access the basic
+     * authentication credentials stored in a Secrets Manager secret.</p>
      */
     inline CreateRetrieverRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of an IAM role used by Amazon Q to access the basic authentication
-     * credentials stored in a Secrets Manager secret.</p>
+     * <p>The ARN of an IAM role used by Amazon Q Business to access the basic
+     * authentication credentials stored in a Secrets Manager secret.</p>
      */
     inline CreateRetrieverRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of an IAM role used by Amazon Q to access the basic authentication
-     * credentials stored in a Secrets Manager secret.</p>
+     * <p>The ARN of an IAM role used by Amazon Q Business to access the basic
+     * authentication credentials stored in a Secrets Manager secret.</p>
      */
     inline CreateRetrieverRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

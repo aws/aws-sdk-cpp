@@ -16,6 +16,7 @@ CreateWebExperienceRequest::CreateWebExperienceRequest() :
     m_applicationIdHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
+    m_roleArnHasBeenSet(false),
     m_samplePromptsControlMode(WebExperienceSamplePromptsControlMode::NOT_SET),
     m_samplePromptsControlModeHasBeenSet(false),
     m_subtitleHasBeenSet(false),
@@ -32,6 +33,12 @@ Aws::String CreateWebExperienceRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
+
+  }
+
+  if(m_roleArnHasBeenSet)
+  {
+   payload.WithString("roleArn", m_roleArn);
 
   }
 

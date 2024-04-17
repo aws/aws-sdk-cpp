@@ -308,11 +308,6 @@ ChatSyncOutcome QBusinessClient::ChatSync(const ChatSyncRequest& request) const
     AWS_LOGSTREAM_ERROR("ChatSync", "Required field: ApplicationId, is not set");
     return ChatSyncOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
   }
-  if (!request.UserIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("ChatSync", "Required field: UserId, is not set");
-    return ChatSyncOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
-  }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ChatSync, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
   auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
@@ -659,11 +654,6 @@ DeleteConversationOutcome QBusinessClient::DeleteConversation(const DeleteConver
   {
     AWS_LOGSTREAM_ERROR("DeleteConversation", "Required field: ConversationId, is not set");
     return DeleteConversationOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConversationId]", false));
-  }
-  if (!request.UserIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DeleteConversation", "Required field: UserId, is not set");
-    return DeleteConversationOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteConversation, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1382,11 +1372,6 @@ ListConversationsOutcome QBusinessClient::ListConversations(const ListConversati
     AWS_LOGSTREAM_ERROR("ListConversations", "Required field: ApplicationId, is not set");
     return ListConversationsOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
   }
-  if (!request.UserIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("ListConversations", "Required field: UserId, is not set");
-    return ListConversationsOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
-  }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListConversations, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
   auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
@@ -1636,11 +1621,6 @@ ListMessagesOutcome QBusinessClient::ListMessages(const ListMessagesRequest& req
     AWS_LOGSTREAM_ERROR("ListMessages", "Required field: ConversationId, is not set");
     return ListMessagesOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConversationId]", false));
   }
-  if (!request.UserIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("ListMessages", "Required field: UserId, is not set");
-    return ListMessagesOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
-  }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListMessages, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
   auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
@@ -1820,11 +1800,6 @@ PutFeedbackOutcome QBusinessClient::PutFeedback(const PutFeedbackRequest& reques
   {
     AWS_LOGSTREAM_ERROR("PutFeedback", "Required field: MessageId, is not set");
     return PutFeedbackOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MessageId]", false));
-  }
-  if (!request.UserIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("PutFeedback", "Required field: UserId, is not set");
-    return PutFeedbackOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PutFeedback, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});

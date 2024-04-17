@@ -39,50 +39,50 @@ namespace Model
 
 
     /**
-     * <p> The identifier of the Amazon Q application the data source will be attached
-     * to.</p>
+     * <p> The identifier of the Amazon Q Business application the data source will be
+     * attached to.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * <p> The identifier of the Amazon Q application the data source will be attached
-     * to.</p>
+     * <p> The identifier of the Amazon Q Business application the data source will be
+     * attached to.</p>
      */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
 
     /**
-     * <p> The identifier of the Amazon Q application the data source will be attached
-     * to.</p>
+     * <p> The identifier of the Amazon Q Business application the data source will be
+     * attached to.</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * <p> The identifier of the Amazon Q application the data source will be attached
-     * to.</p>
+     * <p> The identifier of the Amazon Q Business application the data source will be
+     * attached to.</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * <p> The identifier of the Amazon Q application the data source will be attached
-     * to.</p>
+     * <p> The identifier of the Amazon Q Business application the data source will be
+     * attached to.</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * <p> The identifier of the Amazon Q application the data source will be attached
-     * to.</p>
+     * <p> The identifier of the Amazon Q Business application the data source will be
+     * attached to.</p>
      */
     inline CreateDataSourceRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * <p> The identifier of the Amazon Q application the data source will be attached
-     * to.</p>
+     * <p> The identifier of the Amazon Q Business application the data source will be
+     * attached to.</p>
      */
     inline CreateDataSourceRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * <p> The identifier of the Amazon Q application the data source will be attached
-     * to.</p>
+     * <p> The identifier of the Amazon Q Business application the data source will be
+     * attached to.</p>
      */
     inline CreateDataSourceRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
@@ -147,7 +147,7 @@ namespace Model
     /**
      * <p>Configuration information to connect to your data source repository. For
      * configuration templates for your specific data source, see <a
-     * href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connectors-list.html.html">Supported
+     * href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connectors-list.html">Supported
      * connectors</a>.</p>
      */
     inline Aws::Utils::DocumentView GetConfiguration() const{ return m_configuration; }
@@ -155,7 +155,7 @@ namespace Model
     /**
      * <p>Configuration information to connect to your data source repository. For
      * configuration templates for your specific data source, see <a
-     * href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connectors-list.html.html">Supported
+     * href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connectors-list.html">Supported
      * connectors</a>.</p>
      */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
@@ -163,7 +163,7 @@ namespace Model
     /**
      * <p>Configuration information to connect to your data source repository. For
      * configuration templates for your specific data source, see <a
-     * href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connectors-list.html.html">Supported
+     * href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connectors-list.html">Supported
      * connectors</a>.</p>
      */
     inline void SetConfiguration(const Aws::Utils::Document& value) { m_configurationHasBeenSet = true; m_configuration = value; }
@@ -171,7 +171,7 @@ namespace Model
     /**
      * <p>Configuration information to connect to your data source repository. For
      * configuration templates for your specific data source, see <a
-     * href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connectors-list.html.html">Supported
+     * href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connectors-list.html">Supported
      * connectors</a>.</p>
      */
     inline void SetConfiguration(Aws::Utils::Document&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
@@ -179,7 +179,7 @@ namespace Model
     /**
      * <p>Configuration information to connect to your data source repository. For
      * configuration templates for your specific data source, see <a
-     * href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connectors-list.html.html">Supported
+     * href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connectors-list.html">Supported
      * connectors</a>.</p>
      */
     inline CreateDataSourceRequest& WithConfiguration(const Aws::Utils::Document& value) { SetConfiguration(value); return *this;}
@@ -187,7 +187,7 @@ namespace Model
     /**
      * <p>Configuration information to connect to your data source repository. For
      * configuration templates for your specific data source, see <a
-     * href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connectors-list.html.html">Supported
+     * href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connectors-list.html">Supported
      * connectors</a>.</p>
      */
     inline CreateDataSourceRequest& WithConfiguration(Aws::Utils::Document&& value) { SetConfiguration(std::move(value)); return *this;}
@@ -393,90 +393,90 @@ namespace Model
 
 
     /**
-     * <p>Sets the frequency for Amazon Q to check the documents in your data source
-     * repository and update your index. If you don't set a schedule, Amazon Q won't
-     * periodically update the index.</p> <p>Specify a <code>cron-</code> format
-     * schedule string or an empty string to indicate that the index is updated on
-     * demand. You can't specify the <code>Schedule</code> parameter when the
-     * <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you
-     * receive a <code>ValidationException</code> exception. </p>
+     * <p>Sets the frequency for Amazon Q Business to check the documents in your data
+     * source repository and update your index. If you don't set a schedule, Amazon Q
+     * Business won't periodically update the index.</p> <p>Specify a
+     * <code>cron-</code> format schedule string or an empty string to indicate that
+     * the index is updated on demand. You can't specify the <code>Schedule</code>
+     * parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If
+     * you do, you receive a <code>ValidationException</code> exception. </p>
      */
     inline const Aws::String& GetSyncSchedule() const{ return m_syncSchedule; }
 
     /**
-     * <p>Sets the frequency for Amazon Q to check the documents in your data source
-     * repository and update your index. If you don't set a schedule, Amazon Q won't
-     * periodically update the index.</p> <p>Specify a <code>cron-</code> format
-     * schedule string or an empty string to indicate that the index is updated on
-     * demand. You can't specify the <code>Schedule</code> parameter when the
-     * <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you
-     * receive a <code>ValidationException</code> exception. </p>
+     * <p>Sets the frequency for Amazon Q Business to check the documents in your data
+     * source repository and update your index. If you don't set a schedule, Amazon Q
+     * Business won't periodically update the index.</p> <p>Specify a
+     * <code>cron-</code> format schedule string or an empty string to indicate that
+     * the index is updated on demand. You can't specify the <code>Schedule</code>
+     * parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If
+     * you do, you receive a <code>ValidationException</code> exception. </p>
      */
     inline bool SyncScheduleHasBeenSet() const { return m_syncScheduleHasBeenSet; }
 
     /**
-     * <p>Sets the frequency for Amazon Q to check the documents in your data source
-     * repository and update your index. If you don't set a schedule, Amazon Q won't
-     * periodically update the index.</p> <p>Specify a <code>cron-</code> format
-     * schedule string or an empty string to indicate that the index is updated on
-     * demand. You can't specify the <code>Schedule</code> parameter when the
-     * <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you
-     * receive a <code>ValidationException</code> exception. </p>
+     * <p>Sets the frequency for Amazon Q Business to check the documents in your data
+     * source repository and update your index. If you don't set a schedule, Amazon Q
+     * Business won't periodically update the index.</p> <p>Specify a
+     * <code>cron-</code> format schedule string or an empty string to indicate that
+     * the index is updated on demand. You can't specify the <code>Schedule</code>
+     * parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If
+     * you do, you receive a <code>ValidationException</code> exception. </p>
      */
     inline void SetSyncSchedule(const Aws::String& value) { m_syncScheduleHasBeenSet = true; m_syncSchedule = value; }
 
     /**
-     * <p>Sets the frequency for Amazon Q to check the documents in your data source
-     * repository and update your index. If you don't set a schedule, Amazon Q won't
-     * periodically update the index.</p> <p>Specify a <code>cron-</code> format
-     * schedule string or an empty string to indicate that the index is updated on
-     * demand. You can't specify the <code>Schedule</code> parameter when the
-     * <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you
-     * receive a <code>ValidationException</code> exception. </p>
+     * <p>Sets the frequency for Amazon Q Business to check the documents in your data
+     * source repository and update your index. If you don't set a schedule, Amazon Q
+     * Business won't periodically update the index.</p> <p>Specify a
+     * <code>cron-</code> format schedule string or an empty string to indicate that
+     * the index is updated on demand. You can't specify the <code>Schedule</code>
+     * parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If
+     * you do, you receive a <code>ValidationException</code> exception. </p>
      */
     inline void SetSyncSchedule(Aws::String&& value) { m_syncScheduleHasBeenSet = true; m_syncSchedule = std::move(value); }
 
     /**
-     * <p>Sets the frequency for Amazon Q to check the documents in your data source
-     * repository and update your index. If you don't set a schedule, Amazon Q won't
-     * periodically update the index.</p> <p>Specify a <code>cron-</code> format
-     * schedule string or an empty string to indicate that the index is updated on
-     * demand. You can't specify the <code>Schedule</code> parameter when the
-     * <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you
-     * receive a <code>ValidationException</code> exception. </p>
+     * <p>Sets the frequency for Amazon Q Business to check the documents in your data
+     * source repository and update your index. If you don't set a schedule, Amazon Q
+     * Business won't periodically update the index.</p> <p>Specify a
+     * <code>cron-</code> format schedule string or an empty string to indicate that
+     * the index is updated on demand. You can't specify the <code>Schedule</code>
+     * parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If
+     * you do, you receive a <code>ValidationException</code> exception. </p>
      */
     inline void SetSyncSchedule(const char* value) { m_syncScheduleHasBeenSet = true; m_syncSchedule.assign(value); }
 
     /**
-     * <p>Sets the frequency for Amazon Q to check the documents in your data source
-     * repository and update your index. If you don't set a schedule, Amazon Q won't
-     * periodically update the index.</p> <p>Specify a <code>cron-</code> format
-     * schedule string or an empty string to indicate that the index is updated on
-     * demand. You can't specify the <code>Schedule</code> parameter when the
-     * <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you
-     * receive a <code>ValidationException</code> exception. </p>
+     * <p>Sets the frequency for Amazon Q Business to check the documents in your data
+     * source repository and update your index. If you don't set a schedule, Amazon Q
+     * Business won't periodically update the index.</p> <p>Specify a
+     * <code>cron-</code> format schedule string or an empty string to indicate that
+     * the index is updated on demand. You can't specify the <code>Schedule</code>
+     * parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If
+     * you do, you receive a <code>ValidationException</code> exception. </p>
      */
     inline CreateDataSourceRequest& WithSyncSchedule(const Aws::String& value) { SetSyncSchedule(value); return *this;}
 
     /**
-     * <p>Sets the frequency for Amazon Q to check the documents in your data source
-     * repository and update your index. If you don't set a schedule, Amazon Q won't
-     * periodically update the index.</p> <p>Specify a <code>cron-</code> format
-     * schedule string or an empty string to indicate that the index is updated on
-     * demand. You can't specify the <code>Schedule</code> parameter when the
-     * <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you
-     * receive a <code>ValidationException</code> exception. </p>
+     * <p>Sets the frequency for Amazon Q Business to check the documents in your data
+     * source repository and update your index. If you don't set a schedule, Amazon Q
+     * Business won't periodically update the index.</p> <p>Specify a
+     * <code>cron-</code> format schedule string or an empty string to indicate that
+     * the index is updated on demand. You can't specify the <code>Schedule</code>
+     * parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If
+     * you do, you receive a <code>ValidationException</code> exception. </p>
      */
     inline CreateDataSourceRequest& WithSyncSchedule(Aws::String&& value) { SetSyncSchedule(std::move(value)); return *this;}
 
     /**
-     * <p>Sets the frequency for Amazon Q to check the documents in your data source
-     * repository and update your index. If you don't set a schedule, Amazon Q won't
-     * periodically update the index.</p> <p>Specify a <code>cron-</code> format
-     * schedule string or an empty string to indicate that the index is updated on
-     * demand. You can't specify the <code>Schedule</code> parameter when the
-     * <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you
-     * receive a <code>ValidationException</code> exception. </p>
+     * <p>Sets the frequency for Amazon Q Business to check the documents in your data
+     * source repository and update your index. If you don't set a schedule, Amazon Q
+     * Business won't periodically update the index.</p> <p>Specify a
+     * <code>cron-</code> format schedule string or an empty string to indicate that
+     * the index is updated on demand. You can't specify the <code>Schedule</code>
+     * parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If
+     * you do, you receive a <code>ValidationException</code> exception. </p>
      */
     inline CreateDataSourceRequest& WithSyncSchedule(const char* value) { SetSyncSchedule(value); return *this;}
 
@@ -550,7 +550,7 @@ namespace Model
      * <p>Configuration information for an Amazon VPC (Virtual Private Cloud) to
      * connect to your data source. For more information, see <a
      * href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connector-vpc.html">Using
-     * Amazon VPC with Amazon Q connectors</a>.</p>
+     * Amazon VPC with Amazon Q Business connectors</a>.</p>
      */
     inline const DataSourceVpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
 
@@ -558,7 +558,7 @@ namespace Model
      * <p>Configuration information for an Amazon VPC (Virtual Private Cloud) to
      * connect to your data source. For more information, see <a
      * href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connector-vpc.html">Using
-     * Amazon VPC with Amazon Q connectors</a>.</p>
+     * Amazon VPC with Amazon Q Business connectors</a>.</p>
      */
     inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
 
@@ -566,7 +566,7 @@ namespace Model
      * <p>Configuration information for an Amazon VPC (Virtual Private Cloud) to
      * connect to your data source. For more information, see <a
      * href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connector-vpc.html">Using
-     * Amazon VPC with Amazon Q connectors</a>.</p>
+     * Amazon VPC with Amazon Q Business connectors</a>.</p>
      */
     inline void SetVpcConfiguration(const DataSourceVpcConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
 
@@ -574,7 +574,7 @@ namespace Model
      * <p>Configuration information for an Amazon VPC (Virtual Private Cloud) to
      * connect to your data source. For more information, see <a
      * href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connector-vpc.html">Using
-     * Amazon VPC with Amazon Q connectors</a>.</p>
+     * Amazon VPC with Amazon Q Business connectors</a>.</p>
      */
     inline void SetVpcConfiguration(DataSourceVpcConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
 
@@ -582,7 +582,7 @@ namespace Model
      * <p>Configuration information for an Amazon VPC (Virtual Private Cloud) to
      * connect to your data source. For more information, see <a
      * href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connector-vpc.html">Using
-     * Amazon VPC with Amazon Q connectors</a>.</p>
+     * Amazon VPC with Amazon Q Business connectors</a>.</p>
      */
     inline CreateDataSourceRequest& WithVpcConfiguration(const DataSourceVpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
 
@@ -590,7 +590,7 @@ namespace Model
      * <p>Configuration information for an Amazon VPC (Virtual Private Cloud) to
      * connect to your data source. For more information, see <a
      * href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connector-vpc.html">Using
-     * Amazon VPC with Amazon Q connectors</a>.</p>
+     * Amazon VPC with Amazon Q Business connectors</a>.</p>
      */
     inline CreateDataSourceRequest& WithVpcConfiguration(DataSourceVpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
 

@@ -99,49 +99,49 @@ namespace Model
 
     /**
      * <p>A token that you provide to identify the request to create your Amazon Q
-     * plugin.</p>
+     * Business plugin.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
      * <p>A token that you provide to identify the request to create your Amazon Q
-     * plugin.</p>
+     * Business plugin.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>A token that you provide to identify the request to create your Amazon Q
-     * plugin.</p>
+     * Business plugin.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
      * <p>A token that you provide to identify the request to create your Amazon Q
-     * plugin.</p>
+     * Business plugin.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>A token that you provide to identify the request to create your Amazon Q
-     * plugin.</p>
+     * Business plugin.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
      * <p>A token that you provide to identify the request to create your Amazon Q
-     * plugin.</p>
+     * Business plugin.</p>
      */
     inline CreatePluginRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
      * <p>A token that you provide to identify the request to create your Amazon Q
-     * plugin.</p>
+     * Business plugin.</p>
      */
     inline CreatePluginRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>A token that you provide to identify the request to create your Amazon Q
-     * plugin.</p>
+     * Business plugin.</p>
      */
     inline CreatePluginRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

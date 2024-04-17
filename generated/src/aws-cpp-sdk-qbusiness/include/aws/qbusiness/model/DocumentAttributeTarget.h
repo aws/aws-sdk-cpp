@@ -27,19 +27,19 @@ namespace Model
 
   /**
    * <p>The target document attribute or metadata field you want to alter when
-   * ingesting documents into Amazon Q.</p> <p>For example, you can delete all
-   * customer identification numbers associated with the documents, stored in the
+   * ingesting documents into Amazon Q Business.</p> <p>For example, you can delete
+   * all customer identification numbers associated with the documents, stored in the
    * document metadata field called 'Customer_ID' by setting the target key as
    * 'Customer_ID' and the deletion flag to <code>TRUE</code>. This removes all
    * customer ID values in the field 'Customer_ID'. This would scrub personally
-   * identifiable information from each document's metadata.</p> <p>Amazon Q can't
-   * create a target field if it has not already been created as an index field.
-   * After you create your index field, you can create a document metadata field
-   * using <a
+   * identifiable information from each document's metadata.</p> <p>Amazon Q Business
+   * can't create a target field if it has not already been created as an index
+   * field. After you create your index field, you can create a document metadata
+   * field using <a
    * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeTarget.html">
-   * <code>DocumentAttributeTarget</code> </a>. Amazon Q will then map your newly
-   * created document attribute to your index field.</p> <p>You can also use this
-   * with <a
+   * <code>DocumentAttributeTarget</code> </a>. Amazon Q Business will then map your
+   * newly created document attribute to your index field.</p> <p>You can also use
+   * this with <a
    * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeCondition.html">
    * <code>DocumentAttributeCondition</code> </a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DocumentAttributeTarget">AWS

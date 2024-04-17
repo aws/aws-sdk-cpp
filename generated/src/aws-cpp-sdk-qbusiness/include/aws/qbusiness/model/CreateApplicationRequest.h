@@ -70,170 +70,219 @@ namespace Model
 
     /**
      * <p>A token that you provide to identify the request to create your Amazon Q
-     * application.</p>
+     * Business application.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
      * <p>A token that you provide to identify the request to create your Amazon Q
-     * application.</p>
+     * Business application.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>A token that you provide to identify the request to create your Amazon Q
-     * application.</p>
+     * Business application.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
      * <p>A token that you provide to identify the request to create your Amazon Q
-     * application.</p>
+     * Business application.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>A token that you provide to identify the request to create your Amazon Q
-     * application.</p>
+     * Business application.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
      * <p>A token that you provide to identify the request to create your Amazon Q
-     * application.</p>
+     * Business application.</p>
      */
     inline CreateApplicationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
      * <p>A token that you provide to identify the request to create your Amazon Q
-     * application.</p>
+     * Business application.</p>
      */
     inline CreateApplicationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>A token that you provide to identify the request to create your Amazon Q
-     * application.</p>
+     * Business application.</p>
      */
     inline CreateApplicationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
 
     /**
-     * <p>A description for the Amazon Q application. </p>
+     * <p>A description for the Amazon Q Business application. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A description for the Amazon Q application. </p>
+     * <p>A description for the Amazon Q Business application. </p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A description for the Amazon Q application. </p>
+     * <p>A description for the Amazon Q Business application. </p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A description for the Amazon Q application. </p>
+     * <p>A description for the Amazon Q Business application. </p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A description for the Amazon Q application. </p>
+     * <p>A description for the Amazon Q Business application. </p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A description for the Amazon Q application. </p>
+     * <p>A description for the Amazon Q Business application. </p>
      */
     inline CreateApplicationRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A description for the Amazon Q application. </p>
+     * <p>A description for the Amazon Q Business application. </p>
      */
     inline CreateApplicationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A description for the Amazon Q application. </p>
+     * <p>A description for the Amazon Q Business application. </p>
      */
     inline CreateApplicationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>A name for the Amazon Q application. </p>
+     * <p>A name for the Amazon Q Business application. </p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
     /**
-     * <p>A name for the Amazon Q application. </p>
+     * <p>A name for the Amazon Q Business application. </p>
      */
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
 
     /**
-     * <p>A name for the Amazon Q application. </p>
+     * <p>A name for the Amazon Q Business application. </p>
      */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
-     * <p>A name for the Amazon Q application. </p>
+     * <p>A name for the Amazon Q Business application. </p>
      */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
-     * <p>A name for the Amazon Q application. </p>
+     * <p>A name for the Amazon Q Business application. </p>
      */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
     /**
-     * <p>A name for the Amazon Q application. </p>
+     * <p>A name for the Amazon Q Business application. </p>
      */
     inline CreateApplicationRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
 
     /**
-     * <p>A name for the Amazon Q application. </p>
+     * <p>A name for the Amazon Q Business application. </p>
      */
     inline CreateApplicationRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
-     * <p>A name for the Amazon Q application. </p>
+     * <p>A name for the Amazon Q Business application. </p>
      */
     inline CreateApplicationRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
 
     /**
      * <p>The identifier of the KMS key that is used to encrypt your data. Amazon Q
-     * doesn't support asymmetric keys.</p>
+     * Business doesn't support asymmetric keys.</p>
      */
     inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
 
     /**
      * <p>The identifier of the KMS key that is used to encrypt your data. Amazon Q
-     * doesn't support asymmetric keys.</p>
+     * Business doesn't support asymmetric keys.</p>
      */
     inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
 
     /**
      * <p>The identifier of the KMS key that is used to encrypt your data. Amazon Q
-     * doesn't support asymmetric keys.</p>
+     * Business doesn't support asymmetric keys.</p>
      */
     inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
 
     /**
      * <p>The identifier of the KMS key that is used to encrypt your data. Amazon Q
-     * doesn't support asymmetric keys.</p>
+     * Business doesn't support asymmetric keys.</p>
      */
     inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
 
     /**
      * <p>The identifier of the KMS key that is used to encrypt your data. Amazon Q
-     * doesn't support asymmetric keys.</p>
+     * Business doesn't support asymmetric keys.</p>
      */
     inline CreateApplicationRequest& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
 
     /**
      * <p>The identifier of the KMS key that is used to encrypt your data. Amazon Q
-     * doesn't support asymmetric keys.</p>
+     * Business doesn't support asymmetric keys.</p>
      */
     inline CreateApplicationRequest& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the IAM Identity Center instance you are
+     * either creating for—or connecting to—your Amazon Q Business application.</p>
+     */
+    inline const Aws::String& GetIdentityCenterInstanceArn() const{ return m_identityCenterInstanceArn; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the IAM Identity Center instance you are
+     * either creating for—or connecting to—your Amazon Q Business application.</p>
+     */
+    inline bool IdentityCenterInstanceArnHasBeenSet() const { return m_identityCenterInstanceArnHasBeenSet; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the IAM Identity Center instance you are
+     * either creating for—or connecting to—your Amazon Q Business application.</p>
+     */
+    inline void SetIdentityCenterInstanceArn(const Aws::String& value) { m_identityCenterInstanceArnHasBeenSet = true; m_identityCenterInstanceArn = value; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the IAM Identity Center instance you are
+     * either creating for—or connecting to—your Amazon Q Business application.</p>
+     */
+    inline void SetIdentityCenterInstanceArn(Aws::String&& value) { m_identityCenterInstanceArnHasBeenSet = true; m_identityCenterInstanceArn = std::move(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the IAM Identity Center instance you are
+     * either creating for—or connecting to—your Amazon Q Business application.</p>
+     */
+    inline void SetIdentityCenterInstanceArn(const char* value) { m_identityCenterInstanceArnHasBeenSet = true; m_identityCenterInstanceArn.assign(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the IAM Identity Center instance you are
+     * either creating for—or connecting to—your Amazon Q Business application.</p>
+     */
+    inline CreateApplicationRequest& WithIdentityCenterInstanceArn(const Aws::String& value) { SetIdentityCenterInstanceArn(value); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the IAM Identity Center instance you are
+     * either creating for—or connecting to—your Amazon Q Business application.</p>
+     */
+    inline CreateApplicationRequest& WithIdentityCenterInstanceArn(Aws::String&& value) { SetIdentityCenterInstanceArn(std::move(value)); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the IAM Identity Center instance you are
+     * either creating for—or connecting to—your Amazon Q Business application.</p>
+     */
+    inline CreateApplicationRequest& WithIdentityCenterInstanceArn(const char* value) { SetIdentityCenterInstanceArn(value); return *this;}
 
 
     /**
@@ -286,7 +335,7 @@ namespace Model
 
 
     /**
-     * <p>A list of key-value pairs that identify or categorize your Amazon Q
+     * <p>A list of key-value pairs that identify or categorize your Amazon Q Business
      * application. You can also use tags to help control access to the application.
      * Tag keys and values can consist of Unicode letters, digits, white space, and any
      * of the following symbols: _ . : / = + - @.</p>
@@ -294,7 +343,7 @@ namespace Model
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A list of key-value pairs that identify or categorize your Amazon Q
+     * <p>A list of key-value pairs that identify or categorize your Amazon Q Business
      * application. You can also use tags to help control access to the application.
      * Tag keys and values can consist of Unicode letters, digits, white space, and any
      * of the following symbols: _ . : / = + - @.</p>
@@ -302,7 +351,7 @@ namespace Model
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>A list of key-value pairs that identify or categorize your Amazon Q
+     * <p>A list of key-value pairs that identify or categorize your Amazon Q Business
      * application. You can also use tags to help control access to the application.
      * Tag keys and values can consist of Unicode letters, digits, white space, and any
      * of the following symbols: _ . : / = + - @.</p>
@@ -310,7 +359,7 @@ namespace Model
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A list of key-value pairs that identify or categorize your Amazon Q
+     * <p>A list of key-value pairs that identify or categorize your Amazon Q Business
      * application. You can also use tags to help control access to the application.
      * Tag keys and values can consist of Unicode letters, digits, white space, and any
      * of the following symbols: _ . : / = + - @.</p>
@@ -318,7 +367,7 @@ namespace Model
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>A list of key-value pairs that identify or categorize your Amazon Q
+     * <p>A list of key-value pairs that identify or categorize your Amazon Q Business
      * application. You can also use tags to help control access to the application.
      * Tag keys and values can consist of Unicode letters, digits, white space, and any
      * of the following symbols: _ . : / = + - @.</p>
@@ -326,7 +375,7 @@ namespace Model
     inline CreateApplicationRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A list of key-value pairs that identify or categorize your Amazon Q
+     * <p>A list of key-value pairs that identify or categorize your Amazon Q Business
      * application. You can also use tags to help control access to the application.
      * Tag keys and values can consist of Unicode letters, digits, white space, and any
      * of the following symbols: _ . : / = + - @.</p>
@@ -334,7 +383,7 @@ namespace Model
     inline CreateApplicationRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A list of key-value pairs that identify or categorize your Amazon Q
+     * <p>A list of key-value pairs that identify or categorize your Amazon Q Business
      * application. You can also use tags to help control access to the application.
      * Tag keys and values can consist of Unicode letters, digits, white space, and any
      * of the following symbols: _ . : / = + - @.</p>
@@ -342,7 +391,7 @@ namespace Model
     inline CreateApplicationRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>A list of key-value pairs that identify or categorize your Amazon Q
+     * <p>A list of key-value pairs that identify or categorize your Amazon Q Business
      * application. You can also use tags to help control access to the application.
      * Tag keys and values can consist of Unicode letters, digits, white space, and any
      * of the following symbols: _ . : / = + - @.</p>
@@ -365,6 +414,9 @@ namespace Model
 
     EncryptionConfiguration m_encryptionConfiguration;
     bool m_encryptionConfigurationHasBeenSet = false;
+
+    Aws::String m_identityCenterInstanceArn;
+    bool m_identityCenterInstanceArnHasBeenSet = false;
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;

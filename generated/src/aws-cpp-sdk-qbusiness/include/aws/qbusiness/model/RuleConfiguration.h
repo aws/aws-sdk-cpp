@@ -40,38 +40,38 @@ namespace Model
 
 
     /**
-     * <p>A rule for configuring how Amazon Q responds when it encounters a a blocked
-     * topic.</p>
+     * <p>A rule for configuring how Amazon Q Business responds when it encounters a a
+     * blocked topic.</p>
      */
     inline const ContentBlockerRule& GetContentBlockerRule() const{ return m_contentBlockerRule; }
 
     /**
-     * <p>A rule for configuring how Amazon Q responds when it encounters a a blocked
-     * topic.</p>
+     * <p>A rule for configuring how Amazon Q Business responds when it encounters a a
+     * blocked topic.</p>
      */
     inline bool ContentBlockerRuleHasBeenSet() const { return m_contentBlockerRuleHasBeenSet; }
 
     /**
-     * <p>A rule for configuring how Amazon Q responds when it encounters a a blocked
-     * topic.</p>
+     * <p>A rule for configuring how Amazon Q Business responds when it encounters a a
+     * blocked topic.</p>
      */
     inline void SetContentBlockerRule(const ContentBlockerRule& value) { m_contentBlockerRuleHasBeenSet = true; m_contentBlockerRule = value; }
 
     /**
-     * <p>A rule for configuring how Amazon Q responds when it encounters a a blocked
-     * topic.</p>
+     * <p>A rule for configuring how Amazon Q Business responds when it encounters a a
+     * blocked topic.</p>
      */
     inline void SetContentBlockerRule(ContentBlockerRule&& value) { m_contentBlockerRuleHasBeenSet = true; m_contentBlockerRule = std::move(value); }
 
     /**
-     * <p>A rule for configuring how Amazon Q responds when it encounters a a blocked
-     * topic.</p>
+     * <p>A rule for configuring how Amazon Q Business responds when it encounters a a
+     * blocked topic.</p>
      */
     inline RuleConfiguration& WithContentBlockerRule(const ContentBlockerRule& value) { SetContentBlockerRule(value); return *this;}
 
     /**
-     * <p>A rule for configuring how Amazon Q responds when it encounters a a blocked
-     * topic.</p>
+     * <p>A rule for configuring how Amazon Q Business responds when it encounters a a
+     * blocked topic.</p>
      */
     inline RuleConfiguration& WithContentBlockerRule(ContentBlockerRule&& value) { SetContentBlockerRule(std::move(value)); return *this;}
 

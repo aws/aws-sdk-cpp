@@ -19,6 +19,7 @@ CreateApplicationRequest::CreateApplicationRequest() :
     m_descriptionHasBeenSet(false),
     m_displayNameHasBeenSet(false),
     m_encryptionConfigurationHasBeenSet(false),
+    m_identityCenterInstanceArnHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -55,6 +56,12 @@ Aws::String CreateApplicationRequest::SerializePayload() const
   if(m_encryptionConfigurationHasBeenSet)
   {
    payload.WithObject("encryptionConfiguration", m_encryptionConfiguration.Jsonize());
+
+  }
+
+  if(m_identityCenterInstanceArnHasBeenSet)
+  {
+   payload.WithString("identityCenterInstanceArn", m_identityCenterInstanceArn);
 
   }
 

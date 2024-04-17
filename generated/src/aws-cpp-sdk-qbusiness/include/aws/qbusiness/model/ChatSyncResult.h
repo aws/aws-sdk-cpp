@@ -37,68 +37,68 @@ namespace Model
 
 
     /**
-     * <p>A request from Amazon Q to the end user for information Amazon Q needs to
-     * successfully complete a requested plugin action.</p>
+     * <p>A request from Amazon Q Business to the end user for information Amazon Q
+     * Business needs to successfully complete a requested plugin action.</p>
      */
     inline const ActionReview& GetActionReview() const{ return m_actionReview; }
 
     /**
-     * <p>A request from Amazon Q to the end user for information Amazon Q needs to
-     * successfully complete a requested plugin action.</p>
+     * <p>A request from Amazon Q Business to the end user for information Amazon Q
+     * Business needs to successfully complete a requested plugin action.</p>
      */
     inline void SetActionReview(const ActionReview& value) { m_actionReview = value; }
 
     /**
-     * <p>A request from Amazon Q to the end user for information Amazon Q needs to
-     * successfully complete a requested plugin action.</p>
+     * <p>A request from Amazon Q Business to the end user for information Amazon Q
+     * Business needs to successfully complete a requested plugin action.</p>
      */
     inline void SetActionReview(ActionReview&& value) { m_actionReview = std::move(value); }
 
     /**
-     * <p>A request from Amazon Q to the end user for information Amazon Q needs to
-     * successfully complete a requested plugin action.</p>
+     * <p>A request from Amazon Q Business to the end user for information Amazon Q
+     * Business needs to successfully complete a requested plugin action.</p>
      */
     inline ChatSyncResult& WithActionReview(const ActionReview& value) { SetActionReview(value); return *this;}
 
     /**
-     * <p>A request from Amazon Q to the end user for information Amazon Q needs to
-     * successfully complete a requested plugin action.</p>
+     * <p>A request from Amazon Q Business to the end user for information Amazon Q
+     * Business needs to successfully complete a requested plugin action.</p>
      */
     inline ChatSyncResult& WithActionReview(ActionReview&& value) { SetActionReview(std::move(value)); return *this;}
 
 
     /**
-     * <p>The identifier of the Amazon Q conversation.</p>
+     * <p>The identifier of the Amazon Q Business conversation.</p>
      */
     inline const Aws::String& GetConversationId() const{ return m_conversationId; }
 
     /**
-     * <p>The identifier of the Amazon Q conversation.</p>
+     * <p>The identifier of the Amazon Q Business conversation.</p>
      */
     inline void SetConversationId(const Aws::String& value) { m_conversationId = value; }
 
     /**
-     * <p>The identifier of the Amazon Q conversation.</p>
+     * <p>The identifier of the Amazon Q Business conversation.</p>
      */
     inline void SetConversationId(Aws::String&& value) { m_conversationId = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon Q conversation.</p>
+     * <p>The identifier of the Amazon Q Business conversation.</p>
      */
     inline void SetConversationId(const char* value) { m_conversationId.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon Q conversation.</p>
+     * <p>The identifier of the Amazon Q Business conversation.</p>
      */
     inline ChatSyncResult& WithConversationId(const Aws::String& value) { SetConversationId(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q conversation.</p>
+     * <p>The identifier of the Amazon Q Business conversation.</p>
      */
     inline ChatSyncResult& WithConversationId(Aws::String&& value) { SetConversationId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q conversation.</p>
+     * <p>The identifier of the Amazon Q Business conversation.</p>
      */
     inline ChatSyncResult& WithConversationId(const char* value) { SetConversationId(value); return *this;}
 
@@ -212,86 +212,86 @@ namespace Model
 
 
     /**
-     * <p>The identifier of an Amazon Q AI generated message within the
+     * <p>The identifier of an Amazon Q Business AI generated message within the
      * conversation.</p>
      */
     inline const Aws::String& GetSystemMessageId() const{ return m_systemMessageId; }
 
     /**
-     * <p>The identifier of an Amazon Q AI generated message within the
+     * <p>The identifier of an Amazon Q Business AI generated message within the
      * conversation.</p>
      */
     inline void SetSystemMessageId(const Aws::String& value) { m_systemMessageId = value; }
 
     /**
-     * <p>The identifier of an Amazon Q AI generated message within the
+     * <p>The identifier of an Amazon Q Business AI generated message within the
      * conversation.</p>
      */
     inline void SetSystemMessageId(Aws::String&& value) { m_systemMessageId = std::move(value); }
 
     /**
-     * <p>The identifier of an Amazon Q AI generated message within the
+     * <p>The identifier of an Amazon Q Business AI generated message within the
      * conversation.</p>
      */
     inline void SetSystemMessageId(const char* value) { m_systemMessageId.assign(value); }
 
     /**
-     * <p>The identifier of an Amazon Q AI generated message within the
+     * <p>The identifier of an Amazon Q Business AI generated message within the
      * conversation.</p>
      */
     inline ChatSyncResult& WithSystemMessageId(const Aws::String& value) { SetSystemMessageId(value); return *this;}
 
     /**
-     * <p>The identifier of an Amazon Q AI generated message within the
+     * <p>The identifier of an Amazon Q Business AI generated message within the
      * conversation.</p>
      */
     inline ChatSyncResult& WithSystemMessageId(Aws::String&& value) { SetSystemMessageId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of an Amazon Q AI generated message within the
+     * <p>The identifier of an Amazon Q Business AI generated message within the
      * conversation.</p>
      */
     inline ChatSyncResult& WithSystemMessageId(const char* value) { SetSystemMessageId(value); return *this;}
 
 
     /**
-     * <p>The identifier of an Amazon Q end user text input message within the
+     * <p>The identifier of an Amazon Q Business end user text input message within the
      * conversation.</p>
      */
     inline const Aws::String& GetUserMessageId() const{ return m_userMessageId; }
 
     /**
-     * <p>The identifier of an Amazon Q end user text input message within the
+     * <p>The identifier of an Amazon Q Business end user text input message within the
      * conversation.</p>
      */
     inline void SetUserMessageId(const Aws::String& value) { m_userMessageId = value; }
 
     /**
-     * <p>The identifier of an Amazon Q end user text input message within the
+     * <p>The identifier of an Amazon Q Business end user text input message within the
      * conversation.</p>
      */
     inline void SetUserMessageId(Aws::String&& value) { m_userMessageId = std::move(value); }
 
     /**
-     * <p>The identifier of an Amazon Q end user text input message within the
+     * <p>The identifier of an Amazon Q Business end user text input message within the
      * conversation.</p>
      */
     inline void SetUserMessageId(const char* value) { m_userMessageId.assign(value); }
 
     /**
-     * <p>The identifier of an Amazon Q end user text input message within the
+     * <p>The identifier of an Amazon Q Business end user text input message within the
      * conversation.</p>
      */
     inline ChatSyncResult& WithUserMessageId(const Aws::String& value) { SetUserMessageId(value); return *this;}
 
     /**
-     * <p>The identifier of an Amazon Q end user text input message within the
+     * <p>The identifier of an Amazon Q Business end user text input message within the
      * conversation.</p>
      */
     inline ChatSyncResult& WithUserMessageId(Aws::String&& value) { SetUserMessageId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of an Amazon Q end user text input message within the
+     * <p>The identifier of an Amazon Q Business end user text input message within the
      * conversation.</p>
      */
     inline ChatSyncResult& WithUserMessageId(const char* value) { SetUserMessageId(value); return *this;}

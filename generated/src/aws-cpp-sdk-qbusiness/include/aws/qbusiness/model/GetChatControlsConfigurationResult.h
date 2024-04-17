@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/qbusiness/model/BlockedPhrasesConfiguration.h>
+#include <aws/qbusiness/model/AppliedCreatorModeConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qbusiness/model/ResponseScope.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -63,135 +64,173 @@ namespace Model
 
 
     /**
+     * <p>The configuration details for <code>CREATOR_MODE</code>.</p>
+     */
+    inline const AppliedCreatorModeConfiguration& GetCreatorModeConfiguration() const{ return m_creatorModeConfiguration; }
+
+    /**
+     * <p>The configuration details for <code>CREATOR_MODE</code>.</p>
+     */
+    inline void SetCreatorModeConfiguration(const AppliedCreatorModeConfiguration& value) { m_creatorModeConfiguration = value; }
+
+    /**
+     * <p>The configuration details for <code>CREATOR_MODE</code>.</p>
+     */
+    inline void SetCreatorModeConfiguration(AppliedCreatorModeConfiguration&& value) { m_creatorModeConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration details for <code>CREATOR_MODE</code>.</p>
+     */
+    inline GetChatControlsConfigurationResult& WithCreatorModeConfiguration(const AppliedCreatorModeConfiguration& value) { SetCreatorModeConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration details for <code>CREATOR_MODE</code>.</p>
+     */
+    inline GetChatControlsConfigurationResult& WithCreatorModeConfiguration(AppliedCreatorModeConfiguration&& value) { SetCreatorModeConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>If the <code>maxResults</code> response was incomplete because there is more
-     * data to retrieve, Amazon Q returns a pagination token in the response. You can
-     * use this pagination token to retrieve the next set of Amazon Q chat controls
-     * configured.</p>
+     * data to retrieve, Amazon Q Business returns a pagination token in the response.
+     * You can use this pagination token to retrieve the next set of Amazon Q Business
+     * chat controls configured.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>If the <code>maxResults</code> response was incomplete because there is more
-     * data to retrieve, Amazon Q returns a pagination token in the response. You can
-     * use this pagination token to retrieve the next set of Amazon Q chat controls
-     * configured.</p>
+     * data to retrieve, Amazon Q Business returns a pagination token in the response.
+     * You can use this pagination token to retrieve the next set of Amazon Q Business
+     * chat controls configured.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
      * <p>If the <code>maxResults</code> response was incomplete because there is more
-     * data to retrieve, Amazon Q returns a pagination token in the response. You can
-     * use this pagination token to retrieve the next set of Amazon Q chat controls
-     * configured.</p>
+     * data to retrieve, Amazon Q Business returns a pagination token in the response.
+     * You can use this pagination token to retrieve the next set of Amazon Q Business
+     * chat controls configured.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If the <code>maxResults</code> response was incomplete because there is more
-     * data to retrieve, Amazon Q returns a pagination token in the response. You can
-     * use this pagination token to retrieve the next set of Amazon Q chat controls
-     * configured.</p>
+     * data to retrieve, Amazon Q Business returns a pagination token in the response.
+     * You can use this pagination token to retrieve the next set of Amazon Q Business
+     * chat controls configured.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
      * <p>If the <code>maxResults</code> response was incomplete because there is more
-     * data to retrieve, Amazon Q returns a pagination token in the response. You can
-     * use this pagination token to retrieve the next set of Amazon Q chat controls
-     * configured.</p>
+     * data to retrieve, Amazon Q Business returns a pagination token in the response.
+     * You can use this pagination token to retrieve the next set of Amazon Q Business
+     * chat controls configured.</p>
      */
     inline GetChatControlsConfigurationResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>If the <code>maxResults</code> response was incomplete because there is more
-     * data to retrieve, Amazon Q returns a pagination token in the response. You can
-     * use this pagination token to retrieve the next set of Amazon Q chat controls
-     * configured.</p>
+     * data to retrieve, Amazon Q Business returns a pagination token in the response.
+     * You can use this pagination token to retrieve the next set of Amazon Q Business
+     * chat controls configured.</p>
      */
     inline GetChatControlsConfigurationResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If the <code>maxResults</code> response was incomplete because there is more
-     * data to retrieve, Amazon Q returns a pagination token in the response. You can
-     * use this pagination token to retrieve the next set of Amazon Q chat controls
-     * configured.</p>
+     * data to retrieve, Amazon Q Business returns a pagination token in the response.
+     * You can use this pagination token to retrieve the next set of Amazon Q Business
+     * chat controls configured.</p>
      */
     inline GetChatControlsConfigurationResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * <p>The response scope configured for a Amazon Q application. This determines
-     * whether your application uses its retrieval augmented generation (RAG) system to
-     * generate answers only from your enterprise data, or also uses the large language
-     * models (LLM) knowledge to respons to end user questions in chat.</p>
+     * <p>The response scope configured for a Amazon Q Business application. This
+     * determines whether your application uses its retrieval augmented generation
+     * (RAG) system to generate answers only from your enterprise data, or also uses
+     * the large language models (LLM) knowledge to respons to end user questions in
+     * chat.</p>
      */
     inline const ResponseScope& GetResponseScope() const{ return m_responseScope; }
 
     /**
-     * <p>The response scope configured for a Amazon Q application. This determines
-     * whether your application uses its retrieval augmented generation (RAG) system to
-     * generate answers only from your enterprise data, or also uses the large language
-     * models (LLM) knowledge to respons to end user questions in chat.</p>
+     * <p>The response scope configured for a Amazon Q Business application. This
+     * determines whether your application uses its retrieval augmented generation
+     * (RAG) system to generate answers only from your enterprise data, or also uses
+     * the large language models (LLM) knowledge to respons to end user questions in
+     * chat.</p>
      */
     inline void SetResponseScope(const ResponseScope& value) { m_responseScope = value; }
 
     /**
-     * <p>The response scope configured for a Amazon Q application. This determines
-     * whether your application uses its retrieval augmented generation (RAG) system to
-     * generate answers only from your enterprise data, or also uses the large language
-     * models (LLM) knowledge to respons to end user questions in chat.</p>
+     * <p>The response scope configured for a Amazon Q Business application. This
+     * determines whether your application uses its retrieval augmented generation
+     * (RAG) system to generate answers only from your enterprise data, or also uses
+     * the large language models (LLM) knowledge to respons to end user questions in
+     * chat.</p>
      */
     inline void SetResponseScope(ResponseScope&& value) { m_responseScope = std::move(value); }
 
     /**
-     * <p>The response scope configured for a Amazon Q application. This determines
-     * whether your application uses its retrieval augmented generation (RAG) system to
-     * generate answers only from your enterprise data, or also uses the large language
-     * models (LLM) knowledge to respons to end user questions in chat.</p>
+     * <p>The response scope configured for a Amazon Q Business application. This
+     * determines whether your application uses its retrieval augmented generation
+     * (RAG) system to generate answers only from your enterprise data, or also uses
+     * the large language models (LLM) knowledge to respons to end user questions in
+     * chat.</p>
      */
     inline GetChatControlsConfigurationResult& WithResponseScope(const ResponseScope& value) { SetResponseScope(value); return *this;}
 
     /**
-     * <p>The response scope configured for a Amazon Q application. This determines
-     * whether your application uses its retrieval augmented generation (RAG) system to
-     * generate answers only from your enterprise data, or also uses the large language
-     * models (LLM) knowledge to respons to end user questions in chat.</p>
+     * <p>The response scope configured for a Amazon Q Business application. This
+     * determines whether your application uses its retrieval augmented generation
+     * (RAG) system to generate answers only from your enterprise data, or also uses
+     * the large language models (LLM) knowledge to respons to end user questions in
+     * chat.</p>
      */
     inline GetChatControlsConfigurationResult& WithResponseScope(ResponseScope&& value) { SetResponseScope(std::move(value)); return *this;}
 
 
     /**
-     * <p>The topic specific controls configured for a Amazon Q application.</p>
+     * <p>The topic specific controls configured for a Amazon Q Business
+     * application.</p>
      */
     inline const Aws::Vector<TopicConfiguration>& GetTopicConfigurations() const{ return m_topicConfigurations; }
 
     /**
-     * <p>The topic specific controls configured for a Amazon Q application.</p>
+     * <p>The topic specific controls configured for a Amazon Q Business
+     * application.</p>
      */
     inline void SetTopicConfigurations(const Aws::Vector<TopicConfiguration>& value) { m_topicConfigurations = value; }
 
     /**
-     * <p>The topic specific controls configured for a Amazon Q application.</p>
+     * <p>The topic specific controls configured for a Amazon Q Business
+     * application.</p>
      */
     inline void SetTopicConfigurations(Aws::Vector<TopicConfiguration>&& value) { m_topicConfigurations = std::move(value); }
 
     /**
-     * <p>The topic specific controls configured for a Amazon Q application.</p>
+     * <p>The topic specific controls configured for a Amazon Q Business
+     * application.</p>
      */
     inline GetChatControlsConfigurationResult& WithTopicConfigurations(const Aws::Vector<TopicConfiguration>& value) { SetTopicConfigurations(value); return *this;}
 
     /**
-     * <p>The topic specific controls configured for a Amazon Q application.</p>
+     * <p>The topic specific controls configured for a Amazon Q Business
+     * application.</p>
      */
     inline GetChatControlsConfigurationResult& WithTopicConfigurations(Aws::Vector<TopicConfiguration>&& value) { SetTopicConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>The topic specific controls configured for a Amazon Q application.</p>
+     * <p>The topic specific controls configured for a Amazon Q Business
+     * application.</p>
      */
     inline GetChatControlsConfigurationResult& AddTopicConfigurations(const TopicConfiguration& value) { m_topicConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>The topic specific controls configured for a Amazon Q application.</p>
+     * <p>The topic specific controls configured for a Amazon Q Business
+     * application.</p>
      */
     inline GetChatControlsConfigurationResult& AddTopicConfigurations(TopicConfiguration&& value) { m_topicConfigurations.push_back(std::move(value)); return *this; }
 
@@ -220,6 +259,8 @@ namespace Model
   private:
 
     BlockedPhrasesConfiguration m_blockedPhrases;
+
+    AppliedCreatorModeConfiguration m_creatorModeConfiguration;
 
     Aws::String m_nextToken;
 

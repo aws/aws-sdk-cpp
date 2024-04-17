@@ -41,49 +41,49 @@ namespace Model
 
     /**
      * <p> The key for the tag. Keys are not case sensitive and must be unique for the
-     * Amazon Q application or data source.</p>
+     * Amazon Q Business application or data source.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
      * <p> The key for the tag. Keys are not case sensitive and must be unique for the
-     * Amazon Q application or data source.</p>
+     * Amazon Q Business application or data source.</p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
      * <p> The key for the tag. Keys are not case sensitive and must be unique for the
-     * Amazon Q application or data source.</p>
+     * Amazon Q Business application or data source.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
      * <p> The key for the tag. Keys are not case sensitive and must be unique for the
-     * Amazon Q application or data source.</p>
+     * Amazon Q Business application or data source.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p> The key for the tag. Keys are not case sensitive and must be unique for the
-     * Amazon Q application or data source.</p>
+     * Amazon Q Business application or data source.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
      * <p> The key for the tag. Keys are not case sensitive and must be unique for the
-     * Amazon Q application or data source.</p>
+     * Amazon Q Business application or data source.</p>
      */
     inline Tag& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
      * <p> The key for the tag. Keys are not case sensitive and must be unique for the
-     * Amazon Q application or data source.</p>
+     * Amazon Q Business application or data source.</p>
      */
     inline Tag& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p> The key for the tag. Keys are not case sensitive and must be unique for the
-     * Amazon Q application or data source.</p>
+     * Amazon Q Business application or data source.</p>
      */
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
 

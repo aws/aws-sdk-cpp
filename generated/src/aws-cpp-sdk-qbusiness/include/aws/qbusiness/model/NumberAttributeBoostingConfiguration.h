@@ -27,7 +27,7 @@ namespace Model
   /**
    * <p>Provides information on boosting <code>NUMBER</code> type document
    * attributes.</p> <p>For more information on how boosting document attributes work
-   * in Amazon Q, see <a
+   * in Amazon Q Business, see <a
    * href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/metadata-boosting.html">Boosting
    * using document attributes</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/NumberAttributeBoostingConfiguration">AWS

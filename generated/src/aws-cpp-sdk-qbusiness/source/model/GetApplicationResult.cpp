@@ -79,6 +79,12 @@ GetApplicationResult& GetApplicationResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("identityCenterApplicationArn"))
+  {
+    m_identityCenterApplicationArn = jsonValue.GetString("identityCenterApplicationArn");
+
+  }
+
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");

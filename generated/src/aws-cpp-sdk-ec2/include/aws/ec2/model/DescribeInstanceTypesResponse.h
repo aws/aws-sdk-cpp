@@ -36,51 +36,37 @@ namespace Model
 
 
     /**
-     * <p>The instance type. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>The instance type.</p>
      */
     inline const Aws::Vector<InstanceTypeInfo>& GetInstanceTypes() const{ return m_instanceTypes; }
 
     /**
-     * <p>The instance type. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>The instance type.</p>
      */
     inline void SetInstanceTypes(const Aws::Vector<InstanceTypeInfo>& value) { m_instanceTypes = value; }
 
     /**
-     * <p>The instance type. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>The instance type.</p>
      */
     inline void SetInstanceTypes(Aws::Vector<InstanceTypeInfo>&& value) { m_instanceTypes = std::move(value); }
 
     /**
-     * <p>The instance type. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>The instance type.</p>
      */
     inline DescribeInstanceTypesResponse& WithInstanceTypes(const Aws::Vector<InstanceTypeInfo>& value) { SetInstanceTypes(value); return *this;}
 
     /**
-     * <p>The instance type. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>The instance type.</p>
      */
     inline DescribeInstanceTypesResponse& WithInstanceTypes(Aws::Vector<InstanceTypeInfo>&& value) { SetInstanceTypes(std::move(value)); return *this;}
 
     /**
-     * <p>The instance type. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>The instance type.</p>
      */
     inline DescribeInstanceTypesResponse& AddInstanceTypes(const InstanceTypeInfo& value) { m_instanceTypes.push_back(value); return *this; }
 
     /**
-     * <p>The instance type. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>The instance type.</p>
      */
     inline DescribeInstanceTypesResponse& AddInstanceTypes(InstanceTypeInfo&& value) { m_instanceTypes.push_back(std::move(value)); return *this; }
 

@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Aliases attached to a user id within an Amazon Q application.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Aliases attached to a user id within an Amazon Q Business
+   * application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UserAlias">AWS
    * API Reference</a></p>
    */

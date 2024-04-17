@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The identifier of the data source Amazon Q will generate responses
+   * <p>The identifier of the data source Amazon Q Business will generate responses
    * from.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/EligibleDataSource">AWS
    * API Reference</a></p>

@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>The input doesn't meet the constraints set by the Amazon Q service. Provide
-   * the correct input and try again.</p><p><h3>See Also:</h3>   <a
+   * <p>The input doesn't meet the constraints set by the Amazon Q Business service.
+   * Provide the correct input and try again.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ValidationException">AWS
    * API Reference</a></p>
    */

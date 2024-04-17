@@ -17,6 +17,7 @@ UpdateChatControlsConfigurationRequest::UpdateChatControlsConfigurationRequest()
     m_blockedPhrasesConfigurationUpdateHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
+    m_creatorModeConfigurationHasBeenSet(false),
     m_responseScope(ResponseScope::NOT_SET),
     m_responseScopeHasBeenSet(false),
     m_topicConfigurationsToCreateOrUpdateHasBeenSet(false),
@@ -37,6 +38,12 @@ Aws::String UpdateChatControlsConfigurationRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
+
+  }
+
+  if(m_creatorModeConfigurationHasBeenSet)
+  {
+   payload.WithObject("creatorModeConfiguration", m_creatorModeConfiguration.Jsonize());
 
   }
 
