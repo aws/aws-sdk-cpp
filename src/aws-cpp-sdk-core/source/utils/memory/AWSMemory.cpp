@@ -101,7 +101,7 @@ void Free(void* memoryPtr)
 static void* MemAcquire(aws_allocator* allocator, size_t size)
 {
     (void)allocator; // unused;
-    return Aws::Malloc("MemAcquire", size);
+    return Aws::Malloc("CrtMemAcquire", size);
 }
 
 static void MemRelease(aws_allocator* allocator, void* ptr)

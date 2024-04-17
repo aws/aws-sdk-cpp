@@ -18,10 +18,19 @@
 namespace Aws
 {
 #ifdef USE_AWS_MEMORY_MANAGEMENT
+    /**
+     * Std allocator interface that is used for all STL types in CRT library
+     * in the event that Custom Memory Management is being used.
+     *
+     * Both SDK and CRT STL allocators are going to call the same SDK memory allocation methods.
+     * However, we should keep them separated
+     * to allow SDK to use the allocator when CRT is not initialized or already terminated.
+     */
     template< typename T > using CrtAllocator = Aws::Crt::StlAllocator<T>;
 
     /**
-     * Std allocator interface that is used for all STL types in the event that Custom Memory Management is being used.
+     * Std allocator interface that is used for all STL types in the SDK
+     * in the event that Custom Memory Management is being used.
      */  
     template <typename T>
     class Allocator : public std::allocator<T>
