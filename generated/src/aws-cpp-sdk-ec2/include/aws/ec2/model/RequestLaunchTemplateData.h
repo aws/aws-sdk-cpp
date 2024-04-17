@@ -246,50 +246,42 @@ namespace Model
 
 
     /**
-     * <p>One or more network interfaces. If you specify a network interface, you must
-     * specify any security groups and subnets as part of the network interface.</p>
+     * <p>The network interfaces for the instance.</p>
      */
     inline const Aws::Vector<LaunchTemplateInstanceNetworkInterfaceSpecificationRequest>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
 
     /**
-     * <p>One or more network interfaces. If you specify a network interface, you must
-     * specify any security groups and subnets as part of the network interface.</p>
+     * <p>The network interfaces for the instance.</p>
      */
     inline bool NetworkInterfacesHasBeenSet() const { return m_networkInterfacesHasBeenSet; }
 
     /**
-     * <p>One or more network interfaces. If you specify a network interface, you must
-     * specify any security groups and subnets as part of the network interface.</p>
+     * <p>The network interfaces for the instance.</p>
      */
     inline void SetNetworkInterfaces(const Aws::Vector<LaunchTemplateInstanceNetworkInterfaceSpecificationRequest>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
 
     /**
-     * <p>One or more network interfaces. If you specify a network interface, you must
-     * specify any security groups and subnets as part of the network interface.</p>
+     * <p>The network interfaces for the instance.</p>
      */
     inline void SetNetworkInterfaces(Aws::Vector<LaunchTemplateInstanceNetworkInterfaceSpecificationRequest>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
 
     /**
-     * <p>One or more network interfaces. If you specify a network interface, you must
-     * specify any security groups and subnets as part of the network interface.</p>
+     * <p>The network interfaces for the instance.</p>
      */
     inline RequestLaunchTemplateData& WithNetworkInterfaces(const Aws::Vector<LaunchTemplateInstanceNetworkInterfaceSpecificationRequest>& value) { SetNetworkInterfaces(value); return *this;}
 
     /**
-     * <p>One or more network interfaces. If you specify a network interface, you must
-     * specify any security groups and subnets as part of the network interface.</p>
+     * <p>The network interfaces for the instance.</p>
      */
     inline RequestLaunchTemplateData& WithNetworkInterfaces(Aws::Vector<LaunchTemplateInstanceNetworkInterfaceSpecificationRequest>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
 
     /**
-     * <p>One or more network interfaces. If you specify a network interface, you must
-     * specify any security groups and subnets as part of the network interface.</p>
+     * <p>The network interfaces for the instance.</p>
      */
     inline RequestLaunchTemplateData& AddNetworkInterfaces(const LaunchTemplateInstanceNetworkInterfaceSpecificationRequest& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
 
     /**
-     * <p>One or more network interfaces. If you specify a network interface, you must
-     * specify any security groups and subnets as part of the network interface.</p>
+     * <p>The network interfaces for the instance.</p>
      */
     inline RequestLaunchTemplateData& AddNetworkInterfaces(LaunchTemplateInstanceNetworkInterfaceSpecificationRequest&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
 
@@ -1163,111 +1155,138 @@ namespace Model
 
 
     /**
-     * <p>One or more security group IDs. You can create a security group using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
+     * <p>The IDs of the security groups.</p> <p>If you specify a network interface,
+     * you must specify any security groups as part of the network interface instead of
+     * using this parameter.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
     /**
-     * <p>One or more security group IDs. You can create a security group using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
+     * <p>The IDs of the security groups.</p> <p>If you specify a network interface,
+     * you must specify any security groups as part of the network interface instead of
+     * using this parameter.</p>
      */
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
-     * <p>One or more security group IDs. You can create a security group using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
+     * <p>The IDs of the security groups.</p> <p>If you specify a network interface,
+     * you must specify any security groups as part of the network interface instead of
+     * using this parameter.</p>
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
-     * <p>One or more security group IDs. You can create a security group using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
+     * <p>The IDs of the security groups.</p> <p>If you specify a network interface,
+     * you must specify any security groups as part of the network interface instead of
+     * using this parameter.</p>
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
-     * <p>One or more security group IDs. You can create a security group using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
+     * <p>The IDs of the security groups.</p> <p>If you specify a network interface,
+     * you must specify any security groups as part of the network interface instead of
+     * using this parameter.</p>
      */
     inline RequestLaunchTemplateData& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
     /**
-     * <p>One or more security group IDs. You can create a security group using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
+     * <p>The IDs of the security groups.</p> <p>If you specify a network interface,
+     * you must specify any security groups as part of the network interface instead of
+     * using this parameter.</p>
      */
     inline RequestLaunchTemplateData& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more security group IDs. You can create a security group using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
+     * <p>The IDs of the security groups.</p> <p>If you specify a network interface,
+     * you must specify any security groups as part of the network interface instead of
+     * using this parameter.</p>
      */
     inline RequestLaunchTemplateData& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more security group IDs. You can create a security group using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
+     * <p>The IDs of the security groups.</p> <p>If you specify a network interface,
+     * you must specify any security groups as part of the network interface instead of
+     * using this parameter.</p>
      */
     inline RequestLaunchTemplateData& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more security group IDs. You can create a security group using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
+     * <p>The IDs of the security groups.</p> <p>If you specify a network interface,
+     * you must specify any security groups as part of the network interface instead of
+     * using this parameter.</p>
      */
     inline RequestLaunchTemplateData& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
 
     /**
-     * <p>One or more security group names. For a nondefault VPC, you must use security
-     * group IDs instead.</p>
+     * <p>The names of the security groups. For a nondefault VPC, you must use security
+     * group IDs instead.</p> <p>If you specify a network interface, you must specify
+     * any security groups as part of the network interface instead of using this
+     * parameter.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
 
     /**
-     * <p>One or more security group names. For a nondefault VPC, you must use security
-     * group IDs instead.</p>
+     * <p>The names of the security groups. For a nondefault VPC, you must use security
+     * group IDs instead.</p> <p>If you specify a network interface, you must specify
+     * any security groups as part of the network interface instead of using this
+     * parameter.</p>
      */
     inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
 
     /**
-     * <p>One or more security group names. For a nondefault VPC, you must use security
-     * group IDs instead.</p>
+     * <p>The names of the security groups. For a nondefault VPC, you must use security
+     * group IDs instead.</p> <p>If you specify a network interface, you must specify
+     * any security groups as part of the network interface instead of using this
+     * parameter.</p>
      */
     inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
     /**
-     * <p>One or more security group names. For a nondefault VPC, you must use security
-     * group IDs instead.</p>
+     * <p>The names of the security groups. For a nondefault VPC, you must use security
+     * group IDs instead.</p> <p>If you specify a network interface, you must specify
+     * any security groups as part of the network interface instead of using this
+     * parameter.</p>
      */
     inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
 
     /**
-     * <p>One or more security group names. For a nondefault VPC, you must use security
-     * group IDs instead.</p>
+     * <p>The names of the security groups. For a nondefault VPC, you must use security
+     * group IDs instead.</p> <p>If you specify a network interface, you must specify
+     * any security groups as part of the network interface instead of using this
+     * parameter.</p>
      */
     inline RequestLaunchTemplateData& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
 
     /**
-     * <p>One or more security group names. For a nondefault VPC, you must use security
-     * group IDs instead.</p>
+     * <p>The names of the security groups. For a nondefault VPC, you must use security
+     * group IDs instead.</p> <p>If you specify a network interface, you must specify
+     * any security groups as part of the network interface instead of using this
+     * parameter.</p>
      */
     inline RequestLaunchTemplateData& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
 
     /**
-     * <p>One or more security group names. For a nondefault VPC, you must use security
-     * group IDs instead.</p>
+     * <p>The names of the security groups. For a nondefault VPC, you must use security
+     * group IDs instead.</p> <p>If you specify a network interface, you must specify
+     * any security groups as part of the network interface instead of using this
+     * parameter.</p>
      */
     inline RequestLaunchTemplateData& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
     /**
-     * <p>One or more security group names. For a nondefault VPC, you must use security
-     * group IDs instead.</p>
+     * <p>The names of the security groups. For a nondefault VPC, you must use security
+     * group IDs instead.</p> <p>If you specify a network interface, you must specify
+     * any security groups as part of the network interface instead of using this
+     * parameter.</p>
      */
     inline RequestLaunchTemplateData& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more security group names. For a nondefault VPC, you must use security
-     * group IDs instead.</p>
+     * <p>The names of the security groups. For a nondefault VPC, you must use security
+     * group IDs instead.</p> <p>If you specify a network interface, you must specify
+     * any security groups as part of the network interface instead of using this
+     * parameter.</p>
      */
     inline RequestLaunchTemplateData& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 

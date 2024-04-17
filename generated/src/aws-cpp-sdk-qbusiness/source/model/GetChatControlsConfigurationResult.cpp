@@ -37,6 +37,12 @@ GetChatControlsConfigurationResult& GetChatControlsConfigurationResult::operator
 
   }
 
+  if(jsonValue.ValueExists("creatorModeConfiguration"))
+  {
+    m_creatorModeConfiguration = jsonValue.GetObject("creatorModeConfiguration");
+
+  }
+
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");

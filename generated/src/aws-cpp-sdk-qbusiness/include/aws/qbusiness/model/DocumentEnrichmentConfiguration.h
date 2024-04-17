@@ -45,49 +45,49 @@ namespace Model
 
     /**
      * <p>Configuration information to alter document attributes or metadata fields and
-     * content when ingesting documents into Amazon Q.</p>
+     * content when ingesting documents into Amazon Q Business.</p>
      */
     inline const Aws::Vector<InlineDocumentEnrichmentConfiguration>& GetInlineConfigurations() const{ return m_inlineConfigurations; }
 
     /**
      * <p>Configuration information to alter document attributes or metadata fields and
-     * content when ingesting documents into Amazon Q.</p>
+     * content when ingesting documents into Amazon Q Business.</p>
      */
     inline bool InlineConfigurationsHasBeenSet() const { return m_inlineConfigurationsHasBeenSet; }
 
     /**
      * <p>Configuration information to alter document attributes or metadata fields and
-     * content when ingesting documents into Amazon Q.</p>
+     * content when ingesting documents into Amazon Q Business.</p>
      */
     inline void SetInlineConfigurations(const Aws::Vector<InlineDocumentEnrichmentConfiguration>& value) { m_inlineConfigurationsHasBeenSet = true; m_inlineConfigurations = value; }
 
     /**
      * <p>Configuration information to alter document attributes or metadata fields and
-     * content when ingesting documents into Amazon Q.</p>
+     * content when ingesting documents into Amazon Q Business.</p>
      */
     inline void SetInlineConfigurations(Aws::Vector<InlineDocumentEnrichmentConfiguration>&& value) { m_inlineConfigurationsHasBeenSet = true; m_inlineConfigurations = std::move(value); }
 
     /**
      * <p>Configuration information to alter document attributes or metadata fields and
-     * content when ingesting documents into Amazon Q.</p>
+     * content when ingesting documents into Amazon Q Business.</p>
      */
     inline DocumentEnrichmentConfiguration& WithInlineConfigurations(const Aws::Vector<InlineDocumentEnrichmentConfiguration>& value) { SetInlineConfigurations(value); return *this;}
 
     /**
      * <p>Configuration information to alter document attributes or metadata fields and
-     * content when ingesting documents into Amazon Q.</p>
+     * content when ingesting documents into Amazon Q Business.</p>
      */
     inline DocumentEnrichmentConfiguration& WithInlineConfigurations(Aws::Vector<InlineDocumentEnrichmentConfiguration>&& value) { SetInlineConfigurations(std::move(value)); return *this;}
 
     /**
      * <p>Configuration information to alter document attributes or metadata fields and
-     * content when ingesting documents into Amazon Q.</p>
+     * content when ingesting documents into Amazon Q Business.</p>
      */
     inline DocumentEnrichmentConfiguration& AddInlineConfigurations(const InlineDocumentEnrichmentConfiguration& value) { m_inlineConfigurationsHasBeenSet = true; m_inlineConfigurations.push_back(value); return *this; }
 
     /**
      * <p>Configuration information to alter document attributes or metadata fields and
-     * content when ingesting documents into Amazon Q.</p>
+     * content when ingesting documents into Amazon Q Business.</p>
      */
     inline DocumentEnrichmentConfiguration& AddInlineConfigurations(InlineDocumentEnrichmentConfiguration&& value) { m_inlineConfigurationsHasBeenSet = true; m_inlineConfigurations.push_back(std::move(value)); return *this; }
 

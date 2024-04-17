@@ -33,42 +33,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier the application attached to the Amazon Q plugin.</p>
+     * <p>The identifier the application attached to the Amazon Q Business plugin.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * <p>The identifier the application attached to the Amazon Q plugin.</p>
+     * <p>The identifier the application attached to the Amazon Q Business plugin.</p>
      */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
 
     /**
-     * <p>The identifier the application attached to the Amazon Q plugin.</p>
+     * <p>The identifier the application attached to the Amazon Q Business plugin.</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * <p>The identifier the application attached to the Amazon Q plugin.</p>
+     * <p>The identifier the application attached to the Amazon Q Business plugin.</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * <p>The identifier the application attached to the Amazon Q plugin.</p>
+     * <p>The identifier the application attached to the Amazon Q Business plugin.</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * <p>The identifier the application attached to the Amazon Q plugin.</p>
+     * <p>The identifier the application attached to the Amazon Q Business plugin.</p>
      */
     inline DeletePluginRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * <p>The identifier the application attached to the Amazon Q plugin.</p>
+     * <p>The identifier the application attached to the Amazon Q Business plugin.</p>
      */
     inline DeletePluginRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier the application attached to the Amazon Q plugin.</p>
+     * <p>The identifier the application attached to the Amazon Q Business plugin.</p>
      */
     inline DeletePluginRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 

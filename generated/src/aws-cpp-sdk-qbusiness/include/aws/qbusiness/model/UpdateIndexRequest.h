@@ -36,161 +36,169 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the Amazon Q application connected to the index.</p>
+     * <p>The identifier of the Amazon Q Business application connected to the
+     * index.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * <p>The identifier of the Amazon Q application connected to the index.</p>
+     * <p>The identifier of the Amazon Q Business application connected to the
+     * index.</p>
      */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the Amazon Q application connected to the index.</p>
+     * <p>The identifier of the Amazon Q Business application connected to the
+     * index.</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * <p>The identifier of the Amazon Q application connected to the index.</p>
+     * <p>The identifier of the Amazon Q Business application connected to the
+     * index.</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon Q application connected to the index.</p>
+     * <p>The identifier of the Amazon Q Business application connected to the
+     * index.</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon Q application connected to the index.</p>
+     * <p>The identifier of the Amazon Q Business application connected to the
+     * index.</p>
      */
     inline UpdateIndexRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q application connected to the index.</p>
+     * <p>The identifier of the Amazon Q Business application connected to the
+     * index.</p>
      */
     inline UpdateIndexRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q application connected to the index.</p>
+     * <p>The identifier of the Amazon Q Business application connected to the
+     * index.</p>
      */
     inline UpdateIndexRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
     /**
-     * <p>The storage capacity units you want to provision for your Amazon Q index. You
-     * can add and remove capacity to fit your usage needs.</p>
+     * <p>The storage capacity units you want to provision for your Amazon Q Business
+     * index. You can add and remove capacity to fit your usage needs.</p>
      */
     inline const IndexCapacityConfiguration& GetCapacityConfiguration() const{ return m_capacityConfiguration; }
 
     /**
-     * <p>The storage capacity units you want to provision for your Amazon Q index. You
-     * can add and remove capacity to fit your usage needs.</p>
+     * <p>The storage capacity units you want to provision for your Amazon Q Business
+     * index. You can add and remove capacity to fit your usage needs.</p>
      */
     inline bool CapacityConfigurationHasBeenSet() const { return m_capacityConfigurationHasBeenSet; }
 
     /**
-     * <p>The storage capacity units you want to provision for your Amazon Q index. You
-     * can add and remove capacity to fit your usage needs.</p>
+     * <p>The storage capacity units you want to provision for your Amazon Q Business
+     * index. You can add and remove capacity to fit your usage needs.</p>
      */
     inline void SetCapacityConfiguration(const IndexCapacityConfiguration& value) { m_capacityConfigurationHasBeenSet = true; m_capacityConfiguration = value; }
 
     /**
-     * <p>The storage capacity units you want to provision for your Amazon Q index. You
-     * can add and remove capacity to fit your usage needs.</p>
+     * <p>The storage capacity units you want to provision for your Amazon Q Business
+     * index. You can add and remove capacity to fit your usage needs.</p>
      */
     inline void SetCapacityConfiguration(IndexCapacityConfiguration&& value) { m_capacityConfigurationHasBeenSet = true; m_capacityConfiguration = std::move(value); }
 
     /**
-     * <p>The storage capacity units you want to provision for your Amazon Q index. You
-     * can add and remove capacity to fit your usage needs.</p>
+     * <p>The storage capacity units you want to provision for your Amazon Q Business
+     * index. You can add and remove capacity to fit your usage needs.</p>
      */
     inline UpdateIndexRequest& WithCapacityConfiguration(const IndexCapacityConfiguration& value) { SetCapacityConfiguration(value); return *this;}
 
     /**
-     * <p>The storage capacity units you want to provision for your Amazon Q index. You
-     * can add and remove capacity to fit your usage needs.</p>
+     * <p>The storage capacity units you want to provision for your Amazon Q Business
+     * index. You can add and remove capacity to fit your usage needs.</p>
      */
     inline UpdateIndexRequest& WithCapacityConfiguration(IndexCapacityConfiguration&& value) { SetCapacityConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>The description of the Amazon Q index.</p>
+     * <p>The description of the Amazon Q Business index.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description of the Amazon Q index.</p>
+     * <p>The description of the Amazon Q Business index.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The description of the Amazon Q index.</p>
+     * <p>The description of the Amazon Q Business index.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description of the Amazon Q index.</p>
+     * <p>The description of the Amazon Q Business index.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description of the Amazon Q index.</p>
+     * <p>The description of the Amazon Q Business index.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description of the Amazon Q index.</p>
+     * <p>The description of the Amazon Q Business index.</p>
      */
     inline UpdateIndexRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description of the Amazon Q index.</p>
+     * <p>The description of the Amazon Q Business index.</p>
      */
     inline UpdateIndexRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description of the Amazon Q index.</p>
+     * <p>The description of the Amazon Q Business index.</p>
      */
     inline UpdateIndexRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>The name of the Amazon Q index.</p>
+     * <p>The name of the Amazon Q Business index.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
     /**
-     * <p>The name of the Amazon Q index.</p>
+     * <p>The name of the Amazon Q Business index.</p>
      */
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
 
     /**
-     * <p>The name of the Amazon Q index.</p>
+     * <p>The name of the Amazon Q Business index.</p>
      */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
-     * <p>The name of the Amazon Q index.</p>
+     * <p>The name of the Amazon Q Business index.</p>
      */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
-     * <p>The name of the Amazon Q index.</p>
+     * <p>The name of the Amazon Q Business index.</p>
      */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
     /**
-     * <p>The name of the Amazon Q index.</p>
+     * <p>The name of the Amazon Q Business index.</p>
      */
     inline UpdateIndexRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
 
     /**
-     * <p>The name of the Amazon Q index.</p>
+     * <p>The name of the Amazon Q Business index.</p>
      */
     inline UpdateIndexRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Amazon Q index.</p>
+     * <p>The name of the Amazon Q Business index.</p>
      */
     inline UpdateIndexRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
@@ -277,42 +285,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the Amazon Q index.</p>
+     * <p>The identifier of the Amazon Q Business index.</p>
      */
     inline const Aws::String& GetIndexId() const{ return m_indexId; }
 
     /**
-     * <p>The identifier of the Amazon Q index.</p>
+     * <p>The identifier of the Amazon Q Business index.</p>
      */
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the Amazon Q index.</p>
+     * <p>The identifier of the Amazon Q Business index.</p>
      */
     inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
 
     /**
-     * <p>The identifier of the Amazon Q index.</p>
+     * <p>The identifier of the Amazon Q Business index.</p>
      */
     inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon Q index.</p>
+     * <p>The identifier of the Amazon Q Business index.</p>
      */
     inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon Q index.</p>
+     * <p>The identifier of the Amazon Q Business index.</p>
      */
     inline UpdateIndexRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q index.</p>
+     * <p>The identifier of the Amazon Q Business index.</p>
      */
     inline UpdateIndexRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q index.</p>
+     * <p>The identifier of the Amazon Q Business index.</p>
      */
     inline UpdateIndexRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
 

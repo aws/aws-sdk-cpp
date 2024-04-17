@@ -1650,8 +1650,10 @@ namespace EC2
          * you choose to terminate the instances, the Spot Fleet request enters the
          * <code>cancelled_terminating</code> state. Otherwise, the Spot Fleet request
          * enters the <code>cancelled_running</code> state and the instances continue to
-         * run until they are interrupted or you terminate them manually.</p><p><h3>See
-         * Also:</h3>   <a
+         * run until they are interrupted or you terminate them manually.</p> <p
+         * class="title"> <b>Restrictions</b> </p> <ul> <li> <p>You can delete up to 100
+         * fleets in a single request. If you exceed the specified number, no fleets are
+         * deleted.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotFleetRequests">AWS
          * API Reference</a></p>
          */
@@ -4766,15 +4768,16 @@ namespace EC2
          * EC2 Fleet enters the <code>deleted_running</code> state, and the instances
          * continue to run until they are interrupted or you terminate them manually.</p>
          * <p>For <code>instant</code> fleets, EC2 Fleet must terminate the instances when
-         * the fleet is deleted. A deleted <code>instant</code> fleet with running
-         * instances is not supported.</p> <p class="title"> <b>Restrictions</b> </p> <ul>
-         * <li> <p>You can delete up to 25 <code>instant</code> fleets in a single request.
-         * If you exceed this number, no <code>instant</code> fleets are deleted and an
-         * error is returned. There is no restriction on the number of fleets of type
-         * <code>maintain</code> or <code>request</code> that can be deleted in a single
-         * request.</p> </li> <li> <p>Up to 1000 instances can be terminated in a single
-         * request to delete <code>instant</code> fleets.</p> </li> </ul> <p>For more
-         * information, see <a
+         * the fleet is deleted. Up to 1000 instances can be terminated in a single request
+         * to delete <code>instant</code> fleets. A deleted <code>instant</code> fleet with
+         * running instances is not supported.</p> <p class="title"> <b>Restrictions</b>
+         * </p> <ul> <li> <p>You can delete up to 25 fleets of type <code>instant</code> in
+         * a single request.</p> </li> <li> <p>You can delete up to 100 fleets of type
+         * <code>maintain</code> or <code>request</code> in a single request.</p> </li>
+         * <li> <p>You can delete up to 125 fleets in a single request, provided you do not
+         * exceed the quota for each fleet type, as specified above.</p> </li> <li> <p>If
+         * you exceed the specified number of fleets to delete, no fleets are deleted.</p>
+         * </li> </ul> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#delete-fleet">Delete
          * an EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>  
          * <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFleets">AWS
@@ -8393,10 +8396,9 @@ namespace EC2
         }
 
         /**
-         * <p>Returns a list of all instance types offered. The results can be filtered by
-         * location (Region or Availability Zone). If no location is specified, the
-         * instance types offered in the current Region are returned.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the instance types that are offered for the specified location. If no
+         * location is specified, the default is to list the instance types that are
+         * offered in the current Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypeOfferings">AWS
          * API Reference</a></p>
          */
@@ -8421,9 +8423,9 @@ namespace EC2
         }
 
         /**
-         * <p>Describes the details of the instance types that are offered in a location.
-         * The results can be filtered by the attributes of the instance
-         * types.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified instance types. By default, all instance types for
+         * the current Region are described. Alternatively, you can filter the
+         * results.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypes">AWS
          * API Reference</a></p>
          */
@@ -13083,8 +13085,11 @@ namespace EC2
 
         /**
          * <p>Retrieve a JPG-format screenshot of a running instance to help with
-         * troubleshooting.</p> <p>The returned content is Base64-encoded.</p><p><h3>See
-         * Also:</h3>   <a
+         * troubleshooting.</p> <p>The returned content is Base64-encoded.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/troubleshoot-unreachable-instance.html#instance-console-console-output">Instance
+         * console output</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleScreenshot">AWS
          * API Reference</a></p>
          */
@@ -15243,8 +15248,9 @@ namespace EC2
          * <p>Modifies the default instance metadata service (IMDS) settings at the account
          * level in the specified Amazon Web Services&#x2028; Region.</p>  <p>To
          * remove a parameter's account-level default setting, specify
-         * <code>no-preference</code>. At instance launch, the value will come from the
-         * AMI, or from the launch parameter if specified. For more information, see <a
+         * <code>no-preference</code>. If an account-level setting is cleared with
+         * <code>no-preference</code>, then the instance launch considers the other
+         * instance metadata settings. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html#instance-metadata-options-order-of-precedence">Order
          * of precedence for instance metadata options</a> in the <i>Amazon EC2 User
          * Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -15275,7 +15281,7 @@ namespace EC2
          * <p>Modify the instance metadata parameters on a running or stopped instance.
          * When you modify the parameters on a stopped instance, they are applied when the
          * instance is started. When you modify the parameters on a running instance, the
-         * API responds with a state of “pending��. After the parameter modifications are
+         * API responds with a state of “pending”. After the parameter modifications are
          * successfully applied to the instance, the state of the modifications changes
          * from “pending” to “applied” in subsequent describe-instances API calls. For more
          * information, see <a

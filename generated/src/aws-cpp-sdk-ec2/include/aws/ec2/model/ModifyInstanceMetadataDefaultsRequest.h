@@ -88,26 +88,34 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of hops that the metadata token can travel.</p>
-     * <p>Minimum: <code>1</code> </p> <p>Maximum: <code>64</code> </p>
+     * <p>The maximum number of hops that the metadata token can travel. To indicate no
+     * preference, specify <code>-1</code>.</p> <p>Possible values: Integers from
+     * <code>1</code> to <code>64</code>, and <code>-1</code> to indicate no
+     * preference</p>
      */
     inline int GetHttpPutResponseHopLimit() const{ return m_httpPutResponseHopLimit; }
 
     /**
-     * <p>The maximum number of hops that the metadata token can travel.</p>
-     * <p>Minimum: <code>1</code> </p> <p>Maximum: <code>64</code> </p>
+     * <p>The maximum number of hops that the metadata token can travel. To indicate no
+     * preference, specify <code>-1</code>.</p> <p>Possible values: Integers from
+     * <code>1</code> to <code>64</code>, and <code>-1</code> to indicate no
+     * preference</p>
      */
     inline bool HttpPutResponseHopLimitHasBeenSet() const { return m_httpPutResponseHopLimitHasBeenSet; }
 
     /**
-     * <p>The maximum number of hops that the metadata token can travel.</p>
-     * <p>Minimum: <code>1</code> </p> <p>Maximum: <code>64</code> </p>
+     * <p>The maximum number of hops that the metadata token can travel. To indicate no
+     * preference, specify <code>-1</code>.</p> <p>Possible values: Integers from
+     * <code>1</code> to <code>64</code>, and <code>-1</code> to indicate no
+     * preference</p>
      */
     inline void SetHttpPutResponseHopLimit(int value) { m_httpPutResponseHopLimitHasBeenSet = true; m_httpPutResponseHopLimit = value; }
 
     /**
-     * <p>The maximum number of hops that the metadata token can travel.</p>
-     * <p>Minimum: <code>1</code> </p> <p>Maximum: <code>64</code> </p>
+     * <p>The maximum number of hops that the metadata token can travel. To indicate no
+     * preference, specify <code>-1</code>.</p> <p>Possible values: Integers from
+     * <code>1</code> to <code>64</code>, and <code>-1</code> to indicate no
+     * preference</p>
      */
     inline ModifyInstanceMetadataDefaultsRequest& WithHttpPutResponseHopLimit(int value) { SetHttpPutResponseHopLimit(value); return *this;}
 

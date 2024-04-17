@@ -27,10 +27,10 @@ namespace Model
   /**
    * <p>Provides the configuration information for invoking a Lambda function in
    * Lambda to alter document metadata and content when ingesting documents into
-   * Amazon Q.</p> <p>You can configure your Lambda function using <a
+   * Amazon Q Business.</p> <p>You can configure your Lambda function using <a
    * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentEnrichmentConfiguration.html">PreExtractionHookConfiguration</a>
    * if you want to apply advanced alterations on the original or raw documents.</p>
-   * <p>If you want to apply advanced alterations on the Amazon Q structured
+   * <p>If you want to apply advanced alterations on the Amazon Q Business structured
    * documents, you must configure your Lambda function using <a
    * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentEnrichmentConfiguration.html">PostExtractionHookConfiguration</a>.</p>
    * <p>You can only invoke one Lambda function. However, this function can invoke
@@ -52,42 +52,48 @@ namespace Model
     /**
      * <p>The condition used for when a Lambda function should be invoked.</p> <p>For
      * example, you can specify a condition that if there are empty date-time values,
-     * then Amazon Q should invoke a function that inserts the current date-time.</p>
+     * then Amazon Q Business should invoke a function that inserts the current
+     * date-time.</p>
      */
     inline const DocumentAttributeCondition& GetInvocationCondition() const{ return m_invocationCondition; }
 
     /**
      * <p>The condition used for when a Lambda function should be invoked.</p> <p>For
      * example, you can specify a condition that if there are empty date-time values,
-     * then Amazon Q should invoke a function that inserts the current date-time.</p>
+     * then Amazon Q Business should invoke a function that inserts the current
+     * date-time.</p>
      */
     inline bool InvocationConditionHasBeenSet() const { return m_invocationConditionHasBeenSet; }
 
     /**
      * <p>The condition used for when a Lambda function should be invoked.</p> <p>For
      * example, you can specify a condition that if there are empty date-time values,
-     * then Amazon Q should invoke a function that inserts the current date-time.</p>
+     * then Amazon Q Business should invoke a function that inserts the current
+     * date-time.</p>
      */
     inline void SetInvocationCondition(const DocumentAttributeCondition& value) { m_invocationConditionHasBeenSet = true; m_invocationCondition = value; }
 
     /**
      * <p>The condition used for when a Lambda function should be invoked.</p> <p>For
      * example, you can specify a condition that if there are empty date-time values,
-     * then Amazon Q should invoke a function that inserts the current date-time.</p>
+     * then Amazon Q Business should invoke a function that inserts the current
+     * date-time.</p>
      */
     inline void SetInvocationCondition(DocumentAttributeCondition&& value) { m_invocationConditionHasBeenSet = true; m_invocationCondition = std::move(value); }
 
     /**
      * <p>The condition used for when a Lambda function should be invoked.</p> <p>For
      * example, you can specify a condition that if there are empty date-time values,
-     * then Amazon Q should invoke a function that inserts the current date-time.</p>
+     * then Amazon Q Business should invoke a function that inserts the current
+     * date-time.</p>
      */
     inline HookConfiguration& WithInvocationCondition(const DocumentAttributeCondition& value) { SetInvocationCondition(value); return *this;}
 
     /**
      * <p>The condition used for when a Lambda function should be invoked.</p> <p>For
      * example, you can specify a condition that if there are empty date-time values,
-     * then Amazon Q should invoke a function that inserts the current date-time.</p>
+     * then Amazon Q Business should invoke a function that inserts the current
+     * date-time.</p>
      */
     inline HookConfiguration& WithInvocationCondition(DocumentAttributeCondition&& value) { SetInvocationCondition(std::move(value)); return *this;}
 

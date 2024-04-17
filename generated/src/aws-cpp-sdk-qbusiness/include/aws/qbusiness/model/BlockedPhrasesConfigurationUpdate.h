@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Updates a blocked phrases configuration in your Amazon Q
+   * <p>Updates a blocked phrases configuration in your Amazon Q Business
    * application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/BlockedPhrasesConfigurationUpdate">AWS
    * API Reference</a></p>
@@ -40,102 +40,111 @@ namespace Model
 
 
     /**
-     * <p>Creates or updates a blocked phrases configuration in your Amazon Q
+     * <p>Creates or updates a blocked phrases configuration in your Amazon Q Business
      * application.</p>
      */
     inline const Aws::Vector<Aws::String>& GetBlockedPhrasesToCreateOrUpdate() const{ return m_blockedPhrasesToCreateOrUpdate; }
 
     /**
-     * <p>Creates or updates a blocked phrases configuration in your Amazon Q
+     * <p>Creates or updates a blocked phrases configuration in your Amazon Q Business
      * application.</p>
      */
     inline bool BlockedPhrasesToCreateOrUpdateHasBeenSet() const { return m_blockedPhrasesToCreateOrUpdateHasBeenSet; }
 
     /**
-     * <p>Creates or updates a blocked phrases configuration in your Amazon Q
+     * <p>Creates or updates a blocked phrases configuration in your Amazon Q Business
      * application.</p>
      */
     inline void SetBlockedPhrasesToCreateOrUpdate(const Aws::Vector<Aws::String>& value) { m_blockedPhrasesToCreateOrUpdateHasBeenSet = true; m_blockedPhrasesToCreateOrUpdate = value; }
 
     /**
-     * <p>Creates or updates a blocked phrases configuration in your Amazon Q
+     * <p>Creates or updates a blocked phrases configuration in your Amazon Q Business
      * application.</p>
      */
     inline void SetBlockedPhrasesToCreateOrUpdate(Aws::Vector<Aws::String>&& value) { m_blockedPhrasesToCreateOrUpdateHasBeenSet = true; m_blockedPhrasesToCreateOrUpdate = std::move(value); }
 
     /**
-     * <p>Creates or updates a blocked phrases configuration in your Amazon Q
+     * <p>Creates or updates a blocked phrases configuration in your Amazon Q Business
      * application.</p>
      */
     inline BlockedPhrasesConfigurationUpdate& WithBlockedPhrasesToCreateOrUpdate(const Aws::Vector<Aws::String>& value) { SetBlockedPhrasesToCreateOrUpdate(value); return *this;}
 
     /**
-     * <p>Creates or updates a blocked phrases configuration in your Amazon Q
+     * <p>Creates or updates a blocked phrases configuration in your Amazon Q Business
      * application.</p>
      */
     inline BlockedPhrasesConfigurationUpdate& WithBlockedPhrasesToCreateOrUpdate(Aws::Vector<Aws::String>&& value) { SetBlockedPhrasesToCreateOrUpdate(std::move(value)); return *this;}
 
     /**
-     * <p>Creates or updates a blocked phrases configuration in your Amazon Q
+     * <p>Creates or updates a blocked phrases configuration in your Amazon Q Business
      * application.</p>
      */
     inline BlockedPhrasesConfigurationUpdate& AddBlockedPhrasesToCreateOrUpdate(const Aws::String& value) { m_blockedPhrasesToCreateOrUpdateHasBeenSet = true; m_blockedPhrasesToCreateOrUpdate.push_back(value); return *this; }
 
     /**
-     * <p>Creates or updates a blocked phrases configuration in your Amazon Q
+     * <p>Creates or updates a blocked phrases configuration in your Amazon Q Business
      * application.</p>
      */
     inline BlockedPhrasesConfigurationUpdate& AddBlockedPhrasesToCreateOrUpdate(Aws::String&& value) { m_blockedPhrasesToCreateOrUpdateHasBeenSet = true; m_blockedPhrasesToCreateOrUpdate.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Creates or updates a blocked phrases configuration in your Amazon Q
+     * <p>Creates or updates a blocked phrases configuration in your Amazon Q Business
      * application.</p>
      */
     inline BlockedPhrasesConfigurationUpdate& AddBlockedPhrasesToCreateOrUpdate(const char* value) { m_blockedPhrasesToCreateOrUpdateHasBeenSet = true; m_blockedPhrasesToCreateOrUpdate.push_back(value); return *this; }
 
 
     /**
-     * <p>Deletes a blocked phrases configuration in your Amazon Q application.</p>
+     * <p>Deletes a blocked phrases configuration in your Amazon Q Business
+     * application.</p>
      */
     inline const Aws::Vector<Aws::String>& GetBlockedPhrasesToDelete() const{ return m_blockedPhrasesToDelete; }
 
     /**
-     * <p>Deletes a blocked phrases configuration in your Amazon Q application.</p>
+     * <p>Deletes a blocked phrases configuration in your Amazon Q Business
+     * application.</p>
      */
     inline bool BlockedPhrasesToDeleteHasBeenSet() const { return m_blockedPhrasesToDeleteHasBeenSet; }
 
     /**
-     * <p>Deletes a blocked phrases configuration in your Amazon Q application.</p>
+     * <p>Deletes a blocked phrases configuration in your Amazon Q Business
+     * application.</p>
      */
     inline void SetBlockedPhrasesToDelete(const Aws::Vector<Aws::String>& value) { m_blockedPhrasesToDeleteHasBeenSet = true; m_blockedPhrasesToDelete = value; }
 
     /**
-     * <p>Deletes a blocked phrases configuration in your Amazon Q application.</p>
+     * <p>Deletes a blocked phrases configuration in your Amazon Q Business
+     * application.</p>
      */
     inline void SetBlockedPhrasesToDelete(Aws::Vector<Aws::String>&& value) { m_blockedPhrasesToDeleteHasBeenSet = true; m_blockedPhrasesToDelete = std::move(value); }
 
     /**
-     * <p>Deletes a blocked phrases configuration in your Amazon Q application.</p>
+     * <p>Deletes a blocked phrases configuration in your Amazon Q Business
+     * application.</p>
      */
     inline BlockedPhrasesConfigurationUpdate& WithBlockedPhrasesToDelete(const Aws::Vector<Aws::String>& value) { SetBlockedPhrasesToDelete(value); return *this;}
 
     /**
-     * <p>Deletes a blocked phrases configuration in your Amazon Q application.</p>
+     * <p>Deletes a blocked phrases configuration in your Amazon Q Business
+     * application.</p>
      */
     inline BlockedPhrasesConfigurationUpdate& WithBlockedPhrasesToDelete(Aws::Vector<Aws::String>&& value) { SetBlockedPhrasesToDelete(std::move(value)); return *this;}
 
     /**
-     * <p>Deletes a blocked phrases configuration in your Amazon Q application.</p>
+     * <p>Deletes a blocked phrases configuration in your Amazon Q Business
+     * application.</p>
      */
     inline BlockedPhrasesConfigurationUpdate& AddBlockedPhrasesToDelete(const Aws::String& value) { m_blockedPhrasesToDeleteHasBeenSet = true; m_blockedPhrasesToDelete.push_back(value); return *this; }
 
     /**
-     * <p>Deletes a blocked phrases configuration in your Amazon Q application.</p>
+     * <p>Deletes a blocked phrases configuration in your Amazon Q Business
+     * application.</p>
      */
     inline BlockedPhrasesConfigurationUpdate& AddBlockedPhrasesToDelete(Aws::String&& value) { m_blockedPhrasesToDeleteHasBeenSet = true; m_blockedPhrasesToDelete.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Deletes a blocked phrases configuration in your Amazon Q application.</p>
+     * <p>Deletes a blocked phrases configuration in your Amazon Q Business
+     * application.</p>
      */
     inline BlockedPhrasesConfigurationUpdate& AddBlockedPhrasesToDelete(const char* value) { m_blockedPhrasesToDeleteHasBeenSet = true; m_blockedPhrasesToDelete.push_back(value); return *this; }
 

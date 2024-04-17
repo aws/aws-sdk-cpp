@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>Provides the authorization configuration information needed to deploy a
-   * Amazon Q web experience to end users.</p><p><h3>See Also:</h3>   <a
+   * Amazon Q Business web experience to end users.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/WebExperienceAuthConfiguration">AWS
    * API Reference</a></p>
    */

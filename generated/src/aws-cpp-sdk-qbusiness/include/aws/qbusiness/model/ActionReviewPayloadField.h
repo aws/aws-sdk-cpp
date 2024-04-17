@@ -44,49 +44,57 @@ namespace Model
 
     /**
      * <p>Information about the field values that an end user can use to provide to
-     * Amazon Q for Amazon Q to perform the requested plugin action.</p>
+     * Amazon Q Business for Amazon Q Business to perform the requested plugin
+     * action.</p>
      */
     inline const Aws::Vector<ActionReviewPayloadFieldAllowedValue>& GetAllowedValues() const{ return m_allowedValues; }
 
     /**
      * <p>Information about the field values that an end user can use to provide to
-     * Amazon Q for Amazon Q to perform the requested plugin action.</p>
+     * Amazon Q Business for Amazon Q Business to perform the requested plugin
+     * action.</p>
      */
     inline bool AllowedValuesHasBeenSet() const { return m_allowedValuesHasBeenSet; }
 
     /**
      * <p>Information about the field values that an end user can use to provide to
-     * Amazon Q for Amazon Q to perform the requested plugin action.</p>
+     * Amazon Q Business for Amazon Q Business to perform the requested plugin
+     * action.</p>
      */
     inline void SetAllowedValues(const Aws::Vector<ActionReviewPayloadFieldAllowedValue>& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = value; }
 
     /**
      * <p>Information about the field values that an end user can use to provide to
-     * Amazon Q for Amazon Q to perform the requested plugin action.</p>
+     * Amazon Q Business for Amazon Q Business to perform the requested plugin
+     * action.</p>
      */
     inline void SetAllowedValues(Aws::Vector<ActionReviewPayloadFieldAllowedValue>&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = std::move(value); }
 
     /**
      * <p>Information about the field values that an end user can use to provide to
-     * Amazon Q for Amazon Q to perform the requested plugin action.</p>
+     * Amazon Q Business for Amazon Q Business to perform the requested plugin
+     * action.</p>
      */
     inline ActionReviewPayloadField& WithAllowedValues(const Aws::Vector<ActionReviewPayloadFieldAllowedValue>& value) { SetAllowedValues(value); return *this;}
 
     /**
      * <p>Information about the field values that an end user can use to provide to
-     * Amazon Q for Amazon Q to perform the requested plugin action.</p>
+     * Amazon Q Business for Amazon Q Business to perform the requested plugin
+     * action.</p>
      */
     inline ActionReviewPayloadField& WithAllowedValues(Aws::Vector<ActionReviewPayloadFieldAllowedValue>&& value) { SetAllowedValues(std::move(value)); return *this;}
 
     /**
      * <p>Information about the field values that an end user can use to provide to
-     * Amazon Q for Amazon Q to perform the requested plugin action.</p>
+     * Amazon Q Business for Amazon Q Business to perform the requested plugin
+     * action.</p>
      */
     inline ActionReviewPayloadField& AddAllowedValues(const ActionReviewPayloadFieldAllowedValue& value) { m_allowedValuesHasBeenSet = true; m_allowedValues.push_back(value); return *this; }
 
     /**
      * <p>Information about the field values that an end user can use to provide to
-     * Amazon Q for Amazon Q to perform the requested plugin action.</p>
+     * Amazon Q Business for Amazon Q Business to perform the requested plugin
+     * action.</p>
      */
     inline ActionReviewPayloadField& AddAllowedValues(ActionReviewPayloadFieldAllowedValue&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues.push_back(std::move(value)); return *this; }
 

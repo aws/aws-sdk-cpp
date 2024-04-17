@@ -24,9 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>A rule for configuring how Amazon Q responds when it encounters a a blocked
-   * topic. You can configure a custom message to inform your end users that they
-   * have asked about a restricted topic and suggest any next steps they should
+   * <p>A rule for configuring how Amazon Q Business responds when it encounters a a
+   * blocked topic. You can configure a custom message to inform your end users that
+   * they have asked about a restricted topic and suggest any next steps they should
    * take.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ContentBlockerRule">AWS
    * API Reference</a></p>

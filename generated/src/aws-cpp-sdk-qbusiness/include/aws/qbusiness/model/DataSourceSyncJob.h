@@ -28,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about an Amazon Q data source connector synchronization
-   * job.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides information about an Amazon Q Business data source connector
+   * synchronization job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DataSourceSyncJob">AWS
    * API Reference</a></p>
    */

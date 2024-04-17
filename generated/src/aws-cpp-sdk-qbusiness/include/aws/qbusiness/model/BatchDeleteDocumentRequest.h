@@ -35,42 +35,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the Amazon Q application.</p>
+     * <p>The identifier of the Amazon Q Business application.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * <p>The identifier of the Amazon Q application.</p>
+     * <p>The identifier of the Amazon Q Business application.</p>
      */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the Amazon Q application.</p>
+     * <p>The identifier of the Amazon Q Business application.</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * <p>The identifier of the Amazon Q application.</p>
+     * <p>The identifier of the Amazon Q Business application.</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon Q application.</p>
+     * <p>The identifier of the Amazon Q Business application.</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon Q application.</p>
+     * <p>The identifier of the Amazon Q Business application.</p>
      */
     inline BatchDeleteDocumentRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q application.</p>
+     * <p>The identifier of the Amazon Q Business application.</p>
      */
     inline BatchDeleteDocumentRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q application.</p>
+     * <p>The identifier of the Amazon Q Business application.</p>
      */
     inline BatchDeleteDocumentRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
@@ -125,90 +125,90 @@ namespace Model
 
 
     /**
-     * <p>Documents deleted from the Amazon Q index.</p>
+     * <p>Documents deleted from the Amazon Q Business index.</p>
      */
     inline const Aws::Vector<DeleteDocument>& GetDocuments() const{ return m_documents; }
 
     /**
-     * <p>Documents deleted from the Amazon Q index.</p>
+     * <p>Documents deleted from the Amazon Q Business index.</p>
      */
     inline bool DocumentsHasBeenSet() const { return m_documentsHasBeenSet; }
 
     /**
-     * <p>Documents deleted from the Amazon Q index.</p>
+     * <p>Documents deleted from the Amazon Q Business index.</p>
      */
     inline void SetDocuments(const Aws::Vector<DeleteDocument>& value) { m_documentsHasBeenSet = true; m_documents = value; }
 
     /**
-     * <p>Documents deleted from the Amazon Q index.</p>
+     * <p>Documents deleted from the Amazon Q Business index.</p>
      */
     inline void SetDocuments(Aws::Vector<DeleteDocument>&& value) { m_documentsHasBeenSet = true; m_documents = std::move(value); }
 
     /**
-     * <p>Documents deleted from the Amazon Q index.</p>
+     * <p>Documents deleted from the Amazon Q Business index.</p>
      */
     inline BatchDeleteDocumentRequest& WithDocuments(const Aws::Vector<DeleteDocument>& value) { SetDocuments(value); return *this;}
 
     /**
-     * <p>Documents deleted from the Amazon Q index.</p>
+     * <p>Documents deleted from the Amazon Q Business index.</p>
      */
     inline BatchDeleteDocumentRequest& WithDocuments(Aws::Vector<DeleteDocument>&& value) { SetDocuments(std::move(value)); return *this;}
 
     /**
-     * <p>Documents deleted from the Amazon Q index.</p>
+     * <p>Documents deleted from the Amazon Q Business index.</p>
      */
     inline BatchDeleteDocumentRequest& AddDocuments(const DeleteDocument& value) { m_documentsHasBeenSet = true; m_documents.push_back(value); return *this; }
 
     /**
-     * <p>Documents deleted from the Amazon Q index.</p>
+     * <p>Documents deleted from the Amazon Q Business index.</p>
      */
     inline BatchDeleteDocumentRequest& AddDocuments(DeleteDocument&& value) { m_documentsHasBeenSet = true; m_documents.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The identifier of the Amazon Q index that contains the documents to
+     * <p>The identifier of the Amazon Q Business index that contains the documents to
      * delete.</p>
      */
     inline const Aws::String& GetIndexId() const{ return m_indexId; }
 
     /**
-     * <p>The identifier of the Amazon Q index that contains the documents to
+     * <p>The identifier of the Amazon Q Business index that contains the documents to
      * delete.</p>
      */
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the Amazon Q index that contains the documents to
+     * <p>The identifier of the Amazon Q Business index that contains the documents to
      * delete.</p>
      */
     inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
 
     /**
-     * <p>The identifier of the Amazon Q index that contains the documents to
+     * <p>The identifier of the Amazon Q Business index that contains the documents to
      * delete.</p>
      */
     inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon Q index that contains the documents to
+     * <p>The identifier of the Amazon Q Business index that contains the documents to
      * delete.</p>
      */
     inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon Q index that contains the documents to
+     * <p>The identifier of the Amazon Q Business index that contains the documents to
      * delete.</p>
      */
     inline BatchDeleteDocumentRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q index that contains the documents to
+     * <p>The identifier of the Amazon Q Business index that contains the documents to
      * delete.</p>
      */
     inline BatchDeleteDocumentRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q index that contains the documents to
+     * <p>The identifier of the Amazon Q Business index that contains the documents to
      * delete.</p>
      */
     inline BatchDeleteDocumentRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}

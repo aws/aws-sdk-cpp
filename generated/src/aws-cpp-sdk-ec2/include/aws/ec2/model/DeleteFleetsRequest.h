@@ -71,47 +71,65 @@ namespace Model
 
 
     /**
-     * <p>The IDs of the EC2 Fleets.</p>
+     * <p>The IDs of the EC2 Fleets.</p> <p>Constraints: In a single request, you can
+     * specify up to 25 <code>instant</code> fleet IDs and up to 100
+     * <code>maintain</code> or <code>request</code> fleet IDs. </p>
      */
     inline const Aws::Vector<Aws::String>& GetFleetIds() const{ return m_fleetIds; }
 
     /**
-     * <p>The IDs of the EC2 Fleets.</p>
+     * <p>The IDs of the EC2 Fleets.</p> <p>Constraints: In a single request, you can
+     * specify up to 25 <code>instant</code> fleet IDs and up to 100
+     * <code>maintain</code> or <code>request</code> fleet IDs. </p>
      */
     inline bool FleetIdsHasBeenSet() const { return m_fleetIdsHasBeenSet; }
 
     /**
-     * <p>The IDs of the EC2 Fleets.</p>
+     * <p>The IDs of the EC2 Fleets.</p> <p>Constraints: In a single request, you can
+     * specify up to 25 <code>instant</code> fleet IDs and up to 100
+     * <code>maintain</code> or <code>request</code> fleet IDs. </p>
      */
     inline void SetFleetIds(const Aws::Vector<Aws::String>& value) { m_fleetIdsHasBeenSet = true; m_fleetIds = value; }
 
     /**
-     * <p>The IDs of the EC2 Fleets.</p>
+     * <p>The IDs of the EC2 Fleets.</p> <p>Constraints: In a single request, you can
+     * specify up to 25 <code>instant</code> fleet IDs and up to 100
+     * <code>maintain</code> or <code>request</code> fleet IDs. </p>
      */
     inline void SetFleetIds(Aws::Vector<Aws::String>&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds = std::move(value); }
 
     /**
-     * <p>The IDs of the EC2 Fleets.</p>
+     * <p>The IDs of the EC2 Fleets.</p> <p>Constraints: In a single request, you can
+     * specify up to 25 <code>instant</code> fleet IDs and up to 100
+     * <code>maintain</code> or <code>request</code> fleet IDs. </p>
      */
     inline DeleteFleetsRequest& WithFleetIds(const Aws::Vector<Aws::String>& value) { SetFleetIds(value); return *this;}
 
     /**
-     * <p>The IDs of the EC2 Fleets.</p>
+     * <p>The IDs of the EC2 Fleets.</p> <p>Constraints: In a single request, you can
+     * specify up to 25 <code>instant</code> fleet IDs and up to 100
+     * <code>maintain</code> or <code>request</code> fleet IDs. </p>
      */
     inline DeleteFleetsRequest& WithFleetIds(Aws::Vector<Aws::String>&& value) { SetFleetIds(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of the EC2 Fleets.</p>
+     * <p>The IDs of the EC2 Fleets.</p> <p>Constraints: In a single request, you can
+     * specify up to 25 <code>instant</code> fleet IDs and up to 100
+     * <code>maintain</code> or <code>request</code> fleet IDs. </p>
      */
     inline DeleteFleetsRequest& AddFleetIds(const Aws::String& value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the EC2 Fleets.</p>
+     * <p>The IDs of the EC2 Fleets.</p> <p>Constraints: In a single request, you can
+     * specify up to 25 <code>instant</code> fleet IDs and up to 100
+     * <code>maintain</code> or <code>request</code> fleet IDs. </p>
      */
     inline DeleteFleetsRequest& AddFleetIds(Aws::String&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The IDs of the EC2 Fleets.</p>
+     * <p>The IDs of the EC2 Fleets.</p> <p>Constraints: In a single request, you can
+     * specify up to 25 <code>instant</code> fleet IDs and up to 100
+     * <code>maintain</code> or <code>request</code> fleet IDs. </p>
      */
     inline DeleteFleetsRequest& AddFleetIds(const char* value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(value); return *this; }
 

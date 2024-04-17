@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>The topic specific controls configured for an Amazon Q
+   * <p>The topic specific controls configured for an Amazon Q Business
    * application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/TopicConfiguration">AWS
    * API Reference</a></p>

@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>The documents used to generate an Amazon Q web experience
+   * <p>The documents used to generate an Amazon Q Business web experience
    * response.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/SourceAttribution">AWS
    * API Reference</a></p>
@@ -42,22 +42,26 @@ namespace Model
 
 
     /**
-     * <p>The number attached to a citation in an Amazon Q generated response.</p>
+     * <p>The number attached to a citation in an Amazon Q Business generated
+     * response.</p>
      */
     inline int GetCitationNumber() const{ return m_citationNumber; }
 
     /**
-     * <p>The number attached to a citation in an Amazon Q generated response.</p>
+     * <p>The number attached to a citation in an Amazon Q Business generated
+     * response.</p>
      */
     inline bool CitationNumberHasBeenSet() const { return m_citationNumberHasBeenSet; }
 
     /**
-     * <p>The number attached to a citation in an Amazon Q generated response.</p>
+     * <p>The number attached to a citation in an Amazon Q Business generated
+     * response.</p>
      */
     inline void SetCitationNumber(int value) { m_citationNumberHasBeenSet = true; m_citationNumber = value; }
 
     /**
-     * <p>The number attached to a citation in an Amazon Q generated response.</p>
+     * <p>The number attached to a citation in an Amazon Q Business generated
+     * response.</p>
      */
     inline SourceAttribution& WithCitationNumber(int value) { SetCitationNumber(value); return *this;}
 
@@ -161,130 +165,136 @@ namespace Model
 
 
     /**
-     * <p>The title of the document which is the source for the Amazon Q generated
-     * response. </p>
+     * <p>The title of the document which is the source for the Amazon Q Business
+     * generated response. </p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
 
     /**
-     * <p>The title of the document which is the source for the Amazon Q generated
-     * response. </p>
+     * <p>The title of the document which is the source for the Amazon Q Business
+     * generated response. </p>
      */
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
 
     /**
-     * <p>The title of the document which is the source for the Amazon Q generated
-     * response. </p>
+     * <p>The title of the document which is the source for the Amazon Q Business
+     * generated response. </p>
      */
     inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
 
     /**
-     * <p>The title of the document which is the source for the Amazon Q generated
-     * response. </p>
+     * <p>The title of the document which is the source for the Amazon Q Business
+     * generated response. </p>
      */
     inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
 
     /**
-     * <p>The title of the document which is the source for the Amazon Q generated
-     * response. </p>
+     * <p>The title of the document which is the source for the Amazon Q Business
+     * generated response. </p>
      */
     inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
 
     /**
-     * <p>The title of the document which is the source for the Amazon Q generated
-     * response. </p>
+     * <p>The title of the document which is the source for the Amazon Q Business
+     * generated response. </p>
      */
     inline SourceAttribution& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
 
     /**
-     * <p>The title of the document which is the source for the Amazon Q generated
-     * response. </p>
+     * <p>The title of the document which is the source for the Amazon Q Business
+     * generated response. </p>
      */
     inline SourceAttribution& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
 
     /**
-     * <p>The title of the document which is the source for the Amazon Q generated
-     * response. </p>
+     * <p>The title of the document which is the source for the Amazon Q Business
+     * generated response. </p>
      */
     inline SourceAttribution& WithTitle(const char* value) { SetTitle(value); return *this;}
 
 
     /**
-     * <p>The Unix timestamp when the Amazon Q application was last updated.</p>
+     * <p>The Unix timestamp when the Amazon Q Business application was last
+     * updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>The Unix timestamp when the Amazon Q application was last updated.</p>
+     * <p>The Unix timestamp when the Amazon Q Business application was last
+     * updated.</p>
      */
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
-     * <p>The Unix timestamp when the Amazon Q application was last updated.</p>
+     * <p>The Unix timestamp when the Amazon Q Business application was last
+     * updated.</p>
      */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
-     * <p>The Unix timestamp when the Amazon Q application was last updated.</p>
+     * <p>The Unix timestamp when the Amazon Q Business application was last
+     * updated.</p>
      */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
 
     /**
-     * <p>The Unix timestamp when the Amazon Q application was last updated.</p>
+     * <p>The Unix timestamp when the Amazon Q Business application was last
+     * updated.</p>
      */
     inline SourceAttribution& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>The Unix timestamp when the Amazon Q application was last updated.</p>
+     * <p>The Unix timestamp when the Amazon Q Business application was last
+     * updated.</p>
      */
     inline SourceAttribution& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The URL of the document which is the source for the Amazon Q generated
-     * response. </p>
+     * <p>The URL of the document which is the source for the Amazon Q Business
+     * generated response. </p>
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
 
     /**
-     * <p>The URL of the document which is the source for the Amazon Q generated
-     * response. </p>
+     * <p>The URL of the document which is the source for the Amazon Q Business
+     * generated response. </p>
      */
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
     /**
-     * <p>The URL of the document which is the source for the Amazon Q generated
-     * response. </p>
+     * <p>The URL of the document which is the source for the Amazon Q Business
+     * generated response. </p>
      */
     inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
 
     /**
-     * <p>The URL of the document which is the source for the Amazon Q generated
-     * response. </p>
+     * <p>The URL of the document which is the source for the Amazon Q Business
+     * generated response. </p>
      */
     inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
 
     /**
-     * <p>The URL of the document which is the source for the Amazon Q generated
-     * response. </p>
+     * <p>The URL of the document which is the source for the Amazon Q Business
+     * generated response. </p>
      */
     inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
 
     /**
-     * <p>The URL of the document which is the source for the Amazon Q generated
-     * response. </p>
+     * <p>The URL of the document which is the source for the Amazon Q Business
+     * generated response. </p>
      */
     inline SourceAttribution& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
 
     /**
-     * <p>The URL of the document which is the source for the Amazon Q generated
-     * response. </p>
+     * <p>The URL of the document which is the source for the Amazon Q Business
+     * generated response. </p>
      */
     inline SourceAttribution& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The URL of the document which is the source for the Amazon Q generated
-     * response. </p>
+     * <p>The URL of the document which is the source for the Amazon Q Business
+     * generated response. </p>
      */
     inline SourceAttribution& WithUrl(const char* value) { SetUrl(value); return *this;}
 

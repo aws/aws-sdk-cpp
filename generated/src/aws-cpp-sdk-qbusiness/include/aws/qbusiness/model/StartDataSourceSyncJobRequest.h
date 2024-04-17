@@ -33,42 +33,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier of Amazon Q application the data source is connected to.</p>
+     * <p>The identifier of Amazon Q Business application the data source is connected
+     * to.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * <p>The identifier of Amazon Q application the data source is connected to.</p>
+     * <p>The identifier of Amazon Q Business application the data source is connected
+     * to.</p>
      */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
 
     /**
-     * <p>The identifier of Amazon Q application the data source is connected to.</p>
+     * <p>The identifier of Amazon Q Business application the data source is connected
+     * to.</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * <p>The identifier of Amazon Q application the data source is connected to.</p>
+     * <p>The identifier of Amazon Q Business application the data source is connected
+     * to.</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * <p>The identifier of Amazon Q application the data source is connected to.</p>
+     * <p>The identifier of Amazon Q Business application the data source is connected
+     * to.</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * <p>The identifier of Amazon Q application the data source is connected to.</p>
+     * <p>The identifier of Amazon Q Business application the data source is connected
+     * to.</p>
      */
     inline StartDataSourceSyncJobRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * <p>The identifier of Amazon Q application the data source is connected to.</p>
+     * <p>The identifier of Amazon Q Business application the data source is connected
+     * to.</p>
      */
     inline StartDataSourceSyncJobRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of Amazon Q application the data source is connected to.</p>
+     * <p>The identifier of Amazon Q Business application the data source is connected
+     * to.</p>
      */
     inline StartDataSourceSyncJobRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 

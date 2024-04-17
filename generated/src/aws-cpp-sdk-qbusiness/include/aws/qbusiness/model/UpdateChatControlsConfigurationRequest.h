@@ -8,6 +8,7 @@
 #include <aws/qbusiness/QBusinessRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qbusiness/model/BlockedPhrasesConfigurationUpdate.h>
+#include <aws/qbusiness/model/CreatorModeConfiguration.h>
 #include <aws/qbusiness/model/ResponseScope.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qbusiness/model/TopicConfiguration.h>
@@ -119,51 +120,82 @@ namespace Model
 
     /**
      * <p>A token that you provide to identify the request to update a Amazon Q
-     * application chat configuration.</p>
+     * Business application chat configuration.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
      * <p>A token that you provide to identify the request to update a Amazon Q
-     * application chat configuration.</p>
+     * Business application chat configuration.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>A token that you provide to identify the request to update a Amazon Q
-     * application chat configuration.</p>
+     * Business application chat configuration.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
      * <p>A token that you provide to identify the request to update a Amazon Q
-     * application chat configuration.</p>
+     * Business application chat configuration.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>A token that you provide to identify the request to update a Amazon Q
-     * application chat configuration.</p>
+     * Business application chat configuration.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
      * <p>A token that you provide to identify the request to update a Amazon Q
-     * application chat configuration.</p>
+     * Business application chat configuration.</p>
      */
     inline UpdateChatControlsConfigurationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
      * <p>A token that you provide to identify the request to update a Amazon Q
-     * application chat configuration.</p>
+     * Business application chat configuration.</p>
      */
     inline UpdateChatControlsConfigurationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>A token that you provide to identify the request to update a Amazon Q
-     * application chat configuration.</p>
+     * Business application chat configuration.</p>
      */
     inline UpdateChatControlsConfigurationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+
+
+    /**
+     * <p>The configuration details for <code>CREATOR_MODE</code>.</p>
+     */
+    inline const CreatorModeConfiguration& GetCreatorModeConfiguration() const{ return m_creatorModeConfiguration; }
+
+    /**
+     * <p>The configuration details for <code>CREATOR_MODE</code>.</p>
+     */
+    inline bool CreatorModeConfigurationHasBeenSet() const { return m_creatorModeConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration details for <code>CREATOR_MODE</code>.</p>
+     */
+    inline void SetCreatorModeConfiguration(const CreatorModeConfiguration& value) { m_creatorModeConfigurationHasBeenSet = true; m_creatorModeConfiguration = value; }
+
+    /**
+     * <p>The configuration details for <code>CREATOR_MODE</code>.</p>
+     */
+    inline void SetCreatorModeConfiguration(CreatorModeConfiguration&& value) { m_creatorModeConfigurationHasBeenSet = true; m_creatorModeConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration details for <code>CREATOR_MODE</code>.</p>
+     */
+    inline UpdateChatControlsConfigurationRequest& WithCreatorModeConfiguration(const CreatorModeConfiguration& value) { SetCreatorModeConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration details for <code>CREATOR_MODE</code>.</p>
+     */
+    inline UpdateChatControlsConfigurationRequest& WithCreatorModeConfiguration(CreatorModeConfiguration&& value) { SetCreatorModeConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -306,6 +338,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
+
+    CreatorModeConfiguration m_creatorModeConfiguration;
+    bool m_creatorModeConfigurationHasBeenSet = false;
 
     ResponseScope m_responseScope;
     bool m_responseScopeHasBeenSet = false;

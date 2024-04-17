@@ -30,7 +30,7 @@ namespace Model
 {
 
   /**
-   * <p>A document in an Amazon Q application.</p><p><h3>See Also:</h3>   <a
+   * <p>A document in an Amazon Q Business application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/Document">AWS
    * API Reference</a></p>
    */
@@ -75,49 +75,49 @@ namespace Model
 
 
     /**
-     * <p>Custom attributes to apply to the document for refining Amazon Q web
+     * <p>Custom attributes to apply to the document for refining Amazon Q Business web
      * experience responses.</p>
      */
     inline const Aws::Vector<DocumentAttribute>& GetAttributes() const{ return m_attributes; }
 
     /**
-     * <p>Custom attributes to apply to the document for refining Amazon Q web
+     * <p>Custom attributes to apply to the document for refining Amazon Q Business web
      * experience responses.</p>
      */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
-     * <p>Custom attributes to apply to the document for refining Amazon Q web
+     * <p>Custom attributes to apply to the document for refining Amazon Q Business web
      * experience responses.</p>
      */
     inline void SetAttributes(const Aws::Vector<DocumentAttribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
-     * <p>Custom attributes to apply to the document for refining Amazon Q web
+     * <p>Custom attributes to apply to the document for refining Amazon Q Business web
      * experience responses.</p>
      */
     inline void SetAttributes(Aws::Vector<DocumentAttribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
-     * <p>Custom attributes to apply to the document for refining Amazon Q web
+     * <p>Custom attributes to apply to the document for refining Amazon Q Business web
      * experience responses.</p>
      */
     inline Document& WithAttributes(const Aws::Vector<DocumentAttribute>& value) { SetAttributes(value); return *this;}
 
     /**
-     * <p>Custom attributes to apply to the document for refining Amazon Q web
+     * <p>Custom attributes to apply to the document for refining Amazon Q Business web
      * experience responses.</p>
      */
     inline Document& WithAttributes(Aws::Vector<DocumentAttribute>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>Custom attributes to apply to the document for refining Amazon Q web
+     * <p>Custom attributes to apply to the document for refining Amazon Q Business web
      * experience responses.</p>
      */
     inline Document& AddAttributes(const DocumentAttribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 
     /**
-     * <p>Custom attributes to apply to the document for refining Amazon Q web
+     * <p>Custom attributes to apply to the document for refining Amazon Q Business web
      * experience responses.</p>
      */
     inline Document& AddAttributes(DocumentAttribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }

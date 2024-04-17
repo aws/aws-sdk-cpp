@@ -37,93 +37,142 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the Amazon Q web experience.</p>
+     * <p>The identifier of the Amazon Q Business web experience.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * <p>The identifier of the Amazon Q web experience.</p>
+     * <p>The identifier of the Amazon Q Business web experience.</p>
      */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the Amazon Q web experience.</p>
+     * <p>The identifier of the Amazon Q Business web experience.</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * <p>The identifier of the Amazon Q web experience.</p>
+     * <p>The identifier of the Amazon Q Business web experience.</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon Q web experience.</p>
+     * <p>The identifier of the Amazon Q Business web experience.</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon Q web experience.</p>
+     * <p>The identifier of the Amazon Q Business web experience.</p>
      */
     inline CreateWebExperienceRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q web experience.</p>
+     * <p>The identifier of the Amazon Q Business web experience.</p>
      */
     inline CreateWebExperienceRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q web experience.</p>
+     * <p>The identifier of the Amazon Q Business web experience.</p>
      */
     inline CreateWebExperienceRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
     /**
-     * <p>A token you provide to identify a request to create an Amazon Q web
+     * <p>A token you provide to identify a request to create an Amazon Q Business web
      * experience. </p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>A token you provide to identify a request to create an Amazon Q web
+     * <p>A token you provide to identify a request to create an Amazon Q Business web
      * experience. </p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>A token you provide to identify a request to create an Amazon Q web
+     * <p>A token you provide to identify a request to create an Amazon Q Business web
      * experience. </p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>A token you provide to identify a request to create an Amazon Q web
+     * <p>A token you provide to identify a request to create an Amazon Q Business web
      * experience. </p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>A token you provide to identify a request to create an Amazon Q web
+     * <p>A token you provide to identify a request to create an Amazon Q Business web
      * experience. </p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>A token you provide to identify a request to create an Amazon Q web
+     * <p>A token you provide to identify a request to create an Amazon Q Business web
      * experience. </p>
      */
     inline CreateWebExperienceRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>A token you provide to identify a request to create an Amazon Q web
+     * <p>A token you provide to identify a request to create an Amazon Q Business web
      * experience. </p>
      */
     inline CreateWebExperienceRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token you provide to identify a request to create an Amazon Q web
+     * <p>A token you provide to identify a request to create an Amazon Q Business web
      * experience. </p>
      */
     inline CreateWebExperienceRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service role attached to your web
+     * experience.</p>
+     */
+    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service role attached to your web
+     * experience.</p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service role attached to your web
+     * experience.</p>
+     */
+    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service role attached to your web
+     * experience.</p>
+     */
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service role attached to your web
+     * experience.</p>
+     */
+    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service role attached to your web
+     * experience.</p>
+     */
+    inline CreateWebExperienceRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service role attached to your web
+     * experience.</p>
+     */
+    inline CreateWebExperienceRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service role attached to your web
+     * experience.</p>
+     */
+    inline CreateWebExperienceRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
 
     /**
@@ -164,196 +213,196 @@ namespace Model
 
 
     /**
-     * <p>A subtitle to personalize your Amazon Q web experience.</p>
+     * <p>A subtitle to personalize your Amazon Q Business web experience.</p>
      */
     inline const Aws::String& GetSubtitle() const{ return m_subtitle; }
 
     /**
-     * <p>A subtitle to personalize your Amazon Q web experience.</p>
+     * <p>A subtitle to personalize your Amazon Q Business web experience.</p>
      */
     inline bool SubtitleHasBeenSet() const { return m_subtitleHasBeenSet; }
 
     /**
-     * <p>A subtitle to personalize your Amazon Q web experience.</p>
+     * <p>A subtitle to personalize your Amazon Q Business web experience.</p>
      */
     inline void SetSubtitle(const Aws::String& value) { m_subtitleHasBeenSet = true; m_subtitle = value; }
 
     /**
-     * <p>A subtitle to personalize your Amazon Q web experience.</p>
+     * <p>A subtitle to personalize your Amazon Q Business web experience.</p>
      */
     inline void SetSubtitle(Aws::String&& value) { m_subtitleHasBeenSet = true; m_subtitle = std::move(value); }
 
     /**
-     * <p>A subtitle to personalize your Amazon Q web experience.</p>
+     * <p>A subtitle to personalize your Amazon Q Business web experience.</p>
      */
     inline void SetSubtitle(const char* value) { m_subtitleHasBeenSet = true; m_subtitle.assign(value); }
 
     /**
-     * <p>A subtitle to personalize your Amazon Q web experience.</p>
+     * <p>A subtitle to personalize your Amazon Q Business web experience.</p>
      */
     inline CreateWebExperienceRequest& WithSubtitle(const Aws::String& value) { SetSubtitle(value); return *this;}
 
     /**
-     * <p>A subtitle to personalize your Amazon Q web experience.</p>
+     * <p>A subtitle to personalize your Amazon Q Business web experience.</p>
      */
     inline CreateWebExperienceRequest& WithSubtitle(Aws::String&& value) { SetSubtitle(std::move(value)); return *this;}
 
     /**
-     * <p>A subtitle to personalize your Amazon Q web experience.</p>
+     * <p>A subtitle to personalize your Amazon Q Business web experience.</p>
      */
     inline CreateWebExperienceRequest& WithSubtitle(const char* value) { SetSubtitle(value); return *this;}
 
 
     /**
-     * <p>A list of key-value pairs that identify or categorize your Amazon Q web
-     * experience. You can also use tags to help control access to the web experience.
-     * Tag keys and values can consist of Unicode letters, digits, white space, and any
-     * of the following symbols: _ . : / = + - @.</p>
+     * <p>A list of key-value pairs that identify or categorize your Amazon Q Business
+     * web experience. You can also use tags to help control access to the web
+     * experience. Tag keys and values can consist of Unicode letters, digits, white
+     * space, and any of the following symbols: _ . : / = + - @.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A list of key-value pairs that identify or categorize your Amazon Q web
-     * experience. You can also use tags to help control access to the web experience.
-     * Tag keys and values can consist of Unicode letters, digits, white space, and any
-     * of the following symbols: _ . : / = + - @.</p>
+     * <p>A list of key-value pairs that identify or categorize your Amazon Q Business
+     * web experience. You can also use tags to help control access to the web
+     * experience. Tag keys and values can consist of Unicode letters, digits, white
+     * space, and any of the following symbols: _ . : / = + - @.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>A list of key-value pairs that identify or categorize your Amazon Q web
-     * experience. You can also use tags to help control access to the web experience.
-     * Tag keys and values can consist of Unicode letters, digits, white space, and any
-     * of the following symbols: _ . : / = + - @.</p>
+     * <p>A list of key-value pairs that identify or categorize your Amazon Q Business
+     * web experience. You can also use tags to help control access to the web
+     * experience. Tag keys and values can consist of Unicode letters, digits, white
+     * space, and any of the following symbols: _ . : / = + - @.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A list of key-value pairs that identify or categorize your Amazon Q web
-     * experience. You can also use tags to help control access to the web experience.
-     * Tag keys and values can consist of Unicode letters, digits, white space, and any
-     * of the following symbols: _ . : / = + - @.</p>
+     * <p>A list of key-value pairs that identify or categorize your Amazon Q Business
+     * web experience. You can also use tags to help control access to the web
+     * experience. Tag keys and values can consist of Unicode letters, digits, white
+     * space, and any of the following symbols: _ . : / = + - @.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>A list of key-value pairs that identify or categorize your Amazon Q web
-     * experience. You can also use tags to help control access to the web experience.
-     * Tag keys and values can consist of Unicode letters, digits, white space, and any
-     * of the following symbols: _ . : / = + - @.</p>
+     * <p>A list of key-value pairs that identify or categorize your Amazon Q Business
+     * web experience. You can also use tags to help control access to the web
+     * experience. Tag keys and values can consist of Unicode letters, digits, white
+     * space, and any of the following symbols: _ . : / = + - @.</p>
      */
     inline CreateWebExperienceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A list of key-value pairs that identify or categorize your Amazon Q web
-     * experience. You can also use tags to help control access to the web experience.
-     * Tag keys and values can consist of Unicode letters, digits, white space, and any
-     * of the following symbols: _ . : / = + - @.</p>
+     * <p>A list of key-value pairs that identify or categorize your Amazon Q Business
+     * web experience. You can also use tags to help control access to the web
+     * experience. Tag keys and values can consist of Unicode letters, digits, white
+     * space, and any of the following symbols: _ . : / = + - @.</p>
      */
     inline CreateWebExperienceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A list of key-value pairs that identify or categorize your Amazon Q web
-     * experience. You can also use tags to help control access to the web experience.
-     * Tag keys and values can consist of Unicode letters, digits, white space, and any
-     * of the following symbols: _ . : / = + - @.</p>
+     * <p>A list of key-value pairs that identify or categorize your Amazon Q Business
+     * web experience. You can also use tags to help control access to the web
+     * experience. Tag keys and values can consist of Unicode letters, digits, white
+     * space, and any of the following symbols: _ . : / = + - @.</p>
      */
     inline CreateWebExperienceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>A list of key-value pairs that identify or categorize your Amazon Q web
-     * experience. You can also use tags to help control access to the web experience.
-     * Tag keys and values can consist of Unicode letters, digits, white space, and any
-     * of the following symbols: _ . : / = + - @.</p>
+     * <p>A list of key-value pairs that identify or categorize your Amazon Q Business
+     * web experience. You can also use tags to help control access to the web
+     * experience. Tag keys and values can consist of Unicode letters, digits, white
+     * space, and any of the following symbols: _ . : / = + - @.</p>
      */
     inline CreateWebExperienceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The title for your Amazon Q web experience.</p>
+     * <p>The title for your Amazon Q Business web experience.</p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
 
     /**
-     * <p>The title for your Amazon Q web experience.</p>
+     * <p>The title for your Amazon Q Business web experience.</p>
      */
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
 
     /**
-     * <p>The title for your Amazon Q web experience.</p>
+     * <p>The title for your Amazon Q Business web experience.</p>
      */
     inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
 
     /**
-     * <p>The title for your Amazon Q web experience.</p>
+     * <p>The title for your Amazon Q Business web experience.</p>
      */
     inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
 
     /**
-     * <p>The title for your Amazon Q web experience.</p>
+     * <p>The title for your Amazon Q Business web experience.</p>
      */
     inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
 
     /**
-     * <p>The title for your Amazon Q web experience.</p>
+     * <p>The title for your Amazon Q Business web experience.</p>
      */
     inline CreateWebExperienceRequest& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
 
     /**
-     * <p>The title for your Amazon Q web experience.</p>
+     * <p>The title for your Amazon Q Business web experience.</p>
      */
     inline CreateWebExperienceRequest& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
 
     /**
-     * <p>The title for your Amazon Q web experience.</p>
+     * <p>The title for your Amazon Q Business web experience.</p>
      */
     inline CreateWebExperienceRequest& WithTitle(const char* value) { SetTitle(value); return *this;}
 
 
     /**
-     * <p>The customized welcome message for end users of an Amazon Q web
+     * <p>The customized welcome message for end users of an Amazon Q Business web
      * experience.</p>
      */
     inline const Aws::String& GetWelcomeMessage() const{ return m_welcomeMessage; }
 
     /**
-     * <p>The customized welcome message for end users of an Amazon Q web
+     * <p>The customized welcome message for end users of an Amazon Q Business web
      * experience.</p>
      */
     inline bool WelcomeMessageHasBeenSet() const { return m_welcomeMessageHasBeenSet; }
 
     /**
-     * <p>The customized welcome message for end users of an Amazon Q web
+     * <p>The customized welcome message for end users of an Amazon Q Business web
      * experience.</p>
      */
     inline void SetWelcomeMessage(const Aws::String& value) { m_welcomeMessageHasBeenSet = true; m_welcomeMessage = value; }
 
     /**
-     * <p>The customized welcome message for end users of an Amazon Q web
+     * <p>The customized welcome message for end users of an Amazon Q Business web
      * experience.</p>
      */
     inline void SetWelcomeMessage(Aws::String&& value) { m_welcomeMessageHasBeenSet = true; m_welcomeMessage = std::move(value); }
 
     /**
-     * <p>The customized welcome message for end users of an Amazon Q web
+     * <p>The customized welcome message for end users of an Amazon Q Business web
      * experience.</p>
      */
     inline void SetWelcomeMessage(const char* value) { m_welcomeMessageHasBeenSet = true; m_welcomeMessage.assign(value); }
 
     /**
-     * <p>The customized welcome message for end users of an Amazon Q web
+     * <p>The customized welcome message for end users of an Amazon Q Business web
      * experience.</p>
      */
     inline CreateWebExperienceRequest& WithWelcomeMessage(const Aws::String& value) { SetWelcomeMessage(value); return *this;}
 
     /**
-     * <p>The customized welcome message for end users of an Amazon Q web
+     * <p>The customized welcome message for end users of an Amazon Q Business web
      * experience.</p>
      */
     inline CreateWebExperienceRequest& WithWelcomeMessage(Aws::String&& value) { SetWelcomeMessage(std::move(value)); return *this;}
 
     /**
-     * <p>The customized welcome message for end users of an Amazon Q web
+     * <p>The customized welcome message for end users of an Amazon Q Business web
      * experience.</p>
      */
     inline CreateWebExperienceRequest& WithWelcomeMessage(const char* value) { SetWelcomeMessage(value); return *this;}
@@ -365,6 +414,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
+
+    Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
 
     WebExperienceSamplePromptsControlMode m_samplePromptsControlMode;
     bool m_samplePromptsControlModeHasBeenSet = false;

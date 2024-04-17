@@ -40,47 +40,47 @@ namespace Model
 
 
     /**
-     * <p>A list of phrases blocked from a Amazon Q web experience chat.</p>
+     * <p>A list of phrases blocked from a Amazon Q Business web experience chat.</p>
      */
     inline const Aws::Vector<Aws::String>& GetBlockedPhrases() const{ return m_blockedPhrases; }
 
     /**
-     * <p>A list of phrases blocked from a Amazon Q web experience chat.</p>
+     * <p>A list of phrases blocked from a Amazon Q Business web experience chat.</p>
      */
     inline bool BlockedPhrasesHasBeenSet() const { return m_blockedPhrasesHasBeenSet; }
 
     /**
-     * <p>A list of phrases blocked from a Amazon Q web experience chat.</p>
+     * <p>A list of phrases blocked from a Amazon Q Business web experience chat.</p>
      */
     inline void SetBlockedPhrases(const Aws::Vector<Aws::String>& value) { m_blockedPhrasesHasBeenSet = true; m_blockedPhrases = value; }
 
     /**
-     * <p>A list of phrases blocked from a Amazon Q web experience chat.</p>
+     * <p>A list of phrases blocked from a Amazon Q Business web experience chat.</p>
      */
     inline void SetBlockedPhrases(Aws::Vector<Aws::String>&& value) { m_blockedPhrasesHasBeenSet = true; m_blockedPhrases = std::move(value); }
 
     /**
-     * <p>A list of phrases blocked from a Amazon Q web experience chat.</p>
+     * <p>A list of phrases blocked from a Amazon Q Business web experience chat.</p>
      */
     inline BlockedPhrasesConfiguration& WithBlockedPhrases(const Aws::Vector<Aws::String>& value) { SetBlockedPhrases(value); return *this;}
 
     /**
-     * <p>A list of phrases blocked from a Amazon Q web experience chat.</p>
+     * <p>A list of phrases blocked from a Amazon Q Business web experience chat.</p>
      */
     inline BlockedPhrasesConfiguration& WithBlockedPhrases(Aws::Vector<Aws::String>&& value) { SetBlockedPhrases(std::move(value)); return *this;}
 
     /**
-     * <p>A list of phrases blocked from a Amazon Q web experience chat.</p>
+     * <p>A list of phrases blocked from a Amazon Q Business web experience chat.</p>
      */
     inline BlockedPhrasesConfiguration& AddBlockedPhrases(const Aws::String& value) { m_blockedPhrasesHasBeenSet = true; m_blockedPhrases.push_back(value); return *this; }
 
     /**
-     * <p>A list of phrases blocked from a Amazon Q web experience chat.</p>
+     * <p>A list of phrases blocked from a Amazon Q Business web experience chat.</p>
      */
     inline BlockedPhrasesConfiguration& AddBlockedPhrases(Aws::String&& value) { m_blockedPhrasesHasBeenSet = true; m_blockedPhrases.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of phrases blocked from a Amazon Q web experience chat.</p>
+     * <p>A list of phrases blocked from a Amazon Q Business web experience chat.</p>
      */
     inline BlockedPhrasesConfiguration& AddBlockedPhrases(const char* value) { m_blockedPhrasesHasBeenSet = true; m_blockedPhrases.push_back(value); return *this; }
 

@@ -33,73 +33,73 @@ namespace Model
 
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the Amazon Q application. </p>
+     * <p> The Amazon Resource Name (ARN) of the Amazon Q Business application. </p>
      */
     inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the Amazon Q application. </p>
+     * <p> The Amazon Resource Name (ARN) of the Amazon Q Business application. </p>
      */
     inline void SetApplicationArn(const Aws::String& value) { m_applicationArn = value; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the Amazon Q application. </p>
+     * <p> The Amazon Resource Name (ARN) of the Amazon Q Business application. </p>
      */
     inline void SetApplicationArn(Aws::String&& value) { m_applicationArn = std::move(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the Amazon Q application. </p>
+     * <p> The Amazon Resource Name (ARN) of the Amazon Q Business application. </p>
      */
     inline void SetApplicationArn(const char* value) { m_applicationArn.assign(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the Amazon Q application. </p>
+     * <p> The Amazon Resource Name (ARN) of the Amazon Q Business application. </p>
      */
     inline CreateApplicationResult& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the Amazon Q application. </p>
+     * <p> The Amazon Resource Name (ARN) of the Amazon Q Business application. </p>
      */
     inline CreateApplicationResult& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the Amazon Q application. </p>
+     * <p> The Amazon Resource Name (ARN) of the Amazon Q Business application. </p>
      */
     inline CreateApplicationResult& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
 
 
     /**
-     * <p>The identifier of the Amazon Q application.</p>
+     * <p>The identifier of the Amazon Q Business application.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * <p>The identifier of the Amazon Q application.</p>
+     * <p>The identifier of the Amazon Q Business application.</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationId = value; }
 
     /**
-     * <p>The identifier of the Amazon Q application.</p>
+     * <p>The identifier of the Amazon Q Business application.</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationId = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon Q application.</p>
+     * <p>The identifier of the Amazon Q Business application.</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationId.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon Q application.</p>
+     * <p>The identifier of the Amazon Q Business application.</p>
      */
     inline CreateApplicationResult& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q application.</p>
+     * <p>The identifier of the Amazon Q Business application.</p>
      */
     inline CreateApplicationResult& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q application.</p>
+     * <p>The identifier of the Amazon Q Business application.</p>
      */
     inline CreateApplicationResult& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 

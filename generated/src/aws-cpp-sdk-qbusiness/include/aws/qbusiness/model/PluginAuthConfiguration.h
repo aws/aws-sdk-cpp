@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Authentication configuration information for an Amazon Q
+   * <p>Authentication configuration information for an Amazon Q Business
    * plugin.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/PluginAuthConfiguration">AWS
    * API Reference</a></p>

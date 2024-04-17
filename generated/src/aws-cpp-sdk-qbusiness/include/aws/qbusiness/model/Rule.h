@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Guardrail rules for an Amazon Q application. Amazon Q supports only one rule
-   * at a time.</p><p><h3>See Also:</h3>   <a
+   * <p>Guardrail rules for an Amazon Q Business application. Amazon Q Business
+   * supports only one rule at a time.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/Rule">AWS API
    * Reference</a></p>
    */

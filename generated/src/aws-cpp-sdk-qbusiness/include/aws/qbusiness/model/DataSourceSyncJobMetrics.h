@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Maps a batch delete document request to a specific Amazon Q data source
-   * connector sync job.</p><p><h3>See Also:</h3>   <a
+   * <p>Maps a batch delete document request to a specific Amazon Q Business data
+   * source connector sync job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DataSourceSyncJobMetrics">AWS
    * API Reference</a></p>
    */

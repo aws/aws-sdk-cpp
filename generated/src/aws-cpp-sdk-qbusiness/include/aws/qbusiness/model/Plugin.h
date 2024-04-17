@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about an Amazon Q plugin and its configuration.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Information about an Amazon Q Business plugin and its
+   * configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/Plugin">AWS
    * API Reference</a></p>
    */

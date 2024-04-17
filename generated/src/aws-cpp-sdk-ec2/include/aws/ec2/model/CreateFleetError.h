@@ -125,7 +125,7 @@ namespace Model
     /**
      * <p>The error code that indicates why the instance could not be launched. For
      * more information about error codes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
      * codes</a>.</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
@@ -133,7 +133,7 @@ namespace Model
     /**
      * <p>The error code that indicates why the instance could not be launched. For
      * more information about error codes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
      * codes</a>.</p>
      */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
@@ -141,7 +141,7 @@ namespace Model
     /**
      * <p>The error code that indicates why the instance could not be launched. For
      * more information about error codes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
      * codes</a>.</p>
      */
     inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
@@ -149,7 +149,7 @@ namespace Model
     /**
      * <p>The error code that indicates why the instance could not be launched. For
      * more information about error codes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
      * codes</a>.</p>
      */
     inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
@@ -157,7 +157,7 @@ namespace Model
     /**
      * <p>The error code that indicates why the instance could not be launched. For
      * more information about error codes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
      * codes</a>.</p>
      */
     inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
@@ -165,7 +165,7 @@ namespace Model
     /**
      * <p>The error code that indicates why the instance could not be launched. For
      * more information about error codes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
      * codes</a>.</p>
      */
     inline CreateFleetError& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
@@ -173,7 +173,7 @@ namespace Model
     /**
      * <p>The error code that indicates why the instance could not be launched. For
      * more information about error codes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
      * codes</a>.</p>
      */
     inline CreateFleetError& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
@@ -181,7 +181,7 @@ namespace Model
     /**
      * <p>The error code that indicates why the instance could not be launched. For
      * more information about error codes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
      * codes</a>.</p>
      */
     inline CreateFleetError& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
@@ -190,7 +190,7 @@ namespace Model
     /**
      * <p>The error message that describes why the instance could not be launched. For
      * more information about error messages, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
      * codes</a>.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
@@ -198,7 +198,7 @@ namespace Model
     /**
      * <p>The error message that describes why the instance could not be launched. For
      * more information about error messages, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
      * codes</a>.</p>
      */
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
@@ -206,7 +206,7 @@ namespace Model
     /**
      * <p>The error message that describes why the instance could not be launched. For
      * more information about error messages, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
      * codes</a>.</p>
      */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
@@ -214,7 +214,7 @@ namespace Model
     /**
      * <p>The error message that describes why the instance could not be launched. For
      * more information about error messages, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
      * codes</a>.</p>
      */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
@@ -222,7 +222,7 @@ namespace Model
     /**
      * <p>The error message that describes why the instance could not be launched. For
      * more information about error messages, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
      * codes</a>.</p>
      */
     inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
@@ -230,7 +230,7 @@ namespace Model
     /**
      * <p>The error message that describes why the instance could not be launched. For
      * more information about error messages, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
      * codes</a>.</p>
      */
     inline CreateFleetError& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
@@ -238,7 +238,7 @@ namespace Model
     /**
      * <p>The error message that describes why the instance could not be launched. For
      * more information about error messages, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
      * codes</a>.</p>
      */
     inline CreateFleetError& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
@@ -246,7 +246,7 @@ namespace Model
     /**
      * <p>The error message that describes why the instance could not be launched. For
      * more information about error messages, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
      * codes</a>.</p>
      */
     inline CreateFleetError& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}

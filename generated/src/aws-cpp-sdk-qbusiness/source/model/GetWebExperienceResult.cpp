@@ -63,6 +63,12 @@ GetWebExperienceResult& GetWebExperienceResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("roleArn"))
+  {
+    m_roleArn = jsonValue.GetString("roleArn");
+
+  }
+
   if(jsonValue.ValueExists("samplePromptsControlMode"))
   {
     m_samplePromptsControlMode = WebExperienceSamplePromptsControlModeMapper::GetWebExperienceSamplePromptsControlModeForName(jsonValue.GetString("samplePromptsControlMode"));

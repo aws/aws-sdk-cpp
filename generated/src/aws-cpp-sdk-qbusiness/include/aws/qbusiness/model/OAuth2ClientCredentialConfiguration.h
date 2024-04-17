@@ -39,49 +39,49 @@ namespace Model
 
 
     /**
-     * <p>The ARN of an IAM role used by Amazon Q to access the OAuth 2.0
+     * <p>The ARN of an IAM role used by Amazon Q Business to access the OAuth 2.0
      * authentication credentials stored in a Secrets Manager secret.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The ARN of an IAM role used by Amazon Q to access the OAuth 2.0
+     * <p>The ARN of an IAM role used by Amazon Q Business to access the OAuth 2.0
      * authentication credentials stored in a Secrets Manager secret.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The ARN of an IAM role used by Amazon Q to access the OAuth 2.0
+     * <p>The ARN of an IAM role used by Amazon Q Business to access the OAuth 2.0
      * authentication credentials stored in a Secrets Manager secret.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The ARN of an IAM role used by Amazon Q to access the OAuth 2.0
+     * <p>The ARN of an IAM role used by Amazon Q Business to access the OAuth 2.0
      * authentication credentials stored in a Secrets Manager secret.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The ARN of an IAM role used by Amazon Q to access the OAuth 2.0
+     * <p>The ARN of an IAM role used by Amazon Q Business to access the OAuth 2.0
      * authentication credentials stored in a Secrets Manager secret.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The ARN of an IAM role used by Amazon Q to access the OAuth 2.0
+     * <p>The ARN of an IAM role used by Amazon Q Business to access the OAuth 2.0
      * authentication credentials stored in a Secrets Manager secret.</p>
      */
     inline OAuth2ClientCredentialConfiguration& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of an IAM role used by Amazon Q to access the OAuth 2.0
+     * <p>The ARN of an IAM role used by Amazon Q Business to access the OAuth 2.0
      * authentication credentials stored in a Secrets Manager secret.</p>
      */
     inline OAuth2ClientCredentialConfiguration& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of an IAM role used by Amazon Q to access the OAuth 2.0
+     * <p>The ARN of an IAM role used by Amazon Q Business to access the OAuth 2.0
      * authentication credentials stored in a Secrets Manager secret.</p>
      */
     inline OAuth2ClientCredentialConfiguration& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}

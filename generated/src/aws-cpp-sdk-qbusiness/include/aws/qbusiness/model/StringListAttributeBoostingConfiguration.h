@@ -33,8 +33,8 @@ namespace Model
    * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_UpdateIndex.html">UpdateIndex</a>
    * API. If you haven't enabled searching on these attributes, you can't boost
    * attributes of these data types on either the console or the API.</p> 
-   * <p>For more information on how boosting document attributes work in Amazon Q,
-   * see <a
+   * <p>For more information on how boosting document attributes work in Amazon Q
+   * Business, see <a
    * href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/metadata-boosting.html">Boosting
    * using document attributes</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/StringListAttributeBoostingConfiguration">AWS

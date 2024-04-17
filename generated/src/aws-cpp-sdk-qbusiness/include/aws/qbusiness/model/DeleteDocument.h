@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>A document deleted from an Amazon Q data source connector.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A document deleted from an Amazon Q Business data source
+   * connector.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteDocument">AWS
    * API Reference</a></p>
    */

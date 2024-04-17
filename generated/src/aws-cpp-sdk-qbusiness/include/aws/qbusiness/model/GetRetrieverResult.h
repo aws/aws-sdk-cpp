@@ -37,37 +37,37 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the Amazon Q application using the retriever. </p>
+     * <p>The identifier of the Amazon Q Business application using the retriever. </p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * <p>The identifier of the Amazon Q application using the retriever. </p>
+     * <p>The identifier of the Amazon Q Business application using the retriever. </p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationId = value; }
 
     /**
-     * <p>The identifier of the Amazon Q application using the retriever. </p>
+     * <p>The identifier of the Amazon Q Business application using the retriever. </p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationId = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon Q application using the retriever. </p>
+     * <p>The identifier of the Amazon Q Business application using the retriever. </p>
      */
     inline void SetApplicationId(const char* value) { m_applicationId.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon Q application using the retriever. </p>
+     * <p>The identifier of the Amazon Q Business application using the retriever. </p>
      */
     inline GetRetrieverResult& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q application using the retriever. </p>
+     * <p>The identifier of the Amazon Q Business application using the retriever. </p>
      */
     inline GetRetrieverResult& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q application using the retriever. </p>
+     * <p>The identifier of the Amazon Q Business application using the retriever. </p>
      */
     inline GetRetrieverResult& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 

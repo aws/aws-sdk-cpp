@@ -26,8 +26,8 @@ namespace Model
 
   /**
    * <p>Rules for retrieving content from data sources connected to a Amazon Q
-   * application for a specific topic control configuration.</p><p><h3>See Also:</h3>
-   * <a
+   * Business application for a specific topic control configuration.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ContentRetrievalRule">AWS
    * API Reference</a></p>
    */
@@ -41,49 +41,49 @@ namespace Model
 
 
     /**
-     * <p>Specifies data sources in a Amazon Q application to use for content
+     * <p>Specifies data sources in a Amazon Q Business application to use for content
      * generation.</p>
      */
     inline const Aws::Vector<EligibleDataSource>& GetEligibleDataSources() const{ return m_eligibleDataSources; }
 
     /**
-     * <p>Specifies data sources in a Amazon Q application to use for content
+     * <p>Specifies data sources in a Amazon Q Business application to use for content
      * generation.</p>
      */
     inline bool EligibleDataSourcesHasBeenSet() const { return m_eligibleDataSourcesHasBeenSet; }
 
     /**
-     * <p>Specifies data sources in a Amazon Q application to use for content
+     * <p>Specifies data sources in a Amazon Q Business application to use for content
      * generation.</p>
      */
     inline void SetEligibleDataSources(const Aws::Vector<EligibleDataSource>& value) { m_eligibleDataSourcesHasBeenSet = true; m_eligibleDataSources = value; }
 
     /**
-     * <p>Specifies data sources in a Amazon Q application to use for content
+     * <p>Specifies data sources in a Amazon Q Business application to use for content
      * generation.</p>
      */
     inline void SetEligibleDataSources(Aws::Vector<EligibleDataSource>&& value) { m_eligibleDataSourcesHasBeenSet = true; m_eligibleDataSources = std::move(value); }
 
     /**
-     * <p>Specifies data sources in a Amazon Q application to use for content
+     * <p>Specifies data sources in a Amazon Q Business application to use for content
      * generation.</p>
      */
     inline ContentRetrievalRule& WithEligibleDataSources(const Aws::Vector<EligibleDataSource>& value) { SetEligibleDataSources(value); return *this;}
 
     /**
-     * <p>Specifies data sources in a Amazon Q application to use for content
+     * <p>Specifies data sources in a Amazon Q Business application to use for content
      * generation.</p>
      */
     inline ContentRetrievalRule& WithEligibleDataSources(Aws::Vector<EligibleDataSource>&& value) { SetEligibleDataSources(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies data sources in a Amazon Q application to use for content
+     * <p>Specifies data sources in a Amazon Q Business application to use for content
      * generation.</p>
      */
     inline ContentRetrievalRule& AddEligibleDataSources(const EligibleDataSource& value) { m_eligibleDataSourcesHasBeenSet = true; m_eligibleDataSources.push_back(value); return *this; }
 
     /**
-     * <p>Specifies data sources in a Amazon Q application to use for content
+     * <p>Specifies data sources in a Amazon Q Business application to use for content
      * generation.</p>
      */
     inline ContentRetrievalRule& AddEligibleDataSources(EligibleDataSource&& value) { m_eligibleDataSourcesHasBeenSet = true; m_eligibleDataSources.push_back(std::move(value)); return *this; }

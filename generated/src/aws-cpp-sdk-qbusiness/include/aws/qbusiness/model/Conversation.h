@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>A conversation in an Amazon Q application.</p><p><h3>See Also:</h3>   <a
+   * <p>A conversation in an Amazon Q Business application.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/Conversation">AWS
    * API Reference</a></p>
    */
@@ -39,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the Amazon Q conversation.</p>
+     * <p>The identifier of the Amazon Q Business conversation.</p>
      */
     inline const Aws::String& GetConversationId() const{ return m_conversationId; }
 
     /**
-     * <p>The identifier of the Amazon Q conversation.</p>
+     * <p>The identifier of the Amazon Q Business conversation.</p>
      */
     inline bool ConversationIdHasBeenSet() const { return m_conversationIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the Amazon Q conversation.</p>
+     * <p>The identifier of the Amazon Q Business conversation.</p>
      */
     inline void SetConversationId(const Aws::String& value) { m_conversationIdHasBeenSet = true; m_conversationId = value; }
 
     /**
-     * <p>The identifier of the Amazon Q conversation.</p>
+     * <p>The identifier of the Amazon Q Business conversation.</p>
      */
     inline void SetConversationId(Aws::String&& value) { m_conversationIdHasBeenSet = true; m_conversationId = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon Q conversation.</p>
+     * <p>The identifier of the Amazon Q Business conversation.</p>
      */
     inline void SetConversationId(const char* value) { m_conversationIdHasBeenSet = true; m_conversationId.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon Q conversation.</p>
+     * <p>The identifier of the Amazon Q Business conversation.</p>
      */
     inline Conversation& WithConversationId(const Aws::String& value) { SetConversationId(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q conversation.</p>
+     * <p>The identifier of the Amazon Q Business conversation.</p>
      */
     inline Conversation& WithConversationId(Aws::String&& value) { SetConversationId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Q conversation.</p>
+     * <p>The identifier of the Amazon Q Business conversation.</p>
      */
     inline Conversation& WithConversationId(const char* value) { SetConversationId(value); return *this;}
 

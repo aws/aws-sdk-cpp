@@ -36,37 +36,37 @@ namespace Model
 
 
     /**
-     * <p>The instance types offered.</p>
+     * <p>The instance types offered in the location.</p>
      */
     inline const Aws::Vector<InstanceTypeOffering>& GetInstanceTypeOfferings() const{ return m_instanceTypeOfferings; }
 
     /**
-     * <p>The instance types offered.</p>
+     * <p>The instance types offered in the location.</p>
      */
     inline void SetInstanceTypeOfferings(const Aws::Vector<InstanceTypeOffering>& value) { m_instanceTypeOfferings = value; }
 
     /**
-     * <p>The instance types offered.</p>
+     * <p>The instance types offered in the location.</p>
      */
     inline void SetInstanceTypeOfferings(Aws::Vector<InstanceTypeOffering>&& value) { m_instanceTypeOfferings = std::move(value); }
 
     /**
-     * <p>The instance types offered.</p>
+     * <p>The instance types offered in the location.</p>
      */
     inline DescribeInstanceTypeOfferingsResponse& WithInstanceTypeOfferings(const Aws::Vector<InstanceTypeOffering>& value) { SetInstanceTypeOfferings(value); return *this;}
 
     /**
-     * <p>The instance types offered.</p>
+     * <p>The instance types offered in the location.</p>
      */
     inline DescribeInstanceTypeOfferingsResponse& WithInstanceTypeOfferings(Aws::Vector<InstanceTypeOffering>&& value) { SetInstanceTypeOfferings(std::move(value)); return *this;}
 
     /**
-     * <p>The instance types offered.</p>
+     * <p>The instance types offered in the location.</p>
      */
     inline DescribeInstanceTypeOfferingsResponse& AddInstanceTypeOfferings(const InstanceTypeOffering& value) { m_instanceTypeOfferings.push_back(value); return *this; }
 
     /**
-     * <p>The instance types offered.</p>
+     * <p>The instance types offered in the location.</p>
      */
     inline DescribeInstanceTypeOfferingsResponse& AddInstanceTypeOfferings(InstanceTypeOffering&& value) { m_instanceTypeOfferings.push_back(std::move(value)); return *this; }
 

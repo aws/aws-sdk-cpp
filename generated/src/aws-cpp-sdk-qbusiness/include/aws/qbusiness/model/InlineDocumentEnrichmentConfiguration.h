@@ -27,8 +27,9 @@ namespace Model
 
   /**
    * <p>Provides the configuration information for applying basic logic to alter
-   * document metadata and content when ingesting documents into Amazon Q.</p> <p>To
-   * apply advanced logic, to go beyond what you can do with basic logic, see <a
+   * document metadata and content when ingesting documents into Amazon Q
+   * Business.</p> <p>To apply advanced logic, to go beyond what you can do with
+   * basic logic, see <a
    * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_HookConfiguration.html">
    * <code>HookConfiguration</code> </a>.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom

@@ -27,10 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>An output event that Amazon Q returns to an user who wants to perform a
-   * plugin action during a non-streaming chat conversation. It contains information
-   * about the selected action with a list of possible user input fields, some
-   * pre-populated by Amazon Q.</p><p><h3>See Also:</h3>   <a
+   * <p>An output event that Amazon Q Business returns to an user who wants to
+   * perform a plugin action during a non-streaming chat conversation. It contains
+   * information about the selected action with a list of possible user input fields,
+   * some pre-populated by Amazon Q Business.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ActionReview">AWS
    * API Reference</a></p>
    */
@@ -44,74 +44,74 @@ namespace Model
 
 
     /**
-     * <p>Field values that an end user needs to provide to Amazon Q for Amazon Q to
-     * perform the requested plugin action.</p>
+     * <p>Field values that an end user needs to provide to Amazon Q Business for
+     * Amazon Q Business to perform the requested plugin action.</p>
      */
     inline const Aws::Map<Aws::String, ActionReviewPayloadField>& GetPayload() const{ return m_payload; }
 
     /**
-     * <p>Field values that an end user needs to provide to Amazon Q for Amazon Q to
-     * perform the requested plugin action.</p>
+     * <p>Field values that an end user needs to provide to Amazon Q Business for
+     * Amazon Q Business to perform the requested plugin action.</p>
      */
     inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
 
     /**
-     * <p>Field values that an end user needs to provide to Amazon Q for Amazon Q to
-     * perform the requested plugin action.</p>
+     * <p>Field values that an end user needs to provide to Amazon Q Business for
+     * Amazon Q Business to perform the requested plugin action.</p>
      */
     inline void SetPayload(const Aws::Map<Aws::String, ActionReviewPayloadField>& value) { m_payloadHasBeenSet = true; m_payload = value; }
 
     /**
-     * <p>Field values that an end user needs to provide to Amazon Q for Amazon Q to
-     * perform the requested plugin action.</p>
+     * <p>Field values that an end user needs to provide to Amazon Q Business for
+     * Amazon Q Business to perform the requested plugin action.</p>
      */
     inline void SetPayload(Aws::Map<Aws::String, ActionReviewPayloadField>&& value) { m_payloadHasBeenSet = true; m_payload = std::move(value); }
 
     /**
-     * <p>Field values that an end user needs to provide to Amazon Q for Amazon Q to
-     * perform the requested plugin action.</p>
+     * <p>Field values that an end user needs to provide to Amazon Q Business for
+     * Amazon Q Business to perform the requested plugin action.</p>
      */
     inline ActionReview& WithPayload(const Aws::Map<Aws::String, ActionReviewPayloadField>& value) { SetPayload(value); return *this;}
 
     /**
-     * <p>Field values that an end user needs to provide to Amazon Q for Amazon Q to
-     * perform the requested plugin action.</p>
+     * <p>Field values that an end user needs to provide to Amazon Q Business for
+     * Amazon Q Business to perform the requested plugin action.</p>
      */
     inline ActionReview& WithPayload(Aws::Map<Aws::String, ActionReviewPayloadField>&& value) { SetPayload(std::move(value)); return *this;}
 
     /**
-     * <p>Field values that an end user needs to provide to Amazon Q for Amazon Q to
-     * perform the requested plugin action.</p>
+     * <p>Field values that an end user needs to provide to Amazon Q Business for
+     * Amazon Q Business to perform the requested plugin action.</p>
      */
     inline ActionReview& AddPayload(const Aws::String& key, const ActionReviewPayloadField& value) { m_payloadHasBeenSet = true; m_payload.emplace(key, value); return *this; }
 
     /**
-     * <p>Field values that an end user needs to provide to Amazon Q for Amazon Q to
-     * perform the requested plugin action.</p>
+     * <p>Field values that an end user needs to provide to Amazon Q Business for
+     * Amazon Q Business to perform the requested plugin action.</p>
      */
     inline ActionReview& AddPayload(Aws::String&& key, const ActionReviewPayloadField& value) { m_payloadHasBeenSet = true; m_payload.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Field values that an end user needs to provide to Amazon Q for Amazon Q to
-     * perform the requested plugin action.</p>
+     * <p>Field values that an end user needs to provide to Amazon Q Business for
+     * Amazon Q Business to perform the requested plugin action.</p>
      */
     inline ActionReview& AddPayload(const Aws::String& key, ActionReviewPayloadField&& value) { m_payloadHasBeenSet = true; m_payload.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Field values that an end user needs to provide to Amazon Q for Amazon Q to
-     * perform the requested plugin action.</p>
+     * <p>Field values that an end user needs to provide to Amazon Q Business for
+     * Amazon Q Business to perform the requested plugin action.</p>
      */
     inline ActionReview& AddPayload(Aws::String&& key, ActionReviewPayloadField&& value) { m_payloadHasBeenSet = true; m_payload.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Field values that an end user needs to provide to Amazon Q for Amazon Q to
-     * perform the requested plugin action.</p>
+     * <p>Field values that an end user needs to provide to Amazon Q Business for
+     * Amazon Q Business to perform the requested plugin action.</p>
      */
     inline ActionReview& AddPayload(const char* key, ActionReviewPayloadField&& value) { m_payloadHasBeenSet = true; m_payload.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Field values that an end user needs to provide to Amazon Q for Amazon Q to
-     * perform the requested plugin action.</p>
+     * <p>Field values that an end user needs to provide to Amazon Q Business for
+     * Amazon Q Business to perform the requested plugin action.</p>
      */
     inline ActionReview& AddPayload(const char* key, const ActionReviewPayloadField& value) { m_payloadHasBeenSet = true; m_payload.emplace(key, value); return *this; }
 

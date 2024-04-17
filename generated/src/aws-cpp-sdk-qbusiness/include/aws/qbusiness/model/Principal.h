@@ -26,7 +26,8 @@ namespace Model
 
   /**
    * <p>Provides user and group information used for filtering documents to use for
-   * generating Amazon Q conversation responses.</p><p><h3>See Also:</h3>   <a
+   * generating Amazon Q Business conversation responses.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/Principal">AWS
    * API Reference</a></p>
    */

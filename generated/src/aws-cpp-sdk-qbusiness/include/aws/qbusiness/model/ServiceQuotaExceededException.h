@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>You have exceeded the set limits for your Amazon Q service. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>You have exceeded the set limits for your Amazon Q Business service.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ServiceQuotaExceededException">AWS
    * API Reference</a></p>
    */
