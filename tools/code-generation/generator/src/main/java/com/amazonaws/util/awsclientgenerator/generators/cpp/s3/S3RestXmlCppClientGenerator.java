@@ -381,7 +381,7 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
     }
 
     @Override
-    protected SdkFileEntry generateModelSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) throws Exception {
+    protected SdkFileEntry generateModelSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) {
         Template template = null;
         String fileName = "";
 

@@ -116,14 +116,14 @@ public class JsonCppClientGenerator extends CppClientGenerator {
     }
 
     @Override
-    protected SdkFileEntry generateModelSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) throws Exception {
+    protected SdkFileEntry generateModelSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) {
         Shape shape = shapeEntry.getValue();
         if (shape.isResult() && shape.hasEventStreamMembers())
             return null;
 
         // if the shape is an event and its content type is "blob" then we don't need a source file, because the whole
         // class is implemented in the header file. See EventHeader.vm
-        if (shape.isEvent() && shape.getEventPayloadType().equals("blob"))
+        if (shape.isEvent() && "blob".equals(shape.getEventPayloadType()))
             return null;
 
         if (shape.isException() && !shape.isJsonModeledException())
@@ -222,7 +222,7 @@ public class JsonCppClientGenerator extends CppClientGenerator {
     }
 
     @Override
-    protected SdkFileEntry generateEventStreamHandlerSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) throws Exception {
+    protected SdkFileEntry generateEventStreamHandlerSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) {
         Shape shape = shapeEntry.getValue();
         if (shape.isRequest()) {
             Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonEventStreamHandlerSource.vm", StandardCharsets.UTF_8.name());
