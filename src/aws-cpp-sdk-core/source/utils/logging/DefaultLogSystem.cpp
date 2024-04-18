@@ -27,6 +27,8 @@ static void LogThread(DefaultLogSystem::LogSynchronizationData* syncData, std::s
 {
     // localtime requires access to env. variables to get Timezone, which is not thread-safe
     int32_t lastRolledHour = DateTime::Now().GetHour(false /*localtime*/);
+    Aws::Vector<Aws::String> messages;
+    messages.reserve(BUFFERED_MSG_COUNT);
 
     for(;;)
     {
@@ -38,9 +40,7 @@ static void LogThread(DefaultLogSystem::LogSynchronizationData* syncData, std::s
             break;
         }
 
-        Aws::Vector<Aws::String> messages(std::move(syncData->m_queuedLogMessages));
-        syncData->m_queuedLogMessages.reserve(BUFFERED_MSG_COUNT);
-
+        std::swap(messages, syncData->m_queuedLogMessages);
         locker.unlock();
 
         if (messages.size() > 0)
@@ -48,7 +48,7 @@ static void LogThread(DefaultLogSystem::LogSynchronizationData* syncData, std::s
             if (rollLog)
             {
                 // localtime requires access to env. variables to get Timezone, which is not thread-safe
-                int32_t currentHour = DateTime::Now().GetHour(false /*localtime*/); 
+                int32_t currentHour = DateTime::Now().GetHour(false /*localtime*/);
                 if (currentHour != lastRolledHour)
                 {
                     logFile = MakeDefaultLogFile(filenamePrefix);
@@ -62,6 +62,12 @@ static void LogThread(DefaultLogSystem::LogSynchronizationData* syncData, std::s
             }
 
             logFile->flush();
+        }
+        messages.clear();
+        if(messages.capacity() > 2 * BUFFERED_MSG_COUNT)
+        {
+            messages.shrink_to_fit();
+            messages.reserve(BUFFERED_MSG_COUNT);
         }
     }
 
@@ -77,6 +83,7 @@ DefaultLogSystem::DefaultLogSystem(LogLevel logLevel, const std::shared_ptr<Aws:
     m_syncData(),
     m_loggingThread()
 {
+    m_syncData.m_queuedLogMessages.reserve(BUFFERED_MSG_COUNT);
     m_loggingThread = std::thread(LogThread, &m_syncData, logFile, "", false);
 }
 
@@ -85,6 +92,7 @@ DefaultLogSystem::DefaultLogSystem(LogLevel logLevel, const Aws::String& filenam
     m_syncData(),
     m_loggingThread()
 {
+    m_syncData.m_queuedLogMessages.reserve(BUFFERED_MSG_COUNT);
     m_loggingThread = std::thread(LogThread, &m_syncData, MakeDefaultLogFile(filenamePrefix), filenamePrefix, true);
 }
 
