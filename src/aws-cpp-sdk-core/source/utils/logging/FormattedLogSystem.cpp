@@ -141,4 +141,8 @@ void FormattedLogSystem::LogStream(LogLevel logLevel, const char* tag, const Aws
 {
     auto message = message_stream.str();
     ProcessFormattedStatement(CreateLogPrefixLine(logLevel, tag, message.size()) + std::move(message) + "\n");
+    if (LogLevel::Fatal == logLevel)
+    {
+        Flush();
+    }
 }
