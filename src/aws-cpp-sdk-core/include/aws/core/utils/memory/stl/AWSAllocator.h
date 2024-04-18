@@ -103,6 +103,10 @@ namespace Aws
     template<typename T, typename ...ArgTypes>
     std::shared_ptr<T> MakeShared(const char* allocationTag, ArgTypes&&... args)
     {
+#ifdef USE_AWS_MEMORY_MANAGEMENT
+        Aws::Utils::Memory::MemorySystemInterface* memorySystem = Aws::Utils::Memory::GetMemorySystem();
+        assert(memorySystem && "Memory system is not initialized");
+#endif
         AWS_UNREFERENCED_PARAM(allocationTag);
 
         return std::allocate_shared<T, Aws::Allocator<T>>(Aws::Allocator<T>(), std::forward<ArgTypes>(args)...);
