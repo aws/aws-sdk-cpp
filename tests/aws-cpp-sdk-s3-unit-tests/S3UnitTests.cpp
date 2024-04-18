@@ -19,18 +19,14 @@ class S3UnitTest : public testing::Test {
 protected:
   static void SetUpTestSuite() {
 #ifdef USE_AWS_MEMORY_MANAGEMENT
-    _testMemorySystem = Aws::MakeShared<ExactTestMemorySystem>(ALLOCATION_TAG, 1024, 128);
+    _testMemorySystem.reset(new ExactTestMemorySystem(1024, 128));
     _options.memoryManagementOptions.memoryManager = _testMemorySystem.get();
 #endif
+    InitAPI(_options);
     _mockClientFactory = Aws::MakeShared<MockHttpClientFactory>(ALLOCATION_TAG);
     _mockHttpClient = Aws::MakeShared<MockHttpClient>(ALLOCATION_TAG);
     _mockClientFactory->SetClient(_mockHttpClient);
-    HttpOptions httpOptions;
-    httpOptions.httpClientFactory_create_fn = []() -> std::shared_ptr<HttpClientFactory> {
-      return _mockClientFactory;
-    };
-    _options.httpOptions = httpOptions;
-    InitAPI(_options);
+    SetHttpClientFactory(_mockClientFactory);
     AWSCredentials credentials{"mock", "credentials"};
     const auto epProvider = Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG);
     S3ClientConfiguration s3Config;
@@ -62,7 +58,7 @@ protected:
   static std::shared_ptr<MockHttpClientFactory> _mockClientFactory;
   static std::shared_ptr<S3Client> _s3Client;
 #ifdef USE_AWS_MEMORY_MANAGEMENT
-  static std::shared_ptr<ExactTestMemorySystem> _testMemorySystem;
+  static std::unique_ptr<ExactTestMemorySystem> _testMemorySystem;
 #endif
 };
 
@@ -71,7 +67,8 @@ std::shared_ptr<MockHttpClient> S3UnitTest::_mockHttpClient = nullptr;
 std::shared_ptr<MockHttpClientFactory> S3UnitTest::_mockClientFactory = nullptr;
 std::shared_ptr<S3Client> S3UnitTest::_s3Client = nullptr;
 #ifdef USE_AWS_MEMORY_MANAGEMENT
-std::shared_ptr<ExactTestMemorySystem> S3UnitTest::_testMemorySystem = nullptr;
+// this must be std:: because this is an utility to track allocations in the SDK and should not rely on SDK
+std::unique_ptr<ExactTestMemorySystem> S3UnitTest::_testMemorySystem = nullptr;
 #endif
 
 

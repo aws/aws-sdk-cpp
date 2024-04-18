@@ -65,6 +65,10 @@ MemorySystemInterface* GetMemorySystem()
 void* Malloc(const char* allocationTag, size_t allocationSize)
 {
     Aws::Utils::Memory::MemorySystemInterface* memorySystem = Aws::Utils::Memory::GetMemorySystem();
+#ifdef USE_AWS_MEMORY_MANAGEMENT
+    // Was InitAPI forgotten or ShutdownAPI already called?
+    assert(memorySystem && "Memory system is not initialized.");
+#endif
 
     void* rawMemory = nullptr;
     if(memorySystem != nullptr)
