@@ -5,9 +5,10 @@
 
 #pragma once
 #include <aws/rolesanywhere/RolesAnywhere_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rolesanywhere/model/AttributeMapping.h>
 #include <utility>
 
 namespace Aws
@@ -38,6 +39,47 @@ namespace Model
     AWS_ROLESANYWHERE_API ProfileDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROLESANYWHERE_API ProfileDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROLESANYWHERE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>A mapping applied to the authenticating end-entity certificate.</p>
+     */
+    inline const Aws::Vector<AttributeMapping>& GetAttributeMappings() const{ return m_attributeMappings; }
+
+    /**
+     * <p>A mapping applied to the authenticating end-entity certificate.</p>
+     */
+    inline bool AttributeMappingsHasBeenSet() const { return m_attributeMappingsHasBeenSet; }
+
+    /**
+     * <p>A mapping applied to the authenticating end-entity certificate.</p>
+     */
+    inline void SetAttributeMappings(const Aws::Vector<AttributeMapping>& value) { m_attributeMappingsHasBeenSet = true; m_attributeMappings = value; }
+
+    /**
+     * <p>A mapping applied to the authenticating end-entity certificate.</p>
+     */
+    inline void SetAttributeMappings(Aws::Vector<AttributeMapping>&& value) { m_attributeMappingsHasBeenSet = true; m_attributeMappings = std::move(value); }
+
+    /**
+     * <p>A mapping applied to the authenticating end-entity certificate.</p>
+     */
+    inline ProfileDetail& WithAttributeMappings(const Aws::Vector<AttributeMapping>& value) { SetAttributeMappings(value); return *this;}
+
+    /**
+     * <p>A mapping applied to the authenticating end-entity certificate.</p>
+     */
+    inline ProfileDetail& WithAttributeMappings(Aws::Vector<AttributeMapping>&& value) { SetAttributeMappings(std::move(value)); return *this;}
+
+    /**
+     * <p>A mapping applied to the authenticating end-entity certificate.</p>
+     */
+    inline ProfileDetail& AddAttributeMappings(const AttributeMapping& value) { m_attributeMappingsHasBeenSet = true; m_attributeMappings.push_back(value); return *this; }
+
+    /**
+     * <p>A mapping applied to the authenticating end-entity certificate.</p>
+     */
+    inline ProfileDetail& AddAttributeMappings(AttributeMapping&& value) { m_attributeMappingsHasBeenSet = true; m_attributeMappings.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -508,6 +550,9 @@ namespace Model
     inline ProfileDetail& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
   private:
+
+    Aws::Vector<AttributeMapping> m_attributeMappings;
+    bool m_attributeMappingsHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet = false;

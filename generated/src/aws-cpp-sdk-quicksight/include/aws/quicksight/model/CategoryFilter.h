@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/model/ColumnIdentifier.h>
 #include <aws/quicksight/model/CategoryFilterConfiguration.h>
+#include <aws/quicksight/model/DefaultFilterControlConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -153,6 +154,43 @@ namespace Model
      */
     inline CategoryFilter& WithConfiguration(CategoryFilterConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The default configurations for the associated controls. This applies only for
+     * filters that are scoped to multiple sheets.</p>
+     */
+    inline const DefaultFilterControlConfiguration& GetDefaultFilterControlConfiguration() const{ return m_defaultFilterControlConfiguration; }
+
+    /**
+     * <p>The default configurations for the associated controls. This applies only for
+     * filters that are scoped to multiple sheets.</p>
+     */
+    inline bool DefaultFilterControlConfigurationHasBeenSet() const { return m_defaultFilterControlConfigurationHasBeenSet; }
+
+    /**
+     * <p>The default configurations for the associated controls. This applies only for
+     * filters that are scoped to multiple sheets.</p>
+     */
+    inline void SetDefaultFilterControlConfiguration(const DefaultFilterControlConfiguration& value) { m_defaultFilterControlConfigurationHasBeenSet = true; m_defaultFilterControlConfiguration = value; }
+
+    /**
+     * <p>The default configurations for the associated controls. This applies only for
+     * filters that are scoped to multiple sheets.</p>
+     */
+    inline void SetDefaultFilterControlConfiguration(DefaultFilterControlConfiguration&& value) { m_defaultFilterControlConfigurationHasBeenSet = true; m_defaultFilterControlConfiguration = std::move(value); }
+
+    /**
+     * <p>The default configurations for the associated controls. This applies only for
+     * filters that are scoped to multiple sheets.</p>
+     */
+    inline CategoryFilter& WithDefaultFilterControlConfiguration(const DefaultFilterControlConfiguration& value) { SetDefaultFilterControlConfiguration(value); return *this;}
+
+    /**
+     * <p>The default configurations for the associated controls. This applies only for
+     * filters that are scoped to multiple sheets.</p>
+     */
+    inline CategoryFilter& WithDefaultFilterControlConfiguration(DefaultFilterControlConfiguration&& value) { SetDefaultFilterControlConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_filterId;
@@ -163,6 +201,9 @@ namespace Model
 
     CategoryFilterConfiguration m_configuration;
     bool m_configurationHasBeenSet = false;
+
+    DefaultFilterControlConfiguration m_defaultFilterControlConfiguration;
+    bool m_defaultFilterControlConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

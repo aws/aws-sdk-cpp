@@ -160,6 +160,47 @@ namespace Model
      */
     inline SourceCloudProperties& WithOriginRegion(const char* value) { SetOriginRegion(value); return *this;}
 
+
+    /**
+     * <p>The ARN of the source Outpost</p>
+     */
+    inline const Aws::String& GetSourceOutpostArn() const{ return m_sourceOutpostArn; }
+
+    /**
+     * <p>The ARN of the source Outpost</p>
+     */
+    inline bool SourceOutpostArnHasBeenSet() const { return m_sourceOutpostArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the source Outpost</p>
+     */
+    inline void SetSourceOutpostArn(const Aws::String& value) { m_sourceOutpostArnHasBeenSet = true; m_sourceOutpostArn = value; }
+
+    /**
+     * <p>The ARN of the source Outpost</p>
+     */
+    inline void SetSourceOutpostArn(Aws::String&& value) { m_sourceOutpostArnHasBeenSet = true; m_sourceOutpostArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the source Outpost</p>
+     */
+    inline void SetSourceOutpostArn(const char* value) { m_sourceOutpostArnHasBeenSet = true; m_sourceOutpostArn.assign(value); }
+
+    /**
+     * <p>The ARN of the source Outpost</p>
+     */
+    inline SourceCloudProperties& WithSourceOutpostArn(const Aws::String& value) { SetSourceOutpostArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the source Outpost</p>
+     */
+    inline SourceCloudProperties& WithSourceOutpostArn(Aws::String&& value) { SetSourceOutpostArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the source Outpost</p>
+     */
+    inline SourceCloudProperties& WithSourceOutpostArn(const char* value) { SetSourceOutpostArn(value); return *this;}
+
   private:
 
     Aws::String m_originAccountID;
@@ -170,6 +211,9 @@ namespace Model
 
     Aws::String m_originRegion;
     bool m_originRegionHasBeenSet = false;
+
+    Aws::String m_sourceOutpostArn;
+    bool m_sourceOutpostArnHasBeenSet = false;
   };
 
 } // namespace Model

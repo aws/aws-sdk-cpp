@@ -23,6 +23,7 @@
 #include <aws/rolesanywhere/RolesAnywhereEndpointProvider.h>
 #include <aws/rolesanywhere/model/CreateProfileRequest.h>
 #include <aws/rolesanywhere/model/CreateTrustAnchorRequest.h>
+#include <aws/rolesanywhere/model/DeleteAttributeMappingRequest.h>
 #include <aws/rolesanywhere/model/DeleteCrlRequest.h>
 #include <aws/rolesanywhere/model/DeleteProfileRequest.h>
 #include <aws/rolesanywhere/model/DeleteTrustAnchorRequest.h>
@@ -42,6 +43,7 @@
 #include <aws/rolesanywhere/model/ListSubjectsRequest.h>
 #include <aws/rolesanywhere/model/ListTagsForResourceRequest.h>
 #include <aws/rolesanywhere/model/ListTrustAnchorsRequest.h>
+#include <aws/rolesanywhere/model/PutAttributeMappingRequest.h>
 #include <aws/rolesanywhere/model/PutNotificationSettingsRequest.h>
 #include <aws/rolesanywhere/model/ResetNotificationSettingsRequest.h>
 #include <aws/rolesanywhere/model/TagResourceRequest.h>
@@ -238,6 +240,45 @@ CreateTrustAnchorOutcome RolesAnywhereClient::CreateTrustAnchor(const CreateTrus
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateTrustAnchor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/trustanchors");
       return CreateTrustAnchorOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteAttributeMappingOutcome RolesAnywhereClient::DeleteAttributeMapping(const DeleteAttributeMappingRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteAttributeMapping);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAttributeMapping, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.CertificateFieldHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAttributeMapping", "Required field: CertificateField, is not set");
+    return DeleteAttributeMappingOutcome(Aws::Client::AWSError<RolesAnywhereErrors>(RolesAnywhereErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CertificateField]", false));
+  }
+  if (!request.ProfileIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAttributeMapping", "Required field: ProfileId, is not set");
+    return DeleteAttributeMappingOutcome(Aws::Client::AWSError<RolesAnywhereErrors>(RolesAnywhereErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteAttributeMapping, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteAttributeMapping, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteAttributeMapping",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteAttributeMappingOutcome>(
+    [&]()-> DeleteAttributeMappingOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteAttributeMapping, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/profiles/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/mappings");
+      return DeleteAttributeMappingOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -840,6 +881,40 @@ ListTrustAnchorsOutcome RolesAnywhereClient::ListTrustAnchors(const ListTrustAnc
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTrustAnchors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/trustanchors");
       return ListTrustAnchorsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+PutAttributeMappingOutcome RolesAnywhereClient::PutAttributeMapping(const PutAttributeMappingRequest& request) const
+{
+  AWS_OPERATION_GUARD(PutAttributeMapping);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutAttributeMapping, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ProfileIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutAttributeMapping", "Required field: ProfileId, is not set");
+    return PutAttributeMappingOutcome(Aws::Client::AWSError<RolesAnywhereErrors>(RolesAnywhereErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PutAttributeMapping, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, PutAttributeMapping, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PutAttributeMapping",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<PutAttributeMappingOutcome>(
+    [&]()-> PutAttributeMappingOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutAttributeMapping, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/profiles/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/mappings");
+      return PutAttributeMappingOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

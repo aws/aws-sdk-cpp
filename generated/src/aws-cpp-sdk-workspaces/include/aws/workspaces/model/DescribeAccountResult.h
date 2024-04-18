@@ -7,6 +7,7 @@
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/workspaces/model/DedicatedTenancySupportResultEnum.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workspaces/model/DedicatedTenancyAccountType.h>
 #include <utility>
 
 namespace Aws
@@ -123,6 +124,32 @@ namespace Model
     inline DescribeAccountResult& WithDedicatedTenancyManagementCidrRange(const char* value) { SetDedicatedTenancyManagementCidrRange(value); return *this;}
 
 
+    /**
+     * <p>The type of linked account.</p>
+     */
+    inline const DedicatedTenancyAccountType& GetDedicatedTenancyAccountType() const{ return m_dedicatedTenancyAccountType; }
+
+    /**
+     * <p>The type of linked account.</p>
+     */
+    inline void SetDedicatedTenancyAccountType(const DedicatedTenancyAccountType& value) { m_dedicatedTenancyAccountType = value; }
+
+    /**
+     * <p>The type of linked account.</p>
+     */
+    inline void SetDedicatedTenancyAccountType(DedicatedTenancyAccountType&& value) { m_dedicatedTenancyAccountType = std::move(value); }
+
+    /**
+     * <p>The type of linked account.</p>
+     */
+    inline DescribeAccountResult& WithDedicatedTenancyAccountType(const DedicatedTenancyAccountType& value) { SetDedicatedTenancyAccountType(value); return *this;}
+
+    /**
+     * <p>The type of linked account.</p>
+     */
+    inline DescribeAccountResult& WithDedicatedTenancyAccountType(DedicatedTenancyAccountType&& value) { SetDedicatedTenancyAccountType(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -149,6 +176,8 @@ namespace Model
     DedicatedTenancySupportResultEnum m_dedicatedTenancySupport;
 
     Aws::String m_dedicatedTenancyManagementCidrRange;
+
+    DedicatedTenancyAccountType m_dedicatedTenancyAccountType;
 
     Aws::String m_requestId;
   };

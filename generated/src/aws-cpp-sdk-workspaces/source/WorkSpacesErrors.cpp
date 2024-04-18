@@ -47,6 +47,8 @@ template<> AWS_WORKSPACES_API ResourceUnavailableException WorkSpacesError::GetM
 namespace WorkSpacesErrorMapper
 {
 
+static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
+static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 static const int COMPUTE_NOT_COMPATIBLE_HASH = HashingUtils::HashString("ComputeNotCompatibleException");
 static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
 static const int OPERATION_NOT_SUPPORTED_HASH = HashingUtils::HashString("OperationNotSupportedException");
@@ -70,7 +72,15 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == COMPUTE_NOT_COMPATIBLE_HASH)
+  if (hashCode == CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == INTERNAL_SERVER_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == COMPUTE_NOT_COMPATIBLE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::COMPUTE_NOT_COMPATIBLE), RetryableType::NOT_RETRYABLE);
   }

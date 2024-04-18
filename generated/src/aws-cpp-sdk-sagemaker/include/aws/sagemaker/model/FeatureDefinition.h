@@ -47,9 +47,9 @@ namespace Model
      * <p>The name of a feature. The type must be a string. <code>FeatureName</code>
      * cannot be any of the following: <code>is_deleted</code>,
      * <code>write_time</code>, <code>api_invocation_time</code>.</p> <p>The name:</p>
-     * <ul> <li> <p>Must start and end with an alphanumeric character.</p> </li> <li>
-     * <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces
-     * are not allowed.</p> </li> </ul>
+     * <ul> <li> <p>Must start with an alphanumeric character.</p> </li> <li> <p>Can
+     * only include alphanumeric characters, underscores, and hyphens. Spaces are not
+     * allowed.</p> </li> </ul>
      */
     inline const Aws::String& GetFeatureName() const{ return m_featureName; }
 
@@ -57,9 +57,9 @@ namespace Model
      * <p>The name of a feature. The type must be a string. <code>FeatureName</code>
      * cannot be any of the following: <code>is_deleted</code>,
      * <code>write_time</code>, <code>api_invocation_time</code>.</p> <p>The name:</p>
-     * <ul> <li> <p>Must start and end with an alphanumeric character.</p> </li> <li>
-     * <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces
-     * are not allowed.</p> </li> </ul>
+     * <ul> <li> <p>Must start with an alphanumeric character.</p> </li> <li> <p>Can
+     * only include alphanumeric characters, underscores, and hyphens. Spaces are not
+     * allowed.</p> </li> </ul>
      */
     inline bool FeatureNameHasBeenSet() const { return m_featureNameHasBeenSet; }
 
@@ -67,9 +67,9 @@ namespace Model
      * <p>The name of a feature. The type must be a string. <code>FeatureName</code>
      * cannot be any of the following: <code>is_deleted</code>,
      * <code>write_time</code>, <code>api_invocation_time</code>.</p> <p>The name:</p>
-     * <ul> <li> <p>Must start and end with an alphanumeric character.</p> </li> <li>
-     * <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces
-     * are not allowed.</p> </li> </ul>
+     * <ul> <li> <p>Must start with an alphanumeric character.</p> </li> <li> <p>Can
+     * only include alphanumeric characters, underscores, and hyphens. Spaces are not
+     * allowed.</p> </li> </ul>
      */
     inline void SetFeatureName(const Aws::String& value) { m_featureNameHasBeenSet = true; m_featureName = value; }
 
@@ -77,9 +77,9 @@ namespace Model
      * <p>The name of a feature. The type must be a string. <code>FeatureName</code>
      * cannot be any of the following: <code>is_deleted</code>,
      * <code>write_time</code>, <code>api_invocation_time</code>.</p> <p>The name:</p>
-     * <ul> <li> <p>Must start and end with an alphanumeric character.</p> </li> <li>
-     * <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces
-     * are not allowed.</p> </li> </ul>
+     * <ul> <li> <p>Must start with an alphanumeric character.</p> </li> <li> <p>Can
+     * only include alphanumeric characters, underscores, and hyphens. Spaces are not
+     * allowed.</p> </li> </ul>
      */
     inline void SetFeatureName(Aws::String&& value) { m_featureNameHasBeenSet = true; m_featureName = std::move(value); }
 
@@ -87,9 +87,9 @@ namespace Model
      * <p>The name of a feature. The type must be a string. <code>FeatureName</code>
      * cannot be any of the following: <code>is_deleted</code>,
      * <code>write_time</code>, <code>api_invocation_time</code>.</p> <p>The name:</p>
-     * <ul> <li> <p>Must start and end with an alphanumeric character.</p> </li> <li>
-     * <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces
-     * are not allowed.</p> </li> </ul>
+     * <ul> <li> <p>Must start with an alphanumeric character.</p> </li> <li> <p>Can
+     * only include alphanumeric characters, underscores, and hyphens. Spaces are not
+     * allowed.</p> </li> </ul>
      */
     inline void SetFeatureName(const char* value) { m_featureNameHasBeenSet = true; m_featureName.assign(value); }
 
@@ -97,9 +97,9 @@ namespace Model
      * <p>The name of a feature. The type must be a string. <code>FeatureName</code>
      * cannot be any of the following: <code>is_deleted</code>,
      * <code>write_time</code>, <code>api_invocation_time</code>.</p> <p>The name:</p>
-     * <ul> <li> <p>Must start and end with an alphanumeric character.</p> </li> <li>
-     * <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces
-     * are not allowed.</p> </li> </ul>
+     * <ul> <li> <p>Must start with an alphanumeric character.</p> </li> <li> <p>Can
+     * only include alphanumeric characters, underscores, and hyphens. Spaces are not
+     * allowed.</p> </li> </ul>
      */
     inline FeatureDefinition& WithFeatureName(const Aws::String& value) { SetFeatureName(value); return *this;}
 
@@ -107,9 +107,9 @@ namespace Model
      * <p>The name of a feature. The type must be a string. <code>FeatureName</code>
      * cannot be any of the following: <code>is_deleted</code>,
      * <code>write_time</code>, <code>api_invocation_time</code>.</p> <p>The name:</p>
-     * <ul> <li> <p>Must start and end with an alphanumeric character.</p> </li> <li>
-     * <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces
-     * are not allowed.</p> </li> </ul>
+     * <ul> <li> <p>Must start with an alphanumeric character.</p> </li> <li> <p>Can
+     * only include alphanumeric characters, underscores, and hyphens. Spaces are not
+     * allowed.</p> </li> </ul>
      */
     inline FeatureDefinition& WithFeatureName(Aws::String&& value) { SetFeatureName(std::move(value)); return *this;}
 
@@ -117,9 +117,9 @@ namespace Model
      * <p>The name of a feature. The type must be a string. <code>FeatureName</code>
      * cannot be any of the following: <code>is_deleted</code>,
      * <code>write_time</code>, <code>api_invocation_time</code>.</p> <p>The name:</p>
-     * <ul> <li> <p>Must start and end with an alphanumeric character.</p> </li> <li>
-     * <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces
-     * are not allowed.</p> </li> </ul>
+     * <ul> <li> <p>Must start with an alphanumeric character.</p> </li> <li> <p>Can
+     * only include alphanumeric characters, underscores, and hyphens. Spaces are not
+     * allowed.</p> </li> </ul>
      */
     inline FeatureDefinition& WithFeatureName(const char* value) { SetFeatureName(value); return *this;}
 

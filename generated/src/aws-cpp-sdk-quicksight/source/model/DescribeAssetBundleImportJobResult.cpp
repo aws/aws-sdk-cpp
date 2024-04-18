@@ -119,6 +119,15 @@ DescribeAssetBundleImportJobResult& DescribeAssetBundleImportJobResult::operator
 
   }
 
+  if(jsonValue.ValueExists("Warnings"))
+  {
+    Aws::Utils::Array<JsonView> warningsJsonList = jsonValue.GetArray("Warnings");
+    for(unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex)
+    {
+      m_warnings.push_back(warningsJsonList[warningsIndex].AsObject());
+    }
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

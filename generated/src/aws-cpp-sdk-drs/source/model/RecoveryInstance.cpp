@@ -35,6 +35,7 @@ RecoveryInstance::RecoveryInstance() :
     m_pointInTimeSnapshotDateTimeHasBeenSet(false),
     m_recoveryInstanceIDHasBeenSet(false),
     m_recoveryInstancePropertiesHasBeenSet(false),
+    m_sourceOutpostArnHasBeenSet(false),
     m_sourceServerIDHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -57,6 +58,7 @@ RecoveryInstance::RecoveryInstance(JsonView jsonValue) :
     m_pointInTimeSnapshotDateTimeHasBeenSet(false),
     m_recoveryInstanceIDHasBeenSet(false),
     m_recoveryInstancePropertiesHasBeenSet(false),
+    m_sourceOutpostArnHasBeenSet(false),
     m_sourceServerIDHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -156,6 +158,13 @@ RecoveryInstance& RecoveryInstance::operator =(JsonView jsonValue)
     m_recoveryInstancePropertiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("sourceOutpostArn"))
+  {
+    m_sourceOutpostArn = jsonValue.GetString("sourceOutpostArn");
+
+    m_sourceOutpostArnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("sourceServerID"))
   {
     m_sourceServerID = jsonValue.GetString("sourceServerID");
@@ -253,6 +262,12 @@ JsonValue RecoveryInstance::Jsonize() const
   if(m_recoveryInstancePropertiesHasBeenSet)
   {
    payload.WithObject("recoveryInstanceProperties", m_recoveryInstanceProperties.Jsonize());
+
+  }
+
+  if(m_sourceOutpostArnHasBeenSet)
+  {
+   payload.WithString("sourceOutpostArn", m_sourceOutpostArn);
 
   }
 

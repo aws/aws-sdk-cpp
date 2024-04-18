@@ -19,6 +19,7 @@ namespace Model
 {
 
 ProfileDetail::ProfileDetail() : 
+    m_attributeMappingsHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_createdByHasBeenSet(false),
     m_durationSeconds(0),
@@ -38,6 +39,7 @@ ProfileDetail::ProfileDetail() :
 }
 
 ProfileDetail::ProfileDetail(JsonView jsonValue) : 
+    m_attributeMappingsHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_createdByHasBeenSet(false),
     m_durationSeconds(0),
@@ -59,6 +61,16 @@ ProfileDetail::ProfileDetail(JsonView jsonValue) :
 
 ProfileDetail& ProfileDetail::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("attributeMappings"))
+  {
+    Aws::Utils::Array<JsonView> attributeMappingsJsonList = jsonValue.GetArray("attributeMappings");
+    for(unsigned attributeMappingsIndex = 0; attributeMappingsIndex < attributeMappingsJsonList.GetLength(); ++attributeMappingsIndex)
+    {
+      m_attributeMappings.push_back(attributeMappingsJsonList[attributeMappingsIndex].AsObject());
+    }
+    m_attributeMappingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
@@ -155,6 +167,17 @@ ProfileDetail& ProfileDetail::operator =(JsonView jsonValue)
 JsonValue ProfileDetail::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_attributeMappingsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> attributeMappingsJsonList(m_attributeMappings.size());
+   for(unsigned attributeMappingsIndex = 0; attributeMappingsIndex < attributeMappingsJsonList.GetLength(); ++attributeMappingsIndex)
+   {
+     attributeMappingsJsonList[attributeMappingsIndex].AsObject(m_attributeMappings[attributeMappingsIndex].Jsonize());
+   }
+   payload.WithArray("attributeMappings", std::move(attributeMappingsJsonList));
+
+  }
 
   if(m_createdAtHasBeenSet)
   {

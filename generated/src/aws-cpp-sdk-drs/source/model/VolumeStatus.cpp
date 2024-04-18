@@ -24,6 +24,7 @@ namespace Aws
         static const int CONTAINS_MARKETPLACE_PRODUCT_CODES_HASH = HashingUtils::HashString("CONTAINS_MARKETPLACE_PRODUCT_CODES");
         static const int MISSING_VOLUME_ATTRIBUTES_HASH = HashingUtils::HashString("MISSING_VOLUME_ATTRIBUTES");
         static const int MISSING_VOLUME_ATTRIBUTES_AND_PRECHECK_UNAVAILABLE_HASH = HashingUtils::HashString("MISSING_VOLUME_ATTRIBUTES_AND_PRECHECK_UNAVAILABLE");
+        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
 
 
         VolumeStatus GetVolumeStatusForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == MISSING_VOLUME_ATTRIBUTES_AND_PRECHECK_UNAVAILABLE_HASH)
           {
             return VolumeStatus::MISSING_VOLUME_ATTRIBUTES_AND_PRECHECK_UNAVAILABLE;
+          }
+          else if (hashCode == PENDING_HASH)
+          {
+            return VolumeStatus::PENDING;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "MISSING_VOLUME_ATTRIBUTES";
           case VolumeStatus::MISSING_VOLUME_ATTRIBUTES_AND_PRECHECK_UNAVAILABLE:
             return "MISSING_VOLUME_ATTRIBUTES_AND_PRECHECK_UNAVAILABLE";
+          case VolumeStatus::PENDING:
+            return "PENDING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

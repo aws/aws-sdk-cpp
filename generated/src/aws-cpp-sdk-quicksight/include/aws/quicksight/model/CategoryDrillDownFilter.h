@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>The numeric equality type drill down filter.</p><p><h3>See Also:</h3>   <a
+   * <p>The category drill down filter.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CategoryDrillDownFilter">AWS
    * API Reference</a></p>
    */

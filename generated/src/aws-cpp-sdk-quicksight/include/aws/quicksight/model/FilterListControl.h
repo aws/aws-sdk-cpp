@@ -197,7 +197,7 @@ namespace Model
 
 
     /**
-     * <p>The type of <code>FilterListControl</code>. Choose one of the following
+     * <p>The type of the <code>FilterListControl</code>. Choose one of the following
      * options:</p> <ul> <li> <p> <code>MULTI_SELECT</code>: The user can select
      * multiple entries from the list.</p> </li> <li> <p> <code>SINGLE_SELECT</code>:
      * The user can select a single entry from the list.</p> </li> </ul>
@@ -205,7 +205,7 @@ namespace Model
     inline const SheetControlListType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of <code>FilterListControl</code>. Choose one of the following
+     * <p>The type of the <code>FilterListControl</code>. Choose one of the following
      * options:</p> <ul> <li> <p> <code>MULTI_SELECT</code>: The user can select
      * multiple entries from the list.</p> </li> <li> <p> <code>SINGLE_SELECT</code>:
      * The user can select a single entry from the list.</p> </li> </ul>
@@ -213,7 +213,7 @@ namespace Model
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of <code>FilterListControl</code>. Choose one of the following
+     * <p>The type of the <code>FilterListControl</code>. Choose one of the following
      * options:</p> <ul> <li> <p> <code>MULTI_SELECT</code>: The user can select
      * multiple entries from the list.</p> </li> <li> <p> <code>SINGLE_SELECT</code>:
      * The user can select a single entry from the list.</p> </li> </ul>
@@ -221,7 +221,7 @@ namespace Model
     inline void SetType(const SheetControlListType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of <code>FilterListControl</code>. Choose one of the following
+     * <p>The type of the <code>FilterListControl</code>. Choose one of the following
      * options:</p> <ul> <li> <p> <code>MULTI_SELECT</code>: The user can select
      * multiple entries from the list.</p> </li> <li> <p> <code>SINGLE_SELECT</code>:
      * The user can select a single entry from the list.</p> </li> </ul>
@@ -229,7 +229,7 @@ namespace Model
     inline void SetType(SheetControlListType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of <code>FilterListControl</code>. Choose one of the following
+     * <p>The type of the <code>FilterListControl</code>. Choose one of the following
      * options:</p> <ul> <li> <p> <code>MULTI_SELECT</code>: The user can select
      * multiple entries from the list.</p> </li> <li> <p> <code>SINGLE_SELECT</code>:
      * The user can select a single entry from the list.</p> </li> </ul>
@@ -237,7 +237,7 @@ namespace Model
     inline FilterListControl& WithType(const SheetControlListType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of <code>FilterListControl</code>. Choose one of the following
+     * <p>The type of the <code>FilterListControl</code>. Choose one of the following
      * options:</p> <ul> <li> <p> <code>MULTI_SELECT</code>: The user can select
      * multiple entries from the list.</p> </li> <li> <p> <code>SINGLE_SELECT</code>:
      * The user can select a single entry from the list.</p> </li> </ul>

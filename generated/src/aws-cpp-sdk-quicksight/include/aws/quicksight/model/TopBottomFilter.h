@@ -9,6 +9,7 @@
 #include <aws/quicksight/model/ColumnIdentifier.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/model/TimeGranularity.h>
+#include <aws/quicksight/model/DefaultFilterControlConfiguration.h>
 #include <aws/quicksight/model/AggregationSortConfiguration.h>
 #include <utility>
 
@@ -261,6 +262,43 @@ namespace Model
      */
     inline TopBottomFilter& WithParameterName(const char* value) { SetParameterName(value); return *this;}
 
+
+    /**
+     * <p>The default configurations for the associated controls. This applies only for
+     * filters that are scoped to multiple sheets.</p>
+     */
+    inline const DefaultFilterControlConfiguration& GetDefaultFilterControlConfiguration() const{ return m_defaultFilterControlConfiguration; }
+
+    /**
+     * <p>The default configurations for the associated controls. This applies only for
+     * filters that are scoped to multiple sheets.</p>
+     */
+    inline bool DefaultFilterControlConfigurationHasBeenSet() const { return m_defaultFilterControlConfigurationHasBeenSet; }
+
+    /**
+     * <p>The default configurations for the associated controls. This applies only for
+     * filters that are scoped to multiple sheets.</p>
+     */
+    inline void SetDefaultFilterControlConfiguration(const DefaultFilterControlConfiguration& value) { m_defaultFilterControlConfigurationHasBeenSet = true; m_defaultFilterControlConfiguration = value; }
+
+    /**
+     * <p>The default configurations for the associated controls. This applies only for
+     * filters that are scoped to multiple sheets.</p>
+     */
+    inline void SetDefaultFilterControlConfiguration(DefaultFilterControlConfiguration&& value) { m_defaultFilterControlConfigurationHasBeenSet = true; m_defaultFilterControlConfiguration = std::move(value); }
+
+    /**
+     * <p>The default configurations for the associated controls. This applies only for
+     * filters that are scoped to multiple sheets.</p>
+     */
+    inline TopBottomFilter& WithDefaultFilterControlConfiguration(const DefaultFilterControlConfiguration& value) { SetDefaultFilterControlConfiguration(value); return *this;}
+
+    /**
+     * <p>The default configurations for the associated controls. This applies only for
+     * filters that are scoped to multiple sheets.</p>
+     */
+    inline TopBottomFilter& WithDefaultFilterControlConfiguration(DefaultFilterControlConfiguration&& value) { SetDefaultFilterControlConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_filterId;
@@ -280,6 +318,9 @@ namespace Model
 
     Aws::String m_parameterName;
     bool m_parameterNameHasBeenSet = false;
+
+    DefaultFilterControlConfiguration m_defaultFilterControlConfiguration;
+    bool m_defaultFilterControlConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

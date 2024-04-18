@@ -195,7 +195,7 @@ namespace Model
 
 
     /**
-     * <p>The type of <code>FilterSliderControl</code>. Choose one of the following
+     * <p>The type of the <code>FilterSliderControl</code>. Choose one of the following
      * options:</p> <ul> <li> <p> <code>SINGLE_POINT</code>: Filter against(equals) a
      * single data point.</p> </li> <li> <p> <code>RANGE</code>: Filter data that is in
      * a specified range.</p> </li> </ul>
@@ -203,7 +203,7 @@ namespace Model
     inline const SheetControlSliderType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of <code>FilterSliderControl</code>. Choose one of the following
+     * <p>The type of the <code>FilterSliderControl</code>. Choose one of the following
      * options:</p> <ul> <li> <p> <code>SINGLE_POINT</code>: Filter against(equals) a
      * single data point.</p> </li> <li> <p> <code>RANGE</code>: Filter data that is in
      * a specified range.</p> </li> </ul>
@@ -211,7 +211,7 @@ namespace Model
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of <code>FilterSliderControl</code>. Choose one of the following
+     * <p>The type of the <code>FilterSliderControl</code>. Choose one of the following
      * options:</p> <ul> <li> <p> <code>SINGLE_POINT</code>: Filter against(equals) a
      * single data point.</p> </li> <li> <p> <code>RANGE</code>: Filter data that is in
      * a specified range.</p> </li> </ul>
@@ -219,7 +219,7 @@ namespace Model
     inline void SetType(const SheetControlSliderType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of <code>FilterSliderControl</code>. Choose one of the following
+     * <p>The type of the <code>FilterSliderControl</code>. Choose one of the following
      * options:</p> <ul> <li> <p> <code>SINGLE_POINT</code>: Filter against(equals) a
      * single data point.</p> </li> <li> <p> <code>RANGE</code>: Filter data that is in
      * a specified range.</p> </li> </ul>
@@ -227,7 +227,7 @@ namespace Model
     inline void SetType(SheetControlSliderType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of <code>FilterSliderControl</code>. Choose one of the following
+     * <p>The type of the <code>FilterSliderControl</code>. Choose one of the following
      * options:</p> <ul> <li> <p> <code>SINGLE_POINT</code>: Filter against(equals) a
      * single data point.</p> </li> <li> <p> <code>RANGE</code>: Filter data that is in
      * a specified range.</p> </li> </ul>
@@ -235,7 +235,7 @@ namespace Model
     inline FilterSliderControl& WithType(const SheetControlSliderType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of <code>FilterSliderControl</code>. Choose one of the following
+     * <p>The type of the <code>FilterSliderControl</code>. Choose one of the following
      * options:</p> <ul> <li> <p> <code>SINGLE_POINT</code>: Filter against(equals) a
      * single data point.</p> </li> <li> <p> <code>RANGE</code>: Filter data that is in
      * a specified range.</p> </li> </ul>
@@ -244,43 +244,43 @@ namespace Model
 
 
     /**
-     * <p>The smaller value that is displayed at the left of the slider.</p>
+     * <p>The larger value that is displayed at the right of the slider.</p>
      */
     inline double GetMaximumValue() const{ return m_maximumValue; }
 
     /**
-     * <p>The smaller value that is displayed at the left of the slider.</p>
+     * <p>The larger value that is displayed at the right of the slider.</p>
      */
     inline bool MaximumValueHasBeenSet() const { return m_maximumValueHasBeenSet; }
 
     /**
-     * <p>The smaller value that is displayed at the left of the slider.</p>
+     * <p>The larger value that is displayed at the right of the slider.</p>
      */
     inline void SetMaximumValue(double value) { m_maximumValueHasBeenSet = true; m_maximumValue = value; }
 
     /**
-     * <p>The smaller value that is displayed at the left of the slider.</p>
+     * <p>The larger value that is displayed at the right of the slider.</p>
      */
     inline FilterSliderControl& WithMaximumValue(double value) { SetMaximumValue(value); return *this;}
 
 
     /**
-     * <p>The larger value that is displayed at the right of the slider.</p>
+     * <p>The smaller value that is displayed at the left of the slider.</p>
      */
     inline double GetMinimumValue() const{ return m_minimumValue; }
 
     /**
-     * <p>The larger value that is displayed at the right of the slider.</p>
+     * <p>The smaller value that is displayed at the left of the slider.</p>
      */
     inline bool MinimumValueHasBeenSet() const { return m_minimumValueHasBeenSet; }
 
     /**
-     * <p>The larger value that is displayed at the right of the slider.</p>
+     * <p>The smaller value that is displayed at the left of the slider.</p>
      */
     inline void SetMinimumValue(double value) { m_minimumValueHasBeenSet = true; m_minimumValue = value; }
 
     /**
-     * <p>The larger value that is displayed at the right of the slider.</p>
+     * <p>The smaller value that is displayed at the left of the slider.</p>
      */
     inline FilterSliderControl& WithMinimumValue(double value) { SetMinimumValue(value); return *this;}
 

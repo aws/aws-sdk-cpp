@@ -17,10 +17,7 @@ namespace Model
   {
     NOT_SET,
     AWS_Rekognition_DetectModerationLabels_Image_V3,
-    AWS_Textract_AnalyzeDocument_Forms_V1,
-    AWS_Textract_AnalyzeExpense,
-    AWS_Handshake_VerifyIdentity,
-    AWS_Bedrock_ModelEvaluation
+    AWS_Textract_AnalyzeDocument_Forms_V1
   };
 
 namespace AwsManagedHumanLoopRequestSourceMapper

@@ -16,6 +16,7 @@
 #include <aws/quicksight/model/AssetBundleImportJobOverrideTags.h>
 #include <aws/quicksight/model/AssetBundleImportJobOverrideValidationStrategy.h>
 #include <aws/quicksight/model/AssetBundleImportJobError.h>
+#include <aws/quicksight/model/AssetBundleImportJobWarning.h>
 #include <utility>
 
 namespace Aws
@@ -573,6 +574,49 @@ namespace Model
      */
     inline DescribeAssetBundleImportJobResult& WithOverrideValidationStrategy(AssetBundleImportJobOverrideValidationStrategy&& value) { SetOverrideValidationStrategy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An array of warning records that describe all permitted errors that are
+     * encountered during the import job.</p>
+     */
+    inline const Aws::Vector<AssetBundleImportJobWarning>& GetWarnings() const{ return m_warnings; }
+
+    /**
+     * <p>An array of warning records that describe all permitted errors that are
+     * encountered during the import job.</p>
+     */
+    inline void SetWarnings(const Aws::Vector<AssetBundleImportJobWarning>& value) { m_warnings = value; }
+
+    /**
+     * <p>An array of warning records that describe all permitted errors that are
+     * encountered during the import job.</p>
+     */
+    inline void SetWarnings(Aws::Vector<AssetBundleImportJobWarning>&& value) { m_warnings = std::move(value); }
+
+    /**
+     * <p>An array of warning records that describe all permitted errors that are
+     * encountered during the import job.</p>
+     */
+    inline DescribeAssetBundleImportJobResult& WithWarnings(const Aws::Vector<AssetBundleImportJobWarning>& value) { SetWarnings(value); return *this;}
+
+    /**
+     * <p>An array of warning records that describe all permitted errors that are
+     * encountered during the import job.</p>
+     */
+    inline DescribeAssetBundleImportJobResult& WithWarnings(Aws::Vector<AssetBundleImportJobWarning>&& value) { SetWarnings(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of warning records that describe all permitted errors that are
+     * encountered during the import job.</p>
+     */
+    inline DescribeAssetBundleImportJobResult& AddWarnings(const AssetBundleImportJobWarning& value) { m_warnings.push_back(value); return *this; }
+
+    /**
+     * <p>An array of warning records that describe all permitted errors that are
+     * encountered during the import job.</p>
+     */
+    inline DescribeAssetBundleImportJobResult& AddWarnings(AssetBundleImportJobWarning&& value) { m_warnings.push_back(std::move(value)); return *this; }
+
   private:
 
     AssetBundleImportJobStatus m_jobStatus;
@@ -604,6 +648,8 @@ namespace Model
     AssetBundleImportJobOverrideTags m_overrideTags;
 
     AssetBundleImportJobOverrideValidationStrategy m_overrideValidationStrategy;
+
+    Aws::Vector<AssetBundleImportJobWarning> m_warnings;
   };
 
 } // namespace Model

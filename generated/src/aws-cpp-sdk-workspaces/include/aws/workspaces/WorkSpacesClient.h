@@ -99,6 +99,33 @@ namespace WorkSpaces
         virtual ~WorkSpacesClient();
 
         /**
+         * <p>Accepts the account link invitation.</p>  <p>There's currently no
+         * unlinking capability after you accept the account linking invitation.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AcceptAccountLinkInvitation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AcceptAccountLinkInvitationOutcome AcceptAccountLinkInvitation(const Model::AcceptAccountLinkInvitationRequest& request) const;
+
+        /**
+         * A Callable wrapper for AcceptAccountLinkInvitation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AcceptAccountLinkInvitationRequestT = Model::AcceptAccountLinkInvitationRequest>
+        Model::AcceptAccountLinkInvitationOutcomeCallable AcceptAccountLinkInvitationCallable(const AcceptAccountLinkInvitationRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesClient::AcceptAccountLinkInvitation, request);
+        }
+
+        /**
+         * An Async wrapper for AcceptAccountLinkInvitation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AcceptAccountLinkInvitationRequestT = Model::AcceptAccountLinkInvitationRequest>
+        void AcceptAccountLinkInvitationAsync(const AcceptAccountLinkInvitationRequestT& request, const AcceptAccountLinkInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesClient::AcceptAccountLinkInvitation, request, handler, context);
+        }
+
+        /**
          * <p>Associates the specified connection alias with the specified directory to
          * enable cross-Region redirection. For more information, see <a
          * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
@@ -245,6 +272,31 @@ namespace WorkSpaces
         void CopyWorkspaceImageAsync(const CopyWorkspaceImageRequestT& request, const CopyWorkspaceImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&WorkSpacesClient::CopyWorkspaceImage, request, handler, context);
+        }
+
+        /**
+         * <p>Creates the account link invitation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateAccountLinkInvitation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAccountLinkInvitationOutcome CreateAccountLinkInvitation(const Model::CreateAccountLinkInvitationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateAccountLinkInvitation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateAccountLinkInvitationRequestT = Model::CreateAccountLinkInvitationRequest>
+        Model::CreateAccountLinkInvitationOutcomeCallable CreateAccountLinkInvitationCallable(const CreateAccountLinkInvitationRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesClient::CreateAccountLinkInvitation, request);
+        }
+
+        /**
+         * An Async wrapper for CreateAccountLinkInvitation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateAccountLinkInvitationRequestT = Model::CreateAccountLinkInvitationRequest>
+        void CreateAccountLinkInvitationAsync(const CreateAccountLinkInvitationRequestT& request, const CreateAccountLinkInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesClient::CreateAccountLinkInvitation, request, handler, context);
         }
 
         /**
@@ -514,6 +566,31 @@ namespace WorkSpaces
         void CreateWorkspacesAsync(const CreateWorkspacesRequestT& request, const CreateWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&WorkSpacesClient::CreateWorkspaces, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the account link invitation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteAccountLinkInvitation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAccountLinkInvitationOutcome DeleteAccountLinkInvitation(const Model::DeleteAccountLinkInvitationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAccountLinkInvitation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteAccountLinkInvitationRequestT = Model::DeleteAccountLinkInvitationRequest>
+        Model::DeleteAccountLinkInvitationOutcomeCallable DeleteAccountLinkInvitationCallable(const DeleteAccountLinkInvitationRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesClient::DeleteAccountLinkInvitation, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteAccountLinkInvitation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteAccountLinkInvitationRequestT = Model::DeleteAccountLinkInvitationRequest>
+        void DeleteAccountLinkInvitationAsync(const DeleteAccountLinkInvitationRequestT& request, const DeleteAccountLinkInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesClient::DeleteAccountLinkInvitation, request, handler, context);
         }
 
         /**
@@ -1429,6 +1506,31 @@ namespace WorkSpaces
         }
 
         /**
+         * <p>Retrieves account link information.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/GetAccountLink">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAccountLinkOutcome GetAccountLink(const Model::GetAccountLinkRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetAccountLink that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAccountLinkRequestT = Model::GetAccountLinkRequest>
+        Model::GetAccountLinkOutcomeCallable GetAccountLinkCallable(const GetAccountLinkRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesClient::GetAccountLink, request);
+        }
+
+        /**
+         * An Async wrapper for GetAccountLink that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAccountLinkRequestT = Model::GetAccountLinkRequest>
+        void GetAccountLinkAsync(const GetAccountLinkRequestT& request, const GetAccountLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesClient::GetAccountLink, request, handler, context);
+        }
+
+        /**
          * <p>Imports client branding. Client branding allows you to customize your
          * WorkSpace's client login portal. You can tailor your login portal company logo,
          * the support email address, support link, link to reset password, and a custom
@@ -1494,6 +1596,31 @@ namespace WorkSpaces
         void ImportWorkspaceImageAsync(const ImportWorkspaceImageRequestT& request, const ImportWorkspaceImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&WorkSpacesClient::ImportWorkspaceImage, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all account links.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ListAccountLinks">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAccountLinksOutcome ListAccountLinks(const Model::ListAccountLinksRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAccountLinks that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAccountLinksRequestT = Model::ListAccountLinksRequest>
+        Model::ListAccountLinksOutcomeCallable ListAccountLinksCallable(const ListAccountLinksRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesClient::ListAccountLinks, request);
+        }
+
+        /**
+         * An Async wrapper for ListAccountLinks that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAccountLinksRequestT = Model::ListAccountLinksRequest>
+        void ListAccountLinksAsync(const ListAccountLinksRequestT& request, const ListAccountLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesClient::ListAccountLinks, request, handler, context);
         }
 
         /**
@@ -1906,6 +2033,31 @@ namespace WorkSpaces
         void RegisterWorkspaceDirectoryAsync(const RegisterWorkspaceDirectoryRequestT& request, const RegisterWorkspaceDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&WorkSpacesClient::RegisterWorkspaceDirectory, request, handler, context);
+        }
+
+        /**
+         * <p>Rejects the account link invitation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RejectAccountLinkInvitation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RejectAccountLinkInvitationOutcome RejectAccountLinkInvitation(const Model::RejectAccountLinkInvitationRequest& request) const;
+
+        /**
+         * A Callable wrapper for RejectAccountLinkInvitation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename RejectAccountLinkInvitationRequestT = Model::RejectAccountLinkInvitationRequest>
+        Model::RejectAccountLinkInvitationOutcomeCallable RejectAccountLinkInvitationCallable(const RejectAccountLinkInvitationRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesClient::RejectAccountLinkInvitation, request);
+        }
+
+        /**
+         * An Async wrapper for RejectAccountLinkInvitation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename RejectAccountLinkInvitationRequestT = Model::RejectAccountLinkInvitationRequest>
+        void RejectAccountLinkInvitationAsync(const RejectAccountLinkInvitationRequestT& request, const RejectAccountLinkInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesClient::RejectAccountLinkInvitation, request, handler, context);
         }
 
         /**

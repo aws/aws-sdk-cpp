@@ -8,6 +8,7 @@
 #include <aws/emr-serverless/model/S3MonitoringConfiguration.h>
 #include <aws/emr-serverless/model/ManagedPersistenceMonitoringConfiguration.h>
 #include <aws/emr-serverless/model/CloudWatchLoggingConfiguration.h>
+#include <aws/emr-serverless/model/PrometheusMonitoringConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -137,6 +138,43 @@ namespace Model
      */
     inline MonitoringConfiguration& WithCloudWatchLoggingConfiguration(CloudWatchLoggingConfiguration&& value) { SetCloudWatchLoggingConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The monitoring configuration object you can configure to send metrics to
+     * Amazon Managed Service for Prometheus for a job run.</p>
+     */
+    inline const PrometheusMonitoringConfiguration& GetPrometheusMonitoringConfiguration() const{ return m_prometheusMonitoringConfiguration; }
+
+    /**
+     * <p>The monitoring configuration object you can configure to send metrics to
+     * Amazon Managed Service for Prometheus for a job run.</p>
+     */
+    inline bool PrometheusMonitoringConfigurationHasBeenSet() const { return m_prometheusMonitoringConfigurationHasBeenSet; }
+
+    /**
+     * <p>The monitoring configuration object you can configure to send metrics to
+     * Amazon Managed Service for Prometheus for a job run.</p>
+     */
+    inline void SetPrometheusMonitoringConfiguration(const PrometheusMonitoringConfiguration& value) { m_prometheusMonitoringConfigurationHasBeenSet = true; m_prometheusMonitoringConfiguration = value; }
+
+    /**
+     * <p>The monitoring configuration object you can configure to send metrics to
+     * Amazon Managed Service for Prometheus for a job run.</p>
+     */
+    inline void SetPrometheusMonitoringConfiguration(PrometheusMonitoringConfiguration&& value) { m_prometheusMonitoringConfigurationHasBeenSet = true; m_prometheusMonitoringConfiguration = std::move(value); }
+
+    /**
+     * <p>The monitoring configuration object you can configure to send metrics to
+     * Amazon Managed Service for Prometheus for a job run.</p>
+     */
+    inline MonitoringConfiguration& WithPrometheusMonitoringConfiguration(const PrometheusMonitoringConfiguration& value) { SetPrometheusMonitoringConfiguration(value); return *this;}
+
+    /**
+     * <p>The monitoring configuration object you can configure to send metrics to
+     * Amazon Managed Service for Prometheus for a job run.</p>
+     */
+    inline MonitoringConfiguration& WithPrometheusMonitoringConfiguration(PrometheusMonitoringConfiguration&& value) { SetPrometheusMonitoringConfiguration(std::move(value)); return *this;}
+
   private:
 
     S3MonitoringConfiguration m_s3MonitoringConfiguration;
@@ -147,6 +185,9 @@ namespace Model
 
     CloudWatchLoggingConfiguration m_cloudWatchLoggingConfiguration;
     bool m_cloudWatchLoggingConfigurationHasBeenSet = false;
+
+    PrometheusMonitoringConfiguration m_prometheusMonitoringConfiguration;
+    bool m_prometheusMonitoringConfigurationHasBeenSet = false;
   };
 
 } // namespace Model
