@@ -33,7 +33,8 @@ RelativeDatesFilter::RelativeDatesFilter() :
     m_parameterNameHasBeenSet(false),
     m_nullOption(FilterNullOption::NOT_SET),
     m_nullOptionHasBeenSet(false),
-    m_excludePeriodConfigurationHasBeenSet(false)
+    m_excludePeriodConfigurationHasBeenSet(false),
+    m_defaultFilterControlConfigurationHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ RelativeDatesFilter::RelativeDatesFilter(JsonView jsonValue) :
     m_parameterNameHasBeenSet(false),
     m_nullOption(FilterNullOption::NOT_SET),
     m_nullOptionHasBeenSet(false),
-    m_excludePeriodConfigurationHasBeenSet(false)
+    m_excludePeriodConfigurationHasBeenSet(false),
+    m_defaultFilterControlConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -129,6 +131,13 @@ RelativeDatesFilter& RelativeDatesFilter::operator =(JsonView jsonValue)
     m_excludePeriodConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DefaultFilterControlConfiguration"))
+  {
+    m_defaultFilterControlConfiguration = jsonValue.GetObject("DefaultFilterControlConfiguration");
+
+    m_defaultFilterControlConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -189,6 +198,12 @@ JsonValue RelativeDatesFilter::Jsonize() const
   if(m_excludePeriodConfigurationHasBeenSet)
   {
    payload.WithObject("ExcludePeriodConfiguration", m_excludePeriodConfiguration.Jsonize());
+
+  }
+
+  if(m_defaultFilterControlConfigurationHasBeenSet)
+  {
+   payload.WithObject("DefaultFilterControlConfiguration", m_defaultFilterControlConfiguration.Jsonize());
 
   }
 

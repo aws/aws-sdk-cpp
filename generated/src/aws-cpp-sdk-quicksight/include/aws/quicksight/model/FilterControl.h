@@ -12,6 +12,7 @@
 #include <aws/quicksight/model/FilterTextAreaControl.h>
 #include <aws/quicksight/model/FilterSliderControl.h>
 #include <aws/quicksight/model/FilterRelativeDateTimeControl.h>
+#include <aws/quicksight/model/FilterCrossSheetControl.h>
 #include <utility>
 
 namespace Aws
@@ -279,6 +280,43 @@ namespace Model
      */
     inline FilterControl& WithRelativeDateTime(FilterRelativeDateTimeControl&& value) { SetRelativeDateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A control from a filter that is scoped across more than one sheet. This
+     * represents your filter control on a sheet</p>
+     */
+    inline const FilterCrossSheetControl& GetCrossSheet() const{ return m_crossSheet; }
+
+    /**
+     * <p>A control from a filter that is scoped across more than one sheet. This
+     * represents your filter control on a sheet</p>
+     */
+    inline bool CrossSheetHasBeenSet() const { return m_crossSheetHasBeenSet; }
+
+    /**
+     * <p>A control from a filter that is scoped across more than one sheet. This
+     * represents your filter control on a sheet</p>
+     */
+    inline void SetCrossSheet(const FilterCrossSheetControl& value) { m_crossSheetHasBeenSet = true; m_crossSheet = value; }
+
+    /**
+     * <p>A control from a filter that is scoped across more than one sheet. This
+     * represents your filter control on a sheet</p>
+     */
+    inline void SetCrossSheet(FilterCrossSheetControl&& value) { m_crossSheetHasBeenSet = true; m_crossSheet = std::move(value); }
+
+    /**
+     * <p>A control from a filter that is scoped across more than one sheet. This
+     * represents your filter control on a sheet</p>
+     */
+    inline FilterControl& WithCrossSheet(const FilterCrossSheetControl& value) { SetCrossSheet(value); return *this;}
+
+    /**
+     * <p>A control from a filter that is scoped across more than one sheet. This
+     * represents your filter control on a sheet</p>
+     */
+    inline FilterControl& WithCrossSheet(FilterCrossSheetControl&& value) { SetCrossSheet(std::move(value)); return *this;}
+
   private:
 
     FilterDateTimePickerControl m_dateTimePicker;
@@ -301,6 +339,9 @@ namespace Model
 
     FilterRelativeDateTimeControl m_relativeDateTime;
     bool m_relativeDateTimeHasBeenSet = false;
+
+    FilterCrossSheetControl m_crossSheet;
+    bool m_crossSheetHasBeenSet = false;
   };
 
 } // namespace Model

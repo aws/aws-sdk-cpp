@@ -23,8 +23,8 @@ namespace Model
 
   /**
    * <p>The option to relax the validation that is required to export each asset.
-   * When <code>StrictModeForAllResource</code> is set to true, validation is skipped
-   * for specific UI errors.</p><p><h3>See Also:</h3>   <a
+   * When <code>StrictModeForAllResource</code> is set to <code>false</code>,
+   * validation is skipped for specific UI errors.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AssetBundleExportJobValidationStrategy">AWS
    * API Reference</a></p>
    */

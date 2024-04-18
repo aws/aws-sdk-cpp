@@ -30,7 +30,8 @@ NumericEqualityFilter::NumericEqualityFilter() :
     m_aggregationFunctionHasBeenSet(false),
     m_parameterNameHasBeenSet(false),
     m_nullOption(FilterNullOption::NOT_SET),
-    m_nullOptionHasBeenSet(false)
+    m_nullOptionHasBeenSet(false),
+    m_defaultFilterControlConfigurationHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ NumericEqualityFilter::NumericEqualityFilter(JsonView jsonValue) :
     m_aggregationFunctionHasBeenSet(false),
     m_parameterNameHasBeenSet(false),
     m_nullOption(FilterNullOption::NOT_SET),
-    m_nullOptionHasBeenSet(false)
+    m_nullOptionHasBeenSet(false),
+    m_defaultFilterControlConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -109,6 +111,13 @@ NumericEqualityFilter& NumericEqualityFilter::operator =(JsonView jsonValue)
     m_nullOptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DefaultFilterControlConfiguration"))
+  {
+    m_defaultFilterControlConfiguration = jsonValue.GetObject("DefaultFilterControlConfiguration");
+
+    m_defaultFilterControlConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -159,6 +168,12 @@ JsonValue NumericEqualityFilter::Jsonize() const
   if(m_nullOptionHasBeenSet)
   {
    payload.WithString("NullOption", FilterNullOptionMapper::GetNameForFilterNullOption(m_nullOption));
+  }
+
+  if(m_defaultFilterControlConfigurationHasBeenSet)
+  {
+   payload.WithObject("DefaultFilterControlConfiguration", m_defaultFilterControlConfiguration.Jsonize());
+
   }
 
   return payload;

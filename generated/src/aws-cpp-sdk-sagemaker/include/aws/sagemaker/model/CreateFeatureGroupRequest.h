@@ -43,72 +43,72 @@ namespace Model
     /**
      * <p>The name of the <code>FeatureGroup</code>. The name must be unique within an
      * Amazon Web Services Region in an Amazon Web Services account.</p> <p>The
-     * name:</p> <ul> <li> <p>Must start and end with an alphanumeric character.</p>
-     * </li> <li> <p>Can only include alphanumeric characters, underscores, and
-     * hyphens. Spaces are not allowed.</p> </li> </ul>
+     * name:</p> <ul> <li> <p>Must start with an alphanumeric character.</p> </li> <li>
+     * <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces
+     * are not allowed.</p> </li> </ul>
      */
     inline const Aws::String& GetFeatureGroupName() const{ return m_featureGroupName; }
 
     /**
      * <p>The name of the <code>FeatureGroup</code>. The name must be unique within an
      * Amazon Web Services Region in an Amazon Web Services account.</p> <p>The
-     * name:</p> <ul> <li> <p>Must start and end with an alphanumeric character.</p>
-     * </li> <li> <p>Can only include alphanumeric characters, underscores, and
-     * hyphens. Spaces are not allowed.</p> </li> </ul>
+     * name:</p> <ul> <li> <p>Must start with an alphanumeric character.</p> </li> <li>
+     * <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces
+     * are not allowed.</p> </li> </ul>
      */
     inline bool FeatureGroupNameHasBeenSet() const { return m_featureGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the <code>FeatureGroup</code>. The name must be unique within an
      * Amazon Web Services Region in an Amazon Web Services account.</p> <p>The
-     * name:</p> <ul> <li> <p>Must start and end with an alphanumeric character.</p>
-     * </li> <li> <p>Can only include alphanumeric characters, underscores, and
-     * hyphens. Spaces are not allowed.</p> </li> </ul>
+     * name:</p> <ul> <li> <p>Must start with an alphanumeric character.</p> </li> <li>
+     * <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces
+     * are not allowed.</p> </li> </ul>
      */
     inline void SetFeatureGroupName(const Aws::String& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = value; }
 
     /**
      * <p>The name of the <code>FeatureGroup</code>. The name must be unique within an
      * Amazon Web Services Region in an Amazon Web Services account.</p> <p>The
-     * name:</p> <ul> <li> <p>Must start and end with an alphanumeric character.</p>
-     * </li> <li> <p>Can only include alphanumeric characters, underscores, and
-     * hyphens. Spaces are not allowed.</p> </li> </ul>
+     * name:</p> <ul> <li> <p>Must start with an alphanumeric character.</p> </li> <li>
+     * <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces
+     * are not allowed.</p> </li> </ul>
      */
     inline void SetFeatureGroupName(Aws::String&& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = std::move(value); }
 
     /**
      * <p>The name of the <code>FeatureGroup</code>. The name must be unique within an
      * Amazon Web Services Region in an Amazon Web Services account.</p> <p>The
-     * name:</p> <ul> <li> <p>Must start and end with an alphanumeric character.</p>
-     * </li> <li> <p>Can only include alphanumeric characters, underscores, and
-     * hyphens. Spaces are not allowed.</p> </li> </ul>
+     * name:</p> <ul> <li> <p>Must start with an alphanumeric character.</p> </li> <li>
+     * <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces
+     * are not allowed.</p> </li> </ul>
      */
     inline void SetFeatureGroupName(const char* value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName.assign(value); }
 
     /**
      * <p>The name of the <code>FeatureGroup</code>. The name must be unique within an
      * Amazon Web Services Region in an Amazon Web Services account.</p> <p>The
-     * name:</p> <ul> <li> <p>Must start and end with an alphanumeric character.</p>
-     * </li> <li> <p>Can only include alphanumeric characters, underscores, and
-     * hyphens. Spaces are not allowed.</p> </li> </ul>
+     * name:</p> <ul> <li> <p>Must start with an alphanumeric character.</p> </li> <li>
+     * <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces
+     * are not allowed.</p> </li> </ul>
      */
     inline CreateFeatureGroupRequest& WithFeatureGroupName(const Aws::String& value) { SetFeatureGroupName(value); return *this;}
 
     /**
      * <p>The name of the <code>FeatureGroup</code>. The name must be unique within an
      * Amazon Web Services Region in an Amazon Web Services account.</p> <p>The
-     * name:</p> <ul> <li> <p>Must start and end with an alphanumeric character.</p>
-     * </li> <li> <p>Can only include alphanumeric characters, underscores, and
-     * hyphens. Spaces are not allowed.</p> </li> </ul>
+     * name:</p> <ul> <li> <p>Must start with an alphanumeric character.</p> </li> <li>
+     * <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces
+     * are not allowed.</p> </li> </ul>
      */
     inline CreateFeatureGroupRequest& WithFeatureGroupName(Aws::String&& value) { SetFeatureGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the <code>FeatureGroup</code>. The name must be unique within an
      * Amazon Web Services Region in an Amazon Web Services account.</p> <p>The
-     * name:</p> <ul> <li> <p>Must start and end with an alphanumeric character.</p>
-     * </li> <li> <p>Can only include alphanumeric characters, underscores, and
-     * hyphens. Spaces are not allowed.</p> </li> </ul>
+     * name:</p> <ul> <li> <p>Must start with an alphanumeric character.</p> </li> <li>
+     * <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces
+     * are not allowed.</p> </li> </ul>
      */
     inline CreateFeatureGroupRequest& WithFeatureGroupName(const char* value) { SetFeatureGroupName(value); return *this;}
 
@@ -120,9 +120,9 @@ namespace Model
      * <code>RecordIdentifierFeatureName</code> must be one of feature definitions'
      * names.</p> <p>You use the <code>RecordIdentifierFeatureName</code> to access
      * data in a <code>FeatureStore</code>.</p> <p>This name:</p> <ul> <li> <p>Must
-     * start and end with an alphanumeric character.</p> </li> <li> <p>Can only
-     * contains alphanumeric characters, hyphens, underscores. Spaces are not allowed.
-     * </p> </li> </ul>
+     * start with an alphanumeric character.</p> </li> <li> <p>Can only contains
+     * alphanumeric characters, hyphens, underscores. Spaces are not allowed. </p>
+     * </li> </ul>
      */
     inline const Aws::String& GetRecordIdentifierFeatureName() const{ return m_recordIdentifierFeatureName; }
 
@@ -133,9 +133,9 @@ namespace Model
      * <code>RecordIdentifierFeatureName</code> must be one of feature definitions'
      * names.</p> <p>You use the <code>RecordIdentifierFeatureName</code> to access
      * data in a <code>FeatureStore</code>.</p> <p>This name:</p> <ul> <li> <p>Must
-     * start and end with an alphanumeric character.</p> </li> <li> <p>Can only
-     * contains alphanumeric characters, hyphens, underscores. Spaces are not allowed.
-     * </p> </li> </ul>
+     * start with an alphanumeric character.</p> </li> <li> <p>Can only contains
+     * alphanumeric characters, hyphens, underscores. Spaces are not allowed. </p>
+     * </li> </ul>
      */
     inline bool RecordIdentifierFeatureNameHasBeenSet() const { return m_recordIdentifierFeatureNameHasBeenSet; }
 
@@ -146,9 +146,9 @@ namespace Model
      * <code>RecordIdentifierFeatureName</code> must be one of feature definitions'
      * names.</p> <p>You use the <code>RecordIdentifierFeatureName</code> to access
      * data in a <code>FeatureStore</code>.</p> <p>This name:</p> <ul> <li> <p>Must
-     * start and end with an alphanumeric character.</p> </li> <li> <p>Can only
-     * contains alphanumeric characters, hyphens, underscores. Spaces are not allowed.
-     * </p> </li> </ul>
+     * start with an alphanumeric character.</p> </li> <li> <p>Can only contains
+     * alphanumeric characters, hyphens, underscores. Spaces are not allowed. </p>
+     * </li> </ul>
      */
     inline void SetRecordIdentifierFeatureName(const Aws::String& value) { m_recordIdentifierFeatureNameHasBeenSet = true; m_recordIdentifierFeatureName = value; }
 
@@ -159,9 +159,9 @@ namespace Model
      * <code>RecordIdentifierFeatureName</code> must be one of feature definitions'
      * names.</p> <p>You use the <code>RecordIdentifierFeatureName</code> to access
      * data in a <code>FeatureStore</code>.</p> <p>This name:</p> <ul> <li> <p>Must
-     * start and end with an alphanumeric character.</p> </li> <li> <p>Can only
-     * contains alphanumeric characters, hyphens, underscores. Spaces are not allowed.
-     * </p> </li> </ul>
+     * start with an alphanumeric character.</p> </li> <li> <p>Can only contains
+     * alphanumeric characters, hyphens, underscores. Spaces are not allowed. </p>
+     * </li> </ul>
      */
     inline void SetRecordIdentifierFeatureName(Aws::String&& value) { m_recordIdentifierFeatureNameHasBeenSet = true; m_recordIdentifierFeatureName = std::move(value); }
 
@@ -172,9 +172,9 @@ namespace Model
      * <code>RecordIdentifierFeatureName</code> must be one of feature definitions'
      * names.</p> <p>You use the <code>RecordIdentifierFeatureName</code> to access
      * data in a <code>FeatureStore</code>.</p> <p>This name:</p> <ul> <li> <p>Must
-     * start and end with an alphanumeric character.</p> </li> <li> <p>Can only
-     * contains alphanumeric characters, hyphens, underscores. Spaces are not allowed.
-     * </p> </li> </ul>
+     * start with an alphanumeric character.</p> </li> <li> <p>Can only contains
+     * alphanumeric characters, hyphens, underscores. Spaces are not allowed. </p>
+     * </li> </ul>
      */
     inline void SetRecordIdentifierFeatureName(const char* value) { m_recordIdentifierFeatureNameHasBeenSet = true; m_recordIdentifierFeatureName.assign(value); }
 
@@ -185,9 +185,9 @@ namespace Model
      * <code>RecordIdentifierFeatureName</code> must be one of feature definitions'
      * names.</p> <p>You use the <code>RecordIdentifierFeatureName</code> to access
      * data in a <code>FeatureStore</code>.</p> <p>This name:</p> <ul> <li> <p>Must
-     * start and end with an alphanumeric character.</p> </li> <li> <p>Can only
-     * contains alphanumeric characters, hyphens, underscores. Spaces are not allowed.
-     * </p> </li> </ul>
+     * start with an alphanumeric character.</p> </li> <li> <p>Can only contains
+     * alphanumeric characters, hyphens, underscores. Spaces are not allowed. </p>
+     * </li> </ul>
      */
     inline CreateFeatureGroupRequest& WithRecordIdentifierFeatureName(const Aws::String& value) { SetRecordIdentifierFeatureName(value); return *this;}
 
@@ -198,9 +198,9 @@ namespace Model
      * <code>RecordIdentifierFeatureName</code> must be one of feature definitions'
      * names.</p> <p>You use the <code>RecordIdentifierFeatureName</code> to access
      * data in a <code>FeatureStore</code>.</p> <p>This name:</p> <ul> <li> <p>Must
-     * start and end with an alphanumeric character.</p> </li> <li> <p>Can only
-     * contains alphanumeric characters, hyphens, underscores. Spaces are not allowed.
-     * </p> </li> </ul>
+     * start with an alphanumeric character.</p> </li> <li> <p>Can only contains
+     * alphanumeric characters, hyphens, underscores. Spaces are not allowed. </p>
+     * </li> </ul>
      */
     inline CreateFeatureGroupRequest& WithRecordIdentifierFeatureName(Aws::String&& value) { SetRecordIdentifierFeatureName(std::move(value)); return *this;}
 
@@ -211,9 +211,9 @@ namespace Model
      * <code>RecordIdentifierFeatureName</code> must be one of feature definitions'
      * names.</p> <p>You use the <code>RecordIdentifierFeatureName</code> to access
      * data in a <code>FeatureStore</code>.</p> <p>This name:</p> <ul> <li> <p>Must
-     * start and end with an alphanumeric character.</p> </li> <li> <p>Can only
-     * contains alphanumeric characters, hyphens, underscores. Spaces are not allowed.
-     * </p> </li> </ul>
+     * start with an alphanumeric character.</p> </li> <li> <p>Can only contains
+     * alphanumeric characters, hyphens, underscores. Spaces are not allowed. </p>
+     * </li> </ul>
      */
     inline CreateFeatureGroupRequest& WithRecordIdentifierFeatureName(const char* value) { SetRecordIdentifierFeatureName(value); return *this;}
 

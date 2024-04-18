@@ -195,56 +195,56 @@ namespace Model
 
 
     /**
-     * <p>The date time picker type of a <code>FilterDateTimePickerControl</code>.
-     * Choose one of the following options:</p> <ul> <li> <p>
-     * <code>SINGLE_VALUED</code>: The filter condition is a fixed date.</p> </li> <li>
-     * <p> <code>DATE_RANGE</code>: The filter condition is a date time range.</p>
-     * </li> </ul>
+     * <p>The type of the <code>FilterDropDownControl</code>. Choose one of the
+     * following options:</p> <ul> <li> <p> <code>MULTI_SELECT</code>: The user can
+     * select multiple entries from a dropdown menu.</p> </li> <li> <p>
+     * <code>SINGLE_SELECT</code>: The user can select a single entry from a dropdown
+     * menu.</p> </li> </ul>
      */
     inline const SheetControlDateTimePickerType& GetType() const{ return m_type; }
 
     /**
-     * <p>The date time picker type of a <code>FilterDateTimePickerControl</code>.
-     * Choose one of the following options:</p> <ul> <li> <p>
-     * <code>SINGLE_VALUED</code>: The filter condition is a fixed date.</p> </li> <li>
-     * <p> <code>DATE_RANGE</code>: The filter condition is a date time range.</p>
-     * </li> </ul>
+     * <p>The type of the <code>FilterDropDownControl</code>. Choose one of the
+     * following options:</p> <ul> <li> <p> <code>MULTI_SELECT</code>: The user can
+     * select multiple entries from a dropdown menu.</p> </li> <li> <p>
+     * <code>SINGLE_SELECT</code>: The user can select a single entry from a dropdown
+     * menu.</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The date time picker type of a <code>FilterDateTimePickerControl</code>.
-     * Choose one of the following options:</p> <ul> <li> <p>
-     * <code>SINGLE_VALUED</code>: The filter condition is a fixed date.</p> </li> <li>
-     * <p> <code>DATE_RANGE</code>: The filter condition is a date time range.</p>
-     * </li> </ul>
+     * <p>The type of the <code>FilterDropDownControl</code>. Choose one of the
+     * following options:</p> <ul> <li> <p> <code>MULTI_SELECT</code>: The user can
+     * select multiple entries from a dropdown menu.</p> </li> <li> <p>
+     * <code>SINGLE_SELECT</code>: The user can select a single entry from a dropdown
+     * menu.</p> </li> </ul>
      */
     inline void SetType(const SheetControlDateTimePickerType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The date time picker type of a <code>FilterDateTimePickerControl</code>.
-     * Choose one of the following options:</p> <ul> <li> <p>
-     * <code>SINGLE_VALUED</code>: The filter condition is a fixed date.</p> </li> <li>
-     * <p> <code>DATE_RANGE</code>: The filter condition is a date time range.</p>
-     * </li> </ul>
+     * <p>The type of the <code>FilterDropDownControl</code>. Choose one of the
+     * following options:</p> <ul> <li> <p> <code>MULTI_SELECT</code>: The user can
+     * select multiple entries from a dropdown menu.</p> </li> <li> <p>
+     * <code>SINGLE_SELECT</code>: The user can select a single entry from a dropdown
+     * menu.</p> </li> </ul>
      */
     inline void SetType(SheetControlDateTimePickerType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The date time picker type of a <code>FilterDateTimePickerControl</code>.
-     * Choose one of the following options:</p> <ul> <li> <p>
-     * <code>SINGLE_VALUED</code>: The filter condition is a fixed date.</p> </li> <li>
-     * <p> <code>DATE_RANGE</code>: The filter condition is a date time range.</p>
-     * </li> </ul>
+     * <p>The type of the <code>FilterDropDownControl</code>. Choose one of the
+     * following options:</p> <ul> <li> <p> <code>MULTI_SELECT</code>: The user can
+     * select multiple entries from a dropdown menu.</p> </li> <li> <p>
+     * <code>SINGLE_SELECT</code>: The user can select a single entry from a dropdown
+     * menu.</p> </li> </ul>
      */
     inline FilterDateTimePickerControl& WithType(const SheetControlDateTimePickerType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The date time picker type of a <code>FilterDateTimePickerControl</code>.
-     * Choose one of the following options:</p> <ul> <li> <p>
-     * <code>SINGLE_VALUED</code>: The filter condition is a fixed date.</p> </li> <li>
-     * <p> <code>DATE_RANGE</code>: The filter condition is a date time range.</p>
-     * </li> </ul>
+     * <p>The type of the <code>FilterDropDownControl</code>. Choose one of the
+     * following options:</p> <ul> <li> <p> <code>MULTI_SELECT</code>: The user can
+     * select multiple entries from a dropdown menu.</p> </li> <li> <p>
+     * <code>SINGLE_SELECT</code>: The user can select a single entry from a dropdown
+     * menu.</p> </li> </ul>
      */
     inline FilterDateTimePickerControl& WithType(SheetControlDateTimePickerType&& value) { SetType(std::move(value)); return *this;}
 

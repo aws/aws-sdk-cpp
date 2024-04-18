@@ -12,6 +12,7 @@
 #include <aws/quicksight/model/RelativeDateType.h>
 #include <aws/quicksight/model/FilterNullOption.h>
 #include <aws/quicksight/model/ExcludePeriodConfiguration.h>
+#include <aws/quicksight/model/DefaultFilterControlConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -425,6 +426,43 @@ namespace Model
      */
     inline RelativeDatesFilter& WithExcludePeriodConfiguration(ExcludePeriodConfiguration&& value) { SetExcludePeriodConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The default configurations for the associated controls. This applies only for
+     * filters that are scoped to multiple sheets.</p>
+     */
+    inline const DefaultFilterControlConfiguration& GetDefaultFilterControlConfiguration() const{ return m_defaultFilterControlConfiguration; }
+
+    /**
+     * <p>The default configurations for the associated controls. This applies only for
+     * filters that are scoped to multiple sheets.</p>
+     */
+    inline bool DefaultFilterControlConfigurationHasBeenSet() const { return m_defaultFilterControlConfigurationHasBeenSet; }
+
+    /**
+     * <p>The default configurations for the associated controls. This applies only for
+     * filters that are scoped to multiple sheets.</p>
+     */
+    inline void SetDefaultFilterControlConfiguration(const DefaultFilterControlConfiguration& value) { m_defaultFilterControlConfigurationHasBeenSet = true; m_defaultFilterControlConfiguration = value; }
+
+    /**
+     * <p>The default configurations for the associated controls. This applies only for
+     * filters that are scoped to multiple sheets.</p>
+     */
+    inline void SetDefaultFilterControlConfiguration(DefaultFilterControlConfiguration&& value) { m_defaultFilterControlConfigurationHasBeenSet = true; m_defaultFilterControlConfiguration = std::move(value); }
+
+    /**
+     * <p>The default configurations for the associated controls. This applies only for
+     * filters that are scoped to multiple sheets.</p>
+     */
+    inline RelativeDatesFilter& WithDefaultFilterControlConfiguration(const DefaultFilterControlConfiguration& value) { SetDefaultFilterControlConfiguration(value); return *this;}
+
+    /**
+     * <p>The default configurations for the associated controls. This applies only for
+     * filters that are scoped to multiple sheets.</p>
+     */
+    inline RelativeDatesFilter& WithDefaultFilterControlConfiguration(DefaultFilterControlConfiguration&& value) { SetDefaultFilterControlConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_filterId;
@@ -456,6 +494,9 @@ namespace Model
 
     ExcludePeriodConfiguration m_excludePeriodConfiguration;
     bool m_excludePeriodConfigurationHasBeenSet = false;
+
+    DefaultFilterControlConfiguration m_defaultFilterControlConfiguration;
+    bool m_defaultFilterControlConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -177,6 +177,47 @@ namespace Model
 
 
     /**
+     * <p>The IPv6 remote address of the connection.</p>
+     */
+    inline const Aws::String& GetIpAddressV6() const{ return m_ipAddressV6; }
+
+    /**
+     * <p>The IPv6 remote address of the connection.</p>
+     */
+    inline bool IpAddressV6HasBeenSet() const { return m_ipAddressV6HasBeenSet; }
+
+    /**
+     * <p>The IPv6 remote address of the connection.</p>
+     */
+    inline void SetIpAddressV6(const Aws::String& value) { m_ipAddressV6HasBeenSet = true; m_ipAddressV6 = value; }
+
+    /**
+     * <p>The IPv6 remote address of the connection.</p>
+     */
+    inline void SetIpAddressV6(Aws::String&& value) { m_ipAddressV6HasBeenSet = true; m_ipAddressV6 = std::move(value); }
+
+    /**
+     * <p>The IPv6 remote address of the connection.</p>
+     */
+    inline void SetIpAddressV6(const char* value) { m_ipAddressV6HasBeenSet = true; m_ipAddressV6.assign(value); }
+
+    /**
+     * <p>The IPv6 remote address of the connection.</p>
+     */
+    inline RemoteIpDetails& WithIpAddressV6(const Aws::String& value) { SetIpAddressV6(value); return *this;}
+
+    /**
+     * <p>The IPv6 remote address of the connection.</p>
+     */
+    inline RemoteIpDetails& WithIpAddressV6(Aws::String&& value) { SetIpAddressV6(std::move(value)); return *this;}
+
+    /**
+     * <p>The IPv6 remote address of the connection.</p>
+     */
+    inline RemoteIpDetails& WithIpAddressV6(const char* value) { SetIpAddressV6(value); return *this;}
+
+
+    /**
      * <p>The ISP organization information of the remote IP address.</p>
      */
     inline const Organization& GetOrganization() const{ return m_organization; }
@@ -219,6 +260,9 @@ namespace Model
 
     Aws::String m_ipAddressV4;
     bool m_ipAddressV4HasBeenSet = false;
+
+    Aws::String m_ipAddressV6;
+    bool m_ipAddressV6HasBeenSet = false;
 
     Organization m_organization;
     bool m_organizationHasBeenSet = false;

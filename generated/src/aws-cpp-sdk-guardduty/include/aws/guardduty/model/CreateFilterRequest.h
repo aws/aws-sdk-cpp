@@ -322,6 +322,7 @@ namespace Model
      * <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li> <li>
      * <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
      * <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+     * <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV6</p> </li>
      * <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p>
      * </li> <li>
      * <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
@@ -337,7 +338,8 @@ namespace Model
      * <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
      * </li> <li>
      * <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
-     * <li>
+     * <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV6</p>
+     * </li> <li>
      * <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p>
      * </li> <li>
      * <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
@@ -345,12 +347,15 @@ namespace Model
      * </li> <li>
      * <p>service.action.awsApiCallAction.remoteAccountDetails.affiliated</p> </li>
      * <li> <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV4</p>
-     * </li> <li> <p>service.action.kubernetesApiCallAction.namespace</p> </li> <li>
+     * </li> <li>
+     * <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV6</p> </li>
+     * <li> <p>service.action.kubernetesApiCallAction.namespace</p> </li> <li>
      * <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.asn</p>
      * </li> <li> <p>service.action.kubernetesApiCallAction.requestUri</p> </li> <li>
      * <p>service.action.kubernetesApiCallAction.statusCode</p> </li> <li>
      * <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
-     * <li> <p>service.action.networkConnectionAction.protocol</p> </li> <li>
+     * <li> <p>service.action.networkConnectionAction.localIpDetails.ipAddressV6</p>
+     * </li> <li> <p>service.action.networkConnectionAction.protocol</p> </li> <li>
      * <p>service.action.awsApiCallAction.serviceName</p> </li> <li>
      * <p>service.action.awsApiCallAction.remoteAccountDetails.accountId</p> </li> <li>
      * <p>service.additionalInfo.threatListName</p> </li> <li>
@@ -433,6 +438,7 @@ namespace Model
      * <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li> <li>
      * <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
      * <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+     * <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV6</p> </li>
      * <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p>
      * </li> <li>
      * <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
@@ -448,7 +454,8 @@ namespace Model
      * <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
      * </li> <li>
      * <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
-     * <li>
+     * <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV6</p>
+     * </li> <li>
      * <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p>
      * </li> <li>
      * <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
@@ -456,12 +463,15 @@ namespace Model
      * </li> <li>
      * <p>service.action.awsApiCallAction.remoteAccountDetails.affiliated</p> </li>
      * <li> <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV4</p>
-     * </li> <li> <p>service.action.kubernetesApiCallAction.namespace</p> </li> <li>
+     * </li> <li>
+     * <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV6</p> </li>
+     * <li> <p>service.action.kubernetesApiCallAction.namespace</p> </li> <li>
      * <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.asn</p>
      * </li> <li> <p>service.action.kubernetesApiCallAction.requestUri</p> </li> <li>
      * <p>service.action.kubernetesApiCallAction.statusCode</p> </li> <li>
      * <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
-     * <li> <p>service.action.networkConnectionAction.protocol</p> </li> <li>
+     * <li> <p>service.action.networkConnectionAction.localIpDetails.ipAddressV6</p>
+     * </li> <li> <p>service.action.networkConnectionAction.protocol</p> </li> <li>
      * <p>service.action.awsApiCallAction.serviceName</p> </li> <li>
      * <p>service.action.awsApiCallAction.remoteAccountDetails.accountId</p> </li> <li>
      * <p>service.additionalInfo.threatListName</p> </li> <li>
@@ -544,6 +554,7 @@ namespace Model
      * <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li> <li>
      * <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
      * <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+     * <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV6</p> </li>
      * <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p>
      * </li> <li>
      * <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
@@ -559,7 +570,8 @@ namespace Model
      * <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
      * </li> <li>
      * <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
-     * <li>
+     * <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV6</p>
+     * </li> <li>
      * <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p>
      * </li> <li>
      * <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
@@ -567,12 +579,15 @@ namespace Model
      * </li> <li>
      * <p>service.action.awsApiCallAction.remoteAccountDetails.affiliated</p> </li>
      * <li> <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV4</p>
-     * </li> <li> <p>service.action.kubernetesApiCallAction.namespace</p> </li> <li>
+     * </li> <li>
+     * <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV6</p> </li>
+     * <li> <p>service.action.kubernetesApiCallAction.namespace</p> </li> <li>
      * <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.asn</p>
      * </li> <li> <p>service.action.kubernetesApiCallAction.requestUri</p> </li> <li>
      * <p>service.action.kubernetesApiCallAction.statusCode</p> </li> <li>
      * <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
-     * <li> <p>service.action.networkConnectionAction.protocol</p> </li> <li>
+     * <li> <p>service.action.networkConnectionAction.localIpDetails.ipAddressV6</p>
+     * </li> <li> <p>service.action.networkConnectionAction.protocol</p> </li> <li>
      * <p>service.action.awsApiCallAction.serviceName</p> </li> <li>
      * <p>service.action.awsApiCallAction.remoteAccountDetails.accountId</p> </li> <li>
      * <p>service.additionalInfo.threatListName</p> </li> <li>
@@ -655,6 +670,7 @@ namespace Model
      * <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li> <li>
      * <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
      * <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+     * <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV6</p> </li>
      * <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p>
      * </li> <li>
      * <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
@@ -670,7 +686,8 @@ namespace Model
      * <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
      * </li> <li>
      * <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
-     * <li>
+     * <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV6</p>
+     * </li> <li>
      * <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p>
      * </li> <li>
      * <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
@@ -678,12 +695,15 @@ namespace Model
      * </li> <li>
      * <p>service.action.awsApiCallAction.remoteAccountDetails.affiliated</p> </li>
      * <li> <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV4</p>
-     * </li> <li> <p>service.action.kubernetesApiCallAction.namespace</p> </li> <li>
+     * </li> <li>
+     * <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV6</p> </li>
+     * <li> <p>service.action.kubernetesApiCallAction.namespace</p> </li> <li>
      * <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.asn</p>
      * </li> <li> <p>service.action.kubernetesApiCallAction.requestUri</p> </li> <li>
      * <p>service.action.kubernetesApiCallAction.statusCode</p> </li> <li>
      * <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
-     * <li> <p>service.action.networkConnectionAction.protocol</p> </li> <li>
+     * <li> <p>service.action.networkConnectionAction.localIpDetails.ipAddressV6</p>
+     * </li> <li> <p>service.action.networkConnectionAction.protocol</p> </li> <li>
      * <p>service.action.awsApiCallAction.serviceName</p> </li> <li>
      * <p>service.action.awsApiCallAction.remoteAccountDetails.accountId</p> </li> <li>
      * <p>service.additionalInfo.threatListName</p> </li> <li>
@@ -766,6 +786,7 @@ namespace Model
      * <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li> <li>
      * <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
      * <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+     * <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV6</p> </li>
      * <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p>
      * </li> <li>
      * <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
@@ -781,7 +802,8 @@ namespace Model
      * <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
      * </li> <li>
      * <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
-     * <li>
+     * <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV6</p>
+     * </li> <li>
      * <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p>
      * </li> <li>
      * <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
@@ -789,12 +811,15 @@ namespace Model
      * </li> <li>
      * <p>service.action.awsApiCallAction.remoteAccountDetails.affiliated</p> </li>
      * <li> <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV4</p>
-     * </li> <li> <p>service.action.kubernetesApiCallAction.namespace</p> </li> <li>
+     * </li> <li>
+     * <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV6</p> </li>
+     * <li> <p>service.action.kubernetesApiCallAction.namespace</p> </li> <li>
      * <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.asn</p>
      * </li> <li> <p>service.action.kubernetesApiCallAction.requestUri</p> </li> <li>
      * <p>service.action.kubernetesApiCallAction.statusCode</p> </li> <li>
      * <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
-     * <li> <p>service.action.networkConnectionAction.protocol</p> </li> <li>
+     * <li> <p>service.action.networkConnectionAction.localIpDetails.ipAddressV6</p>
+     * </li> <li> <p>service.action.networkConnectionAction.protocol</p> </li> <li>
      * <p>service.action.awsApiCallAction.serviceName</p> </li> <li>
      * <p>service.action.awsApiCallAction.remoteAccountDetails.accountId</p> </li> <li>
      * <p>service.additionalInfo.threatListName</p> </li> <li>
@@ -877,6 +902,7 @@ namespace Model
      * <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li> <li>
      * <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
      * <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+     * <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV6</p> </li>
      * <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p>
      * </li> <li>
      * <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
@@ -892,7 +918,8 @@ namespace Model
      * <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
      * </li> <li>
      * <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
-     * <li>
+     * <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV6</p>
+     * </li> <li>
      * <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p>
      * </li> <li>
      * <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
@@ -900,12 +927,15 @@ namespace Model
      * </li> <li>
      * <p>service.action.awsApiCallAction.remoteAccountDetails.affiliated</p> </li>
      * <li> <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV4</p>
-     * </li> <li> <p>service.action.kubernetesApiCallAction.namespace</p> </li> <li>
+     * </li> <li>
+     * <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV6</p> </li>
+     * <li> <p>service.action.kubernetesApiCallAction.namespace</p> </li> <li>
      * <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.asn</p>
      * </li> <li> <p>service.action.kubernetesApiCallAction.requestUri</p> </li> <li>
      * <p>service.action.kubernetesApiCallAction.statusCode</p> </li> <li>
      * <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
-     * <li> <p>service.action.networkConnectionAction.protocol</p> </li> <li>
+     * <li> <p>service.action.networkConnectionAction.localIpDetails.ipAddressV6</p>
+     * </li> <li> <p>service.action.networkConnectionAction.protocol</p> </li> <li>
      * <p>service.action.awsApiCallAction.serviceName</p> </li> <li>
      * <p>service.action.awsApiCallAction.remoteAccountDetails.accountId</p> </li> <li>
      * <p>service.additionalInfo.threatListName</p> </li> <li>

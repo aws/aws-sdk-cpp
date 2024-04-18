@@ -151,6 +151,32 @@ namespace RolesAnywhere
         }
 
         /**
+         * <p>Delete an entry from the attribute mapping rules enforced by a given
+         * profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/DeleteAttributeMapping">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAttributeMappingOutcome DeleteAttributeMapping(const Model::DeleteAttributeMappingRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAttributeMapping that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteAttributeMappingRequestT = Model::DeleteAttributeMappingRequest>
+        Model::DeleteAttributeMappingOutcomeCallable DeleteAttributeMappingCallable(const DeleteAttributeMappingRequestT& request) const
+        {
+            return SubmitCallable(&RolesAnywhereClient::DeleteAttributeMapping, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteAttributeMapping that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteAttributeMappingRequestT = Model::DeleteAttributeMappingRequest>
+        void DeleteAttributeMappingAsync(const DeleteAttributeMappingRequestT& request, const DeleteAttributeMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RolesAnywhereClient::DeleteAttributeMapping, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a certificate revocation list (CRL).</p> <p> <b>Required permissions:
          * </b> <code>rolesanywhere:DeleteCrl</code>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/DeleteCrl">AWS
@@ -663,6 +689,33 @@ namespace RolesAnywhere
         void ListTrustAnchorsAsync(const ListTrustAnchorsRequestT& request, const ListTrustAnchorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RolesAnywhereClient::ListTrustAnchors, request, handler, context);
+        }
+
+        /**
+         * <p>Put an entry in the attribute mapping rules that will be enforced by a given
+         * profile. A mapping specifies a certificate field and one or more specifiers that
+         * have contextual meanings.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/PutAttributeMapping">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutAttributeMappingOutcome PutAttributeMapping(const Model::PutAttributeMappingRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutAttributeMapping that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutAttributeMappingRequestT = Model::PutAttributeMappingRequest>
+        Model::PutAttributeMappingOutcomeCallable PutAttributeMappingCallable(const PutAttributeMappingRequestT& request) const
+        {
+            return SubmitCallable(&RolesAnywhereClient::PutAttributeMapping, request);
+        }
+
+        /**
+         * An Async wrapper for PutAttributeMapping that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutAttributeMappingRequestT = Model::PutAttributeMappingRequest>
+        void PutAttributeMappingAsync(const PutAttributeMappingRequestT& request, const PutAttributeMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RolesAnywhereClient::PutAttributeMapping, request, handler, context);
         }
 
         /**

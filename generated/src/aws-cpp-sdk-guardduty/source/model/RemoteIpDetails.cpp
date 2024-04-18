@@ -23,6 +23,7 @@ RemoteIpDetails::RemoteIpDetails() :
     m_countryHasBeenSet(false),
     m_geoLocationHasBeenSet(false),
     m_ipAddressV4HasBeenSet(false),
+    m_ipAddressV6HasBeenSet(false),
     m_organizationHasBeenSet(false)
 {
 }
@@ -32,6 +33,7 @@ RemoteIpDetails::RemoteIpDetails(JsonView jsonValue) :
     m_countryHasBeenSet(false),
     m_geoLocationHasBeenSet(false),
     m_ipAddressV4HasBeenSet(false),
+    m_ipAddressV6HasBeenSet(false),
     m_organizationHasBeenSet(false)
 {
   *this = jsonValue;
@@ -65,6 +67,13 @@ RemoteIpDetails& RemoteIpDetails::operator =(JsonView jsonValue)
     m_ipAddressV4 = jsonValue.GetString("ipAddressV4");
 
     m_ipAddressV4HasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ipAddressV6"))
+  {
+    m_ipAddressV6 = jsonValue.GetString("ipAddressV6");
+
+    m_ipAddressV6HasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("organization"))
@@ -102,6 +111,12 @@ JsonValue RemoteIpDetails::Jsonize() const
   if(m_ipAddressV4HasBeenSet)
   {
    payload.WithString("ipAddressV4", m_ipAddressV4);
+
+  }
+
+  if(m_ipAddressV6HasBeenSet)
+  {
+   payload.WithString("ipAddressV6", m_ipAddressV6);
 
   }
 

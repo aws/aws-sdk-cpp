@@ -532,6 +532,47 @@ namespace Model
 
 
     /**
+     * <p>The ARN of the source Outpost</p>
+     */
+    inline const Aws::String& GetSourceOutpostArn() const{ return m_sourceOutpostArn; }
+
+    /**
+     * <p>The ARN of the source Outpost</p>
+     */
+    inline bool SourceOutpostArnHasBeenSet() const { return m_sourceOutpostArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the source Outpost</p>
+     */
+    inline void SetSourceOutpostArn(const Aws::String& value) { m_sourceOutpostArnHasBeenSet = true; m_sourceOutpostArn = value; }
+
+    /**
+     * <p>The ARN of the source Outpost</p>
+     */
+    inline void SetSourceOutpostArn(Aws::String&& value) { m_sourceOutpostArnHasBeenSet = true; m_sourceOutpostArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the source Outpost</p>
+     */
+    inline void SetSourceOutpostArn(const char* value) { m_sourceOutpostArnHasBeenSet = true; m_sourceOutpostArn.assign(value); }
+
+    /**
+     * <p>The ARN of the source Outpost</p>
+     */
+    inline RecoveryInstance& WithSourceOutpostArn(const Aws::String& value) { SetSourceOutpostArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the source Outpost</p>
+     */
+    inline RecoveryInstance& WithSourceOutpostArn(Aws::String&& value) { SetSourceOutpostArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the source Outpost</p>
+     */
+    inline RecoveryInstance& WithSourceOutpostArn(const char* value) { SetSourceOutpostArn(value); return *this;}
+
+
+    /**
      * <p>The Source Server ID that this Recovery Instance is associated with.</p>
      */
     inline const Aws::String& GetSourceServerID() const{ return m_sourceServerID; }
@@ -677,6 +718,9 @@ namespace Model
 
     RecoveryInstanceProperties m_recoveryInstanceProperties;
     bool m_recoveryInstancePropertiesHasBeenSet = false;
+
+    Aws::String m_sourceOutpostArn;
+    bool m_sourceOutpostArnHasBeenSet = false;
 
     Aws::String m_sourceServerID;
     bool m_sourceServerIDHasBeenSet = false;

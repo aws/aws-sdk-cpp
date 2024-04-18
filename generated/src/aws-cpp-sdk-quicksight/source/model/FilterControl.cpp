@@ -25,7 +25,8 @@ FilterControl::FilterControl() :
     m_textFieldHasBeenSet(false),
     m_textAreaHasBeenSet(false),
     m_sliderHasBeenSet(false),
-    m_relativeDateTimeHasBeenSet(false)
+    m_relativeDateTimeHasBeenSet(false),
+    m_crossSheetHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ FilterControl::FilterControl(JsonView jsonValue) :
     m_textFieldHasBeenSet(false),
     m_textAreaHasBeenSet(false),
     m_sliderHasBeenSet(false),
-    m_relativeDateTimeHasBeenSet(false)
+    m_relativeDateTimeHasBeenSet(false),
+    m_crossSheetHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -92,6 +94,13 @@ FilterControl& FilterControl::operator =(JsonView jsonValue)
     m_relativeDateTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CrossSheet"))
+  {
+    m_crossSheet = jsonValue.GetObject("CrossSheet");
+
+    m_crossSheetHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -138,6 +147,12 @@ JsonValue FilterControl::Jsonize() const
   if(m_relativeDateTimeHasBeenSet)
   {
    payload.WithObject("RelativeDateTime", m_relativeDateTime.Jsonize());
+
+  }
+
+  if(m_crossSheetHasBeenSet)
+  {
+   payload.WithObject("CrossSheet", m_crossSheet.Jsonize());
 
   }
 

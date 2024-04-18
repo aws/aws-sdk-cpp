@@ -298,6 +298,47 @@ namespace Model
      */
     inline DataReplicationInfo& WithStagingAvailabilityZone(const char* value) { SetStagingAvailabilityZone(value); return *this;}
 
+
+    /**
+     * <p>The ARN of the staging Outpost</p>
+     */
+    inline const Aws::String& GetStagingOutpostArn() const{ return m_stagingOutpostArn; }
+
+    /**
+     * <p>The ARN of the staging Outpost</p>
+     */
+    inline bool StagingOutpostArnHasBeenSet() const { return m_stagingOutpostArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the staging Outpost</p>
+     */
+    inline void SetStagingOutpostArn(const Aws::String& value) { m_stagingOutpostArnHasBeenSet = true; m_stagingOutpostArn = value; }
+
+    /**
+     * <p>The ARN of the staging Outpost</p>
+     */
+    inline void SetStagingOutpostArn(Aws::String&& value) { m_stagingOutpostArnHasBeenSet = true; m_stagingOutpostArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the staging Outpost</p>
+     */
+    inline void SetStagingOutpostArn(const char* value) { m_stagingOutpostArnHasBeenSet = true; m_stagingOutpostArn.assign(value); }
+
+    /**
+     * <p>The ARN of the staging Outpost</p>
+     */
+    inline DataReplicationInfo& WithStagingOutpostArn(const Aws::String& value) { SetStagingOutpostArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the staging Outpost</p>
+     */
+    inline DataReplicationInfo& WithStagingOutpostArn(Aws::String&& value) { SetStagingOutpostArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the staging Outpost</p>
+     */
+    inline DataReplicationInfo& WithStagingOutpostArn(const char* value) { SetStagingOutpostArn(value); return *this;}
+
   private:
 
     DataReplicationError m_dataReplicationError;
@@ -320,6 +361,9 @@ namespace Model
 
     Aws::String m_stagingAvailabilityZone;
     bool m_stagingAvailabilityZoneHasBeenSet = false;
+
+    Aws::String m_stagingOutpostArn;
+    bool m_stagingOutpostArnHasBeenSet = false;
   };
 
 } // namespace Model
