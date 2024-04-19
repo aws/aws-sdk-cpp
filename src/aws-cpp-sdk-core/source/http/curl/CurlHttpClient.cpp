@@ -904,7 +904,7 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
             request->AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::ConnectLatency), static_cast<int64_t>(timep * 1000));
         }
 
-#if LIBCURL_VERSION_NUM >= 0x073700 // 7.55.0
+#if LIBCURL_VERSION_NUM >= 0x073D00 // 7.61.0
         curl_off_t metric;
         ret = curl_easy_getinfo(connectionHandle, CURLINFO_APPCONNECT_TIME_T, &metric); // Ssl Latency
 #else
