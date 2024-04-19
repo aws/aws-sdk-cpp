@@ -126,42 +126,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a specific version of the solution.</p>
+     * <p>The Amazon Resource Name (ARN) of the solution version the campaign uses.</p>
      */
     inline const Aws::String& GetSolutionVersionArn() const{ return m_solutionVersionArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a specific version of the solution.</p>
+     * <p>The Amazon Resource Name (ARN) of the solution version the campaign uses.</p>
      */
     inline bool SolutionVersionArnHasBeenSet() const { return m_solutionVersionArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a specific version of the solution.</p>
+     * <p>The Amazon Resource Name (ARN) of the solution version the campaign uses.</p>
      */
     inline void SetSolutionVersionArn(const Aws::String& value) { m_solutionVersionArnHasBeenSet = true; m_solutionVersionArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a specific version of the solution.</p>
+     * <p>The Amazon Resource Name (ARN) of the solution version the campaign uses.</p>
      */
     inline void SetSolutionVersionArn(Aws::String&& value) { m_solutionVersionArnHasBeenSet = true; m_solutionVersionArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a specific version of the solution.</p>
+     * <p>The Amazon Resource Name (ARN) of the solution version the campaign uses.</p>
      */
     inline void SetSolutionVersionArn(const char* value) { m_solutionVersionArnHasBeenSet = true; m_solutionVersionArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a specific version of the solution.</p>
+     * <p>The Amazon Resource Name (ARN) of the solution version the campaign uses.</p>
      */
     inline Campaign& WithSolutionVersionArn(const Aws::String& value) { SetSolutionVersionArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a specific version of the solution.</p>
+     * <p>The Amazon Resource Name (ARN) of the solution version the campaign uses.</p>
      */
     inline Campaign& WithSolutionVersionArn(Aws::String&& value) { SetSolutionVersionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a specific version of the solution.</p>
+     * <p>The Amazon Resource Name (ARN) of the solution version the campaign uses.</p>
      */
     inline Campaign& WithSolutionVersionArn(const char* value) { SetSolutionVersionArn(value); return *this;}
 

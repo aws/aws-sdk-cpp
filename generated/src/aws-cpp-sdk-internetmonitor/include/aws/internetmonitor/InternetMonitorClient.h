@@ -173,7 +173,7 @@ namespace InternetMonitor
         }
 
         /**
-         * <p>Gets information the Amazon CloudWatch Internet Monitor has created and
+         * <p>Gets information that Amazon CloudWatch Internet Monitor has created and
          * stored about a health event for a specified monitor. This information includes
          * the impacted locations, and all the information related to the event, by
          * location.</p> <p>The information returned includes the impact on performance,
@@ -202,6 +202,38 @@ namespace InternetMonitor
         void GetHealthEventAsync(const GetHealthEventRequestT& request, const GetHealthEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&InternetMonitorClient::GetHealthEvent, request, handler, context);
+        }
+
+        /**
+         * <p>Gets information that Amazon CloudWatch Internet Monitor has generated about
+         * an internet event. Internet Monitor displays information about recent global
+         * health events, called internet events, on a global outages map that is available
+         * to all Amazon Web Services customers. </p> <p>The information returned here
+         * includes the impacted location, when the event started and (if the event is
+         * over) ended, the type of event (<code>PERFORMANCE</code> or
+         * <code>AVAILABILITY</code>), and the status (<code>ACTIVE</code> or
+         * <code>RESOLVED</code>).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/GetInternetEvent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetInternetEventOutcome GetInternetEvent(const Model::GetInternetEventRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetInternetEvent that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetInternetEventRequestT = Model::GetInternetEventRequest>
+        Model::GetInternetEventOutcomeCallable GetInternetEventCallable(const GetInternetEventRequestT& request) const
+        {
+            return SubmitCallable(&InternetMonitorClient::GetInternetEvent, request);
+        }
+
+        /**
+         * An Async wrapper for GetInternetEvent that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetInternetEventRequestT = Model::GetInternetEventRequest>
+        void GetInternetEventAsync(const GetInternetEventRequestT& request, const GetInternetEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&InternetMonitorClient::GetInternetEvent, request, handler, context);
         }
 
         /**
@@ -298,9 +330,9 @@ namespace InternetMonitor
 
         /**
          * <p>Lists all health events for a monitor in Amazon CloudWatch Internet Monitor.
-         * Returns information for health events including the event start and end time and
-         * the status.</p>  <p>Health events that have start times during the time
-         * frame that is requested are not included in the list of health events.</p>
+         * Returns information for health events including the event start and end times,
+         * and the status.</p>  <p>Health events that have start times during the
+         * time frame that is requested are not included in the list of health events.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/ListHealthEvents">AWS
          * API Reference</a></p>
@@ -323,6 +355,41 @@ namespace InternetMonitor
         void ListHealthEventsAsync(const ListHealthEventsRequestT& request, const ListHealthEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&InternetMonitorClient::ListHealthEvents, request, handler, context);
+        }
+
+        /**
+         * <p>Lists internet events that cause performance or availability issues for
+         * client locations. Amazon CloudWatch Internet Monitor displays information about
+         * recent global health events, called internet events, on a global outages map
+         * that is available to all Amazon Web Services customers. </p> <p>You can
+         * constrain the list of internet events returned by providing a start time and end
+         * time to define a total time frame for events you want to list. Both start time
+         * and end time specify the time when an event started. End time is optional. If
+         * you don't include it, the default end time is the current time.</p> <p>You can
+         * also limit the events returned to a specific status (<code>ACTIVE</code> or
+         * <code>RESOLVED</code>) or type (<code>PERFORMANCE</code> or
+         * <code>AVAILABILITY</code>).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/ListInternetEvents">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListInternetEventsOutcome ListInternetEvents(const Model::ListInternetEventsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListInternetEvents that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListInternetEventsRequestT = Model::ListInternetEventsRequest>
+        Model::ListInternetEventsOutcomeCallable ListInternetEventsCallable(const ListInternetEventsRequestT& request) const
+        {
+            return SubmitCallable(&InternetMonitorClient::ListInternetEvents, request);
+        }
+
+        /**
+         * An Async wrapper for ListInternetEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListInternetEventsRequestT = Model::ListInternetEventsRequest>
+        void ListInternetEventsAsync(const ListInternetEventsRequestT& request, const ListInternetEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&InternetMonitorClient::ListInternetEvents, request, handler, context);
         }
 
         /**

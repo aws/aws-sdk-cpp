@@ -131,32 +131,32 @@ namespace Model
 
 
     /**
-     * <p>Type of network impairment.</p>
+     * <p>The type of network impairment.</p>
      */
     inline const TriangulationEventType& GetNetworkEventType() const{ return m_networkEventType; }
 
     /**
-     * <p>Type of network impairment.</p>
+     * <p>The type of network impairment.</p>
      */
     inline bool NetworkEventTypeHasBeenSet() const { return m_networkEventTypeHasBeenSet; }
 
     /**
-     * <p>Type of network impairment.</p>
+     * <p>The type of network impairment.</p>
      */
     inline void SetNetworkEventType(const TriangulationEventType& value) { m_networkEventTypeHasBeenSet = true; m_networkEventType = value; }
 
     /**
-     * <p>Type of network impairment.</p>
+     * <p>The type of network impairment.</p>
      */
     inline void SetNetworkEventType(TriangulationEventType&& value) { m_networkEventTypeHasBeenSet = true; m_networkEventType = std::move(value); }
 
     /**
-     * <p>Type of network impairment.</p>
+     * <p>The type of network impairment.</p>
      */
     inline NetworkImpairment& WithNetworkEventType(const TriangulationEventType& value) { SetNetworkEventType(value); return *this;}
 
     /**
-     * <p>Type of network impairment.</p>
+     * <p>The type of network impairment.</p>
      */
     inline NetworkImpairment& WithNetworkEventType(TriangulationEventType&& value) { SetNetworkEventType(std::move(value)); return *this;}
 

@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/personalize/Personalize_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/personalize/model/TrainingMode.h>
+#include <aws/personalize/model/TrainingType.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -140,6 +142,92 @@ namespace Model
 
 
     /**
+     * <p>The scope of training to be performed when creating the solution version. A
+     * <code>FULL</code> training considers all of the data in your dataset group. An
+     * <code>UPDATE</code> processes only the data that has changed since the latest
+     * training. Only solution versions created with the User-Personalization recipe
+     * can use <code>UPDATE</code>. </p>
+     */
+    inline const TrainingMode& GetTrainingMode() const{ return m_trainingMode; }
+
+    /**
+     * <p>The scope of training to be performed when creating the solution version. A
+     * <code>FULL</code> training considers all of the data in your dataset group. An
+     * <code>UPDATE</code> processes only the data that has changed since the latest
+     * training. Only solution versions created with the User-Personalization recipe
+     * can use <code>UPDATE</code>. </p>
+     */
+    inline bool TrainingModeHasBeenSet() const { return m_trainingModeHasBeenSet; }
+
+    /**
+     * <p>The scope of training to be performed when creating the solution version. A
+     * <code>FULL</code> training considers all of the data in your dataset group. An
+     * <code>UPDATE</code> processes only the data that has changed since the latest
+     * training. Only solution versions created with the User-Personalization recipe
+     * can use <code>UPDATE</code>. </p>
+     */
+    inline void SetTrainingMode(const TrainingMode& value) { m_trainingModeHasBeenSet = true; m_trainingMode = value; }
+
+    /**
+     * <p>The scope of training to be performed when creating the solution version. A
+     * <code>FULL</code> training considers all of the data in your dataset group. An
+     * <code>UPDATE</code> processes only the data that has changed since the latest
+     * training. Only solution versions created with the User-Personalization recipe
+     * can use <code>UPDATE</code>. </p>
+     */
+    inline void SetTrainingMode(TrainingMode&& value) { m_trainingModeHasBeenSet = true; m_trainingMode = std::move(value); }
+
+    /**
+     * <p>The scope of training to be performed when creating the solution version. A
+     * <code>FULL</code> training considers all of the data in your dataset group. An
+     * <code>UPDATE</code> processes only the data that has changed since the latest
+     * training. Only solution versions created with the User-Personalization recipe
+     * can use <code>UPDATE</code>. </p>
+     */
+    inline SolutionVersionSummary& WithTrainingMode(const TrainingMode& value) { SetTrainingMode(value); return *this;}
+
+    /**
+     * <p>The scope of training to be performed when creating the solution version. A
+     * <code>FULL</code> training considers all of the data in your dataset group. An
+     * <code>UPDATE</code> processes only the data that has changed since the latest
+     * training. Only solution versions created with the User-Personalization recipe
+     * can use <code>UPDATE</code>. </p>
+     */
+    inline SolutionVersionSummary& WithTrainingMode(TrainingMode&& value) { SetTrainingMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Whether the solution version was created automatically or manually.</p>
+     */
+    inline const TrainingType& GetTrainingType() const{ return m_trainingType; }
+
+    /**
+     * <p>Whether the solution version was created automatically or manually.</p>
+     */
+    inline bool TrainingTypeHasBeenSet() const { return m_trainingTypeHasBeenSet; }
+
+    /**
+     * <p>Whether the solution version was created automatically or manually.</p>
+     */
+    inline void SetTrainingType(const TrainingType& value) { m_trainingTypeHasBeenSet = true; m_trainingType = value; }
+
+    /**
+     * <p>Whether the solution version was created automatically or manually.</p>
+     */
+    inline void SetTrainingType(TrainingType&& value) { m_trainingTypeHasBeenSet = true; m_trainingType = std::move(value); }
+
+    /**
+     * <p>Whether the solution version was created automatically or manually.</p>
+     */
+    inline SolutionVersionSummary& WithTrainingType(const TrainingType& value) { SetTrainingType(value); return *this;}
+
+    /**
+     * <p>Whether the solution version was created automatically or manually.</p>
+     */
+    inline SolutionVersionSummary& WithTrainingType(TrainingType&& value) { SetTrainingType(std::move(value)); return *this;}
+
+
+    /**
      * <p>The date and time (in Unix time) that this version of a solution was
      * created.</p>
      */
@@ -260,6 +348,12 @@ namespace Model
 
     Aws::String m_status;
     bool m_statusHasBeenSet = false;
+
+    TrainingMode m_trainingMode;
+    bool m_trainingModeHasBeenSet = false;
+
+    TrainingType m_trainingType;
+    bool m_trainingTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDateTime;
     bool m_creationDateTimeHasBeenSet = false;

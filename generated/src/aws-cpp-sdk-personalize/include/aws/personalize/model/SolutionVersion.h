@@ -10,6 +10,7 @@
 #include <aws/personalize/model/TrainingMode.h>
 #include <aws/personalize/model/TunedHPOParams.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/personalize/model/TrainingType.h>
 #include <utility>
 
 namespace Aws
@@ -420,104 +421,56 @@ namespace Model
 
 
     /**
-     * <p>The scope of training to be performed when creating the solution version. The
-     * <code>FULL</code> option trains the solution version based on the entirety of
-     * the input solution's training data, while the <code>UPDATE</code> option
-     * processes only the data that has changed in comparison to the input solution.
-     * Choose <code>UPDATE</code> when you want to incrementally update your solution
-     * version instead of creating an entirely new one.</p>  <p>The
-     * <code>UPDATE</code> option can only be used when you already have an active
-     * solution version created from the input solution using the <code>FULL</code>
-     * option and the input solution was trained with the <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
-     * recipe or the <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
-     * recipe.</p> 
+     * <p>The scope of training to be performed when creating the solution version. A
+     * <code>FULL</code> training considers all of the data in your dataset group. An
+     * <code>UPDATE</code> processes only the data that has changed since the latest
+     * training. Only solution versions created with the User-Personalization recipe
+     * can use <code>UPDATE</code>. </p>
      */
     inline const TrainingMode& GetTrainingMode() const{ return m_trainingMode; }
 
     /**
-     * <p>The scope of training to be performed when creating the solution version. The
-     * <code>FULL</code> option trains the solution version based on the entirety of
-     * the input solution's training data, while the <code>UPDATE</code> option
-     * processes only the data that has changed in comparison to the input solution.
-     * Choose <code>UPDATE</code> when you want to incrementally update your solution
-     * version instead of creating an entirely new one.</p>  <p>The
-     * <code>UPDATE</code> option can only be used when you already have an active
-     * solution version created from the input solution using the <code>FULL</code>
-     * option and the input solution was trained with the <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
-     * recipe or the <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
-     * recipe.</p> 
+     * <p>The scope of training to be performed when creating the solution version. A
+     * <code>FULL</code> training considers all of the data in your dataset group. An
+     * <code>UPDATE</code> processes only the data that has changed since the latest
+     * training. Only solution versions created with the User-Personalization recipe
+     * can use <code>UPDATE</code>. </p>
      */
     inline bool TrainingModeHasBeenSet() const { return m_trainingModeHasBeenSet; }
 
     /**
-     * <p>The scope of training to be performed when creating the solution version. The
-     * <code>FULL</code> option trains the solution version based on the entirety of
-     * the input solution's training data, while the <code>UPDATE</code> option
-     * processes only the data that has changed in comparison to the input solution.
-     * Choose <code>UPDATE</code> when you want to incrementally update your solution
-     * version instead of creating an entirely new one.</p>  <p>The
-     * <code>UPDATE</code> option can only be used when you already have an active
-     * solution version created from the input solution using the <code>FULL</code>
-     * option and the input solution was trained with the <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
-     * recipe or the <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
-     * recipe.</p> 
+     * <p>The scope of training to be performed when creating the solution version. A
+     * <code>FULL</code> training considers all of the data in your dataset group. An
+     * <code>UPDATE</code> processes only the data that has changed since the latest
+     * training. Only solution versions created with the User-Personalization recipe
+     * can use <code>UPDATE</code>. </p>
      */
     inline void SetTrainingMode(const TrainingMode& value) { m_trainingModeHasBeenSet = true; m_trainingMode = value; }
 
     /**
-     * <p>The scope of training to be performed when creating the solution version. The
-     * <code>FULL</code> option trains the solution version based on the entirety of
-     * the input solution's training data, while the <code>UPDATE</code> option
-     * processes only the data that has changed in comparison to the input solution.
-     * Choose <code>UPDATE</code> when you want to incrementally update your solution
-     * version instead of creating an entirely new one.</p>  <p>The
-     * <code>UPDATE</code> option can only be used when you already have an active
-     * solution version created from the input solution using the <code>FULL</code>
-     * option and the input solution was trained with the <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
-     * recipe or the <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
-     * recipe.</p> 
+     * <p>The scope of training to be performed when creating the solution version. A
+     * <code>FULL</code> training considers all of the data in your dataset group. An
+     * <code>UPDATE</code> processes only the data that has changed since the latest
+     * training. Only solution versions created with the User-Personalization recipe
+     * can use <code>UPDATE</code>. </p>
      */
     inline void SetTrainingMode(TrainingMode&& value) { m_trainingModeHasBeenSet = true; m_trainingMode = std::move(value); }
 
     /**
-     * <p>The scope of training to be performed when creating the solution version. The
-     * <code>FULL</code> option trains the solution version based on the entirety of
-     * the input solution's training data, while the <code>UPDATE</code> option
-     * processes only the data that has changed in comparison to the input solution.
-     * Choose <code>UPDATE</code> when you want to incrementally update your solution
-     * version instead of creating an entirely new one.</p>  <p>The
-     * <code>UPDATE</code> option can only be used when you already have an active
-     * solution version created from the input solution using the <code>FULL</code>
-     * option and the input solution was trained with the <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
-     * recipe or the <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
-     * recipe.</p> 
+     * <p>The scope of training to be performed when creating the solution version. A
+     * <code>FULL</code> training considers all of the data in your dataset group. An
+     * <code>UPDATE</code> processes only the data that has changed since the latest
+     * training. Only solution versions created with the User-Personalization recipe
+     * can use <code>UPDATE</code>. </p>
      */
     inline SolutionVersion& WithTrainingMode(const TrainingMode& value) { SetTrainingMode(value); return *this;}
 
     /**
-     * <p>The scope of training to be performed when creating the solution version. The
-     * <code>FULL</code> option trains the solution version based on the entirety of
-     * the input solution's training data, while the <code>UPDATE</code> option
-     * processes only the data that has changed in comparison to the input solution.
-     * Choose <code>UPDATE</code> when you want to incrementally update your solution
-     * version instead of creating an entirely new one.</p>  <p>The
-     * <code>UPDATE</code> option can only be used when you already have an active
-     * solution version created from the input solution using the <code>FULL</code>
-     * option and the input solution was trained with the <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
-     * recipe or the <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
-     * recipe.</p> 
+     * <p>The scope of training to be performed when creating the solution version. A
+     * <code>FULL</code> training considers all of the data in your dataset group. An
+     * <code>UPDATE</code> processes only the data that has changed since the latest
+     * training. Only solution versions created with the User-Personalization recipe
+     * can use <code>UPDATE</code>. </p>
      */
     inline SolutionVersion& WithTrainingMode(TrainingMode&& value) { SetTrainingMode(std::move(value)); return *this;}
 
@@ -740,6 +693,37 @@ namespace Model
      */
     inline SolutionVersion& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Whether the solution version was created automatically or manually.</p>
+     */
+    inline const TrainingType& GetTrainingType() const{ return m_trainingType; }
+
+    /**
+     * <p>Whether the solution version was created automatically or manually.</p>
+     */
+    inline bool TrainingTypeHasBeenSet() const { return m_trainingTypeHasBeenSet; }
+
+    /**
+     * <p>Whether the solution version was created automatically or manually.</p>
+     */
+    inline void SetTrainingType(const TrainingType& value) { m_trainingTypeHasBeenSet = true; m_trainingType = value; }
+
+    /**
+     * <p>Whether the solution version was created automatically or manually.</p>
+     */
+    inline void SetTrainingType(TrainingType&& value) { m_trainingTypeHasBeenSet = true; m_trainingType = std::move(value); }
+
+    /**
+     * <p>Whether the solution version was created automatically or manually.</p>
+     */
+    inline SolutionVersion& WithTrainingType(const TrainingType& value) { SetTrainingType(value); return *this;}
+
+    /**
+     * <p>Whether the solution version was created automatically or manually.</p>
+     */
+    inline SolutionVersion& WithTrainingType(TrainingType&& value) { SetTrainingType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -789,6 +773,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
     bool m_lastUpdatedDateTimeHasBeenSet = false;
+
+    TrainingType m_trainingType;
+    bool m_trainingTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -38,7 +38,9 @@ SolutionVersion::SolutionVersion() :
     m_statusHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+    m_lastUpdatedDateTimeHasBeenSet(false),
+    m_trainingType(TrainingType::NOT_SET),
+    m_trainingTypeHasBeenSet(false)
 {
 }
 
@@ -62,7 +64,9 @@ SolutionVersion::SolutionVersion(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+    m_lastUpdatedDateTimeHasBeenSet(false),
+    m_trainingType(TrainingType::NOT_SET),
+    m_trainingTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -181,6 +185,13 @@ SolutionVersion& SolutionVersion::operator =(JsonView jsonValue)
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("trainingType"))
+  {
+    m_trainingType = TrainingTypeMapper::GetTrainingTypeForName(jsonValue.GetString("trainingType"));
+
+    m_trainingTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -279,6 +290,11 @@ JsonValue SolutionVersion::Jsonize() const
   if(m_lastUpdatedDateTimeHasBeenSet)
   {
    payload.WithDouble("lastUpdatedDateTime", m_lastUpdatedDateTime.SecondsWithMSPrecision());
+  }
+
+  if(m_trainingTypeHasBeenSet)
+  {
+   payload.WithString("trainingType", TrainingTypeMapper::GetNameForTrainingType(m_trainingType));
   }
 
   return payload;

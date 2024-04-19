@@ -28,8 +28,20 @@ namespace Model
 {
 
   /**
-   * <p>An object that provides information about a solution. A solution is a trained
-   * model that can be deployed as a campaign.</p><p><h3>See Also:</h3>   <a
+   *  <p>After you create a solution, you can’t change its configuration.
+   * By default, all new solutions use automatic training. With automatic training,
+   * you incur training costs while your solution is active. You can't stop automatic
+   * training for a solution. To avoid unnecessary costs, make sure to delete the
+   * solution when you are finished. For information about training costs, see <a
+   * href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize
+   * pricing</a>.</p>  <p>An object that provides information about a
+   * solution. A solution includes the custom recipe, customized parameters, and
+   * trained models (Solution Versions) that Amazon Personalize uses to generate
+   * recommendations. </p> <p>After you create a solution, you can’t change its
+   * configuration. If you need to make changes, you can <a
+   * href="https://docs.aws.amazon.com/personalize/latest/dg/cloning-solution.html">clone
+   * the solution</a> with the Amazon Personalize console or create a new
+   * one.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/Solution">AWS
    * API Reference</a></p>
    */
@@ -200,6 +212,43 @@ namespace Model
      * training.</p>
      */
     inline Solution& WithPerformAutoML(bool value) { SetPerformAutoML(value); return *this;}
+
+
+    /**
+     * <p>Specifies whether the solution automatically creates solution versions. The
+     * default is <code>True</code> and the solution automatically creates new solution
+     * versions every 7 days.</p> <p>For more information about auto training, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/customizing-solution-config.html">Creating
+     * and configuring a solution</a>.</p>
+     */
+    inline bool GetPerformAutoTraining() const{ return m_performAutoTraining; }
+
+    /**
+     * <p>Specifies whether the solution automatically creates solution versions. The
+     * default is <code>True</code> and the solution automatically creates new solution
+     * versions every 7 days.</p> <p>For more information about auto training, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/customizing-solution-config.html">Creating
+     * and configuring a solution</a>.</p>
+     */
+    inline bool PerformAutoTrainingHasBeenSet() const { return m_performAutoTrainingHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the solution automatically creates solution versions. The
+     * default is <code>True</code> and the solution automatically creates new solution
+     * versions every 7 days.</p> <p>For more information about auto training, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/customizing-solution-config.html">Creating
+     * and configuring a solution</a>.</p>
+     */
+    inline void SetPerformAutoTraining(bool value) { m_performAutoTrainingHasBeenSet = true; m_performAutoTraining = value; }
+
+    /**
+     * <p>Specifies whether the solution automatically creates solution versions. The
+     * default is <code>True</code> and the solution automatically creates new solution
+     * versions every 7 days.</p> <p>For more information about auto training, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/customizing-solution-config.html">Creating
+     * and configuring a solution</a>.</p>
+     */
+    inline Solution& WithPerformAutoTraining(bool value) { SetPerformAutoTraining(value); return *this;}
 
 
     /**
@@ -595,6 +644,9 @@ namespace Model
 
     bool m_performAutoML;
     bool m_performAutoMLHasBeenSet = false;
+
+    bool m_performAutoTraining;
+    bool m_performAutoTrainingHasBeenSet = false;
 
     Aws::String m_recipeArn;
     bool m_recipeArnHasBeenSet = false;

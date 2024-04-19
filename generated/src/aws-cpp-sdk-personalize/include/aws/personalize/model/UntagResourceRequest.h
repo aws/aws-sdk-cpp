@@ -77,47 +77,47 @@ namespace Model
 
 
     /**
-     * <p>Keys to remove from the resource's tags.</p>
+     * <p>The keys of the tags to be removed.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
 
     /**
-     * <p>Keys to remove from the resource's tags.</p>
+     * <p>The keys of the tags to be removed.</p>
      */
     inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
 
     /**
-     * <p>Keys to remove from the resource's tags.</p>
+     * <p>The keys of the tags to be removed.</p>
      */
     inline void SetTagKeys(const Aws::Vector<Aws::String>& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
 
     /**
-     * <p>Keys to remove from the resource's tags.</p>
+     * <p>The keys of the tags to be removed.</p>
      */
     inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
 
     /**
-     * <p>Keys to remove from the resource's tags.</p>
+     * <p>The keys of the tags to be removed.</p>
      */
     inline UntagResourceRequest& WithTagKeys(const Aws::Vector<Aws::String>& value) { SetTagKeys(value); return *this;}
 
     /**
-     * <p>Keys to remove from the resource's tags.</p>
+     * <p>The keys of the tags to be removed.</p>
      */
     inline UntagResourceRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
 
     /**
-     * <p>Keys to remove from the resource's tags.</p>
+     * <p>The keys of the tags to be removed.</p>
      */
     inline UntagResourceRequest& AddTagKeys(const Aws::String& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
     /**
-     * <p>Keys to remove from the resource's tags.</p>
+     * <p>The keys of the tags to be removed.</p>
      */
     inline UntagResourceRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Keys to remove from the resource's tags.</p>
+     * <p>The keys of the tags to be removed.</p>
      */
     inline UntagResourceRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
