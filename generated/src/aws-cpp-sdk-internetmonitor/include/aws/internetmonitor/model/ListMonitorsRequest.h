@@ -182,22 +182,50 @@ namespace Model
 
 
     /**
-     * <p>TBD </p>
+     * <p>A boolean option that you can set to <code>TRUE</code> to include monitors
+     * for linked accounts in a list of monitors, when you've set up cross-account
+     * sharing in Amazon CloudWatch Internet Monitor. You configure cross-account
+     * sharing by using Amazon CloudWatch Observability Access Manager. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet
+     * Monitor cross-account observability</a> in the Amazon CloudWatch Internet
+     * Monitor User Guide.</p>
      */
     inline bool GetIncludeLinkedAccounts() const{ return m_includeLinkedAccounts; }
 
     /**
-     * <p>TBD </p>
+     * <p>A boolean option that you can set to <code>TRUE</code> to include monitors
+     * for linked accounts in a list of monitors, when you've set up cross-account
+     * sharing in Amazon CloudWatch Internet Monitor. You configure cross-account
+     * sharing by using Amazon CloudWatch Observability Access Manager. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet
+     * Monitor cross-account observability</a> in the Amazon CloudWatch Internet
+     * Monitor User Guide.</p>
      */
     inline bool IncludeLinkedAccountsHasBeenSet() const { return m_includeLinkedAccountsHasBeenSet; }
 
     /**
-     * <p>TBD </p>
+     * <p>A boolean option that you can set to <code>TRUE</code> to include monitors
+     * for linked accounts in a list of monitors, when you've set up cross-account
+     * sharing in Amazon CloudWatch Internet Monitor. You configure cross-account
+     * sharing by using Amazon CloudWatch Observability Access Manager. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet
+     * Monitor cross-account observability</a> in the Amazon CloudWatch Internet
+     * Monitor User Guide.</p>
      */
     inline void SetIncludeLinkedAccounts(bool value) { m_includeLinkedAccountsHasBeenSet = true; m_includeLinkedAccounts = value; }
 
     /**
-     * <p>TBD </p>
+     * <p>A boolean option that you can set to <code>TRUE</code> to include monitors
+     * for linked accounts in a list of monitors, when you've set up cross-account
+     * sharing in Amazon CloudWatch Internet Monitor. You configure cross-account
+     * sharing by using Amazon CloudWatch Observability Access Manager. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet
+     * Monitor cross-account observability</a> in the Amazon CloudWatch Internet
+     * Monitor User Guide.</p>
      */
     inline ListMonitorsRequest& WithIncludeLinkedAccounts(bool value) { SetIncludeLinkedAccounts(value); return *this;}
 

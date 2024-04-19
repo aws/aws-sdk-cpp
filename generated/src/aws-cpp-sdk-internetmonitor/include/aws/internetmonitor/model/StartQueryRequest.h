@@ -358,42 +358,82 @@ namespace Model
 
 
     /**
-     * <p>TBD </p>
+     * <p>The account ID for an account that you've set up cross-account sharing for in
+     * Amazon CloudWatch Internet Monitor. You configure cross-account sharing by using
+     * Amazon CloudWatch Observability Access Manager. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet
+     * Monitor cross-account observability</a> in the Amazon CloudWatch Internet
+     * Monitor User Guide.</p>
      */
     inline const Aws::String& GetLinkedAccountId() const{ return m_linkedAccountId; }
 
     /**
-     * <p>TBD </p>
+     * <p>The account ID for an account that you've set up cross-account sharing for in
+     * Amazon CloudWatch Internet Monitor. You configure cross-account sharing by using
+     * Amazon CloudWatch Observability Access Manager. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet
+     * Monitor cross-account observability</a> in the Amazon CloudWatch Internet
+     * Monitor User Guide.</p>
      */
     inline bool LinkedAccountIdHasBeenSet() const { return m_linkedAccountIdHasBeenSet; }
 
     /**
-     * <p>TBD </p>
+     * <p>The account ID for an account that you've set up cross-account sharing for in
+     * Amazon CloudWatch Internet Monitor. You configure cross-account sharing by using
+     * Amazon CloudWatch Observability Access Manager. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet
+     * Monitor cross-account observability</a> in the Amazon CloudWatch Internet
+     * Monitor User Guide.</p>
      */
     inline void SetLinkedAccountId(const Aws::String& value) { m_linkedAccountIdHasBeenSet = true; m_linkedAccountId = value; }
 
     /**
-     * <p>TBD </p>
+     * <p>The account ID for an account that you've set up cross-account sharing for in
+     * Amazon CloudWatch Internet Monitor. You configure cross-account sharing by using
+     * Amazon CloudWatch Observability Access Manager. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet
+     * Monitor cross-account observability</a> in the Amazon CloudWatch Internet
+     * Monitor User Guide.</p>
      */
     inline void SetLinkedAccountId(Aws::String&& value) { m_linkedAccountIdHasBeenSet = true; m_linkedAccountId = std::move(value); }
 
     /**
-     * <p>TBD </p>
+     * <p>The account ID for an account that you've set up cross-account sharing for in
+     * Amazon CloudWatch Internet Monitor. You configure cross-account sharing by using
+     * Amazon CloudWatch Observability Access Manager. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet
+     * Monitor cross-account observability</a> in the Amazon CloudWatch Internet
+     * Monitor User Guide.</p>
      */
     inline void SetLinkedAccountId(const char* value) { m_linkedAccountIdHasBeenSet = true; m_linkedAccountId.assign(value); }
 
     /**
-     * <p>TBD </p>
+     * <p>The account ID for an account that you've set up cross-account sharing for in
+     * Amazon CloudWatch Internet Monitor. You configure cross-account sharing by using
+     * Amazon CloudWatch Observability Access Manager. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet
+     * Monitor cross-account observability</a> in the Amazon CloudWatch Internet
+     * Monitor User Guide.</p>
      */
     inline StartQueryRequest& WithLinkedAccountId(const Aws::String& value) { SetLinkedAccountId(value); return *this;}
 
     /**
-     * <p>TBD </p>
+     * <p>The account ID for an account that you've set up cross-account sharing for in
+     * Amazon CloudWatch Internet Monitor. You configure cross-account sharing by using
+     * Amazon CloudWatch Observability Access Manager. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet
+     * Monitor cross-account observability</a> in the Amazon CloudWatch Internet
+     * Monitor User Guide.</p>
      */
     inline StartQueryRequest& WithLinkedAccountId(Aws::String&& value) { SetLinkedAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>TBD </p>
+     * <p>The account ID for an account that you've set up cross-account sharing for in
+     * Amazon CloudWatch Internet Monitor. You configure cross-account sharing by using
+     * Amazon CloudWatch Observability Access Manager. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet
+     * Monitor cross-account observability</a> in the Amazon CloudWatch Internet
+     * Monitor User Guide.</p>
      */
     inline StartQueryRequest& WithLinkedAccountId(const char* value) { SetLinkedAccountId(value); return *this;}
 

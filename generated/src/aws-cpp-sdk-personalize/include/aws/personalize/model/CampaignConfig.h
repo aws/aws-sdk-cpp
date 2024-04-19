@@ -238,6 +238,59 @@ namespace Model
      */
     inline CampaignConfig& WithEnableMetadataWithRecommendations(bool value) { SetEnableMetadataWithRecommendations(value); return *this;}
 
+
+    /**
+     * <p>Whether the campaign automatically updates to use the latest solution version
+     * (trained model) of a solution. If you specify <code>True</code>, you must
+     * specify the ARN of your <i>solution</i> for the <code>SolutionVersionArn</code>
+     * parameter. It must be in <code>SolutionArn/$LATEST</code> format. The default is
+     * <code>False</code> and you must manually update the campaign to deploy the
+     * latest solution version. </p> <p> For more information about automatic campaign
+     * updates, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update">Enabling
+     * automatic campaign updates</a>. </p>
+     */
+    inline bool GetSyncWithLatestSolutionVersion() const{ return m_syncWithLatestSolutionVersion; }
+
+    /**
+     * <p>Whether the campaign automatically updates to use the latest solution version
+     * (trained model) of a solution. If you specify <code>True</code>, you must
+     * specify the ARN of your <i>solution</i> for the <code>SolutionVersionArn</code>
+     * parameter. It must be in <code>SolutionArn/$LATEST</code> format. The default is
+     * <code>False</code> and you must manually update the campaign to deploy the
+     * latest solution version. </p> <p> For more information about automatic campaign
+     * updates, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update">Enabling
+     * automatic campaign updates</a>. </p>
+     */
+    inline bool SyncWithLatestSolutionVersionHasBeenSet() const { return m_syncWithLatestSolutionVersionHasBeenSet; }
+
+    /**
+     * <p>Whether the campaign automatically updates to use the latest solution version
+     * (trained model) of a solution. If you specify <code>True</code>, you must
+     * specify the ARN of your <i>solution</i> for the <code>SolutionVersionArn</code>
+     * parameter. It must be in <code>SolutionArn/$LATEST</code> format. The default is
+     * <code>False</code> and you must manually update the campaign to deploy the
+     * latest solution version. </p> <p> For more information about automatic campaign
+     * updates, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update">Enabling
+     * automatic campaign updates</a>. </p>
+     */
+    inline void SetSyncWithLatestSolutionVersion(bool value) { m_syncWithLatestSolutionVersionHasBeenSet = true; m_syncWithLatestSolutionVersion = value; }
+
+    /**
+     * <p>Whether the campaign automatically updates to use the latest solution version
+     * (trained model) of a solution. If you specify <code>True</code>, you must
+     * specify the ARN of your <i>solution</i> for the <code>SolutionVersionArn</code>
+     * parameter. It must be in <code>SolutionArn/$LATEST</code> format. The default is
+     * <code>False</code> and you must manually update the campaign to deploy the
+     * latest solution version. </p> <p> For more information about automatic campaign
+     * updates, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update">Enabling
+     * automatic campaign updates</a>. </p>
+     */
+    inline CampaignConfig& WithSyncWithLatestSolutionVersion(bool value) { SetSyncWithLatestSolutionVersion(value); return *this;}
+
   private:
 
     Aws::Map<Aws::String, Aws::String> m_itemExplorationConfig;
@@ -245,6 +298,9 @@ namespace Model
 
     bool m_enableMetadataWithRecommendations;
     bool m_enableMetadataWithRecommendationsHasBeenSet = false;
+
+    bool m_syncWithLatestSolutionVersion;
+    bool m_syncWithLatestSolutionVersionHasBeenSet = false;
   };
 
 } // namespace Model

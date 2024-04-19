@@ -305,32 +305,32 @@ namespace Model
 
 
     /**
-     * <p>Health event list member.</p>
+     * <p>The status of a health event.</p>
      */
     inline const HealthEventStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Health event list member.</p>
+     * <p>The status of a health event.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>Health event list member.</p>
+     * <p>The status of a health event.</p>
      */
     inline void SetStatus(const HealthEventStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Health event list member.</p>
+     * <p>The status of a health event.</p>
      */
     inline void SetStatus(HealthEventStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>Health event list member.</p>
+     * <p>The status of a health event.</p>
      */
     inline HealthEvent& WithStatus(const HealthEventStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Health event list member.</p>
+     * <p>The status of a health event.</p>
      */
     inline HealthEvent& WithStatus(HealthEventStatus&& value) { SetStatus(std::move(value)); return *this;}
 

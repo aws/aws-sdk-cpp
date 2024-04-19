@@ -98,6 +98,12 @@ GetUnfilteredTableMetadataResult& GetUnfilteredTableMetadataResult::operator =(c
     }
   }
 
+  if(jsonValue.ValueExists("RowFilter"))
+  {
+    m_rowFilter = jsonValue.GetString("RowFilter");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

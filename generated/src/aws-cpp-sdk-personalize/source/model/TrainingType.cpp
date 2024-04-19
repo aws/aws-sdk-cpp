@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/personalize/model/TrainingMode.h>
+#include <aws/personalize/model/TrainingType.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -17,51 +17,44 @@ namespace Aws
   {
     namespace Model
     {
-      namespace TrainingModeMapper
+      namespace TrainingTypeMapper
       {
 
-        static const int FULL_HASH = HashingUtils::HashString("FULL");
-        static const int UPDATE_HASH = HashingUtils::HashString("UPDATE");
-        static const int AUTOTRAIN_HASH = HashingUtils::HashString("AUTOTRAIN");
+        static const int AUTOMATIC_HASH = HashingUtils::HashString("AUTOMATIC");
+        static const int MANUAL_HASH = HashingUtils::HashString("MANUAL");
 
 
-        TrainingMode GetTrainingModeForName(const Aws::String& name)
+        TrainingType GetTrainingTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == FULL_HASH)
+          if (hashCode == AUTOMATIC_HASH)
           {
-            return TrainingMode::FULL;
+            return TrainingType::AUTOMATIC;
           }
-          else if (hashCode == UPDATE_HASH)
+          else if (hashCode == MANUAL_HASH)
           {
-            return TrainingMode::UPDATE;
-          }
-          else if (hashCode == AUTOTRAIN_HASH)
-          {
-            return TrainingMode::AUTOTRAIN;
+            return TrainingType::MANUAL;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<TrainingMode>(hashCode);
+            return static_cast<TrainingType>(hashCode);
           }
 
-          return TrainingMode::NOT_SET;
+          return TrainingType::NOT_SET;
         }
 
-        Aws::String GetNameForTrainingMode(TrainingMode enumValue)
+        Aws::String GetNameForTrainingType(TrainingType enumValue)
         {
           switch(enumValue)
           {
-          case TrainingMode::NOT_SET:
+          case TrainingType::NOT_SET:
             return {};
-          case TrainingMode::FULL:
-            return "FULL";
-          case TrainingMode::UPDATE:
-            return "UPDATE";
-          case TrainingMode::AUTOTRAIN:
-            return "AUTOTRAIN";
+          case TrainingType::AUTOMATIC:
+            return "AUTOMATIC";
+          case TrainingType::MANUAL:
+            return "MANUAL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -73,7 +66,7 @@ namespace Aws
           }
         }
 
-      } // namespace TrainingModeMapper
+      } // namespace TrainingTypeMapper
     } // namespace Model
   } // namespace Personalize
 } // namespace Aws

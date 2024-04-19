@@ -13,20 +13,19 @@ namespace Personalize
 {
 namespace Model
 {
-  enum class TrainingMode
+  enum class TrainingType
   {
     NOT_SET,
-    FULL,
-    UPDATE,
-    AUTOTRAIN
+    AUTOMATIC,
+    MANUAL
   };
 
-namespace TrainingModeMapper
+namespace TrainingTypeMapper
 {
-AWS_PERSONALIZE_API TrainingMode GetTrainingModeForName(const Aws::String& name);
+AWS_PERSONALIZE_API TrainingType GetTrainingTypeForName(const Aws::String& name);
 
-AWS_PERSONALIZE_API Aws::String GetNameForTrainingMode(TrainingMode value);
-} // namespace TrainingModeMapper
+AWS_PERSONALIZE_API Aws::String GetNameForTrainingType(TrainingType value);
+} // namespace TrainingTypeMapper
 } // namespace Model
 } // namespace Personalize
 } // namespace Aws

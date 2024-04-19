@@ -324,6 +324,63 @@ namespace Model
     inline GetUnfilteredTableMetadataResult& AddPermissions(Permission&& value) { m_permissions.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>The filter that applies to the table. For example when applying the filter in
+     * SQL, it would go in the <code>WHERE</code> clause and can be evaluated by using
+     * an <code>AND</code> operator with any other predicates applied by the user
+     * querying the table.</p>
+     */
+    inline const Aws::String& GetRowFilter() const{ return m_rowFilter; }
+
+    /**
+     * <p>The filter that applies to the table. For example when applying the filter in
+     * SQL, it would go in the <code>WHERE</code> clause and can be evaluated by using
+     * an <code>AND</code> operator with any other predicates applied by the user
+     * querying the table.</p>
+     */
+    inline void SetRowFilter(const Aws::String& value) { m_rowFilter = value; }
+
+    /**
+     * <p>The filter that applies to the table. For example when applying the filter in
+     * SQL, it would go in the <code>WHERE</code> clause and can be evaluated by using
+     * an <code>AND</code> operator with any other predicates applied by the user
+     * querying the table.</p>
+     */
+    inline void SetRowFilter(Aws::String&& value) { m_rowFilter = std::move(value); }
+
+    /**
+     * <p>The filter that applies to the table. For example when applying the filter in
+     * SQL, it would go in the <code>WHERE</code> clause and can be evaluated by using
+     * an <code>AND</code> operator with any other predicates applied by the user
+     * querying the table.</p>
+     */
+    inline void SetRowFilter(const char* value) { m_rowFilter.assign(value); }
+
+    /**
+     * <p>The filter that applies to the table. For example when applying the filter in
+     * SQL, it would go in the <code>WHERE</code> clause and can be evaluated by using
+     * an <code>AND</code> operator with any other predicates applied by the user
+     * querying the table.</p>
+     */
+    inline GetUnfilteredTableMetadataResult& WithRowFilter(const Aws::String& value) { SetRowFilter(value); return *this;}
+
+    /**
+     * <p>The filter that applies to the table. For example when applying the filter in
+     * SQL, it would go in the <code>WHERE</code> clause and can be evaluated by using
+     * an <code>AND</code> operator with any other predicates applied by the user
+     * querying the table.</p>
+     */
+    inline GetUnfilteredTableMetadataResult& WithRowFilter(Aws::String&& value) { SetRowFilter(std::move(value)); return *this;}
+
+    /**
+     * <p>The filter that applies to the table. For example when applying the filter in
+     * SQL, it would go in the <code>WHERE</code> clause and can be evaluated by using
+     * an <code>AND</code> operator with any other predicates applied by the user
+     * querying the table.</p>
+     */
+    inline GetUnfilteredTableMetadataResult& WithRowFilter(const char* value) { SetRowFilter(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -364,6 +421,8 @@ namespace Model
     bool m_isProtected;
 
     Aws::Vector<Permission> m_permissions;
+
+    Aws::String m_rowFilter;
 
     Aws::String m_requestId;
   };

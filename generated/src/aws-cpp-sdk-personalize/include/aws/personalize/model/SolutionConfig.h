@@ -11,6 +11,7 @@
 #include <aws/personalize/model/AutoMLConfig.h>
 #include <aws/personalize/model/OptimizationObjective.h>
 #include <aws/personalize/model/TrainingDataConfig.h>
+#include <aws/personalize/model/AutoTrainingConfig.h>
 #include <utility>
 
 namespace Aws
@@ -383,6 +384,37 @@ namespace Model
      */
     inline SolutionConfig& WithTrainingDataConfig(TrainingDataConfig&& value) { SetTrainingDataConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies the automatic training configuration to use.</p>
+     */
+    inline const AutoTrainingConfig& GetAutoTrainingConfig() const{ return m_autoTrainingConfig; }
+
+    /**
+     * <p>Specifies the automatic training configuration to use.</p>
+     */
+    inline bool AutoTrainingConfigHasBeenSet() const { return m_autoTrainingConfigHasBeenSet; }
+
+    /**
+     * <p>Specifies the automatic training configuration to use.</p>
+     */
+    inline void SetAutoTrainingConfig(const AutoTrainingConfig& value) { m_autoTrainingConfigHasBeenSet = true; m_autoTrainingConfig = value; }
+
+    /**
+     * <p>Specifies the automatic training configuration to use.</p>
+     */
+    inline void SetAutoTrainingConfig(AutoTrainingConfig&& value) { m_autoTrainingConfigHasBeenSet = true; m_autoTrainingConfig = std::move(value); }
+
+    /**
+     * <p>Specifies the automatic training configuration to use.</p>
+     */
+    inline SolutionConfig& WithAutoTrainingConfig(const AutoTrainingConfig& value) { SetAutoTrainingConfig(value); return *this;}
+
+    /**
+     * <p>Specifies the automatic training configuration to use.</p>
+     */
+    inline SolutionConfig& WithAutoTrainingConfig(AutoTrainingConfig&& value) { SetAutoTrainingConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_eventValueThreshold;
@@ -405,6 +437,9 @@ namespace Model
 
     TrainingDataConfig m_trainingDataConfig;
     bool m_trainingDataConfigHasBeenSet = false;
+
+    AutoTrainingConfig m_autoTrainingConfig;
+    bool m_autoTrainingConfigHasBeenSet = false;
   };
 
 } // namespace Model

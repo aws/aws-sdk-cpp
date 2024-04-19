@@ -25,6 +25,8 @@ Solution::Solution() :
     m_performHPOHasBeenSet(false),
     m_performAutoML(false),
     m_performAutoMLHasBeenSet(false),
+    m_performAutoTraining(false),
+    m_performAutoTrainingHasBeenSet(false),
     m_recipeArnHasBeenSet(false),
     m_datasetGroupArnHasBeenSet(false),
     m_eventTypeHasBeenSet(false),
@@ -44,6 +46,8 @@ Solution::Solution(JsonView jsonValue) :
     m_performHPOHasBeenSet(false),
     m_performAutoML(false),
     m_performAutoMLHasBeenSet(false),
+    m_performAutoTraining(false),
+    m_performAutoTrainingHasBeenSet(false),
     m_recipeArnHasBeenSet(false),
     m_datasetGroupArnHasBeenSet(false),
     m_eventTypeHasBeenSet(false),
@@ -85,6 +89,13 @@ Solution& Solution::operator =(JsonView jsonValue)
     m_performAutoML = jsonValue.GetBool("performAutoML");
 
     m_performAutoMLHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("performAutoTraining"))
+  {
+    m_performAutoTraining = jsonValue.GetBool("performAutoTraining");
+
+    m_performAutoTrainingHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("recipeArn"))
@@ -178,6 +189,12 @@ JsonValue Solution::Jsonize() const
   if(m_performAutoMLHasBeenSet)
   {
    payload.WithBool("performAutoML", m_performAutoML);
+
+  }
+
+  if(m_performAutoTrainingHasBeenSet)
+  {
+   payload.WithBool("performAutoTraining", m_performAutoTraining);
 
   }
 

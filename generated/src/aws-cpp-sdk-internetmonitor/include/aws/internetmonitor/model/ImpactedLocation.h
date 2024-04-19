@@ -46,42 +46,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the network at an impacted location.</p>
+     * <p>The name of the internet service provider (ISP) or network (ASN).</p>
      */
     inline const Aws::String& GetASName() const{ return m_aSName; }
 
     /**
-     * <p>The name of the network at an impacted location.</p>
+     * <p>The name of the internet service provider (ISP) or network (ASN).</p>
      */
     inline bool ASNameHasBeenSet() const { return m_aSNameHasBeenSet; }
 
     /**
-     * <p>The name of the network at an impacted location.</p>
+     * <p>The name of the internet service provider (ISP) or network (ASN).</p>
      */
     inline void SetASName(const Aws::String& value) { m_aSNameHasBeenSet = true; m_aSName = value; }
 
     /**
-     * <p>The name of the network at an impacted location.</p>
+     * <p>The name of the internet service provider (ISP) or network (ASN).</p>
      */
     inline void SetASName(Aws::String&& value) { m_aSNameHasBeenSet = true; m_aSName = std::move(value); }
 
     /**
-     * <p>The name of the network at an impacted location.</p>
+     * <p>The name of the internet service provider (ISP) or network (ASN).</p>
      */
     inline void SetASName(const char* value) { m_aSNameHasBeenSet = true; m_aSName.assign(value); }
 
     /**
-     * <p>The name of the network at an impacted location.</p>
+     * <p>The name of the internet service provider (ISP) or network (ASN).</p>
      */
     inline ImpactedLocation& WithASName(const Aws::String& value) { SetASName(value); return *this;}
 
     /**
-     * <p>The name of the network at an impacted location.</p>
+     * <p>The name of the internet service provider (ISP) or network (ASN).</p>
      */
     inline ImpactedLocation& WithASName(Aws::String&& value) { SetASName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the network at an impacted location.</p>
+     * <p>The name of the internet service provider (ISP) or network (ASN).</p>
      */
     inline ImpactedLocation& WithASName(const char* value) { SetASName(value); return *this;}
 
