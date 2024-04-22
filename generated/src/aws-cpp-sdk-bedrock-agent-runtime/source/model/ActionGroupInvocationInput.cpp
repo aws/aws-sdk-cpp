@@ -21,6 +21,7 @@ namespace Model
 ActionGroupInvocationInput::ActionGroupInvocationInput() : 
     m_actionGroupNameHasBeenSet(false),
     m_apiPathHasBeenSet(false),
+    m_functionHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_requestBodyHasBeenSet(false),
     m_verbHasBeenSet(false)
@@ -30,6 +31,7 @@ ActionGroupInvocationInput::ActionGroupInvocationInput() :
 ActionGroupInvocationInput::ActionGroupInvocationInput(JsonView jsonValue) : 
     m_actionGroupNameHasBeenSet(false),
     m_apiPathHasBeenSet(false),
+    m_functionHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_requestBodyHasBeenSet(false),
     m_verbHasBeenSet(false)
@@ -51,6 +53,13 @@ ActionGroupInvocationInput& ActionGroupInvocationInput::operator =(JsonView json
     m_apiPath = jsonValue.GetString("apiPath");
 
     m_apiPathHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("function"))
+  {
+    m_function = jsonValue.GetString("function");
+
+    m_functionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("parameters"))
@@ -93,6 +102,12 @@ JsonValue ActionGroupInvocationInput::Jsonize() const
   if(m_apiPathHasBeenSet)
   {
    payload.WithString("apiPath", m_apiPath);
+
+  }
+
+  if(m_functionHasBeenSet)
+  {
+   payload.WithString("function", m_function);
 
   }
 

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/payment-cryptography/PaymentCryptography_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/payment-cryptography/model/Tag.h>
 #include <utility>
 
@@ -32,49 +32,6 @@ namespace Model
     AWS_PAYMENTCRYPTOGRAPHY_API ListTagsForResourceResult();
     AWS_PAYMENTCRYPTOGRAPHY_API ListTagsForResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PAYMENTCRYPTOGRAPHY_API ListTagsForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>The token for the next set of results, or an empty or null value if there are
-     * no more results.</p>
-     */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token for the next set of results, or an empty or null value if there are
-     * no more results.</p>
-     */
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token for the next set of results, or an empty or null value if there are
-     * no more results.</p>
-     */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token for the next set of results, or an empty or null value if there are
-     * no more results.</p>
-     */
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token for the next set of results, or an empty or null value if there are
-     * no more results.</p>
-     */
-    inline ListTagsForResourceResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token for the next set of results, or an empty or null value if there are
-     * no more results.</p>
-     */
-    inline ListTagsForResourceResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token for the next set of results, or an empty or null value if there are
-     * no more results.</p>
-     */
-    inline ListTagsForResourceResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
@@ -120,6 +77,49 @@ namespace Model
     inline ListTagsForResourceResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>The token for the next set of results, or an empty or null value if there are
+     * no more results.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token for the next set of results, or an empty or null value if there are
+     * no more results.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /**
+     * <p>The token for the next set of results, or an empty or null value if there are
+     * no more results.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
+
+    /**
+     * <p>The token for the next set of results, or an empty or null value if there are
+     * no more results.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
+
+    /**
+     * <p>The token for the next set of results, or an empty or null value if there are
+     * no more results.</p>
+     */
+    inline ListTagsForResourceResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>The token for the next set of results, or an empty or null value if there are
+     * no more results.</p>
+     */
+    inline ListTagsForResourceResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * <p>The token for the next set of results, or an empty or null value if there are
+     * no more results.</p>
+     */
+    inline ListTagsForResourceResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -143,9 +143,9 @@ namespace Model
 
   private:
 
-    Aws::String m_nextToken;
-
     Aws::Vector<Tag> m_tags;
+
+    Aws::String m_nextToken;
 
     Aws::String m_requestId;
   };

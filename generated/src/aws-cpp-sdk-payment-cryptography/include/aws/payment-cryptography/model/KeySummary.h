@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/payment-cryptography/PaymentCryptography_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/payment-cryptography/model/KeyAttributes.h>
 #include <aws/payment-cryptography/model/KeyState.h>
+#include <aws/payment-cryptography/model/KeyAttributes.h>
 #include <utility>
 
 namespace Aws
@@ -38,52 +38,6 @@ namespace Model
     AWS_PAYMENTCRYPTOGRAPHY_API KeySummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHY_API KeySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHY_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>Specifies whether the key is enabled. </p>
-     */
-    inline bool GetEnabled() const{ return m_enabled; }
-
-    /**
-     * <p>Specifies whether the key is enabled. </p>
-     */
-    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-
-    /**
-     * <p>Specifies whether the key is enabled. </p>
-     */
-    inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-
-    /**
-     * <p>Specifies whether the key is enabled. </p>
-     */
-    inline KeySummary& WithEnabled(bool value) { SetEnabled(value); return *this;}
-
-
-    /**
-     * <p>Specifies whether the key is exportable. This data is immutable after the key
-     * is created.</p>
-     */
-    inline bool GetExportable() const{ return m_exportable; }
-
-    /**
-     * <p>Specifies whether the key is exportable. This data is immutable after the key
-     * is created.</p>
-     */
-    inline bool ExportableHasBeenSet() const { return m_exportableHasBeenSet; }
-
-    /**
-     * <p>Specifies whether the key is exportable. This data is immutable after the key
-     * is created.</p>
-     */
-    inline void SetExportable(bool value) { m_exportableHasBeenSet = true; m_exportable = value; }
-
-    /**
-     * <p>Specifies whether the key is exportable. This data is immutable after the key
-     * is created.</p>
-     */
-    inline KeySummary& WithExportable(bool value) { SetExportable(value); return *this;}
 
 
     /**
@@ -125,6 +79,43 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the key.</p>
      */
     inline KeySummary& WithKeyArn(const char* value) { SetKeyArn(value); return *this;}
+
+
+    /**
+     * <p>The state of an Amazon Web Services Payment Cryptography that is being
+     * created or deleted.</p>
+     */
+    inline const KeyState& GetKeyState() const{ return m_keyState; }
+
+    /**
+     * <p>The state of an Amazon Web Services Payment Cryptography that is being
+     * created or deleted.</p>
+     */
+    inline bool KeyStateHasBeenSet() const { return m_keyStateHasBeenSet; }
+
+    /**
+     * <p>The state of an Amazon Web Services Payment Cryptography that is being
+     * created or deleted.</p>
+     */
+    inline void SetKeyState(const KeyState& value) { m_keyStateHasBeenSet = true; m_keyState = value; }
+
+    /**
+     * <p>The state of an Amazon Web Services Payment Cryptography that is being
+     * created or deleted.</p>
+     */
+    inline void SetKeyState(KeyState&& value) { m_keyStateHasBeenSet = true; m_keyState = std::move(value); }
+
+    /**
+     * <p>The state of an Amazon Web Services Payment Cryptography that is being
+     * created or deleted.</p>
+     */
+    inline KeySummary& WithKeyState(const KeyState& value) { SetKeyState(value); return *this;}
+
+    /**
+     * <p>The state of an Amazon Web Services Payment Cryptography that is being
+     * created or deleted.</p>
+     */
+    inline KeySummary& WithKeyState(KeyState&& value) { SetKeyState(std::move(value)); return *this;}
 
 
     /**
@@ -220,51 +211,57 @@ namespace Model
 
 
     /**
-     * <p>The state of an Amazon Web Services Payment Cryptography that is being
-     * created or deleted.</p>
+     * <p>Specifies whether the key is exportable. This data is immutable after the key
+     * is created.</p>
      */
-    inline const KeyState& GetKeyState() const{ return m_keyState; }
+    inline bool GetExportable() const{ return m_exportable; }
 
     /**
-     * <p>The state of an Amazon Web Services Payment Cryptography that is being
-     * created or deleted.</p>
+     * <p>Specifies whether the key is exportable. This data is immutable after the key
+     * is created.</p>
      */
-    inline bool KeyStateHasBeenSet() const { return m_keyStateHasBeenSet; }
+    inline bool ExportableHasBeenSet() const { return m_exportableHasBeenSet; }
 
     /**
-     * <p>The state of an Amazon Web Services Payment Cryptography that is being
-     * created or deleted.</p>
+     * <p>Specifies whether the key is exportable. This data is immutable after the key
+     * is created.</p>
      */
-    inline void SetKeyState(const KeyState& value) { m_keyStateHasBeenSet = true; m_keyState = value; }
+    inline void SetExportable(bool value) { m_exportableHasBeenSet = true; m_exportable = value; }
 
     /**
-     * <p>The state of an Amazon Web Services Payment Cryptography that is being
-     * created or deleted.</p>
+     * <p>Specifies whether the key is exportable. This data is immutable after the key
+     * is created.</p>
      */
-    inline void SetKeyState(KeyState&& value) { m_keyStateHasBeenSet = true; m_keyState = std::move(value); }
+    inline KeySummary& WithExportable(bool value) { SetExportable(value); return *this;}
+
 
     /**
-     * <p>The state of an Amazon Web Services Payment Cryptography that is being
-     * created or deleted.</p>
+     * <p>Specifies whether the key is enabled. </p>
      */
-    inline KeySummary& WithKeyState(const KeyState& value) { SetKeyState(value); return *this;}
+    inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * <p>The state of an Amazon Web Services Payment Cryptography that is being
-     * created or deleted.</p>
+     * <p>Specifies whether the key is enabled. </p>
      */
-    inline KeySummary& WithKeyState(KeyState&& value) { SetKeyState(std::move(value)); return *this;}
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the key is enabled. </p>
+     */
+    inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
+
+    /**
+     * <p>Specifies whether the key is enabled. </p>
+     */
+    inline KeySummary& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
   private:
 
-    bool m_enabled;
-    bool m_enabledHasBeenSet = false;
-
-    bool m_exportable;
-    bool m_exportableHasBeenSet = false;
-
     Aws::String m_keyArn;
     bool m_keyArnHasBeenSet = false;
+
+    KeyState m_keyState;
+    bool m_keyStateHasBeenSet = false;
 
     KeyAttributes m_keyAttributes;
     bool m_keyAttributesHasBeenSet = false;
@@ -272,8 +269,11 @@ namespace Model
     Aws::String m_keyCheckValue;
     bool m_keyCheckValueHasBeenSet = false;
 
-    KeyState m_keyState;
-    bool m_keyStateHasBeenSet = false;
+    bool m_exportable;
+    bool m_exportableHasBeenSet = false;
+
+    bool m_enabled;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,6 +22,7 @@ UpdateAgentActionGroupRequest::UpdateAgentActionGroupRequest() :
     m_agentVersionHasBeenSet(false),
     m_apiSchemaHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_functionSchemaHasBeenSet(false),
     m_parentActionGroupSignature(ActionGroupSignature::NOT_SET),
     m_parentActionGroupSignatureHasBeenSet(false)
 {
@@ -57,6 +58,12 @@ Aws::String UpdateAgentActionGroupRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_functionSchemaHasBeenSet)
+  {
+   payload.WithObject("functionSchema", m_functionSchema.Jsonize());
 
   }
 

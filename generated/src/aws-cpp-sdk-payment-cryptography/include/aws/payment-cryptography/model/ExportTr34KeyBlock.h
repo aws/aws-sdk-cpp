@@ -7,6 +7,7 @@
 #include <aws/payment-cryptography/PaymentCryptography_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/payment-cryptography/model/Tr34KeyBlockFormat.h>
+#include <aws/payment-cryptography/model/KeyBlockHeaders.h>
 #include <utility>
 
 namespace Aws
@@ -89,82 +90,131 @@ namespace Model
 
 
     /**
+     * <p>The <code>KeyARN</code> of the wrapping key certificate. Amazon Web Services
+     * Payment Cryptography uses this certificate to wrap the key under export.</p>
+     */
+    inline const Aws::String& GetWrappingKeyCertificate() const{ return m_wrappingKeyCertificate; }
+
+    /**
+     * <p>The <code>KeyARN</code> of the wrapping key certificate. Amazon Web Services
+     * Payment Cryptography uses this certificate to wrap the key under export.</p>
+     */
+    inline bool WrappingKeyCertificateHasBeenSet() const { return m_wrappingKeyCertificateHasBeenSet; }
+
+    /**
+     * <p>The <code>KeyARN</code> of the wrapping key certificate. Amazon Web Services
+     * Payment Cryptography uses this certificate to wrap the key under export.</p>
+     */
+    inline void SetWrappingKeyCertificate(const Aws::String& value) { m_wrappingKeyCertificateHasBeenSet = true; m_wrappingKeyCertificate = value; }
+
+    /**
+     * <p>The <code>KeyARN</code> of the wrapping key certificate. Amazon Web Services
+     * Payment Cryptography uses this certificate to wrap the key under export.</p>
+     */
+    inline void SetWrappingKeyCertificate(Aws::String&& value) { m_wrappingKeyCertificateHasBeenSet = true; m_wrappingKeyCertificate = std::move(value); }
+
+    /**
+     * <p>The <code>KeyARN</code> of the wrapping key certificate. Amazon Web Services
+     * Payment Cryptography uses this certificate to wrap the key under export.</p>
+     */
+    inline void SetWrappingKeyCertificate(const char* value) { m_wrappingKeyCertificateHasBeenSet = true; m_wrappingKeyCertificate.assign(value); }
+
+    /**
+     * <p>The <code>KeyARN</code> of the wrapping key certificate. Amazon Web Services
+     * Payment Cryptography uses this certificate to wrap the key under export.</p>
+     */
+    inline ExportTr34KeyBlock& WithWrappingKeyCertificate(const Aws::String& value) { SetWrappingKeyCertificate(value); return *this;}
+
+    /**
+     * <p>The <code>KeyARN</code> of the wrapping key certificate. Amazon Web Services
+     * Payment Cryptography uses this certificate to wrap the key under export.</p>
+     */
+    inline ExportTr34KeyBlock& WithWrappingKeyCertificate(Aws::String&& value) { SetWrappingKeyCertificate(std::move(value)); return *this;}
+
+    /**
+     * <p>The <code>KeyARN</code> of the wrapping key certificate. Amazon Web Services
+     * Payment Cryptography uses this certificate to wrap the key under export.</p>
+     */
+    inline ExportTr34KeyBlock& WithWrappingKeyCertificate(const char* value) { SetWrappingKeyCertificate(value); return *this;}
+
+
+    /**
      * <p>The export token to initiate key export from Amazon Web Services Payment
      * Cryptography. It also contains the signing key certificate that will sign the
-     * wrapped key during TR-34 key block generation. Call
-     * <a>GetParametersForExport</a> to receive an export token. It expires after 7
-     * days. You can use the same export token to export multiple keys from the same
-     * service account.</p>
+     * wrapped key during TR-34 key block generation. Call <a
+     * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForExport.html">GetParametersForExport</a>
+     * to receive an export token. It expires after 7 days. You can use the same export
+     * token to export multiple keys from the same service account.</p>
      */
     inline const Aws::String& GetExportToken() const{ return m_exportToken; }
 
     /**
      * <p>The export token to initiate key export from Amazon Web Services Payment
      * Cryptography. It also contains the signing key certificate that will sign the
-     * wrapped key during TR-34 key block generation. Call
-     * <a>GetParametersForExport</a> to receive an export token. It expires after 7
-     * days. You can use the same export token to export multiple keys from the same
-     * service account.</p>
+     * wrapped key during TR-34 key block generation. Call <a
+     * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForExport.html">GetParametersForExport</a>
+     * to receive an export token. It expires after 7 days. You can use the same export
+     * token to export multiple keys from the same service account.</p>
      */
     inline bool ExportTokenHasBeenSet() const { return m_exportTokenHasBeenSet; }
 
     /**
      * <p>The export token to initiate key export from Amazon Web Services Payment
      * Cryptography. It also contains the signing key certificate that will sign the
-     * wrapped key during TR-34 key block generation. Call
-     * <a>GetParametersForExport</a> to receive an export token. It expires after 7
-     * days. You can use the same export token to export multiple keys from the same
-     * service account.</p>
+     * wrapped key during TR-34 key block generation. Call <a
+     * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForExport.html">GetParametersForExport</a>
+     * to receive an export token. It expires after 7 days. You can use the same export
+     * token to export multiple keys from the same service account.</p>
      */
     inline void SetExportToken(const Aws::String& value) { m_exportTokenHasBeenSet = true; m_exportToken = value; }
 
     /**
      * <p>The export token to initiate key export from Amazon Web Services Payment
      * Cryptography. It also contains the signing key certificate that will sign the
-     * wrapped key during TR-34 key block generation. Call
-     * <a>GetParametersForExport</a> to receive an export token. It expires after 7
-     * days. You can use the same export token to export multiple keys from the same
-     * service account.</p>
+     * wrapped key during TR-34 key block generation. Call <a
+     * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForExport.html">GetParametersForExport</a>
+     * to receive an export token. It expires after 7 days. You can use the same export
+     * token to export multiple keys from the same service account.</p>
      */
     inline void SetExportToken(Aws::String&& value) { m_exportTokenHasBeenSet = true; m_exportToken = std::move(value); }
 
     /**
      * <p>The export token to initiate key export from Amazon Web Services Payment
      * Cryptography. It also contains the signing key certificate that will sign the
-     * wrapped key during TR-34 key block generation. Call
-     * <a>GetParametersForExport</a> to receive an export token. It expires after 7
-     * days. You can use the same export token to export multiple keys from the same
-     * service account.</p>
+     * wrapped key during TR-34 key block generation. Call <a
+     * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForExport.html">GetParametersForExport</a>
+     * to receive an export token. It expires after 7 days. You can use the same export
+     * token to export multiple keys from the same service account.</p>
      */
     inline void SetExportToken(const char* value) { m_exportTokenHasBeenSet = true; m_exportToken.assign(value); }
 
     /**
      * <p>The export token to initiate key export from Amazon Web Services Payment
      * Cryptography. It also contains the signing key certificate that will sign the
-     * wrapped key during TR-34 key block generation. Call
-     * <a>GetParametersForExport</a> to receive an export token. It expires after 7
-     * days. You can use the same export token to export multiple keys from the same
-     * service account.</p>
+     * wrapped key during TR-34 key block generation. Call <a
+     * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForExport.html">GetParametersForExport</a>
+     * to receive an export token. It expires after 7 days. You can use the same export
+     * token to export multiple keys from the same service account.</p>
      */
     inline ExportTr34KeyBlock& WithExportToken(const Aws::String& value) { SetExportToken(value); return *this;}
 
     /**
      * <p>The export token to initiate key export from Amazon Web Services Payment
      * Cryptography. It also contains the signing key certificate that will sign the
-     * wrapped key during TR-34 key block generation. Call
-     * <a>GetParametersForExport</a> to receive an export token. It expires after 7
-     * days. You can use the same export token to export multiple keys from the same
-     * service account.</p>
+     * wrapped key during TR-34 key block generation. Call <a
+     * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForExport.html">GetParametersForExport</a>
+     * to receive an export token. It expires after 7 days. You can use the same export
+     * token to export multiple keys from the same service account.</p>
      */
     inline ExportTr34KeyBlock& WithExportToken(Aws::String&& value) { SetExportToken(std::move(value)); return *this;}
 
     /**
      * <p>The export token to initiate key export from Amazon Web Services Payment
      * Cryptography. It also contains the signing key certificate that will sign the
-     * wrapped key during TR-34 key block generation. Call
-     * <a>GetParametersForExport</a> to receive an export token. It expires after 7
-     * days. You can use the same export token to export multiple keys from the same
-     * service account.</p>
+     * wrapped key during TR-34 key block generation. Call <a
+     * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForExport.html">GetParametersForExport</a>
+     * to receive an export token. It expires after 7 days. You can use the same export
+     * token to export multiple keys from the same service account.</p>
      */
     inline ExportTr34KeyBlock& WithExportToken(const char* value) { SetExportToken(value); return *this;}
 
@@ -264,57 +314,48 @@ namespace Model
 
 
     /**
-     * <p>The <code>KeyARN</code> of the wrapping key certificate. Amazon Web Services
-     * Payment Cryptography uses this certificate to wrap the key under export.</p>
+     * <p>Optional metadata for export associated with the key material. This data is
+     * signed but transmitted in clear text.</p>
      */
-    inline const Aws::String& GetWrappingKeyCertificate() const{ return m_wrappingKeyCertificate; }
+    inline const KeyBlockHeaders& GetKeyBlockHeaders() const{ return m_keyBlockHeaders; }
 
     /**
-     * <p>The <code>KeyARN</code> of the wrapping key certificate. Amazon Web Services
-     * Payment Cryptography uses this certificate to wrap the key under export.</p>
+     * <p>Optional metadata for export associated with the key material. This data is
+     * signed but transmitted in clear text.</p>
      */
-    inline bool WrappingKeyCertificateHasBeenSet() const { return m_wrappingKeyCertificateHasBeenSet; }
+    inline bool KeyBlockHeadersHasBeenSet() const { return m_keyBlockHeadersHasBeenSet; }
 
     /**
-     * <p>The <code>KeyARN</code> of the wrapping key certificate. Amazon Web Services
-     * Payment Cryptography uses this certificate to wrap the key under export.</p>
+     * <p>Optional metadata for export associated with the key material. This data is
+     * signed but transmitted in clear text.</p>
      */
-    inline void SetWrappingKeyCertificate(const Aws::String& value) { m_wrappingKeyCertificateHasBeenSet = true; m_wrappingKeyCertificate = value; }
+    inline void SetKeyBlockHeaders(const KeyBlockHeaders& value) { m_keyBlockHeadersHasBeenSet = true; m_keyBlockHeaders = value; }
 
     /**
-     * <p>The <code>KeyARN</code> of the wrapping key certificate. Amazon Web Services
-     * Payment Cryptography uses this certificate to wrap the key under export.</p>
+     * <p>Optional metadata for export associated with the key material. This data is
+     * signed but transmitted in clear text.</p>
      */
-    inline void SetWrappingKeyCertificate(Aws::String&& value) { m_wrappingKeyCertificateHasBeenSet = true; m_wrappingKeyCertificate = std::move(value); }
+    inline void SetKeyBlockHeaders(KeyBlockHeaders&& value) { m_keyBlockHeadersHasBeenSet = true; m_keyBlockHeaders = std::move(value); }
 
     /**
-     * <p>The <code>KeyARN</code> of the wrapping key certificate. Amazon Web Services
-     * Payment Cryptography uses this certificate to wrap the key under export.</p>
+     * <p>Optional metadata for export associated with the key material. This data is
+     * signed but transmitted in clear text.</p>
      */
-    inline void SetWrappingKeyCertificate(const char* value) { m_wrappingKeyCertificateHasBeenSet = true; m_wrappingKeyCertificate.assign(value); }
+    inline ExportTr34KeyBlock& WithKeyBlockHeaders(const KeyBlockHeaders& value) { SetKeyBlockHeaders(value); return *this;}
 
     /**
-     * <p>The <code>KeyARN</code> of the wrapping key certificate. Amazon Web Services
-     * Payment Cryptography uses this certificate to wrap the key under export.</p>
+     * <p>Optional metadata for export associated with the key material. This data is
+     * signed but transmitted in clear text.</p>
      */
-    inline ExportTr34KeyBlock& WithWrappingKeyCertificate(const Aws::String& value) { SetWrappingKeyCertificate(value); return *this;}
-
-    /**
-     * <p>The <code>KeyARN</code> of the wrapping key certificate. Amazon Web Services
-     * Payment Cryptography uses this certificate to wrap the key under export.</p>
-     */
-    inline ExportTr34KeyBlock& WithWrappingKeyCertificate(Aws::String&& value) { SetWrappingKeyCertificate(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>KeyARN</code> of the wrapping key certificate. Amazon Web Services
-     * Payment Cryptography uses this certificate to wrap the key under export.</p>
-     */
-    inline ExportTr34KeyBlock& WithWrappingKeyCertificate(const char* value) { SetWrappingKeyCertificate(value); return *this;}
+    inline ExportTr34KeyBlock& WithKeyBlockHeaders(KeyBlockHeaders&& value) { SetKeyBlockHeaders(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_certificateAuthorityPublicKeyIdentifier;
     bool m_certificateAuthorityPublicKeyIdentifierHasBeenSet = false;
+
+    Aws::String m_wrappingKeyCertificate;
+    bool m_wrappingKeyCertificateHasBeenSet = false;
 
     Aws::String m_exportToken;
     bool m_exportTokenHasBeenSet = false;
@@ -325,8 +366,8 @@ namespace Model
     Aws::String m_randomNonce;
     bool m_randomNonceHasBeenSet = false;
 
-    Aws::String m_wrappingKeyCertificate;
-    bool m_wrappingKeyCertificateHasBeenSet = false;
+    KeyBlockHeaders m_keyBlockHeaders;
+    bool m_keyBlockHeadersHasBeenSet = false;
   };
 
 } // namespace Model

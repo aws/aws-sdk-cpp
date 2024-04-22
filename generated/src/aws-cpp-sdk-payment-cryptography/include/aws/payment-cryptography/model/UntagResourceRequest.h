@@ -80,7 +80,8 @@ namespace Model
      * <p>One or more tag keys. Don't include the tag values.</p> <p>If the Amazon Web
      * Services Payment Cryptography key doesn't have the specified tag key, Amazon Web
      * Services Payment Cryptography doesn't throw an exception or return a response.
-     * To confirm that the operation succeeded, use the <a>ListTagsForResource</a>
+     * To confirm that the operation succeeded, use the <a
+     * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>
      * operation.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
@@ -89,7 +90,8 @@ namespace Model
      * <p>One or more tag keys. Don't include the tag values.</p> <p>If the Amazon Web
      * Services Payment Cryptography key doesn't have the specified tag key, Amazon Web
      * Services Payment Cryptography doesn't throw an exception or return a response.
-     * To confirm that the operation succeeded, use the <a>ListTagsForResource</a>
+     * To confirm that the operation succeeded, use the <a
+     * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>
      * operation.</p>
      */
     inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
@@ -98,7 +100,8 @@ namespace Model
      * <p>One or more tag keys. Don't include the tag values.</p> <p>If the Amazon Web
      * Services Payment Cryptography key doesn't have the specified tag key, Amazon Web
      * Services Payment Cryptography doesn't throw an exception or return a response.
-     * To confirm that the operation succeeded, use the <a>ListTagsForResource</a>
+     * To confirm that the operation succeeded, use the <a
+     * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>
      * operation.</p>
      */
     inline void SetTagKeys(const Aws::Vector<Aws::String>& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
@@ -107,7 +110,8 @@ namespace Model
      * <p>One or more tag keys. Don't include the tag values.</p> <p>If the Amazon Web
      * Services Payment Cryptography key doesn't have the specified tag key, Amazon Web
      * Services Payment Cryptography doesn't throw an exception or return a response.
-     * To confirm that the operation succeeded, use the <a>ListTagsForResource</a>
+     * To confirm that the operation succeeded, use the <a
+     * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>
      * operation.</p>
      */
     inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
@@ -116,7 +120,8 @@ namespace Model
      * <p>One or more tag keys. Don't include the tag values.</p> <p>If the Amazon Web
      * Services Payment Cryptography key doesn't have the specified tag key, Amazon Web
      * Services Payment Cryptography doesn't throw an exception or return a response.
-     * To confirm that the operation succeeded, use the <a>ListTagsForResource</a>
+     * To confirm that the operation succeeded, use the <a
+     * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>
      * operation.</p>
      */
     inline UntagResourceRequest& WithTagKeys(const Aws::Vector<Aws::String>& value) { SetTagKeys(value); return *this;}
@@ -125,7 +130,8 @@ namespace Model
      * <p>One or more tag keys. Don't include the tag values.</p> <p>If the Amazon Web
      * Services Payment Cryptography key doesn't have the specified tag key, Amazon Web
      * Services Payment Cryptography doesn't throw an exception or return a response.
-     * To confirm that the operation succeeded, use the <a>ListTagsForResource</a>
+     * To confirm that the operation succeeded, use the <a
+     * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>
      * operation.</p>
      */
     inline UntagResourceRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
@@ -134,7 +140,8 @@ namespace Model
      * <p>One or more tag keys. Don't include the tag values.</p> <p>If the Amazon Web
      * Services Payment Cryptography key doesn't have the specified tag key, Amazon Web
      * Services Payment Cryptography doesn't throw an exception or return a response.
-     * To confirm that the operation succeeded, use the <a>ListTagsForResource</a>
+     * To confirm that the operation succeeded, use the <a
+     * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>
      * operation.</p>
      */
     inline UntagResourceRequest& AddTagKeys(const Aws::String& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
@@ -143,7 +150,8 @@ namespace Model
      * <p>One or more tag keys. Don't include the tag values.</p> <p>If the Amazon Web
      * Services Payment Cryptography key doesn't have the specified tag key, Amazon Web
      * Services Payment Cryptography doesn't throw an exception or return a response.
-     * To confirm that the operation succeeded, use the <a>ListTagsForResource</a>
+     * To confirm that the operation succeeded, use the <a
+     * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>
      * operation.</p>
      */
     inline UntagResourceRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
@@ -152,7 +160,8 @@ namespace Model
      * <p>One or more tag keys. Don't include the tag values.</p> <p>If the Amazon Web
      * Services Payment Cryptography key doesn't have the specified tag key, Amazon Web
      * Services Payment Cryptography doesn't throw an exception or return a response.
-     * To confirm that the operation succeeded, use the <a>ListTagsForResource</a>
+     * To confirm that the operation succeeded, use the <a
+     * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>
      * operation.</p>
      */
     inline UntagResourceRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }

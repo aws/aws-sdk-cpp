@@ -52,6 +52,7 @@
 #include <aws/awstransfer/model/ListUsersResult.h>
 #include <aws/awstransfer/model/ListWorkflowsResult.h>
 #include <aws/awstransfer/model/SendWorkflowStepStateResult.h>
+#include <aws/awstransfer/model/StartDirectoryListingResult.h>
 #include <aws/awstransfer/model/StartFileTransferResult.h>
 #include <aws/awstransfer/model/TestConnectionResult.h>
 #include <aws/awstransfer/model/TestIdentityProviderResult.h>
@@ -148,6 +149,7 @@ namespace Aws
       class ListUsersRequest;
       class ListWorkflowsRequest;
       class SendWorkflowStepStateRequest;
+      class StartDirectoryListingRequest;
       class StartFileTransferRequest;
       class StartServerRequest;
       class StopServerRequest;
@@ -210,6 +212,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListUsersResult, TransferError> ListUsersOutcome;
       typedef Aws::Utils::Outcome<ListWorkflowsResult, TransferError> ListWorkflowsOutcome;
       typedef Aws::Utils::Outcome<SendWorkflowStepStateResult, TransferError> SendWorkflowStepStateOutcome;
+      typedef Aws::Utils::Outcome<StartDirectoryListingResult, TransferError> StartDirectoryListingOutcome;
       typedef Aws::Utils::Outcome<StartFileTransferResult, TransferError> StartFileTransferOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, TransferError> StartServerOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, TransferError> StopServerOutcome;
@@ -272,6 +275,7 @@ namespace Aws
       typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
       typedef std::future<ListWorkflowsOutcome> ListWorkflowsOutcomeCallable;
       typedef std::future<SendWorkflowStepStateOutcome> SendWorkflowStepStateOutcomeCallable;
+      typedef std::future<StartDirectoryListingOutcome> StartDirectoryListingOutcomeCallable;
       typedef std::future<StartFileTransferOutcome> StartFileTransferOutcomeCallable;
       typedef std::future<StartServerOutcome> StartServerOutcomeCallable;
       typedef std::future<StopServerOutcome> StopServerOutcomeCallable;
@@ -337,6 +341,7 @@ namespace Aws
     typedef std::function<void(const TransferClient*, const Model::ListUsersRequest&, const Model::ListUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsersResponseReceivedHandler;
     typedef std::function<void(const TransferClient*, const Model::ListWorkflowsRequest&, const Model::ListWorkflowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkflowsResponseReceivedHandler;
     typedef std::function<void(const TransferClient*, const Model::SendWorkflowStepStateRequest&, const Model::SendWorkflowStepStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendWorkflowStepStateResponseReceivedHandler;
+    typedef std::function<void(const TransferClient*, const Model::StartDirectoryListingRequest&, const Model::StartDirectoryListingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDirectoryListingResponseReceivedHandler;
     typedef std::function<void(const TransferClient*, const Model::StartFileTransferRequest&, const Model::StartFileTransferOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartFileTransferResponseReceivedHandler;
     typedef std::function<void(const TransferClient*, const Model::StartServerRequest&, const Model::StartServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartServerResponseReceivedHandler;
     typedef std::function<void(const TransferClient*, const Model::StopServerRequest&, const Model::StopServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopServerResponseReceivedHandler;

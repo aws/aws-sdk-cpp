@@ -9,6 +9,10 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/JupyterServerAppSettings.h>
 #include <aws/sagemaker/model/KernelGatewayAppSettings.h>
+#include <aws/sagemaker/model/JupyterLabAppSettings.h>
+#include <aws/sagemaker/model/DefaultSpaceStorageSettings.h>
+#include <aws/sagemaker/model/CustomPosixUserConfig.h>
+#include <aws/sagemaker/model/CustomFileSystemConfig.h>
 #include <utility>
 
 namespace Aws
@@ -174,6 +178,112 @@ namespace Model
     
     inline DefaultSpaceSettings& WithKernelGatewayAppSettings(KernelGatewayAppSettings&& value) { SetKernelGatewayAppSettings(std::move(value)); return *this;}
 
+
+    
+    inline const JupyterLabAppSettings& GetJupyterLabAppSettings() const{ return m_jupyterLabAppSettings; }
+
+    
+    inline bool JupyterLabAppSettingsHasBeenSet() const { return m_jupyterLabAppSettingsHasBeenSet; }
+
+    
+    inline void SetJupyterLabAppSettings(const JupyterLabAppSettings& value) { m_jupyterLabAppSettingsHasBeenSet = true; m_jupyterLabAppSettings = value; }
+
+    
+    inline void SetJupyterLabAppSettings(JupyterLabAppSettings&& value) { m_jupyterLabAppSettingsHasBeenSet = true; m_jupyterLabAppSettings = std::move(value); }
+
+    
+    inline DefaultSpaceSettings& WithJupyterLabAppSettings(const JupyterLabAppSettings& value) { SetJupyterLabAppSettings(value); return *this;}
+
+    
+    inline DefaultSpaceSettings& WithJupyterLabAppSettings(JupyterLabAppSettings&& value) { SetJupyterLabAppSettings(std::move(value)); return *this;}
+
+
+    
+    inline const DefaultSpaceStorageSettings& GetSpaceStorageSettings() const{ return m_spaceStorageSettings; }
+
+    
+    inline bool SpaceStorageSettingsHasBeenSet() const { return m_spaceStorageSettingsHasBeenSet; }
+
+    
+    inline void SetSpaceStorageSettings(const DefaultSpaceStorageSettings& value) { m_spaceStorageSettingsHasBeenSet = true; m_spaceStorageSettings = value; }
+
+    
+    inline void SetSpaceStorageSettings(DefaultSpaceStorageSettings&& value) { m_spaceStorageSettingsHasBeenSet = true; m_spaceStorageSettings = std::move(value); }
+
+    
+    inline DefaultSpaceSettings& WithSpaceStorageSettings(const DefaultSpaceStorageSettings& value) { SetSpaceStorageSettings(value); return *this;}
+
+    
+    inline DefaultSpaceSettings& WithSpaceStorageSettings(DefaultSpaceStorageSettings&& value) { SetSpaceStorageSettings(std::move(value)); return *this;}
+
+
+    
+    inline const CustomPosixUserConfig& GetCustomPosixUserConfig() const{ return m_customPosixUserConfig; }
+
+    
+    inline bool CustomPosixUserConfigHasBeenSet() const { return m_customPosixUserConfigHasBeenSet; }
+
+    
+    inline void SetCustomPosixUserConfig(const CustomPosixUserConfig& value) { m_customPosixUserConfigHasBeenSet = true; m_customPosixUserConfig = value; }
+
+    
+    inline void SetCustomPosixUserConfig(CustomPosixUserConfig&& value) { m_customPosixUserConfigHasBeenSet = true; m_customPosixUserConfig = std::move(value); }
+
+    
+    inline DefaultSpaceSettings& WithCustomPosixUserConfig(const CustomPosixUserConfig& value) { SetCustomPosixUserConfig(value); return *this;}
+
+    
+    inline DefaultSpaceSettings& WithCustomPosixUserConfig(CustomPosixUserConfig&& value) { SetCustomPosixUserConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The settings for assigning a custom file system to a domain. Permitted users
+     * can access this file system in Amazon SageMaker Studio.</p>
+     */
+    inline const Aws::Vector<CustomFileSystemConfig>& GetCustomFileSystemConfigs() const{ return m_customFileSystemConfigs; }
+
+    /**
+     * <p>The settings for assigning a custom file system to a domain. Permitted users
+     * can access this file system in Amazon SageMaker Studio.</p>
+     */
+    inline bool CustomFileSystemConfigsHasBeenSet() const { return m_customFileSystemConfigsHasBeenSet; }
+
+    /**
+     * <p>The settings for assigning a custom file system to a domain. Permitted users
+     * can access this file system in Amazon SageMaker Studio.</p>
+     */
+    inline void SetCustomFileSystemConfigs(const Aws::Vector<CustomFileSystemConfig>& value) { m_customFileSystemConfigsHasBeenSet = true; m_customFileSystemConfigs = value; }
+
+    /**
+     * <p>The settings for assigning a custom file system to a domain. Permitted users
+     * can access this file system in Amazon SageMaker Studio.</p>
+     */
+    inline void SetCustomFileSystemConfigs(Aws::Vector<CustomFileSystemConfig>&& value) { m_customFileSystemConfigsHasBeenSet = true; m_customFileSystemConfigs = std::move(value); }
+
+    /**
+     * <p>The settings for assigning a custom file system to a domain. Permitted users
+     * can access this file system in Amazon SageMaker Studio.</p>
+     */
+    inline DefaultSpaceSettings& WithCustomFileSystemConfigs(const Aws::Vector<CustomFileSystemConfig>& value) { SetCustomFileSystemConfigs(value); return *this;}
+
+    /**
+     * <p>The settings for assigning a custom file system to a domain. Permitted users
+     * can access this file system in Amazon SageMaker Studio.</p>
+     */
+    inline DefaultSpaceSettings& WithCustomFileSystemConfigs(Aws::Vector<CustomFileSystemConfig>&& value) { SetCustomFileSystemConfigs(std::move(value)); return *this;}
+
+    /**
+     * <p>The settings for assigning a custom file system to a domain. Permitted users
+     * can access this file system in Amazon SageMaker Studio.</p>
+     */
+    inline DefaultSpaceSettings& AddCustomFileSystemConfigs(const CustomFileSystemConfig& value) { m_customFileSystemConfigsHasBeenSet = true; m_customFileSystemConfigs.push_back(value); return *this; }
+
+    /**
+     * <p>The settings for assigning a custom file system to a domain. Permitted users
+     * can access this file system in Amazon SageMaker Studio.</p>
+     */
+    inline DefaultSpaceSettings& AddCustomFileSystemConfigs(CustomFileSystemConfig&& value) { m_customFileSystemConfigsHasBeenSet = true; m_customFileSystemConfigs.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_executionRole;
@@ -187,6 +297,18 @@ namespace Model
 
     KernelGatewayAppSettings m_kernelGatewayAppSettings;
     bool m_kernelGatewayAppSettingsHasBeenSet = false;
+
+    JupyterLabAppSettings m_jupyterLabAppSettings;
+    bool m_jupyterLabAppSettingsHasBeenSet = false;
+
+    DefaultSpaceStorageSettings m_spaceStorageSettings;
+    bool m_spaceStorageSettingsHasBeenSet = false;
+
+    CustomPosixUserConfig m_customPosixUserConfig;
+    bool m_customPosixUserConfigHasBeenSet = false;
+
+    Aws::Vector<CustomFileSystemConfig> m_customFileSystemConfigs;
+    bool m_customFileSystemConfigsHasBeenSet = false;
   };
 
 } // namespace Model

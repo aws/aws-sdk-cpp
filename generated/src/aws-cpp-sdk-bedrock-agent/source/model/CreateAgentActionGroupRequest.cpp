@@ -23,6 +23,7 @@ CreateAgentActionGroupRequest::CreateAgentActionGroupRequest() :
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_descriptionHasBeenSet(false),
+    m_functionSchemaHasBeenSet(false),
     m_parentActionGroupSignature(ActionGroupSignature::NOT_SET),
     m_parentActionGroupSignatureHasBeenSet(false)
 {
@@ -64,6 +65,12 @@ Aws::String CreateAgentActionGroupRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_functionSchemaHasBeenSet)
+  {
+   payload.WithObject("functionSchema", m_functionSchema.Jsonize());
 
   }
 

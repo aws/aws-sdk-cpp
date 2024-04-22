@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent/model/ActionGroupState.h>
 #include <aws/bedrock-agent/model/APISchema.h>
+#include <aws/bedrock-agent/model/FunctionSchema.h>
 #include <aws/bedrock-agent/model/ActionGroupSignature.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -416,6 +417,43 @@ namespace Model
 
 
     /**
+     * <p>Contains details about the function schema for the action group or the JSON
+     * or YAML-formatted payload defining the schema.</p>
+     */
+    inline const FunctionSchema& GetFunctionSchema() const{ return m_functionSchema; }
+
+    /**
+     * <p>Contains details about the function schema for the action group or the JSON
+     * or YAML-formatted payload defining the schema.</p>
+     */
+    inline bool FunctionSchemaHasBeenSet() const { return m_functionSchemaHasBeenSet; }
+
+    /**
+     * <p>Contains details about the function schema for the action group or the JSON
+     * or YAML-formatted payload defining the schema.</p>
+     */
+    inline void SetFunctionSchema(const FunctionSchema& value) { m_functionSchemaHasBeenSet = true; m_functionSchema = value; }
+
+    /**
+     * <p>Contains details about the function schema for the action group or the JSON
+     * or YAML-formatted payload defining the schema.</p>
+     */
+    inline void SetFunctionSchema(FunctionSchema&& value) { m_functionSchemaHasBeenSet = true; m_functionSchema = std::move(value); }
+
+    /**
+     * <p>Contains details about the function schema for the action group or the JSON
+     * or YAML-formatted payload defining the schema.</p>
+     */
+    inline CreateAgentActionGroupRequest& WithFunctionSchema(const FunctionSchema& value) { SetFunctionSchema(value); return *this;}
+
+    /**
+     * <p>Contains details about the function schema for the action group or the JSON
+     * or YAML-formatted payload defining the schema.</p>
+     */
+    inline CreateAgentActionGroupRequest& WithFunctionSchema(FunctionSchema&& value) { SetFunctionSchema(std::move(value)); return *this;}
+
+
+    /**
      * <p>To allow your agent to request the user for additional information when
      * trying to complete a task, set this field to <code>AMAZON.UserInput</code>. You
      * must leave the <code>description</code>, <code>apiSchema</code>, and
@@ -518,6 +556,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    FunctionSchema m_functionSchema;
+    bool m_functionSchemaHasBeenSet = false;
 
     ActionGroupSignature m_parentActionGroupSignature;
     bool m_parentActionGroupSignatureHasBeenSet = false;

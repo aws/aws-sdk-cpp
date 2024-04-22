@@ -127,6 +127,47 @@ namespace Model
 
 
     /**
+     * <p>The version of the agent.</p>
+     */
+    inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
+
+    /**
+     * <p>The version of the agent.</p>
+     */
+    inline bool AgentVersionHasBeenSet() const { return m_agentVersionHasBeenSet; }
+
+    /**
+     * <p>The version of the agent.</p>
+     */
+    inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
+
+    /**
+     * <p>The version of the agent.</p>
+     */
+    inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::move(value); }
+
+    /**
+     * <p>The version of the agent.</p>
+     */
+    inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
+
+    /**
+     * <p>The version of the agent.</p>
+     */
+    inline TracePart& WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
+
+    /**
+     * <p>The version of the agent.</p>
+     */
+    inline TracePart& WithAgentVersion(Aws::String&& value) { SetAgentVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The version of the agent.</p>
+     */
+    inline TracePart& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
+
+
+    /**
      * <p>The unique identifier of the session with the agent.</p>
      */
     inline const Aws::String& GetSessionId() const{ return m_sessionId; }
@@ -234,6 +275,9 @@ namespace Model
 
     Aws::String m_agentId;
     bool m_agentIdHasBeenSet = false;
+
+    Aws::String m_agentVersion;
+    bool m_agentVersionHasBeenSet = false;
 
     Aws::String m_sessionId;
     bool m_sessionIdHasBeenSet = false;

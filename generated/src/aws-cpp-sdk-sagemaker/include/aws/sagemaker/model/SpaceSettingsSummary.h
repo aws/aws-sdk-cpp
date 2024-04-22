@@ -71,32 +71,32 @@ namespace Model
 
 
     /**
-     * <p>The storage settings for a private space.</p>
+     * <p>The storage settings for a space.</p>
      */
     inline const SpaceStorageSettings& GetSpaceStorageSettings() const{ return m_spaceStorageSettings; }
 
     /**
-     * <p>The storage settings for a private space.</p>
+     * <p>The storage settings for a space.</p>
      */
     inline bool SpaceStorageSettingsHasBeenSet() const { return m_spaceStorageSettingsHasBeenSet; }
 
     /**
-     * <p>The storage settings for a private space.</p>
+     * <p>The storage settings for a space.</p>
      */
     inline void SetSpaceStorageSettings(const SpaceStorageSettings& value) { m_spaceStorageSettingsHasBeenSet = true; m_spaceStorageSettings = value; }
 
     /**
-     * <p>The storage settings for a private space.</p>
+     * <p>The storage settings for a space.</p>
      */
     inline void SetSpaceStorageSettings(SpaceStorageSettings&& value) { m_spaceStorageSettingsHasBeenSet = true; m_spaceStorageSettings = std::move(value); }
 
     /**
-     * <p>The storage settings for a private space.</p>
+     * <p>The storage settings for a space.</p>
      */
     inline SpaceSettingsSummary& WithSpaceStorageSettings(const SpaceStorageSettings& value) { SetSpaceStorageSettings(value); return *this;}
 
     /**
-     * <p>The storage settings for a private space.</p>
+     * <p>The storage settings for a space.</p>
      */
     inline SpaceSettingsSummary& WithSpaceStorageSettings(SpaceStorageSettings&& value) { SetSpaceStorageSettings(std::move(value)); return *this;}
 

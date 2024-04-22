@@ -31,24 +31,6 @@ GetParametersForExportResult::GetParametersForExportResult(const Aws::AmazonWebS
 GetParametersForExportResult& GetParametersForExportResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("ExportToken"))
-  {
-    m_exportToken = jsonValue.GetString("ExportToken");
-
-  }
-
-  if(jsonValue.ValueExists("ParametersValidUntilTimestamp"))
-  {
-    m_parametersValidUntilTimestamp = jsonValue.GetDouble("ParametersValidUntilTimestamp");
-
-  }
-
-  if(jsonValue.ValueExists("SigningKeyAlgorithm"))
-  {
-    m_signingKeyAlgorithm = KeyAlgorithmMapper::GetKeyAlgorithmForName(jsonValue.GetString("SigningKeyAlgorithm"));
-
-  }
-
   if(jsonValue.ValueExists("SigningKeyCertificate"))
   {
     m_signingKeyCertificate = jsonValue.GetString("SigningKeyCertificate");
@@ -58,6 +40,24 @@ GetParametersForExportResult& GetParametersForExportResult::operator =(const Aws
   if(jsonValue.ValueExists("SigningKeyCertificateChain"))
   {
     m_signingKeyCertificateChain = jsonValue.GetString("SigningKeyCertificateChain");
+
+  }
+
+  if(jsonValue.ValueExists("SigningKeyAlgorithm"))
+  {
+    m_signingKeyAlgorithm = KeyAlgorithmMapper::GetKeyAlgorithmForName(jsonValue.GetString("SigningKeyAlgorithm"));
+
+  }
+
+  if(jsonValue.ValueExists("ExportToken"))
+  {
+    m_exportToken = jsonValue.GetString("ExportToken");
+
+  }
+
+  if(jsonValue.ValueExists("ParametersValidUntilTimestamp"))
+  {
+    m_parametersValidUntilTimestamp = jsonValue.GetDouble("ParametersValidUntilTimestamp");
 
   }
 

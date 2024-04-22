@@ -19,29 +19,22 @@ namespace Model
 {
 
 TrustedCertificatePublicKey::TrustedCertificatePublicKey() : 
-    m_certificateAuthorityPublicKeyIdentifierHasBeenSet(false),
     m_keyAttributesHasBeenSet(false),
-    m_publicKeyCertificateHasBeenSet(false)
+    m_publicKeyCertificateHasBeenSet(false),
+    m_certificateAuthorityPublicKeyIdentifierHasBeenSet(false)
 {
 }
 
 TrustedCertificatePublicKey::TrustedCertificatePublicKey(JsonView jsonValue) : 
-    m_certificateAuthorityPublicKeyIdentifierHasBeenSet(false),
     m_keyAttributesHasBeenSet(false),
-    m_publicKeyCertificateHasBeenSet(false)
+    m_publicKeyCertificateHasBeenSet(false),
+    m_certificateAuthorityPublicKeyIdentifierHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 TrustedCertificatePublicKey& TrustedCertificatePublicKey::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("CertificateAuthorityPublicKeyIdentifier"))
-  {
-    m_certificateAuthorityPublicKeyIdentifier = jsonValue.GetString("CertificateAuthorityPublicKeyIdentifier");
-
-    m_certificateAuthorityPublicKeyIdentifierHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("KeyAttributes"))
   {
     m_keyAttributes = jsonValue.GetObject("KeyAttributes");
@@ -56,18 +49,19 @@ TrustedCertificatePublicKey& TrustedCertificatePublicKey::operator =(JsonView js
     m_publicKeyCertificateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CertificateAuthorityPublicKeyIdentifier"))
+  {
+    m_certificateAuthorityPublicKeyIdentifier = jsonValue.GetString("CertificateAuthorityPublicKeyIdentifier");
+
+    m_certificateAuthorityPublicKeyIdentifierHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue TrustedCertificatePublicKey::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_certificateAuthorityPublicKeyIdentifierHasBeenSet)
-  {
-   payload.WithString("CertificateAuthorityPublicKeyIdentifier", m_certificateAuthorityPublicKeyIdentifier);
-
-  }
 
   if(m_keyAttributesHasBeenSet)
   {
@@ -78,6 +72,12 @@ JsonValue TrustedCertificatePublicKey::Jsonize() const
   if(m_publicKeyCertificateHasBeenSet)
   {
    payload.WithString("PublicKeyCertificate", m_publicKeyCertificate);
+
+  }
+
+  if(m_certificateAuthorityPublicKeyIdentifierHasBeenSet)
+  {
+   payload.WithString("CertificateAuthorityPublicKeyIdentifier", m_certificateAuthorityPublicKeyIdentifier);
 
   }
 

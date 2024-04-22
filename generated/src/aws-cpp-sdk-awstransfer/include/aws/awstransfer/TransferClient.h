@@ -1302,6 +1302,58 @@ namespace Transfer
         }
 
         /**
+         * <p>Retrieves a list of the contents of a directory from a remote SFTP server.
+         * You specify the connector ID, the output path, and the remote directory path.
+         * You can also specify the optional <code>MaxItems</code> value to control the
+         * maximum number of items that are listed from the remote directory. This API
+         * returns a list of all files and directories in the remote directory (up to the
+         * maximum value), but does not return files or folders in sub-directories. That
+         * is, it only returns a list of files and directories one-level deep.</p> <p>After
+         * you receive the listing file, you can provide the files that you want to
+         * transfer to the <code>RetrieveFilePaths</code> parameter of the
+         * <code>StartFileTransfer</code> API call.</p> <p>The naming convention for the
+         * output file is <code> <i>connector-ID</i>-<i>listing-ID</i>.json</code>. The
+         * output file contains the following information:</p> <ul> <li> <p>
+         * <code>filePath</code>: the complete path of a remote file, relative to the
+         * directory of the listing request for your SFTP connector on the remote
+         * server.</p> </li> <li> <p> <code>modifiedTimestamp</code>: the last time the
+         * file was modified, in UTC time format. This field is optional. If the remote
+         * file attributes don't contain a timestamp, it is omitted from the file
+         * listing.</p> </li> <li> <p> <code>size</code>: the size of the file, in bytes.
+         * This field is optional. If the remote file attributes don't contain a file size,
+         * it is omitted from the file listing.</p> </li> <li> <p> <code>path</code>: the
+         * complete path of a remote directory, relative to the directory of the listing
+         * request for your SFTP connector on the remote server.</p> </li> <li> <p>
+         * <code>truncated</code>: a flag indicating whether the list output contains all
+         * of the items contained in the remote directory or not. If your
+         * <code>Truncated</code> output value is true, you can increase the value provided
+         * in the optional <code>max-items</code> input attribute to be able to list more
+         * items (up to the maximum allowed list size of 10,000 items).</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartDirectoryListing">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartDirectoryListingOutcome StartDirectoryListing(const Model::StartDirectoryListingRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartDirectoryListing that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartDirectoryListingRequestT = Model::StartDirectoryListingRequest>
+        Model::StartDirectoryListingOutcomeCallable StartDirectoryListingCallable(const StartDirectoryListingRequestT& request) const
+        {
+            return SubmitCallable(&TransferClient::StartDirectoryListing, request);
+        }
+
+        /**
+         * An Async wrapper for StartDirectoryListing that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartDirectoryListingRequestT = Model::StartDirectoryListingRequest>
+        void StartDirectoryListingAsync(const StartDirectoryListingRequestT& request, const StartDirectoryListingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TransferClient::StartDirectoryListing, request, handler, context);
+        }
+
+        /**
          * <p>Begins a file transfer between local Amazon Web Services storage and a remote
          * AS2 or SFTP server.</p> <ul> <li> <p>For an AS2 connector, you specify the
          * <code>ConnectorId</code> and one or more <code>SendFilePaths</code> to identify
@@ -1310,7 +1362,7 @@ namespace Transfer
          * <code>ConnectorId</code>. Depending on the direction of the transfer, you also
          * specify the following items:</p> <ul> <li> <p>If you are transferring file from
          * a partner's SFTP server to Amazon Web Services storage, you specify one or more
-         * <code>RetreiveFilePaths</code> to identify the files you want to transfer, and a
+         * <code>RetrieveFilePaths</code> to identify the files you want to transfer, and a
          * <code>LocalDirectoryPath</code> to specify the destination folder.</p> </li>
          * <li> <p>If you are transferring file to a partner's SFTP server from Amazon Web
          * Services storage, you specify one or more <code>SendFilePaths</code> to identify

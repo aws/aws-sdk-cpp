@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The storage settings for a private space.</p><p><h3>See Also:</h3>   <a
+   * <p>The storage settings for a space.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SpaceStorageSettings">AWS
    * API Reference</a></p>
    */
@@ -38,32 +38,32 @@ namespace Model
 
 
     /**
-     * <p>A collection of EBS storage settings for a private space.</p>
+     * <p>A collection of EBS storage settings for a space.</p>
      */
     inline const EbsStorageSettings& GetEbsStorageSettings() const{ return m_ebsStorageSettings; }
 
     /**
-     * <p>A collection of EBS storage settings for a private space.</p>
+     * <p>A collection of EBS storage settings for a space.</p>
      */
     inline bool EbsStorageSettingsHasBeenSet() const { return m_ebsStorageSettingsHasBeenSet; }
 
     /**
-     * <p>A collection of EBS storage settings for a private space.</p>
+     * <p>A collection of EBS storage settings for a space.</p>
      */
     inline void SetEbsStorageSettings(const EbsStorageSettings& value) { m_ebsStorageSettingsHasBeenSet = true; m_ebsStorageSettings = value; }
 
     /**
-     * <p>A collection of EBS storage settings for a private space.</p>
+     * <p>A collection of EBS storage settings for a space.</p>
      */
     inline void SetEbsStorageSettings(EbsStorageSettings&& value) { m_ebsStorageSettingsHasBeenSet = true; m_ebsStorageSettings = std::move(value); }
 
     /**
-     * <p>A collection of EBS storage settings for a private space.</p>
+     * <p>A collection of EBS storage settings for a space.</p>
      */
     inline SpaceStorageSettings& WithEbsStorageSettings(const EbsStorageSettings& value) { SetEbsStorageSettings(value); return *this;}
 
     /**
-     * <p>A collection of EBS storage settings for a private space.</p>
+     * <p>A collection of EBS storage settings for a space.</p>
      */
     inline SpaceStorageSettings& WithEbsStorageSettings(EbsStorageSettings&& value) { SetEbsStorageSettings(std::move(value)); return *this;}
 

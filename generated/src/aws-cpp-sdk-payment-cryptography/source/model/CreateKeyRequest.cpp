@@ -13,13 +13,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateKeyRequest::CreateKeyRequest() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_exportable(false),
-    m_exportableHasBeenSet(false),
     m_keyAttributesHasBeenSet(false),
     m_keyCheckValueAlgorithm(KeyCheckValueAlgorithm::NOT_SET),
     m_keyCheckValueAlgorithmHasBeenSet(false),
+    m_exportable(false),
+    m_exportableHasBeenSet(false),
+    m_enabled(false),
+    m_enabledHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -27,18 +27,6 @@ CreateKeyRequest::CreateKeyRequest() :
 Aws::String CreateKeyRequest::SerializePayload() const
 {
   JsonValue payload;
-
-  if(m_enabledHasBeenSet)
-  {
-   payload.WithBool("Enabled", m_enabled);
-
-  }
-
-  if(m_exportableHasBeenSet)
-  {
-   payload.WithBool("Exportable", m_exportable);
-
-  }
 
   if(m_keyAttributesHasBeenSet)
   {
@@ -49,6 +37,18 @@ Aws::String CreateKeyRequest::SerializePayload() const
   if(m_keyCheckValueAlgorithmHasBeenSet)
   {
    payload.WithString("KeyCheckValueAlgorithm", KeyCheckValueAlgorithmMapper::GetNameForKeyCheckValueAlgorithm(m_keyCheckValueAlgorithm));
+  }
+
+  if(m_exportableHasBeenSet)
+  {
+   payload.WithBool("Exportable", m_exportable);
+
+  }
+
+  if(m_enabledHasBeenSet)
+  {
+   payload.WithBool("Enabled", m_enabled);
+
   }
 
   if(m_tagsHasBeenSet)

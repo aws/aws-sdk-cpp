@@ -254,80 +254,86 @@ namespace Model
 
 
     /**
-     * <p>The schedule for a one-time (at format) or recurring (cron format) scheduled
-     * action. Schedule invocations must be separated by at least one hour.</p>
-     * <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For
-     * example, "<code>at(2016-03-04T17:27:00)</code>".</p> <p>Format of cron
-     * expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week
-     * Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more
-     * information, see <a
+     * <p>The schedule for a one-time (at timestamp format) or recurring (cron format)
+     * scheduled action. Schedule invocations must be separated by at least one hour.
+     * Times are in UTC.</p> <ul> <li> <p>Format of at timestamp is
+     * <code>yyyy-mm-ddThh:mm:ss</code>. For example,
+     * <code>2016-03-04T17:27:00</code>.</p> </li> <li> <p>Format of cron expression is
+     * <code>(Minutes Hours Day-of-month Month Day-of-week Year)</code>. For example,
+     * <code>"(0 10 ? * MON *)"</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p> </li>
+     * </ul>
      */
     inline const Schedule& GetSchedule() const{ return m_schedule; }
 
     /**
-     * <p>The schedule for a one-time (at format) or recurring (cron format) scheduled
-     * action. Schedule invocations must be separated by at least one hour.</p>
-     * <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For
-     * example, "<code>at(2016-03-04T17:27:00)</code>".</p> <p>Format of cron
-     * expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week
-     * Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more
-     * information, see <a
+     * <p>The schedule for a one-time (at timestamp format) or recurring (cron format)
+     * scheduled action. Schedule invocations must be separated by at least one hour.
+     * Times are in UTC.</p> <ul> <li> <p>Format of at timestamp is
+     * <code>yyyy-mm-ddThh:mm:ss</code>. For example,
+     * <code>2016-03-04T17:27:00</code>.</p> </li> <li> <p>Format of cron expression is
+     * <code>(Minutes Hours Day-of-month Month Day-of-week Year)</code>. For example,
+     * <code>"(0 10 ? * MON *)"</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p> </li>
+     * </ul>
      */
     inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
 
     /**
-     * <p>The schedule for a one-time (at format) or recurring (cron format) scheduled
-     * action. Schedule invocations must be separated by at least one hour.</p>
-     * <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For
-     * example, "<code>at(2016-03-04T17:27:00)</code>".</p> <p>Format of cron
-     * expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week
-     * Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more
-     * information, see <a
+     * <p>The schedule for a one-time (at timestamp format) or recurring (cron format)
+     * scheduled action. Schedule invocations must be separated by at least one hour.
+     * Times are in UTC.</p> <ul> <li> <p>Format of at timestamp is
+     * <code>yyyy-mm-ddThh:mm:ss</code>. For example,
+     * <code>2016-03-04T17:27:00</code>.</p> </li> <li> <p>Format of cron expression is
+     * <code>(Minutes Hours Day-of-month Month Day-of-week Year)</code>. For example,
+     * <code>"(0 10 ? * MON *)"</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p> </li>
+     * </ul>
      */
     inline void SetSchedule(const Schedule& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
 
     /**
-     * <p>The schedule for a one-time (at format) or recurring (cron format) scheduled
-     * action. Schedule invocations must be separated by at least one hour.</p>
-     * <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For
-     * example, "<code>at(2016-03-04T17:27:00)</code>".</p> <p>Format of cron
-     * expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week
-     * Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more
-     * information, see <a
+     * <p>The schedule for a one-time (at timestamp format) or recurring (cron format)
+     * scheduled action. Schedule invocations must be separated by at least one hour.
+     * Times are in UTC.</p> <ul> <li> <p>Format of at timestamp is
+     * <code>yyyy-mm-ddThh:mm:ss</code>. For example,
+     * <code>2016-03-04T17:27:00</code>.</p> </li> <li> <p>Format of cron expression is
+     * <code>(Minutes Hours Day-of-month Month Day-of-week Year)</code>. For example,
+     * <code>"(0 10 ? * MON *)"</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p> </li>
+     * </ul>
      */
     inline void SetSchedule(Schedule&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
 
     /**
-     * <p>The schedule for a one-time (at format) or recurring (cron format) scheduled
-     * action. Schedule invocations must be separated by at least one hour.</p>
-     * <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For
-     * example, "<code>at(2016-03-04T17:27:00)</code>".</p> <p>Format of cron
-     * expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week
-     * Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more
-     * information, see <a
+     * <p>The schedule for a one-time (at timestamp format) or recurring (cron format)
+     * scheduled action. Schedule invocations must be separated by at least one hour.
+     * Times are in UTC.</p> <ul> <li> <p>Format of at timestamp is
+     * <code>yyyy-mm-ddThh:mm:ss</code>. For example,
+     * <code>2016-03-04T17:27:00</code>.</p> </li> <li> <p>Format of cron expression is
+     * <code>(Minutes Hours Day-of-month Month Day-of-week Year)</code>. For example,
+     * <code>"(0 10 ? * MON *)"</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p> </li>
+     * </ul>
      */
     inline CreateScheduledActionRequest& WithSchedule(const Schedule& value) { SetSchedule(value); return *this;}
 
     /**
-     * <p>The schedule for a one-time (at format) or recurring (cron format) scheduled
-     * action. Schedule invocations must be separated by at least one hour.</p>
-     * <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For
-     * example, "<code>at(2016-03-04T17:27:00)</code>".</p> <p>Format of cron
-     * expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week
-     * Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more
-     * information, see <a
+     * <p>The schedule for a one-time (at timestamp format) or recurring (cron format)
+     * scheduled action. Schedule invocations must be separated by at least one hour.
+     * Times are in UTC.</p> <ul> <li> <p>Format of at timestamp is
+     * <code>yyyy-mm-ddThh:mm:ss</code>. For example,
+     * <code>2016-03-04T17:27:00</code>.</p> </li> <li> <p>Format of cron expression is
+     * <code>(Minutes Hours Day-of-month Month Day-of-week Year)</code>. For example,
+     * <code>"(0 10 ? * MON *)"</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p> </li>
+     * </ul>
      */
     inline CreateScheduledActionRequest& WithSchedule(Schedule&& value) { SetSchedule(std::move(value)); return *this;}
 

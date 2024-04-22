@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>A parameter in the Lambda input event.</p><p><h3>See Also:</h3>   <a
+   * <p>A parameter for the API request or function.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/Parameter">AWS
    * API Reference</a></p>
    */

@@ -27,8 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the action group being invoked.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Contains information about the action group being invoked. For more
+   * information about the possible structures, see the InvocationInput tab in <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/trace-orchestration.html">OrchestrationTrace</a>
+   * in the Amazon Bedrock User Guide.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/ActionGroupInvocationInput">AWS
    * API Reference</a></p>
    */
@@ -121,6 +123,47 @@ namespace Model
      * <p>The path to the API to call, based off the action group.</p>
      */
     inline ActionGroupInvocationInput& WithApiPath(const char* value) { SetApiPath(value); return *this;}
+
+
+    /**
+     * <p>The function in the action group to call.</p>
+     */
+    inline const Aws::String& GetFunction() const{ return m_function; }
+
+    /**
+     * <p>The function in the action group to call.</p>
+     */
+    inline bool FunctionHasBeenSet() const { return m_functionHasBeenSet; }
+
+    /**
+     * <p>The function in the action group to call.</p>
+     */
+    inline void SetFunction(const Aws::String& value) { m_functionHasBeenSet = true; m_function = value; }
+
+    /**
+     * <p>The function in the action group to call.</p>
+     */
+    inline void SetFunction(Aws::String&& value) { m_functionHasBeenSet = true; m_function = std::move(value); }
+
+    /**
+     * <p>The function in the action group to call.</p>
+     */
+    inline void SetFunction(const char* value) { m_functionHasBeenSet = true; m_function.assign(value); }
+
+    /**
+     * <p>The function in the action group to call.</p>
+     */
+    inline ActionGroupInvocationInput& WithFunction(const Aws::String& value) { SetFunction(value); return *this;}
+
+    /**
+     * <p>The function in the action group to call.</p>
+     */
+    inline ActionGroupInvocationInput& WithFunction(Aws::String&& value) { SetFunction(std::move(value)); return *this;}
+
+    /**
+     * <p>The function in the action group to call.</p>
+     */
+    inline ActionGroupInvocationInput& WithFunction(const char* value) { SetFunction(value); return *this;}
 
 
     /**
@@ -242,6 +285,9 @@ namespace Model
 
     Aws::String m_apiPath;
     bool m_apiPathHasBeenSet = false;
+
+    Aws::String m_function;
+    bool m_functionHasBeenSet = false;
 
     Aws::Vector<Parameter> m_parameters;
     bool m_parametersHasBeenSet = false;

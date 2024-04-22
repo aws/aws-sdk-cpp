@@ -357,12 +357,12 @@ namespace Model
      * the records that are defined in the service. </p> </li> <li> <p>For each
      * attribute, the applicable value.</p> </li> </ul>  <p>Do not include
      * sensitive information in the attributes if the namespace is discoverable by
-     * public DNS queries.</p>  <p>Supported attribute keys include the
-     * following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud Map to
-     * create an Amazon Route 53 alias record that routes traffic to an Elastic Load
-     * Balancing load balancer, specify the DNS name that's associated with the load
-     * balancer. For information about how to get the DNS name, see "DNSName" in the
-     * topic <a
+     * public DNS queries.</p>  <p>The following are the supported
+     * attribute keys.</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud
+     * Map to create an Amazon Route 53 alias record that routes traffic to an Elastic
+     * Load Balancing load balancer, specify the DNS name that's associated with the
+     * load balancer. For information about how to get the DNS name, see "DNSName" in
+     * the topic <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
      * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that's specified by <code>ServiceId</code>
@@ -376,21 +376,22 @@ namespace Model
      * support creating alias records that route traffic to Amazon Web Services
      * resources other than Elastic Load Balancing load balancers.</p> </li> <li> <p>If
      * you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values
-     * for any of the <code>AWS_INSTANCE</code> attributes.</p> </li> </ul> </dd>
-     * <dt>AWS_EC2_INSTANCE_ID</dt> <dd> <p> <i>HTTP namespaces only.</i> The Amazon
-     * EC2 instance ID for the instance. If the <code>AWS_EC2_INSTANCE_ID</code>
-     * attribute is specified, then the only other attribute that can be specified is
-     * <code>AWS_INIT_HEALTH_STATUS</code>. When the <code>AWS_EC2_INSTANCE_ID</code>
-     * attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute will
-     * be filled out with the primary private IPv4 address.</p> </dd>
-     * <dt>AWS_INIT_HEALTH_STATUS</dt> <dd> <p>If the service configuration includes
-     * <code>HealthCheckCustomConfig</code>, you can optionally use
-     * <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom
-     * health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't
-     * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
-     * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If the
-     * service configuration includes a <code>CNAME</code> record, the domain name that
-     * you want Route 53 to return in response to DNS queries (for example,
+     * for any of the <code>AWS_INSTANCE</code> attributes.</p> </li> <li> <p>The
+     * <code>AWS_ALIAS_DNS_NAME</code> is not supported in the GovCloud (US)
+     * Regions.</p> </li> </ul> </dd> <dt>AWS_EC2_INSTANCE_ID</dt> <dd> <p> <i>HTTP
+     * namespaces only.</i> The Amazon EC2 instance ID for the instance. If the
+     * <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the only other
+     * attribute that can be specified is <code>AWS_INIT_HEALTH_STATUS</code>. When the
+     * <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the
+     * <code>AWS_INSTANCE_IPV4</code> attribute will be filled out with the primary
+     * private IPv4 address.</p> </dd> <dt>AWS_INIT_HEALTH_STATUS</dt> <dd> <p>If the
+     * service configuration includes <code>HealthCheckCustomConfig</code>, you can
+     * optionally use <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status
+     * of the custom health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If
+     * you don't specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial
+     * status is <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If
+     * the service configuration includes a <code>CNAME</code> record, the domain name
+     * that you want Route 53 to return in response to DNS queries (for example,
      * <code>example.com</code>).</p> <p>This value is required if the service
      * specified by <code>ServiceId</code> includes settings for an <code>CNAME</code>
      * record.</p> </dd> <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>If the service
@@ -428,12 +429,12 @@ namespace Model
      * the records that are defined in the service. </p> </li> <li> <p>For each
      * attribute, the applicable value.</p> </li> </ul>  <p>Do not include
      * sensitive information in the attributes if the namespace is discoverable by
-     * public DNS queries.</p>  <p>Supported attribute keys include the
-     * following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud Map to
-     * create an Amazon Route 53 alias record that routes traffic to an Elastic Load
-     * Balancing load balancer, specify the DNS name that's associated with the load
-     * balancer. For information about how to get the DNS name, see "DNSName" in the
-     * topic <a
+     * public DNS queries.</p>  <p>The following are the supported
+     * attribute keys.</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud
+     * Map to create an Amazon Route 53 alias record that routes traffic to an Elastic
+     * Load Balancing load balancer, specify the DNS name that's associated with the
+     * load balancer. For information about how to get the DNS name, see "DNSName" in
+     * the topic <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
      * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that's specified by <code>ServiceId</code>
@@ -447,21 +448,22 @@ namespace Model
      * support creating alias records that route traffic to Amazon Web Services
      * resources other than Elastic Load Balancing load balancers.</p> </li> <li> <p>If
      * you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values
-     * for any of the <code>AWS_INSTANCE</code> attributes.</p> </li> </ul> </dd>
-     * <dt>AWS_EC2_INSTANCE_ID</dt> <dd> <p> <i>HTTP namespaces only.</i> The Amazon
-     * EC2 instance ID for the instance. If the <code>AWS_EC2_INSTANCE_ID</code>
-     * attribute is specified, then the only other attribute that can be specified is
-     * <code>AWS_INIT_HEALTH_STATUS</code>. When the <code>AWS_EC2_INSTANCE_ID</code>
-     * attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute will
-     * be filled out with the primary private IPv4 address.</p> </dd>
-     * <dt>AWS_INIT_HEALTH_STATUS</dt> <dd> <p>If the service configuration includes
-     * <code>HealthCheckCustomConfig</code>, you can optionally use
-     * <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom
-     * health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't
-     * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
-     * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If the
-     * service configuration includes a <code>CNAME</code> record, the domain name that
-     * you want Route 53 to return in response to DNS queries (for example,
+     * for any of the <code>AWS_INSTANCE</code> attributes.</p> </li> <li> <p>The
+     * <code>AWS_ALIAS_DNS_NAME</code> is not supported in the GovCloud (US)
+     * Regions.</p> </li> </ul> </dd> <dt>AWS_EC2_INSTANCE_ID</dt> <dd> <p> <i>HTTP
+     * namespaces only.</i> The Amazon EC2 instance ID for the instance. If the
+     * <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the only other
+     * attribute that can be specified is <code>AWS_INIT_HEALTH_STATUS</code>. When the
+     * <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the
+     * <code>AWS_INSTANCE_IPV4</code> attribute will be filled out with the primary
+     * private IPv4 address.</p> </dd> <dt>AWS_INIT_HEALTH_STATUS</dt> <dd> <p>If the
+     * service configuration includes <code>HealthCheckCustomConfig</code>, you can
+     * optionally use <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status
+     * of the custom health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If
+     * you don't specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial
+     * status is <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If
+     * the service configuration includes a <code>CNAME</code> record, the domain name
+     * that you want Route 53 to return in response to DNS queries (for example,
      * <code>example.com</code>).</p> <p>This value is required if the service
      * specified by <code>ServiceId</code> includes settings for an <code>CNAME</code>
      * record.</p> </dd> <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>If the service
@@ -499,12 +501,12 @@ namespace Model
      * the records that are defined in the service. </p> </li> <li> <p>For each
      * attribute, the applicable value.</p> </li> </ul>  <p>Do not include
      * sensitive information in the attributes if the namespace is discoverable by
-     * public DNS queries.</p>  <p>Supported attribute keys include the
-     * following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud Map to
-     * create an Amazon Route 53 alias record that routes traffic to an Elastic Load
-     * Balancing load balancer, specify the DNS name that's associated with the load
-     * balancer. For information about how to get the DNS name, see "DNSName" in the
-     * topic <a
+     * public DNS queries.</p>  <p>The following are the supported
+     * attribute keys.</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud
+     * Map to create an Amazon Route 53 alias record that routes traffic to an Elastic
+     * Load Balancing load balancer, specify the DNS name that's associated with the
+     * load balancer. For information about how to get the DNS name, see "DNSName" in
+     * the topic <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
      * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that's specified by <code>ServiceId</code>
@@ -518,21 +520,22 @@ namespace Model
      * support creating alias records that route traffic to Amazon Web Services
      * resources other than Elastic Load Balancing load balancers.</p> </li> <li> <p>If
      * you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values
-     * for any of the <code>AWS_INSTANCE</code> attributes.</p> </li> </ul> </dd>
-     * <dt>AWS_EC2_INSTANCE_ID</dt> <dd> <p> <i>HTTP namespaces only.</i> The Amazon
-     * EC2 instance ID for the instance. If the <code>AWS_EC2_INSTANCE_ID</code>
-     * attribute is specified, then the only other attribute that can be specified is
-     * <code>AWS_INIT_HEALTH_STATUS</code>. When the <code>AWS_EC2_INSTANCE_ID</code>
-     * attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute will
-     * be filled out with the primary private IPv4 address.</p> </dd>
-     * <dt>AWS_INIT_HEALTH_STATUS</dt> <dd> <p>If the service configuration includes
-     * <code>HealthCheckCustomConfig</code>, you can optionally use
-     * <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom
-     * health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't
-     * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
-     * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If the
-     * service configuration includes a <code>CNAME</code> record, the domain name that
-     * you want Route 53 to return in response to DNS queries (for example,
+     * for any of the <code>AWS_INSTANCE</code> attributes.</p> </li> <li> <p>The
+     * <code>AWS_ALIAS_DNS_NAME</code> is not supported in the GovCloud (US)
+     * Regions.</p> </li> </ul> </dd> <dt>AWS_EC2_INSTANCE_ID</dt> <dd> <p> <i>HTTP
+     * namespaces only.</i> The Amazon EC2 instance ID for the instance. If the
+     * <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the only other
+     * attribute that can be specified is <code>AWS_INIT_HEALTH_STATUS</code>. When the
+     * <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the
+     * <code>AWS_INSTANCE_IPV4</code> attribute will be filled out with the primary
+     * private IPv4 address.</p> </dd> <dt>AWS_INIT_HEALTH_STATUS</dt> <dd> <p>If the
+     * service configuration includes <code>HealthCheckCustomConfig</code>, you can
+     * optionally use <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status
+     * of the custom health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If
+     * you don't specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial
+     * status is <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If
+     * the service configuration includes a <code>CNAME</code> record, the domain name
+     * that you want Route 53 to return in response to DNS queries (for example,
      * <code>example.com</code>).</p> <p>This value is required if the service
      * specified by <code>ServiceId</code> includes settings for an <code>CNAME</code>
      * record.</p> </dd> <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>If the service
@@ -570,12 +573,12 @@ namespace Model
      * the records that are defined in the service. </p> </li> <li> <p>For each
      * attribute, the applicable value.</p> </li> </ul>  <p>Do not include
      * sensitive information in the attributes if the namespace is discoverable by
-     * public DNS queries.</p>  <p>Supported attribute keys include the
-     * following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud Map to
-     * create an Amazon Route 53 alias record that routes traffic to an Elastic Load
-     * Balancing load balancer, specify the DNS name that's associated with the load
-     * balancer. For information about how to get the DNS name, see "DNSName" in the
-     * topic <a
+     * public DNS queries.</p>  <p>The following are the supported
+     * attribute keys.</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud
+     * Map to create an Amazon Route 53 alias record that routes traffic to an Elastic
+     * Load Balancing load balancer, specify the DNS name that's associated with the
+     * load balancer. For information about how to get the DNS name, see "DNSName" in
+     * the topic <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
      * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that's specified by <code>ServiceId</code>
@@ -589,21 +592,22 @@ namespace Model
      * support creating alias records that route traffic to Amazon Web Services
      * resources other than Elastic Load Balancing load balancers.</p> </li> <li> <p>If
      * you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values
-     * for any of the <code>AWS_INSTANCE</code> attributes.</p> </li> </ul> </dd>
-     * <dt>AWS_EC2_INSTANCE_ID</dt> <dd> <p> <i>HTTP namespaces only.</i> The Amazon
-     * EC2 instance ID for the instance. If the <code>AWS_EC2_INSTANCE_ID</code>
-     * attribute is specified, then the only other attribute that can be specified is
-     * <code>AWS_INIT_HEALTH_STATUS</code>. When the <code>AWS_EC2_INSTANCE_ID</code>
-     * attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute will
-     * be filled out with the primary private IPv4 address.</p> </dd>
-     * <dt>AWS_INIT_HEALTH_STATUS</dt> <dd> <p>If the service configuration includes
-     * <code>HealthCheckCustomConfig</code>, you can optionally use
-     * <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom
-     * health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't
-     * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
-     * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If the
-     * service configuration includes a <code>CNAME</code> record, the domain name that
-     * you want Route 53 to return in response to DNS queries (for example,
+     * for any of the <code>AWS_INSTANCE</code> attributes.</p> </li> <li> <p>The
+     * <code>AWS_ALIAS_DNS_NAME</code> is not supported in the GovCloud (US)
+     * Regions.</p> </li> </ul> </dd> <dt>AWS_EC2_INSTANCE_ID</dt> <dd> <p> <i>HTTP
+     * namespaces only.</i> The Amazon EC2 instance ID for the instance. If the
+     * <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the only other
+     * attribute that can be specified is <code>AWS_INIT_HEALTH_STATUS</code>. When the
+     * <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the
+     * <code>AWS_INSTANCE_IPV4</code> attribute will be filled out with the primary
+     * private IPv4 address.</p> </dd> <dt>AWS_INIT_HEALTH_STATUS</dt> <dd> <p>If the
+     * service configuration includes <code>HealthCheckCustomConfig</code>, you can
+     * optionally use <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status
+     * of the custom health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If
+     * you don't specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial
+     * status is <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If
+     * the service configuration includes a <code>CNAME</code> record, the domain name
+     * that you want Route 53 to return in response to DNS queries (for example,
      * <code>example.com</code>).</p> <p>This value is required if the service
      * specified by <code>ServiceId</code> includes settings for an <code>CNAME</code>
      * record.</p> </dd> <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>If the service
@@ -641,12 +645,12 @@ namespace Model
      * the records that are defined in the service. </p> </li> <li> <p>For each
      * attribute, the applicable value.</p> </li> </ul>  <p>Do not include
      * sensitive information in the attributes if the namespace is discoverable by
-     * public DNS queries.</p>  <p>Supported attribute keys include the
-     * following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud Map to
-     * create an Amazon Route 53 alias record that routes traffic to an Elastic Load
-     * Balancing load balancer, specify the DNS name that's associated with the load
-     * balancer. For information about how to get the DNS name, see "DNSName" in the
-     * topic <a
+     * public DNS queries.</p>  <p>The following are the supported
+     * attribute keys.</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud
+     * Map to create an Amazon Route 53 alias record that routes traffic to an Elastic
+     * Load Balancing load balancer, specify the DNS name that's associated with the
+     * load balancer. For information about how to get the DNS name, see "DNSName" in
+     * the topic <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
      * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that's specified by <code>ServiceId</code>
@@ -660,21 +664,22 @@ namespace Model
      * support creating alias records that route traffic to Amazon Web Services
      * resources other than Elastic Load Balancing load balancers.</p> </li> <li> <p>If
      * you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values
-     * for any of the <code>AWS_INSTANCE</code> attributes.</p> </li> </ul> </dd>
-     * <dt>AWS_EC2_INSTANCE_ID</dt> <dd> <p> <i>HTTP namespaces only.</i> The Amazon
-     * EC2 instance ID for the instance. If the <code>AWS_EC2_INSTANCE_ID</code>
-     * attribute is specified, then the only other attribute that can be specified is
-     * <code>AWS_INIT_HEALTH_STATUS</code>. When the <code>AWS_EC2_INSTANCE_ID</code>
-     * attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute will
-     * be filled out with the primary private IPv4 address.</p> </dd>
-     * <dt>AWS_INIT_HEALTH_STATUS</dt> <dd> <p>If the service configuration includes
-     * <code>HealthCheckCustomConfig</code>, you can optionally use
-     * <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom
-     * health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't
-     * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
-     * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If the
-     * service configuration includes a <code>CNAME</code> record, the domain name that
-     * you want Route 53 to return in response to DNS queries (for example,
+     * for any of the <code>AWS_INSTANCE</code> attributes.</p> </li> <li> <p>The
+     * <code>AWS_ALIAS_DNS_NAME</code> is not supported in the GovCloud (US)
+     * Regions.</p> </li> </ul> </dd> <dt>AWS_EC2_INSTANCE_ID</dt> <dd> <p> <i>HTTP
+     * namespaces only.</i> The Amazon EC2 instance ID for the instance. If the
+     * <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the only other
+     * attribute that can be specified is <code>AWS_INIT_HEALTH_STATUS</code>. When the
+     * <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the
+     * <code>AWS_INSTANCE_IPV4</code> attribute will be filled out with the primary
+     * private IPv4 address.</p> </dd> <dt>AWS_INIT_HEALTH_STATUS</dt> <dd> <p>If the
+     * service configuration includes <code>HealthCheckCustomConfig</code>, you can
+     * optionally use <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status
+     * of the custom health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If
+     * you don't specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial
+     * status is <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If
+     * the service configuration includes a <code>CNAME</code> record, the domain name
+     * that you want Route 53 to return in response to DNS queries (for example,
      * <code>example.com</code>).</p> <p>This value is required if the service
      * specified by <code>ServiceId</code> includes settings for an <code>CNAME</code>
      * record.</p> </dd> <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>If the service
@@ -712,12 +717,12 @@ namespace Model
      * the records that are defined in the service. </p> </li> <li> <p>For each
      * attribute, the applicable value.</p> </li> </ul>  <p>Do not include
      * sensitive information in the attributes if the namespace is discoverable by
-     * public DNS queries.</p>  <p>Supported attribute keys include the
-     * following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud Map to
-     * create an Amazon Route 53 alias record that routes traffic to an Elastic Load
-     * Balancing load balancer, specify the DNS name that's associated with the load
-     * balancer. For information about how to get the DNS name, see "DNSName" in the
-     * topic <a
+     * public DNS queries.</p>  <p>The following are the supported
+     * attribute keys.</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud
+     * Map to create an Amazon Route 53 alias record that routes traffic to an Elastic
+     * Load Balancing load balancer, specify the DNS name that's associated with the
+     * load balancer. For information about how to get the DNS name, see "DNSName" in
+     * the topic <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
      * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that's specified by <code>ServiceId</code>
@@ -731,21 +736,22 @@ namespace Model
      * support creating alias records that route traffic to Amazon Web Services
      * resources other than Elastic Load Balancing load balancers.</p> </li> <li> <p>If
      * you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values
-     * for any of the <code>AWS_INSTANCE</code> attributes.</p> </li> </ul> </dd>
-     * <dt>AWS_EC2_INSTANCE_ID</dt> <dd> <p> <i>HTTP namespaces only.</i> The Amazon
-     * EC2 instance ID for the instance. If the <code>AWS_EC2_INSTANCE_ID</code>
-     * attribute is specified, then the only other attribute that can be specified is
-     * <code>AWS_INIT_HEALTH_STATUS</code>. When the <code>AWS_EC2_INSTANCE_ID</code>
-     * attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute will
-     * be filled out with the primary private IPv4 address.</p> </dd>
-     * <dt>AWS_INIT_HEALTH_STATUS</dt> <dd> <p>If the service configuration includes
-     * <code>HealthCheckCustomConfig</code>, you can optionally use
-     * <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom
-     * health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't
-     * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
-     * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If the
-     * service configuration includes a <code>CNAME</code> record, the domain name that
-     * you want Route 53 to return in response to DNS queries (for example,
+     * for any of the <code>AWS_INSTANCE</code> attributes.</p> </li> <li> <p>The
+     * <code>AWS_ALIAS_DNS_NAME</code> is not supported in the GovCloud (US)
+     * Regions.</p> </li> </ul> </dd> <dt>AWS_EC2_INSTANCE_ID</dt> <dd> <p> <i>HTTP
+     * namespaces only.</i> The Amazon EC2 instance ID for the instance. If the
+     * <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the only other
+     * attribute that can be specified is <code>AWS_INIT_HEALTH_STATUS</code>. When the
+     * <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the
+     * <code>AWS_INSTANCE_IPV4</code> attribute will be filled out with the primary
+     * private IPv4 address.</p> </dd> <dt>AWS_INIT_HEALTH_STATUS</dt> <dd> <p>If the
+     * service configuration includes <code>HealthCheckCustomConfig</code>, you can
+     * optionally use <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status
+     * of the custom health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If
+     * you don't specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial
+     * status is <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If
+     * the service configuration includes a <code>CNAME</code> record, the domain name
+     * that you want Route 53 to return in response to DNS queries (for example,
      * <code>example.com</code>).</p> <p>This value is required if the service
      * specified by <code>ServiceId</code> includes settings for an <code>CNAME</code>
      * record.</p> </dd> <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>If the service
@@ -783,12 +789,12 @@ namespace Model
      * the records that are defined in the service. </p> </li> <li> <p>For each
      * attribute, the applicable value.</p> </li> </ul>  <p>Do not include
      * sensitive information in the attributes if the namespace is discoverable by
-     * public DNS queries.</p>  <p>Supported attribute keys include the
-     * following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud Map to
-     * create an Amazon Route 53 alias record that routes traffic to an Elastic Load
-     * Balancing load balancer, specify the DNS name that's associated with the load
-     * balancer. For information about how to get the DNS name, see "DNSName" in the
-     * topic <a
+     * public DNS queries.</p>  <p>The following are the supported
+     * attribute keys.</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud
+     * Map to create an Amazon Route 53 alias record that routes traffic to an Elastic
+     * Load Balancing load balancer, specify the DNS name that's associated with the
+     * load balancer. For information about how to get the DNS name, see "DNSName" in
+     * the topic <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
      * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that's specified by <code>ServiceId</code>
@@ -802,21 +808,22 @@ namespace Model
      * support creating alias records that route traffic to Amazon Web Services
      * resources other than Elastic Load Balancing load balancers.</p> </li> <li> <p>If
      * you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values
-     * for any of the <code>AWS_INSTANCE</code> attributes.</p> </li> </ul> </dd>
-     * <dt>AWS_EC2_INSTANCE_ID</dt> <dd> <p> <i>HTTP namespaces only.</i> The Amazon
-     * EC2 instance ID for the instance. If the <code>AWS_EC2_INSTANCE_ID</code>
-     * attribute is specified, then the only other attribute that can be specified is
-     * <code>AWS_INIT_HEALTH_STATUS</code>. When the <code>AWS_EC2_INSTANCE_ID</code>
-     * attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute will
-     * be filled out with the primary private IPv4 address.</p> </dd>
-     * <dt>AWS_INIT_HEALTH_STATUS</dt> <dd> <p>If the service configuration includes
-     * <code>HealthCheckCustomConfig</code>, you can optionally use
-     * <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom
-     * health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't
-     * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
-     * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If the
-     * service configuration includes a <code>CNAME</code> record, the domain name that
-     * you want Route 53 to return in response to DNS queries (for example,
+     * for any of the <code>AWS_INSTANCE</code> attributes.</p> </li> <li> <p>The
+     * <code>AWS_ALIAS_DNS_NAME</code> is not supported in the GovCloud (US)
+     * Regions.</p> </li> </ul> </dd> <dt>AWS_EC2_INSTANCE_ID</dt> <dd> <p> <i>HTTP
+     * namespaces only.</i> The Amazon EC2 instance ID for the instance. If the
+     * <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the only other
+     * attribute that can be specified is <code>AWS_INIT_HEALTH_STATUS</code>. When the
+     * <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the
+     * <code>AWS_INSTANCE_IPV4</code> attribute will be filled out with the primary
+     * private IPv4 address.</p> </dd> <dt>AWS_INIT_HEALTH_STATUS</dt> <dd> <p>If the
+     * service configuration includes <code>HealthCheckCustomConfig</code>, you can
+     * optionally use <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status
+     * of the custom health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If
+     * you don't specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial
+     * status is <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If
+     * the service configuration includes a <code>CNAME</code> record, the domain name
+     * that you want Route 53 to return in response to DNS queries (for example,
      * <code>example.com</code>).</p> <p>This value is required if the service
      * specified by <code>ServiceId</code> includes settings for an <code>CNAME</code>
      * record.</p> </dd> <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>If the service
@@ -854,12 +861,12 @@ namespace Model
      * the records that are defined in the service. </p> </li> <li> <p>For each
      * attribute, the applicable value.</p> </li> </ul>  <p>Do not include
      * sensitive information in the attributes if the namespace is discoverable by
-     * public DNS queries.</p>  <p>Supported attribute keys include the
-     * following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud Map to
-     * create an Amazon Route 53 alias record that routes traffic to an Elastic Load
-     * Balancing load balancer, specify the DNS name that's associated with the load
-     * balancer. For information about how to get the DNS name, see "DNSName" in the
-     * topic <a
+     * public DNS queries.</p>  <p>The following are the supported
+     * attribute keys.</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud
+     * Map to create an Amazon Route 53 alias record that routes traffic to an Elastic
+     * Load Balancing load balancer, specify the DNS name that's associated with the
+     * load balancer. For information about how to get the DNS name, see "DNSName" in
+     * the topic <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
      * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that's specified by <code>ServiceId</code>
@@ -873,21 +880,22 @@ namespace Model
      * support creating alias records that route traffic to Amazon Web Services
      * resources other than Elastic Load Balancing load balancers.</p> </li> <li> <p>If
      * you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values
-     * for any of the <code>AWS_INSTANCE</code> attributes.</p> </li> </ul> </dd>
-     * <dt>AWS_EC2_INSTANCE_ID</dt> <dd> <p> <i>HTTP namespaces only.</i> The Amazon
-     * EC2 instance ID for the instance. If the <code>AWS_EC2_INSTANCE_ID</code>
-     * attribute is specified, then the only other attribute that can be specified is
-     * <code>AWS_INIT_HEALTH_STATUS</code>. When the <code>AWS_EC2_INSTANCE_ID</code>
-     * attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute will
-     * be filled out with the primary private IPv4 address.</p> </dd>
-     * <dt>AWS_INIT_HEALTH_STATUS</dt> <dd> <p>If the service configuration includes
-     * <code>HealthCheckCustomConfig</code>, you can optionally use
-     * <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom
-     * health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't
-     * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
-     * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If the
-     * service configuration includes a <code>CNAME</code> record, the domain name that
-     * you want Route 53 to return in response to DNS queries (for example,
+     * for any of the <code>AWS_INSTANCE</code> attributes.</p> </li> <li> <p>The
+     * <code>AWS_ALIAS_DNS_NAME</code> is not supported in the GovCloud (US)
+     * Regions.</p> </li> </ul> </dd> <dt>AWS_EC2_INSTANCE_ID</dt> <dd> <p> <i>HTTP
+     * namespaces only.</i> The Amazon EC2 instance ID for the instance. If the
+     * <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the only other
+     * attribute that can be specified is <code>AWS_INIT_HEALTH_STATUS</code>. When the
+     * <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the
+     * <code>AWS_INSTANCE_IPV4</code> attribute will be filled out with the primary
+     * private IPv4 address.</p> </dd> <dt>AWS_INIT_HEALTH_STATUS</dt> <dd> <p>If the
+     * service configuration includes <code>HealthCheckCustomConfig</code>, you can
+     * optionally use <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status
+     * of the custom health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If
+     * you don't specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial
+     * status is <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If
+     * the service configuration includes a <code>CNAME</code> record, the domain name
+     * that you want Route 53 to return in response to DNS queries (for example,
      * <code>example.com</code>).</p> <p>This value is required if the service
      * specified by <code>ServiceId</code> includes settings for an <code>CNAME</code>
      * record.</p> </dd> <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>If the service
@@ -925,12 +933,12 @@ namespace Model
      * the records that are defined in the service. </p> </li> <li> <p>For each
      * attribute, the applicable value.</p> </li> </ul>  <p>Do not include
      * sensitive information in the attributes if the namespace is discoverable by
-     * public DNS queries.</p>  <p>Supported attribute keys include the
-     * following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud Map to
-     * create an Amazon Route 53 alias record that routes traffic to an Elastic Load
-     * Balancing load balancer, specify the DNS name that's associated with the load
-     * balancer. For information about how to get the DNS name, see "DNSName" in the
-     * topic <a
+     * public DNS queries.</p>  <p>The following are the supported
+     * attribute keys.</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud
+     * Map to create an Amazon Route 53 alias record that routes traffic to an Elastic
+     * Load Balancing load balancer, specify the DNS name that's associated with the
+     * load balancer. For information about how to get the DNS name, see "DNSName" in
+     * the topic <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
      * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that's specified by <code>ServiceId</code>
@@ -944,21 +952,22 @@ namespace Model
      * support creating alias records that route traffic to Amazon Web Services
      * resources other than Elastic Load Balancing load balancers.</p> </li> <li> <p>If
      * you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values
-     * for any of the <code>AWS_INSTANCE</code> attributes.</p> </li> </ul> </dd>
-     * <dt>AWS_EC2_INSTANCE_ID</dt> <dd> <p> <i>HTTP namespaces only.</i> The Amazon
-     * EC2 instance ID for the instance. If the <code>AWS_EC2_INSTANCE_ID</code>
-     * attribute is specified, then the only other attribute that can be specified is
-     * <code>AWS_INIT_HEALTH_STATUS</code>. When the <code>AWS_EC2_INSTANCE_ID</code>
-     * attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute will
-     * be filled out with the primary private IPv4 address.</p> </dd>
-     * <dt>AWS_INIT_HEALTH_STATUS</dt> <dd> <p>If the service configuration includes
-     * <code>HealthCheckCustomConfig</code>, you can optionally use
-     * <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom
-     * health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't
-     * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
-     * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If the
-     * service configuration includes a <code>CNAME</code> record, the domain name that
-     * you want Route 53 to return in response to DNS queries (for example,
+     * for any of the <code>AWS_INSTANCE</code> attributes.</p> </li> <li> <p>The
+     * <code>AWS_ALIAS_DNS_NAME</code> is not supported in the GovCloud (US)
+     * Regions.</p> </li> </ul> </dd> <dt>AWS_EC2_INSTANCE_ID</dt> <dd> <p> <i>HTTP
+     * namespaces only.</i> The Amazon EC2 instance ID for the instance. If the
+     * <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the only other
+     * attribute that can be specified is <code>AWS_INIT_HEALTH_STATUS</code>. When the
+     * <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the
+     * <code>AWS_INSTANCE_IPV4</code> attribute will be filled out with the primary
+     * private IPv4 address.</p> </dd> <dt>AWS_INIT_HEALTH_STATUS</dt> <dd> <p>If the
+     * service configuration includes <code>HealthCheckCustomConfig</code>, you can
+     * optionally use <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status
+     * of the custom health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If
+     * you don't specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial
+     * status is <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If
+     * the service configuration includes a <code>CNAME</code> record, the domain name
+     * that you want Route 53 to return in response to DNS queries (for example,
      * <code>example.com</code>).</p> <p>This value is required if the service
      * specified by <code>ServiceId</code> includes settings for an <code>CNAME</code>
      * record.</p> </dd> <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>If the service
@@ -996,12 +1005,12 @@ namespace Model
      * the records that are defined in the service. </p> </li> <li> <p>For each
      * attribute, the applicable value.</p> </li> </ul>  <p>Do not include
      * sensitive information in the attributes if the namespace is discoverable by
-     * public DNS queries.</p>  <p>Supported attribute keys include the
-     * following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud Map to
-     * create an Amazon Route 53 alias record that routes traffic to an Elastic Load
-     * Balancing load balancer, specify the DNS name that's associated with the load
-     * balancer. For information about how to get the DNS name, see "DNSName" in the
-     * topic <a
+     * public DNS queries.</p>  <p>The following are the supported
+     * attribute keys.</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud
+     * Map to create an Amazon Route 53 alias record that routes traffic to an Elastic
+     * Load Balancing load balancer, specify the DNS name that's associated with the
+     * load balancer. For information about how to get the DNS name, see "DNSName" in
+     * the topic <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
      * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that's specified by <code>ServiceId</code>
@@ -1015,21 +1024,22 @@ namespace Model
      * support creating alias records that route traffic to Amazon Web Services
      * resources other than Elastic Load Balancing load balancers.</p> </li> <li> <p>If
      * you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values
-     * for any of the <code>AWS_INSTANCE</code> attributes.</p> </li> </ul> </dd>
-     * <dt>AWS_EC2_INSTANCE_ID</dt> <dd> <p> <i>HTTP namespaces only.</i> The Amazon
-     * EC2 instance ID for the instance. If the <code>AWS_EC2_INSTANCE_ID</code>
-     * attribute is specified, then the only other attribute that can be specified is
-     * <code>AWS_INIT_HEALTH_STATUS</code>. When the <code>AWS_EC2_INSTANCE_ID</code>
-     * attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute will
-     * be filled out with the primary private IPv4 address.</p> </dd>
-     * <dt>AWS_INIT_HEALTH_STATUS</dt> <dd> <p>If the service configuration includes
-     * <code>HealthCheckCustomConfig</code>, you can optionally use
-     * <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom
-     * health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't
-     * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
-     * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If the
-     * service configuration includes a <code>CNAME</code> record, the domain name that
-     * you want Route 53 to return in response to DNS queries (for example,
+     * for any of the <code>AWS_INSTANCE</code> attributes.</p> </li> <li> <p>The
+     * <code>AWS_ALIAS_DNS_NAME</code> is not supported in the GovCloud (US)
+     * Regions.</p> </li> </ul> </dd> <dt>AWS_EC2_INSTANCE_ID</dt> <dd> <p> <i>HTTP
+     * namespaces only.</i> The Amazon EC2 instance ID for the instance. If the
+     * <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the only other
+     * attribute that can be specified is <code>AWS_INIT_HEALTH_STATUS</code>. When the
+     * <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the
+     * <code>AWS_INSTANCE_IPV4</code> attribute will be filled out with the primary
+     * private IPv4 address.</p> </dd> <dt>AWS_INIT_HEALTH_STATUS</dt> <dd> <p>If the
+     * service configuration includes <code>HealthCheckCustomConfig</code>, you can
+     * optionally use <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status
+     * of the custom health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If
+     * you don't specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial
+     * status is <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If
+     * the service configuration includes a <code>CNAME</code> record, the domain name
+     * that you want Route 53 to return in response to DNS queries (for example,
      * <code>example.com</code>).</p> <p>This value is required if the service
      * specified by <code>ServiceId</code> includes settings for an <code>CNAME</code>
      * record.</p> </dd> <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>If the service
@@ -1067,12 +1077,12 @@ namespace Model
      * the records that are defined in the service. </p> </li> <li> <p>For each
      * attribute, the applicable value.</p> </li> </ul>  <p>Do not include
      * sensitive information in the attributes if the namespace is discoverable by
-     * public DNS queries.</p>  <p>Supported attribute keys include the
-     * following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud Map to
-     * create an Amazon Route 53 alias record that routes traffic to an Elastic Load
-     * Balancing load balancer, specify the DNS name that's associated with the load
-     * balancer. For information about how to get the DNS name, see "DNSName" in the
-     * topic <a
+     * public DNS queries.</p>  <p>The following are the supported
+     * attribute keys.</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud
+     * Map to create an Amazon Route 53 alias record that routes traffic to an Elastic
+     * Load Balancing load balancer, specify the DNS name that's associated with the
+     * load balancer. For information about how to get the DNS name, see "DNSName" in
+     * the topic <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
      * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that's specified by <code>ServiceId</code>
@@ -1086,21 +1096,22 @@ namespace Model
      * support creating alias records that route traffic to Amazon Web Services
      * resources other than Elastic Load Balancing load balancers.</p> </li> <li> <p>If
      * you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values
-     * for any of the <code>AWS_INSTANCE</code> attributes.</p> </li> </ul> </dd>
-     * <dt>AWS_EC2_INSTANCE_ID</dt> <dd> <p> <i>HTTP namespaces only.</i> The Amazon
-     * EC2 instance ID for the instance. If the <code>AWS_EC2_INSTANCE_ID</code>
-     * attribute is specified, then the only other attribute that can be specified is
-     * <code>AWS_INIT_HEALTH_STATUS</code>. When the <code>AWS_EC2_INSTANCE_ID</code>
-     * attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute will
-     * be filled out with the primary private IPv4 address.</p> </dd>
-     * <dt>AWS_INIT_HEALTH_STATUS</dt> <dd> <p>If the service configuration includes
-     * <code>HealthCheckCustomConfig</code>, you can optionally use
-     * <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom
-     * health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't
-     * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
-     * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If the
-     * service configuration includes a <code>CNAME</code> record, the domain name that
-     * you want Route 53 to return in response to DNS queries (for example,
+     * for any of the <code>AWS_INSTANCE</code> attributes.</p> </li> <li> <p>The
+     * <code>AWS_ALIAS_DNS_NAME</code> is not supported in the GovCloud (US)
+     * Regions.</p> </li> </ul> </dd> <dt>AWS_EC2_INSTANCE_ID</dt> <dd> <p> <i>HTTP
+     * namespaces only.</i> The Amazon EC2 instance ID for the instance. If the
+     * <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the only other
+     * attribute that can be specified is <code>AWS_INIT_HEALTH_STATUS</code>. When the
+     * <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the
+     * <code>AWS_INSTANCE_IPV4</code> attribute will be filled out with the primary
+     * private IPv4 address.</p> </dd> <dt>AWS_INIT_HEALTH_STATUS</dt> <dd> <p>If the
+     * service configuration includes <code>HealthCheckCustomConfig</code>, you can
+     * optionally use <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status
+     * of the custom health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If
+     * you don't specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial
+     * status is <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If
+     * the service configuration includes a <code>CNAME</code> record, the domain name
+     * that you want Route 53 to return in response to DNS queries (for example,
      * <code>example.com</code>).</p> <p>This value is required if the service
      * specified by <code>ServiceId</code> includes settings for an <code>CNAME</code>
      * record.</p> </dd> <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>If the service
@@ -1138,12 +1149,12 @@ namespace Model
      * the records that are defined in the service. </p> </li> <li> <p>For each
      * attribute, the applicable value.</p> </li> </ul>  <p>Do not include
      * sensitive information in the attributes if the namespace is discoverable by
-     * public DNS queries.</p>  <p>Supported attribute keys include the
-     * following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud Map to
-     * create an Amazon Route 53 alias record that routes traffic to an Elastic Load
-     * Balancing load balancer, specify the DNS name that's associated with the load
-     * balancer. For information about how to get the DNS name, see "DNSName" in the
-     * topic <a
+     * public DNS queries.</p>  <p>The following are the supported
+     * attribute keys.</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud
+     * Map to create an Amazon Route 53 alias record that routes traffic to an Elastic
+     * Load Balancing load balancer, specify the DNS name that's associated with the
+     * load balancer. For information about how to get the DNS name, see "DNSName" in
+     * the topic <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
      * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that's specified by <code>ServiceId</code>
@@ -1157,21 +1168,22 @@ namespace Model
      * support creating alias records that route traffic to Amazon Web Services
      * resources other than Elastic Load Balancing load balancers.</p> </li> <li> <p>If
      * you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values
-     * for any of the <code>AWS_INSTANCE</code> attributes.</p> </li> </ul> </dd>
-     * <dt>AWS_EC2_INSTANCE_ID</dt> <dd> <p> <i>HTTP namespaces only.</i> The Amazon
-     * EC2 instance ID for the instance. If the <code>AWS_EC2_INSTANCE_ID</code>
-     * attribute is specified, then the only other attribute that can be specified is
-     * <code>AWS_INIT_HEALTH_STATUS</code>. When the <code>AWS_EC2_INSTANCE_ID</code>
-     * attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute will
-     * be filled out with the primary private IPv4 address.</p> </dd>
-     * <dt>AWS_INIT_HEALTH_STATUS</dt> <dd> <p>If the service configuration includes
-     * <code>HealthCheckCustomConfig</code>, you can optionally use
-     * <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom
-     * health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't
-     * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
-     * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If the
-     * service configuration includes a <code>CNAME</code> record, the domain name that
-     * you want Route 53 to return in response to DNS queries (for example,
+     * for any of the <code>AWS_INSTANCE</code> attributes.</p> </li> <li> <p>The
+     * <code>AWS_ALIAS_DNS_NAME</code> is not supported in the GovCloud (US)
+     * Regions.</p> </li> </ul> </dd> <dt>AWS_EC2_INSTANCE_ID</dt> <dd> <p> <i>HTTP
+     * namespaces only.</i> The Amazon EC2 instance ID for the instance. If the
+     * <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the only other
+     * attribute that can be specified is <code>AWS_INIT_HEALTH_STATUS</code>. When the
+     * <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the
+     * <code>AWS_INSTANCE_IPV4</code> attribute will be filled out with the primary
+     * private IPv4 address.</p> </dd> <dt>AWS_INIT_HEALTH_STATUS</dt> <dd> <p>If the
+     * service configuration includes <code>HealthCheckCustomConfig</code>, you can
+     * optionally use <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status
+     * of the custom health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If
+     * you don't specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial
+     * status is <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If
+     * the service configuration includes a <code>CNAME</code> record, the domain name
+     * that you want Route 53 to return in response to DNS queries (for example,
      * <code>example.com</code>).</p> <p>This value is required if the service
      * specified by <code>ServiceId</code> includes settings for an <code>CNAME</code>
      * record.</p> </dd> <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>If the service
@@ -1209,12 +1221,12 @@ namespace Model
      * the records that are defined in the service. </p> </li> <li> <p>For each
      * attribute, the applicable value.</p> </li> </ul>  <p>Do not include
      * sensitive information in the attributes if the namespace is discoverable by
-     * public DNS queries.</p>  <p>Supported attribute keys include the
-     * following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud Map to
-     * create an Amazon Route 53 alias record that routes traffic to an Elastic Load
-     * Balancing load balancer, specify the DNS name that's associated with the load
-     * balancer. For information about how to get the DNS name, see "DNSName" in the
-     * topic <a
+     * public DNS queries.</p>  <p>The following are the supported
+     * attribute keys.</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud
+     * Map to create an Amazon Route 53 alias record that routes traffic to an Elastic
+     * Load Balancing load balancer, specify the DNS name that's associated with the
+     * load balancer. For information about how to get the DNS name, see "DNSName" in
+     * the topic <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
      * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that's specified by <code>ServiceId</code>
@@ -1228,21 +1240,22 @@ namespace Model
      * support creating alias records that route traffic to Amazon Web Services
      * resources other than Elastic Load Balancing load balancers.</p> </li> <li> <p>If
      * you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values
-     * for any of the <code>AWS_INSTANCE</code> attributes.</p> </li> </ul> </dd>
-     * <dt>AWS_EC2_INSTANCE_ID</dt> <dd> <p> <i>HTTP namespaces only.</i> The Amazon
-     * EC2 instance ID for the instance. If the <code>AWS_EC2_INSTANCE_ID</code>
-     * attribute is specified, then the only other attribute that can be specified is
-     * <code>AWS_INIT_HEALTH_STATUS</code>. When the <code>AWS_EC2_INSTANCE_ID</code>
-     * attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute will
-     * be filled out with the primary private IPv4 address.</p> </dd>
-     * <dt>AWS_INIT_HEALTH_STATUS</dt> <dd> <p>If the service configuration includes
-     * <code>HealthCheckCustomConfig</code>, you can optionally use
-     * <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom
-     * health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't
-     * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
-     * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If the
-     * service configuration includes a <code>CNAME</code> record, the domain name that
-     * you want Route 53 to return in response to DNS queries (for example,
+     * for any of the <code>AWS_INSTANCE</code> attributes.</p> </li> <li> <p>The
+     * <code>AWS_ALIAS_DNS_NAME</code> is not supported in the GovCloud (US)
+     * Regions.</p> </li> </ul> </dd> <dt>AWS_EC2_INSTANCE_ID</dt> <dd> <p> <i>HTTP
+     * namespaces only.</i> The Amazon EC2 instance ID for the instance. If the
+     * <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the only other
+     * attribute that can be specified is <code>AWS_INIT_HEALTH_STATUS</code>. When the
+     * <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the
+     * <code>AWS_INSTANCE_IPV4</code> attribute will be filled out with the primary
+     * private IPv4 address.</p> </dd> <dt>AWS_INIT_HEALTH_STATUS</dt> <dd> <p>If the
+     * service configuration includes <code>HealthCheckCustomConfig</code>, you can
+     * optionally use <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status
+     * of the custom health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If
+     * you don't specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial
+     * status is <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If
+     * the service configuration includes a <code>CNAME</code> record, the domain name
+     * that you want Route 53 to return in response to DNS queries (for example,
      * <code>example.com</code>).</p> <p>This value is required if the service
      * specified by <code>ServiceId</code> includes settings for an <code>CNAME</code>
      * record.</p> </dd> <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>If the service

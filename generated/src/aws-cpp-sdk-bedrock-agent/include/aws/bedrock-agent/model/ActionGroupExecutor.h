@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
+#include <aws/bedrock-agent/model/CustomControlMethod.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -36,6 +37,43 @@ namespace Model
     AWS_BEDROCKAGENT_API ActionGroupExecutor(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API ActionGroupExecutor& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>To return the action group invocation results directly in the
+     * <code>InvokeAgent</code> response, specify <code>RETURN_CONTROL</code>.</p>
+     */
+    inline const CustomControlMethod& GetCustomControl() const{ return m_customControl; }
+
+    /**
+     * <p>To return the action group invocation results directly in the
+     * <code>InvokeAgent</code> response, specify <code>RETURN_CONTROL</code>.</p>
+     */
+    inline bool CustomControlHasBeenSet() const { return m_customControlHasBeenSet; }
+
+    /**
+     * <p>To return the action group invocation results directly in the
+     * <code>InvokeAgent</code> response, specify <code>RETURN_CONTROL</code>.</p>
+     */
+    inline void SetCustomControl(const CustomControlMethod& value) { m_customControlHasBeenSet = true; m_customControl = value; }
+
+    /**
+     * <p>To return the action group invocation results directly in the
+     * <code>InvokeAgent</code> response, specify <code>RETURN_CONTROL</code>.</p>
+     */
+    inline void SetCustomControl(CustomControlMethod&& value) { m_customControlHasBeenSet = true; m_customControl = std::move(value); }
+
+    /**
+     * <p>To return the action group invocation results directly in the
+     * <code>InvokeAgent</code> response, specify <code>RETURN_CONTROL</code>.</p>
+     */
+    inline ActionGroupExecutor& WithCustomControl(const CustomControlMethod& value) { SetCustomControl(value); return *this;}
+
+    /**
+     * <p>To return the action group invocation results directly in the
+     * <code>InvokeAgent</code> response, specify <code>RETURN_CONTROL</code>.</p>
+     */
+    inline ActionGroupExecutor& WithCustomControl(CustomControlMethod&& value) { SetCustomControl(std::move(value)); return *this;}
 
 
     /**
@@ -87,6 +125,9 @@ namespace Model
     inline ActionGroupExecutor& WithLambda(const char* value) { SetLambda(value); return *this;}
 
   private:
+
+    CustomControlMethod m_customControl;
+    bool m_customControlHasBeenSet = false;
 
     Aws::String m_lambda;
     bool m_lambdaHasBeenSet = false;

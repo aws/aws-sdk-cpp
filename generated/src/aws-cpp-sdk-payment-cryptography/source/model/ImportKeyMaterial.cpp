@@ -19,38 +19,38 @@ namespace Model
 {
 
 ImportKeyMaterial::ImportKeyMaterial() : 
-    m_keyCryptogramHasBeenSet(false),
     m_rootCertificatePublicKeyHasBeenSet(false),
+    m_trustedCertificatePublicKeyHasBeenSet(false),
     m_tr31KeyBlockHasBeenSet(false),
     m_tr34KeyBlockHasBeenSet(false),
-    m_trustedCertificatePublicKeyHasBeenSet(false)
+    m_keyCryptogramHasBeenSet(false)
 {
 }
 
 ImportKeyMaterial::ImportKeyMaterial(JsonView jsonValue) : 
-    m_keyCryptogramHasBeenSet(false),
     m_rootCertificatePublicKeyHasBeenSet(false),
+    m_trustedCertificatePublicKeyHasBeenSet(false),
     m_tr31KeyBlockHasBeenSet(false),
     m_tr34KeyBlockHasBeenSet(false),
-    m_trustedCertificatePublicKeyHasBeenSet(false)
+    m_keyCryptogramHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 ImportKeyMaterial& ImportKeyMaterial::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("KeyCryptogram"))
-  {
-    m_keyCryptogram = jsonValue.GetObject("KeyCryptogram");
-
-    m_keyCryptogramHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("RootCertificatePublicKey"))
   {
     m_rootCertificatePublicKey = jsonValue.GetObject("RootCertificatePublicKey");
 
     m_rootCertificatePublicKeyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TrustedCertificatePublicKey"))
+  {
+    m_trustedCertificatePublicKey = jsonValue.GetObject("TrustedCertificatePublicKey");
+
+    m_trustedCertificatePublicKeyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Tr31KeyBlock"))
@@ -67,11 +67,11 @@ ImportKeyMaterial& ImportKeyMaterial::operator =(JsonView jsonValue)
     m_tr34KeyBlockHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("TrustedCertificatePublicKey"))
+  if(jsonValue.ValueExists("KeyCryptogram"))
   {
-    m_trustedCertificatePublicKey = jsonValue.GetObject("TrustedCertificatePublicKey");
+    m_keyCryptogram = jsonValue.GetObject("KeyCryptogram");
 
-    m_trustedCertificatePublicKeyHasBeenSet = true;
+    m_keyCryptogramHasBeenSet = true;
   }
 
   return *this;
@@ -81,15 +81,15 @@ JsonValue ImportKeyMaterial::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_keyCryptogramHasBeenSet)
-  {
-   payload.WithObject("KeyCryptogram", m_keyCryptogram.Jsonize());
-
-  }
-
   if(m_rootCertificatePublicKeyHasBeenSet)
   {
    payload.WithObject("RootCertificatePublicKey", m_rootCertificatePublicKey.Jsonize());
+
+  }
+
+  if(m_trustedCertificatePublicKeyHasBeenSet)
+  {
+   payload.WithObject("TrustedCertificatePublicKey", m_trustedCertificatePublicKey.Jsonize());
 
   }
 
@@ -105,9 +105,9 @@ JsonValue ImportKeyMaterial::Jsonize() const
 
   }
 
-  if(m_trustedCertificatePublicKeyHasBeenSet)
+  if(m_keyCryptogramHasBeenSet)
   {
-   payload.WithObject("TrustedCertificatePublicKey", m_trustedCertificatePublicKey.Jsonize());
+   payload.WithObject("KeyCryptogram", m_keyCryptogram.Jsonize());
 
   }
 

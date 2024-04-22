@@ -19,13 +19,17 @@ namespace Model
 {
 
 SessionState::SessionState() : 
+    m_invocationIdHasBeenSet(false),
     m_promptSessionAttributesHasBeenSet(false),
+    m_returnControlInvocationResultsHasBeenSet(false),
     m_sessionAttributesHasBeenSet(false)
 {
 }
 
 SessionState::SessionState(JsonView jsonValue) : 
+    m_invocationIdHasBeenSet(false),
     m_promptSessionAttributesHasBeenSet(false),
+    m_returnControlInvocationResultsHasBeenSet(false),
     m_sessionAttributesHasBeenSet(false)
 {
   *this = jsonValue;
@@ -33,6 +37,13 @@ SessionState::SessionState(JsonView jsonValue) :
 
 SessionState& SessionState::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("invocationId"))
+  {
+    m_invocationId = jsonValue.GetString("invocationId");
+
+    m_invocationIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("promptSessionAttributes"))
   {
     Aws::Map<Aws::String, JsonView> promptSessionAttributesJsonMap = jsonValue.GetObject("promptSessionAttributes").GetAllObjects();
@@ -41,6 +52,16 @@ SessionState& SessionState::operator =(JsonView jsonValue)
       m_promptSessionAttributes[promptSessionAttributesItem.first] = promptSessionAttributesItem.second.AsString();
     }
     m_promptSessionAttributesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("returnControlInvocationResults"))
+  {
+    Aws::Utils::Array<JsonView> returnControlInvocationResultsJsonList = jsonValue.GetArray("returnControlInvocationResults");
+    for(unsigned returnControlInvocationResultsIndex = 0; returnControlInvocationResultsIndex < returnControlInvocationResultsJsonList.GetLength(); ++returnControlInvocationResultsIndex)
+    {
+      m_returnControlInvocationResults.push_back(returnControlInvocationResultsJsonList[returnControlInvocationResultsIndex].AsObject());
+    }
+    m_returnControlInvocationResultsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sessionAttributes"))
@@ -60,6 +81,12 @@ JsonValue SessionState::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_invocationIdHasBeenSet)
+  {
+   payload.WithString("invocationId", m_invocationId);
+
+  }
+
   if(m_promptSessionAttributesHasBeenSet)
   {
    JsonValue promptSessionAttributesJsonMap;
@@ -68,6 +95,17 @@ JsonValue SessionState::Jsonize() const
      promptSessionAttributesJsonMap.WithString(promptSessionAttributesItem.first, promptSessionAttributesItem.second);
    }
    payload.WithObject("promptSessionAttributes", std::move(promptSessionAttributesJsonMap));
+
+  }
+
+  if(m_returnControlInvocationResultsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> returnControlInvocationResultsJsonList(m_returnControlInvocationResults.size());
+   for(unsigned returnControlInvocationResultsIndex = 0; returnControlInvocationResultsIndex < returnControlInvocationResultsJsonList.GetLength(); ++returnControlInvocationResultsIndex)
+   {
+     returnControlInvocationResultsJsonList[returnControlInvocationResultsIndex].AsObject(m_returnControlInvocationResults[returnControlInvocationResultsIndex].Jsonize());
+   }
+   payload.WithArray("returnControlInvocationResults", std::move(returnControlInvocationResultsJsonList));
 
   }
 

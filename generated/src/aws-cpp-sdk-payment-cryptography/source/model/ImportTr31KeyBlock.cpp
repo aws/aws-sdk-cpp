@@ -19,32 +19,32 @@ namespace Model
 {
 
 ImportTr31KeyBlock::ImportTr31KeyBlock() : 
-    m_wrappedKeyBlockHasBeenSet(false),
-    m_wrappingKeyIdentifierHasBeenSet(false)
+    m_wrappingKeyIdentifierHasBeenSet(false),
+    m_wrappedKeyBlockHasBeenSet(false)
 {
 }
 
 ImportTr31KeyBlock::ImportTr31KeyBlock(JsonView jsonValue) : 
-    m_wrappedKeyBlockHasBeenSet(false),
-    m_wrappingKeyIdentifierHasBeenSet(false)
+    m_wrappingKeyIdentifierHasBeenSet(false),
+    m_wrappedKeyBlockHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 ImportTr31KeyBlock& ImportTr31KeyBlock::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("WrappedKeyBlock"))
-  {
-    m_wrappedKeyBlock = jsonValue.GetString("WrappedKeyBlock");
-
-    m_wrappedKeyBlockHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("WrappingKeyIdentifier"))
   {
     m_wrappingKeyIdentifier = jsonValue.GetString("WrappingKeyIdentifier");
 
     m_wrappingKeyIdentifierHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("WrappedKeyBlock"))
+  {
+    m_wrappedKeyBlock = jsonValue.GetString("WrappedKeyBlock");
+
+    m_wrappedKeyBlockHasBeenSet = true;
   }
 
   return *this;
@@ -54,15 +54,15 @@ JsonValue ImportTr31KeyBlock::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_wrappedKeyBlockHasBeenSet)
-  {
-   payload.WithString("WrappedKeyBlock", m_wrappedKeyBlock);
-
-  }
-
   if(m_wrappingKeyIdentifierHasBeenSet)
   {
    payload.WithString("WrappingKeyIdentifier", m_wrappingKeyIdentifier);
+
+  }
+
+  if(m_wrappedKeyBlockHasBeenSet)
+  {
+   payload.WithString("WrappedKeyBlock", m_wrappedKeyBlock);
 
   }
 

@@ -30,6 +30,7 @@ AgentActionGroup::AgentActionGroup() :
     m_clientTokenHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_functionSchemaHasBeenSet(false),
     m_parentActionSignature(ActionGroupSignature::NOT_SET),
     m_parentActionSignatureHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
@@ -48,6 +49,7 @@ AgentActionGroup::AgentActionGroup(JsonView jsonValue) :
     m_clientTokenHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_functionSchemaHasBeenSet(false),
     m_parentActionSignature(ActionGroupSignature::NOT_SET),
     m_parentActionSignatureHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
@@ -127,6 +129,13 @@ AgentActionGroup& AgentActionGroup::operator =(JsonView jsonValue)
     m_descriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("functionSchema"))
+  {
+    m_functionSchema = jsonValue.GetObject("functionSchema");
+
+    m_functionSchemaHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("parentActionSignature"))
   {
     m_parentActionSignature = ActionGroupSignatureMapper::GetActionGroupSignatureForName(jsonValue.GetString("parentActionSignature"));
@@ -203,6 +212,12 @@ JsonValue AgentActionGroup::Jsonize() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_functionSchemaHasBeenSet)
+  {
+   payload.WithObject("functionSchema", m_functionSchema.Jsonize());
 
   }
 

@@ -13,11 +13,11 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ImportKeyRequest::ImportKeyRequest() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
+    m_keyMaterialHasBeenSet(false),
     m_keyCheckValueAlgorithm(KeyCheckValueAlgorithm::NOT_SET),
     m_keyCheckValueAlgorithmHasBeenSet(false),
-    m_keyMaterialHasBeenSet(false),
+    m_enabled(false),
+    m_enabledHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -26,9 +26,9 @@ Aws::String ImportKeyRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_enabledHasBeenSet)
+  if(m_keyMaterialHasBeenSet)
   {
-   payload.WithBool("Enabled", m_enabled);
+   payload.WithObject("KeyMaterial", m_keyMaterial.Jsonize());
 
   }
 
@@ -37,9 +37,9 @@ Aws::String ImportKeyRequest::SerializePayload() const
    payload.WithString("KeyCheckValueAlgorithm", KeyCheckValueAlgorithmMapper::GetNameForKeyCheckValueAlgorithm(m_keyCheckValueAlgorithm));
   }
 
-  if(m_keyMaterialHasBeenSet)
+  if(m_enabledHasBeenSet)
   {
-   payload.WithObject("KeyMaterial", m_keyMaterial.Jsonize());
+   payload.WithBool("Enabled", m_enabled);
 
   }
 

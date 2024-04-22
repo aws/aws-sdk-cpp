@@ -5,12 +5,12 @@
 
 #pragma once
 #include <aws/payment-cryptography/PaymentCryptography_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/payment-cryptography/model/KeyAttributes.h>
 #include <aws/payment-cryptography/model/KeyCheckValueAlgorithm.h>
-#include <aws/payment-cryptography/model/KeyOrigin.h>
 #include <aws/payment-cryptography/model/KeyState.h>
+#include <aws/payment-cryptography/model/KeyOrigin.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -41,175 +41,6 @@ namespace Model
     AWS_PAYMENTCRYPTOGRAPHY_API Key(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHY_API Key& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHY_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The date and time when the key was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreateTimestamp() const{ return m_createTimestamp; }
-
-    /**
-     * <p>The date and time when the key was created.</p>
-     */
-    inline bool CreateTimestampHasBeenSet() const { return m_createTimestampHasBeenSet; }
-
-    /**
-     * <p>The date and time when the key was created.</p>
-     */
-    inline void SetCreateTimestamp(const Aws::Utils::DateTime& value) { m_createTimestampHasBeenSet = true; m_createTimestamp = value; }
-
-    /**
-     * <p>The date and time when the key was created.</p>
-     */
-    inline void SetCreateTimestamp(Aws::Utils::DateTime&& value) { m_createTimestampHasBeenSet = true; m_createTimestamp = std::move(value); }
-
-    /**
-     * <p>The date and time when the key was created.</p>
-     */
-    inline Key& WithCreateTimestamp(const Aws::Utils::DateTime& value) { SetCreateTimestamp(value); return *this;}
-
-    /**
-     * <p>The date and time when the key was created.</p>
-     */
-    inline Key& WithCreateTimestamp(Aws::Utils::DateTime&& value) { SetCreateTimestamp(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The date and time after which Amazon Web Services Payment Cryptography will
-     * delete the key. This value is present only when <code>KeyState</code> is
-     * <code>DELETE_PENDING</code> and the key is scheduled for deletion.</p>
-     */
-    inline const Aws::Utils::DateTime& GetDeletePendingTimestamp() const{ return m_deletePendingTimestamp; }
-
-    /**
-     * <p>The date and time after which Amazon Web Services Payment Cryptography will
-     * delete the key. This value is present only when <code>KeyState</code> is
-     * <code>DELETE_PENDING</code> and the key is scheduled for deletion.</p>
-     */
-    inline bool DeletePendingTimestampHasBeenSet() const { return m_deletePendingTimestampHasBeenSet; }
-
-    /**
-     * <p>The date and time after which Amazon Web Services Payment Cryptography will
-     * delete the key. This value is present only when <code>KeyState</code> is
-     * <code>DELETE_PENDING</code> and the key is scheduled for deletion.</p>
-     */
-    inline void SetDeletePendingTimestamp(const Aws::Utils::DateTime& value) { m_deletePendingTimestampHasBeenSet = true; m_deletePendingTimestamp = value; }
-
-    /**
-     * <p>The date and time after which Amazon Web Services Payment Cryptography will
-     * delete the key. This value is present only when <code>KeyState</code> is
-     * <code>DELETE_PENDING</code> and the key is scheduled for deletion.</p>
-     */
-    inline void SetDeletePendingTimestamp(Aws::Utils::DateTime&& value) { m_deletePendingTimestampHasBeenSet = true; m_deletePendingTimestamp = std::move(value); }
-
-    /**
-     * <p>The date and time after which Amazon Web Services Payment Cryptography will
-     * delete the key. This value is present only when <code>KeyState</code> is
-     * <code>DELETE_PENDING</code> and the key is scheduled for deletion.</p>
-     */
-    inline Key& WithDeletePendingTimestamp(const Aws::Utils::DateTime& value) { SetDeletePendingTimestamp(value); return *this;}
-
-    /**
-     * <p>The date and time after which Amazon Web Services Payment Cryptography will
-     * delete the key. This value is present only when <code>KeyState</code> is
-     * <code>DELETE_PENDING</code> and the key is scheduled for deletion.</p>
-     */
-    inline Key& WithDeletePendingTimestamp(Aws::Utils::DateTime&& value) { SetDeletePendingTimestamp(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The date and time after which Amazon Web Services Payment Cryptography will
-     * delete the key. This value is present only when when the <code>KeyState</code>
-     * is <code>DELETE_COMPLETE</code> and the Amazon Web Services Payment Cryptography
-     * key is deleted.</p>
-     */
-    inline const Aws::Utils::DateTime& GetDeleteTimestamp() const{ return m_deleteTimestamp; }
-
-    /**
-     * <p>The date and time after which Amazon Web Services Payment Cryptography will
-     * delete the key. This value is present only when when the <code>KeyState</code>
-     * is <code>DELETE_COMPLETE</code> and the Amazon Web Services Payment Cryptography
-     * key is deleted.</p>
-     */
-    inline bool DeleteTimestampHasBeenSet() const { return m_deleteTimestampHasBeenSet; }
-
-    /**
-     * <p>The date and time after which Amazon Web Services Payment Cryptography will
-     * delete the key. This value is present only when when the <code>KeyState</code>
-     * is <code>DELETE_COMPLETE</code> and the Amazon Web Services Payment Cryptography
-     * key is deleted.</p>
-     */
-    inline void SetDeleteTimestamp(const Aws::Utils::DateTime& value) { m_deleteTimestampHasBeenSet = true; m_deleteTimestamp = value; }
-
-    /**
-     * <p>The date and time after which Amazon Web Services Payment Cryptography will
-     * delete the key. This value is present only when when the <code>KeyState</code>
-     * is <code>DELETE_COMPLETE</code> and the Amazon Web Services Payment Cryptography
-     * key is deleted.</p>
-     */
-    inline void SetDeleteTimestamp(Aws::Utils::DateTime&& value) { m_deleteTimestampHasBeenSet = true; m_deleteTimestamp = std::move(value); }
-
-    /**
-     * <p>The date and time after which Amazon Web Services Payment Cryptography will
-     * delete the key. This value is present only when when the <code>KeyState</code>
-     * is <code>DELETE_COMPLETE</code> and the Amazon Web Services Payment Cryptography
-     * key is deleted.</p>
-     */
-    inline Key& WithDeleteTimestamp(const Aws::Utils::DateTime& value) { SetDeleteTimestamp(value); return *this;}
-
-    /**
-     * <p>The date and time after which Amazon Web Services Payment Cryptography will
-     * delete the key. This value is present only when when the <code>KeyState</code>
-     * is <code>DELETE_COMPLETE</code> and the Amazon Web Services Payment Cryptography
-     * key is deleted.</p>
-     */
-    inline Key& WithDeleteTimestamp(Aws::Utils::DateTime&& value) { SetDeleteTimestamp(std::move(value)); return *this;}
-
-
-    /**
-     * <p>Specifies whether the key is enabled. </p>
-     */
-    inline bool GetEnabled() const{ return m_enabled; }
-
-    /**
-     * <p>Specifies whether the key is enabled. </p>
-     */
-    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-
-    /**
-     * <p>Specifies whether the key is enabled. </p>
-     */
-    inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-
-    /**
-     * <p>Specifies whether the key is enabled. </p>
-     */
-    inline Key& WithEnabled(bool value) { SetEnabled(value); return *this;}
-
-
-    /**
-     * <p>Specifies whether the key is exportable. This data is immutable after the key
-     * is created.</p>
-     */
-    inline bool GetExportable() const{ return m_exportable; }
-
-    /**
-     * <p>Specifies whether the key is exportable. This data is immutable after the key
-     * is created.</p>
-     */
-    inline bool ExportableHasBeenSet() const { return m_exportableHasBeenSet; }
-
-    /**
-     * <p>Specifies whether the key is exportable. This data is immutable after the key
-     * is created.</p>
-     */
-    inline void SetExportable(bool value) { m_exportableHasBeenSet = true; m_exportable = value; }
-
-    /**
-     * <p>Specifies whether the key is exportable. This data is immutable after the key
-     * is created.</p>
-     */
-    inline Key& WithExportable(bool value) { SetExportable(value); return *this;}
 
 
     /**
@@ -413,6 +244,83 @@ namespace Model
 
 
     /**
+     * <p>Specifies whether the key is enabled. </p>
+     */
+    inline bool GetEnabled() const{ return m_enabled; }
+
+    /**
+     * <p>Specifies whether the key is enabled. </p>
+     */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the key is enabled. </p>
+     */
+    inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
+
+    /**
+     * <p>Specifies whether the key is enabled. </p>
+     */
+    inline Key& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
+
+    /**
+     * <p>Specifies whether the key is exportable. This data is immutable after the key
+     * is created.</p>
+     */
+    inline bool GetExportable() const{ return m_exportable; }
+
+    /**
+     * <p>Specifies whether the key is exportable. This data is immutable after the key
+     * is created.</p>
+     */
+    inline bool ExportableHasBeenSet() const { return m_exportableHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the key is exportable. This data is immutable after the key
+     * is created.</p>
+     */
+    inline void SetExportable(bool value) { m_exportableHasBeenSet = true; m_exportable = value; }
+
+    /**
+     * <p>Specifies whether the key is exportable. This data is immutable after the key
+     * is created.</p>
+     */
+    inline Key& WithExportable(bool value) { SetExportable(value); return *this;}
+
+
+    /**
+     * <p>The state of key that is being created or deleted.</p>
+     */
+    inline const KeyState& GetKeyState() const{ return m_keyState; }
+
+    /**
+     * <p>The state of key that is being created or deleted.</p>
+     */
+    inline bool KeyStateHasBeenSet() const { return m_keyStateHasBeenSet; }
+
+    /**
+     * <p>The state of key that is being created or deleted.</p>
+     */
+    inline void SetKeyState(const KeyState& value) { m_keyStateHasBeenSet = true; m_keyState = value; }
+
+    /**
+     * <p>The state of key that is being created or deleted.</p>
+     */
+    inline void SetKeyState(KeyState&& value) { m_keyStateHasBeenSet = true; m_keyState = std::move(value); }
+
+    /**
+     * <p>The state of key that is being created or deleted.</p>
+     */
+    inline Key& WithKeyState(const KeyState& value) { SetKeyState(value); return *this;}
+
+    /**
+     * <p>The state of key that is being created or deleted.</p>
+     */
+    inline Key& WithKeyState(KeyState&& value) { SetKeyState(std::move(value)); return *this;}
+
+
+    /**
      * <p>The source of the key material. For keys created within Amazon Web Services
      * Payment Cryptography, the value is <code>AWS_PAYMENT_CRYPTOGRAPHY</code>. For
      * keys imported into Amazon Web Services Payment Cryptography, the value is
@@ -462,34 +370,34 @@ namespace Model
 
 
     /**
-     * <p>The state of key that is being created or deleted.</p>
+     * <p>The date and time when the key was created.</p>
      */
-    inline const KeyState& GetKeyState() const{ return m_keyState; }
+    inline const Aws::Utils::DateTime& GetCreateTimestamp() const{ return m_createTimestamp; }
 
     /**
-     * <p>The state of key that is being created or deleted.</p>
+     * <p>The date and time when the key was created.</p>
      */
-    inline bool KeyStateHasBeenSet() const { return m_keyStateHasBeenSet; }
+    inline bool CreateTimestampHasBeenSet() const { return m_createTimestampHasBeenSet; }
 
     /**
-     * <p>The state of key that is being created or deleted.</p>
+     * <p>The date and time when the key was created.</p>
      */
-    inline void SetKeyState(const KeyState& value) { m_keyStateHasBeenSet = true; m_keyState = value; }
+    inline void SetCreateTimestamp(const Aws::Utils::DateTime& value) { m_createTimestampHasBeenSet = true; m_createTimestamp = value; }
 
     /**
-     * <p>The state of key that is being created or deleted.</p>
+     * <p>The date and time when the key was created.</p>
      */
-    inline void SetKeyState(KeyState&& value) { m_keyStateHasBeenSet = true; m_keyState = std::move(value); }
+    inline void SetCreateTimestamp(Aws::Utils::DateTime&& value) { m_createTimestampHasBeenSet = true; m_createTimestamp = std::move(value); }
 
     /**
-     * <p>The state of key that is being created or deleted.</p>
+     * <p>The date and time when the key was created.</p>
      */
-    inline Key& WithKeyState(const KeyState& value) { SetKeyState(value); return *this;}
+    inline Key& WithCreateTimestamp(const Aws::Utils::DateTime& value) { SetCreateTimestamp(value); return *this;}
 
     /**
-     * <p>The state of key that is being created or deleted.</p>
+     * <p>The date and time when the key was created.</p>
      */
-    inline Key& WithKeyState(KeyState&& value) { SetKeyState(std::move(value)); return *this;}
+    inline Key& WithCreateTimestamp(Aws::Utils::DateTime&& value) { SetCreateTimestamp(std::move(value)); return *this;}
 
 
     /**
@@ -565,22 +473,99 @@ namespace Model
      */
     inline Key& WithUsageStopTimestamp(Aws::Utils::DateTime&& value) { SetUsageStopTimestamp(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The date and time after which Amazon Web Services Payment Cryptography will
+     * delete the key. This value is present only when <code>KeyState</code> is
+     * <code>DELETE_PENDING</code> and the key is scheduled for deletion.</p>
+     */
+    inline const Aws::Utils::DateTime& GetDeletePendingTimestamp() const{ return m_deletePendingTimestamp; }
+
+    /**
+     * <p>The date and time after which Amazon Web Services Payment Cryptography will
+     * delete the key. This value is present only when <code>KeyState</code> is
+     * <code>DELETE_PENDING</code> and the key is scheduled for deletion.</p>
+     */
+    inline bool DeletePendingTimestampHasBeenSet() const { return m_deletePendingTimestampHasBeenSet; }
+
+    /**
+     * <p>The date and time after which Amazon Web Services Payment Cryptography will
+     * delete the key. This value is present only when <code>KeyState</code> is
+     * <code>DELETE_PENDING</code> and the key is scheduled for deletion.</p>
+     */
+    inline void SetDeletePendingTimestamp(const Aws::Utils::DateTime& value) { m_deletePendingTimestampHasBeenSet = true; m_deletePendingTimestamp = value; }
+
+    /**
+     * <p>The date and time after which Amazon Web Services Payment Cryptography will
+     * delete the key. This value is present only when <code>KeyState</code> is
+     * <code>DELETE_PENDING</code> and the key is scheduled for deletion.</p>
+     */
+    inline void SetDeletePendingTimestamp(Aws::Utils::DateTime&& value) { m_deletePendingTimestampHasBeenSet = true; m_deletePendingTimestamp = std::move(value); }
+
+    /**
+     * <p>The date and time after which Amazon Web Services Payment Cryptography will
+     * delete the key. This value is present only when <code>KeyState</code> is
+     * <code>DELETE_PENDING</code> and the key is scheduled for deletion.</p>
+     */
+    inline Key& WithDeletePendingTimestamp(const Aws::Utils::DateTime& value) { SetDeletePendingTimestamp(value); return *this;}
+
+    /**
+     * <p>The date and time after which Amazon Web Services Payment Cryptography will
+     * delete the key. This value is present only when <code>KeyState</code> is
+     * <code>DELETE_PENDING</code> and the key is scheduled for deletion.</p>
+     */
+    inline Key& WithDeletePendingTimestamp(Aws::Utils::DateTime&& value) { SetDeletePendingTimestamp(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The date and time after which Amazon Web Services Payment Cryptography will
+     * delete the key. This value is present only when when the <code>KeyState</code>
+     * is <code>DELETE_COMPLETE</code> and the Amazon Web Services Payment Cryptography
+     * key is deleted.</p>
+     */
+    inline const Aws::Utils::DateTime& GetDeleteTimestamp() const{ return m_deleteTimestamp; }
+
+    /**
+     * <p>The date and time after which Amazon Web Services Payment Cryptography will
+     * delete the key. This value is present only when when the <code>KeyState</code>
+     * is <code>DELETE_COMPLETE</code> and the Amazon Web Services Payment Cryptography
+     * key is deleted.</p>
+     */
+    inline bool DeleteTimestampHasBeenSet() const { return m_deleteTimestampHasBeenSet; }
+
+    /**
+     * <p>The date and time after which Amazon Web Services Payment Cryptography will
+     * delete the key. This value is present only when when the <code>KeyState</code>
+     * is <code>DELETE_COMPLETE</code> and the Amazon Web Services Payment Cryptography
+     * key is deleted.</p>
+     */
+    inline void SetDeleteTimestamp(const Aws::Utils::DateTime& value) { m_deleteTimestampHasBeenSet = true; m_deleteTimestamp = value; }
+
+    /**
+     * <p>The date and time after which Amazon Web Services Payment Cryptography will
+     * delete the key. This value is present only when when the <code>KeyState</code>
+     * is <code>DELETE_COMPLETE</code> and the Amazon Web Services Payment Cryptography
+     * key is deleted.</p>
+     */
+    inline void SetDeleteTimestamp(Aws::Utils::DateTime&& value) { m_deleteTimestampHasBeenSet = true; m_deleteTimestamp = std::move(value); }
+
+    /**
+     * <p>The date and time after which Amazon Web Services Payment Cryptography will
+     * delete the key. This value is present only when when the <code>KeyState</code>
+     * is <code>DELETE_COMPLETE</code> and the Amazon Web Services Payment Cryptography
+     * key is deleted.</p>
+     */
+    inline Key& WithDeleteTimestamp(const Aws::Utils::DateTime& value) { SetDeleteTimestamp(value); return *this;}
+
+    /**
+     * <p>The date and time after which Amazon Web Services Payment Cryptography will
+     * delete the key. This value is present only when when the <code>KeyState</code>
+     * is <code>DELETE_COMPLETE</code> and the Amazon Web Services Payment Cryptography
+     * key is deleted.</p>
+     */
+    inline Key& WithDeleteTimestamp(Aws::Utils::DateTime&& value) { SetDeleteTimestamp(std::move(value)); return *this;}
+
   private:
-
-    Aws::Utils::DateTime m_createTimestamp;
-    bool m_createTimestampHasBeenSet = false;
-
-    Aws::Utils::DateTime m_deletePendingTimestamp;
-    bool m_deletePendingTimestampHasBeenSet = false;
-
-    Aws::Utils::DateTime m_deleteTimestamp;
-    bool m_deleteTimestampHasBeenSet = false;
-
-    bool m_enabled;
-    bool m_enabledHasBeenSet = false;
-
-    bool m_exportable;
-    bool m_exportableHasBeenSet = false;
 
     Aws::String m_keyArn;
     bool m_keyArnHasBeenSet = false;
@@ -594,17 +579,32 @@ namespace Model
     KeyCheckValueAlgorithm m_keyCheckValueAlgorithm;
     bool m_keyCheckValueAlgorithmHasBeenSet = false;
 
-    KeyOrigin m_keyOrigin;
-    bool m_keyOriginHasBeenSet = false;
+    bool m_enabled;
+    bool m_enabledHasBeenSet = false;
+
+    bool m_exportable;
+    bool m_exportableHasBeenSet = false;
 
     KeyState m_keyState;
     bool m_keyStateHasBeenSet = false;
+
+    KeyOrigin m_keyOrigin;
+    bool m_keyOriginHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createTimestamp;
+    bool m_createTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_usageStartTimestamp;
     bool m_usageStartTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_usageStopTimestamp;
     bool m_usageStopTimestampHasBeenSet = false;
+
+    Aws::Utils::DateTime m_deletePendingTimestamp;
+    bool m_deletePendingTimestampHasBeenSet = false;
+
+    Aws::Utils::DateTime m_deleteTimestamp;
+    bool m_deleteTimestampHasBeenSet = false;
   };
 
 } // namespace Model

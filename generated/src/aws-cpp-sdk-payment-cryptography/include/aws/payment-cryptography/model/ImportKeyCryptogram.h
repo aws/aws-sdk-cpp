@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/payment-cryptography/PaymentCryptography_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/payment-cryptography/model/KeyAttributes.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/payment-cryptography/model/WrappingKeySpec.h>
 #include <utility>
 
@@ -40,6 +40,25 @@ namespace Model
     AWS_PAYMENTCRYPTOGRAPHY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    
+    inline const KeyAttributes& GetKeyAttributes() const{ return m_keyAttributes; }
+
+    
+    inline bool KeyAttributesHasBeenSet() const { return m_keyAttributesHasBeenSet; }
+
+    
+    inline void SetKeyAttributes(const KeyAttributes& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes = value; }
+
+    
+    inline void SetKeyAttributes(KeyAttributes&& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes = std::move(value); }
+
+    
+    inline ImportKeyCryptogram& WithKeyAttributes(const KeyAttributes& value) { SetKeyAttributes(value); return *this;}
+
+    
+    inline ImportKeyCryptogram& WithKeyAttributes(KeyAttributes&& value) { SetKeyAttributes(std::move(value)); return *this;}
+
+
     /**
      * <p>Specifies whether the key is exportable from the service.</p>
      */
@@ -59,6 +78,47 @@ namespace Model
      * <p>Specifies whether the key is exportable from the service.</p>
      */
     inline ImportKeyCryptogram& WithExportable(bool value) { SetExportable(value); return *this;}
+
+
+    /**
+     * <p>The RSA wrapped key cryptogram under import.</p>
+     */
+    inline const Aws::String& GetWrappedKeyCryptogram() const{ return m_wrappedKeyCryptogram; }
+
+    /**
+     * <p>The RSA wrapped key cryptogram under import.</p>
+     */
+    inline bool WrappedKeyCryptogramHasBeenSet() const { return m_wrappedKeyCryptogramHasBeenSet; }
+
+    /**
+     * <p>The RSA wrapped key cryptogram under import.</p>
+     */
+    inline void SetWrappedKeyCryptogram(const Aws::String& value) { m_wrappedKeyCryptogramHasBeenSet = true; m_wrappedKeyCryptogram = value; }
+
+    /**
+     * <p>The RSA wrapped key cryptogram under import.</p>
+     */
+    inline void SetWrappedKeyCryptogram(Aws::String&& value) { m_wrappedKeyCryptogramHasBeenSet = true; m_wrappedKeyCryptogram = std::move(value); }
+
+    /**
+     * <p>The RSA wrapped key cryptogram under import.</p>
+     */
+    inline void SetWrappedKeyCryptogram(const char* value) { m_wrappedKeyCryptogramHasBeenSet = true; m_wrappedKeyCryptogram.assign(value); }
+
+    /**
+     * <p>The RSA wrapped key cryptogram under import.</p>
+     */
+    inline ImportKeyCryptogram& WithWrappedKeyCryptogram(const Aws::String& value) { SetWrappedKeyCryptogram(value); return *this;}
+
+    /**
+     * <p>The RSA wrapped key cryptogram under import.</p>
+     */
+    inline ImportKeyCryptogram& WithWrappedKeyCryptogram(Aws::String&& value) { SetWrappedKeyCryptogram(std::move(value)); return *this;}
+
+    /**
+     * <p>The RSA wrapped key cryptogram under import.</p>
+     */
+    inline ImportKeyCryptogram& WithWrappedKeyCryptogram(const char* value) { SetWrappedKeyCryptogram(value); return *this;}
 
 
     /**
@@ -126,66 +186,6 @@ namespace Model
     inline ImportKeyCryptogram& WithImportToken(const char* value) { SetImportToken(value); return *this;}
 
 
-    
-    inline const KeyAttributes& GetKeyAttributes() const{ return m_keyAttributes; }
-
-    
-    inline bool KeyAttributesHasBeenSet() const { return m_keyAttributesHasBeenSet; }
-
-    
-    inline void SetKeyAttributes(const KeyAttributes& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes = value; }
-
-    
-    inline void SetKeyAttributes(KeyAttributes&& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes = std::move(value); }
-
-    
-    inline ImportKeyCryptogram& WithKeyAttributes(const KeyAttributes& value) { SetKeyAttributes(value); return *this;}
-
-    
-    inline ImportKeyCryptogram& WithKeyAttributes(KeyAttributes&& value) { SetKeyAttributes(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The RSA wrapped key cryptogram under import.</p>
-     */
-    inline const Aws::String& GetWrappedKeyCryptogram() const{ return m_wrappedKeyCryptogram; }
-
-    /**
-     * <p>The RSA wrapped key cryptogram under import.</p>
-     */
-    inline bool WrappedKeyCryptogramHasBeenSet() const { return m_wrappedKeyCryptogramHasBeenSet; }
-
-    /**
-     * <p>The RSA wrapped key cryptogram under import.</p>
-     */
-    inline void SetWrappedKeyCryptogram(const Aws::String& value) { m_wrappedKeyCryptogramHasBeenSet = true; m_wrappedKeyCryptogram = value; }
-
-    /**
-     * <p>The RSA wrapped key cryptogram under import.</p>
-     */
-    inline void SetWrappedKeyCryptogram(Aws::String&& value) { m_wrappedKeyCryptogramHasBeenSet = true; m_wrappedKeyCryptogram = std::move(value); }
-
-    /**
-     * <p>The RSA wrapped key cryptogram under import.</p>
-     */
-    inline void SetWrappedKeyCryptogram(const char* value) { m_wrappedKeyCryptogramHasBeenSet = true; m_wrappedKeyCryptogram.assign(value); }
-
-    /**
-     * <p>The RSA wrapped key cryptogram under import.</p>
-     */
-    inline ImportKeyCryptogram& WithWrappedKeyCryptogram(const Aws::String& value) { SetWrappedKeyCryptogram(value); return *this;}
-
-    /**
-     * <p>The RSA wrapped key cryptogram under import.</p>
-     */
-    inline ImportKeyCryptogram& WithWrappedKeyCryptogram(Aws::String&& value) { SetWrappedKeyCryptogram(std::move(value)); return *this;}
-
-    /**
-     * <p>The RSA wrapped key cryptogram under import.</p>
-     */
-    inline ImportKeyCryptogram& WithWrappedKeyCryptogram(const char* value) { SetWrappedKeyCryptogram(value); return *this;}
-
-
     /**
      * <p>The wrapping spec for the wrapped key cryptogram.</p>
      */
@@ -218,17 +218,17 @@ namespace Model
 
   private:
 
-    bool m_exportable;
-    bool m_exportableHasBeenSet = false;
-
-    Aws::String m_importToken;
-    bool m_importTokenHasBeenSet = false;
-
     KeyAttributes m_keyAttributes;
     bool m_keyAttributesHasBeenSet = false;
 
+    bool m_exportable;
+    bool m_exportableHasBeenSet = false;
+
     Aws::String m_wrappedKeyCryptogram;
     bool m_wrappedKeyCryptogramHasBeenSet = false;
+
+    Aws::String m_importToken;
+    bool m_importTokenHasBeenSet = false;
 
     WrappingKeySpec m_wrappingSpec;
     bool m_wrappingSpecHasBeenSet = false;
