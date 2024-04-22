@@ -13,9 +13,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DeleteKeyRequest::DeleteKeyRequest() : 
+    m_keyIdentifierHasBeenSet(false),
     m_deleteKeyInDays(0),
-    m_deleteKeyInDaysHasBeenSet(false),
-    m_keyIdentifierHasBeenSet(false)
+    m_deleteKeyInDaysHasBeenSet(false)
 {
 }
 
@@ -23,15 +23,15 @@ Aws::String DeleteKeyRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_deleteKeyInDaysHasBeenSet)
-  {
-   payload.WithInteger("DeleteKeyInDays", m_deleteKeyInDays);
-
-  }
-
   if(m_keyIdentifierHasBeenSet)
   {
    payload.WithString("KeyIdentifier", m_keyIdentifier);
+
+  }
+
+  if(m_deleteKeyInDaysHasBeenSet)
+  {
+   payload.WithInteger("DeleteKeyInDays", m_deleteKeyInDays);
 
   }
 

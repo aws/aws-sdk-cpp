@@ -19,53 +19,46 @@ namespace Model
 {
 
 KeySummary::KeySummary() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_exportable(false),
-    m_exportableHasBeenSet(false),
     m_keyArnHasBeenSet(false),
+    m_keyState(KeyState::NOT_SET),
+    m_keyStateHasBeenSet(false),
     m_keyAttributesHasBeenSet(false),
     m_keyCheckValueHasBeenSet(false),
-    m_keyState(KeyState::NOT_SET),
-    m_keyStateHasBeenSet(false)
+    m_exportable(false),
+    m_exportableHasBeenSet(false),
+    m_enabled(false),
+    m_enabledHasBeenSet(false)
 {
 }
 
 KeySummary::KeySummary(JsonView jsonValue) : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_exportable(false),
-    m_exportableHasBeenSet(false),
     m_keyArnHasBeenSet(false),
+    m_keyState(KeyState::NOT_SET),
+    m_keyStateHasBeenSet(false),
     m_keyAttributesHasBeenSet(false),
     m_keyCheckValueHasBeenSet(false),
-    m_keyState(KeyState::NOT_SET),
-    m_keyStateHasBeenSet(false)
+    m_exportable(false),
+    m_exportableHasBeenSet(false),
+    m_enabled(false),
+    m_enabledHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 KeySummary& KeySummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Enabled"))
-  {
-    m_enabled = jsonValue.GetBool("Enabled");
-
-    m_enabledHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("Exportable"))
-  {
-    m_exportable = jsonValue.GetBool("Exportable");
-
-    m_exportableHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("KeyArn"))
   {
     m_keyArn = jsonValue.GetString("KeyArn");
 
     m_keyArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("KeyState"))
+  {
+    m_keyState = KeyStateMapper::GetKeyStateForName(jsonValue.GetString("KeyState"));
+
+    m_keyStateHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("KeyAttributes"))
@@ -82,11 +75,18 @@ KeySummary& KeySummary::operator =(JsonView jsonValue)
     m_keyCheckValueHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("KeyState"))
+  if(jsonValue.ValueExists("Exportable"))
   {
-    m_keyState = KeyStateMapper::GetKeyStateForName(jsonValue.GetString("KeyState"));
+    m_exportable = jsonValue.GetBool("Exportable");
 
-    m_keyStateHasBeenSet = true;
+    m_exportableHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Enabled"))
+  {
+    m_enabled = jsonValue.GetBool("Enabled");
+
+    m_enabledHasBeenSet = true;
   }
 
   return *this;
@@ -96,22 +96,15 @@ JsonValue KeySummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_enabledHasBeenSet)
-  {
-   payload.WithBool("Enabled", m_enabled);
-
-  }
-
-  if(m_exportableHasBeenSet)
-  {
-   payload.WithBool("Exportable", m_exportable);
-
-  }
-
   if(m_keyArnHasBeenSet)
   {
    payload.WithString("KeyArn", m_keyArn);
 
+  }
+
+  if(m_keyStateHasBeenSet)
+  {
+   payload.WithString("KeyState", KeyStateMapper::GetNameForKeyState(m_keyState));
   }
 
   if(m_keyAttributesHasBeenSet)
@@ -126,9 +119,16 @@ JsonValue KeySummary::Jsonize() const
 
   }
 
-  if(m_keyStateHasBeenSet)
+  if(m_exportableHasBeenSet)
   {
-   payload.WithString("KeyState", KeyStateMapper::GetNameForKeyState(m_keyState));
+   payload.WithBool("Exportable", m_exportable);
+
+  }
+
+  if(m_enabledHasBeenSet)
+  {
+   payload.WithBool("Enabled", m_enabled);
+
   }
 
   return payload;

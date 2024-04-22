@@ -39,56 +39,32 @@ namespace Model
 
 
     /**
-     * <p>Specifies how this certificate is used. It can be used in the following
-     * ways:</p> <ul> <li> <p> <code>SIGNING</code>: For signing AS2 messages</p> </li>
-     * <li> <p> <code>ENCRYPTION</code>: For encrypting AS2 messages</p> </li> <li> <p>
-     * <code>TLS</code>: For securing AS2 communications sent over HTTPS</p> </li>
-     * </ul>
+     * <p>Specifies whether this certificate is used for signing or encryption.</p>
      */
     inline const CertificateUsageType& GetUsage() const{ return m_usage; }
 
     /**
-     * <p>Specifies how this certificate is used. It can be used in the following
-     * ways:</p> <ul> <li> <p> <code>SIGNING</code>: For signing AS2 messages</p> </li>
-     * <li> <p> <code>ENCRYPTION</code>: For encrypting AS2 messages</p> </li> <li> <p>
-     * <code>TLS</code>: For securing AS2 communications sent over HTTPS</p> </li>
-     * </ul>
+     * <p>Specifies whether this certificate is used for signing or encryption.</p>
      */
     inline bool UsageHasBeenSet() const { return m_usageHasBeenSet; }
 
     /**
-     * <p>Specifies how this certificate is used. It can be used in the following
-     * ways:</p> <ul> <li> <p> <code>SIGNING</code>: For signing AS2 messages</p> </li>
-     * <li> <p> <code>ENCRYPTION</code>: For encrypting AS2 messages</p> </li> <li> <p>
-     * <code>TLS</code>: For securing AS2 communications sent over HTTPS</p> </li>
-     * </ul>
+     * <p>Specifies whether this certificate is used for signing or encryption.</p>
      */
     inline void SetUsage(const CertificateUsageType& value) { m_usageHasBeenSet = true; m_usage = value; }
 
     /**
-     * <p>Specifies how this certificate is used. It can be used in the following
-     * ways:</p> <ul> <li> <p> <code>SIGNING</code>: For signing AS2 messages</p> </li>
-     * <li> <p> <code>ENCRYPTION</code>: For encrypting AS2 messages</p> </li> <li> <p>
-     * <code>TLS</code>: For securing AS2 communications sent over HTTPS</p> </li>
-     * </ul>
+     * <p>Specifies whether this certificate is used for signing or encryption.</p>
      */
     inline void SetUsage(CertificateUsageType&& value) { m_usageHasBeenSet = true; m_usage = std::move(value); }
 
     /**
-     * <p>Specifies how this certificate is used. It can be used in the following
-     * ways:</p> <ul> <li> <p> <code>SIGNING</code>: For signing AS2 messages</p> </li>
-     * <li> <p> <code>ENCRYPTION</code>: For encrypting AS2 messages</p> </li> <li> <p>
-     * <code>TLS</code>: For securing AS2 communications sent over HTTPS</p> </li>
-     * </ul>
+     * <p>Specifies whether this certificate is used for signing or encryption.</p>
      */
     inline ImportCertificateRequest& WithUsage(const CertificateUsageType& value) { SetUsage(value); return *this;}
 
     /**
-     * <p>Specifies how this certificate is used. It can be used in the following
-     * ways:</p> <ul> <li> <p> <code>SIGNING</code>: For signing AS2 messages</p> </li>
-     * <li> <p> <code>ENCRYPTION</code>: For encrypting AS2 messages</p> </li> <li> <p>
-     * <code>TLS</code>: For securing AS2 communications sent over HTTPS</p> </li>
-     * </ul>
+     * <p>Specifies whether this certificate is used for signing or encryption.</p>
      */
     inline ImportCertificateRequest& WithUsage(CertificateUsageType&& value) { SetUsage(std::move(value)); return *this;}
 

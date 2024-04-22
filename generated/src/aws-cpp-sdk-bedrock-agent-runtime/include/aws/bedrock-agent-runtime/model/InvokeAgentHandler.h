@@ -12,6 +12,7 @@
 
 #include <aws/bedrock-agent-runtime/model/InvokeAgentInitialResponse.h>
 #include <aws/bedrock-agent-runtime/model/PayloadPart.h>
+#include <aws/bedrock-agent-runtime/model/ReturnControlPayload.h>
 #include <aws/bedrock-agent-runtime/model/TracePart.h>
 
 namespace Aws
@@ -24,6 +25,7 @@ namespace Model
     {
         INITIAL_RESPONSE,
         CHUNK,
+        RETURNCONTROL,
         TRACE,
         UNKNOWN
     };
@@ -32,6 +34,7 @@ namespace Model
     {
         typedef std::function<void(const InvokeAgentInitialResponse&)> InvokeAgentInitialResponseCallback;
         typedef std::function<void(const PayloadPart&)> PayloadPartCallback;
+        typedef std::function<void(const ReturnControlPayload&)> ReturnControlPayloadCallback;
         typedef std::function<void(const TracePart&)> TracePartCallback;
         typedef std::function<void(const Aws::Client::AWSError<BedrockAgentRuntimeErrors>& error)> ErrorCallback;
 
@@ -43,6 +46,7 @@ namespace Model
 
         inline void SetInitialResponseCallback(const InvokeAgentInitialResponseCallback& callback) { m_onInitialResponse = callback; }
         inline void SetPayloadPartCallback(const PayloadPartCallback& callback) { m_onPayloadPart = callback; }
+        inline void SetReturnControlPayloadCallback(const ReturnControlPayloadCallback& callback) { m_onReturnControlPayload = callback; }
         inline void SetTracePartCallback(const TracePartCallback& callback) { m_onTracePart = callback; }
         inline void SetOnErrorCallback(const ErrorCallback& callback) { m_onError = callback; }
 
@@ -53,6 +57,7 @@ namespace Model
 
         InvokeAgentInitialResponseCallback m_onInitialResponse;
         PayloadPartCallback m_onPayloadPart;
+        ReturnControlPayloadCallback m_onReturnControlPayload;
         TracePartCallback m_onTracePart;
         ErrorCallback m_onError;
     };

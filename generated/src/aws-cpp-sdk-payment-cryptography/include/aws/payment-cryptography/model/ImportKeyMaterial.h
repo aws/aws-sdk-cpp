@@ -5,11 +5,11 @@
 
 #pragma once
 #include <aws/payment-cryptography/PaymentCryptography_EXPORTS.h>
-#include <aws/payment-cryptography/model/ImportKeyCryptogram.h>
 #include <aws/payment-cryptography/model/RootCertificatePublicKey.h>
+#include <aws/payment-cryptography/model/TrustedCertificatePublicKey.h>
 #include <aws/payment-cryptography/model/ImportTr31KeyBlock.h>
 #include <aws/payment-cryptography/model/ImportTr34KeyBlock.h>
-#include <aws/payment-cryptography/model/TrustedCertificatePublicKey.h>
+#include <aws/payment-cryptography/model/ImportKeyCryptogram.h>
 #include <utility>
 
 namespace Aws
@@ -44,43 +44,6 @@ namespace Model
 
 
     /**
-     * <p>Parameter information for key material import using asymmetric RSA wrap and
-     * unwrap key exchange method.</p>
-     */
-    inline const ImportKeyCryptogram& GetKeyCryptogram() const{ return m_keyCryptogram; }
-
-    /**
-     * <p>Parameter information for key material import using asymmetric RSA wrap and
-     * unwrap key exchange method.</p>
-     */
-    inline bool KeyCryptogramHasBeenSet() const { return m_keyCryptogramHasBeenSet; }
-
-    /**
-     * <p>Parameter information for key material import using asymmetric RSA wrap and
-     * unwrap key exchange method.</p>
-     */
-    inline void SetKeyCryptogram(const ImportKeyCryptogram& value) { m_keyCryptogramHasBeenSet = true; m_keyCryptogram = value; }
-
-    /**
-     * <p>Parameter information for key material import using asymmetric RSA wrap and
-     * unwrap key exchange method.</p>
-     */
-    inline void SetKeyCryptogram(ImportKeyCryptogram&& value) { m_keyCryptogramHasBeenSet = true; m_keyCryptogram = std::move(value); }
-
-    /**
-     * <p>Parameter information for key material import using asymmetric RSA wrap and
-     * unwrap key exchange method.</p>
-     */
-    inline ImportKeyMaterial& WithKeyCryptogram(const ImportKeyCryptogram& value) { SetKeyCryptogram(value); return *this;}
-
-    /**
-     * <p>Parameter information for key material import using asymmetric RSA wrap and
-     * unwrap key exchange method.</p>
-     */
-    inline ImportKeyMaterial& WithKeyCryptogram(ImportKeyCryptogram&& value) { SetKeyCryptogram(std::move(value)); return *this;}
-
-
-    /**
      * <p>Parameter information for root public key certificate import.</p>
      */
     inline const RootCertificatePublicKey& GetRootCertificatePublicKey() const{ return m_rootCertificatePublicKey; }
@@ -109,6 +72,37 @@ namespace Model
      * <p>Parameter information for root public key certificate import.</p>
      */
     inline ImportKeyMaterial& WithRootCertificatePublicKey(RootCertificatePublicKey&& value) { SetRootCertificatePublicKey(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Parameter information for trusted public key certificate import.</p>
+     */
+    inline const TrustedCertificatePublicKey& GetTrustedCertificatePublicKey() const{ return m_trustedCertificatePublicKey; }
+
+    /**
+     * <p>Parameter information for trusted public key certificate import.</p>
+     */
+    inline bool TrustedCertificatePublicKeyHasBeenSet() const { return m_trustedCertificatePublicKeyHasBeenSet; }
+
+    /**
+     * <p>Parameter information for trusted public key certificate import.</p>
+     */
+    inline void SetTrustedCertificatePublicKey(const TrustedCertificatePublicKey& value) { m_trustedCertificatePublicKeyHasBeenSet = true; m_trustedCertificatePublicKey = value; }
+
+    /**
+     * <p>Parameter information for trusted public key certificate import.</p>
+     */
+    inline void SetTrustedCertificatePublicKey(TrustedCertificatePublicKey&& value) { m_trustedCertificatePublicKeyHasBeenSet = true; m_trustedCertificatePublicKey = std::move(value); }
+
+    /**
+     * <p>Parameter information for trusted public key certificate import.</p>
+     */
+    inline ImportKeyMaterial& WithTrustedCertificatePublicKey(const TrustedCertificatePublicKey& value) { SetTrustedCertificatePublicKey(value); return *this;}
+
+    /**
+     * <p>Parameter information for trusted public key certificate import.</p>
+     */
+    inline ImportKeyMaterial& WithTrustedCertificatePublicKey(TrustedCertificatePublicKey&& value) { SetTrustedCertificatePublicKey(std::move(value)); return *this;}
 
 
     /**
@@ -186,42 +180,48 @@ namespace Model
 
 
     /**
-     * <p>Parameter information for trusted public key certificate import.</p>
+     * <p>Parameter information for key material import using asymmetric RSA wrap and
+     * unwrap key exchange method.</p>
      */
-    inline const TrustedCertificatePublicKey& GetTrustedCertificatePublicKey() const{ return m_trustedCertificatePublicKey; }
+    inline const ImportKeyCryptogram& GetKeyCryptogram() const{ return m_keyCryptogram; }
 
     /**
-     * <p>Parameter information for trusted public key certificate import.</p>
+     * <p>Parameter information for key material import using asymmetric RSA wrap and
+     * unwrap key exchange method.</p>
      */
-    inline bool TrustedCertificatePublicKeyHasBeenSet() const { return m_trustedCertificatePublicKeyHasBeenSet; }
+    inline bool KeyCryptogramHasBeenSet() const { return m_keyCryptogramHasBeenSet; }
 
     /**
-     * <p>Parameter information for trusted public key certificate import.</p>
+     * <p>Parameter information for key material import using asymmetric RSA wrap and
+     * unwrap key exchange method.</p>
      */
-    inline void SetTrustedCertificatePublicKey(const TrustedCertificatePublicKey& value) { m_trustedCertificatePublicKeyHasBeenSet = true; m_trustedCertificatePublicKey = value; }
+    inline void SetKeyCryptogram(const ImportKeyCryptogram& value) { m_keyCryptogramHasBeenSet = true; m_keyCryptogram = value; }
 
     /**
-     * <p>Parameter information for trusted public key certificate import.</p>
+     * <p>Parameter information for key material import using asymmetric RSA wrap and
+     * unwrap key exchange method.</p>
      */
-    inline void SetTrustedCertificatePublicKey(TrustedCertificatePublicKey&& value) { m_trustedCertificatePublicKeyHasBeenSet = true; m_trustedCertificatePublicKey = std::move(value); }
+    inline void SetKeyCryptogram(ImportKeyCryptogram&& value) { m_keyCryptogramHasBeenSet = true; m_keyCryptogram = std::move(value); }
 
     /**
-     * <p>Parameter information for trusted public key certificate import.</p>
+     * <p>Parameter information for key material import using asymmetric RSA wrap and
+     * unwrap key exchange method.</p>
      */
-    inline ImportKeyMaterial& WithTrustedCertificatePublicKey(const TrustedCertificatePublicKey& value) { SetTrustedCertificatePublicKey(value); return *this;}
+    inline ImportKeyMaterial& WithKeyCryptogram(const ImportKeyCryptogram& value) { SetKeyCryptogram(value); return *this;}
 
     /**
-     * <p>Parameter information for trusted public key certificate import.</p>
+     * <p>Parameter information for key material import using asymmetric RSA wrap and
+     * unwrap key exchange method.</p>
      */
-    inline ImportKeyMaterial& WithTrustedCertificatePublicKey(TrustedCertificatePublicKey&& value) { SetTrustedCertificatePublicKey(std::move(value)); return *this;}
+    inline ImportKeyMaterial& WithKeyCryptogram(ImportKeyCryptogram&& value) { SetKeyCryptogram(std::move(value)); return *this;}
 
   private:
 
-    ImportKeyCryptogram m_keyCryptogram;
-    bool m_keyCryptogramHasBeenSet = false;
-
     RootCertificatePublicKey m_rootCertificatePublicKey;
     bool m_rootCertificatePublicKeyHasBeenSet = false;
+
+    TrustedCertificatePublicKey m_trustedCertificatePublicKey;
+    bool m_trustedCertificatePublicKeyHasBeenSet = false;
 
     ImportTr31KeyBlock m_tr31KeyBlock;
     bool m_tr31KeyBlockHasBeenSet = false;
@@ -229,8 +229,8 @@ namespace Model
     ImportTr34KeyBlock m_tr34KeyBlock;
     bool m_tr34KeyBlockHasBeenSet = false;
 
-    TrustedCertificatePublicKey m_trustedCertificatePublicKey;
-    bool m_trustedCertificatePublicKeyHasBeenSet = false;
+    ImportKeyCryptogram m_keyCryptogram;
+    bool m_keyCryptogramHasBeenSet = false;
   };
 
 } // namespace Model

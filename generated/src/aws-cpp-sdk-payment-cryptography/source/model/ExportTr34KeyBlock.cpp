@@ -20,21 +20,23 @@ namespace Model
 
 ExportTr34KeyBlock::ExportTr34KeyBlock() : 
     m_certificateAuthorityPublicKeyIdentifierHasBeenSet(false),
+    m_wrappingKeyCertificateHasBeenSet(false),
     m_exportTokenHasBeenSet(false),
     m_keyBlockFormat(Tr34KeyBlockFormat::NOT_SET),
     m_keyBlockFormatHasBeenSet(false),
     m_randomNonceHasBeenSet(false),
-    m_wrappingKeyCertificateHasBeenSet(false)
+    m_keyBlockHeadersHasBeenSet(false)
 {
 }
 
 ExportTr34KeyBlock::ExportTr34KeyBlock(JsonView jsonValue) : 
     m_certificateAuthorityPublicKeyIdentifierHasBeenSet(false),
+    m_wrappingKeyCertificateHasBeenSet(false),
     m_exportTokenHasBeenSet(false),
     m_keyBlockFormat(Tr34KeyBlockFormat::NOT_SET),
     m_keyBlockFormatHasBeenSet(false),
     m_randomNonceHasBeenSet(false),
-    m_wrappingKeyCertificateHasBeenSet(false)
+    m_keyBlockHeadersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -46,6 +48,13 @@ ExportTr34KeyBlock& ExportTr34KeyBlock::operator =(JsonView jsonValue)
     m_certificateAuthorityPublicKeyIdentifier = jsonValue.GetString("CertificateAuthorityPublicKeyIdentifier");
 
     m_certificateAuthorityPublicKeyIdentifierHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("WrappingKeyCertificate"))
+  {
+    m_wrappingKeyCertificate = jsonValue.GetString("WrappingKeyCertificate");
+
+    m_wrappingKeyCertificateHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ExportToken"))
@@ -69,11 +78,11 @@ ExportTr34KeyBlock& ExportTr34KeyBlock::operator =(JsonView jsonValue)
     m_randomNonceHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("WrappingKeyCertificate"))
+  if(jsonValue.ValueExists("KeyBlockHeaders"))
   {
-    m_wrappingKeyCertificate = jsonValue.GetString("WrappingKeyCertificate");
+    m_keyBlockHeaders = jsonValue.GetObject("KeyBlockHeaders");
 
-    m_wrappingKeyCertificateHasBeenSet = true;
+    m_keyBlockHeadersHasBeenSet = true;
   }
 
   return *this;
@@ -86,6 +95,12 @@ JsonValue ExportTr34KeyBlock::Jsonize() const
   if(m_certificateAuthorityPublicKeyIdentifierHasBeenSet)
   {
    payload.WithString("CertificateAuthorityPublicKeyIdentifier", m_certificateAuthorityPublicKeyIdentifier);
+
+  }
+
+  if(m_wrappingKeyCertificateHasBeenSet)
+  {
+   payload.WithString("WrappingKeyCertificate", m_wrappingKeyCertificate);
 
   }
 
@@ -106,9 +121,9 @@ JsonValue ExportTr34KeyBlock::Jsonize() const
 
   }
 
-  if(m_wrappingKeyCertificateHasBeenSet)
+  if(m_keyBlockHeadersHasBeenSet)
   {
-   payload.WithString("WrappingKeyCertificate", m_wrappingKeyCertificate);
+   payload.WithObject("KeyBlockHeaders", m_keyBlockHeaders.Jsonize());
 
   }
 

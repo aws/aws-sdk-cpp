@@ -85,10 +85,11 @@ namespace Model
      * Payment Cryptography replaces the current tag value with the new one.</p>
      *  <p>Don't include personal, confidential or sensitive information in
      * this field. This field may be displayed in plaintext in CloudTrail logs and
-     * other output.</p>  <p>To use this parameter, you must have
-     * <a>TagResource</a> permission in an IAM policy.</p>  <p>Don't include
-     * personal, confidential or sensitive information in this field. This field may be
-     * displayed in plaintext in CloudTrail logs and other output.</p> 
+     * other output.</p>  <p>To use this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_TagResource.html">TagResource</a>
+     * permission in an IAM policy.</p>  <p>Don't include personal,
+     * confidential or sensitive information in this field. This field may be displayed
+     * in plaintext in CloudTrail logs and other output.</p> 
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -100,10 +101,11 @@ namespace Model
      * Payment Cryptography replaces the current tag value with the new one.</p>
      *  <p>Don't include personal, confidential or sensitive information in
      * this field. This field may be displayed in plaintext in CloudTrail logs and
-     * other output.</p>  <p>To use this parameter, you must have
-     * <a>TagResource</a> permission in an IAM policy.</p>  <p>Don't include
-     * personal, confidential or sensitive information in this field. This field may be
-     * displayed in plaintext in CloudTrail logs and other output.</p> 
+     * other output.</p>  <p>To use this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_TagResource.html">TagResource</a>
+     * permission in an IAM policy.</p>  <p>Don't include personal,
+     * confidential or sensitive information in this field. This field may be displayed
+     * in plaintext in CloudTrail logs and other output.</p> 
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -115,10 +117,11 @@ namespace Model
      * Payment Cryptography replaces the current tag value with the new one.</p>
      *  <p>Don't include personal, confidential or sensitive information in
      * this field. This field may be displayed in plaintext in CloudTrail logs and
-     * other output.</p>  <p>To use this parameter, you must have
-     * <a>TagResource</a> permission in an IAM policy.</p>  <p>Don't include
-     * personal, confidential or sensitive information in this field. This field may be
-     * displayed in plaintext in CloudTrail logs and other output.</p> 
+     * other output.</p>  <p>To use this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_TagResource.html">TagResource</a>
+     * permission in an IAM policy.</p>  <p>Don't include personal,
+     * confidential or sensitive information in this field. This field may be displayed
+     * in plaintext in CloudTrail logs and other output.</p> 
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -130,10 +133,11 @@ namespace Model
      * Payment Cryptography replaces the current tag value with the new one.</p>
      *  <p>Don't include personal, confidential or sensitive information in
      * this field. This field may be displayed in plaintext in CloudTrail logs and
-     * other output.</p>  <p>To use this parameter, you must have
-     * <a>TagResource</a> permission in an IAM policy.</p>  <p>Don't include
-     * personal, confidential or sensitive information in this field. This field may be
-     * displayed in plaintext in CloudTrail logs and other output.</p> 
+     * other output.</p>  <p>To use this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_TagResource.html">TagResource</a>
+     * permission in an IAM policy.</p>  <p>Don't include personal,
+     * confidential or sensitive information in this field. This field may be displayed
+     * in plaintext in CloudTrail logs and other output.</p> 
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -145,10 +149,11 @@ namespace Model
      * Payment Cryptography replaces the current tag value with the new one.</p>
      *  <p>Don't include personal, confidential or sensitive information in
      * this field. This field may be displayed in plaintext in CloudTrail logs and
-     * other output.</p>  <p>To use this parameter, you must have
-     * <a>TagResource</a> permission in an IAM policy.</p>  <p>Don't include
-     * personal, confidential or sensitive information in this field. This field may be
-     * displayed in plaintext in CloudTrail logs and other output.</p> 
+     * other output.</p>  <p>To use this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_TagResource.html">TagResource</a>
+     * permission in an IAM policy.</p>  <p>Don't include personal,
+     * confidential or sensitive information in this field. This field may be displayed
+     * in plaintext in CloudTrail logs and other output.</p> 
      */
     inline TagResourceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -160,10 +165,11 @@ namespace Model
      * Payment Cryptography replaces the current tag value with the new one.</p>
      *  <p>Don't include personal, confidential or sensitive information in
      * this field. This field may be displayed in plaintext in CloudTrail logs and
-     * other output.</p>  <p>To use this parameter, you must have
-     * <a>TagResource</a> permission in an IAM policy.</p>  <p>Don't include
-     * personal, confidential or sensitive information in this field. This field may be
-     * displayed in plaintext in CloudTrail logs and other output.</p> 
+     * other output.</p>  <p>To use this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_TagResource.html">TagResource</a>
+     * permission in an IAM policy.</p>  <p>Don't include personal,
+     * confidential or sensitive information in this field. This field may be displayed
+     * in plaintext in CloudTrail logs and other output.</p> 
      */
     inline TagResourceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -175,10 +181,11 @@ namespace Model
      * Payment Cryptography replaces the current tag value with the new one.</p>
      *  <p>Don't include personal, confidential or sensitive information in
      * this field. This field may be displayed in plaintext in CloudTrail logs and
-     * other output.</p>  <p>To use this parameter, you must have
-     * <a>TagResource</a> permission in an IAM policy.</p>  <p>Don't include
-     * personal, confidential or sensitive information in this field. This field may be
-     * displayed in plaintext in CloudTrail logs and other output.</p> 
+     * other output.</p>  <p>To use this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_TagResource.html">TagResource</a>
+     * permission in an IAM policy.</p>  <p>Don't include personal,
+     * confidential or sensitive information in this field. This field may be displayed
+     * in plaintext in CloudTrail logs and other output.</p> 
      */
     inline TagResourceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -190,10 +197,11 @@ namespace Model
      * Payment Cryptography replaces the current tag value with the new one.</p>
      *  <p>Don't include personal, confidential or sensitive information in
      * this field. This field may be displayed in plaintext in CloudTrail logs and
-     * other output.</p>  <p>To use this parameter, you must have
-     * <a>TagResource</a> permission in an IAM policy.</p>  <p>Don't include
-     * personal, confidential or sensitive information in this field. This field may be
-     * displayed in plaintext in CloudTrail logs and other output.</p> 
+     * other output.</p>  <p>To use this parameter, you must have <a
+     * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_TagResource.html">TagResource</a>
+     * permission in an IAM policy.</p>  <p>Don't include personal,
+     * confidential or sensitive information in this field. This field may be displayed
+     * in plaintext in CloudTrail logs and other output.</p> 
      */
     inline TagResourceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

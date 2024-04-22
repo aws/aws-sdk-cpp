@@ -78,24 +78,26 @@ namespace BedrockAgentRuntime
         virtual ~BedrockAgentRuntimeClient();
 
         /**
-         * <p>Sends a prompt for the agent to process and respond to.</p>  <p>The CLI
-         * doesn't support <code>InvokeAgent</code>.</p>  <ul> <li> <p>To continue
-         * the same conversation with an agent, use the same <code>sessionId</code> value
-         * in the request.</p> </li> <li> <p>To activate trace enablement, turn
+         * <p>Sends a prompt for the agent to process and respond to. Use return control
+         * event type for function calling.</p>  <p>The CLI doesn't support
+         * <code>InvokeAgent</code>.</p>  <ul> <li> <p>To continue the same
+         * conversation with an agent, use the same <code>sessionId</code> value in the
+         * request.</p> </li> <li> <p>To activate trace enablement, turn
          * <code>enableTrace</code> to <code>true</code>. Trace enablement helps you follow
          * the agent's reasoning process that led it to the information it processed, the
          * actions it took, and the final result it yielded. For more information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-events">Trace
          * enablement</a>.</p> </li> <li> <p>End a conversation by setting
-         * <code>endSession</code> to <code>true</code>.</p> </li> <li> <p>Include
-         * attributes for the session or prompt in the <code>sessionState</code>
-         * object.</p> </li> </ul> <p>The response is returned in the <code>bytes</code>
-         * field of the <code>chunk</code> object.</p> <ul> <li> <p>The
-         * <code>attribution</code> object contains citations for parts of the
-         * response.</p> </li> <li> <p>If you set <code>enableTrace</code> to
-         * <code>true</code> in the request, you can trace the agent's steps and reasoning
-         * process that led it to the response.</p> </li> <li> <p>Errors are also surfaced
-         * in the response.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <code>endSession</code> to <code>true</code>.</p> </li> <li> <p>In the
+         * <code>sessionState</code> object, you can include attributes for the session or
+         * prompt or parameters returned from the action group.</p> </li> <li> <p>Use
+         * return control event type for function calling.</p> </li> </ul> <p>The response
+         * is returned in the <code>bytes</code> field of the <code>chunk</code>
+         * object.</p> <ul> <li> <p>The <code>attribution</code> object contains citations
+         * for parts of the response.</p> </li> <li> <p>If you set <code>enableTrace</code>
+         * to <code>true</code> in the request, you can trace the agent's steps and
+         * reasoning process that led it to the response.</p> </li> <li> <p>Errors are also
+         * surfaced in the response.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/InvokeAgent">AWS
          * API Reference</a></p>
          */

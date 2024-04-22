@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/payment-cryptography/PaymentCryptography_EXPORTS.h>
 #include <aws/payment-cryptography/PaymentCryptographyRequest.h>
-#include <aws/payment-cryptography/model/ExportAttributes.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/payment-cryptography/model/ExportKeyMaterial.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/payment-cryptography/model/ExportAttributes.h>
 #include <utility>
 
 namespace Aws
@@ -37,34 +37,40 @@ namespace Model
 
 
     /**
-     * <p>The attributes for IPEK generation during export.</p>
+     * <p>The key block format type, for example, TR-34 or TR-31, to use during key
+     * material export.</p>
      */
-    inline const ExportAttributes& GetExportAttributes() const{ return m_exportAttributes; }
+    inline const ExportKeyMaterial& GetKeyMaterial() const{ return m_keyMaterial; }
 
     /**
-     * <p>The attributes for IPEK generation during export.</p>
+     * <p>The key block format type, for example, TR-34 or TR-31, to use during key
+     * material export.</p>
      */
-    inline bool ExportAttributesHasBeenSet() const { return m_exportAttributesHasBeenSet; }
+    inline bool KeyMaterialHasBeenSet() const { return m_keyMaterialHasBeenSet; }
 
     /**
-     * <p>The attributes for IPEK generation during export.</p>
+     * <p>The key block format type, for example, TR-34 or TR-31, to use during key
+     * material export.</p>
      */
-    inline void SetExportAttributes(const ExportAttributes& value) { m_exportAttributesHasBeenSet = true; m_exportAttributes = value; }
+    inline void SetKeyMaterial(const ExportKeyMaterial& value) { m_keyMaterialHasBeenSet = true; m_keyMaterial = value; }
 
     /**
-     * <p>The attributes for IPEK generation during export.</p>
+     * <p>The key block format type, for example, TR-34 or TR-31, to use during key
+     * material export.</p>
      */
-    inline void SetExportAttributes(ExportAttributes&& value) { m_exportAttributesHasBeenSet = true; m_exportAttributes = std::move(value); }
+    inline void SetKeyMaterial(ExportKeyMaterial&& value) { m_keyMaterialHasBeenSet = true; m_keyMaterial = std::move(value); }
 
     /**
-     * <p>The attributes for IPEK generation during export.</p>
+     * <p>The key block format type, for example, TR-34 or TR-31, to use during key
+     * material export.</p>
      */
-    inline ExportKeyRequest& WithExportAttributes(const ExportAttributes& value) { SetExportAttributes(value); return *this;}
+    inline ExportKeyRequest& WithKeyMaterial(const ExportKeyMaterial& value) { SetKeyMaterial(value); return *this;}
 
     /**
-     * <p>The attributes for IPEK generation during export.</p>
+     * <p>The key block format type, for example, TR-34 or TR-31, to use during key
+     * material export.</p>
      */
-    inline ExportKeyRequest& WithExportAttributes(ExportAttributes&& value) { SetExportAttributes(std::move(value)); return *this;}
+    inline ExportKeyRequest& WithKeyMaterial(ExportKeyMaterial&& value) { SetKeyMaterial(std::move(value)); return *this;}
 
 
     /**
@@ -117,51 +123,45 @@ namespace Model
 
 
     /**
-     * <p>The key block format type, for example, TR-34 or TR-31, to use during key
-     * material export.</p>
+     * <p>The attributes for IPEK generation during export.</p>
      */
-    inline const ExportKeyMaterial& GetKeyMaterial() const{ return m_keyMaterial; }
+    inline const ExportAttributes& GetExportAttributes() const{ return m_exportAttributes; }
 
     /**
-     * <p>The key block format type, for example, TR-34 or TR-31, to use during key
-     * material export.</p>
+     * <p>The attributes for IPEK generation during export.</p>
      */
-    inline bool KeyMaterialHasBeenSet() const { return m_keyMaterialHasBeenSet; }
+    inline bool ExportAttributesHasBeenSet() const { return m_exportAttributesHasBeenSet; }
 
     /**
-     * <p>The key block format type, for example, TR-34 or TR-31, to use during key
-     * material export.</p>
+     * <p>The attributes for IPEK generation during export.</p>
      */
-    inline void SetKeyMaterial(const ExportKeyMaterial& value) { m_keyMaterialHasBeenSet = true; m_keyMaterial = value; }
+    inline void SetExportAttributes(const ExportAttributes& value) { m_exportAttributesHasBeenSet = true; m_exportAttributes = value; }
 
     /**
-     * <p>The key block format type, for example, TR-34 or TR-31, to use during key
-     * material export.</p>
+     * <p>The attributes for IPEK generation during export.</p>
      */
-    inline void SetKeyMaterial(ExportKeyMaterial&& value) { m_keyMaterialHasBeenSet = true; m_keyMaterial = std::move(value); }
+    inline void SetExportAttributes(ExportAttributes&& value) { m_exportAttributesHasBeenSet = true; m_exportAttributes = std::move(value); }
 
     /**
-     * <p>The key block format type, for example, TR-34 or TR-31, to use during key
-     * material export.</p>
+     * <p>The attributes for IPEK generation during export.</p>
      */
-    inline ExportKeyRequest& WithKeyMaterial(const ExportKeyMaterial& value) { SetKeyMaterial(value); return *this;}
+    inline ExportKeyRequest& WithExportAttributes(const ExportAttributes& value) { SetExportAttributes(value); return *this;}
 
     /**
-     * <p>The key block format type, for example, TR-34 or TR-31, to use during key
-     * material export.</p>
+     * <p>The attributes for IPEK generation during export.</p>
      */
-    inline ExportKeyRequest& WithKeyMaterial(ExportKeyMaterial&& value) { SetKeyMaterial(std::move(value)); return *this;}
+    inline ExportKeyRequest& WithExportAttributes(ExportAttributes&& value) { SetExportAttributes(std::move(value)); return *this;}
 
   private:
 
-    ExportAttributes m_exportAttributes;
-    bool m_exportAttributesHasBeenSet = false;
+    ExportKeyMaterial m_keyMaterial;
+    bool m_keyMaterialHasBeenSet = false;
 
     Aws::String m_exportKeyIdentifier;
     bool m_exportKeyIdentifierHasBeenSet = false;
 
-    ExportKeyMaterial m_keyMaterial;
-    bool m_keyMaterialHasBeenSet = false;
+    ExportAttributes m_exportAttributes;
+    bool m_exportAttributesHasBeenSet = false;
   };
 
 } // namespace Model

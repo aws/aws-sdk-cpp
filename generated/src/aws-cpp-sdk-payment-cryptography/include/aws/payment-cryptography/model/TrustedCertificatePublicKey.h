@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/payment-cryptography/PaymentCryptography_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/payment-cryptography/model/KeyAttributes.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -37,55 +37,6 @@ namespace Model
     AWS_PAYMENTCRYPTOGRAPHY_API TrustedCertificatePublicKey(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHY_API TrustedCertificatePublicKey& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHY_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The <code>KeyARN</code> of the root public key certificate or certificate
-     * chain that signs the trusted public key certificate import.</p>
-     */
-    inline const Aws::String& GetCertificateAuthorityPublicKeyIdentifier() const{ return m_certificateAuthorityPublicKeyIdentifier; }
-
-    /**
-     * <p>The <code>KeyARN</code> of the root public key certificate or certificate
-     * chain that signs the trusted public key certificate import.</p>
-     */
-    inline bool CertificateAuthorityPublicKeyIdentifierHasBeenSet() const { return m_certificateAuthorityPublicKeyIdentifierHasBeenSet; }
-
-    /**
-     * <p>The <code>KeyARN</code> of the root public key certificate or certificate
-     * chain that signs the trusted public key certificate import.</p>
-     */
-    inline void SetCertificateAuthorityPublicKeyIdentifier(const Aws::String& value) { m_certificateAuthorityPublicKeyIdentifierHasBeenSet = true; m_certificateAuthorityPublicKeyIdentifier = value; }
-
-    /**
-     * <p>The <code>KeyARN</code> of the root public key certificate or certificate
-     * chain that signs the trusted public key certificate import.</p>
-     */
-    inline void SetCertificateAuthorityPublicKeyIdentifier(Aws::String&& value) { m_certificateAuthorityPublicKeyIdentifierHasBeenSet = true; m_certificateAuthorityPublicKeyIdentifier = std::move(value); }
-
-    /**
-     * <p>The <code>KeyARN</code> of the root public key certificate or certificate
-     * chain that signs the trusted public key certificate import.</p>
-     */
-    inline void SetCertificateAuthorityPublicKeyIdentifier(const char* value) { m_certificateAuthorityPublicKeyIdentifierHasBeenSet = true; m_certificateAuthorityPublicKeyIdentifier.assign(value); }
-
-    /**
-     * <p>The <code>KeyARN</code> of the root public key certificate or certificate
-     * chain that signs the trusted public key certificate import.</p>
-     */
-    inline TrustedCertificatePublicKey& WithCertificateAuthorityPublicKeyIdentifier(const Aws::String& value) { SetCertificateAuthorityPublicKeyIdentifier(value); return *this;}
-
-    /**
-     * <p>The <code>KeyARN</code> of the root public key certificate or certificate
-     * chain that signs the trusted public key certificate import.</p>
-     */
-    inline TrustedCertificatePublicKey& WithCertificateAuthorityPublicKeyIdentifier(Aws::String&& value) { SetCertificateAuthorityPublicKeyIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>KeyARN</code> of the root public key certificate or certificate
-     * chain that signs the trusted public key certificate import.</p>
-     */
-    inline TrustedCertificatePublicKey& WithCertificateAuthorityPublicKeyIdentifier(const char* value) { SetCertificateAuthorityPublicKeyIdentifier(value); return *this;}
 
 
     /**
@@ -171,16 +122,65 @@ namespace Model
      */
     inline TrustedCertificatePublicKey& WithPublicKeyCertificate(const char* value) { SetPublicKeyCertificate(value); return *this;}
 
-  private:
 
-    Aws::String m_certificateAuthorityPublicKeyIdentifier;
-    bool m_certificateAuthorityPublicKeyIdentifierHasBeenSet = false;
+    /**
+     * <p>The <code>KeyARN</code> of the root public key certificate or certificate
+     * chain that signs the trusted public key certificate import.</p>
+     */
+    inline const Aws::String& GetCertificateAuthorityPublicKeyIdentifier() const{ return m_certificateAuthorityPublicKeyIdentifier; }
+
+    /**
+     * <p>The <code>KeyARN</code> of the root public key certificate or certificate
+     * chain that signs the trusted public key certificate import.</p>
+     */
+    inline bool CertificateAuthorityPublicKeyIdentifierHasBeenSet() const { return m_certificateAuthorityPublicKeyIdentifierHasBeenSet; }
+
+    /**
+     * <p>The <code>KeyARN</code> of the root public key certificate or certificate
+     * chain that signs the trusted public key certificate import.</p>
+     */
+    inline void SetCertificateAuthorityPublicKeyIdentifier(const Aws::String& value) { m_certificateAuthorityPublicKeyIdentifierHasBeenSet = true; m_certificateAuthorityPublicKeyIdentifier = value; }
+
+    /**
+     * <p>The <code>KeyARN</code> of the root public key certificate or certificate
+     * chain that signs the trusted public key certificate import.</p>
+     */
+    inline void SetCertificateAuthorityPublicKeyIdentifier(Aws::String&& value) { m_certificateAuthorityPublicKeyIdentifierHasBeenSet = true; m_certificateAuthorityPublicKeyIdentifier = std::move(value); }
+
+    /**
+     * <p>The <code>KeyARN</code> of the root public key certificate or certificate
+     * chain that signs the trusted public key certificate import.</p>
+     */
+    inline void SetCertificateAuthorityPublicKeyIdentifier(const char* value) { m_certificateAuthorityPublicKeyIdentifierHasBeenSet = true; m_certificateAuthorityPublicKeyIdentifier.assign(value); }
+
+    /**
+     * <p>The <code>KeyARN</code> of the root public key certificate or certificate
+     * chain that signs the trusted public key certificate import.</p>
+     */
+    inline TrustedCertificatePublicKey& WithCertificateAuthorityPublicKeyIdentifier(const Aws::String& value) { SetCertificateAuthorityPublicKeyIdentifier(value); return *this;}
+
+    /**
+     * <p>The <code>KeyARN</code> of the root public key certificate or certificate
+     * chain that signs the trusted public key certificate import.</p>
+     */
+    inline TrustedCertificatePublicKey& WithCertificateAuthorityPublicKeyIdentifier(Aws::String&& value) { SetCertificateAuthorityPublicKeyIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>The <code>KeyARN</code> of the root public key certificate or certificate
+     * chain that signs the trusted public key certificate import.</p>
+     */
+    inline TrustedCertificatePublicKey& WithCertificateAuthorityPublicKeyIdentifier(const char* value) { SetCertificateAuthorityPublicKeyIdentifier(value); return *this;}
+
+  private:
 
     KeyAttributes m_keyAttributes;
     bool m_keyAttributesHasBeenSet = false;
 
     Aws::String m_publicKeyCertificate;
     bool m_publicKeyCertificateHasBeenSet = false;
+
+    Aws::String m_certificateAuthorityPublicKeyIdentifier;
+    bool m_certificateAuthorityPublicKeyIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

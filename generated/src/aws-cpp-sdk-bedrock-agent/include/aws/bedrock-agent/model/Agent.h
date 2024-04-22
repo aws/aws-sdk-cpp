@@ -219,7 +219,7 @@ namespace Model
      * created.</p> </li> <li> <p>PREPARING – The agent is being prepared.</p> </li>
      * <li> <p>PREPARED – The agent is prepared and ready to be invoked.</p> </li> <li>
      * <p>NOT_PREPARED – The agent has been created but not yet prepared.</p> </li>
-     * <li> <p>FAILED ��� The agent API operation failed.</p> </li> <li> <p>UPDATING –
+     * <li> <p>FAILED – The agent API operation failed.</p> </li> <li> <p>UPDATING –
      * The agent is being updated.</p> </li> <li> <p>DELETING – The agent is being
      * deleted.</p> </li> </ul>
      */
@@ -231,7 +231,7 @@ namespace Model
      * created.</p> </li> <li> <p>PREPARING – The agent is being prepared.</p> </li>
      * <li> <p>PREPARED – The agent is prepared and ready to be invoked.</p> </li> <li>
      * <p>NOT_PREPARED – The agent has been created but not yet prepared.</p> </li>
-     * <li> <p>FAILED ��� The agent API operation failed.</p> </li> <li> <p>UPDATING –
+     * <li> <p>FAILED – The agent API operation failed.</p> </li> <li> <p>UPDATING –
      * The agent is being updated.</p> </li> <li> <p>DELETING – The agent is being
      * deleted.</p> </li> </ul>
      */
@@ -243,7 +243,7 @@ namespace Model
      * created.</p> </li> <li> <p>PREPARING – The agent is being prepared.</p> </li>
      * <li> <p>PREPARED – The agent is prepared and ready to be invoked.</p> </li> <li>
      * <p>NOT_PREPARED – The agent has been created but not yet prepared.</p> </li>
-     * <li> <p>FAILED ��� The agent API operation failed.</p> </li> <li> <p>UPDATING –
+     * <li> <p>FAILED – The agent API operation failed.</p> </li> <li> <p>UPDATING –
      * The agent is being updated.</p> </li> <li> <p>DELETING – The agent is being
      * deleted.</p> </li> </ul>
      */
@@ -255,7 +255,7 @@ namespace Model
      * created.</p> </li> <li> <p>PREPARING – The agent is being prepared.</p> </li>
      * <li> <p>PREPARED – The agent is prepared and ready to be invoked.</p> </li> <li>
      * <p>NOT_PREPARED – The agent has been created but not yet prepared.</p> </li>
-     * <li> <p>FAILED ��� The agent API operation failed.</p> </li> <li> <p>UPDATING –
+     * <li> <p>FAILED – The agent API operation failed.</p> </li> <li> <p>UPDATING –
      * The agent is being updated.</p> </li> <li> <p>DELETING – The agent is being
      * deleted.</p> </li> </ul>
      */
@@ -267,7 +267,7 @@ namespace Model
      * created.</p> </li> <li> <p>PREPARING – The agent is being prepared.</p> </li>
      * <li> <p>PREPARED – The agent is prepared and ready to be invoked.</p> </li> <li>
      * <p>NOT_PREPARED – The agent has been created but not yet prepared.</p> </li>
-     * <li> <p>FAILED ��� The agent API operation failed.</p> </li> <li> <p>UPDATING –
+     * <li> <p>FAILED – The agent API operation failed.</p> </li> <li> <p>UPDATING –
      * The agent is being updated.</p> </li> <li> <p>DELETING – The agent is being
      * deleted.</p> </li> </ul>
      */
@@ -279,7 +279,7 @@ namespace Model
      * created.</p> </li> <li> <p>PREPARING – The agent is being prepared.</p> </li>
      * <li> <p>PREPARED – The agent is prepared and ready to be invoked.</p> </li> <li>
      * <p>NOT_PREPARED – The agent has been created but not yet prepared.</p> </li>
-     * <li> <p>FAILED ��� The agent API operation failed.</p> </li> <li> <p>UPDATING –
+     * <li> <p>FAILED – The agent API operation failed.</p> </li> <li> <p>UPDATING –
      * The agent is being updated.</p> </li> <li> <p>DELETING – The agent is being
      * deleted.</p> </li> </ul>
      */

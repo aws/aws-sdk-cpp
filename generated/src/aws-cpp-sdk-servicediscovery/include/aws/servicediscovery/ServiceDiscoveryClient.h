@@ -573,7 +573,7 @@ namespace ServiceDiscovery
 
         /**
          * <p>Lists summary information for all the services that are associated with one
-         * or more specified namespaces.</p><p><h3>See Also:</h3>   <a
+         * or more namespaces.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListServices">AWS
          * API Reference</a></p>
          */

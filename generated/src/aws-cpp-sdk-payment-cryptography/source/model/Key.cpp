@@ -19,87 +19,52 @@ namespace Model
 {
 
 Key::Key() : 
-    m_createTimestampHasBeenSet(false),
-    m_deletePendingTimestampHasBeenSet(false),
-    m_deleteTimestampHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_exportable(false),
-    m_exportableHasBeenSet(false),
     m_keyArnHasBeenSet(false),
     m_keyAttributesHasBeenSet(false),
     m_keyCheckValueHasBeenSet(false),
     m_keyCheckValueAlgorithm(KeyCheckValueAlgorithm::NOT_SET),
     m_keyCheckValueAlgorithmHasBeenSet(false),
-    m_keyOrigin(KeyOrigin::NOT_SET),
-    m_keyOriginHasBeenSet(false),
+    m_enabled(false),
+    m_enabledHasBeenSet(false),
+    m_exportable(false),
+    m_exportableHasBeenSet(false),
     m_keyState(KeyState::NOT_SET),
     m_keyStateHasBeenSet(false),
+    m_keyOrigin(KeyOrigin::NOT_SET),
+    m_keyOriginHasBeenSet(false),
+    m_createTimestampHasBeenSet(false),
     m_usageStartTimestampHasBeenSet(false),
-    m_usageStopTimestampHasBeenSet(false)
+    m_usageStopTimestampHasBeenSet(false),
+    m_deletePendingTimestampHasBeenSet(false),
+    m_deleteTimestampHasBeenSet(false)
 {
 }
 
 Key::Key(JsonView jsonValue) : 
-    m_createTimestampHasBeenSet(false),
-    m_deletePendingTimestampHasBeenSet(false),
-    m_deleteTimestampHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_exportable(false),
-    m_exportableHasBeenSet(false),
     m_keyArnHasBeenSet(false),
     m_keyAttributesHasBeenSet(false),
     m_keyCheckValueHasBeenSet(false),
     m_keyCheckValueAlgorithm(KeyCheckValueAlgorithm::NOT_SET),
     m_keyCheckValueAlgorithmHasBeenSet(false),
-    m_keyOrigin(KeyOrigin::NOT_SET),
-    m_keyOriginHasBeenSet(false),
+    m_enabled(false),
+    m_enabledHasBeenSet(false),
+    m_exportable(false),
+    m_exportableHasBeenSet(false),
     m_keyState(KeyState::NOT_SET),
     m_keyStateHasBeenSet(false),
+    m_keyOrigin(KeyOrigin::NOT_SET),
+    m_keyOriginHasBeenSet(false),
+    m_createTimestampHasBeenSet(false),
     m_usageStartTimestampHasBeenSet(false),
-    m_usageStopTimestampHasBeenSet(false)
+    m_usageStopTimestampHasBeenSet(false),
+    m_deletePendingTimestampHasBeenSet(false),
+    m_deleteTimestampHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 Key& Key::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("CreateTimestamp"))
-  {
-    m_createTimestamp = jsonValue.GetDouble("CreateTimestamp");
-
-    m_createTimestampHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("DeletePendingTimestamp"))
-  {
-    m_deletePendingTimestamp = jsonValue.GetDouble("DeletePendingTimestamp");
-
-    m_deletePendingTimestampHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("DeleteTimestamp"))
-  {
-    m_deleteTimestamp = jsonValue.GetDouble("DeleteTimestamp");
-
-    m_deleteTimestampHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("Enabled"))
-  {
-    m_enabled = jsonValue.GetBool("Enabled");
-
-    m_enabledHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("Exportable"))
-  {
-    m_exportable = jsonValue.GetBool("Exportable");
-
-    m_exportableHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("KeyArn"))
   {
     m_keyArn = jsonValue.GetString("KeyArn");
@@ -128,11 +93,18 @@ Key& Key::operator =(JsonView jsonValue)
     m_keyCheckValueAlgorithmHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("KeyOrigin"))
+  if(jsonValue.ValueExists("Enabled"))
   {
-    m_keyOrigin = KeyOriginMapper::GetKeyOriginForName(jsonValue.GetString("KeyOrigin"));
+    m_enabled = jsonValue.GetBool("Enabled");
 
-    m_keyOriginHasBeenSet = true;
+    m_enabledHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Exportable"))
+  {
+    m_exportable = jsonValue.GetBool("Exportable");
+
+    m_exportableHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("KeyState"))
@@ -140,6 +112,20 @@ Key& Key::operator =(JsonView jsonValue)
     m_keyState = KeyStateMapper::GetKeyStateForName(jsonValue.GetString("KeyState"));
 
     m_keyStateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("KeyOrigin"))
+  {
+    m_keyOrigin = KeyOriginMapper::GetKeyOriginForName(jsonValue.GetString("KeyOrigin"));
+
+    m_keyOriginHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CreateTimestamp"))
+  {
+    m_createTimestamp = jsonValue.GetDouble("CreateTimestamp");
+
+    m_createTimestampHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("UsageStartTimestamp"))
@@ -156,39 +142,26 @@ Key& Key::operator =(JsonView jsonValue)
     m_usageStopTimestampHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DeletePendingTimestamp"))
+  {
+    m_deletePendingTimestamp = jsonValue.GetDouble("DeletePendingTimestamp");
+
+    m_deletePendingTimestampHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DeleteTimestamp"))
+  {
+    m_deleteTimestamp = jsonValue.GetDouble("DeleteTimestamp");
+
+    m_deleteTimestampHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue Key::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_createTimestampHasBeenSet)
-  {
-   payload.WithDouble("CreateTimestamp", m_createTimestamp.SecondsWithMSPrecision());
-  }
-
-  if(m_deletePendingTimestampHasBeenSet)
-  {
-   payload.WithDouble("DeletePendingTimestamp", m_deletePendingTimestamp.SecondsWithMSPrecision());
-  }
-
-  if(m_deleteTimestampHasBeenSet)
-  {
-   payload.WithDouble("DeleteTimestamp", m_deleteTimestamp.SecondsWithMSPrecision());
-  }
-
-  if(m_enabledHasBeenSet)
-  {
-   payload.WithBool("Enabled", m_enabled);
-
-  }
-
-  if(m_exportableHasBeenSet)
-  {
-   payload.WithBool("Exportable", m_exportable);
-
-  }
 
   if(m_keyArnHasBeenSet)
   {
@@ -213,14 +186,31 @@ JsonValue Key::Jsonize() const
    payload.WithString("KeyCheckValueAlgorithm", KeyCheckValueAlgorithmMapper::GetNameForKeyCheckValueAlgorithm(m_keyCheckValueAlgorithm));
   }
 
-  if(m_keyOriginHasBeenSet)
+  if(m_enabledHasBeenSet)
   {
-   payload.WithString("KeyOrigin", KeyOriginMapper::GetNameForKeyOrigin(m_keyOrigin));
+   payload.WithBool("Enabled", m_enabled);
+
+  }
+
+  if(m_exportableHasBeenSet)
+  {
+   payload.WithBool("Exportable", m_exportable);
+
   }
 
   if(m_keyStateHasBeenSet)
   {
    payload.WithString("KeyState", KeyStateMapper::GetNameForKeyState(m_keyState));
+  }
+
+  if(m_keyOriginHasBeenSet)
+  {
+   payload.WithString("KeyOrigin", KeyOriginMapper::GetNameForKeyOrigin(m_keyOrigin));
+  }
+
+  if(m_createTimestampHasBeenSet)
+  {
+   payload.WithDouble("CreateTimestamp", m_createTimestamp.SecondsWithMSPrecision());
   }
 
   if(m_usageStartTimestampHasBeenSet)
@@ -231,6 +221,16 @@ JsonValue Key::Jsonize() const
   if(m_usageStopTimestampHasBeenSet)
   {
    payload.WithDouble("UsageStopTimestamp", m_usageStopTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_deletePendingTimestampHasBeenSet)
+  {
+   payload.WithDouble("DeletePendingTimestamp", m_deletePendingTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_deleteTimestampHasBeenSet)
+  {
+   payload.WithDouble("DeleteTimestamp", m_deleteTimestamp.SecondsWithMSPrecision());
   }
 
   return payload;

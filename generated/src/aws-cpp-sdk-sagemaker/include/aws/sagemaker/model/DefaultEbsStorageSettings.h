@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>A collection of default EBS storage settings that applies to private spaces
-   * created within a domain or user profile.</p><p><h3>See Also:</h3>   <a
+   * <p>A collection of default EBS storage settings that apply to spaces created
+   * within a domain or user profile.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DefaultEbsStorageSettings">AWS
    * API Reference</a></p>
    */
@@ -37,43 +37,43 @@ namespace Model
 
 
     /**
-     * <p>The default size of the EBS storage volume for a private space.</p>
+     * <p>The default size of the EBS storage volume for a space.</p>
      */
     inline int GetDefaultEbsVolumeSizeInGb() const{ return m_defaultEbsVolumeSizeInGb; }
 
     /**
-     * <p>The default size of the EBS storage volume for a private space.</p>
+     * <p>The default size of the EBS storage volume for a space.</p>
      */
     inline bool DefaultEbsVolumeSizeInGbHasBeenSet() const { return m_defaultEbsVolumeSizeInGbHasBeenSet; }
 
     /**
-     * <p>The default size of the EBS storage volume for a private space.</p>
+     * <p>The default size of the EBS storage volume for a space.</p>
      */
     inline void SetDefaultEbsVolumeSizeInGb(int value) { m_defaultEbsVolumeSizeInGbHasBeenSet = true; m_defaultEbsVolumeSizeInGb = value; }
 
     /**
-     * <p>The default size of the EBS storage volume for a private space.</p>
+     * <p>The default size of the EBS storage volume for a space.</p>
      */
     inline DefaultEbsStorageSettings& WithDefaultEbsVolumeSizeInGb(int value) { SetDefaultEbsVolumeSizeInGb(value); return *this;}
 
 
     /**
-     * <p>The maximum size of the EBS storage volume for a private space.</p>
+     * <p>The maximum size of the EBS storage volume for a space.</p>
      */
     inline int GetMaximumEbsVolumeSizeInGb() const{ return m_maximumEbsVolumeSizeInGb; }
 
     /**
-     * <p>The maximum size of the EBS storage volume for a private space.</p>
+     * <p>The maximum size of the EBS storage volume for a space.</p>
      */
     inline bool MaximumEbsVolumeSizeInGbHasBeenSet() const { return m_maximumEbsVolumeSizeInGbHasBeenSet; }
 
     /**
-     * <p>The maximum size of the EBS storage volume for a private space.</p>
+     * <p>The maximum size of the EBS storage volume for a space.</p>
      */
     inline void SetMaximumEbsVolumeSizeInGb(int value) { m_maximumEbsVolumeSizeInGbHasBeenSet = true; m_maximumEbsVolumeSizeInGb = value; }
 
     /**
-     * <p>The maximum size of the EBS storage volume for a private space.</p>
+     * <p>The maximum size of the EBS storage volume for a space.</p>
      */
     inline DefaultEbsStorageSettings& WithMaximumEbsVolumeSizeInGb(int value) { SetMaximumEbsVolumeSizeInGb(value); return *this;}
 

@@ -12,6 +12,7 @@
 #include <aws/bedrock-agent-runtime/model/DependencyFailedException.h>
 #include <aws/bedrock-agent-runtime/model/InternalServerException.h>
 #include <aws/bedrock-agent-runtime/model/ResourceNotFoundException.h>
+#include <aws/bedrock-agent-runtime/model/ReturnControlPayload.h>
 #include <aws/bedrock-agent-runtime/model/ServiceQuotaExceededException.h>
 #include <aws/bedrock-agent-runtime/model/ThrottlingException.h>
 #include <aws/bedrock-agent-runtime/model/TracePart.h>
@@ -259,40 +260,83 @@ namespace Model
 
 
     /**
-     * <p>The specified resource ARN was not found. Check the ARN and try your request
-     * again.</p>
+     * <p>The specified resource Amazon Resource Name (ARN) was not found. Check the
+     * Amazon Resource Name (ARN) and try your request again.</p>
      */
     inline const ResourceNotFoundException& GetResourceNotFoundException() const{ return m_resourceNotFoundException; }
 
     /**
-     * <p>The specified resource ARN was not found. Check the ARN and try your request
-     * again.</p>
+     * <p>The specified resource Amazon Resource Name (ARN) was not found. Check the
+     * Amazon Resource Name (ARN) and try your request again.</p>
      */
     inline bool ResourceNotFoundExceptionHasBeenSet() const { return m_resourceNotFoundExceptionHasBeenSet; }
 
     /**
-     * <p>The specified resource ARN was not found. Check the ARN and try your request
-     * again.</p>
+     * <p>The specified resource Amazon Resource Name (ARN) was not found. Check the
+     * Amazon Resource Name (ARN) and try your request again.</p>
      */
     inline void SetResourceNotFoundException(const ResourceNotFoundException& value) { m_resourceNotFoundExceptionHasBeenSet = true; m_resourceNotFoundException = value; }
 
     /**
-     * <p>The specified resource ARN was not found. Check the ARN and try your request
-     * again.</p>
+     * <p>The specified resource Amazon Resource Name (ARN) was not found. Check the
+     * Amazon Resource Name (ARN) and try your request again.</p>
      */
     inline void SetResourceNotFoundException(ResourceNotFoundException&& value) { m_resourceNotFoundExceptionHasBeenSet = true; m_resourceNotFoundException = std::move(value); }
 
     /**
-     * <p>The specified resource ARN was not found. Check the ARN and try your request
-     * again.</p>
+     * <p>The specified resource Amazon Resource Name (ARN) was not found. Check the
+     * Amazon Resource Name (ARN) and try your request again.</p>
      */
     inline ResponseStream& WithResourceNotFoundException(const ResourceNotFoundException& value) { SetResourceNotFoundException(value); return *this;}
 
     /**
-     * <p>The specified resource ARN was not found. Check the ARN and try your request
-     * again.</p>
+     * <p>The specified resource Amazon Resource Name (ARN) was not found. Check the
+     * Amazon Resource Name (ARN) and try your request again.</p>
      */
     inline ResponseStream& WithResourceNotFoundException(ResourceNotFoundException&& value) { SetResourceNotFoundException(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Contains the parameters and information that the agent elicited from the
+     * customer to carry out an action. This information is returned to the system and
+     * can be used in your own setup for fulfilling the action.</p>
+     */
+    inline const ReturnControlPayload& GetReturnControl() const{ return m_returnControl; }
+
+    /**
+     * <p>Contains the parameters and information that the agent elicited from the
+     * customer to carry out an action. This information is returned to the system and
+     * can be used in your own setup for fulfilling the action.</p>
+     */
+    inline bool ReturnControlHasBeenSet() const { return m_returnControlHasBeenSet; }
+
+    /**
+     * <p>Contains the parameters and information that the agent elicited from the
+     * customer to carry out an action. This information is returned to the system and
+     * can be used in your own setup for fulfilling the action.</p>
+     */
+    inline void SetReturnControl(const ReturnControlPayload& value) { m_returnControlHasBeenSet = true; m_returnControl = value; }
+
+    /**
+     * <p>Contains the parameters and information that the agent elicited from the
+     * customer to carry out an action. This information is returned to the system and
+     * can be used in your own setup for fulfilling the action.</p>
+     */
+    inline void SetReturnControl(ReturnControlPayload&& value) { m_returnControlHasBeenSet = true; m_returnControl = std::move(value); }
+
+    /**
+     * <p>Contains the parameters and information that the agent elicited from the
+     * customer to carry out an action. This information is returned to the system and
+     * can be used in your own setup for fulfilling the action.</p>
+     */
+    inline ResponseStream& WithReturnControl(const ReturnControlPayload& value) { SetReturnControl(value); return *this;}
+
+    /**
+     * <p>Contains the parameters and information that the agent elicited from the
+     * customer to carry out an action. This information is returned to the system and
+     * can be used in your own setup for fulfilling the action.</p>
+     */
+    inline ResponseStream& WithReturnControl(ReturnControlPayload&& value) { SetReturnControl(std::move(value)); return *this;}
 
 
     /**
@@ -365,10 +409,9 @@ namespace Model
 
     /**
      * <p>Contains information about the agent and session, alongside the agent's
-     * reasoning process and results from calling API actions and querying knowledge
-     * bases and metadata about the trace. You can use the trace to understand how the
-     * agent arrived at the response it provided the customer. For more information,
-     * see <a
+     * reasoning process and results from calling actions and querying knowledge bases
+     * and metadata about the trace. You can use the trace to understand how the agent
+     * arrived at the response it provided the customer. For more information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/trace-events.html">Trace
      * events</a>.</p>
      */
@@ -376,10 +419,9 @@ namespace Model
 
     /**
      * <p>Contains information about the agent and session, alongside the agent's
-     * reasoning process and results from calling API actions and querying knowledge
-     * bases and metadata about the trace. You can use the trace to understand how the
-     * agent arrived at the response it provided the customer. For more information,
-     * see <a
+     * reasoning process and results from calling actions and querying knowledge bases
+     * and metadata about the trace. You can use the trace to understand how the agent
+     * arrived at the response it provided the customer. For more information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/trace-events.html">Trace
      * events</a>.</p>
      */
@@ -387,10 +429,9 @@ namespace Model
 
     /**
      * <p>Contains information about the agent and session, alongside the agent's
-     * reasoning process and results from calling API actions and querying knowledge
-     * bases and metadata about the trace. You can use the trace to understand how the
-     * agent arrived at the response it provided the customer. For more information,
-     * see <a
+     * reasoning process and results from calling actions and querying knowledge bases
+     * and metadata about the trace. You can use the trace to understand how the agent
+     * arrived at the response it provided the customer. For more information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/trace-events.html">Trace
      * events</a>.</p>
      */
@@ -398,10 +439,9 @@ namespace Model
 
     /**
      * <p>Contains information about the agent and session, alongside the agent's
-     * reasoning process and results from calling API actions and querying knowledge
-     * bases and metadata about the trace. You can use the trace to understand how the
-     * agent arrived at the response it provided the customer. For more information,
-     * see <a
+     * reasoning process and results from calling actions and querying knowledge bases
+     * and metadata about the trace. You can use the trace to understand how the agent
+     * arrived at the response it provided the customer. For more information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/trace-events.html">Trace
      * events</a>.</p>
      */
@@ -409,10 +449,9 @@ namespace Model
 
     /**
      * <p>Contains information about the agent and session, alongside the agent's
-     * reasoning process and results from calling API actions and querying knowledge
-     * bases and metadata about the trace. You can use the trace to understand how the
-     * agent arrived at the response it provided the customer. For more information,
-     * see <a
+     * reasoning process and results from calling actions and querying knowledge bases
+     * and metadata about the trace. You can use the trace to understand how the agent
+     * arrived at the response it provided the customer. For more information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/trace-events.html">Trace
      * events</a>.</p>
      */
@@ -420,10 +459,9 @@ namespace Model
 
     /**
      * <p>Contains information about the agent and session, alongside the agent's
-     * reasoning process and results from calling API actions and querying knowledge
-     * bases and metadata about the trace. You can use the trace to understand how the
-     * agent arrived at the response it provided the customer. For more information,
-     * see <a
+     * reasoning process and results from calling actions and querying knowledge bases
+     * and metadata about the trace. You can use the trace to understand how the agent
+     * arrived at the response it provided the customer. For more information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/trace-events.html">Trace
      * events</a>.</p>
      */
@@ -488,6 +526,9 @@ namespace Model
 
     ResourceNotFoundException m_resourceNotFoundException;
     bool m_resourceNotFoundExceptionHasBeenSet = false;
+
+    ReturnControlPayload m_returnControl;
+    bool m_returnControlHasBeenSet = false;
 
     ServiceQuotaExceededException m_serviceQuotaExceededException;
     bool m_serviceQuotaExceededExceptionHasBeenSet = false;

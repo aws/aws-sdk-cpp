@@ -39,56 +39,6 @@ namespace Model
 
     /**
      * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
-     * to decrypt data.</p>
-     */
-    inline bool GetDecrypt() const{ return m_decrypt; }
-
-    /**
-     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
-     * to decrypt data.</p>
-     */
-    inline bool DecryptHasBeenSet() const { return m_decryptHasBeenSet; }
-
-    /**
-     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
-     * to decrypt data.</p>
-     */
-    inline void SetDecrypt(bool value) { m_decryptHasBeenSet = true; m_decrypt = value; }
-
-    /**
-     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
-     * to decrypt data.</p>
-     */
-    inline KeyModesOfUse& WithDecrypt(bool value) { SetDecrypt(value); return *this;}
-
-
-    /**
-     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
-     * to derive new keys.</p>
-     */
-    inline bool GetDeriveKey() const{ return m_deriveKey; }
-
-    /**
-     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
-     * to derive new keys.</p>
-     */
-    inline bool DeriveKeyHasBeenSet() const { return m_deriveKeyHasBeenSet; }
-
-    /**
-     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
-     * to derive new keys.</p>
-     */
-    inline void SetDeriveKey(bool value) { m_deriveKeyHasBeenSet = true; m_deriveKey = value; }
-
-    /**
-     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
-     * to derive new keys.</p>
-     */
-    inline KeyModesOfUse& WithDeriveKey(bool value) { SetDeriveKey(value); return *this;}
-
-
-    /**
-     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
      * to encrypt data.</p>
      */
     inline bool GetEncrypt() const{ return m_encrypt; }
@@ -114,6 +64,81 @@ namespace Model
 
     /**
      * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
+     * to decrypt data.</p>
+     */
+    inline bool GetDecrypt() const{ return m_decrypt; }
+
+    /**
+     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
+     * to decrypt data.</p>
+     */
+    inline bool DecryptHasBeenSet() const { return m_decryptHasBeenSet; }
+
+    /**
+     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
+     * to decrypt data.</p>
+     */
+    inline void SetDecrypt(bool value) { m_decryptHasBeenSet = true; m_decrypt = value; }
+
+    /**
+     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
+     * to decrypt data.</p>
+     */
+    inline KeyModesOfUse& WithDecrypt(bool value) { SetDecrypt(value); return *this;}
+
+
+    /**
+     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
+     * to wrap other keys.</p>
+     */
+    inline bool GetWrap() const{ return m_wrap; }
+
+    /**
+     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
+     * to wrap other keys.</p>
+     */
+    inline bool WrapHasBeenSet() const { return m_wrapHasBeenSet; }
+
+    /**
+     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
+     * to wrap other keys.</p>
+     */
+    inline void SetWrap(bool value) { m_wrapHasBeenSet = true; m_wrap = value; }
+
+    /**
+     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
+     * to wrap other keys.</p>
+     */
+    inline KeyModesOfUse& WithWrap(bool value) { SetWrap(value); return *this;}
+
+
+    /**
+     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
+     * to unwrap other keys.</p>
+     */
+    inline bool GetUnwrap() const{ return m_unwrap; }
+
+    /**
+     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
+     * to unwrap other keys.</p>
+     */
+    inline bool UnwrapHasBeenSet() const { return m_unwrapHasBeenSet; }
+
+    /**
+     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
+     * to unwrap other keys.</p>
+     */
+    inline void SetUnwrap(bool value) { m_unwrapHasBeenSet = true; m_unwrap = value; }
+
+    /**
+     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
+     * to unwrap other keys.</p>
+     */
+    inline KeyModesOfUse& WithUnwrap(bool value) { SetUnwrap(value); return *this;}
+
+
+    /**
+     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
      * to generate and verify other card and PIN verification keys.</p>
      */
     inline bool GetGenerate() const{ return m_generate; }
@@ -135,6 +160,81 @@ namespace Model
      * to generate and verify other card and PIN verification keys.</p>
      */
     inline KeyModesOfUse& WithGenerate(bool value) { SetGenerate(value); return *this;}
+
+
+    /**
+     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
+     * for signing.</p>
+     */
+    inline bool GetSign() const{ return m_sign; }
+
+    /**
+     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
+     * for signing.</p>
+     */
+    inline bool SignHasBeenSet() const { return m_signHasBeenSet; }
+
+    /**
+     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
+     * for signing.</p>
+     */
+    inline void SetSign(bool value) { m_signHasBeenSet = true; m_sign = value; }
+
+    /**
+     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
+     * for signing.</p>
+     */
+    inline KeyModesOfUse& WithSign(bool value) { SetSign(value); return *this;}
+
+
+    /**
+     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
+     * to verify signatures.</p>
+     */
+    inline bool GetVerify() const{ return m_verify; }
+
+    /**
+     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
+     * to verify signatures.</p>
+     */
+    inline bool VerifyHasBeenSet() const { return m_verifyHasBeenSet; }
+
+    /**
+     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
+     * to verify signatures.</p>
+     */
+    inline void SetVerify(bool value) { m_verifyHasBeenSet = true; m_verify = value; }
+
+    /**
+     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
+     * to verify signatures.</p>
+     */
+    inline KeyModesOfUse& WithVerify(bool value) { SetVerify(value); return *this;}
+
+
+    /**
+     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
+     * to derive new keys.</p>
+     */
+    inline bool GetDeriveKey() const{ return m_deriveKey; }
+
+    /**
+     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
+     * to derive new keys.</p>
+     */
+    inline bool DeriveKeyHasBeenSet() const { return m_deriveKeyHasBeenSet; }
+
+    /**
+     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
+     * to derive new keys.</p>
+     */
+    inline void SetDeriveKey(bool value) { m_deriveKeyHasBeenSet = true; m_deriveKey = value; }
+
+    /**
+     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
+     * to derive new keys.</p>
+     */
+    inline KeyModesOfUse& WithDeriveKey(bool value) { SetDeriveKey(value); return *this;}
 
 
     /**
@@ -165,134 +265,34 @@ namespace Model
      */
     inline KeyModesOfUse& WithNoRestrictions(bool value) { SetNoRestrictions(value); return *this;}
 
-
-    /**
-     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
-     * for signing.</p>
-     */
-    inline bool GetSign() const{ return m_sign; }
-
-    /**
-     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
-     * for signing.</p>
-     */
-    inline bool SignHasBeenSet() const { return m_signHasBeenSet; }
-
-    /**
-     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
-     * for signing.</p>
-     */
-    inline void SetSign(bool value) { m_signHasBeenSet = true; m_sign = value; }
-
-    /**
-     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
-     * for signing.</p>
-     */
-    inline KeyModesOfUse& WithSign(bool value) { SetSign(value); return *this;}
-
-
-    /**
-     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
-     * to unwrap other keys.</p>
-     */
-    inline bool GetUnwrap() const{ return m_unwrap; }
-
-    /**
-     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
-     * to unwrap other keys.</p>
-     */
-    inline bool UnwrapHasBeenSet() const { return m_unwrapHasBeenSet; }
-
-    /**
-     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
-     * to unwrap other keys.</p>
-     */
-    inline void SetUnwrap(bool value) { m_unwrapHasBeenSet = true; m_unwrap = value; }
-
-    /**
-     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
-     * to unwrap other keys.</p>
-     */
-    inline KeyModesOfUse& WithUnwrap(bool value) { SetUnwrap(value); return *this;}
-
-
-    /**
-     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
-     * to verify signatures.</p>
-     */
-    inline bool GetVerify() const{ return m_verify; }
-
-    /**
-     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
-     * to verify signatures.</p>
-     */
-    inline bool VerifyHasBeenSet() const { return m_verifyHasBeenSet; }
-
-    /**
-     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
-     * to verify signatures.</p>
-     */
-    inline void SetVerify(bool value) { m_verifyHasBeenSet = true; m_verify = value; }
-
-    /**
-     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
-     * to verify signatures.</p>
-     */
-    inline KeyModesOfUse& WithVerify(bool value) { SetVerify(value); return *this;}
-
-
-    /**
-     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
-     * to wrap other keys.</p>
-     */
-    inline bool GetWrap() const{ return m_wrap; }
-
-    /**
-     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
-     * to wrap other keys.</p>
-     */
-    inline bool WrapHasBeenSet() const { return m_wrapHasBeenSet; }
-
-    /**
-     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
-     * to wrap other keys.</p>
-     */
-    inline void SetWrap(bool value) { m_wrapHasBeenSet = true; m_wrap = value; }
-
-    /**
-     * <p>Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used
-     * to wrap other keys.</p>
-     */
-    inline KeyModesOfUse& WithWrap(bool value) { SetWrap(value); return *this;}
-
   private:
-
-    bool m_decrypt;
-    bool m_decryptHasBeenSet = false;
-
-    bool m_deriveKey;
-    bool m_deriveKeyHasBeenSet = false;
 
     bool m_encrypt;
     bool m_encryptHasBeenSet = false;
 
-    bool m_generate;
-    bool m_generateHasBeenSet = false;
+    bool m_decrypt;
+    bool m_decryptHasBeenSet = false;
 
-    bool m_noRestrictions;
-    bool m_noRestrictionsHasBeenSet = false;
-
-    bool m_sign;
-    bool m_signHasBeenSet = false;
+    bool m_wrap;
+    bool m_wrapHasBeenSet = false;
 
     bool m_unwrap;
     bool m_unwrapHasBeenSet = false;
 
+    bool m_generate;
+    bool m_generateHasBeenSet = false;
+
+    bool m_sign;
+    bool m_signHasBeenSet = false;
+
     bool m_verify;
     bool m_verifyHasBeenSet = false;
 
-    bool m_wrap;
-    bool m_wrapHasBeenSet = false;
+    bool m_deriveKey;
+    bool m_deriveKeyHasBeenSet = false;
+
+    bool m_noRestrictions;
+    bool m_noRestrictionsHasBeenSet = false;
   };
 
 } // namespace Model

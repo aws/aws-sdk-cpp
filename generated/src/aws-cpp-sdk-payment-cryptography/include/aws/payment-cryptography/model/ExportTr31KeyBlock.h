@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/payment-cryptography/PaymentCryptography_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/payment-cryptography/model/KeyBlockHeaders.h>
 #include <utility>
 
 namespace Aws
@@ -86,10 +87,50 @@ namespace Model
      */
     inline ExportTr31KeyBlock& WithWrappingKeyIdentifier(const char* value) { SetWrappingKeyIdentifier(value); return *this;}
 
+
+    /**
+     * <p>Optional metadata for export associated with the key material. This data is
+     * signed but transmitted in clear text.</p>
+     */
+    inline const KeyBlockHeaders& GetKeyBlockHeaders() const{ return m_keyBlockHeaders; }
+
+    /**
+     * <p>Optional metadata for export associated with the key material. This data is
+     * signed but transmitted in clear text.</p>
+     */
+    inline bool KeyBlockHeadersHasBeenSet() const { return m_keyBlockHeadersHasBeenSet; }
+
+    /**
+     * <p>Optional metadata for export associated with the key material. This data is
+     * signed but transmitted in clear text.</p>
+     */
+    inline void SetKeyBlockHeaders(const KeyBlockHeaders& value) { m_keyBlockHeadersHasBeenSet = true; m_keyBlockHeaders = value; }
+
+    /**
+     * <p>Optional metadata for export associated with the key material. This data is
+     * signed but transmitted in clear text.</p>
+     */
+    inline void SetKeyBlockHeaders(KeyBlockHeaders&& value) { m_keyBlockHeadersHasBeenSet = true; m_keyBlockHeaders = std::move(value); }
+
+    /**
+     * <p>Optional metadata for export associated with the key material. This data is
+     * signed but transmitted in clear text.</p>
+     */
+    inline ExportTr31KeyBlock& WithKeyBlockHeaders(const KeyBlockHeaders& value) { SetKeyBlockHeaders(value); return *this;}
+
+    /**
+     * <p>Optional metadata for export associated with the key material. This data is
+     * signed but transmitted in clear text.</p>
+     */
+    inline ExportTr31KeyBlock& WithKeyBlockHeaders(KeyBlockHeaders&& value) { SetKeyBlockHeaders(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_wrappingKeyIdentifier;
     bool m_wrappingKeyIdentifierHasBeenSet = false;
+
+    KeyBlockHeaders m_keyBlockHeaders;
+    bool m_keyBlockHeadersHasBeenSet = false;
   };
 
 } // namespace Model

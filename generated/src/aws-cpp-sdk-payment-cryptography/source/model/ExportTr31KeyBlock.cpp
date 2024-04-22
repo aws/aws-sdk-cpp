@@ -19,12 +19,14 @@ namespace Model
 {
 
 ExportTr31KeyBlock::ExportTr31KeyBlock() : 
-    m_wrappingKeyIdentifierHasBeenSet(false)
+    m_wrappingKeyIdentifierHasBeenSet(false),
+    m_keyBlockHeadersHasBeenSet(false)
 {
 }
 
 ExportTr31KeyBlock::ExportTr31KeyBlock(JsonView jsonValue) : 
-    m_wrappingKeyIdentifierHasBeenSet(false)
+    m_wrappingKeyIdentifierHasBeenSet(false),
+    m_keyBlockHeadersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ ExportTr31KeyBlock& ExportTr31KeyBlock::operator =(JsonView jsonValue)
     m_wrappingKeyIdentifierHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("KeyBlockHeaders"))
+  {
+    m_keyBlockHeaders = jsonValue.GetObject("KeyBlockHeaders");
+
+    m_keyBlockHeadersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue ExportTr31KeyBlock::Jsonize() const
   if(m_wrappingKeyIdentifierHasBeenSet)
   {
    payload.WithString("WrappingKeyIdentifier", m_wrappingKeyIdentifier);
+
+  }
+
+  if(m_keyBlockHeadersHasBeenSet)
+  {
+   payload.WithObject("KeyBlockHeaders", m_keyBlockHeaders.Jsonize());
 
   }
 

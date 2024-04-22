@@ -40,6 +40,11 @@ namespace Model
             AWS_LOGSTREAM_TRACE(INVOKEAGENT_HANDLER_CLASS_TAG, "PayloadPart received.");
         };
 
+        m_onReturnControlPayload = [&](const ReturnControlPayload&)
+        {
+            AWS_LOGSTREAM_TRACE(INVOKEAGENT_HANDLER_CLASS_TAG, "ReturnControlPayload received.");
+        };
+
         m_onTracePart = [&](const TracePart&)
         {
             AWS_LOGSTREAM_TRACE(INVOKEAGENT_HANDLER_CLASS_TAG, "TracePart received.");
@@ -124,6 +129,18 @@ namespace Model
             }
 
             m_onPayloadPart(PayloadPart{json.View()});
+            break;
+        }
+        case InvokeAgentEventType::RETURNCONTROL:
+        {
+            JsonValue json(GetEventPayloadAsString());
+            if (!json.WasParseSuccessful())
+            {
+                AWS_LOGSTREAM_WARN(INVOKEAGENT_HANDLER_CLASS_TAG, "Unable to generate a proper ReturnControlPayload object from the response in JSON format.");
+                break;
+            }
+
+            m_onReturnControlPayload(ReturnControlPayload{json.View()});
             break;
         }
         case InvokeAgentEventType::TRACE:
@@ -232,6 +249,7 @@ namespace InvokeAgentEventMapper
 {
     static const int INITIAL_RESPONSE_HASH = Aws::Utils::HashingUtils::HashString("initial-response");
     static const int CHUNK_HASH = Aws::Utils::HashingUtils::HashString("chunk");
+    static const int RETURNCONTROL_HASH = Aws::Utils::HashingUtils::HashString("returnControl");
     static const int TRACE_HASH = Aws::Utils::HashingUtils::HashString("trace");
 
     InvokeAgentEventType GetInvokeAgentEventTypeForName(const Aws::String& name)
@@ -245,6 +263,10 @@ namespace InvokeAgentEventMapper
         else if (hashCode == CHUNK_HASH)
         {
             return InvokeAgentEventType::CHUNK;
+        }
+        else if (hashCode == RETURNCONTROL_HASH)
+        {
+            return InvokeAgentEventType::RETURNCONTROL;
         }
         else if (hashCode == TRACE_HASH)
         {
@@ -261,6 +283,8 @@ namespace InvokeAgentEventMapper
             return "initial-response";
         case InvokeAgentEventType::CHUNK:
             return "chunk";
+        case InvokeAgentEventType::RETURNCONTROL:
+            return "returnControl";
         case InvokeAgentEventType::TRACE:
             return "trace";
         default:

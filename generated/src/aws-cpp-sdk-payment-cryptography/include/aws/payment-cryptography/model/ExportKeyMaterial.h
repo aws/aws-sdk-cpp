@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/payment-cryptography/PaymentCryptography_EXPORTS.h>
-#include <aws/payment-cryptography/model/ExportKeyCryptogram.h>
 #include <aws/payment-cryptography/model/ExportTr31KeyBlock.h>
 #include <aws/payment-cryptography/model/ExportTr34KeyBlock.h>
+#include <aws/payment-cryptography/model/ExportKeyCryptogram.h>
 #include <utility>
 
 namespace Aws
@@ -39,43 +39,6 @@ namespace Model
     AWS_PAYMENTCRYPTOGRAPHY_API ExportKeyMaterial(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHY_API ExportKeyMaterial& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHY_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>Parameter information for key material export using asymmetric RSA wrap and
-     * unwrap key exchange method</p>
-     */
-    inline const ExportKeyCryptogram& GetKeyCryptogram() const{ return m_keyCryptogram; }
-
-    /**
-     * <p>Parameter information for key material export using asymmetric RSA wrap and
-     * unwrap key exchange method</p>
-     */
-    inline bool KeyCryptogramHasBeenSet() const { return m_keyCryptogramHasBeenSet; }
-
-    /**
-     * <p>Parameter information for key material export using asymmetric RSA wrap and
-     * unwrap key exchange method</p>
-     */
-    inline void SetKeyCryptogram(const ExportKeyCryptogram& value) { m_keyCryptogramHasBeenSet = true; m_keyCryptogram = value; }
-
-    /**
-     * <p>Parameter information for key material export using asymmetric RSA wrap and
-     * unwrap key exchange method</p>
-     */
-    inline void SetKeyCryptogram(ExportKeyCryptogram&& value) { m_keyCryptogramHasBeenSet = true; m_keyCryptogram = std::move(value); }
-
-    /**
-     * <p>Parameter information for key material export using asymmetric RSA wrap and
-     * unwrap key exchange method</p>
-     */
-    inline ExportKeyMaterial& WithKeyCryptogram(const ExportKeyCryptogram& value) { SetKeyCryptogram(value); return *this;}
-
-    /**
-     * <p>Parameter information for key material export using asymmetric RSA wrap and
-     * unwrap key exchange method</p>
-     */
-    inline ExportKeyMaterial& WithKeyCryptogram(ExportKeyCryptogram&& value) { SetKeyCryptogram(std::move(value)); return *this;}
 
 
     /**
@@ -151,16 +114,53 @@ namespace Model
      */
     inline ExportKeyMaterial& WithTr34KeyBlock(ExportTr34KeyBlock&& value) { SetTr34KeyBlock(std::move(value)); return *this;}
 
-  private:
 
-    ExportKeyCryptogram m_keyCryptogram;
-    bool m_keyCryptogramHasBeenSet = false;
+    /**
+     * <p>Parameter information for key material export using asymmetric RSA wrap and
+     * unwrap key exchange method</p>
+     */
+    inline const ExportKeyCryptogram& GetKeyCryptogram() const{ return m_keyCryptogram; }
+
+    /**
+     * <p>Parameter information for key material export using asymmetric RSA wrap and
+     * unwrap key exchange method</p>
+     */
+    inline bool KeyCryptogramHasBeenSet() const { return m_keyCryptogramHasBeenSet; }
+
+    /**
+     * <p>Parameter information for key material export using asymmetric RSA wrap and
+     * unwrap key exchange method</p>
+     */
+    inline void SetKeyCryptogram(const ExportKeyCryptogram& value) { m_keyCryptogramHasBeenSet = true; m_keyCryptogram = value; }
+
+    /**
+     * <p>Parameter information for key material export using asymmetric RSA wrap and
+     * unwrap key exchange method</p>
+     */
+    inline void SetKeyCryptogram(ExportKeyCryptogram&& value) { m_keyCryptogramHasBeenSet = true; m_keyCryptogram = std::move(value); }
+
+    /**
+     * <p>Parameter information for key material export using asymmetric RSA wrap and
+     * unwrap key exchange method</p>
+     */
+    inline ExportKeyMaterial& WithKeyCryptogram(const ExportKeyCryptogram& value) { SetKeyCryptogram(value); return *this;}
+
+    /**
+     * <p>Parameter information for key material export using asymmetric RSA wrap and
+     * unwrap key exchange method</p>
+     */
+    inline ExportKeyMaterial& WithKeyCryptogram(ExportKeyCryptogram&& value) { SetKeyCryptogram(std::move(value)); return *this;}
+
+  private:
 
     ExportTr31KeyBlock m_tr31KeyBlock;
     bool m_tr31KeyBlockHasBeenSet = false;
 
     ExportTr34KeyBlock m_tr34KeyBlock;
     bool m_tr34KeyBlockHasBeenSet = false;
+
+    ExportKeyCryptogram m_keyCryptogram;
+    bool m_keyCryptogramHasBeenSet = false;
   };
 
 } // namespace Model

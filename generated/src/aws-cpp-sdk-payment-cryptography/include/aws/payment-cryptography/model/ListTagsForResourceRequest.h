@@ -35,40 +35,44 @@ namespace Model
 
 
     /**
-     * <p>Use this parameter to specify the maximum number of items to return. When
-     * this value is present, Amazon Web Services Payment Cryptography does not return
-     * more than the specified number of items, but it might return fewer.</p> <p>This
-     * value is optional. If you include a value, it must be between 1 and 100,
-     * inclusive. If you do not include a value, it defaults to 50.</p>
+     * <p>The <code>KeyARN</code> of the key whose tags you are getting.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
-     * <p>Use this parameter to specify the maximum number of items to return. When
-     * this value is present, Amazon Web Services Payment Cryptography does not return
-     * more than the specified number of items, but it might return fewer.</p> <p>This
-     * value is optional. If you include a value, it must be between 1 and 100,
-     * inclusive. If you do not include a value, it defaults to 50.</p>
+     * <p>The <code>KeyARN</code> of the key whose tags you are getting.</p>
      */
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
     /**
-     * <p>Use this parameter to specify the maximum number of items to return. When
-     * this value is present, Amazon Web Services Payment Cryptography does not return
-     * more than the specified number of items, but it might return fewer.</p> <p>This
-     * value is optional. If you include a value, it must be between 1 and 100,
-     * inclusive. If you do not include a value, it defaults to 50.</p>
+     * <p>The <code>KeyARN</code> of the key whose tags you are getting.</p>
      */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
-     * <p>Use this parameter to specify the maximum number of items to return. When
-     * this value is present, Amazon Web Services Payment Cryptography does not return
-     * more than the specified number of items, but it might return fewer.</p> <p>This
-     * value is optional. If you include a value, it must be between 1 and 100,
-     * inclusive. If you do not include a value, it defaults to 50.</p>
+     * <p>The <code>KeyARN</code> of the key whose tags you are getting.</p>
      */
-    inline ListTagsForResourceRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
+
+    /**
+     * <p>The <code>KeyARN</code> of the key whose tags you are getting.</p>
+     */
+    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
+
+    /**
+     * <p>The <code>KeyARN</code> of the key whose tags you are getting.</p>
+     */
+    inline ListTagsForResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
+
+    /**
+     * <p>The <code>KeyARN</code> of the key whose tags you are getting.</p>
+     */
+    inline ListTagsForResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The <code>KeyARN</code> of the key whose tags you are getting.</p>
+     */
+    inline ListTagsForResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
 
     /**
@@ -129,55 +133,51 @@ namespace Model
 
 
     /**
-     * <p>The <code>KeyARN</code> of the key whose tags you are getting.</p>
+     * <p>Use this parameter to specify the maximum number of items to return. When
+     * this value is present, Amazon Web Services Payment Cryptography does not return
+     * more than the specified number of items, but it might return fewer.</p> <p>This
+     * value is optional. If you include a value, it must be between 1 and 100,
+     * inclusive. If you do not include a value, it defaults to 50.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The <code>KeyARN</code> of the key whose tags you are getting.</p>
+     * <p>Use this parameter to specify the maximum number of items to return. When
+     * this value is present, Amazon Web Services Payment Cryptography does not return
+     * more than the specified number of items, but it might return fewer.</p> <p>This
+     * value is optional. If you include a value, it must be between 1 and 100,
+     * inclusive. If you do not include a value, it defaults to 50.</p>
      */
-    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The <code>KeyARN</code> of the key whose tags you are getting.</p>
+     * <p>Use this parameter to specify the maximum number of items to return. When
+     * this value is present, Amazon Web Services Payment Cryptography does not return
+     * more than the specified number of items, but it might return fewer.</p> <p>This
+     * value is optional. If you include a value, it must be between 1 and 100,
+     * inclusive. If you do not include a value, it defaults to 50.</p>
      */
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The <code>KeyARN</code> of the key whose tags you are getting.</p>
+     * <p>Use this parameter to specify the maximum number of items to return. When
+     * this value is present, Amazon Web Services Payment Cryptography does not return
+     * more than the specified number of items, but it might return fewer.</p> <p>This
+     * value is optional. If you include a value, it must be between 1 and 100,
+     * inclusive. If you do not include a value, it defaults to 50.</p>
      */
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-
-    /**
-     * <p>The <code>KeyARN</code> of the key whose tags you are getting.</p>
-     */
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-
-    /**
-     * <p>The <code>KeyARN</code> of the key whose tags you are getting.</p>
-     */
-    inline ListTagsForResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-
-    /**
-     * <p>The <code>KeyARN</code> of the key whose tags you are getting.</p>
-     */
-    inline ListTagsForResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>KeyARN</code> of the key whose tags you are getting.</p>
-     */
-    inline ListTagsForResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    inline ListTagsForResourceRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
 
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
+    Aws::String m_resourceArn;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet = false;
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

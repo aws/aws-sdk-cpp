@@ -19,66 +19,52 @@ namespace Model
 {
 
 KeyModesOfUse::KeyModesOfUse() : 
-    m_decrypt(false),
-    m_decryptHasBeenSet(false),
-    m_deriveKey(false),
-    m_deriveKeyHasBeenSet(false),
     m_encrypt(false),
     m_encryptHasBeenSet(false),
-    m_generate(false),
-    m_generateHasBeenSet(false),
-    m_noRestrictions(false),
-    m_noRestrictionsHasBeenSet(false),
-    m_sign(false),
-    m_signHasBeenSet(false),
+    m_decrypt(false),
+    m_decryptHasBeenSet(false),
+    m_wrap(false),
+    m_wrapHasBeenSet(false),
     m_unwrap(false),
     m_unwrapHasBeenSet(false),
+    m_generate(false),
+    m_generateHasBeenSet(false),
+    m_sign(false),
+    m_signHasBeenSet(false),
     m_verify(false),
     m_verifyHasBeenSet(false),
-    m_wrap(false),
-    m_wrapHasBeenSet(false)
+    m_deriveKey(false),
+    m_deriveKeyHasBeenSet(false),
+    m_noRestrictions(false),
+    m_noRestrictionsHasBeenSet(false)
 {
 }
 
 KeyModesOfUse::KeyModesOfUse(JsonView jsonValue) : 
-    m_decrypt(false),
-    m_decryptHasBeenSet(false),
-    m_deriveKey(false),
-    m_deriveKeyHasBeenSet(false),
     m_encrypt(false),
     m_encryptHasBeenSet(false),
-    m_generate(false),
-    m_generateHasBeenSet(false),
-    m_noRestrictions(false),
-    m_noRestrictionsHasBeenSet(false),
-    m_sign(false),
-    m_signHasBeenSet(false),
+    m_decrypt(false),
+    m_decryptHasBeenSet(false),
+    m_wrap(false),
+    m_wrapHasBeenSet(false),
     m_unwrap(false),
     m_unwrapHasBeenSet(false),
+    m_generate(false),
+    m_generateHasBeenSet(false),
+    m_sign(false),
+    m_signHasBeenSet(false),
     m_verify(false),
     m_verifyHasBeenSet(false),
-    m_wrap(false),
-    m_wrapHasBeenSet(false)
+    m_deriveKey(false),
+    m_deriveKeyHasBeenSet(false),
+    m_noRestrictions(false),
+    m_noRestrictionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 KeyModesOfUse& KeyModesOfUse::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Decrypt"))
-  {
-    m_decrypt = jsonValue.GetBool("Decrypt");
-
-    m_decryptHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("DeriveKey"))
-  {
-    m_deriveKey = jsonValue.GetBool("DeriveKey");
-
-    m_deriveKeyHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("Encrypt"))
   {
     m_encrypt = jsonValue.GetBool("Encrypt");
@@ -86,39 +72,11 @@ KeyModesOfUse& KeyModesOfUse::operator =(JsonView jsonValue)
     m_encryptHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("Generate"))
+  if(jsonValue.ValueExists("Decrypt"))
   {
-    m_generate = jsonValue.GetBool("Generate");
+    m_decrypt = jsonValue.GetBool("Decrypt");
 
-    m_generateHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("NoRestrictions"))
-  {
-    m_noRestrictions = jsonValue.GetBool("NoRestrictions");
-
-    m_noRestrictionsHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("Sign"))
-  {
-    m_sign = jsonValue.GetBool("Sign");
-
-    m_signHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("Unwrap"))
-  {
-    m_unwrap = jsonValue.GetBool("Unwrap");
-
-    m_unwrapHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("Verify"))
-  {
-    m_verify = jsonValue.GetBool("Verify");
-
-    m_verifyHasBeenSet = true;
+    m_decryptHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Wrap"))
@@ -128,6 +86,48 @@ KeyModesOfUse& KeyModesOfUse::operator =(JsonView jsonValue)
     m_wrapHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Unwrap"))
+  {
+    m_unwrap = jsonValue.GetBool("Unwrap");
+
+    m_unwrapHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Generate"))
+  {
+    m_generate = jsonValue.GetBool("Generate");
+
+    m_generateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Sign"))
+  {
+    m_sign = jsonValue.GetBool("Sign");
+
+    m_signHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Verify"))
+  {
+    m_verify = jsonValue.GetBool("Verify");
+
+    m_verifyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DeriveKey"))
+  {
+    m_deriveKey = jsonValue.GetBool("DeriveKey");
+
+    m_deriveKeyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NoRestrictions"))
+  {
+    m_noRestrictions = jsonValue.GetBool("NoRestrictions");
+
+    m_noRestrictionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -135,39 +135,21 @@ JsonValue KeyModesOfUse::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_decryptHasBeenSet)
-  {
-   payload.WithBool("Decrypt", m_decrypt);
-
-  }
-
-  if(m_deriveKeyHasBeenSet)
-  {
-   payload.WithBool("DeriveKey", m_deriveKey);
-
-  }
-
   if(m_encryptHasBeenSet)
   {
    payload.WithBool("Encrypt", m_encrypt);
 
   }
 
-  if(m_generateHasBeenSet)
+  if(m_decryptHasBeenSet)
   {
-   payload.WithBool("Generate", m_generate);
+   payload.WithBool("Decrypt", m_decrypt);
 
   }
 
-  if(m_noRestrictionsHasBeenSet)
+  if(m_wrapHasBeenSet)
   {
-   payload.WithBool("NoRestrictions", m_noRestrictions);
-
-  }
-
-  if(m_signHasBeenSet)
-  {
-   payload.WithBool("Sign", m_sign);
+   payload.WithBool("Wrap", m_wrap);
 
   }
 
@@ -177,15 +159,33 @@ JsonValue KeyModesOfUse::Jsonize() const
 
   }
 
+  if(m_generateHasBeenSet)
+  {
+   payload.WithBool("Generate", m_generate);
+
+  }
+
+  if(m_signHasBeenSet)
+  {
+   payload.WithBool("Sign", m_sign);
+
+  }
+
   if(m_verifyHasBeenSet)
   {
    payload.WithBool("Verify", m_verify);
 
   }
 
-  if(m_wrapHasBeenSet)
+  if(m_deriveKeyHasBeenSet)
   {
-   payload.WithBool("Wrap", m_wrap);
+   payload.WithBool("DeriveKey", m_deriveKey);
+
+  }
+
+  if(m_noRestrictionsHasBeenSet)
+  {
+   payload.WithBool("NoRestrictions", m_noRestrictions);
 
   }
 

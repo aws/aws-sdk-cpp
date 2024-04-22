@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/bedrock-agent-runtime/model/InvocationResultMember.h>
 #include <utility>
 
 namespace Aws
@@ -46,6 +48,47 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API SessionState(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API SessionState& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The identifier of the invocation.</p>
+     */
+    inline const Aws::String& GetInvocationId() const{ return m_invocationId; }
+
+    /**
+     * <p>The identifier of the invocation.</p>
+     */
+    inline bool InvocationIdHasBeenSet() const { return m_invocationIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the invocation.</p>
+     */
+    inline void SetInvocationId(const Aws::String& value) { m_invocationIdHasBeenSet = true; m_invocationId = value; }
+
+    /**
+     * <p>The identifier of the invocation.</p>
+     */
+    inline void SetInvocationId(Aws::String&& value) { m_invocationIdHasBeenSet = true; m_invocationId = std::move(value); }
+
+    /**
+     * <p>The identifier of the invocation.</p>
+     */
+    inline void SetInvocationId(const char* value) { m_invocationIdHasBeenSet = true; m_invocationId.assign(value); }
+
+    /**
+     * <p>The identifier of the invocation.</p>
+     */
+    inline SessionState& WithInvocationId(const Aws::String& value) { SetInvocationId(value); return *this;}
+
+    /**
+     * <p>The identifier of the invocation.</p>
+     */
+    inline SessionState& WithInvocationId(Aws::String&& value) { SetInvocationId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the invocation.</p>
+     */
+    inline SessionState& WithInvocationId(const char* value) { SetInvocationId(value); return *this;}
 
 
     /**
@@ -167,6 +210,47 @@ namespace Model
 
 
     /**
+     * <p>Contains information about the results from the action group invocation.</p>
+     */
+    inline const Aws::Vector<InvocationResultMember>& GetReturnControlInvocationResults() const{ return m_returnControlInvocationResults; }
+
+    /**
+     * <p>Contains information about the results from the action group invocation.</p>
+     */
+    inline bool ReturnControlInvocationResultsHasBeenSet() const { return m_returnControlInvocationResultsHasBeenSet; }
+
+    /**
+     * <p>Contains information about the results from the action group invocation.</p>
+     */
+    inline void SetReturnControlInvocationResults(const Aws::Vector<InvocationResultMember>& value) { m_returnControlInvocationResultsHasBeenSet = true; m_returnControlInvocationResults = value; }
+
+    /**
+     * <p>Contains information about the results from the action group invocation.</p>
+     */
+    inline void SetReturnControlInvocationResults(Aws::Vector<InvocationResultMember>&& value) { m_returnControlInvocationResultsHasBeenSet = true; m_returnControlInvocationResults = std::move(value); }
+
+    /**
+     * <p>Contains information about the results from the action group invocation.</p>
+     */
+    inline SessionState& WithReturnControlInvocationResults(const Aws::Vector<InvocationResultMember>& value) { SetReturnControlInvocationResults(value); return *this;}
+
+    /**
+     * <p>Contains information about the results from the action group invocation.</p>
+     */
+    inline SessionState& WithReturnControlInvocationResults(Aws::Vector<InvocationResultMember>&& value) { SetReturnControlInvocationResults(std::move(value)); return *this;}
+
+    /**
+     * <p>Contains information about the results from the action group invocation.</p>
+     */
+    inline SessionState& AddReturnControlInvocationResults(const InvocationResultMember& value) { m_returnControlInvocationResultsHasBeenSet = true; m_returnControlInvocationResults.push_back(value); return *this; }
+
+    /**
+     * <p>Contains information about the results from the action group invocation.</p>
+     */
+    inline SessionState& AddReturnControlInvocationResults(InvocationResultMember&& value) { m_returnControlInvocationResultsHasBeenSet = true; m_returnControlInvocationResults.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>Contains attributes that persist across a session and the values of those
      * attributes.</p>
      */
@@ -246,8 +330,14 @@ namespace Model
 
   private:
 
+    Aws::String m_invocationId;
+    bool m_invocationIdHasBeenSet = false;
+
     Aws::Map<Aws::String, Aws::String> m_promptSessionAttributes;
     bool m_promptSessionAttributesHasBeenSet = false;
+
+    Aws::Vector<InvocationResultMember> m_returnControlInvocationResults;
+    bool m_returnControlInvocationResultsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_sessionAttributes;
     bool m_sessionAttributesHasBeenSet = false;

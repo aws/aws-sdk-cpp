@@ -309,7 +309,7 @@ namespace Model
      * for Route 53 to change the current status of the endpoint from unhealthy to
      * healthy or the other way around. For more information, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
-     * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53
+     * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route��53
      * Developer Guide</i>.</p>
      */
     inline int GetFailureThreshold() const{ return m_failureThreshold; }
@@ -319,7 +319,7 @@ namespace Model
      * for Route 53 to change the current status of the endpoint from unhealthy to
      * healthy or the other way around. For more information, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
-     * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53
+     * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route��53
      * Developer Guide</i>.</p>
      */
     inline bool FailureThresholdHasBeenSet() const { return m_failureThresholdHasBeenSet; }
@@ -329,7 +329,7 @@ namespace Model
      * for Route 53 to change the current status of the endpoint from unhealthy to
      * healthy or the other way around. For more information, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
-     * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53
+     * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route��53
      * Developer Guide</i>.</p>
      */
     inline void SetFailureThreshold(int value) { m_failureThresholdHasBeenSet = true; m_failureThreshold = value; }
@@ -339,7 +339,7 @@ namespace Model
      * for Route 53 to change the current status of the endpoint from unhealthy to
      * healthy or the other way around. For more information, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
-     * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53
+     * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route��53
      * Developer Guide</i>.</p>
      */
     inline HealthCheckConfig& WithFailureThreshold(int value) { SetFailureThreshold(value); return *this;}

@@ -39,56 +39,72 @@ namespace Model
     /**
      * <p>The <code>HttpName</code> name of the namespace. It's found in the
      * <code>HttpProperties</code> member of the <code>Properties</code> member of the
-     * namespace.</p>
+     * namespace. In most cases, <code>Name</code> and <code>HttpName</code> match.
+     * However, if you reuse <code>Name</code> for namespace creation, a generated hash
+     * is added to <code>HttpName</code> to distinguish the two.</p>
      */
     inline const Aws::String& GetNamespaceName() const{ return m_namespaceName; }
 
     /**
      * <p>The <code>HttpName</code> name of the namespace. It's found in the
      * <code>HttpProperties</code> member of the <code>Properties</code> member of the
-     * namespace.</p>
+     * namespace. In most cases, <code>Name</code> and <code>HttpName</code> match.
+     * However, if you reuse <code>Name</code> for namespace creation, a generated hash
+     * is added to <code>HttpName</code> to distinguish the two.</p>
      */
     inline bool NamespaceNameHasBeenSet() const { return m_namespaceNameHasBeenSet; }
 
     /**
      * <p>The <code>HttpName</code> name of the namespace. It's found in the
      * <code>HttpProperties</code> member of the <code>Properties</code> member of the
-     * namespace.</p>
+     * namespace. In most cases, <code>Name</code> and <code>HttpName</code> match.
+     * However, if you reuse <code>Name</code> for namespace creation, a generated hash
+     * is added to <code>HttpName</code> to distinguish the two.</p>
      */
     inline void SetNamespaceName(const Aws::String& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = value; }
 
     /**
      * <p>The <code>HttpName</code> name of the namespace. It's found in the
      * <code>HttpProperties</code> member of the <code>Properties</code> member of the
-     * namespace.</p>
+     * namespace. In most cases, <code>Name</code> and <code>HttpName</code> match.
+     * However, if you reuse <code>Name</code> for namespace creation, a generated hash
+     * is added to <code>HttpName</code> to distinguish the two.</p>
      */
     inline void SetNamespaceName(Aws::String&& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = std::move(value); }
 
     /**
      * <p>The <code>HttpName</code> name of the namespace. It's found in the
      * <code>HttpProperties</code> member of the <code>Properties</code> member of the
-     * namespace.</p>
+     * namespace. In most cases, <code>Name</code> and <code>HttpName</code> match.
+     * However, if you reuse <code>Name</code> for namespace creation, a generated hash
+     * is added to <code>HttpName</code> to distinguish the two.</p>
      */
     inline void SetNamespaceName(const char* value) { m_namespaceNameHasBeenSet = true; m_namespaceName.assign(value); }
 
     /**
      * <p>The <code>HttpName</code> name of the namespace. It's found in the
      * <code>HttpProperties</code> member of the <code>Properties</code> member of the
-     * namespace.</p>
+     * namespace. In most cases, <code>Name</code> and <code>HttpName</code> match.
+     * However, if you reuse <code>Name</code> for namespace creation, a generated hash
+     * is added to <code>HttpName</code> to distinguish the two.</p>
      */
     inline DiscoverInstancesRequest& WithNamespaceName(const Aws::String& value) { SetNamespaceName(value); return *this;}
 
     /**
      * <p>The <code>HttpName</code> name of the namespace. It's found in the
      * <code>HttpProperties</code> member of the <code>Properties</code> member of the
-     * namespace.</p>
+     * namespace. In most cases, <code>Name</code> and <code>HttpName</code> match.
+     * However, if you reuse <code>Name</code> for namespace creation, a generated hash
+     * is added to <code>HttpName</code> to distinguish the two.</p>
      */
     inline DiscoverInstancesRequest& WithNamespaceName(Aws::String&& value) { SetNamespaceName(std::move(value)); return *this;}
 
     /**
      * <p>The <code>HttpName</code> name of the namespace. It's found in the
      * <code>HttpProperties</code> member of the <code>Properties</code> member of the
-     * namespace.</p>
+     * namespace. In most cases, <code>Name</code> and <code>HttpName</code> match.
+     * However, if you reuse <code>Name</code> for namespace creation, a generated hash
+     * is added to <code>HttpName</code> to distinguish the two.</p>
      */
     inline DiscoverInstancesRequest& WithNamespaceName(const char* value) { SetNamespaceName(value); return *this;}
 

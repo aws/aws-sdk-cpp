@@ -19,29 +19,22 @@ namespace Model
 {
 
 ExportKeyMaterial::ExportKeyMaterial() : 
-    m_keyCryptogramHasBeenSet(false),
     m_tr31KeyBlockHasBeenSet(false),
-    m_tr34KeyBlockHasBeenSet(false)
+    m_tr34KeyBlockHasBeenSet(false),
+    m_keyCryptogramHasBeenSet(false)
 {
 }
 
 ExportKeyMaterial::ExportKeyMaterial(JsonView jsonValue) : 
-    m_keyCryptogramHasBeenSet(false),
     m_tr31KeyBlockHasBeenSet(false),
-    m_tr34KeyBlockHasBeenSet(false)
+    m_tr34KeyBlockHasBeenSet(false),
+    m_keyCryptogramHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 ExportKeyMaterial& ExportKeyMaterial::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("KeyCryptogram"))
-  {
-    m_keyCryptogram = jsonValue.GetObject("KeyCryptogram");
-
-    m_keyCryptogramHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("Tr31KeyBlock"))
   {
     m_tr31KeyBlock = jsonValue.GetObject("Tr31KeyBlock");
@@ -56,18 +49,19 @@ ExportKeyMaterial& ExportKeyMaterial::operator =(JsonView jsonValue)
     m_tr34KeyBlockHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("KeyCryptogram"))
+  {
+    m_keyCryptogram = jsonValue.GetObject("KeyCryptogram");
+
+    m_keyCryptogramHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue ExportKeyMaterial::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_keyCryptogramHasBeenSet)
-  {
-   payload.WithObject("KeyCryptogram", m_keyCryptogram.Jsonize());
-
-  }
 
   if(m_tr31KeyBlockHasBeenSet)
   {
@@ -78,6 +72,12 @@ JsonValue ExportKeyMaterial::Jsonize() const
   if(m_tr34KeyBlockHasBeenSet)
   {
    payload.WithObject("Tr34KeyBlock", m_tr34KeyBlock.Jsonize());
+
+  }
+
+  if(m_keyCryptogramHasBeenSet)
+  {
+   payload.WithObject("KeyCryptogram", m_keyCryptogram.Jsonize());
 
   }
 

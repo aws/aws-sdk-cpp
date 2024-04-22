@@ -10,6 +10,7 @@
 #include <aws/bedrock-agent/model/ActionGroupState.h>
 #include <aws/bedrock-agent/model/APISchema.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/bedrock-agent/model/FunctionSchema.h>
 #include <aws/bedrock-agent/model/ActionGroupSignature.h>
 #include <utility>
 
@@ -493,6 +494,43 @@ namespace Model
 
 
     /**
+     * <p>Defines functions that each define parameters that the agent needs to invoke
+     * from the user. Each function represents an action in an action group.</p>
+     */
+    inline const FunctionSchema& GetFunctionSchema() const{ return m_functionSchema; }
+
+    /**
+     * <p>Defines functions that each define parameters that the agent needs to invoke
+     * from the user. Each function represents an action in an action group.</p>
+     */
+    inline bool FunctionSchemaHasBeenSet() const { return m_functionSchemaHasBeenSet; }
+
+    /**
+     * <p>Defines functions that each define parameters that the agent needs to invoke
+     * from the user. Each function represents an action in an action group.</p>
+     */
+    inline void SetFunctionSchema(const FunctionSchema& value) { m_functionSchemaHasBeenSet = true; m_functionSchema = value; }
+
+    /**
+     * <p>Defines functions that each define parameters that the agent needs to invoke
+     * from the user. Each function represents an action in an action group.</p>
+     */
+    inline void SetFunctionSchema(FunctionSchema&& value) { m_functionSchemaHasBeenSet = true; m_functionSchema = std::move(value); }
+
+    /**
+     * <p>Defines functions that each define parameters that the agent needs to invoke
+     * from the user. Each function represents an action in an action group.</p>
+     */
+    inline AgentActionGroup& WithFunctionSchema(const FunctionSchema& value) { SetFunctionSchema(value); return *this;}
+
+    /**
+     * <p>Defines functions that each define parameters that the agent needs to invoke
+     * from the user. Each function represents an action in an action group.</p>
+     */
+    inline AgentActionGroup& WithFunctionSchema(FunctionSchema&& value) { SetFunctionSchema(std::move(value)); return *this;}
+
+
+    /**
      * <p>If this field is set as <code>AMAZON.UserInput</code>, the agent can request
      * the user for additional information when trying to complete a task. The
      * <code>description</code>, <code>apiSchema</code>, and
@@ -632,6 +670,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    FunctionSchema m_functionSchema;
+    bool m_functionSchemaHasBeenSet = false;
 
     ActionGroupSignature m_parentActionSignature;
     bool m_parentActionSignatureHasBeenSet = false;

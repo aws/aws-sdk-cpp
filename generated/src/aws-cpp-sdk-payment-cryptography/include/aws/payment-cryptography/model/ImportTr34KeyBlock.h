@@ -89,6 +89,55 @@ namespace Model
 
 
     /**
+     * <p>The public key component in PEM certificate format of the private key that
+     * signs the KDH TR-34 WrappedKeyBlock.</p>
+     */
+    inline const Aws::String& GetSigningKeyCertificate() const{ return m_signingKeyCertificate; }
+
+    /**
+     * <p>The public key component in PEM certificate format of the private key that
+     * signs the KDH TR-34 WrappedKeyBlock.</p>
+     */
+    inline bool SigningKeyCertificateHasBeenSet() const { return m_signingKeyCertificateHasBeenSet; }
+
+    /**
+     * <p>The public key component in PEM certificate format of the private key that
+     * signs the KDH TR-34 WrappedKeyBlock.</p>
+     */
+    inline void SetSigningKeyCertificate(const Aws::String& value) { m_signingKeyCertificateHasBeenSet = true; m_signingKeyCertificate = value; }
+
+    /**
+     * <p>The public key component in PEM certificate format of the private key that
+     * signs the KDH TR-34 WrappedKeyBlock.</p>
+     */
+    inline void SetSigningKeyCertificate(Aws::String&& value) { m_signingKeyCertificateHasBeenSet = true; m_signingKeyCertificate = std::move(value); }
+
+    /**
+     * <p>The public key component in PEM certificate format of the private key that
+     * signs the KDH TR-34 WrappedKeyBlock.</p>
+     */
+    inline void SetSigningKeyCertificate(const char* value) { m_signingKeyCertificateHasBeenSet = true; m_signingKeyCertificate.assign(value); }
+
+    /**
+     * <p>The public key component in PEM certificate format of the private key that
+     * signs the KDH TR-34 WrappedKeyBlock.</p>
+     */
+    inline ImportTr34KeyBlock& WithSigningKeyCertificate(const Aws::String& value) { SetSigningKeyCertificate(value); return *this;}
+
+    /**
+     * <p>The public key component in PEM certificate format of the private key that
+     * signs the KDH TR-34 WrappedKeyBlock.</p>
+     */
+    inline ImportTr34KeyBlock& WithSigningKeyCertificate(Aws::String&& value) { SetSigningKeyCertificate(std::move(value)); return *this;}
+
+    /**
+     * <p>The public key component in PEM certificate format of the private key that
+     * signs the KDH TR-34 WrappedKeyBlock.</p>
+     */
+    inline ImportTr34KeyBlock& WithSigningKeyCertificate(const char* value) { SetSigningKeyCertificate(value); return *this;}
+
+
+    /**
      * <p>The import token that initiates key import using the asymmetric TR-34 key
      * exchange method into Amazon Web Services Payment Cryptography. It expires after
      * 7 days. You can use the same import token to import multiple keys to the same
@@ -151,6 +200,47 @@ namespace Model
      * service account.</p>
      */
     inline ImportTr34KeyBlock& WithImportToken(const char* value) { SetImportToken(value); return *this;}
+
+
+    /**
+     * <p>The TR-34 wrapped key block to import.</p>
+     */
+    inline const Aws::String& GetWrappedKeyBlock() const{ return m_wrappedKeyBlock; }
+
+    /**
+     * <p>The TR-34 wrapped key block to import.</p>
+     */
+    inline bool WrappedKeyBlockHasBeenSet() const { return m_wrappedKeyBlockHasBeenSet; }
+
+    /**
+     * <p>The TR-34 wrapped key block to import.</p>
+     */
+    inline void SetWrappedKeyBlock(const Aws::String& value) { m_wrappedKeyBlockHasBeenSet = true; m_wrappedKeyBlock = value; }
+
+    /**
+     * <p>The TR-34 wrapped key block to import.</p>
+     */
+    inline void SetWrappedKeyBlock(Aws::String&& value) { m_wrappedKeyBlockHasBeenSet = true; m_wrappedKeyBlock = std::move(value); }
+
+    /**
+     * <p>The TR-34 wrapped key block to import.</p>
+     */
+    inline void SetWrappedKeyBlock(const char* value) { m_wrappedKeyBlockHasBeenSet = true; m_wrappedKeyBlock.assign(value); }
+
+    /**
+     * <p>The TR-34 wrapped key block to import.</p>
+     */
+    inline ImportTr34KeyBlock& WithWrappedKeyBlock(const Aws::String& value) { SetWrappedKeyBlock(value); return *this;}
+
+    /**
+     * <p>The TR-34 wrapped key block to import.</p>
+     */
+    inline ImportTr34KeyBlock& WithWrappedKeyBlock(Aws::String&& value) { SetWrappedKeyBlock(std::move(value)); return *this;}
+
+    /**
+     * <p>The TR-34 wrapped key block to import.</p>
+     */
+    inline ImportTr34KeyBlock& WithWrappedKeyBlock(const char* value) { SetWrappedKeyBlock(value); return *this;}
 
 
     /**
@@ -246,115 +336,25 @@ namespace Model
      */
     inline ImportTr34KeyBlock& WithRandomNonce(const char* value) { SetRandomNonce(value); return *this;}
 
-
-    /**
-     * <p>The public key component in PEM certificate format of the private key that
-     * signs the KDH TR-34 WrappedKeyBlock.</p>
-     */
-    inline const Aws::String& GetSigningKeyCertificate() const{ return m_signingKeyCertificate; }
-
-    /**
-     * <p>The public key component in PEM certificate format of the private key that
-     * signs the KDH TR-34 WrappedKeyBlock.</p>
-     */
-    inline bool SigningKeyCertificateHasBeenSet() const { return m_signingKeyCertificateHasBeenSet; }
-
-    /**
-     * <p>The public key component in PEM certificate format of the private key that
-     * signs the KDH TR-34 WrappedKeyBlock.</p>
-     */
-    inline void SetSigningKeyCertificate(const Aws::String& value) { m_signingKeyCertificateHasBeenSet = true; m_signingKeyCertificate = value; }
-
-    /**
-     * <p>The public key component in PEM certificate format of the private key that
-     * signs the KDH TR-34 WrappedKeyBlock.</p>
-     */
-    inline void SetSigningKeyCertificate(Aws::String&& value) { m_signingKeyCertificateHasBeenSet = true; m_signingKeyCertificate = std::move(value); }
-
-    /**
-     * <p>The public key component in PEM certificate format of the private key that
-     * signs the KDH TR-34 WrappedKeyBlock.</p>
-     */
-    inline void SetSigningKeyCertificate(const char* value) { m_signingKeyCertificateHasBeenSet = true; m_signingKeyCertificate.assign(value); }
-
-    /**
-     * <p>The public key component in PEM certificate format of the private key that
-     * signs the KDH TR-34 WrappedKeyBlock.</p>
-     */
-    inline ImportTr34KeyBlock& WithSigningKeyCertificate(const Aws::String& value) { SetSigningKeyCertificate(value); return *this;}
-
-    /**
-     * <p>The public key component in PEM certificate format of the private key that
-     * signs the KDH TR-34 WrappedKeyBlock.</p>
-     */
-    inline ImportTr34KeyBlock& WithSigningKeyCertificate(Aws::String&& value) { SetSigningKeyCertificate(std::move(value)); return *this;}
-
-    /**
-     * <p>The public key component in PEM certificate format of the private key that
-     * signs the KDH TR-34 WrappedKeyBlock.</p>
-     */
-    inline ImportTr34KeyBlock& WithSigningKeyCertificate(const char* value) { SetSigningKeyCertificate(value); return *this;}
-
-
-    /**
-     * <p>The TR-34 wrapped key block to import.</p>
-     */
-    inline const Aws::String& GetWrappedKeyBlock() const{ return m_wrappedKeyBlock; }
-
-    /**
-     * <p>The TR-34 wrapped key block to import.</p>
-     */
-    inline bool WrappedKeyBlockHasBeenSet() const { return m_wrappedKeyBlockHasBeenSet; }
-
-    /**
-     * <p>The TR-34 wrapped key block to import.</p>
-     */
-    inline void SetWrappedKeyBlock(const Aws::String& value) { m_wrappedKeyBlockHasBeenSet = true; m_wrappedKeyBlock = value; }
-
-    /**
-     * <p>The TR-34 wrapped key block to import.</p>
-     */
-    inline void SetWrappedKeyBlock(Aws::String&& value) { m_wrappedKeyBlockHasBeenSet = true; m_wrappedKeyBlock = std::move(value); }
-
-    /**
-     * <p>The TR-34 wrapped key block to import.</p>
-     */
-    inline void SetWrappedKeyBlock(const char* value) { m_wrappedKeyBlockHasBeenSet = true; m_wrappedKeyBlock.assign(value); }
-
-    /**
-     * <p>The TR-34 wrapped key block to import.</p>
-     */
-    inline ImportTr34KeyBlock& WithWrappedKeyBlock(const Aws::String& value) { SetWrappedKeyBlock(value); return *this;}
-
-    /**
-     * <p>The TR-34 wrapped key block to import.</p>
-     */
-    inline ImportTr34KeyBlock& WithWrappedKeyBlock(Aws::String&& value) { SetWrappedKeyBlock(std::move(value)); return *this;}
-
-    /**
-     * <p>The TR-34 wrapped key block to import.</p>
-     */
-    inline ImportTr34KeyBlock& WithWrappedKeyBlock(const char* value) { SetWrappedKeyBlock(value); return *this;}
-
   private:
 
     Aws::String m_certificateAuthorityPublicKeyIdentifier;
     bool m_certificateAuthorityPublicKeyIdentifierHasBeenSet = false;
 
+    Aws::String m_signingKeyCertificate;
+    bool m_signingKeyCertificateHasBeenSet = false;
+
     Aws::String m_importToken;
     bool m_importTokenHasBeenSet = false;
+
+    Aws::String m_wrappedKeyBlock;
+    bool m_wrappedKeyBlockHasBeenSet = false;
 
     Tr34KeyBlockFormat m_keyBlockFormat;
     bool m_keyBlockFormatHasBeenSet = false;
 
     Aws::String m_randomNonce;
     bool m_randomNonceHasBeenSet = false;
-
-    Aws::String m_signingKeyCertificate;
-    bool m_signingKeyCertificateHasBeenSet = false;
-
-    Aws::String m_wrappedKeyBlock;
-    bool m_wrappedKeyBlockHasBeenSet = false;
   };
 
 } // namespace Model

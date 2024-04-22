@@ -110,14 +110,24 @@ namespace PaymentCryptography
          * multiple aliases. You can't create an alias without a key. The alias must be
          * unique in the account and Amazon Web Services Region, but you can create another
          * alias with the same name in a different Amazon Web Services Region.</p> <p>To
-         * change the key that's associated with the alias, call <a>UpdateAlias</a>. To
-         * delete the alias, call <a>DeleteAlias</a>. These operations don't affect the
-         * underlying key. To get the alias that you created, call <a>ListAliases</a>.</p>
+         * change the key that's associated with the alias, call <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_UpdateAlias.html">UpdateAlias</a>.
+         * To delete the alias, call <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteAlias.html">DeleteAlias</a>.
+         * These operations don't affect the underlying key. To get the alias that you
+         * created, call <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListAliases.html">ListAliases</a>.</p>
          * <p> <b>Cross-account use</b>: This operation can't be used across different
          * Amazon Web Services accounts.</p> <p> <b>Related operations:</b> </p> <ul> <li>
-         * <p> <a>DeleteAlias</a> </p> </li> <li> <p> <a>GetAlias</a> </p> </li> <li> <p>
-         * <a>ListAliases</a> </p> </li> <li> <p> <a>UpdateAlias</a> </p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteAlias.html">DeleteAlias</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetAlias.html">GetAlias</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListAliases.html">ListAliases</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_UpdateAlias.html">UpdateAlias</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/CreateAlias">AWS
          * API Reference</a></p>
          */
@@ -164,9 +174,13 @@ namespace PaymentCryptography
          * you store or export them. Amazon Web Services Payment Cryptography stores the
          * key contents wrapped and never stores or transmits them in the clear. </p> <p>
          * <b>Cross-account use</b>: This operation can't be used across different Amazon
-         * Web Services accounts.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p>
-         * <a>DeleteKey</a> </p> </li> <li> <p> <a>GetKey</a> </p> </li> <li> <p>
-         * <a>ListKeys</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * Web Services accounts.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteKey.html">DeleteKey</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetKey.html">GetKey</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListKeys.html">ListKeys</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/CreateKey">AWS
          * API Reference</a></p>
          */
@@ -192,15 +206,26 @@ namespace PaymentCryptography
 
         /**
          * <p>Deletes the alias, but doesn't affect the underlying key.</p> <p>Each key can
-         * have multiple aliases. To get the aliases of all keys, use the
-         * <a>ListAliases</a> operation. To change the alias of a key, first use
-         * <a>DeleteAlias</a> to delete the current alias and then use <a>CreateAlias</a>
+         * have multiple aliases. To get the aliases of all keys, use the <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_UpdateAlias.html">UpdateAlias</a>
+         * operation. To change the alias of a key, first use <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteAlias.html">DeleteAlias</a>
+         * to delete the current alias and then use <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateAlias.html">CreateAlias</a>
          * to create a new alias. To associate an existing alias with a different key, call
-         * <a>UpdateAlias</a>.</p> <p> <b>Cross-account use:</b> This operation can't be
-         * used across different Amazon Web Services accounts.</p> <p> <b>Related
-         * operations:</b> </p> <ul> <li> <p> <a>CreateAlias</a> </p> </li> <li> <p>
-         * <a>GetAlias</a> </p> </li> <li> <p> <a>ListAliases</a> </p> </li> <li> <p>
-         * <a>UpdateAlias</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_UpdateAlias.html">UpdateAlias</a>.</p>
+         * <p> <b>Cross-account use:</b> This operation can't be used across different
+         * Amazon Web Services accounts.</p> <p> <b>Related operations:</b> </p> <ul> <li>
+         * <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateAlias.html">CreateAlias</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetAlias.html">GetAlias</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListAliases.html">ListAliases</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_UpdateAlias.html">UpdateAlias</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/DeleteAlias">AWS
          * API Reference</a></p>
          */
@@ -239,11 +264,17 @@ namespace PaymentCryptography
          * the <code>KeyState</code> is <code>DELETE_COMPLETE</code>.</p> <p>You should
          * delete a key only when you are sure that you don't need to use it anymore and no
          * other parties are utilizing this key. If you aren't sure, consider deactivating
-         * it instead by calling <a>StopKeyUsage</a>.</p> <p> <b>Cross-account use:</b>
-         * This operation can't be used across different Amazon Web Services accounts.</p>
-         * <p> <b>Related operations:</b> </p> <ul> <li> <p> <a>RestoreKey</a> </p> </li>
-         * <li> <p> <a>StartKeyUsage</a> </p> </li> <li> <p> <a>StopKeyUsage</a> </p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * it instead by calling <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_StopKeyUsage.html">StopKeyUsage</a>.</p>
+         * <p> <b>Cross-account use:</b> This operation can't be used across different
+         * Amazon Web Services accounts.</p> <p> <b>Related operations:</b> </p> <ul> <li>
+         * <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_RestoreKey.html">RestoreKey</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_StartKeyUsage.html">StartKeyUsage</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_StopKeyUsage.html">StopKeyUsage</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/DeleteKey">AWS
          * API Reference</a></p>
          */
@@ -295,26 +326,42 @@ namespace PaymentCryptography
          * IPEK is generated from BDK (Base Derivation Key) and
          * <code>ExportDukptInitialKey</code> attribute KSN (<code>KeySerialNumber</code>).
          * The generated IPEK does not persist within Amazon Web Services Payment
-         * Cryptography and has to be re-generated each time during export.</p> <p> <b>To
-         * export initial keys (KEK) or IPEK using TR-34</b> </p> <p>Using this operation,
-         * you can export initial key using TR-34 asymmetric key exchange. You can only
-         * export KEK generated within Amazon Web Services Payment Cryptography. In TR-34
-         * terminology, the sending party of the key is called Key Distribution Host (KDH)
-         * and the receiving party of the key is called Key Receiving Device (KRD). During
-         * key export process, KDH is Amazon Web Services Payment Cryptography which
-         * initiates key export and KRD is the user receiving the key.</p> <p>To initiate
-         * TR-34 key export, the KRD must obtain an export token by calling
-         * <a>GetParametersForExport</a>. This operation also generates a key pair for the
-         * purpose of key export, signs the key and returns back the signing public key
-         * certificate (also known as KDH signing certificate) and root certificate chain.
-         * The KDH uses the private key to sign the the export payload and the signing
-         * public key certificate is provided to KRD to verify the signature. The KRD can
-         * import the root certificate into its Hardware Security Module (HSM), as
-         * required. The export token and the associated KDH signing certificate expires
-         * after 7 days. </p> <p>Next the KRD generates a key pair for the the purpose of
-         * encrypting the KDH key and provides the public key cerificate (also known as KRD
-         * wrapping certificate) back to KDH. The KRD will also import the root cerificate
-         * chain into Amazon Web Services Payment Cryptography by calling <a>ImportKey</a>
+         * Cryptography and has to be re-generated each time during export.</p> <p>For key
+         * exchange using TR-31 or TR-34 key blocks, you can also export optional blocks
+         * within the key block header which contain additional attribute information about
+         * the key. The <code>KeyVersion</code> within <code>KeyBlockHeaders</code>
+         * indicates the version of the key within the key block. Furthermore,
+         * <code>KeyExportability</code> within <code>KeyBlockHeaders</code> can be used to
+         * further restrict exportability of the key after export from Amazon Web Services
+         * Payment Cryptography.</p> <p>The <code>OptionalBlocks</code> contain the
+         * additional data related to the key. For information on data type that can be
+         * included within optional blocks, refer to <a
+         * href="https://webstore.ansi.org/standards/ascx9/ansix91432022">ASC
+         * X9.143-2022</a>.</p>  <p>Data included in key block headers is signed but
+         * transmitted in clear text. Sensitive or confidential information should not be
+         * included in optional blocks. Refer to ASC X9.143-2022 standard for information
+         * on allowed data type.</p>  <p> <b>To export initial keys (KEK) or IPEK
+         * using TR-34</b> </p> <p>Using this operation, you can export initial key using
+         * TR-34 asymmetric key exchange. You can only export KEK generated within Amazon
+         * Web Services Payment Cryptography. In TR-34 terminology, the sending party of
+         * the key is called Key Distribution Host (KDH) and the receiving party of the key
+         * is called Key Receiving Device (KRD). During key export process, KDH is Amazon
+         * Web Services Payment Cryptography which initiates key export and KRD is the user
+         * receiving the key.</p> <p>To initiate TR-34 key export, the KRD must obtain an
+         * export token by calling <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForExport.html">GetParametersForExport</a>.
+         * This operation also generates a key pair for the purpose of key export, signs
+         * the key and returns back the signing public key certificate (also known as KDH
+         * signing certificate) and root certificate chain. The KDH uses the private key to
+         * sign the the export payload and the signing public key certificate is provided
+         * to KRD to verify the signature. The KRD can import the root certificate into its
+         * Hardware Security Module (HSM), as required. The export token and the associated
+         * KDH signing certificate expires after 7 days. </p> <p>Next the KRD generates a
+         * key pair for the the purpose of encrypting the KDH key and provides the public
+         * key cerificate (also known as KRD wrapping certificate) back to KDH. The KRD
+         * will also import the root cerificate chain into Amazon Web Services Payment
+         * Cryptography by calling <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>
          * for <code>RootCertificatePublicKey</code>. The KDH, Amazon Web Services Payment
          * Cryptography, will use the KRD wrapping cerificate to encrypt (wrap) the key
          * under export and signs it with signing private key to generate a TR-34
@@ -329,23 +376,25 @@ namespace PaymentCryptography
          * <code>Tr34KeyBlock</code> parameters.</p> </li> <li> <p>
          * <code>CertificateAuthorityPublicKeyIdentifier</code>: The <code>KeyARN</code> of
          * the certificate chain that signed the KRD wrapping key certificate.</p> </li>
-         * <li> <p> <code>ExportToken</code>: Obtained from KDH by calling
-         * <a>GetParametersForImport</a>.</p> </li> <li> <p>
-         * <code>WrappingKeyCertificate</code>: The public key certificate in PEM format
-         * (base64 encoded) of the KRD wrapping key Amazon Web Services Payment
-         * Cryptography uses for encryption of the TR-34 export payload. This certificate
-         * must be signed by the root certificate (CertificateAuthorityPublicKeyIdentifier)
-         * imported into Amazon Web Services Payment Cryptography.</p> </li> </ul> <p>When
-         * this operation is successful, Amazon Web Services Payment Cryptography returns
-         * the KEK or IPEK as a TR-34 WrappedKeyBlock. </p> <p> <b>To export initial keys
-         * (KEK) or IPEK using RSA Wrap and Unwrap</b> </p> <p>Using this operation, you
-         * can export initial key using asymmetric RSA wrap and unwrap key exchange method.
-         * To initiate export, generate an asymmetric key pair on the receiving HSM and
-         * obtain the public key certificate in PEM format (base64 encoded) for the purpose
-         * of wrapping and the root certifiate chain. Import the root certificate into
-         * Amazon Web Services Payment Cryptography by calling <a>ImportKey</a> for
-         * <code>RootCertificatePublicKey</code>.</p> <p>Next call <code>ExportKey</code>
-         * and set the following parameters:</p> <ul> <li> <p>
+         * <li> <p> <code>ExportToken</code>: Obtained from KDH by calling <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForImport.html">GetParametersForImport</a>.</p>
+         * </li> <li> <p> <code>WrappingKeyCertificate</code>: The public key certificate
+         * in PEM format (base64 encoded) of the KRD wrapping key Amazon Web Services
+         * Payment Cryptography uses for encryption of the TR-34 export payload. This
+         * certificate must be signed by the root certificate
+         * (CertificateAuthorityPublicKeyIdentifier) imported into Amazon Web Services
+         * Payment Cryptography.</p> </li> </ul> <p>When this operation is successful,
+         * Amazon Web Services Payment Cryptography returns the KEK or IPEK as a TR-34
+         * WrappedKeyBlock. </p> <p> <b>To export initial keys (KEK) or IPEK using RSA Wrap
+         * and Unwrap</b> </p> <p>Using this operation, you can export initial key using
+         * asymmetric RSA wrap and unwrap key exchange method. To initiate export, generate
+         * an asymmetric key pair on the receiving HSM and obtain the public key
+         * certificate in PEM format (base64 encoded) for the purpose of wrapping and the
+         * root certifiate chain. Import the root certificate into Amazon Web Services
+         * Payment Cryptography by calling <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>
+         * for <code>RootCertificatePublicKey</code>.</p> <p>Next call
+         * <code>ExportKey</code> and set the following parameters:</p> <ul> <li> <p>
          * <code>CertificateAuthorityPublicKeyIdentifier</code>: The <code>KeyARN</code> of
          * the certificate chain that signed wrapping key certificate.</p> </li> <li> <p>
          * <code>KeyMaterial</code>: Set to <code>KeyCryptogram</code>.</p> </li> <li> <p>
@@ -358,18 +407,24 @@ namespace PaymentCryptography
          * WrappedKeyCryptogram. </p> <p> <b>To export working keys or IPEK using TR-31</b>
          * </p> <p>Using this operation, you can export working keys or IPEK using TR-31
          * symmetric key exchange. In TR-31, you must use an initial key such as KEK to
-         * encrypt or wrap the key under export. To establish a KEK, you can use
-         * <a>CreateKey</a> or <a>ImportKey</a>. </p> <p>Set the following parameters:</p>
-         * <ul> <li> <p> <code>ExportAttributes</code>: Specify export attributes in case
-         * of IPEK export. This parameter is optional for KEK export.</p> </li> <li> <p>
+         * encrypt or wrap the key under export. To establish a KEK, you can use <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>.
+         * </p> <p>Set the following parameters:</p> <ul> <li> <p>
+         * <code>ExportAttributes</code>: Specify export attributes in case of IPEK export.
+         * This parameter is optional for KEK export.</p> </li> <li> <p>
          * <code>ExportKeyIdentifier</code>: The <code>KeyARN</code> of the KEK or BDK (in
          * case of IPEK) under export.</p> </li> <li> <p> <code>KeyMaterial</code>: Use
          * <code>Tr31KeyBlock</code> parameters.</p> </li> </ul> <p>When this operation is
          * successful, Amazon Web Services Payment Cryptography returns the working key or
          * IPEK as a TR-31 WrappedKeyBlock.</p> <p> <b>Cross-account use:</b> This
          * operation can't be used across different Amazon Web Services accounts.</p> <p>
-         * <b>Related operations:</b> </p> <ul> <li> <p> <a>GetParametersForExport</a> </p>
-         * </li> <li> <p> <a>ImportKey</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <b>Related operations:</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForExport.html">GetParametersForExport</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/ExportKey">AWS
          * API Reference</a></p>
          */
@@ -397,9 +452,15 @@ namespace PaymentCryptography
          * <p>Gets the Amazon Web Services Payment Cryptography key associated with the
          * alias.</p> <p> <b>Cross-account use:</b> This operation can't be used across
          * different Amazon Web Services accounts.</p> <p> <b>Related operations:</b> </p>
-         * <ul> <li> <p> <a>CreateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p>
-         * </li> <li> <p> <a>ListAliases</a> </p> </li> <li> <p> <a>UpdateAlias</a> </p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateAlias.html">CreateAlias</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteAlias.html">DeleteAlias</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListAliases.html">ListAliases</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_UpdateAlias.html">UpdateAlias</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetAlias">AWS
          * API Reference</a></p>
          */
@@ -428,8 +489,13 @@ namespace PaymentCryptography
          * including the immutable and mutable data specified when the key was created.</p>
          * <p> <b>Cross-account use:</b> This operation can't be used across different
          * Amazon Web Services accounts.</p> <p> <b>Related operations:</b> </p> <ul> <li>
-         * <p> <a>CreateKey</a> </p> </li> <li> <p> <a>DeleteKey</a> </p> </li> <li> <p>
-         * <a>ListKeys</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteKey.html">DeleteKey</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListKeys.html">ListKeys</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetKey">AWS
          * API Reference</a></p>
          */
@@ -458,12 +524,16 @@ namespace PaymentCryptography
          * export from Amazon Web Services Payment Cryptography.</p> <p>The signing key
          * certificate signs the wrapped key under export within the TR-34 key payload. The
          * export token and signing key certificate must be in place and operational before
-         * calling <a>ExportKey</a>. The export token expires in 7 days. You can use the
-         * same export token to export multiple keys from your service account.</p> <p>
-         * <b>Cross-account use:</b> This operation can't be used across different Amazon
-         * Web Services accounts.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p>
-         * <a>ExportKey</a> </p> </li> <li> <p> <a>GetParametersForImport</a> </p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * calling <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ExportKey.html">ExportKey</a>.
+         * The export token expires in 7 days. You can use the same export token to export
+         * multiple keys from your service account.</p> <p> <b>Cross-account use:</b> This
+         * operation can't be used across different Amazon Web Services accounts.</p> <p>
+         * <b>Related operations:</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ExportKey.html">ExportKey</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForImport.html">GetParametersForImport</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetParametersForExport">AWS
          * API Reference</a></p>
          */
@@ -492,12 +562,16 @@ namespace PaymentCryptography
          * encoded) to initiate a TR-34 WrappedKeyBlock or a RSA WrappedKeyCryptogram
          * import into Amazon Web Services Payment Cryptography.</p> <p>The wrapping key
          * certificate wraps the key under import. The import token and wrapping key
-         * certificate must be in place and operational before calling <a>ImportKey</a>.
+         * certificate must be in place and operational before calling <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>.
          * The import token expires in 7 days. You can use the same import token to import
          * multiple keys into your service account.</p> <p> <b>Cross-account use:</b> This
          * operation can't be used across different Amazon Web Services accounts.</p> <p>
-         * <b>Related operations:</b> </p> <ul> <li> <p> <a>GetParametersForExport</a> </p>
-         * </li> <li> <p> <a>ImportKey</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <b>Related operations:</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForExport.html">GetParametersForExport</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetParametersForImport">AWS
          * API Reference</a></p>
          */
@@ -609,19 +683,20 @@ namespace PaymentCryptography
          * and the receiving party of the key is called Key Receiving Device (KRD). During
          * the key import process, KDH is the user who initiates the key import and KRD is
          * Amazon Web Services Payment Cryptography who receives the key.</p> <p>To
-         * initiate TR-34 key import, the KDH must obtain an import token by calling
-         * <a>GetParametersForImport</a>. This operation generates an encryption keypair
-         * for the purpose of key import, signs the key and returns back the wrapping key
-         * certificate (also known as KRD wrapping certificate) and the root certificate
-         * chain. The KDH must trust and install the KRD wrapping certificate on its HSM
-         * and use it to encrypt (wrap) the KDH key during TR-34 WrappedKeyBlock
-         * generation. The import token and associated KRD wrapping certificate expires
-         * after 7 days.</p> <p>Next the KDH generates a key pair for the purpose of
-         * signing the encrypted KDH key and provides the public certificate of the signing
-         * key to Amazon Web Services Payment Cryptography. The KDH will also need to
-         * import the root certificate chain of the KDH signing certificate by calling
-         * <code>ImportKey</code> for <code>RootCertificatePublicKey</code>. For more
-         * information on TR-34 key import, see section <a
+         * initiate TR-34 key import, the KDH must obtain an import token by calling <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForImport.html">GetParametersForImport</a>.
+         * This operation generates an encryption keypair for the purpose of key import,
+         * signs the key and returns back the wrapping key certificate (also known as KRD
+         * wrapping certificate) and the root certificate chain. The KDH must trust and
+         * install the KRD wrapping certificate on its HSM and use it to encrypt (wrap) the
+         * KDH key during TR-34 WrappedKeyBlock generation. The import token and associated
+         * KRD wrapping certificate expires after 7 days.</p> <p>Next the KDH generates a
+         * key pair for the purpose of signing the encrypted KDH key and provides the
+         * public certificate of the signing key to Amazon Web Services Payment
+         * Cryptography. The KDH will also need to import the root certificate chain of the
+         * KDH signing certificate by calling <code>ImportKey</code> for
+         * <code>RootCertificatePublicKey</code>. For more information on TR-34 key import,
+         * see section <a
          * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-import.html">Importing
          * symmetric keys</a> in the <i>Amazon Web Services Payment Cryptography User
          * Guide</i>.</p> <p>Set the following parameters:</p> <ul> <li> <p>
@@ -629,19 +704,22 @@ namespace PaymentCryptography
          * <li> <p> <code>CertificateAuthorityPublicKeyIdentifier</code>: The
          * <code>KeyARN</code> of the certificate chain that signed the KDH signing key
          * certificate.</p> </li> <li> <p> <code>ImportToken</code>: Obtained from KRD by
-         * calling <a>GetParametersForImport</a>.</p> </li> <li> <p>
-         * <code>WrappedKeyBlock</code>: The TR-34 wrapped key material from KDH. It
-         * contains the KDH key under import, wrapped with KRD wrapping certificate and
-         * signed by KDH signing private key. This TR-34 key block is typically generated
-         * by the KDH Hardware Security Module (HSM) outside of Amazon Web Services Payment
-         * Cryptography.</p> </li> <li> <p> <code>SigningKeyCertificate</code>: The public
-         * key certificate in PEM format (base64 encoded) of the KDH signing key generated
-         * under the root certificate (CertificateAuthorityPublicKeyIdentifier) imported in
-         * Amazon Web Services Payment Cryptography.</p> </li> </ul> <p> <b>To import
-         * initial keys (KEK or ZMK or similar) using RSA Wrap and Unwrap</b> </p> <p>Using
-         * this operation, you can import initial key using asymmetric RSA wrap and unwrap
-         * key exchange method. To initiate import, call <a>GetParametersForImport</a> with
-         * <code>KeyMaterial</code> set to <code>KEY_CRYPTOGRAM</code> to generate an
+         * calling <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForImport.html">GetParametersForImport</a>.</p>
+         * </li> <li> <p> <code>WrappedKeyBlock</code>: The TR-34 wrapped key material from
+         * KDH. It contains the KDH key under import, wrapped with KRD wrapping certificate
+         * and signed by KDH signing private key. This TR-34 key block is typically
+         * generated by the KDH Hardware Security Module (HSM) outside of Amazon Web
+         * Services Payment Cryptography.</p> </li> <li> <p>
+         * <code>SigningKeyCertificate</code>: The public key certificate in PEM format
+         * (base64 encoded) of the KDH signing key generated under the root certificate
+         * (CertificateAuthorityPublicKeyIdentifier) imported in Amazon Web Services
+         * Payment Cryptography.</p> </li> </ul> <p> <b>To import initial keys (KEK or ZMK
+         * or similar) using RSA Wrap and Unwrap</b> </p> <p>Using this operation, you can
+         * import initial key using asymmetric RSA wrap and unwrap key exchange method. To
+         * initiate import, call <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForImport.html">GetParametersForImport</a>
+         * with <code>KeyMaterial</code> set to <code>KEY_CRYPTOGRAM</code> to generate an
          * import token. This operation also generates an encryption keypair for the
          * purpose of key import, signs the key and returns back the wrapping key
          * certificate in PEM format (base64 encoded) and its root certificate chain. The
@@ -654,8 +732,9 @@ namespace PaymentCryptography
          * import.</p> <p> <b>To import working keys using TR-31</b> </p> <p>Amazon Web
          * Services Payment Cryptography uses TR-31 symmetric key exchange norm to import
          * working keys. A KEK must be established within Amazon Web Services Payment
-         * Cryptography by using TR-34 key import or by using <a>CreateKey</a>. To initiate
-         * a TR-31 key import, set the following parameters:</p> <ul> <li> <p>
+         * Cryptography by using TR-34 key import or by using <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>.
+         * To initiate a TR-31 key import, set the following parameters:</p> <ul> <li> <p>
          * <code>KeyMaterial</code>: Use <code>Tr31KeyBlock</code> parameters.</p> </li>
          * <li> <p> <code>WrappedKeyBlock</code>: The TR-31 wrapped key material. It
          * contains the key under import, encrypted using KEK. The TR-31 key block is
@@ -664,9 +743,11 @@ namespace PaymentCryptography
          * <code>KeyArn</code> of the KEK that Amazon Web Services Payment Cryptography
          * uses to decrypt or unwrap the key under import.</p> </li> </ul> <p>
          * <b>Cross-account use:</b> This operation can't be used across different Amazon
-         * Web Services accounts.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p>
-         * <a>ExportKey</a> </p> </li> <li> <p> <a>GetParametersForImport</a> </p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * Web Services accounts.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ExportKey.html">ExportKey</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForImport.html">GetParametersForImport</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/ImportKey">AWS
          * API Reference</a></p>
          */
@@ -703,9 +784,15 @@ namespace PaymentCryptography
          * receive a response with no NextToken (or an empty or null value), that means
          * there are no more aliases to get.</p> <p> <b>Cross-account use:</b> This
          * operation can't be used across different Amazon Web Services accounts.</p> <p>
-         * <b>Related operations:</b> </p> <ul> <li> <p> <a>CreateAlias</a> </p> </li> <li>
-         * <p> <a>DeleteAlias</a> </p> </li> <li> <p> <a>GetAlias</a> </p> </li> <li> <p>
-         * <a>UpdateAlias</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <b>Related operations:</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateAlias.html">CreateAlias</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteAlias.html">DeleteAlias</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetAlias.html">GetAlias</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_UpdateAlias.html">UpdateAlias</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/ListAliases">AWS
          * API Reference</a></p>
          */
@@ -739,8 +826,13 @@ namespace PaymentCryptography
          * no NextToken (or an empty or null value), that means there are no more keys to
          * get.</p> <p> <b>Cross-account use:</b> This operation can't be used across
          * different Amazon Web Services accounts.</p> <p> <b>Related operations:</b> </p>
-         * <ul> <li> <p> <a>CreateKey</a> </p> </li> <li> <p> <a>DeleteKey</a> </p> </li>
-         * <li> <p> <a>GetKey</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteKey.html">DeleteKey</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetKey.html">GetKey</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/ListKeys">AWS
          * API Reference</a></p>
          */
@@ -773,8 +865,11 @@ namespace PaymentCryptography
          * response with no NextToken (or an empty or null value), that means there are no
          * more tags to get.</p> <p> <b>Cross-account use:</b> This operation can't be used
          * across different Amazon Web Services accounts.</p> <p> <b>Related
-         * operations:</b> </p> <ul> <li> <p> <a>TagResource</a> </p> </li> <li> <p>
-         * <a>UntagResource</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * operations:</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_TagResource.html">TagResource</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_UntagResource.html">UntagResource</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -808,8 +903,12 @@ namespace PaymentCryptography
          * <code>CREATE_COMPLETE</code>, and the value for
          * <code>deletePendingTimestamp</code> is removed.</p> <p> <b>Cross-account
          * use:</b> This operation can't be used across different Amazon Web Services
-         * accounts.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p> <a>DeleteKey</a>
-         * </p> </li> <li> <p> <a>StartKeyUsage</a> </p> </li> <li> <p> <a>StopKeyUsage</a>
+         * accounts.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteKey.html">DeleteKey</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_StartKeyUsage.html">StartKeyUsage</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_StopKeyUsage.html">StopKeyUsage</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/RestoreKey">AWS
          * API Reference</a></p>
@@ -839,8 +938,9 @@ namespace PaymentCryptography
          * active for cryptographic operations within Amazon Web Services Payment
          * Cryptography</p> <p> <b>Cross-account use:</b> This operation can't be used
          * across different Amazon Web Services accounts.</p> <p> <b>Related
-         * operations:</b> </p> <ul> <li> <p> <a>StopKeyUsage</a> </p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * operations:</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_StopKeyUsage.html">StopKeyUsage</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/StartKeyUsage">AWS
          * API Reference</a></p>
          */
@@ -867,12 +967,17 @@ namespace PaymentCryptography
         /**
          * <p>Disables an Amazon Web Services Payment Cryptography key, which makes it
          * inactive within Amazon Web Services Payment Cryptography.</p> <p>You can use
-         * this operation instead of <a>DeleteKey</a> to deactivate a key. You can enable
-         * the key in the future by calling <a>StartKeyUsage</a>.</p> <p> <b>Cross-account
-         * use:</b> This operation can't be used across different Amazon Web Services
-         * accounts.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p> <a>DeleteKey</a>
-         * </p> </li> <li> <p> <a>StartKeyUsage</a> </p> </li> </ul><p><h3>See Also:</h3>  
-         * <a
+         * this operation instead of <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteKey.html">DeleteKey</a>
+         * to deactivate a key. You can enable the key in the future by calling <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_StartKeyUsage.html">StartKeyUsage</a>.</p>
+         * <p> <b>Cross-account use:</b> This operation can't be used across different
+         * Amazon Web Services accounts.</p> <p> <b>Related operations:</b> </p> <ul> <li>
+         * <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteKey.html">DeleteKey</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_StartKeyUsage.html">StartKeyUsage</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/StopKeyUsage">AWS
          * API Reference</a></p>
          */
@@ -904,10 +1009,15 @@ namespace PaymentCryptography
          * can be an empty (null) string. To add a tag, specify a new tag key and a tag
          * value. To edit a tag, specify an existing tag key and a new tag value. You can
          * also add tags to an Amazon Web Services Payment Cryptography key when you create
-         * it with <a>CreateKey</a>.</p> <p> <b>Cross-account use:</b> This operation can't
-         * be used across different Amazon Web Services accounts.</p> <p> <b>Related
-         * operations:</b> </p> <ul> <li> <p> <a>ListTagsForResource</a> </p> </li> <li>
-         * <p> <a>UntagResource</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * it with <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>.</p>
+         * <p> <b>Cross-account use:</b> This operation can't be used across different
+         * Amazon Web Services accounts.</p> <p> <b>Related operations:</b> </p> <ul> <li>
+         * <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_UntagResource.html">UntagResource</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/TagResource">AWS
          * API Reference</a></p>
          */
@@ -936,9 +1046,11 @@ namespace PaymentCryptography
          *  <p>Tagging or untagging an Amazon Web Services Payment Cryptography key
          * can allow or deny permission to the key.</p>  <p> <b>Cross-account
          * use:</b> This operation can't be used across different Amazon Web Services
-         * accounts.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p>
-         * <a>ListTagsForResource</a> </p> </li> <li> <p> <a>TagResource</a> </p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * accounts.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_TagResource.html">TagResource</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/UntagResource">AWS
          * API Reference</a></p>
          */
@@ -969,10 +1081,15 @@ namespace PaymentCryptography
          * The alias and the Amazon Web Services Payment Cryptography key must be in the
          * same Amazon Web Services account and Amazon Web Services Region</p> <p>
          * <b>Cross-account use:</b> This operation can't be used across different Amazon
-         * Web Services accounts.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p>
-         * <a>CreateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li> <p>
-         * <a>GetAlias</a> </p> </li> <li> <p> <a>ListAliases</a> </p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * Web Services accounts.</p> <p> <b>Related operations:</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateAlias.html">CreateAlias</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteAlias.html">DeleteAlias</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetAlias.html">GetAlias</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListAliases.html">ListAliases</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/UpdateAlias">AWS
          * API Reference</a></p>
          */
