@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Configuration fields for invokation logging.</p><p><h3>See Also:</h3>   <a
+   * <p>Configuration fields for invocation logging.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/LoggingConfig">AWS
    * API Reference</a></p>
    */

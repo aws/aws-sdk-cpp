@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int KNOWLEDGE_BASE_HASH = HashingUtils::HashString("KNOWLEDGE_BASE");
+        static const int EXTERNAL_SOURCES_HASH = HashingUtils::HashString("EXTERNAL_SOURCES");
 
 
         RetrieveAndGenerateType GetRetrieveAndGenerateTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == KNOWLEDGE_BASE_HASH)
           {
             return RetrieveAndGenerateType::KNOWLEDGE_BASE;
+          }
+          else if (hashCode == EXTERNAL_SOURCES_HASH)
+          {
+            return RetrieveAndGenerateType::EXTERNAL_SOURCES;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case RetrieveAndGenerateType::KNOWLEDGE_BASE:
             return "KNOWLEDGE_BASE";
+          case RetrieveAndGenerateType::EXTERNAL_SOURCES:
+            return "EXTERNAL_SOURCES";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>An error occurred while streaming the response.</p><p><h3>See Also:</h3>   <a
+   * <p>An error occurred while streaming the response. Retry your
+   * request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ModelStreamErrorException">AWS
    * API Reference</a></p>
    */

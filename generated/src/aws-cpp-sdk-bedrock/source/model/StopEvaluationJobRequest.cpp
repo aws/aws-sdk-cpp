@@ -1,0 +1,27 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/bedrock/model/StopEvaluationJobRequest.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Bedrock::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+StopEvaluationJobRequest::StopEvaluationJobRequest() : 
+    m_jobIdentifierHasBeenSet(false)
+{
+}
+
+Aws::String StopEvaluationJobRequest::SerializePayload() const
+{
+  return {};
+}
+
+
+
+

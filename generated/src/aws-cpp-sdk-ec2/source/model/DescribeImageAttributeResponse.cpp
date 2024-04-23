@@ -121,6 +121,11 @@ DescribeImageAttributeResponse& DescribeImageAttributeResponse::operator =(const
     {
       m_imdsSupport = imdsSupportNode;
     }
+    XmlNode deregistrationProtectionNode = resultNode.FirstChild("deregistrationProtection");
+    if(!deregistrationProtectionNode.IsNull())
+    {
+      m_deregistrationProtection = deregistrationProtectionNode;
+    }
   }
 
   if (!rootNode.IsNull()) {

@@ -41,83 +41,83 @@ namespace Model
 
 
     /**
-     * <p>ARN of the customization job.</p>
+     * <p>Amazon Resource Name (ARN) of the customization job.</p>
      */
     inline const Aws::String& GetJobArn() const{ return m_jobArn; }
 
     /**
-     * <p>ARN of the customization job.</p>
+     * <p>Amazon Resource Name (ARN) of the customization job.</p>
      */
     inline bool JobArnHasBeenSet() const { return m_jobArnHasBeenSet; }
 
     /**
-     * <p>ARN of the customization job.</p>
+     * <p>Amazon Resource Name (ARN) of the customization job.</p>
      */
     inline void SetJobArn(const Aws::String& value) { m_jobArnHasBeenSet = true; m_jobArn = value; }
 
     /**
-     * <p>ARN of the customization job.</p>
+     * <p>Amazon Resource Name (ARN) of the customization job.</p>
      */
     inline void SetJobArn(Aws::String&& value) { m_jobArnHasBeenSet = true; m_jobArn = std::move(value); }
 
     /**
-     * <p>ARN of the customization job.</p>
+     * <p>Amazon Resource Name (ARN) of the customization job.</p>
      */
     inline void SetJobArn(const char* value) { m_jobArnHasBeenSet = true; m_jobArn.assign(value); }
 
     /**
-     * <p>ARN of the customization job.</p>
+     * <p>Amazon Resource Name (ARN) of the customization job.</p>
      */
     inline ModelCustomizationJobSummary& WithJobArn(const Aws::String& value) { SetJobArn(value); return *this;}
 
     /**
-     * <p>ARN of the customization job.</p>
+     * <p>Amazon Resource Name (ARN) of the customization job.</p>
      */
     inline ModelCustomizationJobSummary& WithJobArn(Aws::String&& value) { SetJobArn(std::move(value)); return *this;}
 
     /**
-     * <p>ARN of the customization job.</p>
+     * <p>Amazon Resource Name (ARN) of the customization job.</p>
      */
     inline ModelCustomizationJobSummary& WithJobArn(const char* value) { SetJobArn(value); return *this;}
 
 
     /**
-     * <p>ARN of the base model.</p>
+     * <p>Amazon Resource Name (ARN) of the base model.</p>
      */
     inline const Aws::String& GetBaseModelArn() const{ return m_baseModelArn; }
 
     /**
-     * <p>ARN of the base model.</p>
+     * <p>Amazon Resource Name (ARN) of the base model.</p>
      */
     inline bool BaseModelArnHasBeenSet() const { return m_baseModelArnHasBeenSet; }
 
     /**
-     * <p>ARN of the base model.</p>
+     * <p>Amazon Resource Name (ARN) of the base model.</p>
      */
     inline void SetBaseModelArn(const Aws::String& value) { m_baseModelArnHasBeenSet = true; m_baseModelArn = value; }
 
     /**
-     * <p>ARN of the base model.</p>
+     * <p>Amazon Resource Name (ARN) of the base model.</p>
      */
     inline void SetBaseModelArn(Aws::String&& value) { m_baseModelArnHasBeenSet = true; m_baseModelArn = std::move(value); }
 
     /**
-     * <p>ARN of the base model.</p>
+     * <p>Amazon Resource Name (ARN) of the base model.</p>
      */
     inline void SetBaseModelArn(const char* value) { m_baseModelArnHasBeenSet = true; m_baseModelArn.assign(value); }
 
     /**
-     * <p>ARN of the base model.</p>
+     * <p>Amazon Resource Name (ARN) of the base model.</p>
      */
     inline ModelCustomizationJobSummary& WithBaseModelArn(const Aws::String& value) { SetBaseModelArn(value); return *this;}
 
     /**
-     * <p>ARN of the base model.</p>
+     * <p>Amazon Resource Name (ARN) of the base model.</p>
      */
     inline ModelCustomizationJobSummary& WithBaseModelArn(Aws::String&& value) { SetBaseModelArn(std::move(value)); return *this;}
 
     /**
-     * <p>ARN of the base model.</p>
+     * <p>Amazon Resource Name (ARN) of the base model.</p>
      */
     inline ModelCustomizationJobSummary& WithBaseModelArn(const char* value) { SetBaseModelArn(value); return *this;}
 
@@ -288,42 +288,42 @@ namespace Model
 
 
     /**
-     * <p>ARN of the custom model.</p>
+     * <p>Amazon Resource Name (ARN) of the custom model.</p>
      */
     inline const Aws::String& GetCustomModelArn() const{ return m_customModelArn; }
 
     /**
-     * <p>ARN of the custom model.</p>
+     * <p>Amazon Resource Name (ARN) of the custom model.</p>
      */
     inline bool CustomModelArnHasBeenSet() const { return m_customModelArnHasBeenSet; }
 
     /**
-     * <p>ARN of the custom model.</p>
+     * <p>Amazon Resource Name (ARN) of the custom model.</p>
      */
     inline void SetCustomModelArn(const Aws::String& value) { m_customModelArnHasBeenSet = true; m_customModelArn = value; }
 
     /**
-     * <p>ARN of the custom model.</p>
+     * <p>Amazon Resource Name (ARN) of the custom model.</p>
      */
     inline void SetCustomModelArn(Aws::String&& value) { m_customModelArnHasBeenSet = true; m_customModelArn = std::move(value); }
 
     /**
-     * <p>ARN of the custom model.</p>
+     * <p>Amazon Resource Name (ARN) of the custom model.</p>
      */
     inline void SetCustomModelArn(const char* value) { m_customModelArnHasBeenSet = true; m_customModelArn.assign(value); }
 
     /**
-     * <p>ARN of the custom model.</p>
+     * <p>Amazon Resource Name (ARN) of the custom model.</p>
      */
     inline ModelCustomizationJobSummary& WithCustomModelArn(const Aws::String& value) { SetCustomModelArn(value); return *this;}
 
     /**
-     * <p>ARN of the custom model.</p>
+     * <p>Amazon Resource Name (ARN) of the custom model.</p>
      */
     inline ModelCustomizationJobSummary& WithCustomModelArn(Aws::String&& value) { SetCustomModelArn(std::move(value)); return *this;}
 
     /**
-     * <p>ARN of the custom model.</p>
+     * <p>Amazon Resource Name (ARN) of the custom model.</p>
      */
     inline ModelCustomizationJobSummary& WithCustomModelArn(const char* value) { SetCustomModelArn(value); return *this;}
 

@@ -521,6 +521,32 @@ namespace Model
     inline DescribeImageAttributeResponse& WithImdsSupport(AttributeValue&& value) { SetImdsSupport(std::move(value)); return *this;}
 
 
+    /**
+     * <p>Indicates whether deregistration protection is enabled for the AMI.</p>
+     */
+    inline const AttributeValue& GetDeregistrationProtection() const{ return m_deregistrationProtection; }
+
+    /**
+     * <p>Indicates whether deregistration protection is enabled for the AMI.</p>
+     */
+    inline void SetDeregistrationProtection(const AttributeValue& value) { m_deregistrationProtection = value; }
+
+    /**
+     * <p>Indicates whether deregistration protection is enabled for the AMI.</p>
+     */
+    inline void SetDeregistrationProtection(AttributeValue&& value) { m_deregistrationProtection = std::move(value); }
+
+    /**
+     * <p>Indicates whether deregistration protection is enabled for the AMI.</p>
+     */
+    inline DescribeImageAttributeResponse& WithDeregistrationProtection(const AttributeValue& value) { SetDeregistrationProtection(value); return *this;}
+
+    /**
+     * <p>Indicates whether deregistration protection is enabled for the AMI.</p>
+     */
+    inline DescribeImageAttributeResponse& WithDeregistrationProtection(AttributeValue&& value) { SetDeregistrationProtection(std::move(value)); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -563,6 +589,8 @@ namespace Model
     AttributeValue m_lastLaunchedTime;
 
     AttributeValue m_imdsSupport;
+
+    AttributeValue m_deregistrationProtection;
 
     ResponseMetadata m_responseMetadata;
   };

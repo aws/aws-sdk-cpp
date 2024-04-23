@@ -22,6 +22,7 @@ namespace Aws
 
         static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+        static const int DELETE_UNSUCCESSFUL_HASH = HashingUtils::HashString("DELETE_UNSUCCESSFUL");
 
 
         DataSourceStatus GetDataSourceStatusForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == DELETING_HASH)
           {
             return DataSourceStatus::DELETING;
+          }
+          else if (hashCode == DELETE_UNSUCCESSFUL_HASH)
+          {
+            return DataSourceStatus::DELETE_UNSUCCESSFUL;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "AVAILABLE";
           case DataSourceStatus::DELETING:
             return "DELETING";
+          case DataSourceStatus::DELETE_UNSUCCESSFUL:
+            return "DELETE_UNSUCCESSFUL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

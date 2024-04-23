@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
@@ -39,6 +40,72 @@ namespace Model
     AWS_WORKSPACESWEB_API BrowserSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACESWEB_API BrowserSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACESWEB_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The additional encryption context of the browser settings.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalEncryptionContext() const{ return m_additionalEncryptionContext; }
+
+    /**
+     * <p>The additional encryption context of the browser settings.</p>
+     */
+    inline bool AdditionalEncryptionContextHasBeenSet() const { return m_additionalEncryptionContextHasBeenSet; }
+
+    /**
+     * <p>The additional encryption context of the browser settings.</p>
+     */
+    inline void SetAdditionalEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { m_additionalEncryptionContextHasBeenSet = true; m_additionalEncryptionContext = value; }
+
+    /**
+     * <p>The additional encryption context of the browser settings.</p>
+     */
+    inline void SetAdditionalEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { m_additionalEncryptionContextHasBeenSet = true; m_additionalEncryptionContext = std::move(value); }
+
+    /**
+     * <p>The additional encryption context of the browser settings.</p>
+     */
+    inline BrowserSettings& WithAdditionalEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { SetAdditionalEncryptionContext(value); return *this;}
+
+    /**
+     * <p>The additional encryption context of the browser settings.</p>
+     */
+    inline BrowserSettings& WithAdditionalEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { SetAdditionalEncryptionContext(std::move(value)); return *this;}
+
+    /**
+     * <p>The additional encryption context of the browser settings.</p>
+     */
+    inline BrowserSettings& AddAdditionalEncryptionContext(const Aws::String& key, const Aws::String& value) { m_additionalEncryptionContextHasBeenSet = true; m_additionalEncryptionContext.emplace(key, value); return *this; }
+
+    /**
+     * <p>The additional encryption context of the browser settings.</p>
+     */
+    inline BrowserSettings& AddAdditionalEncryptionContext(Aws::String&& key, const Aws::String& value) { m_additionalEncryptionContextHasBeenSet = true; m_additionalEncryptionContext.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The additional encryption context of the browser settings.</p>
+     */
+    inline BrowserSettings& AddAdditionalEncryptionContext(const Aws::String& key, Aws::String&& value) { m_additionalEncryptionContextHasBeenSet = true; m_additionalEncryptionContext.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The additional encryption context of the browser settings.</p>
+     */
+    inline BrowserSettings& AddAdditionalEncryptionContext(Aws::String&& key, Aws::String&& value) { m_additionalEncryptionContextHasBeenSet = true; m_additionalEncryptionContext.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The additional encryption context of the browser settings.</p>
+     */
+    inline BrowserSettings& AddAdditionalEncryptionContext(const char* key, Aws::String&& value) { m_additionalEncryptionContextHasBeenSet = true; m_additionalEncryptionContext.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The additional encryption context of the browser settings.</p>
+     */
+    inline BrowserSettings& AddAdditionalEncryptionContext(Aws::String&& key, const char* value) { m_additionalEncryptionContextHasBeenSet = true; m_additionalEncryptionContext.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The additional encryption context of the browser settings.</p>
+     */
+    inline BrowserSettings& AddAdditionalEncryptionContext(const char* key, const char* value) { m_additionalEncryptionContextHasBeenSet = true; m_additionalEncryptionContext.emplace(key, value); return *this; }
 
 
     /**
@@ -176,7 +243,59 @@ namespace Model
      */
     inline BrowserSettings& WithBrowserSettingsArn(const char* value) { SetBrowserSettingsArn(value); return *this;}
 
+
+    /**
+     * <p>The customer managed key used to encrypt sensitive information in the browser
+     * settings.</p>
+     */
+    inline const Aws::String& GetCustomerManagedKey() const{ return m_customerManagedKey; }
+
+    /**
+     * <p>The customer managed key used to encrypt sensitive information in the browser
+     * settings.</p>
+     */
+    inline bool CustomerManagedKeyHasBeenSet() const { return m_customerManagedKeyHasBeenSet; }
+
+    /**
+     * <p>The customer managed key used to encrypt sensitive information in the browser
+     * settings.</p>
+     */
+    inline void SetCustomerManagedKey(const Aws::String& value) { m_customerManagedKeyHasBeenSet = true; m_customerManagedKey = value; }
+
+    /**
+     * <p>The customer managed key used to encrypt sensitive information in the browser
+     * settings.</p>
+     */
+    inline void SetCustomerManagedKey(Aws::String&& value) { m_customerManagedKeyHasBeenSet = true; m_customerManagedKey = std::move(value); }
+
+    /**
+     * <p>The customer managed key used to encrypt sensitive information in the browser
+     * settings.</p>
+     */
+    inline void SetCustomerManagedKey(const char* value) { m_customerManagedKeyHasBeenSet = true; m_customerManagedKey.assign(value); }
+
+    /**
+     * <p>The customer managed key used to encrypt sensitive information in the browser
+     * settings.</p>
+     */
+    inline BrowserSettings& WithCustomerManagedKey(const Aws::String& value) { SetCustomerManagedKey(value); return *this;}
+
+    /**
+     * <p>The customer managed key used to encrypt sensitive information in the browser
+     * settings.</p>
+     */
+    inline BrowserSettings& WithCustomerManagedKey(Aws::String&& value) { SetCustomerManagedKey(std::move(value)); return *this;}
+
+    /**
+     * <p>The customer managed key used to encrypt sensitive information in the browser
+     * settings.</p>
+     */
+    inline BrowserSettings& WithCustomerManagedKey(const char* value) { SetCustomerManagedKey(value); return *this;}
+
   private:
+
+    Aws::Map<Aws::String, Aws::String> m_additionalEncryptionContext;
+    bool m_additionalEncryptionContextHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_associatedPortalArns;
     bool m_associatedPortalArnsHasBeenSet = false;
@@ -186,6 +305,9 @@ namespace Model
 
     Aws::String m_browserSettingsArn;
     bool m_browserSettingsArnHasBeenSet = false;
+
+    Aws::String m_customerManagedKey;
+    bool m_customerManagedKeyHasBeenSet = false;
   };
 
 } // namespace Model

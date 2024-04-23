@@ -136,188 +136,196 @@ namespace Model
 
 
     /**
-     * <p>The ID of the launch template.</p> <p>You must specify either the
-     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
-     * both.</p>
+     * <p>The ID of the launch template.</p> <p>You must specify either the launch
+     * template ID or the launch template name, but not both.</p>
      */
     inline const Aws::String& GetLaunchTemplateId() const{ return m_launchTemplateId; }
 
     /**
-     * <p>The ID of the launch template.</p> <p>You must specify either the
-     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
-     * both.</p>
+     * <p>The ID of the launch template.</p> <p>You must specify either the launch
+     * template ID or the launch template name, but not both.</p>
      */
     inline bool LaunchTemplateIdHasBeenSet() const { return m_launchTemplateIdHasBeenSet; }
 
     /**
-     * <p>The ID of the launch template.</p> <p>You must specify either the
-     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
-     * both.</p>
+     * <p>The ID of the launch template.</p> <p>You must specify either the launch
+     * template ID or the launch template name, but not both.</p>
      */
     inline void SetLaunchTemplateId(const Aws::String& value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId = value; }
 
     /**
-     * <p>The ID of the launch template.</p> <p>You must specify either the
-     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
-     * both.</p>
+     * <p>The ID of the launch template.</p> <p>You must specify either the launch
+     * template ID or the launch template name, but not both.</p>
      */
     inline void SetLaunchTemplateId(Aws::String&& value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId = std::move(value); }
 
     /**
-     * <p>The ID of the launch template.</p> <p>You must specify either the
-     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
-     * both.</p>
+     * <p>The ID of the launch template.</p> <p>You must specify either the launch
+     * template ID or the launch template name, but not both.</p>
      */
     inline void SetLaunchTemplateId(const char* value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId.assign(value); }
 
     /**
-     * <p>The ID of the launch template.</p> <p>You must specify either the
-     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
-     * both.</p>
+     * <p>The ID of the launch template.</p> <p>You must specify either the launch
+     * template ID or the launch template name, but not both.</p>
      */
     inline CreateLaunchTemplateVersionRequest& WithLaunchTemplateId(const Aws::String& value) { SetLaunchTemplateId(value); return *this;}
 
     /**
-     * <p>The ID of the launch template.</p> <p>You must specify either the
-     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
-     * both.</p>
+     * <p>The ID of the launch template.</p> <p>You must specify either the launch
+     * template ID or the launch template name, but not both.</p>
      */
     inline CreateLaunchTemplateVersionRequest& WithLaunchTemplateId(Aws::String&& value) { SetLaunchTemplateId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the launch template.</p> <p>You must specify either the
-     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
-     * both.</p>
+     * <p>The ID of the launch template.</p> <p>You must specify either the launch
+     * template ID or the launch template name, but not both.</p>
      */
     inline CreateLaunchTemplateVersionRequest& WithLaunchTemplateId(const char* value) { SetLaunchTemplateId(value); return *this;}
 
 
     /**
-     * <p>The name of the launch template.</p> <p>You must specify the
-     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
-     * both.</p>
+     * <p>The name of the launch template.</p> <p>You must specify either the launch
+     * template ID or the launch template name, but not both.</p>
      */
     inline const Aws::String& GetLaunchTemplateName() const{ return m_launchTemplateName; }
 
     /**
-     * <p>The name of the launch template.</p> <p>You must specify the
-     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
-     * both.</p>
+     * <p>The name of the launch template.</p> <p>You must specify either the launch
+     * template ID or the launch template name, but not both.</p>
      */
     inline bool LaunchTemplateNameHasBeenSet() const { return m_launchTemplateNameHasBeenSet; }
 
     /**
-     * <p>The name of the launch template.</p> <p>You must specify the
-     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
-     * both.</p>
+     * <p>The name of the launch template.</p> <p>You must specify either the launch
+     * template ID or the launch template name, but not both.</p>
      */
     inline void SetLaunchTemplateName(const Aws::String& value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName = value; }
 
     /**
-     * <p>The name of the launch template.</p> <p>You must specify the
-     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
-     * both.</p>
+     * <p>The name of the launch template.</p> <p>You must specify either the launch
+     * template ID or the launch template name, but not both.</p>
      */
     inline void SetLaunchTemplateName(Aws::String&& value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName = std::move(value); }
 
     /**
-     * <p>The name of the launch template.</p> <p>You must specify the
-     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
-     * both.</p>
+     * <p>The name of the launch template.</p> <p>You must specify either the launch
+     * template ID or the launch template name, but not both.</p>
      */
     inline void SetLaunchTemplateName(const char* value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName.assign(value); }
 
     /**
-     * <p>The name of the launch template.</p> <p>You must specify the
-     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
-     * both.</p>
+     * <p>The name of the launch template.</p> <p>You must specify either the launch
+     * template ID or the launch template name, but not both.</p>
      */
     inline CreateLaunchTemplateVersionRequest& WithLaunchTemplateName(const Aws::String& value) { SetLaunchTemplateName(value); return *this;}
 
     /**
-     * <p>The name of the launch template.</p> <p>You must specify the
-     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
-     * both.</p>
+     * <p>The name of the launch template.</p> <p>You must specify either the launch
+     * template ID or the launch template name, but not both.</p>
      */
     inline CreateLaunchTemplateVersionRequest& WithLaunchTemplateName(Aws::String&& value) { SetLaunchTemplateName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the launch template.</p> <p>You must specify the
-     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
-     * both.</p>
+     * <p>The name of the launch template.</p> <p>You must specify either the launch
+     * template ID or the launch template name, but not both.</p>
      */
     inline CreateLaunchTemplateVersionRequest& WithLaunchTemplateName(const char* value) { SetLaunchTemplateName(value); return *this;}
 
 
     /**
-     * <p>The version number of the launch template version on which to base the new
-     * version. The new version inherits the same launch parameters as the source
-     * version, except for parameters that you specify in
-     * <code>LaunchTemplateData</code>. Snapshots applied to the block device mapping
-     * are ignored when creating a new version unless they are explicitly included.</p>
+     * <p>The version of the launch template on which to base the new version.
+     * Snapshots applied to the block device mapping are ignored when creating a new
+     * version unless they are explicitly included.</p> <p>If you specify this
+     * parameter, the new version inherits the launch parameters from the source
+     * version. If you specify additional launch parameters for the new version, they
+     * overwrite any corresponding launch parameters inherited from the source
+     * version.</p> <p>If you omit this parameter, the new version contains only the
+     * launch parameters that you specify for the new version.</p>
      */
     inline const Aws::String& GetSourceVersion() const{ return m_sourceVersion; }
 
     /**
-     * <p>The version number of the launch template version on which to base the new
-     * version. The new version inherits the same launch parameters as the source
-     * version, except for parameters that you specify in
-     * <code>LaunchTemplateData</code>. Snapshots applied to the block device mapping
-     * are ignored when creating a new version unless they are explicitly included.</p>
+     * <p>The version of the launch template on which to base the new version.
+     * Snapshots applied to the block device mapping are ignored when creating a new
+     * version unless they are explicitly included.</p> <p>If you specify this
+     * parameter, the new version inherits the launch parameters from the source
+     * version. If you specify additional launch parameters for the new version, they
+     * overwrite any corresponding launch parameters inherited from the source
+     * version.</p> <p>If you omit this parameter, the new version contains only the
+     * launch parameters that you specify for the new version.</p>
      */
     inline bool SourceVersionHasBeenSet() const { return m_sourceVersionHasBeenSet; }
 
     /**
-     * <p>The version number of the launch template version on which to base the new
-     * version. The new version inherits the same launch parameters as the source
-     * version, except for parameters that you specify in
-     * <code>LaunchTemplateData</code>. Snapshots applied to the block device mapping
-     * are ignored when creating a new version unless they are explicitly included.</p>
+     * <p>The version of the launch template on which to base the new version.
+     * Snapshots applied to the block device mapping are ignored when creating a new
+     * version unless they are explicitly included.</p> <p>If you specify this
+     * parameter, the new version inherits the launch parameters from the source
+     * version. If you specify additional launch parameters for the new version, they
+     * overwrite any corresponding launch parameters inherited from the source
+     * version.</p> <p>If you omit this parameter, the new version contains only the
+     * launch parameters that you specify for the new version.</p>
      */
     inline void SetSourceVersion(const Aws::String& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = value; }
 
     /**
-     * <p>The version number of the launch template version on which to base the new
-     * version. The new version inherits the same launch parameters as the source
-     * version, except for parameters that you specify in
-     * <code>LaunchTemplateData</code>. Snapshots applied to the block device mapping
-     * are ignored when creating a new version unless they are explicitly included.</p>
+     * <p>The version of the launch template on which to base the new version.
+     * Snapshots applied to the block device mapping are ignored when creating a new
+     * version unless they are explicitly included.</p> <p>If you specify this
+     * parameter, the new version inherits the launch parameters from the source
+     * version. If you specify additional launch parameters for the new version, they
+     * overwrite any corresponding launch parameters inherited from the source
+     * version.</p> <p>If you omit this parameter, the new version contains only the
+     * launch parameters that you specify for the new version.</p>
      */
     inline void SetSourceVersion(Aws::String&& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = std::move(value); }
 
     /**
-     * <p>The version number of the launch template version on which to base the new
-     * version. The new version inherits the same launch parameters as the source
-     * version, except for parameters that you specify in
-     * <code>LaunchTemplateData</code>. Snapshots applied to the block device mapping
-     * are ignored when creating a new version unless they are explicitly included.</p>
+     * <p>The version of the launch template on which to base the new version.
+     * Snapshots applied to the block device mapping are ignored when creating a new
+     * version unless they are explicitly included.</p> <p>If you specify this
+     * parameter, the new version inherits the launch parameters from the source
+     * version. If you specify additional launch parameters for the new version, they
+     * overwrite any corresponding launch parameters inherited from the source
+     * version.</p> <p>If you omit this parameter, the new version contains only the
+     * launch parameters that you specify for the new version.</p>
      */
     inline void SetSourceVersion(const char* value) { m_sourceVersionHasBeenSet = true; m_sourceVersion.assign(value); }
 
     /**
-     * <p>The version number of the launch template version on which to base the new
-     * version. The new version inherits the same launch parameters as the source
-     * version, except for parameters that you specify in
-     * <code>LaunchTemplateData</code>. Snapshots applied to the block device mapping
-     * are ignored when creating a new version unless they are explicitly included.</p>
+     * <p>The version of the launch template on which to base the new version.
+     * Snapshots applied to the block device mapping are ignored when creating a new
+     * version unless they are explicitly included.</p> <p>If you specify this
+     * parameter, the new version inherits the launch parameters from the source
+     * version. If you specify additional launch parameters for the new version, they
+     * overwrite any corresponding launch parameters inherited from the source
+     * version.</p> <p>If you omit this parameter, the new version contains only the
+     * launch parameters that you specify for the new version.</p>
      */
     inline CreateLaunchTemplateVersionRequest& WithSourceVersion(const Aws::String& value) { SetSourceVersion(value); return *this;}
 
     /**
-     * <p>The version number of the launch template version on which to base the new
-     * version. The new version inherits the same launch parameters as the source
-     * version, except for parameters that you specify in
-     * <code>LaunchTemplateData</code>. Snapshots applied to the block device mapping
-     * are ignored when creating a new version unless they are explicitly included.</p>
+     * <p>The version of the launch template on which to base the new version.
+     * Snapshots applied to the block device mapping are ignored when creating a new
+     * version unless they are explicitly included.</p> <p>If you specify this
+     * parameter, the new version inherits the launch parameters from the source
+     * version. If you specify additional launch parameters for the new version, they
+     * overwrite any corresponding launch parameters inherited from the source
+     * version.</p> <p>If you omit this parameter, the new version contains only the
+     * launch parameters that you specify for the new version.</p>
      */
     inline CreateLaunchTemplateVersionRequest& WithSourceVersion(Aws::String&& value) { SetSourceVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version number of the launch template version on which to base the new
-     * version. The new version inherits the same launch parameters as the source
-     * version, except for parameters that you specify in
-     * <code>LaunchTemplateData</code>. Snapshots applied to the block device mapping
-     * are ignored when creating a new version unless they are explicitly included.</p>
+     * <p>The version of the launch template on which to base the new version.
+     * Snapshots applied to the block device mapping are ignored when creating a new
+     * version unless they are explicitly included.</p> <p>If you specify this
+     * parameter, the new version inherits the launch parameters from the source
+     * version. If you specify additional launch parameters for the new version, they
+     * overwrite any corresponding launch parameters inherited from the source
+     * version.</p> <p>If you omit this parameter, the new version contains only the
+     * launch parameters that you specify for the new version.</p>
      */
     inline CreateLaunchTemplateVersionRequest& WithSourceVersion(const char* value) { SetSourceVersion(value); return *this;}
 

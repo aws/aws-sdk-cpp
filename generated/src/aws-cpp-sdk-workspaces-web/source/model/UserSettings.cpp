@@ -19,10 +19,12 @@ namespace Model
 {
 
 UserSettings::UserSettings() : 
+    m_additionalEncryptionContextHasBeenSet(false),
     m_associatedPortalArnsHasBeenSet(false),
     m_cookieSynchronizationConfigurationHasBeenSet(false),
     m_copyAllowed(EnabledType::NOT_SET),
     m_copyAllowedHasBeenSet(false),
+    m_customerManagedKeyHasBeenSet(false),
     m_disconnectTimeoutInMinutes(0),
     m_disconnectTimeoutInMinutesHasBeenSet(false),
     m_downloadAllowed(EnabledType::NOT_SET),
@@ -40,10 +42,12 @@ UserSettings::UserSettings() :
 }
 
 UserSettings::UserSettings(JsonView jsonValue) : 
+    m_additionalEncryptionContextHasBeenSet(false),
     m_associatedPortalArnsHasBeenSet(false),
     m_cookieSynchronizationConfigurationHasBeenSet(false),
     m_copyAllowed(EnabledType::NOT_SET),
     m_copyAllowedHasBeenSet(false),
+    m_customerManagedKeyHasBeenSet(false),
     m_disconnectTimeoutInMinutes(0),
     m_disconnectTimeoutInMinutesHasBeenSet(false),
     m_downloadAllowed(EnabledType::NOT_SET),
@@ -63,6 +67,16 @@ UserSettings::UserSettings(JsonView jsonValue) :
 
 UserSettings& UserSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("additionalEncryptionContext"))
+  {
+    Aws::Map<Aws::String, JsonView> additionalEncryptionContextJsonMap = jsonValue.GetObject("additionalEncryptionContext").GetAllObjects();
+    for(auto& additionalEncryptionContextItem : additionalEncryptionContextJsonMap)
+    {
+      m_additionalEncryptionContext[additionalEncryptionContextItem.first] = additionalEncryptionContextItem.second.AsString();
+    }
+    m_additionalEncryptionContextHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("associatedPortalArns"))
   {
     Aws::Utils::Array<JsonView> associatedPortalArnsJsonList = jsonValue.GetArray("associatedPortalArns");
@@ -85,6 +99,13 @@ UserSettings& UserSettings::operator =(JsonView jsonValue)
     m_copyAllowed = EnabledTypeMapper::GetEnabledTypeForName(jsonValue.GetString("copyAllowed"));
 
     m_copyAllowedHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("customerManagedKey"))
+  {
+    m_customerManagedKey = jsonValue.GetString("customerManagedKey");
+
+    m_customerManagedKeyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("disconnectTimeoutInMinutes"))
@@ -143,6 +164,17 @@ JsonValue UserSettings::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_additionalEncryptionContextHasBeenSet)
+  {
+   JsonValue additionalEncryptionContextJsonMap;
+   for(auto& additionalEncryptionContextItem : m_additionalEncryptionContext)
+   {
+     additionalEncryptionContextJsonMap.WithString(additionalEncryptionContextItem.first, additionalEncryptionContextItem.second);
+   }
+   payload.WithObject("additionalEncryptionContext", std::move(additionalEncryptionContextJsonMap));
+
+  }
+
   if(m_associatedPortalArnsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> associatedPortalArnsJsonList(m_associatedPortalArns.size());
@@ -163,6 +195,12 @@ JsonValue UserSettings::Jsonize() const
   if(m_copyAllowedHasBeenSet)
   {
    payload.WithString("copyAllowed", EnabledTypeMapper::GetNameForEnabledType(m_copyAllowed));
+  }
+
+  if(m_customerManagedKeyHasBeenSet)
+  {
+   payload.WithString("customerManagedKey", m_customerManagedKey);
+
   }
 
   if(m_disconnectTimeoutInMinutesHasBeenSet)

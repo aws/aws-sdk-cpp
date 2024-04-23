@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     AVAILABLE,
-    DELETING
+    DELETING,
+    DELETE_UNSUCCESSFUL
   };
 
 namespace DataSourceStatusMapper

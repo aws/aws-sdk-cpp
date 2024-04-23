@@ -424,10 +424,11 @@ namespace CostExplorer
          * dimensions, see the <a
          * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
          * operation. Management account in an organization in Organizations have access to
-         * all member accounts. This API is currently available for the Amazon Elastic
-         * Compute Cloud – Compute service only.</p>  <p>This is an opt-in only
-         * feature. You can enable this feature from the Cost Explorer Settings page. For
-         * information about how to access the Settings page, see <a
+         * all member accounts.</p> <p>Hourly granularity is only available for
+         * EC2-Instances (Elastic Compute Cloud) resource-level data. All other
+         * resource-level data is available at daily granularity.</p>  <p>This is an
+         * opt-in only feature. You can enable this feature from the Cost Explorer Settings
+         * page. For information about how to access the Settings page, see <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-access.html">Controlling
          * Access for Cost Explorer</a> in the <i>Billing and Cost Management User
          * Guide</i>.</p> <p><h3>See Also:</h3>   <a

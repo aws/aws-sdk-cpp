@@ -145,91 +145,99 @@ namespace Model
 
 
     /**
-     * <p>Return custom models only if the base model ARN matches this parameter.</p>
+     * <p>Return custom models only if the base model Amazon Resource Name (ARN)
+     * matches this parameter.</p>
      */
     inline const Aws::String& GetBaseModelArnEquals() const{ return m_baseModelArnEquals; }
 
     /**
-     * <p>Return custom models only if the base model ARN matches this parameter.</p>
+     * <p>Return custom models only if the base model Amazon Resource Name (ARN)
+     * matches this parameter.</p>
      */
     inline bool BaseModelArnEqualsHasBeenSet() const { return m_baseModelArnEqualsHasBeenSet; }
 
     /**
-     * <p>Return custom models only if the base model ARN matches this parameter.</p>
+     * <p>Return custom models only if the base model Amazon Resource Name (ARN)
+     * matches this parameter.</p>
      */
     inline void SetBaseModelArnEquals(const Aws::String& value) { m_baseModelArnEqualsHasBeenSet = true; m_baseModelArnEquals = value; }
 
     /**
-     * <p>Return custom models only if the base model ARN matches this parameter.</p>
+     * <p>Return custom models only if the base model Amazon Resource Name (ARN)
+     * matches this parameter.</p>
      */
     inline void SetBaseModelArnEquals(Aws::String&& value) { m_baseModelArnEqualsHasBeenSet = true; m_baseModelArnEquals = std::move(value); }
 
     /**
-     * <p>Return custom models only if the base model ARN matches this parameter.</p>
+     * <p>Return custom models only if the base model Amazon Resource Name (ARN)
+     * matches this parameter.</p>
      */
     inline void SetBaseModelArnEquals(const char* value) { m_baseModelArnEqualsHasBeenSet = true; m_baseModelArnEquals.assign(value); }
 
     /**
-     * <p>Return custom models only if the base model ARN matches this parameter.</p>
+     * <p>Return custom models only if the base model Amazon Resource Name (ARN)
+     * matches this parameter.</p>
      */
     inline ListCustomModelsRequest& WithBaseModelArnEquals(const Aws::String& value) { SetBaseModelArnEquals(value); return *this;}
 
     /**
-     * <p>Return custom models only if the base model ARN matches this parameter.</p>
+     * <p>Return custom models only if the base model Amazon Resource Name (ARN)
+     * matches this parameter.</p>
      */
     inline ListCustomModelsRequest& WithBaseModelArnEquals(Aws::String&& value) { SetBaseModelArnEquals(std::move(value)); return *this;}
 
     /**
-     * <p>Return custom models only if the base model ARN matches this parameter.</p>
+     * <p>Return custom models only if the base model Amazon Resource Name (ARN)
+     * matches this parameter.</p>
      */
     inline ListCustomModelsRequest& WithBaseModelArnEquals(const char* value) { SetBaseModelArnEquals(value); return *this;}
 
 
     /**
-     * <p>Return custom models only if the foundation model ARN matches this
-     * parameter.</p>
+     * <p>Return custom models only if the foundation model Amazon Resource Name (ARN)
+     * matches this parameter.</p>
      */
     inline const Aws::String& GetFoundationModelArnEquals() const{ return m_foundationModelArnEquals; }
 
     /**
-     * <p>Return custom models only if the foundation model ARN matches this
-     * parameter.</p>
+     * <p>Return custom models only if the foundation model Amazon Resource Name (ARN)
+     * matches this parameter.</p>
      */
     inline bool FoundationModelArnEqualsHasBeenSet() const { return m_foundationModelArnEqualsHasBeenSet; }
 
     /**
-     * <p>Return custom models only if the foundation model ARN matches this
-     * parameter.</p>
+     * <p>Return custom models only if the foundation model Amazon Resource Name (ARN)
+     * matches this parameter.</p>
      */
     inline void SetFoundationModelArnEquals(const Aws::String& value) { m_foundationModelArnEqualsHasBeenSet = true; m_foundationModelArnEquals = value; }
 
     /**
-     * <p>Return custom models only if the foundation model ARN matches this
-     * parameter.</p>
+     * <p>Return custom models only if the foundation model Amazon Resource Name (ARN)
+     * matches this parameter.</p>
      */
     inline void SetFoundationModelArnEquals(Aws::String&& value) { m_foundationModelArnEqualsHasBeenSet = true; m_foundationModelArnEquals = std::move(value); }
 
     /**
-     * <p>Return custom models only if the foundation model ARN matches this
-     * parameter.</p>
+     * <p>Return custom models only if the foundation model Amazon Resource Name (ARN)
+     * matches this parameter.</p>
      */
     inline void SetFoundationModelArnEquals(const char* value) { m_foundationModelArnEqualsHasBeenSet = true; m_foundationModelArnEquals.assign(value); }
 
     /**
-     * <p>Return custom models only if the foundation model ARN matches this
-     * parameter.</p>
+     * <p>Return custom models only if the foundation model Amazon Resource Name (ARN)
+     * matches this parameter.</p>
      */
     inline ListCustomModelsRequest& WithFoundationModelArnEquals(const Aws::String& value) { SetFoundationModelArnEquals(value); return *this;}
 
     /**
-     * <p>Return custom models only if the foundation model ARN matches this
-     * parameter.</p>
+     * <p>Return custom models only if the foundation model Amazon Resource Name (ARN)
+     * matches this parameter.</p>
      */
     inline ListCustomModelsRequest& WithFoundationModelArnEquals(Aws::String&& value) { SetFoundationModelArnEquals(std::move(value)); return *this;}
 
     /**
-     * <p>Return custom models only if the foundation model ARN matches this
-     * parameter.</p>
+     * <p>Return custom models only if the foundation model Amazon Resource Name (ARN)
+     * matches this parameter.</p>
      */
     inline ListCustomModelsRequest& WithFoundationModelArnEquals(const char* value) { SetFoundationModelArnEquals(value); return *this;}
 

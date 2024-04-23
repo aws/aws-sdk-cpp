@@ -42,37 +42,37 @@ namespace Model
 
 
     /**
-     * <p>ARN associated with this model.</p>
+     * <p>Amazon Resource Name (ARN) associated with this model.</p>
      */
     inline const Aws::String& GetModelArn() const{ return m_modelArn; }
 
     /**
-     * <p>ARN associated with this model.</p>
+     * <p>Amazon Resource Name (ARN) associated with this model.</p>
      */
     inline void SetModelArn(const Aws::String& value) { m_modelArn = value; }
 
     /**
-     * <p>ARN associated with this model.</p>
+     * <p>Amazon Resource Name (ARN) associated with this model.</p>
      */
     inline void SetModelArn(Aws::String&& value) { m_modelArn = std::move(value); }
 
     /**
-     * <p>ARN associated with this model.</p>
+     * <p>Amazon Resource Name (ARN) associated with this model.</p>
      */
     inline void SetModelArn(const char* value) { m_modelArn.assign(value); }
 
     /**
-     * <p>ARN associated with this model.</p>
+     * <p>Amazon Resource Name (ARN) associated with this model.</p>
      */
     inline GetCustomModelResult& WithModelArn(const Aws::String& value) { SetModelArn(value); return *this;}
 
     /**
-     * <p>ARN associated with this model.</p>
+     * <p>Amazon Resource Name (ARN) associated with this model.</p>
      */
     inline GetCustomModelResult& WithModelArn(Aws::String&& value) { SetModelArn(std::move(value)); return *this;}
 
     /**
-     * <p>ARN associated with this model.</p>
+     * <p>Amazon Resource Name (ARN) associated with this model.</p>
      */
     inline GetCustomModelResult& WithModelArn(const char* value) { SetModelArn(value); return *this;}
 
@@ -150,73 +150,73 @@ namespace Model
 
 
     /**
-     * <p>Job ARN associated with this model.</p>
+     * <p>Job Amazon Resource Name (ARN) associated with this model.</p>
      */
     inline const Aws::String& GetJobArn() const{ return m_jobArn; }
 
     /**
-     * <p>Job ARN associated with this model.</p>
+     * <p>Job Amazon Resource Name (ARN) associated with this model.</p>
      */
     inline void SetJobArn(const Aws::String& value) { m_jobArn = value; }
 
     /**
-     * <p>Job ARN associated with this model.</p>
+     * <p>Job Amazon Resource Name (ARN) associated with this model.</p>
      */
     inline void SetJobArn(Aws::String&& value) { m_jobArn = std::move(value); }
 
     /**
-     * <p>Job ARN associated with this model.</p>
+     * <p>Job Amazon Resource Name (ARN) associated with this model.</p>
      */
     inline void SetJobArn(const char* value) { m_jobArn.assign(value); }
 
     /**
-     * <p>Job ARN associated with this model.</p>
+     * <p>Job Amazon Resource Name (ARN) associated with this model.</p>
      */
     inline GetCustomModelResult& WithJobArn(const Aws::String& value) { SetJobArn(value); return *this;}
 
     /**
-     * <p>Job ARN associated with this model.</p>
+     * <p>Job Amazon Resource Name (ARN) associated with this model.</p>
      */
     inline GetCustomModelResult& WithJobArn(Aws::String&& value) { SetJobArn(std::move(value)); return *this;}
 
     /**
-     * <p>Job ARN associated with this model.</p>
+     * <p>Job Amazon Resource Name (ARN) associated with this model.</p>
      */
     inline GetCustomModelResult& WithJobArn(const char* value) { SetJobArn(value); return *this;}
 
 
     /**
-     * <p>ARN of the base model.</p>
+     * <p>Amazon Resource Name (ARN) of the base model.</p>
      */
     inline const Aws::String& GetBaseModelArn() const{ return m_baseModelArn; }
 
     /**
-     * <p>ARN of the base model.</p>
+     * <p>Amazon Resource Name (ARN) of the base model.</p>
      */
     inline void SetBaseModelArn(const Aws::String& value) { m_baseModelArn = value; }
 
     /**
-     * <p>ARN of the base model.</p>
+     * <p>Amazon Resource Name (ARN) of the base model.</p>
      */
     inline void SetBaseModelArn(Aws::String&& value) { m_baseModelArn = std::move(value); }
 
     /**
-     * <p>ARN of the base model.</p>
+     * <p>Amazon Resource Name (ARN) of the base model.</p>
      */
     inline void SetBaseModelArn(const char* value) { m_baseModelArn.assign(value); }
 
     /**
-     * <p>ARN of the base model.</p>
+     * <p>Amazon Resource Name (ARN) of the base model.</p>
      */
     inline GetCustomModelResult& WithBaseModelArn(const Aws::String& value) { SetBaseModelArn(value); return *this;}
 
     /**
-     * <p>ARN of the base model.</p>
+     * <p>Amazon Resource Name (ARN) of the base model.</p>
      */
     inline GetCustomModelResult& WithBaseModelArn(Aws::String&& value) { SetBaseModelArn(std::move(value)); return *this;}
 
     /**
-     * <p>ARN of the base model.</p>
+     * <p>Amazon Resource Name (ARN) of the base model.</p>
      */
     inline GetCustomModelResult& WithBaseModelArn(const char* value) { SetBaseModelArn(value); return *this;}
 
@@ -284,105 +284,151 @@ namespace Model
 
 
     /**
-     * <p>Hyperparameter values associated with this model.</p>
+     * <p>Hyperparameter values associated with this model. For details on the format
+     * for different models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom
+     * model hyperparameters</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetHyperParameters() const{ return m_hyperParameters; }
 
     /**
-     * <p>Hyperparameter values associated with this model.</p>
+     * <p>Hyperparameter values associated with this model. For details on the format
+     * for different models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom
+     * model hyperparameters</a>.</p>
      */
     inline void SetHyperParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_hyperParameters = value; }
 
     /**
-     * <p>Hyperparameter values associated with this model.</p>
+     * <p>Hyperparameter values associated with this model. For details on the format
+     * for different models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom
+     * model hyperparameters</a>.</p>
      */
     inline void SetHyperParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_hyperParameters = std::move(value); }
 
     /**
-     * <p>Hyperparameter values associated with this model.</p>
+     * <p>Hyperparameter values associated with this model. For details on the format
+     * for different models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom
+     * model hyperparameters</a>.</p>
      */
     inline GetCustomModelResult& WithHyperParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetHyperParameters(value); return *this;}
 
     /**
-     * <p>Hyperparameter values associated with this model.</p>
+     * <p>Hyperparameter values associated with this model. For details on the format
+     * for different models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom
+     * model hyperparameters</a>.</p>
      */
     inline GetCustomModelResult& WithHyperParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetHyperParameters(std::move(value)); return *this;}
 
     /**
-     * <p>Hyperparameter values associated with this model.</p>
+     * <p>Hyperparameter values associated with this model. For details on the format
+     * for different models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom
+     * model hyperparameters</a>.</p>
      */
     inline GetCustomModelResult& AddHyperParameters(const Aws::String& key, const Aws::String& value) { m_hyperParameters.emplace(key, value); return *this; }
 
     /**
-     * <p>Hyperparameter values associated with this model.</p>
+     * <p>Hyperparameter values associated with this model. For details on the format
+     * for different models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom
+     * model hyperparameters</a>.</p>
      */
     inline GetCustomModelResult& AddHyperParameters(Aws::String&& key, const Aws::String& value) { m_hyperParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Hyperparameter values associated with this model.</p>
+     * <p>Hyperparameter values associated with this model. For details on the format
+     * for different models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom
+     * model hyperparameters</a>.</p>
      */
     inline GetCustomModelResult& AddHyperParameters(const Aws::String& key, Aws::String&& value) { m_hyperParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Hyperparameter values associated with this model.</p>
+     * <p>Hyperparameter values associated with this model. For details on the format
+     * for different models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom
+     * model hyperparameters</a>.</p>
      */
     inline GetCustomModelResult& AddHyperParameters(Aws::String&& key, Aws::String&& value) { m_hyperParameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Hyperparameter values associated with this model.</p>
+     * <p>Hyperparameter values associated with this model. For details on the format
+     * for different models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom
+     * model hyperparameters</a>.</p>
      */
     inline GetCustomModelResult& AddHyperParameters(const char* key, Aws::String&& value) { m_hyperParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Hyperparameter values associated with this model.</p>
+     * <p>Hyperparameter values associated with this model. For details on the format
+     * for different models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom
+     * model hyperparameters</a>.</p>
      */
     inline GetCustomModelResult& AddHyperParameters(Aws::String&& key, const char* value) { m_hyperParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Hyperparameter values associated with this model.</p>
+     * <p>Hyperparameter values associated with this model. For details on the format
+     * for different models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom
+     * model hyperparameters</a>.</p>
      */
     inline GetCustomModelResult& AddHyperParameters(const char* key, const char* value) { m_hyperParameters.emplace(key, value); return *this; }
 
 
     /**
-     * <p>Information about the training dataset.</p>
+     * <p>Contains information about the training dataset.</p>
      */
     inline const TrainingDataConfig& GetTrainingDataConfig() const{ return m_trainingDataConfig; }
 
     /**
-     * <p>Information about the training dataset.</p>
+     * <p>Contains information about the training dataset.</p>
      */
     inline void SetTrainingDataConfig(const TrainingDataConfig& value) { m_trainingDataConfig = value; }
 
     /**
-     * <p>Information about the training dataset.</p>
+     * <p>Contains information about the training dataset.</p>
      */
     inline void SetTrainingDataConfig(TrainingDataConfig&& value) { m_trainingDataConfig = std::move(value); }
 
     /**
-     * <p>Information about the training dataset.</p>
+     * <p>Contains information about the training dataset.</p>
      */
     inline GetCustomModelResult& WithTrainingDataConfig(const TrainingDataConfig& value) { SetTrainingDataConfig(value); return *this;}
 
     /**
-     * <p>Information about the training dataset.</p>
+     * <p>Contains information about the training dataset.</p>
      */
     inline GetCustomModelResult& WithTrainingDataConfig(TrainingDataConfig&& value) { SetTrainingDataConfig(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Contains information about the validation dataset.</p>
+     */
     inline const ValidationDataConfig& GetValidationDataConfig() const{ return m_validationDataConfig; }
 
-    
+    /**
+     * <p>Contains information about the validation dataset.</p>
+     */
     inline void SetValidationDataConfig(const ValidationDataConfig& value) { m_validationDataConfig = value; }
 
-    
+    /**
+     * <p>Contains information about the validation dataset.</p>
+     */
     inline void SetValidationDataConfig(ValidationDataConfig&& value) { m_validationDataConfig = std::move(value); }
 
-    
+    /**
+     * <p>Contains information about the validation dataset.</p>
+     */
     inline GetCustomModelResult& WithValidationDataConfig(const ValidationDataConfig& value) { SetValidationDataConfig(value); return *this;}
 
-    
+    /**
+     * <p>Contains information about the validation dataset.</p>
+     */
     inline GetCustomModelResult& WithValidationDataConfig(ValidationDataConfig&& value) { SetValidationDataConfig(std::move(value)); return *this;}
 
 
@@ -413,27 +459,27 @@ namespace Model
 
 
     /**
-     * <p>The training metrics from the job creation.</p>
+     * <p>Contains training metrics from the job creation.</p>
      */
     inline const TrainingMetrics& GetTrainingMetrics() const{ return m_trainingMetrics; }
 
     /**
-     * <p>The training metrics from the job creation.</p>
+     * <p>Contains training metrics from the job creation.</p>
      */
     inline void SetTrainingMetrics(const TrainingMetrics& value) { m_trainingMetrics = value; }
 
     /**
-     * <p>The training metrics from the job creation.</p>
+     * <p>Contains training metrics from the job creation.</p>
      */
     inline void SetTrainingMetrics(TrainingMetrics&& value) { m_trainingMetrics = std::move(value); }
 
     /**
-     * <p>The training metrics from the job creation.</p>
+     * <p>Contains training metrics from the job creation.</p>
      */
     inline GetCustomModelResult& WithTrainingMetrics(const TrainingMetrics& value) { SetTrainingMetrics(value); return *this;}
 
     /**
-     * <p>The training metrics from the job creation.</p>
+     * <p>Contains training metrics from the job creation.</p>
      */
     inline GetCustomModelResult& WithTrainingMetrics(TrainingMetrics&& value) { SetTrainingMetrics(std::move(value)); return *this;}
 

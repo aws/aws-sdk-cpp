@@ -173,57 +173,89 @@ namespace Model
 
     /**
      * <p>An array of one or more queries to perform. Each query must specify a
-     * Performance Insights metric, and can optionally specify aggregation and
-     * filtering criteria.</p>
+     * Performance Insights metric and specify an aggregate function, and you can
+     * provide filtering criteria. You must append the aggregate function to the
+     * metric. For example, to find the average for the metric <code>db.load</code> you
+     * must use <code>db.load.avg</code>. Valid values for aggregate functions include
+     * <code>.avg</code>, <code>.min</code>, <code>.max</code>, and
+     * <code>.sum</code>.</p>
      */
     inline const Aws::Vector<MetricQuery>& GetMetricQueries() const{ return m_metricQueries; }
 
     /**
      * <p>An array of one or more queries to perform. Each query must specify a
-     * Performance Insights metric, and can optionally specify aggregation and
-     * filtering criteria.</p>
+     * Performance Insights metric and specify an aggregate function, and you can
+     * provide filtering criteria. You must append the aggregate function to the
+     * metric. For example, to find the average for the metric <code>db.load</code> you
+     * must use <code>db.load.avg</code>. Valid values for aggregate functions include
+     * <code>.avg</code>, <code>.min</code>, <code>.max</code>, and
+     * <code>.sum</code>.</p>
      */
     inline bool MetricQueriesHasBeenSet() const { return m_metricQueriesHasBeenSet; }
 
     /**
      * <p>An array of one or more queries to perform. Each query must specify a
-     * Performance Insights metric, and can optionally specify aggregation and
-     * filtering criteria.</p>
+     * Performance Insights metric and specify an aggregate function, and you can
+     * provide filtering criteria. You must append the aggregate function to the
+     * metric. For example, to find the average for the metric <code>db.load</code> you
+     * must use <code>db.load.avg</code>. Valid values for aggregate functions include
+     * <code>.avg</code>, <code>.min</code>, <code>.max</code>, and
+     * <code>.sum</code>.</p>
      */
     inline void SetMetricQueries(const Aws::Vector<MetricQuery>& value) { m_metricQueriesHasBeenSet = true; m_metricQueries = value; }
 
     /**
      * <p>An array of one or more queries to perform. Each query must specify a
-     * Performance Insights metric, and can optionally specify aggregation and
-     * filtering criteria.</p>
+     * Performance Insights metric and specify an aggregate function, and you can
+     * provide filtering criteria. You must append the aggregate function to the
+     * metric. For example, to find the average for the metric <code>db.load</code> you
+     * must use <code>db.load.avg</code>. Valid values for aggregate functions include
+     * <code>.avg</code>, <code>.min</code>, <code>.max</code>, and
+     * <code>.sum</code>.</p>
      */
     inline void SetMetricQueries(Aws::Vector<MetricQuery>&& value) { m_metricQueriesHasBeenSet = true; m_metricQueries = std::move(value); }
 
     /**
      * <p>An array of one or more queries to perform. Each query must specify a
-     * Performance Insights metric, and can optionally specify aggregation and
-     * filtering criteria.</p>
+     * Performance Insights metric and specify an aggregate function, and you can
+     * provide filtering criteria. You must append the aggregate function to the
+     * metric. For example, to find the average for the metric <code>db.load</code> you
+     * must use <code>db.load.avg</code>. Valid values for aggregate functions include
+     * <code>.avg</code>, <code>.min</code>, <code>.max</code>, and
+     * <code>.sum</code>.</p>
      */
     inline GetResourceMetricsRequest& WithMetricQueries(const Aws::Vector<MetricQuery>& value) { SetMetricQueries(value); return *this;}
 
     /**
      * <p>An array of one or more queries to perform. Each query must specify a
-     * Performance Insights metric, and can optionally specify aggregation and
-     * filtering criteria.</p>
+     * Performance Insights metric and specify an aggregate function, and you can
+     * provide filtering criteria. You must append the aggregate function to the
+     * metric. For example, to find the average for the metric <code>db.load</code> you
+     * must use <code>db.load.avg</code>. Valid values for aggregate functions include
+     * <code>.avg</code>, <code>.min</code>, <code>.max</code>, and
+     * <code>.sum</code>.</p>
      */
     inline GetResourceMetricsRequest& WithMetricQueries(Aws::Vector<MetricQuery>&& value) { SetMetricQueries(std::move(value)); return *this;}
 
     /**
      * <p>An array of one or more queries to perform. Each query must specify a
-     * Performance Insights metric, and can optionally specify aggregation and
-     * filtering criteria.</p>
+     * Performance Insights metric and specify an aggregate function, and you can
+     * provide filtering criteria. You must append the aggregate function to the
+     * metric. For example, to find the average for the metric <code>db.load</code> you
+     * must use <code>db.load.avg</code>. Valid values for aggregate functions include
+     * <code>.avg</code>, <code>.min</code>, <code>.max</code>, and
+     * <code>.sum</code>.</p>
      */
     inline GetResourceMetricsRequest& AddMetricQueries(const MetricQuery& value) { m_metricQueriesHasBeenSet = true; m_metricQueries.push_back(value); return *this; }
 
     /**
      * <p>An array of one or more queries to perform. Each query must specify a
-     * Performance Insights metric, and can optionally specify aggregation and
-     * filtering criteria.</p>
+     * Performance Insights metric and specify an aggregate function, and you can
+     * provide filtering criteria. You must append the aggregate function to the
+     * metric. For example, to find the average for the metric <code>db.load</code> you
+     * must use <code>db.load.avg</code>. Valid values for aggregate functions include
+     * <code>.avg</code>, <code>.min</code>, <code>.max</code>, and
+     * <code>.sum</code>.</p>
      */
     inline GetResourceMetricsRequest& AddMetricQueries(MetricQuery&& value) { m_metricQueriesHasBeenSet = true; m_metricQueries.push_back(std::move(value)); return *this; }
 

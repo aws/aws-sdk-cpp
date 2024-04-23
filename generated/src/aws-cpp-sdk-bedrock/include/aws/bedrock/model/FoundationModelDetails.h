@@ -43,42 +43,42 @@ namespace Model
 
 
     /**
-     * <p>The model ARN.</p>
+     * <p>The model Amazon Resource Name (ARN).</p>
      */
     inline const Aws::String& GetModelArn() const{ return m_modelArn; }
 
     /**
-     * <p>The model ARN.</p>
+     * <p>The model Amazon Resource Name (ARN).</p>
      */
     inline bool ModelArnHasBeenSet() const { return m_modelArnHasBeenSet; }
 
     /**
-     * <p>The model ARN.</p>
+     * <p>The model Amazon Resource Name (ARN).</p>
      */
     inline void SetModelArn(const Aws::String& value) { m_modelArnHasBeenSet = true; m_modelArn = value; }
 
     /**
-     * <p>The model ARN.</p>
+     * <p>The model Amazon Resource Name (ARN).</p>
      */
     inline void SetModelArn(Aws::String&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::move(value); }
 
     /**
-     * <p>The model ARN.</p>
+     * <p>The model Amazon Resource Name (ARN).</p>
      */
     inline void SetModelArn(const char* value) { m_modelArnHasBeenSet = true; m_modelArn.assign(value); }
 
     /**
-     * <p>The model ARN.</p>
+     * <p>The model Amazon Resource Name (ARN).</p>
      */
     inline FoundationModelDetails& WithModelArn(const Aws::String& value) { SetModelArn(value); return *this;}
 
     /**
-     * <p>The model ARN.</p>
+     * <p>The model Amazon Resource Name (ARN).</p>
      */
     inline FoundationModelDetails& WithModelArn(Aws::String&& value) { SetModelArn(std::move(value)); return *this;}
 
     /**
-     * <p>The model ARN.</p>
+     * <p>The model Amazon Resource Name (ARN).</p>
      */
     inline FoundationModelDetails& WithModelArn(const char* value) { SetModelArn(value); return *this;}
 
@@ -166,42 +166,42 @@ namespace Model
 
 
     /**
-     * <p>he model's provider name.</p>
+     * <p>The model's provider name.</p>
      */
     inline const Aws::String& GetProviderName() const{ return m_providerName; }
 
     /**
-     * <p>he model's provider name.</p>
+     * <p>The model's provider name.</p>
      */
     inline bool ProviderNameHasBeenSet() const { return m_providerNameHasBeenSet; }
 
     /**
-     * <p>he model's provider name.</p>
+     * <p>The model's provider name.</p>
      */
     inline void SetProviderName(const Aws::String& value) { m_providerNameHasBeenSet = true; m_providerName = value; }
 
     /**
-     * <p>he model's provider name.</p>
+     * <p>The model's provider name.</p>
      */
     inline void SetProviderName(Aws::String&& value) { m_providerNameHasBeenSet = true; m_providerName = std::move(value); }
 
     /**
-     * <p>he model's provider name.</p>
+     * <p>The model's provider name.</p>
      */
     inline void SetProviderName(const char* value) { m_providerNameHasBeenSet = true; m_providerName.assign(value); }
 
     /**
-     * <p>he model's provider name.</p>
+     * <p>The model's provider name.</p>
      */
     inline FoundationModelDetails& WithProviderName(const Aws::String& value) { SetProviderName(value); return *this;}
 
     /**
-     * <p>he model's provider name.</p>
+     * <p>The model's provider name.</p>
      */
     inline FoundationModelDetails& WithProviderName(Aws::String&& value) { SetProviderName(std::move(value)); return *this;}
 
     /**
-     * <p>he model's provider name.</p>
+     * <p>The model's provider name.</p>
      */
     inline FoundationModelDetails& WithProviderName(const char* value) { SetProviderName(value); return *this;}
 
