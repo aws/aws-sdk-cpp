@@ -27,6 +27,7 @@ using namespace Aws::TranscribeStreamingService::Model;
 
 static const char TEST_FILE_NAME[] = "transcribe-test-file.wav";
 const char ALLOC_TAG[] = "TranscribestreamingIntegTest";
+static const size_t MAX_TEST_RETRIES = 5;
 
 #define AWS_ADD_FAILURE(MSG) \
 ADD_FAILURE() << MSG;        \
@@ -93,7 +94,17 @@ protected:
         m_testTraces.erase();
     }
 
-    Aws::String RunTestLikeSample(size_t timeoutMs, const Aws::String& fileName, const size_t SampleRate, const size_t chunkLengthToUseMs);
+    Aws::String RunTestWithRetires(size_t maxRetries,
+        size_t timeoutMs,
+        const Aws::String& fileName,
+        const size_t SampleRate,
+        const size_t chunkLengthToUseMs);
+
+    Aws::String RunTestLikeSample(size_t timeoutMs,
+        const Aws::String& fileName,
+        const size_t SampleRate,
+        const size_t chunkLengthToUseMs,
+        bool& sawRetryableError);
 };
 
 TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
@@ -306,7 +317,31 @@ TEST_F(TranscribeStreamingTests, TranscribeStreamingWithRequestRetry)
     semaphore.WaitOne();
 }
 
-Aws::String TranscribeStreamingTests::RunTestLikeSample(size_t timeoutMs, const Aws::String& fileName, const size_t SampleRate, const size_t chunkLengthToUseMs)
+Aws::String TranscribeStreamingTests::RunTestWithRetires(size_t maxRetries,
+    size_t timeoutMs,
+    const Aws::String& fileName,
+    const size_t SampleRate,
+    const size_t chunkLengthToUseMs)
+{
+    size_t retryCount = 0;
+    bool sawRetryableError;
+    Aws::String testReturn;
+    do
+    {
+        sawRetryableError = false;
+        testReturn = RunTestLikeSample(timeoutMs, fileName, SampleRate, chunkLengthToUseMs, sawRetryableError);
+        retryCount++;
+    }
+    while (sawRetryableError && retryCount <= maxRetries);
+    EXPECT_FALSE(sawRetryableError);
+    return testReturn;
+}
+
+Aws::String TranscribeStreamingTests::RunTestLikeSample(size_t timeoutMs,
+    const Aws::String& fileName,
+    const size_t SampleRate,
+    const size_t chunkLengthToUseMs,
+    bool& sawRetryableError)
 {
     SCOPED_TRACE(Aws::String("File name: ") + fileName);
     SCOPED_TRACE(Aws::String("Sample rate (Hz): ") + Aws::Utils::StringUtils::to_string(SampleRate));
@@ -322,8 +357,16 @@ Aws::String TranscribeStreamingTests::RunTestLikeSample(size_t timeoutMs, const 
 
     StartStreamTranscriptionHandler handler;
     handler.SetOnErrorCallback(
-            [this](const Aws::Client::AWSError<TranscribeStreamingServiceErrors> &error) {
+            [&sawRetryableError, this](const Aws::Client::AWSError<TranscribeStreamingServiceErrors> &error) {
+                if (error.ShouldRetry())
+                {
+                    SCOPED_TRACE("Saw retryable error: " + error.GetMessage());
+                    sawRetryableError = true;
+                }
+                else
+                {
                     AWS_ADD_FAILURE(Aws::String("OnErrorCallback: ") + error.GetMessage())
+                }
             });
     //SetTranscriptEventCallback called for every 'chunk' of file transcripted.
     // Partial results are returned in real time.
@@ -519,7 +562,7 @@ TEST_F(TranscribeStreamingTests, TranscribeStreamingCppSdkSample)
     m_testTraces.clear();
     TestTrace(Aws::String("### Starting TranscribeStreamingCppSdkSample with chunks of ") + Aws::Utils::StringUtils::to_string(chunkDuration) + " ms ##");
     int64_t startedAt = Aws::Utils::DateTime::Now().Millis();
-    Aws::String result = RunTestLikeSample(4500, "this_is_a_cpp_test_sample_8kHz_2162ms.wav", 8000, chunkDuration);
+    Aws::String result = RunTestWithRetires(MAX_TEST_RETRIES, 4500, "this_is_a_cpp_test_sample_8kHz_2162ms.wav", 8000, chunkDuration);
     int64_t endedAt = Aws::Utils::DateTime::Now().Millis();
     TestTrace(Aws::String("### Done this_is_a_cpp_test_sample_8kHz_2162ms with chunks of ") + Aws::Utils::StringUtils::to_string(chunkDuration) + " ms ##");
     std::cout << "Transcription of TranscribeStreamingCppSdkSample with chunk duration " << chunkDuration << " ms took " << endedAt - startedAt << " ms.\n";
@@ -544,7 +587,7 @@ TEST_F(TranscribeStreamingTests, TranscribeStreamingKantSample)
     m_testTraces.clear();
     TestTrace(Aws::String("### Starting TranscribeStreamingKantSample with chunks of ") + Aws::Utils::StringUtils::to_string(chunkDuration) + " ms ##");
     int64_t startedAt = Aws::Utils::DateTime::Now().Millis();
-    Aws::String result = RunTestLikeSample(22000, "Kant_16kHz_17176ms.wav", 16000, chunkDuration);
+    Aws::String result = RunTestWithRetires(MAX_TEST_RETRIES, 22000, "Kant_16kHz_17176ms.wav", 16000, chunkDuration);
     int64_t endedAt = Aws::Utils::DateTime::Now().Millis();
     TestTrace(Aws::String("### Done TranscribeStreamingKantSample with chunks of ") + Aws::Utils::StringUtils::to_string(chunkDuration) + " ms ##");
     std::cout << "Transcription of Kant_16kHz_17176ms with chunk duration " << chunkDuration << " ms took " << endedAt - startedAt << " ms.\n";
