@@ -105,7 +105,10 @@ namespace Aws
     {
 #ifdef USE_AWS_MEMORY_MANAGEMENT
         Aws::Utils::Memory::MemorySystemInterface* memorySystem = Aws::Utils::Memory::GetMemorySystem();
-        assert(memorySystem && "Memory system is not initialized");
+        // Was InitAPI forgotten or ShutdownAPI already called or Aws:: class used as static?
+        // TODO: enforce to non-conditional assert
+        AWS_ASSERT(memorySystem && "Memory system is not initialized.");
+        AWS_UNREFERENCED_PARAM(memorySystem);
 #endif
         AWS_UNREFERENCED_PARAM(allocationTag);
 
