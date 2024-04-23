@@ -614,7 +614,7 @@ namespace
                 ASSERT_NE(S3Errors::VALIDATION, getObjectOutcome.GetError().GetErrorType());
                 Aws::StringStream ss;
                 ss << "https://" << expectedEndpoint << "/fakeObjectKey";
-                if (ss.str() != TestingMonitoringMetrics::s_lastUriString) {
+                if (ss.str() != TestingMonitoringMetrics::s_lastUriString.c_str()) {
                     std::cout << "Error";
                 }
                 ASSERT_STREQ(ss.str().c_str(), TestingMonitoringMetrics::s_lastUriString.c_str());
