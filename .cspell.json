@@ -13,7 +13,7 @@
         "Presigner", "xindex", "errortype", "waveout", "WAVEOUTCAPSA", "ALLOWSYNC", "WAVEHDR", "MMSYSERR",
         "WAVEFORMATEX", "Unprepare", "DDISABLE_IMDSV1", "SENDREQUEST", "threadpool",
         // AWS general
-        "Arns", "AMZN", "amzn", "Paulo", "Ningxia", "ISOB", "isob", "AWSXML", "IMDSV",
+        "Arns", "AMZN", "amzn", "Paulo", "Ningxia", "ISOB", "isob", "AWSXML", "IMDSV", "AWSSTL",
         // AWS Signature
         "SIGV", "AUTHV",
         // CMake
