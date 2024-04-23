@@ -53,7 +53,7 @@ namespace Model
        msg.InsertEventHeader(":event-type", Aws::String("${entry.value.shape.name}"));
 #if($entry.value.shape.eventPayloadType.equals("string"))
        msg.InsertEventHeader(":content-type", Aws::String("text/plain"));
-       msg.WriteEventPayload(value.Get$CppViewHelper.capitalizeFirstChar(${entry.value.shape.eventPayloadMemberName})()));
+       msg.WriteEventPayload(value.Get$CppViewHelper.capitalizeFirstChar(${entry.value.shape.eventPayloadMemberName})());
 #elseif($entry.value.shape.eventPayloadType.equals("structure") || $entry.value.shape.eventPayloadType.equals("list"))
        msg.InsertEventHeader(":content-type", Aws::String("application/json"));
        msg.WriteEventPayload(value.Jsonize().View().WriteCompact());
