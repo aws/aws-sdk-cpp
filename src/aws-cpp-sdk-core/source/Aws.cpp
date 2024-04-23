@@ -46,7 +46,6 @@ namespace Aws
             Aws::Utils::Memory::InitializeAWSMemorySystem(*options.memoryManagementOptions.memoryManager);
         }
 #endif // USE_AWS_MEMORY_MANAGEMENT
-        Aws::InitializeCrt();
         Aws::Client::CoreErrorsMapper::InitCoreErrorsMapper();
         if(options.loggingOptions.logLevel != Aws::Utils::Logging::LogLevel::Off)
         {
@@ -72,6 +71,7 @@ namespace Aws
             AWS_LOGSTREAM_INFO(ALLOCATION_TAG, "Initiate AWS SDK for C++ with Version:" << Aws::String(Aws::Version::GetVersionString()));
         }
 
+        Aws::InitializeCrt();
         Aws::Config::InitConfigAndCredentialsCacheManager();
 
         if (options.ioOptions.clientBootstrap_create_fn)

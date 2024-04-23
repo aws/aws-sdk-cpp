@@ -66,8 +66,9 @@ void* Malloc(const char* allocationTag, size_t allocationSize)
 {
     Aws::Utils::Memory::MemorySystemInterface* memorySystem = Aws::Utils::Memory::GetMemorySystem();
 #ifdef USE_AWS_MEMORY_MANAGEMENT
-    // Was InitAPI forgotten or ShutdownAPI already called?
-    assert(memorySystem && "Memory system is not initialized.");
+    // Was InitAPI forgotten or ShutdownAPI already called or Aws:: class used as static?
+    // TODO: enforce to non-conditional assert AWS_ASSERT
+    AWS_ASSERT(memorySystem && "Memory system is not initialized.");
 #endif
 
     void* rawMemory = nullptr;
@@ -92,6 +93,11 @@ void Free(void* memoryPtr)
     }
 
     Aws::Utils::Memory::MemorySystemInterface* memorySystem = Aws::Utils::Memory::GetMemorySystem();
+#ifdef USE_AWS_MEMORY_MANAGEMENT
+    // Was InitAPI forgotten or ShutdownAPI already called or Aws:: class used as static?
+    // TODO: enforce to non-conditional assert
+    AWS_ASSERT(memorySystem && "Memory system is not initialized.");
+#endif
     if(memorySystem != nullptr)
     {
         memorySystem->FreeMemory(memoryPtr);
