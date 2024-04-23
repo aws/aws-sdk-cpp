@@ -45,7 +45,7 @@
   ${spaces}headers.emplace("${locationName}", std::accumulate(std::begin($memberVarName),
   ${spaces}  std::end($memberVarName),
   ${spaces}  Aws::String{},
-  ${spaces}  [](const Aws::String &acc, const ${member.shape.listMember.shape.name} &item) -> Aws::String {
+  ${spaces}  [](const Aws::String &acc, const $CppViewHelper.computeCppType($member.shape.listMember.shape) &item) -> Aws::String {
 #if($member.shape.listMember.shape.enum)
   ${spaces}    const auto headerValue = ${member.shape.listMember.shape.name}Mapper::GetNameFor${member.shape.listMember.shape.name}(item);
 #else
