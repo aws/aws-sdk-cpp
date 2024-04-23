@@ -32,6 +32,7 @@ namespace Aws
         static const int uefiData_HASH = HashingUtils::HashString("uefiData");
         static const int lastLaunchedTime_HASH = HashingUtils::HashString("lastLaunchedTime");
         static const int imdsSupport_HASH = HashingUtils::HashString("imdsSupport");
+        static const int deregistrationProtection_HASH = HashingUtils::HashString("deregistrationProtection");
 
 
         ImageAttributeName GetImageAttributeNameForName(const Aws::String& name)
@@ -85,6 +86,10 @@ namespace Aws
           {
             return ImageAttributeName::imdsSupport;
           }
+          else if (hashCode == deregistrationProtection_HASH)
+          {
+            return ImageAttributeName::deregistrationProtection;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -125,6 +130,8 @@ namespace Aws
             return "lastLaunchedTime";
           case ImageAttributeName::imdsSupport:
             return "imdsSupport";
+          case ImageAttributeName::deregistrationProtection:
+            return "deregistrationProtection";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

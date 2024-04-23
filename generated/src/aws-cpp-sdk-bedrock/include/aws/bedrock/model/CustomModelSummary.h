@@ -40,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the custom model.</p>
+     * <p>The Amazon Resource Name (ARN) of the custom model.</p>
      */
     inline const Aws::String& GetModelArn() const{ return m_modelArn; }
 
     /**
-     * <p>The ARN of the custom model.</p>
+     * <p>The Amazon Resource Name (ARN) of the custom model.</p>
      */
     inline bool ModelArnHasBeenSet() const { return m_modelArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the custom model.</p>
+     * <p>The Amazon Resource Name (ARN) of the custom model.</p>
      */
     inline void SetModelArn(const Aws::String& value) { m_modelArnHasBeenSet = true; m_modelArn = value; }
 
     /**
-     * <p>The ARN of the custom model.</p>
+     * <p>The Amazon Resource Name (ARN) of the custom model.</p>
      */
     inline void SetModelArn(Aws::String&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::move(value); }
 
     /**
-     * <p>The ARN of the custom model.</p>
+     * <p>The Amazon Resource Name (ARN) of the custom model.</p>
      */
     inline void SetModelArn(const char* value) { m_modelArnHasBeenSet = true; m_modelArn.assign(value); }
 
     /**
-     * <p>The ARN of the custom model.</p>
+     * <p>The Amazon Resource Name (ARN) of the custom model.</p>
      */
     inline CustomModelSummary& WithModelArn(const Aws::String& value) { SetModelArn(value); return *this;}
 
     /**
-     * <p>The ARN of the custom model.</p>
+     * <p>The Amazon Resource Name (ARN) of the custom model.</p>
      */
     inline CustomModelSummary& WithModelArn(Aws::String&& value) { SetModelArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the custom model.</p>
+     * <p>The Amazon Resource Name (ARN) of the custom model.</p>
      */
     inline CustomModelSummary& WithModelArn(const char* value) { SetModelArn(value); return *this;}
 
@@ -153,42 +153,42 @@ namespace Model
 
 
     /**
-     * <p>The base model ARN.</p>
+     * <p>The base model Amazon Resource Name (ARN).</p>
      */
     inline const Aws::String& GetBaseModelArn() const{ return m_baseModelArn; }
 
     /**
-     * <p>The base model ARN.</p>
+     * <p>The base model Amazon Resource Name (ARN).</p>
      */
     inline bool BaseModelArnHasBeenSet() const { return m_baseModelArnHasBeenSet; }
 
     /**
-     * <p>The base model ARN.</p>
+     * <p>The base model Amazon Resource Name (ARN).</p>
      */
     inline void SetBaseModelArn(const Aws::String& value) { m_baseModelArnHasBeenSet = true; m_baseModelArn = value; }
 
     /**
-     * <p>The base model ARN.</p>
+     * <p>The base model Amazon Resource Name (ARN).</p>
      */
     inline void SetBaseModelArn(Aws::String&& value) { m_baseModelArnHasBeenSet = true; m_baseModelArn = std::move(value); }
 
     /**
-     * <p>The base model ARN.</p>
+     * <p>The base model Amazon Resource Name (ARN).</p>
      */
     inline void SetBaseModelArn(const char* value) { m_baseModelArnHasBeenSet = true; m_baseModelArn.assign(value); }
 
     /**
-     * <p>The base model ARN.</p>
+     * <p>The base model Amazon Resource Name (ARN).</p>
      */
     inline CustomModelSummary& WithBaseModelArn(const Aws::String& value) { SetBaseModelArn(value); return *this;}
 
     /**
-     * <p>The base model ARN.</p>
+     * <p>The base model Amazon Resource Name (ARN).</p>
      */
     inline CustomModelSummary& WithBaseModelArn(Aws::String&& value) { SetBaseModelArn(std::move(value)); return *this;}
 
     /**
-     * <p>The base model ARN.</p>
+     * <p>The base model Amazon Resource Name (ARN).</p>
      */
     inline CustomModelSummary& WithBaseModelArn(const char* value) { SetBaseModelArn(value); return *this;}
 

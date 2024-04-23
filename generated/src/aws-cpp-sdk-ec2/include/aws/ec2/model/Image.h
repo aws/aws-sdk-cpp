@@ -1462,6 +1462,120 @@ namespace Model
      */
     inline Image& WithSourceInstanceId(const char* value) { SetSourceInstanceId(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether deregistration protection is enabled for the AMI.</p>
+     */
+    inline const Aws::String& GetDeregistrationProtection() const{ return m_deregistrationProtection; }
+
+    /**
+     * <p>Indicates whether deregistration protection is enabled for the AMI.</p>
+     */
+    inline bool DeregistrationProtectionHasBeenSet() const { return m_deregistrationProtectionHasBeenSet; }
+
+    /**
+     * <p>Indicates whether deregistration protection is enabled for the AMI.</p>
+     */
+    inline void SetDeregistrationProtection(const Aws::String& value) { m_deregistrationProtectionHasBeenSet = true; m_deregistrationProtection = value; }
+
+    /**
+     * <p>Indicates whether deregistration protection is enabled for the AMI.</p>
+     */
+    inline void SetDeregistrationProtection(Aws::String&& value) { m_deregistrationProtectionHasBeenSet = true; m_deregistrationProtection = std::move(value); }
+
+    /**
+     * <p>Indicates whether deregistration protection is enabled for the AMI.</p>
+     */
+    inline void SetDeregistrationProtection(const char* value) { m_deregistrationProtectionHasBeenSet = true; m_deregistrationProtection.assign(value); }
+
+    /**
+     * <p>Indicates whether deregistration protection is enabled for the AMI.</p>
+     */
+    inline Image& WithDeregistrationProtection(const Aws::String& value) { SetDeregistrationProtection(value); return *this;}
+
+    /**
+     * <p>Indicates whether deregistration protection is enabled for the AMI.</p>
+     */
+    inline Image& WithDeregistrationProtection(Aws::String&& value) { SetDeregistrationProtection(std::move(value)); return *this;}
+
+    /**
+     * <p>Indicates whether deregistration protection is enabled for the AMI.</p>
+     */
+    inline Image& WithDeregistrationProtection(const char* value) { SetDeregistrationProtection(value); return *this;}
+
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the AMI was last used to launch an EC2 instance. When
+     * the AMI is used to launch an instance, there is a 24-hour delay before that
+     * usage is reported.</p>  <p> <code>lastLaunchedTime</code> data is
+     * available starting April 2017.</p> 
+     */
+    inline const Aws::String& GetLastLaunchedTime() const{ return m_lastLaunchedTime; }
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the AMI was last used to launch an EC2 instance. When
+     * the AMI is used to launch an instance, there is a 24-hour delay before that
+     * usage is reported.</p>  <p> <code>lastLaunchedTime</code> data is
+     * available starting April 2017.</p> 
+     */
+    inline bool LastLaunchedTimeHasBeenSet() const { return m_lastLaunchedTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the AMI was last used to launch an EC2 instance. When
+     * the AMI is used to launch an instance, there is a 24-hour delay before that
+     * usage is reported.</p>  <p> <code>lastLaunchedTime</code> data is
+     * available starting April 2017.</p> 
+     */
+    inline void SetLastLaunchedTime(const Aws::String& value) { m_lastLaunchedTimeHasBeenSet = true; m_lastLaunchedTime = value; }
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the AMI was last used to launch an EC2 instance. When
+     * the AMI is used to launch an instance, there is a 24-hour delay before that
+     * usage is reported.</p>  <p> <code>lastLaunchedTime</code> data is
+     * available starting April 2017.</p> 
+     */
+    inline void SetLastLaunchedTime(Aws::String&& value) { m_lastLaunchedTimeHasBeenSet = true; m_lastLaunchedTime = std::move(value); }
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the AMI was last used to launch an EC2 instance. When
+     * the AMI is used to launch an instance, there is a 24-hour delay before that
+     * usage is reported.</p>  <p> <code>lastLaunchedTime</code> data is
+     * available starting April 2017.</p> 
+     */
+    inline void SetLastLaunchedTime(const char* value) { m_lastLaunchedTimeHasBeenSet = true; m_lastLaunchedTime.assign(value); }
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the AMI was last used to launch an EC2 instance. When
+     * the AMI is used to launch an instance, there is a 24-hour delay before that
+     * usage is reported.</p>  <p> <code>lastLaunchedTime</code> data is
+     * available starting April 2017.</p> 
+     */
+    inline Image& WithLastLaunchedTime(const Aws::String& value) { SetLastLaunchedTime(value); return *this;}
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the AMI was last used to launch an EC2 instance. When
+     * the AMI is used to launch an instance, there is a 24-hour delay before that
+     * usage is reported.</p>  <p> <code>lastLaunchedTime</code> data is
+     * available starting April 2017.</p> 
+     */
+    inline Image& WithLastLaunchedTime(Aws::String&& value) { SetLastLaunchedTime(std::move(value)); return *this;}
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the AMI was last used to launch an EC2 instance. When
+     * the AMI is used to launch an instance, there is a 24-hour delay before that
+     * usage is reported.</p>  <p> <code>lastLaunchedTime</code> data is
+     * available starting April 2017.</p> 
+     */
+    inline Image& WithLastLaunchedTime(const char* value) { SetLastLaunchedTime(value); return *this;}
+
   private:
 
     ArchitectureValues m_architecture;
@@ -1556,6 +1670,12 @@ namespace Model
 
     Aws::String m_sourceInstanceId;
     bool m_sourceInstanceIdHasBeenSet = false;
+
+    Aws::String m_deregistrationProtection;
+    bool m_deregistrationProtectionHasBeenSet = false;
+
+    Aws::String m_lastLaunchedTime;
+    bool m_lastLaunchedTimeHasBeenSet = false;
   };
 
 } // namespace Model

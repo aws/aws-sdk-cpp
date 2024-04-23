@@ -42,205 +42,229 @@ namespace Model
 
 
     /**
-     * <p>Enter a unique name for the fine-tuning job.</p>
+     * <p>A name for the fine-tuning job.</p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
 
     /**
-     * <p>Enter a unique name for the fine-tuning job.</p>
+     * <p>A name for the fine-tuning job.</p>
      */
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
 
     /**
-     * <p>Enter a unique name for the fine-tuning job.</p>
+     * <p>A name for the fine-tuning job.</p>
      */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
 
     /**
-     * <p>Enter a unique name for the fine-tuning job.</p>
+     * <p>A name for the fine-tuning job.</p>
      */
     inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
 
     /**
-     * <p>Enter a unique name for the fine-tuning job.</p>
+     * <p>A name for the fine-tuning job.</p>
      */
     inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
 
     /**
-     * <p>Enter a unique name for the fine-tuning job.</p>
+     * <p>A name for the fine-tuning job.</p>
      */
     inline CreateModelCustomizationJobRequest& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
 
     /**
-     * <p>Enter a unique name for the fine-tuning job.</p>
+     * <p>A name for the fine-tuning job.</p>
      */
     inline CreateModelCustomizationJobRequest& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
 
     /**
-     * <p>Enter a unique name for the fine-tuning job.</p>
+     * <p>A name for the fine-tuning job.</p>
      */
     inline CreateModelCustomizationJobRequest& WithJobName(const char* value) { SetJobName(value); return *this;}
 
 
     /**
-     * <p>Enter a name for the custom model.</p>
+     * <p>A name for the resulting custom model.</p>
      */
     inline const Aws::String& GetCustomModelName() const{ return m_customModelName; }
 
     /**
-     * <p>Enter a name for the custom model.</p>
+     * <p>A name for the resulting custom model.</p>
      */
     inline bool CustomModelNameHasBeenSet() const { return m_customModelNameHasBeenSet; }
 
     /**
-     * <p>Enter a name for the custom model.</p>
+     * <p>A name for the resulting custom model.</p>
      */
     inline void SetCustomModelName(const Aws::String& value) { m_customModelNameHasBeenSet = true; m_customModelName = value; }
 
     /**
-     * <p>Enter a name for the custom model.</p>
+     * <p>A name for the resulting custom model.</p>
      */
     inline void SetCustomModelName(Aws::String&& value) { m_customModelNameHasBeenSet = true; m_customModelName = std::move(value); }
 
     /**
-     * <p>Enter a name for the custom model.</p>
+     * <p>A name for the resulting custom model.</p>
      */
     inline void SetCustomModelName(const char* value) { m_customModelNameHasBeenSet = true; m_customModelName.assign(value); }
 
     /**
-     * <p>Enter a name for the custom model.</p>
+     * <p>A name for the resulting custom model.</p>
      */
     inline CreateModelCustomizationJobRequest& WithCustomModelName(const Aws::String& value) { SetCustomModelName(value); return *this;}
 
     /**
-     * <p>Enter a name for the custom model.</p>
+     * <p>A name for the resulting custom model.</p>
      */
     inline CreateModelCustomizationJobRequest& WithCustomModelName(Aws::String&& value) { SetCustomModelName(std::move(value)); return *this;}
 
     /**
-     * <p>Enter a name for the custom model.</p>
+     * <p>A name for the resulting custom model.</p>
      */
     inline CreateModelCustomizationJobRequest& WithCustomModelName(const char* value) { SetCustomModelName(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume
-     * to perform tasks on your behalf. For example, during model training, Amazon
-     * Bedrock needs your permission to read input data from an S3 bucket, write model
-     * artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of
-     * this API must have the <code>iam:PassRole</code> permission. </p>
+     * <p>The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock can
+     * assume to perform tasks on your behalf. For example, during model training,
+     * Amazon Bedrock needs your permission to read input data from an S3 bucket, write
+     * model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller
+     * of this API must have the <code>iam:PassRole</code> permission. </p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume
-     * to perform tasks on your behalf. For example, during model training, Amazon
-     * Bedrock needs your permission to read input data from an S3 bucket, write model
-     * artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of
-     * this API must have the <code>iam:PassRole</code> permission. </p>
+     * <p>The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock can
+     * assume to perform tasks on your behalf. For example, during model training,
+     * Amazon Bedrock needs your permission to read input data from an S3 bucket, write
+     * model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller
+     * of this API must have the <code>iam:PassRole</code> permission. </p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume
-     * to perform tasks on your behalf. For example, during model training, Amazon
-     * Bedrock needs your permission to read input data from an S3 bucket, write model
-     * artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of
-     * this API must have the <code>iam:PassRole</code> permission. </p>
+     * <p>The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock can
+     * assume to perform tasks on your behalf. For example, during model training,
+     * Amazon Bedrock needs your permission to read input data from an S3 bucket, write
+     * model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller
+     * of this API must have the <code>iam:PassRole</code> permission. </p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume
-     * to perform tasks on your behalf. For example, during model training, Amazon
-     * Bedrock needs your permission to read input data from an S3 bucket, write model
-     * artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of
-     * this API must have the <code>iam:PassRole</code> permission. </p>
+     * <p>The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock can
+     * assume to perform tasks on your behalf. For example, during model training,
+     * Amazon Bedrock needs your permission to read input data from an S3 bucket, write
+     * model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller
+     * of this API must have the <code>iam:PassRole</code> permission. </p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume
-     * to perform tasks on your behalf. For example, during model training, Amazon
-     * Bedrock needs your permission to read input data from an S3 bucket, write model
-     * artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of
-     * this API must have the <code>iam:PassRole</code> permission. </p>
+     * <p>The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock can
+     * assume to perform tasks on your behalf. For example, during model training,
+     * Amazon Bedrock needs your permission to read input data from an S3 bucket, write
+     * model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller
+     * of this API must have the <code>iam:PassRole</code> permission. </p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume
-     * to perform tasks on your behalf. For example, during model training, Amazon
-     * Bedrock needs your permission to read input data from an S3 bucket, write model
-     * artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of
-     * this API must have the <code>iam:PassRole</code> permission. </p>
+     * <p>The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock can
+     * assume to perform tasks on your behalf. For example, during model training,
+     * Amazon Bedrock needs your permission to read input data from an S3 bucket, write
+     * model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller
+     * of this API must have the <code>iam:PassRole</code> permission. </p>
      */
     inline CreateModelCustomizationJobRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume
-     * to perform tasks on your behalf. For example, during model training, Amazon
-     * Bedrock needs your permission to read input data from an S3 bucket, write model
-     * artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of
-     * this API must have the <code>iam:PassRole</code> permission. </p>
+     * <p>The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock can
+     * assume to perform tasks on your behalf. For example, during model training,
+     * Amazon Bedrock needs your permission to read input data from an S3 bucket, write
+     * model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller
+     * of this API must have the <code>iam:PassRole</code> permission. </p>
      */
     inline CreateModelCustomizationJobRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume
-     * to perform tasks on your behalf. For example, during model training, Amazon
-     * Bedrock needs your permission to read input data from an S3 bucket, write model
-     * artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of
-     * this API must have the <code>iam:PassRole</code> permission. </p>
+     * <p>The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock can
+     * assume to perform tasks on your behalf. For example, during model training,
+     * Amazon Bedrock needs your permission to read input data from an S3 bucket, write
+     * model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller
+     * of this API must have the <code>iam:PassRole</code> permission. </p>
      */
     inline CreateModelCustomizationJobRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
 
     /**
-     * <p>Unique token value that you can provide. The GetModelCustomizationJob
-     * response includes the same token value.</p>
+     * <p>A unique, case-sensitive identifier to ensure that the API request completes
+     * no more than one time. If this token matches a previous request, Amazon Bedrock
+     * ignores the request, but does not return an error. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a>.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
-     * <p>Unique token value that you can provide. The GetModelCustomizationJob
-     * response includes the same token value.</p>
+     * <p>A unique, case-sensitive identifier to ensure that the API request completes
+     * no more than one time. If this token matches a previous request, Amazon Bedrock
+     * ignores the request, but does not return an error. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a>.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
-     * <p>Unique token value that you can provide. The GetModelCustomizationJob
-     * response includes the same token value.</p>
+     * <p>A unique, case-sensitive identifier to ensure that the API request completes
+     * no more than one time. If this token matches a previous request, Amazon Bedrock
+     * ignores the request, but does not return an error. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a>.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
-     * <p>Unique token value that you can provide. The GetModelCustomizationJob
-     * response includes the same token value.</p>
+     * <p>A unique, case-sensitive identifier to ensure that the API request completes
+     * no more than one time. If this token matches a previous request, Amazon Bedrock
+     * ignores the request, but does not return an error. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a>.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
-     * <p>Unique token value that you can provide. The GetModelCustomizationJob
-     * response includes the same token value.</p>
+     * <p>A unique, case-sensitive identifier to ensure that the API request completes
+     * no more than one time. If this token matches a previous request, Amazon Bedrock
+     * ignores the request, but does not return an error. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a>.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
-     * <p>Unique token value that you can provide. The GetModelCustomizationJob
-     * response includes the same token value.</p>
+     * <p>A unique, case-sensitive identifier to ensure that the API request completes
+     * no more than one time. If this token matches a previous request, Amazon Bedrock
+     * ignores the request, but does not return an error. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a>.</p>
      */
     inline CreateModelCustomizationJobRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
-     * <p>Unique token value that you can provide. The GetModelCustomizationJob
-     * response includes the same token value.</p>
+     * <p>A unique, case-sensitive identifier to ensure that the API request completes
+     * no more than one time. If this token matches a previous request, Amazon Bedrock
+     * ignores the request, but does not return an error. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a>.</p>
      */
     inline CreateModelCustomizationJobRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
-     * <p>Unique token value that you can provide. The GetModelCustomizationJob
-     * response includes the same token value.</p>
+     * <p>A unique, case-sensitive identifier to ensure that the API request completes
+     * no more than one time. If this token matches a previous request, Amazon Bedrock
+     * ignores the request, but does not return an error. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a>.</p>
      */
     inline CreateModelCustomizationJobRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
@@ -359,83 +383,83 @@ namespace Model
 
 
     /**
-     * <p>Assign tags to the job.</p>
+     * <p>Tags to attach to the job.</p>
      */
     inline const Aws::Vector<Tag>& GetJobTags() const{ return m_jobTags; }
 
     /**
-     * <p>Assign tags to the job.</p>
+     * <p>Tags to attach to the job.</p>
      */
     inline bool JobTagsHasBeenSet() const { return m_jobTagsHasBeenSet; }
 
     /**
-     * <p>Assign tags to the job.</p>
+     * <p>Tags to attach to the job.</p>
      */
     inline void SetJobTags(const Aws::Vector<Tag>& value) { m_jobTagsHasBeenSet = true; m_jobTags = value; }
 
     /**
-     * <p>Assign tags to the job.</p>
+     * <p>Tags to attach to the job.</p>
      */
     inline void SetJobTags(Aws::Vector<Tag>&& value) { m_jobTagsHasBeenSet = true; m_jobTags = std::move(value); }
 
     /**
-     * <p>Assign tags to the job.</p>
+     * <p>Tags to attach to the job.</p>
      */
     inline CreateModelCustomizationJobRequest& WithJobTags(const Aws::Vector<Tag>& value) { SetJobTags(value); return *this;}
 
     /**
-     * <p>Assign tags to the job.</p>
+     * <p>Tags to attach to the job.</p>
      */
     inline CreateModelCustomizationJobRequest& WithJobTags(Aws::Vector<Tag>&& value) { SetJobTags(std::move(value)); return *this;}
 
     /**
-     * <p>Assign tags to the job.</p>
+     * <p>Tags to attach to the job.</p>
      */
     inline CreateModelCustomizationJobRequest& AddJobTags(const Tag& value) { m_jobTagsHasBeenSet = true; m_jobTags.push_back(value); return *this; }
 
     /**
-     * <p>Assign tags to the job.</p>
+     * <p>Tags to attach to the job.</p>
      */
     inline CreateModelCustomizationJobRequest& AddJobTags(Tag&& value) { m_jobTagsHasBeenSet = true; m_jobTags.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Assign tags to the custom model.</p>
+     * <p>Tags to attach to the resulting custom model.</p>
      */
     inline const Aws::Vector<Tag>& GetCustomModelTags() const{ return m_customModelTags; }
 
     /**
-     * <p>Assign tags to the custom model.</p>
+     * <p>Tags to attach to the resulting custom model.</p>
      */
     inline bool CustomModelTagsHasBeenSet() const { return m_customModelTagsHasBeenSet; }
 
     /**
-     * <p>Assign tags to the custom model.</p>
+     * <p>Tags to attach to the resulting custom model.</p>
      */
     inline void SetCustomModelTags(const Aws::Vector<Tag>& value) { m_customModelTagsHasBeenSet = true; m_customModelTags = value; }
 
     /**
-     * <p>Assign tags to the custom model.</p>
+     * <p>Tags to attach to the resulting custom model.</p>
      */
     inline void SetCustomModelTags(Aws::Vector<Tag>&& value) { m_customModelTagsHasBeenSet = true; m_customModelTags = std::move(value); }
 
     /**
-     * <p>Assign tags to the custom model.</p>
+     * <p>Tags to attach to the resulting custom model.</p>
      */
     inline CreateModelCustomizationJobRequest& WithCustomModelTags(const Aws::Vector<Tag>& value) { SetCustomModelTags(value); return *this;}
 
     /**
-     * <p>Assign tags to the custom model.</p>
+     * <p>Tags to attach to the resulting custom model.</p>
      */
     inline CreateModelCustomizationJobRequest& WithCustomModelTags(Aws::Vector<Tag>&& value) { SetCustomModelTags(std::move(value)); return *this;}
 
     /**
-     * <p>Assign tags to the custom model.</p>
+     * <p>Tags to attach to the resulting custom model.</p>
      */
     inline CreateModelCustomizationJobRequest& AddCustomModelTags(const Tag& value) { m_customModelTagsHasBeenSet = true; m_customModelTags.push_back(value); return *this; }
 
     /**
-     * <p>Assign tags to the custom model.</p>
+     * <p>Tags to attach to the resulting custom model.</p>
      */
     inline CreateModelCustomizationJobRequest& AddCustomModelTags(Tag&& value) { m_customModelTagsHasBeenSet = true; m_customModelTags.push_back(std::move(value)); return *this; }
 
@@ -534,67 +558,106 @@ namespace Model
 
 
     /**
-     * <p>Parameters related to tuning the model.</p>
+     * <p>Parameters related to tuning the model. For details on the format for
+     * different models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom
+     * model hyperparameters</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetHyperParameters() const{ return m_hyperParameters; }
 
     /**
-     * <p>Parameters related to tuning the model.</p>
+     * <p>Parameters related to tuning the model. For details on the format for
+     * different models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom
+     * model hyperparameters</a>.</p>
      */
     inline bool HyperParametersHasBeenSet() const { return m_hyperParametersHasBeenSet; }
 
     /**
-     * <p>Parameters related to tuning the model.</p>
+     * <p>Parameters related to tuning the model. For details on the format for
+     * different models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom
+     * model hyperparameters</a>.</p>
      */
     inline void SetHyperParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters = value; }
 
     /**
-     * <p>Parameters related to tuning the model.</p>
+     * <p>Parameters related to tuning the model. For details on the format for
+     * different models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom
+     * model hyperparameters</a>.</p>
      */
     inline void SetHyperParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters = std::move(value); }
 
     /**
-     * <p>Parameters related to tuning the model.</p>
+     * <p>Parameters related to tuning the model. For details on the format for
+     * different models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom
+     * model hyperparameters</a>.</p>
      */
     inline CreateModelCustomizationJobRequest& WithHyperParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetHyperParameters(value); return *this;}
 
     /**
-     * <p>Parameters related to tuning the model.</p>
+     * <p>Parameters related to tuning the model. For details on the format for
+     * different models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom
+     * model hyperparameters</a>.</p>
      */
     inline CreateModelCustomizationJobRequest& WithHyperParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetHyperParameters(std::move(value)); return *this;}
 
     /**
-     * <p>Parameters related to tuning the model.</p>
+     * <p>Parameters related to tuning the model. For details on the format for
+     * different models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom
+     * model hyperparameters</a>.</p>
      */
     inline CreateModelCustomizationJobRequest& AddHyperParameters(const Aws::String& key, const Aws::String& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(key, value); return *this; }
 
     /**
-     * <p>Parameters related to tuning the model.</p>
+     * <p>Parameters related to tuning the model. For details on the format for
+     * different models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom
+     * model hyperparameters</a>.</p>
      */
     inline CreateModelCustomizationJobRequest& AddHyperParameters(Aws::String&& key, const Aws::String& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Parameters related to tuning the model.</p>
+     * <p>Parameters related to tuning the model. For details on the format for
+     * different models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom
+     * model hyperparameters</a>.</p>
      */
     inline CreateModelCustomizationJobRequest& AddHyperParameters(const Aws::String& key, Aws::String&& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Parameters related to tuning the model.</p>
+     * <p>Parameters related to tuning the model. For details on the format for
+     * different models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom
+     * model hyperparameters</a>.</p>
      */
     inline CreateModelCustomizationJobRequest& AddHyperParameters(Aws::String&& key, Aws::String&& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Parameters related to tuning the model.</p>
+     * <p>Parameters related to tuning the model. For details on the format for
+     * different models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom
+     * model hyperparameters</a>.</p>
      */
     inline CreateModelCustomizationJobRequest& AddHyperParameters(const char* key, Aws::String&& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Parameters related to tuning the model.</p>
+     * <p>Parameters related to tuning the model. For details on the format for
+     * different models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom
+     * model hyperparameters</a>.</p>
      */
     inline CreateModelCustomizationJobRequest& AddHyperParameters(Aws::String&& key, const char* value) { m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Parameters related to tuning the model.</p>
+     * <p>Parameters related to tuning the model. For details on the format for
+     * different models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom
+     * model hyperparameters</a>.</p>
      */
     inline CreateModelCustomizationJobRequest& AddHyperParameters(const char* key, const char* value) { m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(key, value); return *this; }
 

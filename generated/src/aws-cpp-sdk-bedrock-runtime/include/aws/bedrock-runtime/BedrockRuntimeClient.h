@@ -16,7 +16,8 @@ namespace Aws
 namespace BedrockRuntime
 {
   /**
-   * <p>Describes the API operations for running inference using Bedrock models.</p>
+   * <p>Describes the API operations for running inference using Amazon Bedrock
+   * models.</p>
    */
   class AWS_BEDROCKRUNTIME_API BedrockRuntimeClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BedrockRuntimeClient>
   {
@@ -77,12 +78,12 @@ namespace BedrockRuntime
         virtual ~BedrockRuntimeClient();
 
         /**
-         * <p>Invokes the specified Bedrock model to run inference using the input provided
-         * in the request body. You use InvokeModel to run inference for text models, image
-         * models, and embedding models.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run
-         * inference</a> in the Bedrock User Guide.</p> <p>For example requests, see
-         * Examples (after the Errors section).</p><p><h3>See Also:</h3>   <a
+         * <p>Invokes the specified Amazon Bedrock model to run inference using the prompt
+         * and inference parameters provided in the request body. You use model inference
+         * to generate text, images, and embeddings.</p> <p>For example code, see <i>Invoke
+         * model code examples</i> in the <i>Amazon Bedrock User Guide</i>. </p> <p>This
+         * operation requires permission for the <code>bedrock:InvokeModel</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/InvokeModel">AWS
          * API Reference</a></p>
          */
@@ -107,11 +108,17 @@ namespace BedrockRuntime
         }
 
         /**
-         * <p>Invoke the specified Bedrock model to run inference using the input provided.
-         * Return the response in a stream.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run
-         * inference</a> in the Bedrock User Guide.</p> <p>For an example request and
-         * response, see Examples (after the Errors section).</p><p><h3>See Also:</h3>   <a
+         * <p>Invoke the specified Amazon Bedrock model to run inference using the prompt
+         * and inference parameters provided in the request body. The response is returned
+         * in a stream.</p> <p>To see if a model supports streaming, call <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetFoundationModel.html">GetFoundationModel</a>
+         * and check the <code>responseStreamingSupported</code> field in the response.</p>
+         *  <p>The CLI doesn't support
+         * <code>InvokeModelWithResponseStream</code>.</p>  <p>For example code, see
+         * <i>Invoke model with streaming code example</i> in the <i>Amazon Bedrock User
+         * Guide</i>. </p> <p>This operation requires permissions to perform the
+         * <code>bedrock:InvokeModelWithResponseStream</code> action. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/InvokeModelWithResponseStream">AWS
          * API Reference</a></p>
          */

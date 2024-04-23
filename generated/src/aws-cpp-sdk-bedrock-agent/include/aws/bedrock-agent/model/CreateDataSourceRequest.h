@@ -7,6 +7,7 @@
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/bedrock-agent/BedrockAgentRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent/model/DataDeletionPolicy.h>
 #include <aws/bedrock-agent/model/DataSourceConfiguration.h>
 #include <aws/bedrock-agent/model/ServerSideEncryptionConfiguration.h>
 #include <aws/bedrock-agent/model/VectorIngestionConfiguration.h>
@@ -107,6 +108,37 @@ namespace Model
      * idempotency</a>.</p>
      */
     inline CreateDataSourceRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+
+
+    /**
+     * <p>The deletion policy for the requested data source</p>
+     */
+    inline const DataDeletionPolicy& GetDataDeletionPolicy() const{ return m_dataDeletionPolicy; }
+
+    /**
+     * <p>The deletion policy for the requested data source</p>
+     */
+    inline bool DataDeletionPolicyHasBeenSet() const { return m_dataDeletionPolicyHasBeenSet; }
+
+    /**
+     * <p>The deletion policy for the requested data source</p>
+     */
+    inline void SetDataDeletionPolicy(const DataDeletionPolicy& value) { m_dataDeletionPolicyHasBeenSet = true; m_dataDeletionPolicy = value; }
+
+    /**
+     * <p>The deletion policy for the requested data source</p>
+     */
+    inline void SetDataDeletionPolicy(DataDeletionPolicy&& value) { m_dataDeletionPolicyHasBeenSet = true; m_dataDeletionPolicy = std::move(value); }
+
+    /**
+     * <p>The deletion policy for the requested data source</p>
+     */
+    inline CreateDataSourceRequest& WithDataDeletionPolicy(const DataDeletionPolicy& value) { SetDataDeletionPolicy(value); return *this;}
+
+    /**
+     * <p>The deletion policy for the requested data source</p>
+     */
+    inline CreateDataSourceRequest& WithDataDeletionPolicy(DataDeletionPolicy&& value) { SetDataDeletionPolicy(std::move(value)); return *this;}
 
 
     /**
@@ -336,6 +368,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
+
+    DataDeletionPolicy m_dataDeletionPolicy;
+    bool m_dataDeletionPolicyHasBeenSet = false;
 
     DataSourceConfiguration m_dataSourceConfiguration;
     bool m_dataSourceConfigurationHasBeenSet = false;

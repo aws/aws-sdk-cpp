@@ -16,7 +16,8 @@ namespace Model
   enum class RetrieveAndGenerateType
   {
     NOT_SET,
-    KNOWLEDGE_BASE
+    KNOWLEDGE_BASE,
+    EXTERNAL_SOURCES
   };
 
 namespace RetrieveAndGenerateTypeMapper

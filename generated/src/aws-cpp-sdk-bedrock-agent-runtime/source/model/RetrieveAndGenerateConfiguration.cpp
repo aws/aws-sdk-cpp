@@ -19,6 +19,7 @@ namespace Model
 {
 
 RetrieveAndGenerateConfiguration::RetrieveAndGenerateConfiguration() : 
+    m_externalSourcesConfigurationHasBeenSet(false),
     m_knowledgeBaseConfigurationHasBeenSet(false),
     m_type(RetrieveAndGenerateType::NOT_SET),
     m_typeHasBeenSet(false)
@@ -26,6 +27,7 @@ RetrieveAndGenerateConfiguration::RetrieveAndGenerateConfiguration() :
 }
 
 RetrieveAndGenerateConfiguration::RetrieveAndGenerateConfiguration(JsonView jsonValue) : 
+    m_externalSourcesConfigurationHasBeenSet(false),
     m_knowledgeBaseConfigurationHasBeenSet(false),
     m_type(RetrieveAndGenerateType::NOT_SET),
     m_typeHasBeenSet(false)
@@ -35,6 +37,13 @@ RetrieveAndGenerateConfiguration::RetrieveAndGenerateConfiguration(JsonView json
 
 RetrieveAndGenerateConfiguration& RetrieveAndGenerateConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("externalSourcesConfiguration"))
+  {
+    m_externalSourcesConfiguration = jsonValue.GetObject("externalSourcesConfiguration");
+
+    m_externalSourcesConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("knowledgeBaseConfiguration"))
   {
     m_knowledgeBaseConfiguration = jsonValue.GetObject("knowledgeBaseConfiguration");
@@ -55,6 +64,12 @@ RetrieveAndGenerateConfiguration& RetrieveAndGenerateConfiguration::operator =(J
 JsonValue RetrieveAndGenerateConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_externalSourcesConfigurationHasBeenSet)
+  {
+   payload.WithObject("externalSourcesConfiguration", m_externalSourcesConfiguration.Jsonize());
+
+  }
 
   if(m_knowledgeBaseConfigurationHasBeenSet)
   {

@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>The ARN for this provisioned throughput.</p>
+     * <p>The Amazon Resource Name (ARN) for this Provisioned Throughput.</p>
      */
     inline const Aws::String& GetProvisionedModelArn() const{ return m_provisionedModelArn; }
 
     /**
-     * <p>The ARN for this provisioned throughput.</p>
+     * <p>The Amazon Resource Name (ARN) for this Provisioned Throughput.</p>
      */
     inline void SetProvisionedModelArn(const Aws::String& value) { m_provisionedModelArn = value; }
 
     /**
-     * <p>The ARN for this provisioned throughput.</p>
+     * <p>The Amazon Resource Name (ARN) for this Provisioned Throughput.</p>
      */
     inline void SetProvisionedModelArn(Aws::String&& value) { m_provisionedModelArn = std::move(value); }
 
     /**
-     * <p>The ARN for this provisioned throughput.</p>
+     * <p>The Amazon Resource Name (ARN) for this Provisioned Throughput.</p>
      */
     inline void SetProvisionedModelArn(const char* value) { m_provisionedModelArn.assign(value); }
 
     /**
-     * <p>The ARN for this provisioned throughput.</p>
+     * <p>The Amazon Resource Name (ARN) for this Provisioned Throughput.</p>
      */
     inline CreateProvisionedModelThroughputResult& WithProvisionedModelArn(const Aws::String& value) { SetProvisionedModelArn(value); return *this;}
 
     /**
-     * <p>The ARN for this provisioned throughput.</p>
+     * <p>The Amazon Resource Name (ARN) for this Provisioned Throughput.</p>
      */
     inline CreateProvisionedModelThroughputResult& WithProvisionedModelArn(Aws::String&& value) { SetProvisionedModelArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN for this provisioned throughput.</p>
+     * <p>The Amazon Resource Name (ARN) for this Provisioned Throughput.</p>
      */
     inline CreateProvisionedModelThroughputResult& WithProvisionedModelArn(const char* value) { SetProvisionedModelArn(value); return *this;}
 

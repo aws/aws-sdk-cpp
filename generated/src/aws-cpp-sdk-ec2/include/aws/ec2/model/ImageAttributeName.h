@@ -27,7 +27,8 @@ namespace Model
     tpmSupport,
     uefiData,
     lastLaunchedTime,
-    imdsSupport
+    imdsSupport,
+    deregistrationProtection
   };
 
 namespace ImageAttributeNameMapper

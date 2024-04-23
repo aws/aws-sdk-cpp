@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>ARN of the fine tuning job</p>
+     * <p>Amazon Resource Name (ARN) of the fine tuning job</p>
      */
     inline const Aws::String& GetJobArn() const{ return m_jobArn; }
 
     /**
-     * <p>ARN of the fine tuning job</p>
+     * <p>Amazon Resource Name (ARN) of the fine tuning job</p>
      */
     inline void SetJobArn(const Aws::String& value) { m_jobArn = value; }
 
     /**
-     * <p>ARN of the fine tuning job</p>
+     * <p>Amazon Resource Name (ARN) of the fine tuning job</p>
      */
     inline void SetJobArn(Aws::String&& value) { m_jobArn = std::move(value); }
 
     /**
-     * <p>ARN of the fine tuning job</p>
+     * <p>Amazon Resource Name (ARN) of the fine tuning job</p>
      */
     inline void SetJobArn(const char* value) { m_jobArn.assign(value); }
 
     /**
-     * <p>ARN of the fine tuning job</p>
+     * <p>Amazon Resource Name (ARN) of the fine tuning job</p>
      */
     inline CreateModelCustomizationJobResult& WithJobArn(const Aws::String& value) { SetJobArn(value); return *this;}
 
     /**
-     * <p>ARN of the fine tuning job</p>
+     * <p>Amazon Resource Name (ARN) of the fine tuning job</p>
      */
     inline CreateModelCustomizationJobResult& WithJobArn(Aws::String&& value) { SetJobArn(std::move(value)); return *this;}
 
     /**
-     * <p>ARN of the fine tuning job</p>
+     * <p>Amazon Resource Name (ARN) of the fine tuning job</p>
      */
     inline CreateModelCustomizationJobResult& WithJobArn(const char* value) { SetJobArn(value); return *this;}
 

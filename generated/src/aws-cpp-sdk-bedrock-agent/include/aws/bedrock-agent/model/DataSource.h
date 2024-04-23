@@ -6,8 +6,10 @@
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/bedrock-agent/model/DataDeletionPolicy.h>
 #include <aws/bedrock-agent/model/DataSourceConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent/model/ServerSideEncryptionConfiguration.h>
 #include <aws/bedrock-agent/model/DataSourceStatus.h>
 #include <aws/bedrock-agent/model/VectorIngestionConfiguration.h>
@@ -71,6 +73,37 @@ namespace Model
      * <p>The time at which the data source was created.</p>
      */
     inline DataSource& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The deletion policy for the data source.</p>
+     */
+    inline const DataDeletionPolicy& GetDataDeletionPolicy() const{ return m_dataDeletionPolicy; }
+
+    /**
+     * <p>The deletion policy for the data source.</p>
+     */
+    inline bool DataDeletionPolicyHasBeenSet() const { return m_dataDeletionPolicyHasBeenSet; }
+
+    /**
+     * <p>The deletion policy for the data source.</p>
+     */
+    inline void SetDataDeletionPolicy(const DataDeletionPolicy& value) { m_dataDeletionPolicyHasBeenSet = true; m_dataDeletionPolicy = value; }
+
+    /**
+     * <p>The deletion policy for the data source.</p>
+     */
+    inline void SetDataDeletionPolicy(DataDeletionPolicy&& value) { m_dataDeletionPolicyHasBeenSet = true; m_dataDeletionPolicy = std::move(value); }
+
+    /**
+     * <p>The deletion policy for the data source.</p>
+     */
+    inline DataSource& WithDataDeletionPolicy(const DataDeletionPolicy& value) { SetDataDeletionPolicy(value); return *this;}
+
+    /**
+     * <p>The deletion policy for the data source.</p>
+     */
+    inline DataSource& WithDataDeletionPolicy(DataDeletionPolicy&& value) { SetDataDeletionPolicy(std::move(value)); return *this;}
 
 
     /**
@@ -184,6 +217,52 @@ namespace Model
      * <p>The description of the data source.</p>
      */
     inline DataSource& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
+     * <p>The details of the failure reasons related to the data source.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetFailureReasons() const{ return m_failureReasons; }
+
+    /**
+     * <p>The details of the failure reasons related to the data source.</p>
+     */
+    inline bool FailureReasonsHasBeenSet() const { return m_failureReasonsHasBeenSet; }
+
+    /**
+     * <p>The details of the failure reasons related to the data source.</p>
+     */
+    inline void SetFailureReasons(const Aws::Vector<Aws::String>& value) { m_failureReasonsHasBeenSet = true; m_failureReasons = value; }
+
+    /**
+     * <p>The details of the failure reasons related to the data source.</p>
+     */
+    inline void SetFailureReasons(Aws::Vector<Aws::String>&& value) { m_failureReasonsHasBeenSet = true; m_failureReasons = std::move(value); }
+
+    /**
+     * <p>The details of the failure reasons related to the data source.</p>
+     */
+    inline DataSource& WithFailureReasons(const Aws::Vector<Aws::String>& value) { SetFailureReasons(value); return *this;}
+
+    /**
+     * <p>The details of the failure reasons related to the data source.</p>
+     */
+    inline DataSource& WithFailureReasons(Aws::Vector<Aws::String>&& value) { SetFailureReasons(std::move(value)); return *this;}
+
+    /**
+     * <p>The details of the failure reasons related to the data source.</p>
+     */
+    inline DataSource& AddFailureReasons(const Aws::String& value) { m_failureReasonsHasBeenSet = true; m_failureReasons.push_back(value); return *this; }
+
+    /**
+     * <p>The details of the failure reasons related to the data source.</p>
+     */
+    inline DataSource& AddFailureReasons(Aws::String&& value) { m_failureReasonsHasBeenSet = true; m_failureReasons.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The details of the failure reasons related to the data source.</p>
+     */
+    inline DataSource& AddFailureReasons(const char* value) { m_failureReasonsHasBeenSet = true; m_failureReasons.push_back(value); return *this; }
 
 
     /**
@@ -422,6 +501,9 @@ namespace Model
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet = false;
 
+    DataDeletionPolicy m_dataDeletionPolicy;
+    bool m_dataDeletionPolicyHasBeenSet = false;
+
     DataSourceConfiguration m_dataSourceConfiguration;
     bool m_dataSourceConfigurationHasBeenSet = false;
 
@@ -430,6 +512,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_failureReasons;
+    bool m_failureReasonsHasBeenSet = false;
 
     Aws::String m_knowledgeBaseId;
     bool m_knowledgeBaseIdHasBeenSet = false;

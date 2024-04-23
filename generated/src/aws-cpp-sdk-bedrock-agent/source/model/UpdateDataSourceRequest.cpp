@@ -13,6 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateDataSourceRequest::UpdateDataSourceRequest() : 
+    m_dataDeletionPolicy(DataDeletionPolicy::NOT_SET),
+    m_dataDeletionPolicyHasBeenSet(false),
     m_dataSourceConfigurationHasBeenSet(false),
     m_dataSourceIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -26,6 +28,11 @@ UpdateDataSourceRequest::UpdateDataSourceRequest() :
 Aws::String UpdateDataSourceRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_dataDeletionPolicyHasBeenSet)
+  {
+   payload.WithString("dataDeletionPolicy", DataDeletionPolicyMapper::GetNameForDataDeletionPolicy(m_dataDeletionPolicy));
+  }
 
   if(m_dataSourceConfigurationHasBeenSet)
   {

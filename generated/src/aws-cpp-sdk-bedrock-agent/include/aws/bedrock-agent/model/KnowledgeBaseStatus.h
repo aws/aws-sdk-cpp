@@ -20,7 +20,8 @@ namespace Model
     ACTIVE,
     DELETING,
     UPDATING,
-    FAILED
+    FAILED,
+    DELETE_UNSUCCESSFUL
   };
 
 namespace KnowledgeBaseStatusMapper

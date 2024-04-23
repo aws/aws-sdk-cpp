@@ -36,37 +36,37 @@ namespace Model
 
 
     /**
-     * <p>Information about one or more network interfaces.</p>
+     * <p>Information about the network interfaces.</p>
      */
     inline const Aws::Vector<NetworkInterface>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
 
     /**
-     * <p>Information about one or more network interfaces.</p>
+     * <p>Information about the network interfaces.</p>
      */
     inline void SetNetworkInterfaces(const Aws::Vector<NetworkInterface>& value) { m_networkInterfaces = value; }
 
     /**
-     * <p>Information about one or more network interfaces.</p>
+     * <p>Information about the network interfaces.</p>
      */
     inline void SetNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { m_networkInterfaces = std::move(value); }
 
     /**
-     * <p>Information about one or more network interfaces.</p>
+     * <p>Information about the network interfaces.</p>
      */
     inline DescribeNetworkInterfacesResponse& WithNetworkInterfaces(const Aws::Vector<NetworkInterface>& value) { SetNetworkInterfaces(value); return *this;}
 
     /**
-     * <p>Information about one or more network interfaces.</p>
+     * <p>Information about the network interfaces.</p>
      */
     inline DescribeNetworkInterfacesResponse& WithNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
 
     /**
-     * <p>Information about one or more network interfaces.</p>
+     * <p>Information about the network interfaces.</p>
      */
     inline DescribeNetworkInterfacesResponse& AddNetworkInterfaces(const NetworkInterface& value) { m_networkInterfaces.push_back(value); return *this; }
 
     /**
-     * <p>Information about one or more network interfaces.</p>
+     * <p>Information about the network interfaces.</p>
      */
     inline DescribeNetworkInterfacesResponse& AddNetworkInterfaces(NetworkInterface&& value) { m_networkInterfaces.push_back(std::move(value)); return *this; }
 

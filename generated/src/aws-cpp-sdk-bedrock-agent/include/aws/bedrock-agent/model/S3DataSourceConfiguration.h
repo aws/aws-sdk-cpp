@@ -89,6 +89,47 @@ namespace Model
 
 
     /**
+     * <p>The account ID for the owner of the S3 bucket.</p>
+     */
+    inline const Aws::String& GetBucketOwnerAccountId() const{ return m_bucketOwnerAccountId; }
+
+    /**
+     * <p>The account ID for the owner of the S3 bucket.</p>
+     */
+    inline bool BucketOwnerAccountIdHasBeenSet() const { return m_bucketOwnerAccountIdHasBeenSet; }
+
+    /**
+     * <p>The account ID for the owner of the S3 bucket.</p>
+     */
+    inline void SetBucketOwnerAccountId(const Aws::String& value) { m_bucketOwnerAccountIdHasBeenSet = true; m_bucketOwnerAccountId = value; }
+
+    /**
+     * <p>The account ID for the owner of the S3 bucket.</p>
+     */
+    inline void SetBucketOwnerAccountId(Aws::String&& value) { m_bucketOwnerAccountIdHasBeenSet = true; m_bucketOwnerAccountId = std::move(value); }
+
+    /**
+     * <p>The account ID for the owner of the S3 bucket.</p>
+     */
+    inline void SetBucketOwnerAccountId(const char* value) { m_bucketOwnerAccountIdHasBeenSet = true; m_bucketOwnerAccountId.assign(value); }
+
+    /**
+     * <p>The account ID for the owner of the S3 bucket.</p>
+     */
+    inline S3DataSourceConfiguration& WithBucketOwnerAccountId(const Aws::String& value) { SetBucketOwnerAccountId(value); return *this;}
+
+    /**
+     * <p>The account ID for the owner of the S3 bucket.</p>
+     */
+    inline S3DataSourceConfiguration& WithBucketOwnerAccountId(Aws::String&& value) { SetBucketOwnerAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>The account ID for the owner of the S3 bucket.</p>
+     */
+    inline S3DataSourceConfiguration& WithBucketOwnerAccountId(const char* value) { SetBucketOwnerAccountId(value); return *this;}
+
+
+    /**
      * <p>A list of S3 prefixes that define the object containing the data sources. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
@@ -164,6 +205,9 @@ namespace Model
 
     Aws::String m_bucketArn;
     bool m_bucketArnHasBeenSet = false;
+
+    Aws::String m_bucketOwnerAccountId;
+    bool m_bucketOwnerAccountIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inclusionPrefixes;
     bool m_inclusionPrefixesHasBeenSet = false;

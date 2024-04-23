@@ -16,6 +16,10 @@ UpdatePortalRequest::UpdatePortalRequest() :
     m_authenticationType(AuthenticationType::NOT_SET),
     m_authenticationTypeHasBeenSet(false),
     m_displayNameHasBeenSet(false),
+    m_instanceType(InstanceType::NOT_SET),
+    m_instanceTypeHasBeenSet(false),
+    m_maxConcurrentSessions(0),
+    m_maxConcurrentSessionsHasBeenSet(false),
     m_portalArnHasBeenSet(false)
 {
 }
@@ -32,6 +36,17 @@ Aws::String UpdatePortalRequest::SerializePayload() const
   if(m_displayNameHasBeenSet)
   {
    payload.WithString("displayName", m_displayName);
+
+  }
+
+  if(m_instanceTypeHasBeenSet)
+  {
+   payload.WithString("instanceType", InstanceTypeMapper::GetNameForInstanceType(m_instanceType));
+  }
+
+  if(m_maxConcurrentSessionsHasBeenSet)
+  {
+   payload.WithInteger("maxConcurrentSessions", m_maxConcurrentSessions);
 
   }
 

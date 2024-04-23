@@ -43,83 +43,83 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the foundation model.</p>
+     * <p>The Amazon Resource Name (ARN) of the foundation model.</p>
      */
     inline const Aws::String& GetModelArn() const{ return m_modelArn; }
 
     /**
-     * <p>The ARN of the foundation model.</p>
+     * <p>The Amazon Resource Name (ARN) of the foundation model.</p>
      */
     inline bool ModelArnHasBeenSet() const { return m_modelArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the foundation model.</p>
+     * <p>The Amazon Resource Name (ARN) of the foundation model.</p>
      */
     inline void SetModelArn(const Aws::String& value) { m_modelArnHasBeenSet = true; m_modelArn = value; }
 
     /**
-     * <p>The ARN of the foundation model.</p>
+     * <p>The Amazon Resource Name (ARN) of the foundation model.</p>
      */
     inline void SetModelArn(Aws::String&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::move(value); }
 
     /**
-     * <p>The ARN of the foundation model.</p>
+     * <p>The Amazon Resource Name (ARN) of the foundation model.</p>
      */
     inline void SetModelArn(const char* value) { m_modelArnHasBeenSet = true; m_modelArn.assign(value); }
 
     /**
-     * <p>The ARN of the foundation model.</p>
+     * <p>The Amazon Resource Name (ARN) of the foundation model.</p>
      */
     inline FoundationModelSummary& WithModelArn(const Aws::String& value) { SetModelArn(value); return *this;}
 
     /**
-     * <p>The ARN of the foundation model.</p>
+     * <p>The Amazon Resource Name (ARN) of the foundation model.</p>
      */
     inline FoundationModelSummary& WithModelArn(Aws::String&& value) { SetModelArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the foundation model.</p>
+     * <p>The Amazon Resource Name (ARN) of the foundation model.</p>
      */
     inline FoundationModelSummary& WithModelArn(const char* value) { SetModelArn(value); return *this;}
 
 
     /**
-     * <p>The model Id of the foundation model.</p>
+     * <p>The model ID of the foundation model.</p>
      */
     inline const Aws::String& GetModelId() const{ return m_modelId; }
 
     /**
-     * <p>The model Id of the foundation model.</p>
+     * <p>The model ID of the foundation model.</p>
      */
     inline bool ModelIdHasBeenSet() const { return m_modelIdHasBeenSet; }
 
     /**
-     * <p>The model Id of the foundation model.</p>
+     * <p>The model ID of the foundation model.</p>
      */
     inline void SetModelId(const Aws::String& value) { m_modelIdHasBeenSet = true; m_modelId = value; }
 
     /**
-     * <p>The model Id of the foundation model.</p>
+     * <p>The model ID of the foundation model.</p>
      */
     inline void SetModelId(Aws::String&& value) { m_modelIdHasBeenSet = true; m_modelId = std::move(value); }
 
     /**
-     * <p>The model Id of the foundation model.</p>
+     * <p>The model ID of the foundation model.</p>
      */
     inline void SetModelId(const char* value) { m_modelIdHasBeenSet = true; m_modelId.assign(value); }
 
     /**
-     * <p>The model Id of the foundation model.</p>
+     * <p>The model ID of the foundation model.</p>
      */
     inline FoundationModelSummary& WithModelId(const Aws::String& value) { SetModelId(value); return *this;}
 
     /**
-     * <p>The model Id of the foundation model.</p>
+     * <p>The model ID of the foundation model.</p>
      */
     inline FoundationModelSummary& WithModelId(Aws::String&& value) { SetModelId(std::move(value)); return *this;}
 
     /**
-     * <p>The model Id of the foundation model.</p>
+     * <p>The model ID of the foundation model.</p>
      */
     inline FoundationModelSummary& WithModelId(const char* value) { SetModelId(value); return *this;}
 

@@ -252,81 +252,81 @@ namespace Model
 
     /**
      * <p>The tags to apply to the launch template on creation. To tag the launch
-     * template, the resource type must be <code>launch-template</code>.</p> 
-     * <p>To specify the tags for the resources that are created when an instance is
+     * template, the resource type must be <code>launch-template</code>.</p> <p>To
+     * specify the tags for the resources that are created when an instance is
      * launched, you must use the <code>TagSpecifications</code> parameter in the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html">launch
-     * template data</a> structure.</p> 
+     * template data</a> structure.</p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
 
     /**
      * <p>The tags to apply to the launch template on creation. To tag the launch
-     * template, the resource type must be <code>launch-template</code>.</p> 
-     * <p>To specify the tags for the resources that are created when an instance is
+     * template, the resource type must be <code>launch-template</code>.</p> <p>To
+     * specify the tags for the resources that are created when an instance is
      * launched, you must use the <code>TagSpecifications</code> parameter in the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html">launch
-     * template data</a> structure.</p> 
+     * template data</a> structure.</p>
      */
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
 
     /**
      * <p>The tags to apply to the launch template on creation. To tag the launch
-     * template, the resource type must be <code>launch-template</code>.</p> 
-     * <p>To specify the tags for the resources that are created when an instance is
+     * template, the resource type must be <code>launch-template</code>.</p> <p>To
+     * specify the tags for the resources that are created when an instance is
      * launched, you must use the <code>TagSpecifications</code> parameter in the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html">launch
-     * template data</a> structure.</p> 
+     * template data</a> structure.</p>
      */
     inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
 
     /**
      * <p>The tags to apply to the launch template on creation. To tag the launch
-     * template, the resource type must be <code>launch-template</code>.</p> 
-     * <p>To specify the tags for the resources that are created when an instance is
+     * template, the resource type must be <code>launch-template</code>.</p> <p>To
+     * specify the tags for the resources that are created when an instance is
      * launched, you must use the <code>TagSpecifications</code> parameter in the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html">launch
-     * template data</a> structure.</p> 
+     * template data</a> structure.</p>
      */
     inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
 
     /**
      * <p>The tags to apply to the launch template on creation. To tag the launch
-     * template, the resource type must be <code>launch-template</code>.</p> 
-     * <p>To specify the tags for the resources that are created when an instance is
+     * template, the resource type must be <code>launch-template</code>.</p> <p>To
+     * specify the tags for the resources that are created when an instance is
      * launched, you must use the <code>TagSpecifications</code> parameter in the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html">launch
-     * template data</a> structure.</p> 
+     * template data</a> structure.</p>
      */
     inline CreateLaunchTemplateRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
 
     /**
      * <p>The tags to apply to the launch template on creation. To tag the launch
-     * template, the resource type must be <code>launch-template</code>.</p> 
-     * <p>To specify the tags for the resources that are created when an instance is
+     * template, the resource type must be <code>launch-template</code>.</p> <p>To
+     * specify the tags for the resources that are created when an instance is
      * launched, you must use the <code>TagSpecifications</code> parameter in the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html">launch
-     * template data</a> structure.</p> 
+     * template data</a> structure.</p>
      */
     inline CreateLaunchTemplateRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
 
     /**
      * <p>The tags to apply to the launch template on creation. To tag the launch
-     * template, the resource type must be <code>launch-template</code>.</p> 
-     * <p>To specify the tags for the resources that are created when an instance is
+     * template, the resource type must be <code>launch-template</code>.</p> <p>To
+     * specify the tags for the resources that are created when an instance is
      * launched, you must use the <code>TagSpecifications</code> parameter in the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html">launch
-     * template data</a> structure.</p> 
+     * template data</a> structure.</p>
      */
     inline CreateLaunchTemplateRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
 
     /**
      * <p>The tags to apply to the launch template on creation. To tag the launch
-     * template, the resource type must be <code>launch-template</code>.</p> 
-     * <p>To specify the tags for the resources that are created when an instance is
+     * template, the resource type must be <code>launch-template</code>.</p> <p>To
+     * specify the tags for the resources that are created when an instance is
      * launched, you must use the <code>TagSpecifications</code> parameter in the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html">launch
-     * template data</a> structure.</p> 
+     * template data</a> structure.</p>
      */
     inline CreateLaunchTemplateRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 

@@ -2194,13 +2194,13 @@ namespace EC2
          * type (1, 2, 4, or 8). We recommend that you specify 2. Broadcast and multicast
          * are not supported. For more information about NetBIOS node types, see <a
          * href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.</p> </li> <li> <p>
-         * <code>ipv6-preferred-lease-time</code> - A value (in seconds, minutes, hours, or
-         * years) for how frequently a running instance with an IPv6 assigned to it goes
-         * through DHCPv6 lease renewal. Acceptable values are between 140 and 2147483647
-         * seconds (approximately 68 years). If no value is entered, the default lease time
-         * is 140 seconds. If you use long-term addressing for EC2 instances, you can
-         * increase the lease time and avoid frequent lease renewal requests. Lease renewal
-         * typically occurs when half of the lease time has elapsed.</p> </li>
+         * <code>ipv6-address-preferred-lease-time</code> - A value (in seconds, minutes,
+         * hours, or years) for how frequently a running instance with an IPv6 assigned to
+         * it goes through DHCPv6 lease renewal. Acceptable values are between 140 and
+         * 2147483647 seconds (approximately 68 years). If no value is entered, the default
+         * lease time is 140 seconds. If you use long-term addressing for EC2 instances,
+         * you can increase the lease time and avoid frequent lease renewal requests. Lease
+         * renewal typically occurs when half of the lease time has elapsed.</p> </li>
          * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDhcpOptions">AWS
          * API Reference</a></p>
@@ -2687,10 +2687,9 @@ namespace EC2
          * the request. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">Launch
          * an instance from a launch template</a> in the <i>Amazon Elastic Compute Cloud
-         * User Guide</i>.</p> <p>If you want to clone an existing launch template as the
-         * basis for creating a new launch template, you can use the Amazon EC2 console.
-         * The API, SDKs, and CLI do not support cloning a template. For more information,
-         * see <a
+         * User Guide</i>.</p> <p>To clone an existing launch template as the basis for a
+         * new launch template, use the Amazon EC2 console. The API, SDKs, and CLI do not
+         * support cloning a template. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template-from-existing-launch-template">Create
          * a launch template from an existing launch template</a> in the <i>Amazon Elastic
          * Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -2718,13 +2717,14 @@ namespace EC2
         }
 
         /**
-         * <p>Creates a new version of a launch template. You can specify an existing
-         * version of launch template from which to base the new version.</p> <p>Launch
-         * template versions are numbered in the order in which they are created. You
-         * cannot specify, change, or replace the numbering of launch template
-         * versions.</p> <p>Launch templates are immutable; after you create a launch
-         * template, you can't modify it. Instead, you can create a new version of the
-         * launch template that includes any changes you require.</p> <p>For more
+         * <p>Creates a new version of a launch template. You must specify an existing
+         * launch template, either by name or ID. You can determine whether the new version
+         * inherits parameters from a source version, and add or overwrite parameters as
+         * needed.</p> <p>Launch template versions are numbered in the order in which they
+         * are created. You can't specify, change, or replace the numbering of launch
+         * template versions.</p> <p>Launch templates are immutable; after you create a
+         * launch template, you can't modify it. Instead, you can create a new version of
+         * the launch template that includes the changes that you require.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#manage-launch-template-versions">Modify
          * a launch template (manage launch template versions)</a> in the <i>Amazon Elastic
@@ -8065,9 +8065,11 @@ namespace EC2
          * <p>Recently deregistered images appear in the returned results for a short
          * interval and then return empty results. After all instances that reference a
          * deregistered AMI are terminated, specifying the ID of the image will eventually
-         * return an error indicating that the AMI ID cannot be found.</p>  <p>The
-         * order of the elements in the response, including those within nested structures,
-         * might vary. Applications should not assume the elements appear in a particular
+         * return an error indicating that the AMI ID cannot be found.</p> 
+         * <p>We strongly recommend using only paginated requests. Unpaginated requests are
+         * susceptible to throttling and timeouts.</p>   <p>The order of
+         * the elements in the response, including those within nested structures, might
+         * vary. Applications should not assume the elements appear in a particular
          * order.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImages">AWS
          * API Reference</a></p>
@@ -8464,10 +8466,12 @@ namespace EC2
          * experiencing a service disruption and you specify instance IDs that are in the
          * affected zone, or do not specify any instance IDs at all, the call fails. If you
          * describe instances and specify only instance IDs that are in an unaffected zone,
-         * the call works normally.</p>  <p>The order of the elements in the
-         * response, including those within nested structures, might vary. Applications
-         * should not assume the elements appear in a particular order.</p>
-         * <p><h3>See Also:</h3>   <a
+         * the call works normally.</p>  <p>We strongly recommend using only
+         * paginated requests. Unpaginated requests are susceptible to throttling and
+         * timeouts.</p>   <p>The order of the elements in the response,
+         * including those within nested structures, might vary. Applications should not
+         * assume the elements appear in a particular order.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstances">AWS
          * API Reference</a></p>
          */
@@ -9262,7 +9266,9 @@ namespace EC2
          * one of the following filters: <code>group-id</code>, <code>mac-address</code>,
          * <code>private-dns-name</code>, <code>private-ip-address</code>,
          * <code>private-dns-name</code>, <code>subnet-id</code>, or
-         * <code>vpc-id</code>.</p><p><h3>See Also:</h3>   <a
+         * <code>vpc-id</code>.</p>  <p>We strongly recommend using only
+         * paginated requests. Unpaginated requests are susceptible to throttling and
+         * timeouts.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfaces">AWS
          * API Reference</a></p>
          */
@@ -9878,7 +9884,9 @@ namespace EC2
          * <a>DescribeFastSnapshotRestores</a>.</p> <p>For more information about EBS
          * snapshots, see <a
          * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-snapshots.html">Amazon
-         * EBS snapshots</a> in the <i>Amazon EBS User Guide</i>.</p><p><h3>See Also:</h3> 
+         * EBS snapshots</a> in the <i>Amazon EBS User Guide</i>.</p>  <p>We
+         * strongly recommend using only paginated requests. Unpaginated requests are
+         * susceptible to throttling and timeouts.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshots">AWS
          * API Reference</a></p>
@@ -10187,7 +10195,9 @@ namespace EC2
          * information about tags, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag
          * your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p>  <p>The order of the elements in the response, including
+         * Guide</i>.</p>  <p>We strongly recommend using only paginated
+         * requests. Unpaginated requests are susceptible to throttling and timeouts.</p>
+         *   <p>The order of the elements in the response, including
          * those within nested structures, might vary. Applications should not assume the
          * elements appear in a particular order.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTags">AWS
@@ -10806,7 +10816,9 @@ namespace EC2
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
          * <p>For more information about EBS volumes, see <a
          * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes.html">Amazon
-         * EBS volumes</a> in the <i>Amazon EBS User Guide</i>.</p>  <p>The order of
+         * EBS volumes</a> in the <i>Amazon EBS User Guide</i>.</p>  <p>We
+         * strongly recommend using only paginated requests. Unpaginated requests are
+         * susceptible to throttling and timeouts.</p>   <p>The order of
          * the elements in the response, including those within nested structures, might
          * vary. Applications should not assume the elements appear in a particular
          * order.</p> <p><h3>See Also:</h3>   <a
@@ -11641,6 +11653,38 @@ namespace EC2
         void DisableImageDeprecationAsync(const DisableImageDeprecationRequestT& request, const DisableImageDeprecationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::DisableImageDeprecation, request, handler, context);
+        }
+
+        /**
+         * <p>Disables deregistration protection for an AMI. When deregistration protection
+         * is disabled, the AMI can be deregistered.</p> <p>If you chose to include a
+         * 24-hour cooldown period when you enabled deregistration protection for the AMI,
+         * then, when you disable deregistration protection, you won’t immediately be able
+         * to deregister the AMI.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html#ami-deregistration-protection">Protect
+         * an AMI from deregistration</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageDeregistrationProtection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableImageDeregistrationProtectionOutcome DisableImageDeregistrationProtection(const Model::DisableImageDeregistrationProtectionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisableImageDeregistrationProtection that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisableImageDeregistrationProtectionRequestT = Model::DisableImageDeregistrationProtectionRequest>
+        Model::DisableImageDeregistrationProtectionOutcomeCallable DisableImageDeregistrationProtectionCallable(const DisableImageDeregistrationProtectionRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DisableImageDeregistrationProtection, request);
+        }
+
+        /**
+         * An Async wrapper for DisableImageDeregistrationProtection that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisableImageDeregistrationProtectionRequestT = Model::DisableImageDeregistrationProtectionRequest>
+        void DisableImageDeregistrationProtectionAsync(const DisableImageDeregistrationProtectionRequestT& request, const DisableImageDeregistrationProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DisableImageDeregistrationProtection, request, handler, context);
         }
 
         /**
@@ -12526,6 +12570,37 @@ namespace EC2
         void EnableImageDeprecationAsync(const EnableImageDeprecationRequestT& request, const EnableImageDeprecationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::EnableImageDeprecation, request, handler, context);
+        }
+
+        /**
+         * <p>Enables deregistration protection for an AMI. When deregistration protection
+         * is enabled, the AMI can't be deregistered.</p> <p>To allow the AMI to be
+         * deregistered, you must first disable deregistration protection using
+         * <a>DisableImageDeregistrationProtection</a>.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html#ami-deregistration-protection">Protect
+         * an AMI from deregistration</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageDeregistrationProtection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableImageDeregistrationProtectionOutcome EnableImageDeregistrationProtection(const Model::EnableImageDeregistrationProtectionRequest& request) const;
+
+        /**
+         * A Callable wrapper for EnableImageDeregistrationProtection that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename EnableImageDeregistrationProtectionRequestT = Model::EnableImageDeregistrationProtectionRequest>
+        Model::EnableImageDeregistrationProtectionOutcomeCallable EnableImageDeregistrationProtectionCallable(const EnableImageDeregistrationProtectionRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::EnableImageDeregistrationProtection, request);
+        }
+
+        /**
+         * An Async wrapper for EnableImageDeregistrationProtection that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename EnableImageDeregistrationProtectionRequestT = Model::EnableImageDeregistrationProtectionRequest>
+        void EnableImageDeregistrationProtectionAsync(const EnableImageDeregistrationProtectionRequestT& request, const EnableImageDeregistrationProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::EnableImageDeregistrationProtection, request, handler, context);
         }
 
         /**

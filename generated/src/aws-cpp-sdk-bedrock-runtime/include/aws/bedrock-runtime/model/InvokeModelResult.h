@@ -38,18 +38,18 @@ namespace Model
 
 
     /**
-     * <p>Inference response from the model in the format specified in the content-type
-     * header field. To see the format and content of this field for different models,
-     * refer to <a
+     * <p>Inference response from the model in the format specified in the
+     * <code>contentType</code> header. To see the format and content of the request
+     * and response bodies for different models, refer to <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
      * parameters</a>.</p>
      */
     inline Aws::IOStream& GetBody() const { return m_body.GetUnderlyingStream(); }
 
     /**
-     * <p>Inference response from the model in the format specified in the content-type
-     * header field. To see the format and content of this field for different models,
-     * refer to <a
+     * <p>Inference response from the model in the format specified in the
+     * <code>contentType</code> header. To see the format and content of the request
+     * and response bodies for different models, refer to <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
      * parameters</a>.</p>
      */

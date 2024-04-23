@@ -20,13 +20,15 @@ namespace Model
 
 ReservationPurchaseRecommendationMetadata::ReservationPurchaseRecommendationMetadata() : 
     m_recommendationIdHasBeenSet(false),
-    m_generationTimestampHasBeenSet(false)
+    m_generationTimestampHasBeenSet(false),
+    m_additionalMetadataHasBeenSet(false)
 {
 }
 
 ReservationPurchaseRecommendationMetadata::ReservationPurchaseRecommendationMetadata(JsonView jsonValue) : 
     m_recommendationIdHasBeenSet(false),
-    m_generationTimestampHasBeenSet(false)
+    m_generationTimestampHasBeenSet(false),
+    m_additionalMetadataHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ ReservationPurchaseRecommendationMetadata& ReservationPurchaseRecommendationMeta
     m_generationTimestampHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AdditionalMetadata"))
+  {
+    m_additionalMetadata = jsonValue.GetString("AdditionalMetadata");
+
+    m_additionalMetadataHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue ReservationPurchaseRecommendationMetadata::Jsonize() const
   if(m_generationTimestampHasBeenSet)
   {
    payload.WithString("GenerationTimestamp", m_generationTimestamp);
+
+  }
+
+  if(m_additionalMetadataHasBeenSet)
+  {
+   payload.WithString("AdditionalMetadata", m_additionalMetadata);
 
   }
 

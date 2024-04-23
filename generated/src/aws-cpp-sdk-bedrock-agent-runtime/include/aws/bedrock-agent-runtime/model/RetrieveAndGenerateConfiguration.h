@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
+#include <aws/bedrock-agent-runtime/model/ExternalSourcesRetrieveAndGenerateConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/KnowledgeBaseRetrieveAndGenerateConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/RetrieveAndGenerateType.h>
 #include <utility>
@@ -40,6 +41,43 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API RetrieveAndGenerateConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API RetrieveAndGenerateConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The configuration used with the external source wrapper object in the
+     * retrieveAndGenerate function.</p>
+     */
+    inline const ExternalSourcesRetrieveAndGenerateConfiguration& GetExternalSourcesConfiguration() const{ return m_externalSourcesConfiguration; }
+
+    /**
+     * <p>The configuration used with the external source wrapper object in the
+     * retrieveAndGenerate function.</p>
+     */
+    inline bool ExternalSourcesConfigurationHasBeenSet() const { return m_externalSourcesConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration used with the external source wrapper object in the
+     * retrieveAndGenerate function.</p>
+     */
+    inline void SetExternalSourcesConfiguration(const ExternalSourcesRetrieveAndGenerateConfiguration& value) { m_externalSourcesConfigurationHasBeenSet = true; m_externalSourcesConfiguration = value; }
+
+    /**
+     * <p>The configuration used with the external source wrapper object in the
+     * retrieveAndGenerate function.</p>
+     */
+    inline void SetExternalSourcesConfiguration(ExternalSourcesRetrieveAndGenerateConfiguration&& value) { m_externalSourcesConfigurationHasBeenSet = true; m_externalSourcesConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration used with the external source wrapper object in the
+     * retrieveAndGenerate function.</p>
+     */
+    inline RetrieveAndGenerateConfiguration& WithExternalSourcesConfiguration(const ExternalSourcesRetrieveAndGenerateConfiguration& value) { SetExternalSourcesConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration used with the external source wrapper object in the
+     * retrieveAndGenerate function.</p>
+     */
+    inline RetrieveAndGenerateConfiguration& WithExternalSourcesConfiguration(ExternalSourcesRetrieveAndGenerateConfiguration&& value) { SetExternalSourcesConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -104,6 +142,9 @@ namespace Model
     inline RetrieveAndGenerateConfiguration& WithType(RetrieveAndGenerateType&& value) { SetType(std::move(value)); return *this;}
 
   private:
+
+    ExternalSourcesRetrieveAndGenerateConfiguration m_externalSourcesConfiguration;
+    bool m_externalSourcesConfigurationHasBeenSet = false;
 
     KnowledgeBaseRetrieveAndGenerateConfiguration m_knowledgeBaseConfiguration;
     bool m_knowledgeBaseConfigurationHasBeenSet = false;

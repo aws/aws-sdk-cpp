@@ -1687,50 +1687,44 @@ namespace Model
 
 
     /**
-     * <p>The launch template to use to launch the instances. Any parameters that you
-     * specify in <a>RunInstances</a> override the same parameters in the launch
-     * template. You can specify either the name or ID of a launch template, but not
-     * both.</p>
+     * <p>The launch template. Any additional parameters that you specify for the new
+     * instance overwrite the corresponding parameters included in the launch
+     * template.</p>
      */
     inline const LaunchTemplateSpecification& GetLaunchTemplate() const{ return m_launchTemplate; }
 
     /**
-     * <p>The launch template to use to launch the instances. Any parameters that you
-     * specify in <a>RunInstances</a> override the same parameters in the launch
-     * template. You can specify either the name or ID of a launch template, but not
-     * both.</p>
+     * <p>The launch template. Any additional parameters that you specify for the new
+     * instance overwrite the corresponding parameters included in the launch
+     * template.</p>
      */
     inline bool LaunchTemplateHasBeenSet() const { return m_launchTemplateHasBeenSet; }
 
     /**
-     * <p>The launch template to use to launch the instances. Any parameters that you
-     * specify in <a>RunInstances</a> override the same parameters in the launch
-     * template. You can specify either the name or ID of a launch template, but not
-     * both.</p>
+     * <p>The launch template. Any additional parameters that you specify for the new
+     * instance overwrite the corresponding parameters included in the launch
+     * template.</p>
      */
     inline void SetLaunchTemplate(const LaunchTemplateSpecification& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
 
     /**
-     * <p>The launch template to use to launch the instances. Any parameters that you
-     * specify in <a>RunInstances</a> override the same parameters in the launch
-     * template. You can specify either the name or ID of a launch template, but not
-     * both.</p>
+     * <p>The launch template. Any additional parameters that you specify for the new
+     * instance overwrite the corresponding parameters included in the launch
+     * template.</p>
      */
     inline void SetLaunchTemplate(LaunchTemplateSpecification&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::move(value); }
 
     /**
-     * <p>The launch template to use to launch the instances. Any parameters that you
-     * specify in <a>RunInstances</a> override the same parameters in the launch
-     * template. You can specify either the name or ID of a launch template, but not
-     * both.</p>
+     * <p>The launch template. Any additional parameters that you specify for the new
+     * instance overwrite the corresponding parameters included in the launch
+     * template.</p>
      */
     inline RunInstancesRequest& WithLaunchTemplate(const LaunchTemplateSpecification& value) { SetLaunchTemplate(value); return *this;}
 
     /**
-     * <p>The launch template to use to launch the instances. Any parameters that you
-     * specify in <a>RunInstances</a> override the same parameters in the launch
-     * template. You can specify either the name or ID of a launch template, but not
-     * both.</p>
+     * <p>The launch template. Any additional parameters that you specify for the new
+     * instance overwrite the corresponding parameters included in the launch
+     * template.</p>
      */
     inline RunInstancesRequest& WithLaunchTemplate(LaunchTemplateSpecification&& value) { SetLaunchTemplate(std::move(value)); return *this;}
 

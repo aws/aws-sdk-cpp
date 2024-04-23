@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/workspaces-web/model/BrowserType.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/workspaces-web/model/InstanceType.h>
 #include <aws/workspaces-web/model/PortalStatus.h>
 #include <aws/workspaces-web/model/RendererType.h>
 #include <utility>
@@ -48,12 +49,11 @@ namespace Model
      * portals are authenticated directly through your identity provider. You need to
      * call <code>CreateIdentityProvider</code> to integrate your identity provider
      * with your web portal. User and group access to your web portal is controlled
-     * through your identity provider.</p> <p> <code>IAM_Identity_Center</code> web
-     * portals are authenticated through AWS IAM Identity Center (successor to AWS
-     * Single Sign-On). They provide additional features, such as IdP-initiated
-     * authentication. Identity sources (including external identity provider
-     * integration), plus user and group access to your web portal, can be configured
-     * in the IAM Identity Center.</p>
+     * through your identity provider.</p> <p> <code>IAM Identity Center</code> web
+     * portals are authenticated through IAM Identity Center (successor to Single
+     * Sign-On). Identity sources (including external identity provider integration),
+     * plus user and group access to your web portal, can be configured in the IAM
+     * Identity Center.</p>
      */
     inline const AuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
 
@@ -63,12 +63,11 @@ namespace Model
      * portals are authenticated directly through your identity provider. You need to
      * call <code>CreateIdentityProvider</code> to integrate your identity provider
      * with your web portal. User and group access to your web portal is controlled
-     * through your identity provider.</p> <p> <code>IAM_Identity_Center</code> web
-     * portals are authenticated through AWS IAM Identity Center (successor to AWS
-     * Single Sign-On). They provide additional features, such as IdP-initiated
-     * authentication. Identity sources (including external identity provider
-     * integration), plus user and group access to your web portal, can be configured
-     * in the IAM Identity Center.</p>
+     * through your identity provider.</p> <p> <code>IAM Identity Center</code> web
+     * portals are authenticated through IAM Identity Center (successor to Single
+     * Sign-On). Identity sources (including external identity provider integration),
+     * plus user and group access to your web portal, can be configured in the IAM
+     * Identity Center.</p>
      */
     inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
 
@@ -78,12 +77,11 @@ namespace Model
      * portals are authenticated directly through your identity provider. You need to
      * call <code>CreateIdentityProvider</code> to integrate your identity provider
      * with your web portal. User and group access to your web portal is controlled
-     * through your identity provider.</p> <p> <code>IAM_Identity_Center</code> web
-     * portals are authenticated through AWS IAM Identity Center (successor to AWS
-     * Single Sign-On). They provide additional features, such as IdP-initiated
-     * authentication. Identity sources (including external identity provider
-     * integration), plus user and group access to your web portal, can be configured
-     * in the IAM Identity Center.</p>
+     * through your identity provider.</p> <p> <code>IAM Identity Center</code> web
+     * portals are authenticated through IAM Identity Center (successor to Single
+     * Sign-On). Identity sources (including external identity provider integration),
+     * plus user and group access to your web portal, can be configured in the IAM
+     * Identity Center.</p>
      */
     inline void SetAuthenticationType(const AuthenticationType& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
 
@@ -93,12 +91,11 @@ namespace Model
      * portals are authenticated directly through your identity provider. You need to
      * call <code>CreateIdentityProvider</code> to integrate your identity provider
      * with your web portal. User and group access to your web portal is controlled
-     * through your identity provider.</p> <p> <code>IAM_Identity_Center</code> web
-     * portals are authenticated through AWS IAM Identity Center (successor to AWS
-     * Single Sign-On). They provide additional features, such as IdP-initiated
-     * authentication. Identity sources (including external identity provider
-     * integration), plus user and group access to your web portal, can be configured
-     * in the IAM Identity Center.</p>
+     * through your identity provider.</p> <p> <code>IAM Identity Center</code> web
+     * portals are authenticated through IAM Identity Center (successor to Single
+     * Sign-On). Identity sources (including external identity provider integration),
+     * plus user and group access to your web portal, can be configured in the IAM
+     * Identity Center.</p>
      */
     inline void SetAuthenticationType(AuthenticationType&& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = std::move(value); }
 
@@ -108,12 +105,11 @@ namespace Model
      * portals are authenticated directly through your identity provider. You need to
      * call <code>CreateIdentityProvider</code> to integrate your identity provider
      * with your web portal. User and group access to your web portal is controlled
-     * through your identity provider.</p> <p> <code>IAM_Identity_Center</code> web
-     * portals are authenticated through AWS IAM Identity Center (successor to AWS
-     * Single Sign-On). They provide additional features, such as IdP-initiated
-     * authentication. Identity sources (including external identity provider
-     * integration), plus user and group access to your web portal, can be configured
-     * in the IAM Identity Center.</p>
+     * through your identity provider.</p> <p> <code>IAM Identity Center</code> web
+     * portals are authenticated through IAM Identity Center (successor to Single
+     * Sign-On). Identity sources (including external identity provider integration),
+     * plus user and group access to your web portal, can be configured in the IAM
+     * Identity Center.</p>
      */
     inline PortalSummary& WithAuthenticationType(const AuthenticationType& value) { SetAuthenticationType(value); return *this;}
 
@@ -123,12 +119,11 @@ namespace Model
      * portals are authenticated directly through your identity provider. You need to
      * call <code>CreateIdentityProvider</code> to integrate your identity provider
      * with your web portal. User and group access to your web portal is controlled
-     * through your identity provider.</p> <p> <code>IAM_Identity_Center</code> web
-     * portals are authenticated through AWS IAM Identity Center (successor to AWS
-     * Single Sign-On). They provide additional features, such as IdP-initiated
-     * authentication. Identity sources (including external identity provider
-     * integration), plus user and group access to your web portal, can be configured
-     * in the IAM Identity Center.</p>
+     * through your identity provider.</p> <p> <code>IAM Identity Center</code> web
+     * portals are authenticated through IAM Identity Center (successor to Single
+     * Sign-On). Identity sources (including external identity provider integration),
+     * plus user and group access to your web portal, can be configured in the IAM
+     * Identity Center.</p>
      */
     inline PortalSummary& WithAuthenticationType(AuthenticationType&& value) { SetAuthenticationType(std::move(value)); return *this;}
 
@@ -278,6 +273,37 @@ namespace Model
 
 
     /**
+     * <p>The type and resources of the underlying instance.</p>
+     */
+    inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>The type and resources of the underlying instance.</p>
+     */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
+
+    /**
+     * <p>The type and resources of the underlying instance.</p>
+     */
+    inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+
+    /**
+     * <p>The type and resources of the underlying instance.</p>
+     */
+    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
+
+    /**
+     * <p>The type and resources of the underlying instance.</p>
+     */
+    inline PortalSummary& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
+
+    /**
+     * <p>The type and resources of the underlying instance.</p>
+     */
+    inline PortalSummary& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+
+
+    /**
      * <p>The ARN of the IP access settings.</p>
      */
     inline const Aws::String& GetIpAccessSettingsArn() const{ return m_ipAccessSettingsArn; }
@@ -316,6 +342,27 @@ namespace Model
      * <p>The ARN of the IP access settings.</p>
      */
     inline PortalSummary& WithIpAccessSettingsArn(const char* value) { SetIpAccessSettingsArn(value); return *this;}
+
+
+    /**
+     * <p>The maximum number of concurrent sessions for the portal.</p>
+     */
+    inline int GetMaxConcurrentSessions() const{ return m_maxConcurrentSessions; }
+
+    /**
+     * <p>The maximum number of concurrent sessions for the portal.</p>
+     */
+    inline bool MaxConcurrentSessionsHasBeenSet() const { return m_maxConcurrentSessionsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of concurrent sessions for the portal.</p>
+     */
+    inline void SetMaxConcurrentSessions(int value) { m_maxConcurrentSessionsHasBeenSet = true; m_maxConcurrentSessions = value; }
+
+    /**
+     * <p>The maximum number of concurrent sessions for the portal.</p>
+     */
+    inline PortalSummary& WithMaxConcurrentSessions(int value) { SetMaxConcurrentSessions(value); return *this;}
 
 
     /**
@@ -658,8 +705,14 @@ namespace Model
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet = false;
 
+    InstanceType m_instanceType;
+    bool m_instanceTypeHasBeenSet = false;
+
     Aws::String m_ipAccessSettingsArn;
     bool m_ipAccessSettingsArnHasBeenSet = false;
+
+    int m_maxConcurrentSessions;
+    bool m_maxConcurrentSessionsHasBeenSet = false;
 
     Aws::String m_networkSettingsArn;
     bool m_networkSettingsArnHasBeenSet = false;

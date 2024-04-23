@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/bedrock-agent/BedrockAgentRequest.h>
+#include <aws/bedrock-agent/model/DataDeletionPolicy.h>
 #include <aws/bedrock-agent/model/DataSourceConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent/model/ServerSideEncryptionConfiguration.h>
@@ -33,6 +34,37 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "UpdateDataSource"; }
 
     AWS_BEDROCKAGENT_API Aws::String SerializePayload() const override;
+
+
+    /**
+     * <p>The data deletion policy of the updated data source.</p>
+     */
+    inline const DataDeletionPolicy& GetDataDeletionPolicy() const{ return m_dataDeletionPolicy; }
+
+    /**
+     * <p>The data deletion policy of the updated data source.</p>
+     */
+    inline bool DataDeletionPolicyHasBeenSet() const { return m_dataDeletionPolicyHasBeenSet; }
+
+    /**
+     * <p>The data deletion policy of the updated data source.</p>
+     */
+    inline void SetDataDeletionPolicy(const DataDeletionPolicy& value) { m_dataDeletionPolicyHasBeenSet = true; m_dataDeletionPolicy = value; }
+
+    /**
+     * <p>The data deletion policy of the updated data source.</p>
+     */
+    inline void SetDataDeletionPolicy(DataDeletionPolicy&& value) { m_dataDeletionPolicyHasBeenSet = true; m_dataDeletionPolicy = std::move(value); }
+
+    /**
+     * <p>The data deletion policy of the updated data source.</p>
+     */
+    inline UpdateDataSourceRequest& WithDataDeletionPolicy(const DataDeletionPolicy& value) { SetDataDeletionPolicy(value); return *this;}
+
+    /**
+     * <p>The data deletion policy of the updated data source.</p>
+     */
+    inline UpdateDataSourceRequest& WithDataDeletionPolicy(DataDeletionPolicy&& value) { SetDataDeletionPolicy(std::move(value)); return *this;}
 
 
     /**
@@ -300,6 +332,9 @@ namespace Model
     inline UpdateDataSourceRequest& WithVectorIngestionConfiguration(VectorIngestionConfiguration&& value) { SetVectorIngestionConfiguration(std::move(value)); return *this;}
 
   private:
+
+    DataDeletionPolicy m_dataDeletionPolicy;
+    bool m_dataDeletionPolicyHasBeenSet = false;
 
     DataSourceConfiguration m_dataSourceConfiguration;
     bool m_dataSourceConfigurationHasBeenSet = false;

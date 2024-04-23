@@ -104,7 +104,11 @@ namespace Model
      * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
      * </li> </ul> </li> <li> <p>For SAML providers:</p> <ul> <li> <p>
      * <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li> <li> <p>
-     * <code>IDPSignout</code> <i>optional</i> </p> </li> </ul> </li> </ul>
+     * <code>IDPSignout</code> (boolean) <i>optional</i> </p> </li> <li> <p>
+     * <code>IDPInit</code> (boolean) <i>optional</i> </p> </li> <li> <p>
+     * <code>RequestSigningAlgorithm</code> (string) <i>optional</i> - Only accepts
+     * <code>rsa-sha256</code> </p> </li> <li> <p> <code>EncryptedResponses</code>
+     * (boolean) <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetIdentityProviderDetails() const{ return m_identityProviderDetails; }
 
@@ -132,7 +136,11 @@ namespace Model
      * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
      * </li> </ul> </li> <li> <p>For SAML providers:</p> <ul> <li> <p>
      * <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li> <li> <p>
-     * <code>IDPSignout</code> <i>optional</i> </p> </li> </ul> </li> </ul>
+     * <code>IDPSignout</code> (boolean) <i>optional</i> </p> </li> <li> <p>
+     * <code>IDPInit</code> (boolean) <i>optional</i> </p> </li> <li> <p>
+     * <code>RequestSigningAlgorithm</code> (string) <i>optional</i> - Only accepts
+     * <code>rsa-sha256</code> </p> </li> <li> <p> <code>EncryptedResponses</code>
+     * (boolean) <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline bool IdentityProviderDetailsHasBeenSet() const { return m_identityProviderDetailsHasBeenSet; }
 
@@ -160,7 +168,11 @@ namespace Model
      * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
      * </li> </ul> </li> <li> <p>For SAML providers:</p> <ul> <li> <p>
      * <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li> <li> <p>
-     * <code>IDPSignout</code> <i>optional</i> </p> </li> </ul> </li> </ul>
+     * <code>IDPSignout</code> (boolean) <i>optional</i> </p> </li> <li> <p>
+     * <code>IDPInit</code> (boolean) <i>optional</i> </p> </li> <li> <p>
+     * <code>RequestSigningAlgorithm</code> (string) <i>optional</i> - Only accepts
+     * <code>rsa-sha256</code> </p> </li> <li> <p> <code>EncryptedResponses</code>
+     * (boolean) <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline void SetIdentityProviderDetails(const Aws::Map<Aws::String, Aws::String>& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails = value; }
 
@@ -188,7 +200,11 @@ namespace Model
      * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
      * </li> </ul> </li> <li> <p>For SAML providers:</p> <ul> <li> <p>
      * <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li> <li> <p>
-     * <code>IDPSignout</code> <i>optional</i> </p> </li> </ul> </li> </ul>
+     * <code>IDPSignout</code> (boolean) <i>optional</i> </p> </li> <li> <p>
+     * <code>IDPInit</code> (boolean) <i>optional</i> </p> </li> <li> <p>
+     * <code>RequestSigningAlgorithm</code> (string) <i>optional</i> - Only accepts
+     * <code>rsa-sha256</code> </p> </li> <li> <p> <code>EncryptedResponses</code>
+     * (boolean) <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline void SetIdentityProviderDetails(Aws::Map<Aws::String, Aws::String>&& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails = std::move(value); }
 
@@ -216,7 +232,11 @@ namespace Model
      * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
      * </li> </ul> </li> <li> <p>For SAML providers:</p> <ul> <li> <p>
      * <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li> <li> <p>
-     * <code>IDPSignout</code> <i>optional</i> </p> </li> </ul> </li> </ul>
+     * <code>IDPSignout</code> (boolean) <i>optional</i> </p> </li> <li> <p>
+     * <code>IDPInit</code> (boolean) <i>optional</i> </p> </li> <li> <p>
+     * <code>RequestSigningAlgorithm</code> (string) <i>optional</i> - Only accepts
+     * <code>rsa-sha256</code> </p> </li> <li> <p> <code>EncryptedResponses</code>
+     * (boolean) <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline IdentityProvider& WithIdentityProviderDetails(const Aws::Map<Aws::String, Aws::String>& value) { SetIdentityProviderDetails(value); return *this;}
 
@@ -244,7 +264,11 @@ namespace Model
      * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
      * </li> </ul> </li> <li> <p>For SAML providers:</p> <ul> <li> <p>
      * <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li> <li> <p>
-     * <code>IDPSignout</code> <i>optional</i> </p> </li> </ul> </li> </ul>
+     * <code>IDPSignout</code> (boolean) <i>optional</i> </p> </li> <li> <p>
+     * <code>IDPInit</code> (boolean) <i>optional</i> </p> </li> <li> <p>
+     * <code>RequestSigningAlgorithm</code> (string) <i>optional</i> - Only accepts
+     * <code>rsa-sha256</code> </p> </li> <li> <p> <code>EncryptedResponses</code>
+     * (boolean) <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline IdentityProvider& WithIdentityProviderDetails(Aws::Map<Aws::String, Aws::String>&& value) { SetIdentityProviderDetails(std::move(value)); return *this;}
 
@@ -272,7 +296,11 @@ namespace Model
      * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
      * </li> </ul> </li> <li> <p>For SAML providers:</p> <ul> <li> <p>
      * <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li> <li> <p>
-     * <code>IDPSignout</code> <i>optional</i> </p> </li> </ul> </li> </ul>
+     * <code>IDPSignout</code> (boolean) <i>optional</i> </p> </li> <li> <p>
+     * <code>IDPInit</code> (boolean) <i>optional</i> </p> </li> <li> <p>
+     * <code>RequestSigningAlgorithm</code> (string) <i>optional</i> - Only accepts
+     * <code>rsa-sha256</code> </p> </li> <li> <p> <code>EncryptedResponses</code>
+     * (boolean) <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline IdentityProvider& AddIdentityProviderDetails(const Aws::String& key, const Aws::String& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails.emplace(key, value); return *this; }
 
@@ -300,7 +328,11 @@ namespace Model
      * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
      * </li> </ul> </li> <li> <p>For SAML providers:</p> <ul> <li> <p>
      * <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li> <li> <p>
-     * <code>IDPSignout</code> <i>optional</i> </p> </li> </ul> </li> </ul>
+     * <code>IDPSignout</code> (boolean) <i>optional</i> </p> </li> <li> <p>
+     * <code>IDPInit</code> (boolean) <i>optional</i> </p> </li> <li> <p>
+     * <code>RequestSigningAlgorithm</code> (string) <i>optional</i> - Only accepts
+     * <code>rsa-sha256</code> </p> </li> <li> <p> <code>EncryptedResponses</code>
+     * (boolean) <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline IdentityProvider& AddIdentityProviderDetails(Aws::String&& key, const Aws::String& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails.emplace(std::move(key), value); return *this; }
 
@@ -328,7 +360,11 @@ namespace Model
      * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
      * </li> </ul> </li> <li> <p>For SAML providers:</p> <ul> <li> <p>
      * <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li> <li> <p>
-     * <code>IDPSignout</code> <i>optional</i> </p> </li> </ul> </li> </ul>
+     * <code>IDPSignout</code> (boolean) <i>optional</i> </p> </li> <li> <p>
+     * <code>IDPInit</code> (boolean) <i>optional</i> </p> </li> <li> <p>
+     * <code>RequestSigningAlgorithm</code> (string) <i>optional</i> - Only accepts
+     * <code>rsa-sha256</code> </p> </li> <li> <p> <code>EncryptedResponses</code>
+     * (boolean) <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline IdentityProvider& AddIdentityProviderDetails(const Aws::String& key, Aws::String&& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails.emplace(key, std::move(value)); return *this; }
 
@@ -356,7 +392,11 @@ namespace Model
      * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
      * </li> </ul> </li> <li> <p>For SAML providers:</p> <ul> <li> <p>
      * <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li> <li> <p>
-     * <code>IDPSignout</code> <i>optional</i> </p> </li> </ul> </li> </ul>
+     * <code>IDPSignout</code> (boolean) <i>optional</i> </p> </li> <li> <p>
+     * <code>IDPInit</code> (boolean) <i>optional</i> </p> </li> <li> <p>
+     * <code>RequestSigningAlgorithm</code> (string) <i>optional</i> - Only accepts
+     * <code>rsa-sha256</code> </p> </li> <li> <p> <code>EncryptedResponses</code>
+     * (boolean) <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline IdentityProvider& AddIdentityProviderDetails(Aws::String&& key, Aws::String&& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -384,7 +424,11 @@ namespace Model
      * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
      * </li> </ul> </li> <li> <p>For SAML providers:</p> <ul> <li> <p>
      * <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li> <li> <p>
-     * <code>IDPSignout</code> <i>optional</i> </p> </li> </ul> </li> </ul>
+     * <code>IDPSignout</code> (boolean) <i>optional</i> </p> </li> <li> <p>
+     * <code>IDPInit</code> (boolean) <i>optional</i> </p> </li> <li> <p>
+     * <code>RequestSigningAlgorithm</code> (string) <i>optional</i> - Only accepts
+     * <code>rsa-sha256</code> </p> </li> <li> <p> <code>EncryptedResponses</code>
+     * (boolean) <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline IdentityProvider& AddIdentityProviderDetails(const char* key, Aws::String&& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails.emplace(key, std::move(value)); return *this; }
 
@@ -412,7 +456,11 @@ namespace Model
      * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
      * </li> </ul> </li> <li> <p>For SAML providers:</p> <ul> <li> <p>
      * <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li> <li> <p>
-     * <code>IDPSignout</code> <i>optional</i> </p> </li> </ul> </li> </ul>
+     * <code>IDPSignout</code> (boolean) <i>optional</i> </p> </li> <li> <p>
+     * <code>IDPInit</code> (boolean) <i>optional</i> </p> </li> <li> <p>
+     * <code>RequestSigningAlgorithm</code> (string) <i>optional</i> - Only accepts
+     * <code>rsa-sha256</code> </p> </li> <li> <p> <code>EncryptedResponses</code>
+     * (boolean) <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline IdentityProvider& AddIdentityProviderDetails(Aws::String&& key, const char* value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails.emplace(std::move(key), value); return *this; }
 
@@ -440,7 +488,11 @@ namespace Model
      * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
      * </li> </ul> </li> <li> <p>For SAML providers:</p> <ul> <li> <p>
      * <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li> <li> <p>
-     * <code>IDPSignout</code> <i>optional</i> </p> </li> </ul> </li> </ul>
+     * <code>IDPSignout</code> (boolean) <i>optional</i> </p> </li> <li> <p>
+     * <code>IDPInit</code> (boolean) <i>optional</i> </p> </li> <li> <p>
+     * <code>RequestSigningAlgorithm</code> (string) <i>optional</i> - Only accepts
+     * <code>rsa-sha256</code> </p> </li> <li> <p> <code>EncryptedResponses</code>
+     * (boolean) <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline IdentityProvider& AddIdentityProviderDetails(const char* key, const char* value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails.emplace(key, value); return *this; }
 
