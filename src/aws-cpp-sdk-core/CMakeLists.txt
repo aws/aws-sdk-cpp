@@ -534,6 +534,13 @@ if(MSVC)
 
 endif(MSVC)
 
+check_cxx_source_compiles("
+        #include <stdlib.h>
+        int main() {
+            void* ptr = aligned_alloc(24, 64);
+            return 0;
+        }" AWS_HAS_ALIGNED_ALLOC)
+
 add_library(${PROJECT_NAME} ${AWS_NATIVE_SDK_SRC})
 add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
@@ -559,6 +566,10 @@ endif()
 
 if (CURL_HAS_TLS_PROXY)
     target_compile_definitions(${PROJECT_NAME} PRIVATE "CURL_HAS_TLS_PROXY")
+endif()
+
+if (AWS_HAS_ALIGNED_ALLOC)
+    target_compile_definitions(${PROJECT_NAME} PRIVATE "AWS_HAS_ALIGNED_ALLOC")
 endif()
 
 set(Core_INCLUDES "${CMAKE_CURRENT_SOURCE_DIR}/include/")
