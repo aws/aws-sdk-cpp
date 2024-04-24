@@ -130,56 +130,72 @@ namespace Model
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when you want the
      * maintenance window to become active. <code>StartDate</code> allows you to delay
-     * activation of the maintenance window until the specified future date.</p>
+     * activation of the maintenance window until the specified future date.</p> 
+     * <p>When using a rate schedule, if you provide a start date that occurs in the
+     * past, the current date and time are used as the start date. </p> 
      */
     inline const Aws::String& GetStartDate() const{ return m_startDate; }
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when you want the
      * maintenance window to become active. <code>StartDate</code> allows you to delay
-     * activation of the maintenance window until the specified future date.</p>
+     * activation of the maintenance window until the specified future date.</p> 
+     * <p>When using a rate schedule, if you provide a start date that occurs in the
+     * past, the current date and time are used as the start date. </p> 
      */
     inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when you want the
      * maintenance window to become active. <code>StartDate</code> allows you to delay
-     * activation of the maintenance window until the specified future date.</p>
+     * activation of the maintenance window until the specified future date.</p> 
+     * <p>When using a rate schedule, if you provide a start date that occurs in the
+     * past, the current date and time are used as the start date. </p> 
      */
     inline void SetStartDate(const Aws::String& value) { m_startDateHasBeenSet = true; m_startDate = value; }
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when you want the
      * maintenance window to become active. <code>StartDate</code> allows you to delay
-     * activation of the maintenance window until the specified future date.</p>
+     * activation of the maintenance window until the specified future date.</p> 
+     * <p>When using a rate schedule, if you provide a start date that occurs in the
+     * past, the current date and time are used as the start date. </p> 
      */
     inline void SetStartDate(Aws::String&& value) { m_startDateHasBeenSet = true; m_startDate = std::move(value); }
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when you want the
      * maintenance window to become active. <code>StartDate</code> allows you to delay
-     * activation of the maintenance window until the specified future date.</p>
+     * activation of the maintenance window until the specified future date.</p> 
+     * <p>When using a rate schedule, if you provide a start date that occurs in the
+     * past, the current date and time are used as the start date. </p> 
      */
     inline void SetStartDate(const char* value) { m_startDateHasBeenSet = true; m_startDate.assign(value); }
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when you want the
      * maintenance window to become active. <code>StartDate</code> allows you to delay
-     * activation of the maintenance window until the specified future date.</p>
+     * activation of the maintenance window until the specified future date.</p> 
+     * <p>When using a rate schedule, if you provide a start date that occurs in the
+     * past, the current date and time are used as the start date. </p> 
      */
     inline CreateMaintenanceWindowRequest& WithStartDate(const Aws::String& value) { SetStartDate(value); return *this;}
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when you want the
      * maintenance window to become active. <code>StartDate</code> allows you to delay
-     * activation of the maintenance window until the specified future date.</p>
+     * activation of the maintenance window until the specified future date.</p> 
+     * <p>When using a rate schedule, if you provide a start date that occurs in the
+     * past, the current date and time are used as the start date. </p> 
      */
     inline CreateMaintenanceWindowRequest& WithStartDate(Aws::String&& value) { SetStartDate(std::move(value)); return *this;}
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when you want the
      * maintenance window to become active. <code>StartDate</code> allows you to delay
-     * activation of the maintenance window until the specified future date.</p>
+     * activation of the maintenance window until the specified future date.</p> 
+     * <p>When using a rate schedule, if you provide a start date that occurs in the
+     * past, the current date and time are used as the start date. </p> 
      */
     inline CreateMaintenanceWindowRequest& WithStartDate(const char* value) { SetStartDate(value); return *this;}
 

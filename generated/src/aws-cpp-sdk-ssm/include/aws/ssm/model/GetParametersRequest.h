@@ -40,8 +40,9 @@ namespace Model
      * query. For parameters shared with you from another account, you must use the
      * full ARNs.</p> <p>To query by parameter label, use <code>"Name":
      * "name:label"</code>. To query by parameter version, use <code>"Name":
-     * "name:version"</code>.</p> <p>For more information about shared parameters, see
-     * <a
+     * "name:version"</code>.</p>  <p>The results for <code>GetParameters</code>
+     * requests are listed in alphabetical order in query responses.</p>  <p>For
+     * information about shared parameters, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
      * with shared parameters</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
@@ -53,8 +54,9 @@ namespace Model
      * query. For parameters shared with you from another account, you must use the
      * full ARNs.</p> <p>To query by parameter label, use <code>"Name":
      * "name:label"</code>. To query by parameter version, use <code>"Name":
-     * "name:version"</code>.</p> <p>For more information about shared parameters, see
-     * <a
+     * "name:version"</code>.</p>  <p>The results for <code>GetParameters</code>
+     * requests are listed in alphabetical order in query responses.</p>  <p>For
+     * information about shared parameters, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
      * with shared parameters</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
@@ -66,8 +68,9 @@ namespace Model
      * query. For parameters shared with you from another account, you must use the
      * full ARNs.</p> <p>To query by parameter label, use <code>"Name":
      * "name:label"</code>. To query by parameter version, use <code>"Name":
-     * "name:version"</code>.</p> <p>For more information about shared parameters, see
-     * <a
+     * "name:version"</code>.</p>  <p>The results for <code>GetParameters</code>
+     * requests are listed in alphabetical order in query responses.</p>  <p>For
+     * information about shared parameters, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
      * with shared parameters</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
@@ -79,8 +82,9 @@ namespace Model
      * query. For parameters shared with you from another account, you must use the
      * full ARNs.</p> <p>To query by parameter label, use <code>"Name":
      * "name:label"</code>. To query by parameter version, use <code>"Name":
-     * "name:version"</code>.</p> <p>For more information about shared parameters, see
-     * <a
+     * "name:version"</code>.</p>  <p>The results for <code>GetParameters</code>
+     * requests are listed in alphabetical order in query responses.</p>  <p>For
+     * information about shared parameters, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
      * with shared parameters</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
@@ -92,8 +96,9 @@ namespace Model
      * query. For parameters shared with you from another account, you must use the
      * full ARNs.</p> <p>To query by parameter label, use <code>"Name":
      * "name:label"</code>. To query by parameter version, use <code>"Name":
-     * "name:version"</code>.</p> <p>For more information about shared parameters, see
-     * <a
+     * "name:version"</code>.</p>  <p>The results for <code>GetParameters</code>
+     * requests are listed in alphabetical order in query responses.</p>  <p>For
+     * information about shared parameters, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
      * with shared parameters</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
@@ -105,8 +110,9 @@ namespace Model
      * query. For parameters shared with you from another account, you must use the
      * full ARNs.</p> <p>To query by parameter label, use <code>"Name":
      * "name:label"</code>. To query by parameter version, use <code>"Name":
-     * "name:version"</code>.</p> <p>For more information about shared parameters, see
-     * <a
+     * "name:version"</code>.</p>  <p>The results for <code>GetParameters</code>
+     * requests are listed in alphabetical order in query responses.</p>  <p>For
+     * information about shared parameters, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
      * with shared parameters</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
@@ -118,8 +124,9 @@ namespace Model
      * query. For parameters shared with you from another account, you must use the
      * full ARNs.</p> <p>To query by parameter label, use <code>"Name":
      * "name:label"</code>. To query by parameter version, use <code>"Name":
-     * "name:version"</code>.</p> <p>For more information about shared parameters, see
-     * <a
+     * "name:version"</code>.</p>  <p>The results for <code>GetParameters</code>
+     * requests are listed in alphabetical order in query responses.</p>  <p>For
+     * information about shared parameters, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
      * with shared parameters</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
@@ -131,8 +138,9 @@ namespace Model
      * query. For parameters shared with you from another account, you must use the
      * full ARNs.</p> <p>To query by parameter label, use <code>"Name":
      * "name:label"</code>. To query by parameter version, use <code>"Name":
-     * "name:version"</code>.</p> <p>For more information about shared parameters, see
-     * <a
+     * "name:version"</code>.</p>  <p>The results for <code>GetParameters</code>
+     * requests are listed in alphabetical order in query responses.</p>  <p>For
+     * information about shared parameters, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
      * with shared parameters</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
@@ -144,8 +152,9 @@ namespace Model
      * query. For parameters shared with you from another account, you must use the
      * full ARNs.</p> <p>To query by parameter label, use <code>"Name":
      * "name:label"</code>. To query by parameter version, use <code>"Name":
-     * "name:version"</code>.</p> <p>For more information about shared parameters, see
-     * <a
+     * "name:version"</code>.</p>  <p>The results for <code>GetParameters</code>
+     * requests are listed in alphabetical order in query responses.</p>  <p>For
+     * information about shared parameters, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
      * with shared parameters</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>

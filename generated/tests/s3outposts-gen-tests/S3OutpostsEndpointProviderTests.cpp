@@ -20,8 +20,6 @@ using ExpEpProps = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::Vector<EpProp
 using ExpEpAuthScheme = Aws::Vector<EpProp>;
 using ExpEpHeaders = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::String>>;
 
-class S3OutpostsEndpointProviderTests : public ::testing::TestWithParam<size_t> {};
-
 struct S3OutpostsEndpointProviderEndpointTestCase
 {
     using OperationParamsFromTest = EndpointParameters;
@@ -55,7 +53,32 @@ struct S3OutpostsEndpointProviderEndpointTestCase
     // Aws::Vector<OperationInput> operationInput;
 };
 
-static const Aws::Vector<S3OutpostsEndpointProviderEndpointTestCase> TEST_CASES = {
+class S3OutpostsEndpointProviderTests : public ::testing::TestWithParam<size_t>
+{
+public:
+    static const size_t TEST_CASES_SZ;
+protected:
+    static Aws::Vector<S3OutpostsEndpointProviderEndpointTestCase> getTestCase();
+    static Aws::UniquePtrSafeDeleted<Aws::Vector<S3OutpostsEndpointProviderEndpointTestCase>> TEST_CASES;
+    static void SetUpTestSuite()
+    {
+        TEST_CASES = Aws::MakeUniqueSafeDeleted<Aws::Vector<S3OutpostsEndpointProviderEndpointTestCase>>(ALLOCATION_TAG, getTestCase());
+        ASSERT_TRUE(TEST_CASES) << "Failed to allocate TEST_CASES table";
+        assert(TEST_CASES->size() == TEST_CASES_SZ);
+    }
+
+    static void TearDownTestSuite()
+    {
+        TEST_CASES.reset();
+    }
+};
+
+Aws::UniquePtrSafeDeleted<Aws::Vector<S3OutpostsEndpointProviderEndpointTestCase>> S3OutpostsEndpointProviderTests::TEST_CASES;
+const size_t S3OutpostsEndpointProviderTests::TEST_CASES_SZ = 45;
+
+Aws::Vector<S3OutpostsEndpointProviderEndpointTestCase> S3OutpostsEndpointProviderTests::getTestCase() {
+
+  Aws::Vector<S3OutpostsEndpointProviderEndpointTestCase> test_cases = {
   /*TEST CASE 0*/
   {"For region af-south-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "af-south-1"), EpParam("UseDualStack", false)}, // params
@@ -440,7 +463,9 @@ static const Aws::Vector<S3OutpostsEndpointProviderEndpointTestCase> TEST_CASES 
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Missing Region"} // expect
   }
-};
+  };
+  return test_cases;
+}
 
 Aws::String RulesToSdkSignerName(const Aws::String& rulesSignerName)
 {
@@ -535,9 +560,10 @@ void ValidateOutcome(const ResolveEndpointOutcome& outcome, const S3OutpostsEndp
 TEST_P(S3OutpostsEndpointProviderTests, EndpointProviderTest)
 {
     const size_t TEST_CASE_IDX = GetParam();
-    ASSERT_LT(TEST_CASE_IDX, TEST_CASES.size()) << "Something is wrong with the test fixture itself.";
-    const S3OutpostsEndpointProviderEndpointTestCase& TEST_CASE = TEST_CASES.at(TEST_CASE_IDX);
+    ASSERT_LT(TEST_CASE_IDX, TEST_CASES->size()) << "Something is wrong with the test fixture itself.";
+    const S3OutpostsEndpointProviderEndpointTestCase& TEST_CASE = TEST_CASES->at(TEST_CASE_IDX);
     SCOPED_TRACE(Aws::String("\nTEST CASE # ") + Aws::Utils::StringUtils::to_string(TEST_CASE_IDX) + ": " + TEST_CASE.documentation);
+    SCOPED_TRACE(Aws::String("\n--gtest_filter=EndpointTestsFromModel/S3OutpostsEndpointProviderTests.EndpointProviderTest/") + Aws::Utils::StringUtils::to_string(TEST_CASE_IDX));
 
     std::shared_ptr<S3OutpostsEndpointProvider> endpointProvider = Aws::MakeShared<S3OutpostsEndpointProvider>(ALLOCATION_TAG);
     ASSERT_TRUE(endpointProvider) << "Failed to allocate/initialize S3OutpostsEndpointProvider";
@@ -579,4 +605,4 @@ TEST_P(S3OutpostsEndpointProviderTests, EndpointProviderTest)
 
 INSTANTIATE_TEST_SUITE_P(EndpointTestsFromModel,
                          S3OutpostsEndpointProviderTests,
-                         ::testing::Range((size_t) 0u, TEST_CASES.size()));
+                         ::testing::Range((size_t) 0u, S3OutpostsEndpointProviderTests::TEST_CASES_SZ));

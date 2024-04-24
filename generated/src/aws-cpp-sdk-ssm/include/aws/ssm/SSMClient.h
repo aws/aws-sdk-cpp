@@ -1425,6 +1425,32 @@ namespace SSM
         }
 
         /**
+         * <p>An API operation used by the Systems Manager console to display information
+         * about Systems Manager managed nodes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceProperties">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeInstancePropertiesOutcome DescribeInstanceProperties(const Model::DescribeInstancePropertiesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeInstanceProperties that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeInstancePropertiesRequestT = Model::DescribeInstancePropertiesRequest>
+        Model::DescribeInstancePropertiesOutcomeCallable DescribeInstancePropertiesCallable(const DescribeInstancePropertiesRequestT& request) const
+        {
+            return SubmitCallable(&SSMClient::DescribeInstanceProperties, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeInstanceProperties that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeInstancePropertiesRequestT = Model::DescribeInstancePropertiesRequest>
+        void DescribeInstancePropertiesAsync(const DescribeInstancePropertiesRequestT& request, const DescribeInstancePropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSMClient::DescribeInstanceProperties, request, handler, context);
+        }
+
+        /**
          * <p>Describes a specific delete inventory operation.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInventoryDeletions">AWS

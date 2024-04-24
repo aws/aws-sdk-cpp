@@ -20,8 +20,6 @@ using ExpEpProps = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::Vector<EpProp
 using ExpEpAuthScheme = Aws::Vector<EpProp>;
 using ExpEpHeaders = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::String>>;
 
-class FMSEndpointProviderTests : public ::testing::TestWithParam<size_t> {};
-
 struct FMSEndpointProviderEndpointTestCase
 {
     using OperationParamsFromTest = EndpointParameters;
@@ -55,7 +53,32 @@ struct FMSEndpointProviderEndpointTestCase
     // Aws::Vector<OperationInput> operationInput;
 };
 
-static const Aws::Vector<FMSEndpointProviderEndpointTestCase> TEST_CASES = {
+class FMSEndpointProviderTests : public ::testing::TestWithParam<size_t>
+{
+public:
+    static const size_t TEST_CASES_SZ;
+protected:
+    static Aws::Vector<FMSEndpointProviderEndpointTestCase> getTestCase();
+    static Aws::UniquePtrSafeDeleted<Aws::Vector<FMSEndpointProviderEndpointTestCase>> TEST_CASES;
+    static void SetUpTestSuite()
+    {
+        TEST_CASES = Aws::MakeUniqueSafeDeleted<Aws::Vector<FMSEndpointProviderEndpointTestCase>>(ALLOCATION_TAG, getTestCase());
+        ASSERT_TRUE(TEST_CASES) << "Failed to allocate TEST_CASES table";
+        assert(TEST_CASES->size() == TEST_CASES_SZ);
+    }
+
+    static void TearDownTestSuite()
+    {
+        TEST_CASES.reset();
+    }
+};
+
+Aws::UniquePtrSafeDeleted<Aws::Vector<FMSEndpointProviderEndpointTestCase>> FMSEndpointProviderTests::TEST_CASES;
+const size_t FMSEndpointProviderTests::TEST_CASES_SZ = 66;
+
+Aws::Vector<FMSEndpointProviderEndpointTestCase> FMSEndpointProviderTests::getTestCase() {
+
+  Aws::Vector<FMSEndpointProviderEndpointTestCase> test_cases = {
   /*TEST CASE 0*/
   {"For region af-south-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "af-south-1"), EpParam("UseDualStack", false)}, // params
@@ -629,7 +652,9 @@ static const Aws::Vector<FMSEndpointProviderEndpointTestCase> TEST_CASES = {
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Missing Region"} // expect
   }
-};
+  };
+  return test_cases;
+}
 
 Aws::String RulesToSdkSignerName(const Aws::String& rulesSignerName)
 {
@@ -724,9 +749,10 @@ void ValidateOutcome(const ResolveEndpointOutcome& outcome, const FMSEndpointPro
 TEST_P(FMSEndpointProviderTests, EndpointProviderTest)
 {
     const size_t TEST_CASE_IDX = GetParam();
-    ASSERT_LT(TEST_CASE_IDX, TEST_CASES.size()) << "Something is wrong with the test fixture itself.";
-    const FMSEndpointProviderEndpointTestCase& TEST_CASE = TEST_CASES.at(TEST_CASE_IDX);
+    ASSERT_LT(TEST_CASE_IDX, TEST_CASES->size()) << "Something is wrong with the test fixture itself.";
+    const FMSEndpointProviderEndpointTestCase& TEST_CASE = TEST_CASES->at(TEST_CASE_IDX);
     SCOPED_TRACE(Aws::String("\nTEST CASE # ") + Aws::Utils::StringUtils::to_string(TEST_CASE_IDX) + ": " + TEST_CASE.documentation);
+    SCOPED_TRACE(Aws::String("\n--gtest_filter=EndpointTestsFromModel/FMSEndpointProviderTests.EndpointProviderTest/") + Aws::Utils::StringUtils::to_string(TEST_CASE_IDX));
 
     std::shared_ptr<FMSEndpointProvider> endpointProvider = Aws::MakeShared<FMSEndpointProvider>(ALLOCATION_TAG);
     ASSERT_TRUE(endpointProvider) << "Failed to allocate/initialize FMSEndpointProvider";
@@ -768,4 +794,4 @@ TEST_P(FMSEndpointProviderTests, EndpointProviderTest)
 
 INSTANTIATE_TEST_SUITE_P(EndpointTestsFromModel,
                          FMSEndpointProviderTests,
-                         ::testing::Range((size_t) 0u, TEST_CASES.size()));
+                         ::testing::Range((size_t) 0u, FMSEndpointProviderTests::TEST_CASES_SZ));

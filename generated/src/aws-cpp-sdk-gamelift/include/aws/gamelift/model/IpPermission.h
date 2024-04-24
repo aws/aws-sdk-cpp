@@ -26,11 +26,12 @@ namespace Model
 
   /**
    * <p>A range of IP addresses and port settings that allow inbound traffic to
-   * connect to server processes on an instance in a fleet. New game sessions are
-   * assigned an IP address/port number combination, which must fall into the fleet's
-   * allowed ranges. Fleets with custom game builds must have permissions explicitly
-   * set. For Realtime Servers fleets, Amazon GameLift automatically opens two port
-   * ranges, one for TCP messaging and one for UDP.</p><p><h3>See Also:</h3>   <a
+   * connect to processes on an instance in a fleet. Processes are assigned an IP
+   * address/port number combination, which must fall into the fleet's allowed
+   * ranges. For container fleets, the port settings must use the same port numbers
+   * as the fleet's connection ports. </p> <p>For Realtime Servers fleets, Amazon
+   * GameLift automatically opens two port ranges, one for TCP messaging and one for
+   * UDP.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/IpPermission">AWS
    * API Reference</a></p>
    */

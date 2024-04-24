@@ -20,8 +20,6 @@ using ExpEpProps = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::Vector<EpProp
 using ExpEpAuthScheme = Aws::Vector<EpProp>;
 using ExpEpHeaders = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::String>>;
 
-class KinesisEndpointProviderTests : public ::testing::TestWithParam<size_t> {};
-
 struct KinesisEndpointProviderEndpointTestCase
 {
     using OperationParamsFromTest = EndpointParameters;
@@ -55,7 +53,32 @@ struct KinesisEndpointProviderEndpointTestCase
     // Aws::Vector<OperationInput> operationInput;
 };
 
-static const Aws::Vector<KinesisEndpointProviderEndpointTestCase> TEST_CASES = {
+class KinesisEndpointProviderTests : public ::testing::TestWithParam<size_t>
+{
+public:
+    static const size_t TEST_CASES_SZ;
+protected:
+    static Aws::Vector<KinesisEndpointProviderEndpointTestCase> getTestCase();
+    static Aws::UniquePtrSafeDeleted<Aws::Vector<KinesisEndpointProviderEndpointTestCase>> TEST_CASES;
+    static void SetUpTestSuite()
+    {
+        TEST_CASES = Aws::MakeUniqueSafeDeleted<Aws::Vector<KinesisEndpointProviderEndpointTestCase>>(ALLOCATION_TAG, getTestCase());
+        ASSERT_TRUE(TEST_CASES) << "Failed to allocate TEST_CASES table";
+        assert(TEST_CASES->size() == TEST_CASES_SZ);
+    }
+
+    static void TearDownTestSuite()
+    {
+        TEST_CASES.reset();
+    }
+};
+
+Aws::UniquePtrSafeDeleted<Aws::Vector<KinesisEndpointProviderEndpointTestCase>> KinesisEndpointProviderTests::TEST_CASES;
+const size_t KinesisEndpointProviderTests::TEST_CASES_SZ = 162;
+
+Aws::Vector<KinesisEndpointProviderEndpointTestCase> KinesisEndpointProviderTests::getTestCase() {
+
+  Aws::Vector<KinesisEndpointProviderEndpointTestCase> test_cases = {
   /*TEST CASE 0*/
   {"For region af-south-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "af-south-1"), EpParam("UseDualStack", false)}, // params
@@ -1456,7 +1479,9 @@ static const Aws::Vector<KinesisEndpointProviderEndpointTestCase> TEST_CASES = {
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   }
-};
+  };
+  return test_cases;
+}
 
 Aws::String RulesToSdkSignerName(const Aws::String& rulesSignerName)
 {
@@ -1551,9 +1576,10 @@ void ValidateOutcome(const ResolveEndpointOutcome& outcome, const KinesisEndpoin
 TEST_P(KinesisEndpointProviderTests, EndpointProviderTest)
 {
     const size_t TEST_CASE_IDX = GetParam();
-    ASSERT_LT(TEST_CASE_IDX, TEST_CASES.size()) << "Something is wrong with the test fixture itself.";
-    const KinesisEndpointProviderEndpointTestCase& TEST_CASE = TEST_CASES.at(TEST_CASE_IDX);
+    ASSERT_LT(TEST_CASE_IDX, TEST_CASES->size()) << "Something is wrong with the test fixture itself.";
+    const KinesisEndpointProviderEndpointTestCase& TEST_CASE = TEST_CASES->at(TEST_CASE_IDX);
     SCOPED_TRACE(Aws::String("\nTEST CASE # ") + Aws::Utils::StringUtils::to_string(TEST_CASE_IDX) + ": " + TEST_CASE.documentation);
+    SCOPED_TRACE(Aws::String("\n--gtest_filter=EndpointTestsFromModel/KinesisEndpointProviderTests.EndpointProviderTest/") + Aws::Utils::StringUtils::to_string(TEST_CASE_IDX));
 
     std::shared_ptr<KinesisEndpointProvider> endpointProvider = Aws::MakeShared<KinesisEndpointProvider>(ALLOCATION_TAG);
     ASSERT_TRUE(endpointProvider) << "Failed to allocate/initialize KinesisEndpointProvider";
@@ -1595,4 +1621,4 @@ TEST_P(KinesisEndpointProviderTests, EndpointProviderTest)
 
 INSTANTIATE_TEST_SUITE_P(EndpointTestsFromModel,
                          KinesisEndpointProviderTests,
-                         ::testing::Range((size_t) 0u, TEST_CASES.size()));
+                         ::testing::Range((size_t) 0u, KinesisEndpointProviderTests::TEST_CASES_SZ));

@@ -76,42 +76,66 @@ namespace Model
 
 
     /**
-     * <p>The name of a location to retrieve compute resources for.</p>
+     * <p>The name of a location to retrieve compute resources for. For an Amazon
+     * GameLift Anywhere fleet, use a custom location. For a multi-location EC2 or
+     * container fleet, provide a Amazon Web Services Region or Local Zone code (for
+     * example: <code>us-west-2</code> or <code>us-west-2-lax-1</code>).</p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
     /**
-     * <p>The name of a location to retrieve compute resources for.</p>
+     * <p>The name of a location to retrieve compute resources for. For an Amazon
+     * GameLift Anywhere fleet, use a custom location. For a multi-location EC2 or
+     * container fleet, provide a Amazon Web Services Region or Local Zone code (for
+     * example: <code>us-west-2</code> or <code>us-west-2-lax-1</code>).</p>
      */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
-     * <p>The name of a location to retrieve compute resources for.</p>
+     * <p>The name of a location to retrieve compute resources for. For an Amazon
+     * GameLift Anywhere fleet, use a custom location. For a multi-location EC2 or
+     * container fleet, provide a Amazon Web Services Region or Local Zone code (for
+     * example: <code>us-west-2</code> or <code>us-west-2-lax-1</code>).</p>
      */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
-     * <p>The name of a location to retrieve compute resources for.</p>
+     * <p>The name of a location to retrieve compute resources for. For an Amazon
+     * GameLift Anywhere fleet, use a custom location. For a multi-location EC2 or
+     * container fleet, provide a Amazon Web Services Region or Local Zone code (for
+     * example: <code>us-west-2</code> or <code>us-west-2-lax-1</code>).</p>
      */
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
-     * <p>The name of a location to retrieve compute resources for.</p>
+     * <p>The name of a location to retrieve compute resources for. For an Amazon
+     * GameLift Anywhere fleet, use a custom location. For a multi-location EC2 or
+     * container fleet, provide a Amazon Web Services Region or Local Zone code (for
+     * example: <code>us-west-2</code> or <code>us-west-2-lax-1</code>).</p>
      */
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
 
     /**
-     * <p>The name of a location to retrieve compute resources for.</p>
+     * <p>The name of a location to retrieve compute resources for. For an Amazon
+     * GameLift Anywhere fleet, use a custom location. For a multi-location EC2 or
+     * container fleet, provide a Amazon Web Services Region or Local Zone code (for
+     * example: <code>us-west-2</code> or <code>us-west-2-lax-1</code>).</p>
      */
     inline ListComputeRequest& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     /**
-     * <p>The name of a location to retrieve compute resources for.</p>
+     * <p>The name of a location to retrieve compute resources for. For an Amazon
+     * GameLift Anywhere fleet, use a custom location. For a multi-location EC2 or
+     * container fleet, provide a Amazon Web Services Region or Local Zone code (for
+     * example: <code>us-west-2</code> or <code>us-west-2-lax-1</code>).</p>
      */
     inline ListComputeRequest& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
-     * <p>The name of a location to retrieve compute resources for.</p>
+     * <p>The name of a location to retrieve compute resources for. For an Amazon
+     * GameLift Anywhere fleet, use a custom location. For a multi-location EC2 or
+     * container fleet, provide a Amazon Web Services Region or Local Zone code (for
+     * example: <code>us-west-2</code> or <code>us-west-2-lax-1</code>).</p>
      */
     inline ListComputeRequest& WithLocation(const char* value) { SetLocation(value); return *this;}
 

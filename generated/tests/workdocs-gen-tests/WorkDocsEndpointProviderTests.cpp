@@ -20,8 +20,6 @@ using ExpEpProps = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::Vector<EpProp
 using ExpEpAuthScheme = Aws::Vector<EpProp>;
 using ExpEpHeaders = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::String>>;
 
-class WorkDocsEndpointProviderTests : public ::testing::TestWithParam<size_t> {};
-
 struct WorkDocsEndpointProviderEndpointTestCase
 {
     using OperationParamsFromTest = EndpointParameters;
@@ -55,7 +53,32 @@ struct WorkDocsEndpointProviderEndpointTestCase
     // Aws::Vector<OperationInput> operationInput;
 };
 
-static const Aws::Vector<WorkDocsEndpointProviderEndpointTestCase> TEST_CASES = {
+class WorkDocsEndpointProviderTests : public ::testing::TestWithParam<size_t>
+{
+public:
+    static const size_t TEST_CASES_SZ;
+protected:
+    static Aws::Vector<WorkDocsEndpointProviderEndpointTestCase> getTestCase();
+    static Aws::UniquePtrSafeDeleted<Aws::Vector<WorkDocsEndpointProviderEndpointTestCase>> TEST_CASES;
+    static void SetUpTestSuite()
+    {
+        TEST_CASES = Aws::MakeUniqueSafeDeleted<Aws::Vector<WorkDocsEndpointProviderEndpointTestCase>>(ALLOCATION_TAG, getTestCase());
+        ASSERT_TRUE(TEST_CASES) << "Failed to allocate TEST_CASES table";
+        assert(TEST_CASES->size() == TEST_CASES_SZ);
+    }
+
+    static void TearDownTestSuite()
+    {
+        TEST_CASES.reset();
+    }
+};
+
+Aws::UniquePtrSafeDeleted<Aws::Vector<WorkDocsEndpointProviderEndpointTestCase>> WorkDocsEndpointProviderTests::TEST_CASES;
+const size_t WorkDocsEndpointProviderTests::TEST_CASES_SZ = 31;
+
+Aws::Vector<WorkDocsEndpointProviderEndpointTestCase> WorkDocsEndpointProviderTests::getTestCase() {
+
+  Aws::Vector<WorkDocsEndpointProviderEndpointTestCase> test_cases = {
   /*TEST CASE 0*/
   {"For region ap-northeast-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "ap-northeast-1"), EpParam("UseDualStack", false)}, // params
@@ -314,7 +337,9 @@ static const Aws::Vector<WorkDocsEndpointProviderEndpointTestCase> TEST_CASES = 
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Missing Region"} // expect
   }
-};
+  };
+  return test_cases;
+}
 
 Aws::String RulesToSdkSignerName(const Aws::String& rulesSignerName)
 {
@@ -409,9 +434,10 @@ void ValidateOutcome(const ResolveEndpointOutcome& outcome, const WorkDocsEndpoi
 TEST_P(WorkDocsEndpointProviderTests, EndpointProviderTest)
 {
     const size_t TEST_CASE_IDX = GetParam();
-    ASSERT_LT(TEST_CASE_IDX, TEST_CASES.size()) << "Something is wrong with the test fixture itself.";
-    const WorkDocsEndpointProviderEndpointTestCase& TEST_CASE = TEST_CASES.at(TEST_CASE_IDX);
+    ASSERT_LT(TEST_CASE_IDX, TEST_CASES->size()) << "Something is wrong with the test fixture itself.";
+    const WorkDocsEndpointProviderEndpointTestCase& TEST_CASE = TEST_CASES->at(TEST_CASE_IDX);
     SCOPED_TRACE(Aws::String("\nTEST CASE # ") + Aws::Utils::StringUtils::to_string(TEST_CASE_IDX) + ": " + TEST_CASE.documentation);
+    SCOPED_TRACE(Aws::String("\n--gtest_filter=EndpointTestsFromModel/WorkDocsEndpointProviderTests.EndpointProviderTest/") + Aws::Utils::StringUtils::to_string(TEST_CASE_IDX));
 
     std::shared_ptr<WorkDocsEndpointProvider> endpointProvider = Aws::MakeShared<WorkDocsEndpointProvider>(ALLOCATION_TAG);
     ASSERT_TRUE(endpointProvider) << "Failed to allocate/initialize WorkDocsEndpointProvider";
@@ -453,4 +479,4 @@ TEST_P(WorkDocsEndpointProviderTests, EndpointProviderTest)
 
 INSTANTIATE_TEST_SUITE_P(EndpointTestsFromModel,
                          WorkDocsEndpointProviderTests,
-                         ::testing::Range((size_t) 0u, TEST_CASES.size()));
+                         ::testing::Range((size_t) 0u, WorkDocsEndpointProviderTests::TEST_CASES_SZ));

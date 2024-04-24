@@ -328,6 +328,47 @@ namespace Model
      */
     inline VirtualCluster& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The ID of the security configuration.</p>
+     */
+    inline const Aws::String& GetSecurityConfigurationId() const{ return m_securityConfigurationId; }
+
+    /**
+     * <p>The ID of the security configuration.</p>
+     */
+    inline bool SecurityConfigurationIdHasBeenSet() const { return m_securityConfigurationIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the security configuration.</p>
+     */
+    inline void SetSecurityConfigurationId(const Aws::String& value) { m_securityConfigurationIdHasBeenSet = true; m_securityConfigurationId = value; }
+
+    /**
+     * <p>The ID of the security configuration.</p>
+     */
+    inline void SetSecurityConfigurationId(Aws::String&& value) { m_securityConfigurationIdHasBeenSet = true; m_securityConfigurationId = std::move(value); }
+
+    /**
+     * <p>The ID of the security configuration.</p>
+     */
+    inline void SetSecurityConfigurationId(const char* value) { m_securityConfigurationIdHasBeenSet = true; m_securityConfigurationId.assign(value); }
+
+    /**
+     * <p>The ID of the security configuration.</p>
+     */
+    inline VirtualCluster& WithSecurityConfigurationId(const Aws::String& value) { SetSecurityConfigurationId(value); return *this;}
+
+    /**
+     * <p>The ID of the security configuration.</p>
+     */
+    inline VirtualCluster& WithSecurityConfigurationId(Aws::String&& value) { SetSecurityConfigurationId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the security configuration.</p>
+     */
+    inline VirtualCluster& WithSecurityConfigurationId(const char* value) { SetSecurityConfigurationId(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -350,6 +391,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_securityConfigurationId;
+    bool m_securityConfigurationIdHasBeenSet = false;
   };
 
 } // namespace Model

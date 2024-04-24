@@ -34,37 +34,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the fleet that contains the compute resource to be accessed.</p>
+     * <p>The ID of the fleet that holds the compute resource to be accessed.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>The ID of the fleet that contains the compute resource to be accessed.</p>
+     * <p>The ID of the fleet that holds the compute resource to be accessed.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetId = value; }
 
     /**
-     * <p>The ID of the fleet that contains the compute resource to be accessed.</p>
+     * <p>The ID of the fleet that holds the compute resource to be accessed.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetId = std::move(value); }
 
     /**
-     * <p>The ID of the fleet that contains the compute resource to be accessed.</p>
+     * <p>The ID of the fleet that holds the compute resource to be accessed.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetId.assign(value); }
 
     /**
-     * <p>The ID of the fleet that contains the compute resource to be accessed.</p>
+     * <p>The ID of the fleet that holds the compute resource to be accessed.</p>
      */
     inline GetComputeAccessResult& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>The ID of the fleet that contains the compute resource to be accessed.</p>
+     * <p>The ID of the fleet that holds the compute resource to be accessed.</p>
      */
     inline GetComputeAccessResult& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the fleet that contains the compute resource to be accessed.</p>
+     * <p>The ID of the fleet that holds the compute resource to be accessed.</p>
      */
     inline GetComputeAccessResult& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
@@ -271,6 +271,49 @@ namespace Model
     inline GetComputeAccessResult& WithCredentials(AwsCredentials&& value) { SetCredentials(std::move(value)); return *this;}
 
 
+    /**
+     * <p>(For container fleets only) The instance ID where the compute resource is
+     * running.</p>
+     */
+    inline const Aws::String& GetTarget() const{ return m_target; }
+
+    /**
+     * <p>(For container fleets only) The instance ID where the compute resource is
+     * running.</p>
+     */
+    inline void SetTarget(const Aws::String& value) { m_target = value; }
+
+    /**
+     * <p>(For container fleets only) The instance ID where the compute resource is
+     * running.</p>
+     */
+    inline void SetTarget(Aws::String&& value) { m_target = std::move(value); }
+
+    /**
+     * <p>(For container fleets only) The instance ID where the compute resource is
+     * running.</p>
+     */
+    inline void SetTarget(const char* value) { m_target.assign(value); }
+
+    /**
+     * <p>(For container fleets only) The instance ID where the compute resource is
+     * running.</p>
+     */
+    inline GetComputeAccessResult& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
+
+    /**
+     * <p>(For container fleets only) The instance ID where the compute resource is
+     * running.</p>
+     */
+    inline GetComputeAccessResult& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
+
+    /**
+     * <p>(For container fleets only) The instance ID where the compute resource is
+     * running.</p>
+     */
+    inline GetComputeAccessResult& WithTarget(const char* value) { SetTarget(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -303,6 +346,8 @@ namespace Model
     Aws::String m_computeArn;
 
     AwsCredentials m_credentials;
+
+    Aws::String m_target;
 
     Aws::String m_requestId;
   };

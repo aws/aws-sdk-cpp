@@ -20,8 +20,6 @@ using ExpEpProps = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::Vector<EpProp
 using ExpEpAuthScheme = Aws::Vector<EpProp>;
 using ExpEpHeaders = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::String>>;
 
-class RedshiftServerlessEndpointProviderTests : public ::testing::TestWithParam<size_t> {};
-
 struct RedshiftServerlessEndpointProviderEndpointTestCase
 {
     using OperationParamsFromTest = EndpointParameters;
@@ -55,7 +53,32 @@ struct RedshiftServerlessEndpointProviderEndpointTestCase
     // Aws::Vector<OperationInput> operationInput;
 };
 
-static const Aws::Vector<RedshiftServerlessEndpointProviderEndpointTestCase> TEST_CASES = {
+class RedshiftServerlessEndpointProviderTests : public ::testing::TestWithParam<size_t>
+{
+public:
+    static const size_t TEST_CASES_SZ;
+protected:
+    static Aws::Vector<RedshiftServerlessEndpointProviderEndpointTestCase> getTestCase();
+    static Aws::UniquePtrSafeDeleted<Aws::Vector<RedshiftServerlessEndpointProviderEndpointTestCase>> TEST_CASES;
+    static void SetUpTestSuite()
+    {
+        TEST_CASES = Aws::MakeUniqueSafeDeleted<Aws::Vector<RedshiftServerlessEndpointProviderEndpointTestCase>>(ALLOCATION_TAG, getTestCase());
+        ASSERT_TRUE(TEST_CASES) << "Failed to allocate TEST_CASES table";
+        assert(TEST_CASES->size() == TEST_CASES_SZ);
+    }
+
+    static void TearDownTestSuite()
+    {
+        TEST_CASES.reset();
+    }
+};
+
+Aws::UniquePtrSafeDeleted<Aws::Vector<RedshiftServerlessEndpointProviderEndpointTestCase>> RedshiftServerlessEndpointProviderTests::TEST_CASES;
+const size_t RedshiftServerlessEndpointProviderTests::TEST_CASES_SZ = 35;
+
+Aws::Vector<RedshiftServerlessEndpointProviderEndpointTestCase> RedshiftServerlessEndpointProviderTests::getTestCase() {
+
+  Aws::Vector<RedshiftServerlessEndpointProviderEndpointTestCase> test_cases = {
   /*TEST CASE 0*/
   {"For region ap-northeast-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "ap-northeast-1"), EpParam("UseDualStack", false)}, // params
@@ -350,7 +373,9 @@ static const Aws::Vector<RedshiftServerlessEndpointProviderEndpointTestCase> TES
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Missing Region"} // expect
   }
-};
+  };
+  return test_cases;
+}
 
 Aws::String RulesToSdkSignerName(const Aws::String& rulesSignerName)
 {
@@ -445,9 +470,10 @@ void ValidateOutcome(const ResolveEndpointOutcome& outcome, const RedshiftServer
 TEST_P(RedshiftServerlessEndpointProviderTests, EndpointProviderTest)
 {
     const size_t TEST_CASE_IDX = GetParam();
-    ASSERT_LT(TEST_CASE_IDX, TEST_CASES.size()) << "Something is wrong with the test fixture itself.";
-    const RedshiftServerlessEndpointProviderEndpointTestCase& TEST_CASE = TEST_CASES.at(TEST_CASE_IDX);
+    ASSERT_LT(TEST_CASE_IDX, TEST_CASES->size()) << "Something is wrong with the test fixture itself.";
+    const RedshiftServerlessEndpointProviderEndpointTestCase& TEST_CASE = TEST_CASES->at(TEST_CASE_IDX);
     SCOPED_TRACE(Aws::String("\nTEST CASE # ") + Aws::Utils::StringUtils::to_string(TEST_CASE_IDX) + ": " + TEST_CASE.documentation);
+    SCOPED_TRACE(Aws::String("\n--gtest_filter=EndpointTestsFromModel/RedshiftServerlessEndpointProviderTests.EndpointProviderTest/") + Aws::Utils::StringUtils::to_string(TEST_CASE_IDX));
 
     std::shared_ptr<RedshiftServerlessEndpointProvider> endpointProvider = Aws::MakeShared<RedshiftServerlessEndpointProvider>(ALLOCATION_TAG);
     ASSERT_TRUE(endpointProvider) << "Failed to allocate/initialize RedshiftServerlessEndpointProvider";
@@ -489,4 +515,4 @@ TEST_P(RedshiftServerlessEndpointProviderTests, EndpointProviderTest)
 
 INSTANTIATE_TEST_SUITE_P(EndpointTestsFromModel,
                          RedshiftServerlessEndpointProviderTests,
-                         ::testing::Range((size_t) 0u, TEST_CASES.size()));
+                         ::testing::Range((size_t) 0u, RedshiftServerlessEndpointProviderTests::TEST_CASES_SZ));

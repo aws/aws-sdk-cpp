@@ -10,6 +10,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/gamelift/model/OperatingSystem.h>
 #include <aws/gamelift/model/EC2InstanceType.h>
+#include <aws/gamelift/model/ContainerAttributes.h>
 #include <utility>
 
 namespace Aws
@@ -28,9 +29,15 @@ namespace Model
 {
 
   /**
-   * <p>An Amazon GameLift compute resource for hosting your game servers. A compute
-   * can be an EC2instance in a managed EC2 fleet or a registered compute in an
-   * Anywhere fleet. </p><p><h3>See Also:</h3>   <a
+   * <p> <b>This data type has been expanded to use with the Amazon GameLift
+   * containers feature, which is currently in public preview.</b> </p> <p>An Amazon
+   * GameLift compute resource for hosting your game servers. Computes in an Amazon
+   * GameLift fleet differs depending on the fleet's compute type property as
+   * follows: </p> <ul> <li> <p>For <code>EC2</code> fleets, a compute is an EC2
+   * instance.</p> </li> <li> <p>For <code>ANYWHERE</code> fleets, a compute is a
+   * computing resource that you provide and is registered to the fleet.</p> </li>
+   * <li> <p>For <code>CONTAINER</code> fleets, a compute is a container that's
+   * registered to the fleet. </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Compute">AWS
    * API Reference</a></p>
    */
@@ -127,49 +134,49 @@ namespace Model
 
     /**
      * <p>A descriptive label for the compute resource. For instances in a managed EC2
-     * fleet, the compute name is an instance ID.</p>
+     * fleet, the compute name is the same value as the <code>InstanceId</code> ID.</p>
      */
     inline const Aws::String& GetComputeName() const{ return m_computeName; }
 
     /**
      * <p>A descriptive label for the compute resource. For instances in a managed EC2
-     * fleet, the compute name is an instance ID.</p>
+     * fleet, the compute name is the same value as the <code>InstanceId</code> ID.</p>
      */
     inline bool ComputeNameHasBeenSet() const { return m_computeNameHasBeenSet; }
 
     /**
      * <p>A descriptive label for the compute resource. For instances in a managed EC2
-     * fleet, the compute name is an instance ID.</p>
+     * fleet, the compute name is the same value as the <code>InstanceId</code> ID.</p>
      */
     inline void SetComputeName(const Aws::String& value) { m_computeNameHasBeenSet = true; m_computeName = value; }
 
     /**
      * <p>A descriptive label for the compute resource. For instances in a managed EC2
-     * fleet, the compute name is an instance ID.</p>
+     * fleet, the compute name is the same value as the <code>InstanceId</code> ID.</p>
      */
     inline void SetComputeName(Aws::String&& value) { m_computeNameHasBeenSet = true; m_computeName = std::move(value); }
 
     /**
      * <p>A descriptive label for the compute resource. For instances in a managed EC2
-     * fleet, the compute name is an instance ID.</p>
+     * fleet, the compute name is the same value as the <code>InstanceId</code> ID.</p>
      */
     inline void SetComputeName(const char* value) { m_computeNameHasBeenSet = true; m_computeName.assign(value); }
 
     /**
      * <p>A descriptive label for the compute resource. For instances in a managed EC2
-     * fleet, the compute name is an instance ID.</p>
+     * fleet, the compute name is the same value as the <code>InstanceId</code> ID.</p>
      */
     inline Compute& WithComputeName(const Aws::String& value) { SetComputeName(value); return *this;}
 
     /**
      * <p>A descriptive label for the compute resource. For instances in a managed EC2
-     * fleet, the compute name is an instance ID.</p>
+     * fleet, the compute name is the same value as the <code>InstanceId</code> ID.</p>
      */
     inline Compute& WithComputeName(Aws::String&& value) { SetComputeName(std::move(value)); return *this;}
 
     /**
      * <p>A descriptive label for the compute resource. For instances in a managed EC2
-     * fleet, the compute name is an instance ID.</p>
+     * fleet, the compute name is the same value as the <code>InstanceId</code> ID.</p>
      */
     inline Compute& WithComputeName(const char* value) { SetComputeName(value); return *this;}
 
@@ -177,56 +184,56 @@ namespace Model
     /**
      * <p>The ARN that is assigned to a compute resource and uniquely identifies it.
      * ARNs are unique across locations. Instances in managed EC2 fleets are not
-     * assigned a ComputeARN.</p>
+     * assigned a Compute ARN.</p>
      */
     inline const Aws::String& GetComputeArn() const{ return m_computeArn; }
 
     /**
      * <p>The ARN that is assigned to a compute resource and uniquely identifies it.
      * ARNs are unique across locations. Instances in managed EC2 fleets are not
-     * assigned a ComputeARN.</p>
+     * assigned a Compute ARN.</p>
      */
     inline bool ComputeArnHasBeenSet() const { return m_computeArnHasBeenSet; }
 
     /**
      * <p>The ARN that is assigned to a compute resource and uniquely identifies it.
      * ARNs are unique across locations. Instances in managed EC2 fleets are not
-     * assigned a ComputeARN.</p>
+     * assigned a Compute ARN.</p>
      */
     inline void SetComputeArn(const Aws::String& value) { m_computeArnHasBeenSet = true; m_computeArn = value; }
 
     /**
      * <p>The ARN that is assigned to a compute resource and uniquely identifies it.
      * ARNs are unique across locations. Instances in managed EC2 fleets are not
-     * assigned a ComputeARN.</p>
+     * assigned a Compute ARN.</p>
      */
     inline void SetComputeArn(Aws::String&& value) { m_computeArnHasBeenSet = true; m_computeArn = std::move(value); }
 
     /**
      * <p>The ARN that is assigned to a compute resource and uniquely identifies it.
      * ARNs are unique across locations. Instances in managed EC2 fleets are not
-     * assigned a ComputeARN.</p>
+     * assigned a Compute ARN.</p>
      */
     inline void SetComputeArn(const char* value) { m_computeArnHasBeenSet = true; m_computeArn.assign(value); }
 
     /**
      * <p>The ARN that is assigned to a compute resource and uniquely identifies it.
      * ARNs are unique across locations. Instances in managed EC2 fleets are not
-     * assigned a ComputeARN.</p>
+     * assigned a Compute ARN.</p>
      */
     inline Compute& WithComputeArn(const Aws::String& value) { SetComputeArn(value); return *this;}
 
     /**
      * <p>The ARN that is assigned to a compute resource and uniquely identifies it.
      * ARNs are unique across locations. Instances in managed EC2 fleets are not
-     * assigned a ComputeARN.</p>
+     * assigned a Compute ARN.</p>
      */
     inline Compute& WithComputeArn(Aws::String&& value) { SetComputeArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN that is assigned to a compute resource and uniquely identifies it.
      * ARNs are unique across locations. Instances in managed EC2 fleets are not
-     * assigned a ComputeARN.</p>
+     * assigned a Compute ARN.</p>
      */
     inline Compute& WithComputeArn(const char* value) { SetComputeArn(value); return *this;}
 
@@ -582,6 +589,127 @@ namespace Model
      */
     inline Compute& WithGameLiftServiceSdkEndpoint(const char* value) { SetGameLiftServiceSdkEndpoint(value); return *this;}
 
+
+    /**
+     * <p> The endpoint of the Amazon GameLift Agent. </p>
+     */
+    inline const Aws::String& GetGameLiftAgentEndpoint() const{ return m_gameLiftAgentEndpoint; }
+
+    /**
+     * <p> The endpoint of the Amazon GameLift Agent. </p>
+     */
+    inline bool GameLiftAgentEndpointHasBeenSet() const { return m_gameLiftAgentEndpointHasBeenSet; }
+
+    /**
+     * <p> The endpoint of the Amazon GameLift Agent. </p>
+     */
+    inline void SetGameLiftAgentEndpoint(const Aws::String& value) { m_gameLiftAgentEndpointHasBeenSet = true; m_gameLiftAgentEndpoint = value; }
+
+    /**
+     * <p> The endpoint of the Amazon GameLift Agent. </p>
+     */
+    inline void SetGameLiftAgentEndpoint(Aws::String&& value) { m_gameLiftAgentEndpointHasBeenSet = true; m_gameLiftAgentEndpoint = std::move(value); }
+
+    /**
+     * <p> The endpoint of the Amazon GameLift Agent. </p>
+     */
+    inline void SetGameLiftAgentEndpoint(const char* value) { m_gameLiftAgentEndpointHasBeenSet = true; m_gameLiftAgentEndpoint.assign(value); }
+
+    /**
+     * <p> The endpoint of the Amazon GameLift Agent. </p>
+     */
+    inline Compute& WithGameLiftAgentEndpoint(const Aws::String& value) { SetGameLiftAgentEndpoint(value); return *this;}
+
+    /**
+     * <p> The endpoint of the Amazon GameLift Agent. </p>
+     */
+    inline Compute& WithGameLiftAgentEndpoint(Aws::String&& value) { SetGameLiftAgentEndpoint(std::move(value)); return *this;}
+
+    /**
+     * <p> The endpoint of the Amazon GameLift Agent. </p>
+     */
+    inline Compute& WithGameLiftAgentEndpoint(const char* value) { SetGameLiftAgentEndpoint(value); return *this;}
+
+
+    /**
+     * <p> The <code>InstanceID</code> of the <code>Instance</code> hosting the compute
+     * for Container and Managed EC2 fleets. </p>
+     */
+    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p> The <code>InstanceID</code> of the <code>Instance</code> hosting the compute
+     * for Container and Managed EC2 fleets. </p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p> The <code>InstanceID</code> of the <code>Instance</code> hosting the compute
+     * for Container and Managed EC2 fleets. </p>
+     */
+    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+
+    /**
+     * <p> The <code>InstanceID</code> of the <code>Instance</code> hosting the compute
+     * for Container and Managed EC2 fleets. </p>
+     */
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
+
+    /**
+     * <p> The <code>InstanceID</code> of the <code>Instance</code> hosting the compute
+     * for Container and Managed EC2 fleets. </p>
+     */
+    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
+
+    /**
+     * <p> The <code>InstanceID</code> of the <code>Instance</code> hosting the compute
+     * for Container and Managed EC2 fleets. </p>
+     */
+    inline Compute& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+
+    /**
+     * <p> The <code>InstanceID</code> of the <code>Instance</code> hosting the compute
+     * for Container and Managed EC2 fleets. </p>
+     */
+    inline Compute& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
+
+    /**
+     * <p> The <code>InstanceID</code> of the <code>Instance</code> hosting the compute
+     * for Container and Managed EC2 fleets. </p>
+     */
+    inline Compute& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
+
+    /**
+     * <p> Some attributes of a container. </p>
+     */
+    inline const ContainerAttributes& GetContainerAttributes() const{ return m_containerAttributes; }
+
+    /**
+     * <p> Some attributes of a container. </p>
+     */
+    inline bool ContainerAttributesHasBeenSet() const { return m_containerAttributesHasBeenSet; }
+
+    /**
+     * <p> Some attributes of a container. </p>
+     */
+    inline void SetContainerAttributes(const ContainerAttributes& value) { m_containerAttributesHasBeenSet = true; m_containerAttributes = value; }
+
+    /**
+     * <p> Some attributes of a container. </p>
+     */
+    inline void SetContainerAttributes(ContainerAttributes&& value) { m_containerAttributesHasBeenSet = true; m_containerAttributes = std::move(value); }
+
+    /**
+     * <p> Some attributes of a container. </p>
+     */
+    inline Compute& WithContainerAttributes(const ContainerAttributes& value) { SetContainerAttributes(value); return *this;}
+
+    /**
+     * <p> Some attributes of a container. </p>
+     */
+    inline Compute& WithContainerAttributes(ContainerAttributes&& value) { SetContainerAttributes(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_fleetId;
@@ -619,6 +747,15 @@ namespace Model
 
     Aws::String m_gameLiftServiceSdkEndpoint;
     bool m_gameLiftServiceSdkEndpointHasBeenSet = false;
+
+    Aws::String m_gameLiftAgentEndpoint;
+    bool m_gameLiftAgentEndpointHasBeenSet = false;
+
+    Aws::String m_instanceId;
+    bool m_instanceIdHasBeenSet = false;
+
+    ContainerAttributes m_containerAttributes;
+    bool m_containerAttributesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Amazon GameLift Anywhere configuration options for your Anywhere
-   * fleets.</p><p><h3>See Also:</h3>   <a
+   * <p>Amazon GameLift configuration options for your Anywhere fleets.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/AnywhereConfiguration">AWS
    * API Reference</a></p>
    */

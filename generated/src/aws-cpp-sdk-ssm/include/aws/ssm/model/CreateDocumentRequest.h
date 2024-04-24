@@ -320,7 +320,9 @@ namespace Model
      * strings as document name prefixes. These are reserved by Amazon Web Services for
      * use as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li>
      * <li> <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li>
-     * </ul> 
+     * <li> <p> <code>AWSEC2</code> </p> </li> <li> <p>
+     * <code>AWSConfigRemediation</code> </p> </li> <li> <p> <code>AWSSupport</code>
+     * </p> </li> </ul> 
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -329,7 +331,9 @@ namespace Model
      * strings as document name prefixes. These are reserved by Amazon Web Services for
      * use as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li>
      * <li> <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li>
-     * </ul> 
+     * <li> <p> <code>AWSEC2</code> </p> </li> <li> <p>
+     * <code>AWSConfigRemediation</code> </p> </li> <li> <p> <code>AWSSupport</code>
+     * </p> </li> </ul> 
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
@@ -338,7 +342,9 @@ namespace Model
      * strings as document name prefixes. These are reserved by Amazon Web Services for
      * use as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li>
      * <li> <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li>
-     * </ul> 
+     * <li> <p> <code>AWSEC2</code> </p> </li> <li> <p>
+     * <code>AWSConfigRemediation</code> </p> </li> <li> <p> <code>AWSSupport</code>
+     * </p> </li> </ul> 
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -347,7 +353,9 @@ namespace Model
      * strings as document name prefixes. These are reserved by Amazon Web Services for
      * use as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li>
      * <li> <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li>
-     * </ul> 
+     * <li> <p> <code>AWSEC2</code> </p> </li> <li> <p>
+     * <code>AWSConfigRemediation</code> </p> </li> <li> <p> <code>AWSSupport</code>
+     * </p> </li> </ul> 
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
@@ -356,7 +364,9 @@ namespace Model
      * strings as document name prefixes. These are reserved by Amazon Web Services for
      * use as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li>
      * <li> <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li>
-     * </ul> 
+     * <li> <p> <code>AWSEC2</code> </p> </li> <li> <p>
+     * <code>AWSConfigRemediation</code> </p> </li> <li> <p> <code>AWSSupport</code>
+     * </p> </li> </ul> 
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
@@ -365,7 +375,9 @@ namespace Model
      * strings as document name prefixes. These are reserved by Amazon Web Services for
      * use as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li>
      * <li> <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li>
-     * </ul> 
+     * <li> <p> <code>AWSEC2</code> </p> </li> <li> <p>
+     * <code>AWSConfigRemediation</code> </p> </li> <li> <p> <code>AWSSupport</code>
+     * </p> </li> </ul> 
      */
     inline CreateDocumentRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
@@ -374,7 +386,9 @@ namespace Model
      * strings as document name prefixes. These are reserved by Amazon Web Services for
      * use as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li>
      * <li> <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li>
-     * </ul> 
+     * <li> <p> <code>AWSEC2</code> </p> </li> <li> <p>
+     * <code>AWSConfigRemediation</code> </p> </li> <li> <p> <code>AWSSupport</code>
+     * </p> </li> </ul> 
      */
     inline CreateDocumentRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
@@ -383,7 +397,9 @@ namespace Model
      * strings as document name prefixes. These are reserved by Amazon Web Services for
      * use as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li>
      * <li> <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li>
-     * </ul> 
+     * <li> <p> <code>AWSEC2</code> </p> </li> <li> <p>
+     * <code>AWSConfigRemediation</code> </p> </li> <li> <p> <code>AWSSupport</code>
+     * </p> </li> </ul> 
      */
     inline CreateDocumentRequest& WithName(const char* value) { SetName(value); return *this;}
 

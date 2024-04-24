@@ -34,32 +34,32 @@ namespace Model
 
 
     /**
-     * <p>Instructions that describe how server processes should be launched and
-     * maintained on each instance in the fleet.</p>
+     * <p>Instructions that describe how server processes are launched and maintained
+     * on computes in the fleet.</p>
      */
     inline const RuntimeConfiguration& GetRuntimeConfiguration() const{ return m_runtimeConfiguration; }
 
     /**
-     * <p>Instructions that describe how server processes should be launched and
-     * maintained on each instance in the fleet.</p>
+     * <p>Instructions that describe how server processes are launched and maintained
+     * on computes in the fleet.</p>
      */
     inline void SetRuntimeConfiguration(const RuntimeConfiguration& value) { m_runtimeConfiguration = value; }
 
     /**
-     * <p>Instructions that describe how server processes should be launched and
-     * maintained on each instance in the fleet.</p>
+     * <p>Instructions that describe how server processes are launched and maintained
+     * on computes in the fleet.</p>
      */
     inline void SetRuntimeConfiguration(RuntimeConfiguration&& value) { m_runtimeConfiguration = std::move(value); }
 
     /**
-     * <p>Instructions that describe how server processes should be launched and
-     * maintained on each instance in the fleet.</p>
+     * <p>Instructions that describe how server processes are launched and maintained
+     * on computes in the fleet.</p>
      */
     inline DescribeRuntimeConfigurationResult& WithRuntimeConfiguration(const RuntimeConfiguration& value) { SetRuntimeConfiguration(value); return *this;}
 
     /**
-     * <p>Instructions that describe how server processes should be launched and
-     * maintained on each instance in the fleet.</p>
+     * <p>Instructions that describe how server processes are launched and maintained
+     * on computes in the fleet.</p>
      */
     inline DescribeRuntimeConfigurationResult& WithRuntimeConfiguration(RuntimeConfiguration&& value) { SetRuntimeConfiguration(std::move(value)); return *this;}
 

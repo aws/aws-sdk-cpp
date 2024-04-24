@@ -24,10 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>A set of instructions for launching server processes on each instance in a
-   * fleet. Server processes run either an executable in a custom game build or a
-   * Realtime Servers script. Server process configurations are part of a fleet's
-   * runtime configuration.</p><p><h3>See Also:</h3>   <a
+   * <p>A set of instructions for launching server processes on fleet computes.
+   * Server processes run either an executable in a custom game build or a Realtime
+   * Servers script. Server process configurations are part of a fleet's runtime
+   * configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ServerProcess">AWS
    * API Reference</a></p>
    */
@@ -204,25 +204,25 @@ namespace Model
 
     /**
      * <p>The number of server processes using this configuration that run concurrently
-     * on each instance.</p>
+     * on each instance or container..</p>
      */
     inline int GetConcurrentExecutions() const{ return m_concurrentExecutions; }
 
     /**
      * <p>The number of server processes using this configuration that run concurrently
-     * on each instance.</p>
+     * on each instance or container..</p>
      */
     inline bool ConcurrentExecutionsHasBeenSet() const { return m_concurrentExecutionsHasBeenSet; }
 
     /**
      * <p>The number of server processes using this configuration that run concurrently
-     * on each instance.</p>
+     * on each instance or container..</p>
      */
     inline void SetConcurrentExecutions(int value) { m_concurrentExecutionsHasBeenSet = true; m_concurrentExecutions = value; }
 
     /**
      * <p>The number of server processes using this configuration that run concurrently
-     * on each instance.</p>
+     * on each instance or container..</p>
      */
     inline ServerProcess& WithConcurrentExecutions(int value) { SetConcurrentExecutions(value); return *this;}
 

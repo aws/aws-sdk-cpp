@@ -25,8 +25,8 @@ namespace Model
 
   /**
    * <p>Current resource utilization statistics in a specified fleet or location. The
-   * location value might refer to a fleet's remote location or its home Region.</p>
-   * <p> <b>Related actions</b> </p><p><h3>See Also:</h3>   <a
+   * location value might refer to a fleet's remote location or its home
+   * region.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/FleetUtilization">AWS
    * API Reference</a></p>
    */

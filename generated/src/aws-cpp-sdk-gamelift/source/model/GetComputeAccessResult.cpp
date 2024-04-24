@@ -59,6 +59,12 @@ GetComputeAccessResult& GetComputeAccessResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("Target"))
+  {
+    m_target = jsonValue.GetString("Target");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -21,7 +21,9 @@ ModifyNetworkInterfaceAttributeRequest::ModifyNetworkInterfaceAttributeRequest()
     m_enaSrdSpecificationHasBeenSet(false),
     m_enablePrimaryIpv6(false),
     m_enablePrimaryIpv6HasBeenSet(false),
-    m_connectionTrackingSpecificationHasBeenSet(false)
+    m_connectionTrackingSpecificationHasBeenSet(false),
+    m_associatePublicIpAddress(false),
+    m_associatePublicIpAddressHasBeenSet(false)
 {
 }
 
@@ -78,6 +80,11 @@ Aws::String ModifyNetworkInterfaceAttributeRequest::SerializePayload() const
   if(m_connectionTrackingSpecificationHasBeenSet)
   {
     m_connectionTrackingSpecification.OutputToStream(ss, "ConnectionTrackingSpecification");
+  }
+
+  if(m_associatePublicIpAddressHasBeenSet)
+  {
+    ss << "AssociatePublicIpAddress=" << std::boolalpha << m_associatePublicIpAddress << "&";
   }
 
   ss << "Version=2016-11-15";

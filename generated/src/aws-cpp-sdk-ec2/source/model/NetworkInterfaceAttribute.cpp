@@ -24,6 +24,7 @@ namespace Aws
         static const int groupSet_HASH = HashingUtils::HashString("groupSet");
         static const int sourceDestCheck_HASH = HashingUtils::HashString("sourceDestCheck");
         static const int attachment_HASH = HashingUtils::HashString("attachment");
+        static const int associatePublicIpAddress_HASH = HashingUtils::HashString("associatePublicIpAddress");
 
 
         NetworkInterfaceAttribute GetNetworkInterfaceAttributeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == attachment_HASH)
           {
             return NetworkInterfaceAttribute::attachment;
+          }
+          else if (hashCode == associatePublicIpAddress_HASH)
+          {
+            return NetworkInterfaceAttribute::associatePublicIpAddress;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "sourceDestCheck";
           case NetworkInterfaceAttribute::attachment:
             return "attachment";
+          case NetworkInterfaceAttribute::associatePublicIpAddress:
+            return "associatePublicIpAddress";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

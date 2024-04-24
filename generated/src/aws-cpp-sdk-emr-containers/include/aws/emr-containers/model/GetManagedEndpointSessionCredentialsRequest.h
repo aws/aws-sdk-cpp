@@ -158,49 +158,49 @@ namespace Model
 
     /**
      * <p>Type of the token requested. Currently supported and default value of this
-     * field is “TOKEN.”</p>
+     * field is ���TOKEN.”</p>
      */
     inline const Aws::String& GetCredentialType() const{ return m_credentialType; }
 
     /**
      * <p>Type of the token requested. Currently supported and default value of this
-     * field is “TOKEN.”</p>
+     * field is ���TOKEN.”</p>
      */
     inline bool CredentialTypeHasBeenSet() const { return m_credentialTypeHasBeenSet; }
 
     /**
      * <p>Type of the token requested. Currently supported and default value of this
-     * field is “TOKEN.”</p>
+     * field is ���TOKEN.”</p>
      */
     inline void SetCredentialType(const Aws::String& value) { m_credentialTypeHasBeenSet = true; m_credentialType = value; }
 
     /**
      * <p>Type of the token requested. Currently supported and default value of this
-     * field is “TOKEN.”</p>
+     * field is ���TOKEN.”</p>
      */
     inline void SetCredentialType(Aws::String&& value) { m_credentialTypeHasBeenSet = true; m_credentialType = std::move(value); }
 
     /**
      * <p>Type of the token requested. Currently supported and default value of this
-     * field is “TOKEN.”</p>
+     * field is ���TOKEN.”</p>
      */
     inline void SetCredentialType(const char* value) { m_credentialTypeHasBeenSet = true; m_credentialType.assign(value); }
 
     /**
      * <p>Type of the token requested. Currently supported and default value of this
-     * field is “TOKEN.”</p>
+     * field is ���TOKEN.”</p>
      */
     inline GetManagedEndpointSessionCredentialsRequest& WithCredentialType(const Aws::String& value) { SetCredentialType(value); return *this;}
 
     /**
      * <p>Type of the token requested. Currently supported and default value of this
-     * field is “TOKEN.”</p>
+     * field is ���TOKEN.”</p>
      */
     inline GetManagedEndpointSessionCredentialsRequest& WithCredentialType(Aws::String&& value) { SetCredentialType(std::move(value)); return *this;}
 
     /**
      * <p>Type of the token requested. Currently supported and default value of this
-     * field is “TOKEN.”</p>
+     * field is ���TOKEN.”</p>
      */
     inline GetManagedEndpointSessionCredentialsRequest& WithCredentialType(const char* value) { SetCredentialType(value); return *this;}
 

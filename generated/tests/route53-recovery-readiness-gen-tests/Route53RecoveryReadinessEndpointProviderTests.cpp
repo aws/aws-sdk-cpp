@@ -20,8 +20,6 @@ using ExpEpProps = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::Vector<EpProp
 using ExpEpAuthScheme = Aws::Vector<EpProp>;
 using ExpEpHeaders = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::String>>;
 
-class Route53RecoveryReadinessEndpointProviderTests : public ::testing::TestWithParam<size_t> {};
-
 struct Route53RecoveryReadinessEndpointProviderEndpointTestCase
 {
     using OperationParamsFromTest = EndpointParameters;
@@ -55,7 +53,32 @@ struct Route53RecoveryReadinessEndpointProviderEndpointTestCase
     // Aws::Vector<OperationInput> operationInput;
 };
 
-static const Aws::Vector<Route53RecoveryReadinessEndpointProviderEndpointTestCase> TEST_CASES = {
+class Route53RecoveryReadinessEndpointProviderTests : public ::testing::TestWithParam<size_t>
+{
+public:
+    static const size_t TEST_CASES_SZ;
+protected:
+    static Aws::Vector<Route53RecoveryReadinessEndpointProviderEndpointTestCase> getTestCase();
+    static Aws::UniquePtrSafeDeleted<Aws::Vector<Route53RecoveryReadinessEndpointProviderEndpointTestCase>> TEST_CASES;
+    static void SetUpTestSuite()
+    {
+        TEST_CASES = Aws::MakeUniqueSafeDeleted<Aws::Vector<Route53RecoveryReadinessEndpointProviderEndpointTestCase>>(ALLOCATION_TAG, getTestCase());
+        ASSERT_TRUE(TEST_CASES) << "Failed to allocate TEST_CASES table";
+        assert(TEST_CASES->size() == TEST_CASES_SZ);
+    }
+
+    static void TearDownTestSuite()
+    {
+        TEST_CASES.reset();
+    }
+};
+
+Aws::UniquePtrSafeDeleted<Aws::Vector<Route53RecoveryReadinessEndpointProviderEndpointTestCase>> Route53RecoveryReadinessEndpointProviderTests::TEST_CASES;
+const size_t Route53RecoveryReadinessEndpointProviderTests::TEST_CASES_SZ = 25;
+
+Aws::Vector<Route53RecoveryReadinessEndpointProviderEndpointTestCase> Route53RecoveryReadinessEndpointProviderTests::getTestCase() {
+
+  Aws::Vector<Route53RecoveryReadinessEndpointProviderEndpointTestCase> test_cases = {
   /*TEST CASE 0*/
   {"For region us-east-1 with FIPS enabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
@@ -260,7 +283,9 @@ static const Aws::Vector<Route53RecoveryReadinessEndpointProviderEndpointTestCas
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Missing Region"} // expect
   }
-};
+  };
+  return test_cases;
+}
 
 Aws::String RulesToSdkSignerName(const Aws::String& rulesSignerName)
 {
@@ -355,9 +380,10 @@ void ValidateOutcome(const ResolveEndpointOutcome& outcome, const Route53Recover
 TEST_P(Route53RecoveryReadinessEndpointProviderTests, EndpointProviderTest)
 {
     const size_t TEST_CASE_IDX = GetParam();
-    ASSERT_LT(TEST_CASE_IDX, TEST_CASES.size()) << "Something is wrong with the test fixture itself.";
-    const Route53RecoveryReadinessEndpointProviderEndpointTestCase& TEST_CASE = TEST_CASES.at(TEST_CASE_IDX);
+    ASSERT_LT(TEST_CASE_IDX, TEST_CASES->size()) << "Something is wrong with the test fixture itself.";
+    const Route53RecoveryReadinessEndpointProviderEndpointTestCase& TEST_CASE = TEST_CASES->at(TEST_CASE_IDX);
     SCOPED_TRACE(Aws::String("\nTEST CASE # ") + Aws::Utils::StringUtils::to_string(TEST_CASE_IDX) + ": " + TEST_CASE.documentation);
+    SCOPED_TRACE(Aws::String("\n--gtest_filter=EndpointTestsFromModel/Route53RecoveryReadinessEndpointProviderTests.EndpointProviderTest/") + Aws::Utils::StringUtils::to_string(TEST_CASE_IDX));
 
     std::shared_ptr<Route53RecoveryReadinessEndpointProvider> endpointProvider = Aws::MakeShared<Route53RecoveryReadinessEndpointProvider>(ALLOCATION_TAG);
     ASSERT_TRUE(endpointProvider) << "Failed to allocate/initialize Route53RecoveryReadinessEndpointProvider";
@@ -399,4 +425,4 @@ TEST_P(Route53RecoveryReadinessEndpointProviderTests, EndpointProviderTest)
 
 INSTANTIATE_TEST_SUITE_P(EndpointTestsFromModel,
                          Route53RecoveryReadinessEndpointProviderTests,
-                         ::testing::Range((size_t) 0u, TEST_CASES.size()));
+                         ::testing::Range((size_t) 0u, Route53RecoveryReadinessEndpointProviderTests::TEST_CASES_SZ));

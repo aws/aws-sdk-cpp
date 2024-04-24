@@ -115,6 +115,32 @@ namespace EntityResolution
         }
 
         /**
+         * <p>Deletes multiple unique IDs in a matching workflow.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/BatchDeleteUniqueId">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchDeleteUniqueIdOutcome BatchDeleteUniqueId(const Model::BatchDeleteUniqueIdRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchDeleteUniqueId that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchDeleteUniqueIdRequestT = Model::BatchDeleteUniqueIdRequest>
+        Model::BatchDeleteUniqueIdOutcomeCallable BatchDeleteUniqueIdCallable(const BatchDeleteUniqueIdRequestT& request) const
+        {
+            return SubmitCallable(&EntityResolutionClient::BatchDeleteUniqueId, request);
+        }
+
+        /**
+         * An Async wrapper for BatchDeleteUniqueId that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchDeleteUniqueIdRequestT = Model::BatchDeleteUniqueIdRequest>
+        void BatchDeleteUniqueIdAsync(const BatchDeleteUniqueIdRequestT& request, const BatchDeleteUniqueIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EntityResolutionClient::BatchDeleteUniqueId, request, handler, context);
+        }
+
+        /**
          * <p>Creates an <code>IdMappingWorkflow</code> object which stores the
          * configuration of the data processing job to be run. Each
          * <code>IdMappingWorkflow</code> must have a unique workflow name. To modify an

@@ -955,6 +955,27 @@ namespace Model
      */
     inline Event& WithPreSignedLogUrl(const char* value) { SetPreSignedLogUrl(value); return *this;}
 
+
+    /**
+     * <p>The number of times that this event occurred.</p>
+     */
+    inline long long GetCount() const{ return m_count; }
+
+    /**
+     * <p>The number of times that this event occurred.</p>
+     */
+    inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
+
+    /**
+     * <p>The number of times that this event occurred.</p>
+     */
+    inline void SetCount(long long value) { m_countHasBeenSet = true; m_count = value; }
+
+    /**
+     * <p>The number of times that this event occurred.</p>
+     */
+    inline Event& WithCount(long long value) { SetCount(value); return *this;}
+
   private:
 
     Aws::String m_eventId;
@@ -974,6 +995,9 @@ namespace Model
 
     Aws::String m_preSignedLogUrl;
     bool m_preSignedLogUrlHasBeenSet = false;
+
+    long long m_count;
+    bool m_countHasBeenSet = false;
   };
 
 } // namespace Model
