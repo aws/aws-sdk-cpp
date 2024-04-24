@@ -117,6 +117,7 @@ static const int OPS_ITEM_CONFLICT_HASH = HashingUtils::HashString("OpsItemConfl
 static const int ASSOCIATION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("AssociationDoesNotExist");
 static const int ASSOCIATION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AssociationLimitExceeded");
 static const int INVALID_OPTION_HASH = HashingUtils::HashString("InvalidOptionException");
+static const int INVALID_INSTANCE_PROPERTY_FILTER_VALUE_HASH = HashingUtils::HashString("InvalidInstancePropertyFilterValue");
 static const int PARAMETER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ParameterLimitExceeded");
 static const int SUB_TYPE_COUNT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("SubTypeCountLimitExceededException");
 static const int ASSOCIATION_VERSION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AssociationVersionLimitExceeded");
@@ -311,6 +312,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == INVALID_OPTION_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_OPTION), RetryableType::NOT_RETRYABLE);
+    return true;
+  }
+  else if (hashCode == INVALID_INSTANCE_PROPERTY_FILTER_VALUE_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_INSTANCE_PROPERTY_FILTER_VALUE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == PARAMETER_LIMIT_EXCEEDED_HASH)
@@ -848,17 +854,17 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
     return true;
   }
-  else if (hashCode == INVALID_INVENTORY_GROUP_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_INVENTORY_GROUP), RetryableType::NOT_RETRYABLE);
-    return true;
-  }
   return false;
 }
 
 static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
 {
-  if (hashCode == POLICIES_LIMIT_EXCEEDED_HASH)
+  if (hashCode == INVALID_INVENTORY_GROUP_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_INVENTORY_GROUP), RetryableType::NOT_RETRYABLE);
+    return true;
+  }
+  else if (hashCode == POLICIES_LIMIT_EXCEEDED_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::POLICIES_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;

@@ -31,6 +31,7 @@ static const int OUT_OF_CAPACITY_HASH = HashingUtils::HashString("OutOfCapacityE
 static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
 static const int INVALID_FLEET_STATUS_HASH = HashingUtils::HashString("InvalidFleetStatusException");
 static const int GAME_SESSION_FULL_HASH = HashingUtils::HashString("GameSessionFullException");
+static const int NOT_READY_HASH = HashingUtils::HashString("NotReadyException");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 static const int TERMINAL_ROUTING_STRATEGY_HASH = HashingUtils::HashString("TerminalRoutingStrategyException");
 
@@ -90,6 +91,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == GAME_SESSION_FULL_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::GAME_SESSION_FULL), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == NOT_READY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::NOT_READY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_REQUEST_HASH)
   {

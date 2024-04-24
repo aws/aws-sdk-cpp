@@ -19,7 +19,8 @@ namespace Model
     description,
     groupSet,
     sourceDestCheck,
-    attachment
+    attachment,
+    associatePublicIpAddress
   };
 
 namespace NetworkInterfaceAttributeMapper

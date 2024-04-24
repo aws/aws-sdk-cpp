@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/model/EC2InstanceType.h>
 #include <aws/gamelift/model/EC2InstanceCounts.h>
+#include <aws/gamelift/model/ReplicaContainerGroupCounts.h>
 #include <utility>
 
 namespace Aws
@@ -26,13 +27,13 @@ namespace Model
 {
 
   /**
-   * <p>Current resource capacity settings in a specified fleet or location. The
-   * location value might refer to a fleet's remote location or its home Region. </p>
-   * <p> <b>Related actions</b> </p> <p> <a
-   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html">DescribeFleetCapacity</a>
-   * | <a
-   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html">DescribeFleetLocationCapacity</a>
-   * | <a
+   * <p>Current resource capacity settings for managed EC2 fleets and container
+   * fleets. For multi-location fleets, location values might refer to a fleet's
+   * remote location or its home Region. </p> <p> <b>Returned by:</b> <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html">DescribeFleetCapacity</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html">DescribeFleetLocationCapacity</a>,
+   * <a
    * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetCapacity.html">UpdateFleetCapacity</a>
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/FleetCapacity">AWS
@@ -162,76 +163,106 @@ namespace Model
 
 
     /**
-     * <p>The Amazon EC2 instance type that is used for all instances in a fleet. The
-     * instance type determines the computing resources in use, including CPU, memory,
-     * storage, and networking capacity. See <a
+     * <p>The Amazon EC2 instance type that is used for instances in a fleet. Instance
+     * type determines the computing resources in use, including CPU, memory, storage,
+     * and networking capacity. See <a
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud
      * Instance Types</a> for detailed descriptions.</p>
      */
     inline const EC2InstanceType& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The Amazon EC2 instance type that is used for all instances in a fleet. The
-     * instance type determines the computing resources in use, including CPU, memory,
-     * storage, and networking capacity. See <a
+     * <p>The Amazon EC2 instance type that is used for instances in a fleet. Instance
+     * type determines the computing resources in use, including CPU, memory, storage,
+     * and networking capacity. See <a
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud
      * Instance Types</a> for detailed descriptions.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
-     * <p>The Amazon EC2 instance type that is used for all instances in a fleet. The
-     * instance type determines the computing resources in use, including CPU, memory,
-     * storage, and networking capacity. See <a
+     * <p>The Amazon EC2 instance type that is used for instances in a fleet. Instance
+     * type determines the computing resources in use, including CPU, memory, storage,
+     * and networking capacity. See <a
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud
      * Instance Types</a> for detailed descriptions.</p>
      */
     inline void SetInstanceType(const EC2InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The Amazon EC2 instance type that is used for all instances in a fleet. The
-     * instance type determines the computing resources in use, including CPU, memory,
-     * storage, and networking capacity. See <a
+     * <p>The Amazon EC2 instance type that is used for instances in a fleet. Instance
+     * type determines the computing resources in use, including CPU, memory, storage,
+     * and networking capacity. See <a
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud
      * Instance Types</a> for detailed descriptions.</p>
      */
     inline void SetInstanceType(EC2InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>The Amazon EC2 instance type that is used for all instances in a fleet. The
-     * instance type determines the computing resources in use, including CPU, memory,
-     * storage, and networking capacity. See <a
+     * <p>The Amazon EC2 instance type that is used for instances in a fleet. Instance
+     * type determines the computing resources in use, including CPU, memory, storage,
+     * and networking capacity. See <a
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud
      * Instance Types</a> for detailed descriptions.</p>
      */
     inline FleetCapacity& WithInstanceType(const EC2InstanceType& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The Amazon EC2 instance type that is used for all instances in a fleet. The
-     * instance type determines the computing resources in use, including CPU, memory,
-     * storage, and networking capacity. See <a
+     * <p>The Amazon EC2 instance type that is used for instances in a fleet. Instance
+     * type determines the computing resources in use, including CPU, memory, storage,
+     * and networking capacity. See <a
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud
      * Instance Types</a> for detailed descriptions.</p>
      */
     inline FleetCapacity& WithInstanceType(EC2InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The current number of instances in the fleet, listed by instance status.
+     * Counts for pending and terminating instances might be non-zero if the fleet is
+     * adjusting to a scaling event or if access to resources is temporarily
+     * affected.</p>
+     */
     inline const EC2InstanceCounts& GetInstanceCounts() const{ return m_instanceCounts; }
 
-    
+    /**
+     * <p>The current number of instances in the fleet, listed by instance status.
+     * Counts for pending and terminating instances might be non-zero if the fleet is
+     * adjusting to a scaling event or if access to resources is temporarily
+     * affected.</p>
+     */
     inline bool InstanceCountsHasBeenSet() const { return m_instanceCountsHasBeenSet; }
 
-    
+    /**
+     * <p>The current number of instances in the fleet, listed by instance status.
+     * Counts for pending and terminating instances might be non-zero if the fleet is
+     * adjusting to a scaling event or if access to resources is temporarily
+     * affected.</p>
+     */
     inline void SetInstanceCounts(const EC2InstanceCounts& value) { m_instanceCountsHasBeenSet = true; m_instanceCounts = value; }
 
-    
+    /**
+     * <p>The current number of instances in the fleet, listed by instance status.
+     * Counts for pending and terminating instances might be non-zero if the fleet is
+     * adjusting to a scaling event or if access to resources is temporarily
+     * affected.</p>
+     */
     inline void SetInstanceCounts(EC2InstanceCounts&& value) { m_instanceCountsHasBeenSet = true; m_instanceCounts = std::move(value); }
 
-    
+    /**
+     * <p>The current number of instances in the fleet, listed by instance status.
+     * Counts for pending and terminating instances might be non-zero if the fleet is
+     * adjusting to a scaling event or if access to resources is temporarily
+     * affected.</p>
+     */
     inline FleetCapacity& WithInstanceCounts(const EC2InstanceCounts& value) { SetInstanceCounts(value); return *this;}
 
-    
+    /**
+     * <p>The current number of instances in the fleet, listed by instance status.
+     * Counts for pending and terminating instances might be non-zero if the fleet is
+     * adjusting to a scaling event or if access to resources is temporarily
+     * affected.</p>
+     */
     inline FleetCapacity& WithInstanceCounts(EC2InstanceCounts&& value) { SetInstanceCounts(std::move(value)); return *this;}
 
 
@@ -283,6 +314,49 @@ namespace Model
      */
     inline FleetCapacity& WithLocation(const char* value) { SetLocation(value); return *this;}
 
+
+    /**
+     * <p> <b>This property is used with the Amazon GameLift containers feature, which
+     * is currently in public preview.</b> The number and status of replica container
+     * groups in a container fleet.</p>
+     */
+    inline const ReplicaContainerGroupCounts& GetReplicaContainerGroupCounts() const{ return m_replicaContainerGroupCounts; }
+
+    /**
+     * <p> <b>This property is used with the Amazon GameLift containers feature, which
+     * is currently in public preview.</b> The number and status of replica container
+     * groups in a container fleet.</p>
+     */
+    inline bool ReplicaContainerGroupCountsHasBeenSet() const { return m_replicaContainerGroupCountsHasBeenSet; }
+
+    /**
+     * <p> <b>This property is used with the Amazon GameLift containers feature, which
+     * is currently in public preview.</b> The number and status of replica container
+     * groups in a container fleet.</p>
+     */
+    inline void SetReplicaContainerGroupCounts(const ReplicaContainerGroupCounts& value) { m_replicaContainerGroupCountsHasBeenSet = true; m_replicaContainerGroupCounts = value; }
+
+    /**
+     * <p> <b>This property is used with the Amazon GameLift containers feature, which
+     * is currently in public preview.</b> The number and status of replica container
+     * groups in a container fleet.</p>
+     */
+    inline void SetReplicaContainerGroupCounts(ReplicaContainerGroupCounts&& value) { m_replicaContainerGroupCountsHasBeenSet = true; m_replicaContainerGroupCounts = std::move(value); }
+
+    /**
+     * <p> <b>This property is used with the Amazon GameLift containers feature, which
+     * is currently in public preview.</b> The number and status of replica container
+     * groups in a container fleet.</p>
+     */
+    inline FleetCapacity& WithReplicaContainerGroupCounts(const ReplicaContainerGroupCounts& value) { SetReplicaContainerGroupCounts(value); return *this;}
+
+    /**
+     * <p> <b>This property is used with the Amazon GameLift containers feature, which
+     * is currently in public preview.</b> The number and status of replica container
+     * groups in a container fleet.</p>
+     */
+    inline FleetCapacity& WithReplicaContainerGroupCounts(ReplicaContainerGroupCounts&& value) { SetReplicaContainerGroupCounts(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_fleetId;
@@ -299,6 +373,9 @@ namespace Model
 
     Aws::String m_location;
     bool m_locationHasBeenSet = false;
+
+    ReplicaContainerGroupCounts m_replicaContainerGroupCounts;
+    bool m_replicaContainerGroupCountsHasBeenSet = false;
   };
 
 } // namespace Model

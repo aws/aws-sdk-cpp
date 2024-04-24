@@ -20,8 +20,6 @@ using ExpEpProps = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::Vector<EpProp
 using ExpEpAuthScheme = Aws::Vector<EpProp>;
 using ExpEpHeaders = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::String>>;
 
-class CloudFrontKeyValueStoreEndpointProviderTests : public ::testing::TestWithParam<size_t> {};
-
 struct CloudFrontKeyValueStoreEndpointProviderEndpointTestCase
 {
     using OperationParamsFromTest = EndpointParameters;
@@ -55,7 +53,32 @@ struct CloudFrontKeyValueStoreEndpointProviderEndpointTestCase
     // Aws::Vector<OperationInput> operationInput;
 };
 
-static const Aws::Vector<CloudFrontKeyValueStoreEndpointProviderEndpointTestCase> TEST_CASES = {
+class CloudFrontKeyValueStoreEndpointProviderTests : public ::testing::TestWithParam<size_t>
+{
+public:
+    static const size_t TEST_CASES_SZ;
+protected:
+    static Aws::Vector<CloudFrontKeyValueStoreEndpointProviderEndpointTestCase> getTestCase();
+    static Aws::UniquePtrSafeDeleted<Aws::Vector<CloudFrontKeyValueStoreEndpointProviderEndpointTestCase>> TEST_CASES;
+    static void SetUpTestSuite()
+    {
+        TEST_CASES = Aws::MakeUniqueSafeDeleted<Aws::Vector<CloudFrontKeyValueStoreEndpointProviderEndpointTestCase>>(ALLOCATION_TAG, getTestCase());
+        ASSERT_TRUE(TEST_CASES) << "Failed to allocate TEST_CASES table";
+        assert(TEST_CASES->size() == TEST_CASES_SZ);
+    }
+
+    static void TearDownTestSuite()
+    {
+        TEST_CASES.reset();
+    }
+};
+
+Aws::UniquePtrSafeDeleted<Aws::Vector<CloudFrontKeyValueStoreEndpointProviderEndpointTestCase>> CloudFrontKeyValueStoreEndpointProviderTests::TEST_CASES;
+const size_t CloudFrontKeyValueStoreEndpointProviderTests::TEST_CASES_SZ = 15;
+
+Aws::Vector<CloudFrontKeyValueStoreEndpointProviderEndpointTestCase> CloudFrontKeyValueStoreEndpointProviderTests::getTestCase() {
+
+  Aws::Vector<CloudFrontKeyValueStoreEndpointProviderEndpointTestCase> test_cases = {
   /*TEST CASE 0*/
   {"FIPS should error", // documentation
     {EpParam("UseFIPS", true)}, // params
@@ -158,7 +181,9 @@ static const Aws::Vector<CloudFrontKeyValueStoreEndpointProviderEndpointTestCase
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Client was configured for partition `aws-us-gov` but Kvs ARN has `aws`"} // expect
   }
-};
+  };
+  return test_cases;
+}
 
 Aws::String RulesToSdkSignerName(const Aws::String& rulesSignerName)
 {
@@ -253,9 +278,10 @@ void ValidateOutcome(const ResolveEndpointOutcome& outcome, const CloudFrontKeyV
 TEST_P(CloudFrontKeyValueStoreEndpointProviderTests, EndpointProviderTest)
 {
     const size_t TEST_CASE_IDX = GetParam();
-    ASSERT_LT(TEST_CASE_IDX, TEST_CASES.size()) << "Something is wrong with the test fixture itself.";
-    const CloudFrontKeyValueStoreEndpointProviderEndpointTestCase& TEST_CASE = TEST_CASES.at(TEST_CASE_IDX);
+    ASSERT_LT(TEST_CASE_IDX, TEST_CASES->size()) << "Something is wrong with the test fixture itself.";
+    const CloudFrontKeyValueStoreEndpointProviderEndpointTestCase& TEST_CASE = TEST_CASES->at(TEST_CASE_IDX);
     SCOPED_TRACE(Aws::String("\nTEST CASE # ") + Aws::Utils::StringUtils::to_string(TEST_CASE_IDX) + ": " + TEST_CASE.documentation);
+    SCOPED_TRACE(Aws::String("\n--gtest_filter=EndpointTestsFromModel/CloudFrontKeyValueStoreEndpointProviderTests.EndpointProviderTest/") + Aws::Utils::StringUtils::to_string(TEST_CASE_IDX));
 
     std::shared_ptr<CloudFrontKeyValueStoreEndpointProvider> endpointProvider = Aws::MakeShared<CloudFrontKeyValueStoreEndpointProvider>(ALLOCATION_TAG);
     ASSERT_TRUE(endpointProvider) << "Failed to allocate/initialize CloudFrontKeyValueStoreEndpointProvider";
@@ -297,4 +323,4 @@ TEST_P(CloudFrontKeyValueStoreEndpointProviderTests, EndpointProviderTest)
 
 INSTANTIATE_TEST_SUITE_P(EndpointTestsFromModel,
                          CloudFrontKeyValueStoreEndpointProviderTests,
-                         ::testing::Range((size_t) 0u, TEST_CASES.size()));
+                         ::testing::Range((size_t) 0u, CloudFrontKeyValueStoreEndpointProviderTests::TEST_CASES_SZ));

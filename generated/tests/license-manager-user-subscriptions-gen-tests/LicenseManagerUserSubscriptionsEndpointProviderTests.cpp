@@ -20,8 +20,6 @@ using ExpEpProps = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::Vector<EpProp
 using ExpEpAuthScheme = Aws::Vector<EpProp>;
 using ExpEpHeaders = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::String>>;
 
-class LicenseManagerUserSubscriptionsEndpointProviderTests : public ::testing::TestWithParam<size_t> {};
-
 struct LicenseManagerUserSubscriptionsEndpointProviderEndpointTestCase
 {
     using OperationParamsFromTest = EndpointParameters;
@@ -55,7 +53,32 @@ struct LicenseManagerUserSubscriptionsEndpointProviderEndpointTestCase
     // Aws::Vector<OperationInput> operationInput;
 };
 
-static const Aws::Vector<LicenseManagerUserSubscriptionsEndpointProviderEndpointTestCase> TEST_CASES = {
+class LicenseManagerUserSubscriptionsEndpointProviderTests : public ::testing::TestWithParam<size_t>
+{
+public:
+    static const size_t TEST_CASES_SZ;
+protected:
+    static Aws::Vector<LicenseManagerUserSubscriptionsEndpointProviderEndpointTestCase> getTestCase();
+    static Aws::UniquePtrSafeDeleted<Aws::Vector<LicenseManagerUserSubscriptionsEndpointProviderEndpointTestCase>> TEST_CASES;
+    static void SetUpTestSuite()
+    {
+        TEST_CASES = Aws::MakeUniqueSafeDeleted<Aws::Vector<LicenseManagerUserSubscriptionsEndpointProviderEndpointTestCase>>(ALLOCATION_TAG, getTestCase());
+        ASSERT_TRUE(TEST_CASES) << "Failed to allocate TEST_CASES table";
+        assert(TEST_CASES->size() == TEST_CASES_SZ);
+    }
+
+    static void TearDownTestSuite()
+    {
+        TEST_CASES.reset();
+    }
+};
+
+Aws::UniquePtrSafeDeleted<Aws::Vector<LicenseManagerUserSubscriptionsEndpointProviderEndpointTestCase>> LicenseManagerUserSubscriptionsEndpointProviderTests::TEST_CASES;
+const size_t LicenseManagerUserSubscriptionsEndpointProviderTests::TEST_CASES_SZ = 25;
+
+Aws::Vector<LicenseManagerUserSubscriptionsEndpointProviderEndpointTestCase> LicenseManagerUserSubscriptionsEndpointProviderTests::getTestCase() {
+
+  Aws::Vector<LicenseManagerUserSubscriptionsEndpointProviderEndpointTestCase> test_cases = {
   /*TEST CASE 0*/
   {"For region us-east-1 with FIPS enabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
@@ -260,7 +283,9 @@ static const Aws::Vector<LicenseManagerUserSubscriptionsEndpointProviderEndpoint
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Missing Region"} // expect
   }
-};
+  };
+  return test_cases;
+}
 
 Aws::String RulesToSdkSignerName(const Aws::String& rulesSignerName)
 {
@@ -355,9 +380,10 @@ void ValidateOutcome(const ResolveEndpointOutcome& outcome, const LicenseManager
 TEST_P(LicenseManagerUserSubscriptionsEndpointProviderTests, EndpointProviderTest)
 {
     const size_t TEST_CASE_IDX = GetParam();
-    ASSERT_LT(TEST_CASE_IDX, TEST_CASES.size()) << "Something is wrong with the test fixture itself.";
-    const LicenseManagerUserSubscriptionsEndpointProviderEndpointTestCase& TEST_CASE = TEST_CASES.at(TEST_CASE_IDX);
+    ASSERT_LT(TEST_CASE_IDX, TEST_CASES->size()) << "Something is wrong with the test fixture itself.";
+    const LicenseManagerUserSubscriptionsEndpointProviderEndpointTestCase& TEST_CASE = TEST_CASES->at(TEST_CASE_IDX);
     SCOPED_TRACE(Aws::String("\nTEST CASE # ") + Aws::Utils::StringUtils::to_string(TEST_CASE_IDX) + ": " + TEST_CASE.documentation);
+    SCOPED_TRACE(Aws::String("\n--gtest_filter=EndpointTestsFromModel/LicenseManagerUserSubscriptionsEndpointProviderTests.EndpointProviderTest/") + Aws::Utils::StringUtils::to_string(TEST_CASE_IDX));
 
     std::shared_ptr<LicenseManagerUserSubscriptionsEndpointProvider> endpointProvider = Aws::MakeShared<LicenseManagerUserSubscriptionsEndpointProvider>(ALLOCATION_TAG);
     ASSERT_TRUE(endpointProvider) << "Failed to allocate/initialize LicenseManagerUserSubscriptionsEndpointProvider";
@@ -399,4 +425,4 @@ TEST_P(LicenseManagerUserSubscriptionsEndpointProviderTests, EndpointProviderTes
 
 INSTANTIATE_TEST_SUITE_P(EndpointTestsFromModel,
                          LicenseManagerUserSubscriptionsEndpointProviderTests,
-                         ::testing::Range((size_t) 0u, TEST_CASES.size()));
+                         ::testing::Range((size_t) 0u, LicenseManagerUserSubscriptionsEndpointProviderTests::TEST_CASES_SZ));

@@ -24,7 +24,8 @@ FleetCapacity::FleetCapacity() :
     m_instanceType(EC2InstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
     m_instanceCountsHasBeenSet(false),
-    m_locationHasBeenSet(false)
+    m_locationHasBeenSet(false),
+    m_replicaContainerGroupCountsHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ FleetCapacity::FleetCapacity(JsonView jsonValue) :
     m_instanceType(EC2InstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
     m_instanceCountsHasBeenSet(false),
-    m_locationHasBeenSet(false)
+    m_locationHasBeenSet(false),
+    m_replicaContainerGroupCountsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +78,13 @@ FleetCapacity& FleetCapacity::operator =(JsonView jsonValue)
     m_locationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ReplicaContainerGroupCounts"))
+  {
+    m_replicaContainerGroupCounts = jsonValue.GetObject("ReplicaContainerGroupCounts");
+
+    m_replicaContainerGroupCountsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -109,6 +118,12 @@ JsonValue FleetCapacity::Jsonize() const
   if(m_locationHasBeenSet)
   {
    payload.WithString("Location", m_location);
+
+  }
+
+  if(m_replicaContainerGroupCountsHasBeenSet)
+  {
+   payload.WithObject("ReplicaContainerGroupCounts", m_replicaContainerGroupCounts.Jsonize());
 
   }
 

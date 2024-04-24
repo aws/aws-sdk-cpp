@@ -44,50 +44,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource name of the task to
-     * update.</p>
+     * <p>Specifies the ARN of the task that you want to update.</p>
      */
     inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource name of the task to
-     * update.</p>
+     * <p>Specifies the ARN of the task that you want to update.</p>
      */
     inline bool TaskArnHasBeenSet() const { return m_taskArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource name of the task to
-     * update.</p>
+     * <p>Specifies the ARN of the task that you want to update.</p>
      */
     inline void SetTaskArn(const Aws::String& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource name of the task to
-     * update.</p>
+     * <p>Specifies the ARN of the task that you want to update.</p>
      */
     inline void SetTaskArn(Aws::String&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource name of the task to
-     * update.</p>
+     * <p>Specifies the ARN of the task that you want to update.</p>
      */
     inline void SetTaskArn(const char* value) { m_taskArnHasBeenSet = true; m_taskArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource name of the task to
-     * update.</p>
+     * <p>Specifies the ARN of the task that you want to update.</p>
      */
     inline UpdateTaskRequest& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource name of the task to
-     * update.</p>
+     * <p>Specifies the ARN of the task that you want to update.</p>
      */
     inline UpdateTaskRequest& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource name of the task to
-     * update.</p>
+     * <p>Specifies the ARN of the task that you want to update.</p>
      */
     inline UpdateTaskRequest& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
 
@@ -112,75 +104,80 @@ namespace Model
 
 
     /**
-     * <p>Specifies a list of filter rules that exclude specific data during your
-     * transfer. For more information and examples, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
-     * data transferred by DataSync</a>.</p>
+     * <p>Specifies exclude filters that define the files, objects, and folders in your
+     * source location that you don't want DataSync to transfer. For more information
+     * and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying
+     * what DataSync transfers by using filters</a>.</p>
      */
     inline const Aws::Vector<FilterRule>& GetExcludes() const{ return m_excludes; }
 
     /**
-     * <p>Specifies a list of filter rules that exclude specific data during your
-     * transfer. For more information and examples, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
-     * data transferred by DataSync</a>.</p>
+     * <p>Specifies exclude filters that define the files, objects, and folders in your
+     * source location that you don't want DataSync to transfer. For more information
+     * and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying
+     * what DataSync transfers by using filters</a>.</p>
      */
     inline bool ExcludesHasBeenSet() const { return m_excludesHasBeenSet; }
 
     /**
-     * <p>Specifies a list of filter rules that exclude specific data during your
-     * transfer. For more information and examples, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
-     * data transferred by DataSync</a>.</p>
+     * <p>Specifies exclude filters that define the files, objects, and folders in your
+     * source location that you don't want DataSync to transfer. For more information
+     * and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying
+     * what DataSync transfers by using filters</a>.</p>
      */
     inline void SetExcludes(const Aws::Vector<FilterRule>& value) { m_excludesHasBeenSet = true; m_excludes = value; }
 
     /**
-     * <p>Specifies a list of filter rules that exclude specific data during your
-     * transfer. For more information and examples, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
-     * data transferred by DataSync</a>.</p>
+     * <p>Specifies exclude filters that define the files, objects, and folders in your
+     * source location that you don't want DataSync to transfer. For more information
+     * and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying
+     * what DataSync transfers by using filters</a>.</p>
      */
     inline void SetExcludes(Aws::Vector<FilterRule>&& value) { m_excludesHasBeenSet = true; m_excludes = std::move(value); }
 
     /**
-     * <p>Specifies a list of filter rules that exclude specific data during your
-     * transfer. For more information and examples, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
-     * data transferred by DataSync</a>.</p>
+     * <p>Specifies exclude filters that define the files, objects, and folders in your
+     * source location that you don't want DataSync to transfer. For more information
+     * and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying
+     * what DataSync transfers by using filters</a>.</p>
      */
     inline UpdateTaskRequest& WithExcludes(const Aws::Vector<FilterRule>& value) { SetExcludes(value); return *this;}
 
     /**
-     * <p>Specifies a list of filter rules that exclude specific data during your
-     * transfer. For more information and examples, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
-     * data transferred by DataSync</a>.</p>
+     * <p>Specifies exclude filters that define the files, objects, and folders in your
+     * source location that you don't want DataSync to transfer. For more information
+     * and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying
+     * what DataSync transfers by using filters</a>.</p>
      */
     inline UpdateTaskRequest& WithExcludes(Aws::Vector<FilterRule>&& value) { SetExcludes(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies a list of filter rules that exclude specific data during your
-     * transfer. For more information and examples, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
-     * data transferred by DataSync</a>.</p>
+     * <p>Specifies exclude filters that define the files, objects, and folders in your
+     * source location that you don't want DataSync to transfer. For more information
+     * and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying
+     * what DataSync transfers by using filters</a>.</p>
      */
     inline UpdateTaskRequest& AddExcludes(const FilterRule& value) { m_excludesHasBeenSet = true; m_excludes.push_back(value); return *this; }
 
     /**
-     * <p>Specifies a list of filter rules that exclude specific data during your
-     * transfer. For more information and examples, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
-     * data transferred by DataSync</a>.</p>
+     * <p>Specifies exclude filters that define the files, objects, and folders in your
+     * source location that you don't want DataSync to transfer. For more information
+     * and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying
+     * what DataSync transfers by using filters</a>.</p>
      */
     inline UpdateTaskRequest& AddExcludes(FilterRule&& value) { m_excludesHasBeenSet = true; m_excludes.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Specifies a schedule used to periodically transfer files from a source to a
-     * destination location. You can configure your task to execute hourly, daily,
-     * weekly or on specific days of the week. You control when in the day or hour you
-     * want the task to execute. The time you specify is UTC time. For more
+     * <p>Specifies a schedule for when you want your task to run. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling
      * your task</a>.</p>
@@ -188,10 +185,7 @@ namespace Model
     inline const TaskSchedule& GetSchedule() const{ return m_schedule; }
 
     /**
-     * <p>Specifies a schedule used to periodically transfer files from a source to a
-     * destination location. You can configure your task to execute hourly, daily,
-     * weekly or on specific days of the week. You control when in the day or hour you
-     * want the task to execute. The time you specify is UTC time. For more
+     * <p>Specifies a schedule for when you want your task to run. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling
      * your task</a>.</p>
@@ -199,10 +193,7 @@ namespace Model
     inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
 
     /**
-     * <p>Specifies a schedule used to periodically transfer files from a source to a
-     * destination location. You can configure your task to execute hourly, daily,
-     * weekly or on specific days of the week. You control when in the day or hour you
-     * want the task to execute. The time you specify is UTC time. For more
+     * <p>Specifies a schedule for when you want your task to run. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling
      * your task</a>.</p>
@@ -210,10 +201,7 @@ namespace Model
     inline void SetSchedule(const TaskSchedule& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
 
     /**
-     * <p>Specifies a schedule used to periodically transfer files from a source to a
-     * destination location. You can configure your task to execute hourly, daily,
-     * weekly or on specific days of the week. You control when in the day or hour you
-     * want the task to execute. The time you specify is UTC time. For more
+     * <p>Specifies a schedule for when you want your task to run. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling
      * your task</a>.</p>
@@ -221,10 +209,7 @@ namespace Model
     inline void SetSchedule(TaskSchedule&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
 
     /**
-     * <p>Specifies a schedule used to periodically transfer files from a source to a
-     * destination location. You can configure your task to execute hourly, daily,
-     * weekly or on specific days of the week. You control when in the day or hour you
-     * want the task to execute. The time you specify is UTC time. For more
+     * <p>Specifies a schedule for when you want your task to run. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling
      * your task</a>.</p>
@@ -232,10 +217,7 @@ namespace Model
     inline UpdateTaskRequest& WithSchedule(const TaskSchedule& value) { SetSchedule(value); return *this;}
 
     /**
-     * <p>Specifies a schedule used to periodically transfer files from a source to a
-     * destination location. You can configure your task to execute hourly, daily,
-     * weekly or on specific days of the week. You control when in the day or hour you
-     * want the task to execute. The time you specify is UTC time. For more
+     * <p>Specifies a schedule for when you want your task to run. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling
      * your task</a>.</p>
@@ -244,156 +226,164 @@ namespace Model
 
 
     /**
-     * <p>The name of the task to update.</p>
+     * <p>Specifies the name of your task.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the task to update.</p>
+     * <p>Specifies the name of your task.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the task to update.</p>
+     * <p>Specifies the name of your task.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the task to update.</p>
+     * <p>Specifies the name of your task.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the task to update.</p>
+     * <p>Specifies the name of your task.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the task to update.</p>
+     * <p>Specifies the name of your task.</p>
      */
     inline UpdateTaskRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the task to update.</p>
+     * <p>Specifies the name of your task.</p>
      */
     inline UpdateTaskRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the task to update.</p>
+     * <p>Specifies the name of your task.</p>
      */
     inline UpdateTaskRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch
-     * log group.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of an Amazon CloudWatch log group
+     * for monitoring your task.</p>
      */
     inline const Aws::String& GetCloudWatchLogGroupArn() const{ return m_cloudWatchLogGroupArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch
-     * log group.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of an Amazon CloudWatch log group
+     * for monitoring your task.</p>
      */
     inline bool CloudWatchLogGroupArnHasBeenSet() const { return m_cloudWatchLogGroupArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch
-     * log group.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of an Amazon CloudWatch log group
+     * for monitoring your task.</p>
      */
     inline void SetCloudWatchLogGroupArn(const Aws::String& value) { m_cloudWatchLogGroupArnHasBeenSet = true; m_cloudWatchLogGroupArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch
-     * log group.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of an Amazon CloudWatch log group
+     * for monitoring your task.</p>
      */
     inline void SetCloudWatchLogGroupArn(Aws::String&& value) { m_cloudWatchLogGroupArnHasBeenSet = true; m_cloudWatchLogGroupArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch
-     * log group.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of an Amazon CloudWatch log group
+     * for monitoring your task.</p>
      */
     inline void SetCloudWatchLogGroupArn(const char* value) { m_cloudWatchLogGroupArnHasBeenSet = true; m_cloudWatchLogGroupArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch
-     * log group.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of an Amazon CloudWatch log group
+     * for monitoring your task.</p>
      */
     inline UpdateTaskRequest& WithCloudWatchLogGroupArn(const Aws::String& value) { SetCloudWatchLogGroupArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch
-     * log group.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of an Amazon CloudWatch log group
+     * for monitoring your task.</p>
      */
     inline UpdateTaskRequest& WithCloudWatchLogGroupArn(Aws::String&& value) { SetCloudWatchLogGroupArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch
-     * log group.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of an Amazon CloudWatch log group
+     * for monitoring your task.</p>
      */
     inline UpdateTaskRequest& WithCloudWatchLogGroupArn(const char* value) { SetCloudWatchLogGroupArn(value); return *this;}
 
 
     /**
-     * <p>Specifies a list of filter rules that include specific data during your
-     * transfer. For more information and examples, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
-     * data transferred by DataSync</a>.</p>
+     * <p>Specifies include filters define the files, objects, and folders in your
+     * source location that you want DataSync to transfer. For more information and
+     * examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying
+     * what DataSync transfers by using filters</a>.</p>
      */
     inline const Aws::Vector<FilterRule>& GetIncludes() const{ return m_includes; }
 
     /**
-     * <p>Specifies a list of filter rules that include specific data during your
-     * transfer. For more information and examples, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
-     * data transferred by DataSync</a>.</p>
+     * <p>Specifies include filters define the files, objects, and folders in your
+     * source location that you want DataSync to transfer. For more information and
+     * examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying
+     * what DataSync transfers by using filters</a>.</p>
      */
     inline bool IncludesHasBeenSet() const { return m_includesHasBeenSet; }
 
     /**
-     * <p>Specifies a list of filter rules that include specific data during your
-     * transfer. For more information and examples, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
-     * data transferred by DataSync</a>.</p>
+     * <p>Specifies include filters define the files, objects, and folders in your
+     * source location that you want DataSync to transfer. For more information and
+     * examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying
+     * what DataSync transfers by using filters</a>.</p>
      */
     inline void SetIncludes(const Aws::Vector<FilterRule>& value) { m_includesHasBeenSet = true; m_includes = value; }
 
     /**
-     * <p>Specifies a list of filter rules that include specific data during your
-     * transfer. For more information and examples, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
-     * data transferred by DataSync</a>.</p>
+     * <p>Specifies include filters define the files, objects, and folders in your
+     * source location that you want DataSync to transfer. For more information and
+     * examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying
+     * what DataSync transfers by using filters</a>.</p>
      */
     inline void SetIncludes(Aws::Vector<FilterRule>&& value) { m_includesHasBeenSet = true; m_includes = std::move(value); }
 
     /**
-     * <p>Specifies a list of filter rules that include specific data during your
-     * transfer. For more information and examples, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
-     * data transferred by DataSync</a>.</p>
+     * <p>Specifies include filters define the files, objects, and folders in your
+     * source location that you want DataSync to transfer. For more information and
+     * examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying
+     * what DataSync transfers by using filters</a>.</p>
      */
     inline UpdateTaskRequest& WithIncludes(const Aws::Vector<FilterRule>& value) { SetIncludes(value); return *this;}
 
     /**
-     * <p>Specifies a list of filter rules that include specific data during your
-     * transfer. For more information and examples, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
-     * data transferred by DataSync</a>.</p>
+     * <p>Specifies include filters define the files, objects, and folders in your
+     * source location that you want DataSync to transfer. For more information and
+     * examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying
+     * what DataSync transfers by using filters</a>.</p>
      */
     inline UpdateTaskRequest& WithIncludes(Aws::Vector<FilterRule>&& value) { SetIncludes(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies a list of filter rules that include specific data during your
-     * transfer. For more information and examples, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
-     * data transferred by DataSync</a>.</p>
+     * <p>Specifies include filters define the files, objects, and folders in your
+     * source location that you want DataSync to transfer. For more information and
+     * examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying
+     * what DataSync transfers by using filters</a>.</p>
      */
     inline UpdateTaskRequest& AddIncludes(const FilterRule& value) { m_includesHasBeenSet = true; m_includes.push_back(value); return *this; }
 
     /**
-     * <p>Specifies a list of filter rules that include specific data during your
-     * transfer. For more information and examples, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
-     * data transferred by DataSync</a>.</p>
+     * <p>Specifies include filters define the files, objects, and folders in your
+     * source location that you want DataSync to transfer. For more information and
+     * examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying
+     * what DataSync transfers by using filters</a>.</p>
      */
     inline UpdateTaskRequest& AddIncludes(FilterRule&& value) { m_includesHasBeenSet = true; m_includes.push_back(std::move(value)); return *this; }
 

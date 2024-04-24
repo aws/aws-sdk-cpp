@@ -464,6 +464,35 @@ namespace Model
      */
     inline ModifyNetworkInterfaceAttributeRequest& WithConnectionTrackingSpecification(ConnectionTrackingSpecificationRequest&& value) { SetConnectionTrackingSpecification(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates whether to assign a public IPv4 address to a network interface.
+     * This option can be enabled for any network interface but will only apply to the
+     * primary network interface (eth0).</p>
+     */
+    inline bool GetAssociatePublicIpAddress() const{ return m_associatePublicIpAddress; }
+
+    /**
+     * <p>Indicates whether to assign a public IPv4 address to a network interface.
+     * This option can be enabled for any network interface but will only apply to the
+     * primary network interface (eth0).</p>
+     */
+    inline bool AssociatePublicIpAddressHasBeenSet() const { return m_associatePublicIpAddressHasBeenSet; }
+
+    /**
+     * <p>Indicates whether to assign a public IPv4 address to a network interface.
+     * This option can be enabled for any network interface but will only apply to the
+     * primary network interface (eth0).</p>
+     */
+    inline void SetAssociatePublicIpAddress(bool value) { m_associatePublicIpAddressHasBeenSet = true; m_associatePublicIpAddress = value; }
+
+    /**
+     * <p>Indicates whether to assign a public IPv4 address to a network interface.
+     * This option can be enabled for any network interface but will only apply to the
+     * primary network interface (eth0).</p>
+     */
+    inline ModifyNetworkInterfaceAttributeRequest& WithAssociatePublicIpAddress(bool value) { SetAssociatePublicIpAddress(value); return *this;}
+
   private:
 
     NetworkInterfaceAttachmentChanges m_attachment;
@@ -492,6 +521,9 @@ namespace Model
 
     ConnectionTrackingSpecificationRequest m_connectionTrackingSpecification;
     bool m_connectionTrackingSpecificationHasBeenSet = false;
+
+    bool m_associatePublicIpAddress;
+    bool m_associatePublicIpAddressHasBeenSet = false;
   };
 
 } // namespace Model

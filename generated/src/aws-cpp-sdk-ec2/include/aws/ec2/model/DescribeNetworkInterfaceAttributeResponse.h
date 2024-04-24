@@ -194,6 +194,28 @@ namespace Model
     inline DescribeNetworkInterfaceAttributeResponse& WithSourceDestCheck(AttributeBooleanValue&& value) { SetSourceDestCheck(std::move(value)); return *this;}
 
 
+    /**
+     * <p>Indicates whether to assign a public IPv4 address to a network interface.
+     * This option can be enabled for any network interface but will only apply to the
+     * primary network interface (eth0).</p>
+     */
+    inline bool GetAssociatePublicIpAddress() const{ return m_associatePublicIpAddress; }
+
+    /**
+     * <p>Indicates whether to assign a public IPv4 address to a network interface.
+     * This option can be enabled for any network interface but will only apply to the
+     * primary network interface (eth0).</p>
+     */
+    inline void SetAssociatePublicIpAddress(bool value) { m_associatePublicIpAddress = value; }
+
+    /**
+     * <p>Indicates whether to assign a public IPv4 address to a network interface.
+     * This option can be enabled for any network interface but will only apply to the
+     * primary network interface (eth0).</p>
+     */
+    inline DescribeNetworkInterfaceAttributeResponse& WithAssociatePublicIpAddress(bool value) { SetAssociatePublicIpAddress(value); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -220,6 +242,8 @@ namespace Model
     Aws::String m_networkInterfaceId;
 
     AttributeBooleanValue m_sourceDestCheck;
+
+    bool m_associatePublicIpAddress;
 
     ResponseMetadata m_responseMetadata;
   };

@@ -22,6 +22,7 @@ namespace Aws
 
         static const int EC2_HASH = HashingUtils::HashString("EC2");
         static const int ANYWHERE_HASH = HashingUtils::HashString("ANYWHERE");
+        static const int CONTAINER_HASH = HashingUtils::HashString("CONTAINER");
 
 
         ComputeType GetComputeTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == ANYWHERE_HASH)
           {
             return ComputeType::ANYWHERE;
+          }
+          else if (hashCode == CONTAINER_HASH)
+          {
+            return ComputeType::CONTAINER;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "EC2";
           case ComputeType::ANYWHERE:
             return "ANYWHERE";
+          case ComputeType::CONTAINER:
+            return "CONTAINER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

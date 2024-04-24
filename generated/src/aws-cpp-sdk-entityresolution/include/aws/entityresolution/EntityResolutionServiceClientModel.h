@@ -19,6 +19,7 @@
 
 /* Service model headers required in EntityResolutionClient header */
 #include <aws/entityresolution/model/AddPolicyStatementResult.h>
+#include <aws/entityresolution/model/BatchDeleteUniqueIdResult.h>
 #include <aws/entityresolution/model/CreateIdMappingWorkflowResult.h>
 #include <aws/entityresolution/model/CreateIdNamespaceResult.h>
 #include <aws/entityresolution/model/CreateMatchingWorkflowResult.h>
@@ -95,6 +96,7 @@ namespace Aws
     {
       /* Service model forward declarations required in EntityResolutionClient header */
       class AddPolicyStatementRequest;
+      class BatchDeleteUniqueIdRequest;
       class CreateIdMappingWorkflowRequest;
       class CreateIdNamespaceRequest;
       class CreateMatchingWorkflowRequest;
@@ -134,6 +136,7 @@ namespace Aws
 
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<AddPolicyStatementResult, EntityResolutionError> AddPolicyStatementOutcome;
+      typedef Aws::Utils::Outcome<BatchDeleteUniqueIdResult, EntityResolutionError> BatchDeleteUniqueIdOutcome;
       typedef Aws::Utils::Outcome<CreateIdMappingWorkflowResult, EntityResolutionError> CreateIdMappingWorkflowOutcome;
       typedef Aws::Utils::Outcome<CreateIdNamespaceResult, EntityResolutionError> CreateIdNamespaceOutcome;
       typedef Aws::Utils::Outcome<CreateMatchingWorkflowResult, EntityResolutionError> CreateMatchingWorkflowOutcome;
@@ -173,6 +176,7 @@ namespace Aws
 
       /* Service model Outcome callable definitions */
       typedef std::future<AddPolicyStatementOutcome> AddPolicyStatementOutcomeCallable;
+      typedef std::future<BatchDeleteUniqueIdOutcome> BatchDeleteUniqueIdOutcomeCallable;
       typedef std::future<CreateIdMappingWorkflowOutcome> CreateIdMappingWorkflowOutcomeCallable;
       typedef std::future<CreateIdNamespaceOutcome> CreateIdNamespaceOutcomeCallable;
       typedef std::future<CreateMatchingWorkflowOutcome> CreateMatchingWorkflowOutcomeCallable;
@@ -215,6 +219,7 @@ namespace Aws
 
     /* Service model async handlers definitions */
     typedef std::function<void(const EntityResolutionClient*, const Model::AddPolicyStatementRequest&, const Model::AddPolicyStatementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddPolicyStatementResponseReceivedHandler;
+    typedef std::function<void(const EntityResolutionClient*, const Model::BatchDeleteUniqueIdRequest&, const Model::BatchDeleteUniqueIdOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteUniqueIdResponseReceivedHandler;
     typedef std::function<void(const EntityResolutionClient*, const Model::CreateIdMappingWorkflowRequest&, const Model::CreateIdMappingWorkflowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIdMappingWorkflowResponseReceivedHandler;
     typedef std::function<void(const EntityResolutionClient*, const Model::CreateIdNamespaceRequest&, const Model::CreateIdNamespaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIdNamespaceResponseReceivedHandler;
     typedef std::function<void(const EntityResolutionClient*, const Model::CreateMatchingWorkflowRequest&, const Model::CreateMatchingWorkflowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMatchingWorkflowResponseReceivedHandler;

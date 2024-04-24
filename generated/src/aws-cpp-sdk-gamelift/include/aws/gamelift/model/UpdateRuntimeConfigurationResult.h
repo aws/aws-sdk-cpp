@@ -34,32 +34,32 @@ namespace Model
 
 
     /**
-     * <p>The runtime configuration currently in use by all instances in the fleet. If
-     * the update was successful, all property changes are shown. </p>
+     * <p>The runtime configuration currently in use by computes in the fleet. If the
+     * update is successful, all property changes are shown. </p>
      */
     inline const RuntimeConfiguration& GetRuntimeConfiguration() const{ return m_runtimeConfiguration; }
 
     /**
-     * <p>The runtime configuration currently in use by all instances in the fleet. If
-     * the update was successful, all property changes are shown. </p>
+     * <p>The runtime configuration currently in use by computes in the fleet. If the
+     * update is successful, all property changes are shown. </p>
      */
     inline void SetRuntimeConfiguration(const RuntimeConfiguration& value) { m_runtimeConfiguration = value; }
 
     /**
-     * <p>The runtime configuration currently in use by all instances in the fleet. If
-     * the update was successful, all property changes are shown. </p>
+     * <p>The runtime configuration currently in use by computes in the fleet. If the
+     * update is successful, all property changes are shown. </p>
      */
     inline void SetRuntimeConfiguration(RuntimeConfiguration&& value) { m_runtimeConfiguration = std::move(value); }
 
     /**
-     * <p>The runtime configuration currently in use by all instances in the fleet. If
-     * the update was successful, all property changes are shown. </p>
+     * <p>The runtime configuration currently in use by computes in the fleet. If the
+     * update is successful, all property changes are shown. </p>
      */
     inline UpdateRuntimeConfigurationResult& WithRuntimeConfiguration(const RuntimeConfiguration& value) { SetRuntimeConfiguration(value); return *this;}
 
     /**
-     * <p>The runtime configuration currently in use by all instances in the fleet. If
-     * the update was successful, all property changes are shown. </p>
+     * <p>The runtime configuration currently in use by computes in the fleet. If the
+     * update is successful, all property changes are shown. </p>
      */
     inline UpdateRuntimeConfigurationResult& WithRuntimeConfiguration(RuntimeConfiguration&& value) { SetRuntimeConfiguration(std::move(value)); return *this;}
 

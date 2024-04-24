@@ -34,39 +34,30 @@ namespace Model
    * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
    * maintenance window tasks without targets</a> in the <i>Amazon Web Services
    * Systems Manager User Guide</i>.</p>  <p>Supported formats include the
-   * following.</p> <ul> <li> <p>
-   * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;,&lt;instance-id-3&gt;</code>
+   * following.</p> <p> <b>For all Systems Manager capabilities:</b> </p> <ul> <li>
+   * <p> <code>Key=tag-key,Values=tag-value-1,tag-value-2</code> </p> </li> </ul> <p>
+   * <b>For Automation and Change Manager:</b> </p> <ul> <li> <p>
+   * <code>Key=tag:tag-key,Values=tag-value</code> </p> </li> <li> <p>
+   * <code>Key=ResourceGroup,Values=resource-group-name</code> </p> </li> <li> <p>
+   * <code>Key=ParameterValues,Values=value-1,value-2,value-3</code> </p> </li> <li>
+   * <p>To target all instances in the Amazon Web Services Region:</p> <ul> <li> <p>
+   * <code>Key=AWS::EC2::Instance,Values=*</code> </p> </li> <li> <p>
+   * <code>Key=InstanceIds,Values=*</code> </p> </li> </ul> </li> </ul> <p> <b>For
+   * Run Command and Maintenance Windows:</b> </p> <ul> <li> <p>
+   * <code>Key=InstanceIds,Values=instance-id-1,instance-id-2,instance-id-3</code>
+   * </p> </li> <li> <p> <code>Key=tag:tag-key,Values=tag-value-1,tag-value-2</code>
    * </p> </li> <li> <p>
-   * <code>Key=tag:&lt;my-tag-key&gt;,Values=&lt;my-tag-value-1&gt;,&lt;my-tag-value-2&gt;</code>
-   * </p> </li> <li> <p>
-   * <code>Key=tag-key,Values=&lt;my-tag-key-1&gt;,&lt;my-tag-key-2&gt;</code> </p>
-   * </li> <li> <p> <b>Run Command and Maintenance window targets only</b>:
-   * <code>Key=resource-groups:Name,Values=&lt;resource-group-name&gt;</code> </p>
-   * </li> <li> <p> <b>Maintenance window targets only</b>:
-   * <code>Key=resource-groups:ResourceTypeFilters,Values=&lt;resource-type-1&gt;,&lt;resource-type-2&gt;</code>
-   * </p> </li> <li> <p> <b>Automation targets only</b>:
-   * <code>Key=ResourceGroup;Values=&lt;resource-group-name&gt;</code> </p> </li>
-   * </ul> <p>For example:</p> <ul> <li> <p>
-   * <code>Key=InstanceIds,Values=i-02573cafcfEXAMPLE,i-0471e04240EXAMPLE,i-07782c72faEXAMPLE</code>
-   * </p> </li> <li> <p>
-   * <code>Key=tag:CostCenter,Values=CostCenter1,CostCenter2,CostCenter3</code> </p>
-   * </li> <li> <p> <code>Key=tag-key,Values=Name,Instance-Type,CostCenter</code>
-   * </p> </li> <li> <p> <b>Run Command and Maintenance window targets only</b>:
-   * <code>Key=resource-groups:Name,Values=ProductionResourceGroup</code> </p>
-   * <p>This example demonstrates how to target all resources in the resource group
-   * <b>ProductionResourceGroup</b> in your maintenance window.</p> </li> <li> <p>
-   * <b>Maintenance window targets only</b>:
-   * <code>Key=resource-groups:ResourceTypeFilters,Values=AWS::EC2::INSTANCE,AWS::EC2::VPC</code>
-   * </p> <p>This example demonstrates how to target only Amazon Elastic Compute
-   * Cloud (Amazon EC2) instances and VPCs in your maintenance window.</p> </li> <li>
-   * <p> <b>Automation targets only</b>:
-   * <code>Key=ResourceGroup,Values=MyResourceGroup</code> </p> </li> <li> <p>
-   * <b>State Manager association targets only</b>:
-   * <code>Key=InstanceIds,Values=*</code> </p> <p>This example demonstrates how to
-   * target all managed instances in the Amazon Web Services Region where the
-   * association was created.</p> </li> </ul> <p>For more information about how to
-   * send commands that target managed nodes using <code>Key,Value</code> parameters,
-   * see <a
+   * <code>Key=resource-groups:Name,Values=resource-group-name</code> </p> </li> <li>
+   * <p>Additionally, Maintenance Windows support targeting resource types:</p> <ul>
+   * <li> <p>
+   * <code>Key=resource-groups:ResourceTypeFilters,Values=resource-type-1,resource-type-2</code>
+   * </p> </li> </ul> </li> </ul> <p> <b>For State Manager:</b> </p> <ul> <li> <p>
+   * <code>Key=InstanceIds,Values=instance-id-1,instance-id-2,instance-id-3</code>
+   * </p> </li> <li> <p> <code>Key=tag:tag-key,Values=tag-value-1,tag-value-2</code>
+   * </p> </li> <li> <p>To target all instances in the Amazon Web Services
+   * Region:</p> <ul> <li> <p> <code>Key=InstanceIds,Values=*</code> </p> </li> </ul>
+   * </li> </ul> <p>For more information about how to send commands that target
+   * managed nodes using <code>Key,Value</code> parameters, see <a
    * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting">Targeting
    * multiple managed nodes</a> in the <i>Amazon Web Services Systems Manager User
    * Guide</i>.</p><p><h3>See Also:</h3>   <a

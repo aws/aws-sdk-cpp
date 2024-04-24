@@ -22,6 +22,7 @@
 #include <aws/entityresolution/EntityResolutionErrorMarshaller.h>
 #include <aws/entityresolution/EntityResolutionEndpointProvider.h>
 #include <aws/entityresolution/model/AddPolicyStatementRequest.h>
+#include <aws/entityresolution/model/BatchDeleteUniqueIdRequest.h>
 #include <aws/entityresolution/model/CreateIdMappingWorkflowRequest.h>
 #include <aws/entityresolution/model/CreateIdNamespaceRequest.h>
 #include <aws/entityresolution/model/CreateMatchingWorkflowRequest.h>
@@ -231,6 +232,45 @@ AddPolicyStatementOutcome EntityResolutionClient::AddPolicyStatement(const AddPo
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStatementId());
       return AddPolicyStatementOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+BatchDeleteUniqueIdOutcome EntityResolutionClient::BatchDeleteUniqueId(const BatchDeleteUniqueIdRequest& request) const
+{
+  AWS_OPERATION_GUARD(BatchDeleteUniqueId);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchDeleteUniqueId, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.UniqueIdsHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchDeleteUniqueId", "Required field: UniqueIds, is not set");
+    return BatchDeleteUniqueIdOutcome(Aws::Client::AWSError<EntityResolutionErrors>(EntityResolutionErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UniqueIds]", false));
+  }
+  if (!request.WorkflowNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchDeleteUniqueId", "Required field: WorkflowName, is not set");
+    return BatchDeleteUniqueIdOutcome(Aws::Client::AWSError<EntityResolutionErrors>(EntityResolutionErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkflowName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, BatchDeleteUniqueId, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, BatchDeleteUniqueId, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".BatchDeleteUniqueId",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<BatchDeleteUniqueIdOutcome>(
+    [&]()-> BatchDeleteUniqueIdOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchDeleteUniqueId, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/matchingworkflows/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkflowName());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/uniqueids");
+      return BatchDeleteUniqueIdOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

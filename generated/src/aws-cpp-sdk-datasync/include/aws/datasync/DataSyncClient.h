@@ -519,11 +519,11 @@ namespace DataSync
         }
 
         /**
-         * <p>Configures a transfer task, which defines where and how DataSync moves your
-         * data.</p> <p>A task includes a source location, destination location, and the
-         * options for how and when you want to transfer your data (such as bandwidth
-         * limits, scheduling, among other options).</p>  <p>If you're planning
-         * to transfer data to or from an Amazon S3 location, review <a
+         * <p>Configures a <i>task</i>, which defines where and how DataSync transfers your
+         * data.</p> <p>A task includes a source location, destination location, and
+         * transfer options (such as bandwidth limits, scheduling, and more).</p>
+         *  <p>If you're planning to transfer data to or from an Amazon S3
+         * location, review <a
          * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#create-s3-location-s3-requests">how
          * DataSync can affect your S3 request charges</a> and the <a
          * href="http://aws.amazon.com/datasync/pricing/">DataSync pricing page</a> before
@@ -1056,8 +1056,8 @@ namespace DataSync
         }
 
         /**
-         * <p>Provides information about an DataSync transfer task.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Provides information about a <i>task</i>, which defines where and how
+         * DataSync transfers your data.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeTask">AWS
          * API Reference</a></p>
          */
@@ -1725,8 +1725,8 @@ namespace DataSync
         }
 
         /**
-         * <p>Updates the configuration of an DataSync transfer task.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates the configuration of a <i>task</i>, which defines where and how
+         * DataSync transfers your data.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTask">AWS
          * API Reference</a></p>
          */
