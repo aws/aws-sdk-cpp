@@ -38,6 +38,11 @@ namespace Aws
              */
             AWS_CORE_API MemorySystemInterface* GetMemorySystem();
 
+            /**
+             * Get the pointer to the SDK default memory system
+             */
+            AWS_CORE_API MemorySystemInterface& GetDefaultMemorySystem();
+
         } // namespace Memory
     } // namespace Utils
 

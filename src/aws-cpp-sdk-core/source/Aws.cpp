@@ -45,6 +45,10 @@ namespace Aws
         {
             Aws::Utils::Memory::InitializeAWSMemorySystem(*options.memoryManagementOptions.memoryManager);
         }
+        else
+        {
+            Aws::Utils::Memory::InitializeAWSMemorySystem(Utils::Memory::GetDefaultMemorySystem());
+        }
 #endif // USE_AWS_MEMORY_MANAGEMENT
         Aws::Client::CoreErrorsMapper::InitCoreErrorsMapper();
         if(options.loggingOptions.logLevel != Aws::Utils::Logging::LogLevel::Off)
