@@ -143,8 +143,8 @@ namespace Model
 
     /**
      * <p>The current status of the request to onboard a member account as an Firewall
-     * Manager administator.</p> <ul> <li> <p> <code>ONBOARDING</code> - The account is
-     * onboarding to Firewall Manager as an administrator.</p> </li> <li> <p>
+     * Manager administrator.</p> <ul> <li> <p> <code>ONBOARDING</code> - The account
+     * is onboarding to Firewall Manager as an administrator.</p> </li> <li> <p>
      * <code>ONBOARDING_COMPLETE</code> - Firewall Manager The account is onboarded to
      * Firewall Manager as an administrator, and can perform actions on the resources
      * defined in their <a>AdminScope</a>.</p> </li> <li> <p> <code>OFFBOARDING</code>
@@ -156,8 +156,8 @@ namespace Model
 
     /**
      * <p>The current status of the request to onboard a member account as an Firewall
-     * Manager administator.</p> <ul> <li> <p> <code>ONBOARDING</code> - The account is
-     * onboarding to Firewall Manager as an administrator.</p> </li> <li> <p>
+     * Manager administrator.</p> <ul> <li> <p> <code>ONBOARDING</code> - The account
+     * is onboarding to Firewall Manager as an administrator.</p> </li> <li> <p>
      * <code>ONBOARDING_COMPLETE</code> - Firewall Manager The account is onboarded to
      * Firewall Manager as an administrator, and can perform actions on the resources
      * defined in their <a>AdminScope</a>.</p> </li> <li> <p> <code>OFFBOARDING</code>
@@ -169,8 +169,8 @@ namespace Model
 
     /**
      * <p>The current status of the request to onboard a member account as an Firewall
-     * Manager administator.</p> <ul> <li> <p> <code>ONBOARDING</code> - The account is
-     * onboarding to Firewall Manager as an administrator.</p> </li> <li> <p>
+     * Manager administrator.</p> <ul> <li> <p> <code>ONBOARDING</code> - The account
+     * is onboarding to Firewall Manager as an administrator.</p> </li> <li> <p>
      * <code>ONBOARDING_COMPLETE</code> - Firewall Manager The account is onboarded to
      * Firewall Manager as an administrator, and can perform actions on the resources
      * defined in their <a>AdminScope</a>.</p> </li> <li> <p> <code>OFFBOARDING</code>
@@ -182,8 +182,8 @@ namespace Model
 
     /**
      * <p>The current status of the request to onboard a member account as an Firewall
-     * Manager administator.</p> <ul> <li> <p> <code>ONBOARDING</code> - The account is
-     * onboarding to Firewall Manager as an administrator.</p> </li> <li> <p>
+     * Manager administrator.</p> <ul> <li> <p> <code>ONBOARDING</code> - The account
+     * is onboarding to Firewall Manager as an administrator.</p> </li> <li> <p>
      * <code>ONBOARDING_COMPLETE</code> - Firewall Manager The account is onboarded to
      * Firewall Manager as an administrator, and can perform actions on the resources
      * defined in their <a>AdminScope</a>.</p> </li> <li> <p> <code>OFFBOARDING</code>
@@ -195,8 +195,8 @@ namespace Model
 
     /**
      * <p>The current status of the request to onboard a member account as an Firewall
-     * Manager administator.</p> <ul> <li> <p> <code>ONBOARDING</code> - The account is
-     * onboarding to Firewall Manager as an administrator.</p> </li> <li> <p>
+     * Manager administrator.</p> <ul> <li> <p> <code>ONBOARDING</code> - The account
+     * is onboarding to Firewall Manager as an administrator.</p> </li> <li> <p>
      * <code>ONBOARDING_COMPLETE</code> - Firewall Manager The account is onboarded to
      * Firewall Manager as an administrator, and can perform actions on the resources
      * defined in their <a>AdminScope</a>.</p> </li> <li> <p> <code>OFFBOARDING</code>
@@ -208,8 +208,8 @@ namespace Model
 
     /**
      * <p>The current status of the request to onboard a member account as an Firewall
-     * Manager administator.</p> <ul> <li> <p> <code>ONBOARDING</code> - The account is
-     * onboarding to Firewall Manager as an administrator.</p> </li> <li> <p>
+     * Manager administrator.</p> <ul> <li> <p> <code>ONBOARDING</code> - The account
+     * is onboarding to Firewall Manager as an administrator.</p> </li> <li> <p>
      * <code>ONBOARDING_COMPLETE</code> - Firewall Manager The account is onboarded to
      * Firewall Manager as an administrator, and can perform actions on the resources
      * defined in their <a>AdminScope</a>.</p> </li> <li> <p> <code>OFFBOARDING</code>

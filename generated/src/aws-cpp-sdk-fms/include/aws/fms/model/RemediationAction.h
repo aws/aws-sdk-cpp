@@ -14,6 +14,10 @@
 #include <aws/fms/model/EC2AssociateRouteTableAction.h>
 #include <aws/fms/model/EC2CreateRouteTableAction.h>
 #include <aws/fms/model/FMSPolicyUpdateFirewallCreationConfigAction.h>
+#include <aws/fms/model/CreateNetworkAclAction.h>
+#include <aws/fms/model/ReplaceNetworkAclAssociationAction.h>
+#include <aws/fms/model/CreateNetworkAclEntriesAction.h>
+#include <aws/fms/model/DeleteNetworkAclEntriesAction.h>
 #include <utility>
 
 namespace Aws
@@ -340,6 +344,148 @@ namespace Model
      */
     inline RemediationAction& WithFMSPolicyUpdateFirewallCreationConfigAction(FMSPolicyUpdateFirewallCreationConfigAction&& value) { SetFMSPolicyUpdateFirewallCreationConfigAction(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information about the <code>CreateNetworkAcl</code> action in Amazon EC2.</p>
+     */
+    inline const CreateNetworkAclAction& GetCreateNetworkAclAction() const{ return m_createNetworkAclAction; }
+
+    /**
+     * <p>Information about the <code>CreateNetworkAcl</code> action in Amazon EC2.</p>
+     */
+    inline bool CreateNetworkAclActionHasBeenSet() const { return m_createNetworkAclActionHasBeenSet; }
+
+    /**
+     * <p>Information about the <code>CreateNetworkAcl</code> action in Amazon EC2.</p>
+     */
+    inline void SetCreateNetworkAclAction(const CreateNetworkAclAction& value) { m_createNetworkAclActionHasBeenSet = true; m_createNetworkAclAction = value; }
+
+    /**
+     * <p>Information about the <code>CreateNetworkAcl</code> action in Amazon EC2.</p>
+     */
+    inline void SetCreateNetworkAclAction(CreateNetworkAclAction&& value) { m_createNetworkAclActionHasBeenSet = true; m_createNetworkAclAction = std::move(value); }
+
+    /**
+     * <p>Information about the <code>CreateNetworkAcl</code> action in Amazon EC2.</p>
+     */
+    inline RemediationAction& WithCreateNetworkAclAction(const CreateNetworkAclAction& value) { SetCreateNetworkAclAction(value); return *this;}
+
+    /**
+     * <p>Information about the <code>CreateNetworkAcl</code> action in Amazon EC2.</p>
+     */
+    inline RemediationAction& WithCreateNetworkAclAction(CreateNetworkAclAction&& value) { SetCreateNetworkAclAction(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information about the <code>ReplaceNetworkAclAssociation</code> action in
+     * Amazon EC2. </p>
+     */
+    inline const ReplaceNetworkAclAssociationAction& GetReplaceNetworkAclAssociationAction() const{ return m_replaceNetworkAclAssociationAction; }
+
+    /**
+     * <p>Information about the <code>ReplaceNetworkAclAssociation</code> action in
+     * Amazon EC2. </p>
+     */
+    inline bool ReplaceNetworkAclAssociationActionHasBeenSet() const { return m_replaceNetworkAclAssociationActionHasBeenSet; }
+
+    /**
+     * <p>Information about the <code>ReplaceNetworkAclAssociation</code> action in
+     * Amazon EC2. </p>
+     */
+    inline void SetReplaceNetworkAclAssociationAction(const ReplaceNetworkAclAssociationAction& value) { m_replaceNetworkAclAssociationActionHasBeenSet = true; m_replaceNetworkAclAssociationAction = value; }
+
+    /**
+     * <p>Information about the <code>ReplaceNetworkAclAssociation</code> action in
+     * Amazon EC2. </p>
+     */
+    inline void SetReplaceNetworkAclAssociationAction(ReplaceNetworkAclAssociationAction&& value) { m_replaceNetworkAclAssociationActionHasBeenSet = true; m_replaceNetworkAclAssociationAction = std::move(value); }
+
+    /**
+     * <p>Information about the <code>ReplaceNetworkAclAssociation</code> action in
+     * Amazon EC2. </p>
+     */
+    inline RemediationAction& WithReplaceNetworkAclAssociationAction(const ReplaceNetworkAclAssociationAction& value) { SetReplaceNetworkAclAssociationAction(value); return *this;}
+
+    /**
+     * <p>Information about the <code>ReplaceNetworkAclAssociation</code> action in
+     * Amazon EC2. </p>
+     */
+    inline RemediationAction& WithReplaceNetworkAclAssociationAction(ReplaceNetworkAclAssociationAction&& value) { SetReplaceNetworkAclAssociationAction(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information about the <code>CreateNetworkAclEntries</code> action in Amazon
+     * EC2.</p>
+     */
+    inline const CreateNetworkAclEntriesAction& GetCreateNetworkAclEntriesAction() const{ return m_createNetworkAclEntriesAction; }
+
+    /**
+     * <p>Information about the <code>CreateNetworkAclEntries</code> action in Amazon
+     * EC2.</p>
+     */
+    inline bool CreateNetworkAclEntriesActionHasBeenSet() const { return m_createNetworkAclEntriesActionHasBeenSet; }
+
+    /**
+     * <p>Information about the <code>CreateNetworkAclEntries</code> action in Amazon
+     * EC2.</p>
+     */
+    inline void SetCreateNetworkAclEntriesAction(const CreateNetworkAclEntriesAction& value) { m_createNetworkAclEntriesActionHasBeenSet = true; m_createNetworkAclEntriesAction = value; }
+
+    /**
+     * <p>Information about the <code>CreateNetworkAclEntries</code> action in Amazon
+     * EC2.</p>
+     */
+    inline void SetCreateNetworkAclEntriesAction(CreateNetworkAclEntriesAction&& value) { m_createNetworkAclEntriesActionHasBeenSet = true; m_createNetworkAclEntriesAction = std::move(value); }
+
+    /**
+     * <p>Information about the <code>CreateNetworkAclEntries</code> action in Amazon
+     * EC2.</p>
+     */
+    inline RemediationAction& WithCreateNetworkAclEntriesAction(const CreateNetworkAclEntriesAction& value) { SetCreateNetworkAclEntriesAction(value); return *this;}
+
+    /**
+     * <p>Information about the <code>CreateNetworkAclEntries</code> action in Amazon
+     * EC2.</p>
+     */
+    inline RemediationAction& WithCreateNetworkAclEntriesAction(CreateNetworkAclEntriesAction&& value) { SetCreateNetworkAclEntriesAction(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information about the <code>DeleteNetworkAclEntries</code> action in Amazon
+     * EC2.</p>
+     */
+    inline const DeleteNetworkAclEntriesAction& GetDeleteNetworkAclEntriesAction() const{ return m_deleteNetworkAclEntriesAction; }
+
+    /**
+     * <p>Information about the <code>DeleteNetworkAclEntries</code> action in Amazon
+     * EC2.</p>
+     */
+    inline bool DeleteNetworkAclEntriesActionHasBeenSet() const { return m_deleteNetworkAclEntriesActionHasBeenSet; }
+
+    /**
+     * <p>Information about the <code>DeleteNetworkAclEntries</code> action in Amazon
+     * EC2.</p>
+     */
+    inline void SetDeleteNetworkAclEntriesAction(const DeleteNetworkAclEntriesAction& value) { m_deleteNetworkAclEntriesActionHasBeenSet = true; m_deleteNetworkAclEntriesAction = value; }
+
+    /**
+     * <p>Information about the <code>DeleteNetworkAclEntries</code> action in Amazon
+     * EC2.</p>
+     */
+    inline void SetDeleteNetworkAclEntriesAction(DeleteNetworkAclEntriesAction&& value) { m_deleteNetworkAclEntriesActionHasBeenSet = true; m_deleteNetworkAclEntriesAction = std::move(value); }
+
+    /**
+     * <p>Information about the <code>DeleteNetworkAclEntries</code> action in Amazon
+     * EC2.</p>
+     */
+    inline RemediationAction& WithDeleteNetworkAclEntriesAction(const DeleteNetworkAclEntriesAction& value) { SetDeleteNetworkAclEntriesAction(value); return *this;}
+
+    /**
+     * <p>Information about the <code>DeleteNetworkAclEntries</code> action in Amazon
+     * EC2.</p>
+     */
+    inline RemediationAction& WithDeleteNetworkAclEntriesAction(DeleteNetworkAclEntriesAction&& value) { SetDeleteNetworkAclEntriesAction(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_description;
@@ -368,6 +514,18 @@ namespace Model
 
     FMSPolicyUpdateFirewallCreationConfigAction m_fMSPolicyUpdateFirewallCreationConfigAction;
     bool m_fMSPolicyUpdateFirewallCreationConfigActionHasBeenSet = false;
+
+    CreateNetworkAclAction m_createNetworkAclAction;
+    bool m_createNetworkAclActionHasBeenSet = false;
+
+    ReplaceNetworkAclAssociationAction m_replaceNetworkAclAssociationAction;
+    bool m_replaceNetworkAclAssociationActionHasBeenSet = false;
+
+    CreateNetworkAclEntriesAction m_createNetworkAclEntriesAction;
+    bool m_createNetworkAclEntriesActionHasBeenSet = false;
+
+    DeleteNetworkAclEntriesAction m_deleteNetworkAclEntriesAction;
+    bool m_deleteNetworkAclEntriesActionHasBeenSet = false;
   };
 
 } // namespace Model

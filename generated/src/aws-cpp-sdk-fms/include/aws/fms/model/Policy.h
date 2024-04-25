@@ -248,16 +248,16 @@ namespace Model
      * and <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>.</p> </li> <li>
      * <p>WAF - <code>AWS::ApiGateway::Stage</code>,
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and
-     * <code>AWS::CloudFront::Distribution</code>.</p> </li> <li> <p> DNS Firewall,
-     * Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p>
-     * </li> <li> <p>Shield Advanced -
+     * <code>AWS::CloudFront::Distribution</code>.</p> </li> <li> <p>Shield Advanced -
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
      * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>,
      * <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>.</p>
-     * </li> <li> <p>Security group content audit -
-     * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>,
-     * and <code>AWS::EC2::Instance</code>.</p> </li> <li> <p>Security group usage
-     * audit - <code>AWS::EC2::SecurityGroup</code>.</p> </li> </ul>
+     * </li> <li> <p>Network ACL - <code>AWS::EC2::Subnet</code>.</p> </li> <li>
+     * <p>Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.</p> </li>
+     * <li> <p>Security group content audit - <code>AWS::EC2::SecurityGroup</code>,
+     * <code>AWS::EC2::NetworkInterface</code>, and
+     * <code>AWS::EC2::Instance</code>.</p> </li> <li> <p>DNS Firewall, Network
+     * Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
@@ -274,16 +274,16 @@ namespace Model
      * and <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>.</p> </li> <li>
      * <p>WAF - <code>AWS::ApiGateway::Stage</code>,
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and
-     * <code>AWS::CloudFront::Distribution</code>.</p> </li> <li> <p> DNS Firewall,
-     * Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p>
-     * </li> <li> <p>Shield Advanced -
+     * <code>AWS::CloudFront::Distribution</code>.</p> </li> <li> <p>Shield Advanced -
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
      * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>,
      * <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>.</p>
-     * </li> <li> <p>Security group content audit -
-     * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>,
-     * and <code>AWS::EC2::Instance</code>.</p> </li> <li> <p>Security group usage
-     * audit - <code>AWS::EC2::SecurityGroup</code>.</p> </li> </ul>
+     * </li> <li> <p>Network ACL - <code>AWS::EC2::Subnet</code>.</p> </li> <li>
+     * <p>Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.</p> </li>
+     * <li> <p>Security group content audit - <code>AWS::EC2::SecurityGroup</code>,
+     * <code>AWS::EC2::NetworkInterface</code>, and
+     * <code>AWS::EC2::Instance</code>.</p> </li> <li> <p>DNS Firewall, Network
+     * Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p> </li> </ul>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
@@ -300,16 +300,16 @@ namespace Model
      * and <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>.</p> </li> <li>
      * <p>WAF - <code>AWS::ApiGateway::Stage</code>,
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and
-     * <code>AWS::CloudFront::Distribution</code>.</p> </li> <li> <p> DNS Firewall,
-     * Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p>
-     * </li> <li> <p>Shield Advanced -
+     * <code>AWS::CloudFront::Distribution</code>.</p> </li> <li> <p>Shield Advanced -
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
      * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>,
      * <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>.</p>
-     * </li> <li> <p>Security group content audit -
-     * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>,
-     * and <code>AWS::EC2::Instance</code>.</p> </li> <li> <p>Security group usage
-     * audit - <code>AWS::EC2::SecurityGroup</code>.</p> </li> </ul>
+     * </li> <li> <p>Network ACL - <code>AWS::EC2::Subnet</code>.</p> </li> <li>
+     * <p>Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.</p> </li>
+     * <li> <p>Security group content audit - <code>AWS::EC2::SecurityGroup</code>,
+     * <code>AWS::EC2::NetworkInterface</code>, and
+     * <code>AWS::EC2::Instance</code>.</p> </li> <li> <p>DNS Firewall, Network
+     * Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p> </li> </ul>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
@@ -326,16 +326,16 @@ namespace Model
      * and <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>.</p> </li> <li>
      * <p>WAF - <code>AWS::ApiGateway::Stage</code>,
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and
-     * <code>AWS::CloudFront::Distribution</code>.</p> </li> <li> <p> DNS Firewall,
-     * Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p>
-     * </li> <li> <p>Shield Advanced -
+     * <code>AWS::CloudFront::Distribution</code>.</p> </li> <li> <p>Shield Advanced -
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
      * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>,
      * <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>.</p>
-     * </li> <li> <p>Security group content audit -
-     * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>,
-     * and <code>AWS::EC2::Instance</code>.</p> </li> <li> <p>Security group usage
-     * audit - <code>AWS::EC2::SecurityGroup</code>.</p> </li> </ul>
+     * </li> <li> <p>Network ACL - <code>AWS::EC2::Subnet</code>.</p> </li> <li>
+     * <p>Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.</p> </li>
+     * <li> <p>Security group content audit - <code>AWS::EC2::SecurityGroup</code>,
+     * <code>AWS::EC2::NetworkInterface</code>, and
+     * <code>AWS::EC2::Instance</code>.</p> </li> <li> <p>DNS Firewall, Network
+     * Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p> </li> </ul>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
@@ -352,16 +352,16 @@ namespace Model
      * and <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>.</p> </li> <li>
      * <p>WAF - <code>AWS::ApiGateway::Stage</code>,
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and
-     * <code>AWS::CloudFront::Distribution</code>.</p> </li> <li> <p> DNS Firewall,
-     * Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p>
-     * </li> <li> <p>Shield Advanced -
+     * <code>AWS::CloudFront::Distribution</code>.</p> </li> <li> <p>Shield Advanced -
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
      * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>,
      * <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>.</p>
-     * </li> <li> <p>Security group content audit -
-     * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>,
-     * and <code>AWS::EC2::Instance</code>.</p> </li> <li> <p>Security group usage
-     * audit - <code>AWS::EC2::SecurityGroup</code>.</p> </li> </ul>
+     * </li> <li> <p>Network ACL - <code>AWS::EC2::Subnet</code>.</p> </li> <li>
+     * <p>Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.</p> </li>
+     * <li> <p>Security group content audit - <code>AWS::EC2::SecurityGroup</code>,
+     * <code>AWS::EC2::NetworkInterface</code>, and
+     * <code>AWS::EC2::Instance</code>.</p> </li> <li> <p>DNS Firewall, Network
+     * Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p> </li> </ul>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
@@ -378,16 +378,16 @@ namespace Model
      * and <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>.</p> </li> <li>
      * <p>WAF - <code>AWS::ApiGateway::Stage</code>,
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and
-     * <code>AWS::CloudFront::Distribution</code>.</p> </li> <li> <p> DNS Firewall,
-     * Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p>
-     * </li> <li> <p>Shield Advanced -
+     * <code>AWS::CloudFront::Distribution</code>.</p> </li> <li> <p>Shield Advanced -
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
      * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>,
      * <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>.</p>
-     * </li> <li> <p>Security group content audit -
-     * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>,
-     * and <code>AWS::EC2::Instance</code>.</p> </li> <li> <p>Security group usage
-     * audit - <code>AWS::EC2::SecurityGroup</code>.</p> </li> </ul>
+     * </li> <li> <p>Network ACL - <code>AWS::EC2::Subnet</code>.</p> </li> <li>
+     * <p>Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.</p> </li>
+     * <li> <p>Security group content audit - <code>AWS::EC2::SecurityGroup</code>,
+     * <code>AWS::EC2::NetworkInterface</code>, and
+     * <code>AWS::EC2::Instance</code>.</p> </li> <li> <p>DNS Firewall, Network
+     * Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p> </li> </ul>
      */
     inline Policy& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
@@ -404,16 +404,16 @@ namespace Model
      * and <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>.</p> </li> <li>
      * <p>WAF - <code>AWS::ApiGateway::Stage</code>,
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and
-     * <code>AWS::CloudFront::Distribution</code>.</p> </li> <li> <p> DNS Firewall,
-     * Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p>
-     * </li> <li> <p>Shield Advanced -
+     * <code>AWS::CloudFront::Distribution</code>.</p> </li> <li> <p>Shield Advanced -
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
      * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>,
      * <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>.</p>
-     * </li> <li> <p>Security group content audit -
-     * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>,
-     * and <code>AWS::EC2::Instance</code>.</p> </li> <li> <p>Security group usage
-     * audit - <code>AWS::EC2::SecurityGroup</code>.</p> </li> </ul>
+     * </li> <li> <p>Network ACL - <code>AWS::EC2::Subnet</code>.</p> </li> <li>
+     * <p>Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.</p> </li>
+     * <li> <p>Security group content audit - <code>AWS::EC2::SecurityGroup</code>,
+     * <code>AWS::EC2::NetworkInterface</code>, and
+     * <code>AWS::EC2::Instance</code>.</p> </li> <li> <p>DNS Firewall, Network
+     * Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p> </li> </ul>
      */
     inline Policy& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
@@ -430,16 +430,16 @@ namespace Model
      * and <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>.</p> </li> <li>
      * <p>WAF - <code>AWS::ApiGateway::Stage</code>,
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and
-     * <code>AWS::CloudFront::Distribution</code>.</p> </li> <li> <p> DNS Firewall,
-     * Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p>
-     * </li> <li> <p>Shield Advanced -
+     * <code>AWS::CloudFront::Distribution</code>.</p> </li> <li> <p>Shield Advanced -
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
      * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>,
      * <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>.</p>
-     * </li> <li> <p>Security group content audit -
-     * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>,
-     * and <code>AWS::EC2::Instance</code>.</p> </li> <li> <p>Security group usage
-     * audit - <code>AWS::EC2::SecurityGroup</code>.</p> </li> </ul>
+     * </li> <li> <p>Network ACL - <code>AWS::EC2::Subnet</code>.</p> </li> <li>
+     * <p>Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.</p> </li>
+     * <li> <p>Security group content audit - <code>AWS::EC2::SecurityGroup</code>,
+     * <code>AWS::EC2::NetworkInterface</code>, and
+     * <code>AWS::EC2::Instance</code>.</p> </li> <li> <p>DNS Firewall, Network
+     * Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p> </li> </ul>
      */
     inline Policy& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 

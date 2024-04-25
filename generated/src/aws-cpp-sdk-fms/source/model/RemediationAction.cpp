@@ -27,7 +27,11 @@ RemediationAction::RemediationAction() :
     m_eC2ReplaceRouteTableAssociationActionHasBeenSet(false),
     m_eC2AssociateRouteTableActionHasBeenSet(false),
     m_eC2CreateRouteTableActionHasBeenSet(false),
-    m_fMSPolicyUpdateFirewallCreationConfigActionHasBeenSet(false)
+    m_fMSPolicyUpdateFirewallCreationConfigActionHasBeenSet(false),
+    m_createNetworkAclActionHasBeenSet(false),
+    m_replaceNetworkAclAssociationActionHasBeenSet(false),
+    m_createNetworkAclEntriesActionHasBeenSet(false),
+    m_deleteNetworkAclEntriesActionHasBeenSet(false)
 {
 }
 
@@ -40,7 +44,11 @@ RemediationAction::RemediationAction(JsonView jsonValue) :
     m_eC2ReplaceRouteTableAssociationActionHasBeenSet(false),
     m_eC2AssociateRouteTableActionHasBeenSet(false),
     m_eC2CreateRouteTableActionHasBeenSet(false),
-    m_fMSPolicyUpdateFirewallCreationConfigActionHasBeenSet(false)
+    m_fMSPolicyUpdateFirewallCreationConfigActionHasBeenSet(false),
+    m_createNetworkAclActionHasBeenSet(false),
+    m_replaceNetworkAclAssociationActionHasBeenSet(false),
+    m_createNetworkAclEntriesActionHasBeenSet(false),
+    m_deleteNetworkAclEntriesActionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -110,6 +118,34 @@ RemediationAction& RemediationAction::operator =(JsonView jsonValue)
     m_fMSPolicyUpdateFirewallCreationConfigActionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CreateNetworkAclAction"))
+  {
+    m_createNetworkAclAction = jsonValue.GetObject("CreateNetworkAclAction");
+
+    m_createNetworkAclActionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ReplaceNetworkAclAssociationAction"))
+  {
+    m_replaceNetworkAclAssociationAction = jsonValue.GetObject("ReplaceNetworkAclAssociationAction");
+
+    m_replaceNetworkAclAssociationActionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CreateNetworkAclEntriesAction"))
+  {
+    m_createNetworkAclEntriesAction = jsonValue.GetObject("CreateNetworkAclEntriesAction");
+
+    m_createNetworkAclEntriesActionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DeleteNetworkAclEntriesAction"))
+  {
+    m_deleteNetworkAclEntriesAction = jsonValue.GetObject("DeleteNetworkAclEntriesAction");
+
+    m_deleteNetworkAclEntriesActionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -168,6 +204,30 @@ JsonValue RemediationAction::Jsonize() const
   if(m_fMSPolicyUpdateFirewallCreationConfigActionHasBeenSet)
   {
    payload.WithObject("FMSPolicyUpdateFirewallCreationConfigAction", m_fMSPolicyUpdateFirewallCreationConfigAction.Jsonize());
+
+  }
+
+  if(m_createNetworkAclActionHasBeenSet)
+  {
+   payload.WithObject("CreateNetworkAclAction", m_createNetworkAclAction.Jsonize());
+
+  }
+
+  if(m_replaceNetworkAclAssociationActionHasBeenSet)
+  {
+   payload.WithObject("ReplaceNetworkAclAssociationAction", m_replaceNetworkAclAssociationAction.Jsonize());
+
+  }
+
+  if(m_createNetworkAclEntriesActionHasBeenSet)
+  {
+   payload.WithObject("CreateNetworkAclEntriesAction", m_createNetworkAclEntriesAction.Jsonize());
+
+  }
+
+  if(m_deleteNetworkAclEntriesActionHasBeenSet)
+  {
+   payload.WithObject("DeleteNetworkAclEntriesAction", m_deleteNetworkAclEntriesAction.Jsonize());
 
   }
 

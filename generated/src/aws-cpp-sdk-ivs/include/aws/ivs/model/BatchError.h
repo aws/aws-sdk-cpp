@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>Channel ARN.</p>
+     * <p>ARN of an IVS resource; e.g., channel.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>Channel ARN.</p>
+     * <p>ARN of an IVS resource; e.g., channel.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>Channel ARN.</p>
+     * <p>ARN of an IVS resource; e.g., channel.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>Channel ARN.</p>
+     * <p>ARN of an IVS resource; e.g., channel.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>Channel ARN.</p>
+     * <p>ARN of an IVS resource; e.g., channel.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>Channel ARN.</p>
+     * <p>ARN of an IVS resource; e.g., channel.</p>
      */
     inline BatchError& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>Channel ARN.</p>
+     * <p>ARN of an IVS resource; e.g., channel.</p>
      */
     inline BatchError& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>Channel ARN.</p>
+     * <p>ARN of an IVS resource; e.g., channel.</p>
      */
     inline BatchError& WithArn(const char* value) { SetArn(value); return *this;}
 

@@ -21,13 +21,14 @@
 #include <aws/fms/model/DnsRuleGroupPriorityConflictViolation.h>
 #include <aws/fms/model/DnsDuplicateRuleGroupViolation.h>
 #include <aws/fms/model/DnsRuleGroupLimitExceededViolation.h>
-#include <aws/fms/model/PossibleRemediationActions.h>
 #include <aws/fms/model/FirewallSubnetIsOutOfScopeViolation.h>
 #include <aws/fms/model/RouteHasOutOfScopeEndpointViolation.h>
 #include <aws/fms/model/ThirdPartyFirewallMissingFirewallViolation.h>
 #include <aws/fms/model/ThirdPartyFirewallMissingSubnetViolation.h>
 #include <aws/fms/model/ThirdPartyFirewallMissingExpectedRouteTableViolation.h>
 #include <aws/fms/model/FirewallSubnetMissingVPCEndpointViolation.h>
+#include <aws/fms/model/InvalidNetworkAclEntriesViolation.h>
+#include <aws/fms/model/PossibleRemediationActions.h>
 #include <utility>
 
 namespace Aws
@@ -628,43 +629,6 @@ namespace Model
 
 
     /**
-     * <p>A list of possible remediation action lists. Each individual possible
-     * remediation action is a list of individual remediation actions.</p>
-     */
-    inline const PossibleRemediationActions& GetPossibleRemediationActions() const{ return m_possibleRemediationActions; }
-
-    /**
-     * <p>A list of possible remediation action lists. Each individual possible
-     * remediation action is a list of individual remediation actions.</p>
-     */
-    inline bool PossibleRemediationActionsHasBeenSet() const { return m_possibleRemediationActionsHasBeenSet; }
-
-    /**
-     * <p>A list of possible remediation action lists. Each individual possible
-     * remediation action is a list of individual remediation actions.</p>
-     */
-    inline void SetPossibleRemediationActions(const PossibleRemediationActions& value) { m_possibleRemediationActionsHasBeenSet = true; m_possibleRemediationActions = value; }
-
-    /**
-     * <p>A list of possible remediation action lists. Each individual possible
-     * remediation action is a list of individual remediation actions.</p>
-     */
-    inline void SetPossibleRemediationActions(PossibleRemediationActions&& value) { m_possibleRemediationActionsHasBeenSet = true; m_possibleRemediationActions = std::move(value); }
-
-    /**
-     * <p>A list of possible remediation action lists. Each individual possible
-     * remediation action is a list of individual remediation actions.</p>
-     */
-    inline ResourceViolation& WithPossibleRemediationActions(const PossibleRemediationActions& value) { SetPossibleRemediationActions(value); return *this;}
-
-    /**
-     * <p>A list of possible remediation action lists. Each individual possible
-     * remediation action is a list of individual remediation actions.</p>
-     */
-    inline ResourceViolation& WithPossibleRemediationActions(PossibleRemediationActions&& value) { SetPossibleRemediationActions(std::move(value)); return *this;}
-
-
-    /**
      * <p>Contains details about the firewall subnet that violates the policy
      * scope.</p>
      */
@@ -879,6 +843,74 @@ namespace Model
      */
     inline ResourceViolation& WithFirewallSubnetMissingVPCEndpointViolation(FirewallSubnetMissingVPCEndpointViolation&& value) { SetFirewallSubnetMissingVPCEndpointViolation(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Violation detail for the entries in a network ACL resource.</p>
+     */
+    inline const InvalidNetworkAclEntriesViolation& GetInvalidNetworkAclEntriesViolation() const{ return m_invalidNetworkAclEntriesViolation; }
+
+    /**
+     * <p>Violation detail for the entries in a network ACL resource.</p>
+     */
+    inline bool InvalidNetworkAclEntriesViolationHasBeenSet() const { return m_invalidNetworkAclEntriesViolationHasBeenSet; }
+
+    /**
+     * <p>Violation detail for the entries in a network ACL resource.</p>
+     */
+    inline void SetInvalidNetworkAclEntriesViolation(const InvalidNetworkAclEntriesViolation& value) { m_invalidNetworkAclEntriesViolationHasBeenSet = true; m_invalidNetworkAclEntriesViolation = value; }
+
+    /**
+     * <p>Violation detail for the entries in a network ACL resource.</p>
+     */
+    inline void SetInvalidNetworkAclEntriesViolation(InvalidNetworkAclEntriesViolation&& value) { m_invalidNetworkAclEntriesViolationHasBeenSet = true; m_invalidNetworkAclEntriesViolation = std::move(value); }
+
+    /**
+     * <p>Violation detail for the entries in a network ACL resource.</p>
+     */
+    inline ResourceViolation& WithInvalidNetworkAclEntriesViolation(const InvalidNetworkAclEntriesViolation& value) { SetInvalidNetworkAclEntriesViolation(value); return *this;}
+
+    /**
+     * <p>Violation detail for the entries in a network ACL resource.</p>
+     */
+    inline ResourceViolation& WithInvalidNetworkAclEntriesViolation(InvalidNetworkAclEntriesViolation&& value) { SetInvalidNetworkAclEntriesViolation(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A list of possible remediation action lists. Each individual possible
+     * remediation action is a list of individual remediation actions.</p>
+     */
+    inline const PossibleRemediationActions& GetPossibleRemediationActions() const{ return m_possibleRemediationActions; }
+
+    /**
+     * <p>A list of possible remediation action lists. Each individual possible
+     * remediation action is a list of individual remediation actions.</p>
+     */
+    inline bool PossibleRemediationActionsHasBeenSet() const { return m_possibleRemediationActionsHasBeenSet; }
+
+    /**
+     * <p>A list of possible remediation action lists. Each individual possible
+     * remediation action is a list of individual remediation actions.</p>
+     */
+    inline void SetPossibleRemediationActions(const PossibleRemediationActions& value) { m_possibleRemediationActionsHasBeenSet = true; m_possibleRemediationActions = value; }
+
+    /**
+     * <p>A list of possible remediation action lists. Each individual possible
+     * remediation action is a list of individual remediation actions.</p>
+     */
+    inline void SetPossibleRemediationActions(PossibleRemediationActions&& value) { m_possibleRemediationActionsHasBeenSet = true; m_possibleRemediationActions = std::move(value); }
+
+    /**
+     * <p>A list of possible remediation action lists. Each individual possible
+     * remediation action is a list of individual remediation actions.</p>
+     */
+    inline ResourceViolation& WithPossibleRemediationActions(const PossibleRemediationActions& value) { SetPossibleRemediationActions(value); return *this;}
+
+    /**
+     * <p>A list of possible remediation action lists. Each individual possible
+     * remediation action is a list of individual remediation actions.</p>
+     */
+    inline ResourceViolation& WithPossibleRemediationActions(PossibleRemediationActions&& value) { SetPossibleRemediationActions(std::move(value)); return *this;}
+
   private:
 
     AwsVPCSecurityGroupViolation m_awsVPCSecurityGroupViolation;
@@ -929,9 +961,6 @@ namespace Model
     DnsRuleGroupLimitExceededViolation m_dnsRuleGroupLimitExceededViolation;
     bool m_dnsRuleGroupLimitExceededViolationHasBeenSet = false;
 
-    PossibleRemediationActions m_possibleRemediationActions;
-    bool m_possibleRemediationActionsHasBeenSet = false;
-
     FirewallSubnetIsOutOfScopeViolation m_firewallSubnetIsOutOfScopeViolation;
     bool m_firewallSubnetIsOutOfScopeViolationHasBeenSet = false;
 
@@ -949,6 +978,12 @@ namespace Model
 
     FirewallSubnetMissingVPCEndpointViolation m_firewallSubnetMissingVPCEndpointViolation;
     bool m_firewallSubnetMissingVPCEndpointViolationHasBeenSet = false;
+
+    InvalidNetworkAclEntriesViolation m_invalidNetworkAclEntriesViolation;
+    bool m_invalidNetworkAclEntriesViolationHasBeenSet = false;
+
+    PossibleRemediationActions m_possibleRemediationActions;
+    bool m_possibleRemediationActionsHasBeenSet = false;
   };
 
 } // namespace Model

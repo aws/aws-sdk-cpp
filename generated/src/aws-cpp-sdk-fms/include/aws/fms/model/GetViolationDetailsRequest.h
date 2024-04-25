@@ -39,7 +39,7 @@ namespace Model
      * get violation details for the following policy types:</p> <ul> <li> <p>DNS
      * Firewall</p> </li> <li> <p>Imported Network Firewall</p> </li> <li> <p>Network
      * Firewall</p> </li> <li> <p>Security group content audit</p> </li> <li>
-     * <p>Third-party firewall</p> </li> </ul>
+     * <p>Network ACL</p> </li> <li> <p>Third-party firewall</p> </li> </ul>
      */
     inline const Aws::String& GetPolicyId() const{ return m_policyId; }
 
@@ -48,7 +48,7 @@ namespace Model
      * get violation details for the following policy types:</p> <ul> <li> <p>DNS
      * Firewall</p> </li> <li> <p>Imported Network Firewall</p> </li> <li> <p>Network
      * Firewall</p> </li> <li> <p>Security group content audit</p> </li> <li>
-     * <p>Third-party firewall</p> </li> </ul>
+     * <p>Network ACL</p> </li> <li> <p>Third-party firewall</p> </li> </ul>
      */
     inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
 
@@ -57,7 +57,7 @@ namespace Model
      * get violation details for the following policy types:</p> <ul> <li> <p>DNS
      * Firewall</p> </li> <li> <p>Imported Network Firewall</p> </li> <li> <p>Network
      * Firewall</p> </li> <li> <p>Security group content audit</p> </li> <li>
-     * <p>Third-party firewall</p> </li> </ul>
+     * <p>Network ACL</p> </li> <li> <p>Third-party firewall</p> </li> </ul>
      */
     inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
 
@@ -66,7 +66,7 @@ namespace Model
      * get violation details for the following policy types:</p> <ul> <li> <p>DNS
      * Firewall</p> </li> <li> <p>Imported Network Firewall</p> </li> <li> <p>Network
      * Firewall</p> </li> <li> <p>Security group content audit</p> </li> <li>
-     * <p>Third-party firewall</p> </li> </ul>
+     * <p>Network ACL</p> </li> <li> <p>Third-party firewall</p> </li> </ul>
      */
     inline void SetPolicyId(Aws::String&& value) { m_policyIdHasBeenSet = true; m_policyId = std::move(value); }
 
@@ -75,7 +75,7 @@ namespace Model
      * get violation details for the following policy types:</p> <ul> <li> <p>DNS
      * Firewall</p> </li> <li> <p>Imported Network Firewall</p> </li> <li> <p>Network
      * Firewall</p> </li> <li> <p>Security group content audit</p> </li> <li>
-     * <p>Third-party firewall</p> </li> </ul>
+     * <p>Network ACL</p> </li> <li> <p>Third-party firewall</p> </li> </ul>
      */
     inline void SetPolicyId(const char* value) { m_policyIdHasBeenSet = true; m_policyId.assign(value); }
 
@@ -84,7 +84,7 @@ namespace Model
      * get violation details for the following policy types:</p> <ul> <li> <p>DNS
      * Firewall</p> </li> <li> <p>Imported Network Firewall</p> </li> <li> <p>Network
      * Firewall</p> </li> <li> <p>Security group content audit</p> </li> <li>
-     * <p>Third-party firewall</p> </li> </ul>
+     * <p>Network ACL</p> </li> <li> <p>Third-party firewall</p> </li> </ul>
      */
     inline GetViolationDetailsRequest& WithPolicyId(const Aws::String& value) { SetPolicyId(value); return *this;}
 
@@ -93,7 +93,7 @@ namespace Model
      * get violation details for the following policy types:</p> <ul> <li> <p>DNS
      * Firewall</p> </li> <li> <p>Imported Network Firewall</p> </li> <li> <p>Network
      * Firewall</p> </li> <li> <p>Security group content audit</p> </li> <li>
-     * <p>Third-party firewall</p> </li> </ul>
+     * <p>Network ACL</p> </li> <li> <p>Third-party firewall</p> </li> </ul>
      */
     inline GetViolationDetailsRequest& WithPolicyId(Aws::String&& value) { SetPolicyId(std::move(value)); return *this;}
 
@@ -102,7 +102,7 @@ namespace Model
      * get violation details for the following policy types:</p> <ul> <li> <p>DNS
      * Firewall</p> </li> <li> <p>Imported Network Firewall</p> </li> <li> <p>Network
      * Firewall</p> </li> <li> <p>Security group content audit</p> </li> <li>
-     * <p>Third-party firewall</p> </li> </ul>
+     * <p>Network ACL</p> </li> <li> <p>Third-party firewall</p> </li> </ul>
      */
     inline GetViolationDetailsRequest& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
 

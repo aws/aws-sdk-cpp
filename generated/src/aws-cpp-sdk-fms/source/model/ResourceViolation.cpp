@@ -35,13 +35,14 @@ ResourceViolation::ResourceViolation() :
     m_dnsRuleGroupPriorityConflictViolationHasBeenSet(false),
     m_dnsDuplicateRuleGroupViolationHasBeenSet(false),
     m_dnsRuleGroupLimitExceededViolationHasBeenSet(false),
-    m_possibleRemediationActionsHasBeenSet(false),
     m_firewallSubnetIsOutOfScopeViolationHasBeenSet(false),
     m_routeHasOutOfScopeEndpointViolationHasBeenSet(false),
     m_thirdPartyFirewallMissingFirewallViolationHasBeenSet(false),
     m_thirdPartyFirewallMissingSubnetViolationHasBeenSet(false),
     m_thirdPartyFirewallMissingExpectedRouteTableViolationHasBeenSet(false),
-    m_firewallSubnetMissingVPCEndpointViolationHasBeenSet(false)
+    m_firewallSubnetMissingVPCEndpointViolationHasBeenSet(false),
+    m_invalidNetworkAclEntriesViolationHasBeenSet(false),
+    m_possibleRemediationActionsHasBeenSet(false)
 {
 }
 
@@ -62,13 +63,14 @@ ResourceViolation::ResourceViolation(JsonView jsonValue) :
     m_dnsRuleGroupPriorityConflictViolationHasBeenSet(false),
     m_dnsDuplicateRuleGroupViolationHasBeenSet(false),
     m_dnsRuleGroupLimitExceededViolationHasBeenSet(false),
-    m_possibleRemediationActionsHasBeenSet(false),
     m_firewallSubnetIsOutOfScopeViolationHasBeenSet(false),
     m_routeHasOutOfScopeEndpointViolationHasBeenSet(false),
     m_thirdPartyFirewallMissingFirewallViolationHasBeenSet(false),
     m_thirdPartyFirewallMissingSubnetViolationHasBeenSet(false),
     m_thirdPartyFirewallMissingExpectedRouteTableViolationHasBeenSet(false),
-    m_firewallSubnetMissingVPCEndpointViolationHasBeenSet(false)
+    m_firewallSubnetMissingVPCEndpointViolationHasBeenSet(false),
+    m_invalidNetworkAclEntriesViolationHasBeenSet(false),
+    m_possibleRemediationActionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -187,13 +189,6 @@ ResourceViolation& ResourceViolation::operator =(JsonView jsonValue)
     m_dnsRuleGroupLimitExceededViolationHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("PossibleRemediationActions"))
-  {
-    m_possibleRemediationActions = jsonValue.GetObject("PossibleRemediationActions");
-
-    m_possibleRemediationActionsHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("FirewallSubnetIsOutOfScopeViolation"))
   {
     m_firewallSubnetIsOutOfScopeViolation = jsonValue.GetObject("FirewallSubnetIsOutOfScopeViolation");
@@ -234,6 +229,20 @@ ResourceViolation& ResourceViolation::operator =(JsonView jsonValue)
     m_firewallSubnetMissingVPCEndpointViolation = jsonValue.GetObject("FirewallSubnetMissingVPCEndpointViolation");
 
     m_firewallSubnetMissingVPCEndpointViolationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InvalidNetworkAclEntriesViolation"))
+  {
+    m_invalidNetworkAclEntriesViolation = jsonValue.GetObject("InvalidNetworkAclEntriesViolation");
+
+    m_invalidNetworkAclEntriesViolationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PossibleRemediationActions"))
+  {
+    m_possibleRemediationActions = jsonValue.GetObject("PossibleRemediationActions");
+
+    m_possibleRemediationActionsHasBeenSet = true;
   }
 
   return *this;
@@ -339,12 +348,6 @@ JsonValue ResourceViolation::Jsonize() const
 
   }
 
-  if(m_possibleRemediationActionsHasBeenSet)
-  {
-   payload.WithObject("PossibleRemediationActions", m_possibleRemediationActions.Jsonize());
-
-  }
-
   if(m_firewallSubnetIsOutOfScopeViolationHasBeenSet)
   {
    payload.WithObject("FirewallSubnetIsOutOfScopeViolation", m_firewallSubnetIsOutOfScopeViolation.Jsonize());
@@ -378,6 +381,18 @@ JsonValue ResourceViolation::Jsonize() const
   if(m_firewallSubnetMissingVPCEndpointViolationHasBeenSet)
   {
    payload.WithObject("FirewallSubnetMissingVPCEndpointViolation", m_firewallSubnetMissingVPCEndpointViolation.Jsonize());
+
+  }
+
+  if(m_invalidNetworkAclEntriesViolationHasBeenSet)
+  {
+   payload.WithObject("InvalidNetworkAclEntriesViolation", m_invalidNetworkAclEntriesViolation.Jsonize());
+
+  }
+
+  if(m_possibleRemediationActionsHasBeenSet)
+  {
+   payload.WithObject("PossibleRemediationActions", m_possibleRemediationActions.Jsonize());
 
   }
 
