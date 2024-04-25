@@ -25,7 +25,8 @@ namespace Model
     NETWORK_FIREWALL,
     DNS_FIREWALL,
     THIRD_PARTY_FIREWALL,
-    IMPORT_NETWORK_FIREWALL
+    IMPORT_NETWORK_FIREWALL,
+    NETWORK_ACL_COMMON
   };
 
 namespace SecurityServiceTypeMapper

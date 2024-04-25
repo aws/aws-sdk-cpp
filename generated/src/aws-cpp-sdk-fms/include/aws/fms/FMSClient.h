@@ -414,8 +414,8 @@ namespace FMS
 
         /**
          * <p>Returns information about the specified account's administrative scope. The
-         * admistrative scope defines the resources that an Firewall Manager administrator
-         * can manage.</p><p><h3>See Also:</h3>   <a
+         * administrative scope defines the resources that an Firewall Manager
+         * administrator can manage.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAdminScope">AWS
          * API Reference</a></p>
          */
@@ -468,19 +468,8 @@ namespace FMS
         /**
          * <p>Returns detailed compliance information about the specified member account.
          * Details include resources that are in and out of compliance with the specified
-         * policy. </p> <ul> <li> <p>Resources are considered noncompliant for WAF and
-         * Shield Advanced policies if the specified policy has not been applied to
-         * them.</p> </li> <li> <p>Resources are considered noncompliant for security group
-         * policies if they are in scope of the policy, they violate one or more of the
-         * policy rules, and remediation is disabled or not possible.</p> </li> <li>
-         * <p>Resources are considered noncompliant for Network Firewall policies if a
-         * firewall is missing in the VPC, if the firewall endpoint isn't set up in an
-         * expected Availability Zone and subnet, if a subnet created by the Firewall
-         * Manager doesn't have the expected route table, and for modifications to a
-         * firewall policy that violate the Firewall Manager policy's rules.</p> </li> <li>
-         * <p>Resources are considered noncompliant for DNS Firewall policies if a DNS
-         * Firewall rule group is missing from the rule group associations for the VPC.
-         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * policy. </p> <p>The reasons for resources being considered compliant depend on
+         * the Firewall Manager policy type. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetComplianceDetail">AWS
          * API Reference</a></p>
          */
@@ -1112,14 +1101,19 @@ namespace FMS
          * organization that you created with Organizations, Firewall Manager automatically
          * applies the policy to the resources in that account that are within scope of the
          * policy. </p> <p>Firewall Manager provides the following types of policies: </p>
-         * <ul> <li> <p> <b>Shield Advanced policy</b> - This policy applies Shield
-         * Advanced protection to specified accounts and resources. </p> </li> <li> <p>
-         * <b>Security Groups policy</b> - This type of policy gives you control over
-         * security groups that are in use throughout your organization in Organizations
-         * and lets you enforce a baseline set of rules across your organization. </p>
-         * </li> <li> <p> <b>Network Firewall policy</b> - This policy applies Network
-         * Firewall protection to your organization's VPCs. </p> </li> <li> <p> <b>DNS
-         * Firewall policy</b> - This policy applies Amazon Route 53 Resolver DNS Firewall
+         * <ul> <li> <p> <b>WAF policy</b> - This policy applies WAF web ACL protections to
+         * specified accounts and resources. </p> </li> <li> <p> <b>Shield Advanced
+         * policy</b> - This policy applies Shield Advanced protection to specified
+         * accounts and resources. </p> </li> <li> <p> <b>Security Groups policy</b> - This
+         * type of policy gives you control over security groups that are in use throughout
+         * your organization in Organizations and lets you enforce a baseline set of rules
+         * across your organization. </p> </li> <li> <p> <b>Network ACL policy</b> - This
+         * type of policy gives you control over the network ACLs that are in use
+         * throughout your organization in Organizations and lets you enforce a baseline
+         * set of first and last network ACL rules across your organization. </p> </li>
+         * <li> <p> <b>Network Firewall policy</b> - This policy applies Network Firewall
+         * protection to your organization's VPCs. </p> </li> <li> <p> <b>DNS Firewall
+         * policy</b> - This policy applies Amazon Route 53 Resolver DNS Firewall
          * protections to your organization's VPCs. </p> </li> <li> <p> <b>Third-party
          * firewall policy</b> - This policy applies third-party firewall protections.
          * Third-party firewalls are available by subscription through the Amazon Web

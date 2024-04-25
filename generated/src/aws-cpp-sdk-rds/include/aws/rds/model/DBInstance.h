@@ -2322,57 +2322,65 @@ namespace Model
 
     /**
      * <p>The time zone of the DB instance. In most cases, the <code>Timezone</code>
-     * element is empty. <code>Timezone</code> content appears only for Microsoft SQL
-     * Server DB instances that were created with a time zone specified.</p>
+     * element is empty. <code>Timezone</code> content appears only for RDS for Db2 and
+     * RDS for SQL Server DB instances that were created with a time zone
+     * specified.</p>
      */
     inline const Aws::String& GetTimezone() const{ return m_timezone; }
 
     /**
      * <p>The time zone of the DB instance. In most cases, the <code>Timezone</code>
-     * element is empty. <code>Timezone</code> content appears only for Microsoft SQL
-     * Server DB instances that were created with a time zone specified.</p>
+     * element is empty. <code>Timezone</code> content appears only for RDS for Db2 and
+     * RDS for SQL Server DB instances that were created with a time zone
+     * specified.</p>
      */
     inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
 
     /**
      * <p>The time zone of the DB instance. In most cases, the <code>Timezone</code>
-     * element is empty. <code>Timezone</code> content appears only for Microsoft SQL
-     * Server DB instances that were created with a time zone specified.</p>
+     * element is empty. <code>Timezone</code> content appears only for RDS for Db2 and
+     * RDS for SQL Server DB instances that were created with a time zone
+     * specified.</p>
      */
     inline void SetTimezone(const Aws::String& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
 
     /**
      * <p>The time zone of the DB instance. In most cases, the <code>Timezone</code>
-     * element is empty. <code>Timezone</code> content appears only for Microsoft SQL
-     * Server DB instances that were created with a time zone specified.</p>
+     * element is empty. <code>Timezone</code> content appears only for RDS for Db2 and
+     * RDS for SQL Server DB instances that were created with a time zone
+     * specified.</p>
      */
     inline void SetTimezone(Aws::String&& value) { m_timezoneHasBeenSet = true; m_timezone = std::move(value); }
 
     /**
      * <p>The time zone of the DB instance. In most cases, the <code>Timezone</code>
-     * element is empty. <code>Timezone</code> content appears only for Microsoft SQL
-     * Server DB instances that were created with a time zone specified.</p>
+     * element is empty. <code>Timezone</code> content appears only for RDS for Db2 and
+     * RDS for SQL Server DB instances that were created with a time zone
+     * specified.</p>
      */
     inline void SetTimezone(const char* value) { m_timezoneHasBeenSet = true; m_timezone.assign(value); }
 
     /**
      * <p>The time zone of the DB instance. In most cases, the <code>Timezone</code>
-     * element is empty. <code>Timezone</code> content appears only for Microsoft SQL
-     * Server DB instances that were created with a time zone specified.</p>
+     * element is empty. <code>Timezone</code> content appears only for RDS for Db2 and
+     * RDS for SQL Server DB instances that were created with a time zone
+     * specified.</p>
      */
     inline DBInstance& WithTimezone(const Aws::String& value) { SetTimezone(value); return *this;}
 
     /**
      * <p>The time zone of the DB instance. In most cases, the <code>Timezone</code>
-     * element is empty. <code>Timezone</code> content appears only for Microsoft SQL
-     * Server DB instances that were created with a time zone specified.</p>
+     * element is empty. <code>Timezone</code> content appears only for RDS for Db2 and
+     * RDS for SQL Server DB instances that were created with a time zone
+     * specified.</p>
      */
     inline DBInstance& WithTimezone(Aws::String&& value) { SetTimezone(std::move(value)); return *this;}
 
     /**
      * <p>The time zone of the DB instance. In most cases, the <code>Timezone</code>
-     * element is empty. <code>Timezone</code> content appears only for Microsoft SQL
-     * Server DB instances that were created with a time zone specified.</p>
+     * element is empty. <code>Timezone</code> content appears only for RDS for Db2 and
+     * RDS for SQL Server DB instances that were created with a time zone
+     * specified.</p>
      */
     inline DBInstance& WithTimezone(const char* value) { SetTimezone(value); return *this;}
 

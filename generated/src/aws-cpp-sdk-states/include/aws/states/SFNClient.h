@@ -1479,6 +1479,46 @@ namespace SFN
             return SubmitAsync(&SFNClient::UpdateStateMachineAlias, request, handler, context);
         }
 
+        /**
+         * <p>Validates the syntax of a state machine definition.</p> <p>You can validate
+         * that a state machine definition is correct without creating a state machine
+         * resource. Step Functions will implicitly perform the same syntax check when you
+         * invoke <code>CreateStateMachine</code> and <code>UpdateStateMachine</code>.
+         * State machine definitions are specified using a JSON-based, structured language.
+         * For more information on Amazon States Language see <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+         * States Language</a> (ASL). </p> <p>Suggested uses for
+         * <code>ValidateStateMachineDefinition</code>:</p> <ul> <li> <p>Integrate
+         * automated checks into your code review or Continuous Integration (CI) process to
+         * validate state machine definitions before starting deployments.</p> </li> <li>
+         * <p>Run the validation from a Git pre-commit hook to check your state machine
+         * definitions before committing them to your source repository.</p> </li> </ul>
+         *  <p>Errors found in the state machine definition will be returned in the
+         * response as a list of <b>diagnostic elements</b>, rather than raise an
+         * exception.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ValidateStateMachineDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ValidateStateMachineDefinitionOutcome ValidateStateMachineDefinition(const Model::ValidateStateMachineDefinitionRequest& request) const;
+
+        /**
+         * A Callable wrapper for ValidateStateMachineDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ValidateStateMachineDefinitionRequestT = Model::ValidateStateMachineDefinitionRequest>
+        Model::ValidateStateMachineDefinitionOutcomeCallable ValidateStateMachineDefinitionCallable(const ValidateStateMachineDefinitionRequestT& request) const
+        {
+            return SubmitCallable(&SFNClient::ValidateStateMachineDefinition, request);
+        }
+
+        /**
+         * An Async wrapper for ValidateStateMachineDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ValidateStateMachineDefinitionRequestT = Model::ValidateStateMachineDefinitionRequest>
+        void ValidateStateMachineDefinitionAsync(const ValidateStateMachineDefinitionRequestT& request, const ValidateStateMachineDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SFNClient::ValidateStateMachineDefinition, request, handler, context);
+        }
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<SFNEndpointProviderBase>& accessEndpointProvider();

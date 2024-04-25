@@ -380,7 +380,7 @@ namespace Model
      * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Changing the subnet group causes an outage during the change. The change is
      * applied during the next maintenance window, unless you enable
-     * <code>ApplyImmediately</code>.</p> <p>This parameter doesn't apply to RDS Custom
+     * <code>ApplyImmediately</code>.</p> <p>This setting doesn't apply to RDS Custom
      * DB instances.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
      * existing DB subnet group.</p> </li> </ul> <p>Example:
      * <code>mydbsubnetgroup</code> </p>
@@ -396,7 +396,7 @@ namespace Model
      * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Changing the subnet group causes an outage during the change. The change is
      * applied during the next maintenance window, unless you enable
-     * <code>ApplyImmediately</code>.</p> <p>This parameter doesn't apply to RDS Custom
+     * <code>ApplyImmediately</code>.</p> <p>This setting doesn't apply to RDS Custom
      * DB instances.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
      * existing DB subnet group.</p> </li> </ul> <p>Example:
      * <code>mydbsubnetgroup</code> </p>
@@ -412,7 +412,7 @@ namespace Model
      * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Changing the subnet group causes an outage during the change. The change is
      * applied during the next maintenance window, unless you enable
-     * <code>ApplyImmediately</code>.</p> <p>This parameter doesn't apply to RDS Custom
+     * <code>ApplyImmediately</code>.</p> <p>This setting doesn't apply to RDS Custom
      * DB instances.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
      * existing DB subnet group.</p> </li> </ul> <p>Example:
      * <code>mydbsubnetgroup</code> </p>
@@ -428,7 +428,7 @@ namespace Model
      * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Changing the subnet group causes an outage during the change. The change is
      * applied during the next maintenance window, unless you enable
-     * <code>ApplyImmediately</code>.</p> <p>This parameter doesn't apply to RDS Custom
+     * <code>ApplyImmediately</code>.</p> <p>This setting doesn't apply to RDS Custom
      * DB instances.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
      * existing DB subnet group.</p> </li> </ul> <p>Example:
      * <code>mydbsubnetgroup</code> </p>
@@ -444,7 +444,7 @@ namespace Model
      * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Changing the subnet group causes an outage during the change. The change is
      * applied during the next maintenance window, unless you enable
-     * <code>ApplyImmediately</code>.</p> <p>This parameter doesn't apply to RDS Custom
+     * <code>ApplyImmediately</code>.</p> <p>This setting doesn't apply to RDS Custom
      * DB instances.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
      * existing DB subnet group.</p> </li> </ul> <p>Example:
      * <code>mydbsubnetgroup</code> </p>
@@ -460,7 +460,7 @@ namespace Model
      * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Changing the subnet group causes an outage during the change. The change is
      * applied during the next maintenance window, unless you enable
-     * <code>ApplyImmediately</code>.</p> <p>This parameter doesn't apply to RDS Custom
+     * <code>ApplyImmediately</code>.</p> <p>This setting doesn't apply to RDS Custom
      * DB instances.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
      * existing DB subnet group.</p> </li> </ul> <p>Example:
      * <code>mydbsubnetgroup</code> </p>
@@ -476,7 +476,7 @@ namespace Model
      * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Changing the subnet group causes an outage during the change. The change is
      * applied during the next maintenance window, unless you enable
-     * <code>ApplyImmediately</code>.</p> <p>This parameter doesn't apply to RDS Custom
+     * <code>ApplyImmediately</code>.</p> <p>This setting doesn't apply to RDS Custom
      * DB instances.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
      * existing DB subnet group.</p> </li> </ul> <p>Example:
      * <code>mydbsubnetgroup</code> </p>
@@ -492,7 +492,7 @@ namespace Model
      * with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Changing the subnet group causes an outage during the change. The change is
      * applied during the next maintenance window, unless you enable
-     * <code>ApplyImmediately</code>.</p> <p>This parameter doesn't apply to RDS Custom
+     * <code>ApplyImmediately</code>.</p> <p>This setting doesn't apply to RDS Custom
      * DB instances.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
      * existing DB subnet group.</p> </li> </ul> <p>Example:
      * <code>mydbsubnetgroup</code> </p>
@@ -3840,7 +3840,11 @@ namespace Model
      * database can't be deleted when deletion protection is enabled. By default,
      * deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
-     * Deleting a DB Instance</a>.</p>
+     * Deleting a DB Instance</a>.</p> <p>This setting doesn't apply to Amazon Aurora
+     * DB instances. You can enable or disable deletion protection for the DB cluster.
+     * For more information, see <code>ModifyDBCluster</code>. DB instances in a DB
+     * cluster can be deleted even when deletion protection is enabled for the DB
+     * cluster.</p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
@@ -3849,7 +3853,11 @@ namespace Model
      * database can't be deleted when deletion protection is enabled. By default,
      * deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
-     * Deleting a DB Instance</a>.</p>
+     * Deleting a DB Instance</a>.</p> <p>This setting doesn't apply to Amazon Aurora
+     * DB instances. You can enable or disable deletion protection for the DB cluster.
+     * For more information, see <code>ModifyDBCluster</code>. DB instances in a DB
+     * cluster can be deleted even when deletion protection is enabled for the DB
+     * cluster.</p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
@@ -3858,7 +3866,11 @@ namespace Model
      * database can't be deleted when deletion protection is enabled. By default,
      * deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
-     * Deleting a DB Instance</a>.</p>
+     * Deleting a DB Instance</a>.</p> <p>This setting doesn't apply to Amazon Aurora
+     * DB instances. You can enable or disable deletion protection for the DB cluster.
+     * For more information, see <code>ModifyDBCluster</code>. DB instances in a DB
+     * cluster can be deleted even when deletion protection is enabled for the DB
+     * cluster.</p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
@@ -3867,7 +3879,11 @@ namespace Model
      * database can't be deleted when deletion protection is enabled. By default,
      * deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
-     * Deleting a DB Instance</a>.</p>
+     * Deleting a DB Instance</a>.</p> <p>This setting doesn't apply to Amazon Aurora
+     * DB instances. You can enable or disable deletion protection for the DB cluster.
+     * For more information, see <code>ModifyDBCluster</code>. DB instances in a DB
+     * cluster can be deleted even when deletion protection is enabled for the DB
+     * cluster.</p>
      */
     inline ModifyDBInstanceRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 

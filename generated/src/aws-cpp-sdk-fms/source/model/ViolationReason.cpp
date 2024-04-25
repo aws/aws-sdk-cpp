@@ -48,6 +48,7 @@ namespace Aws
         static const int RESOURCE_MISSING_DNS_FIREWALL_HASH = HashingUtils::HashString("RESOURCE_MISSING_DNS_FIREWALL");
         static const int ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT_HASH = HashingUtils::HashString("ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT");
         static const int FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT_HASH = HashingUtils::HashString("FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT");
+        static const int INVALID_NETWORK_ACL_ENTRY_HASH = HashingUtils::HashString("INVALID_NETWORK_ACL_ENTRY");
 
 
         ViolationReason GetViolationReasonForName(const Aws::String& name)
@@ -165,6 +166,10 @@ namespace Aws
           {
             return ViolationReason::FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT;
           }
+          else if (hashCode == INVALID_NETWORK_ACL_ENTRY_HASH)
+          {
+            return ViolationReason::INVALID_NETWORK_ACL_ENTRY;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -237,6 +242,8 @@ namespace Aws
             return "ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT";
           case ViolationReason::FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT:
             return "FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT";
+          case ViolationReason::INVALID_NETWORK_ACL_ENTRY:
+            return "INVALID_NETWORK_ACL_ENTRY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -169,7 +169,7 @@ namespace Model
      * <code>true</code>, otherwise Firewall Manager won't be able to create the
      * policy. When you enable <code>revertManualSecurityGroupChanges</code>, Firewall
      * Manager identifies and reports when the security groups created by this policy
-     * become non-compliant. </p> <p> Firewall Manager won't distrubute system tags
+     * become non-compliant. </p> <p> Firewall Manager won't distribute system tags
      * added by Amazon Web Services services into the replica security groups. System
      * tags begin with the <code>aws:</code> prefix. </p> </li> <li> <p>Example: Shared
      * VPCs. Apply the preceding policy to resources in shared VPCs as well as to those
@@ -397,7 +397,7 @@ namespace Model
      * <code>true</code>, otherwise Firewall Manager won't be able to create the
      * policy. When you enable <code>revertManualSecurityGroupChanges</code>, Firewall
      * Manager identifies and reports when the security groups created by this policy
-     * become non-compliant. </p> <p> Firewall Manager won't distrubute system tags
+     * become non-compliant. </p> <p> Firewall Manager won't distribute system tags
      * added by Amazon Web Services services into the replica security groups. System
      * tags begin with the <code>aws:</code> prefix. </p> </li> <li> <p>Example: Shared
      * VPCs. Apply the preceding policy to resources in shared VPCs as well as to those
@@ -625,7 +625,7 @@ namespace Model
      * <code>true</code>, otherwise Firewall Manager won't be able to create the
      * policy. When you enable <code>revertManualSecurityGroupChanges</code>, Firewall
      * Manager identifies and reports when the security groups created by this policy
-     * become non-compliant. </p> <p> Firewall Manager won't distrubute system tags
+     * become non-compliant. </p> <p> Firewall Manager won't distribute system tags
      * added by Amazon Web Services services into the replica security groups. System
      * tags begin with the <code>aws:</code> prefix. </p> </li> <li> <p>Example: Shared
      * VPCs. Apply the preceding policy to resources in shared VPCs as well as to those
@@ -853,7 +853,7 @@ namespace Model
      * <code>true</code>, otherwise Firewall Manager won't be able to create the
      * policy. When you enable <code>revertManualSecurityGroupChanges</code>, Firewall
      * Manager identifies and reports when the security groups created by this policy
-     * become non-compliant. </p> <p> Firewall Manager won't distrubute system tags
+     * become non-compliant. </p> <p> Firewall Manager won't distribute system tags
      * added by Amazon Web Services services into the replica security groups. System
      * tags begin with the <code>aws:</code> prefix. </p> </li> <li> <p>Example: Shared
      * VPCs. Apply the preceding policy to resources in shared VPCs as well as to those
@@ -1081,7 +1081,7 @@ namespace Model
      * <code>true</code>, otherwise Firewall Manager won't be able to create the
      * policy. When you enable <code>revertManualSecurityGroupChanges</code>, Firewall
      * Manager identifies and reports when the security groups created by this policy
-     * become non-compliant. </p> <p> Firewall Manager won't distrubute system tags
+     * become non-compliant. </p> <p> Firewall Manager won't distribute system tags
      * added by Amazon Web Services services into the replica security groups. System
      * tags begin with the <code>aws:</code> prefix. </p> </li> <li> <p>Example: Shared
      * VPCs. Apply the preceding policy to resources in shared VPCs as well as to those
@@ -1309,7 +1309,7 @@ namespace Model
      * <code>true</code>, otherwise Firewall Manager won't be able to create the
      * policy. When you enable <code>revertManualSecurityGroupChanges</code>, Firewall
      * Manager identifies and reports when the security groups created by this policy
-     * become non-compliant. </p> <p> Firewall Manager won't distrubute system tags
+     * become non-compliant. </p> <p> Firewall Manager won't distribute system tags
      * added by Amazon Web Services services into the replica security groups. System
      * tags begin with the <code>aws:</code> prefix. </p> </li> <li> <p>Example: Shared
      * VPCs. Apply the preceding policy to resources in shared VPCs as well as to those
@@ -1537,7 +1537,7 @@ namespace Model
      * <code>true</code>, otherwise Firewall Manager won't be able to create the
      * policy. When you enable <code>revertManualSecurityGroupChanges</code>, Firewall
      * Manager identifies and reports when the security groups created by this policy
-     * become non-compliant. </p> <p> Firewall Manager won't distrubute system tags
+     * become non-compliant. </p> <p> Firewall Manager won't distribute system tags
      * added by Amazon Web Services services into the replica security groups. System
      * tags begin with the <code>aws:</code> prefix. </p> </li> <li> <p>Example: Shared
      * VPCs. Apply the preceding policy to resources in shared VPCs as well as to those
@@ -1765,7 +1765,7 @@ namespace Model
      * <code>true</code>, otherwise Firewall Manager won't be able to create the
      * policy. When you enable <code>revertManualSecurityGroupChanges</code>, Firewall
      * Manager identifies and reports when the security groups created by this policy
-     * become non-compliant. </p> <p> Firewall Manager won't distrubute system tags
+     * become non-compliant. </p> <p> Firewall Manager won't distribute system tags
      * added by Amazon Web Services services into the replica security groups. System
      * tags begin with the <code>aws:</code> prefix. </p> </li> <li> <p>Example: Shared
      * VPCs. Apply the preceding policy to resources in shared VPCs as well as to those
@@ -1927,38 +1927,38 @@ namespace Model
 
 
     /**
-     * <p>Contains the Network Firewall firewall policy options to configure a
-     * centralized deployment model.</p>
+     * <p>Contains the settings to configure a network ACL policy, a Network Firewall
+     * firewall policy deployment model, or a third-party firewall policy.</p>
      */
     inline const PolicyOption& GetPolicyOption() const{ return m_policyOption; }
 
     /**
-     * <p>Contains the Network Firewall firewall policy options to configure a
-     * centralized deployment model.</p>
+     * <p>Contains the settings to configure a network ACL policy, a Network Firewall
+     * firewall policy deployment model, or a third-party firewall policy.</p>
      */
     inline bool PolicyOptionHasBeenSet() const { return m_policyOptionHasBeenSet; }
 
     /**
-     * <p>Contains the Network Firewall firewall policy options to configure a
-     * centralized deployment model.</p>
+     * <p>Contains the settings to configure a network ACL policy, a Network Firewall
+     * firewall policy deployment model, or a third-party firewall policy.</p>
      */
     inline void SetPolicyOption(const PolicyOption& value) { m_policyOptionHasBeenSet = true; m_policyOption = value; }
 
     /**
-     * <p>Contains the Network Firewall firewall policy options to configure a
-     * centralized deployment model.</p>
+     * <p>Contains the settings to configure a network ACL policy, a Network Firewall
+     * firewall policy deployment model, or a third-party firewall policy.</p>
      */
     inline void SetPolicyOption(PolicyOption&& value) { m_policyOptionHasBeenSet = true; m_policyOption = std::move(value); }
 
     /**
-     * <p>Contains the Network Firewall firewall policy options to configure a
-     * centralized deployment model.</p>
+     * <p>Contains the settings to configure a network ACL policy, a Network Firewall
+     * firewall policy deployment model, or a third-party firewall policy.</p>
      */
     inline SecurityServicePolicyData& WithPolicyOption(const PolicyOption& value) { SetPolicyOption(value); return *this;}
 
     /**
-     * <p>Contains the Network Firewall firewall policy options to configure a
-     * centralized deployment model.</p>
+     * <p>Contains the settings to configure a network ACL policy, a Network Firewall
+     * firewall policy deployment model, or a third-party firewall policy.</p>
      */
     inline SecurityServicePolicyData& WithPolicyOption(PolicyOption&& value) { SetPolicyOption(std::move(value)); return *this;}
 

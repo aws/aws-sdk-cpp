@@ -166,16 +166,7 @@ namespace Model
      * <p>The type of resource protected by or in scope of the policy. This is in the
      * format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
-     * Web Services Resource Types Reference</a>. For WAF and Shield Advanced, examples
-     * include <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and
-     * <code>AWS::CloudFront::Distribution</code>. For a security group common policy,
-     * valid values are <code>AWS::EC2::NetworkInterface</code> and
-     * <code>AWS::EC2::Instance</code>. For a security group content audit policy,
-     * valid values are <code>AWS::EC2::SecurityGroup</code>,
-     * <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.
-     * For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS
-     * Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
+     * Web Services Resource Types Reference</a>. </p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
@@ -183,16 +174,7 @@ namespace Model
      * <p>The type of resource protected by or in scope of the policy. This is in the
      * format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
-     * Web Services Resource Types Reference</a>. For WAF and Shield Advanced, examples
-     * include <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and
-     * <code>AWS::CloudFront::Distribution</code>. For a security group common policy,
-     * valid values are <code>AWS::EC2::NetworkInterface</code> and
-     * <code>AWS::EC2::Instance</code>. For a security group content audit policy,
-     * valid values are <code>AWS::EC2::SecurityGroup</code>,
-     * <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.
-     * For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS
-     * Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
+     * Web Services Resource Types Reference</a>. </p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
@@ -200,16 +182,7 @@ namespace Model
      * <p>The type of resource protected by or in scope of the policy. This is in the
      * format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
-     * Web Services Resource Types Reference</a>. For WAF and Shield Advanced, examples
-     * include <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and
-     * <code>AWS::CloudFront::Distribution</code>. For a security group common policy,
-     * valid values are <code>AWS::EC2::NetworkInterface</code> and
-     * <code>AWS::EC2::Instance</code>. For a security group content audit policy,
-     * valid values are <code>AWS::EC2::SecurityGroup</code>,
-     * <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.
-     * For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS
-     * Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
+     * Web Services Resource Types Reference</a>. </p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
@@ -217,16 +190,7 @@ namespace Model
      * <p>The type of resource protected by or in scope of the policy. This is in the
      * format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
-     * Web Services Resource Types Reference</a>. For WAF and Shield Advanced, examples
-     * include <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and
-     * <code>AWS::CloudFront::Distribution</code>. For a security group common policy,
-     * valid values are <code>AWS::EC2::NetworkInterface</code> and
-     * <code>AWS::EC2::Instance</code>. For a security group content audit policy,
-     * valid values are <code>AWS::EC2::SecurityGroup</code>,
-     * <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.
-     * For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS
-     * Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
+     * Web Services Resource Types Reference</a>. </p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
@@ -234,16 +198,7 @@ namespace Model
      * <p>The type of resource protected by or in scope of the policy. This is in the
      * format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
-     * Web Services Resource Types Reference</a>. For WAF and Shield Advanced, examples
-     * include <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and
-     * <code>AWS::CloudFront::Distribution</code>. For a security group common policy,
-     * valid values are <code>AWS::EC2::NetworkInterface</code> and
-     * <code>AWS::EC2::Instance</code>. For a security group content audit policy,
-     * valid values are <code>AWS::EC2::SecurityGroup</code>,
-     * <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.
-     * For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS
-     * Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
+     * Web Services Resource Types Reference</a>. </p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
@@ -251,16 +206,7 @@ namespace Model
      * <p>The type of resource protected by or in scope of the policy. This is in the
      * format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
-     * Web Services Resource Types Reference</a>. For WAF and Shield Advanced, examples
-     * include <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and
-     * <code>AWS::CloudFront::Distribution</code>. For a security group common policy,
-     * valid values are <code>AWS::EC2::NetworkInterface</code> and
-     * <code>AWS::EC2::Instance</code>. For a security group content audit policy,
-     * valid values are <code>AWS::EC2::SecurityGroup</code>,
-     * <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.
-     * For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS
-     * Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
+     * Web Services Resource Types Reference</a>. </p>
      */
     inline PolicySummary& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
@@ -268,16 +214,7 @@ namespace Model
      * <p>The type of resource protected by or in scope of the policy. This is in the
      * format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
-     * Web Services Resource Types Reference</a>. For WAF and Shield Advanced, examples
-     * include <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and
-     * <code>AWS::CloudFront::Distribution</code>. For a security group common policy,
-     * valid values are <code>AWS::EC2::NetworkInterface</code> and
-     * <code>AWS::EC2::Instance</code>. For a security group content audit policy,
-     * valid values are <code>AWS::EC2::SecurityGroup</code>,
-     * <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.
-     * For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS
-     * Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
+     * Web Services Resource Types Reference</a>. </p>
      */
     inline PolicySummary& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
@@ -285,16 +222,7 @@ namespace Model
      * <p>The type of resource protected by or in scope of the policy. This is in the
      * format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
-     * Web Services Resource Types Reference</a>. For WAF and Shield Advanced, examples
-     * include <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and
-     * <code>AWS::CloudFront::Distribution</code>. For a security group common policy,
-     * valid values are <code>AWS::EC2::NetworkInterface</code> and
-     * <code>AWS::EC2::Instance</code>. For a security group content audit policy,
-     * valid values are <code>AWS::EC2::SecurityGroup</code>,
-     * <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.
-     * For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS
-     * Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
+     * Web Services Resource Types Reference</a>. </p>
      */
     inline PolicySummary& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 

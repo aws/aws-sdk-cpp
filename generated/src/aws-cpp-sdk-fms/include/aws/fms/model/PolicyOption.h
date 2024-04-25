@@ -7,6 +7,7 @@
 #include <aws/fms/FMS_EXPORTS.h>
 #include <aws/fms/model/NetworkFirewallPolicy.h>
 #include <aws/fms/model/ThirdPartyFirewallPolicy.h>
+#include <aws/fms/model/NetworkAclCommonPolicy.h>
 #include <utility>
 
 namespace Aws
@@ -25,9 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the Network Firewall firewall policy options to configure the
-   * policy's deployment model and third-party firewall policy
-   * settings.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the settings to configure a network ACL policy, a Network Firewall
+   * firewall policy deployment model, or a third-party firewall
+   * policy.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PolicyOption">AWS
    * API Reference</a></p>
    */
@@ -101,6 +102,37 @@ namespace Model
      */
     inline PolicyOption& WithThirdPartyFirewallPolicy(ThirdPartyFirewallPolicy&& value) { SetThirdPartyFirewallPolicy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Defines a Firewall Manager network ACL policy. </p>
+     */
+    inline const NetworkAclCommonPolicy& GetNetworkAclCommonPolicy() const{ return m_networkAclCommonPolicy; }
+
+    /**
+     * <p>Defines a Firewall Manager network ACL policy. </p>
+     */
+    inline bool NetworkAclCommonPolicyHasBeenSet() const { return m_networkAclCommonPolicyHasBeenSet; }
+
+    /**
+     * <p>Defines a Firewall Manager network ACL policy. </p>
+     */
+    inline void SetNetworkAclCommonPolicy(const NetworkAclCommonPolicy& value) { m_networkAclCommonPolicyHasBeenSet = true; m_networkAclCommonPolicy = value; }
+
+    /**
+     * <p>Defines a Firewall Manager network ACL policy. </p>
+     */
+    inline void SetNetworkAclCommonPolicy(NetworkAclCommonPolicy&& value) { m_networkAclCommonPolicyHasBeenSet = true; m_networkAclCommonPolicy = std::move(value); }
+
+    /**
+     * <p>Defines a Firewall Manager network ACL policy. </p>
+     */
+    inline PolicyOption& WithNetworkAclCommonPolicy(const NetworkAclCommonPolicy& value) { SetNetworkAclCommonPolicy(value); return *this;}
+
+    /**
+     * <p>Defines a Firewall Manager network ACL policy. </p>
+     */
+    inline PolicyOption& WithNetworkAclCommonPolicy(NetworkAclCommonPolicy&& value) { SetNetworkAclCommonPolicy(std::move(value)); return *this;}
+
   private:
 
     NetworkFirewallPolicy m_networkFirewallPolicy;
@@ -108,6 +140,9 @@ namespace Model
 
     ThirdPartyFirewallPolicy m_thirdPartyFirewallPolicy;
     bool m_thirdPartyFirewallPolicyHasBeenSet = false;
+
+    NetworkAclCommonPolicy m_networkAclCommonPolicy;
+    bool m_networkAclCommonPolicyHasBeenSet = false;
   };
 
 } // namespace Model
