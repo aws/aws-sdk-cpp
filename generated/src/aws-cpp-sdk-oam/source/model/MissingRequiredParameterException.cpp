@@ -20,14 +20,14 @@ namespace Model
 {
 
 MissingRequiredParameterException::MissingRequiredParameterException() : 
-    m_messageHasBeenSet(false),
-    m_amznErrorTypeHasBeenSet(false)
+    m_amznErrorTypeHasBeenSet(false),
+    m_messageHasBeenSet(false)
 {
 }
 
 MissingRequiredParameterException::MissingRequiredParameterException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_amznErrorTypeHasBeenSet(false)
+    m_amznErrorTypeHasBeenSet(false),
+    m_messageHasBeenSet(false)
 {
   *this = jsonValue;
 }

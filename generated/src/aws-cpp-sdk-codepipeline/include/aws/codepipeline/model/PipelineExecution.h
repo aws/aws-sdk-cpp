@@ -10,6 +10,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codepipeline/model/ExecutionTrigger.h>
 #include <aws/codepipeline/model/ExecutionMode.h>
+#include <aws/codepipeline/model/ExecutionType.h>
+#include <aws/codepipeline/model/PipelineRollbackMetadata.h>
 #include <aws/codepipeline/model/ArtifactRevision.h>
 #include <aws/codepipeline/model/ResolvedPipelineVariable.h>
 #include <utility>
@@ -472,6 +474,68 @@ namespace Model
      */
     inline PipelineExecution& WithExecutionMode(ExecutionMode&& value) { SetExecutionMode(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The type of the pipeline execution.</p>
+     */
+    inline const ExecutionType& GetExecutionType() const{ return m_executionType; }
+
+    /**
+     * <p>The type of the pipeline execution.</p>
+     */
+    inline bool ExecutionTypeHasBeenSet() const { return m_executionTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the pipeline execution.</p>
+     */
+    inline void SetExecutionType(const ExecutionType& value) { m_executionTypeHasBeenSet = true; m_executionType = value; }
+
+    /**
+     * <p>The type of the pipeline execution.</p>
+     */
+    inline void SetExecutionType(ExecutionType&& value) { m_executionTypeHasBeenSet = true; m_executionType = std::move(value); }
+
+    /**
+     * <p>The type of the pipeline execution.</p>
+     */
+    inline PipelineExecution& WithExecutionType(const ExecutionType& value) { SetExecutionType(value); return *this;}
+
+    /**
+     * <p>The type of the pipeline execution.</p>
+     */
+    inline PipelineExecution& WithExecutionType(ExecutionType&& value) { SetExecutionType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The metadata about the execution pertaining to stage rollback.</p>
+     */
+    inline const PipelineRollbackMetadata& GetRollbackMetadata() const{ return m_rollbackMetadata; }
+
+    /**
+     * <p>The metadata about the execution pertaining to stage rollback.</p>
+     */
+    inline bool RollbackMetadataHasBeenSet() const { return m_rollbackMetadataHasBeenSet; }
+
+    /**
+     * <p>The metadata about the execution pertaining to stage rollback.</p>
+     */
+    inline void SetRollbackMetadata(const PipelineRollbackMetadata& value) { m_rollbackMetadataHasBeenSet = true; m_rollbackMetadata = value; }
+
+    /**
+     * <p>The metadata about the execution pertaining to stage rollback.</p>
+     */
+    inline void SetRollbackMetadata(PipelineRollbackMetadata&& value) { m_rollbackMetadataHasBeenSet = true; m_rollbackMetadata = std::move(value); }
+
+    /**
+     * <p>The metadata about the execution pertaining to stage rollback.</p>
+     */
+    inline PipelineExecution& WithRollbackMetadata(const PipelineRollbackMetadata& value) { SetRollbackMetadata(value); return *this;}
+
+    /**
+     * <p>The metadata about the execution pertaining to stage rollback.</p>
+     */
+    inline PipelineExecution& WithRollbackMetadata(PipelineRollbackMetadata&& value) { SetRollbackMetadata(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_pipelineName;
@@ -500,6 +564,12 @@ namespace Model
 
     ExecutionMode m_executionMode;
     bool m_executionModeHasBeenSet = false;
+
+    ExecutionType m_executionType;
+    bool m_executionTypeHasBeenSet = false;
+
+    PipelineRollbackMetadata m_rollbackMetadata;
+    bool m_rollbackMetadataHasBeenSet = false;
   };
 
 } // namespace Model

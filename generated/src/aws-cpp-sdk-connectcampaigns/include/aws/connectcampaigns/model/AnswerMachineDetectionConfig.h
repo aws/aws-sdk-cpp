@@ -55,10 +55,34 @@ namespace Model
      */
     inline AnswerMachineDetectionConfig& WithEnableAnswerMachineDetection(bool value) { SetEnableAnswerMachineDetection(value); return *this;}
 
+
+    /**
+     * <p>Enable or disable await answer machine prompt</p>
+     */
+    inline bool GetAwaitAnswerMachinePrompt() const{ return m_awaitAnswerMachinePrompt; }
+
+    /**
+     * <p>Enable or disable await answer machine prompt</p>
+     */
+    inline bool AwaitAnswerMachinePromptHasBeenSet() const { return m_awaitAnswerMachinePromptHasBeenSet; }
+
+    /**
+     * <p>Enable or disable await answer machine prompt</p>
+     */
+    inline void SetAwaitAnswerMachinePrompt(bool value) { m_awaitAnswerMachinePromptHasBeenSet = true; m_awaitAnswerMachinePrompt = value; }
+
+    /**
+     * <p>Enable or disable await answer machine prompt</p>
+     */
+    inline AnswerMachineDetectionConfig& WithAwaitAnswerMachinePrompt(bool value) { SetAwaitAnswerMachinePrompt(value); return *this;}
+
   private:
 
     bool m_enableAnswerMachineDetection;
     bool m_enableAnswerMachineDetectionHasBeenSet = false;
+
+    bool m_awaitAnswerMachinePrompt;
+    bool m_awaitAnswerMachinePromptHasBeenSet = false;
   };
 
 } // namespace Model

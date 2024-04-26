@@ -53,6 +53,12 @@ UpdateLinkResult& UpdateLinkResult::operator =(const Aws::AmazonWebServiceResult
 
   }
 
+  if(jsonValue.ValueExists("LinkConfiguration"))
+  {
+    m_linkConfiguration = jsonValue.GetObject("LinkConfiguration");
+
+  }
+
   if(jsonValue.ValueExists("ResourceTypes"))
   {
     Aws::Utils::Array<JsonView> resourceTypesJsonList = jsonValue.GetArray("ResourceTypes");

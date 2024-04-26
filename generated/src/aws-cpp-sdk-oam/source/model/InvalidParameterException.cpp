@@ -20,14 +20,14 @@ namespace Model
 {
 
 InvalidParameterException::InvalidParameterException() : 
-    m_messageHasBeenSet(false),
-    m_amznErrorTypeHasBeenSet(false)
+    m_amznErrorTypeHasBeenSet(false),
+    m_messageHasBeenSet(false)
 {
 }
 
 InvalidParameterException::InvalidParameterException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_amznErrorTypeHasBeenSet(false)
+    m_amznErrorTypeHasBeenSet(false),
+    m_messageHasBeenSet(false)
 {
   *this = jsonValue;
 }

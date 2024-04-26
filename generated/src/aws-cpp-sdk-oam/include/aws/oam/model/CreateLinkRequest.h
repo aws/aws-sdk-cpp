@@ -7,6 +7,7 @@
 #include <aws/oam/OAM_EXPORTS.h>
 #include <aws/oam/OAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/oam/model/LinkConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/oam/model/ResourceType.h>
@@ -122,6 +123,49 @@ namespace Model
      * address of the account without the domain name</p> </li> </ul>
      */
     inline CreateLinkRequest& WithLabelTemplate(const char* value) { SetLabelTemplate(value); return *this;}
+
+
+    /**
+     * <p>Use this structure to optionally create filters that specify that only some
+     * metric namespaces or log groups are to be shared from the source account to the
+     * monitoring account.</p>
+     */
+    inline const LinkConfiguration& GetLinkConfiguration() const{ return m_linkConfiguration; }
+
+    /**
+     * <p>Use this structure to optionally create filters that specify that only some
+     * metric namespaces or log groups are to be shared from the source account to the
+     * monitoring account.</p>
+     */
+    inline bool LinkConfigurationHasBeenSet() const { return m_linkConfigurationHasBeenSet; }
+
+    /**
+     * <p>Use this structure to optionally create filters that specify that only some
+     * metric namespaces or log groups are to be shared from the source account to the
+     * monitoring account.</p>
+     */
+    inline void SetLinkConfiguration(const LinkConfiguration& value) { m_linkConfigurationHasBeenSet = true; m_linkConfiguration = value; }
+
+    /**
+     * <p>Use this structure to optionally create filters that specify that only some
+     * metric namespaces or log groups are to be shared from the source account to the
+     * monitoring account.</p>
+     */
+    inline void SetLinkConfiguration(LinkConfiguration&& value) { m_linkConfigurationHasBeenSet = true; m_linkConfiguration = std::move(value); }
+
+    /**
+     * <p>Use this structure to optionally create filters that specify that only some
+     * metric namespaces or log groups are to be shared from the source account to the
+     * monitoring account.</p>
+     */
+    inline CreateLinkRequest& WithLinkConfiguration(const LinkConfiguration& value) { SetLinkConfiguration(value); return *this;}
+
+    /**
+     * <p>Use this structure to optionally create filters that specify that only some
+     * metric namespaces or log groups are to be shared from the source account to the
+     * monitoring account.</p>
+     */
+    inline CreateLinkRequest& WithLinkConfiguration(LinkConfiguration&& value) { SetLinkConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -385,6 +429,9 @@ namespace Model
 
     Aws::String m_labelTemplate;
     bool m_labelTemplateHasBeenSet = false;
+
+    LinkConfiguration m_linkConfiguration;
+    bool m_linkConfigurationHasBeenSet = false;
 
     Aws::Vector<ResourceType> m_resourceTypes;
     bool m_resourceTypesHasBeenSet = false;

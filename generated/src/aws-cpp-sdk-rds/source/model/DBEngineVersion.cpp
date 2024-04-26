@@ -55,6 +55,8 @@ DBEngineVersion::DBEngineVersion() :
     m_supportsBabelfish(false),
     m_supportsBabelfishHasBeenSet(false),
     m_customDBEngineVersionManifestHasBeenSet(false),
+    m_supportsLimitlessDatabase(false),
+    m_supportsLimitlessDatabaseHasBeenSet(false),
     m_supportsCertificateRotationWithoutRestart(false),
     m_supportsCertificateRotationWithoutRestartHasBeenSet(false),
     m_supportedCACertificateIdentifiersHasBeenSet(false),
@@ -100,6 +102,8 @@ DBEngineVersion::DBEngineVersion(const XmlNode& xmlNode) :
     m_supportsBabelfish(false),
     m_supportsBabelfishHasBeenSet(false),
     m_customDBEngineVersionManifestHasBeenSet(false),
+    m_supportsLimitlessDatabase(false),
+    m_supportsLimitlessDatabaseHasBeenSet(false),
     m_supportsCertificateRotationWithoutRestart(false),
     m_supportsCertificateRotationWithoutRestartHasBeenSet(false),
     m_supportedCACertificateIdentifiersHasBeenSet(false),
@@ -339,6 +343,12 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
       m_customDBEngineVersionManifest = Aws::Utils::Xml::DecodeEscapedXmlText(customDBEngineVersionManifestNode.GetText());
       m_customDBEngineVersionManifestHasBeenSet = true;
     }
+    XmlNode supportsLimitlessDatabaseNode = resultNode.FirstChild("SupportsLimitlessDatabase");
+    if(!supportsLimitlessDatabaseNode.IsNull())
+    {
+      m_supportsLimitlessDatabase = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsLimitlessDatabaseNode.GetText()).c_str()).c_str());
+      m_supportsLimitlessDatabaseHasBeenSet = true;
+    }
     XmlNode supportsCertificateRotationWithoutRestartNode = resultNode.FirstChild("SupportsCertificateRotationWithoutRestart");
     if(!supportsCertificateRotationWithoutRestartNode.IsNull())
     {
@@ -567,6 +577,11 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << index << locationValue << ".CustomDBEngineVersionManifest=" << StringUtils::URLEncode(m_customDBEngineVersionManifest.c_str()) << "&";
   }
 
+  if(m_supportsLimitlessDatabaseHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsLimitlessDatabase=" << std::boolalpha << m_supportsLimitlessDatabase << "&";
+  }
+
   if(m_supportsCertificateRotationWithoutRestartHasBeenSet)
   {
       oStream << location << index << locationValue << ".SupportsCertificateRotationWithoutRestart=" << std::boolalpha << m_supportsCertificateRotationWithoutRestart << "&";
@@ -759,6 +774,10 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_customDBEngineVersionManifestHasBeenSet)
   {
       oStream << location << ".CustomDBEngineVersionManifest=" << StringUtils::URLEncode(m_customDBEngineVersionManifest.c_str()) << "&";
+  }
+  if(m_supportsLimitlessDatabaseHasBeenSet)
+  {
+      oStream << location << ".SupportsLimitlessDatabase=" << std::boolalpha << m_supportsLimitlessDatabase << "&";
   }
   if(m_supportsCertificateRotationWithoutRestartHasBeenSet)
   {

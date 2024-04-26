@@ -1066,6 +1066,31 @@ namespace CodePipeline
         }
 
         /**
+         * <p>Rolls back a stage execution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/RollbackStage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RollbackStageOutcome RollbackStage(const Model::RollbackStageRequest& request) const;
+
+        /**
+         * A Callable wrapper for RollbackStage that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename RollbackStageRequestT = Model::RollbackStageRequest>
+        Model::RollbackStageOutcomeCallable RollbackStageCallable(const RollbackStageRequestT& request) const
+        {
+            return SubmitCallable(&CodePipelineClient::RollbackStage, request);
+        }
+
+        /**
+         * An Async wrapper for RollbackStage that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename RollbackStageRequestT = Model::RollbackStageRequest>
+        void RollbackStageAsync(const RollbackStageRequestT& request, const RollbackStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodePipelineClient::RollbackStage, request, handler, context);
+        }
+
+        /**
          * <p>Starts the specified pipeline. Specifically, it begins processing the latest
          * commit to the source location specified as part of the pipeline.</p><p><h3>See
          * Also:</h3>   <a

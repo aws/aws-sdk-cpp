@@ -1268,96 +1268,112 @@ namespace Model
 
 
     /**
-     * <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
-     * <p>A redirect URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li>
-     * <p>Be registered with the authorization server.</p> </li> <li> <p>Not include a
-     * fragment component.</p> </li> </ul> <p>See <a
-     * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
-     * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
+     * <p>The default redirect URI. In app clients with one assigned IdP, replaces
+     * <code>redirect_uri</code> in authentication requests. Must be in the
+     * <code>CallbackURLs</code> list.</p> <p>A redirect URI must:</p> <ul> <li> <p>Be
+     * an absolute URI.</p> </li> <li> <p>Be registered with the authorization
+     * server.</p> </li> <li> <p>Not include a fragment component.</p> </li> </ul>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html#cognito-user-pools-app-idp-settings-about">Default
+     * redirect URI</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
      * http://localhost for testing purposes only.</p> <p>App callback URLs such as
      * myapp://example are also supported.</p>
      */
     inline const Aws::String& GetDefaultRedirectURI() const{ return m_defaultRedirectURI; }
 
     /**
-     * <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
-     * <p>A redirect URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li>
-     * <p>Be registered with the authorization server.</p> </li> <li> <p>Not include a
-     * fragment component.</p> </li> </ul> <p>See <a
-     * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
-     * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
+     * <p>The default redirect URI. In app clients with one assigned IdP, replaces
+     * <code>redirect_uri</code> in authentication requests. Must be in the
+     * <code>CallbackURLs</code> list.</p> <p>A redirect URI must:</p> <ul> <li> <p>Be
+     * an absolute URI.</p> </li> <li> <p>Be registered with the authorization
+     * server.</p> </li> <li> <p>Not include a fragment component.</p> </li> </ul>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html#cognito-user-pools-app-idp-settings-about">Default
+     * redirect URI</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
      * http://localhost for testing purposes only.</p> <p>App callback URLs such as
      * myapp://example are also supported.</p>
      */
     inline bool DefaultRedirectURIHasBeenSet() const { return m_defaultRedirectURIHasBeenSet; }
 
     /**
-     * <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
-     * <p>A redirect URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li>
-     * <p>Be registered with the authorization server.</p> </li> <li> <p>Not include a
-     * fragment component.</p> </li> </ul> <p>See <a
-     * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
-     * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
+     * <p>The default redirect URI. In app clients with one assigned IdP, replaces
+     * <code>redirect_uri</code> in authentication requests. Must be in the
+     * <code>CallbackURLs</code> list.</p> <p>A redirect URI must:</p> <ul> <li> <p>Be
+     * an absolute URI.</p> </li> <li> <p>Be registered with the authorization
+     * server.</p> </li> <li> <p>Not include a fragment component.</p> </li> </ul>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html#cognito-user-pools-app-idp-settings-about">Default
+     * redirect URI</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
      * http://localhost for testing purposes only.</p> <p>App callback URLs such as
      * myapp://example are also supported.</p>
      */
     inline void SetDefaultRedirectURI(const Aws::String& value) { m_defaultRedirectURIHasBeenSet = true; m_defaultRedirectURI = value; }
 
     /**
-     * <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
-     * <p>A redirect URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li>
-     * <p>Be registered with the authorization server.</p> </li> <li> <p>Not include a
-     * fragment component.</p> </li> </ul> <p>See <a
-     * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
-     * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
+     * <p>The default redirect URI. In app clients with one assigned IdP, replaces
+     * <code>redirect_uri</code> in authentication requests. Must be in the
+     * <code>CallbackURLs</code> list.</p> <p>A redirect URI must:</p> <ul> <li> <p>Be
+     * an absolute URI.</p> </li> <li> <p>Be registered with the authorization
+     * server.</p> </li> <li> <p>Not include a fragment component.</p> </li> </ul>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html#cognito-user-pools-app-idp-settings-about">Default
+     * redirect URI</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
      * http://localhost for testing purposes only.</p> <p>App callback URLs such as
      * myapp://example are also supported.</p>
      */
     inline void SetDefaultRedirectURI(Aws::String&& value) { m_defaultRedirectURIHasBeenSet = true; m_defaultRedirectURI = std::move(value); }
 
     /**
-     * <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
-     * <p>A redirect URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li>
-     * <p>Be registered with the authorization server.</p> </li> <li> <p>Not include a
-     * fragment component.</p> </li> </ul> <p>See <a
-     * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
-     * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
+     * <p>The default redirect URI. In app clients with one assigned IdP, replaces
+     * <code>redirect_uri</code> in authentication requests. Must be in the
+     * <code>CallbackURLs</code> list.</p> <p>A redirect URI must:</p> <ul> <li> <p>Be
+     * an absolute URI.</p> </li> <li> <p>Be registered with the authorization
+     * server.</p> </li> <li> <p>Not include a fragment component.</p> </li> </ul>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html#cognito-user-pools-app-idp-settings-about">Default
+     * redirect URI</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
      * http://localhost for testing purposes only.</p> <p>App callback URLs such as
      * myapp://example are also supported.</p>
      */
     inline void SetDefaultRedirectURI(const char* value) { m_defaultRedirectURIHasBeenSet = true; m_defaultRedirectURI.assign(value); }
 
     /**
-     * <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
-     * <p>A redirect URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li>
-     * <p>Be registered with the authorization server.</p> </li> <li> <p>Not include a
-     * fragment component.</p> </li> </ul> <p>See <a
-     * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
-     * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
+     * <p>The default redirect URI. In app clients with one assigned IdP, replaces
+     * <code>redirect_uri</code> in authentication requests. Must be in the
+     * <code>CallbackURLs</code> list.</p> <p>A redirect URI must:</p> <ul> <li> <p>Be
+     * an absolute URI.</p> </li> <li> <p>Be registered with the authorization
+     * server.</p> </li> <li> <p>Not include a fragment component.</p> </li> </ul>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html#cognito-user-pools-app-idp-settings-about">Default
+     * redirect URI</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
      * http://localhost for testing purposes only.</p> <p>App callback URLs such as
      * myapp://example are also supported.</p>
      */
     inline CreateUserPoolClientRequest& WithDefaultRedirectURI(const Aws::String& value) { SetDefaultRedirectURI(value); return *this;}
 
     /**
-     * <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
-     * <p>A redirect URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li>
-     * <p>Be registered with the authorization server.</p> </li> <li> <p>Not include a
-     * fragment component.</p> </li> </ul> <p>See <a
-     * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
-     * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
+     * <p>The default redirect URI. In app clients with one assigned IdP, replaces
+     * <code>redirect_uri</code> in authentication requests. Must be in the
+     * <code>CallbackURLs</code> list.</p> <p>A redirect URI must:</p> <ul> <li> <p>Be
+     * an absolute URI.</p> </li> <li> <p>Be registered with the authorization
+     * server.</p> </li> <li> <p>Not include a fragment component.</p> </li> </ul>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html#cognito-user-pools-app-idp-settings-about">Default
+     * redirect URI</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
      * http://localhost for testing purposes only.</p> <p>App callback URLs such as
      * myapp://example are also supported.</p>
      */
     inline CreateUserPoolClientRequest& WithDefaultRedirectURI(Aws::String&& value) { SetDefaultRedirectURI(std::move(value)); return *this;}
 
     /**
-     * <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
-     * <p>A redirect URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li>
-     * <p>Be registered with the authorization server.</p> </li> <li> <p>Not include a
-     * fragment component.</p> </li> </ul> <p>See <a
-     * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
-     * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
+     * <p>The default redirect URI. In app clients with one assigned IdP, replaces
+     * <code>redirect_uri</code> in authentication requests. Must be in the
+     * <code>CallbackURLs</code> list.</p> <p>A redirect URI must:</p> <ul> <li> <p>Be
+     * an absolute URI.</p> </li> <li> <p>Be registered with the authorization
+     * server.</p> </li> <li> <p>Not include a fragment component.</p> </li> </ul>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html#cognito-user-pools-app-idp-settings-about">Default
+     * redirect URI</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
      * http://localhost for testing purposes only.</p> <p>App callback URLs such as
      * myapp://example are also supported.</p>
      */

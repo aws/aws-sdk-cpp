@@ -29,6 +29,12 @@ GetSinkPolicyResult::GetSinkPolicyResult(const Aws::AmazonWebServiceResult<JsonV
 GetSinkPolicyResult& GetSinkPolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("Policy"))
+  {
+    m_policy = jsonValue.GetString("Policy");
+
+  }
+
   if(jsonValue.ValueExists("SinkArn"))
   {
     m_sinkArn = jsonValue.GetString("SinkArn");
@@ -38,12 +44,6 @@ GetSinkPolicyResult& GetSinkPolicyResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("SinkId"))
   {
     m_sinkId = jsonValue.GetString("SinkId");
-
-  }
-
-  if(jsonValue.ValueExists("Policy"))
-  {
-    m_policy = jsonValue.GetString("Policy");
 
   }
 

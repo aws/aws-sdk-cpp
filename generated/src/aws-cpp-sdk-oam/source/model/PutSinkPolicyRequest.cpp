@@ -13,8 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 PutSinkPolicyRequest::PutSinkPolicyRequest() : 
-    m_sinkIdentifierHasBeenSet(false),
-    m_policyHasBeenSet(false)
+    m_policyHasBeenSet(false),
+    m_sinkIdentifierHasBeenSet(false)
 {
 }
 
@@ -22,15 +22,15 @@ Aws::String PutSinkPolicyRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_sinkIdentifierHasBeenSet)
-  {
-   payload.WithString("SinkIdentifier", m_sinkIdentifier);
-
-  }
-
   if(m_policyHasBeenSet)
   {
    payload.WithString("Policy", m_policy);
+
+  }
+
+  if(m_sinkIdentifierHasBeenSet)
+  {
+   payload.WithString("SinkIdentifier", m_sinkIdentifier);
 
   }
 

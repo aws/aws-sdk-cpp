@@ -38,31 +38,6 @@ namespace Model
     AWS_OAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
-    inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
-    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
-    inline MissingRequiredParameterException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
-    inline MissingRequiredParameterException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
-    inline MissingRequiredParameterException& WithMessage(const char* value) { SetMessage(value); return *this;}
-
-
     /**
      * <p>The name of the exception.</p>
      */
@@ -103,13 +78,38 @@ namespace Model
      */
     inline MissingRequiredParameterException& WithAmznErrorType(const char* value) { SetAmznErrorType(value); return *this;}
 
-  private:
 
-    Aws::String m_message;
-    bool m_messageHasBeenSet = false;
+    
+    inline const Aws::String& GetMessage() const{ return m_message; }
+
+    
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+
+    
+    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
+
+    
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
+
+    
+    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
+
+    
+    inline MissingRequiredParameterException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+
+    
+    inline MissingRequiredParameterException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
+
+    
+    inline MissingRequiredParameterException& WithMessage(const char* value) { SetMessage(value); return *this;}
+
+  private:
 
     Aws::String m_amznErrorType;
     bool m_amznErrorTypeHasBeenSet = false;
+
+    Aws::String m_message;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

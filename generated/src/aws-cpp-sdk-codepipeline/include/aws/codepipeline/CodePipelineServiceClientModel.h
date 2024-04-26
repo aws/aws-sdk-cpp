@@ -43,6 +43,7 @@
 #include <aws/codepipeline/model/PutWebhookResult.h>
 #include <aws/codepipeline/model/RegisterWebhookWithThirdPartyResult.h>
 #include <aws/codepipeline/model/RetryStageExecutionResult.h>
+#include <aws/codepipeline/model/RollbackStageResult.h>
 #include <aws/codepipeline/model/StartPipelineExecutionResult.h>
 #include <aws/codepipeline/model/StopPipelineExecutionResult.h>
 #include <aws/codepipeline/model/TagResourceResult.h>
@@ -122,6 +123,7 @@ namespace Aws
       class PutWebhookRequest;
       class RegisterWebhookWithThirdPartyRequest;
       class RetryStageExecutionRequest;
+      class RollbackStageRequest;
       class StartPipelineExecutionRequest;
       class StopPipelineExecutionRequest;
       class TagResourceRequest;
@@ -164,6 +166,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<PutWebhookResult, CodePipelineError> PutWebhookOutcome;
       typedef Aws::Utils::Outcome<RegisterWebhookWithThirdPartyResult, CodePipelineError> RegisterWebhookWithThirdPartyOutcome;
       typedef Aws::Utils::Outcome<RetryStageExecutionResult, CodePipelineError> RetryStageExecutionOutcome;
+      typedef Aws::Utils::Outcome<RollbackStageResult, CodePipelineError> RollbackStageOutcome;
       typedef Aws::Utils::Outcome<StartPipelineExecutionResult, CodePipelineError> StartPipelineExecutionOutcome;
       typedef Aws::Utils::Outcome<StopPipelineExecutionResult, CodePipelineError> StopPipelineExecutionOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, CodePipelineError> TagResourceOutcome;
@@ -206,6 +209,7 @@ namespace Aws
       typedef std::future<PutWebhookOutcome> PutWebhookOutcomeCallable;
       typedef std::future<RegisterWebhookWithThirdPartyOutcome> RegisterWebhookWithThirdPartyOutcomeCallable;
       typedef std::future<RetryStageExecutionOutcome> RetryStageExecutionOutcomeCallable;
+      typedef std::future<RollbackStageOutcome> RollbackStageOutcomeCallable;
       typedef std::future<StartPipelineExecutionOutcome> StartPipelineExecutionOutcomeCallable;
       typedef std::future<StopPipelineExecutionOutcome> StopPipelineExecutionOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -251,6 +255,7 @@ namespace Aws
     typedef std::function<void(const CodePipelineClient*, const Model::PutWebhookRequest&, const Model::PutWebhookOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutWebhookResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::RegisterWebhookWithThirdPartyRequest&, const Model::RegisterWebhookWithThirdPartyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterWebhookWithThirdPartyResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::RetryStageExecutionRequest&, const Model::RetryStageExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RetryStageExecutionResponseReceivedHandler;
+    typedef std::function<void(const CodePipelineClient*, const Model::RollbackStageRequest&, const Model::RollbackStageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RollbackStageResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::StartPipelineExecutionRequest&, const Model::StartPipelineExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartPipelineExecutionResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::StopPipelineExecutionRequest&, const Model::StopPipelineExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopPipelineExecutionResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
