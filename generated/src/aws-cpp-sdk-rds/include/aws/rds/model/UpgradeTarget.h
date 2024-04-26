@@ -336,6 +336,31 @@ namespace Model
 
 
     /**
+     * <p>Indicates whether the DB engine version supports Aurora Limitless
+     * Database.</p>
+     */
+    inline bool GetSupportsLimitlessDatabase() const{ return m_supportsLimitlessDatabase; }
+
+    /**
+     * <p>Indicates whether the DB engine version supports Aurora Limitless
+     * Database.</p>
+     */
+    inline bool SupportsLimitlessDatabaseHasBeenSet() const { return m_supportsLimitlessDatabaseHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the DB engine version supports Aurora Limitless
+     * Database.</p>
+     */
+    inline void SetSupportsLimitlessDatabase(bool value) { m_supportsLimitlessDatabaseHasBeenSet = true; m_supportsLimitlessDatabase = value; }
+
+    /**
+     * <p>Indicates whether the DB engine version supports Aurora Limitless
+     * Database.</p>
+     */
+    inline UpgradeTarget& WithSupportsLimitlessDatabase(bool value) { SetSupportsLimitlessDatabase(value); return *this;}
+
+
+    /**
      * <p>Indicates whether the target engine version supports forwarding write
      * operations from reader DB instances to the writer DB instance in the DB cluster.
      * By default, write operations aren't allowed on reader DB instances.</p> <p>Valid
@@ -420,6 +445,9 @@ namespace Model
 
     bool m_supportsBabelfish;
     bool m_supportsBabelfishHasBeenSet = false;
+
+    bool m_supportsLimitlessDatabase;
+    bool m_supportsLimitlessDatabaseHasBeenSet = false;
 
     bool m_supportsLocalWriteForwarding;
     bool m_supportsLocalWriteForwardingHasBeenSet = false;

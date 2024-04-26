@@ -1183,6 +1183,25 @@ namespace Model
 
 
     /**
+     * <p>Indicates whether the DB engine version supports Aurora Limitless
+     * Database.</p>
+     */
+    inline bool GetSupportsLimitlessDatabase() const{ return m_supportsLimitlessDatabase; }
+
+    /**
+     * <p>Indicates whether the DB engine version supports Aurora Limitless
+     * Database.</p>
+     */
+    inline void SetSupportsLimitlessDatabase(bool value) { m_supportsLimitlessDatabase = value; }
+
+    /**
+     * <p>Indicates whether the DB engine version supports Aurora Limitless
+     * Database.</p>
+     */
+    inline CreateCustomDBEngineVersionResult& WithSupportsLimitlessDatabase(bool value) { SetSupportsLimitlessDatabase(value); return *this;}
+
+
+    /**
      * <p>Indicates whether the engine version supports rotating the server certificate
      * without rebooting the DB instance.</p>
      */
@@ -1416,6 +1435,8 @@ namespace Model
     bool m_supportsBabelfish;
 
     Aws::String m_customDBEngineVersionManifest;
+
+    bool m_supportsLimitlessDatabase;
 
     bool m_supportsCertificateRotationWithoutRestart;
 

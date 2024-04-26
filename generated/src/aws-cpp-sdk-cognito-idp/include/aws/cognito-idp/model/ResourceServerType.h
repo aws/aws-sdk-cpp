@@ -82,42 +82,82 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the resource server.</p>
+     * <p>A unique resource server identifier for the resource server. The identifier
+     * can be an API friendly name like <code>solar-system-data</code>. You can also
+     * set an API URL like <code>https://solar-system-data-api.example.com</code> as
+     * your identifier.</p> <p>Amazon Cognito represents scopes in the access token in
+     * the format <code>$resource-server-identifier/$scope</code>. Longer
+     * scope-identifier strings increase the size of your access tokens.</p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
 
     /**
-     * <p>The identifier for the resource server.</p>
+     * <p>A unique resource server identifier for the resource server. The identifier
+     * can be an API friendly name like <code>solar-system-data</code>. You can also
+     * set an API URL like <code>https://solar-system-data-api.example.com</code> as
+     * your identifier.</p> <p>Amazon Cognito represents scopes in the access token in
+     * the format <code>$resource-server-identifier/$scope</code>. Longer
+     * scope-identifier strings increase the size of your access tokens.</p>
      */
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
 
     /**
-     * <p>The identifier for the resource server.</p>
+     * <p>A unique resource server identifier for the resource server. The identifier
+     * can be an API friendly name like <code>solar-system-data</code>. You can also
+     * set an API URL like <code>https://solar-system-data-api.example.com</code> as
+     * your identifier.</p> <p>Amazon Cognito represents scopes in the access token in
+     * the format <code>$resource-server-identifier/$scope</code>. Longer
+     * scope-identifier strings increase the size of your access tokens.</p>
      */
     inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
 
     /**
-     * <p>The identifier for the resource server.</p>
+     * <p>A unique resource server identifier for the resource server. The identifier
+     * can be an API friendly name like <code>solar-system-data</code>. You can also
+     * set an API URL like <code>https://solar-system-data-api.example.com</code> as
+     * your identifier.</p> <p>Amazon Cognito represents scopes in the access token in
+     * the format <code>$resource-server-identifier/$scope</code>. Longer
+     * scope-identifier strings increase the size of your access tokens.</p>
      */
     inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
 
     /**
-     * <p>The identifier for the resource server.</p>
+     * <p>A unique resource server identifier for the resource server. The identifier
+     * can be an API friendly name like <code>solar-system-data</code>. You can also
+     * set an API URL like <code>https://solar-system-data-api.example.com</code> as
+     * your identifier.</p> <p>Amazon Cognito represents scopes in the access token in
+     * the format <code>$resource-server-identifier/$scope</code>. Longer
+     * scope-identifier strings increase the size of your access tokens.</p>
      */
     inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
 
     /**
-     * <p>The identifier for the resource server.</p>
+     * <p>A unique resource server identifier for the resource server. The identifier
+     * can be an API friendly name like <code>solar-system-data</code>. You can also
+     * set an API URL like <code>https://solar-system-data-api.example.com</code> as
+     * your identifier.</p> <p>Amazon Cognito represents scopes in the access token in
+     * the format <code>$resource-server-identifier/$scope</code>. Longer
+     * scope-identifier strings increase the size of your access tokens.</p>
      */
     inline ResourceServerType& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
 
     /**
-     * <p>The identifier for the resource server.</p>
+     * <p>A unique resource server identifier for the resource server. The identifier
+     * can be an API friendly name like <code>solar-system-data</code>. You can also
+     * set an API URL like <code>https://solar-system-data-api.example.com</code> as
+     * your identifier.</p> <p>Amazon Cognito represents scopes in the access token in
+     * the format <code>$resource-server-identifier/$scope</code>. Longer
+     * scope-identifier strings increase the size of your access tokens.</p>
      */
     inline ResourceServerType& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the resource server.</p>
+     * <p>A unique resource server identifier for the resource server. The identifier
+     * can be an API friendly name like <code>solar-system-data</code>. You can also
+     * set an API URL like <code>https://solar-system-data-api.example.com</code> as
+     * your identifier.</p> <p>Amazon Cognito represents scopes in the access token in
+     * the format <code>$resource-server-identifier/$scope</code>. Longer
+     * scope-identifier strings increase the size of your access tokens.</p>
      */
     inline ResourceServerType& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
 

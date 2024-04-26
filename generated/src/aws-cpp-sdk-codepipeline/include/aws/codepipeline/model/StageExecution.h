@@ -7,6 +7,7 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codepipeline/model/StageExecutionStatus.h>
+#include <aws/codepipeline/model/ExecutionType.h>
 #include <utility>
 
 namespace Aws
@@ -122,6 +123,43 @@ namespace Model
      */
     inline StageExecution& WithStatus(StageExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The type of pipeline execution for the stage, such as a rollback pipeline
+     * execution.</p>
+     */
+    inline const ExecutionType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of pipeline execution for the stage, such as a rollback pipeline
+     * execution.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of pipeline execution for the stage, such as a rollback pipeline
+     * execution.</p>
+     */
+    inline void SetType(const ExecutionType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The type of pipeline execution for the stage, such as a rollback pipeline
+     * execution.</p>
+     */
+    inline void SetType(ExecutionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>The type of pipeline execution for the stage, such as a rollback pipeline
+     * execution.</p>
+     */
+    inline StageExecution& WithType(const ExecutionType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The type of pipeline execution for the stage, such as a rollback pipeline
+     * execution.</p>
+     */
+    inline StageExecution& WithType(ExecutionType&& value) { SetType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_pipelineExecutionId;
@@ -129,6 +167,9 @@ namespace Model
 
     StageExecutionStatus m_status;
     bool m_statusHasBeenSet = false;
+
+    ExecutionType m_type;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

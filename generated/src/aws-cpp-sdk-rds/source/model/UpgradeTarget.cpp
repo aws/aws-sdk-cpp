@@ -35,6 +35,8 @@ UpgradeTarget::UpgradeTarget() :
     m_supportsGlobalDatabasesHasBeenSet(false),
     m_supportsBabelfish(false),
     m_supportsBabelfishHasBeenSet(false),
+    m_supportsLimitlessDatabase(false),
+    m_supportsLimitlessDatabaseHasBeenSet(false),
     m_supportsLocalWriteForwarding(false),
     m_supportsLocalWriteForwardingHasBeenSet(false),
     m_supportsIntegrations(false),
@@ -57,6 +59,8 @@ UpgradeTarget::UpgradeTarget(const XmlNode& xmlNode) :
     m_supportsGlobalDatabasesHasBeenSet(false),
     m_supportsBabelfish(false),
     m_supportsBabelfishHasBeenSet(false),
+    m_supportsLimitlessDatabase(false),
+    m_supportsLimitlessDatabaseHasBeenSet(false),
     m_supportsLocalWriteForwarding(false),
     m_supportsLocalWriteForwardingHasBeenSet(false),
     m_supportsIntegrations(false),
@@ -131,6 +135,12 @@ UpgradeTarget& UpgradeTarget::operator =(const XmlNode& xmlNode)
       m_supportsBabelfish = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsBabelfishNode.GetText()).c_str()).c_str());
       m_supportsBabelfishHasBeenSet = true;
     }
+    XmlNode supportsLimitlessDatabaseNode = resultNode.FirstChild("SupportsLimitlessDatabase");
+    if(!supportsLimitlessDatabaseNode.IsNull())
+    {
+      m_supportsLimitlessDatabase = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsLimitlessDatabaseNode.GetText()).c_str()).c_str());
+      m_supportsLimitlessDatabaseHasBeenSet = true;
+    }
     XmlNode supportsLocalWriteForwardingNode = resultNode.FirstChild("SupportsLocalWriteForwarding");
     if(!supportsLocalWriteForwardingNode.IsNull())
     {
@@ -199,6 +209,11 @@ void UpgradeTarget::OutputToStream(Aws::OStream& oStream, const char* location, 
       oStream << location << index << locationValue << ".SupportsBabelfish=" << std::boolalpha << m_supportsBabelfish << "&";
   }
 
+  if(m_supportsLimitlessDatabaseHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsLimitlessDatabase=" << std::boolalpha << m_supportsLimitlessDatabase << "&";
+  }
+
   if(m_supportsLocalWriteForwardingHasBeenSet)
   {
       oStream << location << index << locationValue << ".SupportsLocalWriteForwarding=" << std::boolalpha << m_supportsLocalWriteForwarding << "&";
@@ -252,6 +267,10 @@ void UpgradeTarget::OutputToStream(Aws::OStream& oStream, const char* location) 
   if(m_supportsBabelfishHasBeenSet)
   {
       oStream << location << ".SupportsBabelfish=" << std::boolalpha << m_supportsBabelfish << "&";
+  }
+  if(m_supportsLimitlessDatabaseHasBeenSet)
+  {
+      oStream << location << ".SupportsLimitlessDatabase=" << std::boolalpha << m_supportsLimitlessDatabase << "&";
   }
   if(m_supportsLocalWriteForwardingHasBeenSet)
   {

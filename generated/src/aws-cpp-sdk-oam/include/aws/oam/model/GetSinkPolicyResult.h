@@ -33,6 +33,42 @@ namespace Model
 
 
     /**
+     * <p>The policy that you specified, in JSON format.</p>
+     */
+    inline const Aws::String& GetPolicy() const{ return m_policy; }
+
+    /**
+     * <p>The policy that you specified, in JSON format.</p>
+     */
+    inline void SetPolicy(const Aws::String& value) { m_policy = value; }
+
+    /**
+     * <p>The policy that you specified, in JSON format.</p>
+     */
+    inline void SetPolicy(Aws::String&& value) { m_policy = std::move(value); }
+
+    /**
+     * <p>The policy that you specified, in JSON format.</p>
+     */
+    inline void SetPolicy(const char* value) { m_policy.assign(value); }
+
+    /**
+     * <p>The policy that you specified, in JSON format.</p>
+     */
+    inline GetSinkPolicyResult& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
+
+    /**
+     * <p>The policy that you specified, in JSON format.</p>
+     */
+    inline GetSinkPolicyResult& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
+
+    /**
+     * <p>The policy that you specified, in JSON format.</p>
+     */
+    inline GetSinkPolicyResult& WithPolicy(const char* value) { SetPolicy(value); return *this;}
+
+
+    /**
      * <p>The ARN of the sink.</p>
      */
     inline const Aws::String& GetSinkArn() const{ return m_sinkArn; }
@@ -111,42 +147,6 @@ namespace Model
     inline GetSinkPolicyResult& WithSinkId(const char* value) { SetSinkId(value); return *this;}
 
 
-    /**
-     * <p>The policy that you specified, in JSON format.</p>
-     */
-    inline const Aws::String& GetPolicy() const{ return m_policy; }
-
-    /**
-     * <p>The policy that you specified, in JSON format.</p>
-     */
-    inline void SetPolicy(const Aws::String& value) { m_policy = value; }
-
-    /**
-     * <p>The policy that you specified, in JSON format.</p>
-     */
-    inline void SetPolicy(Aws::String&& value) { m_policy = std::move(value); }
-
-    /**
-     * <p>The policy that you specified, in JSON format.</p>
-     */
-    inline void SetPolicy(const char* value) { m_policy.assign(value); }
-
-    /**
-     * <p>The policy that you specified, in JSON format.</p>
-     */
-    inline GetSinkPolicyResult& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
-
-    /**
-     * <p>The policy that you specified, in JSON format.</p>
-     */
-    inline GetSinkPolicyResult& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
-
-    /**
-     * <p>The policy that you specified, in JSON format.</p>
-     */
-    inline GetSinkPolicyResult& WithPolicy(const char* value) { SetPolicy(value); return *this;}
-
-
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -170,11 +170,11 @@ namespace Model
 
   private:
 
+    Aws::String m_policy;
+
     Aws::String m_sinkArn;
 
     Aws::String m_sinkId;
-
-    Aws::String m_policy;
 
     Aws::String m_requestId;
   };

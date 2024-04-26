@@ -7,6 +7,7 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/codepipeline/CodePipelineRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/codepipeline/model/PipelineExecutionFilter.h>
 #include <utility>
 
 namespace Aws
@@ -121,6 +122,37 @@ namespace Model
 
 
     /**
+     * <p>The pipeline execution to filter on.</p>
+     */
+    inline const PipelineExecutionFilter& GetFilter() const{ return m_filter; }
+
+    /**
+     * <p>The pipeline execution to filter on.</p>
+     */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+
+    /**
+     * <p>The pipeline execution to filter on.</p>
+     */
+    inline void SetFilter(const PipelineExecutionFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
+
+    /**
+     * <p>The pipeline execution to filter on.</p>
+     */
+    inline void SetFilter(PipelineExecutionFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
+
+    /**
+     * <p>The pipeline execution to filter on.</p>
+     */
+    inline ListPipelineExecutionsRequest& WithFilter(const PipelineExecutionFilter& value) { SetFilter(value); return *this;}
+
+    /**
+     * <p>The pipeline execution to filter on.</p>
+     */
+    inline ListPipelineExecutionsRequest& WithFilter(PipelineExecutionFilter&& value) { SetFilter(std::move(value)); return *this;}
+
+
+    /**
      * <p>The token that was returned from the previous
      * <code>ListPipelineExecutions</code> call, which can be used to return the next
      * set of pipeline executions in the list.</p>
@@ -183,6 +215,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
+
+    PipelineExecutionFilter m_filter;
+    bool m_filterHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;

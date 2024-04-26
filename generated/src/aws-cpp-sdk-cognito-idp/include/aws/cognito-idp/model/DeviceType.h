@@ -154,44 +154,44 @@ namespace Model
 
 
     /**
-     * <p>The date and time, in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format, when the item was modified.</p>
+     * <p>The date and time when the item was modified. Amazon Cognito returns this
+     * timestamp in UNIX epoch time format. Your SDK might render the output in a
+     * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
      */
     inline const Aws::Utils::DateTime& GetDeviceLastModifiedDate() const{ return m_deviceLastModifiedDate; }
 
     /**
-     * <p>The date and time, in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format, when the item was modified.</p>
+     * <p>The date and time when the item was modified. Amazon Cognito returns this
+     * timestamp in UNIX epoch time format. Your SDK might render the output in a
+     * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
      */
     inline bool DeviceLastModifiedDateHasBeenSet() const { return m_deviceLastModifiedDateHasBeenSet; }
 
     /**
-     * <p>The date and time, in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format, when the item was modified.</p>
+     * <p>The date and time when the item was modified. Amazon Cognito returns this
+     * timestamp in UNIX epoch time format. Your SDK might render the output in a
+     * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
      */
     inline void SetDeviceLastModifiedDate(const Aws::Utils::DateTime& value) { m_deviceLastModifiedDateHasBeenSet = true; m_deviceLastModifiedDate = value; }
 
     /**
-     * <p>The date and time, in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format, when the item was modified.</p>
+     * <p>The date and time when the item was modified. Amazon Cognito returns this
+     * timestamp in UNIX epoch time format. Your SDK might render the output in a
+     * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
      */
     inline void SetDeviceLastModifiedDate(Aws::Utils::DateTime&& value) { m_deviceLastModifiedDateHasBeenSet = true; m_deviceLastModifiedDate = std::move(value); }
 
     /**
-     * <p>The date and time, in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format, when the item was modified.</p>
+     * <p>The date and time when the item was modified. Amazon Cognito returns this
+     * timestamp in UNIX epoch time format. Your SDK might render the output in a
+     * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
      */
     inline DeviceType& WithDeviceLastModifiedDate(const Aws::Utils::DateTime& value) { SetDeviceLastModifiedDate(value); return *this;}
 
     /**
-     * <p>The date and time, in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format, when the item was modified.</p>
+     * <p>The date and time when the item was modified. Amazon Cognito returns this
+     * timestamp in UNIX epoch time format. Your SDK might render the output in a
+     * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
      */
     inline DeviceType& WithDeviceLastModifiedDate(Aws::Utils::DateTime&& value) { SetDeviceLastModifiedDate(std::move(value)); return *this;}
 

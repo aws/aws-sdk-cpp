@@ -1361,6 +1361,31 @@ namespace Model
 
 
     /**
+     * <p>Indicates whether the DB engine version supports Aurora Limitless
+     * Database.</p>
+     */
+    inline bool GetSupportsLimitlessDatabase() const{ return m_supportsLimitlessDatabase; }
+
+    /**
+     * <p>Indicates whether the DB engine version supports Aurora Limitless
+     * Database.</p>
+     */
+    inline bool SupportsLimitlessDatabaseHasBeenSet() const { return m_supportsLimitlessDatabaseHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the DB engine version supports Aurora Limitless
+     * Database.</p>
+     */
+    inline void SetSupportsLimitlessDatabase(bool value) { m_supportsLimitlessDatabaseHasBeenSet = true; m_supportsLimitlessDatabase = value; }
+
+    /**
+     * <p>Indicates whether the DB engine version supports Aurora Limitless
+     * Database.</p>
+     */
+    inline DBEngineVersion& WithSupportsLimitlessDatabase(bool value) { SetSupportsLimitlessDatabase(value); return *this;}
+
+
+    /**
      * <p>Indicates whether the engine version supports rotating the server certificate
      * without rebooting the DB instance.</p>
      */
@@ -1655,6 +1680,9 @@ namespace Model
 
     Aws::String m_customDBEngineVersionManifest;
     bool m_customDBEngineVersionManifestHasBeenSet = false;
+
+    bool m_supportsLimitlessDatabase;
+    bool m_supportsLimitlessDatabaseHasBeenSet = false;
 
     bool m_supportsCertificateRotationWithoutRestart;
     bool m_supportsCertificateRotationWithoutRestartHasBeenSet = false;

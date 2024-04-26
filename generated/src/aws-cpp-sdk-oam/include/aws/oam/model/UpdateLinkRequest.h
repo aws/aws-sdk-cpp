@@ -7,6 +7,7 @@
 #include <aws/oam/OAM_EXPORTS.h>
 #include <aws/oam/OAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/oam/model/LinkConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/oam/model/ResourceType.h>
 #include <utility>
@@ -76,6 +77,43 @@ namespace Model
 
 
     /**
+     * <p>Use this structure to filter which metric namespaces and which log groups are
+     * to be shared from the source account to the monitoring account.</p>
+     */
+    inline const LinkConfiguration& GetLinkConfiguration() const{ return m_linkConfiguration; }
+
+    /**
+     * <p>Use this structure to filter which metric namespaces and which log groups are
+     * to be shared from the source account to the monitoring account.</p>
+     */
+    inline bool LinkConfigurationHasBeenSet() const { return m_linkConfigurationHasBeenSet; }
+
+    /**
+     * <p>Use this structure to filter which metric namespaces and which log groups are
+     * to be shared from the source account to the monitoring account.</p>
+     */
+    inline void SetLinkConfiguration(const LinkConfiguration& value) { m_linkConfigurationHasBeenSet = true; m_linkConfiguration = value; }
+
+    /**
+     * <p>Use this structure to filter which metric namespaces and which log groups are
+     * to be shared from the source account to the monitoring account.</p>
+     */
+    inline void SetLinkConfiguration(LinkConfiguration&& value) { m_linkConfigurationHasBeenSet = true; m_linkConfiguration = std::move(value); }
+
+    /**
+     * <p>Use this structure to filter which metric namespaces and which log groups are
+     * to be shared from the source account to the monitoring account.</p>
+     */
+    inline UpdateLinkRequest& WithLinkConfiguration(const LinkConfiguration& value) { SetLinkConfiguration(value); return *this;}
+
+    /**
+     * <p>Use this structure to filter which metric namespaces and which log groups are
+     * to be shared from the source account to the monitoring account.</p>
+     */
+    inline UpdateLinkRequest& WithLinkConfiguration(LinkConfiguration&& value) { SetLinkConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>An array of strings that define which types of data that the source account
      * will send to the monitoring account.</p> <p>Your input here replaces the current
      * set of data types that are shared.</p>
@@ -135,6 +173,9 @@ namespace Model
 
     Aws::String m_identifier;
     bool m_identifierHasBeenSet = false;
+
+    LinkConfiguration m_linkConfiguration;
+    bool m_linkConfigurationHasBeenSet = false;
 
     Aws::Vector<ResourceType> m_resourceTypes;
     bool m_resourceTypesHasBeenSet = false;

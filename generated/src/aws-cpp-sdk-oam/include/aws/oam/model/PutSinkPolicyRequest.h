@@ -33,47 +33,6 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the sink to attach this policy to.</p>
-     */
-    inline const Aws::String& GetSinkIdentifier() const{ return m_sinkIdentifier; }
-
-    /**
-     * <p>The ARN of the sink to attach this policy to.</p>
-     */
-    inline bool SinkIdentifierHasBeenSet() const { return m_sinkIdentifierHasBeenSet; }
-
-    /**
-     * <p>The ARN of the sink to attach this policy to.</p>
-     */
-    inline void SetSinkIdentifier(const Aws::String& value) { m_sinkIdentifierHasBeenSet = true; m_sinkIdentifier = value; }
-
-    /**
-     * <p>The ARN of the sink to attach this policy to.</p>
-     */
-    inline void SetSinkIdentifier(Aws::String&& value) { m_sinkIdentifierHasBeenSet = true; m_sinkIdentifier = std::move(value); }
-
-    /**
-     * <p>The ARN of the sink to attach this policy to.</p>
-     */
-    inline void SetSinkIdentifier(const char* value) { m_sinkIdentifierHasBeenSet = true; m_sinkIdentifier.assign(value); }
-
-    /**
-     * <p>The ARN of the sink to attach this policy to.</p>
-     */
-    inline PutSinkPolicyRequest& WithSinkIdentifier(const Aws::String& value) { SetSinkIdentifier(value); return *this;}
-
-    /**
-     * <p>The ARN of the sink to attach this policy to.</p>
-     */
-    inline PutSinkPolicyRequest& WithSinkIdentifier(Aws::String&& value) { SetSinkIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the sink to attach this policy to.</p>
-     */
-    inline PutSinkPolicyRequest& WithSinkIdentifier(const char* value) { SetSinkIdentifier(value); return *this;}
-
-
-    /**
      * <p>The JSON policy to use. If you are updating an existing policy, the entire
      * existing policy is replaced by what you specify here.</p> <p>The policy must be
      * in JSON string format with quotation marks escaped and no newlines.</p> <p>For
@@ -145,13 +104,54 @@ namespace Model
      */
     inline PutSinkPolicyRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
-  private:
 
-    Aws::String m_sinkIdentifier;
-    bool m_sinkIdentifierHasBeenSet = false;
+    /**
+     * <p>The ARN of the sink to attach this policy to.</p>
+     */
+    inline const Aws::String& GetSinkIdentifier() const{ return m_sinkIdentifier; }
+
+    /**
+     * <p>The ARN of the sink to attach this policy to.</p>
+     */
+    inline bool SinkIdentifierHasBeenSet() const { return m_sinkIdentifierHasBeenSet; }
+
+    /**
+     * <p>The ARN of the sink to attach this policy to.</p>
+     */
+    inline void SetSinkIdentifier(const Aws::String& value) { m_sinkIdentifierHasBeenSet = true; m_sinkIdentifier = value; }
+
+    /**
+     * <p>The ARN of the sink to attach this policy to.</p>
+     */
+    inline void SetSinkIdentifier(Aws::String&& value) { m_sinkIdentifierHasBeenSet = true; m_sinkIdentifier = std::move(value); }
+
+    /**
+     * <p>The ARN of the sink to attach this policy to.</p>
+     */
+    inline void SetSinkIdentifier(const char* value) { m_sinkIdentifierHasBeenSet = true; m_sinkIdentifier.assign(value); }
+
+    /**
+     * <p>The ARN of the sink to attach this policy to.</p>
+     */
+    inline PutSinkPolicyRequest& WithSinkIdentifier(const Aws::String& value) { SetSinkIdentifier(value); return *this;}
+
+    /**
+     * <p>The ARN of the sink to attach this policy to.</p>
+     */
+    inline PutSinkPolicyRequest& WithSinkIdentifier(Aws::String&& value) { SetSinkIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the sink to attach this policy to.</p>
+     */
+    inline PutSinkPolicyRequest& WithSinkIdentifier(const char* value) { SetSinkIdentifier(value); return *this;}
+
+  private:
 
     Aws::String m_policy;
     bool m_policyHasBeenSet = false;
+
+    Aws::String m_sinkIdentifier;
+    bool m_sinkIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/oam/OAM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/oam/model/LinkConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
@@ -200,6 +201,42 @@ namespace Model
 
 
     /**
+     * <p>This structure includes filters that specify which metric namespaces and
+     * which log groups are shared from the source account to the monitoring
+     * account.</p>
+     */
+    inline const LinkConfiguration& GetLinkConfiguration() const{ return m_linkConfiguration; }
+
+    /**
+     * <p>This structure includes filters that specify which metric namespaces and
+     * which log groups are shared from the source account to the monitoring
+     * account.</p>
+     */
+    inline void SetLinkConfiguration(const LinkConfiguration& value) { m_linkConfiguration = value; }
+
+    /**
+     * <p>This structure includes filters that specify which metric namespaces and
+     * which log groups are shared from the source account to the monitoring
+     * account.</p>
+     */
+    inline void SetLinkConfiguration(LinkConfiguration&& value) { m_linkConfiguration = std::move(value); }
+
+    /**
+     * <p>This structure includes filters that specify which metric namespaces and
+     * which log groups are shared from the source account to the monitoring
+     * account.</p>
+     */
+    inline UpdateLinkResult& WithLinkConfiguration(const LinkConfiguration& value) { SetLinkConfiguration(value); return *this;}
+
+    /**
+     * <p>This structure includes filters that specify which metric namespaces and
+     * which log groups are shared from the source account to the monitoring
+     * account.</p>
+     */
+    inline UpdateLinkResult& WithLinkConfiguration(LinkConfiguration&& value) { SetLinkConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>The resource types now supported by this link.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceTypes() const{ return m_resourceTypes; }
@@ -367,6 +404,8 @@ namespace Model
     Aws::String m_label;
 
     Aws::String m_labelTemplate;
+
+    LinkConfiguration m_linkConfiguration;
 
     Aws::Vector<Aws::String> m_resourceTypes;
 

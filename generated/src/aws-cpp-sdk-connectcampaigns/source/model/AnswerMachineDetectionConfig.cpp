@@ -20,13 +20,17 @@ namespace Model
 
 AnswerMachineDetectionConfig::AnswerMachineDetectionConfig() : 
     m_enableAnswerMachineDetection(false),
-    m_enableAnswerMachineDetectionHasBeenSet(false)
+    m_enableAnswerMachineDetectionHasBeenSet(false),
+    m_awaitAnswerMachinePrompt(false),
+    m_awaitAnswerMachinePromptHasBeenSet(false)
 {
 }
 
 AnswerMachineDetectionConfig::AnswerMachineDetectionConfig(JsonView jsonValue) : 
     m_enableAnswerMachineDetection(false),
-    m_enableAnswerMachineDetectionHasBeenSet(false)
+    m_enableAnswerMachineDetectionHasBeenSet(false),
+    m_awaitAnswerMachinePrompt(false),
+    m_awaitAnswerMachinePromptHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -40,6 +44,13 @@ AnswerMachineDetectionConfig& AnswerMachineDetectionConfig::operator =(JsonView 
     m_enableAnswerMachineDetectionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("awaitAnswerMachinePrompt"))
+  {
+    m_awaitAnswerMachinePrompt = jsonValue.GetBool("awaitAnswerMachinePrompt");
+
+    m_awaitAnswerMachinePromptHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -50,6 +61,12 @@ JsonValue AnswerMachineDetectionConfig::Jsonize() const
   if(m_enableAnswerMachineDetectionHasBeenSet)
   {
    payload.WithBool("enableAnswerMachineDetection", m_enableAnswerMachineDetection);
+
+  }
+
+  if(m_awaitAnswerMachinePromptHasBeenSet)
+  {
+   payload.WithBool("awaitAnswerMachinePrompt", m_awaitAnswerMachinePrompt);
 
   }
 

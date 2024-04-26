@@ -7,6 +7,7 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/codepipeline/model/FailureConditions.h>
 #include <aws/codepipeline/model/BlockerDeclaration.h>
 #include <aws/codepipeline/model/ActionDeclaration.h>
 #include <utility>
@@ -163,6 +164,49 @@ namespace Model
      */
     inline StageDeclaration& AddActions(ActionDeclaration&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The method to use when a stage has not completed successfully. For example,
+     * configuring this field for rollback will roll back a failed stage automatically
+     * to the last successful pipeline execution in the stage.</p>
+     */
+    inline const FailureConditions& GetOnFailure() const{ return m_onFailure; }
+
+    /**
+     * <p>The method to use when a stage has not completed successfully. For example,
+     * configuring this field for rollback will roll back a failed stage automatically
+     * to the last successful pipeline execution in the stage.</p>
+     */
+    inline bool OnFailureHasBeenSet() const { return m_onFailureHasBeenSet; }
+
+    /**
+     * <p>The method to use when a stage has not completed successfully. For example,
+     * configuring this field for rollback will roll back a failed stage automatically
+     * to the last successful pipeline execution in the stage.</p>
+     */
+    inline void SetOnFailure(const FailureConditions& value) { m_onFailureHasBeenSet = true; m_onFailure = value; }
+
+    /**
+     * <p>The method to use when a stage has not completed successfully. For example,
+     * configuring this field for rollback will roll back a failed stage automatically
+     * to the last successful pipeline execution in the stage.</p>
+     */
+    inline void SetOnFailure(FailureConditions&& value) { m_onFailureHasBeenSet = true; m_onFailure = std::move(value); }
+
+    /**
+     * <p>The method to use when a stage has not completed successfully. For example,
+     * configuring this field for rollback will roll back a failed stage automatically
+     * to the last successful pipeline execution in the stage.</p>
+     */
+    inline StageDeclaration& WithOnFailure(const FailureConditions& value) { SetOnFailure(value); return *this;}
+
+    /**
+     * <p>The method to use when a stage has not completed successfully. For example,
+     * configuring this field for rollback will roll back a failed stage automatically
+     * to the last successful pipeline execution in the stage.</p>
+     */
+    inline StageDeclaration& WithOnFailure(FailureConditions&& value) { SetOnFailure(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -173,6 +217,9 @@ namespace Model
 
     Aws::Vector<ActionDeclaration> m_actions;
     bool m_actionsHasBeenSet = false;
+
+    FailureConditions m_onFailure;
+    bool m_onFailureHasBeenSet = false;
   };
 
 } // namespace Model
