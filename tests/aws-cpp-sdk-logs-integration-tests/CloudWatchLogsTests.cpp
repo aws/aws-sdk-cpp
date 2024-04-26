@@ -127,6 +127,7 @@ namespace
         putRequest.WithSequenceToken(nextSeqToken);
         putOutcome = m_client->PutLogEvents(putRequest);
         AWS_ASSERT_SUCCESS(putOutcome);
+        std::this_thread::sleep_for(std::chrono::seconds(1));
 
         //There should be in total 6 events in the stream. with messages ended with 1,2,1,2,3,4;
         GetLogEventsRequest getRequest;
