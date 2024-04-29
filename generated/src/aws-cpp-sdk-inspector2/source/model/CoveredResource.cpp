@@ -25,6 +25,8 @@ CoveredResource::CoveredResource() :
     m_resourceMetadataHasBeenSet(false),
     m_resourceType(CoverageResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
+    m_scanMode(ScanMode::NOT_SET),
+    m_scanModeHasBeenSet(false),
     m_scanStatusHasBeenSet(false),
     m_scanType(ScanType::NOT_SET),
     m_scanTypeHasBeenSet(false)
@@ -38,6 +40,8 @@ CoveredResource::CoveredResource(JsonView jsonValue) :
     m_resourceMetadataHasBeenSet(false),
     m_resourceType(CoverageResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
+    m_scanMode(ScanMode::NOT_SET),
+    m_scanModeHasBeenSet(false),
     m_scanStatusHasBeenSet(false),
     m_scanType(ScanType::NOT_SET),
     m_scanTypeHasBeenSet(false)
@@ -80,6 +84,13 @@ CoveredResource& CoveredResource::operator =(JsonView jsonValue)
     m_resourceType = CoverageResourceTypeMapper::GetCoverageResourceTypeForName(jsonValue.GetString("resourceType"));
 
     m_resourceTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("scanMode"))
+  {
+    m_scanMode = ScanModeMapper::GetScanModeForName(jsonValue.GetString("scanMode"));
+
+    m_scanModeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("scanStatus"))
@@ -129,6 +140,11 @@ JsonValue CoveredResource::Jsonize() const
   if(m_resourceTypeHasBeenSet)
   {
    payload.WithString("resourceType", CoverageResourceTypeMapper::GetNameForCoverageResourceType(m_resourceType));
+  }
+
+  if(m_scanModeHasBeenSet)
+  {
+   payload.WithString("scanMode", ScanModeMapper::GetNameForScanMode(m_scanMode));
   }
 
   if(m_scanStatusHasBeenSet)

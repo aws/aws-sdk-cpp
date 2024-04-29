@@ -27,6 +27,7 @@ CallAnalyticsJobSummary::CallAnalyticsJobSummary() :
     m_languageCodeHasBeenSet(false),
     m_callAnalyticsJobStatus(CallAnalyticsJobStatus::NOT_SET),
     m_callAnalyticsJobStatusHasBeenSet(false),
+    m_callAnalyticsJobDetailsHasBeenSet(false),
     m_failureReasonHasBeenSet(false)
 {
 }
@@ -40,6 +41,7 @@ CallAnalyticsJobSummary::CallAnalyticsJobSummary(JsonView jsonValue) :
     m_languageCodeHasBeenSet(false),
     m_callAnalyticsJobStatus(CallAnalyticsJobStatus::NOT_SET),
     m_callAnalyticsJobStatusHasBeenSet(false),
+    m_callAnalyticsJobDetailsHasBeenSet(false),
     m_failureReasonHasBeenSet(false)
 {
   *this = jsonValue;
@@ -89,6 +91,13 @@ CallAnalyticsJobSummary& CallAnalyticsJobSummary::operator =(JsonView jsonValue)
     m_callAnalyticsJobStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CallAnalyticsJobDetails"))
+  {
+    m_callAnalyticsJobDetails = jsonValue.GetObject("CallAnalyticsJobDetails");
+
+    m_callAnalyticsJobDetailsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
@@ -132,6 +141,12 @@ JsonValue CallAnalyticsJobSummary::Jsonize() const
   if(m_callAnalyticsJobStatusHasBeenSet)
   {
    payload.WithString("CallAnalyticsJobStatus", CallAnalyticsJobStatusMapper::GetNameForCallAnalyticsJobStatus(m_callAnalyticsJobStatus));
+  }
+
+  if(m_callAnalyticsJobDetailsHasBeenSet)
+  {
+   payload.WithObject("CallAnalyticsJobDetails", m_callAnalyticsJobDetails.Jsonize());
+
   }
 
   if(m_failureReasonHasBeenSet)

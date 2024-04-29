@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/inspector2/model/ResourceScanMetadata.h>
 #include <aws/inspector2/model/CoverageResourceType.h>
+#include <aws/inspector2/model/ScanMode.h>
 #include <aws/inspector2/model/ScanStatus.h>
 #include <aws/inspector2/model/ScanType.h>
 #include <utility>
@@ -219,6 +220,37 @@ namespace Model
 
 
     /**
+     * <p>The scan method that is applied to the instance.</p>
+     */
+    inline const ScanMode& GetScanMode() const{ return m_scanMode; }
+
+    /**
+     * <p>The scan method that is applied to the instance.</p>
+     */
+    inline bool ScanModeHasBeenSet() const { return m_scanModeHasBeenSet; }
+
+    /**
+     * <p>The scan method that is applied to the instance.</p>
+     */
+    inline void SetScanMode(const ScanMode& value) { m_scanModeHasBeenSet = true; m_scanMode = value; }
+
+    /**
+     * <p>The scan method that is applied to the instance.</p>
+     */
+    inline void SetScanMode(ScanMode&& value) { m_scanModeHasBeenSet = true; m_scanMode = std::move(value); }
+
+    /**
+     * <p>The scan method that is applied to the instance.</p>
+     */
+    inline CoveredResource& WithScanMode(const ScanMode& value) { SetScanMode(value); return *this;}
+
+    /**
+     * <p>The scan method that is applied to the instance.</p>
+     */
+    inline CoveredResource& WithScanMode(ScanMode&& value) { SetScanMode(std::move(value)); return *this;}
+
+
+    /**
      * <p>The status of the scan covering the resource.</p>
      */
     inline const ScanStatus& GetScanStatus() const{ return m_scanStatus; }
@@ -295,6 +327,9 @@ namespace Model
 
     CoverageResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet = false;
+
+    ScanMode m_scanMode;
+    bool m_scanModeHasBeenSet = false;
 
     ScanStatus m_scanStatus;
     bool m_scanStatusHasBeenSet = false;

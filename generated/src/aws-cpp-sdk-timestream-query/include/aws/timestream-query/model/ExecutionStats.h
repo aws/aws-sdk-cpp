@@ -103,6 +103,27 @@ namespace Model
 
 
     /**
+     * <p>Bytes scanned for a single scheduled query run.</p>
+     */
+    inline long long GetCumulativeBytesScanned() const{ return m_cumulativeBytesScanned; }
+
+    /**
+     * <p>Bytes scanned for a single scheduled query run.</p>
+     */
+    inline bool CumulativeBytesScannedHasBeenSet() const { return m_cumulativeBytesScannedHasBeenSet; }
+
+    /**
+     * <p>Bytes scanned for a single scheduled query run.</p>
+     */
+    inline void SetCumulativeBytesScanned(long long value) { m_cumulativeBytesScannedHasBeenSet = true; m_cumulativeBytesScanned = value; }
+
+    /**
+     * <p>Bytes scanned for a single scheduled query run.</p>
+     */
+    inline ExecutionStats& WithCumulativeBytesScanned(long long value) { SetCumulativeBytesScanned(value); return *this;}
+
+
+    /**
      * <p>The number of records ingested for a single scheduled query run. </p>
      */
     inline long long GetRecordsIngested() const{ return m_recordsIngested; }
@@ -157,6 +178,9 @@ namespace Model
 
     long long m_bytesMetered;
     bool m_bytesMeteredHasBeenSet = false;
+
+    long long m_cumulativeBytesScanned;
+    bool m_cumulativeBytesScannedHasBeenSet = false;
 
     long long m_recordsIngested;
     bool m_recordsIngestedHasBeenSet = false;

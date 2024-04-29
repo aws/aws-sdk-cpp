@@ -19,9 +19,13 @@ namespace Model
 {
 
 GetFieldResponse::GetFieldResponse() : 
+    m_createdTimeHasBeenSet(false),
+    m_deleted(false),
+    m_deletedHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_fieldArnHasBeenSet(false),
     m_fieldIdHasBeenSet(false),
+    m_lastModifiedTimeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_namespace(FieldNamespace::NOT_SET),
     m_namespaceHasBeenSet(false),
@@ -32,9 +36,13 @@ GetFieldResponse::GetFieldResponse() :
 }
 
 GetFieldResponse::GetFieldResponse(JsonView jsonValue) : 
+    m_createdTimeHasBeenSet(false),
+    m_deleted(false),
+    m_deletedHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_fieldArnHasBeenSet(false),
     m_fieldIdHasBeenSet(false),
+    m_lastModifiedTimeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_namespace(FieldNamespace::NOT_SET),
     m_namespaceHasBeenSet(false),
@@ -47,6 +55,20 @@ GetFieldResponse::GetFieldResponse(JsonView jsonValue) :
 
 GetFieldResponse& GetFieldResponse::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("createdTime"))
+  {
+    m_createdTime = jsonValue.GetString("createdTime");
+
+    m_createdTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("deleted"))
+  {
+    m_deleted = jsonValue.GetBool("deleted");
+
+    m_deletedHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
@@ -66,6 +88,13 @@ GetFieldResponse& GetFieldResponse::operator =(JsonView jsonValue)
     m_fieldId = jsonValue.GetString("fieldId");
 
     m_fieldIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lastModifiedTime"))
+  {
+    m_lastModifiedTime = jsonValue.GetString("lastModifiedTime");
+
+    m_lastModifiedTimeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -106,6 +135,17 @@ JsonValue GetFieldResponse::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_createdTimeHasBeenSet)
+  {
+   payload.WithString("createdTime", m_createdTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_deletedHasBeenSet)
+  {
+   payload.WithBool("deleted", m_deleted);
+
+  }
+
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
@@ -122,6 +162,11 @@ JsonValue GetFieldResponse::Jsonize() const
   {
    payload.WithString("fieldId", m_fieldId);
 
+  }
+
+  if(m_lastModifiedTimeHasBeenSet)
+  {
+   payload.WithString("lastModifiedTime", m_lastModifiedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_nameHasBeenSet)

@@ -17,6 +17,8 @@ using namespace Aws::Http;
 
 ListOrganizationRecommendationResourcesRequest::ListOrganizationRecommendationResourcesRequest() : 
     m_affectedAccountIdHasBeenSet(false),
+    m_exclusionStatus(ExclusionStatus::NOT_SET),
+    m_exclusionStatusHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
@@ -39,6 +41,13 @@ void ListOrganizationRecommendationResourcesRequest::AddQueryStringParameters(UR
     {
       ss << m_affectedAccountId;
       uri.AddQueryStringParameter("affectedAccountId", ss.str());
+      ss.str("");
+    }
+
+    if(m_exclusionStatusHasBeenSet)
+    {
+      ss << ExclusionStatusMapper::GetNameForExclusionStatus(m_exclusionStatus);
+      uri.AddQueryStringParameter("exclusionStatus", ss.str());
       ss.str("");
     }
 

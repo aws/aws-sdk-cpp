@@ -22,6 +22,7 @@ CallAnalyticsJob::CallAnalyticsJob() :
     m_callAnalyticsJobNameHasBeenSet(false),
     m_callAnalyticsJobStatus(CallAnalyticsJobStatus::NOT_SET),
     m_callAnalyticsJobStatusHasBeenSet(false),
+    m_callAnalyticsJobDetailsHasBeenSet(false),
     m_languageCode(LanguageCode::NOT_SET),
     m_languageCodeHasBeenSet(false),
     m_mediaSampleRateHertz(0),
@@ -46,6 +47,7 @@ CallAnalyticsJob::CallAnalyticsJob(JsonView jsonValue) :
     m_callAnalyticsJobNameHasBeenSet(false),
     m_callAnalyticsJobStatus(CallAnalyticsJobStatus::NOT_SET),
     m_callAnalyticsJobStatusHasBeenSet(false),
+    m_callAnalyticsJobDetailsHasBeenSet(false),
     m_languageCode(LanguageCode::NOT_SET),
     m_languageCodeHasBeenSet(false),
     m_mediaSampleRateHertz(0),
@@ -81,6 +83,13 @@ CallAnalyticsJob& CallAnalyticsJob::operator =(JsonView jsonValue)
     m_callAnalyticsJobStatus = CallAnalyticsJobStatusMapper::GetCallAnalyticsJobStatusForName(jsonValue.GetString("CallAnalyticsJobStatus"));
 
     m_callAnalyticsJobStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CallAnalyticsJobDetails"))
+  {
+    m_callAnalyticsJobDetails = jsonValue.GetObject("CallAnalyticsJobDetails");
+
+    m_callAnalyticsJobDetailsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("LanguageCode"))
@@ -193,6 +202,12 @@ JsonValue CallAnalyticsJob::Jsonize() const
   if(m_callAnalyticsJobStatusHasBeenSet)
   {
    payload.WithString("CallAnalyticsJobStatus", CallAnalyticsJobStatusMapper::GetNameForCallAnalyticsJobStatus(m_callAnalyticsJobStatus));
+  }
+
+  if(m_callAnalyticsJobDetailsHasBeenSet)
+  {
+   payload.WithObject("CallAnalyticsJobDetails", m_callAnalyticsJobDetails.Jsonize());
+
   }
 
   if(m_languageCodeHasBeenSet)

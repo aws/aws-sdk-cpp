@@ -25,6 +25,7 @@
 #include <aws/timestream-query/model/CancelQueryRequest.h>
 #include <aws/timestream-query/model/CreateScheduledQueryRequest.h>
 #include <aws/timestream-query/model/DeleteScheduledQueryRequest.h>
+#include <aws/timestream-query/model/DescribeAccountSettingsRequest.h>
 #include <aws/timestream-query/model/DescribeEndpointsRequest.h>
 #include <aws/timestream-query/model/DescribeScheduledQueryRequest.h>
 #include <aws/timestream-query/model/ExecuteScheduledQueryRequest.h>
@@ -34,6 +35,7 @@
 #include <aws/timestream-query/model/QueryRequest.h>
 #include <aws/timestream-query/model/TagResourceRequest.h>
 #include <aws/timestream-query/model/UntagResourceRequest.h>
+#include <aws/timestream-query/model/UpdateAccountSettingsRequest.h>
 #include <aws/timestream-query/model/UpdateScheduledQueryRequest.h>
 
 #include <smithy/tracing/TracingUtils.h>
@@ -377,6 +379,75 @@ DeleteScheduledQueryOutcome TimestreamQueryClient::DeleteScheduledQuery(const De
       }
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteScheduledQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       return DeleteScheduledQueryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DescribeAccountSettingsOutcome TimestreamQueryClient::DescribeAccountSettings(const DescribeAccountSettingsRequest& request) const
+{
+  AWS_OPERATION_GUARD(DescribeAccountSettings);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAccountSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeAccountSettings, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeAccountSettings, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeAccountSettings",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeAccountSettingsOutcome>(
+    [&]()-> DescribeAccountSettingsOutcome {
+      ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
+      if (enableEndpointDiscovery)
+      {
+          Aws::String endpointKey = "Shared";
+          Aws::String endpoint;
+          if (m_endpointsCache.Get(endpointKey, endpoint))
+          {
+              AWS_LOGSTREAM_TRACE("DescribeAccountSettings", "Making request to cached endpoint: " << endpoint);
+              endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
+              endpointResolutionOutcome.GetResult().SetURI(endpoint);
+          }
+          else
+          {
+              AWS_LOGSTREAM_TRACE("DescribeAccountSettings", "Endpoint discovery is enabled and there is no usable endpoint in cache. Discovering endpoints from service...");
+              DescribeEndpointsRequest endpointRequest;
+              auto endpointOutcome = DescribeEndpoints(endpointRequest);
+              if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
+              {
+                  const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
+                  m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
+                  endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
+                  AWS_LOGSTREAM_TRACE("DescribeAccountSettings", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+                  endpointResolutionOutcome.GetResult().SetURI(endpoint);
+              }
+              else
+              {
+                  AWS_LOGSTREAM_ERROR("DescribeAccountSettings", "Failed to discover endpoints " << endpointOutcome.GetError());
+                  return DescribeAccountSettingsOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false));
+              }
+          }
+      }
+      else
+      {
+          Aws::String errorMessage = R"(Unable to perform "DescribeAccountSettings" without endpoint discovery. )"
+              R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
+              R"(your config file's variable "endpoint_discovery_enabled" and )"
+              R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
+          return DescribeAccountSettingsOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
+      }
+      if (!enableEndpointDiscovery || !endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
+          endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+              [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+              TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+              *meter,
+              {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      }
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAccountSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      return DescribeAccountSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -955,6 +1026,75 @@ UntagResourceOutcome TimestreamQueryClient::UntagResource(const UntagResourceReq
       }
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       return UntagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateAccountSettingsOutcome TimestreamQueryClient::UpdateAccountSettings(const UpdateAccountSettingsRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateAccountSettings);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAccountSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateAccountSettings, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateAccountSettings, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateAccountSettings",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateAccountSettingsOutcome>(
+    [&]()-> UpdateAccountSettingsOutcome {
+      ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
+      if (enableEndpointDiscovery)
+      {
+          Aws::String endpointKey = "Shared";
+          Aws::String endpoint;
+          if (m_endpointsCache.Get(endpointKey, endpoint))
+          {
+              AWS_LOGSTREAM_TRACE("UpdateAccountSettings", "Making request to cached endpoint: " << endpoint);
+              endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
+              endpointResolutionOutcome.GetResult().SetURI(endpoint);
+          }
+          else
+          {
+              AWS_LOGSTREAM_TRACE("UpdateAccountSettings", "Endpoint discovery is enabled and there is no usable endpoint in cache. Discovering endpoints from service...");
+              DescribeEndpointsRequest endpointRequest;
+              auto endpointOutcome = DescribeEndpoints(endpointRequest);
+              if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
+              {
+                  const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
+                  m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
+                  endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
+                  AWS_LOGSTREAM_TRACE("UpdateAccountSettings", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+                  endpointResolutionOutcome.GetResult().SetURI(endpoint);
+              }
+              else
+              {
+                  AWS_LOGSTREAM_ERROR("UpdateAccountSettings", "Failed to discover endpoints " << endpointOutcome.GetError());
+                  return UpdateAccountSettingsOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false));
+              }
+          }
+      }
+      else
+      {
+          Aws::String errorMessage = R"(Unable to perform "UpdateAccountSettings" without endpoint discovery. )"
+              R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
+              R"(your config file's variable "endpoint_discovery_enabled" and )"
+              R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
+          return UpdateAccountSettingsOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
+      }
+      if (!enableEndpointDiscovery || !endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
+          endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+              [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+              TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+              *meter,
+              {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      }
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateAccountSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      return UpdateAccountSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

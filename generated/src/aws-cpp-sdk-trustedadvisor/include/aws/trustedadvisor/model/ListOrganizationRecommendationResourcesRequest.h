@@ -7,6 +7,7 @@
 #include <aws/trustedadvisor/TrustedAdvisor_EXPORTS.h>
 #include <aws/trustedadvisor/TrustedAdvisorRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/trustedadvisor/model/ExclusionStatus.h>
 #include <aws/trustedadvisor/model/ResourceStatus.h>
 #include <utility>
 
@@ -78,6 +79,37 @@ namespace Model
      * <p>An account affected by this organization recommendation</p>
      */
     inline ListOrganizationRecommendationResourcesRequest& WithAffectedAccountId(const char* value) { SetAffectedAccountId(value); return *this;}
+
+
+    /**
+     * <p>The exclusion status of the resource</p>
+     */
+    inline const ExclusionStatus& GetExclusionStatus() const{ return m_exclusionStatus; }
+
+    /**
+     * <p>The exclusion status of the resource</p>
+     */
+    inline bool ExclusionStatusHasBeenSet() const { return m_exclusionStatusHasBeenSet; }
+
+    /**
+     * <p>The exclusion status of the resource</p>
+     */
+    inline void SetExclusionStatus(const ExclusionStatus& value) { m_exclusionStatusHasBeenSet = true; m_exclusionStatus = value; }
+
+    /**
+     * <p>The exclusion status of the resource</p>
+     */
+    inline void SetExclusionStatus(ExclusionStatus&& value) { m_exclusionStatusHasBeenSet = true; m_exclusionStatus = std::move(value); }
+
+    /**
+     * <p>The exclusion status of the resource</p>
+     */
+    inline ListOrganizationRecommendationResourcesRequest& WithExclusionStatus(const ExclusionStatus& value) { SetExclusionStatus(value); return *this;}
+
+    /**
+     * <p>The exclusion status of the resource</p>
+     */
+    inline ListOrganizationRecommendationResourcesRequest& WithExclusionStatus(ExclusionStatus&& value) { SetExclusionStatus(std::move(value)); return *this;}
 
 
     /**
@@ -266,6 +298,9 @@ namespace Model
 
     Aws::String m_affectedAccountId;
     bool m_affectedAccountIdHasBeenSet = false;
+
+    ExclusionStatus m_exclusionStatus;
+    bool m_exclusionStatusHasBeenSet = false;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
