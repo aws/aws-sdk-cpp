@@ -7,6 +7,7 @@
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/transcribe/model/CallAnalyticsJobStatus.h>
+#include <aws/transcribe/model/CallAnalyticsJobDetails.h>
 #include <aws/transcribe/model/LanguageCode.h>
 #include <aws/transcribe/model/MediaFormat.h>
 #include <aws/transcribe/model/Media.h>
@@ -164,6 +165,43 @@ namespace Model
      * details on why your transcription job failed.</p>
      */
     inline CallAnalyticsJob& WithCallAnalyticsJobStatus(CallAnalyticsJobStatus&& value) { SetCallAnalyticsJobStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Provides detailed information about a call analytics job, including
+     * information about skipped analytics features.</p>
+     */
+    inline const CallAnalyticsJobDetails& GetCallAnalyticsJobDetails() const{ return m_callAnalyticsJobDetails; }
+
+    /**
+     * <p>Provides detailed information about a call analytics job, including
+     * information about skipped analytics features.</p>
+     */
+    inline bool CallAnalyticsJobDetailsHasBeenSet() const { return m_callAnalyticsJobDetailsHasBeenSet; }
+
+    /**
+     * <p>Provides detailed information about a call analytics job, including
+     * information about skipped analytics features.</p>
+     */
+    inline void SetCallAnalyticsJobDetails(const CallAnalyticsJobDetails& value) { m_callAnalyticsJobDetailsHasBeenSet = true; m_callAnalyticsJobDetails = value; }
+
+    /**
+     * <p>Provides detailed information about a call analytics job, including
+     * information about skipped analytics features.</p>
+     */
+    inline void SetCallAnalyticsJobDetails(CallAnalyticsJobDetails&& value) { m_callAnalyticsJobDetailsHasBeenSet = true; m_callAnalyticsJobDetails = std::move(value); }
+
+    /**
+     * <p>Provides detailed information about a call analytics job, including
+     * information about skipped analytics features.</p>
+     */
+    inline CallAnalyticsJob& WithCallAnalyticsJobDetails(const CallAnalyticsJobDetails& value) { SetCallAnalyticsJobDetails(value); return *this;}
+
+    /**
+     * <p>Provides detailed information about a call analytics job, including
+     * information about skipped analytics features.</p>
+     */
+    inline CallAnalyticsJob& WithCallAnalyticsJobDetails(CallAnalyticsJobDetails&& value) { SetCallAnalyticsJobDetails(std::move(value)); return *this;}
 
 
     /**
@@ -891,6 +929,9 @@ namespace Model
 
     CallAnalyticsJobStatus m_callAnalyticsJobStatus;
     bool m_callAnalyticsJobStatusHasBeenSet = false;
+
+    CallAnalyticsJobDetails m_callAnalyticsJobDetails;
+    bool m_callAnalyticsJobDetailsHasBeenSet = false;
 
     LanguageCode m_languageCode;
     bool m_languageCodeHasBeenSet = false;

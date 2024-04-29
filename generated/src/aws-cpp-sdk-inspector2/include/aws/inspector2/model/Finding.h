@@ -444,32 +444,38 @@ namespace Model
 
 
     /**
-     * <p>The date and time that the finding was last observed.</p>
+     * <p> The date and time the finding was last observed. This timestamp for this
+     * field remains unchanged until a finding is updated. </p>
      */
     inline const Aws::Utils::DateTime& GetLastObservedAt() const{ return m_lastObservedAt; }
 
     /**
-     * <p>The date and time that the finding was last observed.</p>
+     * <p> The date and time the finding was last observed. This timestamp for this
+     * field remains unchanged until a finding is updated. </p>
      */
     inline bool LastObservedAtHasBeenSet() const { return m_lastObservedAtHasBeenSet; }
 
     /**
-     * <p>The date and time that the finding was last observed.</p>
+     * <p> The date and time the finding was last observed. This timestamp for this
+     * field remains unchanged until a finding is updated. </p>
      */
     inline void SetLastObservedAt(const Aws::Utils::DateTime& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt = value; }
 
     /**
-     * <p>The date and time that the finding was last observed.</p>
+     * <p> The date and time the finding was last observed. This timestamp for this
+     * field remains unchanged until a finding is updated. </p>
      */
     inline void SetLastObservedAt(Aws::Utils::DateTime&& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt = std::move(value); }
 
     /**
-     * <p>The date and time that the finding was last observed.</p>
+     * <p> The date and time the finding was last observed. This timestamp for this
+     * field remains unchanged until a finding is updated. </p>
      */
     inline Finding& WithLastObservedAt(const Aws::Utils::DateTime& value) { SetLastObservedAt(value); return *this;}
 
     /**
-     * <p>The date and time that the finding was last observed.</p>
+     * <p> The date and time the finding was last observed. This timestamp for this
+     * field remains unchanged until a finding is updated. </p>
      */
     inline Finding& WithLastObservedAt(Aws::Utils::DateTime&& value) { SetLastObservedAt(std::move(value)); return *this;}
 

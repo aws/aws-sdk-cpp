@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
+#include <aws/inspector2/model/Ec2ConfigurationState.h>
 #include <aws/inspector2/model/EcrConfigurationState.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
@@ -31,6 +32,37 @@ namespace Model
     AWS_INSPECTOR2_API GetConfigurationResult();
     AWS_INSPECTOR2_API GetConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_INSPECTOR2_API GetConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>Specifies how the Amazon EC2 automated scan mode is currently configured for
+     * your environment.</p>
+     */
+    inline const Ec2ConfigurationState& GetEc2Configuration() const{ return m_ec2Configuration; }
+
+    /**
+     * <p>Specifies how the Amazon EC2 automated scan mode is currently configured for
+     * your environment.</p>
+     */
+    inline void SetEc2Configuration(const Ec2ConfigurationState& value) { m_ec2Configuration = value; }
+
+    /**
+     * <p>Specifies how the Amazon EC2 automated scan mode is currently configured for
+     * your environment.</p>
+     */
+    inline void SetEc2Configuration(Ec2ConfigurationState&& value) { m_ec2Configuration = std::move(value); }
+
+    /**
+     * <p>Specifies how the Amazon EC2 automated scan mode is currently configured for
+     * your environment.</p>
+     */
+    inline GetConfigurationResult& WithEc2Configuration(const Ec2ConfigurationState& value) { SetEc2Configuration(value); return *this;}
+
+    /**
+     * <p>Specifies how the Amazon EC2 automated scan mode is currently configured for
+     * your environment.</p>
+     */
+    inline GetConfigurationResult& WithEc2Configuration(Ec2ConfigurationState&& value) { SetEc2Configuration(std::move(value)); return *this;}
 
 
     /**
@@ -86,6 +118,8 @@ namespace Model
     inline GetConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
   private:
+
+    Ec2ConfigurationState m_ec2Configuration;
 
     EcrConfigurationState m_ecrConfiguration;
 

@@ -16,6 +16,8 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 ListRecommendationResourcesRequest::ListRecommendationResourcesRequest() : 
+    m_exclusionStatus(ExclusionStatus::NOT_SET),
+    m_exclusionStatusHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
@@ -34,6 +36,13 @@ Aws::String ListRecommendationResourcesRequest::SerializePayload() const
 void ListRecommendationResourcesRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
+    if(m_exclusionStatusHasBeenSet)
+    {
+      ss << ExclusionStatusMapper::GetNameForExclusionStatus(m_exclusionStatus);
+      uri.AddQueryStringParameter("exclusionStatus", ss.str());
+      ss.str("");
+    }
+
     if(m_maxResultsHasBeenSet)
     {
       ss << m_maxResults;

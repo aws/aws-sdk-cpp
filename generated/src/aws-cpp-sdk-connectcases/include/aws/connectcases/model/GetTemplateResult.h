@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/connectcases/model/LayoutConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -35,6 +36,48 @@ namespace Model
     AWS_CONNECTCASES_API GetTemplateResult();
     AWS_CONNECTCASES_API GetTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECTCASES_API GetTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>The timestamp for when the resource was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
+
+    /**
+     * <p>The timestamp for when the resource was created.</p>
+     */
+    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTime = value; }
+
+    /**
+     * <p>The timestamp for when the resource was created.</p>
+     */
+    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTime = std::move(value); }
+
+    /**
+     * <p>The timestamp for when the resource was created.</p>
+     */
+    inline GetTemplateResult& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
+
+    /**
+     * <p>The timestamp for when the resource was created.</p>
+     */
+    inline GetTemplateResult& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Indicates whether the resource has been deleted.</p>
+     */
+    inline bool GetDeleted() const{ return m_deleted; }
+
+    /**
+     * <p>Indicates whether the resource has been deleted.</p>
+     */
+    inline void SetDeleted(bool value) { m_deleted = value; }
+
+    /**
+     * <p>Indicates whether the resource has been deleted.</p>
+     */
+    inline GetTemplateResult& WithDeleted(bool value) { SetDeleted(value); return *this;}
 
 
     /**
@@ -71,6 +114,32 @@ namespace Model
      * <p>A brief description of the template.</p>
      */
     inline GetTemplateResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
+     * <p>The timestamp for when the resource was created or last modified.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+
+    /**
+     * <p>The timestamp for when the resource was created or last modified.</p>
+     */
+    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
+
+    /**
+     * <p>The timestamp for when the resource was created or last modified.</p>
+     */
+    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
+
+    /**
+     * <p>The timestamp for when the resource was created or last modified.</p>
+     */
+    inline GetTemplateResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
+
+    /**
+     * <p>The timestamp for when the resource was created or last modified.</p>
+     */
+    inline GetTemplateResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 
 
     /**
@@ -372,7 +441,13 @@ namespace Model
 
   private:
 
+    Aws::Utils::DateTime m_createdTime;
+
+    bool m_deleted;
+
     Aws::String m_description;
+
+    Aws::Utils::DateTime m_lastModifiedTime;
 
     LayoutConfiguration m_layoutConfiguration;
 

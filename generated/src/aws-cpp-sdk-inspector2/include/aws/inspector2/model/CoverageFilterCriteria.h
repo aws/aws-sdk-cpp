@@ -565,6 +565,55 @@ namespace Model
 
 
     /**
+     * <p>The filter to search for Amazon EC2 instance coverage by scan mode. Valid
+     * values are <code>EC2_SSM_AGENT_BASED</code> and <code>EC2_HYBRID</code>.</p>
+     */
+    inline const Aws::Vector<CoverageStringFilter>& GetScanMode() const{ return m_scanMode; }
+
+    /**
+     * <p>The filter to search for Amazon EC2 instance coverage by scan mode. Valid
+     * values are <code>EC2_SSM_AGENT_BASED</code> and <code>EC2_HYBRID</code>.</p>
+     */
+    inline bool ScanModeHasBeenSet() const { return m_scanModeHasBeenSet; }
+
+    /**
+     * <p>The filter to search for Amazon EC2 instance coverage by scan mode. Valid
+     * values are <code>EC2_SSM_AGENT_BASED</code> and <code>EC2_HYBRID</code>.</p>
+     */
+    inline void SetScanMode(const Aws::Vector<CoverageStringFilter>& value) { m_scanModeHasBeenSet = true; m_scanMode = value; }
+
+    /**
+     * <p>The filter to search for Amazon EC2 instance coverage by scan mode. Valid
+     * values are <code>EC2_SSM_AGENT_BASED</code> and <code>EC2_HYBRID</code>.</p>
+     */
+    inline void SetScanMode(Aws::Vector<CoverageStringFilter>&& value) { m_scanModeHasBeenSet = true; m_scanMode = std::move(value); }
+
+    /**
+     * <p>The filter to search for Amazon EC2 instance coverage by scan mode. Valid
+     * values are <code>EC2_SSM_AGENT_BASED</code> and <code>EC2_HYBRID</code>.</p>
+     */
+    inline CoverageFilterCriteria& WithScanMode(const Aws::Vector<CoverageStringFilter>& value) { SetScanMode(value); return *this;}
+
+    /**
+     * <p>The filter to search for Amazon EC2 instance coverage by scan mode. Valid
+     * values are <code>EC2_SSM_AGENT_BASED</code> and <code>EC2_HYBRID</code>.</p>
+     */
+    inline CoverageFilterCriteria& WithScanMode(Aws::Vector<CoverageStringFilter>&& value) { SetScanMode(std::move(value)); return *this;}
+
+    /**
+     * <p>The filter to search for Amazon EC2 instance coverage by scan mode. Valid
+     * values are <code>EC2_SSM_AGENT_BASED</code> and <code>EC2_HYBRID</code>.</p>
+     */
+    inline CoverageFilterCriteria& AddScanMode(const CoverageStringFilter& value) { m_scanModeHasBeenSet = true; m_scanMode.push_back(value); return *this; }
+
+    /**
+     * <p>The filter to search for Amazon EC2 instance coverage by scan mode. Valid
+     * values are <code>EC2_SSM_AGENT_BASED</code> and <code>EC2_HYBRID</code>.</p>
+     */
+    inline CoverageFilterCriteria& AddScanMode(CoverageStringFilter&& value) { m_scanModeHasBeenSet = true; m_scanMode.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The scan status code to filter on. Valid values are:
      * <code>ValidationException</code>, <code>InternalServerException</code>,
      * <code>ResourceNotFoundException</code>, <code>BadRequestException</code>, and
@@ -752,6 +801,9 @@ namespace Model
 
     Aws::Vector<CoverageStringFilter> m_resourceType;
     bool m_resourceTypeHasBeenSet = false;
+
+    Aws::Vector<CoverageStringFilter> m_scanMode;
+    bool m_scanModeHasBeenSet = false;
 
     Aws::Vector<CoverageStringFilter> m_scanStatusCode;
     bool m_scanStatusCodeHasBeenSet = false;

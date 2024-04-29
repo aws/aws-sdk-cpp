@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/transcribe/model/LanguageCode.h>
 #include <aws/transcribe/model/CallAnalyticsJobStatus.h>
+#include <aws/transcribe/model/CallAnalyticsJobDetails.h>
 #include <utility>
 
 namespace Aws
@@ -330,6 +331,43 @@ namespace Model
 
 
     /**
+     * <p>Provides detailed information about a call analytics job, including
+     * information about skipped analytics features.</p>
+     */
+    inline const CallAnalyticsJobDetails& GetCallAnalyticsJobDetails() const{ return m_callAnalyticsJobDetails; }
+
+    /**
+     * <p>Provides detailed information about a call analytics job, including
+     * information about skipped analytics features.</p>
+     */
+    inline bool CallAnalyticsJobDetailsHasBeenSet() const { return m_callAnalyticsJobDetailsHasBeenSet; }
+
+    /**
+     * <p>Provides detailed information about a call analytics job, including
+     * information about skipped analytics features.</p>
+     */
+    inline void SetCallAnalyticsJobDetails(const CallAnalyticsJobDetails& value) { m_callAnalyticsJobDetailsHasBeenSet = true; m_callAnalyticsJobDetails = value; }
+
+    /**
+     * <p>Provides detailed information about a call analytics job, including
+     * information about skipped analytics features.</p>
+     */
+    inline void SetCallAnalyticsJobDetails(CallAnalyticsJobDetails&& value) { m_callAnalyticsJobDetailsHasBeenSet = true; m_callAnalyticsJobDetails = std::move(value); }
+
+    /**
+     * <p>Provides detailed information about a call analytics job, including
+     * information about skipped analytics features.</p>
+     */
+    inline CallAnalyticsJobSummary& WithCallAnalyticsJobDetails(const CallAnalyticsJobDetails& value) { SetCallAnalyticsJobDetails(value); return *this;}
+
+    /**
+     * <p>Provides detailed information about a call analytics job, including
+     * information about skipped analytics features.</p>
+     */
+    inline CallAnalyticsJobSummary& WithCallAnalyticsJobDetails(CallAnalyticsJobDetails&& value) { SetCallAnalyticsJobDetails(std::move(value)); return *this;}
+
+
+    /**
      * <p>If <code>CallAnalyticsJobStatus</code> is <code>FAILED</code>,
      * <code>FailureReason</code> contains information about why the Call Analytics job
      * failed. See also: <a
@@ -420,6 +458,9 @@ namespace Model
 
     CallAnalyticsJobStatus m_callAnalyticsJobStatus;
     bool m_callAnalyticsJobStatusHasBeenSet = false;
+
+    CallAnalyticsJobDetails m_callAnalyticsJobDetails;
+    bool m_callAnalyticsJobDetailsHasBeenSet = false;
 
     Aws::String m_failureReason;
     bool m_failureReasonHasBeenSet = false;

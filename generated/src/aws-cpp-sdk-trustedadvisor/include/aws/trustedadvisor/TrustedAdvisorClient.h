@@ -77,6 +77,32 @@ namespace TrustedAdvisor
         virtual ~TrustedAdvisorClient();
 
         /**
+         * <p>Update one or more exclusion status for a list of recommendation
+         * resources</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/BatchUpdateRecommendationResourceExclusion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchUpdateRecommendationResourceExclusionOutcome BatchUpdateRecommendationResourceExclusion(const Model::BatchUpdateRecommendationResourceExclusionRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchUpdateRecommendationResourceExclusion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchUpdateRecommendationResourceExclusionRequestT = Model::BatchUpdateRecommendationResourceExclusionRequest>
+        Model::BatchUpdateRecommendationResourceExclusionOutcomeCallable BatchUpdateRecommendationResourceExclusionCallable(const BatchUpdateRecommendationResourceExclusionRequestT& request) const
+        {
+            return SubmitCallable(&TrustedAdvisorClient::BatchUpdateRecommendationResourceExclusion, request);
+        }
+
+        /**
+         * An Async wrapper for BatchUpdateRecommendationResourceExclusion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchUpdateRecommendationResourceExclusionRequestT = Model::BatchUpdateRecommendationResourceExclusionRequest>
+        void BatchUpdateRecommendationResourceExclusionAsync(const BatchUpdateRecommendationResourceExclusionRequestT& request, const BatchUpdateRecommendationResourceExclusionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TrustedAdvisorClient::BatchUpdateRecommendationResourceExclusion, request, handler, context);
+        }
+
+        /**
          * <p>Get a specific recommendation within an AWS Organizations organization. This
          * API supports only prioritized recommendations. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/GetOrganizationRecommendation">AWS
@@ -282,8 +308,8 @@ namespace TrustedAdvisor
         }
 
         /**
-         * <p>Update the lifecyle of a Recommendation within an Organization. This API only
-         * supports prioritized recommendations. </p><p><h3>See Also:</h3>   <a
+         * <p>Update the lifecycle of a Recommendation within an Organization. This API
+         * only supports prioritized recommendations. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/UpdateOrganizationRecommendationLifecycle">AWS
          * API Reference</a></p>
          */

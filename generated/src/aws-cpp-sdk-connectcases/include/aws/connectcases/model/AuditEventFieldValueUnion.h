@@ -25,9 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Object to store union of Field values.</p>  <p>This data type is a
-   * UNION, so only one of the following members can be specified when used or
-   * returned.</p> <p><h3>See Also:</h3>   <a
+   * <p>Object to store union of Field values.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/AuditEventFieldValueUnion">AWS
    * API Reference</a></p>
    */

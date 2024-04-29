@@ -25,6 +25,8 @@ ExecutionStats::ExecutionStats() :
     m_dataWritesHasBeenSet(false),
     m_bytesMetered(0),
     m_bytesMeteredHasBeenSet(false),
+    m_cumulativeBytesScanned(0),
+    m_cumulativeBytesScannedHasBeenSet(false),
     m_recordsIngested(0),
     m_recordsIngestedHasBeenSet(false),
     m_queryResultRows(0),
@@ -39,6 +41,8 @@ ExecutionStats::ExecutionStats(JsonView jsonValue) :
     m_dataWritesHasBeenSet(false),
     m_bytesMetered(0),
     m_bytesMeteredHasBeenSet(false),
+    m_cumulativeBytesScanned(0),
+    m_cumulativeBytesScannedHasBeenSet(false),
     m_recordsIngested(0),
     m_recordsIngestedHasBeenSet(false),
     m_queryResultRows(0),
@@ -68,6 +72,13 @@ ExecutionStats& ExecutionStats::operator =(JsonView jsonValue)
     m_bytesMetered = jsonValue.GetInt64("BytesMetered");
 
     m_bytesMeteredHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CumulativeBytesScanned"))
+  {
+    m_cumulativeBytesScanned = jsonValue.GetInt64("CumulativeBytesScanned");
+
+    m_cumulativeBytesScannedHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("RecordsIngested"))
@@ -106,6 +117,12 @@ JsonValue ExecutionStats::Jsonize() const
   if(m_bytesMeteredHasBeenSet)
   {
    payload.WithInt64("BytesMetered", m_bytesMetered);
+
+  }
+
+  if(m_cumulativeBytesScannedHasBeenSet)
+  {
+   payload.WithInt64("CumulativeBytesScanned", m_cumulativeBytesScanned);
 
   }
 

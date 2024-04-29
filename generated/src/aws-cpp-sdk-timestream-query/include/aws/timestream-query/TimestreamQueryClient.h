@@ -163,6 +163,34 @@ namespace TimestreamQuery
         }
 
         /**
+         * <p>Describes the settings for your account that include the query pricing model
+         * and the configured maximum TCUs the service can use for your query workload.</p>
+         * <p>You're charged only for the duration of compute units used for your
+         * workloads.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/DescribeAccountSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAccountSettingsOutcome DescribeAccountSettings(const Model::DescribeAccountSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAccountSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeAccountSettingsRequestT = Model::DescribeAccountSettingsRequest>
+        Model::DescribeAccountSettingsOutcomeCallable DescribeAccountSettingsCallable(const DescribeAccountSettingsRequestT& request) const
+        {
+            return SubmitCallable(&TimestreamQueryClient::DescribeAccountSettings, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeAccountSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeAccountSettingsRequestT = Model::DescribeAccountSettingsRequest>
+        void DescribeAccountSettingsAsync(const DescribeAccountSettingsRequestT& request, const DescribeAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TimestreamQueryClient::DescribeAccountSettings, request, handler, context);
+        }
+
+        /**
          * <p>DescribeEndpoints returns a list of available endpoints to make Timestream
          * API calls against. This API is available through both Write and Query.</p>
          * <p>Because the Timestream SDKs are designed to transparently work with the
@@ -425,6 +453,36 @@ namespace TimestreamQuery
         void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&TimestreamQueryClient::UntagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Transitions your account to use TCUs for query pricing and modifies the
+         * maximum query compute units that you've configured. If you reduce the value of
+         * <code>MaxQueryTCU</code> to a desired configuration, the new value can take up
+         * to 24 hours to be effective.</p>  <p>After you've transitioned your
+         * account to use TCUs for query pricing, you can't transition to using bytes
+         * scanned for query pricing.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/UpdateAccountSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAccountSettingsOutcome UpdateAccountSettings(const Model::UpdateAccountSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAccountSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateAccountSettingsRequestT = Model::UpdateAccountSettingsRequest>
+        Model::UpdateAccountSettingsOutcomeCallable UpdateAccountSettingsCallable(const UpdateAccountSettingsRequestT& request) const
+        {
+            return SubmitCallable(&TimestreamQueryClient::UpdateAccountSettings, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateAccountSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateAccountSettingsRequestT = Model::UpdateAccountSettingsRequest>
+        void UpdateAccountSettingsAsync(const UpdateAccountSettingsRequestT& request, const UpdateAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TimestreamQueryClient::UpdateAccountSettings, request, handler, context);
         }
 
         /**
