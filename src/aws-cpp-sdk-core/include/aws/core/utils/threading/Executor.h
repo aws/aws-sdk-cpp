@@ -45,7 +45,7 @@ namespace Aws
                 /**
                  * Call to wait until all tasks have finished.
                  */
-                virtual void WaitUntilStopped() { return; };
+                virtual void WaitUntilStopped() { return; }
 
             protected:
                 /**

@@ -44,7 +44,7 @@ namespace Aws
                  */
                 DefaultLogSystem(LogLevel logLevel, const Aws::String& filenamePrefix);
 
-                virtual ~DefaultLogSystem();
+                virtual ~DefaultLogSystem() override;
 
                 /**
                  * Flushes buffered messages to the file system.

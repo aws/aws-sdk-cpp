@@ -126,8 +126,6 @@ namespace Aws
                 case HttpResponseCode::NETWORK_READ_TIMEOUT:
                 case HttpResponseCode::NETWORK_CONNECT_TIMEOUT:
                     return true;
-                default:
-                    return false;
                 case HttpResponseCode::REQUEST_NOT_MADE:
                 case HttpResponseCode::CONTINUE:
                 case HttpResponseCode::SWITCHING_PROTOCOLS:
@@ -192,6 +190,7 @@ namespace Aws
                 case HttpResponseCode::LOOP_DETECTED:
                 case HttpResponseCode::NOT_EXTENDED:
                 case HttpResponseCode::NETWORK_AUTHENTICATION_REQUIRED:
+                default:
                     return false;
             }
         }

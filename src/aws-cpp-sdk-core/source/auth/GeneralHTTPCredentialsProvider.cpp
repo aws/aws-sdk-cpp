@@ -26,7 +26,7 @@ const char GeneralHTTPCredentialsProvider::AWS_EKS_CONTAINER_HOST[]      = "169.
 const char GeneralHTTPCredentialsProvider::AWS_EKS_CONTAINER_HOST_IPV6[] = "fd00:ec2::23";
 
 
-bool IsAllowedIp(const Aws::String& authority)
+static bool IsAllowedIp(const Aws::String& authority)
 {
     // address is an ECS / EKS container host
     if (authority == GeneralHTTPCredentialsProvider::AWS_ECS_CONTAINER_HOST) // ECS container host

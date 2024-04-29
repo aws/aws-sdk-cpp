@@ -35,7 +35,7 @@ namespace Aws
             {
             public:
                 PooledThreadExecutor(size_t poolSize, OverflowPolicy overflowPolicy = OverflowPolicy::QUEUE_TASKS_EVENLY_ACROSS_THREADS);
-                ~PooledThreadExecutor();
+                ~PooledThreadExecutor() override;
 
                 /**
                 * Rule of 5 stuff.

@@ -41,7 +41,7 @@ namespace Aws
                 const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,
                 const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller);
 
-            virtual ~AWSXMLClient() = default;
+            virtual ~AWSXMLClient() override = default;
 
         protected:
             /**

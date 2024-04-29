@@ -29,7 +29,7 @@ Aws::Client::AWSAuthSigner* AWSUrlPresigner::GetSignerByName(const char* name) c
     return m_awsClient.GetSignerByName(name);
 }
 
-std::shared_ptr<Aws::Http::HttpRequest>
+static std::shared_ptr<Aws::Http::HttpRequest>
 ConvertToRequestForPresigning(const Aws::AmazonWebServiceRequest& request,
                               const Aws::Http::URI& uri,
                               Aws::Http::HttpMethod method,
@@ -179,7 +179,7 @@ Aws::String AWSUrlPresigner::GeneratePresignedUrl(const Aws::Endpoint::AWSEndpoi
         }
     }
 
-    return GeneratePresignedUrl(uri, method, signerRegionOverride, signerServiceNameOverride, signerName, customizedHeaders, expirationInSeconds, serviceSpecificParameters);
+    return GeneratePresignedUrl(uri, method, signerRegionOverride, signerServiceNameOverride, signerName, customizedHeaders, static_cast<long long>(expirationInSeconds), serviceSpecificParameters);
 }
 
 Aws::String AWSUrlPresigner::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request,

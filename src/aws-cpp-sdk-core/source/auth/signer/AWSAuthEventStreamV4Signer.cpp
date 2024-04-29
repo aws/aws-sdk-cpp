@@ -154,7 +154,7 @@ static void WriteBigEndian(Aws::String& str, uint64_t n)
     int shift = 56;
     while(shift >= 0)
     {
-        str.push_back((n >> shift) & 0xFF);
+        str.push_back(static_cast<char>((n >> shift) & 0xFF));
         shift -= 8;
     }
 }
