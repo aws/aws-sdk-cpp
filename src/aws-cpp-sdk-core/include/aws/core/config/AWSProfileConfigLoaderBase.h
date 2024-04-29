@@ -37,7 +37,7 @@ namespace Aws
             /**
              * Gets all profiles from the configuration file.
              */
-            inline const Aws::Map<Aws::String, Aws::Config::Profile> &GetProfiles() const { return m_profiles; };
+            inline const Aws::Map<Aws::String, Aws::Config::Profile> &GetProfiles() const { return m_profiles; }
 
             /**
              * the timestamp from the last time the profile information was loaded from file.

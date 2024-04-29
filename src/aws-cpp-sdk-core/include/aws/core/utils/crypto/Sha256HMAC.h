@@ -41,7 +41,7 @@ namespace Aws
                  * initializes platform specific libs.
                  */
                 Sha256HMAC();
-                virtual ~Sha256HMAC();
+                virtual ~Sha256HMAC() override;
 
                 /**
                 * Calculates a SHA256 HMAC digest (not hex encoded)

@@ -128,6 +128,71 @@ namespace Aws
                     return true;
                 default:
                     return false;
+                case HttpResponseCode::REQUEST_NOT_MADE:
+                case HttpResponseCode::CONTINUE:
+                case HttpResponseCode::SWITCHING_PROTOCOLS:
+                case HttpResponseCode::PROCESSING:
+                case HttpResponseCode::OK:
+                case HttpResponseCode::CREATED:
+                case HttpResponseCode::ACCEPTED:
+                case HttpResponseCode::NON_AUTHORITATIVE_INFORMATION:
+                case HttpResponseCode::NO_CONTENT:
+                case HttpResponseCode::RESET_CONTENT:
+                case HttpResponseCode::PARTIAL_CONTENT:
+                case HttpResponseCode::MULTI_STATUS:
+                case HttpResponseCode::ALREADY_REPORTED:
+                case HttpResponseCode::IM_USED:
+                case HttpResponseCode::MULTIPLE_CHOICES:
+                case HttpResponseCode::MOVED_PERMANENTLY:
+                case HttpResponseCode::FOUND:
+                case HttpResponseCode::SEE_OTHER:
+                case HttpResponseCode::NOT_MODIFIED:
+                case HttpResponseCode::USE_PROXY:
+                case HttpResponseCode::SWITCH_PROXY:
+                case HttpResponseCode::TEMPORARY_REDIRECT:
+                case HttpResponseCode::PERMANENT_REDIRECT:
+                case HttpResponseCode::BAD_REQUEST:
+                case HttpResponseCode::UNAUTHORIZED:
+                case HttpResponseCode::PAYMENT_REQUIRED:
+                case HttpResponseCode::FORBIDDEN:
+                case HttpResponseCode::NOT_FOUND:
+                case HttpResponseCode::METHOD_NOT_ALLOWED:
+                case HttpResponseCode::NOT_ACCEPTABLE:
+                case HttpResponseCode::PROXY_AUTHENTICATION_REQUIRED:
+                case HttpResponseCode::CONFLICT:
+                case HttpResponseCode::GONE:
+                case HttpResponseCode::LENGTH_REQUIRED:
+                case HttpResponseCode::PRECONDITION_FAILED:
+                case HttpResponseCode::REQUEST_ENTITY_TOO_LARGE:
+                case HttpResponseCode::REQUEST_URI_TOO_LONG:
+                case HttpResponseCode::UNSUPPORTED_MEDIA_TYPE:
+                case HttpResponseCode::REQUESTED_RANGE_NOT_SATISFIABLE:
+                case HttpResponseCode::EXPECTATION_FAILED:
+                case HttpResponseCode::IM_A_TEAPOT:
+                case HttpResponseCode::METHOD_FAILURE:
+                case HttpResponseCode::UNPROC_ENTITY:
+                case HttpResponseCode::LOCKED:
+                case HttpResponseCode::FAILED_DEPENDENCY:
+                case HttpResponseCode::UPGRADE_REQUIRED:
+                case HttpResponseCode::PRECONDITION_REQUIRED:
+                case HttpResponseCode::REQUEST_HEADER_FIELDS_TOO_LARGE:
+                case HttpResponseCode::NO_RESPONSE:
+                case HttpResponseCode::RETRY_WITH:
+                case HttpResponseCode::BLOCKED:
+                case HttpResponseCode::REDIRECT:
+                case HttpResponseCode::REQUEST_HEADER_TOO_LARGE:
+                case HttpResponseCode::CERT_ERROR:
+                case HttpResponseCode::NO_CERT:
+                case HttpResponseCode::HTTP_TO_HTTPS:
+                case HttpResponseCode::CLIENT_CLOSED_TO_REQUEST:
+                case HttpResponseCode::NOT_IMPLEMENTED:
+                case HttpResponseCode::HTTP_VERSION_NOT_SUPPORTED:
+                case HttpResponseCode::VARIANT_ALSO_NEGOTIATES:
+                case HttpResponseCode::INSUFFICIENT_STORAGE:
+                case HttpResponseCode::LOOP_DETECTED:
+                case HttpResponseCode::NOT_EXTENDED:
+                case HttpResponseCode::NETWORK_AUTHENTICATION_REQUIRED:
+                    return false;
             }
         }
 
@@ -203,7 +268,7 @@ namespace Aws
               * It isn't pure virtual for backwards compatiblity reasons, but the StandardHttpResponse used by default in the SDK
               * implements the move.
               */
-            virtual void AddHeader(const Aws::String& headerName, Aws::String&& headerValue) { AddHeader(headerName, headerValue); };
+            virtual void AddHeader(const Aws::String& headerName, Aws::String&& headerValue) { AddHeader(headerName, headerValue); }
             /**
              * Sets the content type header on the http response object.
              */

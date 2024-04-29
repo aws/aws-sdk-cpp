@@ -18,7 +18,7 @@ namespace Aws
             class AWS_CORE_API EndpointAuthScheme
             {
             public:
-                virtual ~EndpointAuthScheme(){};
+                virtual ~EndpointAuthScheme(){}
 
                 inline const Aws::String& GetName() const
                 {

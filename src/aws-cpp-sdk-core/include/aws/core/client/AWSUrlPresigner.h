@@ -25,7 +25,7 @@ namespace Aws
         public:
             AWSUrlPresigner(const AWSClient& client);
 
-            virtual ~AWSUrlPresigner() {};
+            virtual ~AWSUrlPresigner() {}
 
             /**
              * Generates a signed Uri using the injected signer, for the supplied uri and http method. expirationInSeconds defaults

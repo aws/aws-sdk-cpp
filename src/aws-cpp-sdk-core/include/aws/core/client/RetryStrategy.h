@@ -106,7 +106,7 @@ namespace Aws
         {
         public:
             DefaultRetryQuotaContainer();
-            virtual ~DefaultRetryQuotaContainer() = default;
+            virtual ~DefaultRetryQuotaContainer() override = default;
             virtual bool AcquireRetryQuota(int capacityAmount) override;
             virtual bool AcquireRetryQuota(const AWSError<CoreErrors>& error) override;
             virtual void ReleaseRetryQuota(int capacityAmount) override;

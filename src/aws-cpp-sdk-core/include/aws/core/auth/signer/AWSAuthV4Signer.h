@@ -83,7 +83,7 @@ namespace Aws
                             const char* serviceName, const Aws::String& region, PayloadSigningPolicy signingPolicy = PayloadSigningPolicy::RequestDependent,
                             bool urlEscapePath = true, Aws::Auth::AWSSigningAlgorithm signingAlgorithm = Aws::Auth::AWSSigningAlgorithm::SIGV4);
 
-            virtual ~AWSAuthV4Signer();
+            virtual ~AWSAuthV4Signer() override;
 
             /**
              * AWSAuthV4signer's implementation of virtual function from base class

@@ -42,7 +42,7 @@ namespace Aws
                  * Initializes platform crypto libs.
                  */
                 Sha256();
-                virtual ~Sha256();
+                virtual ~Sha256() override;
 
                 /**
                 * Calculates a SHA256 Hash digest (not hex encoded)

@@ -180,9 +180,9 @@ namespace Aws
 
         virtual const char* GetServiceRequestName() const = 0;
 
-        inline virtual void SetServiceSpecificParameters(const std::shared_ptr<Http::ServiceSpecificParameters>& serviceSpecificParameters) const { m_serviceSpecificParameters = serviceSpecificParameters; };
+        inline virtual void SetServiceSpecificParameters(const std::shared_ptr<Http::ServiceSpecificParameters>& serviceSpecificParameters) const { m_serviceSpecificParameters = serviceSpecificParameters; }
 
-        inline virtual std::shared_ptr<Http::ServiceSpecificParameters> GetServiceSpecificParameters() const { return m_serviceSpecificParameters; };
+        inline virtual std::shared_ptr<Http::ServiceSpecificParameters> GetServiceSpecificParameters() const { return m_serviceSpecificParameters; }
 
         using EndpointParameters = Aws::Vector<Aws::Endpoint::EndpointParameter>;
         virtual EndpointParameters GetEndpointContextParams() const;
