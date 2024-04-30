@@ -160,7 +160,14 @@ namespace Model
      * inbound rules (for inbound Resolver endpoints) or outbound rules (for outbound
      * Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access.
      * For inbound access, open port 53. For outbound access, open the port that you're
-     * using for DNS queries on your network.</p>
+     * using for DNS queries on your network.</p> <p>Some security group rules will
+     * cause your connection to be tracked. For outbound resolver endpoint, it can
+     * potentially impact the maximum queries per second from outbound endpoint to your
+     * target name server. For inbound resolver endpoint, it can bring down the overall
+     * maximum queries per second per IP address to as low as 1500. To avoid connection
+     * tracking caused by security group, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#untracked-connectionsl">Untracked
+     * connections</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
@@ -170,7 +177,14 @@ namespace Model
      * inbound rules (for inbound Resolver endpoints) or outbound rules (for outbound
      * Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access.
      * For inbound access, open port 53. For outbound access, open the port that you're
-     * using for DNS queries on your network.</p>
+     * using for DNS queries on your network.</p> <p>Some security group rules will
+     * cause your connection to be tracked. For outbound resolver endpoint, it can
+     * potentially impact the maximum queries per second from outbound endpoint to your
+     * target name server. For inbound resolver endpoint, it can bring down the overall
+     * maximum queries per second per IP address to as low as 1500. To avoid connection
+     * tracking caused by security group, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#untracked-connectionsl">Untracked
+     * connections</a>.</p>
      */
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
@@ -180,7 +194,14 @@ namespace Model
      * inbound rules (for inbound Resolver endpoints) or outbound rules (for outbound
      * Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access.
      * For inbound access, open port 53. For outbound access, open the port that you're
-     * using for DNS queries on your network.</p>
+     * using for DNS queries on your network.</p> <p>Some security group rules will
+     * cause your connection to be tracked. For outbound resolver endpoint, it can
+     * potentially impact the maximum queries per second from outbound endpoint to your
+     * target name server. For inbound resolver endpoint, it can bring down the overall
+     * maximum queries per second per IP address to as low as 1500. To avoid connection
+     * tracking caused by security group, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#untracked-connectionsl">Untracked
+     * connections</a>.</p>
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
@@ -190,7 +211,14 @@ namespace Model
      * inbound rules (for inbound Resolver endpoints) or outbound rules (for outbound
      * Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access.
      * For inbound access, open port 53. For outbound access, open the port that you're
-     * using for DNS queries on your network.</p>
+     * using for DNS queries on your network.</p> <p>Some security group rules will
+     * cause your connection to be tracked. For outbound resolver endpoint, it can
+     * potentially impact the maximum queries per second from outbound endpoint to your
+     * target name server. For inbound resolver endpoint, it can bring down the overall
+     * maximum queries per second per IP address to as low as 1500. To avoid connection
+     * tracking caused by security group, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#untracked-connectionsl">Untracked
+     * connections</a>.</p>
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
@@ -200,7 +228,14 @@ namespace Model
      * inbound rules (for inbound Resolver endpoints) or outbound rules (for outbound
      * Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access.
      * For inbound access, open port 53. For outbound access, open the port that you're
-     * using for DNS queries on your network.</p>
+     * using for DNS queries on your network.</p> <p>Some security group rules will
+     * cause your connection to be tracked. For outbound resolver endpoint, it can
+     * potentially impact the maximum queries per second from outbound endpoint to your
+     * target name server. For inbound resolver endpoint, it can bring down the overall
+     * maximum queries per second per IP address to as low as 1500. To avoid connection
+     * tracking caused by security group, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#untracked-connectionsl">Untracked
+     * connections</a>.</p>
      */
     inline CreateResolverEndpointRequest& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
@@ -210,7 +245,14 @@ namespace Model
      * inbound rules (for inbound Resolver endpoints) or outbound rules (for outbound
      * Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access.
      * For inbound access, open port 53. For outbound access, open the port that you're
-     * using for DNS queries on your network.</p>
+     * using for DNS queries on your network.</p> <p>Some security group rules will
+     * cause your connection to be tracked. For outbound resolver endpoint, it can
+     * potentially impact the maximum queries per second from outbound endpoint to your
+     * target name server. For inbound resolver endpoint, it can bring down the overall
+     * maximum queries per second per IP address to as low as 1500. To avoid connection
+     * tracking caused by security group, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#untracked-connectionsl">Untracked
+     * connections</a>.</p>
      */
     inline CreateResolverEndpointRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
@@ -220,7 +262,14 @@ namespace Model
      * inbound rules (for inbound Resolver endpoints) or outbound rules (for outbound
      * Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access.
      * For inbound access, open port 53. For outbound access, open the port that you're
-     * using for DNS queries on your network.</p>
+     * using for DNS queries on your network.</p> <p>Some security group rules will
+     * cause your connection to be tracked. For outbound resolver endpoint, it can
+     * potentially impact the maximum queries per second from outbound endpoint to your
+     * target name server. For inbound resolver endpoint, it can bring down the overall
+     * maximum queries per second per IP address to as low as 1500. To avoid connection
+     * tracking caused by security group, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#untracked-connectionsl">Untracked
+     * connections</a>.</p>
      */
     inline CreateResolverEndpointRequest& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
@@ -230,7 +279,14 @@ namespace Model
      * inbound rules (for inbound Resolver endpoints) or outbound rules (for outbound
      * Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access.
      * For inbound access, open port 53. For outbound access, open the port that you're
-     * using for DNS queries on your network.</p>
+     * using for DNS queries on your network.</p> <p>Some security group rules will
+     * cause your connection to be tracked. For outbound resolver endpoint, it can
+     * potentially impact the maximum queries per second from outbound endpoint to your
+     * target name server. For inbound resolver endpoint, it can bring down the overall
+     * maximum queries per second per IP address to as low as 1500. To avoid connection
+     * tracking caused by security group, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#untracked-connectionsl">Untracked
+     * connections</a>.</p>
      */
     inline CreateResolverEndpointRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
@@ -240,7 +296,14 @@ namespace Model
      * inbound rules (for inbound Resolver endpoints) or outbound rules (for outbound
      * Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access.
      * For inbound access, open port 53. For outbound access, open the port that you're
-     * using for DNS queries on your network.</p>
+     * using for DNS queries on your network.</p> <p>Some security group rules will
+     * cause your connection to be tracked. For outbound resolver endpoint, it can
+     * potentially impact the maximum queries per second from outbound endpoint to your
+     * target name server. For inbound resolver endpoint, it can bring down the overall
+     * maximum queries per second per IP address to as low as 1500. To avoid connection
+     * tracking caused by security group, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#untracked-connectionsl">Untracked
+     * connections</a>.</p>
      */
     inline CreateResolverEndpointRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/model/TopicUserExperienceVersion.h>
 #include <utility>
 
 namespace Aws
@@ -167,6 +168,37 @@ namespace Model
      */
     inline TopicSummary& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * <p>The user experience version of the topic.</p>
+     */
+    inline const TopicUserExperienceVersion& GetUserExperienceVersion() const{ return m_userExperienceVersion; }
+
+    /**
+     * <p>The user experience version of the topic.</p>
+     */
+    inline bool UserExperienceVersionHasBeenSet() const { return m_userExperienceVersionHasBeenSet; }
+
+    /**
+     * <p>The user experience version of the topic.</p>
+     */
+    inline void SetUserExperienceVersion(const TopicUserExperienceVersion& value) { m_userExperienceVersionHasBeenSet = true; m_userExperienceVersion = value; }
+
+    /**
+     * <p>The user experience version of the topic.</p>
+     */
+    inline void SetUserExperienceVersion(TopicUserExperienceVersion&& value) { m_userExperienceVersionHasBeenSet = true; m_userExperienceVersion = std::move(value); }
+
+    /**
+     * <p>The user experience version of the topic.</p>
+     */
+    inline TopicSummary& WithUserExperienceVersion(const TopicUserExperienceVersion& value) { SetUserExperienceVersion(value); return *this;}
+
+    /**
+     * <p>The user experience version of the topic.</p>
+     */
+    inline TopicSummary& WithUserExperienceVersion(TopicUserExperienceVersion&& value) { SetUserExperienceVersion(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -177,6 +209,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    TopicUserExperienceVersion m_userExperienceVersion;
+    bool m_userExperienceVersionHasBeenSet = false;
   };
 
 } // namespace Model

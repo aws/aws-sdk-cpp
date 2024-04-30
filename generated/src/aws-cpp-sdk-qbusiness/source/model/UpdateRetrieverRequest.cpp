@@ -14,9 +14,9 @@ using namespace Aws::Utils;
 
 UpdateRetrieverRequest::UpdateRetrieverRequest() : 
     m_applicationIdHasBeenSet(false),
+    m_retrieverIdHasBeenSet(false),
     m_configurationHasBeenSet(false),
     m_displayNameHasBeenSet(false),
-    m_retrieverIdHasBeenSet(false),
     m_roleArnHasBeenSet(false)
 {
 }

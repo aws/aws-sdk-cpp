@@ -76,96 +76,6 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the data source sync during which the documents were
-     * deleted.</p>
-     */
-    inline const Aws::String& GetDataSourceSyncId() const{ return m_dataSourceSyncId; }
-
-    /**
-     * <p>The identifier of the data source sync during which the documents were
-     * deleted.</p>
-     */
-    inline bool DataSourceSyncIdHasBeenSet() const { return m_dataSourceSyncIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the data source sync during which the documents were
-     * deleted.</p>
-     */
-    inline void SetDataSourceSyncId(const Aws::String& value) { m_dataSourceSyncIdHasBeenSet = true; m_dataSourceSyncId = value; }
-
-    /**
-     * <p>The identifier of the data source sync during which the documents were
-     * deleted.</p>
-     */
-    inline void SetDataSourceSyncId(Aws::String&& value) { m_dataSourceSyncIdHasBeenSet = true; m_dataSourceSyncId = std::move(value); }
-
-    /**
-     * <p>The identifier of the data source sync during which the documents were
-     * deleted.</p>
-     */
-    inline void SetDataSourceSyncId(const char* value) { m_dataSourceSyncIdHasBeenSet = true; m_dataSourceSyncId.assign(value); }
-
-    /**
-     * <p>The identifier of the data source sync during which the documents were
-     * deleted.</p>
-     */
-    inline BatchDeleteDocumentRequest& WithDataSourceSyncId(const Aws::String& value) { SetDataSourceSyncId(value); return *this;}
-
-    /**
-     * <p>The identifier of the data source sync during which the documents were
-     * deleted.</p>
-     */
-    inline BatchDeleteDocumentRequest& WithDataSourceSyncId(Aws::String&& value) { SetDataSourceSyncId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the data source sync during which the documents were
-     * deleted.</p>
-     */
-    inline BatchDeleteDocumentRequest& WithDataSourceSyncId(const char* value) { SetDataSourceSyncId(value); return *this;}
-
-
-    /**
-     * <p>Documents deleted from the Amazon Q Business index.</p>
-     */
-    inline const Aws::Vector<DeleteDocument>& GetDocuments() const{ return m_documents; }
-
-    /**
-     * <p>Documents deleted from the Amazon Q Business index.</p>
-     */
-    inline bool DocumentsHasBeenSet() const { return m_documentsHasBeenSet; }
-
-    /**
-     * <p>Documents deleted from the Amazon Q Business index.</p>
-     */
-    inline void SetDocuments(const Aws::Vector<DeleteDocument>& value) { m_documentsHasBeenSet = true; m_documents = value; }
-
-    /**
-     * <p>Documents deleted from the Amazon Q Business index.</p>
-     */
-    inline void SetDocuments(Aws::Vector<DeleteDocument>&& value) { m_documentsHasBeenSet = true; m_documents = std::move(value); }
-
-    /**
-     * <p>Documents deleted from the Amazon Q Business index.</p>
-     */
-    inline BatchDeleteDocumentRequest& WithDocuments(const Aws::Vector<DeleteDocument>& value) { SetDocuments(value); return *this;}
-
-    /**
-     * <p>Documents deleted from the Amazon Q Business index.</p>
-     */
-    inline BatchDeleteDocumentRequest& WithDocuments(Aws::Vector<DeleteDocument>&& value) { SetDocuments(std::move(value)); return *this;}
-
-    /**
-     * <p>Documents deleted from the Amazon Q Business index.</p>
-     */
-    inline BatchDeleteDocumentRequest& AddDocuments(const DeleteDocument& value) { m_documentsHasBeenSet = true; m_documents.push_back(value); return *this; }
-
-    /**
-     * <p>Documents deleted from the Amazon Q Business index.</p>
-     */
-    inline BatchDeleteDocumentRequest& AddDocuments(DeleteDocument&& value) { m_documentsHasBeenSet = true; m_documents.push_back(std::move(value)); return *this; }
-
-
-    /**
      * <p>The identifier of the Amazon Q Business index that contains the documents to
      * delete.</p>
      */
@@ -213,19 +123,109 @@ namespace Model
      */
     inline BatchDeleteDocumentRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
 
+
+    /**
+     * <p>Documents deleted from the Amazon Q Business index.</p>
+     */
+    inline const Aws::Vector<DeleteDocument>& GetDocuments() const{ return m_documents; }
+
+    /**
+     * <p>Documents deleted from the Amazon Q Business index.</p>
+     */
+    inline bool DocumentsHasBeenSet() const { return m_documentsHasBeenSet; }
+
+    /**
+     * <p>Documents deleted from the Amazon Q Business index.</p>
+     */
+    inline void SetDocuments(const Aws::Vector<DeleteDocument>& value) { m_documentsHasBeenSet = true; m_documents = value; }
+
+    /**
+     * <p>Documents deleted from the Amazon Q Business index.</p>
+     */
+    inline void SetDocuments(Aws::Vector<DeleteDocument>&& value) { m_documentsHasBeenSet = true; m_documents = std::move(value); }
+
+    /**
+     * <p>Documents deleted from the Amazon Q Business index.</p>
+     */
+    inline BatchDeleteDocumentRequest& WithDocuments(const Aws::Vector<DeleteDocument>& value) { SetDocuments(value); return *this;}
+
+    /**
+     * <p>Documents deleted from the Amazon Q Business index.</p>
+     */
+    inline BatchDeleteDocumentRequest& WithDocuments(Aws::Vector<DeleteDocument>&& value) { SetDocuments(std::move(value)); return *this;}
+
+    /**
+     * <p>Documents deleted from the Amazon Q Business index.</p>
+     */
+    inline BatchDeleteDocumentRequest& AddDocuments(const DeleteDocument& value) { m_documentsHasBeenSet = true; m_documents.push_back(value); return *this; }
+
+    /**
+     * <p>Documents deleted from the Amazon Q Business index.</p>
+     */
+    inline BatchDeleteDocumentRequest& AddDocuments(DeleteDocument&& value) { m_documentsHasBeenSet = true; m_documents.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The identifier of the data source sync during which the documents were
+     * deleted.</p>
+     */
+    inline const Aws::String& GetDataSourceSyncId() const{ return m_dataSourceSyncId; }
+
+    /**
+     * <p>The identifier of the data source sync during which the documents were
+     * deleted.</p>
+     */
+    inline bool DataSourceSyncIdHasBeenSet() const { return m_dataSourceSyncIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the data source sync during which the documents were
+     * deleted.</p>
+     */
+    inline void SetDataSourceSyncId(const Aws::String& value) { m_dataSourceSyncIdHasBeenSet = true; m_dataSourceSyncId = value; }
+
+    /**
+     * <p>The identifier of the data source sync during which the documents were
+     * deleted.</p>
+     */
+    inline void SetDataSourceSyncId(Aws::String&& value) { m_dataSourceSyncIdHasBeenSet = true; m_dataSourceSyncId = std::move(value); }
+
+    /**
+     * <p>The identifier of the data source sync during which the documents were
+     * deleted.</p>
+     */
+    inline void SetDataSourceSyncId(const char* value) { m_dataSourceSyncIdHasBeenSet = true; m_dataSourceSyncId.assign(value); }
+
+    /**
+     * <p>The identifier of the data source sync during which the documents were
+     * deleted.</p>
+     */
+    inline BatchDeleteDocumentRequest& WithDataSourceSyncId(const Aws::String& value) { SetDataSourceSyncId(value); return *this;}
+
+    /**
+     * <p>The identifier of the data source sync during which the documents were
+     * deleted.</p>
+     */
+    inline BatchDeleteDocumentRequest& WithDataSourceSyncId(Aws::String&& value) { SetDataSourceSyncId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the data source sync during which the documents were
+     * deleted.</p>
+     */
+    inline BatchDeleteDocumentRequest& WithDataSourceSyncId(const char* value) { SetDataSourceSyncId(value); return *this;}
+
   private:
 
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet = false;
 
-    Aws::String m_dataSourceSyncId;
-    bool m_dataSourceSyncIdHasBeenSet = false;
+    Aws::String m_indexId;
+    bool m_indexIdHasBeenSet = false;
 
     Aws::Vector<DeleteDocument> m_documents;
     bool m_documentsHasBeenSet = false;
 
-    Aws::String m_indexId;
-    bool m_indexIdHasBeenSet = false;
+    Aws::String m_dataSourceSyncId;
+    bool m_dataSourceSyncIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -39,7 +39,8 @@ CreateTrainingJobRequest::CreateTrainingJobRequest() :
     m_environmentHasBeenSet(false),
     m_retryStrategyHasBeenSet(false),
     m_remoteDebugConfigHasBeenSet(false),
-    m_infraCheckConfigHasBeenSet(false)
+    m_infraCheckConfigHasBeenSet(false),
+    m_sessionChainingConfigHasBeenSet(false)
 {
 }
 
@@ -218,6 +219,12 @@ Aws::String CreateTrainingJobRequest::SerializePayload() const
   if(m_infraCheckConfigHasBeenSet)
   {
    payload.WithObject("InfraCheckConfig", m_infraCheckConfig.Jsonize());
+
+  }
+
+  if(m_sessionChainingConfigHasBeenSet)
+  {
+   payload.WithObject("SessionChainingConfig", m_sessionChainingConfig.Jsonize());
 
   }
 

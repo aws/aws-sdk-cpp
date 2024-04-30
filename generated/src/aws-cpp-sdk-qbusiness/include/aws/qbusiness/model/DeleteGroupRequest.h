@@ -80,6 +80,88 @@ namespace Model
 
 
     /**
+     * <p>The identifier of the index you want to delete the group from.</p>
+     */
+    inline const Aws::String& GetIndexId() const{ return m_indexId; }
+
+    /**
+     * <p>The identifier of the index you want to delete the group from.</p>
+     */
+    inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the index you want to delete the group from.</p>
+     */
+    inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
+
+    /**
+     * <p>The identifier of the index you want to delete the group from.</p>
+     */
+    inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
+
+    /**
+     * <p>The identifier of the index you want to delete the group from.</p>
+     */
+    inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
+
+    /**
+     * <p>The identifier of the index you want to delete the group from.</p>
+     */
+    inline DeleteGroupRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
+
+    /**
+     * <p>The identifier of the index you want to delete the group from.</p>
+     */
+    inline DeleteGroupRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the index you want to delete the group from.</p>
+     */
+    inline DeleteGroupRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
+
+
+    /**
+     * <p>The name of the group you want to delete.</p>
+     */
+    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+
+    /**
+     * <p>The name of the group you want to delete.</p>
+     */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the group you want to delete.</p>
+     */
+    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+
+    /**
+     * <p>The name of the group you want to delete.</p>
+     */
+    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
+
+    /**
+     * <p>The name of the group you want to delete.</p>
+     */
+    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
+
+    /**
+     * <p>The name of the group you want to delete.</p>
+     */
+    inline DeleteGroupRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
+
+    /**
+     * <p>The name of the group you want to delete.</p>
+     */
+    inline DeleteGroupRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the group you want to delete.</p>
+     */
+    inline DeleteGroupRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+
+
+    /**
      * <p>The identifier of the data source linked to the group</p> <p>A group can be
      * tied to multiple data sources. You can delete a group from accessing documents
      * in a certain data source. For example, the groups "Research", "Engineering", and
@@ -175,101 +257,19 @@ namespace Model
      */
     inline DeleteGroupRequest& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
 
-
-    /**
-     * <p>The name of the group you want to delete.</p>
-     */
-    inline const Aws::String& GetGroupName() const{ return m_groupName; }
-
-    /**
-     * <p>The name of the group you want to delete.</p>
-     */
-    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the group you want to delete.</p>
-     */
-    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-
-    /**
-     * <p>The name of the group you want to delete.</p>
-     */
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-
-    /**
-     * <p>The name of the group you want to delete.</p>
-     */
-    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-
-    /**
-     * <p>The name of the group you want to delete.</p>
-     */
-    inline DeleteGroupRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the group you want to delete.</p>
-     */
-    inline DeleteGroupRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the group you want to delete.</p>
-     */
-    inline DeleteGroupRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
-
-
-    /**
-     * <p>The identifier of the index you want to delete the group from.</p>
-     */
-    inline const Aws::String& GetIndexId() const{ return m_indexId; }
-
-    /**
-     * <p>The identifier of the index you want to delete the group from.</p>
-     */
-    inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the index you want to delete the group from.</p>
-     */
-    inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
-
-    /**
-     * <p>The identifier of the index you want to delete the group from.</p>
-     */
-    inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
-
-    /**
-     * <p>The identifier of the index you want to delete the group from.</p>
-     */
-    inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
-
-    /**
-     * <p>The identifier of the index you want to delete the group from.</p>
-     */
-    inline DeleteGroupRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
-
-    /**
-     * <p>The identifier of the index you want to delete the group from.</p>
-     */
-    inline DeleteGroupRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the index you want to delete the group from.</p>
-     */
-    inline DeleteGroupRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
-
   private:
 
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet = false;
 
-    Aws::String m_dataSourceId;
-    bool m_dataSourceIdHasBeenSet = false;
+    Aws::String m_indexId;
+    bool m_indexIdHasBeenSet = false;
 
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet = false;
 
-    Aws::String m_indexId;
-    bool m_indexIdHasBeenSet = false;
+    Aws::String m_dataSourceId;
+    bool m_dataSourceIdHasBeenSet = false;
   };
 
 } // namespace Model

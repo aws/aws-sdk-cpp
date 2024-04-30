@@ -29,15 +29,15 @@ CreateIndexResult::CreateIndexResult(const Aws::AmazonWebServiceResult<JsonValue
 CreateIndexResult& CreateIndexResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("indexArn"))
-  {
-    m_indexArn = jsonValue.GetString("indexArn");
-
-  }
-
   if(jsonValue.ValueExists("indexId"))
   {
     m_indexId = jsonValue.GetString("indexId");
+
+  }
+
+  if(jsonValue.ValueExists("indexArn"))
+  {
+    m_indexArn = jsonValue.GetString("indexArn");
 
   }
 

@@ -34,32 +34,32 @@ namespace Model
 
 
     /**
-     * <p> An analytic store share details object. contains status, resourceArn,
-     * ownerId, etc. </p>
+     * <p>A resource share details object. The object includes the status, the
+     * resourceArn, and ownerId.</p>
      */
     inline const ShareDetails& GetShare() const{ return m_share; }
 
     /**
-     * <p> An analytic store share details object. contains status, resourceArn,
-     * ownerId, etc. </p>
+     * <p>A resource share details object. The object includes the status, the
+     * resourceArn, and ownerId.</p>
      */
     inline void SetShare(const ShareDetails& value) { m_share = value; }
 
     /**
-     * <p> An analytic store share details object. contains status, resourceArn,
-     * ownerId, etc. </p>
+     * <p>A resource share details object. The object includes the status, the
+     * resourceArn, and ownerId.</p>
      */
     inline void SetShare(ShareDetails&& value) { m_share = std::move(value); }
 
     /**
-     * <p> An analytic store share details object. contains status, resourceArn,
-     * ownerId, etc. </p>
+     * <p>A resource share details object. The object includes the status, the
+     * resourceArn, and ownerId.</p>
      */
     inline GetShareResult& WithShare(const ShareDetails& value) { SetShare(value); return *this;}
 
     /**
-     * <p> An analytic store share details object. contains status, resourceArn,
-     * ownerId, etc. </p>
+     * <p>A resource share details object. The object includes the status, the
+     * resourceArn, and ownerId.</p>
      */
     inline GetShareResult& WithShare(ShareDetails&& value) { SetShare(std::move(value)); return *this;}
 

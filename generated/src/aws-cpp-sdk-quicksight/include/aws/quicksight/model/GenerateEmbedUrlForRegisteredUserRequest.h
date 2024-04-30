@@ -150,44 +150,50 @@ namespace Model
 
 
     /**
-     * <p>The experience you are embedding. For registered users, you can embed Amazon
-     * QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search
-     * bar, or the entire Amazon QuickSight console.</p>
+     * <p>The experience that you want to embed. For registered users, you can embed
+     * Amazon QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q
+     * search bar, the Amazon QuickSight Generative Q&amp;A experience, or the entire
+     * Amazon QuickSight console.</p>
      */
     inline const RegisteredUserEmbeddingExperienceConfiguration& GetExperienceConfiguration() const{ return m_experienceConfiguration; }
 
     /**
-     * <p>The experience you are embedding. For registered users, you can embed Amazon
-     * QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search
-     * bar, or the entire Amazon QuickSight console.</p>
+     * <p>The experience that you want to embed. For registered users, you can embed
+     * Amazon QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q
+     * search bar, the Amazon QuickSight Generative Q&amp;A experience, or the entire
+     * Amazon QuickSight console.</p>
      */
     inline bool ExperienceConfigurationHasBeenSet() const { return m_experienceConfigurationHasBeenSet; }
 
     /**
-     * <p>The experience you are embedding. For registered users, you can embed Amazon
-     * QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search
-     * bar, or the entire Amazon QuickSight console.</p>
+     * <p>The experience that you want to embed. For registered users, you can embed
+     * Amazon QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q
+     * search bar, the Amazon QuickSight Generative Q&amp;A experience, or the entire
+     * Amazon QuickSight console.</p>
      */
     inline void SetExperienceConfiguration(const RegisteredUserEmbeddingExperienceConfiguration& value) { m_experienceConfigurationHasBeenSet = true; m_experienceConfiguration = value; }
 
     /**
-     * <p>The experience you are embedding. For registered users, you can embed Amazon
-     * QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search
-     * bar, or the entire Amazon QuickSight console.</p>
+     * <p>The experience that you want to embed. For registered users, you can embed
+     * Amazon QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q
+     * search bar, the Amazon QuickSight Generative Q&amp;A experience, or the entire
+     * Amazon QuickSight console.</p>
      */
     inline void SetExperienceConfiguration(RegisteredUserEmbeddingExperienceConfiguration&& value) { m_experienceConfigurationHasBeenSet = true; m_experienceConfiguration = std::move(value); }
 
     /**
-     * <p>The experience you are embedding. For registered users, you can embed Amazon
-     * QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search
-     * bar, or the entire Amazon QuickSight console.</p>
+     * <p>The experience that you want to embed. For registered users, you can embed
+     * Amazon QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q
+     * search bar, the Amazon QuickSight Generative Q&amp;A experience, or the entire
+     * Amazon QuickSight console.</p>
      */
     inline GenerateEmbedUrlForRegisteredUserRequest& WithExperienceConfiguration(const RegisteredUserEmbeddingExperienceConfiguration& value) { SetExperienceConfiguration(value); return *this;}
 
     /**
-     * <p>The experience you are embedding. For registered users, you can embed Amazon
-     * QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search
-     * bar, or the entire Amazon QuickSight console.</p>
+     * <p>The experience that you want to embed. For registered users, you can embed
+     * Amazon QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q
+     * search bar, the Amazon QuickSight Generative Q&amp;A experience, or the entire
+     * Amazon QuickSight console.</p>
      */
     inline GenerateEmbedUrlForRegisteredUserRequest& WithExperienceConfiguration(RegisteredUserEmbeddingExperienceConfiguration&& value) { SetExperienceConfiguration(std::move(value)); return *this;}
 

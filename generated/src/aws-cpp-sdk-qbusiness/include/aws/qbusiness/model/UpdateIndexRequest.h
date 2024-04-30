@@ -85,40 +85,85 @@ namespace Model
 
 
     /**
-     * <p>The storage capacity units you want to provision for your Amazon Q Business
-     * index. You can add and remove capacity to fit your usage needs.</p>
+     * <p>The identifier of the Amazon Q Business index.</p>
      */
-    inline const IndexCapacityConfiguration& GetCapacityConfiguration() const{ return m_capacityConfiguration; }
+    inline const Aws::String& GetIndexId() const{ return m_indexId; }
 
     /**
-     * <p>The storage capacity units you want to provision for your Amazon Q Business
-     * index. You can add and remove capacity to fit your usage needs.</p>
+     * <p>The identifier of the Amazon Q Business index.</p>
      */
-    inline bool CapacityConfigurationHasBeenSet() const { return m_capacityConfigurationHasBeenSet; }
+    inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
 
     /**
-     * <p>The storage capacity units you want to provision for your Amazon Q Business
-     * index. You can add and remove capacity to fit your usage needs.</p>
+     * <p>The identifier of the Amazon Q Business index.</p>
      */
-    inline void SetCapacityConfiguration(const IndexCapacityConfiguration& value) { m_capacityConfigurationHasBeenSet = true; m_capacityConfiguration = value; }
+    inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
 
     /**
-     * <p>The storage capacity units you want to provision for your Amazon Q Business
-     * index. You can add and remove capacity to fit your usage needs.</p>
+     * <p>The identifier of the Amazon Q Business index.</p>
      */
-    inline void SetCapacityConfiguration(IndexCapacityConfiguration&& value) { m_capacityConfigurationHasBeenSet = true; m_capacityConfiguration = std::move(value); }
+    inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
 
     /**
-     * <p>The storage capacity units you want to provision for your Amazon Q Business
-     * index. You can add and remove capacity to fit your usage needs.</p>
+     * <p>The identifier of the Amazon Q Business index.</p>
      */
-    inline UpdateIndexRequest& WithCapacityConfiguration(const IndexCapacityConfiguration& value) { SetCapacityConfiguration(value); return *this;}
+    inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
 
     /**
-     * <p>The storage capacity units you want to provision for your Amazon Q Business
-     * index. You can add and remove capacity to fit your usage needs.</p>
+     * <p>The identifier of the Amazon Q Business index.</p>
      */
-    inline UpdateIndexRequest& WithCapacityConfiguration(IndexCapacityConfiguration&& value) { SetCapacityConfiguration(std::move(value)); return *this;}
+    inline UpdateIndexRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
+
+    /**
+     * <p>The identifier of the Amazon Q Business index.</p>
+     */
+    inline UpdateIndexRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the Amazon Q Business index.</p>
+     */
+    inline UpdateIndexRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
+
+
+    /**
+     * <p>The name of the Amazon Q Business index.</p>
+     */
+    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
+    /**
+     * <p>The name of the Amazon Q Business index.</p>
+     */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Amazon Q Business index.</p>
+     */
+    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+
+    /**
+     * <p>The name of the Amazon Q Business index.</p>
+     */
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
+
+    /**
+     * <p>The name of the Amazon Q Business index.</p>
+     */
+    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
+
+    /**
+     * <p>The name of the Amazon Q Business index.</p>
+     */
+    inline UpdateIndexRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
+
+    /**
+     * <p>The name of the Amazon Q Business index.</p>
+     */
+    inline UpdateIndexRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the Amazon Q Business index.</p>
+     */
+    inline UpdateIndexRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
 
     /**
@@ -163,44 +208,40 @@ namespace Model
 
 
     /**
-     * <p>The name of the Amazon Q Business index.</p>
+     * <p>The storage capacity units you want to provision for your Amazon Q Business
+     * index. You can add and remove capacity to fit your usage needs.</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const IndexCapacityConfiguration& GetCapacityConfiguration() const{ return m_capacityConfiguration; }
 
     /**
-     * <p>The name of the Amazon Q Business index.</p>
+     * <p>The storage capacity units you want to provision for your Amazon Q Business
+     * index. You can add and remove capacity to fit your usage needs.</p>
      */
-    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+    inline bool CapacityConfigurationHasBeenSet() const { return m_capacityConfigurationHasBeenSet; }
 
     /**
-     * <p>The name of the Amazon Q Business index.</p>
+     * <p>The storage capacity units you want to provision for your Amazon Q Business
+     * index. You can add and remove capacity to fit your usage needs.</p>
      */
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+    inline void SetCapacityConfiguration(const IndexCapacityConfiguration& value) { m_capacityConfigurationHasBeenSet = true; m_capacityConfiguration = value; }
 
     /**
-     * <p>The name of the Amazon Q Business index.</p>
+     * <p>The storage capacity units you want to provision for your Amazon Q Business
+     * index. You can add and remove capacity to fit your usage needs.</p>
      */
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
+    inline void SetCapacityConfiguration(IndexCapacityConfiguration&& value) { m_capacityConfigurationHasBeenSet = true; m_capacityConfiguration = std::move(value); }
 
     /**
-     * <p>The name of the Amazon Q Business index.</p>
+     * <p>The storage capacity units you want to provision for your Amazon Q Business
+     * index. You can add and remove capacity to fit your usage needs.</p>
      */
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
+    inline UpdateIndexRequest& WithCapacityConfiguration(const IndexCapacityConfiguration& value) { SetCapacityConfiguration(value); return *this;}
 
     /**
-     * <p>The name of the Amazon Q Business index.</p>
+     * <p>The storage capacity units you want to provision for your Amazon Q Business
+     * index. You can add and remove capacity to fit your usage needs.</p>
      */
-    inline UpdateIndexRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-
-    /**
-     * <p>The name of the Amazon Q Business index.</p>
-     */
-    inline UpdateIndexRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Amazon Q Business index.</p>
-     */
-    inline UpdateIndexRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    inline UpdateIndexRequest& WithCapacityConfiguration(IndexCapacityConfiguration&& value) { SetCapacityConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -283,66 +324,25 @@ namespace Model
      */
     inline UpdateIndexRequest& AddDocumentAttributeConfigurations(DocumentAttributeConfiguration&& value) { m_documentAttributeConfigurationsHasBeenSet = true; m_documentAttributeConfigurations.push_back(std::move(value)); return *this; }
 
-
-    /**
-     * <p>The identifier of the Amazon Q Business index.</p>
-     */
-    inline const Aws::String& GetIndexId() const{ return m_indexId; }
-
-    /**
-     * <p>The identifier of the Amazon Q Business index.</p>
-     */
-    inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the Amazon Q Business index.</p>
-     */
-    inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
-
-    /**
-     * <p>The identifier of the Amazon Q Business index.</p>
-     */
-    inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
-
-    /**
-     * <p>The identifier of the Amazon Q Business index.</p>
-     */
-    inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
-
-    /**
-     * <p>The identifier of the Amazon Q Business index.</p>
-     */
-    inline UpdateIndexRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Q Business index.</p>
-     */
-    inline UpdateIndexRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Q Business index.</p>
-     */
-    inline UpdateIndexRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
-
   private:
 
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet = false;
 
-    IndexCapacityConfiguration m_capacityConfiguration;
-    bool m_capacityConfigurationHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
+    Aws::String m_indexId;
+    bool m_indexIdHasBeenSet = false;
 
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet = false;
 
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
+
+    IndexCapacityConfiguration m_capacityConfiguration;
+    bool m_capacityConfigurationHasBeenSet = false;
+
     Aws::Vector<DocumentAttributeConfiguration> m_documentAttributeConfigurations;
     bool m_documentAttributeConfigurationsHasBeenSet = false;
-
-    Aws::String m_indexId;
-    bool m_indexIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,42 +33,6 @@ namespace Model
 
 
     /**
-     * <p> The Amazon Resource Name (ARN) of an Amazon Q Business index.</p>
-     */
-    inline const Aws::String& GetIndexArn() const{ return m_indexArn; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of an Amazon Q Business index.</p>
-     */
-    inline void SetIndexArn(const Aws::String& value) { m_indexArn = value; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of an Amazon Q Business index.</p>
-     */
-    inline void SetIndexArn(Aws::String&& value) { m_indexArn = std::move(value); }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of an Amazon Q Business index.</p>
-     */
-    inline void SetIndexArn(const char* value) { m_indexArn.assign(value); }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of an Amazon Q Business index.</p>
-     */
-    inline CreateIndexResult& WithIndexArn(const Aws::String& value) { SetIndexArn(value); return *this;}
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of an Amazon Q Business index.</p>
-     */
-    inline CreateIndexResult& WithIndexArn(Aws::String&& value) { SetIndexArn(std::move(value)); return *this;}
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of an Amazon Q Business index.</p>
-     */
-    inline CreateIndexResult& WithIndexArn(const char* value) { SetIndexArn(value); return *this;}
-
-
-    /**
      * <p>The identifier for the Amazon Q Business index.</p>
      */
     inline const Aws::String& GetIndexId() const{ return m_indexId; }
@@ -104,6 +68,42 @@ namespace Model
     inline CreateIndexResult& WithIndexId(const char* value) { SetIndexId(value); return *this;}
 
 
+    /**
+     * <p> The Amazon Resource Name (ARN) of an Amazon Q Business index.</p>
+     */
+    inline const Aws::String& GetIndexArn() const{ return m_indexArn; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of an Amazon Q Business index.</p>
+     */
+    inline void SetIndexArn(const Aws::String& value) { m_indexArn = value; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of an Amazon Q Business index.</p>
+     */
+    inline void SetIndexArn(Aws::String&& value) { m_indexArn = std::move(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of an Amazon Q Business index.</p>
+     */
+    inline void SetIndexArn(const char* value) { m_indexArn.assign(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of an Amazon Q Business index.</p>
+     */
+    inline CreateIndexResult& WithIndexArn(const Aws::String& value) { SetIndexArn(value); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of an Amazon Q Business index.</p>
+     */
+    inline CreateIndexResult& WithIndexArn(Aws::String&& value) { SetIndexArn(std::move(value)); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of an Amazon Q Business index.</p>
+     */
+    inline CreateIndexResult& WithIndexArn(const char* value) { SetIndexArn(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -127,9 +127,9 @@ namespace Model
 
   private:
 
-    Aws::String m_indexArn;
-
     Aws::String m_indexId;
+
+    Aws::String m_indexArn;
 
     Aws::String m_requestId;
   };

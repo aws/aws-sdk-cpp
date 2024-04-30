@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
+#include <aws/qbusiness/model/SnippetExcerpt.h>
+#include <utility>
 
 namespace Aws
 {
@@ -85,6 +87,43 @@ namespace Model
      */
     inline TextSegment& WithEndOffset(int value) { SetEndOffset(value); return *this;}
 
+
+    /**
+     * <p>The relevant text excerpt from a source that was used to generate a citation
+     * text segment in an Amazon Q Business chat response.</p>
+     */
+    inline const SnippetExcerpt& GetSnippetExcerpt() const{ return m_snippetExcerpt; }
+
+    /**
+     * <p>The relevant text excerpt from a source that was used to generate a citation
+     * text segment in an Amazon Q Business chat response.</p>
+     */
+    inline bool SnippetExcerptHasBeenSet() const { return m_snippetExcerptHasBeenSet; }
+
+    /**
+     * <p>The relevant text excerpt from a source that was used to generate a citation
+     * text segment in an Amazon Q Business chat response.</p>
+     */
+    inline void SetSnippetExcerpt(const SnippetExcerpt& value) { m_snippetExcerptHasBeenSet = true; m_snippetExcerpt = value; }
+
+    /**
+     * <p>The relevant text excerpt from a source that was used to generate a citation
+     * text segment in an Amazon Q Business chat response.</p>
+     */
+    inline void SetSnippetExcerpt(SnippetExcerpt&& value) { m_snippetExcerptHasBeenSet = true; m_snippetExcerpt = std::move(value); }
+
+    /**
+     * <p>The relevant text excerpt from a source that was used to generate a citation
+     * text segment in an Amazon Q Business chat response.</p>
+     */
+    inline TextSegment& WithSnippetExcerpt(const SnippetExcerpt& value) { SetSnippetExcerpt(value); return *this;}
+
+    /**
+     * <p>The relevant text excerpt from a source that was used to generate a citation
+     * text segment in an Amazon Q Business chat response.</p>
+     */
+    inline TextSegment& WithSnippetExcerpt(SnippetExcerpt&& value) { SetSnippetExcerpt(std::move(value)); return *this;}
+
   private:
 
     int m_beginOffset;
@@ -92,6 +131,9 @@ namespace Model
 
     int m_endOffset;
     bool m_endOffsetHasBeenSet = false;
+
+    SnippetExcerpt m_snippetExcerpt;
+    bool m_snippetExcerptHasBeenSet = false;
   };
 
 } // namespace Model

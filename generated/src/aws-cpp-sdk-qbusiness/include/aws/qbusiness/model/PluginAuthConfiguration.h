@@ -7,6 +7,7 @@
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/qbusiness/model/BasicAuthConfiguration.h>
 #include <aws/qbusiness/model/OAuth2ClientCredentialConfiguration.h>
+#include <aws/qbusiness/model/NoAuthConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -112,6 +113,37 @@ namespace Model
      */
     inline PluginAuthConfiguration& WithOAuth2ClientCredentialConfiguration(OAuth2ClientCredentialConfiguration&& value) { SetOAuth2ClientCredentialConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information about invoking a custom plugin without any authentication.</p>
+     */
+    inline const NoAuthConfiguration& GetNoAuthConfiguration() const{ return m_noAuthConfiguration; }
+
+    /**
+     * <p>Information about invoking a custom plugin without any authentication.</p>
+     */
+    inline bool NoAuthConfigurationHasBeenSet() const { return m_noAuthConfigurationHasBeenSet; }
+
+    /**
+     * <p>Information about invoking a custom plugin without any authentication.</p>
+     */
+    inline void SetNoAuthConfiguration(const NoAuthConfiguration& value) { m_noAuthConfigurationHasBeenSet = true; m_noAuthConfiguration = value; }
+
+    /**
+     * <p>Information about invoking a custom plugin without any authentication.</p>
+     */
+    inline void SetNoAuthConfiguration(NoAuthConfiguration&& value) { m_noAuthConfigurationHasBeenSet = true; m_noAuthConfiguration = std::move(value); }
+
+    /**
+     * <p>Information about invoking a custom plugin without any authentication.</p>
+     */
+    inline PluginAuthConfiguration& WithNoAuthConfiguration(const NoAuthConfiguration& value) { SetNoAuthConfiguration(value); return *this;}
+
+    /**
+     * <p>Information about invoking a custom plugin without any authentication.</p>
+     */
+    inline PluginAuthConfiguration& WithNoAuthConfiguration(NoAuthConfiguration&& value) { SetNoAuthConfiguration(std::move(value)); return *this;}
+
   private:
 
     BasicAuthConfiguration m_basicAuthConfiguration;
@@ -119,6 +151,9 @@ namespace Model
 
     OAuth2ClientCredentialConfiguration m_oAuth2ClientCredentialConfiguration;
     bool m_oAuth2ClientCredentialConfigurationHasBeenSet = false;
+
+    NoAuthConfiguration m_noAuthConfiguration;
+    bool m_noAuthConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

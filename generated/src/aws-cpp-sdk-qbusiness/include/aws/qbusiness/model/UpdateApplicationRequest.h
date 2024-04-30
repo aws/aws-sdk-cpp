@@ -75,75 +75,52 @@ namespace Model
 
 
     /**
-     * <p>An option to allow end users to upload files directly during chat.</p>
+     * <p> The Amazon Resource Name (ARN) of the IAM Identity Center instance you are
+     * either creating for—or connecting to—your Amazon Q Business application.</p>
      */
-    inline const AttachmentsConfiguration& GetAttachmentsConfiguration() const{ return m_attachmentsConfiguration; }
+    inline const Aws::String& GetIdentityCenterInstanceArn() const{ return m_identityCenterInstanceArn; }
 
     /**
-     * <p>An option to allow end users to upload files directly during chat.</p>
+     * <p> The Amazon Resource Name (ARN) of the IAM Identity Center instance you are
+     * either creating for—or connecting to—your Amazon Q Business application.</p>
      */
-    inline bool AttachmentsConfigurationHasBeenSet() const { return m_attachmentsConfigurationHasBeenSet; }
+    inline bool IdentityCenterInstanceArnHasBeenSet() const { return m_identityCenterInstanceArnHasBeenSet; }
 
     /**
-     * <p>An option to allow end users to upload files directly during chat.</p>
+     * <p> The Amazon Resource Name (ARN) of the IAM Identity Center instance you are
+     * either creating for—or connecting to—your Amazon Q Business application.</p>
      */
-    inline void SetAttachmentsConfiguration(const AttachmentsConfiguration& value) { m_attachmentsConfigurationHasBeenSet = true; m_attachmentsConfiguration = value; }
+    inline void SetIdentityCenterInstanceArn(const Aws::String& value) { m_identityCenterInstanceArnHasBeenSet = true; m_identityCenterInstanceArn = value; }
 
     /**
-     * <p>An option to allow end users to upload files directly during chat.</p>
+     * <p> The Amazon Resource Name (ARN) of the IAM Identity Center instance you are
+     * either creating for—or connecting to—your Amazon Q Business application.</p>
      */
-    inline void SetAttachmentsConfiguration(AttachmentsConfiguration&& value) { m_attachmentsConfigurationHasBeenSet = true; m_attachmentsConfiguration = std::move(value); }
+    inline void SetIdentityCenterInstanceArn(Aws::String&& value) { m_identityCenterInstanceArnHasBeenSet = true; m_identityCenterInstanceArn = std::move(value); }
 
     /**
-     * <p>An option to allow end users to upload files directly during chat.</p>
+     * <p> The Amazon Resource Name (ARN) of the IAM Identity Center instance you are
+     * either creating for—or connecting to—your Amazon Q Business application.</p>
      */
-    inline UpdateApplicationRequest& WithAttachmentsConfiguration(const AttachmentsConfiguration& value) { SetAttachmentsConfiguration(value); return *this;}
+    inline void SetIdentityCenterInstanceArn(const char* value) { m_identityCenterInstanceArnHasBeenSet = true; m_identityCenterInstanceArn.assign(value); }
 
     /**
-     * <p>An option to allow end users to upload files directly during chat.</p>
+     * <p> The Amazon Resource Name (ARN) of the IAM Identity Center instance you are
+     * either creating for—or connecting to—your Amazon Q Business application.</p>
      */
-    inline UpdateApplicationRequest& WithAttachmentsConfiguration(AttachmentsConfiguration&& value) { SetAttachmentsConfiguration(std::move(value)); return *this;}
-
-
-    /**
-     * <p>A description for the Amazon Q Business application.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline UpdateApplicationRequest& WithIdentityCenterInstanceArn(const Aws::String& value) { SetIdentityCenterInstanceArn(value); return *this;}
 
     /**
-     * <p>A description for the Amazon Q Business application.</p>
+     * <p> The Amazon Resource Name (ARN) of the IAM Identity Center instance you are
+     * either creating for—or connecting to—your Amazon Q Business application.</p>
      */
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    inline UpdateApplicationRequest& WithIdentityCenterInstanceArn(Aws::String&& value) { SetIdentityCenterInstanceArn(std::move(value)); return *this;}
 
     /**
-     * <p>A description for the Amazon Q Business application.</p>
+     * <p> The Amazon Resource Name (ARN) of the IAM Identity Center instance you are
+     * either creating for—or connecting to—your Amazon Q Business application.</p>
      */
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>A description for the Amazon Q Business application.</p>
-     */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>A description for the Amazon Q Business application.</p>
-     */
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>A description for the Amazon Q Business application.</p>
-     */
-    inline UpdateApplicationRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A description for the Amazon Q Business application.</p>
-     */
-    inline UpdateApplicationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A description for the Amazon Q Business application.</p>
-     */
-    inline UpdateApplicationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline UpdateApplicationRequest& WithIdentityCenterInstanceArn(const char* value) { SetIdentityCenterInstanceArn(value); return *this;}
 
 
     /**
@@ -185,6 +162,47 @@ namespace Model
      * <p>A name for the Amazon Q Business application.</p>
      */
     inline UpdateApplicationRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+
+
+    /**
+     * <p>A description for the Amazon Q Business application.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description for the Amazon Q Business application.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description for the Amazon Q Business application.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>A description for the Amazon Q Business application.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>A description for the Amazon Q Business application.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>A description for the Amazon Q Business application.</p>
+     */
+    inline UpdateApplicationRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>A description for the Amazon Q Business application.</p>
+     */
+    inline UpdateApplicationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>A description for the Amazon Q Business application.</p>
+     */
+    inline UpdateApplicationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
@@ -235,22 +253,56 @@ namespace Model
      */
     inline UpdateApplicationRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
+    /**
+     * <p>An option to allow end users to upload files directly during chat.</p>
+     */
+    inline const AttachmentsConfiguration& GetAttachmentsConfiguration() const{ return m_attachmentsConfiguration; }
+
+    /**
+     * <p>An option to allow end users to upload files directly during chat.</p>
+     */
+    inline bool AttachmentsConfigurationHasBeenSet() const { return m_attachmentsConfigurationHasBeenSet; }
+
+    /**
+     * <p>An option to allow end users to upload files directly during chat.</p>
+     */
+    inline void SetAttachmentsConfiguration(const AttachmentsConfiguration& value) { m_attachmentsConfigurationHasBeenSet = true; m_attachmentsConfiguration = value; }
+
+    /**
+     * <p>An option to allow end users to upload files directly during chat.</p>
+     */
+    inline void SetAttachmentsConfiguration(AttachmentsConfiguration&& value) { m_attachmentsConfigurationHasBeenSet = true; m_attachmentsConfiguration = std::move(value); }
+
+    /**
+     * <p>An option to allow end users to upload files directly during chat.</p>
+     */
+    inline UpdateApplicationRequest& WithAttachmentsConfiguration(const AttachmentsConfiguration& value) { SetAttachmentsConfiguration(value); return *this;}
+
+    /**
+     * <p>An option to allow end users to upload files directly during chat.</p>
+     */
+    inline UpdateApplicationRequest& WithAttachmentsConfiguration(AttachmentsConfiguration&& value) { SetAttachmentsConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet = false;
 
-    AttachmentsConfiguration m_attachmentsConfiguration;
-    bool m_attachmentsConfigurationHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
+    Aws::String m_identityCenterInstanceArn;
+    bool m_identityCenterInstanceArnHasBeenSet = false;
 
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet = false;
 
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
+
+    AttachmentsConfiguration m_attachmentsConfiguration;
+    bool m_attachmentsConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

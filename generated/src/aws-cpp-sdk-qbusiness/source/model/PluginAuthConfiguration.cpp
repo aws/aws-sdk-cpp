@@ -20,13 +20,15 @@ namespace Model
 
 PluginAuthConfiguration::PluginAuthConfiguration() : 
     m_basicAuthConfigurationHasBeenSet(false),
-    m_oAuth2ClientCredentialConfigurationHasBeenSet(false)
+    m_oAuth2ClientCredentialConfigurationHasBeenSet(false),
+    m_noAuthConfigurationHasBeenSet(false)
 {
 }
 
 PluginAuthConfiguration::PluginAuthConfiguration(JsonView jsonValue) : 
     m_basicAuthConfigurationHasBeenSet(false),
-    m_oAuth2ClientCredentialConfigurationHasBeenSet(false)
+    m_oAuth2ClientCredentialConfigurationHasBeenSet(false),
+    m_noAuthConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ PluginAuthConfiguration& PluginAuthConfiguration::operator =(JsonView jsonValue)
     m_oAuth2ClientCredentialConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("noAuthConfiguration"))
+  {
+    m_noAuthConfiguration = jsonValue.GetObject("noAuthConfiguration");
+
+    m_noAuthConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue PluginAuthConfiguration::Jsonize() const
   if(m_oAuth2ClientCredentialConfigurationHasBeenSet)
   {
    payload.WithObject("oAuth2ClientCredentialConfiguration", m_oAuth2ClientCredentialConfiguration.Jsonize());
+
+  }
+
+  if(m_noAuthConfigurationHasBeenSet)
+  {
+   payload.WithObject("noAuthConfiguration", m_noAuthConfiguration.Jsonize());
 
   }
 

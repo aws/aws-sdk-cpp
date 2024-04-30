@@ -88,6 +88,55 @@ namespace Model
 
 
     /**
+     * <p>The current count of documents modified in the data source during the data
+     * source sync.</p>
+     */
+    inline const Aws::String& GetDocumentsModified() const{ return m_documentsModified; }
+
+    /**
+     * <p>The current count of documents modified in the data source during the data
+     * source sync.</p>
+     */
+    inline bool DocumentsModifiedHasBeenSet() const { return m_documentsModifiedHasBeenSet; }
+
+    /**
+     * <p>The current count of documents modified in the data source during the data
+     * source sync.</p>
+     */
+    inline void SetDocumentsModified(const Aws::String& value) { m_documentsModifiedHasBeenSet = true; m_documentsModified = value; }
+
+    /**
+     * <p>The current count of documents modified in the data source during the data
+     * source sync.</p>
+     */
+    inline void SetDocumentsModified(Aws::String&& value) { m_documentsModifiedHasBeenSet = true; m_documentsModified = std::move(value); }
+
+    /**
+     * <p>The current count of documents modified in the data source during the data
+     * source sync.</p>
+     */
+    inline void SetDocumentsModified(const char* value) { m_documentsModifiedHasBeenSet = true; m_documentsModified.assign(value); }
+
+    /**
+     * <p>The current count of documents modified in the data source during the data
+     * source sync.</p>
+     */
+    inline DataSourceSyncJobMetrics& WithDocumentsModified(const Aws::String& value) { SetDocumentsModified(value); return *this;}
+
+    /**
+     * <p>The current count of documents modified in the data source during the data
+     * source sync.</p>
+     */
+    inline DataSourceSyncJobMetrics& WithDocumentsModified(Aws::String&& value) { SetDocumentsModified(std::move(value)); return *this;}
+
+    /**
+     * <p>The current count of documents modified in the data source during the data
+     * source sync.</p>
+     */
+    inline DataSourceSyncJobMetrics& WithDocumentsModified(const char* value) { SetDocumentsModified(value); return *this;}
+
+
+    /**
      * <p>The current count of documents deleted from the data source during the data
      * source sync.</p>
      */
@@ -186,55 +235,6 @@ namespace Model
 
 
     /**
-     * <p>The current count of documents modified in the data source during the data
-     * source sync.</p>
-     */
-    inline const Aws::String& GetDocumentsModified() const{ return m_documentsModified; }
-
-    /**
-     * <p>The current count of documents modified in the data source during the data
-     * source sync.</p>
-     */
-    inline bool DocumentsModifiedHasBeenSet() const { return m_documentsModifiedHasBeenSet; }
-
-    /**
-     * <p>The current count of documents modified in the data source during the data
-     * source sync.</p>
-     */
-    inline void SetDocumentsModified(const Aws::String& value) { m_documentsModifiedHasBeenSet = true; m_documentsModified = value; }
-
-    /**
-     * <p>The current count of documents modified in the data source during the data
-     * source sync.</p>
-     */
-    inline void SetDocumentsModified(Aws::String&& value) { m_documentsModifiedHasBeenSet = true; m_documentsModified = std::move(value); }
-
-    /**
-     * <p>The current count of documents modified in the data source during the data
-     * source sync.</p>
-     */
-    inline void SetDocumentsModified(const char* value) { m_documentsModifiedHasBeenSet = true; m_documentsModified.assign(value); }
-
-    /**
-     * <p>The current count of documents modified in the data source during the data
-     * source sync.</p>
-     */
-    inline DataSourceSyncJobMetrics& WithDocumentsModified(const Aws::String& value) { SetDocumentsModified(value); return *this;}
-
-    /**
-     * <p>The current count of documents modified in the data source during the data
-     * source sync.</p>
-     */
-    inline DataSourceSyncJobMetrics& WithDocumentsModified(Aws::String&& value) { SetDocumentsModified(std::move(value)); return *this;}
-
-    /**
-     * <p>The current count of documents modified in the data source during the data
-     * source sync.</p>
-     */
-    inline DataSourceSyncJobMetrics& WithDocumentsModified(const char* value) { SetDocumentsModified(value); return *this;}
-
-
-    /**
      * <p>The current count of documents crawled by the ongoing sync job in the data
      * source.</p>
      */
@@ -287,14 +287,14 @@ namespace Model
     Aws::String m_documentsAdded;
     bool m_documentsAddedHasBeenSet = false;
 
+    Aws::String m_documentsModified;
+    bool m_documentsModifiedHasBeenSet = false;
+
     Aws::String m_documentsDeleted;
     bool m_documentsDeletedHasBeenSet = false;
 
     Aws::String m_documentsFailed;
     bool m_documentsFailedHasBeenSet = false;
-
-    Aws::String m_documentsModified;
-    bool m_documentsModifiedHasBeenSet = false;
 
     Aws::String m_documentsScanned;
     bool m_documentsScannedHasBeenSet = false;

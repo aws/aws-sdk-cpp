@@ -20,29 +20,29 @@ namespace Model
 
 AttributeFilter::AttributeFilter() : 
     m_andAllFiltersHasBeenSet(false),
+    m_orAllFiltersHasBeenSet(false),
+    m_notFilterHasBeenSet(false),
+    m_equalsToHasBeenSet(false),
     m_containsAllHasBeenSet(false),
     m_containsAnyHasBeenSet(false),
-    m_equalsToHasBeenSet(false),
     m_greaterThanHasBeenSet(false),
     m_greaterThanOrEqualsHasBeenSet(false),
     m_lessThanHasBeenSet(false),
-    m_lessThanOrEqualsHasBeenSet(false),
-    m_notFilterHasBeenSet(false),
-    m_orAllFiltersHasBeenSet(false)
+    m_lessThanOrEqualsHasBeenSet(false)
 {
 }
 
 AttributeFilter::AttributeFilter(JsonView jsonValue) : 
     m_andAllFiltersHasBeenSet(false),
+    m_orAllFiltersHasBeenSet(false),
+    m_notFilterHasBeenSet(false),
+    m_equalsToHasBeenSet(false),
     m_containsAllHasBeenSet(false),
     m_containsAnyHasBeenSet(false),
-    m_equalsToHasBeenSet(false),
     m_greaterThanHasBeenSet(false),
     m_greaterThanOrEqualsHasBeenSet(false),
     m_lessThanHasBeenSet(false),
-    m_lessThanOrEqualsHasBeenSet(false),
-    m_notFilterHasBeenSet(false),
-    m_orAllFiltersHasBeenSet(false)
+    m_lessThanOrEqualsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -66,6 +66,30 @@ AttributeFilter& AttributeFilter::operator =(JsonView jsonValue)
     m_andAllFiltersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("orAllFilters"))
+  {
+    Aws::Utils::Array<JsonView> orAllFiltersJsonList = jsonValue.GetArray("orAllFilters");
+    for(unsigned orAllFiltersIndex = 0; orAllFiltersIndex < orAllFiltersJsonList.GetLength(); ++orAllFiltersIndex)
+    {
+      m_orAllFilters.push_back(orAllFiltersJsonList[orAllFiltersIndex].AsObject());
+    }
+    m_orAllFiltersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("notFilter"))
+  {
+    m_notFilter = Aws::MakeShared<AttributeFilter>("AttributeFilter", jsonValue.GetObject("notFilter"));
+
+    m_notFilterHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("equalsTo"))
+  {
+    m_equalsTo = jsonValue.GetObject("equalsTo");
+
+    m_equalsToHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("containsAll"))
   {
     m_containsAll = jsonValue.GetObject("containsAll");
@@ -78,13 +102,6 @@ AttributeFilter& AttributeFilter::operator =(JsonView jsonValue)
     m_containsAny = jsonValue.GetObject("containsAny");
 
     m_containsAnyHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("equalsTo"))
-  {
-    m_equalsTo = jsonValue.GetObject("equalsTo");
-
-    m_equalsToHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("greaterThan"))
@@ -115,23 +132,6 @@ AttributeFilter& AttributeFilter::operator =(JsonView jsonValue)
     m_lessThanOrEqualsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("notFilter"))
-  {
-    m_notFilter = Aws::MakeShared<AttributeFilter>("AttributeFilter", jsonValue.GetObject("notFilter"));
-
-    m_notFilterHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("orAllFilters"))
-  {
-    Aws::Utils::Array<JsonView> orAllFiltersJsonList = jsonValue.GetArray("orAllFilters");
-    for(unsigned orAllFiltersIndex = 0; orAllFiltersIndex < orAllFiltersJsonList.GetLength(); ++orAllFiltersIndex)
-    {
-      m_orAllFilters.push_back(orAllFiltersJsonList[orAllFiltersIndex].AsObject());
-    }
-    m_orAllFiltersHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -150,6 +150,29 @@ JsonValue AttributeFilter::Jsonize() const
 
   }
 
+  if(m_orAllFiltersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> orAllFiltersJsonList(m_orAllFilters.size());
+   for(unsigned orAllFiltersIndex = 0; orAllFiltersIndex < orAllFiltersJsonList.GetLength(); ++orAllFiltersIndex)
+   {
+     orAllFiltersJsonList[orAllFiltersIndex].AsObject(m_orAllFilters[orAllFiltersIndex].Jsonize());
+   }
+   payload.WithArray("orAllFilters", std::move(orAllFiltersJsonList));
+
+  }
+
+  if(m_notFilterHasBeenSet)
+  {
+   payload.WithObject("notFilter", m_notFilter->Jsonize());
+
+  }
+
+  if(m_equalsToHasBeenSet)
+  {
+   payload.WithObject("equalsTo", m_equalsTo.Jsonize());
+
+  }
+
   if(m_containsAllHasBeenSet)
   {
    payload.WithObject("containsAll", m_containsAll.Jsonize());
@@ -159,12 +182,6 @@ JsonValue AttributeFilter::Jsonize() const
   if(m_containsAnyHasBeenSet)
   {
    payload.WithObject("containsAny", m_containsAny.Jsonize());
-
-  }
-
-  if(m_equalsToHasBeenSet)
-  {
-   payload.WithObject("equalsTo", m_equalsTo.Jsonize());
 
   }
 
@@ -189,23 +206,6 @@ JsonValue AttributeFilter::Jsonize() const
   if(m_lessThanOrEqualsHasBeenSet)
   {
    payload.WithObject("lessThanOrEquals", m_lessThanOrEquals.Jsonize());
-
-  }
-
-  if(m_notFilterHasBeenSet)
-  {
-   payload.WithObject("notFilter", m_notFilter->Jsonize());
-
-  }
-
-  if(m_orAllFiltersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> orAllFiltersJsonList(m_orAllFilters.size());
-   for(unsigned orAllFiltersIndex = 0; orAllFiltersIndex < orAllFiltersJsonList.GetLength(); ++orAllFiltersIndex)
-   {
-     orAllFiltersJsonList[orAllFiltersIndex].AsObject(m_orAllFilters[orAllFiltersIndex].Jsonize());
-   }
-   payload.WithArray("orAllFilters", std::move(orAllFiltersJsonList));
 
   }
 

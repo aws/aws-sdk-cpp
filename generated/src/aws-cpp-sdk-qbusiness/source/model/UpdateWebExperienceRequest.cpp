@@ -14,13 +14,13 @@ using namespace Aws::Utils;
 
 UpdateWebExperienceRequest::UpdateWebExperienceRequest() : 
     m_applicationIdHasBeenSet(false),
-    m_authenticationConfigurationHasBeenSet(false),
-    m_samplePromptsControlMode(WebExperienceSamplePromptsControlMode::NOT_SET),
-    m_samplePromptsControlModeHasBeenSet(false),
-    m_subtitleHasBeenSet(false),
-    m_titleHasBeenSet(false),
     m_webExperienceIdHasBeenSet(false),
-    m_welcomeMessageHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_titleHasBeenSet(false),
+    m_subtitleHasBeenSet(false),
+    m_welcomeMessageHasBeenSet(false),
+    m_samplePromptsControlMode(WebExperienceSamplePromptsControlMode::NOT_SET),
+    m_samplePromptsControlModeHasBeenSet(false)
 {
 }
 
@@ -28,20 +28,9 @@ Aws::String UpdateWebExperienceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_authenticationConfigurationHasBeenSet)
+  if(m_roleArnHasBeenSet)
   {
-   payload.WithObject("authenticationConfiguration", m_authenticationConfiguration.Jsonize());
-
-  }
-
-  if(m_samplePromptsControlModeHasBeenSet)
-  {
-   payload.WithString("samplePromptsControlMode", WebExperienceSamplePromptsControlModeMapper::GetNameForWebExperienceSamplePromptsControlMode(m_samplePromptsControlMode));
-  }
-
-  if(m_subtitleHasBeenSet)
-  {
-   payload.WithString("subtitle", m_subtitle);
+   payload.WithString("roleArn", m_roleArn);
 
   }
 
@@ -51,10 +40,21 @@ Aws::String UpdateWebExperienceRequest::SerializePayload() const
 
   }
 
+  if(m_subtitleHasBeenSet)
+  {
+   payload.WithString("subtitle", m_subtitle);
+
+  }
+
   if(m_welcomeMessageHasBeenSet)
   {
    payload.WithString("welcomeMessage", m_welcomeMessage);
 
+  }
+
+  if(m_samplePromptsControlModeHasBeenSet)
+  {
+   payload.WithString("samplePromptsControlMode", WebExperienceSamplePromptsControlModeMapper::GetNameForWebExperienceSamplePromptsControlMode(m_samplePromptsControlMode));
   }
 
   return payload.View().WriteReadable();

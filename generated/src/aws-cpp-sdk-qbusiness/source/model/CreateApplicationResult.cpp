@@ -29,15 +29,15 @@ CreateApplicationResult::CreateApplicationResult(const Aws::AmazonWebServiceResu
 CreateApplicationResult& CreateApplicationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("applicationArn"))
-  {
-    m_applicationArn = jsonValue.GetString("applicationArn");
-
-  }
-
   if(jsonValue.ValueExists("applicationId"))
   {
     m_applicationId = jsonValue.GetString("applicationId");
+
+  }
+
+  if(jsonValue.ValueExists("applicationArn"))
+  {
+    m_applicationArn = jsonValue.GetString("applicationArn");
 
   }
 

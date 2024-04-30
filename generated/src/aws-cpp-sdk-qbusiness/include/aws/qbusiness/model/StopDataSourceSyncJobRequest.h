@@ -33,6 +33,47 @@ namespace Model
 
 
     /**
+     * <p> The identifier of the data source connector. </p>
+     */
+    inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
+
+    /**
+     * <p> The identifier of the data source connector. </p>
+     */
+    inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
+
+    /**
+     * <p> The identifier of the data source connector. </p>
+     */
+    inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
+
+    /**
+     * <p> The identifier of the data source connector. </p>
+     */
+    inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::move(value); }
+
+    /**
+     * <p> The identifier of the data source connector. </p>
+     */
+    inline void SetDataSourceId(const char* value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId.assign(value); }
+
+    /**
+     * <p> The identifier of the data source connector. </p>
+     */
+    inline StopDataSourceSyncJobRequest& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
+
+    /**
+     * <p> The identifier of the data source connector. </p>
+     */
+    inline StopDataSourceSyncJobRequest& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
+
+    /**
+     * <p> The identifier of the data source connector. </p>
+     */
+    inline StopDataSourceSyncJobRequest& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
+
+
+    /**
      * <p>The identifier of the Amazon Q Business application that the data source is
      * connected to.</p>
      */
@@ -79,47 +120,6 @@ namespace Model
      * connected to.</p>
      */
     inline StopDataSourceSyncJobRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
-
-
-    /**
-     * <p> The identifier of the data source connector. </p>
-     */
-    inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
-
-    /**
-     * <p> The identifier of the data source connector. </p>
-     */
-    inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
-
-    /**
-     * <p> The identifier of the data source connector. </p>
-     */
-    inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
-
-    /**
-     * <p> The identifier of the data source connector. </p>
-     */
-    inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::move(value); }
-
-    /**
-     * <p> The identifier of the data source connector. </p>
-     */
-    inline void SetDataSourceId(const char* value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId.assign(value); }
-
-    /**
-     * <p> The identifier of the data source connector. </p>
-     */
-    inline StopDataSourceSyncJobRequest& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
-
-    /**
-     * <p> The identifier of the data source connector. </p>
-     */
-    inline StopDataSourceSyncJobRequest& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
-
-    /**
-     * <p> The identifier of the data source connector. </p>
-     */
-    inline StopDataSourceSyncJobRequest& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
 
 
     /**
@@ -172,11 +172,11 @@ namespace Model
 
   private:
 
-    Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet = false;
-
     Aws::String m_dataSourceId;
     bool m_dataSourceIdHasBeenSet = false;
+
+    Aws::String m_applicationId;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_indexId;
     bool m_indexIdHasBeenSet = false;

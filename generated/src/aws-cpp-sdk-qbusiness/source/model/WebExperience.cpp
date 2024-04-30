@@ -19,33 +19,47 @@ namespace Model
 {
 
 WebExperience::WebExperience() : 
+    m_webExperienceIdHasBeenSet(false),
     m_createdAtHasBeenSet(false),
+    m_updatedAtHasBeenSet(false),
     m_defaultEndpointHasBeenSet(false),
     m_status(WebExperienceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_webExperienceIdHasBeenSet(false)
+    m_statusHasBeenSet(false)
 {
 }
 
 WebExperience::WebExperience(JsonView jsonValue) : 
+    m_webExperienceIdHasBeenSet(false),
     m_createdAtHasBeenSet(false),
+    m_updatedAtHasBeenSet(false),
     m_defaultEndpointHasBeenSet(false),
     m_status(WebExperienceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_webExperienceIdHasBeenSet(false)
+    m_statusHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 WebExperience& WebExperience::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("webExperienceId"))
+  {
+    m_webExperienceId = jsonValue.GetString("webExperienceId");
+
+    m_webExperienceIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
 
     m_createdAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("updatedAt"))
+  {
+    m_updatedAt = jsonValue.GetDouble("updatedAt");
+
+    m_updatedAtHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("defaultEndpoint"))
@@ -62,20 +76,6 @@ WebExperience& WebExperience::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("updatedAt"))
-  {
-    m_updatedAt = jsonValue.GetDouble("updatedAt");
-
-    m_updatedAtHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("webExperienceId"))
-  {
-    m_webExperienceId = jsonValue.GetString("webExperienceId");
-
-    m_webExperienceIdHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -83,9 +83,20 @@ JsonValue WebExperience::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_webExperienceIdHasBeenSet)
+  {
+   payload.WithString("webExperienceId", m_webExperienceId);
+
+  }
+
   if(m_createdAtHasBeenSet)
   {
    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  }
+
+  if(m_updatedAtHasBeenSet)
+  {
+   payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
   }
 
   if(m_defaultEndpointHasBeenSet)
@@ -97,17 +108,6 @@ JsonValue WebExperience::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", WebExperienceStatusMapper::GetNameForWebExperienceStatus(m_status));
-  }
-
-  if(m_updatedAtHasBeenSet)
-  {
-   payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
-  }
-
-  if(m_webExperienceIdHasBeenSet)
-  {
-   payload.WithString("webExperienceId", m_webExperienceId);
-
   }
 
   return payload;

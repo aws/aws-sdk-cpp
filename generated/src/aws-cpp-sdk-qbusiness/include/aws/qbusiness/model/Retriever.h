@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/qbusiness/model/RetrieverStatus.h>
 #include <aws/qbusiness/model/RetrieverType.h>
+#include <aws/qbusiness/model/RetrieverStatus.h>
 #include <utility>
 
 namespace Aws
@@ -82,47 +82,6 @@ namespace Model
 
 
     /**
-     * <p>The name of your retriever.</p>
-     */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
-
-    /**
-     * <p>The name of your retriever.</p>
-     */
-    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-
-    /**
-     * <p>The name of your retriever.</p>
-     */
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-
-    /**
-     * <p>The name of your retriever.</p>
-     */
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-
-    /**
-     * <p>The name of your retriever.</p>
-     */
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-
-    /**
-     * <p>The name of your retriever.</p>
-     */
-    inline Retriever& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-
-    /**
-     * <p>The name of your retriever.</p>
-     */
-    inline Retriever& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of your retriever.</p>
-     */
-    inline Retriever& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
-
-
-    /**
      * <p>The identifier of the retriever used by your Amazon Q Business
      * application.</p>
      */
@@ -172,6 +131,37 @@ namespace Model
 
 
     /**
+     * <p>The type of your retriever.</p>
+     */
+    inline const RetrieverType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of your retriever.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of your retriever.</p>
+     */
+    inline void SetType(const RetrieverType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The type of your retriever.</p>
+     */
+    inline void SetType(RetrieverType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>The type of your retriever.</p>
+     */
+    inline Retriever& WithType(const RetrieverType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The type of your retriever.</p>
+     */
+    inline Retriever& WithType(RetrieverType&& value) { SetType(std::move(value)); return *this;}
+
+
+    /**
      * <p>The status of your retriever.</p>
      */
     inline const RetrieverStatus& GetStatus() const{ return m_status; }
@@ -203,51 +193,61 @@ namespace Model
 
 
     /**
-     * <p>The type of your retriever.</p>
+     * <p>The name of your retriever.</p>
      */
-    inline const RetrieverType& GetType() const{ return m_type; }
+    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
     /**
-     * <p>The type of your retriever.</p>
+     * <p>The name of your retriever.</p>
      */
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
 
     /**
-     * <p>The type of your retriever.</p>
+     * <p>The name of your retriever.</p>
      */
-    inline void SetType(const RetrieverType& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
-     * <p>The type of your retriever.</p>
+     * <p>The name of your retriever.</p>
      */
-    inline void SetType(RetrieverType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
-     * <p>The type of your retriever.</p>
+     * <p>The name of your retriever.</p>
      */
-    inline Retriever& WithType(const RetrieverType& value) { SetType(value); return *this;}
+    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
     /**
-     * <p>The type of your retriever.</p>
+     * <p>The name of your retriever.</p>
      */
-    inline Retriever& WithType(RetrieverType&& value) { SetType(std::move(value)); return *this;}
+    inline Retriever& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
+
+    /**
+     * <p>The name of your retriever.</p>
+     */
+    inline Retriever& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of your retriever.</p>
+     */
+    inline Retriever& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
   private:
 
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet = false;
 
-    Aws::String m_displayName;
-    bool m_displayNameHasBeenSet = false;
-
     Aws::String m_retrieverId;
     bool m_retrieverIdHasBeenSet = false;
+
+    RetrieverType m_type;
+    bool m_typeHasBeenSet = false;
 
     RetrieverStatus m_status;
     bool m_statusHasBeenSet = false;
 
-    RetrieverType m_type;
-    bool m_typeHasBeenSet = false;
+    Aws::String m_displayName;
+    bool m_displayNameHasBeenSet = false;
   };
 
 } // namespace Model

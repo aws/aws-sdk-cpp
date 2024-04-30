@@ -197,37 +197,37 @@ namespace Model
 
     /**
      * <p>An object that contains information about an event destination for logging to
-     * Amazon CloudWatch logs.</p>
+     * Amazon CloudWatch Logs.</p>
      */
     inline const CloudWatchLogsDestination& GetCloudWatchLogsDestination() const{ return m_cloudWatchLogsDestination; }
 
     /**
      * <p>An object that contains information about an event destination for logging to
-     * Amazon CloudWatch logs.</p>
+     * Amazon CloudWatch Logs.</p>
      */
     inline bool CloudWatchLogsDestinationHasBeenSet() const { return m_cloudWatchLogsDestinationHasBeenSet; }
 
     /**
      * <p>An object that contains information about an event destination for logging to
-     * Amazon CloudWatch logs.</p>
+     * Amazon CloudWatch Logs.</p>
      */
     inline void SetCloudWatchLogsDestination(const CloudWatchLogsDestination& value) { m_cloudWatchLogsDestinationHasBeenSet = true; m_cloudWatchLogsDestination = value; }
 
     /**
      * <p>An object that contains information about an event destination for logging to
-     * Amazon CloudWatch logs.</p>
+     * Amazon CloudWatch Logs.</p>
      */
     inline void SetCloudWatchLogsDestination(CloudWatchLogsDestination&& value) { m_cloudWatchLogsDestinationHasBeenSet = true; m_cloudWatchLogsDestination = std::move(value); }
 
     /**
      * <p>An object that contains information about an event destination for logging to
-     * Amazon CloudWatch logs.</p>
+     * Amazon CloudWatch Logs.</p>
      */
     inline CreateEventDestinationRequest& WithCloudWatchLogsDestination(const CloudWatchLogsDestination& value) { SetCloudWatchLogsDestination(value); return *this;}
 
     /**
      * <p>An object that contains information about an event destination for logging to
-     * Amazon CloudWatch logs.</p>
+     * Amazon CloudWatch Logs.</p>
      */
     inline CreateEventDestinationRequest& WithCloudWatchLogsDestination(CloudWatchLogsDestination&& value) { SetCloudWatchLogsDestination(std::move(value)); return *this;}
 

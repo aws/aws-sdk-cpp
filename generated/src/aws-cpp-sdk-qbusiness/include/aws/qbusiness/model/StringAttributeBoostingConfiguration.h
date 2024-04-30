@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/qbusiness/model/DocumentAttributeBoostingLevel.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qbusiness/model/StringAttributeValueBoostingLevel.h>
 #include <utility>
@@ -50,6 +50,37 @@ namespace Model
     AWS_QBUSINESS_API StringAttributeBoostingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API StringAttributeBoostingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>Specifies how much a document attribute is boosted.</p>
+     */
+    inline const DocumentAttributeBoostingLevel& GetBoostingLevel() const{ return m_boostingLevel; }
+
+    /**
+     * <p>Specifies how much a document attribute is boosted.</p>
+     */
+    inline bool BoostingLevelHasBeenSet() const { return m_boostingLevelHasBeenSet; }
+
+    /**
+     * <p>Specifies how much a document attribute is boosted.</p>
+     */
+    inline void SetBoostingLevel(const DocumentAttributeBoostingLevel& value) { m_boostingLevelHasBeenSet = true; m_boostingLevel = value; }
+
+    /**
+     * <p>Specifies how much a document attribute is boosted.</p>
+     */
+    inline void SetBoostingLevel(DocumentAttributeBoostingLevel&& value) { m_boostingLevelHasBeenSet = true; m_boostingLevel = std::move(value); }
+
+    /**
+     * <p>Specifies how much a document attribute is boosted.</p>
+     */
+    inline StringAttributeBoostingConfiguration& WithBoostingLevel(const DocumentAttributeBoostingLevel& value) { SetBoostingLevel(value); return *this;}
+
+    /**
+     * <p>Specifies how much a document attribute is boosted.</p>
+     */
+    inline StringAttributeBoostingConfiguration& WithBoostingLevel(DocumentAttributeBoostingLevel&& value) { SetBoostingLevel(std::move(value)); return *this;}
 
 
     /**
@@ -124,44 +155,13 @@ namespace Model
      */
     inline StringAttributeBoostingConfiguration& AddAttributeValueBoosting(const char* key, const StringAttributeValueBoostingLevel& value) { m_attributeValueBoostingHasBeenSet = true; m_attributeValueBoosting.emplace(key, value); return *this; }
 
-
-    /**
-     * <p>Specifies how much a document attribute is boosted.</p>
-     */
-    inline const DocumentAttributeBoostingLevel& GetBoostingLevel() const{ return m_boostingLevel; }
-
-    /**
-     * <p>Specifies how much a document attribute is boosted.</p>
-     */
-    inline bool BoostingLevelHasBeenSet() const { return m_boostingLevelHasBeenSet; }
-
-    /**
-     * <p>Specifies how much a document attribute is boosted.</p>
-     */
-    inline void SetBoostingLevel(const DocumentAttributeBoostingLevel& value) { m_boostingLevelHasBeenSet = true; m_boostingLevel = value; }
-
-    /**
-     * <p>Specifies how much a document attribute is boosted.</p>
-     */
-    inline void SetBoostingLevel(DocumentAttributeBoostingLevel&& value) { m_boostingLevelHasBeenSet = true; m_boostingLevel = std::move(value); }
-
-    /**
-     * <p>Specifies how much a document attribute is boosted.</p>
-     */
-    inline StringAttributeBoostingConfiguration& WithBoostingLevel(const DocumentAttributeBoostingLevel& value) { SetBoostingLevel(value); return *this;}
-
-    /**
-     * <p>Specifies how much a document attribute is boosted.</p>
-     */
-    inline StringAttributeBoostingConfiguration& WithBoostingLevel(DocumentAttributeBoostingLevel&& value) { SetBoostingLevel(std::move(value)); return *this;}
-
   private:
-
-    Aws::Map<Aws::String, StringAttributeValueBoostingLevel> m_attributeValueBoosting;
-    bool m_attributeValueBoostingHasBeenSet = false;
 
     DocumentAttributeBoostingLevel m_boostingLevel;
     bool m_boostingLevelHasBeenSet = false;
+
+    Aws::Map<Aws::String, StringAttributeValueBoostingLevel> m_attributeValueBoosting;
+    bool m_attributeValueBoostingHasBeenSet = false;
   };
 
 } // namespace Model

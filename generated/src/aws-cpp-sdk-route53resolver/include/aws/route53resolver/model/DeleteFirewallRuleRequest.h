@@ -137,7 +137,11 @@ namespace Model
      * the zone.</p> </li> <li> <p>SPF: Lists the servers authorized to send emails
      * from a domain.</p> </li> <li> <p>SRV: Application specific values that identify
      * servers.</p> </li> <li> <p>TXT: Verifies email senders and application-specific
-     * values.</p> </li> </ul>
+     * values.</p> </li> <li> <p>A query type you define by using the DNS type ID, for
+     * example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER
+     * can be 1-65334, for example, TYPE28. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record
+     * types</a>.</p> </li> </ul>
      */
     inline const Aws::String& GetQtype() const{ return m_qtype; }
 
@@ -154,7 +158,11 @@ namespace Model
      * the zone.</p> </li> <li> <p>SPF: Lists the servers authorized to send emails
      * from a domain.</p> </li> <li> <p>SRV: Application specific values that identify
      * servers.</p> </li> <li> <p>TXT: Verifies email senders and application-specific
-     * values.</p> </li> </ul>
+     * values.</p> </li> <li> <p>A query type you define by using the DNS type ID, for
+     * example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER
+     * can be 1-65334, for example, TYPE28. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record
+     * types</a>.</p> </li> </ul>
      */
     inline bool QtypeHasBeenSet() const { return m_qtypeHasBeenSet; }
 
@@ -171,7 +179,11 @@ namespace Model
      * the zone.</p> </li> <li> <p>SPF: Lists the servers authorized to send emails
      * from a domain.</p> </li> <li> <p>SRV: Application specific values that identify
      * servers.</p> </li> <li> <p>TXT: Verifies email senders and application-specific
-     * values.</p> </li> </ul>
+     * values.</p> </li> <li> <p>A query type you define by using the DNS type ID, for
+     * example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER
+     * can be 1-65334, for example, TYPE28. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record
+     * types</a>.</p> </li> </ul>
      */
     inline void SetQtype(const Aws::String& value) { m_qtypeHasBeenSet = true; m_qtype = value; }
 
@@ -188,7 +200,11 @@ namespace Model
      * the zone.</p> </li> <li> <p>SPF: Lists the servers authorized to send emails
      * from a domain.</p> </li> <li> <p>SRV: Application specific values that identify
      * servers.</p> </li> <li> <p>TXT: Verifies email senders and application-specific
-     * values.</p> </li> </ul>
+     * values.</p> </li> <li> <p>A query type you define by using the DNS type ID, for
+     * example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER
+     * can be 1-65334, for example, TYPE28. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record
+     * types</a>.</p> </li> </ul>
      */
     inline void SetQtype(Aws::String&& value) { m_qtypeHasBeenSet = true; m_qtype = std::move(value); }
 
@@ -205,7 +221,11 @@ namespace Model
      * the zone.</p> </li> <li> <p>SPF: Lists the servers authorized to send emails
      * from a domain.</p> </li> <li> <p>SRV: Application specific values that identify
      * servers.</p> </li> <li> <p>TXT: Verifies email senders and application-specific
-     * values.</p> </li> </ul>
+     * values.</p> </li> <li> <p>A query type you define by using the DNS type ID, for
+     * example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER
+     * can be 1-65334, for example, TYPE28. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record
+     * types</a>.</p> </li> </ul>
      */
     inline void SetQtype(const char* value) { m_qtypeHasBeenSet = true; m_qtype.assign(value); }
 
@@ -222,7 +242,11 @@ namespace Model
      * the zone.</p> </li> <li> <p>SPF: Lists the servers authorized to send emails
      * from a domain.</p> </li> <li> <p>SRV: Application specific values that identify
      * servers.</p> </li> <li> <p>TXT: Verifies email senders and application-specific
-     * values.</p> </li> </ul>
+     * values.</p> </li> <li> <p>A query type you define by using the DNS type ID, for
+     * example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER
+     * can be 1-65334, for example, TYPE28. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record
+     * types</a>.</p> </li> </ul>
      */
     inline DeleteFirewallRuleRequest& WithQtype(const Aws::String& value) { SetQtype(value); return *this;}
 
@@ -239,7 +263,11 @@ namespace Model
      * the zone.</p> </li> <li> <p>SPF: Lists the servers authorized to send emails
      * from a domain.</p> </li> <li> <p>SRV: Application specific values that identify
      * servers.</p> </li> <li> <p>TXT: Verifies email senders and application-specific
-     * values.</p> </li> </ul>
+     * values.</p> </li> <li> <p>A query type you define by using the DNS type ID, for
+     * example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER
+     * can be 1-65334, for example, TYPE28. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record
+     * types</a>.</p> </li> </ul>
      */
     inline DeleteFirewallRuleRequest& WithQtype(Aws::String&& value) { SetQtype(std::move(value)); return *this;}
 
@@ -256,7 +284,11 @@ namespace Model
      * the zone.</p> </li> <li> <p>SPF: Lists the servers authorized to send emails
      * from a domain.</p> </li> <li> <p>SRV: Application specific values that identify
      * servers.</p> </li> <li> <p>TXT: Verifies email senders and application-specific
-     * values.</p> </li> </ul>
+     * values.</p> </li> <li> <p>A query type you define by using the DNS type ID, for
+     * example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER
+     * can be 1-65334, for example, TYPE28. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record
+     * types</a>.</p> </li> </ul>
      */
     inline DeleteFirewallRuleRequest& WithQtype(const char* value) { SetQtype(value); return *this;}
 

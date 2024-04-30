@@ -80,27 +80,6 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of retrievers returned.</p>
-     */
-    inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of retrievers returned.</p>
-     */
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of retrievers returned.</p>
-     */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of retrievers returned.</p>
-     */
-    inline ListRetrieversRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
-
-    /**
      * <p>If the number of retrievers returned exceeds <code>maxResults</code>, Amazon
      * Q Business returns a next token as a pagination token to retrieve the next set
      * of retrievers.</p>
@@ -156,16 +135,37 @@ namespace Model
      */
     inline ListRetrieversRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>The maximum number of retrievers returned.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of retrievers returned.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of retrievers returned.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>The maximum number of retrievers returned.</p>
+     */
+    inline ListRetrieversRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
   private:
 
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet = false;
 
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
-
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int ACCOUNT_TIER_HASH = HashingUtils::HashString("ACCOUNT_TIER");
+        static const int DEFAULT_PROTECT_CONFIGURATION_ID_HASH = HashingUtils::HashString("DEFAULT_PROTECT_CONFIGURATION_ID");
 
 
         AccountAttributeName GetAccountAttributeNameForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == ACCOUNT_TIER_HASH)
           {
             return AccountAttributeName::ACCOUNT_TIER;
+          }
+          else if (hashCode == DEFAULT_PROTECT_CONFIGURATION_ID_HASH)
+          {
+            return AccountAttributeName::DEFAULT_PROTECT_CONFIGURATION_ID;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case AccountAttributeName::ACCOUNT_TIER:
             return "ACCOUNT_TIER";
+          case AccountAttributeName::DEFAULT_PROTECT_CONFIGURATION_ID:
+            return "DEFAULT_PROTECT_CONFIGURATION_ID";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

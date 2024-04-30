@@ -38,21 +38,21 @@ UpdateUserResult& UpdateUserResult::operator =(const Aws::AmazonWebServiceResult
     }
   }
 
-  if(jsonValue.ValueExists("userAliasesDeleted"))
-  {
-    Aws::Utils::Array<JsonView> userAliasesDeletedJsonList = jsonValue.GetArray("userAliasesDeleted");
-    for(unsigned userAliasesDeletedIndex = 0; userAliasesDeletedIndex < userAliasesDeletedJsonList.GetLength(); ++userAliasesDeletedIndex)
-    {
-      m_userAliasesDeleted.push_back(userAliasesDeletedJsonList[userAliasesDeletedIndex].AsObject());
-    }
-  }
-
   if(jsonValue.ValueExists("userAliasesUpdated"))
   {
     Aws::Utils::Array<JsonView> userAliasesUpdatedJsonList = jsonValue.GetArray("userAliasesUpdated");
     for(unsigned userAliasesUpdatedIndex = 0; userAliasesUpdatedIndex < userAliasesUpdatedJsonList.GetLength(); ++userAliasesUpdatedIndex)
     {
       m_userAliasesUpdated.push_back(userAliasesUpdatedJsonList[userAliasesUpdatedIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("userAliasesDeleted"))
+  {
+    Aws::Utils::Array<JsonView> userAliasesDeletedJsonList = jsonValue.GetArray("userAliasesDeleted");
+    for(unsigned userAliasesDeletedIndex = 0; userAliasesDeletedIndex < userAliasesDeletedJsonList.GetLength(); ++userAliasesDeletedIndex)
+    {
+      m_userAliasesDeleted.push_back(userAliasesDeletedJsonList[userAliasesDeletedIndex].AsObject());
     }
   }
 

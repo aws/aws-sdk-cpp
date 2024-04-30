@@ -5,11 +5,12 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
-#include <aws/qbusiness/model/ActionReview.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qbusiness/model/ActionReview.h>
+#include <aws/qbusiness/model/AuthChallengeRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/qbusiness/model/AttachmentOutput.h>
 #include <aws/qbusiness/model/SourceAttribution.h>
+#include <aws/qbusiness/model/AttachmentOutput.h>
 #include <utility>
 
 namespace Aws
@@ -34,37 +35,6 @@ namespace Model
     AWS_QBUSINESS_API ChatSyncResult();
     AWS_QBUSINESS_API ChatSyncResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QBUSINESS_API ChatSyncResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>A request from Amazon Q Business to the end user for information Amazon Q
-     * Business needs to successfully complete a requested plugin action.</p>
-     */
-    inline const ActionReview& GetActionReview() const{ return m_actionReview; }
-
-    /**
-     * <p>A request from Amazon Q Business to the end user for information Amazon Q
-     * Business needs to successfully complete a requested plugin action.</p>
-     */
-    inline void SetActionReview(const ActionReview& value) { m_actionReview = value; }
-
-    /**
-     * <p>A request from Amazon Q Business to the end user for information Amazon Q
-     * Business needs to successfully complete a requested plugin action.</p>
-     */
-    inline void SetActionReview(ActionReview&& value) { m_actionReview = std::move(value); }
-
-    /**
-     * <p>A request from Amazon Q Business to the end user for information Amazon Q
-     * Business needs to successfully complete a requested plugin action.</p>
-     */
-    inline ChatSyncResult& WithActionReview(const ActionReview& value) { SetActionReview(value); return *this;}
-
-    /**
-     * <p>A request from Amazon Q Business to the end user for information Amazon Q
-     * Business needs to successfully complete a requested plugin action.</p>
-     */
-    inline ChatSyncResult& WithActionReview(ActionReview&& value) { SetActionReview(std::move(value)); return *this;}
 
 
     /**
@@ -101,78 +71,6 @@ namespace Model
      * <p>The identifier of the Amazon Q Business conversation.</p>
      */
     inline ChatSyncResult& WithConversationId(const char* value) { SetConversationId(value); return *this;}
-
-
-    /**
-     * <p>A list of files which failed to upload during chat.</p>
-     */
-    inline const Aws::Vector<AttachmentOutput>& GetFailedAttachments() const{ return m_failedAttachments; }
-
-    /**
-     * <p>A list of files which failed to upload during chat.</p>
-     */
-    inline void SetFailedAttachments(const Aws::Vector<AttachmentOutput>& value) { m_failedAttachments = value; }
-
-    /**
-     * <p>A list of files which failed to upload during chat.</p>
-     */
-    inline void SetFailedAttachments(Aws::Vector<AttachmentOutput>&& value) { m_failedAttachments = std::move(value); }
-
-    /**
-     * <p>A list of files which failed to upload during chat.</p>
-     */
-    inline ChatSyncResult& WithFailedAttachments(const Aws::Vector<AttachmentOutput>& value) { SetFailedAttachments(value); return *this;}
-
-    /**
-     * <p>A list of files which failed to upload during chat.</p>
-     */
-    inline ChatSyncResult& WithFailedAttachments(Aws::Vector<AttachmentOutput>&& value) { SetFailedAttachments(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of files which failed to upload during chat.</p>
-     */
-    inline ChatSyncResult& AddFailedAttachments(const AttachmentOutput& value) { m_failedAttachments.push_back(value); return *this; }
-
-    /**
-     * <p>A list of files which failed to upload during chat.</p>
-     */
-    inline ChatSyncResult& AddFailedAttachments(AttachmentOutput&& value) { m_failedAttachments.push_back(std::move(value)); return *this; }
-
-
-    /**
-     * <p>The source documents used to generate the conversation response.</p>
-     */
-    inline const Aws::Vector<SourceAttribution>& GetSourceAttributions() const{ return m_sourceAttributions; }
-
-    /**
-     * <p>The source documents used to generate the conversation response.</p>
-     */
-    inline void SetSourceAttributions(const Aws::Vector<SourceAttribution>& value) { m_sourceAttributions = value; }
-
-    /**
-     * <p>The source documents used to generate the conversation response.</p>
-     */
-    inline void SetSourceAttributions(Aws::Vector<SourceAttribution>&& value) { m_sourceAttributions = std::move(value); }
-
-    /**
-     * <p>The source documents used to generate the conversation response.</p>
-     */
-    inline ChatSyncResult& WithSourceAttributions(const Aws::Vector<SourceAttribution>& value) { SetSourceAttributions(value); return *this;}
-
-    /**
-     * <p>The source documents used to generate the conversation response.</p>
-     */
-    inline ChatSyncResult& WithSourceAttributions(Aws::Vector<SourceAttribution>&& value) { SetSourceAttributions(std::move(value)); return *this;}
-
-    /**
-     * <p>The source documents used to generate the conversation response.</p>
-     */
-    inline ChatSyncResult& AddSourceAttributions(const SourceAttribution& value) { m_sourceAttributions.push_back(value); return *this; }
-
-    /**
-     * <p>The source documents used to generate the conversation response.</p>
-     */
-    inline ChatSyncResult& AddSourceAttributions(SourceAttribution&& value) { m_sourceAttributions.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -297,6 +195,140 @@ namespace Model
     inline ChatSyncResult& WithUserMessageId(const char* value) { SetUserMessageId(value); return *this;}
 
 
+    /**
+     * <p>A request from Amazon Q Business to the end user for information Amazon Q
+     * Business needs to successfully complete a requested plugin action.</p>
+     */
+    inline const ActionReview& GetActionReview() const{ return m_actionReview; }
+
+    /**
+     * <p>A request from Amazon Q Business to the end user for information Amazon Q
+     * Business needs to successfully complete a requested plugin action.</p>
+     */
+    inline void SetActionReview(const ActionReview& value) { m_actionReview = value; }
+
+    /**
+     * <p>A request from Amazon Q Business to the end user for information Amazon Q
+     * Business needs to successfully complete a requested plugin action.</p>
+     */
+    inline void SetActionReview(ActionReview&& value) { m_actionReview = std::move(value); }
+
+    /**
+     * <p>A request from Amazon Q Business to the end user for information Amazon Q
+     * Business needs to successfully complete a requested plugin action.</p>
+     */
+    inline ChatSyncResult& WithActionReview(const ActionReview& value) { SetActionReview(value); return *this;}
+
+    /**
+     * <p>A request from Amazon Q Business to the end user for information Amazon Q
+     * Business needs to successfully complete a requested plugin action.</p>
+     */
+    inline ChatSyncResult& WithActionReview(ActionReview&& value) { SetActionReview(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An authentication verification event activated by an end user request to use
+     * a custom plugin.</p>
+     */
+    inline const AuthChallengeRequest& GetAuthChallengeRequest() const{ return m_authChallengeRequest; }
+
+    /**
+     * <p>An authentication verification event activated by an end user request to use
+     * a custom plugin.</p>
+     */
+    inline void SetAuthChallengeRequest(const AuthChallengeRequest& value) { m_authChallengeRequest = value; }
+
+    /**
+     * <p>An authentication verification event activated by an end user request to use
+     * a custom plugin.</p>
+     */
+    inline void SetAuthChallengeRequest(AuthChallengeRequest&& value) { m_authChallengeRequest = std::move(value); }
+
+    /**
+     * <p>An authentication verification event activated by an end user request to use
+     * a custom plugin.</p>
+     */
+    inline ChatSyncResult& WithAuthChallengeRequest(const AuthChallengeRequest& value) { SetAuthChallengeRequest(value); return *this;}
+
+    /**
+     * <p>An authentication verification event activated by an end user request to use
+     * a custom plugin.</p>
+     */
+    inline ChatSyncResult& WithAuthChallengeRequest(AuthChallengeRequest&& value) { SetAuthChallengeRequest(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The source documents used to generate the conversation response.</p>
+     */
+    inline const Aws::Vector<SourceAttribution>& GetSourceAttributions() const{ return m_sourceAttributions; }
+
+    /**
+     * <p>The source documents used to generate the conversation response.</p>
+     */
+    inline void SetSourceAttributions(const Aws::Vector<SourceAttribution>& value) { m_sourceAttributions = value; }
+
+    /**
+     * <p>The source documents used to generate the conversation response.</p>
+     */
+    inline void SetSourceAttributions(Aws::Vector<SourceAttribution>&& value) { m_sourceAttributions = std::move(value); }
+
+    /**
+     * <p>The source documents used to generate the conversation response.</p>
+     */
+    inline ChatSyncResult& WithSourceAttributions(const Aws::Vector<SourceAttribution>& value) { SetSourceAttributions(value); return *this;}
+
+    /**
+     * <p>The source documents used to generate the conversation response.</p>
+     */
+    inline ChatSyncResult& WithSourceAttributions(Aws::Vector<SourceAttribution>&& value) { SetSourceAttributions(std::move(value)); return *this;}
+
+    /**
+     * <p>The source documents used to generate the conversation response.</p>
+     */
+    inline ChatSyncResult& AddSourceAttributions(const SourceAttribution& value) { m_sourceAttributions.push_back(value); return *this; }
+
+    /**
+     * <p>The source documents used to generate the conversation response.</p>
+     */
+    inline ChatSyncResult& AddSourceAttributions(SourceAttribution&& value) { m_sourceAttributions.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A list of files which failed to upload during chat.</p>
+     */
+    inline const Aws::Vector<AttachmentOutput>& GetFailedAttachments() const{ return m_failedAttachments; }
+
+    /**
+     * <p>A list of files which failed to upload during chat.</p>
+     */
+    inline void SetFailedAttachments(const Aws::Vector<AttachmentOutput>& value) { m_failedAttachments = value; }
+
+    /**
+     * <p>A list of files which failed to upload during chat.</p>
+     */
+    inline void SetFailedAttachments(Aws::Vector<AttachmentOutput>&& value) { m_failedAttachments = std::move(value); }
+
+    /**
+     * <p>A list of files which failed to upload during chat.</p>
+     */
+    inline ChatSyncResult& WithFailedAttachments(const Aws::Vector<AttachmentOutput>& value) { SetFailedAttachments(value); return *this;}
+
+    /**
+     * <p>A list of files which failed to upload during chat.</p>
+     */
+    inline ChatSyncResult& WithFailedAttachments(Aws::Vector<AttachmentOutput>&& value) { SetFailedAttachments(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of files which failed to upload during chat.</p>
+     */
+    inline ChatSyncResult& AddFailedAttachments(const AttachmentOutput& value) { m_failedAttachments.push_back(value); return *this; }
+
+    /**
+     * <p>A list of files which failed to upload during chat.</p>
+     */
+    inline ChatSyncResult& AddFailedAttachments(AttachmentOutput&& value) { m_failedAttachments.push_back(std::move(value)); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -320,19 +352,21 @@ namespace Model
 
   private:
 
-    ActionReview m_actionReview;
-
     Aws::String m_conversationId;
-
-    Aws::Vector<AttachmentOutput> m_failedAttachments;
-
-    Aws::Vector<SourceAttribution> m_sourceAttributions;
 
     Aws::String m_systemMessage;
 
     Aws::String m_systemMessageId;
 
     Aws::String m_userMessageId;
+
+    ActionReview m_actionReview;
+
+    AuthChallengeRequest m_authChallengeRequest;
+
+    Aws::Vector<SourceAttribution> m_sourceAttributions;
+
+    Aws::Vector<AttachmentOutput> m_failedAttachments;
 
     Aws::String m_requestId;
   };

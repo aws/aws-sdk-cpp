@@ -5,12 +5,12 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
-#include <aws/qbusiness/model/AccessConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qbusiness/model/DocumentContent.h>
 #include <aws/qbusiness/model/ContentType.h>
+#include <aws/qbusiness/model/AccessConfiguration.h>
 #include <aws/qbusiness/model/DocumentEnrichmentConfiguration.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qbusiness/model/DocumentAttribute.h>
 #include <utility>
 
@@ -44,34 +44,44 @@ namespace Model
 
 
     /**
-     * <p>Configuration information for access permission to a document.</p>
+     * <p>The identifier of the document.</p>
      */
-    inline const AccessConfiguration& GetAccessConfiguration() const{ return m_accessConfiguration; }
+    inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>Configuration information for access permission to a document.</p>
+     * <p>The identifier of the document.</p>
      */
-    inline bool AccessConfigurationHasBeenSet() const { return m_accessConfigurationHasBeenSet; }
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>Configuration information for access permission to a document.</p>
+     * <p>The identifier of the document.</p>
      */
-    inline void SetAccessConfiguration(const AccessConfiguration& value) { m_accessConfigurationHasBeenSet = true; m_accessConfiguration = value; }
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>Configuration information for access permission to a document.</p>
+     * <p>The identifier of the document.</p>
      */
-    inline void SetAccessConfiguration(AccessConfiguration&& value) { m_accessConfigurationHasBeenSet = true; m_accessConfiguration = std::move(value); }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>Configuration information for access permission to a document.</p>
+     * <p>The identifier of the document.</p>
      */
-    inline Document& WithAccessConfiguration(const AccessConfiguration& value) { SetAccessConfiguration(value); return *this;}
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>Configuration information for access permission to a document.</p>
+     * <p>The identifier of the document.</p>
      */
-    inline Document& WithAccessConfiguration(AccessConfiguration&& value) { SetAccessConfiguration(std::move(value)); return *this;}
+    inline Document& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /**
+     * <p>The identifier of the document.</p>
+     */
+    inline Document& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the document.</p>
+     */
+    inline Document& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
@@ -204,84 +214,6 @@ namespace Model
 
 
     /**
-     * <p>The configuration information for altering document metadata and content
-     * during the document ingestion process.</p>
-     */
-    inline const DocumentEnrichmentConfiguration& GetDocumentEnrichmentConfiguration() const{ return m_documentEnrichmentConfiguration; }
-
-    /**
-     * <p>The configuration information for altering document metadata and content
-     * during the document ingestion process.</p>
-     */
-    inline bool DocumentEnrichmentConfigurationHasBeenSet() const { return m_documentEnrichmentConfigurationHasBeenSet; }
-
-    /**
-     * <p>The configuration information for altering document metadata and content
-     * during the document ingestion process.</p>
-     */
-    inline void SetDocumentEnrichmentConfiguration(const DocumentEnrichmentConfiguration& value) { m_documentEnrichmentConfigurationHasBeenSet = true; m_documentEnrichmentConfiguration = value; }
-
-    /**
-     * <p>The configuration information for altering document metadata and content
-     * during the document ingestion process.</p>
-     */
-    inline void SetDocumentEnrichmentConfiguration(DocumentEnrichmentConfiguration&& value) { m_documentEnrichmentConfigurationHasBeenSet = true; m_documentEnrichmentConfiguration = std::move(value); }
-
-    /**
-     * <p>The configuration information for altering document metadata and content
-     * during the document ingestion process.</p>
-     */
-    inline Document& WithDocumentEnrichmentConfiguration(const DocumentEnrichmentConfiguration& value) { SetDocumentEnrichmentConfiguration(value); return *this;}
-
-    /**
-     * <p>The configuration information for altering document metadata and content
-     * during the document ingestion process.</p>
-     */
-    inline Document& WithDocumentEnrichmentConfiguration(DocumentEnrichmentConfiguration&& value) { SetDocumentEnrichmentConfiguration(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The identifier of the document.</p>
-     */
-    inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The identifier of the document.</p>
-     */
-    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The identifier of the document.</p>
-     */
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The identifier of the document.</p>
-     */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The identifier of the document.</p>
-     */
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The identifier of the document.</p>
-     */
-    inline Document& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The identifier of the document.</p>
-     */
-    inline Document& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the document.</p>
-     */
-    inline Document& WithId(const char* value) { SetId(value); return *this;}
-
-
-    /**
      * <p>The title of the document.</p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
@@ -321,10 +253,78 @@ namespace Model
      */
     inline Document& WithTitle(const char* value) { SetTitle(value); return *this;}
 
+
+    /**
+     * <p>Configuration information for access permission to a document.</p>
+     */
+    inline const AccessConfiguration& GetAccessConfiguration() const{ return m_accessConfiguration; }
+
+    /**
+     * <p>Configuration information for access permission to a document.</p>
+     */
+    inline bool AccessConfigurationHasBeenSet() const { return m_accessConfigurationHasBeenSet; }
+
+    /**
+     * <p>Configuration information for access permission to a document.</p>
+     */
+    inline void SetAccessConfiguration(const AccessConfiguration& value) { m_accessConfigurationHasBeenSet = true; m_accessConfiguration = value; }
+
+    /**
+     * <p>Configuration information for access permission to a document.</p>
+     */
+    inline void SetAccessConfiguration(AccessConfiguration&& value) { m_accessConfigurationHasBeenSet = true; m_accessConfiguration = std::move(value); }
+
+    /**
+     * <p>Configuration information for access permission to a document.</p>
+     */
+    inline Document& WithAccessConfiguration(const AccessConfiguration& value) { SetAccessConfiguration(value); return *this;}
+
+    /**
+     * <p>Configuration information for access permission to a document.</p>
+     */
+    inline Document& WithAccessConfiguration(AccessConfiguration&& value) { SetAccessConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The configuration information for altering document metadata and content
+     * during the document ingestion process.</p>
+     */
+    inline const DocumentEnrichmentConfiguration& GetDocumentEnrichmentConfiguration() const{ return m_documentEnrichmentConfiguration; }
+
+    /**
+     * <p>The configuration information for altering document metadata and content
+     * during the document ingestion process.</p>
+     */
+    inline bool DocumentEnrichmentConfigurationHasBeenSet() const { return m_documentEnrichmentConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration information for altering document metadata and content
+     * during the document ingestion process.</p>
+     */
+    inline void SetDocumentEnrichmentConfiguration(const DocumentEnrichmentConfiguration& value) { m_documentEnrichmentConfigurationHasBeenSet = true; m_documentEnrichmentConfiguration = value; }
+
+    /**
+     * <p>The configuration information for altering document metadata and content
+     * during the document ingestion process.</p>
+     */
+    inline void SetDocumentEnrichmentConfiguration(DocumentEnrichmentConfiguration&& value) { m_documentEnrichmentConfigurationHasBeenSet = true; m_documentEnrichmentConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration information for altering document metadata and content
+     * during the document ingestion process.</p>
+     */
+    inline Document& WithDocumentEnrichmentConfiguration(const DocumentEnrichmentConfiguration& value) { SetDocumentEnrichmentConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration information for altering document metadata and content
+     * during the document ingestion process.</p>
+     */
+    inline Document& WithDocumentEnrichmentConfiguration(DocumentEnrichmentConfiguration&& value) { SetDocumentEnrichmentConfiguration(std::move(value)); return *this;}
+
   private:
 
-    AccessConfiguration m_accessConfiguration;
-    bool m_accessConfigurationHasBeenSet = false;
+    Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::Vector<DocumentAttribute> m_attributes;
     bool m_attributesHasBeenSet = false;
@@ -335,14 +335,14 @@ namespace Model
     ContentType m_contentType;
     bool m_contentTypeHasBeenSet = false;
 
-    DocumentEnrichmentConfiguration m_documentEnrichmentConfiguration;
-    bool m_documentEnrichmentConfigurationHasBeenSet = false;
-
-    Aws::String m_id;
-    bool m_idHasBeenSet = false;
-
     Aws::String m_title;
     bool m_titleHasBeenSet = false;
+
+    AccessConfiguration m_accessConfiguration;
+    bool m_accessConfigurationHasBeenSet = false;
+
+    DocumentEnrichmentConfiguration m_documentEnrichmentConfiguration;
+    bool m_documentEnrichmentConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

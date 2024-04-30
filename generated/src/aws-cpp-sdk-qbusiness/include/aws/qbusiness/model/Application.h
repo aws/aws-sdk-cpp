@@ -41,6 +41,47 @@ namespace Model
 
 
     /**
+     * <p>The name of the Amazon Q Business application.</p>
+     */
+    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
+    /**
+     * <p>The name of the Amazon Q Business application.</p>
+     */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Amazon Q Business application.</p>
+     */
+    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+
+    /**
+     * <p>The name of the Amazon Q Business application.</p>
+     */
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
+
+    /**
+     * <p>The name of the Amazon Q Business application.</p>
+     */
+    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
+
+    /**
+     * <p>The name of the Amazon Q Business application.</p>
+     */
+    inline Application& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
+
+    /**
+     * <p>The name of the Amazon Q Business application.</p>
+     */
+    inline Application& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the Amazon Q Business application.</p>
+     */
+    inline Application& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+
+
+    /**
      * <p>The identifier for the Amazon Q Business application.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
@@ -113,44 +154,40 @@ namespace Model
 
 
     /**
-     * <p>The name of the Amazon Q Business application.</p>
+     * <p>The Unix timestamp when the Amazon Q Business application was last updated.
+     * </p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>The name of the Amazon Q Business application.</p>
+     * <p>The Unix timestamp when the Amazon Q Business application was last updated.
+     * </p>
      */
-    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+    inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
-     * <p>The name of the Amazon Q Business application.</p>
+     * <p>The Unix timestamp when the Amazon Q Business application was last updated.
+     * </p>
      */
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
-     * <p>The name of the Amazon Q Business application.</p>
+     * <p>The Unix timestamp when the Amazon Q Business application was last updated.
+     * </p>
      */
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
+    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
 
     /**
-     * <p>The name of the Amazon Q Business application.</p>
+     * <p>The Unix timestamp when the Amazon Q Business application was last updated.
+     * </p>
      */
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
+    inline Application& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>The name of the Amazon Q Business application.</p>
+     * <p>The Unix timestamp when the Amazon Q Business application was last updated.
+     * </p>
      */
-    inline Application& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-
-    /**
-     * <p>The name of the Amazon Q Business application.</p>
-     */
-    inline Application& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Amazon Q Business application.</p>
-     */
-    inline Application& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    inline Application& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
 
     /**
@@ -189,44 +226,10 @@ namespace Model
      */
     inline Application& WithStatus(ApplicationStatus&& value) { SetStatus(std::move(value)); return *this;}
 
-
-    /**
-     * <p>The Unix timestamp when the Amazon Q Business application was last updated.
-     * </p>
-     */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
-
-    /**
-     * <p>The Unix timestamp when the Amazon Q Business application was last updated.
-     * </p>
-     */
-    inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-
-    /**
-     * <p>The Unix timestamp when the Amazon Q Business application was last updated.
-     * </p>
-     */
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-
-    /**
-     * <p>The Unix timestamp when the Amazon Q Business application was last updated.
-     * </p>
-     */
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-
-    /**
-     * <p>The Unix timestamp when the Amazon Q Business application was last updated.
-     * </p>
-     */
-    inline Application& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-
-    /**
-     * <p>The Unix timestamp when the Amazon Q Business application was last updated.
-     * </p>
-     */
-    inline Application& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
-
   private:
+
+    Aws::String m_displayName;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet = false;
@@ -234,14 +237,11 @@ namespace Model
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet = false;
 
-    Aws::String m_displayName;
-    bool m_displayNameHasBeenSet = false;
+    Aws::Utils::DateTime m_updatedAt;
+    bool m_updatedAtHasBeenSet = false;
 
     ApplicationStatus m_status;
     bool m_statusHasBeenSet = false;
-
-    Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,10 +31,25 @@ GetChatControlsConfigurationResult::GetChatControlsConfigurationResult(const Aws
 GetChatControlsConfigurationResult& GetChatControlsConfigurationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("responseScope"))
+  {
+    m_responseScope = ResponseScopeMapper::GetResponseScopeForName(jsonValue.GetString("responseScope"));
+
+  }
+
   if(jsonValue.ValueExists("blockedPhrases"))
   {
     m_blockedPhrases = jsonValue.GetObject("blockedPhrases");
 
+  }
+
+  if(jsonValue.ValueExists("topicConfigurations"))
+  {
+    Aws::Utils::Array<JsonView> topicConfigurationsJsonList = jsonValue.GetArray("topicConfigurations");
+    for(unsigned topicConfigurationsIndex = 0; topicConfigurationsIndex < topicConfigurationsJsonList.GetLength(); ++topicConfigurationsIndex)
+    {
+      m_topicConfigurations.push_back(topicConfigurationsJsonList[topicConfigurationsIndex].AsObject());
+    }
   }
 
   if(jsonValue.ValueExists("creatorModeConfiguration"))
@@ -47,21 +62,6 @@ GetChatControlsConfigurationResult& GetChatControlsConfigurationResult::operator
   {
     m_nextToken = jsonValue.GetString("nextToken");
 
-  }
-
-  if(jsonValue.ValueExists("responseScope"))
-  {
-    m_responseScope = ResponseScopeMapper::GetResponseScopeForName(jsonValue.GetString("responseScope"));
-
-  }
-
-  if(jsonValue.ValueExists("topicConfigurations"))
-  {
-    Aws::Utils::Array<JsonView> topicConfigurationsJsonList = jsonValue.GetArray("topicConfigurations");
-    for(unsigned topicConfigurationsIndex = 0; topicConfigurationsIndex < topicConfigurationsJsonList.GetLength(); ++topicConfigurationsIndex)
-    {
-      m_topicConfigurations.push_back(topicConfigurationsJsonList[topicConfigurationsIndex].AsObject());
-    }
   }
 
 

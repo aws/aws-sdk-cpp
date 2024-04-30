@@ -82,6 +82,47 @@ namespace Model
 
 
     /**
+     * <p>The identifier of the user giving the feedback.</p>
+     */
+    inline const Aws::String& GetUserId() const{ return m_userId; }
+
+    /**
+     * <p>The identifier of the user giving the feedback.</p>
+     */
+    inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the user giving the feedback.</p>
+     */
+    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
+
+    /**
+     * <p>The identifier of the user giving the feedback.</p>
+     */
+    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
+
+    /**
+     * <p>The identifier of the user giving the feedback.</p>
+     */
+    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
+
+    /**
+     * <p>The identifier of the user giving the feedback.</p>
+     */
+    inline PutFeedbackRequest& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
+
+    /**
+     * <p>The identifier of the user giving the feedback.</p>
+     */
+    inline PutFeedbackRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the user giving the feedback.</p>
+     */
+    inline PutFeedbackRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
+
+
+    /**
      * <p>The identifier of the conversation the feedback is attached to.</p>
      */
     inline const Aws::String& GetConversationId() const{ return m_conversationId; }
@@ -120,37 +161,6 @@ namespace Model
      * <p>The identifier of the conversation the feedback is attached to.</p>
      */
     inline PutFeedbackRequest& WithConversationId(const char* value) { SetConversationId(value); return *this;}
-
-
-    /**
-     * <p>The timestamp for when the feedback was recorded.</p>
-     */
-    inline const Aws::Utils::DateTime& GetMessageCopiedAt() const{ return m_messageCopiedAt; }
-
-    /**
-     * <p>The timestamp for when the feedback was recorded.</p>
-     */
-    inline bool MessageCopiedAtHasBeenSet() const { return m_messageCopiedAtHasBeenSet; }
-
-    /**
-     * <p>The timestamp for when the feedback was recorded.</p>
-     */
-    inline void SetMessageCopiedAt(const Aws::Utils::DateTime& value) { m_messageCopiedAtHasBeenSet = true; m_messageCopiedAt = value; }
-
-    /**
-     * <p>The timestamp for when the feedback was recorded.</p>
-     */
-    inline void SetMessageCopiedAt(Aws::Utils::DateTime&& value) { m_messageCopiedAtHasBeenSet = true; m_messageCopiedAt = std::move(value); }
-
-    /**
-     * <p>The timestamp for when the feedback was recorded.</p>
-     */
-    inline PutFeedbackRequest& WithMessageCopiedAt(const Aws::Utils::DateTime& value) { SetMessageCopiedAt(value); return *this;}
-
-    /**
-     * <p>The timestamp for when the feedback was recorded.</p>
-     */
-    inline PutFeedbackRequest& WithMessageCopiedAt(Aws::Utils::DateTime&& value) { SetMessageCopiedAt(std::move(value)); return *this;}
 
 
     /**
@@ -195,6 +205,37 @@ namespace Model
 
 
     /**
+     * <p>The timestamp for when the feedback was recorded.</p>
+     */
+    inline const Aws::Utils::DateTime& GetMessageCopiedAt() const{ return m_messageCopiedAt; }
+
+    /**
+     * <p>The timestamp for when the feedback was recorded.</p>
+     */
+    inline bool MessageCopiedAtHasBeenSet() const { return m_messageCopiedAtHasBeenSet; }
+
+    /**
+     * <p>The timestamp for when the feedback was recorded.</p>
+     */
+    inline void SetMessageCopiedAt(const Aws::Utils::DateTime& value) { m_messageCopiedAtHasBeenSet = true; m_messageCopiedAt = value; }
+
+    /**
+     * <p>The timestamp for when the feedback was recorded.</p>
+     */
+    inline void SetMessageCopiedAt(Aws::Utils::DateTime&& value) { m_messageCopiedAtHasBeenSet = true; m_messageCopiedAt = std::move(value); }
+
+    /**
+     * <p>The timestamp for when the feedback was recorded.</p>
+     */
+    inline PutFeedbackRequest& WithMessageCopiedAt(const Aws::Utils::DateTime& value) { SetMessageCopiedAt(value); return *this;}
+
+    /**
+     * <p>The timestamp for when the feedback was recorded.</p>
+     */
+    inline PutFeedbackRequest& WithMessageCopiedAt(Aws::Utils::DateTime&& value) { SetMessageCopiedAt(std::move(value)); return *this;}
+
+
+    /**
      * <p>The feedback usefulness value given by the user to the chat message.</p>
      */
     inline const MessageUsefulnessFeedback& GetMessageUsefulness() const{ return m_messageUsefulness; }
@@ -224,66 +265,25 @@ namespace Model
      */
     inline PutFeedbackRequest& WithMessageUsefulness(MessageUsefulnessFeedback&& value) { SetMessageUsefulness(std::move(value)); return *this;}
 
-
-    /**
-     * <p>The identifier of the user giving the feedback.</p>
-     */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
-
-    /**
-     * <p>The identifier of the user giving the feedback.</p>
-     */
-    inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the user giving the feedback.</p>
-     */
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-
-    /**
-     * <p>The identifier of the user giving the feedback.</p>
-     */
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-
-    /**
-     * <p>The identifier of the user giving the feedback.</p>
-     */
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-
-    /**
-     * <p>The identifier of the user giving the feedback.</p>
-     */
-    inline PutFeedbackRequest& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-
-    /**
-     * <p>The identifier of the user giving the feedback.</p>
-     */
-    inline PutFeedbackRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the user giving the feedback.</p>
-     */
-    inline PutFeedbackRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
-
   private:
 
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet = false;
 
+    Aws::String m_userId;
+    bool m_userIdHasBeenSet = false;
+
     Aws::String m_conversationId;
     bool m_conversationIdHasBeenSet = false;
-
-    Aws::Utils::DateTime m_messageCopiedAt;
-    bool m_messageCopiedAtHasBeenSet = false;
 
     Aws::String m_messageId;
     bool m_messageIdHasBeenSet = false;
 
+    Aws::Utils::DateTime m_messageCopiedAt;
+    bool m_messageCopiedAtHasBeenSet = false;
+
     MessageUsefulnessFeedback m_messageUsefulness;
     bool m_messageUsefulnessHasBeenSet = false;
-
-    Aws::String m_userId;
-    bool m_userIdHasBeenSet = false;
   };
 
 } // namespace Model

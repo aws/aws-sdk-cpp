@@ -553,8 +553,10 @@ namespace signer
          * create an S3 destination bucket. AWS Signer uses your S3 destination bucket to
          * write your signed code.</p> </li> <li> <p>You specify the name of the source and
          * destination buckets when calling the <code>StartSigningJob</code> operation.</p>
-         * </li> <li> <p>You must also specify a request token that identifies your request
-         * to Signer.</p> </li> </ul> <p>You can call the <a>DescribeSigningJob</a> and the
+         * </li> <li> <p>You must ensure the S3 buckets are from the same Region as the
+         * signing profile. Cross-Region signing isn't supported.</p> </li> <li> <p>You
+         * must also specify a request token that identifies your request to Signer.</p>
+         * </li> </ul> <p>You can call the <a>DescribeSigningJob</a> and the
          * <a>ListSigningJobs</a> actions after you call <code>StartSigningJob</code>.</p>
          * <p>For a Java example that shows how to use this action, see <a
          * href="https://docs.aws.amazon.com/signer/latest/developerguide/api-startsigningjob.html">StartSigningJob</a>.</p><p><h3>See

@@ -39,58 +39,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an Amazon Identity and Access Management
-     * (IAM) role that is able to write event data to an Amazon CloudWatch
-     * destination.</p>
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that
+     * is able to write event data to an Amazon CloudWatch destination.</p>
      */
     inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an Amazon Identity and Access Management
-     * (IAM) role that is able to write event data to an Amazon CloudWatch
-     * destination.</p>
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that
+     * is able to write event data to an Amazon CloudWatch destination.</p>
      */
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an Amazon Identity and Access Management
-     * (IAM) role that is able to write event data to an Amazon CloudWatch
-     * destination.</p>
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that
+     * is able to write event data to an Amazon CloudWatch destination.</p>
      */
     inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an Amazon Identity and Access Management
-     * (IAM) role that is able to write event data to an Amazon CloudWatch
-     * destination.</p>
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that
+     * is able to write event data to an Amazon CloudWatch destination.</p>
      */
     inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an Amazon Identity and Access Management
-     * (IAM) role that is able to write event data to an Amazon CloudWatch
-     * destination.</p>
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that
+     * is able to write event data to an Amazon CloudWatch destination.</p>
      */
     inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an Amazon Identity and Access Management
-     * (IAM) role that is able to write event data to an Amazon CloudWatch
-     * destination.</p>
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that
+     * is able to write event data to an Amazon CloudWatch destination.</p>
      */
     inline CloudWatchLogsDestination& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an Amazon Identity and Access Management
-     * (IAM) role that is able to write event data to an Amazon CloudWatch
-     * destination.</p>
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that
+     * is able to write event data to an Amazon CloudWatch destination.</p>
      */
     inline CloudWatchLogsDestination& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an Amazon Identity and Access Management
-     * (IAM) role that is able to write event data to an Amazon CloudWatch
-     * destination.</p>
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that
+     * is able to write event data to an Amazon CloudWatch destination.</p>
      */
     inline CloudWatchLogsDestination& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
 

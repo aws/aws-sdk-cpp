@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qbusiness/model/TextSegment.h>
 #include <utility>
 
@@ -39,129 +39,6 @@ namespace Model
     AWS_QBUSINESS_API SourceAttribution(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API SourceAttribution& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The number attached to a citation in an Amazon Q Business generated
-     * response.</p>
-     */
-    inline int GetCitationNumber() const{ return m_citationNumber; }
-
-    /**
-     * <p>The number attached to a citation in an Amazon Q Business generated
-     * response.</p>
-     */
-    inline bool CitationNumberHasBeenSet() const { return m_citationNumberHasBeenSet; }
-
-    /**
-     * <p>The number attached to a citation in an Amazon Q Business generated
-     * response.</p>
-     */
-    inline void SetCitationNumber(int value) { m_citationNumberHasBeenSet = true; m_citationNumber = value; }
-
-    /**
-     * <p>The number attached to a citation in an Amazon Q Business generated
-     * response.</p>
-     */
-    inline SourceAttribution& WithCitationNumber(int value) { SetCitationNumber(value); return *this;}
-
-
-    /**
-     * <p>The content extract from the document on which the generated response is
-     * based. </p>
-     */
-    inline const Aws::String& GetSnippet() const{ return m_snippet; }
-
-    /**
-     * <p>The content extract from the document on which the generated response is
-     * based. </p>
-     */
-    inline bool SnippetHasBeenSet() const { return m_snippetHasBeenSet; }
-
-    /**
-     * <p>The content extract from the document on which the generated response is
-     * based. </p>
-     */
-    inline void SetSnippet(const Aws::String& value) { m_snippetHasBeenSet = true; m_snippet = value; }
-
-    /**
-     * <p>The content extract from the document on which the generated response is
-     * based. </p>
-     */
-    inline void SetSnippet(Aws::String&& value) { m_snippetHasBeenSet = true; m_snippet = std::move(value); }
-
-    /**
-     * <p>The content extract from the document on which the generated response is
-     * based. </p>
-     */
-    inline void SetSnippet(const char* value) { m_snippetHasBeenSet = true; m_snippet.assign(value); }
-
-    /**
-     * <p>The content extract from the document on which the generated response is
-     * based. </p>
-     */
-    inline SourceAttribution& WithSnippet(const Aws::String& value) { SetSnippet(value); return *this;}
-
-    /**
-     * <p>The content extract from the document on which the generated response is
-     * based. </p>
-     */
-    inline SourceAttribution& WithSnippet(Aws::String&& value) { SetSnippet(std::move(value)); return *this;}
-
-    /**
-     * <p>The content extract from the document on which the generated response is
-     * based. </p>
-     */
-    inline SourceAttribution& WithSnippet(const char* value) { SetSnippet(value); return *this;}
-
-
-    /**
-     * <p>A text extract from a source document that is used for source
-     * attribution.</p>
-     */
-    inline const Aws::Vector<TextSegment>& GetTextMessageSegments() const{ return m_textMessageSegments; }
-
-    /**
-     * <p>A text extract from a source document that is used for source
-     * attribution.</p>
-     */
-    inline bool TextMessageSegmentsHasBeenSet() const { return m_textMessageSegmentsHasBeenSet; }
-
-    /**
-     * <p>A text extract from a source document that is used for source
-     * attribution.</p>
-     */
-    inline void SetTextMessageSegments(const Aws::Vector<TextSegment>& value) { m_textMessageSegmentsHasBeenSet = true; m_textMessageSegments = value; }
-
-    /**
-     * <p>A text extract from a source document that is used for source
-     * attribution.</p>
-     */
-    inline void SetTextMessageSegments(Aws::Vector<TextSegment>&& value) { m_textMessageSegmentsHasBeenSet = true; m_textMessageSegments = std::move(value); }
-
-    /**
-     * <p>A text extract from a source document that is used for source
-     * attribution.</p>
-     */
-    inline SourceAttribution& WithTextMessageSegments(const Aws::Vector<TextSegment>& value) { SetTextMessageSegments(value); return *this;}
-
-    /**
-     * <p>A text extract from a source document that is used for source
-     * attribution.</p>
-     */
-    inline SourceAttribution& WithTextMessageSegments(Aws::Vector<TextSegment>&& value) { SetTextMessageSegments(std::move(value)); return *this;}
-
-    /**
-     * <p>A text extract from a source document that is used for source
-     * attribution.</p>
-     */
-    inline SourceAttribution& AddTextMessageSegments(const TextSegment& value) { m_textMessageSegmentsHasBeenSet = true; m_textMessageSegments.push_back(value); return *this; }
-
-    /**
-     * <p>A text extract from a source document that is used for source
-     * attribution.</p>
-     */
-    inline SourceAttribution& AddTextMessageSegments(TextSegment&& value) { m_textMessageSegmentsHasBeenSet = true; m_textMessageSegments.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -214,40 +91,52 @@ namespace Model
 
 
     /**
-     * <p>The Unix timestamp when the Amazon Q Business application was last
-     * updated.</p>
+     * <p>The content extract from the document on which the generated response is
+     * based. </p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::String& GetSnippet() const{ return m_snippet; }
 
     /**
-     * <p>The Unix timestamp when the Amazon Q Business application was last
-     * updated.</p>
+     * <p>The content extract from the document on which the generated response is
+     * based. </p>
      */
-    inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
+    inline bool SnippetHasBeenSet() const { return m_snippetHasBeenSet; }
 
     /**
-     * <p>The Unix timestamp when the Amazon Q Business application was last
-     * updated.</p>
+     * <p>The content extract from the document on which the generated response is
+     * based. </p>
      */
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
+    inline void SetSnippet(const Aws::String& value) { m_snippetHasBeenSet = true; m_snippet = value; }
 
     /**
-     * <p>The Unix timestamp when the Amazon Q Business application was last
-     * updated.</p>
+     * <p>The content extract from the document on which the generated response is
+     * based. </p>
      */
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
+    inline void SetSnippet(Aws::String&& value) { m_snippetHasBeenSet = true; m_snippet = std::move(value); }
 
     /**
-     * <p>The Unix timestamp when the Amazon Q Business application was last
-     * updated.</p>
+     * <p>The content extract from the document on which the generated response is
+     * based. </p>
      */
-    inline SourceAttribution& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
+    inline void SetSnippet(const char* value) { m_snippetHasBeenSet = true; m_snippet.assign(value); }
 
     /**
-     * <p>The Unix timestamp when the Amazon Q Business application was last
-     * updated.</p>
+     * <p>The content extract from the document on which the generated response is
+     * based. </p>
      */
-    inline SourceAttribution& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    inline SourceAttribution& WithSnippet(const Aws::String& value) { SetSnippet(value); return *this;}
+
+    /**
+     * <p>The content extract from the document on which the generated response is
+     * based. </p>
+     */
+    inline SourceAttribution& WithSnippet(Aws::String&& value) { SetSnippet(std::move(value)); return *this;}
+
+    /**
+     * <p>The content extract from the document on which the generated response is
+     * based. </p>
+     */
+    inline SourceAttribution& WithSnippet(const char* value) { SetSnippet(value); return *this;}
 
 
     /**
@@ -298,25 +187,136 @@ namespace Model
      */
     inline SourceAttribution& WithUrl(const char* value) { SetUrl(value); return *this;}
 
+
+    /**
+     * <p>The number attached to a citation in an Amazon Q Business generated
+     * response.</p>
+     */
+    inline int GetCitationNumber() const{ return m_citationNumber; }
+
+    /**
+     * <p>The number attached to a citation in an Amazon Q Business generated
+     * response.</p>
+     */
+    inline bool CitationNumberHasBeenSet() const { return m_citationNumberHasBeenSet; }
+
+    /**
+     * <p>The number attached to a citation in an Amazon Q Business generated
+     * response.</p>
+     */
+    inline void SetCitationNumber(int value) { m_citationNumberHasBeenSet = true; m_citationNumber = value; }
+
+    /**
+     * <p>The number attached to a citation in an Amazon Q Business generated
+     * response.</p>
+     */
+    inline SourceAttribution& WithCitationNumber(int value) { SetCitationNumber(value); return *this;}
+
+
+    /**
+     * <p>The Unix timestamp when the Amazon Q Business application was last
+     * updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+
+    /**
+     * <p>The Unix timestamp when the Amazon Q Business application was last
+     * updated.</p>
+     */
+    inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
+
+    /**
+     * <p>The Unix timestamp when the Amazon Q Business application was last
+     * updated.</p>
+     */
+    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
+
+    /**
+     * <p>The Unix timestamp when the Amazon Q Business application was last
+     * updated.</p>
+     */
+    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
+
+    /**
+     * <p>The Unix timestamp when the Amazon Q Business application was last
+     * updated.</p>
+     */
+    inline SourceAttribution& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
+
+    /**
+     * <p>The Unix timestamp when the Amazon Q Business application was last
+     * updated.</p>
+     */
+    inline SourceAttribution& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A text extract from a source document that is used for source
+     * attribution.</p>
+     */
+    inline const Aws::Vector<TextSegment>& GetTextMessageSegments() const{ return m_textMessageSegments; }
+
+    /**
+     * <p>A text extract from a source document that is used for source
+     * attribution.</p>
+     */
+    inline bool TextMessageSegmentsHasBeenSet() const { return m_textMessageSegmentsHasBeenSet; }
+
+    /**
+     * <p>A text extract from a source document that is used for source
+     * attribution.</p>
+     */
+    inline void SetTextMessageSegments(const Aws::Vector<TextSegment>& value) { m_textMessageSegmentsHasBeenSet = true; m_textMessageSegments = value; }
+
+    /**
+     * <p>A text extract from a source document that is used for source
+     * attribution.</p>
+     */
+    inline void SetTextMessageSegments(Aws::Vector<TextSegment>&& value) { m_textMessageSegmentsHasBeenSet = true; m_textMessageSegments = std::move(value); }
+
+    /**
+     * <p>A text extract from a source document that is used for source
+     * attribution.</p>
+     */
+    inline SourceAttribution& WithTextMessageSegments(const Aws::Vector<TextSegment>& value) { SetTextMessageSegments(value); return *this;}
+
+    /**
+     * <p>A text extract from a source document that is used for source
+     * attribution.</p>
+     */
+    inline SourceAttribution& WithTextMessageSegments(Aws::Vector<TextSegment>&& value) { SetTextMessageSegments(std::move(value)); return *this;}
+
+    /**
+     * <p>A text extract from a source document that is used for source
+     * attribution.</p>
+     */
+    inline SourceAttribution& AddTextMessageSegments(const TextSegment& value) { m_textMessageSegmentsHasBeenSet = true; m_textMessageSegments.push_back(value); return *this; }
+
+    /**
+     * <p>A text extract from a source document that is used for source
+     * attribution.</p>
+     */
+    inline SourceAttribution& AddTextMessageSegments(TextSegment&& value) { m_textMessageSegmentsHasBeenSet = true; m_textMessageSegments.push_back(std::move(value)); return *this; }
+
   private:
-
-    int m_citationNumber;
-    bool m_citationNumberHasBeenSet = false;
-
-    Aws::String m_snippet;
-    bool m_snippetHasBeenSet = false;
-
-    Aws::Vector<TextSegment> m_textMessageSegments;
-    bool m_textMessageSegmentsHasBeenSet = false;
 
     Aws::String m_title;
     bool m_titleHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet = false;
+    Aws::String m_snippet;
+    bool m_snippetHasBeenSet = false;
 
     Aws::String m_url;
     bool m_urlHasBeenSet = false;
+
+    int m_citationNumber;
+    bool m_citationNumberHasBeenSet = false;
+
+    Aws::Utils::DateTime m_updatedAt;
+    bool m_updatedAtHasBeenSet = false;
+
+    Aws::Vector<TextSegment> m_textMessageSegments;
+    bool m_textMessageSegmentsHasBeenSet = false;
   };
 
 } // namespace Model

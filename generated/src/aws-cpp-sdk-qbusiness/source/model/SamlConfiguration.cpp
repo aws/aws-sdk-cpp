@@ -21,16 +21,16 @@ namespace Model
 SamlConfiguration::SamlConfiguration() : 
     m_metadataXMLHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_userGroupAttributeHasBeenSet(false),
-    m_userIdAttributeHasBeenSet(false)
+    m_userIdAttributeHasBeenSet(false),
+    m_userGroupAttributeHasBeenSet(false)
 {
 }
 
 SamlConfiguration::SamlConfiguration(JsonView jsonValue) : 
     m_metadataXMLHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_userGroupAttributeHasBeenSet(false),
-    m_userIdAttributeHasBeenSet(false)
+    m_userIdAttributeHasBeenSet(false),
+    m_userGroupAttributeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,18 +51,18 @@ SamlConfiguration& SamlConfiguration::operator =(JsonView jsonValue)
     m_roleArnHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("userGroupAttribute"))
-  {
-    m_userGroupAttribute = jsonValue.GetString("userGroupAttribute");
-
-    m_userGroupAttributeHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("userIdAttribute"))
   {
     m_userIdAttribute = jsonValue.GetString("userIdAttribute");
 
     m_userIdAttributeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("userGroupAttribute"))
+  {
+    m_userGroupAttribute = jsonValue.GetString("userGroupAttribute");
+
+    m_userGroupAttributeHasBeenSet = true;
   }
 
   return *this;
@@ -84,15 +84,15 @@ JsonValue SamlConfiguration::Jsonize() const
 
   }
 
-  if(m_userGroupAttributeHasBeenSet)
-  {
-   payload.WithString("userGroupAttribute", m_userGroupAttribute);
-
-  }
-
   if(m_userIdAttributeHasBeenSet)
   {
    payload.WithString("userIdAttribute", m_userIdAttribute);
+
+  }
+
+  if(m_userGroupAttributeHasBeenSet)
+  {
+   payload.WithString("userGroupAttribute", m_userGroupAttribute);
 
   }
 

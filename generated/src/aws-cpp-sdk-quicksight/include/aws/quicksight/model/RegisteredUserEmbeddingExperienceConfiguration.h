@@ -9,6 +9,7 @@
 #include <aws/quicksight/model/RegisteredUserQuickSightConsoleEmbeddingConfiguration.h>
 #include <aws/quicksight/model/RegisteredUserQSearchBarEmbeddingConfiguration.h>
 #include <aws/quicksight/model/RegisteredUserDashboardVisualEmbeddingConfiguration.h>
+#include <aws/quicksight/model/RegisteredUserGenerativeQnAEmbeddingConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -347,6 +348,61 @@ namespace Model
      */
     inline RegisteredUserEmbeddingExperienceConfiguration& WithDashboardVisual(RegisteredUserDashboardVisualEmbeddingConfiguration&& value) { SetDashboardVisual(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The configuration details for embedding the Generative Q&amp;A
+     * experience.</p> <p>For more information about embedding the Generative Q&amp;A
+     * experience, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding
+     * Overview</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     */
+    inline const RegisteredUserGenerativeQnAEmbeddingConfiguration& GetGenerativeQnA() const{ return m_generativeQnA; }
+
+    /**
+     * <p>The configuration details for embedding the Generative Q&amp;A
+     * experience.</p> <p>For more information about embedding the Generative Q&amp;A
+     * experience, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding
+     * Overview</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     */
+    inline bool GenerativeQnAHasBeenSet() const { return m_generativeQnAHasBeenSet; }
+
+    /**
+     * <p>The configuration details for embedding the Generative Q&amp;A
+     * experience.</p> <p>For more information about embedding the Generative Q&amp;A
+     * experience, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding
+     * Overview</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     */
+    inline void SetGenerativeQnA(const RegisteredUserGenerativeQnAEmbeddingConfiguration& value) { m_generativeQnAHasBeenSet = true; m_generativeQnA = value; }
+
+    /**
+     * <p>The configuration details for embedding the Generative Q&amp;A
+     * experience.</p> <p>For more information about embedding the Generative Q&amp;A
+     * experience, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding
+     * Overview</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     */
+    inline void SetGenerativeQnA(RegisteredUserGenerativeQnAEmbeddingConfiguration&& value) { m_generativeQnAHasBeenSet = true; m_generativeQnA = std::move(value); }
+
+    /**
+     * <p>The configuration details for embedding the Generative Q&amp;A
+     * experience.</p> <p>For more information about embedding the Generative Q&amp;A
+     * experience, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding
+     * Overview</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     */
+    inline RegisteredUserEmbeddingExperienceConfiguration& WithGenerativeQnA(const RegisteredUserGenerativeQnAEmbeddingConfiguration& value) { SetGenerativeQnA(value); return *this;}
+
+    /**
+     * <p>The configuration details for embedding the Generative Q&amp;A
+     * experience.</p> <p>For more information about embedding the Generative Q&amp;A
+     * experience, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding
+     * Overview</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+     */
+    inline RegisteredUserEmbeddingExperienceConfiguration& WithGenerativeQnA(RegisteredUserGenerativeQnAEmbeddingConfiguration&& value) { SetGenerativeQnA(std::move(value)); return *this;}
+
   private:
 
     RegisteredUserDashboardEmbeddingConfiguration m_dashboard;
@@ -360,6 +416,9 @@ namespace Model
 
     RegisteredUserDashboardVisualEmbeddingConfiguration m_dashboardVisual;
     bool m_dashboardVisualHasBeenSet = false;
+
+    RegisteredUserGenerativeQnAEmbeddingConfiguration m_generativeQnA;
+    bool m_generativeQnAHasBeenSet = false;
   };
 
 } // namespace Model

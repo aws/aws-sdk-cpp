@@ -20,23 +20,23 @@ namespace Model
 
 Retriever::Retriever() : 
     m_applicationIdHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
     m_retrieverIdHasBeenSet(false),
+    m_type(RetrieverType::NOT_SET),
+    m_typeHasBeenSet(false),
     m_status(RetrieverStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_type(RetrieverType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_displayNameHasBeenSet(false)
 {
 }
 
 Retriever::Retriever(JsonView jsonValue) : 
     m_applicationIdHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
     m_retrieverIdHasBeenSet(false),
+    m_type(RetrieverType::NOT_SET),
+    m_typeHasBeenSet(false),
     m_status(RetrieverStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_type(RetrieverType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_displayNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,18 +50,18 @@ Retriever& Retriever::operator =(JsonView jsonValue)
     m_applicationIdHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("displayName"))
-  {
-    m_displayName = jsonValue.GetString("displayName");
-
-    m_displayNameHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("retrieverId"))
   {
     m_retrieverId = jsonValue.GetString("retrieverId");
 
     m_retrieverIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = RetrieverTypeMapper::GetRetrieverTypeForName(jsonValue.GetString("type"));
+
+    m_typeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("status"))
@@ -71,11 +71,11 @@ Retriever& Retriever::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("type"))
+  if(jsonValue.ValueExists("displayName"))
   {
-    m_type = RetrieverTypeMapper::GetRetrieverTypeForName(jsonValue.GetString("type"));
+    m_displayName = jsonValue.GetString("displayName");
 
-    m_typeHasBeenSet = true;
+    m_displayNameHasBeenSet = true;
   }
 
   return *this;
@@ -91,16 +91,15 @@ JsonValue Retriever::Jsonize() const
 
   }
 
-  if(m_displayNameHasBeenSet)
-  {
-   payload.WithString("displayName", m_displayName);
-
-  }
-
   if(m_retrieverIdHasBeenSet)
   {
    payload.WithString("retrieverId", m_retrieverId);
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", RetrieverTypeMapper::GetNameForRetrieverType(m_type));
   }
 
   if(m_statusHasBeenSet)
@@ -108,9 +107,10 @@ JsonValue Retriever::Jsonize() const
    payload.WithString("status", RetrieverStatusMapper::GetNameForRetrieverStatus(m_status));
   }
 
-  if(m_typeHasBeenSet)
+  if(m_displayNameHasBeenSet)
   {
-   payload.WithString("type", RetrieverTypeMapper::GetNameForRetrieverType(m_type));
+   payload.WithString("displayName", m_displayName);
+
   }
 
   return payload;

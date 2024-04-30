@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>The workflows' items.</p>
+     * <p>A list of workflow items.</p>
      */
     inline const Aws::Vector<WorkflowListItem>& GetItems() const{ return m_items; }
 
     /**
-     * <p>The workflows' items.</p>
+     * <p>A list of workflow items.</p>
      */
     inline void SetItems(const Aws::Vector<WorkflowListItem>& value) { m_items = value; }
 
     /**
-     * <p>The workflows' items.</p>
+     * <p>A list of workflow items.</p>
      */
     inline void SetItems(Aws::Vector<WorkflowListItem>&& value) { m_items = std::move(value); }
 
     /**
-     * <p>The workflows' items.</p>
+     * <p>A list of workflow items.</p>
      */
     inline ListWorkflowsResult& WithItems(const Aws::Vector<WorkflowListItem>& value) { SetItems(value); return *this;}
 
     /**
-     * <p>The workflows' items.</p>
+     * <p>A list of workflow items.</p>
      */
     inline ListWorkflowsResult& WithItems(Aws::Vector<WorkflowListItem>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * <p>The workflows' items.</p>
+     * <p>A list of workflow items.</p>
      */
     inline ListWorkflowsResult& AddItems(const WorkflowListItem& value) { m_items.push_back(value); return *this; }
 
     /**
-     * <p>The workflows' items.</p>
+     * <p>A list of workflow items.</p>
      */
     inline ListWorkflowsResult& AddItems(WorkflowListItem&& value) { m_items.push_back(std::move(value)); return *this; }
 

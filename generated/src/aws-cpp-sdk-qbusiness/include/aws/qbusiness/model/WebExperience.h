@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/qbusiness/model/WebExperienceStatus.h>
 #include <utility>
 
@@ -38,6 +38,47 @@ namespace Model
     AWS_QBUSINESS_API WebExperience(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API WebExperience& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The identifier of your Amazon Q Business web experience.</p>
+     */
+    inline const Aws::String& GetWebExperienceId() const{ return m_webExperienceId; }
+
+    /**
+     * <p>The identifier of your Amazon Q Business web experience.</p>
+     */
+    inline bool WebExperienceIdHasBeenSet() const { return m_webExperienceIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of your Amazon Q Business web experience.</p>
+     */
+    inline void SetWebExperienceId(const Aws::String& value) { m_webExperienceIdHasBeenSet = true; m_webExperienceId = value; }
+
+    /**
+     * <p>The identifier of your Amazon Q Business web experience.</p>
+     */
+    inline void SetWebExperienceId(Aws::String&& value) { m_webExperienceIdHasBeenSet = true; m_webExperienceId = std::move(value); }
+
+    /**
+     * <p>The identifier of your Amazon Q Business web experience.</p>
+     */
+    inline void SetWebExperienceId(const char* value) { m_webExperienceIdHasBeenSet = true; m_webExperienceId.assign(value); }
+
+    /**
+     * <p>The identifier of your Amazon Q Business web experience.</p>
+     */
+    inline WebExperience& WithWebExperienceId(const Aws::String& value) { SetWebExperienceId(value); return *this;}
+
+    /**
+     * <p>The identifier of your Amazon Q Business web experience.</p>
+     */
+    inline WebExperience& WithWebExperienceId(Aws::String&& value) { SetWebExperienceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of your Amazon Q Business web experience.</p>
+     */
+    inline WebExperience& WithWebExperienceId(const char* value) { SetWebExperienceId(value); return *this;}
 
 
     /**
@@ -75,6 +116,43 @@ namespace Model
      * updated.</p>
      */
     inline WebExperience& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Unix timestamp when your Amazon Q Business web experience was
+     * updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+
+    /**
+     * <p>The Unix timestamp when your Amazon Q Business web experience was
+     * updated.</p>
+     */
+    inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
+
+    /**
+     * <p>The Unix timestamp when your Amazon Q Business web experience was
+     * updated.</p>
+     */
+    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
+
+    /**
+     * <p>The Unix timestamp when your Amazon Q Business web experience was
+     * updated.</p>
+     */
+    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
+
+    /**
+     * <p>The Unix timestamp when your Amazon Q Business web experience was
+     * updated.</p>
+     */
+    inline WebExperience& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
+
+    /**
+     * <p>The Unix timestamp when your Amazon Q Business web experience was
+     * updated.</p>
+     */
+    inline WebExperience& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
 
     /**
@@ -156,100 +234,22 @@ namespace Model
      */
     inline WebExperience& WithStatus(WebExperienceStatus&& value) { SetStatus(std::move(value)); return *this;}
 
-
-    /**
-     * <p>The Unix timestamp when your Amazon Q Business web experience was
-     * updated.</p>
-     */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
-
-    /**
-     * <p>The Unix timestamp when your Amazon Q Business web experience was
-     * updated.</p>
-     */
-    inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-
-    /**
-     * <p>The Unix timestamp when your Amazon Q Business web experience was
-     * updated.</p>
-     */
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-
-    /**
-     * <p>The Unix timestamp when your Amazon Q Business web experience was
-     * updated.</p>
-     */
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-
-    /**
-     * <p>The Unix timestamp when your Amazon Q Business web experience was
-     * updated.</p>
-     */
-    inline WebExperience& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-
-    /**
-     * <p>The Unix timestamp when your Amazon Q Business web experience was
-     * updated.</p>
-     */
-    inline WebExperience& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The identifier of your Amazon Q Business web experience.</p>
-     */
-    inline const Aws::String& GetWebExperienceId() const{ return m_webExperienceId; }
-
-    /**
-     * <p>The identifier of your Amazon Q Business web experience.</p>
-     */
-    inline bool WebExperienceIdHasBeenSet() const { return m_webExperienceIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of your Amazon Q Business web experience.</p>
-     */
-    inline void SetWebExperienceId(const Aws::String& value) { m_webExperienceIdHasBeenSet = true; m_webExperienceId = value; }
-
-    /**
-     * <p>The identifier of your Amazon Q Business web experience.</p>
-     */
-    inline void SetWebExperienceId(Aws::String&& value) { m_webExperienceIdHasBeenSet = true; m_webExperienceId = std::move(value); }
-
-    /**
-     * <p>The identifier of your Amazon Q Business web experience.</p>
-     */
-    inline void SetWebExperienceId(const char* value) { m_webExperienceIdHasBeenSet = true; m_webExperienceId.assign(value); }
-
-    /**
-     * <p>The identifier of your Amazon Q Business web experience.</p>
-     */
-    inline WebExperience& WithWebExperienceId(const Aws::String& value) { SetWebExperienceId(value); return *this;}
-
-    /**
-     * <p>The identifier of your Amazon Q Business web experience.</p>
-     */
-    inline WebExperience& WithWebExperienceId(Aws::String&& value) { SetWebExperienceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of your Amazon Q Business web experience.</p>
-     */
-    inline WebExperience& WithWebExperienceId(const char* value) { SetWebExperienceId(value); return *this;}
-
   private:
+
+    Aws::String m_webExperienceId;
+    bool m_webExperienceIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet = false;
+
+    Aws::Utils::DateTime m_updatedAt;
+    bool m_updatedAtHasBeenSet = false;
 
     Aws::String m_defaultEndpoint;
     bool m_defaultEndpointHasBeenSet = false;
 
     WebExperienceStatus m_status;
     bool m_statusHasBeenSet = false;
-
-    Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet = false;
-
-    Aws::String m_webExperienceId;
-    bool m_webExperienceIdHasBeenSet = false;
   };
 
 } // namespace Model

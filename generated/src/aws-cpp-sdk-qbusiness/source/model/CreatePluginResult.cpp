@@ -17,11 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreatePluginResult::CreatePluginResult()
+CreatePluginResult::CreatePluginResult() : 
+    m_buildStatus(PluginBuildStatus::NOT_SET)
 {
 }
 
-CreatePluginResult::CreatePluginResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+CreatePluginResult::CreatePluginResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_buildStatus(PluginBuildStatus::NOT_SET)
 {
   *this = result;
 }
@@ -29,15 +31,21 @@ CreatePluginResult::CreatePluginResult(const Aws::AmazonWebServiceResult<JsonVal
 CreatePluginResult& CreatePluginResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("pluginId"))
+  {
+    m_pluginId = jsonValue.GetString("pluginId");
+
+  }
+
   if(jsonValue.ValueExists("pluginArn"))
   {
     m_pluginArn = jsonValue.GetString("pluginArn");
 
   }
 
-  if(jsonValue.ValueExists("pluginId"))
+  if(jsonValue.ValueExists("buildStatus"))
   {
-    m_pluginId = jsonValue.GetString("pluginId");
+    m_buildStatus = PluginBuildStatusMapper::GetPluginBuildStatusForName(jsonValue.GetString("buildStatus"));
 
   }
 

@@ -29,12 +29,6 @@ ListRetrieversResult::ListRetrieversResult(const Aws::AmazonWebServiceResult<Jso
 ListRetrieversResult& ListRetrieversResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
-  }
-
   if(jsonValue.ValueExists("retrievers"))
   {
     Aws::Utils::Array<JsonView> retrieversJsonList = jsonValue.GetArray("retrievers");
@@ -42,6 +36,12 @@ ListRetrieversResult& ListRetrieversResult::operator =(const Aws::AmazonWebServi
     {
       m_retrievers.push_back(retrieversJsonList[retrieversIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
   }
 
 

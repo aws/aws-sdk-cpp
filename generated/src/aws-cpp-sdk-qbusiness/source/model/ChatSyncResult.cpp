@@ -29,34 +29,10 @@ ChatSyncResult::ChatSyncResult(const Aws::AmazonWebServiceResult<JsonValue>& res
 ChatSyncResult& ChatSyncResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("actionReview"))
-  {
-    m_actionReview = jsonValue.GetObject("actionReview");
-
-  }
-
   if(jsonValue.ValueExists("conversationId"))
   {
     m_conversationId = jsonValue.GetString("conversationId");
 
-  }
-
-  if(jsonValue.ValueExists("failedAttachments"))
-  {
-    Aws::Utils::Array<JsonView> failedAttachmentsJsonList = jsonValue.GetArray("failedAttachments");
-    for(unsigned failedAttachmentsIndex = 0; failedAttachmentsIndex < failedAttachmentsJsonList.GetLength(); ++failedAttachmentsIndex)
-    {
-      m_failedAttachments.push_back(failedAttachmentsJsonList[failedAttachmentsIndex].AsObject());
-    }
-  }
-
-  if(jsonValue.ValueExists("sourceAttributions"))
-  {
-    Aws::Utils::Array<JsonView> sourceAttributionsJsonList = jsonValue.GetArray("sourceAttributions");
-    for(unsigned sourceAttributionsIndex = 0; sourceAttributionsIndex < sourceAttributionsJsonList.GetLength(); ++sourceAttributionsIndex)
-    {
-      m_sourceAttributions.push_back(sourceAttributionsJsonList[sourceAttributionsIndex].AsObject());
-    }
   }
 
   if(jsonValue.ValueExists("systemMessage"))
@@ -75,6 +51,36 @@ ChatSyncResult& ChatSyncResult::operator =(const Aws::AmazonWebServiceResult<Jso
   {
     m_userMessageId = jsonValue.GetString("userMessageId");
 
+  }
+
+  if(jsonValue.ValueExists("actionReview"))
+  {
+    m_actionReview = jsonValue.GetObject("actionReview");
+
+  }
+
+  if(jsonValue.ValueExists("authChallengeRequest"))
+  {
+    m_authChallengeRequest = jsonValue.GetObject("authChallengeRequest");
+
+  }
+
+  if(jsonValue.ValueExists("sourceAttributions"))
+  {
+    Aws::Utils::Array<JsonView> sourceAttributionsJsonList = jsonValue.GetArray("sourceAttributions");
+    for(unsigned sourceAttributionsIndex = 0; sourceAttributionsIndex < sourceAttributionsJsonList.GetLength(); ++sourceAttributionsIndex)
+    {
+      m_sourceAttributions.push_back(sourceAttributionsJsonList[sourceAttributionsIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("failedAttachments"))
+  {
+    Aws::Utils::Array<JsonView> failedAttachmentsJsonList = jsonValue.GetArray("failedAttachments");
+    for(unsigned failedAttachmentsIndex = 0; failedAttachmentsIndex < failedAttachmentsJsonList.GetLength(); ++failedAttachmentsIndex)
+    {
+      m_failedAttachments.push_back(failedAttachmentsJsonList[failedAttachmentsIndex].AsObject());
+    }
   }
 
 

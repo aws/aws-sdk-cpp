@@ -6,11 +6,11 @@
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/qbusiness/model/AppliedAttachmentsConfiguration.h>
-#include <aws/core/utils/DateTime.h>
-#include <aws/qbusiness/model/EncryptionConfiguration.h>
-#include <aws/qbusiness/model/ErrorDetail.h>
 #include <aws/qbusiness/model/ApplicationStatus.h>
+#include <aws/qbusiness/model/EncryptionConfiguration.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/qbusiness/model/ErrorDetail.h>
+#include <aws/qbusiness/model/AppliedAttachmentsConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -35,171 +35,6 @@ namespace Model
     AWS_QBUSINESS_API GetApplicationResult();
     AWS_QBUSINESS_API GetApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QBUSINESS_API GetApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Q Business application.</p>
-     */
-    inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Q Business application.</p>
-     */
-    inline void SetApplicationArn(const Aws::String& value) { m_applicationArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Q Business application.</p>
-     */
-    inline void SetApplicationArn(Aws::String&& value) { m_applicationArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Q Business application.</p>
-     */
-    inline void SetApplicationArn(const char* value) { m_applicationArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Q Business application.</p>
-     */
-    inline GetApplicationResult& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Q Business application.</p>
-     */
-    inline GetApplicationResult& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Q Business application.</p>
-     */
-    inline GetApplicationResult& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
-
-
-    /**
-     * <p>The identifier of the Amazon Q Business application.</p>
-     */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
-
-    /**
-     * <p>The identifier of the Amazon Q Business application.</p>
-     */
-    inline void SetApplicationId(const Aws::String& value) { m_applicationId = value; }
-
-    /**
-     * <p>The identifier of the Amazon Q Business application.</p>
-     */
-    inline void SetApplicationId(Aws::String&& value) { m_applicationId = std::move(value); }
-
-    /**
-     * <p>The identifier of the Amazon Q Business application.</p>
-     */
-    inline void SetApplicationId(const char* value) { m_applicationId.assign(value); }
-
-    /**
-     * <p>The identifier of the Amazon Q Business application.</p>
-     */
-    inline GetApplicationResult& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Q Business application.</p>
-     */
-    inline GetApplicationResult& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Q Business application.</p>
-     */
-    inline GetApplicationResult& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
-
-
-    /**
-     * <p>Settings for whether end users can upload files directly during chat.</p>
-     */
-    inline const AppliedAttachmentsConfiguration& GetAttachmentsConfiguration() const{ return m_attachmentsConfiguration; }
-
-    /**
-     * <p>Settings for whether end users can upload files directly during chat.</p>
-     */
-    inline void SetAttachmentsConfiguration(const AppliedAttachmentsConfiguration& value) { m_attachmentsConfiguration = value; }
-
-    /**
-     * <p>Settings for whether end users can upload files directly during chat.</p>
-     */
-    inline void SetAttachmentsConfiguration(AppliedAttachmentsConfiguration&& value) { m_attachmentsConfiguration = std::move(value); }
-
-    /**
-     * <p>Settings for whether end users can upload files directly during chat.</p>
-     */
-    inline GetApplicationResult& WithAttachmentsConfiguration(const AppliedAttachmentsConfiguration& value) { SetAttachmentsConfiguration(value); return *this;}
-
-    /**
-     * <p>Settings for whether end users can upload files directly during chat.</p>
-     */
-    inline GetApplicationResult& WithAttachmentsConfiguration(AppliedAttachmentsConfiguration&& value) { SetAttachmentsConfiguration(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The Unix timestamp when the Amazon Q Business application was last
-     * updated.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-
-    /**
-     * <p>The Unix timestamp when the Amazon Q Business application was last
-     * updated.</p>
-     */
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-
-    /**
-     * <p>The Unix timestamp when the Amazon Q Business application was last
-     * updated.</p>
-     */
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-
-    /**
-     * <p>The Unix timestamp when the Amazon Q Business application was last
-     * updated.</p>
-     */
-    inline GetApplicationResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-
-    /**
-     * <p>The Unix timestamp when the Amazon Q Business application was last
-     * updated.</p>
-     */
-    inline GetApplicationResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
-
-
-    /**
-     * <p>A description for the Amazon Q Business application.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>A description for the Amazon Q Business application.</p>
-     */
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-
-    /**
-     * <p>A description for the Amazon Q Business application.</p>
-     */
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-
-    /**
-     * <p>A description for the Amazon Q Business application.</p>
-     */
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-
-    /**
-     * <p>A description for the Amazon Q Business application.</p>
-     */
-    inline GetApplicationResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A description for the Amazon Q Business application.</p>
-     */
-    inline GetApplicationResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A description for the Amazon Q Business application.</p>
-     */
-    inline GetApplicationResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
@@ -239,70 +74,75 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the Amazon Web Services KMS key that is used to encrypt
-     * your data. Amazon Q Business doesn't support asymmetric keys.</p>
+     * <p>The identifier of the Amazon Q Business application.</p>
      */
-    inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
+    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * <p>The identifier of the Amazon Web Services KMS key that is used to encrypt
-     * your data. Amazon Q Business doesn't support asymmetric keys.</p>
+     * <p>The identifier of the Amazon Q Business application.</p>
      */
-    inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfiguration = value; }
+    inline void SetApplicationId(const Aws::String& value) { m_applicationId = value; }
 
     /**
-     * <p>The identifier of the Amazon Web Services KMS key that is used to encrypt
-     * your data. Amazon Q Business doesn't support asymmetric keys.</p>
+     * <p>The identifier of the Amazon Q Business application.</p>
      */
-    inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfiguration = std::move(value); }
+    inline void SetApplicationId(Aws::String&& value) { m_applicationId = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon Web Services KMS key that is used to encrypt
-     * your data. Amazon Q Business doesn't support asymmetric keys.</p>
+     * <p>The identifier of the Amazon Q Business application.</p>
      */
-    inline GetApplicationResult& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
+    inline void SetApplicationId(const char* value) { m_applicationId.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon Web Services KMS key that is used to encrypt
-     * your data. Amazon Q Business doesn't support asymmetric keys.</p>
+     * <p>The identifier of the Amazon Q Business application.</p>
      */
-    inline GetApplicationResult& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
+    inline GetApplicationResult& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
+
+    /**
+     * <p>The identifier of the Amazon Q Business application.</p>
+     */
+    inline GetApplicationResult& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the Amazon Q Business application.</p>
+     */
+    inline GetApplicationResult& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
     /**
-     * <p>If the <code>Status</code> field is set to <code>ERROR</code>, the
-     * <code>ErrorMessage</code> field contains a description of the error that caused
-     * the synchronization to fail.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Q Business application.</p>
      */
-    inline const ErrorDetail& GetError() const{ return m_error; }
+    inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
 
     /**
-     * <p>If the <code>Status</code> field is set to <code>ERROR</code>, the
-     * <code>ErrorMessage</code> field contains a description of the error that caused
-     * the synchronization to fail.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Q Business application.</p>
      */
-    inline void SetError(const ErrorDetail& value) { m_error = value; }
+    inline void SetApplicationArn(const Aws::String& value) { m_applicationArn = value; }
 
     /**
-     * <p>If the <code>Status</code> field is set to <code>ERROR</code>, the
-     * <code>ErrorMessage</code> field contains a description of the error that caused
-     * the synchronization to fail.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Q Business application.</p>
      */
-    inline void SetError(ErrorDetail&& value) { m_error = std::move(value); }
+    inline void SetApplicationArn(Aws::String&& value) { m_applicationArn = std::move(value); }
 
     /**
-     * <p>If the <code>Status</code> field is set to <code>ERROR</code>, the
-     * <code>ErrorMessage</code> field contains a description of the error that caused
-     * the synchronization to fail.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Q Business application.</p>
      */
-    inline GetApplicationResult& WithError(const ErrorDetail& value) { SetError(value); return *this;}
+    inline void SetApplicationArn(const char* value) { m_applicationArn.assign(value); }
 
     /**
-     * <p>If the <code>Status</code> field is set to <code>ERROR</code>, the
-     * <code>ErrorMessage</code> field contains a description of the error that caused
-     * the synchronization to fail.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Q Business application.</p>
      */
-    inline GetApplicationResult& WithError(ErrorDetail&& value) { SetError(std::move(value)); return *this;}
+    inline GetApplicationResult& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon Q Business application.</p>
+     */
+    inline GetApplicationResult& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon Q Business application.</p>
+     */
+    inline GetApplicationResult& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
 
 
     /**
@@ -418,6 +258,104 @@ namespace Model
 
 
     /**
+     * <p>A description for the Amazon Q Business application.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description for the Amazon Q Business application.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_description = value; }
+
+    /**
+     * <p>A description for the Amazon Q Business application.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
+
+    /**
+     * <p>A description for the Amazon Q Business application.</p>
+     */
+    inline void SetDescription(const char* value) { m_description.assign(value); }
+
+    /**
+     * <p>A description for the Amazon Q Business application.</p>
+     */
+    inline GetApplicationResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>A description for the Amazon Q Business application.</p>
+     */
+    inline GetApplicationResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>A description for the Amazon Q Business application.</p>
+     */
+    inline GetApplicationResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
+     * <p>The identifier of the Amazon Web Services KMS key that is used to encrypt
+     * your data. Amazon Q Business doesn't support asymmetric keys.</p>
+     */
+    inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
+
+    /**
+     * <p>The identifier of the Amazon Web Services KMS key that is used to encrypt
+     * your data. Amazon Q Business doesn't support asymmetric keys.</p>
+     */
+    inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfiguration = value; }
+
+    /**
+     * <p>The identifier of the Amazon Web Services KMS key that is used to encrypt
+     * your data. Amazon Q Business doesn't support asymmetric keys.</p>
+     */
+    inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfiguration = std::move(value); }
+
+    /**
+     * <p>The identifier of the Amazon Web Services KMS key that is used to encrypt
+     * your data. Amazon Q Business doesn't support asymmetric keys.</p>
+     */
+    inline GetApplicationResult& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
+
+    /**
+     * <p>The identifier of the Amazon Web Services KMS key that is used to encrypt
+     * your data. Amazon Q Business doesn't support asymmetric keys.</p>
+     */
+    inline GetApplicationResult& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Unix timestamp when the Amazon Q Business application was last
+     * updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * <p>The Unix timestamp when the Amazon Q Business application was last
+     * updated.</p>
+     */
+    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
+
+    /**
+     * <p>The Unix timestamp when the Amazon Q Business application was last
+     * updated.</p>
+     */
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
+
+    /**
+     * <p>The Unix timestamp when the Amazon Q Business application was last
+     * updated.</p>
+     */
+    inline GetApplicationResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
+
+    /**
+     * <p>The Unix timestamp when the Amazon Q Business application was last
+     * updated.</p>
+     */
+    inline GetApplicationResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+
+
+    /**
      * <p>The Unix timestamp when the Amazon Q Business application was last
      * updated.</p>
      */
@@ -448,6 +386,68 @@ namespace Model
     inline GetApplicationResult& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
 
+    /**
+     * <p>If the <code>Status</code> field is set to <code>ERROR</code>, the
+     * <code>ErrorMessage</code> field contains a description of the error that caused
+     * the synchronization to fail.</p>
+     */
+    inline const ErrorDetail& GetError() const{ return m_error; }
+
+    /**
+     * <p>If the <code>Status</code> field is set to <code>ERROR</code>, the
+     * <code>ErrorMessage</code> field contains a description of the error that caused
+     * the synchronization to fail.</p>
+     */
+    inline void SetError(const ErrorDetail& value) { m_error = value; }
+
+    /**
+     * <p>If the <code>Status</code> field is set to <code>ERROR</code>, the
+     * <code>ErrorMessage</code> field contains a description of the error that caused
+     * the synchronization to fail.</p>
+     */
+    inline void SetError(ErrorDetail&& value) { m_error = std::move(value); }
+
+    /**
+     * <p>If the <code>Status</code> field is set to <code>ERROR</code>, the
+     * <code>ErrorMessage</code> field contains a description of the error that caused
+     * the synchronization to fail.</p>
+     */
+    inline GetApplicationResult& WithError(const ErrorDetail& value) { SetError(value); return *this;}
+
+    /**
+     * <p>If the <code>Status</code> field is set to <code>ERROR</code>, the
+     * <code>ErrorMessage</code> field contains a description of the error that caused
+     * the synchronization to fail.</p>
+     */
+    inline GetApplicationResult& WithError(ErrorDetail&& value) { SetError(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Settings for whether end users can upload files directly during chat.</p>
+     */
+    inline const AppliedAttachmentsConfiguration& GetAttachmentsConfiguration() const{ return m_attachmentsConfiguration; }
+
+    /**
+     * <p>Settings for whether end users can upload files directly during chat.</p>
+     */
+    inline void SetAttachmentsConfiguration(const AppliedAttachmentsConfiguration& value) { m_attachmentsConfiguration = value; }
+
+    /**
+     * <p>Settings for whether end users can upload files directly during chat.</p>
+     */
+    inline void SetAttachmentsConfiguration(AppliedAttachmentsConfiguration&& value) { m_attachmentsConfiguration = std::move(value); }
+
+    /**
+     * <p>Settings for whether end users can upload files directly during chat.</p>
+     */
+    inline GetApplicationResult& WithAttachmentsConfiguration(const AppliedAttachmentsConfiguration& value) { SetAttachmentsConfiguration(value); return *this;}
+
+    /**
+     * <p>Settings for whether end users can upload files directly during chat.</p>
+     */
+    inline GetApplicationResult& WithAttachmentsConfiguration(AppliedAttachmentsConfiguration&& value) { SetAttachmentsConfiguration(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -471,21 +471,11 @@ namespace Model
 
   private:
 
-    Aws::String m_applicationArn;
+    Aws::String m_displayName;
 
     Aws::String m_applicationId;
 
-    AppliedAttachmentsConfiguration m_attachmentsConfiguration;
-
-    Aws::Utils::DateTime m_createdAt;
-
-    Aws::String m_description;
-
-    Aws::String m_displayName;
-
-    EncryptionConfiguration m_encryptionConfiguration;
-
-    ErrorDetail m_error;
+    Aws::String m_applicationArn;
 
     Aws::String m_identityCenterApplicationArn;
 
@@ -493,7 +483,17 @@ namespace Model
 
     ApplicationStatus m_status;
 
+    Aws::String m_description;
+
+    EncryptionConfiguration m_encryptionConfiguration;
+
+    Aws::Utils::DateTime m_createdAt;
+
     Aws::Utils::DateTime m_updatedAt;
+
+    ErrorDetail m_error;
+
+    AppliedAttachmentsConfiguration m_attachmentsConfiguration;
 
     Aws::String m_requestId;
   };

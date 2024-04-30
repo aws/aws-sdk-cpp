@@ -426,17 +426,17 @@ namespace Model
 
 
     /**
-     * <p>The workflow's storage capacity in gigabytes.</p>
+     * <p>The workflow's storage capacity in gibibytes.</p>
      */
     inline int GetStorageCapacity() const{ return m_storageCapacity; }
 
     /**
-     * <p>The workflow's storage capacity in gigabytes.</p>
+     * <p>The workflow's storage capacity in gibibytes.</p>
      */
     inline void SetStorageCapacity(int value) { m_storageCapacity = value; }
 
     /**
-     * <p>The workflow's storage capacity in gigabytes.</p>
+     * <p>The workflow's storage capacity in gibibytes.</p>
      */
     inline GetWorkflowResult& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
 

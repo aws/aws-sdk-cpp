@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
-#include <aws/qbusiness/model/ErrorCode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qbusiness/model/ErrorCode.h>
 #include <utility>
 
 namespace Aws
@@ -37,37 +37,6 @@ namespace Model
     AWS_QBUSINESS_API ErrorDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API ErrorDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The code associated with the data source sync error.</p>
-     */
-    inline const ErrorCode& GetErrorCode() const{ return m_errorCode; }
-
-    /**
-     * <p>The code associated with the data source sync error.</p>
-     */
-    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-
-    /**
-     * <p>The code associated with the data source sync error.</p>
-     */
-    inline void SetErrorCode(const ErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-
-    /**
-     * <p>The code associated with the data source sync error.</p>
-     */
-    inline void SetErrorCode(ErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-
-    /**
-     * <p>The code associated with the data source sync error.</p>
-     */
-    inline ErrorDetail& WithErrorCode(const ErrorCode& value) { SetErrorCode(value); return *this;}
-
-    /**
-     * <p>The code associated with the data source sync error.</p>
-     */
-    inline ErrorDetail& WithErrorCode(ErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
 
 
     /**
@@ -110,13 +79,44 @@ namespace Model
      */
     inline ErrorDetail& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 
-  private:
 
-    ErrorCode m_errorCode;
-    bool m_errorCodeHasBeenSet = false;
+    /**
+     * <p>The code associated with the data source sync error.</p>
+     */
+    inline const ErrorCode& GetErrorCode() const{ return m_errorCode; }
+
+    /**
+     * <p>The code associated with the data source sync error.</p>
+     */
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
+
+    /**
+     * <p>The code associated with the data source sync error.</p>
+     */
+    inline void SetErrorCode(const ErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+
+    /**
+     * <p>The code associated with the data source sync error.</p>
+     */
+    inline void SetErrorCode(ErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
+
+    /**
+     * <p>The code associated with the data source sync error.</p>
+     */
+    inline ErrorDetail& WithErrorCode(const ErrorCode& value) { SetErrorCode(value); return *this;}
+
+    /**
+     * <p>The code associated with the data source sync error.</p>
+     */
+    inline ErrorDetail& WithErrorCode(ErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+
+  private:
 
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet = false;
+
+    ErrorCode m_errorCode;
+    bool m_errorCodeHasBeenSet = false;
   };
 
 } // namespace Model

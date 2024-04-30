@@ -41,6 +41,47 @@ namespace Model
 
 
     /**
+     * <p> The identifier of the data source connector.</p>
+     */
+    inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
+
+    /**
+     * <p> The identifier of the data source connector.</p>
+     */
+    inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
+
+    /**
+     * <p> The identifier of the data source connector.</p>
+     */
+    inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
+
+    /**
+     * <p> The identifier of the data source connector.</p>
+     */
+    inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::move(value); }
+
+    /**
+     * <p> The identifier of the data source connector.</p>
+     */
+    inline void SetDataSourceId(const char* value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId.assign(value); }
+
+    /**
+     * <p> The identifier of the data source connector.</p>
+     */
+    inline ListDataSourceSyncJobsRequest& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
+
+    /**
+     * <p> The identifier of the data source connector.</p>
+     */
+    inline ListDataSourceSyncJobsRequest& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
+
+    /**
+     * <p> The identifier of the data source connector.</p>
+     */
+    inline ListDataSourceSyncJobsRequest& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
+
+
+    /**
      * <p>The identifier of the Amazon Q Business application connected to the data
      * source.</p>
      */
@@ -90,78 +131,6 @@ namespace Model
 
 
     /**
-     * <p> The identifier of the data source connector.</p>
-     */
-    inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
-
-    /**
-     * <p> The identifier of the data source connector.</p>
-     */
-    inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
-
-    /**
-     * <p> The identifier of the data source connector.</p>
-     */
-    inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
-
-    /**
-     * <p> The identifier of the data source connector.</p>
-     */
-    inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::move(value); }
-
-    /**
-     * <p> The identifier of the data source connector.</p>
-     */
-    inline void SetDataSourceId(const char* value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId.assign(value); }
-
-    /**
-     * <p> The identifier of the data source connector.</p>
-     */
-    inline ListDataSourceSyncJobsRequest& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
-
-    /**
-     * <p> The identifier of the data source connector.</p>
-     */
-    inline ListDataSourceSyncJobsRequest& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
-
-    /**
-     * <p> The identifier of the data source connector.</p>
-     */
-    inline ListDataSourceSyncJobsRequest& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
-
-
-    /**
-     * <p> The end time of the data source connector sync.</p>
-     */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
-
-    /**
-     * <p> The end time of the data source connector sync.</p>
-     */
-    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-
-    /**
-     * <p> The end time of the data source connector sync.</p>
-     */
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-
-    /**
-     * <p> The end time of the data source connector sync.</p>
-     */
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-
-    /**
-     * <p> The end time of the data source connector sync.</p>
-     */
-    inline ListDataSourceSyncJobsRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-
-    /**
-     * <p> The end time of the data source connector sync.</p>
-     */
-    inline ListDataSourceSyncJobsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
-
-
-    /**
      * <p>The identifier of the index used with the Amazon Q Business data source
      * connector.</p>
      */
@@ -208,27 +177,6 @@ namespace Model
      * connector.</p>
      */
     inline ListDataSourceSyncJobsRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
-
-
-    /**
-     * <p>The maximum number of synchronization jobs to return in the response.</p>
-     */
-    inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of synchronization jobs to return in the response.</p>
-     */
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of synchronization jobs to return in the response.</p>
-     */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of synchronization jobs to return in the response.</p>
-     */
-    inline ListDataSourceSyncJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
@@ -289,6 +237,27 @@ namespace Model
 
 
     /**
+     * <p>The maximum number of synchronization jobs to return in the response.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of synchronization jobs to return in the response.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of synchronization jobs to return in the response.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>The maximum number of synchronization jobs to return in the response.</p>
+     */
+    inline ListDataSourceSyncJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
+
+    /**
      * <p> The start time of the data source connector sync. </p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
@@ -317,6 +286,37 @@ namespace Model
      * <p> The start time of the data source connector sync. </p>
      */
     inline ListDataSourceSyncJobsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p> The end time of the data source connector sync.</p>
+     */
+    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+
+    /**
+     * <p> The end time of the data source connector sync.</p>
+     */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+
+    /**
+     * <p> The end time of the data source connector sync.</p>
+     */
+    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+
+    /**
+     * <p> The end time of the data source connector sync.</p>
+     */
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
+
+    /**
+     * <p> The end time of the data source connector sync.</p>
+     */
+    inline ListDataSourceSyncJobsRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
+
+    /**
+     * <p> The end time of the data source connector sync.</p>
+     */
+    inline ListDataSourceSyncJobsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
 
     /**
@@ -357,26 +357,26 @@ namespace Model
 
   private:
 
-    Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet = false;
-
     Aws::String m_dataSourceId;
     bool m_dataSourceIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet = false;
+    Aws::String m_applicationId;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_indexId;
     bool m_indexIdHasBeenSet = false;
 
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
-
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_endTime;
+    bool m_endTimeHasBeenSet = false;
 
     DataSourceSyncJobStatus m_statusFilter;
     bool m_statusFilterHasBeenSet = false;

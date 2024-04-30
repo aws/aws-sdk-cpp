@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qbusiness/model/Conversation.h>
 #include <utility>
 
@@ -32,49 +32,6 @@ namespace Model
     AWS_QBUSINESS_API ListConversationsResult();
     AWS_QBUSINESS_API ListConversationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QBUSINESS_API ListConversationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>An array of summary information on the configuration of one or more Amazon Q
-     * Business web experiences.</p>
-     */
-    inline const Aws::Vector<Conversation>& GetConversations() const{ return m_conversations; }
-
-    /**
-     * <p>An array of summary information on the configuration of one or more Amazon Q
-     * Business web experiences.</p>
-     */
-    inline void SetConversations(const Aws::Vector<Conversation>& value) { m_conversations = value; }
-
-    /**
-     * <p>An array of summary information on the configuration of one or more Amazon Q
-     * Business web experiences.</p>
-     */
-    inline void SetConversations(Aws::Vector<Conversation>&& value) { m_conversations = std::move(value); }
-
-    /**
-     * <p>An array of summary information on the configuration of one or more Amazon Q
-     * Business web experiences.</p>
-     */
-    inline ListConversationsResult& WithConversations(const Aws::Vector<Conversation>& value) { SetConversations(value); return *this;}
-
-    /**
-     * <p>An array of summary information on the configuration of one or more Amazon Q
-     * Business web experiences.</p>
-     */
-    inline ListConversationsResult& WithConversations(Aws::Vector<Conversation>&& value) { SetConversations(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of summary information on the configuration of one or more Amazon Q
-     * Business web experiences.</p>
-     */
-    inline ListConversationsResult& AddConversations(const Conversation& value) { m_conversations.push_back(value); return *this; }
-
-    /**
-     * <p>An array of summary information on the configuration of one or more Amazon Q
-     * Business web experiences.</p>
-     */
-    inline ListConversationsResult& AddConversations(Conversation&& value) { m_conversations.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -120,6 +77,49 @@ namespace Model
     inline ListConversationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
+    /**
+     * <p>An array of summary information on the configuration of one or more Amazon Q
+     * Business web experiences.</p>
+     */
+    inline const Aws::Vector<Conversation>& GetConversations() const{ return m_conversations; }
+
+    /**
+     * <p>An array of summary information on the configuration of one or more Amazon Q
+     * Business web experiences.</p>
+     */
+    inline void SetConversations(const Aws::Vector<Conversation>& value) { m_conversations = value; }
+
+    /**
+     * <p>An array of summary information on the configuration of one or more Amazon Q
+     * Business web experiences.</p>
+     */
+    inline void SetConversations(Aws::Vector<Conversation>&& value) { m_conversations = std::move(value); }
+
+    /**
+     * <p>An array of summary information on the configuration of one or more Amazon Q
+     * Business web experiences.</p>
+     */
+    inline ListConversationsResult& WithConversations(const Aws::Vector<Conversation>& value) { SetConversations(value); return *this;}
+
+    /**
+     * <p>An array of summary information on the configuration of one or more Amazon Q
+     * Business web experiences.</p>
+     */
+    inline ListConversationsResult& WithConversations(Aws::Vector<Conversation>&& value) { SetConversations(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of summary information on the configuration of one or more Amazon Q
+     * Business web experiences.</p>
+     */
+    inline ListConversationsResult& AddConversations(const Conversation& value) { m_conversations.push_back(value); return *this; }
+
+    /**
+     * <p>An array of summary information on the configuration of one or more Amazon Q
+     * Business web experiences.</p>
+     */
+    inline ListConversationsResult& AddConversations(Conversation&& value) { m_conversations.push_back(std::move(value)); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -143,9 +143,9 @@ namespace Model
 
   private:
 
-    Aws::Vector<Conversation> m_conversations;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<Conversation> m_conversations;
 
     Aws::String m_requestId;
   };

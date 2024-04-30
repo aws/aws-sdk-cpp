@@ -269,7 +269,7 @@ namespace Model
      * package version is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm or Swift package version is its <code>scope</code>. </p> </li> <li>
      * <p>The namespace of a generic package is its <code>namespace</code>.</p> </li>
-     * <li> <p> Python and NuGet package versions do not contain a corresponding
+     * <li> <p> Python, NuGet, and Ruby package versions do not contain a corresponding
      * component, package versions of those formats do not have a namespace. </p> </li>
      * </ul>
      */
@@ -284,7 +284,7 @@ namespace Model
      * package version is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm or Swift package version is its <code>scope</code>. </p> </li> <li>
      * <p>The namespace of a generic package is its <code>namespace</code>.</p> </li>
-     * <li> <p> Python and NuGet package versions do not contain a corresponding
+     * <li> <p> Python, NuGet, and Ruby package versions do not contain a corresponding
      * component, package versions of those formats do not have a namespace. </p> </li>
      * </ul>
      */
@@ -299,7 +299,7 @@ namespace Model
      * package version is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm or Swift package version is its <code>scope</code>. </p> </li> <li>
      * <p>The namespace of a generic package is its <code>namespace</code>.</p> </li>
-     * <li> <p> Python and NuGet package versions do not contain a corresponding
+     * <li> <p> Python, NuGet, and Ruby package versions do not contain a corresponding
      * component, package versions of those formats do not have a namespace. </p> </li>
      * </ul>
      */
@@ -314,7 +314,7 @@ namespace Model
      * package version is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm or Swift package version is its <code>scope</code>. </p> </li> <li>
      * <p>The namespace of a generic package is its <code>namespace</code>.</p> </li>
-     * <li> <p> Python and NuGet package versions do not contain a corresponding
+     * <li> <p> Python, NuGet, and Ruby package versions do not contain a corresponding
      * component, package versions of those formats do not have a namespace. </p> </li>
      * </ul>
      */
@@ -329,7 +329,7 @@ namespace Model
      * package version is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm or Swift package version is its <code>scope</code>. </p> </li> <li>
      * <p>The namespace of a generic package is its <code>namespace</code>.</p> </li>
-     * <li> <p> Python and NuGet package versions do not contain a corresponding
+     * <li> <p> Python, NuGet, and Ruby package versions do not contain a corresponding
      * component, package versions of those formats do not have a namespace. </p> </li>
      * </ul>
      */
@@ -344,7 +344,7 @@ namespace Model
      * package version is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm or Swift package version is its <code>scope</code>. </p> </li> <li>
      * <p>The namespace of a generic package is its <code>namespace</code>.</p> </li>
-     * <li> <p> Python and NuGet package versions do not contain a corresponding
+     * <li> <p> Python, NuGet, and Ruby package versions do not contain a corresponding
      * component, package versions of those formats do not have a namespace. </p> </li>
      * </ul>
      */
@@ -359,7 +359,7 @@ namespace Model
      * package version is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm or Swift package version is its <code>scope</code>. </p> </li> <li>
      * <p>The namespace of a generic package is its <code>namespace</code>.</p> </li>
-     * <li> <p> Python and NuGet package versions do not contain a corresponding
+     * <li> <p> Python, NuGet, and Ruby package versions do not contain a corresponding
      * component, package versions of those formats do not have a namespace. </p> </li>
      * </ul>
      */
@@ -374,7 +374,7 @@ namespace Model
      * package version is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm or Swift package version is its <code>scope</code>. </p> </li> <li>
      * <p>The namespace of a generic package is its <code>namespace</code>.</p> </li>
-     * <li> <p> Python and NuGet package versions do not contain a corresponding
+     * <li> <p> Python, NuGet, and Ruby package versions do not contain a corresponding
      * component, package versions of those formats do not have a namespace. </p> </li>
      * </ul>
      */

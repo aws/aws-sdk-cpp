@@ -18,14 +18,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetWebExperienceResult::GetWebExperienceResult() : 
-    m_samplePromptsControlMode(WebExperienceSamplePromptsControlMode::NOT_SET),
-    m_status(WebExperienceStatus::NOT_SET)
+    m_status(WebExperienceStatus::NOT_SET),
+    m_samplePromptsControlMode(WebExperienceSamplePromptsControlMode::NOT_SET)
 {
 }
 
 GetWebExperienceResult::GetWebExperienceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_samplePromptsControlMode(WebExperienceSamplePromptsControlMode::NOT_SET),
-    m_status(WebExperienceStatus::NOT_SET)
+    m_status(WebExperienceStatus::NOT_SET),
+    m_samplePromptsControlMode(WebExperienceSamplePromptsControlMode::NOT_SET)
 {
   *this = result;
 }
@@ -39,63 +39,9 @@ GetWebExperienceResult& GetWebExperienceResult::operator =(const Aws::AmazonWebS
 
   }
 
-  if(jsonValue.ValueExists("authenticationConfiguration"))
+  if(jsonValue.ValueExists("webExperienceId"))
   {
-    m_authenticationConfiguration = jsonValue.GetObject("authenticationConfiguration");
-
-  }
-
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetDouble("createdAt");
-
-  }
-
-  if(jsonValue.ValueExists("defaultEndpoint"))
-  {
-    m_defaultEndpoint = jsonValue.GetString("defaultEndpoint");
-
-  }
-
-  if(jsonValue.ValueExists("error"))
-  {
-    m_error = jsonValue.GetObject("error");
-
-  }
-
-  if(jsonValue.ValueExists("roleArn"))
-  {
-    m_roleArn = jsonValue.GetString("roleArn");
-
-  }
-
-  if(jsonValue.ValueExists("samplePromptsControlMode"))
-  {
-    m_samplePromptsControlMode = WebExperienceSamplePromptsControlModeMapper::GetWebExperienceSamplePromptsControlModeForName(jsonValue.GetString("samplePromptsControlMode"));
-
-  }
-
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = WebExperienceStatusMapper::GetWebExperienceStatusForName(jsonValue.GetString("status"));
-
-  }
-
-  if(jsonValue.ValueExists("subtitle"))
-  {
-    m_subtitle = jsonValue.GetString("subtitle");
-
-  }
-
-  if(jsonValue.ValueExists("title"))
-  {
-    m_title = jsonValue.GetString("title");
-
-  }
-
-  if(jsonValue.ValueExists("updatedAt"))
-  {
-    m_updatedAt = jsonValue.GetDouble("updatedAt");
+    m_webExperienceId = jsonValue.GetString("webExperienceId");
 
   }
 
@@ -105,15 +51,63 @@ GetWebExperienceResult& GetWebExperienceResult::operator =(const Aws::AmazonWebS
 
   }
 
-  if(jsonValue.ValueExists("webExperienceId"))
+  if(jsonValue.ValueExists("defaultEndpoint"))
   {
-    m_webExperienceId = jsonValue.GetString("webExperienceId");
+    m_defaultEndpoint = jsonValue.GetString("defaultEndpoint");
+
+  }
+
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = WebExperienceStatusMapper::GetWebExperienceStatusForName(jsonValue.GetString("status"));
+
+  }
+
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+
+  }
+
+  if(jsonValue.ValueExists("updatedAt"))
+  {
+    m_updatedAt = jsonValue.GetDouble("updatedAt");
+
+  }
+
+  if(jsonValue.ValueExists("title"))
+  {
+    m_title = jsonValue.GetString("title");
+
+  }
+
+  if(jsonValue.ValueExists("subtitle"))
+  {
+    m_subtitle = jsonValue.GetString("subtitle");
 
   }
 
   if(jsonValue.ValueExists("welcomeMessage"))
   {
     m_welcomeMessage = jsonValue.GetString("welcomeMessage");
+
+  }
+
+  if(jsonValue.ValueExists("samplePromptsControlMode"))
+  {
+    m_samplePromptsControlMode = WebExperienceSamplePromptsControlModeMapper::GetWebExperienceSamplePromptsControlModeForName(jsonValue.GetString("samplePromptsControlMode"));
+
+  }
+
+  if(jsonValue.ValueExists("roleArn"))
+  {
+    m_roleArn = jsonValue.GetString("roleArn");
+
+  }
+
+  if(jsonValue.ValueExists("error"))
+  {
+    m_error = jsonValue.GetObject("error");
 
   }
 

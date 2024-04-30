@@ -40,73 +40,73 @@ namespace Model
 
 
     /**
-     * <p>The workflows' type.</p>
+     * <p>Filter the list by workflow type.</p>
      */
     inline const WorkflowType& GetType() const{ return m_type; }
 
     /**
-     * <p>The workflows' type.</p>
+     * <p>Filter the list by workflow type.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The workflows' type.</p>
+     * <p>Filter the list by workflow type.</p>
      */
     inline void SetType(const WorkflowType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The workflows' type.</p>
+     * <p>Filter the list by workflow type.</p>
      */
     inline void SetType(WorkflowType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The workflows' type.</p>
+     * <p>Filter the list by workflow type.</p>
      */
     inline ListWorkflowsRequest& WithType(const WorkflowType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The workflows' type.</p>
+     * <p>Filter the list by workflow type.</p>
      */
     inline ListWorkflowsRequest& WithType(WorkflowType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The workflows' name.</p>
+     * <p>Filter the list by workflow name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The workflows' name.</p>
+     * <p>Filter the list by workflow name.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The workflows' name.</p>
+     * <p>Filter the list by workflow name.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The workflows' name.</p>
+     * <p>Filter the list by workflow name.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The workflows' name.</p>
+     * <p>Filter the list by workflow name.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The workflows' name.</p>
+     * <p>Filter the list by workflow name.</p>
      */
     inline ListWorkflowsRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The workflows' name.</p>
+     * <p>Filter the list by workflow name.</p>
      */
     inline ListWorkflowsRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The workflows' name.</p>
+     * <p>Filter the list by workflow name.</p>
      */
     inline ListWorkflowsRequest& WithName(const char* value) { SetName(value); return *this;}
 

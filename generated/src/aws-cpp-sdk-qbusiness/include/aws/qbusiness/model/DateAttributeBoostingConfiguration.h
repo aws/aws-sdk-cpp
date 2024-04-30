@@ -42,31 +42,6 @@ namespace Model
 
 
     /**
-     * <p>Specifies the duration, in seconds, of a boost applies to a <code>DATE</code>
-     * type document attribute.</p>
-     */
-    inline long long GetBoostingDurationInSeconds() const{ return m_boostingDurationInSeconds; }
-
-    /**
-     * <p>Specifies the duration, in seconds, of a boost applies to a <code>DATE</code>
-     * type document attribute.</p>
-     */
-    inline bool BoostingDurationInSecondsHasBeenSet() const { return m_boostingDurationInSecondsHasBeenSet; }
-
-    /**
-     * <p>Specifies the duration, in seconds, of a boost applies to a <code>DATE</code>
-     * type document attribute.</p>
-     */
-    inline void SetBoostingDurationInSeconds(long long value) { m_boostingDurationInSecondsHasBeenSet = true; m_boostingDurationInSeconds = value; }
-
-    /**
-     * <p>Specifies the duration, in seconds, of a boost applies to a <code>DATE</code>
-     * type document attribute.</p>
-     */
-    inline DateAttributeBoostingConfiguration& WithBoostingDurationInSeconds(long long value) { SetBoostingDurationInSeconds(value); return *this;}
-
-
-    /**
      * <p>Specifies how much a document attribute is boosted.</p>
      */
     inline const DocumentAttributeBoostingLevel& GetBoostingLevel() const{ return m_boostingLevel; }
@@ -96,13 +71,38 @@ namespace Model
      */
     inline DateAttributeBoostingConfiguration& WithBoostingLevel(DocumentAttributeBoostingLevel&& value) { SetBoostingLevel(std::move(value)); return *this;}
 
-  private:
 
-    long long m_boostingDurationInSeconds;
-    bool m_boostingDurationInSecondsHasBeenSet = false;
+    /**
+     * <p>Specifies the duration, in seconds, of a boost applies to a <code>DATE</code>
+     * type document attribute.</p>
+     */
+    inline long long GetBoostingDurationInSeconds() const{ return m_boostingDurationInSeconds; }
+
+    /**
+     * <p>Specifies the duration, in seconds, of a boost applies to a <code>DATE</code>
+     * type document attribute.</p>
+     */
+    inline bool BoostingDurationInSecondsHasBeenSet() const { return m_boostingDurationInSecondsHasBeenSet; }
+
+    /**
+     * <p>Specifies the duration, in seconds, of a boost applies to a <code>DATE</code>
+     * type document attribute.</p>
+     */
+    inline void SetBoostingDurationInSeconds(long long value) { m_boostingDurationInSecondsHasBeenSet = true; m_boostingDurationInSeconds = value; }
+
+    /**
+     * <p>Specifies the duration, in seconds, of a boost applies to a <code>DATE</code>
+     * type document attribute.</p>
+     */
+    inline DateAttributeBoostingConfiguration& WithBoostingDurationInSeconds(long long value) { SetBoostingDurationInSeconds(value); return *this;}
+
+  private:
 
     DocumentAttributeBoostingLevel m_boostingLevel;
     bool m_boostingLevelHasBeenSet = false;
+
+    long long m_boostingDurationInSeconds;
+    bool m_boostingDurationInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

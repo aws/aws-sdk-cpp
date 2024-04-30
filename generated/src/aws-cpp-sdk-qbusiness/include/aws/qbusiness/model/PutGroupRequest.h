@@ -7,8 +7,8 @@
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/qbusiness/QBusinessRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/qbusiness/model/GroupMembers.h>
 #include <aws/qbusiness/model/MembershipType.h>
+#include <aws/qbusiness/model/GroupMembers.h>
 #include <utility>
 
 namespace Aws
@@ -84,111 +84,52 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the data source for which you want to map users to their
-     * groups. This is useful if a group is tied to multiple data sources, but you only
-     * want the group to access documents of a certain data source. For example, the
-     * groups "Research", "Engineering", and "Sales and Marketing" are all tied to the
-     * company's documents stored in the data sources Confluence and Salesforce.
-     * However, "Sales and Marketing" team only needs access to customer-related
-     * documents stored in Salesforce.</p>
+     * <p>The identifier of the index in which you want to map users to their
+     * groups.</p>
      */
-    inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
+    inline const Aws::String& GetIndexId() const{ return m_indexId; }
 
     /**
-     * <p>The identifier of the data source for which you want to map users to their
-     * groups. This is useful if a group is tied to multiple data sources, but you only
-     * want the group to access documents of a certain data source. For example, the
-     * groups "Research", "Engineering", and "Sales and Marketing" are all tied to the
-     * company's documents stored in the data sources Confluence and Salesforce.
-     * However, "Sales and Marketing" team only needs access to customer-related
-     * documents stored in Salesforce.</p>
+     * <p>The identifier of the index in which you want to map users to their
+     * groups.</p>
      */
-    inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
+    inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the data source for which you want to map users to their
-     * groups. This is useful if a group is tied to multiple data sources, but you only
-     * want the group to access documents of a certain data source. For example, the
-     * groups "Research", "Engineering", and "Sales and Marketing" are all tied to the
-     * company's documents stored in the data sources Confluence and Salesforce.
-     * However, "Sales and Marketing" team only needs access to customer-related
-     * documents stored in Salesforce.</p>
+     * <p>The identifier of the index in which you want to map users to their
+     * groups.</p>
      */
-    inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
+    inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
 
     /**
-     * <p>The identifier of the data source for which you want to map users to their
-     * groups. This is useful if a group is tied to multiple data sources, but you only
-     * want the group to access documents of a certain data source. For example, the
-     * groups "Research", "Engineering", and "Sales and Marketing" are all tied to the
-     * company's documents stored in the data sources Confluence and Salesforce.
-     * However, "Sales and Marketing" team only needs access to customer-related
-     * documents stored in Salesforce.</p>
+     * <p>The identifier of the index in which you want to map users to their
+     * groups.</p>
      */
-    inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::move(value); }
+    inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
 
     /**
-     * <p>The identifier of the data source for which you want to map users to their
-     * groups. This is useful if a group is tied to multiple data sources, but you only
-     * want the group to access documents of a certain data source. For example, the
-     * groups "Research", "Engineering", and "Sales and Marketing" are all tied to the
-     * company's documents stored in the data sources Confluence and Salesforce.
-     * However, "Sales and Marketing" team only needs access to customer-related
-     * documents stored in Salesforce.</p>
+     * <p>The identifier of the index in which you want to map users to their
+     * groups.</p>
      */
-    inline void SetDataSourceId(const char* value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId.assign(value); }
+    inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
 
     /**
-     * <p>The identifier of the data source for which you want to map users to their
-     * groups. This is useful if a group is tied to multiple data sources, but you only
-     * want the group to access documents of a certain data source. For example, the
-     * groups "Research", "Engineering", and "Sales and Marketing" are all tied to the
-     * company's documents stored in the data sources Confluence and Salesforce.
-     * However, "Sales and Marketing" team only needs access to customer-related
-     * documents stored in Salesforce.</p>
+     * <p>The identifier of the index in which you want to map users to their
+     * groups.</p>
      */
-    inline PutGroupRequest& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
+    inline PutGroupRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
 
     /**
-     * <p>The identifier of the data source for which you want to map users to their
-     * groups. This is useful if a group is tied to multiple data sources, but you only
-     * want the group to access documents of a certain data source. For example, the
-     * groups "Research", "Engineering", and "Sales and Marketing" are all tied to the
-     * company's documents stored in the data sources Confluence and Salesforce.
-     * However, "Sales and Marketing" team only needs access to customer-related
-     * documents stored in Salesforce.</p>
+     * <p>The identifier of the index in which you want to map users to their
+     * groups.</p>
      */
-    inline PutGroupRequest& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
+    inline PutGroupRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the data source for which you want to map users to their
-     * groups. This is useful if a group is tied to multiple data sources, but you only
-     * want the group to access documents of a certain data source. For example, the
-     * groups "Research", "Engineering", and "Sales and Marketing" are all tied to the
-     * company's documents stored in the data sources Confluence and Salesforce.
-     * However, "Sales and Marketing" team only needs access to customer-related
-     * documents stored in Salesforce.</p>
+     * <p>The identifier of the index in which you want to map users to their
+     * groups.</p>
      */
-    inline PutGroupRequest& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
-
-
-    
-    inline const GroupMembers& GetGroupMembers() const{ return m_groupMembers; }
-
-    
-    inline bool GroupMembersHasBeenSet() const { return m_groupMembersHasBeenSet; }
-
-    
-    inline void SetGroupMembers(const GroupMembers& value) { m_groupMembersHasBeenSet = true; m_groupMembers = value; }
-
-    
-    inline void SetGroupMembers(GroupMembers&& value) { m_groupMembersHasBeenSet = true; m_groupMembers = std::move(value); }
-
-    
-    inline PutGroupRequest& WithGroupMembers(const GroupMembers& value) { SetGroupMembers(value); return *this;}
-
-    
-    inline PutGroupRequest& WithGroupMembers(GroupMembers&& value) { SetGroupMembers(std::move(value)); return *this;}
+    inline PutGroupRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
 
 
     /**
@@ -281,52 +222,92 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the index in which you want to map users to their
-     * groups.</p>
+     * <p>The identifier of the data source for which you want to map users to their
+     * groups. This is useful if a group is tied to multiple data sources, but you only
+     * want the group to access documents of a certain data source. For example, the
+     * groups "Research", "Engineering", and "Sales and Marketing" are all tied to the
+     * company's documents stored in the data sources Confluence and Salesforce.
+     * However, "Sales and Marketing" team only needs access to customer-related
+     * documents stored in Salesforce.</p>
      */
-    inline const Aws::String& GetIndexId() const{ return m_indexId; }
+    inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
 
     /**
-     * <p>The identifier of the index in which you want to map users to their
-     * groups.</p>
+     * <p>The identifier of the data source for which you want to map users to their
+     * groups. This is useful if a group is tied to multiple data sources, but you only
+     * want the group to access documents of a certain data source. For example, the
+     * groups "Research", "Engineering", and "Sales and Marketing" are all tied to the
+     * company's documents stored in the data sources Confluence and Salesforce.
+     * However, "Sales and Marketing" team only needs access to customer-related
+     * documents stored in Salesforce.</p>
      */
-    inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
+    inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the index in which you want to map users to their
-     * groups.</p>
+     * <p>The identifier of the data source for which you want to map users to their
+     * groups. This is useful if a group is tied to multiple data sources, but you only
+     * want the group to access documents of a certain data source. For example, the
+     * groups "Research", "Engineering", and "Sales and Marketing" are all tied to the
+     * company's documents stored in the data sources Confluence and Salesforce.
+     * However, "Sales and Marketing" team only needs access to customer-related
+     * documents stored in Salesforce.</p>
      */
-    inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
+    inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
 
     /**
-     * <p>The identifier of the index in which you want to map users to their
-     * groups.</p>
+     * <p>The identifier of the data source for which you want to map users to their
+     * groups. This is useful if a group is tied to multiple data sources, but you only
+     * want the group to access documents of a certain data source. For example, the
+     * groups "Research", "Engineering", and "Sales and Marketing" are all tied to the
+     * company's documents stored in the data sources Confluence and Salesforce.
+     * However, "Sales and Marketing" team only needs access to customer-related
+     * documents stored in Salesforce.</p>
      */
-    inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
+    inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::move(value); }
 
     /**
-     * <p>The identifier of the index in which you want to map users to their
-     * groups.</p>
+     * <p>The identifier of the data source for which you want to map users to their
+     * groups. This is useful if a group is tied to multiple data sources, but you only
+     * want the group to access documents of a certain data source. For example, the
+     * groups "Research", "Engineering", and "Sales and Marketing" are all tied to the
+     * company's documents stored in the data sources Confluence and Salesforce.
+     * However, "Sales and Marketing" team only needs access to customer-related
+     * documents stored in Salesforce.</p>
      */
-    inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
+    inline void SetDataSourceId(const char* value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId.assign(value); }
 
     /**
-     * <p>The identifier of the index in which you want to map users to their
-     * groups.</p>
+     * <p>The identifier of the data source for which you want to map users to their
+     * groups. This is useful if a group is tied to multiple data sources, but you only
+     * want the group to access documents of a certain data source. For example, the
+     * groups "Research", "Engineering", and "Sales and Marketing" are all tied to the
+     * company's documents stored in the data sources Confluence and Salesforce.
+     * However, "Sales and Marketing" team only needs access to customer-related
+     * documents stored in Salesforce.</p>
      */
-    inline PutGroupRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
+    inline PutGroupRequest& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
 
     /**
-     * <p>The identifier of the index in which you want to map users to their
-     * groups.</p>
+     * <p>The identifier of the data source for which you want to map users to their
+     * groups. This is useful if a group is tied to multiple data sources, but you only
+     * want the group to access documents of a certain data source. For example, the
+     * groups "Research", "Engineering", and "Sales and Marketing" are all tied to the
+     * company's documents stored in the data sources Confluence and Salesforce.
+     * However, "Sales and Marketing" team only needs access to customer-related
+     * documents stored in Salesforce.</p>
      */
-    inline PutGroupRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
+    inline PutGroupRequest& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the index in which you want to map users to their
-     * groups.</p>
+     * <p>The identifier of the data source for which you want to map users to their
+     * groups. This is useful if a group is tied to multiple data sources, but you only
+     * want the group to access documents of a certain data source. For example, the
+     * groups "Research", "Engineering", and "Sales and Marketing" are all tied to the
+     * company's documents stored in the data sources Confluence and Salesforce.
+     * However, "Sales and Marketing" team only needs access to customer-related
+     * documents stored in Salesforce.</p>
      */
-    inline PutGroupRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
+    inline PutGroupRequest& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
 
 
     /**
@@ -359,25 +340,44 @@ namespace Model
      */
     inline PutGroupRequest& WithType(MembershipType&& value) { SetType(std::move(value)); return *this;}
 
+
+    
+    inline const GroupMembers& GetGroupMembers() const{ return m_groupMembers; }
+
+    
+    inline bool GroupMembersHasBeenSet() const { return m_groupMembersHasBeenSet; }
+
+    
+    inline void SetGroupMembers(const GroupMembers& value) { m_groupMembersHasBeenSet = true; m_groupMembers = value; }
+
+    
+    inline void SetGroupMembers(GroupMembers&& value) { m_groupMembersHasBeenSet = true; m_groupMembers = std::move(value); }
+
+    
+    inline PutGroupRequest& WithGroupMembers(const GroupMembers& value) { SetGroupMembers(value); return *this;}
+
+    
+    inline PutGroupRequest& WithGroupMembers(GroupMembers&& value) { SetGroupMembers(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet = false;
 
-    Aws::String m_dataSourceId;
-    bool m_dataSourceIdHasBeenSet = false;
-
-    GroupMembers m_groupMembers;
-    bool m_groupMembersHasBeenSet = false;
+    Aws::String m_indexId;
+    bool m_indexIdHasBeenSet = false;
 
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet = false;
 
-    Aws::String m_indexId;
-    bool m_indexIdHasBeenSet = false;
+    Aws::String m_dataSourceId;
+    bool m_dataSourceIdHasBeenSet = false;
 
     MembershipType m_type;
     bool m_typeHasBeenSet = false;
+
+    GroupMembers m_groupMembers;
+    bool m_groupMembersHasBeenSet = false;
   };
 
 } // namespace Model

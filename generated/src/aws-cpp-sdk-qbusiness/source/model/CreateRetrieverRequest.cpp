@@ -14,14 +14,14 @@ using namespace Aws::Utils;
 
 CreateRetrieverRequest::CreateRetrieverRequest() : 
     m_applicationIdHasBeenSet(false),
+    m_type(RetrieverType::NOT_SET),
+    m_typeHasBeenSet(false),
+    m_displayNameHasBeenSet(false),
+    m_configurationHasBeenSet(false),
+    m_roleArnHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_configurationHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_type(RetrieverType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -29,9 +29,14 @@ Aws::String CreateRetrieverRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithString("clientToken", m_clientToken);
+   payload.WithString("type", RetrieverTypeMapper::GetNameForRetrieverType(m_type));
+  }
+
+  if(m_displayNameHasBeenSet)
+  {
+   payload.WithString("displayName", m_displayName);
 
   }
 
@@ -41,15 +46,15 @@ Aws::String CreateRetrieverRequest::SerializePayload() const
 
   }
 
-  if(m_displayNameHasBeenSet)
-  {
-   payload.WithString("displayName", m_displayName);
-
-  }
-
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("roleArn", m_roleArn);
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
 
   }
 
@@ -62,11 +67,6 @@ Aws::String CreateRetrieverRequest::SerializePayload() const
    }
    payload.WithArray("tags", std::move(tagsJsonList));
 
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", RetrieverTypeMapper::GetNameForRetrieverType(m_type));
   }
 
   return payload.View().WriteReadable();

@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
-#include <aws/qbusiness/model/DateAttributeBoostingConfiguration.h>
 #include <aws/qbusiness/model/NumberAttributeBoostingConfiguration.h>
 #include <aws/qbusiness/model/StringAttributeBoostingConfiguration.h>
+#include <aws/qbusiness/model/DateAttributeBoostingConfiguration.h>
 #include <aws/qbusiness/model/StringListAttributeBoostingConfiguration.h>
 #include <utility>
 
@@ -53,43 +53,6 @@ namespace Model
     AWS_QBUSINESS_API DocumentAttributeBoostingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API DocumentAttributeBoostingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>Provides information on boosting <code>DATE</code> type document
-     * attributes.</p>
-     */
-    inline const DateAttributeBoostingConfiguration& GetDateConfiguration() const{ return m_dateConfiguration; }
-
-    /**
-     * <p>Provides information on boosting <code>DATE</code> type document
-     * attributes.</p>
-     */
-    inline bool DateConfigurationHasBeenSet() const { return m_dateConfigurationHasBeenSet; }
-
-    /**
-     * <p>Provides information on boosting <code>DATE</code> type document
-     * attributes.</p>
-     */
-    inline void SetDateConfiguration(const DateAttributeBoostingConfiguration& value) { m_dateConfigurationHasBeenSet = true; m_dateConfiguration = value; }
-
-    /**
-     * <p>Provides information on boosting <code>DATE</code> type document
-     * attributes.</p>
-     */
-    inline void SetDateConfiguration(DateAttributeBoostingConfiguration&& value) { m_dateConfigurationHasBeenSet = true; m_dateConfiguration = std::move(value); }
-
-    /**
-     * <p>Provides information on boosting <code>DATE</code> type document
-     * attributes.</p>
-     */
-    inline DocumentAttributeBoostingConfiguration& WithDateConfiguration(const DateAttributeBoostingConfiguration& value) { SetDateConfiguration(value); return *this;}
-
-    /**
-     * <p>Provides information on boosting <code>DATE</code> type document
-     * attributes.</p>
-     */
-    inline DocumentAttributeBoostingConfiguration& WithDateConfiguration(DateAttributeBoostingConfiguration&& value) { SetDateConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -167,6 +130,43 @@ namespace Model
 
 
     /**
+     * <p>Provides information on boosting <code>DATE</code> type document
+     * attributes.</p>
+     */
+    inline const DateAttributeBoostingConfiguration& GetDateConfiguration() const{ return m_dateConfiguration; }
+
+    /**
+     * <p>Provides information on boosting <code>DATE</code> type document
+     * attributes.</p>
+     */
+    inline bool DateConfigurationHasBeenSet() const { return m_dateConfigurationHasBeenSet; }
+
+    /**
+     * <p>Provides information on boosting <code>DATE</code> type document
+     * attributes.</p>
+     */
+    inline void SetDateConfiguration(const DateAttributeBoostingConfiguration& value) { m_dateConfigurationHasBeenSet = true; m_dateConfiguration = value; }
+
+    /**
+     * <p>Provides information on boosting <code>DATE</code> type document
+     * attributes.</p>
+     */
+    inline void SetDateConfiguration(DateAttributeBoostingConfiguration&& value) { m_dateConfigurationHasBeenSet = true; m_dateConfiguration = std::move(value); }
+
+    /**
+     * <p>Provides information on boosting <code>DATE</code> type document
+     * attributes.</p>
+     */
+    inline DocumentAttributeBoostingConfiguration& WithDateConfiguration(const DateAttributeBoostingConfiguration& value) { SetDateConfiguration(value); return *this;}
+
+    /**
+     * <p>Provides information on boosting <code>DATE</code> type document
+     * attributes.</p>
+     */
+    inline DocumentAttributeBoostingConfiguration& WithDateConfiguration(DateAttributeBoostingConfiguration&& value) { SetDateConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>Provides information on boosting <code>STRING_LIST</code> type document
      * attributes.</p>
      */
@@ -204,14 +204,14 @@ namespace Model
 
   private:
 
-    DateAttributeBoostingConfiguration m_dateConfiguration;
-    bool m_dateConfigurationHasBeenSet = false;
-
     NumberAttributeBoostingConfiguration m_numberConfiguration;
     bool m_numberConfigurationHasBeenSet = false;
 
     StringAttributeBoostingConfiguration m_stringConfiguration;
     bool m_stringConfigurationHasBeenSet = false;
+
+    DateAttributeBoostingConfiguration m_dateConfiguration;
+    bool m_dateConfigurationHasBeenSet = false;
 
     StringListAttributeBoostingConfiguration m_stringListConfiguration;
     bool m_stringListConfigurationHasBeenSet = false;

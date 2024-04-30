@@ -480,6 +480,47 @@ namespace Model
      */
     inline SendVoiceMessageRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p>The unique identifier for the protect configuration.</p>
+     */
+    inline const Aws::String& GetProtectConfigurationId() const{ return m_protectConfigurationId; }
+
+    /**
+     * <p>The unique identifier for the protect configuration.</p>
+     */
+    inline bool ProtectConfigurationIdHasBeenSet() const { return m_protectConfigurationIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for the protect configuration.</p>
+     */
+    inline void SetProtectConfigurationId(const Aws::String& value) { m_protectConfigurationIdHasBeenSet = true; m_protectConfigurationId = value; }
+
+    /**
+     * <p>The unique identifier for the protect configuration.</p>
+     */
+    inline void SetProtectConfigurationId(Aws::String&& value) { m_protectConfigurationIdHasBeenSet = true; m_protectConfigurationId = std::move(value); }
+
+    /**
+     * <p>The unique identifier for the protect configuration.</p>
+     */
+    inline void SetProtectConfigurationId(const char* value) { m_protectConfigurationIdHasBeenSet = true; m_protectConfigurationId.assign(value); }
+
+    /**
+     * <p>The unique identifier for the protect configuration.</p>
+     */
+    inline SendVoiceMessageRequest& WithProtectConfigurationId(const Aws::String& value) { SetProtectConfigurationId(value); return *this;}
+
+    /**
+     * <p>The unique identifier for the protect configuration.</p>
+     */
+    inline SendVoiceMessageRequest& WithProtectConfigurationId(Aws::String&& value) { SetProtectConfigurationId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique identifier for the protect configuration.</p>
+     */
+    inline SendVoiceMessageRequest& WithProtectConfigurationId(const char* value) { SetProtectConfigurationId(value); return *this;}
+
   private:
 
     Aws::String m_destinationPhoneNumber;
@@ -511,6 +552,9 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
+
+    Aws::String m_protectConfigurationId;
+    bool m_protectConfigurationIdHasBeenSet = false;
   };
 
 } // namespace Model

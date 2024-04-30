@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/omics/model/RunStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/omics/model/StorageType.h>
 #include <utility>
 
 namespace Aws
@@ -256,22 +257,30 @@ namespace Model
 
 
     /**
-     * <p>The run's storage capacity.</p>
+     * <p>The run's storage capacity in gibibytes. For dynamic storage, after the run
+     * has completed, this value is the maximum amount of storage used during the
+     * run.</p>
      */
     inline int GetStorageCapacity() const{ return m_storageCapacity; }
 
     /**
-     * <p>The run's storage capacity.</p>
+     * <p>The run's storage capacity in gibibytes. For dynamic storage, after the run
+     * has completed, this value is the maximum amount of storage used during the
+     * run.</p>
      */
     inline bool StorageCapacityHasBeenSet() const { return m_storageCapacityHasBeenSet; }
 
     /**
-     * <p>The run's storage capacity.</p>
+     * <p>The run's storage capacity in gibibytes. For dynamic storage, after the run
+     * has completed, this value is the maximum amount of storage used during the
+     * run.</p>
      */
     inline void SetStorageCapacity(int value) { m_storageCapacityHasBeenSet = true; m_storageCapacity = value; }
 
     /**
-     * <p>The run's storage capacity.</p>
+     * <p>The run's storage capacity in gibibytes. For dynamic storage, after the run
+     * has completed, this value is the maximum amount of storage used during the
+     * run.</p>
      */
     inline RunListItem& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
 
@@ -368,6 +377,37 @@ namespace Model
      */
     inline RunListItem& WithStopTime(Aws::Utils::DateTime&& value) { SetStopTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The run's storage type.</p>
+     */
+    inline const StorageType& GetStorageType() const{ return m_storageType; }
+
+    /**
+     * <p>The run's storage type.</p>
+     */
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+
+    /**
+     * <p>The run's storage type.</p>
+     */
+    inline void SetStorageType(const StorageType& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+
+    /**
+     * <p>The run's storage type.</p>
+     */
+    inline void SetStorageType(StorageType&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
+
+    /**
+     * <p>The run's storage type.</p>
+     */
+    inline RunListItem& WithStorageType(const StorageType& value) { SetStorageType(value); return *this;}
+
+    /**
+     * <p>The run's storage type.</p>
+     */
+    inline RunListItem& WithStorageType(StorageType&& value) { SetStorageType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -399,6 +439,9 @@ namespace Model
 
     Aws::Utils::DateTime m_stopTime;
     bool m_stopTimeHasBeenSet = false;
+
+    StorageType m_storageType;
+    bool m_storageTypeHasBeenSet = false;
   };
 
 } // namespace Model

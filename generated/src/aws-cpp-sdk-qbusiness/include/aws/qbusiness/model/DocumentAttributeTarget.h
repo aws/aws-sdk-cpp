@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
-#include <aws/qbusiness/model/AttributeValueOperator.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qbusiness/model/DocumentAttributeValue.h>
+#include <aws/qbusiness/model/AttributeValueOperator.h>
 #include <utility>
 
 namespace Aws
@@ -52,49 +52,6 @@ namespace Model
     AWS_QBUSINESS_API DocumentAttributeTarget(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API DocumentAttributeTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p> <code>TRUE</code> to delete the existing target value for your specified
-     * target attribute key. You cannot create a target value and set this to
-     * <code>TRUE</code>.</p>
-     */
-    inline const AttributeValueOperator& GetAttributeValueOperator() const{ return m_attributeValueOperator; }
-
-    /**
-     * <p> <code>TRUE</code> to delete the existing target value for your specified
-     * target attribute key. You cannot create a target value and set this to
-     * <code>TRUE</code>.</p>
-     */
-    inline bool AttributeValueOperatorHasBeenSet() const { return m_attributeValueOperatorHasBeenSet; }
-
-    /**
-     * <p> <code>TRUE</code> to delete the existing target value for your specified
-     * target attribute key. You cannot create a target value and set this to
-     * <code>TRUE</code>.</p>
-     */
-    inline void SetAttributeValueOperator(const AttributeValueOperator& value) { m_attributeValueOperatorHasBeenSet = true; m_attributeValueOperator = value; }
-
-    /**
-     * <p> <code>TRUE</code> to delete the existing target value for your specified
-     * target attribute key. You cannot create a target value and set this to
-     * <code>TRUE</code>.</p>
-     */
-    inline void SetAttributeValueOperator(AttributeValueOperator&& value) { m_attributeValueOperatorHasBeenSet = true; m_attributeValueOperator = std::move(value); }
-
-    /**
-     * <p> <code>TRUE</code> to delete the existing target value for your specified
-     * target attribute key. You cannot create a target value and set this to
-     * <code>TRUE</code>.</p>
-     */
-    inline DocumentAttributeTarget& WithAttributeValueOperator(const AttributeValueOperator& value) { SetAttributeValueOperator(value); return *this;}
-
-    /**
-     * <p> <code>TRUE</code> to delete the existing target value for your specified
-     * target attribute key. You cannot create a target value and set this to
-     * <code>TRUE</code>.</p>
-     */
-    inline DocumentAttributeTarget& WithAttributeValueOperator(AttributeValueOperator&& value) { SetAttributeValueOperator(std::move(value)); return *this;}
 
 
     /**
@@ -180,16 +137,59 @@ namespace Model
     
     inline DocumentAttributeTarget& WithValue(DocumentAttributeValue&& value) { SetValue(std::move(value)); return *this;}
 
-  private:
 
-    AttributeValueOperator m_attributeValueOperator;
-    bool m_attributeValueOperatorHasBeenSet = false;
+    /**
+     * <p> <code>TRUE</code> to delete the existing target value for your specified
+     * target attribute key. You cannot create a target value and set this to
+     * <code>TRUE</code>.</p>
+     */
+    inline const AttributeValueOperator& GetAttributeValueOperator() const{ return m_attributeValueOperator; }
+
+    /**
+     * <p> <code>TRUE</code> to delete the existing target value for your specified
+     * target attribute key. You cannot create a target value and set this to
+     * <code>TRUE</code>.</p>
+     */
+    inline bool AttributeValueOperatorHasBeenSet() const { return m_attributeValueOperatorHasBeenSet; }
+
+    /**
+     * <p> <code>TRUE</code> to delete the existing target value for your specified
+     * target attribute key. You cannot create a target value and set this to
+     * <code>TRUE</code>.</p>
+     */
+    inline void SetAttributeValueOperator(const AttributeValueOperator& value) { m_attributeValueOperatorHasBeenSet = true; m_attributeValueOperator = value; }
+
+    /**
+     * <p> <code>TRUE</code> to delete the existing target value for your specified
+     * target attribute key. You cannot create a target value and set this to
+     * <code>TRUE</code>.</p>
+     */
+    inline void SetAttributeValueOperator(AttributeValueOperator&& value) { m_attributeValueOperatorHasBeenSet = true; m_attributeValueOperator = std::move(value); }
+
+    /**
+     * <p> <code>TRUE</code> to delete the existing target value for your specified
+     * target attribute key. You cannot create a target value and set this to
+     * <code>TRUE</code>.</p>
+     */
+    inline DocumentAttributeTarget& WithAttributeValueOperator(const AttributeValueOperator& value) { SetAttributeValueOperator(value); return *this;}
+
+    /**
+     * <p> <code>TRUE</code> to delete the existing target value for your specified
+     * target attribute key. You cannot create a target value and set this to
+     * <code>TRUE</code>.</p>
+     */
+    inline DocumentAttributeTarget& WithAttributeValueOperator(AttributeValueOperator&& value) { SetAttributeValueOperator(std::move(value)); return *this;}
+
+  private:
 
     Aws::String m_key;
     bool m_keyHasBeenSet = false;
 
     DocumentAttributeValue m_value;
     bool m_valueHasBeenSet = false;
+
+    AttributeValueOperator m_attributeValueOperator;
+    bool m_attributeValueOperatorHasBeenSet = false;
   };
 
 } // namespace Model

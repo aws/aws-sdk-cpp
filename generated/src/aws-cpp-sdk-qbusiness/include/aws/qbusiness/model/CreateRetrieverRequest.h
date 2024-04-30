@@ -7,9 +7,9 @@
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/qbusiness/QBusinessRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qbusiness/model/RetrieverType.h>
 #include <aws/qbusiness/model/RetrieverConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/qbusiness/model/RetrieverType.h>
 #include <aws/qbusiness/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -79,71 +79,34 @@ namespace Model
 
 
     /**
-     * <p>A token that you provide to identify the request to create your Amazon Q
-     * Business application retriever.</p>
+     * <p>The type of retriever you are using.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const RetrieverType& GetType() const{ return m_type; }
 
     /**
-     * <p>A token that you provide to identify the request to create your Amazon Q
-     * Business application retriever.</p>
+     * <p>The type of retriever you are using.</p>
      */
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>A token that you provide to identify the request to create your Amazon Q
-     * Business application retriever.</p>
+     * <p>The type of retriever you are using.</p>
      */
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetType(const RetrieverType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>A token that you provide to identify the request to create your Amazon Q
-     * Business application retriever.</p>
+     * <p>The type of retriever you are using.</p>
      */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+    inline void SetType(RetrieverType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>A token that you provide to identify the request to create your Amazon Q
-     * Business application retriever.</p>
+     * <p>The type of retriever you are using.</p>
      */
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+    inline CreateRetrieverRequest& WithType(const RetrieverType& value) { SetType(value); return *this;}
 
     /**
-     * <p>A token that you provide to identify the request to create your Amazon Q
-     * Business application retriever.</p>
+     * <p>The type of retriever you are using.</p>
      */
-    inline CreateRetrieverRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>A token that you provide to identify the request to create your Amazon Q
-     * Business application retriever.</p>
-     */
-    inline CreateRetrieverRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token that you provide to identify the request to create your Amazon Q
-     * Business application retriever.</p>
-     */
-    inline CreateRetrieverRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-
-
-    
-    inline const RetrieverConfiguration& GetConfiguration() const{ return m_configuration; }
-
-    
-    inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-
-    
-    inline void SetConfiguration(const RetrieverConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-
-    
-    inline void SetConfiguration(RetrieverConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-
-    
-    inline CreateRetrieverRequest& WithConfiguration(const RetrieverConfiguration& value) { SetConfiguration(value); return *this;}
-
-    
-    inline CreateRetrieverRequest& WithConfiguration(RetrieverConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    inline CreateRetrieverRequest& WithType(RetrieverType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
@@ -185,6 +148,25 @@ namespace Model
      * <p>The name of your retriever.</p>
      */
     inline CreateRetrieverRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+
+
+    
+    inline const RetrieverConfiguration& GetConfiguration() const{ return m_configuration; }
+
+    
+    inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
+
+    
+    inline void SetConfiguration(const RetrieverConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
+
+    
+    inline void SetConfiguration(RetrieverConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
+
+    
+    inline CreateRetrieverRequest& WithConfiguration(const RetrieverConfiguration& value) { SetConfiguration(value); return *this;}
+
+    
+    inline CreateRetrieverRequest& WithConfiguration(RetrieverConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -234,6 +216,55 @@ namespace Model
      * authentication credentials stored in a Secrets Manager secret.</p>
      */
     inline CreateRetrieverRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
+
+    /**
+     * <p>A token that you provide to identify the request to create your Amazon Q
+     * Business application retriever.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>A token that you provide to identify the request to create your Amazon Q
+     * Business application retriever.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+
+    /**
+     * <p>A token that you provide to identify the request to create your Amazon Q
+     * Business application retriever.</p>
+     */
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+
+    /**
+     * <p>A token that you provide to identify the request to create your Amazon Q
+     * Business application retriever.</p>
+     */
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+
+    /**
+     * <p>A token that you provide to identify the request to create your Amazon Q
+     * Business application retriever.</p>
+     */
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+
+    /**
+     * <p>A token that you provide to identify the request to create your Amazon Q
+     * Business application retriever.</p>
+     */
+    inline CreateRetrieverRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+
+    /**
+     * <p>A token that you provide to identify the request to create your Amazon Q
+     * Business application retriever.</p>
+     */
+    inline CreateRetrieverRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+
+    /**
+     * <p>A token that you provide to identify the request to create your Amazon Q
+     * Business application retriever.</p>
+     */
+    inline CreateRetrieverRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
 
     /**
@@ -300,59 +331,28 @@ namespace Model
      */
     inline CreateRetrieverRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
-
-    /**
-     * <p>The type of retriever you are using.</p>
-     */
-    inline const RetrieverType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of retriever you are using.</p>
-     */
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of retriever you are using.</p>
-     */
-    inline void SetType(const RetrieverType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of retriever you are using.</p>
-     */
-    inline void SetType(RetrieverType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of retriever you are using.</p>
-     */
-    inline CreateRetrieverRequest& WithType(const RetrieverType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of retriever you are using.</p>
-     */
-    inline CreateRetrieverRequest& WithType(RetrieverType&& value) { SetType(std::move(value)); return *this;}
-
   private:
 
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
-
-    RetrieverConfiguration m_configuration;
-    bool m_configurationHasBeenSet = false;
+    RetrieverType m_type;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet = false;
 
+    RetrieverConfiguration m_configuration;
+    bool m_configurationHasBeenSet = false;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
 
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
-
-    RetrieverType m_type;
-    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

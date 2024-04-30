@@ -25,6 +25,7 @@ namespace Aws
         static const int maven_HASH = HashingUtils::HashString("maven");
         static const int nuget_HASH = HashingUtils::HashString("nuget");
         static const int generic_HASH = HashingUtils::HashString("generic");
+        static const int ruby_HASH = HashingUtils::HashString("ruby");
         static const int swift_HASH = HashingUtils::HashString("swift");
 
 
@@ -50,6 +51,10 @@ namespace Aws
           else if (hashCode == generic_HASH)
           {
             return PackageFormat::generic;
+          }
+          else if (hashCode == ruby_HASH)
+          {
+            return PackageFormat::ruby;
           }
           else if (hashCode == swift_HASH)
           {
@@ -81,6 +86,8 @@ namespace Aws
             return "nuget";
           case PackageFormat::generic:
             return "generic";
+          case PackageFormat::ruby:
+            return "ruby";
           case PackageFormat::swift:
             return "swift";
           default:

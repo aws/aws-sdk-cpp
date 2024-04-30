@@ -26,7 +26,8 @@ SendTextMessageRequest::SendTextMessageRequest() :
     m_contextHasBeenSet(false),
     m_destinationCountryParametersHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_protectConfigurationIdHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,12 @@ Aws::String SendTextMessageRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
    payload.WithBool("DryRun", m_dryRun);
+
+  }
+
+  if(m_protectConfigurationIdHasBeenSet)
+  {
+   payload.WithString("ProtectConfigurationId", m_protectConfigurationId);
 
   }
 

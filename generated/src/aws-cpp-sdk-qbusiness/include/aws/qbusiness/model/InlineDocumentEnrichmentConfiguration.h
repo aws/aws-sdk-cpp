@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/qbusiness/model/DocumentAttributeCondition.h>
-#include <aws/qbusiness/model/DocumentContentOperator.h>
 #include <aws/qbusiness/model/DocumentAttributeTarget.h>
+#include <aws/qbusiness/model/DocumentContentOperator.h>
 #include <utility>
 
 namespace Aws
@@ -65,6 +65,25 @@ namespace Model
     inline InlineDocumentEnrichmentConfiguration& WithCondition(DocumentAttributeCondition&& value) { SetCondition(std::move(value)); return *this;}
 
 
+    
+    inline const DocumentAttributeTarget& GetTarget() const{ return m_target; }
+
+    
+    inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
+
+    
+    inline void SetTarget(const DocumentAttributeTarget& value) { m_targetHasBeenSet = true; m_target = value; }
+
+    
+    inline void SetTarget(DocumentAttributeTarget&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
+
+    
+    inline InlineDocumentEnrichmentConfiguration& WithTarget(const DocumentAttributeTarget& value) { SetTarget(value); return *this;}
+
+    
+    inline InlineDocumentEnrichmentConfiguration& WithTarget(DocumentAttributeTarget&& value) { SetTarget(std::move(value)); return *this;}
+
+
     /**
      * <p> <code>TRUE</code> to delete content if the condition used for the target
      * attribute is met.</p>
@@ -101,35 +120,16 @@ namespace Model
      */
     inline InlineDocumentEnrichmentConfiguration& WithDocumentContentOperator(DocumentContentOperator&& value) { SetDocumentContentOperator(std::move(value)); return *this;}
 
-
-    
-    inline const DocumentAttributeTarget& GetTarget() const{ return m_target; }
-
-    
-    inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-
-    
-    inline void SetTarget(const DocumentAttributeTarget& value) { m_targetHasBeenSet = true; m_target = value; }
-
-    
-    inline void SetTarget(DocumentAttributeTarget&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-
-    
-    inline InlineDocumentEnrichmentConfiguration& WithTarget(const DocumentAttributeTarget& value) { SetTarget(value); return *this;}
-
-    
-    inline InlineDocumentEnrichmentConfiguration& WithTarget(DocumentAttributeTarget&& value) { SetTarget(std::move(value)); return *this;}
-
   private:
 
     DocumentAttributeCondition m_condition;
     bool m_conditionHasBeenSet = false;
 
-    DocumentContentOperator m_documentContentOperator;
-    bool m_documentContentOperatorHasBeenSet = false;
-
     DocumentAttributeTarget m_target;
     bool m_targetHasBeenSet = false;
+
+    DocumentContentOperator m_documentContentOperator;
+    bool m_documentContentOperatorHasBeenSet = false;
   };
 
 } // namespace Model

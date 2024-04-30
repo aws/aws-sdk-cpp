@@ -22,6 +22,7 @@
 #include <aws/sagemaker/model/RetryStrategy.h>
 #include <aws/sagemaker/model/RemoteDebugConfig.h>
 #include <aws/sagemaker/model/InfraCheckConfig.h>
+#include <aws/sagemaker/model/SessionChainingConfig.h>
 #include <aws/sagemaker/model/Channel.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <aws/sagemaker/model/DebugRuleConfiguration.h>
@@ -1466,6 +1467,43 @@ namespace Model
      */
     inline CreateTrainingJobRequest& WithInfraCheckConfig(InfraCheckConfig&& value) { SetInfraCheckConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Contains information about attribute-based access control (ABAC) for the
+     * training job.</p>
+     */
+    inline const SessionChainingConfig& GetSessionChainingConfig() const{ return m_sessionChainingConfig; }
+
+    /**
+     * <p>Contains information about attribute-based access control (ABAC) for the
+     * training job.</p>
+     */
+    inline bool SessionChainingConfigHasBeenSet() const { return m_sessionChainingConfigHasBeenSet; }
+
+    /**
+     * <p>Contains information about attribute-based access control (ABAC) for the
+     * training job.</p>
+     */
+    inline void SetSessionChainingConfig(const SessionChainingConfig& value) { m_sessionChainingConfigHasBeenSet = true; m_sessionChainingConfig = value; }
+
+    /**
+     * <p>Contains information about attribute-based access control (ABAC) for the
+     * training job.</p>
+     */
+    inline void SetSessionChainingConfig(SessionChainingConfig&& value) { m_sessionChainingConfigHasBeenSet = true; m_sessionChainingConfig = std::move(value); }
+
+    /**
+     * <p>Contains information about attribute-based access control (ABAC) for the
+     * training job.</p>
+     */
+    inline CreateTrainingJobRequest& WithSessionChainingConfig(const SessionChainingConfig& value) { SetSessionChainingConfig(value); return *this;}
+
+    /**
+     * <p>Contains information about attribute-based access control (ABAC) for the
+     * training job.</p>
+     */
+    inline CreateTrainingJobRequest& WithSessionChainingConfig(SessionChainingConfig&& value) { SetSessionChainingConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_trainingJobName;
@@ -1539,6 +1577,9 @@ namespace Model
 
     InfraCheckConfig m_infraCheckConfig;
     bool m_infraCheckConfigHasBeenSet = false;
+
+    SessionChainingConfig m_sessionChainingConfig;
+    bool m_sessionChainingConfigHasBeenSet = false;
   };
 
 } // namespace Model

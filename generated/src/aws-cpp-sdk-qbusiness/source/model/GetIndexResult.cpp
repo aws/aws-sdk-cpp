@@ -18,11 +18,13 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetIndexResult::GetIndexResult() : 
+    m_type(IndexType::NOT_SET),
     m_status(IndexStatus::NOT_SET)
 {
 }
 
 GetIndexResult::GetIndexResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_type(IndexType::NOT_SET),
     m_status(IndexStatus::NOT_SET)
 {
   *this = result;
@@ -37,15 +39,33 @@ GetIndexResult& GetIndexResult::operator =(const Aws::AmazonWebServiceResult<Jso
 
   }
 
-  if(jsonValue.ValueExists("capacityConfiguration"))
+  if(jsonValue.ValueExists("indexId"))
   {
-    m_capacityConfiguration = jsonValue.GetObject("capacityConfiguration");
+    m_indexId = jsonValue.GetString("indexId");
 
   }
 
-  if(jsonValue.ValueExists("createdAt"))
+  if(jsonValue.ValueExists("displayName"))
   {
-    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_displayName = jsonValue.GetString("displayName");
+
+  }
+
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = IndexTypeMapper::GetIndexTypeForName(jsonValue.GetString("type"));
+
+  }
+
+  if(jsonValue.ValueExists("indexArn"))
+  {
+    m_indexArn = jsonValue.GetString("indexArn");
+
+  }
+
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = IndexStatusMapper::GetIndexStatusForName(jsonValue.GetString("status"));
 
   }
 
@@ -55,9 +75,21 @@ GetIndexResult& GetIndexResult::operator =(const Aws::AmazonWebServiceResult<Jso
 
   }
 
-  if(jsonValue.ValueExists("displayName"))
+  if(jsonValue.ValueExists("createdAt"))
   {
-    m_displayName = jsonValue.GetString("displayName");
+    m_createdAt = jsonValue.GetDouble("createdAt");
+
+  }
+
+  if(jsonValue.ValueExists("updatedAt"))
+  {
+    m_updatedAt = jsonValue.GetDouble("updatedAt");
+
+  }
+
+  if(jsonValue.ValueExists("capacityConfiguration"))
+  {
+    m_capacityConfiguration = jsonValue.GetObject("capacityConfiguration");
 
   }
 
@@ -76,33 +108,9 @@ GetIndexResult& GetIndexResult::operator =(const Aws::AmazonWebServiceResult<Jso
 
   }
 
-  if(jsonValue.ValueExists("indexArn"))
-  {
-    m_indexArn = jsonValue.GetString("indexArn");
-
-  }
-
-  if(jsonValue.ValueExists("indexId"))
-  {
-    m_indexId = jsonValue.GetString("indexId");
-
-  }
-
   if(jsonValue.ValueExists("indexStatistics"))
   {
     m_indexStatistics = jsonValue.GetObject("indexStatistics");
-
-  }
-
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = IndexStatusMapper::GetIndexStatusForName(jsonValue.GetString("status"));
-
-  }
-
-  if(jsonValue.ValueExists("updatedAt"))
-  {
-    m_updatedAt = jsonValue.GetDouble("updatedAt");
 
   }
 

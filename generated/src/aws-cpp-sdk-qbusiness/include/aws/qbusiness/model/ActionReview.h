@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qbusiness/model/PluginType.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/qbusiness/model/ActionReviewPayloadField.h>
 #include <utility>
 
@@ -41,6 +41,78 @@ namespace Model
     AWS_QBUSINESS_API ActionReview(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API ActionReview& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The identifier of the plugin associated with the action review.</p>
+     */
+    inline const Aws::String& GetPluginId() const{ return m_pluginId; }
+
+    /**
+     * <p>The identifier of the plugin associated with the action review.</p>
+     */
+    inline bool PluginIdHasBeenSet() const { return m_pluginIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the plugin associated with the action review.</p>
+     */
+    inline void SetPluginId(const Aws::String& value) { m_pluginIdHasBeenSet = true; m_pluginId = value; }
+
+    /**
+     * <p>The identifier of the plugin associated with the action review.</p>
+     */
+    inline void SetPluginId(Aws::String&& value) { m_pluginIdHasBeenSet = true; m_pluginId = std::move(value); }
+
+    /**
+     * <p>The identifier of the plugin associated with the action review.</p>
+     */
+    inline void SetPluginId(const char* value) { m_pluginIdHasBeenSet = true; m_pluginId.assign(value); }
+
+    /**
+     * <p>The identifier of the plugin associated with the action review.</p>
+     */
+    inline ActionReview& WithPluginId(const Aws::String& value) { SetPluginId(value); return *this;}
+
+    /**
+     * <p>The identifier of the plugin associated with the action review.</p>
+     */
+    inline ActionReview& WithPluginId(Aws::String&& value) { SetPluginId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the plugin associated with the action review.</p>
+     */
+    inline ActionReview& WithPluginId(const char* value) { SetPluginId(value); return *this;}
+
+
+    /**
+     * <p>The type of plugin.</p>
+     */
+    inline const PluginType& GetPluginType() const{ return m_pluginType; }
+
+    /**
+     * <p>The type of plugin.</p>
+     */
+    inline bool PluginTypeHasBeenSet() const { return m_pluginTypeHasBeenSet; }
+
+    /**
+     * <p>The type of plugin.</p>
+     */
+    inline void SetPluginType(const PluginType& value) { m_pluginTypeHasBeenSet = true; m_pluginType = value; }
+
+    /**
+     * <p>The type of plugin.</p>
+     */
+    inline void SetPluginType(PluginType&& value) { m_pluginTypeHasBeenSet = true; m_pluginType = std::move(value); }
+
+    /**
+     * <p>The type of plugin.</p>
+     */
+    inline ActionReview& WithPluginType(const PluginType& value) { SetPluginType(value); return *this;}
+
+    /**
+     * <p>The type of plugin.</p>
+     */
+    inline ActionReview& WithPluginType(PluginType&& value) { SetPluginType(std::move(value)); return *this;}
 
 
     /**
@@ -164,91 +236,19 @@ namespace Model
      */
     inline ActionReview& WithPayloadFieldNameSeparator(const char* value) { SetPayloadFieldNameSeparator(value); return *this;}
 
-
-    /**
-     * <p>The identifier of the plugin associated with the action review.</p>
-     */
-    inline const Aws::String& GetPluginId() const{ return m_pluginId; }
-
-    /**
-     * <p>The identifier of the plugin associated with the action review.</p>
-     */
-    inline bool PluginIdHasBeenSet() const { return m_pluginIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the plugin associated with the action review.</p>
-     */
-    inline void SetPluginId(const Aws::String& value) { m_pluginIdHasBeenSet = true; m_pluginId = value; }
-
-    /**
-     * <p>The identifier of the plugin associated with the action review.</p>
-     */
-    inline void SetPluginId(Aws::String&& value) { m_pluginIdHasBeenSet = true; m_pluginId = std::move(value); }
-
-    /**
-     * <p>The identifier of the plugin associated with the action review.</p>
-     */
-    inline void SetPluginId(const char* value) { m_pluginIdHasBeenSet = true; m_pluginId.assign(value); }
-
-    /**
-     * <p>The identifier of the plugin associated with the action review.</p>
-     */
-    inline ActionReview& WithPluginId(const Aws::String& value) { SetPluginId(value); return *this;}
-
-    /**
-     * <p>The identifier of the plugin associated with the action review.</p>
-     */
-    inline ActionReview& WithPluginId(Aws::String&& value) { SetPluginId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the plugin associated with the action review.</p>
-     */
-    inline ActionReview& WithPluginId(const char* value) { SetPluginId(value); return *this;}
-
-
-    /**
-     * <p>The type of plugin.</p>
-     */
-    inline const PluginType& GetPluginType() const{ return m_pluginType; }
-
-    /**
-     * <p>The type of plugin.</p>
-     */
-    inline bool PluginTypeHasBeenSet() const { return m_pluginTypeHasBeenSet; }
-
-    /**
-     * <p>The type of plugin.</p>
-     */
-    inline void SetPluginType(const PluginType& value) { m_pluginTypeHasBeenSet = true; m_pluginType = value; }
-
-    /**
-     * <p>The type of plugin.</p>
-     */
-    inline void SetPluginType(PluginType&& value) { m_pluginTypeHasBeenSet = true; m_pluginType = std::move(value); }
-
-    /**
-     * <p>The type of plugin.</p>
-     */
-    inline ActionReview& WithPluginType(const PluginType& value) { SetPluginType(value); return *this;}
-
-    /**
-     * <p>The type of plugin.</p>
-     */
-    inline ActionReview& WithPluginType(PluginType&& value) { SetPluginType(std::move(value)); return *this;}
-
   private:
-
-    Aws::Map<Aws::String, ActionReviewPayloadField> m_payload;
-    bool m_payloadHasBeenSet = false;
-
-    Aws::String m_payloadFieldNameSeparator;
-    bool m_payloadFieldNameSeparatorHasBeenSet = false;
 
     Aws::String m_pluginId;
     bool m_pluginIdHasBeenSet = false;
 
     PluginType m_pluginType;
     bool m_pluginTypeHasBeenSet = false;
+
+    Aws::Map<Aws::String, ActionReviewPayloadField> m_payload;
+    bool m_payloadHasBeenSet = false;
+
+    Aws::String m_payloadFieldNameSeparator;
+    bool m_payloadFieldNameSeparatorHasBeenSet = false;
   };
 
 } // namespace Model

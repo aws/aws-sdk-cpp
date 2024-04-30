@@ -39,7 +39,6 @@
 #include <aws/chime-sdk-voice/model/GetPhoneNumberSettingsResult.h>
 #include <aws/chime-sdk-voice/model/GetProxySessionResult.h>
 #include <aws/chime-sdk-voice/model/GetSipMediaApplicationResult.h>
-#include <aws/chime-sdk-voice/model/GetSipMediaApplicationAlexaSkillConfigurationResult.h>
 #include <aws/chime-sdk-voice/model/GetSipMediaApplicationLoggingConfigurationResult.h>
 #include <aws/chime-sdk-voice/model/GetSipRuleResult.h>
 #include <aws/chime-sdk-voice/model/GetSpeakerSearchTaskResult.h>
@@ -68,7 +67,6 @@
 #include <aws/chime-sdk-voice/model/ListVoiceConnectorsResult.h>
 #include <aws/chime-sdk-voice/model/ListVoiceProfileDomainsResult.h>
 #include <aws/chime-sdk-voice/model/ListVoiceProfilesResult.h>
-#include <aws/chime-sdk-voice/model/PutSipMediaApplicationAlexaSkillConfigurationResult.h>
 #include <aws/chime-sdk-voice/model/PutSipMediaApplicationLoggingConfigurationResult.h>
 #include <aws/chime-sdk-voice/model/PutVoiceConnectorEmergencyCallingConfigurationResult.h>
 #include <aws/chime-sdk-voice/model/PutVoiceConnectorLoggingConfigurationResult.h>
@@ -166,7 +164,6 @@ namespace Aws
       class GetPhoneNumberSettingsRequest;
       class GetProxySessionRequest;
       class GetSipMediaApplicationRequest;
-      class GetSipMediaApplicationAlexaSkillConfigurationRequest;
       class GetSipMediaApplicationLoggingConfigurationRequest;
       class GetSipRuleRequest;
       class GetSpeakerSearchTaskRequest;
@@ -195,7 +192,6 @@ namespace Aws
       class ListVoiceConnectorsRequest;
       class ListVoiceProfileDomainsRequest;
       class ListVoiceProfilesRequest;
-      class PutSipMediaApplicationAlexaSkillConfigurationRequest;
       class PutSipMediaApplicationLoggingConfigurationRequest;
       class PutVoiceConnectorEmergencyCallingConfigurationRequest;
       class PutVoiceConnectorLoggingConfigurationRequest;
@@ -262,7 +258,6 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetPhoneNumberSettingsResult, ChimeSDKVoiceError> GetPhoneNumberSettingsOutcome;
       typedef Aws::Utils::Outcome<GetProxySessionResult, ChimeSDKVoiceError> GetProxySessionOutcome;
       typedef Aws::Utils::Outcome<GetSipMediaApplicationResult, ChimeSDKVoiceError> GetSipMediaApplicationOutcome;
-      typedef Aws::Utils::Outcome<GetSipMediaApplicationAlexaSkillConfigurationResult, ChimeSDKVoiceError> GetSipMediaApplicationAlexaSkillConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetSipMediaApplicationLoggingConfigurationResult, ChimeSDKVoiceError> GetSipMediaApplicationLoggingConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetSipRuleResult, ChimeSDKVoiceError> GetSipRuleOutcome;
       typedef Aws::Utils::Outcome<GetSpeakerSearchTaskResult, ChimeSDKVoiceError> GetSpeakerSearchTaskOutcome;
@@ -291,7 +286,6 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListVoiceConnectorsResult, ChimeSDKVoiceError> ListVoiceConnectorsOutcome;
       typedef Aws::Utils::Outcome<ListVoiceProfileDomainsResult, ChimeSDKVoiceError> ListVoiceProfileDomainsOutcome;
       typedef Aws::Utils::Outcome<ListVoiceProfilesResult, ChimeSDKVoiceError> ListVoiceProfilesOutcome;
-      typedef Aws::Utils::Outcome<PutSipMediaApplicationAlexaSkillConfigurationResult, ChimeSDKVoiceError> PutSipMediaApplicationAlexaSkillConfigurationOutcome;
       typedef Aws::Utils::Outcome<PutSipMediaApplicationLoggingConfigurationResult, ChimeSDKVoiceError> PutSipMediaApplicationLoggingConfigurationOutcome;
       typedef Aws::Utils::Outcome<PutVoiceConnectorEmergencyCallingConfigurationResult, ChimeSDKVoiceError> PutVoiceConnectorEmergencyCallingConfigurationOutcome;
       typedef Aws::Utils::Outcome<PutVoiceConnectorLoggingConfigurationResult, ChimeSDKVoiceError> PutVoiceConnectorLoggingConfigurationOutcome;
@@ -358,7 +352,6 @@ namespace Aws
       typedef std::future<GetPhoneNumberSettingsOutcome> GetPhoneNumberSettingsOutcomeCallable;
       typedef std::future<GetProxySessionOutcome> GetProxySessionOutcomeCallable;
       typedef std::future<GetSipMediaApplicationOutcome> GetSipMediaApplicationOutcomeCallable;
-      typedef std::future<GetSipMediaApplicationAlexaSkillConfigurationOutcome> GetSipMediaApplicationAlexaSkillConfigurationOutcomeCallable;
       typedef std::future<GetSipMediaApplicationLoggingConfigurationOutcome> GetSipMediaApplicationLoggingConfigurationOutcomeCallable;
       typedef std::future<GetSipRuleOutcome> GetSipRuleOutcomeCallable;
       typedef std::future<GetSpeakerSearchTaskOutcome> GetSpeakerSearchTaskOutcomeCallable;
@@ -387,7 +380,6 @@ namespace Aws
       typedef std::future<ListVoiceConnectorsOutcome> ListVoiceConnectorsOutcomeCallable;
       typedef std::future<ListVoiceProfileDomainsOutcome> ListVoiceProfileDomainsOutcomeCallable;
       typedef std::future<ListVoiceProfilesOutcome> ListVoiceProfilesOutcomeCallable;
-      typedef std::future<PutSipMediaApplicationAlexaSkillConfigurationOutcome> PutSipMediaApplicationAlexaSkillConfigurationOutcomeCallable;
       typedef std::future<PutSipMediaApplicationLoggingConfigurationOutcome> PutSipMediaApplicationLoggingConfigurationOutcomeCallable;
       typedef std::future<PutVoiceConnectorEmergencyCallingConfigurationOutcome> PutVoiceConnectorEmergencyCallingConfigurationOutcomeCallable;
       typedef std::future<PutVoiceConnectorLoggingConfigurationOutcome> PutVoiceConnectorLoggingConfigurationOutcomeCallable;
@@ -457,7 +449,6 @@ namespace Aws
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::GetPhoneNumberSettingsRequest&, const Model::GetPhoneNumberSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPhoneNumberSettingsResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::GetProxySessionRequest&, const Model::GetProxySessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProxySessionResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::GetSipMediaApplicationRequest&, const Model::GetSipMediaApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSipMediaApplicationResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKVoiceClient*, const Model::GetSipMediaApplicationAlexaSkillConfigurationRequest&, const Model::GetSipMediaApplicationAlexaSkillConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSipMediaApplicationAlexaSkillConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::GetSipMediaApplicationLoggingConfigurationRequest&, const Model::GetSipMediaApplicationLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSipMediaApplicationLoggingConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::GetSipRuleRequest&, const Model::GetSipRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSipRuleResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::GetSpeakerSearchTaskRequest&, const Model::GetSpeakerSearchTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSpeakerSearchTaskResponseReceivedHandler;
@@ -486,7 +477,6 @@ namespace Aws
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::ListVoiceConnectorsRequest&, const Model::ListVoiceConnectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVoiceConnectorsResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::ListVoiceProfileDomainsRequest&, const Model::ListVoiceProfileDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVoiceProfileDomainsResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::ListVoiceProfilesRequest&, const Model::ListVoiceProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVoiceProfilesResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKVoiceClient*, const Model::PutSipMediaApplicationAlexaSkillConfigurationRequest&, const Model::PutSipMediaApplicationAlexaSkillConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutSipMediaApplicationAlexaSkillConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::PutSipMediaApplicationLoggingConfigurationRequest&, const Model::PutSipMediaApplicationLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutSipMediaApplicationLoggingConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::PutVoiceConnectorEmergencyCallingConfigurationRequest&, const Model::PutVoiceConnectorEmergencyCallingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutVoiceConnectorEmergencyCallingConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::PutVoiceConnectorLoggingConfigurationRequest&, const Model::PutVoiceConnectorLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutVoiceConnectorLoggingConfigurationResponseReceivedHandler;

@@ -36,6 +36,8 @@ FirewallRule::FirewallRule() :
     m_creatorRequestIdHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_modificationTimeHasBeenSet(false),
+    m_firewallDomainRedirectionAction(FirewallDomainRedirectionAction::NOT_SET),
+    m_firewallDomainRedirectionActionHasBeenSet(false),
     m_qtypeHasBeenSet(false)
 {
 }
@@ -58,6 +60,8 @@ FirewallRule::FirewallRule(JsonView jsonValue) :
     m_creatorRequestIdHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_modificationTimeHasBeenSet(false),
+    m_firewallDomainRedirectionAction(FirewallDomainRedirectionAction::NOT_SET),
+    m_firewallDomainRedirectionActionHasBeenSet(false),
     m_qtypeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -149,6 +153,13 @@ FirewallRule& FirewallRule::operator =(JsonView jsonValue)
     m_modificationTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FirewallDomainRedirectionAction"))
+  {
+    m_firewallDomainRedirectionAction = FirewallDomainRedirectionActionMapper::GetFirewallDomainRedirectionActionForName(jsonValue.GetString("FirewallDomainRedirectionAction"));
+
+    m_firewallDomainRedirectionActionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Qtype"))
   {
     m_qtype = jsonValue.GetString("Qtype");
@@ -230,6 +241,11 @@ JsonValue FirewallRule::Jsonize() const
   {
    payload.WithString("ModificationTime", m_modificationTime);
 
+  }
+
+  if(m_firewallDomainRedirectionActionHasBeenSet)
+  {
+   payload.WithString("FirewallDomainRedirectionAction", FirewallDomainRedirectionActionMapper::GetNameForFirewallDomainRedirectionAction(m_firewallDomainRedirectionAction));
   }
 
   if(m_qtypeHasBeenSet)

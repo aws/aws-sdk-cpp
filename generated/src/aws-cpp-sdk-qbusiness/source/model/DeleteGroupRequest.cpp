@@ -17,9 +17,9 @@ using namespace Aws::Http;
 
 DeleteGroupRequest::DeleteGroupRequest() : 
     m_applicationIdHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false),
+    m_indexIdHasBeenSet(false),
     m_groupNameHasBeenSet(false),
-    m_indexIdHasBeenSet(false)
+    m_dataSourceIdHasBeenSet(false)
 {
 }
 

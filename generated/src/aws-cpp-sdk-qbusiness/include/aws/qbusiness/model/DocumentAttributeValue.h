@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -38,6 +38,114 @@ namespace Model
     AWS_QBUSINESS_API DocumentAttributeValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API DocumentAttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>A string.</p>
+     */
+    inline const Aws::String& GetStringValue() const{ return m_stringValue; }
+
+    /**
+     * <p>A string.</p>
+     */
+    inline bool StringValueHasBeenSet() const { return m_stringValueHasBeenSet; }
+
+    /**
+     * <p>A string.</p>
+     */
+    inline void SetStringValue(const Aws::String& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
+
+    /**
+     * <p>A string.</p>
+     */
+    inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::move(value); }
+
+    /**
+     * <p>A string.</p>
+     */
+    inline void SetStringValue(const char* value) { m_stringValueHasBeenSet = true; m_stringValue.assign(value); }
+
+    /**
+     * <p>A string.</p>
+     */
+    inline DocumentAttributeValue& WithStringValue(const Aws::String& value) { SetStringValue(value); return *this;}
+
+    /**
+     * <p>A string.</p>
+     */
+    inline DocumentAttributeValue& WithStringValue(Aws::String&& value) { SetStringValue(std::move(value)); return *this;}
+
+    /**
+     * <p>A string.</p>
+     */
+    inline DocumentAttributeValue& WithStringValue(const char* value) { SetStringValue(value); return *this;}
+
+
+    /**
+     * <p>A list of strings.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetStringListValue() const{ return m_stringListValue; }
+
+    /**
+     * <p>A list of strings.</p>
+     */
+    inline bool StringListValueHasBeenSet() const { return m_stringListValueHasBeenSet; }
+
+    /**
+     * <p>A list of strings.</p>
+     */
+    inline void SetStringListValue(const Aws::Vector<Aws::String>& value) { m_stringListValueHasBeenSet = true; m_stringListValue = value; }
+
+    /**
+     * <p>A list of strings.</p>
+     */
+    inline void SetStringListValue(Aws::Vector<Aws::String>&& value) { m_stringListValueHasBeenSet = true; m_stringListValue = std::move(value); }
+
+    /**
+     * <p>A list of strings.</p>
+     */
+    inline DocumentAttributeValue& WithStringListValue(const Aws::Vector<Aws::String>& value) { SetStringListValue(value); return *this;}
+
+    /**
+     * <p>A list of strings.</p>
+     */
+    inline DocumentAttributeValue& WithStringListValue(Aws::Vector<Aws::String>&& value) { SetStringListValue(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of strings.</p>
+     */
+    inline DocumentAttributeValue& AddStringListValue(const Aws::String& value) { m_stringListValueHasBeenSet = true; m_stringListValue.push_back(value); return *this; }
+
+    /**
+     * <p>A list of strings.</p>
+     */
+    inline DocumentAttributeValue& AddStringListValue(Aws::String&& value) { m_stringListValueHasBeenSet = true; m_stringListValue.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of strings.</p>
+     */
+    inline DocumentAttributeValue& AddStringListValue(const char* value) { m_stringListValueHasBeenSet = true; m_stringListValue.push_back(value); return *this; }
+
+
+    /**
+     * <p>A long integer value. </p>
+     */
+    inline long long GetLongValue() const{ return m_longValue; }
+
+    /**
+     * <p>A long integer value. </p>
+     */
+    inline bool LongValueHasBeenSet() const { return m_longValueHasBeenSet; }
+
+    /**
+     * <p>A long integer value. </p>
+     */
+    inline void SetLongValue(long long value) { m_longValueHasBeenSet = true; m_longValue = value; }
+
+    /**
+     * <p>A long integer value. </p>
+     */
+    inline DocumentAttributeValue& WithLongValue(long long value) { SetLongValue(value); return *this;}
 
 
     /**
@@ -88,127 +196,19 @@ namespace Model
      */
     inline DocumentAttributeValue& WithDateValue(Aws::Utils::DateTime&& value) { SetDateValue(std::move(value)); return *this;}
 
-
-    /**
-     * <p>A long integer value. </p>
-     */
-    inline long long GetLongValue() const{ return m_longValue; }
-
-    /**
-     * <p>A long integer value. </p>
-     */
-    inline bool LongValueHasBeenSet() const { return m_longValueHasBeenSet; }
-
-    /**
-     * <p>A long integer value. </p>
-     */
-    inline void SetLongValue(long long value) { m_longValueHasBeenSet = true; m_longValue = value; }
-
-    /**
-     * <p>A long integer value. </p>
-     */
-    inline DocumentAttributeValue& WithLongValue(long long value) { SetLongValue(value); return *this;}
-
-
-    /**
-     * <p>A list of strings.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetStringListValue() const{ return m_stringListValue; }
-
-    /**
-     * <p>A list of strings.</p>
-     */
-    inline bool StringListValueHasBeenSet() const { return m_stringListValueHasBeenSet; }
-
-    /**
-     * <p>A list of strings.</p>
-     */
-    inline void SetStringListValue(const Aws::Vector<Aws::String>& value) { m_stringListValueHasBeenSet = true; m_stringListValue = value; }
-
-    /**
-     * <p>A list of strings.</p>
-     */
-    inline void SetStringListValue(Aws::Vector<Aws::String>&& value) { m_stringListValueHasBeenSet = true; m_stringListValue = std::move(value); }
-
-    /**
-     * <p>A list of strings.</p>
-     */
-    inline DocumentAttributeValue& WithStringListValue(const Aws::Vector<Aws::String>& value) { SetStringListValue(value); return *this;}
-
-    /**
-     * <p>A list of strings.</p>
-     */
-    inline DocumentAttributeValue& WithStringListValue(Aws::Vector<Aws::String>&& value) { SetStringListValue(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of strings.</p>
-     */
-    inline DocumentAttributeValue& AddStringListValue(const Aws::String& value) { m_stringListValueHasBeenSet = true; m_stringListValue.push_back(value); return *this; }
-
-    /**
-     * <p>A list of strings.</p>
-     */
-    inline DocumentAttributeValue& AddStringListValue(Aws::String&& value) { m_stringListValueHasBeenSet = true; m_stringListValue.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of strings.</p>
-     */
-    inline DocumentAttributeValue& AddStringListValue(const char* value) { m_stringListValueHasBeenSet = true; m_stringListValue.push_back(value); return *this; }
-
-
-    /**
-     * <p>A string.</p>
-     */
-    inline const Aws::String& GetStringValue() const{ return m_stringValue; }
-
-    /**
-     * <p>A string.</p>
-     */
-    inline bool StringValueHasBeenSet() const { return m_stringValueHasBeenSet; }
-
-    /**
-     * <p>A string.</p>
-     */
-    inline void SetStringValue(const Aws::String& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
-
-    /**
-     * <p>A string.</p>
-     */
-    inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::move(value); }
-
-    /**
-     * <p>A string.</p>
-     */
-    inline void SetStringValue(const char* value) { m_stringValueHasBeenSet = true; m_stringValue.assign(value); }
-
-    /**
-     * <p>A string.</p>
-     */
-    inline DocumentAttributeValue& WithStringValue(const Aws::String& value) { SetStringValue(value); return *this;}
-
-    /**
-     * <p>A string.</p>
-     */
-    inline DocumentAttributeValue& WithStringValue(Aws::String&& value) { SetStringValue(std::move(value)); return *this;}
-
-    /**
-     * <p>A string.</p>
-     */
-    inline DocumentAttributeValue& WithStringValue(const char* value) { SetStringValue(value); return *this;}
-
   private:
 
-    Aws::Utils::DateTime m_dateValue;
-    bool m_dateValueHasBeenSet = false;
-
-    long long m_longValue;
-    bool m_longValueHasBeenSet = false;
+    Aws::String m_stringValue;
+    bool m_stringValueHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_stringListValue;
     bool m_stringListValueHasBeenSet = false;
 
-    Aws::String m_stringValue;
-    bool m_stringValueHasBeenSet = false;
+    long long m_longValue;
+    bool m_longValueHasBeenSet = false;
+
+    Aws::Utils::DateTime m_dateValue;
+    bool m_dateValueHasBeenSet = false;
   };
 
 } // namespace Model

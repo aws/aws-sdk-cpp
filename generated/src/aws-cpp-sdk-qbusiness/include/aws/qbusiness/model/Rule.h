@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/qbusiness/model/UsersAndGroups.h>
-#include <aws/qbusiness/model/RuleConfiguration.h>
 #include <aws/qbusiness/model/RuleType.h>
+#include <aws/qbusiness/model/RuleConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -38,37 +38,6 @@ namespace Model
     AWS_QBUSINESS_API Rule(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Rule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>Users and groups to be excluded from a rule.</p>
-     */
-    inline const UsersAndGroups& GetExcludedUsersAndGroups() const{ return m_excludedUsersAndGroups; }
-
-    /**
-     * <p>Users and groups to be excluded from a rule.</p>
-     */
-    inline bool ExcludedUsersAndGroupsHasBeenSet() const { return m_excludedUsersAndGroupsHasBeenSet; }
-
-    /**
-     * <p>Users and groups to be excluded from a rule.</p>
-     */
-    inline void SetExcludedUsersAndGroups(const UsersAndGroups& value) { m_excludedUsersAndGroupsHasBeenSet = true; m_excludedUsersAndGroups = value; }
-
-    /**
-     * <p>Users and groups to be excluded from a rule.</p>
-     */
-    inline void SetExcludedUsersAndGroups(UsersAndGroups&& value) { m_excludedUsersAndGroupsHasBeenSet = true; m_excludedUsersAndGroups = std::move(value); }
-
-    /**
-     * <p>Users and groups to be excluded from a rule.</p>
-     */
-    inline Rule& WithExcludedUsersAndGroups(const UsersAndGroups& value) { SetExcludedUsersAndGroups(value); return *this;}
-
-    /**
-     * <p>Users and groups to be excluded from a rule.</p>
-     */
-    inline Rule& WithExcludedUsersAndGroups(UsersAndGroups&& value) { SetExcludedUsersAndGroups(std::move(value)); return *this;}
 
 
     /**
@@ -103,34 +72,34 @@ namespace Model
 
 
     /**
-     * <p>The configuration information for a rule.</p>
+     * <p>Users and groups to be excluded from a rule.</p>
      */
-    inline const RuleConfiguration& GetRuleConfiguration() const{ return m_ruleConfiguration; }
+    inline const UsersAndGroups& GetExcludedUsersAndGroups() const{ return m_excludedUsersAndGroups; }
 
     /**
-     * <p>The configuration information for a rule.</p>
+     * <p>Users and groups to be excluded from a rule.</p>
      */
-    inline bool RuleConfigurationHasBeenSet() const { return m_ruleConfigurationHasBeenSet; }
+    inline bool ExcludedUsersAndGroupsHasBeenSet() const { return m_excludedUsersAndGroupsHasBeenSet; }
 
     /**
-     * <p>The configuration information for a rule.</p>
+     * <p>Users and groups to be excluded from a rule.</p>
      */
-    inline void SetRuleConfiguration(const RuleConfiguration& value) { m_ruleConfigurationHasBeenSet = true; m_ruleConfiguration = value; }
+    inline void SetExcludedUsersAndGroups(const UsersAndGroups& value) { m_excludedUsersAndGroupsHasBeenSet = true; m_excludedUsersAndGroups = value; }
 
     /**
-     * <p>The configuration information for a rule.</p>
+     * <p>Users and groups to be excluded from a rule.</p>
      */
-    inline void SetRuleConfiguration(RuleConfiguration&& value) { m_ruleConfigurationHasBeenSet = true; m_ruleConfiguration = std::move(value); }
+    inline void SetExcludedUsersAndGroups(UsersAndGroups&& value) { m_excludedUsersAndGroupsHasBeenSet = true; m_excludedUsersAndGroups = std::move(value); }
 
     /**
-     * <p>The configuration information for a rule.</p>
+     * <p>Users and groups to be excluded from a rule.</p>
      */
-    inline Rule& WithRuleConfiguration(const RuleConfiguration& value) { SetRuleConfiguration(value); return *this;}
+    inline Rule& WithExcludedUsersAndGroups(const UsersAndGroups& value) { SetExcludedUsersAndGroups(value); return *this;}
 
     /**
-     * <p>The configuration information for a rule.</p>
+     * <p>Users and groups to be excluded from a rule.</p>
      */
-    inline Rule& WithRuleConfiguration(RuleConfiguration&& value) { SetRuleConfiguration(std::move(value)); return *this;}
+    inline Rule& WithExcludedUsersAndGroups(UsersAndGroups&& value) { SetExcludedUsersAndGroups(std::move(value)); return *this;}
 
 
     /**
@@ -163,19 +132,50 @@ namespace Model
      */
     inline Rule& WithRuleType(RuleType&& value) { SetRuleType(std::move(value)); return *this;}
 
-  private:
 
-    UsersAndGroups m_excludedUsersAndGroups;
-    bool m_excludedUsersAndGroupsHasBeenSet = false;
+    /**
+     * <p>The configuration information for a rule.</p>
+     */
+    inline const RuleConfiguration& GetRuleConfiguration() const{ return m_ruleConfiguration; }
+
+    /**
+     * <p>The configuration information for a rule.</p>
+     */
+    inline bool RuleConfigurationHasBeenSet() const { return m_ruleConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration information for a rule.</p>
+     */
+    inline void SetRuleConfiguration(const RuleConfiguration& value) { m_ruleConfigurationHasBeenSet = true; m_ruleConfiguration = value; }
+
+    /**
+     * <p>The configuration information for a rule.</p>
+     */
+    inline void SetRuleConfiguration(RuleConfiguration&& value) { m_ruleConfigurationHasBeenSet = true; m_ruleConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration information for a rule.</p>
+     */
+    inline Rule& WithRuleConfiguration(const RuleConfiguration& value) { SetRuleConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration information for a rule.</p>
+     */
+    inline Rule& WithRuleConfiguration(RuleConfiguration&& value) { SetRuleConfiguration(std::move(value)); return *this;}
+
+  private:
 
     UsersAndGroups m_includedUsersAndGroups;
     bool m_includedUsersAndGroupsHasBeenSet = false;
 
-    RuleConfiguration m_ruleConfiguration;
-    bool m_ruleConfigurationHasBeenSet = false;
+    UsersAndGroups m_excludedUsersAndGroups;
+    bool m_excludedUsersAndGroupsHasBeenSet = false;
 
     RuleType m_ruleType;
     bool m_ruleTypeHasBeenSet = false;
+
+    RuleConfiguration m_ruleConfiguration;
+    bool m_ruleConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

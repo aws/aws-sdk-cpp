@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/qbusiness/model/IndexStatus.h>
 #include <utility>
 
@@ -38,37 +38,6 @@ namespace Model
     AWS_QBUSINESS_API Index(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Index& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The Unix timestamp when the index was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-
-    /**
-     * <p>The Unix timestamp when the index was created.</p>
-     */
-    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-
-    /**
-     * <p>The Unix timestamp when the index was created.</p>
-     */
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-
-    /**
-     * <p>The Unix timestamp when the index was created.</p>
-     */
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-
-    /**
-     * <p>The Unix timestamp when the index was created.</p>
-     */
-    inline Index& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-
-    /**
-     * <p>The Unix timestamp when the index was created.</p>
-     */
-    inline Index& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
     /**
@@ -154,6 +123,68 @@ namespace Model
 
 
     /**
+     * <p>The Unix timestamp when the index was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * <p>The Unix timestamp when the index was created.</p>
+     */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The Unix timestamp when the index was created.</p>
+     */
+    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+
+    /**
+     * <p>The Unix timestamp when the index was created.</p>
+     */
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
+
+    /**
+     * <p>The Unix timestamp when the index was created.</p>
+     */
+    inline Index& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
+
+    /**
+     * <p>The Unix timestamp when the index was created.</p>
+     */
+    inline Index& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Unix timestamp when the index was last updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+
+    /**
+     * <p>The Unix timestamp when the index was last updated.</p>
+     */
+    inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
+
+    /**
+     * <p>The Unix timestamp when the index was last updated.</p>
+     */
+    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
+
+    /**
+     * <p>The Unix timestamp when the index was last updated.</p>
+     */
+    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
+
+    /**
+     * <p>The Unix timestamp when the index was last updated.</p>
+     */
+    inline Index& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
+
+    /**
+     * <p>The Unix timestamp when the index was last updated.</p>
+     */
+    inline Index& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+
+
+    /**
      * <p>The current status of the index. When the status is <code>ACTIVE</code>, the
      * index is ready.</p>
      */
@@ -189,41 +220,7 @@ namespace Model
      */
     inline Index& WithStatus(IndexStatus&& value) { SetStatus(std::move(value)); return *this;}
 
-
-    /**
-     * <p>The Unix timestamp when the index was last updated.</p>
-     */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
-
-    /**
-     * <p>The Unix timestamp when the index was last updated.</p>
-     */
-    inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-
-    /**
-     * <p>The Unix timestamp when the index was last updated.</p>
-     */
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-
-    /**
-     * <p>The Unix timestamp when the index was last updated.</p>
-     */
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-
-    /**
-     * <p>The Unix timestamp when the index was last updated.</p>
-     */
-    inline Index& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-
-    /**
-     * <p>The Unix timestamp when the index was last updated.</p>
-     */
-    inline Index& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
-
   private:
-
-    Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet = false;
@@ -231,11 +228,14 @@ namespace Model
     Aws::String m_indexId;
     bool m_indexIdHasBeenSet = false;
 
-    IndexStatus m_status;
-    bool m_statusHasBeenSet = false;
+    Aws::Utils::DateTime m_createdAt;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
     bool m_updatedAtHasBeenSet = false;
+
+    IndexStatus m_status;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

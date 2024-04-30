@@ -26,6 +26,7 @@ namespace Aws
         static const int EVENT_DESTINATIONS_PER_CONFIGURATION_SET_HASH = HashingUtils::HashString("EVENT_DESTINATIONS_PER_CONFIGURATION_SET");
         static const int KEYWORDS_PER_PHONE_NUMBER_HASH = HashingUtils::HashString("KEYWORDS_PER_PHONE_NUMBER");
         static const int KEYWORDS_PER_POOL_HASH = HashingUtils::HashString("KEYWORDS_PER_POOL");
+        static const int MONTHLY_SPEND_LIMIT_REACHED_FOR_MEDIA_HASH = HashingUtils::HashString("MONTHLY_SPEND_LIMIT_REACHED_FOR_MEDIA");
         static const int MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT_HASH = HashingUtils::HashString("MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT");
         static const int MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE_HASH = HashingUtils::HashString("MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE");
         static const int OPT_OUT_LISTS_PER_ACCOUNT_HASH = HashingUtils::HashString("OPT_OUT_LISTS_PER_ACCOUNT");
@@ -41,6 +42,7 @@ namespace Aws
         static const int TAGS_PER_RESOURCE_HASH = HashingUtils::HashString("TAGS_PER_RESOURCE");
         static const int VERIFIED_DESTINATION_NUMBERS_PER_ACCOUNT_HASH = HashingUtils::HashString("VERIFIED_DESTINATION_NUMBERS_PER_ACCOUNT");
         static const int VERIFICATION_ATTEMPTS_PER_DAY_HASH = HashingUtils::HashString("VERIFICATION_ATTEMPTS_PER_DAY");
+        static const int PROTECT_CONFIGURATIONS_PER_ACCOUNT_HASH = HashingUtils::HashString("PROTECT_CONFIGURATIONS_PER_ACCOUNT");
 
 
         ServiceQuotaExceededExceptionReason GetServiceQuotaExceededExceptionReasonForName(const Aws::String& name)
@@ -69,6 +71,10 @@ namespace Aws
           else if (hashCode == KEYWORDS_PER_POOL_HASH)
           {
             return ServiceQuotaExceededExceptionReason::KEYWORDS_PER_POOL;
+          }
+          else if (hashCode == MONTHLY_SPEND_LIMIT_REACHED_FOR_MEDIA_HASH)
+          {
+            return ServiceQuotaExceededExceptionReason::MONTHLY_SPEND_LIMIT_REACHED_FOR_MEDIA;
           }
           else if (hashCode == MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT_HASH)
           {
@@ -130,6 +136,10 @@ namespace Aws
           {
             return ServiceQuotaExceededExceptionReason::VERIFICATION_ATTEMPTS_PER_DAY;
           }
+          else if (hashCode == PROTECT_CONFIGURATIONS_PER_ACCOUNT_HASH)
+          {
+            return ServiceQuotaExceededExceptionReason::PROTECT_CONFIGURATIONS_PER_ACCOUNT;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -158,6 +168,8 @@ namespace Aws
             return "KEYWORDS_PER_PHONE_NUMBER";
           case ServiceQuotaExceededExceptionReason::KEYWORDS_PER_POOL:
             return "KEYWORDS_PER_POOL";
+          case ServiceQuotaExceededExceptionReason::MONTHLY_SPEND_LIMIT_REACHED_FOR_MEDIA:
+            return "MONTHLY_SPEND_LIMIT_REACHED_FOR_MEDIA";
           case ServiceQuotaExceededExceptionReason::MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT:
             return "MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT";
           case ServiceQuotaExceededExceptionReason::MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE:
@@ -188,6 +200,8 @@ namespace Aws
             return "VERIFIED_DESTINATION_NUMBERS_PER_ACCOUNT";
           case ServiceQuotaExceededExceptionReason::VERIFICATION_ATTEMPTS_PER_DAY:
             return "VERIFICATION_ATTEMPTS_PER_DAY";
+          case ServiceQuotaExceededExceptionReason::PROTECT_CONFIGURATIONS_PER_ACCOUNT:
+            return "PROTECT_CONFIGURATIONS_PER_ACCOUNT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

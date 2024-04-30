@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qbusiness/model/ReadAccessType.h>
 #include <aws/qbusiness/model/MembershipType.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -38,6 +38,47 @@ namespace Model
     AWS_QBUSINESS_API PrincipalGroup(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API PrincipalGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The name of the group.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the group.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the group.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>The name of the group.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * <p>The name of the group.</p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p>The name of the group.</p>
+     */
+    inline PrincipalGroup& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>The name of the group.</p>
+     */
+    inline PrincipalGroup& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the group.</p>
+     */
+    inline PrincipalGroup& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
@@ -107,57 +148,16 @@ namespace Model
      */
     inline PrincipalGroup& WithMembershipType(MembershipType&& value) { SetMembershipType(std::move(value)); return *this;}
 
-
-    /**
-     * <p>The name of the group.</p>
-     */
-    inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the group.</p>
-     */
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the group.</p>
-     */
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the group.</p>
-     */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the group.</p>
-     */
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the group.</p>
-     */
-    inline PrincipalGroup& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the group.</p>
-     */
-    inline PrincipalGroup& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the group.</p>
-     */
-    inline PrincipalGroup& WithName(const char* value) { SetName(value); return *this;}
-
   private:
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     ReadAccessType m_access;
     bool m_accessHasBeenSet = false;
 
     MembershipType m_membershipType;
     bool m_membershipTypeHasBeenSet = false;
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

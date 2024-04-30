@@ -12,6 +12,7 @@
 #include <aws/omics/model/RunLogLevel.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/omics/model/RunRetentionMode.h>
+#include <aws/omics/model/StorageType.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -327,22 +328,26 @@ namespace Model
 
 
     /**
-     * <p>A storage capacity for the run in gibibytes.</p>
+     * <p>A storage capacity for the run in gibibytes. This field is not required if
+     * the storage type is dynamic (the system ignores any value that you enter).</p>
      */
     inline int GetStorageCapacity() const{ return m_storageCapacity; }
 
     /**
-     * <p>A storage capacity for the run in gibibytes.</p>
+     * <p>A storage capacity for the run in gibibytes. This field is not required if
+     * the storage type is dynamic (the system ignores any value that you enter).</p>
      */
     inline bool StorageCapacityHasBeenSet() const { return m_storageCapacityHasBeenSet; }
 
     /**
-     * <p>A storage capacity for the run in gibibytes.</p>
+     * <p>A storage capacity for the run in gibibytes. This field is not required if
+     * the storage type is dynamic (the system ignores any value that you enter).</p>
      */
     inline void SetStorageCapacity(int value) { m_storageCapacityHasBeenSet = true; m_storageCapacity = value; }
 
     /**
-     * <p>A storage capacity for the run in gibibytes.</p>
+     * <p>A storage capacity for the run in gibibytes. This field is not required if
+     * the storage type is dynamic (the system ignores any value that you enter).</p>
      */
     inline StartRunRequest& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
 
@@ -564,6 +569,96 @@ namespace Model
      */
     inline StartRunRequest& WithRetentionMode(RunRetentionMode&& value) { SetRetentionMode(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The run's storage type. By default, the run uses STATIC storage type, which
+     * allocates a fixed amount of storage. If you set the storage type to DYNAMIC,
+     * HealthOmics dynamically scales the storage up or down, based on file system
+     * utilization.</p>
+     */
+    inline const StorageType& GetStorageType() const{ return m_storageType; }
+
+    /**
+     * <p>The run's storage type. By default, the run uses STATIC storage type, which
+     * allocates a fixed amount of storage. If you set the storage type to DYNAMIC,
+     * HealthOmics dynamically scales the storage up or down, based on file system
+     * utilization.</p>
+     */
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+
+    /**
+     * <p>The run's storage type. By default, the run uses STATIC storage type, which
+     * allocates a fixed amount of storage. If you set the storage type to DYNAMIC,
+     * HealthOmics dynamically scales the storage up or down, based on file system
+     * utilization.</p>
+     */
+    inline void SetStorageType(const StorageType& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+
+    /**
+     * <p>The run's storage type. By default, the run uses STATIC storage type, which
+     * allocates a fixed amount of storage. If you set the storage type to DYNAMIC,
+     * HealthOmics dynamically scales the storage up or down, based on file system
+     * utilization.</p>
+     */
+    inline void SetStorageType(StorageType&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
+
+    /**
+     * <p>The run's storage type. By default, the run uses STATIC storage type, which
+     * allocates a fixed amount of storage. If you set the storage type to DYNAMIC,
+     * HealthOmics dynamically scales the storage up or down, based on file system
+     * utilization.</p>
+     */
+    inline StartRunRequest& WithStorageType(const StorageType& value) { SetStorageType(value); return *this;}
+
+    /**
+     * <p>The run's storage type. By default, the run uses STATIC storage type, which
+     * allocates a fixed amount of storage. If you set the storage type to DYNAMIC,
+     * HealthOmics dynamically scales the storage up or down, based on file system
+     * utilization.</p>
+     */
+    inline StartRunRequest& WithStorageType(StorageType&& value) { SetStorageType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The ID of the workflow owner. </p>
+     */
+    inline const Aws::String& GetWorkflowOwnerId() const{ return m_workflowOwnerId; }
+
+    /**
+     * <p>The ID of the workflow owner. </p>
+     */
+    inline bool WorkflowOwnerIdHasBeenSet() const { return m_workflowOwnerIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the workflow owner. </p>
+     */
+    inline void SetWorkflowOwnerId(const Aws::String& value) { m_workflowOwnerIdHasBeenSet = true; m_workflowOwnerId = value; }
+
+    /**
+     * <p>The ID of the workflow owner. </p>
+     */
+    inline void SetWorkflowOwnerId(Aws::String&& value) { m_workflowOwnerIdHasBeenSet = true; m_workflowOwnerId = std::move(value); }
+
+    /**
+     * <p>The ID of the workflow owner. </p>
+     */
+    inline void SetWorkflowOwnerId(const char* value) { m_workflowOwnerIdHasBeenSet = true; m_workflowOwnerId.assign(value); }
+
+    /**
+     * <p>The ID of the workflow owner. </p>
+     */
+    inline StartRunRequest& WithWorkflowOwnerId(const Aws::String& value) { SetWorkflowOwnerId(value); return *this;}
+
+    /**
+     * <p>The ID of the workflow owner. </p>
+     */
+    inline StartRunRequest& WithWorkflowOwnerId(Aws::String&& value) { SetWorkflowOwnerId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the workflow owner. </p>
+     */
+    inline StartRunRequest& WithWorkflowOwnerId(const char* value) { SetWorkflowOwnerId(value); return *this;}
+
   private:
 
     Aws::String m_workflowId;
@@ -607,6 +702,12 @@ namespace Model
 
     RunRetentionMode m_retentionMode;
     bool m_retentionModeHasBeenSet = false;
+
+    StorageType m_storageType;
+    bool m_storageTypeHasBeenSet = false;
+
+    Aws::String m_workflowOwnerId;
+    bool m_workflowOwnerIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,32 +19,32 @@ namespace Model
 {
 
 EligibleDataSource::EligibleDataSource() : 
-    m_dataSourceIdHasBeenSet(false),
-    m_indexIdHasBeenSet(false)
+    m_indexIdHasBeenSet(false),
+    m_dataSourceIdHasBeenSet(false)
 {
 }
 
 EligibleDataSource::EligibleDataSource(JsonView jsonValue) : 
-    m_dataSourceIdHasBeenSet(false),
-    m_indexIdHasBeenSet(false)
+    m_indexIdHasBeenSet(false),
+    m_dataSourceIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 EligibleDataSource& EligibleDataSource::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("dataSourceId"))
-  {
-    m_dataSourceId = jsonValue.GetString("dataSourceId");
-
-    m_dataSourceIdHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("indexId"))
   {
     m_indexId = jsonValue.GetString("indexId");
 
     m_indexIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dataSourceId"))
+  {
+    m_dataSourceId = jsonValue.GetString("dataSourceId");
+
+    m_dataSourceIdHasBeenSet = true;
   }
 
   return *this;
@@ -54,15 +54,15 @@ JsonValue EligibleDataSource::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_dataSourceIdHasBeenSet)
-  {
-   payload.WithString("dataSourceId", m_dataSourceId);
-
-  }
-
   if(m_indexIdHasBeenSet)
   {
    payload.WithString("indexId", m_indexId);
+
+  }
+
+  if(m_dataSourceIdHasBeenSet)
+  {
+   payload.WithString("dataSourceId", m_dataSourceId);
 
   }
 

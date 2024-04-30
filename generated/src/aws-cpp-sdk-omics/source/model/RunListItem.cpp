@@ -31,7 +31,9 @@ RunListItem::RunListItem() :
     m_storageCapacityHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_stopTimeHasBeenSet(false)
+    m_stopTimeHasBeenSet(false),
+    m_storageType(StorageType::NOT_SET),
+    m_storageTypeHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ RunListItem::RunListItem(JsonView jsonValue) :
     m_storageCapacityHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_stopTimeHasBeenSet(false)
+    m_stopTimeHasBeenSet(false),
+    m_storageType(StorageType::NOT_SET),
+    m_storageTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -125,6 +129,13 @@ RunListItem& RunListItem::operator =(JsonView jsonValue)
     m_stopTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("storageType"))
+  {
+    m_storageType = StorageTypeMapper::GetStorageTypeForName(jsonValue.GetString("storageType"));
+
+    m_storageTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -186,6 +197,11 @@ JsonValue RunListItem::Jsonize() const
   if(m_stopTimeHasBeenSet)
   {
    payload.WithString("stopTime", m_stopTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_storageTypeHasBeenSet)
+  {
+   payload.WithString("storageType", StorageTypeMapper::GetNameForStorageType(m_storageType));
   }
 
   return payload;

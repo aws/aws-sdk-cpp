@@ -16,7 +16,6 @@ namespace Aws
 namespace QBusiness
 {
   /**
-   *  <p>Amazon Q is in preview release and is subject to change.</p> 
    * <p>This is the <i>Amazon Q Business</i> API Reference. Amazon Q Business is a
    * fully managed, generative-AI powered enterprise chat assistant that you can
    * deploy within your organization. Amazon Q Business enhances employee
@@ -172,6 +171,21 @@ namespace QBusiness
         }
 
         /**
+         * <p>Starts or continues a streaming Amazon Q Business conversation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/Chat">AWS API
+         * Reference</a></p>
+         *
+         * Queues the request into a thread executor.
+         * The streamReadyHandler is triggered when the stream is ready to be written to.
+         * The handler is triggered when the request is finished.
+         */
+        virtual void ChatAsync(Model::ChatRequest& request,
+                const ChatStreamReadyHandler& streamReadyHandler,
+                const ChatResponseReceivedHandler& handler,
+                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext = nullptr) const;
+
+        /**
          * <p>Starts or continues a non-streaming Amazon Q Business
          * conversation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ChatSync">AWS
@@ -198,7 +212,13 @@ namespace QBusiness
         }
 
         /**
-         * <p>Creates an Amazon Q Business application.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an Amazon Q Business application.</p>  <p>There are new tiers
+         * for Amazon Q Business. Not all features in Amazon Q Business Pro are also
+         * available in Amazon Q Business Lite. For information on what's included in
+         * Amazon Q Business Lite and what's included in Amazon Q Business Pro, see <a
+         * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/what-is.html#tiers">Amazon
+         * Q Business tiers</a>. You must use the Amazon Q Business console to assign
+         * subscription tiers to users.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateApplication">AWS
          * API Reference</a></p>
          */

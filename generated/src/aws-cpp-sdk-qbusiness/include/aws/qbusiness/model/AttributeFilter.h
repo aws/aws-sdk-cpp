@@ -81,6 +81,133 @@ namespace Model
 
 
     /**
+     * <p> Performs a logical <code>OR</code> operation on all supplied filters. </p>
+     */
+    inline const Aws::Vector<AttributeFilter>& GetOrAllFilters() const{ return m_orAllFilters; }
+
+    /**
+     * <p> Performs a logical <code>OR</code> operation on all supplied filters. </p>
+     */
+    inline bool OrAllFiltersHasBeenSet() const { return m_orAllFiltersHasBeenSet; }
+
+    /**
+     * <p> Performs a logical <code>OR</code> operation on all supplied filters. </p>
+     */
+    inline void SetOrAllFilters(const Aws::Vector<AttributeFilter>& value) { m_orAllFiltersHasBeenSet = true; m_orAllFilters = value; }
+
+    /**
+     * <p> Performs a logical <code>OR</code> operation on all supplied filters. </p>
+     */
+    inline void SetOrAllFilters(Aws::Vector<AttributeFilter>&& value) { m_orAllFiltersHasBeenSet = true; m_orAllFilters = std::move(value); }
+
+    /**
+     * <p> Performs a logical <code>OR</code> operation on all supplied filters. </p>
+     */
+    inline AttributeFilter& WithOrAllFilters(const Aws::Vector<AttributeFilter>& value) { SetOrAllFilters(value); return *this;}
+
+    /**
+     * <p> Performs a logical <code>OR</code> operation on all supplied filters. </p>
+     */
+    inline AttributeFilter& WithOrAllFilters(Aws::Vector<AttributeFilter>&& value) { SetOrAllFilters(std::move(value)); return *this;}
+
+    /**
+     * <p> Performs a logical <code>OR</code> operation on all supplied filters. </p>
+     */
+    inline AttributeFilter& AddOrAllFilters(const AttributeFilter& value) { m_orAllFiltersHasBeenSet = true; m_orAllFilters.push_back(value); return *this; }
+
+    /**
+     * <p> Performs a logical <code>OR</code> operation on all supplied filters. </p>
+     */
+    inline AttributeFilter& AddOrAllFilters(AttributeFilter&& value) { m_orAllFiltersHasBeenSet = true; m_orAllFilters.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Performs a logical <code>NOT</code> operation on all supplied filters. </p>
+     */
+    AWS_QBUSINESS_API const AttributeFilter& GetNotFilter() const;
+
+    /**
+     * <p>Performs a logical <code>NOT</code> operation on all supplied filters. </p>
+     */
+    AWS_QBUSINESS_API bool NotFilterHasBeenSet() const;
+
+    /**
+     * <p>Performs a logical <code>NOT</code> operation on all supplied filters. </p>
+     */
+    AWS_QBUSINESS_API void SetNotFilter(const AttributeFilter& value);
+
+    /**
+     * <p>Performs a logical <code>NOT</code> operation on all supplied filters. </p>
+     */
+    AWS_QBUSINESS_API void SetNotFilter(AttributeFilter&& value);
+
+    /**
+     * <p>Performs a logical <code>NOT</code> operation on all supplied filters. </p>
+     */
+    AWS_QBUSINESS_API AttributeFilter& WithNotFilter(const AttributeFilter& value);
+
+    /**
+     * <p>Performs a logical <code>NOT</code> operation on all supplied filters. </p>
+     */
+    AWS_QBUSINESS_API AttributeFilter& WithNotFilter(AttributeFilter&& value);
+
+
+    /**
+     * <p>Performs an equals operation on two document attributes or metadata fields.
+     * Supported for the following <a
+     * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
+     * attribute value types</a>: <code>dateValue</code>, <code>longValue</code>,
+     * <code>stringListValue</code> and <code>stringValue</code>.</p>
+     */
+    inline const DocumentAttribute& GetEqualsTo() const{ return m_equalsTo; }
+
+    /**
+     * <p>Performs an equals operation on two document attributes or metadata fields.
+     * Supported for the following <a
+     * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
+     * attribute value types</a>: <code>dateValue</code>, <code>longValue</code>,
+     * <code>stringListValue</code> and <code>stringValue</code>.</p>
+     */
+    inline bool EqualsToHasBeenSet() const { return m_equalsToHasBeenSet; }
+
+    /**
+     * <p>Performs an equals operation on two document attributes or metadata fields.
+     * Supported for the following <a
+     * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
+     * attribute value types</a>: <code>dateValue</code>, <code>longValue</code>,
+     * <code>stringListValue</code> and <code>stringValue</code>.</p>
+     */
+    inline void SetEqualsTo(const DocumentAttribute& value) { m_equalsToHasBeenSet = true; m_equalsTo = value; }
+
+    /**
+     * <p>Performs an equals operation on two document attributes or metadata fields.
+     * Supported for the following <a
+     * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
+     * attribute value types</a>: <code>dateValue</code>, <code>longValue</code>,
+     * <code>stringListValue</code> and <code>stringValue</code>.</p>
+     */
+    inline void SetEqualsTo(DocumentAttribute&& value) { m_equalsToHasBeenSet = true; m_equalsTo = std::move(value); }
+
+    /**
+     * <p>Performs an equals operation on two document attributes or metadata fields.
+     * Supported for the following <a
+     * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
+     * attribute value types</a>: <code>dateValue</code>, <code>longValue</code>,
+     * <code>stringListValue</code> and <code>stringValue</code>.</p>
+     */
+    inline AttributeFilter& WithEqualsTo(const DocumentAttribute& value) { SetEqualsTo(value); return *this;}
+
+    /**
+     * <p>Performs an equals operation on two document attributes or metadata fields.
+     * Supported for the following <a
+     * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
+     * attribute value types</a>: <code>dateValue</code>, <code>longValue</code>,
+     * <code>stringListValue</code> and <code>stringValue</code>.</p>
+     */
+    inline AttributeFilter& WithEqualsTo(DocumentAttribute&& value) { SetEqualsTo(std::move(value)); return *this;}
+
+
+    /**
      * <p>Returns <code>true</code> when a document contains all the specified document
      * attributes or metadata fields. Supported for the following <a
      * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
@@ -182,61 +309,6 @@ namespace Model
      * <code>stringListValue</code> and <code>stringValue</code>.</p>
      */
     inline AttributeFilter& WithContainsAny(DocumentAttribute&& value) { SetContainsAny(std::move(value)); return *this;}
-
-
-    /**
-     * <p>Performs an equals operation on two document attributes or metadata fields.
-     * Supported for the following <a
-     * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
-     * attribute value types</a>: <code>dateValue</code>, <code>longValue</code>,
-     * <code>stringListValue</code> and <code>stringValue</code>.</p>
-     */
-    inline const DocumentAttribute& GetEqualsTo() const{ return m_equalsTo; }
-
-    /**
-     * <p>Performs an equals operation on two document attributes or metadata fields.
-     * Supported for the following <a
-     * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
-     * attribute value types</a>: <code>dateValue</code>, <code>longValue</code>,
-     * <code>stringListValue</code> and <code>stringValue</code>.</p>
-     */
-    inline bool EqualsToHasBeenSet() const { return m_equalsToHasBeenSet; }
-
-    /**
-     * <p>Performs an equals operation on two document attributes or metadata fields.
-     * Supported for the following <a
-     * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
-     * attribute value types</a>: <code>dateValue</code>, <code>longValue</code>,
-     * <code>stringListValue</code> and <code>stringValue</code>.</p>
-     */
-    inline void SetEqualsTo(const DocumentAttribute& value) { m_equalsToHasBeenSet = true; m_equalsTo = value; }
-
-    /**
-     * <p>Performs an equals operation on two document attributes or metadata fields.
-     * Supported for the following <a
-     * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
-     * attribute value types</a>: <code>dateValue</code>, <code>longValue</code>,
-     * <code>stringListValue</code> and <code>stringValue</code>.</p>
-     */
-    inline void SetEqualsTo(DocumentAttribute&& value) { m_equalsToHasBeenSet = true; m_equalsTo = std::move(value); }
-
-    /**
-     * <p>Performs an equals operation on two document attributes or metadata fields.
-     * Supported for the following <a
-     * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
-     * attribute value types</a>: <code>dateValue</code>, <code>longValue</code>,
-     * <code>stringListValue</code> and <code>stringValue</code>.</p>
-     */
-    inline AttributeFilter& WithEqualsTo(const DocumentAttribute& value) { SetEqualsTo(value); return *this;}
-
-    /**
-     * <p>Performs an equals operation on two document attributes or metadata fields.
-     * Supported for the following <a
-     * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
-     * attribute value types</a>: <code>dateValue</code>, <code>longValue</code>,
-     * <code>stringListValue</code> and <code>stringValue</code>.</p>
-     */
-    inline AttributeFilter& WithEqualsTo(DocumentAttribute&& value) { SetEqualsTo(std::move(value)); return *this;}
 
 
     /**
@@ -458,91 +530,25 @@ namespace Model
      */
     inline AttributeFilter& WithLessThanOrEquals(DocumentAttribute&& value) { SetLessThanOrEquals(std::move(value)); return *this;}
 
-
-    /**
-     * <p>Performs a logical <code>NOT</code> operation on all supplied filters. </p>
-     */
-    AWS_QBUSINESS_API const AttributeFilter& GetNotFilter() const;
-
-    /**
-     * <p>Performs a logical <code>NOT</code> operation on all supplied filters. </p>
-     */
-    AWS_QBUSINESS_API bool NotFilterHasBeenSet() const;
-
-    /**
-     * <p>Performs a logical <code>NOT</code> operation on all supplied filters. </p>
-     */
-    AWS_QBUSINESS_API void SetNotFilter(const AttributeFilter& value);
-
-    /**
-     * <p>Performs a logical <code>NOT</code> operation on all supplied filters. </p>
-     */
-    AWS_QBUSINESS_API void SetNotFilter(AttributeFilter&& value);
-
-    /**
-     * <p>Performs a logical <code>NOT</code> operation on all supplied filters. </p>
-     */
-    AWS_QBUSINESS_API AttributeFilter& WithNotFilter(const AttributeFilter& value);
-
-    /**
-     * <p>Performs a logical <code>NOT</code> operation on all supplied filters. </p>
-     */
-    AWS_QBUSINESS_API AttributeFilter& WithNotFilter(AttributeFilter&& value);
-
-
-    /**
-     * <p> Performs a logical <code>OR</code> operation on all supplied filters. </p>
-     */
-    inline const Aws::Vector<AttributeFilter>& GetOrAllFilters() const{ return m_orAllFilters; }
-
-    /**
-     * <p> Performs a logical <code>OR</code> operation on all supplied filters. </p>
-     */
-    inline bool OrAllFiltersHasBeenSet() const { return m_orAllFiltersHasBeenSet; }
-
-    /**
-     * <p> Performs a logical <code>OR</code> operation on all supplied filters. </p>
-     */
-    inline void SetOrAllFilters(const Aws::Vector<AttributeFilter>& value) { m_orAllFiltersHasBeenSet = true; m_orAllFilters = value; }
-
-    /**
-     * <p> Performs a logical <code>OR</code> operation on all supplied filters. </p>
-     */
-    inline void SetOrAllFilters(Aws::Vector<AttributeFilter>&& value) { m_orAllFiltersHasBeenSet = true; m_orAllFilters = std::move(value); }
-
-    /**
-     * <p> Performs a logical <code>OR</code> operation on all supplied filters. </p>
-     */
-    inline AttributeFilter& WithOrAllFilters(const Aws::Vector<AttributeFilter>& value) { SetOrAllFilters(value); return *this;}
-
-    /**
-     * <p> Performs a logical <code>OR</code> operation on all supplied filters. </p>
-     */
-    inline AttributeFilter& WithOrAllFilters(Aws::Vector<AttributeFilter>&& value) { SetOrAllFilters(std::move(value)); return *this;}
-
-    /**
-     * <p> Performs a logical <code>OR</code> operation on all supplied filters. </p>
-     */
-    inline AttributeFilter& AddOrAllFilters(const AttributeFilter& value) { m_orAllFiltersHasBeenSet = true; m_orAllFilters.push_back(value); return *this; }
-
-    /**
-     * <p> Performs a logical <code>OR</code> operation on all supplied filters. </p>
-     */
-    inline AttributeFilter& AddOrAllFilters(AttributeFilter&& value) { m_orAllFiltersHasBeenSet = true; m_orAllFilters.push_back(std::move(value)); return *this; }
-
   private:
 
     Aws::Vector<AttributeFilter> m_andAllFilters;
     bool m_andAllFiltersHasBeenSet = false;
+
+    Aws::Vector<AttributeFilter> m_orAllFilters;
+    bool m_orAllFiltersHasBeenSet = false;
+
+    std::shared_ptr<AttributeFilter> m_notFilter;
+    bool m_notFilterHasBeenSet = false;
+
+    DocumentAttribute m_equalsTo;
+    bool m_equalsToHasBeenSet = false;
 
     DocumentAttribute m_containsAll;
     bool m_containsAllHasBeenSet = false;
 
     DocumentAttribute m_containsAny;
     bool m_containsAnyHasBeenSet = false;
-
-    DocumentAttribute m_equalsTo;
-    bool m_equalsToHasBeenSet = false;
 
     DocumentAttribute m_greaterThan;
     bool m_greaterThanHasBeenSet = false;
@@ -555,12 +561,6 @@ namespace Model
 
     DocumentAttribute m_lessThanOrEquals;
     bool m_lessThanOrEqualsHasBeenSet = false;
-
-    std::shared_ptr<AttributeFilter> m_notFilter;
-    bool m_notFilterHasBeenSet = false;
-
-    Aws::Vector<AttributeFilter> m_orAllFilters;
-    bool m_orAllFiltersHasBeenSet = false;
   };
 
 } // namespace Model

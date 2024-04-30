@@ -16,12 +16,12 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 ListMessagesRequest::ListMessagesRequest() : 
-    m_applicationIdHasBeenSet(false),
     m_conversationIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
+    m_applicationIdHasBeenSet(false),
+    m_userIdHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false)
 {
 }
 
@@ -33,10 +33,10 @@ Aws::String ListMessagesRequest::SerializePayload() const
 void ListMessagesRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
-    if(m_maxResultsHasBeenSet)
+    if(m_userIdHasBeenSet)
     {
-      ss << m_maxResults;
-      uri.AddQueryStringParameter("maxResults", ss.str());
+      ss << m_userId;
+      uri.AddQueryStringParameter("userId", ss.str());
       ss.str("");
     }
 
@@ -47,10 +47,10 @@ void ListMessagesRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
-    if(m_userIdHasBeenSet)
+    if(m_maxResultsHasBeenSet)
     {
-      ss << m_userId;
-      uri.AddQueryStringParameter("userId", ss.str());
+      ss << m_maxResults;
+      uri.AddQueryStringParameter("maxResults", ss.str());
       ss.str("");
     }
 

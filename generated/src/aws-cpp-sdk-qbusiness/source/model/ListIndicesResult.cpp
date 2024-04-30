@@ -29,6 +29,12 @@ ListIndicesResult::ListIndicesResult(const Aws::AmazonWebServiceResult<JsonValue
 ListIndicesResult& ListIndicesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
+  }
+
   if(jsonValue.ValueExists("indices"))
   {
     Aws::Utils::Array<JsonView> indicesJsonList = jsonValue.GetArray("indices");
@@ -36,12 +42,6 @@ ListIndicesResult& ListIndicesResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_indices.push_back(indicesJsonList[indicesIndex].AsObject());
     }
-  }
-
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
   }
 
 

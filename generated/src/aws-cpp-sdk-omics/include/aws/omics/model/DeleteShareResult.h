@@ -34,27 +34,27 @@ namespace Model
 
 
     /**
-     * <p> The status of the share being deleted. </p>
+     * <p>The status of the share being deleted.</p>
      */
     inline const ShareStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p> The status of the share being deleted. </p>
+     * <p>The status of the share being deleted.</p>
      */
     inline void SetStatus(const ShareStatus& value) { m_status = value; }
 
     /**
-     * <p> The status of the share being deleted. </p>
+     * <p>The status of the share being deleted.</p>
      */
     inline void SetStatus(ShareStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p> The status of the share being deleted. </p>
+     * <p>The status of the share being deleted.</p>
      */
     inline DeleteShareResult& WithStatus(const ShareStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p> The status of the share being deleted. </p>
+     * <p>The status of the share being deleted.</p>
      */
     inline DeleteShareResult& WithStatus(ShareStatus&& value) { SetStatus(std::move(value)); return *this;}
 

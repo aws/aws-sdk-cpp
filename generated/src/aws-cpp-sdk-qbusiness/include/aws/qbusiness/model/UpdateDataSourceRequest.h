@@ -8,8 +8,8 @@
 #include <aws/qbusiness/QBusinessRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/Document.h>
-#include <aws/qbusiness/model/DocumentEnrichmentConfiguration.h>
 #include <aws/qbusiness/model/DataSourceVpcConfiguration.h>
+#include <aws/qbusiness/model/DocumentEnrichmentConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -84,23 +84,45 @@ namespace Model
     inline UpdateDataSourceRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
-    
-    inline Aws::Utils::DocumentView GetConfiguration() const{ return m_configuration; }
+    /**
+     * <p>The identifier of the index attached to the data source connector.</p>
+     */
+    inline const Aws::String& GetIndexId() const{ return m_indexId; }
 
-    
-    inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
+    /**
+     * <p>The identifier of the index attached to the data source connector.</p>
+     */
+    inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
 
-    
-    inline void SetConfiguration(const Aws::Utils::Document& value) { m_configurationHasBeenSet = true; m_configuration = value; }
+    /**
+     * <p>The identifier of the index attached to the data source connector.</p>
+     */
+    inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
 
-    
-    inline void SetConfiguration(Aws::Utils::Document&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
+    /**
+     * <p>The identifier of the index attached to the data source connector.</p>
+     */
+    inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
 
-    
-    inline UpdateDataSourceRequest& WithConfiguration(const Aws::Utils::Document& value) { SetConfiguration(value); return *this;}
+    /**
+     * <p>The identifier of the index attached to the data source connector.</p>
+     */
+    inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
 
-    
-    inline UpdateDataSourceRequest& WithConfiguration(Aws::Utils::Document&& value) { SetConfiguration(std::move(value)); return *this;}
+    /**
+     * <p>The identifier of the index attached to the data source connector.</p>
+     */
+    inline UpdateDataSourceRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
+
+    /**
+     * <p>The identifier of the index attached to the data source connector.</p>
+     */
+    inline UpdateDataSourceRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the index attached to the data source connector.</p>
+     */
+    inline UpdateDataSourceRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
 
 
     /**
@@ -145,47 +167,6 @@ namespace Model
 
 
     /**
-     * <p>The description of the data source connector.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The description of the data source connector.</p>
-     */
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The description of the data source connector.</p>
-     */
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The description of the data source connector.</p>
-     */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The description of the data source connector.</p>
-     */
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The description of the data source connector.</p>
-     */
-    inline UpdateDataSourceRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The description of the data source connector.</p>
-     */
-    inline UpdateDataSourceRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The description of the data source connector.</p>
-     */
-    inline UpdateDataSourceRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
-
-
-    /**
      * <p>A name of the data source connector.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
@@ -227,63 +208,123 @@ namespace Model
 
 
     
-    inline const DocumentEnrichmentConfiguration& GetDocumentEnrichmentConfiguration() const{ return m_documentEnrichmentConfiguration; }
+    inline Aws::Utils::DocumentView GetConfiguration() const{ return m_configuration; }
 
     
-    inline bool DocumentEnrichmentConfigurationHasBeenSet() const { return m_documentEnrichmentConfigurationHasBeenSet; }
+    inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     
-    inline void SetDocumentEnrichmentConfiguration(const DocumentEnrichmentConfiguration& value) { m_documentEnrichmentConfigurationHasBeenSet = true; m_documentEnrichmentConfiguration = value; }
+    inline void SetConfiguration(const Aws::Utils::Document& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
     
-    inline void SetDocumentEnrichmentConfiguration(DocumentEnrichmentConfiguration&& value) { m_documentEnrichmentConfigurationHasBeenSet = true; m_documentEnrichmentConfiguration = std::move(value); }
+    inline void SetConfiguration(Aws::Utils::Document&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
 
     
-    inline UpdateDataSourceRequest& WithDocumentEnrichmentConfiguration(const DocumentEnrichmentConfiguration& value) { SetDocumentEnrichmentConfiguration(value); return *this;}
+    inline UpdateDataSourceRequest& WithConfiguration(const Aws::Utils::Document& value) { SetConfiguration(value); return *this;}
 
     
-    inline UpdateDataSourceRequest& WithDocumentEnrichmentConfiguration(DocumentEnrichmentConfiguration&& value) { SetDocumentEnrichmentConfiguration(std::move(value)); return *this;}
+    inline UpdateDataSourceRequest& WithConfiguration(Aws::Utils::Document&& value) { SetConfiguration(std::move(value)); return *this;}
+
+
+    
+    inline const DataSourceVpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
+
+    
+    inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
+
+    
+    inline void SetVpcConfiguration(const DataSourceVpcConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
+
+    
+    inline void SetVpcConfiguration(DataSourceVpcConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
+
+    
+    inline UpdateDataSourceRequest& WithVpcConfiguration(const DataSourceVpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
+
+    
+    inline UpdateDataSourceRequest& WithVpcConfiguration(DataSourceVpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>The identifier of the index attached to the data source connector.</p>
+     * <p>The description of the data source connector.</p>
      */
-    inline const Aws::String& GetIndexId() const{ return m_indexId; }
+    inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The identifier of the index attached to the data source connector.</p>
+     * <p>The description of the data source connector.</p>
      */
-    inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The identifier of the index attached to the data source connector.</p>
+     * <p>The description of the data source connector.</p>
      */
-    inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The identifier of the index attached to the data source connector.</p>
+     * <p>The description of the data source connector.</p>
      */
-    inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The identifier of the index attached to the data source connector.</p>
+     * <p>The description of the data source connector.</p>
      */
-    inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The identifier of the index attached to the data source connector.</p>
+     * <p>The description of the data source connector.</p>
      */
-    inline UpdateDataSourceRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
+    inline UpdateDataSourceRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The identifier of the index attached to the data source connector.</p>
+     * <p>The description of the data source connector.</p>
      */
-    inline UpdateDataSourceRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
+    inline UpdateDataSourceRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the index attached to the data source connector.</p>
+     * <p>The description of the data source connector.</p>
      */
-    inline UpdateDataSourceRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
+    inline UpdateDataSourceRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
+     * <p>The chosen update frequency for your data source.</p>
+     */
+    inline const Aws::String& GetSyncSchedule() const{ return m_syncSchedule; }
+
+    /**
+     * <p>The chosen update frequency for your data source.</p>
+     */
+    inline bool SyncScheduleHasBeenSet() const { return m_syncScheduleHasBeenSet; }
+
+    /**
+     * <p>The chosen update frequency for your data source.</p>
+     */
+    inline void SetSyncSchedule(const Aws::String& value) { m_syncScheduleHasBeenSet = true; m_syncSchedule = value; }
+
+    /**
+     * <p>The chosen update frequency for your data source.</p>
+     */
+    inline void SetSyncSchedule(Aws::String&& value) { m_syncScheduleHasBeenSet = true; m_syncSchedule = std::move(value); }
+
+    /**
+     * <p>The chosen update frequency for your data source.</p>
+     */
+    inline void SetSyncSchedule(const char* value) { m_syncScheduleHasBeenSet = true; m_syncSchedule.assign(value); }
+
+    /**
+     * <p>The chosen update frequency for your data source.</p>
+     */
+    inline UpdateDataSourceRequest& WithSyncSchedule(const Aws::String& value) { SetSyncSchedule(value); return *this;}
+
+    /**
+     * <p>The chosen update frequency for your data source.</p>
+     */
+    inline UpdateDataSourceRequest& WithSyncSchedule(Aws::String&& value) { SetSyncSchedule(std::move(value)); return *this;}
+
+    /**
+     * <p>The chosen update frequency for your data source.</p>
+     */
+    inline UpdateDataSourceRequest& WithSyncSchedule(const char* value) { SetSyncSchedule(value); return *this;}
 
 
     /**
@@ -335,96 +376,55 @@ namespace Model
     inline UpdateDataSourceRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
 
-    /**
-     * <p>The chosen update frequency for your data source.</p>
-     */
-    inline const Aws::String& GetSyncSchedule() const{ return m_syncSchedule; }
-
-    /**
-     * <p>The chosen update frequency for your data source.</p>
-     */
-    inline bool SyncScheduleHasBeenSet() const { return m_syncScheduleHasBeenSet; }
-
-    /**
-     * <p>The chosen update frequency for your data source.</p>
-     */
-    inline void SetSyncSchedule(const Aws::String& value) { m_syncScheduleHasBeenSet = true; m_syncSchedule = value; }
-
-    /**
-     * <p>The chosen update frequency for your data source.</p>
-     */
-    inline void SetSyncSchedule(Aws::String&& value) { m_syncScheduleHasBeenSet = true; m_syncSchedule = std::move(value); }
-
-    /**
-     * <p>The chosen update frequency for your data source.</p>
-     */
-    inline void SetSyncSchedule(const char* value) { m_syncScheduleHasBeenSet = true; m_syncSchedule.assign(value); }
-
-    /**
-     * <p>The chosen update frequency for your data source.</p>
-     */
-    inline UpdateDataSourceRequest& WithSyncSchedule(const Aws::String& value) { SetSyncSchedule(value); return *this;}
-
-    /**
-     * <p>The chosen update frequency for your data source.</p>
-     */
-    inline UpdateDataSourceRequest& WithSyncSchedule(Aws::String&& value) { SetSyncSchedule(std::move(value)); return *this;}
-
-    /**
-     * <p>The chosen update frequency for your data source.</p>
-     */
-    inline UpdateDataSourceRequest& WithSyncSchedule(const char* value) { SetSyncSchedule(value); return *this;}
-
+    
+    inline const DocumentEnrichmentConfiguration& GetDocumentEnrichmentConfiguration() const{ return m_documentEnrichmentConfiguration; }
 
     
-    inline const DataSourceVpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
+    inline bool DocumentEnrichmentConfigurationHasBeenSet() const { return m_documentEnrichmentConfigurationHasBeenSet; }
 
     
-    inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
+    inline void SetDocumentEnrichmentConfiguration(const DocumentEnrichmentConfiguration& value) { m_documentEnrichmentConfigurationHasBeenSet = true; m_documentEnrichmentConfiguration = value; }
 
     
-    inline void SetVpcConfiguration(const DataSourceVpcConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
+    inline void SetDocumentEnrichmentConfiguration(DocumentEnrichmentConfiguration&& value) { m_documentEnrichmentConfigurationHasBeenSet = true; m_documentEnrichmentConfiguration = std::move(value); }
 
     
-    inline void SetVpcConfiguration(DataSourceVpcConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
+    inline UpdateDataSourceRequest& WithDocumentEnrichmentConfiguration(const DocumentEnrichmentConfiguration& value) { SetDocumentEnrichmentConfiguration(value); return *this;}
 
     
-    inline UpdateDataSourceRequest& WithVpcConfiguration(const DataSourceVpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
-
-    
-    inline UpdateDataSourceRequest& WithVpcConfiguration(DataSourceVpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
+    inline UpdateDataSourceRequest& WithDocumentEnrichmentConfiguration(DocumentEnrichmentConfiguration&& value) { SetDocumentEnrichmentConfiguration(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet = false;
 
-    Aws::Utils::Document m_configuration;
-    bool m_configurationHasBeenSet = false;
+    Aws::String m_indexId;
+    bool m_indexIdHasBeenSet = false;
 
     Aws::String m_dataSourceId;
     bool m_dataSourceIdHasBeenSet = false;
 
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet = false;
 
-    DocumentEnrichmentConfiguration m_documentEnrichmentConfiguration;
-    bool m_documentEnrichmentConfigurationHasBeenSet = false;
+    Aws::Utils::Document m_configuration;
+    bool m_configurationHasBeenSet = false;
 
-    Aws::String m_indexId;
-    bool m_indexIdHasBeenSet = false;
+    DataSourceVpcConfiguration m_vpcConfiguration;
+    bool m_vpcConfigurationHasBeenSet = false;
 
-    Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet = false;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_syncSchedule;
     bool m_syncScheduleHasBeenSet = false;
 
-    DataSourceVpcConfiguration m_vpcConfiguration;
-    bool m_vpcConfigurationHasBeenSet = false;
+    Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
+
+    DocumentEnrichmentConfiguration m_documentEnrichmentConfiguration;
+    bool m_documentEnrichmentConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

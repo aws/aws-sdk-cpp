@@ -16,7 +16,8 @@ namespace Model
   enum class AccountAttributeName
   {
     NOT_SET,
-    ACCOUNT_TIER
+    ACCOUNT_TIER,
+    DEFAULT_PROTECT_CONFIGURATION_ID
   };
 
 namespace AccountAttributeNameMapper

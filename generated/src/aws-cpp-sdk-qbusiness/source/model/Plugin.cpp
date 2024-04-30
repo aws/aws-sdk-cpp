@@ -19,27 +19,31 @@ namespace Model
 {
 
 Plugin::Plugin() : 
-    m_createdAtHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
     m_pluginIdHasBeenSet(false),
+    m_displayNameHasBeenSet(false),
+    m_type(PluginType::NOT_SET),
+    m_typeHasBeenSet(false),
     m_serverUrlHasBeenSet(false),
     m_state(PluginState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_type(PluginType::NOT_SET),
-    m_typeHasBeenSet(false),
+    m_buildStatus(PluginBuildStatus::NOT_SET),
+    m_buildStatusHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
 {
 }
 
 Plugin::Plugin(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
     m_pluginIdHasBeenSet(false),
+    m_displayNameHasBeenSet(false),
+    m_type(PluginType::NOT_SET),
+    m_typeHasBeenSet(false),
     m_serverUrlHasBeenSet(false),
     m_state(PluginState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_type(PluginType::NOT_SET),
-    m_typeHasBeenSet(false),
+    m_buildStatus(PluginBuildStatus::NOT_SET),
+    m_buildStatusHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
 {
   *this = jsonValue;
@@ -47,11 +51,11 @@ Plugin::Plugin(JsonView jsonValue) :
 
 Plugin& Plugin::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("createdAt"))
+  if(jsonValue.ValueExists("pluginId"))
   {
-    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_pluginId = jsonValue.GetString("pluginId");
 
-    m_createdAtHasBeenSet = true;
+    m_pluginIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("displayName"))
@@ -61,11 +65,11 @@ Plugin& Plugin::operator =(JsonView jsonValue)
     m_displayNameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("pluginId"))
+  if(jsonValue.ValueExists("type"))
   {
-    m_pluginId = jsonValue.GetString("pluginId");
+    m_type = PluginTypeMapper::GetPluginTypeForName(jsonValue.GetString("type"));
 
-    m_pluginIdHasBeenSet = true;
+    m_typeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("serverUrl"))
@@ -82,11 +86,18 @@ Plugin& Plugin::operator =(JsonView jsonValue)
     m_stateHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("type"))
+  if(jsonValue.ValueExists("buildStatus"))
   {
-    m_type = PluginTypeMapper::GetPluginTypeForName(jsonValue.GetString("type"));
+    m_buildStatus = PluginBuildStatusMapper::GetPluginBuildStatusForName(jsonValue.GetString("buildStatus"));
 
-    m_typeHasBeenSet = true;
+    m_buildStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+
+    m_createdAtHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("updatedAt"))
@@ -103,9 +114,10 @@ JsonValue Plugin::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_createdAtHasBeenSet)
+  if(m_pluginIdHasBeenSet)
   {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+   payload.WithString("pluginId", m_pluginId);
+
   }
 
   if(m_displayNameHasBeenSet)
@@ -114,10 +126,9 @@ JsonValue Plugin::Jsonize() const
 
   }
 
-  if(m_pluginIdHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithString("pluginId", m_pluginId);
-
+   payload.WithString("type", PluginTypeMapper::GetNameForPluginType(m_type));
   }
 
   if(m_serverUrlHasBeenSet)
@@ -131,9 +142,14 @@ JsonValue Plugin::Jsonize() const
    payload.WithString("state", PluginStateMapper::GetNameForPluginState(m_state));
   }
 
-  if(m_typeHasBeenSet)
+  if(m_buildStatusHasBeenSet)
   {
-   payload.WithString("type", PluginTypeMapper::GetNameForPluginType(m_type));
+   payload.WithString("buildStatus", PluginBuildStatusMapper::GetNameForPluginBuildStatus(m_buildStatus));
+  }
+
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
   if(m_updatedAtHasBeenSet)

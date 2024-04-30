@@ -7,8 +7,9 @@
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/qbusiness/QBusinessRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/qbusiness/model/IndexCapacityConfiguration.h>
+#include <aws/qbusiness/model/IndexType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/qbusiness/model/IndexCapacityConfiguration.h>
 #include <aws/qbusiness/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -75,6 +76,202 @@ namespace Model
      * <p>The identifier of the Amazon Q Business application using the index.</p>
      */
     inline CreateIndexRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+
+
+    /**
+     * <p>A name for the Amazon Q Business index.</p>
+     */
+    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
+    /**
+     * <p>A name for the Amazon Q Business index.</p>
+     */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+
+    /**
+     * <p>A name for the Amazon Q Business index.</p>
+     */
+    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+
+    /**
+     * <p>A name for the Amazon Q Business index.</p>
+     */
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
+
+    /**
+     * <p>A name for the Amazon Q Business index.</p>
+     */
+    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
+
+    /**
+     * <p>A name for the Amazon Q Business index.</p>
+     */
+    inline CreateIndexRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
+
+    /**
+     * <p>A name for the Amazon Q Business index.</p>
+     */
+    inline CreateIndexRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
+
+    /**
+     * <p>A name for the Amazon Q Business index.</p>
+     */
+    inline CreateIndexRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+
+
+    /**
+     * <p>The index type that's suitable for your needs. For more information on what's
+     * included in each type of index or index tier, see <a
+     * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/what-is.html#tiers">Amazon
+     * Q Business tiers</a>.</p>
+     */
+    inline const IndexType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The index type that's suitable for your needs. For more information on what's
+     * included in each type of index or index tier, see <a
+     * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/what-is.html#tiers">Amazon
+     * Q Business tiers</a>.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The index type that's suitable for your needs. For more information on what's
+     * included in each type of index or index tier, see <a
+     * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/what-is.html#tiers">Amazon
+     * Q Business tiers</a>.</p>
+     */
+    inline void SetType(const IndexType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The index type that's suitable for your needs. For more information on what's
+     * included in each type of index or index tier, see <a
+     * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/what-is.html#tiers">Amazon
+     * Q Business tiers</a>.</p>
+     */
+    inline void SetType(IndexType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>The index type that's suitable for your needs. For more information on what's
+     * included in each type of index or index tier, see <a
+     * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/what-is.html#tiers">Amazon
+     * Q Business tiers</a>.</p>
+     */
+    inline CreateIndexRequest& WithType(const IndexType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The index type that's suitable for your needs. For more information on what's
+     * included in each type of index or index tier, see <a
+     * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/what-is.html#tiers">Amazon
+     * Q Business tiers</a>.</p>
+     */
+    inline CreateIndexRequest& WithType(IndexType&& value) { SetType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A description for the Amazon Q Business index.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description for the Amazon Q Business index.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description for the Amazon Q Business index.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>A description for the Amazon Q Business index.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>A description for the Amazon Q Business index.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>A description for the Amazon Q Business index.</p>
+     */
+    inline CreateIndexRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>A description for the Amazon Q Business index.</p>
+     */
+    inline CreateIndexRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>A description for the Amazon Q Business index.</p>
+     */
+    inline CreateIndexRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
+     * <p>A list of key-value pairs that identify or categorize the index. You can also
+     * use tags to help control access to the index. Tag keys and values can consist of
+     * Unicode letters, digits, white space, and any of the following symbols: _ . : /
+     * = + - @.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of key-value pairs that identify or categorize the index. You can also
+     * use tags to help control access to the index. Tag keys and values can consist of
+     * Unicode letters, digits, white space, and any of the following symbols: _ . : /
+     * = + - @.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of key-value pairs that identify or categorize the index. You can also
+     * use tags to help control access to the index. Tag keys and values can consist of
+     * Unicode letters, digits, white space, and any of the following symbols: _ . : /
+     * = + - @.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of key-value pairs that identify or categorize the index. You can also
+     * use tags to help control access to the index. Tag keys and values can consist of
+     * Unicode letters, digits, white space, and any of the following symbols: _ . : /
+     * = + - @.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of key-value pairs that identify or categorize the index. You can also
+     * use tags to help control access to the index. Tag keys and values can consist of
+     * Unicode letters, digits, white space, and any of the following symbols: _ . : /
+     * = + - @.</p>
+     */
+    inline CreateIndexRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of key-value pairs that identify or categorize the index. You can also
+     * use tags to help control access to the index. Tag keys and values can consist of
+     * Unicode letters, digits, white space, and any of the following symbols: _ . : /
+     * = + - @.</p>
+     */
+    inline CreateIndexRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of key-value pairs that identify or categorize the index. You can also
+     * use tags to help control access to the index. Tag keys and values can consist of
+     * Unicode letters, digits, white space, and any of the following symbols: _ . : /
+     * = + - @.</p>
+     */
+    inline CreateIndexRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of key-value pairs that identify or categorize the index. You can also
+     * use tags to help control access to the index. Tag keys and values can consist of
+     * Unicode letters, digits, white space, and any of the following symbols: _ . : /
+     * = + - @.</p>
+     */
+    inline CreateIndexRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -170,172 +367,28 @@ namespace Model
      */
     inline CreateIndexRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
-
-    /**
-     * <p>A description for the Amazon Q Business index.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>A description for the Amazon Q Business index.</p>
-     */
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>A description for the Amazon Q Business index.</p>
-     */
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>A description for the Amazon Q Business index.</p>
-     */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>A description for the Amazon Q Business index.</p>
-     */
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>A description for the Amazon Q Business index.</p>
-     */
-    inline CreateIndexRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A description for the Amazon Q Business index.</p>
-     */
-    inline CreateIndexRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A description for the Amazon Q Business index.</p>
-     */
-    inline CreateIndexRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
-
-
-    /**
-     * <p>A name for the Amazon Q Business index.</p>
-     */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
-
-    /**
-     * <p>A name for the Amazon Q Business index.</p>
-     */
-    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-
-    /**
-     * <p>A name for the Amazon Q Business index.</p>
-     */
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-
-    /**
-     * <p>A name for the Amazon Q Business index.</p>
-     */
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-
-    /**
-     * <p>A name for the Amazon Q Business index.</p>
-     */
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-
-    /**
-     * <p>A name for the Amazon Q Business index.</p>
-     */
-    inline CreateIndexRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-
-    /**
-     * <p>A name for the Amazon Q Business index.</p>
-     */
-    inline CreateIndexRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-
-    /**
-     * <p>A name for the Amazon Q Business index.</p>
-     */
-    inline CreateIndexRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
-
-
-    /**
-     * <p>A list of key-value pairs that identify or categorize the index. You can also
-     * use tags to help control access to the index. Tag keys and values can consist of
-     * Unicode letters, digits, white space, and any of the following symbols: _ . : /
-     * = + - @.</p>
-     */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>A list of key-value pairs that identify or categorize the index. You can also
-     * use tags to help control access to the index. Tag keys and values can consist of
-     * Unicode letters, digits, white space, and any of the following symbols: _ . : /
-     * = + - @.</p>
-     */
-    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>A list of key-value pairs that identify or categorize the index. You can also
-     * use tags to help control access to the index. Tag keys and values can consist of
-     * Unicode letters, digits, white space, and any of the following symbols: _ . : /
-     * = + - @.</p>
-     */
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>A list of key-value pairs that identify or categorize the index. You can also
-     * use tags to help control access to the index. Tag keys and values can consist of
-     * Unicode letters, digits, white space, and any of the following symbols: _ . : /
-     * = + - @.</p>
-     */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>A list of key-value pairs that identify or categorize the index. You can also
-     * use tags to help control access to the index. Tag keys and values can consist of
-     * Unicode letters, digits, white space, and any of the following symbols: _ . : /
-     * = + - @.</p>
-     */
-    inline CreateIndexRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>A list of key-value pairs that identify or categorize the index. You can also
-     * use tags to help control access to the index. Tag keys and values can consist of
-     * Unicode letters, digits, white space, and any of the following symbols: _ . : /
-     * = + - @.</p>
-     */
-    inline CreateIndexRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of key-value pairs that identify or categorize the index. You can also
-     * use tags to help control access to the index. Tag keys and values can consist of
-     * Unicode letters, digits, white space, and any of the following symbols: _ . : /
-     * = + - @.</p>
-     */
-    inline CreateIndexRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>A list of key-value pairs that identify or categorize the index. You can also
-     * use tags to help control access to the index. Tag keys and values can consist of
-     * Unicode letters, digits, white space, and any of the following symbols: _ . : /
-     * = + - @.</p>
-     */
-    inline CreateIndexRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
-
   private:
 
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet = false;
+
+    Aws::String m_displayName;
+    bool m_displayNameHasBeenSet = false;
+
+    IndexType m_type;
+    bool m_typeHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     IndexCapacityConfiguration m_capacityConfiguration;
     bool m_capacityConfigurationHasBeenSet = false;
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
-    Aws::String m_displayName;
-    bool m_displayNameHasBeenSet = false;
-
-    Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

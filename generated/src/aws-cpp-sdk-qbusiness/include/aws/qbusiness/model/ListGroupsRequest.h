@@ -89,6 +89,84 @@ namespace Model
 
 
     /**
+     * <p>The identifier of the index for getting a list of groups mapped to users.</p>
+     */
+    inline const Aws::String& GetIndexId() const{ return m_indexId; }
+
+    /**
+     * <p>The identifier of the index for getting a list of groups mapped to users.</p>
+     */
+    inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the index for getting a list of groups mapped to users.</p>
+     */
+    inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
+
+    /**
+     * <p>The identifier of the index for getting a list of groups mapped to users.</p>
+     */
+    inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
+
+    /**
+     * <p>The identifier of the index for getting a list of groups mapped to users.</p>
+     */
+    inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
+
+    /**
+     * <p>The identifier of the index for getting a list of groups mapped to users.</p>
+     */
+    inline ListGroupsRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
+
+    /**
+     * <p>The identifier of the index for getting a list of groups mapped to users.</p>
+     */
+    inline ListGroupsRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the index for getting a list of groups mapped to users.</p>
+     */
+    inline ListGroupsRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
+
+
+    /**
+     * <p>The timestamp identifier used for the latest <code>PUT</code> or
+     * <code>DELETE</code> action for mapping users to their groups.</p>
+     */
+    inline const Aws::Utils::DateTime& GetUpdatedEarlierThan() const{ return m_updatedEarlierThan; }
+
+    /**
+     * <p>The timestamp identifier used for the latest <code>PUT</code> or
+     * <code>DELETE</code> action for mapping users to their groups.</p>
+     */
+    inline bool UpdatedEarlierThanHasBeenSet() const { return m_updatedEarlierThanHasBeenSet; }
+
+    /**
+     * <p>The timestamp identifier used for the latest <code>PUT</code> or
+     * <code>DELETE</code> action for mapping users to their groups.</p>
+     */
+    inline void SetUpdatedEarlierThan(const Aws::Utils::DateTime& value) { m_updatedEarlierThanHasBeenSet = true; m_updatedEarlierThan = value; }
+
+    /**
+     * <p>The timestamp identifier used for the latest <code>PUT</code> or
+     * <code>DELETE</code> action for mapping users to their groups.</p>
+     */
+    inline void SetUpdatedEarlierThan(Aws::Utils::DateTime&& value) { m_updatedEarlierThanHasBeenSet = true; m_updatedEarlierThan = std::move(value); }
+
+    /**
+     * <p>The timestamp identifier used for the latest <code>PUT</code> or
+     * <code>DELETE</code> action for mapping users to their groups.</p>
+     */
+    inline ListGroupsRequest& WithUpdatedEarlierThan(const Aws::Utils::DateTime& value) { SetUpdatedEarlierThan(value); return *this;}
+
+    /**
+     * <p>The timestamp identifier used for the latest <code>PUT</code> or
+     * <code>DELETE</code> action for mapping users to their groups.</p>
+     */
+    inline ListGroupsRequest& WithUpdatedEarlierThan(Aws::Utils::DateTime&& value) { SetUpdatedEarlierThan(std::move(value)); return *this;}
+
+
+    /**
      * <p>The identifier of the data source for getting a list of groups mapped to
      * users.</p>
      */
@@ -135,68 +213,6 @@ namespace Model
      * users.</p>
      */
     inline ListGroupsRequest& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
-
-
-    /**
-     * <p>The identifier of the index for getting a list of groups mapped to users.</p>
-     */
-    inline const Aws::String& GetIndexId() const{ return m_indexId; }
-
-    /**
-     * <p>The identifier of the index for getting a list of groups mapped to users.</p>
-     */
-    inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the index for getting a list of groups mapped to users.</p>
-     */
-    inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
-
-    /**
-     * <p>The identifier of the index for getting a list of groups mapped to users.</p>
-     */
-    inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
-
-    /**
-     * <p>The identifier of the index for getting a list of groups mapped to users.</p>
-     */
-    inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
-
-    /**
-     * <p>The identifier of the index for getting a list of groups mapped to users.</p>
-     */
-    inline ListGroupsRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
-
-    /**
-     * <p>The identifier of the index for getting a list of groups mapped to users.</p>
-     */
-    inline ListGroupsRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the index for getting a list of groups mapped to users.</p>
-     */
-    inline ListGroupsRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
-
-
-    /**
-     * <p>The maximum number of returned groups that are mapped to users.</p>
-     */
-    inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of returned groups that are mapped to users.</p>
-     */
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of returned groups that are mapped to users.</p>
-     */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of returned groups that are mapped to users.</p>
-     */
-    inline ListGroupsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
@@ -265,60 +281,44 @@ namespace Model
 
 
     /**
-     * <p>The timestamp identifier used for the latest <code>PUT</code> or
-     * <code>DELETE</code> action for mapping users to their groups.</p>
+     * <p>The maximum number of returned groups that are mapped to users.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedEarlierThan() const{ return m_updatedEarlierThan; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The timestamp identifier used for the latest <code>PUT</code> or
-     * <code>DELETE</code> action for mapping users to their groups.</p>
+     * <p>The maximum number of returned groups that are mapped to users.</p>
      */
-    inline bool UpdatedEarlierThanHasBeenSet() const { return m_updatedEarlierThanHasBeenSet; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The timestamp identifier used for the latest <code>PUT</code> or
-     * <code>DELETE</code> action for mapping users to their groups.</p>
+     * <p>The maximum number of returned groups that are mapped to users.</p>
      */
-    inline void SetUpdatedEarlierThan(const Aws::Utils::DateTime& value) { m_updatedEarlierThanHasBeenSet = true; m_updatedEarlierThan = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The timestamp identifier used for the latest <code>PUT</code> or
-     * <code>DELETE</code> action for mapping users to their groups.</p>
+     * <p>The maximum number of returned groups that are mapped to users.</p>
      */
-    inline void SetUpdatedEarlierThan(Aws::Utils::DateTime&& value) { m_updatedEarlierThanHasBeenSet = true; m_updatedEarlierThan = std::move(value); }
-
-    /**
-     * <p>The timestamp identifier used for the latest <code>PUT</code> or
-     * <code>DELETE</code> action for mapping users to their groups.</p>
-     */
-    inline ListGroupsRequest& WithUpdatedEarlierThan(const Aws::Utils::DateTime& value) { SetUpdatedEarlierThan(value); return *this;}
-
-    /**
-     * <p>The timestamp identifier used for the latest <code>PUT</code> or
-     * <code>DELETE</code> action for mapping users to their groups.</p>
-     */
-    inline ListGroupsRequest& WithUpdatedEarlierThan(Aws::Utils::DateTime&& value) { SetUpdatedEarlierThan(std::move(value)); return *this;}
+    inline ListGroupsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
 
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet = false;
 
-    Aws::String m_dataSourceId;
-    bool m_dataSourceIdHasBeenSet = false;
-
     Aws::String m_indexId;
     bool m_indexIdHasBeenSet = false;
 
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
+    Aws::Utils::DateTime m_updatedEarlierThan;
+    bool m_updatedEarlierThanHasBeenSet = false;
+
+    Aws::String m_dataSourceId;
+    bool m_dataSourceIdHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedEarlierThan;
-    bool m_updatedEarlierThanHasBeenSet = false;
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

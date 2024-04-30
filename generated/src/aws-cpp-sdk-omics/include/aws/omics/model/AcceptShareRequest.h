@@ -33,42 +33,42 @@ namespace Model
 
 
     /**
-     * <p> The ID for a share offer for analytics store data. </p>
+     * <p>The ID of the resource share.</p>
      */
     inline const Aws::String& GetShareId() const{ return m_shareId; }
 
     /**
-     * <p> The ID for a share offer for analytics store data. </p>
+     * <p>The ID of the resource share.</p>
      */
     inline bool ShareIdHasBeenSet() const { return m_shareIdHasBeenSet; }
 
     /**
-     * <p> The ID for a share offer for analytics store data. </p>
+     * <p>The ID of the resource share.</p>
      */
     inline void SetShareId(const Aws::String& value) { m_shareIdHasBeenSet = true; m_shareId = value; }
 
     /**
-     * <p> The ID for a share offer for analytics store data. </p>
+     * <p>The ID of the resource share.</p>
      */
     inline void SetShareId(Aws::String&& value) { m_shareIdHasBeenSet = true; m_shareId = std::move(value); }
 
     /**
-     * <p> The ID for a share offer for analytics store data. </p>
+     * <p>The ID of the resource share.</p>
      */
     inline void SetShareId(const char* value) { m_shareIdHasBeenSet = true; m_shareId.assign(value); }
 
     /**
-     * <p> The ID for a share offer for analytics store data. </p>
+     * <p>The ID of the resource share.</p>
      */
     inline AcceptShareRequest& WithShareId(const Aws::String& value) { SetShareId(value); return *this;}
 
     /**
-     * <p> The ID for a share offer for analytics store data. </p>
+     * <p>The ID of the resource share.</p>
      */
     inline AcceptShareRequest& WithShareId(Aws::String&& value) { SetShareId(std::move(value)); return *this;}
 
     /**
-     * <p> The ID for a share offer for analytics store data. </p>
+     * <p>The ID of the resource share.</p>
      */
     inline AcceptShareRequest& WithShareId(const char* value) { SetShareId(value); return *this;}
 

@@ -93,25 +93,6 @@ namespace Model
 
 
     
-    inline const HookConfiguration& GetPostExtractionHookConfiguration() const{ return m_postExtractionHookConfiguration; }
-
-    
-    inline bool PostExtractionHookConfigurationHasBeenSet() const { return m_postExtractionHookConfigurationHasBeenSet; }
-
-    
-    inline void SetPostExtractionHookConfiguration(const HookConfiguration& value) { m_postExtractionHookConfigurationHasBeenSet = true; m_postExtractionHookConfiguration = value; }
-
-    
-    inline void SetPostExtractionHookConfiguration(HookConfiguration&& value) { m_postExtractionHookConfigurationHasBeenSet = true; m_postExtractionHookConfiguration = std::move(value); }
-
-    
-    inline DocumentEnrichmentConfiguration& WithPostExtractionHookConfiguration(const HookConfiguration& value) { SetPostExtractionHookConfiguration(value); return *this;}
-
-    
-    inline DocumentEnrichmentConfiguration& WithPostExtractionHookConfiguration(HookConfiguration&& value) { SetPostExtractionHookConfiguration(std::move(value)); return *this;}
-
-
-    
     inline const HookConfiguration& GetPreExtractionHookConfiguration() const{ return m_preExtractionHookConfiguration; }
 
     
@@ -129,16 +110,35 @@ namespace Model
     
     inline DocumentEnrichmentConfiguration& WithPreExtractionHookConfiguration(HookConfiguration&& value) { SetPreExtractionHookConfiguration(std::move(value)); return *this;}
 
+
+    
+    inline const HookConfiguration& GetPostExtractionHookConfiguration() const{ return m_postExtractionHookConfiguration; }
+
+    
+    inline bool PostExtractionHookConfigurationHasBeenSet() const { return m_postExtractionHookConfigurationHasBeenSet; }
+
+    
+    inline void SetPostExtractionHookConfiguration(const HookConfiguration& value) { m_postExtractionHookConfigurationHasBeenSet = true; m_postExtractionHookConfiguration = value; }
+
+    
+    inline void SetPostExtractionHookConfiguration(HookConfiguration&& value) { m_postExtractionHookConfigurationHasBeenSet = true; m_postExtractionHookConfiguration = std::move(value); }
+
+    
+    inline DocumentEnrichmentConfiguration& WithPostExtractionHookConfiguration(const HookConfiguration& value) { SetPostExtractionHookConfiguration(value); return *this;}
+
+    
+    inline DocumentEnrichmentConfiguration& WithPostExtractionHookConfiguration(HookConfiguration&& value) { SetPostExtractionHookConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<InlineDocumentEnrichmentConfiguration> m_inlineConfigurations;
     bool m_inlineConfigurationsHasBeenSet = false;
 
-    HookConfiguration m_postExtractionHookConfiguration;
-    bool m_postExtractionHookConfigurationHasBeenSet = false;
-
     HookConfiguration m_preExtractionHookConfiguration;
     bool m_preExtractionHookConfigurationHasBeenSet = false;
+
+    HookConfiguration m_postExtractionHookConfiguration;
+    bool m_postExtractionHookConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

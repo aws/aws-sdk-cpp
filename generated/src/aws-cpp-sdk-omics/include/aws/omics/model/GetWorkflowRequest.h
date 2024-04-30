@@ -153,6 +153,47 @@ namespace Model
      */
     inline GetWorkflowRequest& AddExport(WorkflowExport&& value) { m_exportHasBeenSet = true; m_export.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The ID of the workflow owner.</p>
+     */
+    inline const Aws::String& GetWorkflowOwnerId() const{ return m_workflowOwnerId; }
+
+    /**
+     * <p>The ID of the workflow owner.</p>
+     */
+    inline bool WorkflowOwnerIdHasBeenSet() const { return m_workflowOwnerIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the workflow owner.</p>
+     */
+    inline void SetWorkflowOwnerId(const Aws::String& value) { m_workflowOwnerIdHasBeenSet = true; m_workflowOwnerId = value; }
+
+    /**
+     * <p>The ID of the workflow owner.</p>
+     */
+    inline void SetWorkflowOwnerId(Aws::String&& value) { m_workflowOwnerIdHasBeenSet = true; m_workflowOwnerId = std::move(value); }
+
+    /**
+     * <p>The ID of the workflow owner.</p>
+     */
+    inline void SetWorkflowOwnerId(const char* value) { m_workflowOwnerIdHasBeenSet = true; m_workflowOwnerId.assign(value); }
+
+    /**
+     * <p>The ID of the workflow owner.</p>
+     */
+    inline GetWorkflowRequest& WithWorkflowOwnerId(const Aws::String& value) { SetWorkflowOwnerId(value); return *this;}
+
+    /**
+     * <p>The ID of the workflow owner.</p>
+     */
+    inline GetWorkflowRequest& WithWorkflowOwnerId(Aws::String&& value) { SetWorkflowOwnerId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the workflow owner.</p>
+     */
+    inline GetWorkflowRequest& WithWorkflowOwnerId(const char* value) { SetWorkflowOwnerId(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -163,6 +204,9 @@ namespace Model
 
     Aws::Vector<WorkflowExport> m_export;
     bool m_exportHasBeenSet = false;
+
+    Aws::String m_workflowOwnerId;
+    bool m_workflowOwnerIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -4575,6 +4575,32 @@ namespace QuickSight
         }
 
         /**
+         * <p>Updates the SPICE capacity configuration for a Amazon QuickSight
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateSPICECapacityConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSPICECapacityConfigurationOutcome UpdateSPICECapacityConfiguration(const Model::UpdateSPICECapacityConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateSPICECapacityConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateSPICECapacityConfigurationRequestT = Model::UpdateSPICECapacityConfigurationRequest>
+        Model::UpdateSPICECapacityConfigurationOutcomeCallable UpdateSPICECapacityConfigurationCallable(const UpdateSPICECapacityConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::UpdateSPICECapacityConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateSPICECapacityConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateSPICECapacityConfigurationRequestT = Model::UpdateSPICECapacityConfigurationRequest>
+        void UpdateSPICECapacityConfigurationAsync(const UpdateSPICECapacityConfigurationRequestT& request, const UpdateSPICECapacityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::UpdateSPICECapacityConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>Updates a template from an existing Amazon QuickSight analysis or another
          * template.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTemplate">AWS

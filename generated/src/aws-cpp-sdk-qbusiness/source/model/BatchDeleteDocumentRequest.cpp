@@ -14,21 +14,15 @@ using namespace Aws::Utils;
 
 BatchDeleteDocumentRequest::BatchDeleteDocumentRequest() : 
     m_applicationIdHasBeenSet(false),
-    m_dataSourceSyncIdHasBeenSet(false),
+    m_indexIdHasBeenSet(false),
     m_documentsHasBeenSet(false),
-    m_indexIdHasBeenSet(false)
+    m_dataSourceSyncIdHasBeenSet(false)
 {
 }
 
 Aws::String BatchDeleteDocumentRequest::SerializePayload() const
 {
   JsonValue payload;
-
-  if(m_dataSourceSyncIdHasBeenSet)
-  {
-   payload.WithString("dataSourceSyncId", m_dataSourceSyncId);
-
-  }
 
   if(m_documentsHasBeenSet)
   {
@@ -38,6 +32,12 @@ Aws::String BatchDeleteDocumentRequest::SerializePayload() const
      documentsJsonList[documentsIndex].AsObject(m_documents[documentsIndex].Jsonize());
    }
    payload.WithArray("documents", std::move(documentsJsonList));
+
+  }
+
+  if(m_dataSourceSyncIdHasBeenSet)
+  {
+   payload.WithString("dataSourceSyncId", m_dataSourceSyncId);
 
   }
 

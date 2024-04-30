@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
-#include <aws/qbusiness/model/MemberRelation.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/qbusiness/model/MemberRelation.h>
 #include <aws/qbusiness/model/Principal.h>
 #include <utility>
 
@@ -39,37 +39,6 @@ namespace Model
     AWS_QBUSINESS_API AccessControl(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API AccessControl& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>Describes the member relation within a principal list.</p>
-     */
-    inline const MemberRelation& GetMemberRelation() const{ return m_memberRelation; }
-
-    /**
-     * <p>Describes the member relation within a principal list.</p>
-     */
-    inline bool MemberRelationHasBeenSet() const { return m_memberRelationHasBeenSet; }
-
-    /**
-     * <p>Describes the member relation within a principal list.</p>
-     */
-    inline void SetMemberRelation(const MemberRelation& value) { m_memberRelationHasBeenSet = true; m_memberRelation = value; }
-
-    /**
-     * <p>Describes the member relation within a principal list.</p>
-     */
-    inline void SetMemberRelation(MemberRelation&& value) { m_memberRelationHasBeenSet = true; m_memberRelation = std::move(value); }
-
-    /**
-     * <p>Describes the member relation within a principal list.</p>
-     */
-    inline AccessControl& WithMemberRelation(const MemberRelation& value) { SetMemberRelation(value); return *this;}
-
-    /**
-     * <p>Describes the member relation within a principal list.</p>
-     */
-    inline AccessControl& WithMemberRelation(MemberRelation&& value) { SetMemberRelation(std::move(value)); return *this;}
 
 
     /**
@@ -128,13 +97,44 @@ namespace Model
      */
     inline AccessControl& AddPrincipals(Principal&& value) { m_principalsHasBeenSet = true; m_principals.push_back(std::move(value)); return *this; }
 
-  private:
 
-    MemberRelation m_memberRelation;
-    bool m_memberRelationHasBeenSet = false;
+    /**
+     * <p>Describes the member relation within a principal list.</p>
+     */
+    inline const MemberRelation& GetMemberRelation() const{ return m_memberRelation; }
+
+    /**
+     * <p>Describes the member relation within a principal list.</p>
+     */
+    inline bool MemberRelationHasBeenSet() const { return m_memberRelationHasBeenSet; }
+
+    /**
+     * <p>Describes the member relation within a principal list.</p>
+     */
+    inline void SetMemberRelation(const MemberRelation& value) { m_memberRelationHasBeenSet = true; m_memberRelation = value; }
+
+    /**
+     * <p>Describes the member relation within a principal list.</p>
+     */
+    inline void SetMemberRelation(MemberRelation&& value) { m_memberRelationHasBeenSet = true; m_memberRelation = std::move(value); }
+
+    /**
+     * <p>Describes the member relation within a principal list.</p>
+     */
+    inline AccessControl& WithMemberRelation(const MemberRelation& value) { SetMemberRelation(value); return *this;}
+
+    /**
+     * <p>Describes the member relation within a principal list.</p>
+     */
+    inline AccessControl& WithMemberRelation(MemberRelation&& value) { SetMemberRelation(std::move(value)); return *this;}
+
+  private:
 
     Aws::Vector<Principal> m_principals;
     bool m_principalsHasBeenSet = false;
+
+    MemberRelation m_memberRelation;
+    bool m_memberRelationHasBeenSet = false;
   };
 
 } // namespace Model

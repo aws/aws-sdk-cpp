@@ -33,6 +33,42 @@ namespace Model
 
 
     /**
+     * <p>The identifier of the retriever you are using.</p>
+     */
+    inline const Aws::String& GetRetrieverId() const{ return m_retrieverId; }
+
+    /**
+     * <p>The identifier of the retriever you are using.</p>
+     */
+    inline void SetRetrieverId(const Aws::String& value) { m_retrieverId = value; }
+
+    /**
+     * <p>The identifier of the retriever you are using.</p>
+     */
+    inline void SetRetrieverId(Aws::String&& value) { m_retrieverId = std::move(value); }
+
+    /**
+     * <p>The identifier of the retriever you are using.</p>
+     */
+    inline void SetRetrieverId(const char* value) { m_retrieverId.assign(value); }
+
+    /**
+     * <p>The identifier of the retriever you are using.</p>
+     */
+    inline CreateRetrieverResult& WithRetrieverId(const Aws::String& value) { SetRetrieverId(value); return *this;}
+
+    /**
+     * <p>The identifier of the retriever you are using.</p>
+     */
+    inline CreateRetrieverResult& WithRetrieverId(Aws::String&& value) { SetRetrieverId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the retriever you are using.</p>
+     */
+    inline CreateRetrieverResult& WithRetrieverId(const char* value) { SetRetrieverId(value); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) of an IAM role associated with a
      * retriever.</p>
      */
@@ -75,42 +111,6 @@ namespace Model
     inline CreateRetrieverResult& WithRetrieverArn(const char* value) { SetRetrieverArn(value); return *this;}
 
 
-    /**
-     * <p>The identifier of the retriever you are using.</p>
-     */
-    inline const Aws::String& GetRetrieverId() const{ return m_retrieverId; }
-
-    /**
-     * <p>The identifier of the retriever you are using.</p>
-     */
-    inline void SetRetrieverId(const Aws::String& value) { m_retrieverId = value; }
-
-    /**
-     * <p>The identifier of the retriever you are using.</p>
-     */
-    inline void SetRetrieverId(Aws::String&& value) { m_retrieverId = std::move(value); }
-
-    /**
-     * <p>The identifier of the retriever you are using.</p>
-     */
-    inline void SetRetrieverId(const char* value) { m_retrieverId.assign(value); }
-
-    /**
-     * <p>The identifier of the retriever you are using.</p>
-     */
-    inline CreateRetrieverResult& WithRetrieverId(const Aws::String& value) { SetRetrieverId(value); return *this;}
-
-    /**
-     * <p>The identifier of the retriever you are using.</p>
-     */
-    inline CreateRetrieverResult& WithRetrieverId(Aws::String&& value) { SetRetrieverId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the retriever you are using.</p>
-     */
-    inline CreateRetrieverResult& WithRetrieverId(const char* value) { SetRetrieverId(value); return *this;}
-
-
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -134,9 +134,9 @@ namespace Model
 
   private:
 
-    Aws::String m_retrieverArn;
-
     Aws::String m_retrieverId;
+
+    Aws::String m_retrieverArn;
 
     Aws::String m_requestId;
   };

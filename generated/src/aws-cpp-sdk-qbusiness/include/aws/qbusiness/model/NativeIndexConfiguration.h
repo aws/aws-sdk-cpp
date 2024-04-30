@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/qbusiness/model/DocumentAttributeBoostingConfiguration.h>
 #include <utility>
 
@@ -38,6 +38,47 @@ namespace Model
     AWS_QBUSINESS_API NativeIndexConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API NativeIndexConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The identifier for the Amazon Q Business index.</p>
+     */
+    inline const Aws::String& GetIndexId() const{ return m_indexId; }
+
+    /**
+     * <p>The identifier for the Amazon Q Business index.</p>
+     */
+    inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
+
+    /**
+     * <p>The identifier for the Amazon Q Business index.</p>
+     */
+    inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
+
+    /**
+     * <p>The identifier for the Amazon Q Business index.</p>
+     */
+    inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
+
+    /**
+     * <p>The identifier for the Amazon Q Business index.</p>
+     */
+    inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
+
+    /**
+     * <p>The identifier for the Amazon Q Business index.</p>
+     */
+    inline NativeIndexConfiguration& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
+
+    /**
+     * <p>The identifier for the Amazon Q Business index.</p>
+     */
+    inline NativeIndexConfiguration& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier for the Amazon Q Business index.</p>
+     */
+    inline NativeIndexConfiguration& WithIndexId(const char* value) { SetIndexId(value); return *this;}
 
 
     /**
@@ -112,54 +153,13 @@ namespace Model
      */
     inline NativeIndexConfiguration& AddBoostingOverride(const char* key, const DocumentAttributeBoostingConfiguration& value) { m_boostingOverrideHasBeenSet = true; m_boostingOverride.emplace(key, value); return *this; }
 
-
-    /**
-     * <p>The identifier for the Amazon Q Business index.</p>
-     */
-    inline const Aws::String& GetIndexId() const{ return m_indexId; }
-
-    /**
-     * <p>The identifier for the Amazon Q Business index.</p>
-     */
-    inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
-
-    /**
-     * <p>The identifier for the Amazon Q Business index.</p>
-     */
-    inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
-
-    /**
-     * <p>The identifier for the Amazon Q Business index.</p>
-     */
-    inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
-
-    /**
-     * <p>The identifier for the Amazon Q Business index.</p>
-     */
-    inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
-
-    /**
-     * <p>The identifier for the Amazon Q Business index.</p>
-     */
-    inline NativeIndexConfiguration& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
-
-    /**
-     * <p>The identifier for the Amazon Q Business index.</p>
-     */
-    inline NativeIndexConfiguration& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier for the Amazon Q Business index.</p>
-     */
-    inline NativeIndexConfiguration& WithIndexId(const char* value) { SetIndexId(value); return *this;}
-
   private:
-
-    Aws::Map<Aws::String, DocumentAttributeBoostingConfiguration> m_boostingOverride;
-    bool m_boostingOverrideHasBeenSet = false;
 
     Aws::String m_indexId;
     bool m_indexIdHasBeenSet = false;
+
+    Aws::Map<Aws::String, DocumentAttributeBoostingConfiguration> m_boostingOverride;
+    bool m_boostingOverrideHasBeenSet = false;
   };
 
 } // namespace Model

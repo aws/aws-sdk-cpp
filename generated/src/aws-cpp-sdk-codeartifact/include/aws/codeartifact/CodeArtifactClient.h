@@ -29,37 +29,29 @@ namespace CodeArtifact
    * versions</a>, each of which maps to a set of assets, or files. Repositories are
    * polyglot, so a single repository can contain packages of any supported type.
    * Each repository exposes endpoints for fetching and publishing packages using
-   * tools like the <b> <code>npm</code> </b> CLI, the Maven CLI (<b>
-   * <code>mvn</code> </b>), Python CLIs (<b> <code>pip</code> </b> and
-   * <code>twine</code>), NuGet CLIs (<code>nuget</code> and <code>dotnet</code>),
-   * and the Swift package manager (<b> <code>swift</code> </b>).</p> </li> <li> <p>
-   * <b>Domain</b>: Repositories are aggregated into a higher-level entity known as a
-   * <i>domain</i>. All package assets and metadata are stored in the domain, but are
-   * consumed through repositories. A given package asset, such as a Maven JAR file,
-   * is stored once per domain, no matter how many repositories it's present in. All
-   * of the assets and metadata in a domain are encrypted with the same customer
-   * master key (CMK) stored in Key Management Service (KMS).</p> <p>Each repository
-   * is a member of a single domain and can't be moved to a different domain.</p>
-   * <p>The domain allows organizational policy to be applied across multiple
-   * repositories, such as which accounts can access repositories in the domain, and
-   * which public repositories can be used as sources of packages.</p> <p>Although an
-   * organization can have multiple domains, we recommend a single production domain
-   * that contains all published artifacts so that teams can find and share packages
-   * across their organization.</p> </li> <li> <p> <b>Package</b>: A <i>package</i>
-   * is a bundle of software and the metadata required to resolve dependencies and
-   * install the software. CodeArtifact supports <a
-   * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-npm.html">npm</a>,
-   * <a
-   * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-python.html">PyPI</a>,
-   * <a
-   * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-maven">Maven</a>,
-   * <a
-   * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-nuget">NuGet</a>,
-   * <a
-   * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-swift">Swift</a>,
-   * and <a
-   * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-generic">generic</a>
-   * package formats.</p> <p>In CodeArtifact, a package consists of:</p> <ul> <li>
+   * tools such as the <b> <code>npm</code> </b> CLI or the Maven CLI (<b>
+   * <code>mvn</code> </b>). For a list of supported package managers, see the <a
+   * href="https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html">CodeArtifact
+   * User Guide</a>.</p> </li> <li> <p> <b>Domain</b>: Repositories are aggregated
+   * into a higher-level entity known as a <i>domain</i>. All package assets and
+   * metadata are stored in the domain, but are consumed through repositories. A
+   * given package asset, such as a Maven JAR file, is stored once per domain, no
+   * matter how many repositories it's present in. All of the assets and metadata in
+   * a domain are encrypted with the same customer master key (CMK) stored in Key
+   * Management Service (KMS).</p> <p>Each repository is a member of a single domain
+   * and can't be moved to a different domain.</p> <p>The domain allows
+   * organizational policy to be applied across multiple repositories, such as which
+   * accounts can access repositories in the domain, and which public repositories
+   * can be used as sources of packages.</p> <p>Although an organization can have
+   * multiple domains, we recommend a single production domain that contains all
+   * published artifacts so that teams can find and share packages across their
+   * organization.</p> </li> <li> <p> <b>Package</b>: A <i>package</i> is a bundle of
+   * software and the metadata required to resolve dependencies and install the
+   * software. CodeArtifact supports npm, PyPI, Maven, NuGet, Swift, Ruby, and
+   * generic package formats. For more information about the supported package
+   * formats and how to use CodeArtifact with them, see the <a
+   * href="https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html">CodeArtifact
+   * User Guide</a>.</p> <p>In CodeArtifact, a package consists of:</p> <ul> <li>
    * <p>A <i>name</i> (for example, <code>webpack</code> is the name of a popular npm
    * package)</p> </li> <li> <p>An optional namespace (for example,
    * <code>@types</code> in <code>@types/node</code>)</p> </li> <li> <p>A set of
@@ -140,9 +132,9 @@ namespace CodeArtifact
    * format: </p> <ul> <li> <p> <code>generic</code> </p> </li> <li> <p>
    * <code>maven</code> </p> </li> <li> <p> <code>npm</code> </p> </li> <li> <p>
    * <code>nuget</code> </p> </li> <li> <p> <code>pypi</code> </p> </li> <li> <p>
-   * <code>swift</code> </p> </li> </ul> </li> <li> <p>
-   * <code>GetRepositoryPermissionsPolicy</code>: Returns the resource policy that is
-   * set on a repository. </p> </li> <li> <p>
+   * <code>ruby</code> </p> </li> <li> <p> <code>swift</code> </p> </li> </ul> </li>
+   * <li> <p> <code>GetRepositoryPermissionsPolicy</code>: Returns the resource
+   * policy that is set on a repository. </p> </li> <li> <p>
    * <code>ListAllowedRepositoriesForGroup</code>: Lists the allowed repositories for
    * a package group that has origin configuration set to
    * <code>ALLOW_SPECIFIC_REPOSITORIES</code>.</p> </li> <li> <p>
@@ -947,8 +939,8 @@ namespace CodeArtifact
          * repository has one endpoint for each package format: </p> <ul> <li> <p>
          * <code>generic</code> </p> </li> <li> <p> <code>maven</code> </p> </li> <li> <p>
          * <code>npm</code> </p> </li> <li> <p> <code>nuget</code> </p> </li> <li> <p>
-         * <code>pypi</code> </p> </li> <li> <p> <code>swift</code> </p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * <code>pypi</code> </p> </li> <li> <p> <code>ruby</code> </p> </li> <li> <p>
+         * <code>swift</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetRepositoryEndpoint">AWS
          * API Reference</a></p>
          */

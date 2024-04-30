@@ -19,29 +19,29 @@ namespace Model
 {
 
 GroupStatusDetail::GroupStatusDetail() : 
-    m_errorDetailHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
     m_status(GroupStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_lastUpdatedAtHasBeenSet(false),
+    m_errorDetailHasBeenSet(false)
 {
 }
 
 GroupStatusDetail::GroupStatusDetail(JsonView jsonValue) : 
-    m_errorDetailHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
     m_status(GroupStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_lastUpdatedAtHasBeenSet(false),
+    m_errorDetailHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 GroupStatusDetail& GroupStatusDetail::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("errorDetail"))
+  if(jsonValue.ValueExists("status"))
   {
-    m_errorDetail = jsonValue.GetObject("errorDetail");
+    m_status = GroupStatusMapper::GetGroupStatusForName(jsonValue.GetString("status"));
 
-    m_errorDetailHasBeenSet = true;
+    m_statusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("lastUpdatedAt"))
@@ -51,11 +51,11 @@ GroupStatusDetail& GroupStatusDetail::operator =(JsonView jsonValue)
     m_lastUpdatedAtHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("status"))
+  if(jsonValue.ValueExists("errorDetail"))
   {
-    m_status = GroupStatusMapper::GetGroupStatusForName(jsonValue.GetString("status"));
+    m_errorDetail = jsonValue.GetObject("errorDetail");
 
-    m_statusHasBeenSet = true;
+    m_errorDetailHasBeenSet = true;
   }
 
   return *this;
@@ -65,10 +65,9 @@ JsonValue GroupStatusDetail::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_errorDetailHasBeenSet)
+  if(m_statusHasBeenSet)
   {
-   payload.WithObject("errorDetail", m_errorDetail.Jsonize());
-
+   payload.WithString("status", GroupStatusMapper::GetNameForGroupStatus(m_status));
   }
 
   if(m_lastUpdatedAtHasBeenSet)
@@ -76,9 +75,10 @@ JsonValue GroupStatusDetail::Jsonize() const
    payload.WithDouble("lastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
   }
 
-  if(m_statusHasBeenSet)
+  if(m_errorDetailHasBeenSet)
   {
-   payload.WithString("status", GroupStatusMapper::GetNameForGroupStatus(m_status));
+   payload.WithObject("errorDetail", m_errorDetail.Jsonize());
+
   }
 
   return payload;

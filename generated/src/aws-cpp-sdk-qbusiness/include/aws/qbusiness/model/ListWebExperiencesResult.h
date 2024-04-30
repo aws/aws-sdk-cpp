@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qbusiness/model/WebExperience.h>
 #include <utility>
 
@@ -32,49 +32,6 @@ namespace Model
     AWS_QBUSINESS_API ListWebExperiencesResult();
     AWS_QBUSINESS_API ListWebExperiencesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QBUSINESS_API ListWebExperiencesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>If the response is truncated, Amazon Q Business returns this token, which you
-     * can use in a later request to list the next set of messages.</p>
-     */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If the response is truncated, Amazon Q Business returns this token, which you
-     * can use in a later request to list the next set of messages.</p>
-     */
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If the response is truncated, Amazon Q Business returns this token, which you
-     * can use in a later request to list the next set of messages.</p>
-     */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If the response is truncated, Amazon Q Business returns this token, which you
-     * can use in a later request to list the next set of messages.</p>
-     */
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If the response is truncated, Amazon Q Business returns this token, which you
-     * can use in a later request to list the next set of messages.</p>
-     */
-    inline ListWebExperiencesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If the response is truncated, Amazon Q Business returns this token, which you
-     * can use in a later request to list the next set of messages.</p>
-     */
-    inline ListWebExperiencesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If the response is truncated, Amazon Q Business returns this token, which you
-     * can use in a later request to list the next set of messages.</p>
-     */
-    inline ListWebExperiencesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
@@ -120,6 +77,49 @@ namespace Model
     inline ListWebExperiencesResult& AddWebExperiences(WebExperience&& value) { m_webExperiences.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>If the response is truncated, Amazon Q Business returns this token, which you
+     * can use in a later request to list the next set of messages.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>If the response is truncated, Amazon Q Business returns this token, which you
+     * can use in a later request to list the next set of messages.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /**
+     * <p>If the response is truncated, Amazon Q Business returns this token, which you
+     * can use in a later request to list the next set of messages.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
+
+    /**
+     * <p>If the response is truncated, Amazon Q Business returns this token, which you
+     * can use in a later request to list the next set of messages.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
+
+    /**
+     * <p>If the response is truncated, Amazon Q Business returns this token, which you
+     * can use in a later request to list the next set of messages.</p>
+     */
+    inline ListWebExperiencesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>If the response is truncated, Amazon Q Business returns this token, which you
+     * can use in a later request to list the next set of messages.</p>
+     */
+    inline ListWebExperiencesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * <p>If the response is truncated, Amazon Q Business returns this token, which you
+     * can use in a later request to list the next set of messages.</p>
+     */
+    inline ListWebExperiencesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -143,9 +143,9 @@ namespace Model
 
   private:
 
-    Aws::String m_nextToken;
-
     Aws::Vector<WebExperience> m_webExperiences;
+
+    Aws::String m_nextToken;
 
     Aws::String m_requestId;
   };
