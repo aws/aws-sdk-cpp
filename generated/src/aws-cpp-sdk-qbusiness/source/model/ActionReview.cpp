@@ -19,26 +19,40 @@ namespace Model
 {
 
 ActionReview::ActionReview() : 
-    m_payloadHasBeenSet(false),
-    m_payloadFieldNameSeparatorHasBeenSet(false),
     m_pluginIdHasBeenSet(false),
     m_pluginType(PluginType::NOT_SET),
-    m_pluginTypeHasBeenSet(false)
+    m_pluginTypeHasBeenSet(false),
+    m_payloadHasBeenSet(false),
+    m_payloadFieldNameSeparatorHasBeenSet(false)
 {
 }
 
 ActionReview::ActionReview(JsonView jsonValue) : 
-    m_payloadHasBeenSet(false),
-    m_payloadFieldNameSeparatorHasBeenSet(false),
     m_pluginIdHasBeenSet(false),
     m_pluginType(PluginType::NOT_SET),
-    m_pluginTypeHasBeenSet(false)
+    m_pluginTypeHasBeenSet(false),
+    m_payloadHasBeenSet(false),
+    m_payloadFieldNameSeparatorHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 ActionReview& ActionReview::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("pluginId"))
+  {
+    m_pluginId = jsonValue.GetString("pluginId");
+
+    m_pluginIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("pluginType"))
+  {
+    m_pluginType = PluginTypeMapper::GetPluginTypeForName(jsonValue.GetString("pluginType"));
+
+    m_pluginTypeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("payload"))
   {
     Aws::Map<Aws::String, JsonView> payloadJsonMap = jsonValue.GetObject("payload").GetAllObjects();
@@ -56,26 +70,23 @@ ActionReview& ActionReview::operator =(JsonView jsonValue)
     m_payloadFieldNameSeparatorHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("pluginId"))
-  {
-    m_pluginId = jsonValue.GetString("pluginId");
-
-    m_pluginIdHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("pluginType"))
-  {
-    m_pluginType = PluginTypeMapper::GetPluginTypeForName(jsonValue.GetString("pluginType"));
-
-    m_pluginTypeHasBeenSet = true;
-  }
-
   return *this;
 }
 
 JsonValue ActionReview::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_pluginIdHasBeenSet)
+  {
+   payload.WithString("pluginId", m_pluginId);
+
+  }
+
+  if(m_pluginTypeHasBeenSet)
+  {
+   payload.WithString("pluginType", PluginTypeMapper::GetNameForPluginType(m_pluginType));
+  }
 
   if(m_payloadHasBeenSet)
   {
@@ -92,17 +103,6 @@ JsonValue ActionReview::Jsonize() const
   {
    payload.WithString("payloadFieldNameSeparator", m_payloadFieldNameSeparator);
 
-  }
-
-  if(m_pluginIdHasBeenSet)
-  {
-   payload.WithString("pluginId", m_pluginId);
-
-  }
-
-  if(m_pluginTypeHasBeenSet)
-  {
-   payload.WithString("pluginType", PluginTypeMapper::GetNameForPluginType(m_pluginType));
   }
 
   return payload;

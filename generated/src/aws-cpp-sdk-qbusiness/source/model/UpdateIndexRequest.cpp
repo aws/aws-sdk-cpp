@@ -14,11 +14,11 @@ using namespace Aws::Utils;
 
 UpdateIndexRequest::UpdateIndexRequest() : 
     m_applicationIdHasBeenSet(false),
-    m_capacityConfigurationHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
+    m_indexIdHasBeenSet(false),
     m_displayNameHasBeenSet(false),
-    m_documentAttributeConfigurationsHasBeenSet(false),
-    m_indexIdHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_capacityConfigurationHasBeenSet(false),
+    m_documentAttributeConfigurationsHasBeenSet(false)
 {
 }
 
@@ -26,9 +26,9 @@ Aws::String UpdateIndexRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_capacityConfigurationHasBeenSet)
+  if(m_displayNameHasBeenSet)
   {
-   payload.WithObject("capacityConfiguration", m_capacityConfiguration.Jsonize());
+   payload.WithString("displayName", m_displayName);
 
   }
 
@@ -38,9 +38,9 @@ Aws::String UpdateIndexRequest::SerializePayload() const
 
   }
 
-  if(m_displayNameHasBeenSet)
+  if(m_capacityConfigurationHasBeenSet)
   {
-   payload.WithString("displayName", m_displayName);
+   payload.WithObject("capacityConfiguration", m_capacityConfiguration.Jsonize());
 
   }
 

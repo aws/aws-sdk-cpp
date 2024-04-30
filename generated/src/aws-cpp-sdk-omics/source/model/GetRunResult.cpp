@@ -24,7 +24,8 @@ GetRunResult::GetRunResult() :
     m_storageCapacity(0),
     m_logLevel(RunLogLevel::NOT_SET),
     m_accelerators(Accelerators::NOT_SET),
-    m_retentionMode(RunRetentionMode::NOT_SET)
+    m_retentionMode(RunRetentionMode::NOT_SET),
+    m_storageType(StorageType::NOT_SET)
 {
 }
 
@@ -35,7 +36,8 @@ GetRunResult::GetRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
     m_storageCapacity(0),
     m_logLevel(RunLogLevel::NOT_SET),
     m_accelerators(Accelerators::NOT_SET),
-    m_retentionMode(RunRetentionMode::NOT_SET)
+    m_retentionMode(RunRetentionMode::NOT_SET),
+    m_storageType(StorageType::NOT_SET)
 {
   *this = result;
 }
@@ -220,6 +222,18 @@ GetRunResult& GetRunResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
   if(jsonValue.ValueExists("runOutputUri"))
   {
     m_runOutputUri = jsonValue.GetString("runOutputUri");
+
+  }
+
+  if(jsonValue.ValueExists("storageType"))
+  {
+    m_storageType = StorageTypeMapper::GetStorageTypeForName(jsonValue.GetString("storageType"));
+
+  }
+
+  if(jsonValue.ValueExists("workflowOwnerId"))
+  {
+    m_workflowOwnerId = jsonValue.GetString("workflowOwnerId");
 
   }
 

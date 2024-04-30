@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
-#include <aws/qbusiness/model/PrincipalGroup.h>
 #include <aws/qbusiness/model/PrincipalUser.h>
+#include <aws/qbusiness/model/PrincipalGroup.h>
 #include <utility>
 
 namespace Aws
@@ -41,37 +41,6 @@ namespace Model
 
 
     /**
-     * <p> The group associated with the principal.</p>
-     */
-    inline const PrincipalGroup& GetGroup() const{ return m_group; }
-
-    /**
-     * <p> The group associated with the principal.</p>
-     */
-    inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
-
-    /**
-     * <p> The group associated with the principal.</p>
-     */
-    inline void SetGroup(const PrincipalGroup& value) { m_groupHasBeenSet = true; m_group = value; }
-
-    /**
-     * <p> The group associated with the principal.</p>
-     */
-    inline void SetGroup(PrincipalGroup&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
-
-    /**
-     * <p> The group associated with the principal.</p>
-     */
-    inline Principal& WithGroup(const PrincipalGroup& value) { SetGroup(value); return *this;}
-
-    /**
-     * <p> The group associated with the principal.</p>
-     */
-    inline Principal& WithGroup(PrincipalGroup&& value) { SetGroup(std::move(value)); return *this;}
-
-
-    /**
      * <p>The user associated with the principal.</p>
      */
     inline const PrincipalUser& GetUser() const{ return m_user; }
@@ -101,13 +70,44 @@ namespace Model
      */
     inline Principal& WithUser(PrincipalUser&& value) { SetUser(std::move(value)); return *this;}
 
-  private:
 
-    PrincipalGroup m_group;
-    bool m_groupHasBeenSet = false;
+    /**
+     * <p> The group associated with the principal.</p>
+     */
+    inline const PrincipalGroup& GetGroup() const{ return m_group; }
+
+    /**
+     * <p> The group associated with the principal.</p>
+     */
+    inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
+
+    /**
+     * <p> The group associated with the principal.</p>
+     */
+    inline void SetGroup(const PrincipalGroup& value) { m_groupHasBeenSet = true; m_group = value; }
+
+    /**
+     * <p> The group associated with the principal.</p>
+     */
+    inline void SetGroup(PrincipalGroup&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
+
+    /**
+     * <p> The group associated with the principal.</p>
+     */
+    inline Principal& WithGroup(const PrincipalGroup& value) { SetGroup(value); return *this;}
+
+    /**
+     * <p> The group associated with the principal.</p>
+     */
+    inline Principal& WithGroup(PrincipalGroup&& value) { SetGroup(std::move(value)); return *this;}
+
+  private:
 
     PrincipalUser m_user;
     bool m_userHasBeenSet = false;
+
+    PrincipalGroup m_group;
+    bool m_groupHasBeenSet = false;
   };
 
 } // namespace Model

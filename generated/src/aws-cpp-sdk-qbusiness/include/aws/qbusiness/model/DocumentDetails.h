@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/qbusiness/model/ErrorDetail.h>
 #include <aws/qbusiness/model/DocumentStatus.h>
+#include <aws/qbusiness/model/ErrorDetail.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -39,37 +39,6 @@ namespace Model
     AWS_QBUSINESS_API DocumentDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API DocumentDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The timestamp for when the document was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-
-    /**
-     * <p>The timestamp for when the document was created.</p>
-     */
-    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-
-    /**
-     * <p>The timestamp for when the document was created.</p>
-     */
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-
-    /**
-     * <p>The timestamp for when the document was created.</p>
-     */
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-
-    /**
-     * <p>The timestamp for when the document was created.</p>
-     */
-    inline DocumentDetails& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-
-    /**
-     * <p>The timestamp for when the document was created.</p>
-     */
-    inline DocumentDetails& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
     /**
@@ -114,6 +83,37 @@ namespace Model
 
 
     /**
+     * <p>The current status of the document.</p>
+     */
+    inline const DocumentStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The current status of the document.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The current status of the document.</p>
+     */
+    inline void SetStatus(const DocumentStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>The current status of the document.</p>
+     */
+    inline void SetStatus(DocumentStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>The current status of the document.</p>
+     */
+    inline DocumentDetails& WithStatus(const DocumentStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The current status of the document.</p>
+     */
+    inline DocumentDetails& WithStatus(DocumentStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+
+    /**
      * <p>An error message associated with the document.</p>
      */
     inline const ErrorDetail& GetError() const{ return m_error; }
@@ -145,34 +145,34 @@ namespace Model
 
 
     /**
-     * <p>The current status of the document.</p>
+     * <p>The timestamp for when the document was created.</p>
      */
-    inline const DocumentStatus& GetStatus() const{ return m_status; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The current status of the document.</p>
+     * <p>The timestamp for when the document was created.</p>
      */
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>The current status of the document.</p>
+     * <p>The timestamp for when the document was created.</p>
      */
-    inline void SetStatus(const DocumentStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The current status of the document.</p>
+     * <p>The timestamp for when the document was created.</p>
      */
-    inline void SetStatus(DocumentStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The current status of the document.</p>
+     * <p>The timestamp for when the document was created.</p>
      */
-    inline DocumentDetails& WithStatus(const DocumentStatus& value) { SetStatus(value); return *this;}
+    inline DocumentDetails& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The current status of the document.</p>
+     * <p>The timestamp for when the document was created.</p>
      */
-    inline DocumentDetails& WithStatus(DocumentStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline DocumentDetails& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
     /**
@@ -207,17 +207,17 @@ namespace Model
 
   private:
 
-    Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet = false;
-
     Aws::String m_documentId;
     bool m_documentIdHasBeenSet = false;
+
+    DocumentStatus m_status;
+    bool m_statusHasBeenSet = false;
 
     ErrorDetail m_error;
     bool m_errorHasBeenSet = false;
 
-    DocumentStatus m_status;
-    bool m_statusHasBeenSet = false;
+    Aws::Utils::DateTime m_createdAt;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
     bool m_updatedAtHasBeenSet = false;

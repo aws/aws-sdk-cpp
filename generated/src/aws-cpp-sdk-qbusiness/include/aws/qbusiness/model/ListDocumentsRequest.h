@@ -81,6 +81,47 @@ namespace Model
 
 
     /**
+     * <p>The identifier of the index the documents are attached to.</p>
+     */
+    inline const Aws::String& GetIndexId() const{ return m_indexId; }
+
+    /**
+     * <p>The identifier of the index the documents are attached to.</p>
+     */
+    inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the index the documents are attached to.</p>
+     */
+    inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
+
+    /**
+     * <p>The identifier of the index the documents are attached to.</p>
+     */
+    inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
+
+    /**
+     * <p>The identifier of the index the documents are attached to.</p>
+     */
+    inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
+
+    /**
+     * <p>The identifier of the index the documents are attached to.</p>
+     */
+    inline ListDocumentsRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
+
+    /**
+     * <p>The identifier of the index the documents are attached to.</p>
+     */
+    inline ListDocumentsRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the index the documents are attached to.</p>
+     */
+    inline ListDocumentsRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
+
+
+    /**
      * <p>The identifier of the data sources the documents are attached to.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDataSourceIds() const{ return m_dataSourceIds; }
@@ -124,68 +165,6 @@ namespace Model
      * <p>The identifier of the data sources the documents are attached to.</p>
      */
     inline ListDocumentsRequest& AddDataSourceIds(const char* value) { m_dataSourceIdsHasBeenSet = true; m_dataSourceIds.push_back(value); return *this; }
-
-
-    /**
-     * <p>The identifier of the index the documents are attached to.</p>
-     */
-    inline const Aws::String& GetIndexId() const{ return m_indexId; }
-
-    /**
-     * <p>The identifier of the index the documents are attached to.</p>
-     */
-    inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the index the documents are attached to.</p>
-     */
-    inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
-
-    /**
-     * <p>The identifier of the index the documents are attached to.</p>
-     */
-    inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
-
-    /**
-     * <p>The identifier of the index the documents are attached to.</p>
-     */
-    inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
-
-    /**
-     * <p>The identifier of the index the documents are attached to.</p>
-     */
-    inline ListDocumentsRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
-
-    /**
-     * <p>The identifier of the index the documents are attached to.</p>
-     */
-    inline ListDocumentsRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the index the documents are attached to.</p>
-     */
-    inline ListDocumentsRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
-
-
-    /**
-     * <p>The maximum number of documents to return.</p>
-     */
-    inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of documents to return.</p>
-     */
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of documents to return.</p>
-     */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of documents to return.</p>
-     */
-    inline ListDocumentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
@@ -244,22 +223,43 @@ namespace Model
      */
     inline ListDocumentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>The maximum number of documents to return.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of documents to return.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of documents to return.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>The maximum number of documents to return.</p>
+     */
+    inline ListDocumentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
   private:
 
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet = false;
 
-    Aws::Vector<Aws::String> m_dataSourceIds;
-    bool m_dataSourceIdsHasBeenSet = false;
-
     Aws::String m_indexId;
     bool m_indexIdHasBeenSet = false;
 
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
+    Aws::Vector<Aws::String> m_dataSourceIds;
+    bool m_dataSourceIdsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

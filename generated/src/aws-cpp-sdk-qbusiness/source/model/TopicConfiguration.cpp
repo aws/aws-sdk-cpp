@@ -19,17 +19,17 @@ namespace Model
 {
 
 TopicConfiguration::TopicConfiguration() : 
+    m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_exampleChatMessagesHasBeenSet(false),
-    m_nameHasBeenSet(false),
     m_rulesHasBeenSet(false)
 {
 }
 
 TopicConfiguration::TopicConfiguration(JsonView jsonValue) : 
+    m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_exampleChatMessagesHasBeenSet(false),
-    m_nameHasBeenSet(false),
     m_rulesHasBeenSet(false)
 {
   *this = jsonValue;
@@ -37,6 +37,13 @@ TopicConfiguration::TopicConfiguration(JsonView jsonValue) :
 
 TopicConfiguration& TopicConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+
+    m_nameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
@@ -52,13 +59,6 @@ TopicConfiguration& TopicConfiguration::operator =(JsonView jsonValue)
       m_exampleChatMessages.push_back(exampleChatMessagesJsonList[exampleChatMessagesIndex].AsString());
     }
     m_exampleChatMessagesHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
-
-    m_nameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("rules"))
@@ -78,6 +78,12 @@ JsonValue TopicConfiguration::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
+
+  }
+
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
@@ -92,12 +98,6 @@ JsonValue TopicConfiguration::Jsonize() const
      exampleChatMessagesJsonList[exampleChatMessagesIndex].AsString(m_exampleChatMessages[exampleChatMessagesIndex]);
    }
    payload.WithArray("exampleChatMessages", std::move(exampleChatMessagesJsonList));
-
-  }
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
 
   }
 

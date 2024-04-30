@@ -5,10 +5,11 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/qbusiness/model/PluginState.h>
 #include <aws/qbusiness/model/PluginType.h>
+#include <aws/qbusiness/model/PluginState.h>
+#include <aws/qbusiness/model/PluginBuildStatus.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -42,34 +43,44 @@ namespace Model
 
 
     /**
-     * <p>The timestamp for when the plugin was created.</p>
+     * <p>The identifier of the plugin.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::String& GetPluginId() const{ return m_pluginId; }
 
     /**
-     * <p>The timestamp for when the plugin was created.</p>
+     * <p>The identifier of the plugin.</p>
      */
-    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+    inline bool PluginIdHasBeenSet() const { return m_pluginIdHasBeenSet; }
 
     /**
-     * <p>The timestamp for when the plugin was created.</p>
+     * <p>The identifier of the plugin.</p>
      */
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+    inline void SetPluginId(const Aws::String& value) { m_pluginIdHasBeenSet = true; m_pluginId = value; }
 
     /**
-     * <p>The timestamp for when the plugin was created.</p>
+     * <p>The identifier of the plugin.</p>
      */
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
+    inline void SetPluginId(Aws::String&& value) { m_pluginIdHasBeenSet = true; m_pluginId = std::move(value); }
 
     /**
-     * <p>The timestamp for when the plugin was created.</p>
+     * <p>The identifier of the plugin.</p>
      */
-    inline Plugin& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
+    inline void SetPluginId(const char* value) { m_pluginIdHasBeenSet = true; m_pluginId.assign(value); }
 
     /**
-     * <p>The timestamp for when the plugin was created.</p>
+     * <p>The identifier of the plugin.</p>
      */
-    inline Plugin& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline Plugin& WithPluginId(const Aws::String& value) { SetPluginId(value); return *this;}
+
+    /**
+     * <p>The identifier of the plugin.</p>
+     */
+    inline Plugin& WithPluginId(Aws::String&& value) { SetPluginId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the plugin.</p>
+     */
+    inline Plugin& WithPluginId(const char* value) { SetPluginId(value); return *this;}
 
 
     /**
@@ -114,44 +125,34 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the plugin.</p>
+     * <p>The type of the plugin.</p>
      */
-    inline const Aws::String& GetPluginId() const{ return m_pluginId; }
+    inline const PluginType& GetType() const{ return m_type; }
 
     /**
-     * <p>The identifier of the plugin.</p>
+     * <p>The type of the plugin.</p>
      */
-    inline bool PluginIdHasBeenSet() const { return m_pluginIdHasBeenSet; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The identifier of the plugin.</p>
+     * <p>The type of the plugin.</p>
      */
-    inline void SetPluginId(const Aws::String& value) { m_pluginIdHasBeenSet = true; m_pluginId = value; }
+    inline void SetType(const PluginType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The identifier of the plugin.</p>
+     * <p>The type of the plugin.</p>
      */
-    inline void SetPluginId(Aws::String&& value) { m_pluginIdHasBeenSet = true; m_pluginId = std::move(value); }
+    inline void SetType(PluginType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The identifier of the plugin.</p>
+     * <p>The type of the plugin.</p>
      */
-    inline void SetPluginId(const char* value) { m_pluginIdHasBeenSet = true; m_pluginId.assign(value); }
+    inline Plugin& WithType(const PluginType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The identifier of the plugin.</p>
+     * <p>The type of the plugin.</p>
      */
-    inline Plugin& WithPluginId(const Aws::String& value) { SetPluginId(value); return *this;}
-
-    /**
-     * <p>The identifier of the plugin.</p>
-     */
-    inline Plugin& WithPluginId(Aws::String&& value) { SetPluginId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the plugin.</p>
-     */
-    inline Plugin& WithPluginId(const char* value) { SetPluginId(value); return *this;}
+    inline Plugin& WithType(PluginType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
@@ -227,34 +228,65 @@ namespace Model
 
 
     /**
-     * <p>The type of the plugin.</p>
+     * <p>The status of the plugin.</p>
      */
-    inline const PluginType& GetType() const{ return m_type; }
+    inline const PluginBuildStatus& GetBuildStatus() const{ return m_buildStatus; }
 
     /**
-     * <p>The type of the plugin.</p>
+     * <p>The status of the plugin.</p>
      */
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline bool BuildStatusHasBeenSet() const { return m_buildStatusHasBeenSet; }
 
     /**
-     * <p>The type of the plugin.</p>
+     * <p>The status of the plugin.</p>
      */
-    inline void SetType(const PluginType& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetBuildStatus(const PluginBuildStatus& value) { m_buildStatusHasBeenSet = true; m_buildStatus = value; }
 
     /**
-     * <p>The type of the plugin.</p>
+     * <p>The status of the plugin.</p>
      */
-    inline void SetType(PluginType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+    inline void SetBuildStatus(PluginBuildStatus&& value) { m_buildStatusHasBeenSet = true; m_buildStatus = std::move(value); }
 
     /**
-     * <p>The type of the plugin.</p>
+     * <p>The status of the plugin.</p>
      */
-    inline Plugin& WithType(const PluginType& value) { SetType(value); return *this;}
+    inline Plugin& WithBuildStatus(const PluginBuildStatus& value) { SetBuildStatus(value); return *this;}
 
     /**
-     * <p>The type of the plugin.</p>
+     * <p>The status of the plugin.</p>
      */
-    inline Plugin& WithType(PluginType&& value) { SetType(std::move(value)); return *this;}
+    inline Plugin& WithBuildStatus(PluginBuildStatus&& value) { SetBuildStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The timestamp for when the plugin was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * <p>The timestamp for when the plugin was created.</p>
+     */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The timestamp for when the plugin was created.</p>
+     */
+    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+
+    /**
+     * <p>The timestamp for when the plugin was created.</p>
+     */
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
+
+    /**
+     * <p>The timestamp for when the plugin was created.</p>
+     */
+    inline Plugin& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
+
+    /**
+     * <p>The timestamp for when the plugin was created.</p>
+     */
+    inline Plugin& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
     /**
@@ -289,14 +321,14 @@ namespace Model
 
   private:
 
-    Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet = false;
+    Aws::String m_pluginId;
+    bool m_pluginIdHasBeenSet = false;
 
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet = false;
 
-    Aws::String m_pluginId;
-    bool m_pluginIdHasBeenSet = false;
+    PluginType m_type;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_serverUrl;
     bool m_serverUrlHasBeenSet = false;
@@ -304,8 +336,11 @@ namespace Model
     PluginState m_state;
     bool m_stateHasBeenSet = false;
 
-    PluginType m_type;
-    bool m_typeHasBeenSet = false;
+    PluginBuildStatus m_buildStatus;
+    bool m_buildStatusHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createdAt;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
     bool m_updatedAtHasBeenSet = false;

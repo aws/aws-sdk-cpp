@@ -10,6 +10,7 @@
 #include <aws/route53resolver/model/Action.h>
 #include <aws/route53resolver/model/BlockResponse.h>
 #include <aws/route53resolver/model/BlockOverrideDnsType.h>
+#include <aws/route53resolver/model/FirewallDomainRedirectionAction.h>
 #include <utility>
 
 namespace Aws
@@ -475,6 +476,73 @@ namespace Model
 
 
     /**
+     * <p> How you want the the rule to evaluate DNS redirection in the DNS redirection
+     * chain, such as CNAME, DNAME, ot ALIAS. </p> <p> <code>Inspect_Redirection_Domain
+     * </code>(Default) inspects all domains in the redirection chain. The individual
+     * domains in the redirection chain must be added to the allow domain list.</p> <p>
+     * <code>Trust_Redirection_Domain </code> inspects only the first domain in the
+     * redirection chain. You don't need to add the subsequent domains in the domain in
+     * the redirection list to the domain alloww list.</p>
+     */
+    inline const FirewallDomainRedirectionAction& GetFirewallDomainRedirectionAction() const{ return m_firewallDomainRedirectionAction; }
+
+    /**
+     * <p> How you want the the rule to evaluate DNS redirection in the DNS redirection
+     * chain, such as CNAME, DNAME, ot ALIAS. </p> <p> <code>Inspect_Redirection_Domain
+     * </code>(Default) inspects all domains in the redirection chain. The individual
+     * domains in the redirection chain must be added to the allow domain list.</p> <p>
+     * <code>Trust_Redirection_Domain </code> inspects only the first domain in the
+     * redirection chain. You don't need to add the subsequent domains in the domain in
+     * the redirection list to the domain alloww list.</p>
+     */
+    inline bool FirewallDomainRedirectionActionHasBeenSet() const { return m_firewallDomainRedirectionActionHasBeenSet; }
+
+    /**
+     * <p> How you want the the rule to evaluate DNS redirection in the DNS redirection
+     * chain, such as CNAME, DNAME, ot ALIAS. </p> <p> <code>Inspect_Redirection_Domain
+     * </code>(Default) inspects all domains in the redirection chain. The individual
+     * domains in the redirection chain must be added to the allow domain list.</p> <p>
+     * <code>Trust_Redirection_Domain </code> inspects only the first domain in the
+     * redirection chain. You don't need to add the subsequent domains in the domain in
+     * the redirection list to the domain alloww list.</p>
+     */
+    inline void SetFirewallDomainRedirectionAction(const FirewallDomainRedirectionAction& value) { m_firewallDomainRedirectionActionHasBeenSet = true; m_firewallDomainRedirectionAction = value; }
+
+    /**
+     * <p> How you want the the rule to evaluate DNS redirection in the DNS redirection
+     * chain, such as CNAME, DNAME, ot ALIAS. </p> <p> <code>Inspect_Redirection_Domain
+     * </code>(Default) inspects all domains in the redirection chain. The individual
+     * domains in the redirection chain must be added to the allow domain list.</p> <p>
+     * <code>Trust_Redirection_Domain </code> inspects only the first domain in the
+     * redirection chain. You don't need to add the subsequent domains in the domain in
+     * the redirection list to the domain alloww list.</p>
+     */
+    inline void SetFirewallDomainRedirectionAction(FirewallDomainRedirectionAction&& value) { m_firewallDomainRedirectionActionHasBeenSet = true; m_firewallDomainRedirectionAction = std::move(value); }
+
+    /**
+     * <p> How you want the the rule to evaluate DNS redirection in the DNS redirection
+     * chain, such as CNAME, DNAME, ot ALIAS. </p> <p> <code>Inspect_Redirection_Domain
+     * </code>(Default) inspects all domains in the redirection chain. The individual
+     * domains in the redirection chain must be added to the allow domain list.</p> <p>
+     * <code>Trust_Redirection_Domain </code> inspects only the first domain in the
+     * redirection chain. You don't need to add the subsequent domains in the domain in
+     * the redirection list to the domain alloww list.</p>
+     */
+    inline UpdateFirewallRuleRequest& WithFirewallDomainRedirectionAction(const FirewallDomainRedirectionAction& value) { SetFirewallDomainRedirectionAction(value); return *this;}
+
+    /**
+     * <p> How you want the the rule to evaluate DNS redirection in the DNS redirection
+     * chain, such as CNAME, DNAME, ot ALIAS. </p> <p> <code>Inspect_Redirection_Domain
+     * </code>(Default) inspects all domains in the redirection chain. The individual
+     * domains in the redirection chain must be added to the allow domain list.</p> <p>
+     * <code>Trust_Redirection_Domain </code> inspects only the first domain in the
+     * redirection chain. You don't need to add the subsequent domains in the domain in
+     * the redirection list to the domain alloww list.</p>
+     */
+    inline UpdateFirewallRuleRequest& WithFirewallDomainRedirectionAction(FirewallDomainRedirectionAction&& value) { SetFirewallDomainRedirectionAction(std::move(value)); return *this;}
+
+
+    /**
      * <p> The DNS query type you want the rule to evaluate. Allowed values are; </p>
      * <ul> <li> <p> A: Returns an IPv4 address.</p> </li> <li> <p>AAAA: Returns an
      * Ipv6 address.</p> </li> <li> <p>CAA: Restricts CAs that can create SSL/TLS
@@ -487,7 +555,11 @@ namespace Model
      * zone.</p> </li> <li> <p>SPF: Lists the servers authorized to send emails from a
      * domain.</p> </li> <li> <p>SRV: Application specific values that identify
      * servers.</p> </li> <li> <p>TXT: Verifies email senders and application-specific
-     * values.</p> </li> </ul>
+     * values.</p> </li> <li> <p>A query type you define by using the DNS type ID, for
+     * example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER
+     * can be 1-65334, for example, TYPE28. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record
+     * types</a>.</p> </li> </ul>
      */
     inline const Aws::String& GetQtype() const{ return m_qtype; }
 
@@ -504,7 +576,11 @@ namespace Model
      * zone.</p> </li> <li> <p>SPF: Lists the servers authorized to send emails from a
      * domain.</p> </li> <li> <p>SRV: Application specific values that identify
      * servers.</p> </li> <li> <p>TXT: Verifies email senders and application-specific
-     * values.</p> </li> </ul>
+     * values.</p> </li> <li> <p>A query type you define by using the DNS type ID, for
+     * example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER
+     * can be 1-65334, for example, TYPE28. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record
+     * types</a>.</p> </li> </ul>
      */
     inline bool QtypeHasBeenSet() const { return m_qtypeHasBeenSet; }
 
@@ -521,7 +597,11 @@ namespace Model
      * zone.</p> </li> <li> <p>SPF: Lists the servers authorized to send emails from a
      * domain.</p> </li> <li> <p>SRV: Application specific values that identify
      * servers.</p> </li> <li> <p>TXT: Verifies email senders and application-specific
-     * values.</p> </li> </ul>
+     * values.</p> </li> <li> <p>A query type you define by using the DNS type ID, for
+     * example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER
+     * can be 1-65334, for example, TYPE28. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record
+     * types</a>.</p> </li> </ul>
      */
     inline void SetQtype(const Aws::String& value) { m_qtypeHasBeenSet = true; m_qtype = value; }
 
@@ -538,7 +618,11 @@ namespace Model
      * zone.</p> </li> <li> <p>SPF: Lists the servers authorized to send emails from a
      * domain.</p> </li> <li> <p>SRV: Application specific values that identify
      * servers.</p> </li> <li> <p>TXT: Verifies email senders and application-specific
-     * values.</p> </li> </ul>
+     * values.</p> </li> <li> <p>A query type you define by using the DNS type ID, for
+     * example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER
+     * can be 1-65334, for example, TYPE28. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record
+     * types</a>.</p> </li> </ul>
      */
     inline void SetQtype(Aws::String&& value) { m_qtypeHasBeenSet = true; m_qtype = std::move(value); }
 
@@ -555,7 +639,11 @@ namespace Model
      * zone.</p> </li> <li> <p>SPF: Lists the servers authorized to send emails from a
      * domain.</p> </li> <li> <p>SRV: Application specific values that identify
      * servers.</p> </li> <li> <p>TXT: Verifies email senders and application-specific
-     * values.</p> </li> </ul>
+     * values.</p> </li> <li> <p>A query type you define by using the DNS type ID, for
+     * example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER
+     * can be 1-65334, for example, TYPE28. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record
+     * types</a>.</p> </li> </ul>
      */
     inline void SetQtype(const char* value) { m_qtypeHasBeenSet = true; m_qtype.assign(value); }
 
@@ -572,7 +660,11 @@ namespace Model
      * zone.</p> </li> <li> <p>SPF: Lists the servers authorized to send emails from a
      * domain.</p> </li> <li> <p>SRV: Application specific values that identify
      * servers.</p> </li> <li> <p>TXT: Verifies email senders and application-specific
-     * values.</p> </li> </ul>
+     * values.</p> </li> <li> <p>A query type you define by using the DNS type ID, for
+     * example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER
+     * can be 1-65334, for example, TYPE28. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record
+     * types</a>.</p> </li> </ul>
      */
     inline UpdateFirewallRuleRequest& WithQtype(const Aws::String& value) { SetQtype(value); return *this;}
 
@@ -589,7 +681,11 @@ namespace Model
      * zone.</p> </li> <li> <p>SPF: Lists the servers authorized to send emails from a
      * domain.</p> </li> <li> <p>SRV: Application specific values that identify
      * servers.</p> </li> <li> <p>TXT: Verifies email senders and application-specific
-     * values.</p> </li> </ul>
+     * values.</p> </li> <li> <p>A query type you define by using the DNS type ID, for
+     * example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER
+     * can be 1-65334, for example, TYPE28. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record
+     * types</a>.</p> </li> </ul>
      */
     inline UpdateFirewallRuleRequest& WithQtype(Aws::String&& value) { SetQtype(std::move(value)); return *this;}
 
@@ -606,7 +702,11 @@ namespace Model
      * zone.</p> </li> <li> <p>SPF: Lists the servers authorized to send emails from a
      * domain.</p> </li> <li> <p>SRV: Application specific values that identify
      * servers.</p> </li> <li> <p>TXT: Verifies email senders and application-specific
-     * values.</p> </li> </ul>
+     * values.</p> </li> <li> <p>A query type you define by using the DNS type ID, for
+     * example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER
+     * can be 1-65334, for example, TYPE28. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record
+     * types</a>.</p> </li> </ul>
      */
     inline UpdateFirewallRuleRequest& WithQtype(const char* value) { SetQtype(value); return *this;}
 
@@ -638,6 +738,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    FirewallDomainRedirectionAction m_firewallDomainRedirectionAction;
+    bool m_firewallDomainRedirectionActionHasBeenSet = false;
 
     Aws::String m_qtype;
     bool m_qtypeHasBeenSet = false;

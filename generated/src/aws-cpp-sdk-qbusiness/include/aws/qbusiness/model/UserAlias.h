@@ -39,6 +39,47 @@ namespace Model
 
 
     /**
+     * <p>The identifier of the index that the user aliases are associated with.</p>
+     */
+    inline const Aws::String& GetIndexId() const{ return m_indexId; }
+
+    /**
+     * <p>The identifier of the index that the user aliases are associated with.</p>
+     */
+    inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the index that the user aliases are associated with.</p>
+     */
+    inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
+
+    /**
+     * <p>The identifier of the index that the user aliases are associated with.</p>
+     */
+    inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
+
+    /**
+     * <p>The identifier of the index that the user aliases are associated with.</p>
+     */
+    inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
+
+    /**
+     * <p>The identifier of the index that the user aliases are associated with.</p>
+     */
+    inline UserAlias& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
+
+    /**
+     * <p>The identifier of the index that the user aliases are associated with.</p>
+     */
+    inline UserAlias& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the index that the user aliases are associated with.</p>
+     */
+    inline UserAlias& WithIndexId(const char* value) { SetIndexId(value); return *this;}
+
+
+    /**
      * <p>The identifier of the data source that the user aliases are associated
      * with.</p>
      */
@@ -88,47 +129,6 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the index that the user aliases are associated with.</p>
-     */
-    inline const Aws::String& GetIndexId() const{ return m_indexId; }
-
-    /**
-     * <p>The identifier of the index that the user aliases are associated with.</p>
-     */
-    inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the index that the user aliases are associated with.</p>
-     */
-    inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
-
-    /**
-     * <p>The identifier of the index that the user aliases are associated with.</p>
-     */
-    inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
-
-    /**
-     * <p>The identifier of the index that the user aliases are associated with.</p>
-     */
-    inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
-
-    /**
-     * <p>The identifier of the index that the user aliases are associated with.</p>
-     */
-    inline UserAlias& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
-
-    /**
-     * <p>The identifier of the index that the user aliases are associated with.</p>
-     */
-    inline UserAlias& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the index that the user aliases are associated with.</p>
-     */
-    inline UserAlias& WithIndexId(const char* value) { SetIndexId(value); return *this;}
-
-
-    /**
      * <p>The identifier of the user id associated with the user aliases.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
@@ -170,11 +170,11 @@ namespace Model
 
   private:
 
-    Aws::String m_dataSourceId;
-    bool m_dataSourceIdHasBeenSet = false;
-
     Aws::String m_indexId;
     bool m_indexIdHasBeenSet = false;
+
+    Aws::String m_dataSourceId;
+    bool m_dataSourceIdHasBeenSet = false;
 
     Aws::String m_userId;
     bool m_userIdHasBeenSet = false;

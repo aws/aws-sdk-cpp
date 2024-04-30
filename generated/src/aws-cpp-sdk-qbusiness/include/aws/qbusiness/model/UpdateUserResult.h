@@ -71,42 +71,6 @@ namespace Model
 
 
     /**
-     * <p>The user aliases that have been deleted from a user id.</p>
-     */
-    inline const Aws::Vector<UserAlias>& GetUserAliasesDeleted() const{ return m_userAliasesDeleted; }
-
-    /**
-     * <p>The user aliases that have been deleted from a user id.</p>
-     */
-    inline void SetUserAliasesDeleted(const Aws::Vector<UserAlias>& value) { m_userAliasesDeleted = value; }
-
-    /**
-     * <p>The user aliases that have been deleted from a user id.</p>
-     */
-    inline void SetUserAliasesDeleted(Aws::Vector<UserAlias>&& value) { m_userAliasesDeleted = std::move(value); }
-
-    /**
-     * <p>The user aliases that have been deleted from a user id.</p>
-     */
-    inline UpdateUserResult& WithUserAliasesDeleted(const Aws::Vector<UserAlias>& value) { SetUserAliasesDeleted(value); return *this;}
-
-    /**
-     * <p>The user aliases that have been deleted from a user id.</p>
-     */
-    inline UpdateUserResult& WithUserAliasesDeleted(Aws::Vector<UserAlias>&& value) { SetUserAliasesDeleted(std::move(value)); return *this;}
-
-    /**
-     * <p>The user aliases that have been deleted from a user id.</p>
-     */
-    inline UpdateUserResult& AddUserAliasesDeleted(const UserAlias& value) { m_userAliasesDeleted.push_back(value); return *this; }
-
-    /**
-     * <p>The user aliases that have been deleted from a user id.</p>
-     */
-    inline UpdateUserResult& AddUserAliasesDeleted(UserAlias&& value) { m_userAliasesDeleted.push_back(std::move(value)); return *this; }
-
-
-    /**
      * <p>The user aliases attached to a user id that have been updated.</p>
      */
     inline const Aws::Vector<UserAlias>& GetUserAliasesUpdated() const{ return m_userAliasesUpdated; }
@@ -142,6 +106,42 @@ namespace Model
     inline UpdateUserResult& AddUserAliasesUpdated(UserAlias&& value) { m_userAliasesUpdated.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>The user aliases that have been deleted from a user id.</p>
+     */
+    inline const Aws::Vector<UserAlias>& GetUserAliasesDeleted() const{ return m_userAliasesDeleted; }
+
+    /**
+     * <p>The user aliases that have been deleted from a user id.</p>
+     */
+    inline void SetUserAliasesDeleted(const Aws::Vector<UserAlias>& value) { m_userAliasesDeleted = value; }
+
+    /**
+     * <p>The user aliases that have been deleted from a user id.</p>
+     */
+    inline void SetUserAliasesDeleted(Aws::Vector<UserAlias>&& value) { m_userAliasesDeleted = std::move(value); }
+
+    /**
+     * <p>The user aliases that have been deleted from a user id.</p>
+     */
+    inline UpdateUserResult& WithUserAliasesDeleted(const Aws::Vector<UserAlias>& value) { SetUserAliasesDeleted(value); return *this;}
+
+    /**
+     * <p>The user aliases that have been deleted from a user id.</p>
+     */
+    inline UpdateUserResult& WithUserAliasesDeleted(Aws::Vector<UserAlias>&& value) { SetUserAliasesDeleted(std::move(value)); return *this;}
+
+    /**
+     * <p>The user aliases that have been deleted from a user id.</p>
+     */
+    inline UpdateUserResult& AddUserAliasesDeleted(const UserAlias& value) { m_userAliasesDeleted.push_back(value); return *this; }
+
+    /**
+     * <p>The user aliases that have been deleted from a user id.</p>
+     */
+    inline UpdateUserResult& AddUserAliasesDeleted(UserAlias&& value) { m_userAliasesDeleted.push_back(std::move(value)); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -167,9 +167,9 @@ namespace Model
 
     Aws::Vector<UserAlias> m_userAliasesAdded;
 
-    Aws::Vector<UserAlias> m_userAliasesDeleted;
-
     Aws::Vector<UserAlias> m_userAliasesUpdated;
+
+    Aws::Vector<UserAlias> m_userAliasesDeleted;
 
     Aws::String m_requestId;
   };

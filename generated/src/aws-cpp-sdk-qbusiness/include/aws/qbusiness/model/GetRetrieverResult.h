@@ -6,10 +6,10 @@
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qbusiness/model/RetrieverType.h>
+#include <aws/qbusiness/model/RetrieverStatus.h>
 #include <aws/qbusiness/model/RetrieverConfiguration.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/qbusiness/model/RetrieverStatus.h>
-#include <aws/qbusiness/model/RetrieverType.h>
 #include <utility>
 
 namespace Aws
@@ -72,82 +72,40 @@ namespace Model
     inline GetRetrieverResult& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
-    
-    inline const RetrieverConfiguration& GetConfiguration() const{ return m_configuration; }
-
-    
-    inline void SetConfiguration(const RetrieverConfiguration& value) { m_configuration = value; }
-
-    
-    inline void SetConfiguration(RetrieverConfiguration&& value) { m_configuration = std::move(value); }
-
-    
-    inline GetRetrieverResult& WithConfiguration(const RetrieverConfiguration& value) { SetConfiguration(value); return *this;}
-
-    
-    inline GetRetrieverResult& WithConfiguration(RetrieverConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
-
+    /**
+     * <p>The identifier of the retriever.</p>
+     */
+    inline const Aws::String& GetRetrieverId() const{ return m_retrieverId; }
 
     /**
-     * <p>The Unix timestamp when the retriever was created.</p>
+     * <p>The identifier of the retriever.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline void SetRetrieverId(const Aws::String& value) { m_retrieverId = value; }
 
     /**
-     * <p>The Unix timestamp when the retriever was created.</p>
+     * <p>The identifier of the retriever.</p>
      */
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
+    inline void SetRetrieverId(Aws::String&& value) { m_retrieverId = std::move(value); }
 
     /**
-     * <p>The Unix timestamp when the retriever was created.</p>
+     * <p>The identifier of the retriever.</p>
      */
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
+    inline void SetRetrieverId(const char* value) { m_retrieverId.assign(value); }
 
     /**
-     * <p>The Unix timestamp when the retriever was created.</p>
+     * <p>The identifier of the retriever.</p>
      */
-    inline GetRetrieverResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
+    inline GetRetrieverResult& WithRetrieverId(const Aws::String& value) { SetRetrieverId(value); return *this;}
 
     /**
-     * <p>The Unix timestamp when the retriever was created.</p>
+     * <p>The identifier of the retriever.</p>
      */
-    inline GetRetrieverResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The name of the retriever.</p>
-     */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline GetRetrieverResult& WithRetrieverId(Aws::String&& value) { SetRetrieverId(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the retriever.</p>
+     * <p>The identifier of the retriever.</p>
      */
-    inline void SetDisplayName(const Aws::String& value) { m_displayName = value; }
-
-    /**
-     * <p>The name of the retriever.</p>
-     */
-    inline void SetDisplayName(Aws::String&& value) { m_displayName = std::move(value); }
-
-    /**
-     * <p>The name of the retriever.</p>
-     */
-    inline void SetDisplayName(const char* value) { m_displayName.assign(value); }
-
-    /**
-     * <p>The name of the retriever.</p>
-     */
-    inline GetRetrieverResult& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-
-    /**
-     * <p>The name of the retriever.</p>
-     */
-    inline GetRetrieverResult& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the retriever.</p>
-     */
-    inline GetRetrieverResult& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    inline GetRetrieverResult& WithRetrieverId(const char* value) { SetRetrieverId(value); return *this;}
 
 
     /**
@@ -194,39 +152,107 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the retriever.</p>
+     * <p>The type of the retriever.</p>
      */
-    inline const Aws::String& GetRetrieverId() const{ return m_retrieverId; }
+    inline const RetrieverType& GetType() const{ return m_type; }
 
     /**
-     * <p>The identifier of the retriever.</p>
+     * <p>The type of the retriever.</p>
      */
-    inline void SetRetrieverId(const Aws::String& value) { m_retrieverId = value; }
+    inline void SetType(const RetrieverType& value) { m_type = value; }
 
     /**
-     * <p>The identifier of the retriever.</p>
+     * <p>The type of the retriever.</p>
      */
-    inline void SetRetrieverId(Aws::String&& value) { m_retrieverId = std::move(value); }
+    inline void SetType(RetrieverType&& value) { m_type = std::move(value); }
 
     /**
-     * <p>The identifier of the retriever.</p>
+     * <p>The type of the retriever.</p>
      */
-    inline void SetRetrieverId(const char* value) { m_retrieverId.assign(value); }
+    inline GetRetrieverResult& WithType(const RetrieverType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The identifier of the retriever.</p>
+     * <p>The type of the retriever.</p>
      */
-    inline GetRetrieverResult& WithRetrieverId(const Aws::String& value) { SetRetrieverId(value); return *this;}
+    inline GetRetrieverResult& WithType(RetrieverType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
-     * <p>The identifier of the retriever.</p>
+     * <p>The status of the retriever.</p>
      */
-    inline GetRetrieverResult& WithRetrieverId(Aws::String&& value) { SetRetrieverId(std::move(value)); return *this;}
+    inline const RetrieverStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The identifier of the retriever.</p>
+     * <p>The status of the retriever.</p>
      */
-    inline GetRetrieverResult& WithRetrieverId(const char* value) { SetRetrieverId(value); return *this;}
+    inline void SetStatus(const RetrieverStatus& value) { m_status = value; }
+
+    /**
+     * <p>The status of the retriever.</p>
+     */
+    inline void SetStatus(RetrieverStatus&& value) { m_status = std::move(value); }
+
+    /**
+     * <p>The status of the retriever.</p>
+     */
+    inline GetRetrieverResult& WithStatus(const RetrieverStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The status of the retriever.</p>
+     */
+    inline GetRetrieverResult& WithStatus(RetrieverStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The name of the retriever.</p>
+     */
+    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
+    /**
+     * <p>The name of the retriever.</p>
+     */
+    inline void SetDisplayName(const Aws::String& value) { m_displayName = value; }
+
+    /**
+     * <p>The name of the retriever.</p>
+     */
+    inline void SetDisplayName(Aws::String&& value) { m_displayName = std::move(value); }
+
+    /**
+     * <p>The name of the retriever.</p>
+     */
+    inline void SetDisplayName(const char* value) { m_displayName.assign(value); }
+
+    /**
+     * <p>The name of the retriever.</p>
+     */
+    inline GetRetrieverResult& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
+
+    /**
+     * <p>The name of the retriever.</p>
+     */
+    inline GetRetrieverResult& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the retriever.</p>
+     */
+    inline GetRetrieverResult& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+
+
+    
+    inline const RetrieverConfiguration& GetConfiguration() const{ return m_configuration; }
+
+    
+    inline void SetConfiguration(const RetrieverConfiguration& value) { m_configuration = value; }
+
+    
+    inline void SetConfiguration(RetrieverConfiguration&& value) { m_configuration = std::move(value); }
+
+    
+    inline GetRetrieverResult& WithConfiguration(const RetrieverConfiguration& value) { SetConfiguration(value); return *this;}
+
+    
+    inline GetRetrieverResult& WithConfiguration(RetrieverConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -273,55 +299,29 @@ namespace Model
 
 
     /**
-     * <p>The status of the retriever.</p>
+     * <p>The Unix timestamp when the retriever was created.</p>
      */
-    inline const RetrieverStatus& GetStatus() const{ return m_status; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The status of the retriever.</p>
+     * <p>The Unix timestamp when the retriever was created.</p>
      */
-    inline void SetStatus(const RetrieverStatus& value) { m_status = value; }
+    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
 
     /**
-     * <p>The status of the retriever.</p>
+     * <p>The Unix timestamp when the retriever was created.</p>
      */
-    inline void SetStatus(RetrieverStatus&& value) { m_status = std::move(value); }
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
 
     /**
-     * <p>The status of the retriever.</p>
+     * <p>The Unix timestamp when the retriever was created.</p>
      */
-    inline GetRetrieverResult& WithStatus(const RetrieverStatus& value) { SetStatus(value); return *this;}
+    inline GetRetrieverResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The status of the retriever.</p>
+     * <p>The Unix timestamp when the retriever was created.</p>
      */
-    inline GetRetrieverResult& WithStatus(RetrieverStatus&& value) { SetStatus(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The type of the retriever.</p>
-     */
-    inline const RetrieverType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of the retriever.</p>
-     */
-    inline void SetType(const RetrieverType& value) { m_type = value; }
-
-    /**
-     * <p>The type of the retriever.</p>
-     */
-    inline void SetType(RetrieverType&& value) { m_type = std::move(value); }
-
-    /**
-     * <p>The type of the retriever.</p>
-     */
-    inline GetRetrieverResult& WithType(const RetrieverType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of the retriever.</p>
-     */
-    inline GetRetrieverResult& WithType(RetrieverType&& value) { SetType(std::move(value)); return *this;}
+    inline GetRetrieverResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
     /**
@@ -375,21 +375,21 @@ namespace Model
 
     Aws::String m_applicationId;
 
-    RetrieverConfiguration m_configuration;
-
-    Aws::Utils::DateTime m_createdAt;
-
-    Aws::String m_displayName;
+    Aws::String m_retrieverId;
 
     Aws::String m_retrieverArn;
 
-    Aws::String m_retrieverId;
-
-    Aws::String m_roleArn;
+    RetrieverType m_type;
 
     RetrieverStatus m_status;
 
-    RetrieverType m_type;
+    Aws::String m_displayName;
+
+    RetrieverConfiguration m_configuration;
+
+    Aws::String m_roleArn;
+
+    Aws::Utils::DateTime m_createdAt;
 
     Aws::Utils::DateTime m_updatedAt;
 

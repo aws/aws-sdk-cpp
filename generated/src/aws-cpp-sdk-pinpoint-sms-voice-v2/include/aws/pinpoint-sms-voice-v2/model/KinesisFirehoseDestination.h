@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>Contains the delivery stream Amazon Resource Name (ARN), and the ARN of the
-   * Identity and Access Management (IAM) role associated with an Kinesis Data
+   * Identity and Access Management (IAM) role associated with a Kinesis Data
    * Firehose event destination.</p> <p>Event destinations, such as Kinesis Data
    * Firehose, are associated with configuration sets, which enable you to publish
    * message sending events.</p><p><h3>See Also:</h3>   <a
@@ -42,50 +42,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of an Amazon Identity and Access Management (IAM) role that is able
-     * to write event data to an Amazon Firehose destination.</p>
+     * <p>The ARN of an Identity and Access Management role that is able to write event
+     * data to an Amazon Kinesis Data Firehose destination.</p>
      */
     inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
 
     /**
-     * <p>The ARN of an Amazon Identity and Access Management (IAM) role that is able
-     * to write event data to an Amazon Firehose destination.</p>
+     * <p>The ARN of an Identity and Access Management role that is able to write event
+     * data to an Amazon Kinesis Data Firehose destination.</p>
      */
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
 
     /**
-     * <p>The ARN of an Amazon Identity and Access Management (IAM) role that is able
-     * to write event data to an Amazon Firehose destination.</p>
+     * <p>The ARN of an Identity and Access Management role that is able to write event
+     * data to an Amazon Kinesis Data Firehose destination.</p>
      */
     inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
 
     /**
-     * <p>The ARN of an Amazon Identity and Access Management (IAM) role that is able
-     * to write event data to an Amazon Firehose destination.</p>
+     * <p>The ARN of an Identity and Access Management role that is able to write event
+     * data to an Amazon Kinesis Data Firehose destination.</p>
      */
     inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
 
     /**
-     * <p>The ARN of an Amazon Identity and Access Management (IAM) role that is able
-     * to write event data to an Amazon Firehose destination.</p>
+     * <p>The ARN of an Identity and Access Management role that is able to write event
+     * data to an Amazon Kinesis Data Firehose destination.</p>
      */
     inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
 
     /**
-     * <p>The ARN of an Amazon Identity and Access Management (IAM) role that is able
-     * to write event data to an Amazon Firehose destination.</p>
+     * <p>The ARN of an Identity and Access Management role that is able to write event
+     * data to an Amazon Kinesis Data Firehose destination.</p>
      */
     inline KinesisFirehoseDestination& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of an Amazon Identity and Access Management (IAM) role that is able
-     * to write event data to an Amazon Firehose destination.</p>
+     * <p>The ARN of an Identity and Access Management role that is able to write event
+     * data to an Amazon Kinesis Data Firehose destination.</p>
      */
     inline KinesisFirehoseDestination& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of an Amazon Identity and Access Management (IAM) role that is able
-     * to write event data to an Amazon Firehose destination.</p>
+     * <p>The ARN of an Identity and Access Management role that is able to write event
+     * data to an Amazon Kinesis Data Firehose destination.</p>
      */
     inline KinesisFirehoseDestination& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
 

@@ -18,7 +18,10 @@ namespace Model
     NOT_SET,
     ADMIN,
     AUTHOR,
-    READER
+    READER,
+    ADMIN_PRO,
+    AUTHOR_PRO,
+    READER_PRO
   };
 
 namespace RoleMapper

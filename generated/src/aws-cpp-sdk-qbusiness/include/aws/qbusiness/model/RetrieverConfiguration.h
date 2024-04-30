@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
-#include <aws/qbusiness/model/KendraIndexConfiguration.h>
 #include <aws/qbusiness/model/NativeIndexConfiguration.h>
+#include <aws/qbusiness/model/KendraIndexConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -37,43 +37,6 @@ namespace Model
     AWS_QBUSINESS_API RetrieverConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API RetrieverConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>Provides information on how the Amazon Kendra index used as a retriever for
-     * your Amazon Q Business application is configured.</p>
-     */
-    inline const KendraIndexConfiguration& GetKendraIndexConfiguration() const{ return m_kendraIndexConfiguration; }
-
-    /**
-     * <p>Provides information on how the Amazon Kendra index used as a retriever for
-     * your Amazon Q Business application is configured.</p>
-     */
-    inline bool KendraIndexConfigurationHasBeenSet() const { return m_kendraIndexConfigurationHasBeenSet; }
-
-    /**
-     * <p>Provides information on how the Amazon Kendra index used as a retriever for
-     * your Amazon Q Business application is configured.</p>
-     */
-    inline void SetKendraIndexConfiguration(const KendraIndexConfiguration& value) { m_kendraIndexConfigurationHasBeenSet = true; m_kendraIndexConfiguration = value; }
-
-    /**
-     * <p>Provides information on how the Amazon Kendra index used as a retriever for
-     * your Amazon Q Business application is configured.</p>
-     */
-    inline void SetKendraIndexConfiguration(KendraIndexConfiguration&& value) { m_kendraIndexConfigurationHasBeenSet = true; m_kendraIndexConfiguration = std::move(value); }
-
-    /**
-     * <p>Provides information on how the Amazon Kendra index used as a retriever for
-     * your Amazon Q Business application is configured.</p>
-     */
-    inline RetrieverConfiguration& WithKendraIndexConfiguration(const KendraIndexConfiguration& value) { SetKendraIndexConfiguration(value); return *this;}
-
-    /**
-     * <p>Provides information on how the Amazon Kendra index used as a retriever for
-     * your Amazon Q Business application is configured.</p>
-     */
-    inline RetrieverConfiguration& WithKendraIndexConfiguration(KendraIndexConfiguration&& value) { SetKendraIndexConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -112,13 +75,50 @@ namespace Model
      */
     inline RetrieverConfiguration& WithNativeIndexConfiguration(NativeIndexConfiguration&& value) { SetNativeIndexConfiguration(std::move(value)); return *this;}
 
-  private:
 
-    KendraIndexConfiguration m_kendraIndexConfiguration;
-    bool m_kendraIndexConfigurationHasBeenSet = false;
+    /**
+     * <p>Provides information on how the Amazon Kendra index used as a retriever for
+     * your Amazon Q Business application is configured.</p>
+     */
+    inline const KendraIndexConfiguration& GetKendraIndexConfiguration() const{ return m_kendraIndexConfiguration; }
+
+    /**
+     * <p>Provides information on how the Amazon Kendra index used as a retriever for
+     * your Amazon Q Business application is configured.</p>
+     */
+    inline bool KendraIndexConfigurationHasBeenSet() const { return m_kendraIndexConfigurationHasBeenSet; }
+
+    /**
+     * <p>Provides information on how the Amazon Kendra index used as a retriever for
+     * your Amazon Q Business application is configured.</p>
+     */
+    inline void SetKendraIndexConfiguration(const KendraIndexConfiguration& value) { m_kendraIndexConfigurationHasBeenSet = true; m_kendraIndexConfiguration = value; }
+
+    /**
+     * <p>Provides information on how the Amazon Kendra index used as a retriever for
+     * your Amazon Q Business application is configured.</p>
+     */
+    inline void SetKendraIndexConfiguration(KendraIndexConfiguration&& value) { m_kendraIndexConfigurationHasBeenSet = true; m_kendraIndexConfiguration = std::move(value); }
+
+    /**
+     * <p>Provides information on how the Amazon Kendra index used as a retriever for
+     * your Amazon Q Business application is configured.</p>
+     */
+    inline RetrieverConfiguration& WithKendraIndexConfiguration(const KendraIndexConfiguration& value) { SetKendraIndexConfiguration(value); return *this;}
+
+    /**
+     * <p>Provides information on how the Amazon Kendra index used as a retriever for
+     * your Amazon Q Business application is configured.</p>
+     */
+    inline RetrieverConfiguration& WithKendraIndexConfiguration(KendraIndexConfiguration&& value) { SetKendraIndexConfiguration(std::move(value)); return *this;}
+
+  private:
 
     NativeIndexConfiguration m_nativeIndexConfiguration;
     bool m_nativeIndexConfigurationHasBeenSet = false;
+
+    KendraIndexConfiguration m_kendraIndexConfiguration;
+    bool m_kendraIndexConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

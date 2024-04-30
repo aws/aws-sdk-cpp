@@ -78,52 +78,171 @@ namespace Model
 
 
     /**
-     * <p>A token you provide to identify a request to create an Amazon Q Business web
-     * experience. </p>
+     * <p>The title for your Amazon Q Business web experience.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetTitle() const{ return m_title; }
 
     /**
-     * <p>A token you provide to identify a request to create an Amazon Q Business web
-     * experience. </p>
+     * <p>The title for your Amazon Q Business web experience.</p>
      */
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
 
     /**
-     * <p>A token you provide to identify a request to create an Amazon Q Business web
-     * experience. </p>
+     * <p>The title for your Amazon Q Business web experience.</p>
      */
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
 
     /**
-     * <p>A token you provide to identify a request to create an Amazon Q Business web
-     * experience. </p>
+     * <p>The title for your Amazon Q Business web experience.</p>
      */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
 
     /**
-     * <p>A token you provide to identify a request to create an Amazon Q Business web
-     * experience. </p>
+     * <p>The title for your Amazon Q Business web experience.</p>
      */
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
 
     /**
-     * <p>A token you provide to identify a request to create an Amazon Q Business web
-     * experience. </p>
+     * <p>The title for your Amazon Q Business web experience.</p>
      */
-    inline CreateWebExperienceRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+    inline CreateWebExperienceRequest& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
 
     /**
-     * <p>A token you provide to identify a request to create an Amazon Q Business web
-     * experience. </p>
+     * <p>The title for your Amazon Q Business web experience.</p>
      */
-    inline CreateWebExperienceRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+    inline CreateWebExperienceRequest& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
 
     /**
-     * <p>A token you provide to identify a request to create an Amazon Q Business web
-     * experience. </p>
+     * <p>The title for your Amazon Q Business web experience.</p>
      */
-    inline CreateWebExperienceRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    inline CreateWebExperienceRequest& WithTitle(const char* value) { SetTitle(value); return *this;}
+
+
+    /**
+     * <p>A subtitle to personalize your Amazon Q Business web experience.</p>
+     */
+    inline const Aws::String& GetSubtitle() const{ return m_subtitle; }
+
+    /**
+     * <p>A subtitle to personalize your Amazon Q Business web experience.</p>
+     */
+    inline bool SubtitleHasBeenSet() const { return m_subtitleHasBeenSet; }
+
+    /**
+     * <p>A subtitle to personalize your Amazon Q Business web experience.</p>
+     */
+    inline void SetSubtitle(const Aws::String& value) { m_subtitleHasBeenSet = true; m_subtitle = value; }
+
+    /**
+     * <p>A subtitle to personalize your Amazon Q Business web experience.</p>
+     */
+    inline void SetSubtitle(Aws::String&& value) { m_subtitleHasBeenSet = true; m_subtitle = std::move(value); }
+
+    /**
+     * <p>A subtitle to personalize your Amazon Q Business web experience.</p>
+     */
+    inline void SetSubtitle(const char* value) { m_subtitleHasBeenSet = true; m_subtitle.assign(value); }
+
+    /**
+     * <p>A subtitle to personalize your Amazon Q Business web experience.</p>
+     */
+    inline CreateWebExperienceRequest& WithSubtitle(const Aws::String& value) { SetSubtitle(value); return *this;}
+
+    /**
+     * <p>A subtitle to personalize your Amazon Q Business web experience.</p>
+     */
+    inline CreateWebExperienceRequest& WithSubtitle(Aws::String&& value) { SetSubtitle(std::move(value)); return *this;}
+
+    /**
+     * <p>A subtitle to personalize your Amazon Q Business web experience.</p>
+     */
+    inline CreateWebExperienceRequest& WithSubtitle(const char* value) { SetSubtitle(value); return *this;}
+
+
+    /**
+     * <p>The customized welcome message for end users of an Amazon Q Business web
+     * experience.</p>
+     */
+    inline const Aws::String& GetWelcomeMessage() const{ return m_welcomeMessage; }
+
+    /**
+     * <p>The customized welcome message for end users of an Amazon Q Business web
+     * experience.</p>
+     */
+    inline bool WelcomeMessageHasBeenSet() const { return m_welcomeMessageHasBeenSet; }
+
+    /**
+     * <p>The customized welcome message for end users of an Amazon Q Business web
+     * experience.</p>
+     */
+    inline void SetWelcomeMessage(const Aws::String& value) { m_welcomeMessageHasBeenSet = true; m_welcomeMessage = value; }
+
+    /**
+     * <p>The customized welcome message for end users of an Amazon Q Business web
+     * experience.</p>
+     */
+    inline void SetWelcomeMessage(Aws::String&& value) { m_welcomeMessageHasBeenSet = true; m_welcomeMessage = std::move(value); }
+
+    /**
+     * <p>The customized welcome message for end users of an Amazon Q Business web
+     * experience.</p>
+     */
+    inline void SetWelcomeMessage(const char* value) { m_welcomeMessageHasBeenSet = true; m_welcomeMessage.assign(value); }
+
+    /**
+     * <p>The customized welcome message for end users of an Amazon Q Business web
+     * experience.</p>
+     */
+    inline CreateWebExperienceRequest& WithWelcomeMessage(const Aws::String& value) { SetWelcomeMessage(value); return *this;}
+
+    /**
+     * <p>The customized welcome message for end users of an Amazon Q Business web
+     * experience.</p>
+     */
+    inline CreateWebExperienceRequest& WithWelcomeMessage(Aws::String&& value) { SetWelcomeMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>The customized welcome message for end users of an Amazon Q Business web
+     * experience.</p>
+     */
+    inline CreateWebExperienceRequest& WithWelcomeMessage(const char* value) { SetWelcomeMessage(value); return *this;}
+
+
+    /**
+     * <p>Determines whether sample prompts are enabled in the web experience for an
+     * end user.</p>
+     */
+    inline const WebExperienceSamplePromptsControlMode& GetSamplePromptsControlMode() const{ return m_samplePromptsControlMode; }
+
+    /**
+     * <p>Determines whether sample prompts are enabled in the web experience for an
+     * end user.</p>
+     */
+    inline bool SamplePromptsControlModeHasBeenSet() const { return m_samplePromptsControlModeHasBeenSet; }
+
+    /**
+     * <p>Determines whether sample prompts are enabled in the web experience for an
+     * end user.</p>
+     */
+    inline void SetSamplePromptsControlMode(const WebExperienceSamplePromptsControlMode& value) { m_samplePromptsControlModeHasBeenSet = true; m_samplePromptsControlMode = value; }
+
+    /**
+     * <p>Determines whether sample prompts are enabled in the web experience for an
+     * end user.</p>
+     */
+    inline void SetSamplePromptsControlMode(WebExperienceSamplePromptsControlMode&& value) { m_samplePromptsControlModeHasBeenSet = true; m_samplePromptsControlMode = std::move(value); }
+
+    /**
+     * <p>Determines whether sample prompts are enabled in the web experience for an
+     * end user.</p>
+     */
+    inline CreateWebExperienceRequest& WithSamplePromptsControlMode(const WebExperienceSamplePromptsControlMode& value) { SetSamplePromptsControlMode(value); return *this;}
+
+    /**
+     * <p>Determines whether sample prompts are enabled in the web experience for an
+     * end user.</p>
+     */
+    inline CreateWebExperienceRequest& WithSamplePromptsControlMode(WebExperienceSamplePromptsControlMode&& value) { SetSamplePromptsControlMode(std::move(value)); return *this;}
 
 
     /**
@@ -173,84 +292,6 @@ namespace Model
      * experience.</p>
      */
     inline CreateWebExperienceRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
-
-
-    /**
-     * <p>Determines whether sample prompts are enabled in the web experience for an
-     * end user.</p>
-     */
-    inline const WebExperienceSamplePromptsControlMode& GetSamplePromptsControlMode() const{ return m_samplePromptsControlMode; }
-
-    /**
-     * <p>Determines whether sample prompts are enabled in the web experience for an
-     * end user.</p>
-     */
-    inline bool SamplePromptsControlModeHasBeenSet() const { return m_samplePromptsControlModeHasBeenSet; }
-
-    /**
-     * <p>Determines whether sample prompts are enabled in the web experience for an
-     * end user.</p>
-     */
-    inline void SetSamplePromptsControlMode(const WebExperienceSamplePromptsControlMode& value) { m_samplePromptsControlModeHasBeenSet = true; m_samplePromptsControlMode = value; }
-
-    /**
-     * <p>Determines whether sample prompts are enabled in the web experience for an
-     * end user.</p>
-     */
-    inline void SetSamplePromptsControlMode(WebExperienceSamplePromptsControlMode&& value) { m_samplePromptsControlModeHasBeenSet = true; m_samplePromptsControlMode = std::move(value); }
-
-    /**
-     * <p>Determines whether sample prompts are enabled in the web experience for an
-     * end user.</p>
-     */
-    inline CreateWebExperienceRequest& WithSamplePromptsControlMode(const WebExperienceSamplePromptsControlMode& value) { SetSamplePromptsControlMode(value); return *this;}
-
-    /**
-     * <p>Determines whether sample prompts are enabled in the web experience for an
-     * end user.</p>
-     */
-    inline CreateWebExperienceRequest& WithSamplePromptsControlMode(WebExperienceSamplePromptsControlMode&& value) { SetSamplePromptsControlMode(std::move(value)); return *this;}
-
-
-    /**
-     * <p>A subtitle to personalize your Amazon Q Business web experience.</p>
-     */
-    inline const Aws::String& GetSubtitle() const{ return m_subtitle; }
-
-    /**
-     * <p>A subtitle to personalize your Amazon Q Business web experience.</p>
-     */
-    inline bool SubtitleHasBeenSet() const { return m_subtitleHasBeenSet; }
-
-    /**
-     * <p>A subtitle to personalize your Amazon Q Business web experience.</p>
-     */
-    inline void SetSubtitle(const Aws::String& value) { m_subtitleHasBeenSet = true; m_subtitle = value; }
-
-    /**
-     * <p>A subtitle to personalize your Amazon Q Business web experience.</p>
-     */
-    inline void SetSubtitle(Aws::String&& value) { m_subtitleHasBeenSet = true; m_subtitle = std::move(value); }
-
-    /**
-     * <p>A subtitle to personalize your Amazon Q Business web experience.</p>
-     */
-    inline void SetSubtitle(const char* value) { m_subtitleHasBeenSet = true; m_subtitle.assign(value); }
-
-    /**
-     * <p>A subtitle to personalize your Amazon Q Business web experience.</p>
-     */
-    inline CreateWebExperienceRequest& WithSubtitle(const Aws::String& value) { SetSubtitle(value); return *this;}
-
-    /**
-     * <p>A subtitle to personalize your Amazon Q Business web experience.</p>
-     */
-    inline CreateWebExperienceRequest& WithSubtitle(Aws::String&& value) { SetSubtitle(std::move(value)); return *this;}
-
-    /**
-     * <p>A subtitle to personalize your Amazon Q Business web experience.</p>
-     */
-    inline CreateWebExperienceRequest& WithSubtitle(const char* value) { SetSubtitle(value); return *this;}
 
 
     /**
@@ -319,119 +360,78 @@ namespace Model
 
 
     /**
-     * <p>The title for your Amazon Q Business web experience.</p>
+     * <p>A token you provide to identify a request to create an Amazon Q Business web
+     * experience. </p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>The title for your Amazon Q Business web experience.</p>
+     * <p>A token you provide to identify a request to create an Amazon Q Business web
+     * experience. </p>
      */
-    inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>The title for your Amazon Q Business web experience.</p>
+     * <p>A token you provide to identify a request to create an Amazon Q Business web
+     * experience. </p>
      */
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>The title for your Amazon Q Business web experience.</p>
+     * <p>A token you provide to identify a request to create an Amazon Q Business web
+     * experience. </p>
      */
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>The title for your Amazon Q Business web experience.</p>
+     * <p>A token you provide to identify a request to create an Amazon Q Business web
+     * experience. </p>
      */
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>The title for your Amazon Q Business web experience.</p>
+     * <p>A token you provide to identify a request to create an Amazon Q Business web
+     * experience. </p>
      */
-    inline CreateWebExperienceRequest& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
+    inline CreateWebExperienceRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>The title for your Amazon Q Business web experience.</p>
+     * <p>A token you provide to identify a request to create an Amazon Q Business web
+     * experience. </p>
      */
-    inline CreateWebExperienceRequest& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
+    inline CreateWebExperienceRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>The title for your Amazon Q Business web experience.</p>
+     * <p>A token you provide to identify a request to create an Amazon Q Business web
+     * experience. </p>
      */
-    inline CreateWebExperienceRequest& WithTitle(const char* value) { SetTitle(value); return *this;}
-
-
-    /**
-     * <p>The customized welcome message for end users of an Amazon Q Business web
-     * experience.</p>
-     */
-    inline const Aws::String& GetWelcomeMessage() const{ return m_welcomeMessage; }
-
-    /**
-     * <p>The customized welcome message for end users of an Amazon Q Business web
-     * experience.</p>
-     */
-    inline bool WelcomeMessageHasBeenSet() const { return m_welcomeMessageHasBeenSet; }
-
-    /**
-     * <p>The customized welcome message for end users of an Amazon Q Business web
-     * experience.</p>
-     */
-    inline void SetWelcomeMessage(const Aws::String& value) { m_welcomeMessageHasBeenSet = true; m_welcomeMessage = value; }
-
-    /**
-     * <p>The customized welcome message for end users of an Amazon Q Business web
-     * experience.</p>
-     */
-    inline void SetWelcomeMessage(Aws::String&& value) { m_welcomeMessageHasBeenSet = true; m_welcomeMessage = std::move(value); }
-
-    /**
-     * <p>The customized welcome message for end users of an Amazon Q Business web
-     * experience.</p>
-     */
-    inline void SetWelcomeMessage(const char* value) { m_welcomeMessageHasBeenSet = true; m_welcomeMessage.assign(value); }
-
-    /**
-     * <p>The customized welcome message for end users of an Amazon Q Business web
-     * experience.</p>
-     */
-    inline CreateWebExperienceRequest& WithWelcomeMessage(const Aws::String& value) { SetWelcomeMessage(value); return *this;}
-
-    /**
-     * <p>The customized welcome message for end users of an Amazon Q Business web
-     * experience.</p>
-     */
-    inline CreateWebExperienceRequest& WithWelcomeMessage(Aws::String&& value) { SetWelcomeMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The customized welcome message for end users of an Amazon Q Business web
-     * experience.</p>
-     */
-    inline CreateWebExperienceRequest& WithWelcomeMessage(const char* value) { SetWelcomeMessage(value); return *this;}
+    inline CreateWebExperienceRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
   private:
 
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
-
-    Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet = false;
-
-    WebExperienceSamplePromptsControlMode m_samplePromptsControlMode;
-    bool m_samplePromptsControlModeHasBeenSet = false;
+    Aws::String m_title;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_subtitle;
     bool m_subtitleHasBeenSet = false;
 
+    Aws::String m_welcomeMessage;
+    bool m_welcomeMessageHasBeenSet = false;
+
+    WebExperienceSamplePromptsControlMode m_samplePromptsControlMode;
+    bool m_samplePromptsControlModeHasBeenSet = false;
+
+    Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    Aws::String m_title;
-    bool m_titleHasBeenSet = false;
-
-    Aws::String m_welcomeMessage;
-    bool m_welcomeMessageHasBeenSet = false;
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

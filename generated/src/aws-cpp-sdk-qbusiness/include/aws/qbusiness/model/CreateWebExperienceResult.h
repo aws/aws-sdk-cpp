@@ -33,42 +33,6 @@ namespace Model
 
 
     /**
-     * <p> The Amazon Resource Name (ARN) of an Amazon Q Business web experience.</p>
-     */
-    inline const Aws::String& GetWebExperienceArn() const{ return m_webExperienceArn; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of an Amazon Q Business web experience.</p>
-     */
-    inline void SetWebExperienceArn(const Aws::String& value) { m_webExperienceArn = value; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of an Amazon Q Business web experience.</p>
-     */
-    inline void SetWebExperienceArn(Aws::String&& value) { m_webExperienceArn = std::move(value); }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of an Amazon Q Business web experience.</p>
-     */
-    inline void SetWebExperienceArn(const char* value) { m_webExperienceArn.assign(value); }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of an Amazon Q Business web experience.</p>
-     */
-    inline CreateWebExperienceResult& WithWebExperienceArn(const Aws::String& value) { SetWebExperienceArn(value); return *this;}
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of an Amazon Q Business web experience.</p>
-     */
-    inline CreateWebExperienceResult& WithWebExperienceArn(Aws::String&& value) { SetWebExperienceArn(std::move(value)); return *this;}
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of an Amazon Q Business web experience.</p>
-     */
-    inline CreateWebExperienceResult& WithWebExperienceArn(const char* value) { SetWebExperienceArn(value); return *this;}
-
-
-    /**
      * <p>The identifier of the Amazon Q Business web experience.</p>
      */
     inline const Aws::String& GetWebExperienceId() const{ return m_webExperienceId; }
@@ -104,6 +68,42 @@ namespace Model
     inline CreateWebExperienceResult& WithWebExperienceId(const char* value) { SetWebExperienceId(value); return *this;}
 
 
+    /**
+     * <p> The Amazon Resource Name (ARN) of an Amazon Q Business web experience.</p>
+     */
+    inline const Aws::String& GetWebExperienceArn() const{ return m_webExperienceArn; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of an Amazon Q Business web experience.</p>
+     */
+    inline void SetWebExperienceArn(const Aws::String& value) { m_webExperienceArn = value; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of an Amazon Q Business web experience.</p>
+     */
+    inline void SetWebExperienceArn(Aws::String&& value) { m_webExperienceArn = std::move(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of an Amazon Q Business web experience.</p>
+     */
+    inline void SetWebExperienceArn(const char* value) { m_webExperienceArn.assign(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of an Amazon Q Business web experience.</p>
+     */
+    inline CreateWebExperienceResult& WithWebExperienceArn(const Aws::String& value) { SetWebExperienceArn(value); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of an Amazon Q Business web experience.</p>
+     */
+    inline CreateWebExperienceResult& WithWebExperienceArn(Aws::String&& value) { SetWebExperienceArn(std::move(value)); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of an Amazon Q Business web experience.</p>
+     */
+    inline CreateWebExperienceResult& WithWebExperienceArn(const char* value) { SetWebExperienceArn(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -127,9 +127,9 @@ namespace Model
 
   private:
 
-    Aws::String m_webExperienceArn;
-
     Aws::String m_webExperienceId;
+
+    Aws::String m_webExperienceArn;
 
     Aws::String m_requestId;
   };

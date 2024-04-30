@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/qbusiness/model/DataSourceStatus.h>
 #include <utility>
 
@@ -38,78 +38,6 @@ namespace Model
     AWS_QBUSINESS_API DataSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API DataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The Unix timestamp when the Amazon Q Business data source was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-
-    /**
-     * <p>The Unix timestamp when the Amazon Q Business data source was created.</p>
-     */
-    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-
-    /**
-     * <p>The Unix timestamp when the Amazon Q Business data source was created.</p>
-     */
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-
-    /**
-     * <p>The Unix timestamp when the Amazon Q Business data source was created.</p>
-     */
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-
-    /**
-     * <p>The Unix timestamp when the Amazon Q Business data source was created.</p>
-     */
-    inline DataSource& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-
-    /**
-     * <p>The Unix timestamp when the Amazon Q Business data source was created.</p>
-     */
-    inline DataSource& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The identifier of the Amazon Q Business data source.</p>
-     */
-    inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
-
-    /**
-     * <p>The identifier of the Amazon Q Business data source.</p>
-     */
-    inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the Amazon Q Business data source.</p>
-     */
-    inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
-
-    /**
-     * <p>The identifier of the Amazon Q Business data source.</p>
-     */
-    inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::move(value); }
-
-    /**
-     * <p>The identifier of the Amazon Q Business data source.</p>
-     */
-    inline void SetDataSourceId(const char* value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId.assign(value); }
-
-    /**
-     * <p>The identifier of the Amazon Q Business data source.</p>
-     */
-    inline DataSource& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Q Business data source.</p>
-     */
-    inline DataSource& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Q Business data source.</p>
-     */
-    inline DataSource& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
 
 
     /**
@@ -154,34 +82,44 @@ namespace Model
 
 
     /**
-     * <p>The status of the Amazon Q Business data source.</p>
+     * <p>The identifier of the Amazon Q Business data source.</p>
      */
-    inline const DataSourceStatus& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
 
     /**
-     * <p>The status of the Amazon Q Business data source.</p>
+     * <p>The identifier of the Amazon Q Business data source.</p>
      */
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
 
     /**
-     * <p>The status of the Amazon Q Business data source.</p>
+     * <p>The identifier of the Amazon Q Business data source.</p>
      */
-    inline void SetStatus(const DataSourceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
 
     /**
-     * <p>The status of the Amazon Q Business data source.</p>
+     * <p>The identifier of the Amazon Q Business data source.</p>
      */
-    inline void SetStatus(DataSourceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+    inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::move(value); }
 
     /**
-     * <p>The status of the Amazon Q Business data source.</p>
+     * <p>The identifier of the Amazon Q Business data source.</p>
      */
-    inline DataSource& WithStatus(const DataSourceStatus& value) { SetStatus(value); return *this;}
+    inline void SetDataSourceId(const char* value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId.assign(value); }
 
     /**
-     * <p>The status of the Amazon Q Business data source.</p>
+     * <p>The identifier of the Amazon Q Business data source.</p>
      */
-    inline DataSource& WithStatus(DataSourceStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline DataSource& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
+
+    /**
+     * <p>The identifier of the Amazon Q Business data source.</p>
+     */
+    inline DataSource& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the Amazon Q Business data source.</p>
+     */
+    inline DataSource& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
 
 
     /**
@@ -226,6 +164,37 @@ namespace Model
 
 
     /**
+     * <p>The Unix timestamp when the Amazon Q Business data source was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * <p>The Unix timestamp when the Amazon Q Business data source was created.</p>
+     */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The Unix timestamp when the Amazon Q Business data source was created.</p>
+     */
+    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+
+    /**
+     * <p>The Unix timestamp when the Amazon Q Business data source was created.</p>
+     */
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
+
+    /**
+     * <p>The Unix timestamp when the Amazon Q Business data source was created.</p>
+     */
+    inline DataSource& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
+
+    /**
+     * <p>The Unix timestamp when the Amazon Q Business data source was created.</p>
+     */
+    inline DataSource& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+
+
+    /**
      * <p>The Unix timestamp when the Amazon Q Business data source was last updated.
      * </p>
      */
@@ -261,25 +230,56 @@ namespace Model
      */
     inline DataSource& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The status of the Amazon Q Business data source.</p>
+     */
+    inline const DataSourceStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the Amazon Q Business data source.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the Amazon Q Business data source.</p>
+     */
+    inline void SetStatus(const DataSourceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>The status of the Amazon Q Business data source.</p>
+     */
+    inline void SetStatus(DataSourceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>The status of the Amazon Q Business data source.</p>
+     */
+    inline DataSource& WithStatus(const DataSourceStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The status of the Amazon Q Business data source.</p>
+     */
+    inline DataSource& WithStatus(DataSourceStatus&& value) { SetStatus(std::move(value)); return *this;}
+
   private:
-
-    Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet = false;
-
-    Aws::String m_dataSourceId;
-    bool m_dataSourceIdHasBeenSet = false;
 
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet = false;
 
-    DataSourceStatus m_status;
-    bool m_statusHasBeenSet = false;
+    Aws::String m_dataSourceId;
+    bool m_dataSourceIdHasBeenSet = false;
 
     Aws::String m_type;
     bool m_typeHasBeenSet = false;
 
+    Aws::Utils::DateTime m_createdAt;
+    bool m_createdAtHasBeenSet = false;
+
     Aws::Utils::DateTime m_updatedAt;
     bool m_updatedAtHasBeenSet = false;
+
+    DataSourceStatus m_status;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

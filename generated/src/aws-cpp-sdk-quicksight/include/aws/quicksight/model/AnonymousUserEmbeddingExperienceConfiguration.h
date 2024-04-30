@@ -8,6 +8,7 @@
 #include <aws/quicksight/model/AnonymousUserDashboardEmbeddingConfiguration.h>
 #include <aws/quicksight/model/AnonymousUserDashboardVisualEmbeddingConfiguration.h>
 #include <aws/quicksight/model/AnonymousUserQSearchBarEmbeddingConfiguration.h>
+#include <aws/quicksight/model/AnonymousUserGenerativeQnAEmbeddingConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -144,6 +145,43 @@ namespace Model
      */
     inline AnonymousUserEmbeddingExperienceConfiguration& WithQSearchBar(AnonymousUserQSearchBarEmbeddingConfiguration&& value) { SetQSearchBar(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Generative Q&amp;A experience that you want to use for anonymous user
+     * embedding.</p>
+     */
+    inline const AnonymousUserGenerativeQnAEmbeddingConfiguration& GetGenerativeQnA() const{ return m_generativeQnA; }
+
+    /**
+     * <p>The Generative Q&amp;A experience that you want to use for anonymous user
+     * embedding.</p>
+     */
+    inline bool GenerativeQnAHasBeenSet() const { return m_generativeQnAHasBeenSet; }
+
+    /**
+     * <p>The Generative Q&amp;A experience that you want to use for anonymous user
+     * embedding.</p>
+     */
+    inline void SetGenerativeQnA(const AnonymousUserGenerativeQnAEmbeddingConfiguration& value) { m_generativeQnAHasBeenSet = true; m_generativeQnA = value; }
+
+    /**
+     * <p>The Generative Q&amp;A experience that you want to use for anonymous user
+     * embedding.</p>
+     */
+    inline void SetGenerativeQnA(AnonymousUserGenerativeQnAEmbeddingConfiguration&& value) { m_generativeQnAHasBeenSet = true; m_generativeQnA = std::move(value); }
+
+    /**
+     * <p>The Generative Q&amp;A experience that you want to use for anonymous user
+     * embedding.</p>
+     */
+    inline AnonymousUserEmbeddingExperienceConfiguration& WithGenerativeQnA(const AnonymousUserGenerativeQnAEmbeddingConfiguration& value) { SetGenerativeQnA(value); return *this;}
+
+    /**
+     * <p>The Generative Q&amp;A experience that you want to use for anonymous user
+     * embedding.</p>
+     */
+    inline AnonymousUserEmbeddingExperienceConfiguration& WithGenerativeQnA(AnonymousUserGenerativeQnAEmbeddingConfiguration&& value) { SetGenerativeQnA(std::move(value)); return *this;}
+
   private:
 
     AnonymousUserDashboardEmbeddingConfiguration m_dashboard;
@@ -154,6 +192,9 @@ namespace Model
 
     AnonymousUserQSearchBarEmbeddingConfiguration m_qSearchBar;
     bool m_qSearchBarHasBeenSet = false;
+
+    AnonymousUserGenerativeQnAEmbeddingConfiguration m_generativeQnA;
+    bool m_generativeQnAHasBeenSet = false;
   };
 
 } // namespace Model

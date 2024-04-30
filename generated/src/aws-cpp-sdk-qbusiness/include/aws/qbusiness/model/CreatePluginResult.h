@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qbusiness/model/PluginBuildStatus.h>
 #include <utility>
 
 namespace Aws
@@ -30,6 +31,42 @@ namespace Model
     AWS_QBUSINESS_API CreatePluginResult();
     AWS_QBUSINESS_API CreatePluginResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QBUSINESS_API CreatePluginResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>The identifier of the plugin created.</p>
+     */
+    inline const Aws::String& GetPluginId() const{ return m_pluginId; }
+
+    /**
+     * <p>The identifier of the plugin created.</p>
+     */
+    inline void SetPluginId(const Aws::String& value) { m_pluginId = value; }
+
+    /**
+     * <p>The identifier of the plugin created.</p>
+     */
+    inline void SetPluginId(Aws::String&& value) { m_pluginId = std::move(value); }
+
+    /**
+     * <p>The identifier of the plugin created.</p>
+     */
+    inline void SetPluginId(const char* value) { m_pluginId.assign(value); }
+
+    /**
+     * <p>The identifier of the plugin created.</p>
+     */
+    inline CreatePluginResult& WithPluginId(const Aws::String& value) { SetPluginId(value); return *this;}
+
+    /**
+     * <p>The identifier of the plugin created.</p>
+     */
+    inline CreatePluginResult& WithPluginId(Aws::String&& value) { SetPluginId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the plugin created.</p>
+     */
+    inline CreatePluginResult& WithPluginId(const char* value) { SetPluginId(value); return *this;}
 
 
     /**
@@ -69,39 +106,29 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the plugin created.</p>
+     * <p>The current status of a plugin. A plugin is modified asynchronously.</p>
      */
-    inline const Aws::String& GetPluginId() const{ return m_pluginId; }
+    inline const PluginBuildStatus& GetBuildStatus() const{ return m_buildStatus; }
 
     /**
-     * <p>The identifier of the plugin created.</p>
+     * <p>The current status of a plugin. A plugin is modified asynchronously.</p>
      */
-    inline void SetPluginId(const Aws::String& value) { m_pluginId = value; }
+    inline void SetBuildStatus(const PluginBuildStatus& value) { m_buildStatus = value; }
 
     /**
-     * <p>The identifier of the plugin created.</p>
+     * <p>The current status of a plugin. A plugin is modified asynchronously.</p>
      */
-    inline void SetPluginId(Aws::String&& value) { m_pluginId = std::move(value); }
+    inline void SetBuildStatus(PluginBuildStatus&& value) { m_buildStatus = std::move(value); }
 
     /**
-     * <p>The identifier of the plugin created.</p>
+     * <p>The current status of a plugin. A plugin is modified asynchronously.</p>
      */
-    inline void SetPluginId(const char* value) { m_pluginId.assign(value); }
+    inline CreatePluginResult& WithBuildStatus(const PluginBuildStatus& value) { SetBuildStatus(value); return *this;}
 
     /**
-     * <p>The identifier of the plugin created.</p>
+     * <p>The current status of a plugin. A plugin is modified asynchronously.</p>
      */
-    inline CreatePluginResult& WithPluginId(const Aws::String& value) { SetPluginId(value); return *this;}
-
-    /**
-     * <p>The identifier of the plugin created.</p>
-     */
-    inline CreatePluginResult& WithPluginId(Aws::String&& value) { SetPluginId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the plugin created.</p>
-     */
-    inline CreatePluginResult& WithPluginId(const char* value) { SetPluginId(value); return *this;}
+    inline CreatePluginResult& WithBuildStatus(PluginBuildStatus&& value) { SetBuildStatus(std::move(value)); return *this;}
 
 
     
@@ -127,9 +154,11 @@ namespace Model
 
   private:
 
+    Aws::String m_pluginId;
+
     Aws::String m_pluginArn;
 
-    Aws::String m_pluginId;
+    PluginBuildStatus m_buildStatus;
 
     Aws::String m_requestId;
   };

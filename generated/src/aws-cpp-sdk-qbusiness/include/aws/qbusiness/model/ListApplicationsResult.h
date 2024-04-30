@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qbusiness/model/Application.h>
 #include <utility>
 
@@ -32,49 +32,6 @@ namespace Model
     AWS_QBUSINESS_API ListApplicationsResult();
     AWS_QBUSINESS_API ListApplicationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QBUSINESS_API ListApplicationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>An array of summary information on the configuration of one or more Amazon Q
-     * Business applications.</p>
-     */
-    inline const Aws::Vector<Application>& GetApplications() const{ return m_applications; }
-
-    /**
-     * <p>An array of summary information on the configuration of one or more Amazon Q
-     * Business applications.</p>
-     */
-    inline void SetApplications(const Aws::Vector<Application>& value) { m_applications = value; }
-
-    /**
-     * <p>An array of summary information on the configuration of one or more Amazon Q
-     * Business applications.</p>
-     */
-    inline void SetApplications(Aws::Vector<Application>&& value) { m_applications = std::move(value); }
-
-    /**
-     * <p>An array of summary information on the configuration of one or more Amazon Q
-     * Business applications.</p>
-     */
-    inline ListApplicationsResult& WithApplications(const Aws::Vector<Application>& value) { SetApplications(value); return *this;}
-
-    /**
-     * <p>An array of summary information on the configuration of one or more Amazon Q
-     * Business applications.</p>
-     */
-    inline ListApplicationsResult& WithApplications(Aws::Vector<Application>&& value) { SetApplications(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of summary information on the configuration of one or more Amazon Q
-     * Business applications.</p>
-     */
-    inline ListApplicationsResult& AddApplications(const Application& value) { m_applications.push_back(value); return *this; }
-
-    /**
-     * <p>An array of summary information on the configuration of one or more Amazon Q
-     * Business applications.</p>
-     */
-    inline ListApplicationsResult& AddApplications(Application&& value) { m_applications.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -127,6 +84,49 @@ namespace Model
     inline ListApplicationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
+    /**
+     * <p>An array of summary information on the configuration of one or more Amazon Q
+     * Business applications.</p>
+     */
+    inline const Aws::Vector<Application>& GetApplications() const{ return m_applications; }
+
+    /**
+     * <p>An array of summary information on the configuration of one or more Amazon Q
+     * Business applications.</p>
+     */
+    inline void SetApplications(const Aws::Vector<Application>& value) { m_applications = value; }
+
+    /**
+     * <p>An array of summary information on the configuration of one or more Amazon Q
+     * Business applications.</p>
+     */
+    inline void SetApplications(Aws::Vector<Application>&& value) { m_applications = std::move(value); }
+
+    /**
+     * <p>An array of summary information on the configuration of one or more Amazon Q
+     * Business applications.</p>
+     */
+    inline ListApplicationsResult& WithApplications(const Aws::Vector<Application>& value) { SetApplications(value); return *this;}
+
+    /**
+     * <p>An array of summary information on the configuration of one or more Amazon Q
+     * Business applications.</p>
+     */
+    inline ListApplicationsResult& WithApplications(Aws::Vector<Application>&& value) { SetApplications(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of summary information on the configuration of one or more Amazon Q
+     * Business applications.</p>
+     */
+    inline ListApplicationsResult& AddApplications(const Application& value) { m_applications.push_back(value); return *this; }
+
+    /**
+     * <p>An array of summary information on the configuration of one or more Amazon Q
+     * Business applications.</p>
+     */
+    inline ListApplicationsResult& AddApplications(Application&& value) { m_applications.push_back(std::move(value)); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -150,9 +150,9 @@ namespace Model
 
   private:
 
-    Aws::Vector<Application> m_applications;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<Application> m_applications;
 
     Aws::String m_requestId;
   };

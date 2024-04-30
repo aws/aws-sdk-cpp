@@ -29,6 +29,12 @@ ListApplicationsResult::ListApplicationsResult(const Aws::AmazonWebServiceResult
 ListApplicationsResult& ListApplicationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
+  }
+
   if(jsonValue.ValueExists("applications"))
   {
     Aws::Utils::Array<JsonView> applicationsJsonList = jsonValue.GetArray("applications");
@@ -36,12 +42,6 @@ ListApplicationsResult& ListApplicationsResult::operator =(const Aws::AmazonWebS
     {
       m_applications.push_back(applicationsJsonList[applicationsIndex].AsObject());
     }
-  }
-
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
   }
 
 

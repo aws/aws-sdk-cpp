@@ -5,12 +5,12 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
-#include <aws/qbusiness/model/ActionExecution.h>
-#include <aws/qbusiness/model/ActionReview.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/qbusiness/model/MessageType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/qbusiness/model/ActionReview.h>
+#include <aws/qbusiness/model/ActionExecution.h>
 #include <aws/qbusiness/model/AttachmentOutput.h>
 #include <aws/qbusiness/model/SourceAttribution.h>
 #include <utility>
@@ -43,126 +43,6 @@ namespace Model
     AWS_QBUSINESS_API Message(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Message& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    
-    inline const ActionExecution& GetActionExecution() const{ return m_actionExecution; }
-
-    
-    inline bool ActionExecutionHasBeenSet() const { return m_actionExecutionHasBeenSet; }
-
-    
-    inline void SetActionExecution(const ActionExecution& value) { m_actionExecutionHasBeenSet = true; m_actionExecution = value; }
-
-    
-    inline void SetActionExecution(ActionExecution&& value) { m_actionExecutionHasBeenSet = true; m_actionExecution = std::move(value); }
-
-    
-    inline Message& WithActionExecution(const ActionExecution& value) { SetActionExecution(value); return *this;}
-
-    
-    inline Message& WithActionExecution(ActionExecution&& value) { SetActionExecution(std::move(value)); return *this;}
-
-
-    
-    inline const ActionReview& GetActionReview() const{ return m_actionReview; }
-
-    
-    inline bool ActionReviewHasBeenSet() const { return m_actionReviewHasBeenSet; }
-
-    
-    inline void SetActionReview(const ActionReview& value) { m_actionReviewHasBeenSet = true; m_actionReview = value; }
-
-    
-    inline void SetActionReview(ActionReview&& value) { m_actionReviewHasBeenSet = true; m_actionReview = std::move(value); }
-
-    
-    inline Message& WithActionReview(const ActionReview& value) { SetActionReview(value); return *this;}
-
-    
-    inline Message& WithActionReview(ActionReview&& value) { SetActionReview(std::move(value)); return *this;}
-
-
-    /**
-     * <p>A file directly uploaded into an Amazon Q Business web experience chat.</p>
-     */
-    inline const Aws::Vector<AttachmentOutput>& GetAttachments() const{ return m_attachments; }
-
-    /**
-     * <p>A file directly uploaded into an Amazon Q Business web experience chat.</p>
-     */
-    inline bool AttachmentsHasBeenSet() const { return m_attachmentsHasBeenSet; }
-
-    /**
-     * <p>A file directly uploaded into an Amazon Q Business web experience chat.</p>
-     */
-    inline void SetAttachments(const Aws::Vector<AttachmentOutput>& value) { m_attachmentsHasBeenSet = true; m_attachments = value; }
-
-    /**
-     * <p>A file directly uploaded into an Amazon Q Business web experience chat.</p>
-     */
-    inline void SetAttachments(Aws::Vector<AttachmentOutput>&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::move(value); }
-
-    /**
-     * <p>A file directly uploaded into an Amazon Q Business web experience chat.</p>
-     */
-    inline Message& WithAttachments(const Aws::Vector<AttachmentOutput>& value) { SetAttachments(value); return *this;}
-
-    /**
-     * <p>A file directly uploaded into an Amazon Q Business web experience chat.</p>
-     */
-    inline Message& WithAttachments(Aws::Vector<AttachmentOutput>&& value) { SetAttachments(std::move(value)); return *this;}
-
-    /**
-     * <p>A file directly uploaded into an Amazon Q Business web experience chat.</p>
-     */
-    inline Message& AddAttachments(const AttachmentOutput& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(value); return *this; }
-
-    /**
-     * <p>A file directly uploaded into an Amazon Q Business web experience chat.</p>
-     */
-    inline Message& AddAttachments(AttachmentOutput&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(std::move(value)); return *this; }
-
-
-    /**
-     * <p>The content of the Amazon Q Business web experience message.</p>
-     */
-    inline const Aws::String& GetBody() const{ return m_body; }
-
-    /**
-     * <p>The content of the Amazon Q Business web experience message.</p>
-     */
-    inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
-
-    /**
-     * <p>The content of the Amazon Q Business web experience message.</p>
-     */
-    inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
-
-    /**
-     * <p>The content of the Amazon Q Business web experience message.</p>
-     */
-    inline void SetBody(Aws::String&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
-
-    /**
-     * <p>The content of the Amazon Q Business web experience message.</p>
-     */
-    inline void SetBody(const char* value) { m_bodyHasBeenSet = true; m_body.assign(value); }
-
-    /**
-     * <p>The content of the Amazon Q Business web experience message.</p>
-     */
-    inline Message& WithBody(const Aws::String& value) { SetBody(value); return *this;}
-
-    /**
-     * <p>The content of the Amazon Q Business web experience message.</p>
-     */
-    inline Message& WithBody(Aws::String&& value) { SetBody(std::move(value)); return *this;}
-
-    /**
-     * <p>The content of the Amazon Q Business web experience message.</p>
-     */
-    inline Message& WithBody(const char* value) { SetBody(value); return *this;}
 
 
     /**
@@ -207,52 +87,44 @@ namespace Model
 
 
     /**
-     * <p>The source documents used to generate Amazon Q Business web experience
-     * message.</p>
+     * <p>The content of the Amazon Q Business web experience message.</p>
      */
-    inline const Aws::Vector<SourceAttribution>& GetSourceAttribution() const{ return m_sourceAttribution; }
+    inline const Aws::String& GetBody() const{ return m_body; }
 
     /**
-     * <p>The source documents used to generate Amazon Q Business web experience
-     * message.</p>
+     * <p>The content of the Amazon Q Business web experience message.</p>
      */
-    inline bool SourceAttributionHasBeenSet() const { return m_sourceAttributionHasBeenSet; }
+    inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
 
     /**
-     * <p>The source documents used to generate Amazon Q Business web experience
-     * message.</p>
+     * <p>The content of the Amazon Q Business web experience message.</p>
      */
-    inline void SetSourceAttribution(const Aws::Vector<SourceAttribution>& value) { m_sourceAttributionHasBeenSet = true; m_sourceAttribution = value; }
+    inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
 
     /**
-     * <p>The source documents used to generate Amazon Q Business web experience
-     * message.</p>
+     * <p>The content of the Amazon Q Business web experience message.</p>
      */
-    inline void SetSourceAttribution(Aws::Vector<SourceAttribution>&& value) { m_sourceAttributionHasBeenSet = true; m_sourceAttribution = std::move(value); }
+    inline void SetBody(Aws::String&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
 
     /**
-     * <p>The source documents used to generate Amazon Q Business web experience
-     * message.</p>
+     * <p>The content of the Amazon Q Business web experience message.</p>
      */
-    inline Message& WithSourceAttribution(const Aws::Vector<SourceAttribution>& value) { SetSourceAttribution(value); return *this;}
+    inline void SetBody(const char* value) { m_bodyHasBeenSet = true; m_body.assign(value); }
 
     /**
-     * <p>The source documents used to generate Amazon Q Business web experience
-     * message.</p>
+     * <p>The content of the Amazon Q Business web experience message.</p>
      */
-    inline Message& WithSourceAttribution(Aws::Vector<SourceAttribution>&& value) { SetSourceAttribution(std::move(value)); return *this;}
+    inline Message& WithBody(const Aws::String& value) { SetBody(value); return *this;}
 
     /**
-     * <p>The source documents used to generate Amazon Q Business web experience
-     * message.</p>
+     * <p>The content of the Amazon Q Business web experience message.</p>
      */
-    inline Message& AddSourceAttribution(const SourceAttribution& value) { m_sourceAttributionHasBeenSet = true; m_sourceAttribution.push_back(value); return *this; }
+    inline Message& WithBody(Aws::String&& value) { SetBody(std::move(value)); return *this;}
 
     /**
-     * <p>The source documents used to generate Amazon Q Business web experience
-     * message.</p>
+     * <p>The content of the Amazon Q Business web experience message.</p>
      */
-    inline Message& AddSourceAttribution(SourceAttribution&& value) { m_sourceAttributionHasBeenSet = true; m_sourceAttribution.push_back(std::move(value)); return *this; }
+    inline Message& WithBody(const char* value) { SetBody(value); return *this;}
 
 
     /**
@@ -322,31 +194,159 @@ namespace Model
      */
     inline Message& WithType(MessageType&& value) { SetType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A file directly uploaded into an Amazon Q Business web experience chat.</p>
+     */
+    inline const Aws::Vector<AttachmentOutput>& GetAttachments() const{ return m_attachments; }
+
+    /**
+     * <p>A file directly uploaded into an Amazon Q Business web experience chat.</p>
+     */
+    inline bool AttachmentsHasBeenSet() const { return m_attachmentsHasBeenSet; }
+
+    /**
+     * <p>A file directly uploaded into an Amazon Q Business web experience chat.</p>
+     */
+    inline void SetAttachments(const Aws::Vector<AttachmentOutput>& value) { m_attachmentsHasBeenSet = true; m_attachments = value; }
+
+    /**
+     * <p>A file directly uploaded into an Amazon Q Business web experience chat.</p>
+     */
+    inline void SetAttachments(Aws::Vector<AttachmentOutput>&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::move(value); }
+
+    /**
+     * <p>A file directly uploaded into an Amazon Q Business web experience chat.</p>
+     */
+    inline Message& WithAttachments(const Aws::Vector<AttachmentOutput>& value) { SetAttachments(value); return *this;}
+
+    /**
+     * <p>A file directly uploaded into an Amazon Q Business web experience chat.</p>
+     */
+    inline Message& WithAttachments(Aws::Vector<AttachmentOutput>&& value) { SetAttachments(std::move(value)); return *this;}
+
+    /**
+     * <p>A file directly uploaded into an Amazon Q Business web experience chat.</p>
+     */
+    inline Message& AddAttachments(const AttachmentOutput& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(value); return *this; }
+
+    /**
+     * <p>A file directly uploaded into an Amazon Q Business web experience chat.</p>
+     */
+    inline Message& AddAttachments(AttachmentOutput&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The source documents used to generate Amazon Q Business web experience
+     * message.</p>
+     */
+    inline const Aws::Vector<SourceAttribution>& GetSourceAttribution() const{ return m_sourceAttribution; }
+
+    /**
+     * <p>The source documents used to generate Amazon Q Business web experience
+     * message.</p>
+     */
+    inline bool SourceAttributionHasBeenSet() const { return m_sourceAttributionHasBeenSet; }
+
+    /**
+     * <p>The source documents used to generate Amazon Q Business web experience
+     * message.</p>
+     */
+    inline void SetSourceAttribution(const Aws::Vector<SourceAttribution>& value) { m_sourceAttributionHasBeenSet = true; m_sourceAttribution = value; }
+
+    /**
+     * <p>The source documents used to generate Amazon Q Business web experience
+     * message.</p>
+     */
+    inline void SetSourceAttribution(Aws::Vector<SourceAttribution>&& value) { m_sourceAttributionHasBeenSet = true; m_sourceAttribution = std::move(value); }
+
+    /**
+     * <p>The source documents used to generate Amazon Q Business web experience
+     * message.</p>
+     */
+    inline Message& WithSourceAttribution(const Aws::Vector<SourceAttribution>& value) { SetSourceAttribution(value); return *this;}
+
+    /**
+     * <p>The source documents used to generate Amazon Q Business web experience
+     * message.</p>
+     */
+    inline Message& WithSourceAttribution(Aws::Vector<SourceAttribution>&& value) { SetSourceAttribution(std::move(value)); return *this;}
+
+    /**
+     * <p>The source documents used to generate Amazon Q Business web experience
+     * message.</p>
+     */
+    inline Message& AddSourceAttribution(const SourceAttribution& value) { m_sourceAttributionHasBeenSet = true; m_sourceAttribution.push_back(value); return *this; }
+
+    /**
+     * <p>The source documents used to generate Amazon Q Business web experience
+     * message.</p>
+     */
+    inline Message& AddSourceAttribution(SourceAttribution&& value) { m_sourceAttributionHasBeenSet = true; m_sourceAttribution.push_back(std::move(value)); return *this; }
+
+
+    
+    inline const ActionReview& GetActionReview() const{ return m_actionReview; }
+
+    
+    inline bool ActionReviewHasBeenSet() const { return m_actionReviewHasBeenSet; }
+
+    
+    inline void SetActionReview(const ActionReview& value) { m_actionReviewHasBeenSet = true; m_actionReview = value; }
+
+    
+    inline void SetActionReview(ActionReview&& value) { m_actionReviewHasBeenSet = true; m_actionReview = std::move(value); }
+
+    
+    inline Message& WithActionReview(const ActionReview& value) { SetActionReview(value); return *this;}
+
+    
+    inline Message& WithActionReview(ActionReview&& value) { SetActionReview(std::move(value)); return *this;}
+
+
+    
+    inline const ActionExecution& GetActionExecution() const{ return m_actionExecution; }
+
+    
+    inline bool ActionExecutionHasBeenSet() const { return m_actionExecutionHasBeenSet; }
+
+    
+    inline void SetActionExecution(const ActionExecution& value) { m_actionExecutionHasBeenSet = true; m_actionExecution = value; }
+
+    
+    inline void SetActionExecution(ActionExecution&& value) { m_actionExecutionHasBeenSet = true; m_actionExecution = std::move(value); }
+
+    
+    inline Message& WithActionExecution(const ActionExecution& value) { SetActionExecution(value); return *this;}
+
+    
+    inline Message& WithActionExecution(ActionExecution&& value) { SetActionExecution(std::move(value)); return *this;}
+
   private:
-
-    ActionExecution m_actionExecution;
-    bool m_actionExecutionHasBeenSet = false;
-
-    ActionReview m_actionReview;
-    bool m_actionReviewHasBeenSet = false;
-
-    Aws::Vector<AttachmentOutput> m_attachments;
-    bool m_attachmentsHasBeenSet = false;
-
-    Aws::String m_body;
-    bool m_bodyHasBeenSet = false;
 
     Aws::String m_messageId;
     bool m_messageIdHasBeenSet = false;
 
-    Aws::Vector<SourceAttribution> m_sourceAttribution;
-    bool m_sourceAttributionHasBeenSet = false;
+    Aws::String m_body;
+    bool m_bodyHasBeenSet = false;
 
     Aws::Utils::DateTime m_time;
     bool m_timeHasBeenSet = false;
 
     MessageType m_type;
     bool m_typeHasBeenSet = false;
+
+    Aws::Vector<AttachmentOutput> m_attachments;
+    bool m_attachmentsHasBeenSet = false;
+
+    Aws::Vector<SourceAttribution> m_sourceAttribution;
+    bool m_sourceAttributionHasBeenSet = false;
+
+    ActionReview m_actionReview;
+    bool m_actionReviewHasBeenSet = false;
+
+    ActionExecution m_actionExecution;
+    bool m_actionExecutionHasBeenSet = false;
   };
 
 } // namespace Model

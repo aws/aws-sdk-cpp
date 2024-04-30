@@ -33,42 +33,6 @@ namespace Model
 
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the Amazon Q Business application. </p>
-     */
-    inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the Amazon Q Business application. </p>
-     */
-    inline void SetApplicationArn(const Aws::String& value) { m_applicationArn = value; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the Amazon Q Business application. </p>
-     */
-    inline void SetApplicationArn(Aws::String&& value) { m_applicationArn = std::move(value); }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the Amazon Q Business application. </p>
-     */
-    inline void SetApplicationArn(const char* value) { m_applicationArn.assign(value); }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the Amazon Q Business application. </p>
-     */
-    inline CreateApplicationResult& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the Amazon Q Business application. </p>
-     */
-    inline CreateApplicationResult& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the Amazon Q Business application. </p>
-     */
-    inline CreateApplicationResult& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
-
-
-    /**
      * <p>The identifier of the Amazon Q Business application.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
@@ -104,6 +68,42 @@ namespace Model
     inline CreateApplicationResult& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Amazon Q Business application. </p>
+     */
+    inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Amazon Q Business application. </p>
+     */
+    inline void SetApplicationArn(const Aws::String& value) { m_applicationArn = value; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Amazon Q Business application. </p>
+     */
+    inline void SetApplicationArn(Aws::String&& value) { m_applicationArn = std::move(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Amazon Q Business application. </p>
+     */
+    inline void SetApplicationArn(const char* value) { m_applicationArn.assign(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Amazon Q Business application. </p>
+     */
+    inline CreateApplicationResult& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Amazon Q Business application. </p>
+     */
+    inline CreateApplicationResult& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Amazon Q Business application. </p>
+     */
+    inline CreateApplicationResult& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -127,9 +127,9 @@ namespace Model
 
   private:
 
-    Aws::String m_applicationArn;
-
     Aws::String m_applicationId;
+
+    Aws::String m_applicationArn;
 
     Aws::String m_requestId;
   };

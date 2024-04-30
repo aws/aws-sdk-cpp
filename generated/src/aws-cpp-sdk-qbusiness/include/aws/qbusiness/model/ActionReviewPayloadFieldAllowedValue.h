@@ -40,37 +40,6 @@ namespace Model
 
 
     /**
-     * <p>The name of the field.</p>
-     */
-    inline Aws::Utils::DocumentView GetDisplayValue() const{ return m_displayValue; }
-
-    /**
-     * <p>The name of the field.</p>
-     */
-    inline bool DisplayValueHasBeenSet() const { return m_displayValueHasBeenSet; }
-
-    /**
-     * <p>The name of the field.</p>
-     */
-    inline void SetDisplayValue(const Aws::Utils::Document& value) { m_displayValueHasBeenSet = true; m_displayValue = value; }
-
-    /**
-     * <p>The name of the field.</p>
-     */
-    inline void SetDisplayValue(Aws::Utils::Document&& value) { m_displayValueHasBeenSet = true; m_displayValue = std::move(value); }
-
-    /**
-     * <p>The name of the field.</p>
-     */
-    inline ActionReviewPayloadFieldAllowedValue& WithDisplayValue(const Aws::Utils::Document& value) { SetDisplayValue(value); return *this;}
-
-    /**
-     * <p>The name of the field.</p>
-     */
-    inline ActionReviewPayloadFieldAllowedValue& WithDisplayValue(Aws::Utils::Document&& value) { SetDisplayValue(std::move(value)); return *this;}
-
-
-    /**
      * <p>The field value.</p>
      */
     inline Aws::Utils::DocumentView GetValue() const{ return m_value; }
@@ -100,13 +69,44 @@ namespace Model
      */
     inline ActionReviewPayloadFieldAllowedValue& WithValue(Aws::Utils::Document&& value) { SetValue(std::move(value)); return *this;}
 
-  private:
 
-    Aws::Utils::Document m_displayValue;
-    bool m_displayValueHasBeenSet = false;
+    /**
+     * <p>The name of the field.</p>
+     */
+    inline Aws::Utils::DocumentView GetDisplayValue() const{ return m_displayValue; }
+
+    /**
+     * <p>The name of the field.</p>
+     */
+    inline bool DisplayValueHasBeenSet() const { return m_displayValueHasBeenSet; }
+
+    /**
+     * <p>The name of the field.</p>
+     */
+    inline void SetDisplayValue(const Aws::Utils::Document& value) { m_displayValueHasBeenSet = true; m_displayValue = value; }
+
+    /**
+     * <p>The name of the field.</p>
+     */
+    inline void SetDisplayValue(Aws::Utils::Document&& value) { m_displayValueHasBeenSet = true; m_displayValue = std::move(value); }
+
+    /**
+     * <p>The name of the field.</p>
+     */
+    inline ActionReviewPayloadFieldAllowedValue& WithDisplayValue(const Aws::Utils::Document& value) { SetDisplayValue(value); return *this;}
+
+    /**
+     * <p>The name of the field.</p>
+     */
+    inline ActionReviewPayloadFieldAllowedValue& WithDisplayValue(Aws::Utils::Document&& value) { SetDisplayValue(std::move(value)); return *this;}
+
+  private:
 
     Aws::Utils::Document m_value;
     bool m_valueHasBeenSet = false;
+
+    Aws::Utils::Document m_displayValue;
+    bool m_displayValueHasBeenSet = false;
   };
 
 } // namespace Model

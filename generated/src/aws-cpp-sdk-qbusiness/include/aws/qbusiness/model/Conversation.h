@@ -81,37 +81,6 @@ namespace Model
 
 
     /**
-     * <p>The start time of the conversation.</p>
-     */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-
-    /**
-     * <p>The start time of the conversation.</p>
-     */
-    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-
-    /**
-     * <p>The start time of the conversation.</p>
-     */
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-
-    /**
-     * <p>The start time of the conversation.</p>
-     */
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-
-    /**
-     * <p>The start time of the conversation.</p>
-     */
-    inline Conversation& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-
-    /**
-     * <p>The start time of the conversation.</p>
-     */
-    inline Conversation& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
-
-
-    /**
      * <p>The title of the conversation.</p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
@@ -151,16 +120,47 @@ namespace Model
      */
     inline Conversation& WithTitle(const char* value) { SetTitle(value); return *this;}
 
+
+    /**
+     * <p>The start time of the conversation.</p>
+     */
+    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+
+    /**
+     * <p>The start time of the conversation.</p>
+     */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>The start time of the conversation.</p>
+     */
+    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+
+    /**
+     * <p>The start time of the conversation.</p>
+     */
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
+
+    /**
+     * <p>The start time of the conversation.</p>
+     */
+    inline Conversation& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
+
+    /**
+     * <p>The start time of the conversation.</p>
+     */
+    inline Conversation& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_conversationId;
     bool m_conversationIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet = false;
-
     Aws::String m_title;
     bool m_titleHasBeenSet = false;
+
+    Aws::Utils::DateTime m_startTime;
+    bool m_startTimeHasBeenSet = false;
   };
 
 } // namespace Model

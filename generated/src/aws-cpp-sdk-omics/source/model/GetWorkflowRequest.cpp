@@ -19,7 +19,8 @@ GetWorkflowRequest::GetWorkflowRequest() :
     m_idHasBeenSet(false),
     m_type(WorkflowType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_exportHasBeenSet(false)
+    m_exportHasBeenSet(false),
+    m_workflowOwnerIdHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,13 @@ void GetWorkflowRequest::AddQueryStringParameters(URI& uri) const
         uri.AddQueryStringParameter("export", ss.str());
         ss.str("");
       }
+    }
+
+    if(m_workflowOwnerIdHasBeenSet)
+    {
+      ss << m_workflowOwnerId;
+      uri.AddQueryStringParameter("workflowOwnerId", ss.str());
+      ss.str("");
     }
 
 }

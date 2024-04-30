@@ -10,6 +10,7 @@
 #include <aws/quicksight/model/DataLabelOptions.h>
 #include <aws/quicksight/model/TooltipOptions.h>
 #include <aws/quicksight/model/VisualPalette.h>
+#include <aws/quicksight/model/GaugeChartColorConfiguration.h>
 #include <aws/quicksight/model/VisualInteractionOptions.h>
 #include <utility>
 
@@ -205,6 +206,37 @@ namespace Model
 
 
     /**
+     * <p>The color configuration of a <code>GaugeChartVisual</code>.</p>
+     */
+    inline const GaugeChartColorConfiguration& GetColorConfiguration() const{ return m_colorConfiguration; }
+
+    /**
+     * <p>The color configuration of a <code>GaugeChartVisual</code>.</p>
+     */
+    inline bool ColorConfigurationHasBeenSet() const { return m_colorConfigurationHasBeenSet; }
+
+    /**
+     * <p>The color configuration of a <code>GaugeChartVisual</code>.</p>
+     */
+    inline void SetColorConfiguration(const GaugeChartColorConfiguration& value) { m_colorConfigurationHasBeenSet = true; m_colorConfiguration = value; }
+
+    /**
+     * <p>The color configuration of a <code>GaugeChartVisual</code>.</p>
+     */
+    inline void SetColorConfiguration(GaugeChartColorConfiguration&& value) { m_colorConfigurationHasBeenSet = true; m_colorConfiguration = std::move(value); }
+
+    /**
+     * <p>The color configuration of a <code>GaugeChartVisual</code>.</p>
+     */
+    inline GaugeChartConfiguration& WithColorConfiguration(const GaugeChartColorConfiguration& value) { SetColorConfiguration(value); return *this;}
+
+    /**
+     * <p>The color configuration of a <code>GaugeChartVisual</code>.</p>
+     */
+    inline GaugeChartConfiguration& WithColorConfiguration(GaugeChartColorConfiguration&& value) { SetColorConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>The general visual interactions setup for a visual.</p>
      */
     inline const VisualInteractionOptions& GetInteractions() const{ return m_interactions; }
@@ -250,6 +282,9 @@ namespace Model
 
     VisualPalette m_visualPalette;
     bool m_visualPaletteHasBeenSet = false;
+
+    GaugeChartColorConfiguration m_colorConfiguration;
+    bool m_colorConfigurationHasBeenSet = false;
 
     VisualInteractionOptions m_interactions;
     bool m_interactionsHasBeenSet = false;

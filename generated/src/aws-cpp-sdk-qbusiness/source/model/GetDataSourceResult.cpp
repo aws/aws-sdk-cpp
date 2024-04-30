@@ -37,21 +37,9 @@ GetDataSourceResult& GetDataSourceResult::operator =(const Aws::AmazonWebService
 
   }
 
-  if(jsonValue.ValueExists("configuration"))
+  if(jsonValue.ValueExists("indexId"))
   {
-    m_configuration = jsonValue.GetObject("configuration");
-
-  }
-
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetDouble("createdAt");
-
-  }
-
-  if(jsonValue.ValueExists("dataSourceArn"))
-  {
-    m_dataSourceArn = jsonValue.GetString("dataSourceArn");
+    m_indexId = jsonValue.GetString("indexId");
 
   }
 
@@ -61,9 +49,9 @@ GetDataSourceResult& GetDataSourceResult::operator =(const Aws::AmazonWebService
 
   }
 
-  if(jsonValue.ValueExists("description"))
+  if(jsonValue.ValueExists("dataSourceArn"))
   {
-    m_description = jsonValue.GetString("description");
+    m_dataSourceArn = jsonValue.GetString("dataSourceArn");
 
   }
 
@@ -73,27 +61,39 @@ GetDataSourceResult& GetDataSourceResult::operator =(const Aws::AmazonWebService
 
   }
 
-  if(jsonValue.ValueExists("documentEnrichmentConfiguration"))
+  if(jsonValue.ValueExists("type"))
   {
-    m_documentEnrichmentConfiguration = jsonValue.GetObject("documentEnrichmentConfiguration");
+    m_type = jsonValue.GetString("type");
 
   }
 
-  if(jsonValue.ValueExists("error"))
+  if(jsonValue.ValueExists("configuration"))
   {
-    m_error = jsonValue.GetObject("error");
+    m_configuration = jsonValue.GetObject("configuration");
 
   }
 
-  if(jsonValue.ValueExists("indexId"))
+  if(jsonValue.ValueExists("vpcConfiguration"))
   {
-    m_indexId = jsonValue.GetString("indexId");
+    m_vpcConfiguration = jsonValue.GetObject("vpcConfiguration");
 
   }
 
-  if(jsonValue.ValueExists("roleArn"))
+  if(jsonValue.ValueExists("createdAt"))
   {
-    m_roleArn = jsonValue.GetString("roleArn");
+    m_createdAt = jsonValue.GetDouble("createdAt");
+
+  }
+
+  if(jsonValue.ValueExists("updatedAt"))
+  {
+    m_updatedAt = jsonValue.GetDouble("updatedAt");
+
+  }
+
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
 
   }
 
@@ -109,21 +109,21 @@ GetDataSourceResult& GetDataSourceResult::operator =(const Aws::AmazonWebService
 
   }
 
-  if(jsonValue.ValueExists("type"))
+  if(jsonValue.ValueExists("roleArn"))
   {
-    m_type = jsonValue.GetString("type");
+    m_roleArn = jsonValue.GetString("roleArn");
 
   }
 
-  if(jsonValue.ValueExists("updatedAt"))
+  if(jsonValue.ValueExists("error"))
   {
-    m_updatedAt = jsonValue.GetDouble("updatedAt");
+    m_error = jsonValue.GetObject("error");
 
   }
 
-  if(jsonValue.ValueExists("vpcConfiguration"))
+  if(jsonValue.ValueExists("documentEnrichmentConfiguration"))
   {
-    m_vpcConfiguration = jsonValue.GetObject("vpcConfiguration");
+    m_documentEnrichmentConfiguration = jsonValue.GetObject("documentEnrichmentConfiguration");
 
   }
 

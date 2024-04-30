@@ -147,42 +147,42 @@ namespace Model
 
 
     /**
-     * <p>Specifies the name assigned to one or more phone numbers.</p>
+     * <p>Specifies the updated name assigned to one or more phone numbers.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Specifies the name assigned to one or more phone numbers.</p>
+     * <p>Specifies the updated name assigned to one or more phone numbers.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>Specifies the name assigned to one or more phone numbers.</p>
+     * <p>Specifies the updated name assigned to one or more phone numbers.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Specifies the name assigned to one or more phone numbers.</p>
+     * <p>Specifies the updated name assigned to one or more phone numbers.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Specifies the name assigned to one or more phone numbers.</p>
+     * <p>Specifies the updated name assigned to one or more phone numbers.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Specifies the name assigned to one or more phone numbers.</p>
+     * <p>Specifies the updated name assigned to one or more phone numbers.</p>
      */
     inline UpdatePhoneNumberRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Specifies the name assigned to one or more phone numbers.</p>
+     * <p>Specifies the updated name assigned to one or more phone numbers.</p>
      */
     inline UpdatePhoneNumberRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the name assigned to one or more phone numbers.</p>
+     * <p>Specifies the updated name assigned to one or more phone numbers.</p>
      */
     inline UpdatePhoneNumberRequest& WithName(const char* value) { SetName(value); return *this;}
 

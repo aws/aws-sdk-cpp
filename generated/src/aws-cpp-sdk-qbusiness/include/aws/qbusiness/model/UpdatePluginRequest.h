@@ -7,8 +7,9 @@
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/qbusiness/QBusinessRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/qbusiness/model/PluginAuthConfiguration.h>
 #include <aws/qbusiness/model/PluginState.h>
+#include <aws/qbusiness/model/CustomPluginConfiguration.h>
+#include <aws/qbusiness/model/PluginAuthConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -76,34 +77,44 @@ namespace Model
 
 
     /**
-     * <p>The authentication configuration the plugin is using.</p>
+     * <p>The identifier of the plugin.</p>
      */
-    inline const PluginAuthConfiguration& GetAuthConfiguration() const{ return m_authConfiguration; }
+    inline const Aws::String& GetPluginId() const{ return m_pluginId; }
 
     /**
-     * <p>The authentication configuration the plugin is using.</p>
+     * <p>The identifier of the plugin.</p>
      */
-    inline bool AuthConfigurationHasBeenSet() const { return m_authConfigurationHasBeenSet; }
+    inline bool PluginIdHasBeenSet() const { return m_pluginIdHasBeenSet; }
 
     /**
-     * <p>The authentication configuration the plugin is using.</p>
+     * <p>The identifier of the plugin.</p>
      */
-    inline void SetAuthConfiguration(const PluginAuthConfiguration& value) { m_authConfigurationHasBeenSet = true; m_authConfiguration = value; }
+    inline void SetPluginId(const Aws::String& value) { m_pluginIdHasBeenSet = true; m_pluginId = value; }
 
     /**
-     * <p>The authentication configuration the plugin is using.</p>
+     * <p>The identifier of the plugin.</p>
      */
-    inline void SetAuthConfiguration(PluginAuthConfiguration&& value) { m_authConfigurationHasBeenSet = true; m_authConfiguration = std::move(value); }
+    inline void SetPluginId(Aws::String&& value) { m_pluginIdHasBeenSet = true; m_pluginId = std::move(value); }
 
     /**
-     * <p>The authentication configuration the plugin is using.</p>
+     * <p>The identifier of the plugin.</p>
      */
-    inline UpdatePluginRequest& WithAuthConfiguration(const PluginAuthConfiguration& value) { SetAuthConfiguration(value); return *this;}
+    inline void SetPluginId(const char* value) { m_pluginIdHasBeenSet = true; m_pluginId.assign(value); }
 
     /**
-     * <p>The authentication configuration the plugin is using.</p>
+     * <p>The identifier of the plugin.</p>
      */
-    inline UpdatePluginRequest& WithAuthConfiguration(PluginAuthConfiguration&& value) { SetAuthConfiguration(std::move(value)); return *this;}
+    inline UpdatePluginRequest& WithPluginId(const Aws::String& value) { SetPluginId(value); return *this;}
+
+    /**
+     * <p>The identifier of the plugin.</p>
+     */
+    inline UpdatePluginRequest& WithPluginId(Aws::String&& value) { SetPluginId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the plugin.</p>
+     */
+    inline UpdatePluginRequest& WithPluginId(const char* value) { SetPluginId(value); return *this;}
 
 
     /**
@@ -148,44 +159,34 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the plugin.</p>
+     * <p>The status of the plugin. </p>
      */
-    inline const Aws::String& GetPluginId() const{ return m_pluginId; }
+    inline const PluginState& GetState() const{ return m_state; }
 
     /**
-     * <p>The identifier of the plugin.</p>
+     * <p>The status of the plugin. </p>
      */
-    inline bool PluginIdHasBeenSet() const { return m_pluginIdHasBeenSet; }
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>The identifier of the plugin.</p>
+     * <p>The status of the plugin. </p>
      */
-    inline void SetPluginId(const Aws::String& value) { m_pluginIdHasBeenSet = true; m_pluginId = value; }
+    inline void SetState(const PluginState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The identifier of the plugin.</p>
+     * <p>The status of the plugin. </p>
      */
-    inline void SetPluginId(Aws::String&& value) { m_pluginIdHasBeenSet = true; m_pluginId = std::move(value); }
+    inline void SetState(PluginState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The identifier of the plugin.</p>
+     * <p>The status of the plugin. </p>
      */
-    inline void SetPluginId(const char* value) { m_pluginIdHasBeenSet = true; m_pluginId.assign(value); }
+    inline UpdatePluginRequest& WithState(const PluginState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The identifier of the plugin.</p>
+     * <p>The status of the plugin. </p>
      */
-    inline UpdatePluginRequest& WithPluginId(const Aws::String& value) { SetPluginId(value); return *this;}
-
-    /**
-     * <p>The identifier of the plugin.</p>
-     */
-    inline UpdatePluginRequest& WithPluginId(Aws::String&& value) { SetPluginId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the plugin.</p>
-     */
-    inline UpdatePluginRequest& WithPluginId(const char* value) { SetPluginId(value); return *this;}
+    inline UpdatePluginRequest& WithState(PluginState&& value) { SetState(std::move(value)); return *this;}
 
 
     /**
@@ -230,54 +231,88 @@ namespace Model
 
 
     /**
-     * <p>The status of the plugin. </p>
+     * <p>The configuration for a custom plugin.</p>
      */
-    inline const PluginState& GetState() const{ return m_state; }
+    inline const CustomPluginConfiguration& GetCustomPluginConfiguration() const{ return m_customPluginConfiguration; }
 
     /**
-     * <p>The status of the plugin. </p>
+     * <p>The configuration for a custom plugin.</p>
      */
-    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+    inline bool CustomPluginConfigurationHasBeenSet() const { return m_customPluginConfigurationHasBeenSet; }
 
     /**
-     * <p>The status of the plugin. </p>
+     * <p>The configuration for a custom plugin.</p>
      */
-    inline void SetState(const PluginState& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetCustomPluginConfiguration(const CustomPluginConfiguration& value) { m_customPluginConfigurationHasBeenSet = true; m_customPluginConfiguration = value; }
 
     /**
-     * <p>The status of the plugin. </p>
+     * <p>The configuration for a custom plugin.</p>
      */
-    inline void SetState(PluginState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
+    inline void SetCustomPluginConfiguration(CustomPluginConfiguration&& value) { m_customPluginConfigurationHasBeenSet = true; m_customPluginConfiguration = std::move(value); }
 
     /**
-     * <p>The status of the plugin. </p>
+     * <p>The configuration for a custom plugin.</p>
      */
-    inline UpdatePluginRequest& WithState(const PluginState& value) { SetState(value); return *this;}
+    inline UpdatePluginRequest& WithCustomPluginConfiguration(const CustomPluginConfiguration& value) { SetCustomPluginConfiguration(value); return *this;}
 
     /**
-     * <p>The status of the plugin. </p>
+     * <p>The configuration for a custom plugin.</p>
      */
-    inline UpdatePluginRequest& WithState(PluginState&& value) { SetState(std::move(value)); return *this;}
+    inline UpdatePluginRequest& WithCustomPluginConfiguration(CustomPluginConfiguration&& value) { SetCustomPluginConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The authentication configuration the plugin is using.</p>
+     */
+    inline const PluginAuthConfiguration& GetAuthConfiguration() const{ return m_authConfiguration; }
+
+    /**
+     * <p>The authentication configuration the plugin is using.</p>
+     */
+    inline bool AuthConfigurationHasBeenSet() const { return m_authConfigurationHasBeenSet; }
+
+    /**
+     * <p>The authentication configuration the plugin is using.</p>
+     */
+    inline void SetAuthConfiguration(const PluginAuthConfiguration& value) { m_authConfigurationHasBeenSet = true; m_authConfiguration = value; }
+
+    /**
+     * <p>The authentication configuration the plugin is using.</p>
+     */
+    inline void SetAuthConfiguration(PluginAuthConfiguration&& value) { m_authConfigurationHasBeenSet = true; m_authConfiguration = std::move(value); }
+
+    /**
+     * <p>The authentication configuration the plugin is using.</p>
+     */
+    inline UpdatePluginRequest& WithAuthConfiguration(const PluginAuthConfiguration& value) { SetAuthConfiguration(value); return *this;}
+
+    /**
+     * <p>The authentication configuration the plugin is using.</p>
+     */
+    inline UpdatePluginRequest& WithAuthConfiguration(PluginAuthConfiguration&& value) { SetAuthConfiguration(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet = false;
 
-    PluginAuthConfiguration m_authConfiguration;
-    bool m_authConfigurationHasBeenSet = false;
+    Aws::String m_pluginId;
+    bool m_pluginIdHasBeenSet = false;
 
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet = false;
 
-    Aws::String m_pluginId;
-    bool m_pluginIdHasBeenSet = false;
+    PluginState m_state;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_serverUrl;
     bool m_serverUrlHasBeenSet = false;
 
-    PluginState m_state;
-    bool m_stateHasBeenSet = false;
+    CustomPluginConfiguration m_customPluginConfiguration;
+    bool m_customPluginConfigurationHasBeenSet = false;
+
+    PluginAuthConfiguration m_authConfiguration;
+    bool m_authConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

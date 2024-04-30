@@ -29,15 +29,15 @@ CreateRetrieverResult::CreateRetrieverResult(const Aws::AmazonWebServiceResult<J
 CreateRetrieverResult& CreateRetrieverResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("retrieverArn"))
-  {
-    m_retrieverArn = jsonValue.GetString("retrieverArn");
-
-  }
-
   if(jsonValue.ValueExists("retrieverId"))
   {
     m_retrieverId = jsonValue.GetString("retrieverId");
+
+  }
+
+  if(jsonValue.ValueExists("retrieverArn"))
+  {
+    m_retrieverArn = jsonValue.GetString("retrieverArn");
 
   }
 

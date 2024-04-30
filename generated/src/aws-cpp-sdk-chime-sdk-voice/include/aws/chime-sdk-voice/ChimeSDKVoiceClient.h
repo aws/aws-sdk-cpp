@@ -164,7 +164,12 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * <p>Updates one or more phone numbers.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates phone number product types, calling names, or phone number names. You
+         * can update one attribute at a time for each
+         * <code>UpdatePhoneNumberRequestItem</code>. For example, you can update the
+         * product type, the calling name, or phone name. </p>  <p>You cannot have a
+         * duplicate <code>phoneNumberId</code> in a request.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/BatchUpdatePhoneNumber">AWS
          * API Reference</a></p>
          */
@@ -1034,32 +1039,6 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * <p>Gets the Alexa Skill configuration for the SIP media
-         * application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetSipMediaApplicationAlexaSkillConfiguration">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::GetSipMediaApplicationAlexaSkillConfigurationOutcome GetSipMediaApplicationAlexaSkillConfiguration(const Model::GetSipMediaApplicationAlexaSkillConfigurationRequest& request) const;
-
-        /**
-         * A Callable wrapper for GetSipMediaApplicationAlexaSkillConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        template<typename GetSipMediaApplicationAlexaSkillConfigurationRequestT = Model::GetSipMediaApplicationAlexaSkillConfigurationRequest>
-        Model::GetSipMediaApplicationAlexaSkillConfigurationOutcomeCallable GetSipMediaApplicationAlexaSkillConfigurationCallable(const GetSipMediaApplicationAlexaSkillConfigurationRequestT& request) const
-        {
-            return SubmitCallable(&ChimeSDKVoiceClient::GetSipMediaApplicationAlexaSkillConfiguration, request);
-        }
-
-        /**
-         * An Async wrapper for GetSipMediaApplicationAlexaSkillConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        template<typename GetSipMediaApplicationAlexaSkillConfigurationRequestT = Model::GetSipMediaApplicationAlexaSkillConfigurationRequest>
-        void GetSipMediaApplicationAlexaSkillConfigurationAsync(const GetSipMediaApplicationAlexaSkillConfigurationRequestT& request, const GetSipMediaApplicationAlexaSkillConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
-        {
-            return SubmitAsync(&ChimeSDKVoiceClient::GetSipMediaApplicationAlexaSkillConfiguration, request, handler, context);
-        }
-
-        /**
          * <p>Retrieves the logging configuration for the specified SIP media
          * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetSipMediaApplicationLoggingConfiguration">AWS
@@ -1794,32 +1773,6 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * <p>Updates the Alexa Skill configuration for the SIP media
-         * application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutSipMediaApplicationAlexaSkillConfiguration">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::PutSipMediaApplicationAlexaSkillConfigurationOutcome PutSipMediaApplicationAlexaSkillConfiguration(const Model::PutSipMediaApplicationAlexaSkillConfigurationRequest& request) const;
-
-        /**
-         * A Callable wrapper for PutSipMediaApplicationAlexaSkillConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        template<typename PutSipMediaApplicationAlexaSkillConfigurationRequestT = Model::PutSipMediaApplicationAlexaSkillConfigurationRequest>
-        Model::PutSipMediaApplicationAlexaSkillConfigurationOutcomeCallable PutSipMediaApplicationAlexaSkillConfigurationCallable(const PutSipMediaApplicationAlexaSkillConfigurationRequestT& request) const
-        {
-            return SubmitCallable(&ChimeSDKVoiceClient::PutSipMediaApplicationAlexaSkillConfiguration, request);
-        }
-
-        /**
-         * An Async wrapper for PutSipMediaApplicationAlexaSkillConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        template<typename PutSipMediaApplicationAlexaSkillConfigurationRequestT = Model::PutSipMediaApplicationAlexaSkillConfigurationRequest>
-        void PutSipMediaApplicationAlexaSkillConfigurationAsync(const PutSipMediaApplicationAlexaSkillConfigurationRequestT& request, const PutSipMediaApplicationAlexaSkillConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
-        {
-            return SubmitAsync(&ChimeSDKVoiceClient::PutSipMediaApplicationAlexaSkillConfiguration, request, handler, context);
-        }
-
-        /**
          * <p>Updates the logging configuration for the specified SIP media
          * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutSipMediaApplicationLoggingConfiguration">AWS
@@ -2267,14 +2220,14 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * <p>Updates phone number details, such as product type or calling name, for the
-         * specified phone number ID. You can update one phone number detail at a time. For
-         * example, you can update either the product type or the calling name in one
-         * action.</p> <p>For numbers outside the U.S., you must use the Amazon Chime SDK
-         * SIP Media Application Dial-In product type.</p> <p>Updates to outbound calling
-         * names can take 72 hours to complete. Pending updates to outbound calling names
-         * must be complete before you can request another update.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Updates phone number details, such as product type, calling name, or phone
+         * number name for the specified phone number ID. You can update one phone number
+         * detail at a time. For example, you can update either the product type, calling
+         * name, or phone number name in one action.</p> <p>For numbers outside the U.S.,
+         * you must use the Amazon Chime SDK SIP Media Application Dial-In product
+         * type.</p> <p>Updates to outbound calling names can take 72 hours to complete.
+         * Pending updates to outbound calling names must be complete before you can
+         * request another update.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdatePhoneNumber">AWS
          * API Reference</a></p>
          */
@@ -2491,7 +2444,7 @@ namespace ChimeSDKVoice
          * written release. Such consent is required under various state laws, including
          * biometrics laws in Illinois, Texas, Washington and other state privacy laws.</p>
          * <p>You must provide a written release to each caller through a process that
-         * clearly reflects each caller��s informed consent before using Amazon Chime SDK
+         * clearly reflects each caller’s informed consent before using Amazon Chime SDK
          * Voice Insights service, as required under the terms of your agreement with AWS
          * governing your use of the service.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateVoiceProfile">AWS

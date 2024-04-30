@@ -7,10 +7,10 @@
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/qbusiness/QBusinessRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/qbusiness/model/BlockedPhrasesConfigurationUpdate.h>
-#include <aws/qbusiness/model/CreatorModeConfiguration.h>
 #include <aws/qbusiness/model/ResponseScope.h>
+#include <aws/qbusiness/model/BlockedPhrasesConfigurationUpdate.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/qbusiness/model/CreatorModeConfiguration.h>
 #include <aws/qbusiness/model/TopicConfiguration.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -88,37 +88,6 @@ namespace Model
 
 
     /**
-     * <p>The phrases blocked from chat by your chat control configuration.</p>
-     */
-    inline const BlockedPhrasesConfigurationUpdate& GetBlockedPhrasesConfigurationUpdate() const{ return m_blockedPhrasesConfigurationUpdate; }
-
-    /**
-     * <p>The phrases blocked from chat by your chat control configuration.</p>
-     */
-    inline bool BlockedPhrasesConfigurationUpdateHasBeenSet() const { return m_blockedPhrasesConfigurationUpdateHasBeenSet; }
-
-    /**
-     * <p>The phrases blocked from chat by your chat control configuration.</p>
-     */
-    inline void SetBlockedPhrasesConfigurationUpdate(const BlockedPhrasesConfigurationUpdate& value) { m_blockedPhrasesConfigurationUpdateHasBeenSet = true; m_blockedPhrasesConfigurationUpdate = value; }
-
-    /**
-     * <p>The phrases blocked from chat by your chat control configuration.</p>
-     */
-    inline void SetBlockedPhrasesConfigurationUpdate(BlockedPhrasesConfigurationUpdate&& value) { m_blockedPhrasesConfigurationUpdateHasBeenSet = true; m_blockedPhrasesConfigurationUpdate = std::move(value); }
-
-    /**
-     * <p>The phrases blocked from chat by your chat control configuration.</p>
-     */
-    inline UpdateChatControlsConfigurationRequest& WithBlockedPhrasesConfigurationUpdate(const BlockedPhrasesConfigurationUpdate& value) { SetBlockedPhrasesConfigurationUpdate(value); return *this;}
-
-    /**
-     * <p>The phrases blocked from chat by your chat control configuration.</p>
-     */
-    inline UpdateChatControlsConfigurationRequest& WithBlockedPhrasesConfigurationUpdate(BlockedPhrasesConfigurationUpdate&& value) { SetBlockedPhrasesConfigurationUpdate(std::move(value)); return *this;}
-
-
-    /**
      * <p>A token that you provide to identify the request to update a Amazon Q
      * Business application chat configuration.</p>
      */
@@ -168,37 +137,6 @@ namespace Model
 
 
     /**
-     * <p>The configuration details for <code>CREATOR_MODE</code>.</p>
-     */
-    inline const CreatorModeConfiguration& GetCreatorModeConfiguration() const{ return m_creatorModeConfiguration; }
-
-    /**
-     * <p>The configuration details for <code>CREATOR_MODE</code>.</p>
-     */
-    inline bool CreatorModeConfigurationHasBeenSet() const { return m_creatorModeConfigurationHasBeenSet; }
-
-    /**
-     * <p>The configuration details for <code>CREATOR_MODE</code>.</p>
-     */
-    inline void SetCreatorModeConfiguration(const CreatorModeConfiguration& value) { m_creatorModeConfigurationHasBeenSet = true; m_creatorModeConfiguration = value; }
-
-    /**
-     * <p>The configuration details for <code>CREATOR_MODE</code>.</p>
-     */
-    inline void SetCreatorModeConfiguration(CreatorModeConfiguration&& value) { m_creatorModeConfigurationHasBeenSet = true; m_creatorModeConfiguration = std::move(value); }
-
-    /**
-     * <p>The configuration details for <code>CREATOR_MODE</code>.</p>
-     */
-    inline UpdateChatControlsConfigurationRequest& WithCreatorModeConfiguration(const CreatorModeConfiguration& value) { SetCreatorModeConfiguration(value); return *this;}
-
-    /**
-     * <p>The configuration details for <code>CREATOR_MODE</code>.</p>
-     */
-    inline UpdateChatControlsConfigurationRequest& WithCreatorModeConfiguration(CreatorModeConfiguration&& value) { SetCreatorModeConfiguration(std::move(value)); return *this;}
-
-
-    /**
      * <p>The response scope configured for your application. This determines whether
      * your application uses its retrieval augmented generation (RAG) system to
      * generate answers only from your enterprise data, or also uses the large language
@@ -245,6 +183,37 @@ namespace Model
      * models (LLM) knowledge to respons to end user questions in chat.</p>
      */
     inline UpdateChatControlsConfigurationRequest& WithResponseScope(ResponseScope&& value) { SetResponseScope(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The phrases blocked from chat by your chat control configuration.</p>
+     */
+    inline const BlockedPhrasesConfigurationUpdate& GetBlockedPhrasesConfigurationUpdate() const{ return m_blockedPhrasesConfigurationUpdate; }
+
+    /**
+     * <p>The phrases blocked from chat by your chat control configuration.</p>
+     */
+    inline bool BlockedPhrasesConfigurationUpdateHasBeenSet() const { return m_blockedPhrasesConfigurationUpdateHasBeenSet; }
+
+    /**
+     * <p>The phrases blocked from chat by your chat control configuration.</p>
+     */
+    inline void SetBlockedPhrasesConfigurationUpdate(const BlockedPhrasesConfigurationUpdate& value) { m_blockedPhrasesConfigurationUpdateHasBeenSet = true; m_blockedPhrasesConfigurationUpdate = value; }
+
+    /**
+     * <p>The phrases blocked from chat by your chat control configuration.</p>
+     */
+    inline void SetBlockedPhrasesConfigurationUpdate(BlockedPhrasesConfigurationUpdate&& value) { m_blockedPhrasesConfigurationUpdateHasBeenSet = true; m_blockedPhrasesConfigurationUpdate = std::move(value); }
+
+    /**
+     * <p>The phrases blocked from chat by your chat control configuration.</p>
+     */
+    inline UpdateChatControlsConfigurationRequest& WithBlockedPhrasesConfigurationUpdate(const BlockedPhrasesConfigurationUpdate& value) { SetBlockedPhrasesConfigurationUpdate(value); return *this;}
+
+    /**
+     * <p>The phrases blocked from chat by your chat control configuration.</p>
+     */
+    inline UpdateChatControlsConfigurationRequest& WithBlockedPhrasesConfigurationUpdate(BlockedPhrasesConfigurationUpdate&& value) { SetBlockedPhrasesConfigurationUpdate(std::move(value)); return *this;}
 
 
     /**
@@ -328,28 +297,59 @@ namespace Model
      */
     inline UpdateChatControlsConfigurationRequest& AddTopicConfigurationsToDelete(TopicConfiguration&& value) { m_topicConfigurationsToDeleteHasBeenSet = true; m_topicConfigurationsToDelete.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The configuration details for <code>CREATOR_MODE</code>.</p>
+     */
+    inline const CreatorModeConfiguration& GetCreatorModeConfiguration() const{ return m_creatorModeConfiguration; }
+
+    /**
+     * <p>The configuration details for <code>CREATOR_MODE</code>.</p>
+     */
+    inline bool CreatorModeConfigurationHasBeenSet() const { return m_creatorModeConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration details for <code>CREATOR_MODE</code>.</p>
+     */
+    inline void SetCreatorModeConfiguration(const CreatorModeConfiguration& value) { m_creatorModeConfigurationHasBeenSet = true; m_creatorModeConfiguration = value; }
+
+    /**
+     * <p>The configuration details for <code>CREATOR_MODE</code>.</p>
+     */
+    inline void SetCreatorModeConfiguration(CreatorModeConfiguration&& value) { m_creatorModeConfigurationHasBeenSet = true; m_creatorModeConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration details for <code>CREATOR_MODE</code>.</p>
+     */
+    inline UpdateChatControlsConfigurationRequest& WithCreatorModeConfiguration(const CreatorModeConfiguration& value) { SetCreatorModeConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration details for <code>CREATOR_MODE</code>.</p>
+     */
+    inline UpdateChatControlsConfigurationRequest& WithCreatorModeConfiguration(CreatorModeConfiguration&& value) { SetCreatorModeConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet = false;
 
-    BlockedPhrasesConfigurationUpdate m_blockedPhrasesConfigurationUpdate;
-    bool m_blockedPhrasesConfigurationUpdateHasBeenSet = false;
-
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
 
-    CreatorModeConfiguration m_creatorModeConfiguration;
-    bool m_creatorModeConfigurationHasBeenSet = false;
-
     ResponseScope m_responseScope;
     bool m_responseScopeHasBeenSet = false;
+
+    BlockedPhrasesConfigurationUpdate m_blockedPhrasesConfigurationUpdate;
+    bool m_blockedPhrasesConfigurationUpdateHasBeenSet = false;
 
     Aws::Vector<TopicConfiguration> m_topicConfigurationsToCreateOrUpdate;
     bool m_topicConfigurationsToCreateOrUpdateHasBeenSet = false;
 
     Aws::Vector<TopicConfiguration> m_topicConfigurationsToDelete;
     bool m_topicConfigurationsToDeleteHasBeenSet = false;
+
+    CreatorModeConfiguration m_creatorModeConfiguration;
+    bool m_creatorModeConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

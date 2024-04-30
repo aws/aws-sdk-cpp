@@ -7,9 +7,10 @@
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/qbusiness/QBusinessRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/qbusiness/model/PluginAuthConfiguration.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qbusiness/model/PluginType.h>
+#include <aws/qbusiness/model/PluginAuthConfiguration.h>
+#include <aws/qbusiness/model/CustomPluginConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qbusiness/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -78,74 +79,6 @@ namespace Model
     inline CreatePluginRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
-    
-    inline const PluginAuthConfiguration& GetAuthConfiguration() const{ return m_authConfiguration; }
-
-    
-    inline bool AuthConfigurationHasBeenSet() const { return m_authConfigurationHasBeenSet; }
-
-    
-    inline void SetAuthConfiguration(const PluginAuthConfiguration& value) { m_authConfigurationHasBeenSet = true; m_authConfiguration = value; }
-
-    
-    inline void SetAuthConfiguration(PluginAuthConfiguration&& value) { m_authConfigurationHasBeenSet = true; m_authConfiguration = std::move(value); }
-
-    
-    inline CreatePluginRequest& WithAuthConfiguration(const PluginAuthConfiguration& value) { SetAuthConfiguration(value); return *this;}
-
-    
-    inline CreatePluginRequest& WithAuthConfiguration(PluginAuthConfiguration&& value) { SetAuthConfiguration(std::move(value)); return *this;}
-
-
-    /**
-     * <p>A token that you provide to identify the request to create your Amazon Q
-     * Business plugin.</p>
-     */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>A token that you provide to identify the request to create your Amazon Q
-     * Business plugin.</p>
-     */
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>A token that you provide to identify the request to create your Amazon Q
-     * Business plugin.</p>
-     */
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>A token that you provide to identify the request to create your Amazon Q
-     * Business plugin.</p>
-     */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>A token that you provide to identify the request to create your Amazon Q
-     * Business plugin.</p>
-     */
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>A token that you provide to identify the request to create your Amazon Q
-     * Business plugin.</p>
-     */
-    inline CreatePluginRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>A token that you provide to identify the request to create your Amazon Q
-     * Business plugin.</p>
-     */
-    inline CreatePluginRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token that you provide to identify the request to create your Amazon Q
-     * Business plugin.</p>
-     */
-    inline CreatePluginRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-
-
     /**
      * <p>A the name for your plugin.</p>
      */
@@ -188,6 +121,56 @@ namespace Model
 
 
     /**
+     * <p>The type of plugin you want to create.</p>
+     */
+    inline const PluginType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of plugin you want to create.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of plugin you want to create.</p>
+     */
+    inline void SetType(const PluginType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The type of plugin you want to create.</p>
+     */
+    inline void SetType(PluginType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>The type of plugin you want to create.</p>
+     */
+    inline CreatePluginRequest& WithType(const PluginType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The type of plugin you want to create.</p>
+     */
+    inline CreatePluginRequest& WithType(PluginType&& value) { SetType(std::move(value)); return *this;}
+
+
+    
+    inline const PluginAuthConfiguration& GetAuthConfiguration() const{ return m_authConfiguration; }
+
+    
+    inline bool AuthConfigurationHasBeenSet() const { return m_authConfigurationHasBeenSet; }
+
+    
+    inline void SetAuthConfiguration(const PluginAuthConfiguration& value) { m_authConfigurationHasBeenSet = true; m_authConfiguration = value; }
+
+    
+    inline void SetAuthConfiguration(PluginAuthConfiguration&& value) { m_authConfigurationHasBeenSet = true; m_authConfiguration = std::move(value); }
+
+    
+    inline CreatePluginRequest& WithAuthConfiguration(const PluginAuthConfiguration& value) { SetAuthConfiguration(value); return *this;}
+
+    
+    inline CreatePluginRequest& WithAuthConfiguration(PluginAuthConfiguration&& value) { SetAuthConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>The source URL used for plugin configuration.</p>
      */
     inline const Aws::String& GetServerUrl() const{ return m_serverUrl; }
@@ -226,6 +209,37 @@ namespace Model
      * <p>The source URL used for plugin configuration.</p>
      */
     inline CreatePluginRequest& WithServerUrl(const char* value) { SetServerUrl(value); return *this;}
+
+
+    /**
+     * <p>Contains configuration for a custom plugin.</p>
+     */
+    inline const CustomPluginConfiguration& GetCustomPluginConfiguration() const{ return m_customPluginConfiguration; }
+
+    /**
+     * <p>Contains configuration for a custom plugin.</p>
+     */
+    inline bool CustomPluginConfigurationHasBeenSet() const { return m_customPluginConfigurationHasBeenSet; }
+
+    /**
+     * <p>Contains configuration for a custom plugin.</p>
+     */
+    inline void SetCustomPluginConfiguration(const CustomPluginConfiguration& value) { m_customPluginConfigurationHasBeenSet = true; m_customPluginConfiguration = value; }
+
+    /**
+     * <p>Contains configuration for a custom plugin.</p>
+     */
+    inline void SetCustomPluginConfiguration(CustomPluginConfiguration&& value) { m_customPluginConfigurationHasBeenSet = true; m_customPluginConfiguration = std::move(value); }
+
+    /**
+     * <p>Contains configuration for a custom plugin.</p>
+     */
+    inline CreatePluginRequest& WithCustomPluginConfiguration(const CustomPluginConfiguration& value) { SetCustomPluginConfiguration(value); return *this;}
+
+    /**
+     * <p>Contains configuration for a custom plugin.</p>
+     */
+    inline CreatePluginRequest& WithCustomPluginConfiguration(CustomPluginConfiguration&& value) { SetCustomPluginConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -294,57 +308,78 @@ namespace Model
 
 
     /**
-     * <p>The type of plugin you want to create.</p>
+     * <p>A token that you provide to identify the request to create your Amazon Q
+     * Business plugin.</p>
      */
-    inline const PluginType& GetType() const{ return m_type; }
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>The type of plugin you want to create.</p>
+     * <p>A token that you provide to identify the request to create your Amazon Q
+     * Business plugin.</p>
      */
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>The type of plugin you want to create.</p>
+     * <p>A token that you provide to identify the request to create your Amazon Q
+     * Business plugin.</p>
      */
-    inline void SetType(const PluginType& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>The type of plugin you want to create.</p>
+     * <p>A token that you provide to identify the request to create your Amazon Q
+     * Business plugin.</p>
      */
-    inline void SetType(PluginType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>The type of plugin you want to create.</p>
+     * <p>A token that you provide to identify the request to create your Amazon Q
+     * Business plugin.</p>
      */
-    inline CreatePluginRequest& WithType(const PluginType& value) { SetType(value); return *this;}
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>The type of plugin you want to create.</p>
+     * <p>A token that you provide to identify the request to create your Amazon Q
+     * Business plugin.</p>
      */
-    inline CreatePluginRequest& WithType(PluginType&& value) { SetType(std::move(value)); return *this;}
+    inline CreatePluginRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+
+    /**
+     * <p>A token that you provide to identify the request to create your Amazon Q
+     * Business plugin.</p>
+     */
+    inline CreatePluginRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+
+    /**
+     * <p>A token that you provide to identify the request to create your Amazon Q
+     * Business plugin.</p>
+     */
+    inline CreatePluginRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
   private:
 
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet = false;
 
-    PluginAuthConfiguration m_authConfiguration;
-    bool m_authConfigurationHasBeenSet = false;
-
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
-
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet = false;
+
+    PluginType m_type;
+    bool m_typeHasBeenSet = false;
+
+    PluginAuthConfiguration m_authConfiguration;
+    bool m_authConfigurationHasBeenSet = false;
 
     Aws::String m_serverUrl;
     bool m_serverUrlHasBeenSet = false;
 
+    CustomPluginConfiguration m_customPluginConfiguration;
+    bool m_customPluginConfigurationHasBeenSet = false;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    PluginType m_type;
-    bool m_typeHasBeenSet = false;
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

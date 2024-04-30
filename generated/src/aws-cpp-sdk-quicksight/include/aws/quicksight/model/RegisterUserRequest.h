@@ -37,56 +37,38 @@ namespace Model
 
 
     /**
-     * <p>Amazon QuickSight supports several ways of managing the identity of users.
-     * This parameter accepts two values:</p> <ul> <li> <p> <code>IAM</code>: A user
-     * whose identity maps to an existing IAM user or role. </p> </li> <li> <p>
-     * <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally
-     * by Amazon QuickSight. </p> </li> </ul>
+     * <p>The identity type that your Amazon QuickSight account uses to manage the
+     * identity of users.</p>
      */
     inline const IdentityType& GetIdentityType() const{ return m_identityType; }
 
     /**
-     * <p>Amazon QuickSight supports several ways of managing the identity of users.
-     * This parameter accepts two values:</p> <ul> <li> <p> <code>IAM</code>: A user
-     * whose identity maps to an existing IAM user or role. </p> </li> <li> <p>
-     * <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally
-     * by Amazon QuickSight. </p> </li> </ul>
+     * <p>The identity type that your Amazon QuickSight account uses to manage the
+     * identity of users.</p>
      */
     inline bool IdentityTypeHasBeenSet() const { return m_identityTypeHasBeenSet; }
 
     /**
-     * <p>Amazon QuickSight supports several ways of managing the identity of users.
-     * This parameter accepts two values:</p> <ul> <li> <p> <code>IAM</code>: A user
-     * whose identity maps to an existing IAM user or role. </p> </li> <li> <p>
-     * <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally
-     * by Amazon QuickSight. </p> </li> </ul>
+     * <p>The identity type that your Amazon QuickSight account uses to manage the
+     * identity of users.</p>
      */
     inline void SetIdentityType(const IdentityType& value) { m_identityTypeHasBeenSet = true; m_identityType = value; }
 
     /**
-     * <p>Amazon QuickSight supports several ways of managing the identity of users.
-     * This parameter accepts two values:</p> <ul> <li> <p> <code>IAM</code>: A user
-     * whose identity maps to an existing IAM user or role. </p> </li> <li> <p>
-     * <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally
-     * by Amazon QuickSight. </p> </li> </ul>
+     * <p>The identity type that your Amazon QuickSight account uses to manage the
+     * identity of users.</p>
      */
     inline void SetIdentityType(IdentityType&& value) { m_identityTypeHasBeenSet = true; m_identityType = std::move(value); }
 
     /**
-     * <p>Amazon QuickSight supports several ways of managing the identity of users.
-     * This parameter accepts two values:</p> <ul> <li> <p> <code>IAM</code>: A user
-     * whose identity maps to an existing IAM user or role. </p> </li> <li> <p>
-     * <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally
-     * by Amazon QuickSight. </p> </li> </ul>
+     * <p>The identity type that your Amazon QuickSight account uses to manage the
+     * identity of users.</p>
      */
     inline RegisterUserRequest& WithIdentityType(const IdentityType& value) { SetIdentityType(value); return *this;}
 
     /**
-     * <p>Amazon QuickSight supports several ways of managing the identity of users.
-     * This parameter accepts two values:</p> <ul> <li> <p> <code>IAM</code>: A user
-     * whose identity maps to an existing IAM user or role. </p> </li> <li> <p>
-     * <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally
-     * by Amazon QuickSight. </p> </li> </ul>
+     * <p>The identity type that your Amazon QuickSight account uses to manage the
+     * identity of users.</p>
      */
     inline RegisterUserRequest& WithIdentityType(IdentityType&& value) { SetIdentityType(std::move(value)); return *this;}
 
@@ -520,8 +502,9 @@ namespace Model
      * to a Amazon QuickSight user. </p> <p>Amazon QuickSight custom permissions are
      * applied through IAM policies. Therefore, they override the permissions typically
      * granted by assigning Amazon QuickSight users to one of the default security
-     * cohorts in Amazon QuickSight (admin, author, reader).</p> <p>This feature is
-     * available only to Amazon QuickSight Enterprise edition subscriptions.</p>
+     * cohorts in Amazon QuickSight (admin, author, reader, admin pro, author pro,
+     * reader pro).</p> <p>This feature is available only to Amazon QuickSight
+     * Enterprise edition subscriptions.</p>
      */
     inline const Aws::String& GetCustomPermissionsName() const{ return m_customPermissionsName; }
 
@@ -541,8 +524,9 @@ namespace Model
      * to a Amazon QuickSight user. </p> <p>Amazon QuickSight custom permissions are
      * applied through IAM policies. Therefore, they override the permissions typically
      * granted by assigning Amazon QuickSight users to one of the default security
-     * cohorts in Amazon QuickSight (admin, author, reader).</p> <p>This feature is
-     * available only to Amazon QuickSight Enterprise edition subscriptions.</p>
+     * cohorts in Amazon QuickSight (admin, author, reader, admin pro, author pro,
+     * reader pro).</p> <p>This feature is available only to Amazon QuickSight
+     * Enterprise edition subscriptions.</p>
      */
     inline bool CustomPermissionsNameHasBeenSet() const { return m_customPermissionsNameHasBeenSet; }
 
@@ -562,8 +546,9 @@ namespace Model
      * to a Amazon QuickSight user. </p> <p>Amazon QuickSight custom permissions are
      * applied through IAM policies. Therefore, they override the permissions typically
      * granted by assigning Amazon QuickSight users to one of the default security
-     * cohorts in Amazon QuickSight (admin, author, reader).</p> <p>This feature is
-     * available only to Amazon QuickSight Enterprise edition subscriptions.</p>
+     * cohorts in Amazon QuickSight (admin, author, reader, admin pro, author pro,
+     * reader pro).</p> <p>This feature is available only to Amazon QuickSight
+     * Enterprise edition subscriptions.</p>
      */
     inline void SetCustomPermissionsName(const Aws::String& value) { m_customPermissionsNameHasBeenSet = true; m_customPermissionsName = value; }
 
@@ -583,8 +568,9 @@ namespace Model
      * to a Amazon QuickSight user. </p> <p>Amazon QuickSight custom permissions are
      * applied through IAM policies. Therefore, they override the permissions typically
      * granted by assigning Amazon QuickSight users to one of the default security
-     * cohorts in Amazon QuickSight (admin, author, reader).</p> <p>This feature is
-     * available only to Amazon QuickSight Enterprise edition subscriptions.</p>
+     * cohorts in Amazon QuickSight (admin, author, reader, admin pro, author pro,
+     * reader pro).</p> <p>This feature is available only to Amazon QuickSight
+     * Enterprise edition subscriptions.</p>
      */
     inline void SetCustomPermissionsName(Aws::String&& value) { m_customPermissionsNameHasBeenSet = true; m_customPermissionsName = std::move(value); }
 
@@ -604,8 +590,9 @@ namespace Model
      * to a Amazon QuickSight user. </p> <p>Amazon QuickSight custom permissions are
      * applied through IAM policies. Therefore, they override the permissions typically
      * granted by assigning Amazon QuickSight users to one of the default security
-     * cohorts in Amazon QuickSight (admin, author, reader).</p> <p>This feature is
-     * available only to Amazon QuickSight Enterprise edition subscriptions.</p>
+     * cohorts in Amazon QuickSight (admin, author, reader, admin pro, author pro,
+     * reader pro).</p> <p>This feature is available only to Amazon QuickSight
+     * Enterprise edition subscriptions.</p>
      */
     inline void SetCustomPermissionsName(const char* value) { m_customPermissionsNameHasBeenSet = true; m_customPermissionsName.assign(value); }
 
@@ -625,8 +612,9 @@ namespace Model
      * to a Amazon QuickSight user. </p> <p>Amazon QuickSight custom permissions are
      * applied through IAM policies. Therefore, they override the permissions typically
      * granted by assigning Amazon QuickSight users to one of the default security
-     * cohorts in Amazon QuickSight (admin, author, reader).</p> <p>This feature is
-     * available only to Amazon QuickSight Enterprise edition subscriptions.</p>
+     * cohorts in Amazon QuickSight (admin, author, reader, admin pro, author pro,
+     * reader pro).</p> <p>This feature is available only to Amazon QuickSight
+     * Enterprise edition subscriptions.</p>
      */
     inline RegisterUserRequest& WithCustomPermissionsName(const Aws::String& value) { SetCustomPermissionsName(value); return *this;}
 
@@ -646,8 +634,9 @@ namespace Model
      * to a Amazon QuickSight user. </p> <p>Amazon QuickSight custom permissions are
      * applied through IAM policies. Therefore, they override the permissions typically
      * granted by assigning Amazon QuickSight users to one of the default security
-     * cohorts in Amazon QuickSight (admin, author, reader).</p> <p>This feature is
-     * available only to Amazon QuickSight Enterprise edition subscriptions.</p>
+     * cohorts in Amazon QuickSight (admin, author, reader, admin pro, author pro,
+     * reader pro).</p> <p>This feature is available only to Amazon QuickSight
+     * Enterprise edition subscriptions.</p>
      */
     inline RegisterUserRequest& WithCustomPermissionsName(Aws::String&& value) { SetCustomPermissionsName(std::move(value)); return *this;}
 
@@ -667,8 +656,9 @@ namespace Model
      * to a Amazon QuickSight user. </p> <p>Amazon QuickSight custom permissions are
      * applied through IAM policies. Therefore, they override the permissions typically
      * granted by assigning Amazon QuickSight users to one of the default security
-     * cohorts in Amazon QuickSight (admin, author, reader).</p> <p>This feature is
-     * available only to Amazon QuickSight Enterprise edition subscriptions.</p>
+     * cohorts in Amazon QuickSight (admin, author, reader, admin pro, author pro,
+     * reader pro).</p> <p>This feature is available only to Amazon QuickSight
+     * Enterprise edition subscriptions.</p>
      */
     inline RegisterUserRequest& WithCustomPermissionsName(const char* value) { SetCustomPermissionsName(value); return *this;}
 

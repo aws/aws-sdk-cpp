@@ -19,35 +19,35 @@ namespace Model
 {
 
 SourceAttribution::SourceAttribution() : 
+    m_titleHasBeenSet(false),
+    m_snippetHasBeenSet(false),
+    m_urlHasBeenSet(false),
     m_citationNumber(0),
     m_citationNumberHasBeenSet(false),
-    m_snippetHasBeenSet(false),
-    m_textMessageSegmentsHasBeenSet(false),
-    m_titleHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
-    m_urlHasBeenSet(false)
+    m_textMessageSegmentsHasBeenSet(false)
 {
 }
 
 SourceAttribution::SourceAttribution(JsonView jsonValue) : 
+    m_titleHasBeenSet(false),
+    m_snippetHasBeenSet(false),
+    m_urlHasBeenSet(false),
     m_citationNumber(0),
     m_citationNumberHasBeenSet(false),
-    m_snippetHasBeenSet(false),
-    m_textMessageSegmentsHasBeenSet(false),
-    m_titleHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
-    m_urlHasBeenSet(false)
+    m_textMessageSegmentsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 SourceAttribution& SourceAttribution::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("citationNumber"))
+  if(jsonValue.ValueExists("title"))
   {
-    m_citationNumber = jsonValue.GetInteger("citationNumber");
+    m_title = jsonValue.GetString("title");
 
-    m_citationNumberHasBeenSet = true;
+    m_titleHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("snippet"))
@@ -55,6 +55,27 @@ SourceAttribution& SourceAttribution::operator =(JsonView jsonValue)
     m_snippet = jsonValue.GetString("snippet");
 
     m_snippetHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("url"))
+  {
+    m_url = jsonValue.GetString("url");
+
+    m_urlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("citationNumber"))
+  {
+    m_citationNumber = jsonValue.GetInteger("citationNumber");
+
+    m_citationNumberHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("updatedAt"))
+  {
+    m_updatedAt = jsonValue.GetDouble("updatedAt");
+
+    m_updatedAtHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("textMessageSegments"))
@@ -67,27 +88,6 @@ SourceAttribution& SourceAttribution::operator =(JsonView jsonValue)
     m_textMessageSegmentsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("title"))
-  {
-    m_title = jsonValue.GetString("title");
-
-    m_titleHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("updatedAt"))
-  {
-    m_updatedAt = jsonValue.GetDouble("updatedAt");
-
-    m_updatedAtHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("url"))
-  {
-    m_url = jsonValue.GetString("url");
-
-    m_urlHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -95,9 +95,9 @@ JsonValue SourceAttribution::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_citationNumberHasBeenSet)
+  if(m_titleHasBeenSet)
   {
-   payload.WithInteger("citationNumber", m_citationNumber);
+   payload.WithString("title", m_title);
 
   }
 
@@ -105,6 +105,23 @@ JsonValue SourceAttribution::Jsonize() const
   {
    payload.WithString("snippet", m_snippet);
 
+  }
+
+  if(m_urlHasBeenSet)
+  {
+   payload.WithString("url", m_url);
+
+  }
+
+  if(m_citationNumberHasBeenSet)
+  {
+   payload.WithInteger("citationNumber", m_citationNumber);
+
+  }
+
+  if(m_updatedAtHasBeenSet)
+  {
+   payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
   }
 
   if(m_textMessageSegmentsHasBeenSet)
@@ -115,23 +132,6 @@ JsonValue SourceAttribution::Jsonize() const
      textMessageSegmentsJsonList[textMessageSegmentsIndex].AsObject(m_textMessageSegments[textMessageSegmentsIndex].Jsonize());
    }
    payload.WithArray("textMessageSegments", std::move(textMessageSegmentsJsonList));
-
-  }
-
-  if(m_titleHasBeenSet)
-  {
-   payload.WithString("title", m_title);
-
-  }
-
-  if(m_updatedAtHasBeenSet)
-  {
-   payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
-  }
-
-  if(m_urlHasBeenSet)
-  {
-   payload.WithString("url", m_url);
 
   }
 

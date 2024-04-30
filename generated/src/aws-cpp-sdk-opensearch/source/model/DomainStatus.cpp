@@ -29,6 +29,7 @@ DomainStatus::DomainStatus() :
     m_endpointHasBeenSet(false),
     m_endpointV2HasBeenSet(false),
     m_endpointsHasBeenSet(false),
+    m_domainEndpointV2HostedZoneIdHasBeenSet(false),
     m_processing(false),
     m_processingHasBeenSet(false),
     m_upgradeProcessing(false),
@@ -70,6 +71,7 @@ DomainStatus::DomainStatus(JsonView jsonValue) :
     m_endpointHasBeenSet(false),
     m_endpointV2HasBeenSet(false),
     m_endpointsHasBeenSet(false),
+    m_domainEndpointV2HostedZoneIdHasBeenSet(false),
     m_processing(false),
     m_processingHasBeenSet(false),
     m_upgradeProcessing(false),
@@ -160,6 +162,13 @@ DomainStatus& DomainStatus::operator =(JsonView jsonValue)
       m_endpoints[endpointsItem.first] = endpointsItem.second.AsString();
     }
     m_endpointsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DomainEndpointV2HostedZoneId"))
+  {
+    m_domainEndpointV2HostedZoneId = jsonValue.GetString("DomainEndpointV2HostedZoneId");
+
+    m_domainEndpointV2HostedZoneIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Processing"))
@@ -389,6 +398,12 @@ JsonValue DomainStatus::Jsonize() const
      endpointsJsonMap.WithString(endpointsItem.first, endpointsItem.second);
    }
    payload.WithObject("Endpoints", std::move(endpointsJsonMap));
+
+  }
+
+  if(m_domainEndpointV2HostedZoneIdHasBeenSet)
+  {
+   payload.WithString("DomainEndpointV2HostedZoneId", m_domainEndpointV2HostedZoneId);
 
   }
 

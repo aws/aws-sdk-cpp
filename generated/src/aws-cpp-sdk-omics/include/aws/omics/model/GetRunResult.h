@@ -15,6 +15,7 @@
 #include <aws/omics/model/Accelerators.h>
 #include <aws/omics/model/RunRetentionMode.h>
 #include <aws/omics/model/RunLogLocation.h>
+#include <aws/omics/model/StorageType.h>
 #include <utility>
 
 namespace Aws
@@ -460,17 +461,23 @@ namespace Model
 
 
     /**
-     * <p>The run's storage capacity in gigabytes.</p>
+     * <p>The run's storage capacity in gibibytes. For dynamic storage, after the run
+     * has completed, this value is the maximum amount of storage used during the
+     * run.</p>
      */
     inline int GetStorageCapacity() const{ return m_storageCapacity; }
 
     /**
-     * <p>The run's storage capacity in gigabytes.</p>
+     * <p>The run's storage capacity in gibibytes. For dynamic storage, after the run
+     * has completed, this value is the maximum amount of storage used during the
+     * run.</p>
      */
     inline void SetStorageCapacity(int value) { m_storageCapacity = value; }
 
     /**
-     * <p>The run's storage capacity in gigabytes.</p>
+     * <p>The run's storage capacity in gibibytes. For dynamic storage, after the run
+     * has completed, this value is the maximum amount of storage used during the
+     * run.</p>
      */
     inline GetRunResult& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
 
@@ -995,6 +1002,68 @@ namespace Model
     inline GetRunResult& WithRunOutputUri(const char* value) { SetRunOutputUri(value); return *this;}
 
 
+    /**
+     * <p>The run's storage type.</p>
+     */
+    inline const StorageType& GetStorageType() const{ return m_storageType; }
+
+    /**
+     * <p>The run's storage type.</p>
+     */
+    inline void SetStorageType(const StorageType& value) { m_storageType = value; }
+
+    /**
+     * <p>The run's storage type.</p>
+     */
+    inline void SetStorageType(StorageType&& value) { m_storageType = std::move(value); }
+
+    /**
+     * <p>The run's storage type.</p>
+     */
+    inline GetRunResult& WithStorageType(const StorageType& value) { SetStorageType(value); return *this;}
+
+    /**
+     * <p>The run's storage type.</p>
+     */
+    inline GetRunResult& WithStorageType(StorageType&& value) { SetStorageType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The ID of the workflow owner.</p>
+     */
+    inline const Aws::String& GetWorkflowOwnerId() const{ return m_workflowOwnerId; }
+
+    /**
+     * <p>The ID of the workflow owner.</p>
+     */
+    inline void SetWorkflowOwnerId(const Aws::String& value) { m_workflowOwnerId = value; }
+
+    /**
+     * <p>The ID of the workflow owner.</p>
+     */
+    inline void SetWorkflowOwnerId(Aws::String&& value) { m_workflowOwnerId = std::move(value); }
+
+    /**
+     * <p>The ID of the workflow owner.</p>
+     */
+    inline void SetWorkflowOwnerId(const char* value) { m_workflowOwnerId.assign(value); }
+
+    /**
+     * <p>The ID of the workflow owner.</p>
+     */
+    inline GetRunResult& WithWorkflowOwnerId(const Aws::String& value) { SetWorkflowOwnerId(value); return *this;}
+
+    /**
+     * <p>The ID of the workflow owner.</p>
+     */
+    inline GetRunResult& WithWorkflowOwnerId(Aws::String&& value) { SetWorkflowOwnerId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the workflow owner.</p>
+     */
+    inline GetRunResult& WithWorkflowOwnerId(const char* value) { SetWorkflowOwnerId(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -1075,6 +1144,10 @@ namespace Model
     Aws::String m_uuid;
 
     Aws::String m_runOutputUri;
+
+    StorageType m_storageType;
+
+    Aws::String m_workflowOwnerId;
 
     Aws::String m_requestId;
   };

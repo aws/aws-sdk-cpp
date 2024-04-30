@@ -19,36 +19,36 @@ namespace Model
 {
 
 DateAttributeBoostingConfiguration::DateAttributeBoostingConfiguration() : 
-    m_boostingDurationInSeconds(0),
-    m_boostingDurationInSecondsHasBeenSet(false),
     m_boostingLevel(DocumentAttributeBoostingLevel::NOT_SET),
-    m_boostingLevelHasBeenSet(false)
+    m_boostingLevelHasBeenSet(false),
+    m_boostingDurationInSeconds(0),
+    m_boostingDurationInSecondsHasBeenSet(false)
 {
 }
 
 DateAttributeBoostingConfiguration::DateAttributeBoostingConfiguration(JsonView jsonValue) : 
-    m_boostingDurationInSeconds(0),
-    m_boostingDurationInSecondsHasBeenSet(false),
     m_boostingLevel(DocumentAttributeBoostingLevel::NOT_SET),
-    m_boostingLevelHasBeenSet(false)
+    m_boostingLevelHasBeenSet(false),
+    m_boostingDurationInSeconds(0),
+    m_boostingDurationInSecondsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 DateAttributeBoostingConfiguration& DateAttributeBoostingConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("boostingDurationInSeconds"))
-  {
-    m_boostingDurationInSeconds = jsonValue.GetInt64("boostingDurationInSeconds");
-
-    m_boostingDurationInSecondsHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("boostingLevel"))
   {
     m_boostingLevel = DocumentAttributeBoostingLevelMapper::GetDocumentAttributeBoostingLevelForName(jsonValue.GetString("boostingLevel"));
 
     m_boostingLevelHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("boostingDurationInSeconds"))
+  {
+    m_boostingDurationInSeconds = jsonValue.GetInt64("boostingDurationInSeconds");
+
+    m_boostingDurationInSecondsHasBeenSet = true;
   }
 
   return *this;
@@ -58,15 +58,15 @@ JsonValue DateAttributeBoostingConfiguration::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_boostingLevelHasBeenSet)
+  {
+   payload.WithString("boostingLevel", DocumentAttributeBoostingLevelMapper::GetNameForDocumentAttributeBoostingLevel(m_boostingLevel));
+  }
+
   if(m_boostingDurationInSecondsHasBeenSet)
   {
    payload.WithInt64("boostingDurationInSeconds", m_boostingDurationInSeconds);
 
-  }
-
-  if(m_boostingLevelHasBeenSet)
-  {
-   payload.WithString("boostingLevel", DocumentAttributeBoostingLevelMapper::GetNameForDocumentAttributeBoostingLevel(m_boostingLevel));
   }
 
   return payload;

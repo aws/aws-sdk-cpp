@@ -384,94 +384,174 @@ namespace Model
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints. Example <code>key, value</code>:
-     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+     * endpoints. For example:</p> <ul> <li> <p> <b>IPv4 IP addresses</b> -
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>
+     * </p> </li> <li> <p> <b>Dual stack IP addresses</b> -
+     * <code>'vpcv2':'vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.aos.us-east-1.on.aws'</code>
+     * </p> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEndpoints() const{ return m_endpoints; }
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints. Example <code>key, value</code>:
-     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+     * endpoints. For example:</p> <ul> <li> <p> <b>IPv4 IP addresses</b> -
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>
+     * </p> </li> <li> <p> <b>Dual stack IP addresses</b> -
+     * <code>'vpcv2':'vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.aos.us-east-1.on.aws'</code>
+     * </p> </li> </ul>
      */
     inline bool EndpointsHasBeenSet() const { return m_endpointsHasBeenSet; }
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints. Example <code>key, value</code>:
-     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+     * endpoints. For example:</p> <ul> <li> <p> <b>IPv4 IP addresses</b> -
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>
+     * </p> </li> <li> <p> <b>Dual stack IP addresses</b> -
+     * <code>'vpcv2':'vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.aos.us-east-1.on.aws'</code>
+     * </p> </li> </ul>
      */
     inline void SetEndpoints(const Aws::Map<Aws::String, Aws::String>& value) { m_endpointsHasBeenSet = true; m_endpoints = value; }
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints. Example <code>key, value</code>:
-     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+     * endpoints. For example:</p> <ul> <li> <p> <b>IPv4 IP addresses</b> -
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>
+     * </p> </li> <li> <p> <b>Dual stack IP addresses</b> -
+     * <code>'vpcv2':'vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.aos.us-east-1.on.aws'</code>
+     * </p> </li> </ul>
      */
     inline void SetEndpoints(Aws::Map<Aws::String, Aws::String>&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::move(value); }
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints. Example <code>key, value</code>:
-     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+     * endpoints. For example:</p> <ul> <li> <p> <b>IPv4 IP addresses</b> -
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>
+     * </p> </li> <li> <p> <b>Dual stack IP addresses</b> -
+     * <code>'vpcv2':'vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.aos.us-east-1.on.aws'</code>
+     * </p> </li> </ul>
      */
     inline DomainStatus& WithEndpoints(const Aws::Map<Aws::String, Aws::String>& value) { SetEndpoints(value); return *this;}
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints. Example <code>key, value</code>:
-     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+     * endpoints. For example:</p> <ul> <li> <p> <b>IPv4 IP addresses</b> -
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>
+     * </p> </li> <li> <p> <b>Dual stack IP addresses</b> -
+     * <code>'vpcv2':'vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.aos.us-east-1.on.aws'</code>
+     * </p> </li> </ul>
      */
     inline DomainStatus& WithEndpoints(Aws::Map<Aws::String, Aws::String>&& value) { SetEndpoints(std::move(value)); return *this;}
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints. Example <code>key, value</code>:
-     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+     * endpoints. For example:</p> <ul> <li> <p> <b>IPv4 IP addresses</b> -
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>
+     * </p> </li> <li> <p> <b>Dual stack IP addresses</b> -
+     * <code>'vpcv2':'vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.aos.us-east-1.on.aws'</code>
+     * </p> </li> </ul>
      */
     inline DomainStatus& AddEndpoints(const Aws::String& key, const Aws::String& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(key, value); return *this; }
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints. Example <code>key, value</code>:
-     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+     * endpoints. For example:</p> <ul> <li> <p> <b>IPv4 IP addresses</b> -
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>
+     * </p> </li> <li> <p> <b>Dual stack IP addresses</b> -
+     * <code>'vpcv2':'vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.aos.us-east-1.on.aws'</code>
+     * </p> </li> </ul>
      */
     inline DomainStatus& AddEndpoints(Aws::String&& key, const Aws::String& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints. Example <code>key, value</code>:
-     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+     * endpoints. For example:</p> <ul> <li> <p> <b>IPv4 IP addresses</b> -
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>
+     * </p> </li> <li> <p> <b>Dual stack IP addresses</b> -
+     * <code>'vpcv2':'vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.aos.us-east-1.on.aws'</code>
+     * </p> </li> </ul>
      */
     inline DomainStatus& AddEndpoints(const Aws::String& key, Aws::String&& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints. Example <code>key, value</code>:
-     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+     * endpoints. For example:</p> <ul> <li> <p> <b>IPv4 IP addresses</b> -
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>
+     * </p> </li> <li> <p> <b>Dual stack IP addresses</b> -
+     * <code>'vpcv2':'vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.aos.us-east-1.on.aws'</code>
+     * </p> </li> </ul>
      */
     inline DomainStatus& AddEndpoints(Aws::String&& key, Aws::String&& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints. Example <code>key, value</code>:
-     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+     * endpoints. For example:</p> <ul> <li> <p> <b>IPv4 IP addresses</b> -
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>
+     * </p> </li> <li> <p> <b>Dual stack IP addresses</b> -
+     * <code>'vpcv2':'vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.aos.us-east-1.on.aws'</code>
+     * </p> </li> </ul>
      */
     inline DomainStatus& AddEndpoints(const char* key, Aws::String&& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints. Example <code>key, value</code>:
-     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+     * endpoints. For example:</p> <ul> <li> <p> <b>IPv4 IP addresses</b> -
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>
+     * </p> </li> <li> <p> <b>Dual stack IP addresses</b> -
+     * <code>'vpcv2':'vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.aos.us-east-1.on.aws'</code>
+     * </p> </li> </ul>
      */
     inline DomainStatus& AddEndpoints(Aws::String&& key, const char* value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints. Example <code>key, value</code>:
-     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+     * endpoints. For example:</p> <ul> <li> <p> <b>IPv4 IP addresses</b> -
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>
+     * </p> </li> <li> <p> <b>Dual stack IP addresses</b> -
+     * <code>'vpcv2':'vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.aos.us-east-1.on.aws'</code>
+     * </p> </li> </ul>
      */
     inline DomainStatus& AddEndpoints(const char* key, const char* value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>The DualStack Hosted Zone Id for the domain. </p>
+     */
+    inline const Aws::String& GetDomainEndpointV2HostedZoneId() const{ return m_domainEndpointV2HostedZoneId; }
+
+    /**
+     * <p>The DualStack Hosted Zone Id for the domain. </p>
+     */
+    inline bool DomainEndpointV2HostedZoneIdHasBeenSet() const { return m_domainEndpointV2HostedZoneIdHasBeenSet; }
+
+    /**
+     * <p>The DualStack Hosted Zone Id for the domain. </p>
+     */
+    inline void SetDomainEndpointV2HostedZoneId(const Aws::String& value) { m_domainEndpointV2HostedZoneIdHasBeenSet = true; m_domainEndpointV2HostedZoneId = value; }
+
+    /**
+     * <p>The DualStack Hosted Zone Id for the domain. </p>
+     */
+    inline void SetDomainEndpointV2HostedZoneId(Aws::String&& value) { m_domainEndpointV2HostedZoneIdHasBeenSet = true; m_domainEndpointV2HostedZoneId = std::move(value); }
+
+    /**
+     * <p>The DualStack Hosted Zone Id for the domain. </p>
+     */
+    inline void SetDomainEndpointV2HostedZoneId(const char* value) { m_domainEndpointV2HostedZoneIdHasBeenSet = true; m_domainEndpointV2HostedZoneId.assign(value); }
+
+    /**
+     * <p>The DualStack Hosted Zone Id for the domain. </p>
+     */
+    inline DomainStatus& WithDomainEndpointV2HostedZoneId(const Aws::String& value) { SetDomainEndpointV2HostedZoneId(value); return *this;}
+
+    /**
+     * <p>The DualStack Hosted Zone Id for the domain. </p>
+     */
+    inline DomainStatus& WithDomainEndpointV2HostedZoneId(Aws::String&& value) { SetDomainEndpointV2HostedZoneId(std::move(value)); return *this;}
+
+    /**
+     * <p>The DualStack Hosted Zone Id for the domain. </p>
+     */
+    inline DomainStatus& WithDomainEndpointV2HostedZoneId(const char* value) { SetDomainEndpointV2HostedZoneId(value); return *this;}
 
 
     /**
@@ -1336,6 +1416,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_endpoints;
     bool m_endpointsHasBeenSet = false;
+
+    Aws::String m_domainEndpointV2HostedZoneId;
+    bool m_domainEndpointV2HostedZoneIdHasBeenSet = false;
 
     bool m_processing;
     bool m_processingHasBeenSet = false;

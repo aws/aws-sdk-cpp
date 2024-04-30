@@ -144,7 +144,7 @@ namespace OpenSearchService
          * of case-sensitive key-value pairs. A domain can have up to 10 tags. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-awsresourcetagging.html">Tagging
-         * Amazon OpenSearch Service domains</a>.</p><p><h3>See Also:</h3>   <a
+         * Amazon OpenSearch Service domains</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AddTags">AWS
          * API Reference</a></p>
          */

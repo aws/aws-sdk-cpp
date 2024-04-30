@@ -21,6 +21,7 @@ namespace Model
     maven,
     nuget,
     generic,
+    ruby,
     swift
   };
 

@@ -29,15 +29,15 @@ CreateWebExperienceResult::CreateWebExperienceResult(const Aws::AmazonWebService
 CreateWebExperienceResult& CreateWebExperienceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("webExperienceArn"))
-  {
-    m_webExperienceArn = jsonValue.GetString("webExperienceArn");
-
-  }
-
   if(jsonValue.ValueExists("webExperienceId"))
   {
     m_webExperienceId = jsonValue.GetString("webExperienceId");
+
+  }
+
+  if(jsonValue.ValueExists("webExperienceArn"))
+  {
+    m_webExperienceArn = jsonValue.GetString("webExperienceArn");
 
   }
 

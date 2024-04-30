@@ -74,6 +74,47 @@ namespace Model
     inline UpdateRetrieverRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
+    /**
+     * <p>The identifier of your retriever.</p>
+     */
+    inline const Aws::String& GetRetrieverId() const{ return m_retrieverId; }
+
+    /**
+     * <p>The identifier of your retriever.</p>
+     */
+    inline bool RetrieverIdHasBeenSet() const { return m_retrieverIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of your retriever.</p>
+     */
+    inline void SetRetrieverId(const Aws::String& value) { m_retrieverIdHasBeenSet = true; m_retrieverId = value; }
+
+    /**
+     * <p>The identifier of your retriever.</p>
+     */
+    inline void SetRetrieverId(Aws::String&& value) { m_retrieverIdHasBeenSet = true; m_retrieverId = std::move(value); }
+
+    /**
+     * <p>The identifier of your retriever.</p>
+     */
+    inline void SetRetrieverId(const char* value) { m_retrieverIdHasBeenSet = true; m_retrieverId.assign(value); }
+
+    /**
+     * <p>The identifier of your retriever.</p>
+     */
+    inline UpdateRetrieverRequest& WithRetrieverId(const Aws::String& value) { SetRetrieverId(value); return *this;}
+
+    /**
+     * <p>The identifier of your retriever.</p>
+     */
+    inline UpdateRetrieverRequest& WithRetrieverId(Aws::String&& value) { SetRetrieverId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of your retriever.</p>
+     */
+    inline UpdateRetrieverRequest& WithRetrieverId(const char* value) { SetRetrieverId(value); return *this;}
+
+
     
     inline const RetrieverConfiguration& GetConfiguration() const{ return m_configuration; }
 
@@ -135,47 +176,6 @@ namespace Model
 
 
     /**
-     * <p>The identifier of your retriever.</p>
-     */
-    inline const Aws::String& GetRetrieverId() const{ return m_retrieverId; }
-
-    /**
-     * <p>The identifier of your retriever.</p>
-     */
-    inline bool RetrieverIdHasBeenSet() const { return m_retrieverIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of your retriever.</p>
-     */
-    inline void SetRetrieverId(const Aws::String& value) { m_retrieverIdHasBeenSet = true; m_retrieverId = value; }
-
-    /**
-     * <p>The identifier of your retriever.</p>
-     */
-    inline void SetRetrieverId(Aws::String&& value) { m_retrieverIdHasBeenSet = true; m_retrieverId = std::move(value); }
-
-    /**
-     * <p>The identifier of your retriever.</p>
-     */
-    inline void SetRetrieverId(const char* value) { m_retrieverIdHasBeenSet = true; m_retrieverId.assign(value); }
-
-    /**
-     * <p>The identifier of your retriever.</p>
-     */
-    inline UpdateRetrieverRequest& WithRetrieverId(const Aws::String& value) { SetRetrieverId(value); return *this;}
-
-    /**
-     * <p>The identifier of your retriever.</p>
-     */
-    inline UpdateRetrieverRequest& WithRetrieverId(Aws::String&& value) { SetRetrieverId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of your retriever.</p>
-     */
-    inline UpdateRetrieverRequest& WithRetrieverId(const char* value) { SetRetrieverId(value); return *this;}
-
-
-    /**
      * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the
      * retriever and required resources. </p>
      */
@@ -228,14 +228,14 @@ namespace Model
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet = false;
 
+    Aws::String m_retrieverId;
+    bool m_retrieverIdHasBeenSet = false;
+
     RetrieverConfiguration m_configuration;
     bool m_configurationHasBeenSet = false;
 
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet = false;
-
-    Aws::String m_retrieverId;
-    bool m_retrieverIdHasBeenSet = false;
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;

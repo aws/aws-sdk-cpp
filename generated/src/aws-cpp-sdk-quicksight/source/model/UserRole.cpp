@@ -25,6 +25,9 @@ namespace Aws
         static const int READER_HASH = HashingUtils::HashString("READER");
         static const int RESTRICTED_AUTHOR_HASH = HashingUtils::HashString("RESTRICTED_AUTHOR");
         static const int RESTRICTED_READER_HASH = HashingUtils::HashString("RESTRICTED_READER");
+        static const int ADMIN_PRO_HASH = HashingUtils::HashString("ADMIN_PRO");
+        static const int AUTHOR_PRO_HASH = HashingUtils::HashString("AUTHOR_PRO");
+        static const int READER_PRO_HASH = HashingUtils::HashString("READER_PRO");
 
 
         UserRole GetUserRoleForName(const Aws::String& name)
@@ -49,6 +52,18 @@ namespace Aws
           else if (hashCode == RESTRICTED_READER_HASH)
           {
             return UserRole::RESTRICTED_READER;
+          }
+          else if (hashCode == ADMIN_PRO_HASH)
+          {
+            return UserRole::ADMIN_PRO;
+          }
+          else if (hashCode == AUTHOR_PRO_HASH)
+          {
+            return UserRole::AUTHOR_PRO;
+          }
+          else if (hashCode == READER_PRO_HASH)
+          {
+            return UserRole::READER_PRO;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -76,6 +91,12 @@ namespace Aws
             return "RESTRICTED_AUTHOR";
           case UserRole::RESTRICTED_READER:
             return "RESTRICTED_READER";
+          case UserRole::ADMIN_PRO:
+            return "ADMIN_PRO";
+          case UserRole::AUTHOR_PRO:
+            return "AUTHOR_PRO";
+          case UserRole::READER_PRO:
+            return "READER_PRO";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

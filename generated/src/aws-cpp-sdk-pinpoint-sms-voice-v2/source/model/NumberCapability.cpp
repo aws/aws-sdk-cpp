@@ -22,6 +22,7 @@ namespace Aws
 
         static const int SMS_HASH = HashingUtils::HashString("SMS");
         static const int VOICE_HASH = HashingUtils::HashString("VOICE");
+        static const int MMS_HASH = HashingUtils::HashString("MMS");
 
 
         NumberCapability GetNumberCapabilityForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == VOICE_HASH)
           {
             return NumberCapability::VOICE;
+          }
+          else if (hashCode == MMS_HASH)
+          {
+            return NumberCapability::MMS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "SMS";
           case NumberCapability::VOICE:
             return "VOICE";
+          case NumberCapability::MMS:
+            return "MMS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

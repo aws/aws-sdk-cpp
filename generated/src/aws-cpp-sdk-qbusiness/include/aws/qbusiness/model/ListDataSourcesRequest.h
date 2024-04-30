@@ -129,27 +129,6 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of data source connectors to return.</p>
-     */
-    inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of data source connectors to return.</p>
-     */
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of data source connectors to return.</p>
-     */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of data source connectors to return.</p>
-     */
-    inline ListDataSourcesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
-
-    /**
      * <p>If the <code>maxResults</code> response was incomplete because there is more
      * data to retrieve, Amazon Q Business returns a pagination token in the response.
      * You can use this pagination token to retrieve the next set of Amazon Q Business
@@ -213,6 +192,27 @@ namespace Model
      */
     inline ListDataSourcesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>The maximum number of data source connectors to return.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of data source connectors to return.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of data source connectors to return.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>The maximum number of data source connectors to return.</p>
+     */
+    inline ListDataSourcesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
   private:
 
     Aws::String m_applicationId;
@@ -221,11 +221,11 @@ namespace Model
     Aws::String m_indexId;
     bool m_indexIdHasBeenSet = false;
 
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
-
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

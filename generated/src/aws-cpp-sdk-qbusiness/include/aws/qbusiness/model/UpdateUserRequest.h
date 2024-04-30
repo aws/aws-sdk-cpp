@@ -76,44 +76,44 @@ namespace Model
 
 
     /**
-     * <p>The user aliases attached to the user id that are to be deleted.</p>
+     * <p>The email id attached to the user.</p>
      */
-    inline const Aws::Vector<UserAlias>& GetUserAliasesToDelete() const{ return m_userAliasesToDelete; }
+    inline const Aws::String& GetUserId() const{ return m_userId; }
 
     /**
-     * <p>The user aliases attached to the user id that are to be deleted.</p>
+     * <p>The email id attached to the user.</p>
      */
-    inline bool UserAliasesToDeleteHasBeenSet() const { return m_userAliasesToDeleteHasBeenSet; }
+    inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
 
     /**
-     * <p>The user aliases attached to the user id that are to be deleted.</p>
+     * <p>The email id attached to the user.</p>
      */
-    inline void SetUserAliasesToDelete(const Aws::Vector<UserAlias>& value) { m_userAliasesToDeleteHasBeenSet = true; m_userAliasesToDelete = value; }
+    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
 
     /**
-     * <p>The user aliases attached to the user id that are to be deleted.</p>
+     * <p>The email id attached to the user.</p>
      */
-    inline void SetUserAliasesToDelete(Aws::Vector<UserAlias>&& value) { m_userAliasesToDeleteHasBeenSet = true; m_userAliasesToDelete = std::move(value); }
+    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
 
     /**
-     * <p>The user aliases attached to the user id that are to be deleted.</p>
+     * <p>The email id attached to the user.</p>
      */
-    inline UpdateUserRequest& WithUserAliasesToDelete(const Aws::Vector<UserAlias>& value) { SetUserAliasesToDelete(value); return *this;}
+    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
 
     /**
-     * <p>The user aliases attached to the user id that are to be deleted.</p>
+     * <p>The email id attached to the user.</p>
      */
-    inline UpdateUserRequest& WithUserAliasesToDelete(Aws::Vector<UserAlias>&& value) { SetUserAliasesToDelete(std::move(value)); return *this;}
+    inline UpdateUserRequest& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
 
     /**
-     * <p>The user aliases attached to the user id that are to be deleted.</p>
+     * <p>The email id attached to the user.</p>
      */
-    inline UpdateUserRequest& AddUserAliasesToDelete(const UserAlias& value) { m_userAliasesToDeleteHasBeenSet = true; m_userAliasesToDelete.push_back(value); return *this; }
+    inline UpdateUserRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
 
     /**
-     * <p>The user aliases attached to the user id that are to be deleted.</p>
+     * <p>The email id attached to the user.</p>
      */
-    inline UpdateUserRequest& AddUserAliasesToDelete(UserAlias&& value) { m_userAliasesToDeleteHasBeenSet = true; m_userAliasesToDelete.push_back(std::move(value)); return *this; }
+    inline UpdateUserRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
 
 
     /**
@@ -158,58 +158,58 @@ namespace Model
 
 
     /**
-     * <p>The email id attached to the user.</p>
+     * <p>The user aliases attached to the user id that are to be deleted.</p>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
+    inline const Aws::Vector<UserAlias>& GetUserAliasesToDelete() const{ return m_userAliasesToDelete; }
 
     /**
-     * <p>The email id attached to the user.</p>
+     * <p>The user aliases attached to the user id that are to be deleted.</p>
      */
-    inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
+    inline bool UserAliasesToDeleteHasBeenSet() const { return m_userAliasesToDeleteHasBeenSet; }
 
     /**
-     * <p>The email id attached to the user.</p>
+     * <p>The user aliases attached to the user id that are to be deleted.</p>
      */
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
+    inline void SetUserAliasesToDelete(const Aws::Vector<UserAlias>& value) { m_userAliasesToDeleteHasBeenSet = true; m_userAliasesToDelete = value; }
 
     /**
-     * <p>The email id attached to the user.</p>
+     * <p>The user aliases attached to the user id that are to be deleted.</p>
      */
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
+    inline void SetUserAliasesToDelete(Aws::Vector<UserAlias>&& value) { m_userAliasesToDeleteHasBeenSet = true; m_userAliasesToDelete = std::move(value); }
 
     /**
-     * <p>The email id attached to the user.</p>
+     * <p>The user aliases attached to the user id that are to be deleted.</p>
      */
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
+    inline UpdateUserRequest& WithUserAliasesToDelete(const Aws::Vector<UserAlias>& value) { SetUserAliasesToDelete(value); return *this;}
 
     /**
-     * <p>The email id attached to the user.</p>
+     * <p>The user aliases attached to the user id that are to be deleted.</p>
      */
-    inline UpdateUserRequest& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
+    inline UpdateUserRequest& WithUserAliasesToDelete(Aws::Vector<UserAlias>&& value) { SetUserAliasesToDelete(std::move(value)); return *this;}
 
     /**
-     * <p>The email id attached to the user.</p>
+     * <p>The user aliases attached to the user id that are to be deleted.</p>
      */
-    inline UpdateUserRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
+    inline UpdateUserRequest& AddUserAliasesToDelete(const UserAlias& value) { m_userAliasesToDeleteHasBeenSet = true; m_userAliasesToDelete.push_back(value); return *this; }
 
     /**
-     * <p>The email id attached to the user.</p>
+     * <p>The user aliases attached to the user id that are to be deleted.</p>
      */
-    inline UpdateUserRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
+    inline UpdateUserRequest& AddUserAliasesToDelete(UserAlias&& value) { m_userAliasesToDeleteHasBeenSet = true; m_userAliasesToDelete.push_back(std::move(value)); return *this; }
 
   private:
 
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet = false;
 
-    Aws::Vector<UserAlias> m_userAliasesToDelete;
-    bool m_userAliasesToDeleteHasBeenSet = false;
+    Aws::String m_userId;
+    bool m_userIdHasBeenSet = false;
 
     Aws::Vector<UserAlias> m_userAliasesToUpdate;
     bool m_userAliasesToUpdateHasBeenSet = false;
 
-    Aws::String m_userId;
-    bool m_userIdHasBeenSet = false;
+    Aws::Vector<UserAlias> m_userAliasesToDelete;
+    bool m_userAliasesToDeleteHasBeenSet = false;
   };
 
 } // namespace Model

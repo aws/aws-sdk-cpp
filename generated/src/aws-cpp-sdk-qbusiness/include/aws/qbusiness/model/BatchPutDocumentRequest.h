@@ -76,52 +76,44 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the data source sync during which the documents were
-     * added.</p>
+     * <p>The identifier of the Amazon Q Business index to add the documents to. </p>
      */
-    inline const Aws::String& GetDataSourceSyncId() const{ return m_dataSourceSyncId; }
+    inline const Aws::String& GetIndexId() const{ return m_indexId; }
 
     /**
-     * <p>The identifier of the data source sync during which the documents were
-     * added.</p>
+     * <p>The identifier of the Amazon Q Business index to add the documents to. </p>
      */
-    inline bool DataSourceSyncIdHasBeenSet() const { return m_dataSourceSyncIdHasBeenSet; }
+    inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the data source sync during which the documents were
-     * added.</p>
+     * <p>The identifier of the Amazon Q Business index to add the documents to. </p>
      */
-    inline void SetDataSourceSyncId(const Aws::String& value) { m_dataSourceSyncIdHasBeenSet = true; m_dataSourceSyncId = value; }
+    inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
 
     /**
-     * <p>The identifier of the data source sync during which the documents were
-     * added.</p>
+     * <p>The identifier of the Amazon Q Business index to add the documents to. </p>
      */
-    inline void SetDataSourceSyncId(Aws::String&& value) { m_dataSourceSyncIdHasBeenSet = true; m_dataSourceSyncId = std::move(value); }
+    inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
 
     /**
-     * <p>The identifier of the data source sync during which the documents were
-     * added.</p>
+     * <p>The identifier of the Amazon Q Business index to add the documents to. </p>
      */
-    inline void SetDataSourceSyncId(const char* value) { m_dataSourceSyncIdHasBeenSet = true; m_dataSourceSyncId.assign(value); }
+    inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
 
     /**
-     * <p>The identifier of the data source sync during which the documents were
-     * added.</p>
+     * <p>The identifier of the Amazon Q Business index to add the documents to. </p>
      */
-    inline BatchPutDocumentRequest& WithDataSourceSyncId(const Aws::String& value) { SetDataSourceSyncId(value); return *this;}
+    inline BatchPutDocumentRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
 
     /**
-     * <p>The identifier of the data source sync during which the documents were
-     * added.</p>
+     * <p>The identifier of the Amazon Q Business index to add the documents to. </p>
      */
-    inline BatchPutDocumentRequest& WithDataSourceSyncId(Aws::String&& value) { SetDataSourceSyncId(std::move(value)); return *this;}
+    inline BatchPutDocumentRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the data source sync during which the documents were
-     * added.</p>
+     * <p>The identifier of the Amazon Q Business index to add the documents to. </p>
      */
-    inline BatchPutDocumentRequest& WithDataSourceSyncId(const char* value) { SetDataSourceSyncId(value); return *this;}
+    inline BatchPutDocumentRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
 
 
     /**
@@ -163,47 +155,6 @@ namespace Model
      * <p>One or more documents to add to the index.</p>
      */
     inline BatchPutDocumentRequest& AddDocuments(Document&& value) { m_documentsHasBeenSet = true; m_documents.push_back(std::move(value)); return *this; }
-
-
-    /**
-     * <p>The identifier of the Amazon Q Business index to add the documents to. </p>
-     */
-    inline const Aws::String& GetIndexId() const{ return m_indexId; }
-
-    /**
-     * <p>The identifier of the Amazon Q Business index to add the documents to. </p>
-     */
-    inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the Amazon Q Business index to add the documents to. </p>
-     */
-    inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
-
-    /**
-     * <p>The identifier of the Amazon Q Business index to add the documents to. </p>
-     */
-    inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
-
-    /**
-     * <p>The identifier of the Amazon Q Business index to add the documents to. </p>
-     */
-    inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
-
-    /**
-     * <p>The identifier of the Amazon Q Business index to add the documents to. </p>
-     */
-    inline BatchPutDocumentRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Q Business index to add the documents to. </p>
-     */
-    inline BatchPutDocumentRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Q Business index to add the documents to. </p>
-     */
-    inline BatchPutDocumentRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
 
 
     /**
@@ -254,22 +205,71 @@ namespace Model
      */
     inline BatchPutDocumentRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
+    /**
+     * <p>The identifier of the data source sync during which the documents were
+     * added.</p>
+     */
+    inline const Aws::String& GetDataSourceSyncId() const{ return m_dataSourceSyncId; }
+
+    /**
+     * <p>The identifier of the data source sync during which the documents were
+     * added.</p>
+     */
+    inline bool DataSourceSyncIdHasBeenSet() const { return m_dataSourceSyncIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the data source sync during which the documents were
+     * added.</p>
+     */
+    inline void SetDataSourceSyncId(const Aws::String& value) { m_dataSourceSyncIdHasBeenSet = true; m_dataSourceSyncId = value; }
+
+    /**
+     * <p>The identifier of the data source sync during which the documents were
+     * added.</p>
+     */
+    inline void SetDataSourceSyncId(Aws::String&& value) { m_dataSourceSyncIdHasBeenSet = true; m_dataSourceSyncId = std::move(value); }
+
+    /**
+     * <p>The identifier of the data source sync during which the documents were
+     * added.</p>
+     */
+    inline void SetDataSourceSyncId(const char* value) { m_dataSourceSyncIdHasBeenSet = true; m_dataSourceSyncId.assign(value); }
+
+    /**
+     * <p>The identifier of the data source sync during which the documents were
+     * added.</p>
+     */
+    inline BatchPutDocumentRequest& WithDataSourceSyncId(const Aws::String& value) { SetDataSourceSyncId(value); return *this;}
+
+    /**
+     * <p>The identifier of the data source sync during which the documents were
+     * added.</p>
+     */
+    inline BatchPutDocumentRequest& WithDataSourceSyncId(Aws::String&& value) { SetDataSourceSyncId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the data source sync during which the documents were
+     * added.</p>
+     */
+    inline BatchPutDocumentRequest& WithDataSourceSyncId(const char* value) { SetDataSourceSyncId(value); return *this;}
+
   private:
 
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet = false;
 
-    Aws::String m_dataSourceSyncId;
-    bool m_dataSourceSyncIdHasBeenSet = false;
+    Aws::String m_indexId;
+    bool m_indexIdHasBeenSet = false;
 
     Aws::Vector<Document> m_documents;
     bool m_documentsHasBeenSet = false;
 
-    Aws::String m_indexId;
-    bool m_indexIdHasBeenSet = false;
-
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
+
+    Aws::String m_dataSourceSyncId;
+    bool m_dataSourceSyncIdHasBeenSet = false;
   };
 
 } // namespace Model

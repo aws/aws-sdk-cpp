@@ -14,10 +14,11 @@ using namespace Aws::Utils;
 
 UpdateApplicationRequest::UpdateApplicationRequest() : 
     m_applicationIdHasBeenSet(false),
-    m_attachmentsConfigurationHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
+    m_identityCenterInstanceArnHasBeenSet(false),
     m_displayNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_roleArnHasBeenSet(false),
+    m_attachmentsConfigurationHasBeenSet(false)
 {
 }
 
@@ -25,15 +26,9 @@ Aws::String UpdateApplicationRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_attachmentsConfigurationHasBeenSet)
+  if(m_identityCenterInstanceArnHasBeenSet)
   {
-   payload.WithObject("attachmentsConfiguration", m_attachmentsConfiguration.Jsonize());
-
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
+   payload.WithString("identityCenterInstanceArn", m_identityCenterInstanceArn);
 
   }
 
@@ -43,9 +38,21 @@ Aws::String UpdateApplicationRequest::SerializePayload() const
 
   }
 
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
+
+  }
+
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("roleArn", m_roleArn);
+
+  }
+
+  if(m_attachmentsConfigurationHasBeenSet)
+  {
+   payload.WithObject("attachmentsConfiguration", m_attachmentsConfiguration.Jsonize());
 
   }
 

@@ -39,55 +39,6 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the Amazon Q Business application associated with the
-     * conversation.</p>
-     */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
-
-    /**
-     * <p>The identifier of the Amazon Q Business application associated with the
-     * conversation.</p>
-     */
-    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the Amazon Q Business application associated with the
-     * conversation.</p>
-     */
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-
-    /**
-     * <p>The identifier of the Amazon Q Business application associated with the
-     * conversation.</p>
-     */
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-
-    /**
-     * <p>The identifier of the Amazon Q Business application associated with the
-     * conversation.</p>
-     */
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-
-    /**
-     * <p>The identifier of the Amazon Q Business application associated with the
-     * conversation.</p>
-     */
-    inline DeleteConversationRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Q Business application associated with the
-     * conversation.</p>
-     */
-    inline DeleteConversationRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Q Business application associated with the
-     * conversation.</p>
-     */
-    inline DeleteConversationRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
-
-
-    /**
      * <p>The identifier of the Amazon Q Business web experience conversation being
      * deleted.</p>
      */
@@ -137,6 +88,55 @@ namespace Model
 
 
     /**
+     * <p>The identifier of the Amazon Q Business application associated with the
+     * conversation.</p>
+     */
+    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+
+    /**
+     * <p>The identifier of the Amazon Q Business application associated with the
+     * conversation.</p>
+     */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the Amazon Q Business application associated with the
+     * conversation.</p>
+     */
+    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
+
+    /**
+     * <p>The identifier of the Amazon Q Business application associated with the
+     * conversation.</p>
+     */
+    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
+
+    /**
+     * <p>The identifier of the Amazon Q Business application associated with the
+     * conversation.</p>
+     */
+    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
+
+    /**
+     * <p>The identifier of the Amazon Q Business application associated with the
+     * conversation.</p>
+     */
+    inline DeleteConversationRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
+
+    /**
+     * <p>The identifier of the Amazon Q Business application associated with the
+     * conversation.</p>
+     */
+    inline DeleteConversationRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the Amazon Q Business application associated with the
+     * conversation.</p>
+     */
+    inline DeleteConversationRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+
+
+    /**
      * <p>The identifier of the user who is deleting the conversation.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
@@ -178,11 +178,11 @@ namespace Model
 
   private:
 
-    Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet = false;
-
     Aws::String m_conversationId;
     bool m_conversationIdHasBeenSet = false;
+
+    Aws::String m_applicationId;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_userId;
     bool m_userIdHasBeenSet = false;

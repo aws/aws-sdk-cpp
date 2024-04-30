@@ -23,6 +23,9 @@ namespace Aws
         static const int ADMIN_HASH = HashingUtils::HashString("ADMIN");
         static const int AUTHOR_HASH = HashingUtils::HashString("AUTHOR");
         static const int READER_HASH = HashingUtils::HashString("READER");
+        static const int ADMIN_PRO_HASH = HashingUtils::HashString("ADMIN_PRO");
+        static const int AUTHOR_PRO_HASH = HashingUtils::HashString("AUTHOR_PRO");
+        static const int READER_PRO_HASH = HashingUtils::HashString("READER_PRO");
 
 
         Role GetRoleForName(const Aws::String& name)
@@ -39,6 +42,18 @@ namespace Aws
           else if (hashCode == READER_HASH)
           {
             return Role::READER;
+          }
+          else if (hashCode == ADMIN_PRO_HASH)
+          {
+            return Role::ADMIN_PRO;
+          }
+          else if (hashCode == AUTHOR_PRO_HASH)
+          {
+            return Role::AUTHOR_PRO;
+          }
+          else if (hashCode == READER_PRO_HASH)
+          {
+            return Role::READER_PRO;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +77,12 @@ namespace Aws
             return "AUTHOR";
           case Role::READER:
             return "READER";
+          case Role::ADMIN_PRO:
+            return "ADMIN_PRO";
+          case Role::AUTHOR_PRO:
+            return "AUTHOR_PRO";
+          case Role::READER_PRO:
+            return "READER_PRO";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -14,26 +14,15 @@ using namespace Aws::Utils;
 
 UpdateUserRequest::UpdateUserRequest() : 
     m_applicationIdHasBeenSet(false),
-    m_userAliasesToDeleteHasBeenSet(false),
+    m_userIdHasBeenSet(false),
     m_userAliasesToUpdateHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_userAliasesToDeleteHasBeenSet(false)
 {
 }
 
 Aws::String UpdateUserRequest::SerializePayload() const
 {
   JsonValue payload;
-
-  if(m_userAliasesToDeleteHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> userAliasesToDeleteJsonList(m_userAliasesToDelete.size());
-   for(unsigned userAliasesToDeleteIndex = 0; userAliasesToDeleteIndex < userAliasesToDeleteJsonList.GetLength(); ++userAliasesToDeleteIndex)
-   {
-     userAliasesToDeleteJsonList[userAliasesToDeleteIndex].AsObject(m_userAliasesToDelete[userAliasesToDeleteIndex].Jsonize());
-   }
-   payload.WithArray("userAliasesToDelete", std::move(userAliasesToDeleteJsonList));
-
-  }
 
   if(m_userAliasesToUpdateHasBeenSet)
   {
@@ -43,6 +32,17 @@ Aws::String UpdateUserRequest::SerializePayload() const
      userAliasesToUpdateJsonList[userAliasesToUpdateIndex].AsObject(m_userAliasesToUpdate[userAliasesToUpdateIndex].Jsonize());
    }
    payload.WithArray("userAliasesToUpdate", std::move(userAliasesToUpdateJsonList));
+
+  }
+
+  if(m_userAliasesToDeleteHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> userAliasesToDeleteJsonList(m_userAliasesToDelete.size());
+   for(unsigned userAliasesToDeleteIndex = 0; userAliasesToDeleteIndex < userAliasesToDeleteJsonList.GetLength(); ++userAliasesToDeleteIndex)
+   {
+     userAliasesToDeleteJsonList[userAliasesToDeleteIndex].AsObject(m_userAliasesToDelete[userAliasesToDeleteIndex].Jsonize());
+   }
+   payload.WithArray("userAliasesToDelete", std::move(userAliasesToDeleteJsonList));
 
   }
 

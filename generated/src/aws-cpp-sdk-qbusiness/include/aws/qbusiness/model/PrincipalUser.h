@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
-#include <aws/qbusiness/model/ReadAccessType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qbusiness/model/ReadAccessType.h>
 #include <aws/qbusiness/model/MembershipType.h>
 #include <utility>
 
@@ -38,43 +38,6 @@ namespace Model
     AWS_QBUSINESS_API PrincipalUser(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API PrincipalUser& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>Provides information about whether to allow or deny access to the
-     * principal.</p>
-     */
-    inline const ReadAccessType& GetAccess() const{ return m_access; }
-
-    /**
-     * <p>Provides information about whether to allow or deny access to the
-     * principal.</p>
-     */
-    inline bool AccessHasBeenSet() const { return m_accessHasBeenSet; }
-
-    /**
-     * <p>Provides information about whether to allow or deny access to the
-     * principal.</p>
-     */
-    inline void SetAccess(const ReadAccessType& value) { m_accessHasBeenSet = true; m_access = value; }
-
-    /**
-     * <p>Provides information about whether to allow or deny access to the
-     * principal.</p>
-     */
-    inline void SetAccess(ReadAccessType&& value) { m_accessHasBeenSet = true; m_access = std::move(value); }
-
-    /**
-     * <p>Provides information about whether to allow or deny access to the
-     * principal.</p>
-     */
-    inline PrincipalUser& WithAccess(const ReadAccessType& value) { SetAccess(value); return *this;}
-
-    /**
-     * <p>Provides information about whether to allow or deny access to the
-     * principal.</p>
-     */
-    inline PrincipalUser& WithAccess(ReadAccessType&& value) { SetAccess(std::move(value)); return *this;}
 
 
     /**
@@ -119,6 +82,43 @@ namespace Model
 
 
     /**
+     * <p>Provides information about whether to allow or deny access to the
+     * principal.</p>
+     */
+    inline const ReadAccessType& GetAccess() const{ return m_access; }
+
+    /**
+     * <p>Provides information about whether to allow or deny access to the
+     * principal.</p>
+     */
+    inline bool AccessHasBeenSet() const { return m_accessHasBeenSet; }
+
+    /**
+     * <p>Provides information about whether to allow or deny access to the
+     * principal.</p>
+     */
+    inline void SetAccess(const ReadAccessType& value) { m_accessHasBeenSet = true; m_access = value; }
+
+    /**
+     * <p>Provides information about whether to allow or deny access to the
+     * principal.</p>
+     */
+    inline void SetAccess(ReadAccessType&& value) { m_accessHasBeenSet = true; m_access = std::move(value); }
+
+    /**
+     * <p>Provides information about whether to allow or deny access to the
+     * principal.</p>
+     */
+    inline PrincipalUser& WithAccess(const ReadAccessType& value) { SetAccess(value); return *this;}
+
+    /**
+     * <p>Provides information about whether to allow or deny access to the
+     * principal.</p>
+     */
+    inline PrincipalUser& WithAccess(ReadAccessType&& value) { SetAccess(std::move(value)); return *this;}
+
+
+    /**
      * <p>The type of group.</p>
      */
     inline const MembershipType& GetMembershipType() const{ return m_membershipType; }
@@ -150,11 +150,11 @@ namespace Model
 
   private:
 
-    ReadAccessType m_access;
-    bool m_accessHasBeenSet = false;
-
     Aws::String m_id;
     bool m_idHasBeenSet = false;
+
+    ReadAccessType m_access;
+    bool m_accessHasBeenSet = false;
 
     MembershipType m_membershipType;
     bool m_membershipTypeHasBeenSet = false;

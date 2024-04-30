@@ -146,47 +146,6 @@ namespace Model
 
 
     /**
-     * <p>The group attribute name in your IdP that maps to user groups.</p>
-     */
-    inline const Aws::String& GetUserGroupAttribute() const{ return m_userGroupAttribute; }
-
-    /**
-     * <p>The group attribute name in your IdP that maps to user groups.</p>
-     */
-    inline bool UserGroupAttributeHasBeenSet() const { return m_userGroupAttributeHasBeenSet; }
-
-    /**
-     * <p>The group attribute name in your IdP that maps to user groups.</p>
-     */
-    inline void SetUserGroupAttribute(const Aws::String& value) { m_userGroupAttributeHasBeenSet = true; m_userGroupAttribute = value; }
-
-    /**
-     * <p>The group attribute name in your IdP that maps to user groups.</p>
-     */
-    inline void SetUserGroupAttribute(Aws::String&& value) { m_userGroupAttributeHasBeenSet = true; m_userGroupAttribute = std::move(value); }
-
-    /**
-     * <p>The group attribute name in your IdP that maps to user groups.</p>
-     */
-    inline void SetUserGroupAttribute(const char* value) { m_userGroupAttributeHasBeenSet = true; m_userGroupAttribute.assign(value); }
-
-    /**
-     * <p>The group attribute name in your IdP that maps to user groups.</p>
-     */
-    inline SamlConfiguration& WithUserGroupAttribute(const Aws::String& value) { SetUserGroupAttribute(value); return *this;}
-
-    /**
-     * <p>The group attribute name in your IdP that maps to user groups.</p>
-     */
-    inline SamlConfiguration& WithUserGroupAttribute(Aws::String&& value) { SetUserGroupAttribute(std::move(value)); return *this;}
-
-    /**
-     * <p>The group attribute name in your IdP that maps to user groups.</p>
-     */
-    inline SamlConfiguration& WithUserGroupAttribute(const char* value) { SetUserGroupAttribute(value); return *this;}
-
-
-    /**
      * <p>The user attribute name in your IdP that maps to the user email.</p>
      */
     inline const Aws::String& GetUserIdAttribute() const{ return m_userIdAttribute; }
@@ -226,6 +185,47 @@ namespace Model
      */
     inline SamlConfiguration& WithUserIdAttribute(const char* value) { SetUserIdAttribute(value); return *this;}
 
+
+    /**
+     * <p>The group attribute name in your IdP that maps to user groups.</p>
+     */
+    inline const Aws::String& GetUserGroupAttribute() const{ return m_userGroupAttribute; }
+
+    /**
+     * <p>The group attribute name in your IdP that maps to user groups.</p>
+     */
+    inline bool UserGroupAttributeHasBeenSet() const { return m_userGroupAttributeHasBeenSet; }
+
+    /**
+     * <p>The group attribute name in your IdP that maps to user groups.</p>
+     */
+    inline void SetUserGroupAttribute(const Aws::String& value) { m_userGroupAttributeHasBeenSet = true; m_userGroupAttribute = value; }
+
+    /**
+     * <p>The group attribute name in your IdP that maps to user groups.</p>
+     */
+    inline void SetUserGroupAttribute(Aws::String&& value) { m_userGroupAttributeHasBeenSet = true; m_userGroupAttribute = std::move(value); }
+
+    /**
+     * <p>The group attribute name in your IdP that maps to user groups.</p>
+     */
+    inline void SetUserGroupAttribute(const char* value) { m_userGroupAttributeHasBeenSet = true; m_userGroupAttribute.assign(value); }
+
+    /**
+     * <p>The group attribute name in your IdP that maps to user groups.</p>
+     */
+    inline SamlConfiguration& WithUserGroupAttribute(const Aws::String& value) { SetUserGroupAttribute(value); return *this;}
+
+    /**
+     * <p>The group attribute name in your IdP that maps to user groups.</p>
+     */
+    inline SamlConfiguration& WithUserGroupAttribute(Aws::String&& value) { SetUserGroupAttribute(std::move(value)); return *this;}
+
+    /**
+     * <p>The group attribute name in your IdP that maps to user groups.</p>
+     */
+    inline SamlConfiguration& WithUserGroupAttribute(const char* value) { SetUserGroupAttribute(value); return *this;}
+
   private:
 
     Aws::String m_metadataXML;
@@ -234,11 +234,11 @@ namespace Model
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
 
-    Aws::String m_userGroupAttribute;
-    bool m_userGroupAttributeHasBeenSet = false;
-
     Aws::String m_userIdAttribute;
     bool m_userIdAttributeHasBeenSet = false;
+
+    Aws::String m_userGroupAttribute;
+    bool m_userGroupAttributeHasBeenSet = false;
   };
 
 } // namespace Model

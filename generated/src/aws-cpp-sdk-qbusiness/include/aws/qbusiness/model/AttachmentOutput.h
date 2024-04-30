@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
-#include <aws/qbusiness/model/ErrorDetail.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qbusiness/model/AttachmentStatus.h>
+#include <aws/qbusiness/model/ErrorDetail.h>
 #include <utility>
 
 namespace Aws
@@ -37,37 +37,6 @@ namespace Model
     AWS_QBUSINESS_API AttachmentOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API AttachmentOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>An error associated with a file uploaded during chat.</p>
-     */
-    inline const ErrorDetail& GetError() const{ return m_error; }
-
-    /**
-     * <p>An error associated with a file uploaded during chat.</p>
-     */
-    inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-
-    /**
-     * <p>An error associated with a file uploaded during chat.</p>
-     */
-    inline void SetError(const ErrorDetail& value) { m_errorHasBeenSet = true; m_error = value; }
-
-    /**
-     * <p>An error associated with a file uploaded during chat.</p>
-     */
-    inline void SetError(ErrorDetail&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-
-    /**
-     * <p>An error associated with a file uploaded during chat.</p>
-     */
-    inline AttachmentOutput& WithError(const ErrorDetail& value) { SetError(value); return *this;}
-
-    /**
-     * <p>An error associated with a file uploaded during chat.</p>
-     */
-    inline AttachmentOutput& WithError(ErrorDetail&& value) { SetError(std::move(value)); return *this;}
 
 
     /**
@@ -141,16 +110,47 @@ namespace Model
      */
     inline AttachmentOutput& WithStatus(AttachmentStatus&& value) { SetStatus(std::move(value)); return *this;}
 
-  private:
 
-    ErrorDetail m_error;
-    bool m_errorHasBeenSet = false;
+    /**
+     * <p>An error associated with a file uploaded during chat.</p>
+     */
+    inline const ErrorDetail& GetError() const{ return m_error; }
+
+    /**
+     * <p>An error associated with a file uploaded during chat.</p>
+     */
+    inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
+
+    /**
+     * <p>An error associated with a file uploaded during chat.</p>
+     */
+    inline void SetError(const ErrorDetail& value) { m_errorHasBeenSet = true; m_error = value; }
+
+    /**
+     * <p>An error associated with a file uploaded during chat.</p>
+     */
+    inline void SetError(ErrorDetail&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
+
+    /**
+     * <p>An error associated with a file uploaded during chat.</p>
+     */
+    inline AttachmentOutput& WithError(const ErrorDetail& value) { SetError(value); return *this;}
+
+    /**
+     * <p>An error associated with a file uploaded during chat.</p>
+     */
+    inline AttachmentOutput& WithError(ErrorDetail&& value) { SetError(std::move(value)); return *this;}
+
+  private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
     AttachmentStatus m_status;
     bool m_statusHasBeenSet = false;
+
+    ErrorDetail m_error;
+    bool m_errorHasBeenSet = false;
   };
 
 } // namespace Model

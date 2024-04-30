@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p> The shares available and their meta details. </p>
+     * <p>The shares available and their metadata details.</p>
      */
     inline const Aws::Vector<ShareDetails>& GetShares() const{ return m_shares; }
 
     /**
-     * <p> The shares available and their meta details. </p>
+     * <p>The shares available and their metadata details.</p>
      */
     inline void SetShares(const Aws::Vector<ShareDetails>& value) { m_shares = value; }
 
     /**
-     * <p> The shares available and their meta details. </p>
+     * <p>The shares available and their metadata details.</p>
      */
     inline void SetShares(Aws::Vector<ShareDetails>&& value) { m_shares = std::move(value); }
 
     /**
-     * <p> The shares available and their meta details. </p>
+     * <p>The shares available and their metadata details.</p>
      */
     inline ListSharesResult& WithShares(const Aws::Vector<ShareDetails>& value) { SetShares(value); return *this;}
 
     /**
-     * <p> The shares available and their meta details. </p>
+     * <p>The shares available and their metadata details.</p>
      */
     inline ListSharesResult& WithShares(Aws::Vector<ShareDetails>&& value) { SetShares(std::move(value)); return *this;}
 
     /**
-     * <p> The shares available and their meta details. </p>
+     * <p>The shares available and their metadata details.</p>
      */
     inline ListSharesResult& AddShares(const ShareDetails& value) { m_shares.push_back(value); return *this; }
 
     /**
-     * <p> The shares available and their meta details. </p>
+     * <p>The shares available and their metadata details.</p>
      */
     inline ListSharesResult& AddShares(ShareDetails&& value) { m_shares.push_back(std::move(value)); return *this; }
 

@@ -45,6 +45,23 @@ namespace Aws
         static const int VOICE_NO_ANSWER_HASH = HashingUtils::HashString("VOICE_NO_ANSWER");
         static const int VOICE_FAILED_HASH = HashingUtils::HashString("VOICE_FAILED");
         static const int VOICE_TTL_EXPIRED_HASH = HashingUtils::HashString("VOICE_TTL_EXPIRED");
+        static const int MEDIA_ALL_HASH = HashingUtils::HashString("MEDIA_ALL");
+        static const int MEDIA_PENDING_HASH = HashingUtils::HashString("MEDIA_PENDING");
+        static const int MEDIA_QUEUED_HASH = HashingUtils::HashString("MEDIA_QUEUED");
+        static const int MEDIA_SUCCESSFUL_HASH = HashingUtils::HashString("MEDIA_SUCCESSFUL");
+        static const int MEDIA_DELIVERED_HASH = HashingUtils::HashString("MEDIA_DELIVERED");
+        static const int MEDIA_INVALID_HASH = HashingUtils::HashString("MEDIA_INVALID");
+        static const int MEDIA_INVALID_MESSAGE_HASH = HashingUtils::HashString("MEDIA_INVALID_MESSAGE");
+        static const int MEDIA_UNREACHABLE_HASH = HashingUtils::HashString("MEDIA_UNREACHABLE");
+        static const int MEDIA_CARRIER_UNREACHABLE_HASH = HashingUtils::HashString("MEDIA_CARRIER_UNREACHABLE");
+        static const int MEDIA_BLOCKED_HASH = HashingUtils::HashString("MEDIA_BLOCKED");
+        static const int MEDIA_CARRIER_BLOCKED_HASH = HashingUtils::HashString("MEDIA_CARRIER_BLOCKED");
+        static const int MEDIA_SPAM_HASH = HashingUtils::HashString("MEDIA_SPAM");
+        static const int MEDIA_UNKNOWN_HASH = HashingUtils::HashString("MEDIA_UNKNOWN");
+        static const int MEDIA_TTL_EXPIRED_HASH = HashingUtils::HashString("MEDIA_TTL_EXPIRED");
+        static const int MEDIA_FILE_INACCESSIBLE_HASH = HashingUtils::HashString("MEDIA_FILE_INACCESSIBLE");
+        static const int MEDIA_FILE_TYPE_UNSUPPORTED_HASH = HashingUtils::HashString("MEDIA_FILE_TYPE_UNSUPPORTED");
+        static const int MEDIA_FILE_SIZE_EXCEEDED_HASH = HashingUtils::HashString("MEDIA_FILE_SIZE_EXCEEDED");
 
 
         EventType GetEventTypeForName(const Aws::String& name)
@@ -150,6 +167,74 @@ namespace Aws
           {
             return EventType::VOICE_TTL_EXPIRED;
           }
+          else if (hashCode == MEDIA_ALL_HASH)
+          {
+            return EventType::MEDIA_ALL;
+          }
+          else if (hashCode == MEDIA_PENDING_HASH)
+          {
+            return EventType::MEDIA_PENDING;
+          }
+          else if (hashCode == MEDIA_QUEUED_HASH)
+          {
+            return EventType::MEDIA_QUEUED;
+          }
+          else if (hashCode == MEDIA_SUCCESSFUL_HASH)
+          {
+            return EventType::MEDIA_SUCCESSFUL;
+          }
+          else if (hashCode == MEDIA_DELIVERED_HASH)
+          {
+            return EventType::MEDIA_DELIVERED;
+          }
+          else if (hashCode == MEDIA_INVALID_HASH)
+          {
+            return EventType::MEDIA_INVALID;
+          }
+          else if (hashCode == MEDIA_INVALID_MESSAGE_HASH)
+          {
+            return EventType::MEDIA_INVALID_MESSAGE;
+          }
+          else if (hashCode == MEDIA_UNREACHABLE_HASH)
+          {
+            return EventType::MEDIA_UNREACHABLE;
+          }
+          else if (hashCode == MEDIA_CARRIER_UNREACHABLE_HASH)
+          {
+            return EventType::MEDIA_CARRIER_UNREACHABLE;
+          }
+          else if (hashCode == MEDIA_BLOCKED_HASH)
+          {
+            return EventType::MEDIA_BLOCKED;
+          }
+          else if (hashCode == MEDIA_CARRIER_BLOCKED_HASH)
+          {
+            return EventType::MEDIA_CARRIER_BLOCKED;
+          }
+          else if (hashCode == MEDIA_SPAM_HASH)
+          {
+            return EventType::MEDIA_SPAM;
+          }
+          else if (hashCode == MEDIA_UNKNOWN_HASH)
+          {
+            return EventType::MEDIA_UNKNOWN;
+          }
+          else if (hashCode == MEDIA_TTL_EXPIRED_HASH)
+          {
+            return EventType::MEDIA_TTL_EXPIRED;
+          }
+          else if (hashCode == MEDIA_FILE_INACCESSIBLE_HASH)
+          {
+            return EventType::MEDIA_FILE_INACCESSIBLE;
+          }
+          else if (hashCode == MEDIA_FILE_TYPE_UNSUPPORTED_HASH)
+          {
+            return EventType::MEDIA_FILE_TYPE_UNSUPPORTED;
+          }
+          else if (hashCode == MEDIA_FILE_SIZE_EXCEEDED_HASH)
+          {
+            return EventType::MEDIA_FILE_SIZE_EXCEEDED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -216,6 +301,40 @@ namespace Aws
             return "VOICE_FAILED";
           case EventType::VOICE_TTL_EXPIRED:
             return "VOICE_TTL_EXPIRED";
+          case EventType::MEDIA_ALL:
+            return "MEDIA_ALL";
+          case EventType::MEDIA_PENDING:
+            return "MEDIA_PENDING";
+          case EventType::MEDIA_QUEUED:
+            return "MEDIA_QUEUED";
+          case EventType::MEDIA_SUCCESSFUL:
+            return "MEDIA_SUCCESSFUL";
+          case EventType::MEDIA_DELIVERED:
+            return "MEDIA_DELIVERED";
+          case EventType::MEDIA_INVALID:
+            return "MEDIA_INVALID";
+          case EventType::MEDIA_INVALID_MESSAGE:
+            return "MEDIA_INVALID_MESSAGE";
+          case EventType::MEDIA_UNREACHABLE:
+            return "MEDIA_UNREACHABLE";
+          case EventType::MEDIA_CARRIER_UNREACHABLE:
+            return "MEDIA_CARRIER_UNREACHABLE";
+          case EventType::MEDIA_BLOCKED:
+            return "MEDIA_BLOCKED";
+          case EventType::MEDIA_CARRIER_BLOCKED:
+            return "MEDIA_CARRIER_BLOCKED";
+          case EventType::MEDIA_SPAM:
+            return "MEDIA_SPAM";
+          case EventType::MEDIA_UNKNOWN:
+            return "MEDIA_UNKNOWN";
+          case EventType::MEDIA_TTL_EXPIRED:
+            return "MEDIA_TTL_EXPIRED";
+          case EventType::MEDIA_FILE_INACCESSIBLE:
+            return "MEDIA_FILE_INACCESSIBLE";
+          case EventType::MEDIA_FILE_TYPE_UNSUPPORTED:
+            return "MEDIA_FILE_TYPE_UNSUPPORTED";
+          case EventType::MEDIA_FILE_SIZE_EXCEEDED:
+            return "MEDIA_FILE_SIZE_EXCEEDED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

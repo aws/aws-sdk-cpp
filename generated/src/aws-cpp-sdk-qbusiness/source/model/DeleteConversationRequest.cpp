@@ -16,8 +16,8 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 DeleteConversationRequest::DeleteConversationRequest() : 
-    m_applicationIdHasBeenSet(false),
     m_conversationIdHasBeenSet(false),
+    m_applicationIdHasBeenSet(false),
     m_userIdHasBeenSet(false)
 {
 }

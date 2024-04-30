@@ -34,27 +34,27 @@ namespace Model
 
 
     /**
-     * <p> The status of an analytics store share. </p>
+     * <p>The status of the resource share.</p>
      */
     inline const ShareStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p> The status of an analytics store share. </p>
+     * <p>The status of the resource share.</p>
      */
     inline void SetStatus(const ShareStatus& value) { m_status = value; }
 
     /**
-     * <p> The status of an analytics store share. </p>
+     * <p>The status of the resource share.</p>
      */
     inline void SetStatus(ShareStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p> The status of an analytics store share. </p>
+     * <p>The status of the resource share.</p>
      */
     inline AcceptShareResult& WithStatus(const ShareStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p> The status of an analytics store share. </p>
+     * <p>The status of the resource share.</p>
      */
     inline AcceptShareResult& WithStatus(ShareStatus&& value) { SetStatus(std::move(value)); return *this;}
 

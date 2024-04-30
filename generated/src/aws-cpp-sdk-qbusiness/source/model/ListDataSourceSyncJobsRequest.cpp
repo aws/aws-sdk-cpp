@@ -16,14 +16,14 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 ListDataSourceSyncJobsRequest::ListDataSourceSyncJobsRequest() : 
-    m_applicationIdHasBeenSet(false),
     m_dataSourceIdHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
+    m_applicationIdHasBeenSet(false),
     m_indexIdHasBeenSet(false),
+    m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
     m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
     m_statusFilter(DataSourceSyncJobStatus::NOT_SET),
     m_statusFilterHasBeenSet(false)
 {
@@ -37,10 +37,10 @@ Aws::String ListDataSourceSyncJobsRequest::SerializePayload() const
 void ListDataSourceSyncJobsRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
-    if(m_endTimeHasBeenSet)
+    if(m_nextTokenHasBeenSet)
     {
-      ss << m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
-      uri.AddQueryStringParameter("endTime", ss.str());
+      ss << m_nextToken;
+      uri.AddQueryStringParameter("nextToken", ss.str());
       ss.str("");
     }
 
@@ -51,17 +51,17 @@ void ListDataSourceSyncJobsRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
-    if(m_nextTokenHasBeenSet)
-    {
-      ss << m_nextToken;
-      uri.AddQueryStringParameter("nextToken", ss.str());
-      ss.str("");
-    }
-
     if(m_startTimeHasBeenSet)
     {
       ss << m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
       uri.AddQueryStringParameter("startTime", ss.str());
+      ss.str("");
+    }
+
+    if(m_endTimeHasBeenSet)
+    {
+      ss << m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
+      uri.AddQueryStringParameter("endTime", ss.str());
       ss.str("");
     }
 

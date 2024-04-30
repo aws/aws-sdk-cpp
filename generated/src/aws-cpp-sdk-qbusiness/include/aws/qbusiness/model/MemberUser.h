@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
-#include <aws/qbusiness/model/MembershipType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qbusiness/model/MembershipType.h>
 #include <utility>
 
 namespace Aws
@@ -36,37 +36,6 @@ namespace Model
     AWS_QBUSINESS_API MemberUser(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API MemberUser& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The type of the user.</p>
-     */
-    inline const MembershipType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of the user.</p>
-     */
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of the user.</p>
-     */
-    inline void SetType(const MembershipType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of the user.</p>
-     */
-    inline void SetType(MembershipType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of the user.</p>
-     */
-    inline MemberUser& WithType(const MembershipType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of the user.</p>
-     */
-    inline MemberUser& WithType(MembershipType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
@@ -109,13 +78,44 @@ namespace Model
      */
     inline MemberUser& WithUserId(const char* value) { SetUserId(value); return *this;}
 
-  private:
 
-    MembershipType m_type;
-    bool m_typeHasBeenSet = false;
+    /**
+     * <p>The type of the user.</p>
+     */
+    inline const MembershipType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of the user.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of the user.</p>
+     */
+    inline void SetType(const MembershipType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The type of the user.</p>
+     */
+    inline void SetType(MembershipType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>The type of the user.</p>
+     */
+    inline MemberUser& WithType(const MembershipType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The type of the user.</p>
+     */
+    inline MemberUser& WithType(MembershipType&& value) { SetType(std::move(value)); return *this;}
+
+  private:
 
     Aws::String m_userId;
     bool m_userIdHasBeenSet = false;
+
+    MembershipType m_type;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

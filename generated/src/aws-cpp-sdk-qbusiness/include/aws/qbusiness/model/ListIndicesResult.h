@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qbusiness/model/Index.h>
 #include <utility>
 
@@ -32,42 +32,6 @@ namespace Model
     AWS_QBUSINESS_API ListIndicesResult();
     AWS_QBUSINESS_API ListIndicesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QBUSINESS_API ListIndicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>An array of information on the items in one or more indexes.</p>
-     */
-    inline const Aws::Vector<Index>& GetIndices() const{ return m_indices; }
-
-    /**
-     * <p>An array of information on the items in one or more indexes.</p>
-     */
-    inline void SetIndices(const Aws::Vector<Index>& value) { m_indices = value; }
-
-    /**
-     * <p>An array of information on the items in one or more indexes.</p>
-     */
-    inline void SetIndices(Aws::Vector<Index>&& value) { m_indices = std::move(value); }
-
-    /**
-     * <p>An array of information on the items in one or more indexes.</p>
-     */
-    inline ListIndicesResult& WithIndices(const Aws::Vector<Index>& value) { SetIndices(value); return *this;}
-
-    /**
-     * <p>An array of information on the items in one or more indexes.</p>
-     */
-    inline ListIndicesResult& WithIndices(Aws::Vector<Index>&& value) { SetIndices(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of information on the items in one or more indexes.</p>
-     */
-    inline ListIndicesResult& AddIndices(const Index& value) { m_indices.push_back(value); return *this; }
-
-    /**
-     * <p>An array of information on the items in one or more indexes.</p>
-     */
-    inline ListIndicesResult& AddIndices(Index&& value) { m_indices.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -113,6 +77,42 @@ namespace Model
     inline ListIndicesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
+    /**
+     * <p>An array of information on the items in one or more indexes.</p>
+     */
+    inline const Aws::Vector<Index>& GetIndices() const{ return m_indices; }
+
+    /**
+     * <p>An array of information on the items in one or more indexes.</p>
+     */
+    inline void SetIndices(const Aws::Vector<Index>& value) { m_indices = value; }
+
+    /**
+     * <p>An array of information on the items in one or more indexes.</p>
+     */
+    inline void SetIndices(Aws::Vector<Index>&& value) { m_indices = std::move(value); }
+
+    /**
+     * <p>An array of information on the items in one or more indexes.</p>
+     */
+    inline ListIndicesResult& WithIndices(const Aws::Vector<Index>& value) { SetIndices(value); return *this;}
+
+    /**
+     * <p>An array of information on the items in one or more indexes.</p>
+     */
+    inline ListIndicesResult& WithIndices(Aws::Vector<Index>&& value) { SetIndices(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of information on the items in one or more indexes.</p>
+     */
+    inline ListIndicesResult& AddIndices(const Index& value) { m_indices.push_back(value); return *this; }
+
+    /**
+     * <p>An array of information on the items in one or more indexes.</p>
+     */
+    inline ListIndicesResult& AddIndices(Index&& value) { m_indices.push_back(std::move(value)); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -136,9 +136,9 @@ namespace Model
 
   private:
 
-    Aws::Vector<Index> m_indices;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<Index> m_indices;
 
     Aws::String m_requestId;
   };

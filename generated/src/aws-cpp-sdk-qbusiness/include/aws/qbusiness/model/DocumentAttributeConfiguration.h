@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/qbusiness/model/Status.h>
 #include <aws/qbusiness/model/AttributeType.h>
+#include <aws/qbusiness/model/Status.h>
 #include <utility>
 
 namespace Aws
@@ -86,6 +86,37 @@ namespace Model
 
 
     /**
+     * <p>The type of document attribute.</p>
+     */
+    inline const AttributeType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of document attribute.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of document attribute.</p>
+     */
+    inline void SetType(const AttributeType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The type of document attribute.</p>
+     */
+    inline void SetType(AttributeType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>The type of document attribute.</p>
+     */
+    inline DocumentAttributeConfiguration& WithType(const AttributeType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The type of document attribute.</p>
+     */
+    inline DocumentAttributeConfiguration& WithType(AttributeType&& value) { SetType(std::move(value)); return *this;}
+
+
+    /**
      * <p>Information about whether the document attribute can be used by an end user
      * to search for information on their web experience.</p>
      */
@@ -121,47 +152,16 @@ namespace Model
      */
     inline DocumentAttributeConfiguration& WithSearch(Status&& value) { SetSearch(std::move(value)); return *this;}
 
-
-    /**
-     * <p>The type of document attribute.</p>
-     */
-    inline const AttributeType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of document attribute.</p>
-     */
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of document attribute.</p>
-     */
-    inline void SetType(const AttributeType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of document attribute.</p>
-     */
-    inline void SetType(AttributeType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of document attribute.</p>
-     */
-    inline DocumentAttributeConfiguration& WithType(const AttributeType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of document attribute.</p>
-     */
-    inline DocumentAttributeConfiguration& WithType(AttributeType&& value) { SetType(std::move(value)); return *this;}
-
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    Status m_search;
-    bool m_searchHasBeenSet = false;
-
     AttributeType m_type;
     bool m_typeHasBeenSet = false;
+
+    Status m_search;
+    bool m_searchHasBeenSet = false;
   };
 
 } // namespace Model

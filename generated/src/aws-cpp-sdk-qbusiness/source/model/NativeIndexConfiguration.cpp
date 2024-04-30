@@ -19,20 +19,27 @@ namespace Model
 {
 
 NativeIndexConfiguration::NativeIndexConfiguration() : 
-    m_boostingOverrideHasBeenSet(false),
-    m_indexIdHasBeenSet(false)
+    m_indexIdHasBeenSet(false),
+    m_boostingOverrideHasBeenSet(false)
 {
 }
 
 NativeIndexConfiguration::NativeIndexConfiguration(JsonView jsonValue) : 
-    m_boostingOverrideHasBeenSet(false),
-    m_indexIdHasBeenSet(false)
+    m_indexIdHasBeenSet(false),
+    m_boostingOverrideHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 NativeIndexConfiguration& NativeIndexConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("indexId"))
+  {
+    m_indexId = jsonValue.GetString("indexId");
+
+    m_indexIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("boostingOverride"))
   {
     Aws::Map<Aws::String, JsonView> boostingOverrideJsonMap = jsonValue.GetObject("boostingOverride").GetAllObjects();
@@ -43,19 +50,18 @@ NativeIndexConfiguration& NativeIndexConfiguration::operator =(JsonView jsonValu
     m_boostingOverrideHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("indexId"))
-  {
-    m_indexId = jsonValue.GetString("indexId");
-
-    m_indexIdHasBeenSet = true;
-  }
-
   return *this;
 }
 
 JsonValue NativeIndexConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_indexIdHasBeenSet)
+  {
+   payload.WithString("indexId", m_indexId);
+
+  }
 
   if(m_boostingOverrideHasBeenSet)
   {
@@ -65,12 +71,6 @@ JsonValue NativeIndexConfiguration::Jsonize() const
      boostingOverrideJsonMap.WithObject(boostingOverrideItem.first, boostingOverrideItem.second.Jsonize());
    }
    payload.WithObject("boostingOverride", std::move(boostingOverrideJsonMap));
-
-  }
-
-  if(m_indexIdHasBeenSet)
-  {
-   payload.WithString("indexId", m_indexId);
 
   }
 

@@ -43,7 +43,8 @@ namespace Model
      * <p>The rules that you want to run first in the Firewall Manager managed network
      * ACLs. </p>  <p>Provide these in the order in which you want them to run.
      * Firewall Manager will assign the specific rule numbers for you, in the network
-     * ACLs that it creates. </p> 
+     * ACLs that it creates. </p>  <p>You must specify at least one first entry
+     * or one last entry in any network ACL policy. </p>
      */
     inline const Aws::Vector<NetworkAclEntry>& GetFirstEntries() const{ return m_firstEntries; }
 
@@ -51,7 +52,8 @@ namespace Model
      * <p>The rules that you want to run first in the Firewall Manager managed network
      * ACLs. </p>  <p>Provide these in the order in which you want them to run.
      * Firewall Manager will assign the specific rule numbers for you, in the network
-     * ACLs that it creates. </p> 
+     * ACLs that it creates. </p>  <p>You must specify at least one first entry
+     * or one last entry in any network ACL policy. </p>
      */
     inline bool FirstEntriesHasBeenSet() const { return m_firstEntriesHasBeenSet; }
 
@@ -59,7 +61,8 @@ namespace Model
      * <p>The rules that you want to run first in the Firewall Manager managed network
      * ACLs. </p>  <p>Provide these in the order in which you want them to run.
      * Firewall Manager will assign the specific rule numbers for you, in the network
-     * ACLs that it creates. </p> 
+     * ACLs that it creates. </p>  <p>You must specify at least one first entry
+     * or one last entry in any network ACL policy. </p>
      */
     inline void SetFirstEntries(const Aws::Vector<NetworkAclEntry>& value) { m_firstEntriesHasBeenSet = true; m_firstEntries = value; }
 
@@ -67,7 +70,8 @@ namespace Model
      * <p>The rules that you want to run first in the Firewall Manager managed network
      * ACLs. </p>  <p>Provide these in the order in which you want them to run.
      * Firewall Manager will assign the specific rule numbers for you, in the network
-     * ACLs that it creates. </p> 
+     * ACLs that it creates. </p>  <p>You must specify at least one first entry
+     * or one last entry in any network ACL policy. </p>
      */
     inline void SetFirstEntries(Aws::Vector<NetworkAclEntry>&& value) { m_firstEntriesHasBeenSet = true; m_firstEntries = std::move(value); }
 
@@ -75,7 +79,8 @@ namespace Model
      * <p>The rules that you want to run first in the Firewall Manager managed network
      * ACLs. </p>  <p>Provide these in the order in which you want them to run.
      * Firewall Manager will assign the specific rule numbers for you, in the network
-     * ACLs that it creates. </p> 
+     * ACLs that it creates. </p>  <p>You must specify at least one first entry
+     * or one last entry in any network ACL policy. </p>
      */
     inline NetworkAclEntrySet& WithFirstEntries(const Aws::Vector<NetworkAclEntry>& value) { SetFirstEntries(value); return *this;}
 
@@ -83,7 +88,8 @@ namespace Model
      * <p>The rules that you want to run first in the Firewall Manager managed network
      * ACLs. </p>  <p>Provide these in the order in which you want them to run.
      * Firewall Manager will assign the specific rule numbers for you, in the network
-     * ACLs that it creates. </p> 
+     * ACLs that it creates. </p>  <p>You must specify at least one first entry
+     * or one last entry in any network ACL policy. </p>
      */
     inline NetworkAclEntrySet& WithFirstEntries(Aws::Vector<NetworkAclEntry>&& value) { SetFirstEntries(std::move(value)); return *this;}
 
@@ -91,7 +97,8 @@ namespace Model
      * <p>The rules that you want to run first in the Firewall Manager managed network
      * ACLs. </p>  <p>Provide these in the order in which you want them to run.
      * Firewall Manager will assign the specific rule numbers for you, in the network
-     * ACLs that it creates. </p> 
+     * ACLs that it creates. </p>  <p>You must specify at least one first entry
+     * or one last entry in any network ACL policy. </p>
      */
     inline NetworkAclEntrySet& AddFirstEntries(const NetworkAclEntry& value) { m_firstEntriesHasBeenSet = true; m_firstEntries.push_back(value); return *this; }
 
@@ -99,7 +106,8 @@ namespace Model
      * <p>The rules that you want to run first in the Firewall Manager managed network
      * ACLs. </p>  <p>Provide these in the order in which you want them to run.
      * Firewall Manager will assign the specific rule numbers for you, in the network
-     * ACLs that it creates. </p> 
+     * ACLs that it creates. </p>  <p>You must specify at least one first entry
+     * or one last entry in any network ACL policy. </p>
      */
     inline NetworkAclEntrySet& AddFirstEntries(NetworkAclEntry&& value) { m_firstEntriesHasBeenSet = true; m_firstEntries.push_back(std::move(value)); return *this; }
 
@@ -157,7 +165,8 @@ namespace Model
      * <p>The rules that you want to run last in the Firewall Manager managed network
      * ACLs. </p>  <p>Provide these in the order in which you want them to run.
      * Firewall Manager will assign the specific rule numbers for you, in the network
-     * ACLs that it creates. </p> 
+     * ACLs that it creates. </p>  <p>You must specify at least one first entry
+     * or one last entry in any network ACL policy. </p>
      */
     inline const Aws::Vector<NetworkAclEntry>& GetLastEntries() const{ return m_lastEntries; }
 
@@ -165,7 +174,8 @@ namespace Model
      * <p>The rules that you want to run last in the Firewall Manager managed network
      * ACLs. </p>  <p>Provide these in the order in which you want them to run.
      * Firewall Manager will assign the specific rule numbers for you, in the network
-     * ACLs that it creates. </p> 
+     * ACLs that it creates. </p>  <p>You must specify at least one first entry
+     * or one last entry in any network ACL policy. </p>
      */
     inline bool LastEntriesHasBeenSet() const { return m_lastEntriesHasBeenSet; }
 
@@ -173,7 +183,8 @@ namespace Model
      * <p>The rules that you want to run last in the Firewall Manager managed network
      * ACLs. </p>  <p>Provide these in the order in which you want them to run.
      * Firewall Manager will assign the specific rule numbers for you, in the network
-     * ACLs that it creates. </p> 
+     * ACLs that it creates. </p>  <p>You must specify at least one first entry
+     * or one last entry in any network ACL policy. </p>
      */
     inline void SetLastEntries(const Aws::Vector<NetworkAclEntry>& value) { m_lastEntriesHasBeenSet = true; m_lastEntries = value; }
 
@@ -181,7 +192,8 @@ namespace Model
      * <p>The rules that you want to run last in the Firewall Manager managed network
      * ACLs. </p>  <p>Provide these in the order in which you want them to run.
      * Firewall Manager will assign the specific rule numbers for you, in the network
-     * ACLs that it creates. </p> 
+     * ACLs that it creates. </p>  <p>You must specify at least one first entry
+     * or one last entry in any network ACL policy. </p>
      */
     inline void SetLastEntries(Aws::Vector<NetworkAclEntry>&& value) { m_lastEntriesHasBeenSet = true; m_lastEntries = std::move(value); }
 
@@ -189,7 +201,8 @@ namespace Model
      * <p>The rules that you want to run last in the Firewall Manager managed network
      * ACLs. </p>  <p>Provide these in the order in which you want them to run.
      * Firewall Manager will assign the specific rule numbers for you, in the network
-     * ACLs that it creates. </p> 
+     * ACLs that it creates. </p>  <p>You must specify at least one first entry
+     * or one last entry in any network ACL policy. </p>
      */
     inline NetworkAclEntrySet& WithLastEntries(const Aws::Vector<NetworkAclEntry>& value) { SetLastEntries(value); return *this;}
 
@@ -197,7 +210,8 @@ namespace Model
      * <p>The rules that you want to run last in the Firewall Manager managed network
      * ACLs. </p>  <p>Provide these in the order in which you want them to run.
      * Firewall Manager will assign the specific rule numbers for you, in the network
-     * ACLs that it creates. </p> 
+     * ACLs that it creates. </p>  <p>You must specify at least one first entry
+     * or one last entry in any network ACL policy. </p>
      */
     inline NetworkAclEntrySet& WithLastEntries(Aws::Vector<NetworkAclEntry>&& value) { SetLastEntries(std::move(value)); return *this;}
 
@@ -205,7 +219,8 @@ namespace Model
      * <p>The rules that you want to run last in the Firewall Manager managed network
      * ACLs. </p>  <p>Provide these in the order in which you want them to run.
      * Firewall Manager will assign the specific rule numbers for you, in the network
-     * ACLs that it creates. </p> 
+     * ACLs that it creates. </p>  <p>You must specify at least one first entry
+     * or one last entry in any network ACL policy. </p>
      */
     inline NetworkAclEntrySet& AddLastEntries(const NetworkAclEntry& value) { m_lastEntriesHasBeenSet = true; m_lastEntries.push_back(value); return *this; }
 
@@ -213,7 +228,8 @@ namespace Model
      * <p>The rules that you want to run last in the Firewall Manager managed network
      * ACLs. </p>  <p>Provide these in the order in which you want them to run.
      * Firewall Manager will assign the specific rule numbers for you, in the network
-     * ACLs that it creates. </p> 
+     * ACLs that it creates. </p>  <p>You must specify at least one first entry
+     * or one last entry in any network ACL policy. </p>
      */
     inline NetworkAclEntrySet& AddLastEntries(NetworkAclEntry&& value) { m_lastEntriesHasBeenSet = true; m_lastEntries.push_back(std::move(value)); return *this; }
 

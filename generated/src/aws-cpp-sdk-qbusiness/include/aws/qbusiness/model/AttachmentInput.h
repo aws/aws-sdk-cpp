@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
-#include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/Array.h>
 #include <utility>
 
 namespace Aws
@@ -37,37 +37,6 @@ namespace Model
     AWS_QBUSINESS_API AttachmentInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API AttachmentInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The data contained within the uploaded file.</p>
-     */
-    inline const Aws::Utils::ByteBuffer& GetData() const{ return m_data; }
-
-    /**
-     * <p>The data contained within the uploaded file.</p>
-     */
-    inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-
-    /**
-     * <p>The data contained within the uploaded file.</p>
-     */
-    inline void SetData(const Aws::Utils::ByteBuffer& value) { m_dataHasBeenSet = true; m_data = value; }
-
-    /**
-     * <p>The data contained within the uploaded file.</p>
-     */
-    inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-
-    /**
-     * <p>The data contained within the uploaded file.</p>
-     */
-    inline AttachmentInput& WithData(const Aws::Utils::ByteBuffer& value) { SetData(value); return *this;}
-
-    /**
-     * <p>The data contained within the uploaded file.</p>
-     */
-    inline AttachmentInput& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
 
 
     /**
@@ -110,13 +79,44 @@ namespace Model
      */
     inline AttachmentInput& WithName(const char* value) { SetName(value); return *this;}
 
-  private:
 
-    Aws::Utils::ByteBuffer m_data;
-    bool m_dataHasBeenSet = false;
+    /**
+     * <p>The data contained within the uploaded file.</p>
+     */
+    inline const Aws::Utils::ByteBuffer& GetData() const{ return m_data; }
+
+    /**
+     * <p>The data contained within the uploaded file.</p>
+     */
+    inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
+
+    /**
+     * <p>The data contained within the uploaded file.</p>
+     */
+    inline void SetData(const Aws::Utils::ByteBuffer& value) { m_dataHasBeenSet = true; m_data = value; }
+
+    /**
+     * <p>The data contained within the uploaded file.</p>
+     */
+    inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
+
+    /**
+     * <p>The data contained within the uploaded file.</p>
+     */
+    inline AttachmentInput& WithData(const Aws::Utils::ByteBuffer& value) { SetData(value); return *this;}
+
+    /**
+     * <p>The data contained within the uploaded file.</p>
+     */
+    inline AttachmentInput& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
+
+  private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::Utils::ByteBuffer m_data;
+    bool m_dataHasBeenSet = false;
   };
 
 } // namespace Model

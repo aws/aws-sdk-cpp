@@ -6,10 +6,12 @@
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/qbusiness/model/PluginAuthConfiguration.h>
-#include <aws/core/utils/DateTime.h>
-#include <aws/qbusiness/model/PluginState.h>
 #include <aws/qbusiness/model/PluginType.h>
+#include <aws/qbusiness/model/PluginAuthConfiguration.h>
+#include <aws/qbusiness/model/CustomPluginConfiguration.h>
+#include <aws/qbusiness/model/PluginBuildStatus.h>
+#include <aws/qbusiness/model/PluginState.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -72,46 +74,40 @@ namespace Model
     inline GetPluginResult& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
-    
-    inline const PluginAuthConfiguration& GetAuthConfiguration() const{ return m_authConfiguration; }
-
-    
-    inline void SetAuthConfiguration(const PluginAuthConfiguration& value) { m_authConfiguration = value; }
-
-    
-    inline void SetAuthConfiguration(PluginAuthConfiguration&& value) { m_authConfiguration = std::move(value); }
-
-    
-    inline GetPluginResult& WithAuthConfiguration(const PluginAuthConfiguration& value) { SetAuthConfiguration(value); return *this;}
-
-    
-    inline GetPluginResult& WithAuthConfiguration(PluginAuthConfiguration&& value) { SetAuthConfiguration(std::move(value)); return *this;}
-
+    /**
+     * <p>The identifier of the plugin.</p>
+     */
+    inline const Aws::String& GetPluginId() const{ return m_pluginId; }
 
     /**
-     * <p>The timestamp for when the plugin was created.</p>
+     * <p>The identifier of the plugin.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline void SetPluginId(const Aws::String& value) { m_pluginId = value; }
 
     /**
-     * <p>The timestamp for when the plugin was created.</p>
+     * <p>The identifier of the plugin.</p>
      */
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
+    inline void SetPluginId(Aws::String&& value) { m_pluginId = std::move(value); }
 
     /**
-     * <p>The timestamp for when the plugin was created.</p>
+     * <p>The identifier of the plugin.</p>
      */
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
+    inline void SetPluginId(const char* value) { m_pluginId.assign(value); }
 
     /**
-     * <p>The timestamp for when the plugin was created.</p>
+     * <p>The identifier of the plugin.</p>
      */
-    inline GetPluginResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
+    inline GetPluginResult& WithPluginId(const Aws::String& value) { SetPluginId(value); return *this;}
 
     /**
-     * <p>The timestamp for when the plugin was created.</p>
+     * <p>The identifier of the plugin.</p>
      */
-    inline GetPluginResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline GetPluginResult& WithPluginId(Aws::String&& value) { SetPluginId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the plugin.</p>
+     */
+    inline GetPluginResult& WithPluginId(const char* value) { SetPluginId(value); return *this;}
 
 
     /**
@@ -148,6 +144,136 @@ namespace Model
      * <p>The name of the plugin.</p>
      */
     inline GetPluginResult& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+
+
+    /**
+     * <p>The type of the plugin.</p>
+     */
+    inline const PluginType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of the plugin.</p>
+     */
+    inline void SetType(const PluginType& value) { m_type = value; }
+
+    /**
+     * <p>The type of the plugin.</p>
+     */
+    inline void SetType(PluginType&& value) { m_type = std::move(value); }
+
+    /**
+     * <p>The type of the plugin.</p>
+     */
+    inline GetPluginResult& WithType(const PluginType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The type of the plugin.</p>
+     */
+    inline GetPluginResult& WithType(PluginType&& value) { SetType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The source URL used for plugin configuration.</p>
+     */
+    inline const Aws::String& GetServerUrl() const{ return m_serverUrl; }
+
+    /**
+     * <p>The source URL used for plugin configuration.</p>
+     */
+    inline void SetServerUrl(const Aws::String& value) { m_serverUrl = value; }
+
+    /**
+     * <p>The source URL used for plugin configuration.</p>
+     */
+    inline void SetServerUrl(Aws::String&& value) { m_serverUrl = std::move(value); }
+
+    /**
+     * <p>The source URL used for plugin configuration.</p>
+     */
+    inline void SetServerUrl(const char* value) { m_serverUrl.assign(value); }
+
+    /**
+     * <p>The source URL used for plugin configuration.</p>
+     */
+    inline GetPluginResult& WithServerUrl(const Aws::String& value) { SetServerUrl(value); return *this;}
+
+    /**
+     * <p>The source URL used for plugin configuration.</p>
+     */
+    inline GetPluginResult& WithServerUrl(Aws::String&& value) { SetServerUrl(std::move(value)); return *this;}
+
+    /**
+     * <p>The source URL used for plugin configuration.</p>
+     */
+    inline GetPluginResult& WithServerUrl(const char* value) { SetServerUrl(value); return *this;}
+
+
+    
+    inline const PluginAuthConfiguration& GetAuthConfiguration() const{ return m_authConfiguration; }
+
+    
+    inline void SetAuthConfiguration(const PluginAuthConfiguration& value) { m_authConfiguration = value; }
+
+    
+    inline void SetAuthConfiguration(PluginAuthConfiguration&& value) { m_authConfiguration = std::move(value); }
+
+    
+    inline GetPluginResult& WithAuthConfiguration(const PluginAuthConfiguration& value) { SetAuthConfiguration(value); return *this;}
+
+    
+    inline GetPluginResult& WithAuthConfiguration(PluginAuthConfiguration&& value) { SetAuthConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Configuration information required to create a custom plugin.</p>
+     */
+    inline const CustomPluginConfiguration& GetCustomPluginConfiguration() const{ return m_customPluginConfiguration; }
+
+    /**
+     * <p>Configuration information required to create a custom plugin.</p>
+     */
+    inline void SetCustomPluginConfiguration(const CustomPluginConfiguration& value) { m_customPluginConfiguration = value; }
+
+    /**
+     * <p>Configuration information required to create a custom plugin.</p>
+     */
+    inline void SetCustomPluginConfiguration(CustomPluginConfiguration&& value) { m_customPluginConfiguration = std::move(value); }
+
+    /**
+     * <p>Configuration information required to create a custom plugin.</p>
+     */
+    inline GetPluginResult& WithCustomPluginConfiguration(const CustomPluginConfiguration& value) { SetCustomPluginConfiguration(value); return *this;}
+
+    /**
+     * <p>Configuration information required to create a custom plugin.</p>
+     */
+    inline GetPluginResult& WithCustomPluginConfiguration(CustomPluginConfiguration&& value) { SetCustomPluginConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The current status of a plugin. A plugin is modified asynchronously.</p>
+     */
+    inline const PluginBuildStatus& GetBuildStatus() const{ return m_buildStatus; }
+
+    /**
+     * <p>The current status of a plugin. A plugin is modified asynchronously.</p>
+     */
+    inline void SetBuildStatus(const PluginBuildStatus& value) { m_buildStatus = value; }
+
+    /**
+     * <p>The current status of a plugin. A plugin is modified asynchronously.</p>
+     */
+    inline void SetBuildStatus(PluginBuildStatus&& value) { m_buildStatus = std::move(value); }
+
+    /**
+     * <p>The current status of a plugin. A plugin is modified asynchronously.</p>
+     */
+    inline GetPluginResult& WithBuildStatus(const PluginBuildStatus& value) { SetBuildStatus(value); return *this;}
+
+    /**
+     * <p>The current status of a plugin. A plugin is modified asynchronously.</p>
+     */
+    inline GetPluginResult& WithBuildStatus(PluginBuildStatus&& value) { SetBuildStatus(std::move(value)); return *this;}
 
 
     /**
@@ -194,78 +320,6 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the plugin.</p>
-     */
-    inline const Aws::String& GetPluginId() const{ return m_pluginId; }
-
-    /**
-     * <p>The identifier of the plugin.</p>
-     */
-    inline void SetPluginId(const Aws::String& value) { m_pluginId = value; }
-
-    /**
-     * <p>The identifier of the plugin.</p>
-     */
-    inline void SetPluginId(Aws::String&& value) { m_pluginId = std::move(value); }
-
-    /**
-     * <p>The identifier of the plugin.</p>
-     */
-    inline void SetPluginId(const char* value) { m_pluginId.assign(value); }
-
-    /**
-     * <p>The identifier of the plugin.</p>
-     */
-    inline GetPluginResult& WithPluginId(const Aws::String& value) { SetPluginId(value); return *this;}
-
-    /**
-     * <p>The identifier of the plugin.</p>
-     */
-    inline GetPluginResult& WithPluginId(Aws::String&& value) { SetPluginId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the plugin.</p>
-     */
-    inline GetPluginResult& WithPluginId(const char* value) { SetPluginId(value); return *this;}
-
-
-    /**
-     * <p>The source URL used for plugin configuration.</p>
-     */
-    inline const Aws::String& GetServerUrl() const{ return m_serverUrl; }
-
-    /**
-     * <p>The source URL used for plugin configuration.</p>
-     */
-    inline void SetServerUrl(const Aws::String& value) { m_serverUrl = value; }
-
-    /**
-     * <p>The source URL used for plugin configuration.</p>
-     */
-    inline void SetServerUrl(Aws::String&& value) { m_serverUrl = std::move(value); }
-
-    /**
-     * <p>The source URL used for plugin configuration.</p>
-     */
-    inline void SetServerUrl(const char* value) { m_serverUrl.assign(value); }
-
-    /**
-     * <p>The source URL used for plugin configuration.</p>
-     */
-    inline GetPluginResult& WithServerUrl(const Aws::String& value) { SetServerUrl(value); return *this;}
-
-    /**
-     * <p>The source URL used for plugin configuration.</p>
-     */
-    inline GetPluginResult& WithServerUrl(Aws::String&& value) { SetServerUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>The source URL used for plugin configuration.</p>
-     */
-    inline GetPluginResult& WithServerUrl(const char* value) { SetServerUrl(value); return *this;}
-
-
-    /**
      * <p>The current state of the plugin.</p>
      */
     inline const PluginState& GetState() const{ return m_state; }
@@ -292,29 +346,29 @@ namespace Model
 
 
     /**
-     * <p>The type of the plugin.</p>
+     * <p>The timestamp for when the plugin was created.</p>
      */
-    inline const PluginType& GetType() const{ return m_type; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The type of the plugin.</p>
+     * <p>The timestamp for when the plugin was created.</p>
      */
-    inline void SetType(const PluginType& value) { m_type = value; }
+    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
 
     /**
-     * <p>The type of the plugin.</p>
+     * <p>The timestamp for when the plugin was created.</p>
      */
-    inline void SetType(PluginType&& value) { m_type = std::move(value); }
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
 
     /**
-     * <p>The type of the plugin.</p>
+     * <p>The timestamp for when the plugin was created.</p>
      */
-    inline GetPluginResult& WithType(const PluginType& value) { SetType(value); return *this;}
+    inline GetPluginResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The type of the plugin.</p>
+     * <p>The timestamp for when the plugin was created.</p>
      */
-    inline GetPluginResult& WithType(PluginType&& value) { SetType(std::move(value)); return *this;}
+    inline GetPluginResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
     /**
@@ -368,21 +422,25 @@ namespace Model
 
     Aws::String m_applicationId;
 
-    PluginAuthConfiguration m_authConfiguration;
-
-    Aws::Utils::DateTime m_createdAt;
+    Aws::String m_pluginId;
 
     Aws::String m_displayName;
 
-    Aws::String m_pluginArn;
-
-    Aws::String m_pluginId;
+    PluginType m_type;
 
     Aws::String m_serverUrl;
 
+    PluginAuthConfiguration m_authConfiguration;
+
+    CustomPluginConfiguration m_customPluginConfiguration;
+
+    PluginBuildStatus m_buildStatus;
+
+    Aws::String m_pluginArn;
+
     PluginState m_state;
 
-    PluginType m_type;
+    Aws::Utils::DateTime m_createdAt;
 
     Aws::Utils::DateTime m_updatedAt;
 

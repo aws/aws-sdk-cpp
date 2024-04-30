@@ -19,7 +19,8 @@ namespace Model
     SERVICE_NOW,
     SALESFORCE,
     JIRA,
-    ZENDESK
+    ZENDESK,
+    CUSTOM
   };
 
 namespace PluginTypeMapper

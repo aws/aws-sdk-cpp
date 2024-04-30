@@ -104,7 +104,7 @@ namespace Omics
         }
 
         /**
-         * <p> Accepts a share for an analytics store. </p><p><h3>See Also:</h3>   <a
+         * <p>Accept a resource share request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/AcceptShare">AWS
          * API Reference</a></p>
          */
@@ -405,9 +405,12 @@ namespace Omics
         }
 
         /**
-         * <p> Creates a share offer that can be accepted outside the account by a
-         * subscriber. The share is created by the owner and accepted by the principal
-         * subscriber. </p><p><h3>See Also:</h3>   <a
+         * <p>Creates a cross-account shared resource. The resource owner makes an offer to
+         * share the resource with the principal subscriber (an AWS user with a different
+         * account than the resource owner).</p> <p>The following resources support
+         * cross-account sharing:</p> <ul> <li> <p>Healthomics variant stores</p> </li>
+         * <li> <p>Healthomics annotation stores</p> </li> <li> <p>Private workflows</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateShare">AWS
          * API Reference</a></p>
          */
@@ -658,7 +661,9 @@ namespace Omics
         }
 
         /**
-         * <p> Deletes a share of an analytics store. </p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a resource share. If you are the resource owner, the subscriber will
+         * no longer have access to the shared resource. If you are the subscriber, this
+         * operation deletes your access to the share.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteShare">AWS
          * API Reference</a></p>
          */
@@ -1037,7 +1042,8 @@ namespace Omics
         }
 
         /**
-         * <p>Gets information about a workflow run.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a workflow run.</p> <p>If a workflow is shared with
+         * you, you cannot export information about the run.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetRun">AWS API
          * Reference</a></p>
          */
@@ -1137,7 +1143,8 @@ namespace Omics
         }
 
         /**
-         * <p> Retrieves the metadata for a share. </p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the metadata for the specified resource share.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetShare">AWS API
          * Reference</a></p>
          */
@@ -1212,7 +1219,8 @@ namespace Omics
         }
 
         /**
-         * <p>Gets information about a workflow.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a workflow.</p> <p>If a workflow is shared with you,
+         * you cannot export the workflow.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetWorkflow">AWS
          * API Reference</a></p>
          */
@@ -1640,8 +1648,9 @@ namespace Omics
         }
 
         /**
-         * <p> Lists all shares associated with an account. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListShares">AWS
+         * <p>Retrieves the resource shares associated with an account. Use the filter
+         * parameter to retrieve a specific subset of the shares.</p><p><h3>See Also:</h3> 
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListShares">AWS
          * API Reference</a></p>
          */
         virtual Model::ListSharesOutcome ListShares(const Model::ListSharesRequest& request) const;
@@ -1892,13 +1901,20 @@ namespace Omics
 
         /**
          * <p>Starts a workflow run. To duplicate a run, specify the run's ID and a role
-         * ARN. The remaining parameters are copied from the previous run.</p> <p>The total
+         * ARN. The remaining parameters are copied from the previous run.</p> <p>StartRun
+         * will not support re-run for a workflow that is shared with you.</p> <p>The total
          * number of runs in your account is subject to a quota per Region. To avoid
          * needing to delete runs manually, you can set the retention mode to
          * <code>REMOVE</code>. Runs with this setting are deleted automatically when the
-         * run quoata is exceeded.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartRun">AWS API
-         * Reference</a></p>
+         * run quoata is exceeded.</p> <p>By default, the run uses STATIC storage. For
+         * STATIC storage, set the <code>storageCapacity</code> field. You can set the
+         * storage type to DYNAMIC. You do not set <code>storageCapacity</code>, because
+         * HealthOmics dynamically scales the storage up or down as required. For more
+         * information about static and dynamic storage, see <a
+         * href="https://docs.aws.amazon.com/omics/latest/dev/Using-workflows.html">Running
+         * workflows</a> in the <i>AWS HealthOmics User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartRun">AWS
+         * API Reference</a></p>
          */
         virtual Model::StartRunOutcome StartRun(const Model::StartRunRequest& request) const;
 

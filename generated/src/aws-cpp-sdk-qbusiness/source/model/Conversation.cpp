@@ -20,15 +20,15 @@ namespace Model
 
 Conversation::Conversation() : 
     m_conversationIdHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_titleHasBeenSet(false)
+    m_titleHasBeenSet(false),
+    m_startTimeHasBeenSet(false)
 {
 }
 
 Conversation::Conversation(JsonView jsonValue) : 
     m_conversationIdHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_titleHasBeenSet(false)
+    m_titleHasBeenSet(false),
+    m_startTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -42,18 +42,18 @@ Conversation& Conversation::operator =(JsonView jsonValue)
     m_conversationIdHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("startTime"))
-  {
-    m_startTime = jsonValue.GetDouble("startTime");
-
-    m_startTimeHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("title"))
   {
     m_title = jsonValue.GetString("title");
 
     m_titleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("startTime"))
+  {
+    m_startTime = jsonValue.GetDouble("startTime");
+
+    m_startTimeHasBeenSet = true;
   }
 
   return *this;
@@ -69,15 +69,15 @@ JsonValue Conversation::Jsonize() const
 
   }
 
-  if(m_startTimeHasBeenSet)
-  {
-   payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
-  }
-
   if(m_titleHasBeenSet)
   {
    payload.WithString("title", m_title);
 
+  }
+
+  if(m_startTimeHasBeenSet)
+  {
+   payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
   }
 
   return payload;

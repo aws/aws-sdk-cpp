@@ -33,6 +33,42 @@ namespace Model
 
 
     /**
+     * <p>The identifier of the data source connector.</p>
+     */
+    inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
+
+    /**
+     * <p>The identifier of the data source connector.</p>
+     */
+    inline void SetDataSourceId(const Aws::String& value) { m_dataSourceId = value; }
+
+    /**
+     * <p>The identifier of the data source connector.</p>
+     */
+    inline void SetDataSourceId(Aws::String&& value) { m_dataSourceId = std::move(value); }
+
+    /**
+     * <p>The identifier of the data source connector.</p>
+     */
+    inline void SetDataSourceId(const char* value) { m_dataSourceId.assign(value); }
+
+    /**
+     * <p>The identifier of the data source connector.</p>
+     */
+    inline CreateDataSourceResult& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
+
+    /**
+     * <p>The identifier of the data source connector.</p>
+     */
+    inline CreateDataSourceResult& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the data source connector.</p>
+     */
+    inline CreateDataSourceResult& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
+
+
+    /**
      * <p> The Amazon Resource Name (ARN) of a data source in an Amazon Q Business
      * application. </p>
      */
@@ -75,42 +111,6 @@ namespace Model
     inline CreateDataSourceResult& WithDataSourceArn(const char* value) { SetDataSourceArn(value); return *this;}
 
 
-    /**
-     * <p>The identifier of the data source connector.</p>
-     */
-    inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
-
-    /**
-     * <p>The identifier of the data source connector.</p>
-     */
-    inline void SetDataSourceId(const Aws::String& value) { m_dataSourceId = value; }
-
-    /**
-     * <p>The identifier of the data source connector.</p>
-     */
-    inline void SetDataSourceId(Aws::String&& value) { m_dataSourceId = std::move(value); }
-
-    /**
-     * <p>The identifier of the data source connector.</p>
-     */
-    inline void SetDataSourceId(const char* value) { m_dataSourceId.assign(value); }
-
-    /**
-     * <p>The identifier of the data source connector.</p>
-     */
-    inline CreateDataSourceResult& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
-
-    /**
-     * <p>The identifier of the data source connector.</p>
-     */
-    inline CreateDataSourceResult& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the data source connector.</p>
-     */
-    inline CreateDataSourceResult& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
-
-
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -134,9 +134,9 @@ namespace Model
 
   private:
 
-    Aws::String m_dataSourceArn;
-
     Aws::String m_dataSourceId;
+
+    Aws::String m_dataSourceArn;
 
     Aws::String m_requestId;
   };

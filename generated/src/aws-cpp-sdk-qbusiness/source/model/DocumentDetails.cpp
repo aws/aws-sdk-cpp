@@ -19,21 +19,21 @@ namespace Model
 {
 
 DocumentDetails::DocumentDetails() : 
-    m_createdAtHasBeenSet(false),
     m_documentIdHasBeenSet(false),
-    m_errorHasBeenSet(false),
     m_status(DocumentStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_errorHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
 {
 }
 
 DocumentDetails::DocumentDetails(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
     m_documentIdHasBeenSet(false),
-    m_errorHasBeenSet(false),
     m_status(DocumentStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_errorHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
 {
   *this = jsonValue;
@@ -41,18 +41,18 @@ DocumentDetails::DocumentDetails(JsonView jsonValue) :
 
 DocumentDetails& DocumentDetails::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetDouble("createdAt");
-
-    m_createdAtHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("documentId"))
   {
     m_documentId = jsonValue.GetString("documentId");
 
     m_documentIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = DocumentStatusMapper::GetDocumentStatusForName(jsonValue.GetString("status"));
+
+    m_statusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("error"))
@@ -62,11 +62,11 @@ DocumentDetails& DocumentDetails::operator =(JsonView jsonValue)
     m_errorHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("status"))
+  if(jsonValue.ValueExists("createdAt"))
   {
-    m_status = DocumentStatusMapper::GetDocumentStatusForName(jsonValue.GetString("status"));
+    m_createdAt = jsonValue.GetDouble("createdAt");
 
-    m_statusHasBeenSet = true;
+    m_createdAtHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("updatedAt"))
@@ -83,15 +83,15 @@ JsonValue DocumentDetails::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
-  }
-
   if(m_documentIdHasBeenSet)
   {
    payload.WithString("documentId", m_documentId);
 
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", DocumentStatusMapper::GetNameForDocumentStatus(m_status));
   }
 
   if(m_errorHasBeenSet)
@@ -100,9 +100,9 @@ JsonValue DocumentDetails::Jsonize() const
 
   }
 
-  if(m_statusHasBeenSet)
+  if(m_createdAtHasBeenSet)
   {
-   payload.WithString("status", DocumentStatusMapper::GetNameForDocumentStatus(m_status));
+   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
   if(m_updatedAtHasBeenSet)

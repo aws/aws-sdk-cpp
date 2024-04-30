@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
-#include <aws/qbusiness/model/ErrorDetail.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/qbusiness/model/GroupStatus.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/qbusiness/model/ErrorDetail.h>
 #include <utility>
 
 namespace Aws
@@ -40,34 +40,34 @@ namespace Model
 
 
     /**
-     * <p>The details of an error associated a group status.</p>
+     * <p>The status of a group.</p>
      */
-    inline const ErrorDetail& GetErrorDetail() const{ return m_errorDetail; }
+    inline const GroupStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The details of an error associated a group status.</p>
+     * <p>The status of a group.</p>
      */
-    inline bool ErrorDetailHasBeenSet() const { return m_errorDetailHasBeenSet; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The details of an error associated a group status.</p>
+     * <p>The status of a group.</p>
      */
-    inline void SetErrorDetail(const ErrorDetail& value) { m_errorDetailHasBeenSet = true; m_errorDetail = value; }
+    inline void SetStatus(const GroupStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The details of an error associated a group status.</p>
+     * <p>The status of a group.</p>
      */
-    inline void SetErrorDetail(ErrorDetail&& value) { m_errorDetailHasBeenSet = true; m_errorDetail = std::move(value); }
+    inline void SetStatus(GroupStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The details of an error associated a group status.</p>
+     * <p>The status of a group.</p>
      */
-    inline GroupStatusDetail& WithErrorDetail(const ErrorDetail& value) { SetErrorDetail(value); return *this;}
+    inline GroupStatusDetail& WithStatus(const GroupStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The details of an error associated a group status.</p>
+     * <p>The status of a group.</p>
      */
-    inline GroupStatusDetail& WithErrorDetail(ErrorDetail&& value) { SetErrorDetail(std::move(value)); return *this;}
+    inline GroupStatusDetail& WithStatus(GroupStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
@@ -108,45 +108,45 @@ namespace Model
 
 
     /**
-     * <p>The status of a group.</p>
+     * <p>The details of an error associated a group status.</p>
      */
-    inline const GroupStatus& GetStatus() const{ return m_status; }
+    inline const ErrorDetail& GetErrorDetail() const{ return m_errorDetail; }
 
     /**
-     * <p>The status of a group.</p>
+     * <p>The details of an error associated a group status.</p>
      */
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline bool ErrorDetailHasBeenSet() const { return m_errorDetailHasBeenSet; }
 
     /**
-     * <p>The status of a group.</p>
+     * <p>The details of an error associated a group status.</p>
      */
-    inline void SetStatus(const GroupStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetErrorDetail(const ErrorDetail& value) { m_errorDetailHasBeenSet = true; m_errorDetail = value; }
 
     /**
-     * <p>The status of a group.</p>
+     * <p>The details of an error associated a group status.</p>
      */
-    inline void SetStatus(GroupStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+    inline void SetErrorDetail(ErrorDetail&& value) { m_errorDetailHasBeenSet = true; m_errorDetail = std::move(value); }
 
     /**
-     * <p>The status of a group.</p>
+     * <p>The details of an error associated a group status.</p>
      */
-    inline GroupStatusDetail& WithStatus(const GroupStatus& value) { SetStatus(value); return *this;}
+    inline GroupStatusDetail& WithErrorDetail(const ErrorDetail& value) { SetErrorDetail(value); return *this;}
 
     /**
-     * <p>The status of a group.</p>
+     * <p>The details of an error associated a group status.</p>
      */
-    inline GroupStatusDetail& WithStatus(GroupStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline GroupStatusDetail& WithErrorDetail(ErrorDetail&& value) { SetErrorDetail(std::move(value)); return *this;}
 
   private:
 
-    ErrorDetail m_errorDetail;
-    bool m_errorDetailHasBeenSet = false;
+    GroupStatus m_status;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
     bool m_lastUpdatedAtHasBeenSet = false;
 
-    GroupStatus m_status;
-    bool m_statusHasBeenSet = false;
+    ErrorDetail m_errorDetail;
+    bool m_errorDetailHasBeenSet = false;
   };
 
 } // namespace Model

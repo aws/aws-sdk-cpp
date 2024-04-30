@@ -31,9 +31,9 @@ GetApplicationResult::GetApplicationResult(const Aws::AmazonWebServiceResult<Jso
 GetApplicationResult& GetApplicationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("applicationArn"))
+  if(jsonValue.ValueExists("displayName"))
   {
-    m_applicationArn = jsonValue.GetString("applicationArn");
+    m_displayName = jsonValue.GetString("displayName");
 
   }
 
@@ -43,39 +43,9 @@ GetApplicationResult& GetApplicationResult::operator =(const Aws::AmazonWebServi
 
   }
 
-  if(jsonValue.ValueExists("attachmentsConfiguration"))
+  if(jsonValue.ValueExists("applicationArn"))
   {
-    m_attachmentsConfiguration = jsonValue.GetObject("attachmentsConfiguration");
-
-  }
-
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetDouble("createdAt");
-
-  }
-
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-
-  }
-
-  if(jsonValue.ValueExists("displayName"))
-  {
-    m_displayName = jsonValue.GetString("displayName");
-
-  }
-
-  if(jsonValue.ValueExists("encryptionConfiguration"))
-  {
-    m_encryptionConfiguration = jsonValue.GetObject("encryptionConfiguration");
-
-  }
-
-  if(jsonValue.ValueExists("error"))
-  {
-    m_error = jsonValue.GetObject("error");
+    m_applicationArn = jsonValue.GetString("applicationArn");
 
   }
 
@@ -97,9 +67,39 @@ GetApplicationResult& GetApplicationResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
+
+  }
+
+  if(jsonValue.ValueExists("encryptionConfiguration"))
+  {
+    m_encryptionConfiguration = jsonValue.GetObject("encryptionConfiguration");
+
+  }
+
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+
+  }
+
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
+
+  }
+
+  if(jsonValue.ValueExists("error"))
+  {
+    m_error = jsonValue.GetObject("error");
+
+  }
+
+  if(jsonValue.ValueExists("attachmentsConfiguration"))
+  {
+    m_attachmentsConfiguration = jsonValue.GetObject("attachmentsConfiguration");
 
   }
 

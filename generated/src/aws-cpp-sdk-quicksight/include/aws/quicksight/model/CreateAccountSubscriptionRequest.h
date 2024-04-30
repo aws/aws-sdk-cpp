@@ -491,10 +491,10 @@ namespace Model
 
     /**
      * <p>The admin group associated with your Active Directory or IAM Identity Center
-     * account. This field is required if <code>ACTIVE_DIRECTORY</code> or
-     * <code>IAM_IDENTITY_CENTER</code> is the selected authentication method of the
-     * new Amazon QuickSight account.</p> <p>For more information about using IAM
-     * Identity Center in Amazon QuickSight, see <a
+     * account. Either this field or the <code>AdminProGroup</code> field is required
+     * if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the
+     * selected authentication method of the new Amazon QuickSight account.</p> <p>For
+     * more information about using IAM Identity Center in Amazon QuickSight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
      * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
      * QuickSight User Guide. For more information about using Active Directory in
@@ -507,10 +507,10 @@ namespace Model
 
     /**
      * <p>The admin group associated with your Active Directory or IAM Identity Center
-     * account. This field is required if <code>ACTIVE_DIRECTORY</code> or
-     * <code>IAM_IDENTITY_CENTER</code> is the selected authentication method of the
-     * new Amazon QuickSight account.</p> <p>For more information about using IAM
-     * Identity Center in Amazon QuickSight, see <a
+     * account. Either this field or the <code>AdminProGroup</code> field is required
+     * if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the
+     * selected authentication method of the new Amazon QuickSight account.</p> <p>For
+     * more information about using IAM Identity Center in Amazon QuickSight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
      * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
      * QuickSight User Guide. For more information about using Active Directory in
@@ -523,10 +523,10 @@ namespace Model
 
     /**
      * <p>The admin group associated with your Active Directory or IAM Identity Center
-     * account. This field is required if <code>ACTIVE_DIRECTORY</code> or
-     * <code>IAM_IDENTITY_CENTER</code> is the selected authentication method of the
-     * new Amazon QuickSight account.</p> <p>For more information about using IAM
-     * Identity Center in Amazon QuickSight, see <a
+     * account. Either this field or the <code>AdminProGroup</code> field is required
+     * if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the
+     * selected authentication method of the new Amazon QuickSight account.</p> <p>For
+     * more information about using IAM Identity Center in Amazon QuickSight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
      * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
      * QuickSight User Guide. For more information about using Active Directory in
@@ -539,10 +539,10 @@ namespace Model
 
     /**
      * <p>The admin group associated with your Active Directory or IAM Identity Center
-     * account. This field is required if <code>ACTIVE_DIRECTORY</code> or
-     * <code>IAM_IDENTITY_CENTER</code> is the selected authentication method of the
-     * new Amazon QuickSight account.</p> <p>For more information about using IAM
-     * Identity Center in Amazon QuickSight, see <a
+     * account. Either this field or the <code>AdminProGroup</code> field is required
+     * if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the
+     * selected authentication method of the new Amazon QuickSight account.</p> <p>For
+     * more information about using IAM Identity Center in Amazon QuickSight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
      * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
      * QuickSight User Guide. For more information about using Active Directory in
@@ -555,10 +555,10 @@ namespace Model
 
     /**
      * <p>The admin group associated with your Active Directory or IAM Identity Center
-     * account. This field is required if <code>ACTIVE_DIRECTORY</code> or
-     * <code>IAM_IDENTITY_CENTER</code> is the selected authentication method of the
-     * new Amazon QuickSight account.</p> <p>For more information about using IAM
-     * Identity Center in Amazon QuickSight, see <a
+     * account. Either this field or the <code>AdminProGroup</code> field is required
+     * if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the
+     * selected authentication method of the new Amazon QuickSight account.</p> <p>For
+     * more information about using IAM Identity Center in Amazon QuickSight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
      * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
      * QuickSight User Guide. For more information about using Active Directory in
@@ -571,10 +571,10 @@ namespace Model
 
     /**
      * <p>The admin group associated with your Active Directory or IAM Identity Center
-     * account. This field is required if <code>ACTIVE_DIRECTORY</code> or
-     * <code>IAM_IDENTITY_CENTER</code> is the selected authentication method of the
-     * new Amazon QuickSight account.</p> <p>For more information about using IAM
-     * Identity Center in Amazon QuickSight, see <a
+     * account. Either this field or the <code>AdminProGroup</code> field is required
+     * if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the
+     * selected authentication method of the new Amazon QuickSight account.</p> <p>For
+     * more information about using IAM Identity Center in Amazon QuickSight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
      * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
      * QuickSight User Guide. For more information about using Active Directory in
@@ -587,10 +587,10 @@ namespace Model
 
     /**
      * <p>The admin group associated with your Active Directory or IAM Identity Center
-     * account. This field is required if <code>ACTIVE_DIRECTORY</code> or
-     * <code>IAM_IDENTITY_CENTER</code> is the selected authentication method of the
-     * new Amazon QuickSight account.</p> <p>For more information about using IAM
-     * Identity Center in Amazon QuickSight, see <a
+     * account. Either this field or the <code>AdminProGroup</code> field is required
+     * if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the
+     * selected authentication method of the new Amazon QuickSight account.</p> <p>For
+     * more information about using IAM Identity Center in Amazon QuickSight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
      * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
      * QuickSight User Guide. For more information about using Active Directory in
@@ -603,10 +603,10 @@ namespace Model
 
     /**
      * <p>The admin group associated with your Active Directory or IAM Identity Center
-     * account. This field is required if <code>ACTIVE_DIRECTORY</code> or
-     * <code>IAM_IDENTITY_CENTER</code> is the selected authentication method of the
-     * new Amazon QuickSight account.</p> <p>For more information about using IAM
-     * Identity Center in Amazon QuickSight, see <a
+     * account. Either this field or the <code>AdminProGroup</code> field is required
+     * if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the
+     * selected authentication method of the new Amazon QuickSight account.</p> <p>For
+     * more information about using IAM Identity Center in Amazon QuickSight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
      * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
      * QuickSight User Guide. For more information about using Active Directory in
@@ -619,10 +619,10 @@ namespace Model
 
     /**
      * <p>The admin group associated with your Active Directory or IAM Identity Center
-     * account. This field is required if <code>ACTIVE_DIRECTORY</code> or
-     * <code>IAM_IDENTITY_CENTER</code> is the selected authentication method of the
-     * new Amazon QuickSight account.</p> <p>For more information about using IAM
-     * Identity Center in Amazon QuickSight, see <a
+     * account. Either this field or the <code>AdminProGroup</code> field is required
+     * if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the
+     * selected authentication method of the new Amazon QuickSight account.</p> <p>For
+     * more information about using IAM Identity Center in Amazon QuickSight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
      * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
      * QuickSight User Guide. For more information about using Active Directory in
@@ -886,6 +886,414 @@ namespace Model
      * QuickSight User Guide.</p>
      */
     inline CreateAccountSubscriptionRequest& AddReaderGroup(const char* value) { m_readerGroupHasBeenSet = true; m_readerGroup.push_back(value); return *this; }
+
+
+    /**
+     * <p>The admin pro group associated with your Active Directory or IAM Identity
+     * Center account. Either this field or the <code>AdminGroup</code> field is
+     * required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is
+     * the selected authentication method of the new Amazon QuickSight account.</p>
+     * <p>For more information about using IAM Identity Center in Amazon QuickSight,
+     * see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
+     * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide. For more information about using Active Directory in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+     * Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAdminProGroup() const{ return m_adminProGroup; }
+
+    /**
+     * <p>The admin pro group associated with your Active Directory or IAM Identity
+     * Center account. Either this field or the <code>AdminGroup</code> field is
+     * required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is
+     * the selected authentication method of the new Amazon QuickSight account.</p>
+     * <p>For more information about using IAM Identity Center in Amazon QuickSight,
+     * see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
+     * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide. For more information about using Active Directory in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+     * Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide.</p>
+     */
+    inline bool AdminProGroupHasBeenSet() const { return m_adminProGroupHasBeenSet; }
+
+    /**
+     * <p>The admin pro group associated with your Active Directory or IAM Identity
+     * Center account. Either this field or the <code>AdminGroup</code> field is
+     * required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is
+     * the selected authentication method of the new Amazon QuickSight account.</p>
+     * <p>For more information about using IAM Identity Center in Amazon QuickSight,
+     * see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
+     * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide. For more information about using Active Directory in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+     * Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide.</p>
+     */
+    inline void SetAdminProGroup(const Aws::Vector<Aws::String>& value) { m_adminProGroupHasBeenSet = true; m_adminProGroup = value; }
+
+    /**
+     * <p>The admin pro group associated with your Active Directory or IAM Identity
+     * Center account. Either this field or the <code>AdminGroup</code> field is
+     * required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is
+     * the selected authentication method of the new Amazon QuickSight account.</p>
+     * <p>For more information about using IAM Identity Center in Amazon QuickSight,
+     * see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
+     * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide. For more information about using Active Directory in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+     * Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide.</p>
+     */
+    inline void SetAdminProGroup(Aws::Vector<Aws::String>&& value) { m_adminProGroupHasBeenSet = true; m_adminProGroup = std::move(value); }
+
+    /**
+     * <p>The admin pro group associated with your Active Directory or IAM Identity
+     * Center account. Either this field or the <code>AdminGroup</code> field is
+     * required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is
+     * the selected authentication method of the new Amazon QuickSight account.</p>
+     * <p>For more information about using IAM Identity Center in Amazon QuickSight,
+     * see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
+     * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide. For more information about using Active Directory in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+     * Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide.</p>
+     */
+    inline CreateAccountSubscriptionRequest& WithAdminProGroup(const Aws::Vector<Aws::String>& value) { SetAdminProGroup(value); return *this;}
+
+    /**
+     * <p>The admin pro group associated with your Active Directory or IAM Identity
+     * Center account. Either this field or the <code>AdminGroup</code> field is
+     * required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is
+     * the selected authentication method of the new Amazon QuickSight account.</p>
+     * <p>For more information about using IAM Identity Center in Amazon QuickSight,
+     * see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
+     * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide. For more information about using Active Directory in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+     * Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide.</p>
+     */
+    inline CreateAccountSubscriptionRequest& WithAdminProGroup(Aws::Vector<Aws::String>&& value) { SetAdminProGroup(std::move(value)); return *this;}
+
+    /**
+     * <p>The admin pro group associated with your Active Directory or IAM Identity
+     * Center account. Either this field or the <code>AdminGroup</code> field is
+     * required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is
+     * the selected authentication method of the new Amazon QuickSight account.</p>
+     * <p>For more information about using IAM Identity Center in Amazon QuickSight,
+     * see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
+     * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide. For more information about using Active Directory in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+     * Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide.</p>
+     */
+    inline CreateAccountSubscriptionRequest& AddAdminProGroup(const Aws::String& value) { m_adminProGroupHasBeenSet = true; m_adminProGroup.push_back(value); return *this; }
+
+    /**
+     * <p>The admin pro group associated with your Active Directory or IAM Identity
+     * Center account. Either this field or the <code>AdminGroup</code> field is
+     * required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is
+     * the selected authentication method of the new Amazon QuickSight account.</p>
+     * <p>For more information about using IAM Identity Center in Amazon QuickSight,
+     * see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
+     * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide. For more information about using Active Directory in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+     * Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide.</p>
+     */
+    inline CreateAccountSubscriptionRequest& AddAdminProGroup(Aws::String&& value) { m_adminProGroupHasBeenSet = true; m_adminProGroup.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The admin pro group associated with your Active Directory or IAM Identity
+     * Center account. Either this field or the <code>AdminGroup</code> field is
+     * required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is
+     * the selected authentication method of the new Amazon QuickSight account.</p>
+     * <p>For more information about using IAM Identity Center in Amazon QuickSight,
+     * see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
+     * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide. For more information about using Active Directory in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+     * Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide.</p>
+     */
+    inline CreateAccountSubscriptionRequest& AddAdminProGroup(const char* value) { m_adminProGroupHasBeenSet = true; m_adminProGroup.push_back(value); return *this; }
+
+
+    /**
+     * <p>The author pro group associated with your Active Directory or IAM Identity
+     * Center account.</p> <p>For more information about using IAM Identity Center in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
+     * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide. For more information about using Active Directory in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+     * Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAuthorProGroup() const{ return m_authorProGroup; }
+
+    /**
+     * <p>The author pro group associated with your Active Directory or IAM Identity
+     * Center account.</p> <p>For more information about using IAM Identity Center in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
+     * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide. For more information about using Active Directory in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+     * Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide.</p>
+     */
+    inline bool AuthorProGroupHasBeenSet() const { return m_authorProGroupHasBeenSet; }
+
+    /**
+     * <p>The author pro group associated with your Active Directory or IAM Identity
+     * Center account.</p> <p>For more information about using IAM Identity Center in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
+     * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide. For more information about using Active Directory in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+     * Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide.</p>
+     */
+    inline void SetAuthorProGroup(const Aws::Vector<Aws::String>& value) { m_authorProGroupHasBeenSet = true; m_authorProGroup = value; }
+
+    /**
+     * <p>The author pro group associated with your Active Directory or IAM Identity
+     * Center account.</p> <p>For more information about using IAM Identity Center in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
+     * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide. For more information about using Active Directory in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+     * Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide.</p>
+     */
+    inline void SetAuthorProGroup(Aws::Vector<Aws::String>&& value) { m_authorProGroupHasBeenSet = true; m_authorProGroup = std::move(value); }
+
+    /**
+     * <p>The author pro group associated with your Active Directory or IAM Identity
+     * Center account.</p> <p>For more information about using IAM Identity Center in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
+     * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide. For more information about using Active Directory in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+     * Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide.</p>
+     */
+    inline CreateAccountSubscriptionRequest& WithAuthorProGroup(const Aws::Vector<Aws::String>& value) { SetAuthorProGroup(value); return *this;}
+
+    /**
+     * <p>The author pro group associated with your Active Directory or IAM Identity
+     * Center account.</p> <p>For more information about using IAM Identity Center in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
+     * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide. For more information about using Active Directory in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+     * Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide.</p>
+     */
+    inline CreateAccountSubscriptionRequest& WithAuthorProGroup(Aws::Vector<Aws::String>&& value) { SetAuthorProGroup(std::move(value)); return *this;}
+
+    /**
+     * <p>The author pro group associated with your Active Directory or IAM Identity
+     * Center account.</p> <p>For more information about using IAM Identity Center in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
+     * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide. For more information about using Active Directory in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+     * Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide.</p>
+     */
+    inline CreateAccountSubscriptionRequest& AddAuthorProGroup(const Aws::String& value) { m_authorProGroupHasBeenSet = true; m_authorProGroup.push_back(value); return *this; }
+
+    /**
+     * <p>The author pro group associated with your Active Directory or IAM Identity
+     * Center account.</p> <p>For more information about using IAM Identity Center in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
+     * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide. For more information about using Active Directory in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+     * Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide.</p>
+     */
+    inline CreateAccountSubscriptionRequest& AddAuthorProGroup(Aws::String&& value) { m_authorProGroupHasBeenSet = true; m_authorProGroup.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The author pro group associated with your Active Directory or IAM Identity
+     * Center account.</p> <p>For more information about using IAM Identity Center in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
+     * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide. For more information about using Active Directory in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+     * Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide.</p>
+     */
+    inline CreateAccountSubscriptionRequest& AddAuthorProGroup(const char* value) { m_authorProGroupHasBeenSet = true; m_authorProGroup.push_back(value); return *this; }
+
+
+    /**
+     * <p>The reader pro group associated with your Active Directory or IAM Identity
+     * Center account.</p> <p>For more information about using IAM Identity Center in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
+     * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide. For more information about using Active Directory in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+     * Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetReaderProGroup() const{ return m_readerProGroup; }
+
+    /**
+     * <p>The reader pro group associated with your Active Directory or IAM Identity
+     * Center account.</p> <p>For more information about using IAM Identity Center in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
+     * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide. For more information about using Active Directory in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+     * Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide.</p>
+     */
+    inline bool ReaderProGroupHasBeenSet() const { return m_readerProGroupHasBeenSet; }
+
+    /**
+     * <p>The reader pro group associated with your Active Directory or IAM Identity
+     * Center account.</p> <p>For more information about using IAM Identity Center in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
+     * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide. For more information about using Active Directory in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+     * Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide.</p>
+     */
+    inline void SetReaderProGroup(const Aws::Vector<Aws::String>& value) { m_readerProGroupHasBeenSet = true; m_readerProGroup = value; }
+
+    /**
+     * <p>The reader pro group associated with your Active Directory or IAM Identity
+     * Center account.</p> <p>For more information about using IAM Identity Center in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
+     * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide. For more information about using Active Directory in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+     * Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide.</p>
+     */
+    inline void SetReaderProGroup(Aws::Vector<Aws::String>&& value) { m_readerProGroupHasBeenSet = true; m_readerProGroup = std::move(value); }
+
+    /**
+     * <p>The reader pro group associated with your Active Directory or IAM Identity
+     * Center account.</p> <p>For more information about using IAM Identity Center in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
+     * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide. For more information about using Active Directory in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+     * Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide.</p>
+     */
+    inline CreateAccountSubscriptionRequest& WithReaderProGroup(const Aws::Vector<Aws::String>& value) { SetReaderProGroup(value); return *this;}
+
+    /**
+     * <p>The reader pro group associated with your Active Directory or IAM Identity
+     * Center account.</p> <p>For more information about using IAM Identity Center in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
+     * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide. For more information about using Active Directory in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+     * Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide.</p>
+     */
+    inline CreateAccountSubscriptionRequest& WithReaderProGroup(Aws::Vector<Aws::String>&& value) { SetReaderProGroup(std::move(value)); return *this;}
+
+    /**
+     * <p>The reader pro group associated with your Active Directory or IAM Identity
+     * Center account.</p> <p>For more information about using IAM Identity Center in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
+     * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide. For more information about using Active Directory in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+     * Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide.</p>
+     */
+    inline CreateAccountSubscriptionRequest& AddReaderProGroup(const Aws::String& value) { m_readerProGroupHasBeenSet = true; m_readerProGroup.push_back(value); return *this; }
+
+    /**
+     * <p>The reader pro group associated with your Active Directory or IAM Identity
+     * Center account.</p> <p>For more information about using IAM Identity Center in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
+     * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide. For more information about using Active Directory in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+     * Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide.</p>
+     */
+    inline CreateAccountSubscriptionRequest& AddReaderProGroup(Aws::String&& value) { m_readerProGroupHasBeenSet = true; m_readerProGroup.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The reader pro group associated with your Active Directory or IAM Identity
+     * Center account.</p> <p>For more information about using IAM Identity Center in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using
+     * IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide. For more information about using Active Directory in
+     * Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using
+     * Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon
+     * QuickSight User Guide.</p>
+     */
+    inline CreateAccountSubscriptionRequest& AddReaderProGroup(const char* value) { m_readerProGroupHasBeenSet = true; m_readerProGroup.push_back(value); return *this; }
 
 
     /**
@@ -1198,6 +1606,15 @@ namespace Model
 
     Aws::Vector<Aws::String> m_readerGroup;
     bool m_readerGroupHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_adminProGroup;
+    bool m_adminProGroupHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_authorProGroup;
+    bool m_authorProGroupHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_readerProGroup;
+    bool m_readerProGroupHasBeenSet = false;
 
     Aws::String m_firstName;
     bool m_firstNameHasBeenSet = false;

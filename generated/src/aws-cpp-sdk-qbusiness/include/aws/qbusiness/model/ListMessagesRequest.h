@@ -39,47 +39,6 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the Amazon Q Business application.</p>
-     */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
-
-    /**
-     * <p>The identifier for the Amazon Q Business application.</p>
-     */
-    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-
-    /**
-     * <p>The identifier for the Amazon Q Business application.</p>
-     */
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-
-    /**
-     * <p>The identifier for the Amazon Q Business application.</p>
-     */
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-
-    /**
-     * <p>The identifier for the Amazon Q Business application.</p>
-     */
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-
-    /**
-     * <p>The identifier for the Amazon Q Business application.</p>
-     */
-    inline ListMessagesRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-
-    /**
-     * <p>The identifier for the Amazon Q Business application.</p>
-     */
-    inline ListMessagesRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier for the Amazon Q Business application.</p>
-     */
-    inline ListMessagesRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
-
-
-    /**
      * <p>The identifier of the Amazon Q Business web experience conversation.</p>
      */
     inline const Aws::String& GetConversationId() const{ return m_conversationId; }
@@ -121,24 +80,93 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of messages to return.</p>
+     * <p>The identifier for the Amazon Q Business application.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * <p>The maximum number of messages to return.</p>
+     * <p>The identifier for the Amazon Q Business application.</p>
      */
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
 
     /**
-     * <p>The maximum number of messages to return.</p>
+     * <p>The identifier for the Amazon Q Business application.</p>
      */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * <p>The maximum number of messages to return.</p>
+     * <p>The identifier for the Amazon Q Business application.</p>
      */
-    inline ListMessagesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
+
+    /**
+     * <p>The identifier for the Amazon Q Business application.</p>
+     */
+    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
+
+    /**
+     * <p>The identifier for the Amazon Q Business application.</p>
+     */
+    inline ListMessagesRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
+
+    /**
+     * <p>The identifier for the Amazon Q Business application.</p>
+     */
+    inline ListMessagesRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier for the Amazon Q Business application.</p>
+     */
+    inline ListMessagesRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+
+
+    /**
+     * <p>The identifier of the user involved in the Amazon Q Business web experience
+     * conversation.</p>
+     */
+    inline const Aws::String& GetUserId() const{ return m_userId; }
+
+    /**
+     * <p>The identifier of the user involved in the Amazon Q Business web experience
+     * conversation.</p>
+     */
+    inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the user involved in the Amazon Q Business web experience
+     * conversation.</p>
+     */
+    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
+
+    /**
+     * <p>The identifier of the user involved in the Amazon Q Business web experience
+     * conversation.</p>
+     */
+    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
+
+    /**
+     * <p>The identifier of the user involved in the Amazon Q Business web experience
+     * conversation.</p>
+     */
+    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
+
+    /**
+     * <p>The identifier of the user involved in the Amazon Q Business web experience
+     * conversation.</p>
+     */
+    inline ListMessagesRequest& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
+
+    /**
+     * <p>The identifier of the user involved in the Amazon Q Business web experience
+     * conversation.</p>
+     */
+    inline ListMessagesRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the user involved in the Amazon Q Business web experience
+     * conversation.</p>
+     */
+    inline ListMessagesRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
 
 
     /**
@@ -199,69 +227,41 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the user involved in the Amazon Q Business web experience
-     * conversation.</p>
+     * <p>The maximum number of messages to return.</p>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The identifier of the user involved in the Amazon Q Business web experience
-     * conversation.</p>
+     * <p>The maximum number of messages to return.</p>
      */
-    inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The identifier of the user involved in the Amazon Q Business web experience
-     * conversation.</p>
+     * <p>The maximum number of messages to return.</p>
      */
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The identifier of the user involved in the Amazon Q Business web experience
-     * conversation.</p>
+     * <p>The maximum number of messages to return.</p>
      */
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-
-    /**
-     * <p>The identifier of the user involved in the Amazon Q Business web experience
-     * conversation.</p>
-     */
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-
-    /**
-     * <p>The identifier of the user involved in the Amazon Q Business web experience
-     * conversation.</p>
-     */
-    inline ListMessagesRequest& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-
-    /**
-     * <p>The identifier of the user involved in the Amazon Q Business web experience
-     * conversation.</p>
-     */
-    inline ListMessagesRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the user involved in the Amazon Q Business web experience
-     * conversation.</p>
-     */
-    inline ListMessagesRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
+    inline ListMessagesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
-
-    Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_conversationId;
     bool m_conversationIdHasBeenSet = false;
 
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
+    Aws::String m_applicationId;
+    bool m_applicationIdHasBeenSet = false;
+
+    Aws::String m_userId;
+    bool m_userIdHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_userId;
-    bool m_userIdHasBeenSet = false;
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

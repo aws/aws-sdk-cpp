@@ -19,17 +19,17 @@ namespace Model
 {
 
 DocumentAttributeBoostingConfiguration::DocumentAttributeBoostingConfiguration() : 
-    m_dateConfigurationHasBeenSet(false),
     m_numberConfigurationHasBeenSet(false),
     m_stringConfigurationHasBeenSet(false),
+    m_dateConfigurationHasBeenSet(false),
     m_stringListConfigurationHasBeenSet(false)
 {
 }
 
 DocumentAttributeBoostingConfiguration::DocumentAttributeBoostingConfiguration(JsonView jsonValue) : 
-    m_dateConfigurationHasBeenSet(false),
     m_numberConfigurationHasBeenSet(false),
     m_stringConfigurationHasBeenSet(false),
+    m_dateConfigurationHasBeenSet(false),
     m_stringListConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
@@ -37,13 +37,6 @@ DocumentAttributeBoostingConfiguration::DocumentAttributeBoostingConfiguration(J
 
 DocumentAttributeBoostingConfiguration& DocumentAttributeBoostingConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("dateConfiguration"))
-  {
-    m_dateConfiguration = jsonValue.GetObject("dateConfiguration");
-
-    m_dateConfigurationHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("numberConfiguration"))
   {
     m_numberConfiguration = jsonValue.GetObject("numberConfiguration");
@@ -56,6 +49,13 @@ DocumentAttributeBoostingConfiguration& DocumentAttributeBoostingConfiguration::
     m_stringConfiguration = jsonValue.GetObject("stringConfiguration");
 
     m_stringConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dateConfiguration"))
+  {
+    m_dateConfiguration = jsonValue.GetObject("dateConfiguration");
+
+    m_dateConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("stringListConfiguration"))
@@ -72,12 +72,6 @@ JsonValue DocumentAttributeBoostingConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_dateConfigurationHasBeenSet)
-  {
-   payload.WithObject("dateConfiguration", m_dateConfiguration.Jsonize());
-
-  }
-
   if(m_numberConfigurationHasBeenSet)
   {
    payload.WithObject("numberConfiguration", m_numberConfiguration.Jsonize());
@@ -87,6 +81,12 @@ JsonValue DocumentAttributeBoostingConfiguration::Jsonize() const
   if(m_stringConfigurationHasBeenSet)
   {
    payload.WithObject("stringConfiguration", m_stringConfiguration.Jsonize());
+
+  }
+
+  if(m_dateConfigurationHasBeenSet)
+  {
+   payload.WithObject("dateConfiguration", m_dateConfiguration.Jsonize());
 
   }
 

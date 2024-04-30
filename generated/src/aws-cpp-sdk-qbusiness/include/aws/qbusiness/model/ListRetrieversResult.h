@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qbusiness/model/Retriever.h>
 #include <utility>
 
@@ -32,6 +32,42 @@ namespace Model
     AWS_QBUSINESS_API ListRetrieversResult();
     AWS_QBUSINESS_API ListRetrieversResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QBUSINESS_API ListRetrieversResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>An array of summary information for one or more retrievers.</p>
+     */
+    inline const Aws::Vector<Retriever>& GetRetrievers() const{ return m_retrievers; }
+
+    /**
+     * <p>An array of summary information for one or more retrievers.</p>
+     */
+    inline void SetRetrievers(const Aws::Vector<Retriever>& value) { m_retrievers = value; }
+
+    /**
+     * <p>An array of summary information for one or more retrievers.</p>
+     */
+    inline void SetRetrievers(Aws::Vector<Retriever>&& value) { m_retrievers = std::move(value); }
+
+    /**
+     * <p>An array of summary information for one or more retrievers.</p>
+     */
+    inline ListRetrieversResult& WithRetrievers(const Aws::Vector<Retriever>& value) { SetRetrievers(value); return *this;}
+
+    /**
+     * <p>An array of summary information for one or more retrievers.</p>
+     */
+    inline ListRetrieversResult& WithRetrievers(Aws::Vector<Retriever>&& value) { SetRetrievers(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of summary information for one or more retrievers.</p>
+     */
+    inline ListRetrieversResult& AddRetrievers(const Retriever& value) { m_retrievers.push_back(value); return *this; }
+
+    /**
+     * <p>An array of summary information for one or more retrievers.</p>
+     */
+    inline ListRetrieversResult& AddRetrievers(Retriever&& value) { m_retrievers.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -77,42 +113,6 @@ namespace Model
     inline ListRetrieversResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
-    /**
-     * <p>An array of summary information for one or more retrievers.</p>
-     */
-    inline const Aws::Vector<Retriever>& GetRetrievers() const{ return m_retrievers; }
-
-    /**
-     * <p>An array of summary information for one or more retrievers.</p>
-     */
-    inline void SetRetrievers(const Aws::Vector<Retriever>& value) { m_retrievers = value; }
-
-    /**
-     * <p>An array of summary information for one or more retrievers.</p>
-     */
-    inline void SetRetrievers(Aws::Vector<Retriever>&& value) { m_retrievers = std::move(value); }
-
-    /**
-     * <p>An array of summary information for one or more retrievers.</p>
-     */
-    inline ListRetrieversResult& WithRetrievers(const Aws::Vector<Retriever>& value) { SetRetrievers(value); return *this;}
-
-    /**
-     * <p>An array of summary information for one or more retrievers.</p>
-     */
-    inline ListRetrieversResult& WithRetrievers(Aws::Vector<Retriever>&& value) { SetRetrievers(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of summary information for one or more retrievers.</p>
-     */
-    inline ListRetrieversResult& AddRetrievers(const Retriever& value) { m_retrievers.push_back(value); return *this; }
-
-    /**
-     * <p>An array of summary information for one or more retrievers.</p>
-     */
-    inline ListRetrieversResult& AddRetrievers(Retriever&& value) { m_retrievers.push_back(std::move(value)); return *this; }
-
-
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -136,9 +136,9 @@ namespace Model
 
   private:
 
-    Aws::String m_nextToken;
-
     Aws::Vector<Retriever> m_retrievers;
+
+    Aws::String m_nextToken;
 
     Aws::String m_requestId;
   };

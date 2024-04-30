@@ -29,6 +29,12 @@ ListGroupsResult::ListGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>&
 ListGroupsResult& ListGroupsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
+  }
+
   if(jsonValue.ValueExists("items"))
   {
     Aws::Utils::Array<JsonView> itemsJsonList = jsonValue.GetArray("items");
@@ -36,12 +42,6 @@ ListGroupsResult& ListGroupsResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_items.push_back(itemsJsonList[itemsIndex].AsObject());
     }
-  }
-
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
   }
 
 

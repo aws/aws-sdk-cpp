@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qbusiness/model/GroupSummary.h>
 #include <utility>
 
@@ -32,42 +32,6 @@ namespace Model
     AWS_QBUSINESS_API ListGroupsResult();
     AWS_QBUSINESS_API ListGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QBUSINESS_API ListGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>Summary information for list of groups that are mapped to users.</p>
-     */
-    inline const Aws::Vector<GroupSummary>& GetItems() const{ return m_items; }
-
-    /**
-     * <p>Summary information for list of groups that are mapped to users.</p>
-     */
-    inline void SetItems(const Aws::Vector<GroupSummary>& value) { m_items = value; }
-
-    /**
-     * <p>Summary information for list of groups that are mapped to users.</p>
-     */
-    inline void SetItems(Aws::Vector<GroupSummary>&& value) { m_items = std::move(value); }
-
-    /**
-     * <p>Summary information for list of groups that are mapped to users.</p>
-     */
-    inline ListGroupsResult& WithItems(const Aws::Vector<GroupSummary>& value) { SetItems(value); return *this;}
-
-    /**
-     * <p>Summary information for list of groups that are mapped to users.</p>
-     */
-    inline ListGroupsResult& WithItems(Aws::Vector<GroupSummary>&& value) { SetItems(std::move(value)); return *this;}
-
-    /**
-     * <p>Summary information for list of groups that are mapped to users.</p>
-     */
-    inline ListGroupsResult& AddItems(const GroupSummary& value) { m_items.push_back(value); return *this; }
-
-    /**
-     * <p>Summary information for list of groups that are mapped to users.</p>
-     */
-    inline ListGroupsResult& AddItems(GroupSummary&& value) { m_items.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -120,6 +84,42 @@ namespace Model
     inline ListGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
+    /**
+     * <p>Summary information for list of groups that are mapped to users.</p>
+     */
+    inline const Aws::Vector<GroupSummary>& GetItems() const{ return m_items; }
+
+    /**
+     * <p>Summary information for list of groups that are mapped to users.</p>
+     */
+    inline void SetItems(const Aws::Vector<GroupSummary>& value) { m_items = value; }
+
+    /**
+     * <p>Summary information for list of groups that are mapped to users.</p>
+     */
+    inline void SetItems(Aws::Vector<GroupSummary>&& value) { m_items = std::move(value); }
+
+    /**
+     * <p>Summary information for list of groups that are mapped to users.</p>
+     */
+    inline ListGroupsResult& WithItems(const Aws::Vector<GroupSummary>& value) { SetItems(value); return *this;}
+
+    /**
+     * <p>Summary information for list of groups that are mapped to users.</p>
+     */
+    inline ListGroupsResult& WithItems(Aws::Vector<GroupSummary>&& value) { SetItems(std::move(value)); return *this;}
+
+    /**
+     * <p>Summary information for list of groups that are mapped to users.</p>
+     */
+    inline ListGroupsResult& AddItems(const GroupSummary& value) { m_items.push_back(value); return *this; }
+
+    /**
+     * <p>Summary information for list of groups that are mapped to users.</p>
+     */
+    inline ListGroupsResult& AddItems(GroupSummary&& value) { m_items.push_back(std::move(value)); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -143,9 +143,9 @@ namespace Model
 
   private:
 
-    Aws::Vector<GroupSummary> m_items;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<GroupSummary> m_items;
 
     Aws::String m_requestId;
   };

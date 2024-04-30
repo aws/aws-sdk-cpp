@@ -19,31 +19,24 @@ namespace Model
 {
 
 AttachmentOutput::AttachmentOutput() : 
-    m_errorHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_status(AttachmentStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_errorHasBeenSet(false)
 {
 }
 
 AttachmentOutput::AttachmentOutput(JsonView jsonValue) : 
-    m_errorHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_status(AttachmentStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_errorHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 AttachmentOutput& AttachmentOutput::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("error"))
-  {
-    m_error = jsonValue.GetObject("error");
-
-    m_errorHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
@@ -58,18 +51,19 @@ AttachmentOutput& AttachmentOutput::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("error"))
+  {
+    m_error = jsonValue.GetObject("error");
+
+    m_errorHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue AttachmentOutput::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_errorHasBeenSet)
-  {
-   payload.WithObject("error", m_error.Jsonize());
-
-  }
 
   if(m_nameHasBeenSet)
   {
@@ -80,6 +74,12 @@ JsonValue AttachmentOutput::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", AttachmentStatusMapper::GetNameForAttachmentStatus(m_status));
+  }
+
+  if(m_errorHasBeenSet)
+  {
+   payload.WithObject("error", m_error.Jsonize());
+
   }
 
   return payload;

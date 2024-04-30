@@ -26,8 +26,11 @@ namespace Model
 {
 
   /**
-   * <p>The Alexa Skill configuration of a SIP media application.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The Alexa Skill configuration of a SIP media application.</p> 
+   * <p>Due to changes made by the Amazon Alexa service, this data type is no longer
+   * available for use. For more information, refer to the <a
+   * href="https://developer.amazon.com/en-US/alexa/alexasmartproperties">Alexa Smart
+   * Properties</a> page.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/SipMediaApplicationAlexaSkillConfiguration">AWS
    * API Reference</a></p>
    */

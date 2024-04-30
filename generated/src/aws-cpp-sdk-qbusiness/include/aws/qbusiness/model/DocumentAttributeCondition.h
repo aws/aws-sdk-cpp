@@ -127,54 +127,54 @@ namespace Model
     /**
      * <p>The identifier of the document attribute used for the condition.</p> <p>For
      * example, 'Source_URI' could be an identifier for the attribute or metadata field
-     * that contains source URIs associated with the documents.</p> <p>Amazon Kendra
-     * currently does not support <code>_document_body</code> as an attribute key used
-     * for the condition.</p>
+     * that contains source URIs associated with the documents.</p> <p>Amazon Q
+     * Business currently does not support <code>_document_body</code> as an attribute
+     * key used for the condition.</p>
      */
     inline const DocumentEnrichmentConditionOperator& GetOperator() const{ return m_operator; }
 
     /**
      * <p>The identifier of the document attribute used for the condition.</p> <p>For
      * example, 'Source_URI' could be an identifier for the attribute or metadata field
-     * that contains source URIs associated with the documents.</p> <p>Amazon Kendra
-     * currently does not support <code>_document_body</code> as an attribute key used
-     * for the condition.</p>
+     * that contains source URIs associated with the documents.</p> <p>Amazon Q
+     * Business currently does not support <code>_document_body</code> as an attribute
+     * key used for the condition.</p>
      */
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
 
     /**
      * <p>The identifier of the document attribute used for the condition.</p> <p>For
      * example, 'Source_URI' could be an identifier for the attribute or metadata field
-     * that contains source URIs associated with the documents.</p> <p>Amazon Kendra
-     * currently does not support <code>_document_body</code> as an attribute key used
-     * for the condition.</p>
+     * that contains source URIs associated with the documents.</p> <p>Amazon Q
+     * Business currently does not support <code>_document_body</code> as an attribute
+     * key used for the condition.</p>
      */
     inline void SetOperator(const DocumentEnrichmentConditionOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
 
     /**
      * <p>The identifier of the document attribute used for the condition.</p> <p>For
      * example, 'Source_URI' could be an identifier for the attribute or metadata field
-     * that contains source URIs associated with the documents.</p> <p>Amazon Kendra
-     * currently does not support <code>_document_body</code> as an attribute key used
-     * for the condition.</p>
+     * that contains source URIs associated with the documents.</p> <p>Amazon Q
+     * Business currently does not support <code>_document_body</code> as an attribute
+     * key used for the condition.</p>
      */
     inline void SetOperator(DocumentEnrichmentConditionOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
 
     /**
      * <p>The identifier of the document attribute used for the condition.</p> <p>For
      * example, 'Source_URI' could be an identifier for the attribute or metadata field
-     * that contains source URIs associated with the documents.</p> <p>Amazon Kendra
-     * currently does not support <code>_document_body</code> as an attribute key used
-     * for the condition.</p>
+     * that contains source URIs associated with the documents.</p> <p>Amazon Q
+     * Business currently does not support <code>_document_body</code> as an attribute
+     * key used for the condition.</p>
      */
     inline DocumentAttributeCondition& WithOperator(const DocumentEnrichmentConditionOperator& value) { SetOperator(value); return *this;}
 
     /**
      * <p>The identifier of the document attribute used for the condition.</p> <p>For
      * example, 'Source_URI' could be an identifier for the attribute or metadata field
-     * that contains source URIs associated with the documents.</p> <p>Amazon Kendra
-     * currently does not support <code>_document_body</code> as an attribute key used
-     * for the condition.</p>
+     * that contains source URIs associated with the documents.</p> <p>Amazon Q
+     * Business currently does not support <code>_document_body</code> as an attribute
+     * key used for the condition.</p>
      */
     inline DocumentAttributeCondition& WithOperator(DocumentEnrichmentConditionOperator&& value) { SetOperator(std::move(value)); return *this;}
 

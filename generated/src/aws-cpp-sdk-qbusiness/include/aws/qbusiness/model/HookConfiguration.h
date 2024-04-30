@@ -27,14 +27,14 @@ namespace Model
   /**
    * <p>Provides the configuration information for invoking a Lambda function in
    * Lambda to alter document metadata and content when ingesting documents into
-   * Amazon Q Business.</p> <p>You can configure your Lambda function using <a
-   * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentEnrichmentConfiguration.html">PreExtractionHookConfiguration</a>
-   * if you want to apply advanced alterations on the original or raw documents.</p>
-   * <p>If you want to apply advanced alterations on the Amazon Q Business structured
-   * documents, you must configure your Lambda function using <a
-   * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentEnrichmentConfiguration.html">PostExtractionHookConfiguration</a>.</p>
-   * <p>You can only invoke one Lambda function. However, this function can invoke
-   * other functions it requires.</p> <p>For more information, see <a
+   * Amazon Q Business.</p> <p>You can configure your Lambda function using the
+   * <code>PreExtractionHookConfiguration</code> parameter if you want to apply
+   * advanced alterations on the original or raw documents.</p> <p>If you want to
+   * apply advanced alterations on the Amazon Q Business structured documents, you
+   * must configure your Lambda function using
+   * <code>PostExtractionHookConfiguration</code>.</p> <p>You can only invoke one
+   * Lambda function. However, this function can invoke other functions it
+   * requires.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom
    * document enrichment</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/HookConfiguration">AWS
@@ -164,71 +164,6 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a role with permission to run
-     * <code>PreExtractionHookConfiguration</code> and
-     * <code>PostExtractionHookConfiguration</code> for altering document metadata and
-     * content during the document ingestion process.</p>
-     */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a role with permission to run
-     * <code>PreExtractionHookConfiguration</code> and
-     * <code>PostExtractionHookConfiguration</code> for altering document metadata and
-     * content during the document ingestion process.</p>
-     */
-    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a role with permission to run
-     * <code>PreExtractionHookConfiguration</code> and
-     * <code>PostExtractionHookConfiguration</code> for altering document metadata and
-     * content during the document ingestion process.</p>
-     */
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a role with permission to run
-     * <code>PreExtractionHookConfiguration</code> and
-     * <code>PostExtractionHookConfiguration</code> for altering document metadata and
-     * content during the document ingestion process.</p>
-     */
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a role with permission to run
-     * <code>PreExtractionHookConfiguration</code> and
-     * <code>PostExtractionHookConfiguration</code> for altering document metadata and
-     * content during the document ingestion process.</p>
-     */
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a role with permission to run
-     * <code>PreExtractionHookConfiguration</code> and
-     * <code>PostExtractionHookConfiguration</code> for altering document metadata and
-     * content during the document ingestion process.</p>
-     */
-    inline HookConfiguration& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a role with permission to run
-     * <code>PreExtractionHookConfiguration</code> and
-     * <code>PostExtractionHookConfiguration</code> for altering document metadata and
-     * content during the document ingestion process.</p>
-     */
-    inline HookConfiguration& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a role with permission to run
-     * <code>PreExtractionHookConfiguration</code> and
-     * <code>PostExtractionHookConfiguration</code> for altering document metadata and
-     * content during the document ingestion process.</p>
-     */
-    inline HookConfiguration& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
-
-
-    /**
      * <p>Stores the original, raw documents or the structured, parsed documents before
      * and after altering them. For more information, see <a
      * href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/cde-lambda-operations.html#cde-lambda-operations-data-contracts">Data
@@ -292,6 +227,71 @@ namespace Model
      */
     inline HookConfiguration& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a role with permission to run
+     * <code>PreExtractionHookConfiguration</code> and
+     * <code>PostExtractionHookConfiguration</code> for altering document metadata and
+     * content during the document ingestion process.</p>
+     */
+    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a role with permission to run
+     * <code>PreExtractionHookConfiguration</code> and
+     * <code>PostExtractionHookConfiguration</code> for altering document metadata and
+     * content during the document ingestion process.</p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a role with permission to run
+     * <code>PreExtractionHookConfiguration</code> and
+     * <code>PostExtractionHookConfiguration</code> for altering document metadata and
+     * content during the document ingestion process.</p>
+     */
+    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a role with permission to run
+     * <code>PreExtractionHookConfiguration</code> and
+     * <code>PostExtractionHookConfiguration</code> for altering document metadata and
+     * content during the document ingestion process.</p>
+     */
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a role with permission to run
+     * <code>PreExtractionHookConfiguration</code> and
+     * <code>PostExtractionHookConfiguration</code> for altering document metadata and
+     * content during the document ingestion process.</p>
+     */
+    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a role with permission to run
+     * <code>PreExtractionHookConfiguration</code> and
+     * <code>PostExtractionHookConfiguration</code> for altering document metadata and
+     * content during the document ingestion process.</p>
+     */
+    inline HookConfiguration& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a role with permission to run
+     * <code>PreExtractionHookConfiguration</code> and
+     * <code>PostExtractionHookConfiguration</code> for altering document metadata and
+     * content during the document ingestion process.</p>
+     */
+    inline HookConfiguration& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a role with permission to run
+     * <code>PreExtractionHookConfiguration</code> and
+     * <code>PostExtractionHookConfiguration</code> for altering document metadata and
+     * content during the document ingestion process.</p>
+     */
+    inline HookConfiguration& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
   private:
 
     DocumentAttributeCondition m_invocationCondition;
@@ -300,11 +300,11 @@ namespace Model
     Aws::String m_lambdaArn;
     bool m_lambdaArnHasBeenSet = false;
 
-    Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet = false;
-
     Aws::String m_s3BucketName;
     bool m_s3BucketNameHasBeenSet = false;
+
+    Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

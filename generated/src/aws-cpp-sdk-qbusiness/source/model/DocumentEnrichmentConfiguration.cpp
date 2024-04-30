@@ -20,15 +20,15 @@ namespace Model
 
 DocumentEnrichmentConfiguration::DocumentEnrichmentConfiguration() : 
     m_inlineConfigurationsHasBeenSet(false),
-    m_postExtractionHookConfigurationHasBeenSet(false),
-    m_preExtractionHookConfigurationHasBeenSet(false)
+    m_preExtractionHookConfigurationHasBeenSet(false),
+    m_postExtractionHookConfigurationHasBeenSet(false)
 {
 }
 
 DocumentEnrichmentConfiguration::DocumentEnrichmentConfiguration(JsonView jsonValue) : 
     m_inlineConfigurationsHasBeenSet(false),
-    m_postExtractionHookConfigurationHasBeenSet(false),
-    m_preExtractionHookConfigurationHasBeenSet(false)
+    m_preExtractionHookConfigurationHasBeenSet(false),
+    m_postExtractionHookConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -45,18 +45,18 @@ DocumentEnrichmentConfiguration& DocumentEnrichmentConfiguration::operator =(Jso
     m_inlineConfigurationsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("postExtractionHookConfiguration"))
-  {
-    m_postExtractionHookConfiguration = jsonValue.GetObject("postExtractionHookConfiguration");
-
-    m_postExtractionHookConfigurationHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("preExtractionHookConfiguration"))
   {
     m_preExtractionHookConfiguration = jsonValue.GetObject("preExtractionHookConfiguration");
 
     m_preExtractionHookConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("postExtractionHookConfiguration"))
+  {
+    m_postExtractionHookConfiguration = jsonValue.GetObject("postExtractionHookConfiguration");
+
+    m_postExtractionHookConfigurationHasBeenSet = true;
   }
 
   return *this;
@@ -77,15 +77,15 @@ JsonValue DocumentEnrichmentConfiguration::Jsonize() const
 
   }
 
-  if(m_postExtractionHookConfigurationHasBeenSet)
-  {
-   payload.WithObject("postExtractionHookConfiguration", m_postExtractionHookConfiguration.Jsonize());
-
-  }
-
   if(m_preExtractionHookConfigurationHasBeenSet)
   {
    payload.WithObject("preExtractionHookConfiguration", m_preExtractionHookConfiguration.Jsonize());
+
+  }
+
+  if(m_postExtractionHookConfigurationHasBeenSet)
+  {
+   payload.WithObject("postExtractionHookConfiguration", m_postExtractionHookConfiguration.Jsonize());
 
   }
 

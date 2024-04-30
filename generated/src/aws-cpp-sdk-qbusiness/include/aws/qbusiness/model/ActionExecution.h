@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/qbusiness/model/ActionExecutionPayloadField.h>
 #include <utility>
 
@@ -38,6 +38,47 @@ namespace Model
     AWS_QBUSINESS_API ActionExecution(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API ActionExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The identifier of the plugin the action is attached to.</p>
+     */
+    inline const Aws::String& GetPluginId() const{ return m_pluginId; }
+
+    /**
+     * <p>The identifier of the plugin the action is attached to.</p>
+     */
+    inline bool PluginIdHasBeenSet() const { return m_pluginIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the plugin the action is attached to.</p>
+     */
+    inline void SetPluginId(const Aws::String& value) { m_pluginIdHasBeenSet = true; m_pluginId = value; }
+
+    /**
+     * <p>The identifier of the plugin the action is attached to.</p>
+     */
+    inline void SetPluginId(Aws::String&& value) { m_pluginIdHasBeenSet = true; m_pluginId = std::move(value); }
+
+    /**
+     * <p>The identifier of the plugin the action is attached to.</p>
+     */
+    inline void SetPluginId(const char* value) { m_pluginIdHasBeenSet = true; m_pluginId.assign(value); }
+
+    /**
+     * <p>The identifier of the plugin the action is attached to.</p>
+     */
+    inline ActionExecution& WithPluginId(const Aws::String& value) { SetPluginId(value); return *this;}
+
+    /**
+     * <p>The identifier of the plugin the action is attached to.</p>
+     */
+    inline ActionExecution& WithPluginId(Aws::String&& value) { SetPluginId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the plugin the action is attached to.</p>
+     */
+    inline ActionExecution& WithPluginId(const char* value) { SetPluginId(value); return *this;}
 
 
     /**
@@ -161,57 +202,16 @@ namespace Model
      */
     inline ActionExecution& WithPayloadFieldNameSeparator(const char* value) { SetPayloadFieldNameSeparator(value); return *this;}
 
-
-    /**
-     * <p>The identifier of the plugin the action is attached to.</p>
-     */
-    inline const Aws::String& GetPluginId() const{ return m_pluginId; }
-
-    /**
-     * <p>The identifier of the plugin the action is attached to.</p>
-     */
-    inline bool PluginIdHasBeenSet() const { return m_pluginIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the plugin the action is attached to.</p>
-     */
-    inline void SetPluginId(const Aws::String& value) { m_pluginIdHasBeenSet = true; m_pluginId = value; }
-
-    /**
-     * <p>The identifier of the plugin the action is attached to.</p>
-     */
-    inline void SetPluginId(Aws::String&& value) { m_pluginIdHasBeenSet = true; m_pluginId = std::move(value); }
-
-    /**
-     * <p>The identifier of the plugin the action is attached to.</p>
-     */
-    inline void SetPluginId(const char* value) { m_pluginIdHasBeenSet = true; m_pluginId.assign(value); }
-
-    /**
-     * <p>The identifier of the plugin the action is attached to.</p>
-     */
-    inline ActionExecution& WithPluginId(const Aws::String& value) { SetPluginId(value); return *this;}
-
-    /**
-     * <p>The identifier of the plugin the action is attached to.</p>
-     */
-    inline ActionExecution& WithPluginId(Aws::String&& value) { SetPluginId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the plugin the action is attached to.</p>
-     */
-    inline ActionExecution& WithPluginId(const char* value) { SetPluginId(value); return *this;}
-
   private:
+
+    Aws::String m_pluginId;
+    bool m_pluginIdHasBeenSet = false;
 
     Aws::Map<Aws::String, ActionExecutionPayloadField> m_payload;
     bool m_payloadHasBeenSet = false;
 
     Aws::String m_payloadFieldNameSeparator;
     bool m_payloadFieldNameSeparatorHasBeenSet = false;
-
-    Aws::String m_pluginId;
-    bool m_pluginIdHasBeenSet = false;
   };
 
 } // namespace Model
