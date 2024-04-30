@@ -30,4 +30,4 @@ if(MSVC AND BUILD_SHARED_LIBS)
 endif()
 
 include(GoogleTest)
-gtest_discover_tests(${PROJECT_NAME})
+gtest_add_tests(TARGET ${PROJECT_NAME})
