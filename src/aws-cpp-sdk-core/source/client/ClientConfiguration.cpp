@@ -117,7 +117,7 @@ Aws::String ComputeUserAgentString(ClientConfiguration const * const pConfig)
   return ss.str();
 }
 
-void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
+static void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
 {
     clientConfig.scheme = Aws::Http::Scheme::HTTPS;
     clientConfig.useDualStack = false;
@@ -208,7 +208,7 @@ void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
     }
 }
 
-void setConfigFromEnvOrProfile(ClientConfiguration &config)
+static void setConfigFromEnvOrProfile(ClientConfiguration &config)
 {
     Aws::String disableIMDSv1 = ClientConfiguration::LoadConfigFromEnvOrProfile(DISABLE_IMDSV1_ENV_VAR,
         config.profileName,
