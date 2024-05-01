@@ -89,42 +89,42 @@ namespace Model
 
 
     /**
-     * <p>The account ID for the owner of the S3 bucket.</p>
+     * <p>The bucket account owner ID for the S3 bucket.</p>
      */
     inline const Aws::String& GetBucketOwnerAccountId() const{ return m_bucketOwnerAccountId; }
 
     /**
-     * <p>The account ID for the owner of the S3 bucket.</p>
+     * <p>The bucket account owner ID for the S3 bucket.</p>
      */
     inline bool BucketOwnerAccountIdHasBeenSet() const { return m_bucketOwnerAccountIdHasBeenSet; }
 
     /**
-     * <p>The account ID for the owner of the S3 bucket.</p>
+     * <p>The bucket account owner ID for the S3 bucket.</p>
      */
     inline void SetBucketOwnerAccountId(const Aws::String& value) { m_bucketOwnerAccountIdHasBeenSet = true; m_bucketOwnerAccountId = value; }
 
     /**
-     * <p>The account ID for the owner of the S3 bucket.</p>
+     * <p>The bucket account owner ID for the S3 bucket.</p>
      */
     inline void SetBucketOwnerAccountId(Aws::String&& value) { m_bucketOwnerAccountIdHasBeenSet = true; m_bucketOwnerAccountId = std::move(value); }
 
     /**
-     * <p>The account ID for the owner of the S3 bucket.</p>
+     * <p>The bucket account owner ID for the S3 bucket.</p>
      */
     inline void SetBucketOwnerAccountId(const char* value) { m_bucketOwnerAccountIdHasBeenSet = true; m_bucketOwnerAccountId.assign(value); }
 
     /**
-     * <p>The account ID for the owner of the S3 bucket.</p>
+     * <p>The bucket account owner ID for the S3 bucket.</p>
      */
     inline S3DataSourceConfiguration& WithBucketOwnerAccountId(const Aws::String& value) { SetBucketOwnerAccountId(value); return *this;}
 
     /**
-     * <p>The account ID for the owner of the S3 bucket.</p>
+     * <p>The bucket account owner ID for the S3 bucket.</p>
      */
     inline S3DataSourceConfiguration& WithBucketOwnerAccountId(Aws::String&& value) { SetBucketOwnerAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The account ID for the owner of the S3 bucket.</p>
+     * <p>The bucket account owner ID for the S3 bucket.</p>
      */
     inline S3DataSourceConfiguration& WithBucketOwnerAccountId(const char* value) { SetBucketOwnerAccountId(value); return *this;}
 

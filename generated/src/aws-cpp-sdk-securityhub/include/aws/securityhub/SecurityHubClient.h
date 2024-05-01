@@ -2150,12 +2150,15 @@ namespace SecurityHub
         }
 
         /**
-         * <p> <code>UpdateFindings</code> is deprecated. Instead of
-         * <code>UpdateFindings</code>, use <code>BatchUpdateFindings</code>.</p>
-         * <p>Updates the <code>Note</code> and <code>RecordState</code> of the Security
-         * Hub-aggregated findings that the filter attributes specify. Any member account
-         * that can view the finding also sees the update to the finding.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p> <code>UpdateFindings</code> is a deprecated operation. Instead of
+         * <code>UpdateFindings</code>, use the <code>BatchUpdateFindings</code>
+         * operation.</p> <p>Updates the <code>Note</code> and <code>RecordState</code> of
+         * the Security Hub-aggregated findings that the filter attributes specify. Any
+         * member account that can view the finding also sees the update to the
+         * finding.</p> <p>Finding updates made with <code>UpdateFindings</code> might not
+         * be persisted if the same finding is later updated by the finding provider
+         * through the <code>BatchImportFindings</code> operation.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateFindings">AWS
          * API Reference</a></p>
          */

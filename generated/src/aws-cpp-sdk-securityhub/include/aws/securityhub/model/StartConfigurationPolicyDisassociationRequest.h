@@ -71,50 +71,58 @@ namespace Model
 
 
     /**
-     * <p> The Amazon Resource Name (ARN) or universally unique identifier (UUID) of
-     * the configuration policy. </p>
+     * <p> The Amazon Resource Name (ARN) of a configuration policy, the universally
+     * unique identifier (UUID) of a configuration policy, or a value of
+     * <code>SELF_MANAGED_SECURITY_HUB</code> for a self-managed configuration. </p>
      */
     inline const Aws::String& GetConfigurationPolicyIdentifier() const{ return m_configurationPolicyIdentifier; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) or universally unique identifier (UUID) of
-     * the configuration policy. </p>
+     * <p> The Amazon Resource Name (ARN) of a configuration policy, the universally
+     * unique identifier (UUID) of a configuration policy, or a value of
+     * <code>SELF_MANAGED_SECURITY_HUB</code> for a self-managed configuration. </p>
      */
     inline bool ConfigurationPolicyIdentifierHasBeenSet() const { return m_configurationPolicyIdentifierHasBeenSet; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) or universally unique identifier (UUID) of
-     * the configuration policy. </p>
+     * <p> The Amazon Resource Name (ARN) of a configuration policy, the universally
+     * unique identifier (UUID) of a configuration policy, or a value of
+     * <code>SELF_MANAGED_SECURITY_HUB</code> for a self-managed configuration. </p>
      */
     inline void SetConfigurationPolicyIdentifier(const Aws::String& value) { m_configurationPolicyIdentifierHasBeenSet = true; m_configurationPolicyIdentifier = value; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) or universally unique identifier (UUID) of
-     * the configuration policy. </p>
+     * <p> The Amazon Resource Name (ARN) of a configuration policy, the universally
+     * unique identifier (UUID) of a configuration policy, or a value of
+     * <code>SELF_MANAGED_SECURITY_HUB</code> for a self-managed configuration. </p>
      */
     inline void SetConfigurationPolicyIdentifier(Aws::String&& value) { m_configurationPolicyIdentifierHasBeenSet = true; m_configurationPolicyIdentifier = std::move(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) or universally unique identifier (UUID) of
-     * the configuration policy. </p>
+     * <p> The Amazon Resource Name (ARN) of a configuration policy, the universally
+     * unique identifier (UUID) of a configuration policy, or a value of
+     * <code>SELF_MANAGED_SECURITY_HUB</code> for a self-managed configuration. </p>
      */
     inline void SetConfigurationPolicyIdentifier(const char* value) { m_configurationPolicyIdentifierHasBeenSet = true; m_configurationPolicyIdentifier.assign(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) or universally unique identifier (UUID) of
-     * the configuration policy. </p>
+     * <p> The Amazon Resource Name (ARN) of a configuration policy, the universally
+     * unique identifier (UUID) of a configuration policy, or a value of
+     * <code>SELF_MANAGED_SECURITY_HUB</code> for a self-managed configuration. </p>
      */
     inline StartConfigurationPolicyDisassociationRequest& WithConfigurationPolicyIdentifier(const Aws::String& value) { SetConfigurationPolicyIdentifier(value); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) or universally unique identifier (UUID) of
-     * the configuration policy. </p>
+     * <p> The Amazon Resource Name (ARN) of a configuration policy, the universally
+     * unique identifier (UUID) of a configuration policy, or a value of
+     * <code>SELF_MANAGED_SECURITY_HUB</code> for a self-managed configuration. </p>
      */
     inline StartConfigurationPolicyDisassociationRequest& WithConfigurationPolicyIdentifier(Aws::String&& value) { SetConfigurationPolicyIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) or universally unique identifier (UUID) of
-     * the configuration policy. </p>
+     * <p> The Amazon Resource Name (ARN) of a configuration policy, the universally
+     * unique identifier (UUID) of a configuration policy, or a value of
+     * <code>SELF_MANAGED_SECURITY_HUB</code> for a self-managed configuration. </p>
      */
     inline StartConfigurationPolicyDisassociationRequest& WithConfigurationPolicyIdentifier(const char* value) { SetConfigurationPolicyIdentifier(value); return *this;}
 

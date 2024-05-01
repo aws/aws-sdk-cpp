@@ -191,22 +191,38 @@ namespace Model
 
 
     /**
-     * <p>The device index for the network interface attachment.</p>
+     * <p>The device index for the network interface attachment. Each network interface
+     * requires a device index. If you create a launch template that includes secondary
+     * network interfaces but not a primary network interface, then you must add a
+     * primary network interface as a launch parameter when you launch an instance from
+     * the template.</p>
      */
     inline int GetDeviceIndex() const{ return m_deviceIndex; }
 
     /**
-     * <p>The device index for the network interface attachment.</p>
+     * <p>The device index for the network interface attachment. Each network interface
+     * requires a device index. If you create a launch template that includes secondary
+     * network interfaces but not a primary network interface, then you must add a
+     * primary network interface as a launch parameter when you launch an instance from
+     * the template.</p>
      */
     inline bool DeviceIndexHasBeenSet() const { return m_deviceIndexHasBeenSet; }
 
     /**
-     * <p>The device index for the network interface attachment.</p>
+     * <p>The device index for the network interface attachment. Each network interface
+     * requires a device index. If you create a launch template that includes secondary
+     * network interfaces but not a primary network interface, then you must add a
+     * primary network interface as a launch parameter when you launch an instance from
+     * the template.</p>
      */
     inline void SetDeviceIndex(int value) { m_deviceIndexHasBeenSet = true; m_deviceIndex = value; }
 
     /**
-     * <p>The device index for the network interface attachment.</p>
+     * <p>The device index for the network interface attachment. Each network interface
+     * requires a device index. If you create a launch template that includes secondary
+     * network interfaces but not a primary network interface, then you must add a
+     * primary network interface as a launch parameter when you launch an instance from
+     * the template.</p>
      */
     inline LaunchTemplateInstanceNetworkInterfaceSpecificationRequest& WithDeviceIndex(int value) { SetDeviceIndex(value); return *this;}
 

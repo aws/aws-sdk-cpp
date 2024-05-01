@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
+#include <aws/bedrock-agent/model/MongoDbAtlasConfiguration.h>
 #include <aws/bedrock-agent/model/OpenSearchServerlessConfiguration.h>
 #include <aws/bedrock-agent/model/PineconeConfiguration.h>
 #include <aws/bedrock-agent/model/RdsConfiguration.h>
@@ -40,6 +41,43 @@ namespace Model
     AWS_BEDROCKAGENT_API StorageConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API StorageConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>Contains the storage configuration of the knowledge base in MongoDB
+     * Atlas.</p>
+     */
+    inline const MongoDbAtlasConfiguration& GetMongoDbAtlasConfiguration() const{ return m_mongoDbAtlasConfiguration; }
+
+    /**
+     * <p>Contains the storage configuration of the knowledge base in MongoDB
+     * Atlas.</p>
+     */
+    inline bool MongoDbAtlasConfigurationHasBeenSet() const { return m_mongoDbAtlasConfigurationHasBeenSet; }
+
+    /**
+     * <p>Contains the storage configuration of the knowledge base in MongoDB
+     * Atlas.</p>
+     */
+    inline void SetMongoDbAtlasConfiguration(const MongoDbAtlasConfiguration& value) { m_mongoDbAtlasConfigurationHasBeenSet = true; m_mongoDbAtlasConfiguration = value; }
+
+    /**
+     * <p>Contains the storage configuration of the knowledge base in MongoDB
+     * Atlas.</p>
+     */
+    inline void SetMongoDbAtlasConfiguration(MongoDbAtlasConfiguration&& value) { m_mongoDbAtlasConfigurationHasBeenSet = true; m_mongoDbAtlasConfiguration = std::move(value); }
+
+    /**
+     * <p>Contains the storage configuration of the knowledge base in MongoDB
+     * Atlas.</p>
+     */
+    inline StorageConfiguration& WithMongoDbAtlasConfiguration(const MongoDbAtlasConfiguration& value) { SetMongoDbAtlasConfiguration(value); return *this;}
+
+    /**
+     * <p>Contains the storage configuration of the knowledge base in MongoDB
+     * Atlas.</p>
+     */
+    inline StorageConfiguration& WithMongoDbAtlasConfiguration(MongoDbAtlasConfiguration&& value) { SetMongoDbAtlasConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -227,6 +265,9 @@ namespace Model
     inline StorageConfiguration& WithType(KnowledgeBaseStorageType&& value) { SetType(std::move(value)); return *this;}
 
   private:
+
+    MongoDbAtlasConfiguration m_mongoDbAtlasConfiguration;
+    bool m_mongoDbAtlasConfigurationHasBeenSet = false;
 
     OpenSearchServerlessConfiguration m_opensearchServerlessConfiguration;
     bool m_opensearchServerlessConfigurationHasBeenSet = false;
