@@ -76,32 +76,32 @@ namespace Model
 
 
     /**
-     * <p>The deletion policy for the data source.</p>
+     * <p>The data deletion policy for a data source.</p>
      */
     inline const DataDeletionPolicy& GetDataDeletionPolicy() const{ return m_dataDeletionPolicy; }
 
     /**
-     * <p>The deletion policy for the data source.</p>
+     * <p>The data deletion policy for a data source.</p>
      */
     inline bool DataDeletionPolicyHasBeenSet() const { return m_dataDeletionPolicyHasBeenSet; }
 
     /**
-     * <p>The deletion policy for the data source.</p>
+     * <p>The data deletion policy for a data source.</p>
      */
     inline void SetDataDeletionPolicy(const DataDeletionPolicy& value) { m_dataDeletionPolicyHasBeenSet = true; m_dataDeletionPolicy = value; }
 
     /**
-     * <p>The deletion policy for the data source.</p>
+     * <p>The data deletion policy for a data source.</p>
      */
     inline void SetDataDeletionPolicy(DataDeletionPolicy&& value) { m_dataDeletionPolicyHasBeenSet = true; m_dataDeletionPolicy = std::move(value); }
 
     /**
-     * <p>The deletion policy for the data source.</p>
+     * <p>The data deletion policy for a data source.</p>
      */
     inline DataSource& WithDataDeletionPolicy(const DataDeletionPolicy& value) { SetDataDeletionPolicy(value); return *this;}
 
     /**
-     * <p>The deletion policy for the data source.</p>
+     * <p>The data deletion policy for a data source.</p>
      */
     inline DataSource& WithDataDeletionPolicy(DataDeletionPolicy&& value) { SetDataDeletionPolicy(std::move(value)); return *this;}
 
@@ -220,47 +220,47 @@ namespace Model
 
 
     /**
-     * <p>The details of the failure reasons related to the data source.</p>
+     * <p>The detailed reasons on the failure to delete a data source.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFailureReasons() const{ return m_failureReasons; }
 
     /**
-     * <p>The details of the failure reasons related to the data source.</p>
+     * <p>The detailed reasons on the failure to delete a data source.</p>
      */
     inline bool FailureReasonsHasBeenSet() const { return m_failureReasonsHasBeenSet; }
 
     /**
-     * <p>The details of the failure reasons related to the data source.</p>
+     * <p>The detailed reasons on the failure to delete a data source.</p>
      */
     inline void SetFailureReasons(const Aws::Vector<Aws::String>& value) { m_failureReasonsHasBeenSet = true; m_failureReasons = value; }
 
     /**
-     * <p>The details of the failure reasons related to the data source.</p>
+     * <p>The detailed reasons on the failure to delete a data source.</p>
      */
     inline void SetFailureReasons(Aws::Vector<Aws::String>&& value) { m_failureReasonsHasBeenSet = true; m_failureReasons = std::move(value); }
 
     /**
-     * <p>The details of the failure reasons related to the data source.</p>
+     * <p>The detailed reasons on the failure to delete a data source.</p>
      */
     inline DataSource& WithFailureReasons(const Aws::Vector<Aws::String>& value) { SetFailureReasons(value); return *this;}
 
     /**
-     * <p>The details of the failure reasons related to the data source.</p>
+     * <p>The detailed reasons on the failure to delete a data source.</p>
      */
     inline DataSource& WithFailureReasons(Aws::Vector<Aws::String>&& value) { SetFailureReasons(std::move(value)); return *this;}
 
     /**
-     * <p>The details of the failure reasons related to the data source.</p>
+     * <p>The detailed reasons on the failure to delete a data source.</p>
      */
     inline DataSource& AddFailureReasons(const Aws::String& value) { m_failureReasonsHasBeenSet = true; m_failureReasons.push_back(value); return *this; }
 
     /**
-     * <p>The details of the failure reasons related to the data source.</p>
+     * <p>The detailed reasons on the failure to delete a data source.</p>
      */
     inline DataSource& AddFailureReasons(Aws::String&& value) { m_failureReasonsHasBeenSet = true; m_failureReasons.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The details of the failure reasons related to the data source.</p>
+     * <p>The detailed reasons on the failure to delete a data source.</p>
      */
     inline DataSource& AddFailureReasons(const char* value) { m_failureReasonsHasBeenSet = true; m_failureReasons.push_back(value); return *this; }
 

@@ -7,6 +7,7 @@
 #include <aws/personalize-runtime/PersonalizeRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -215,6 +216,169 @@ namespace Model
      */
     inline PredictedItem& AddMetadata(const char* key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>If you use User-Personalization-v2, a list of reasons for why the item was
+     * included in recommendations. Possible reasons include the following:</p> <ul>
+     * <li> <p>Promoted item - Indicates the item was included as part of a promotion
+     * that you applied in your recommendation request.</p> </li> <li> <p>Exploration -
+     * Indicates the item was included with exploration. With exploration,
+     * recommendations include items with less interactions data or relevance for the
+     * user. For more information about exploration, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/use-case-recipe-features.html#about-exploration">Exploration</a>.</p>
+     * </li> <li> <p> Popular item - Indicates the item was included as a placeholder
+     * popular item. If you use a filter, depending on how many recommendations the
+     * filter removes, Amazon Personalize might add placeholder items to meet the
+     * <code>numResults</code> for your recommendation request. These items are popular
+     * items, based on interactions data, that satisfy your filter criteria. They don't
+     * have a relevance score for the user. </p> </li> </ul>
+     */
+    inline const Aws::Vector<Aws::String>& GetReason() const{ return m_reason; }
+
+    /**
+     * <p>If you use User-Personalization-v2, a list of reasons for why the item was
+     * included in recommendations. Possible reasons include the following:</p> <ul>
+     * <li> <p>Promoted item - Indicates the item was included as part of a promotion
+     * that you applied in your recommendation request.</p> </li> <li> <p>Exploration -
+     * Indicates the item was included with exploration. With exploration,
+     * recommendations include items with less interactions data or relevance for the
+     * user. For more information about exploration, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/use-case-recipe-features.html#about-exploration">Exploration</a>.</p>
+     * </li> <li> <p> Popular item - Indicates the item was included as a placeholder
+     * popular item. If you use a filter, depending on how many recommendations the
+     * filter removes, Amazon Personalize might add placeholder items to meet the
+     * <code>numResults</code> for your recommendation request. These items are popular
+     * items, based on interactions data, that satisfy your filter criteria. They don't
+     * have a relevance score for the user. </p> </li> </ul>
+     */
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
+
+    /**
+     * <p>If you use User-Personalization-v2, a list of reasons for why the item was
+     * included in recommendations. Possible reasons include the following:</p> <ul>
+     * <li> <p>Promoted item - Indicates the item was included as part of a promotion
+     * that you applied in your recommendation request.</p> </li> <li> <p>Exploration -
+     * Indicates the item was included with exploration. With exploration,
+     * recommendations include items with less interactions data or relevance for the
+     * user. For more information about exploration, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/use-case-recipe-features.html#about-exploration">Exploration</a>.</p>
+     * </li> <li> <p> Popular item - Indicates the item was included as a placeholder
+     * popular item. If you use a filter, depending on how many recommendations the
+     * filter removes, Amazon Personalize might add placeholder items to meet the
+     * <code>numResults</code> for your recommendation request. These items are popular
+     * items, based on interactions data, that satisfy your filter criteria. They don't
+     * have a relevance score for the user. </p> </li> </ul>
+     */
+    inline void SetReason(const Aws::Vector<Aws::String>& value) { m_reasonHasBeenSet = true; m_reason = value; }
+
+    /**
+     * <p>If you use User-Personalization-v2, a list of reasons for why the item was
+     * included in recommendations. Possible reasons include the following:</p> <ul>
+     * <li> <p>Promoted item - Indicates the item was included as part of a promotion
+     * that you applied in your recommendation request.</p> </li> <li> <p>Exploration -
+     * Indicates the item was included with exploration. With exploration,
+     * recommendations include items with less interactions data or relevance for the
+     * user. For more information about exploration, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/use-case-recipe-features.html#about-exploration">Exploration</a>.</p>
+     * </li> <li> <p> Popular item - Indicates the item was included as a placeholder
+     * popular item. If you use a filter, depending on how many recommendations the
+     * filter removes, Amazon Personalize might add placeholder items to meet the
+     * <code>numResults</code> for your recommendation request. These items are popular
+     * items, based on interactions data, that satisfy your filter criteria. They don't
+     * have a relevance score for the user. </p> </li> </ul>
+     */
+    inline void SetReason(Aws::Vector<Aws::String>&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
+
+    /**
+     * <p>If you use User-Personalization-v2, a list of reasons for why the item was
+     * included in recommendations. Possible reasons include the following:</p> <ul>
+     * <li> <p>Promoted item - Indicates the item was included as part of a promotion
+     * that you applied in your recommendation request.</p> </li> <li> <p>Exploration -
+     * Indicates the item was included with exploration. With exploration,
+     * recommendations include items with less interactions data or relevance for the
+     * user. For more information about exploration, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/use-case-recipe-features.html#about-exploration">Exploration</a>.</p>
+     * </li> <li> <p> Popular item - Indicates the item was included as a placeholder
+     * popular item. If you use a filter, depending on how many recommendations the
+     * filter removes, Amazon Personalize might add placeholder items to meet the
+     * <code>numResults</code> for your recommendation request. These items are popular
+     * items, based on interactions data, that satisfy your filter criteria. They don't
+     * have a relevance score for the user. </p> </li> </ul>
+     */
+    inline PredictedItem& WithReason(const Aws::Vector<Aws::String>& value) { SetReason(value); return *this;}
+
+    /**
+     * <p>If you use User-Personalization-v2, a list of reasons for why the item was
+     * included in recommendations. Possible reasons include the following:</p> <ul>
+     * <li> <p>Promoted item - Indicates the item was included as part of a promotion
+     * that you applied in your recommendation request.</p> </li> <li> <p>Exploration -
+     * Indicates the item was included with exploration. With exploration,
+     * recommendations include items with less interactions data or relevance for the
+     * user. For more information about exploration, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/use-case-recipe-features.html#about-exploration">Exploration</a>.</p>
+     * </li> <li> <p> Popular item - Indicates the item was included as a placeholder
+     * popular item. If you use a filter, depending on how many recommendations the
+     * filter removes, Amazon Personalize might add placeholder items to meet the
+     * <code>numResults</code> for your recommendation request. These items are popular
+     * items, based on interactions data, that satisfy your filter criteria. They don't
+     * have a relevance score for the user. </p> </li> </ul>
+     */
+    inline PredictedItem& WithReason(Aws::Vector<Aws::String>&& value) { SetReason(std::move(value)); return *this;}
+
+    /**
+     * <p>If you use User-Personalization-v2, a list of reasons for why the item was
+     * included in recommendations. Possible reasons include the following:</p> <ul>
+     * <li> <p>Promoted item - Indicates the item was included as part of a promotion
+     * that you applied in your recommendation request.</p> </li> <li> <p>Exploration -
+     * Indicates the item was included with exploration. With exploration,
+     * recommendations include items with less interactions data or relevance for the
+     * user. For more information about exploration, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/use-case-recipe-features.html#about-exploration">Exploration</a>.</p>
+     * </li> <li> <p> Popular item - Indicates the item was included as a placeholder
+     * popular item. If you use a filter, depending on how many recommendations the
+     * filter removes, Amazon Personalize might add placeholder items to meet the
+     * <code>numResults</code> for your recommendation request. These items are popular
+     * items, based on interactions data, that satisfy your filter criteria. They don't
+     * have a relevance score for the user. </p> </li> </ul>
+     */
+    inline PredictedItem& AddReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason.push_back(value); return *this; }
+
+    /**
+     * <p>If you use User-Personalization-v2, a list of reasons for why the item was
+     * included in recommendations. Possible reasons include the following:</p> <ul>
+     * <li> <p>Promoted item - Indicates the item was included as part of a promotion
+     * that you applied in your recommendation request.</p> </li> <li> <p>Exploration -
+     * Indicates the item was included with exploration. With exploration,
+     * recommendations include items with less interactions data or relevance for the
+     * user. For more information about exploration, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/use-case-recipe-features.html#about-exploration">Exploration</a>.</p>
+     * </li> <li> <p> Popular item - Indicates the item was included as a placeholder
+     * popular item. If you use a filter, depending on how many recommendations the
+     * filter removes, Amazon Personalize might add placeholder items to meet the
+     * <code>numResults</code> for your recommendation request. These items are popular
+     * items, based on interactions data, that satisfy your filter criteria. They don't
+     * have a relevance score for the user. </p> </li> </ul>
+     */
+    inline PredictedItem& AddReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>If you use User-Personalization-v2, a list of reasons for why the item was
+     * included in recommendations. Possible reasons include the following:</p> <ul>
+     * <li> <p>Promoted item - Indicates the item was included as part of a promotion
+     * that you applied in your recommendation request.</p> </li> <li> <p>Exploration -
+     * Indicates the item was included with exploration. With exploration,
+     * recommendations include items with less interactions data or relevance for the
+     * user. For more information about exploration, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/use-case-recipe-features.html#about-exploration">Exploration</a>.</p>
+     * </li> <li> <p> Popular item - Indicates the item was included as a placeholder
+     * popular item. If you use a filter, depending on how many recommendations the
+     * filter removes, Amazon Personalize might add placeholder items to meet the
+     * <code>numResults</code> for your recommendation request. These items are popular
+     * items, based on interactions data, that satisfy your filter criteria. They don't
+     * have a relevance score for the user. </p> </li> </ul>
+     */
+    inline PredictedItem& AddReason(const char* value) { m_reasonHasBeenSet = true; m_reason.push_back(value); return *this; }
+
   private:
 
     Aws::String m_itemId;
@@ -228,6 +392,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_metadata;
     bool m_metadataHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_reason;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,10 +12,6 @@
 
 namespace Aws
 {
-namespace Http
-{
-    class URI;
-} //namespace Http
 namespace SESV2
 {
 namespace Model
@@ -35,8 +31,6 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "ListContacts"; }
 
     AWS_SESV2_API Aws::String SerializePayload() const override;
-
-    AWS_SESV2_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**

@@ -109,7 +109,12 @@ namespace Model
      * of the transit gateway (<code>available</code> | <code>deleted</code> |
      * <code>deleting</code> | <code>modifying</code> | <code>pending</code>).</p>
      * </li> <li> <p> <code>transit-gateway-id</code> - The ID of the transit
-     * gateway.</p> </li> </ul>
+     * gateway.</p> </li> <li> <p> <code>tag-key </code>- The key/value combination of
+     * a tag assigned to the resource. Use the tag key in the filter name and the tag
+     * value as the filter value. For example, to find all resources that have a tag
+     * with the key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -138,7 +143,12 @@ namespace Model
      * of the transit gateway (<code>available</code> | <code>deleted</code> |
      * <code>deleting</code> | <code>modifying</code> | <code>pending</code>).</p>
      * </li> <li> <p> <code>transit-gateway-id</code> - The ID of the transit
-     * gateway.</p> </li> </ul>
+     * gateway.</p> </li> <li> <p> <code>tag-key </code>- The key/value combination of
+     * a tag assigned to the resource. Use the tag key in the filter name and the tag
+     * value as the filter value. For example, to find all resources that have a tag
+     * with the key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -167,7 +177,12 @@ namespace Model
      * of the transit gateway (<code>available</code> | <code>deleted</code> |
      * <code>deleting</code> | <code>modifying</code> | <code>pending</code>).</p>
      * </li> <li> <p> <code>transit-gateway-id</code> - The ID of the transit
-     * gateway.</p> </li> </ul>
+     * gateway.</p> </li> <li> <p> <code>tag-key </code>- The key/value combination of
+     * a tag assigned to the resource. Use the tag key in the filter name and the tag
+     * value as the filter value. For example, to find all resources that have a tag
+     * with the key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -196,7 +211,12 @@ namespace Model
      * of the transit gateway (<code>available</code> | <code>deleted</code> |
      * <code>deleting</code> | <code>modifying</code> | <code>pending</code>).</p>
      * </li> <li> <p> <code>transit-gateway-id</code> - The ID of the transit
-     * gateway.</p> </li> </ul>
+     * gateway.</p> </li> <li> <p> <code>tag-key </code>- The key/value combination of
+     * a tag assigned to the resource. Use the tag key in the filter name and the tag
+     * value as the filter value. For example, to find all resources that have a tag
+     * with the key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -225,7 +245,12 @@ namespace Model
      * of the transit gateway (<code>available</code> | <code>deleted</code> |
      * <code>deleting</code> | <code>modifying</code> | <code>pending</code>).</p>
      * </li> <li> <p> <code>transit-gateway-id</code> - The ID of the transit
-     * gateway.</p> </li> </ul>
+     * gateway.</p> </li> <li> <p> <code>tag-key </code>- The key/value combination of
+     * a tag assigned to the resource. Use the tag key in the filter name and the tag
+     * value as the filter value. For example, to find all resources that have a tag
+     * with the key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> </ul>
      */
     inline DescribeTransitGatewaysRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -254,7 +279,12 @@ namespace Model
      * of the transit gateway (<code>available</code> | <code>deleted</code> |
      * <code>deleting</code> | <code>modifying</code> | <code>pending</code>).</p>
      * </li> <li> <p> <code>transit-gateway-id</code> - The ID of the transit
-     * gateway.</p> </li> </ul>
+     * gateway.</p> </li> <li> <p> <code>tag-key </code>- The key/value combination of
+     * a tag assigned to the resource. Use the tag key in the filter name and the tag
+     * value as the filter value. For example, to find all resources that have a tag
+     * with the key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> </ul>
      */
     inline DescribeTransitGatewaysRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -283,7 +313,12 @@ namespace Model
      * of the transit gateway (<code>available</code> | <code>deleted</code> |
      * <code>deleting</code> | <code>modifying</code> | <code>pending</code>).</p>
      * </li> <li> <p> <code>transit-gateway-id</code> - The ID of the transit
-     * gateway.</p> </li> </ul>
+     * gateway.</p> </li> <li> <p> <code>tag-key </code>- The key/value combination of
+     * a tag assigned to the resource. Use the tag key in the filter name and the tag
+     * value as the filter value. For example, to find all resources that have a tag
+     * with the key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> </ul>
      */
     inline DescribeTransitGatewaysRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -312,7 +347,12 @@ namespace Model
      * of the transit gateway (<code>available</code> | <code>deleted</code> |
      * <code>deleting</code> | <code>modifying</code> | <code>pending</code>).</p>
      * </li> <li> <p> <code>transit-gateway-id</code> - The ID of the transit
-     * gateway.</p> </li> </ul>
+     * gateway.</p> </li> <li> <p> <code>tag-key </code>- The key/value combination of
+     * a tag assigned to the resource. Use the tag key in the filter name and the tag
+     * value as the filter value. For example, to find all resources that have a tag
+     * with the key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> </ul>
      */
     inline DescribeTransitGatewaysRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

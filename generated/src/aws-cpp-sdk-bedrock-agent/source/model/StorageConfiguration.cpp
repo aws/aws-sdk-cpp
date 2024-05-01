@@ -19,6 +19,7 @@ namespace Model
 {
 
 StorageConfiguration::StorageConfiguration() : 
+    m_mongoDbAtlasConfigurationHasBeenSet(false),
     m_opensearchServerlessConfigurationHasBeenSet(false),
     m_pineconeConfigurationHasBeenSet(false),
     m_rdsConfigurationHasBeenSet(false),
@@ -29,6 +30,7 @@ StorageConfiguration::StorageConfiguration() :
 }
 
 StorageConfiguration::StorageConfiguration(JsonView jsonValue) : 
+    m_mongoDbAtlasConfigurationHasBeenSet(false),
     m_opensearchServerlessConfigurationHasBeenSet(false),
     m_pineconeConfigurationHasBeenSet(false),
     m_rdsConfigurationHasBeenSet(false),
@@ -41,6 +43,13 @@ StorageConfiguration::StorageConfiguration(JsonView jsonValue) :
 
 StorageConfiguration& StorageConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("mongoDbAtlasConfiguration"))
+  {
+    m_mongoDbAtlasConfiguration = jsonValue.GetObject("mongoDbAtlasConfiguration");
+
+    m_mongoDbAtlasConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("opensearchServerlessConfiguration"))
   {
     m_opensearchServerlessConfiguration = jsonValue.GetObject("opensearchServerlessConfiguration");
@@ -82,6 +91,12 @@ StorageConfiguration& StorageConfiguration::operator =(JsonView jsonValue)
 JsonValue StorageConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_mongoDbAtlasConfigurationHasBeenSet)
+  {
+   payload.WithObject("mongoDbAtlasConfiguration", m_mongoDbAtlasConfiguration.Jsonize());
+
+  }
 
   if(m_opensearchServerlessConfigurationHasBeenSet)
   {

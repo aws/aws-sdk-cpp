@@ -111,32 +111,32 @@ namespace Model
 
 
     /**
-     * <p>The deletion policy for the requested data source</p>
+     * <p>The data deletion policy assigned to the data source.</p>
      */
     inline const DataDeletionPolicy& GetDataDeletionPolicy() const{ return m_dataDeletionPolicy; }
 
     /**
-     * <p>The deletion policy for the requested data source</p>
+     * <p>The data deletion policy assigned to the data source.</p>
      */
     inline bool DataDeletionPolicyHasBeenSet() const { return m_dataDeletionPolicyHasBeenSet; }
 
     /**
-     * <p>The deletion policy for the requested data source</p>
+     * <p>The data deletion policy assigned to the data source.</p>
      */
     inline void SetDataDeletionPolicy(const DataDeletionPolicy& value) { m_dataDeletionPolicyHasBeenSet = true; m_dataDeletionPolicy = value; }
 
     /**
-     * <p>The deletion policy for the requested data source</p>
+     * <p>The data deletion policy assigned to the data source.</p>
      */
     inline void SetDataDeletionPolicy(DataDeletionPolicy&& value) { m_dataDeletionPolicyHasBeenSet = true; m_dataDeletionPolicy = std::move(value); }
 
     /**
-     * <p>The deletion policy for the requested data source</p>
+     * <p>The data deletion policy assigned to the data source.</p>
      */
     inline CreateDataSourceRequest& WithDataDeletionPolicy(const DataDeletionPolicy& value) { SetDataDeletionPolicy(value); return *this;}
 
     /**
-     * <p>The deletion policy for the requested data source</p>
+     * <p>The data deletion policy assigned to the data source.</p>
      */
     inline CreateDataSourceRequest& WithDataDeletionPolicy(DataDeletionPolicy&& value) { SetDataDeletionPolicy(std::move(value)); return *this;}
 

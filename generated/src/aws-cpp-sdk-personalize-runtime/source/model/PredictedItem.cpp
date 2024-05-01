@@ -23,7 +23,8 @@ PredictedItem::PredictedItem() :
     m_score(0.0),
     m_scoreHasBeenSet(false),
     m_promotionNameHasBeenSet(false),
-    m_metadataHasBeenSet(false)
+    m_metadataHasBeenSet(false),
+    m_reasonHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ PredictedItem::PredictedItem(JsonView jsonValue) :
     m_score(0.0),
     m_scoreHasBeenSet(false),
     m_promotionNameHasBeenSet(false),
-    m_metadataHasBeenSet(false)
+    m_metadataHasBeenSet(false),
+    m_reasonHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -70,6 +72,16 @@ PredictedItem& PredictedItem::operator =(JsonView jsonValue)
     m_metadataHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("reason"))
+  {
+    Aws::Utils::Array<JsonView> reasonJsonList = jsonValue.GetArray("reason");
+    for(unsigned reasonIndex = 0; reasonIndex < reasonJsonList.GetLength(); ++reasonIndex)
+    {
+      m_reason.push_back(reasonJsonList[reasonIndex].AsString());
+    }
+    m_reasonHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -103,6 +115,17 @@ JsonValue PredictedItem::Jsonize() const
      metadataJsonMap.WithString(metadataItem.first, metadataItem.second);
    }
    payload.WithObject("metadata", std::move(metadataJsonMap));
+
+  }
+
+  if(m_reasonHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> reasonJsonList(m_reason.size());
+   for(unsigned reasonIndex = 0; reasonIndex < reasonJsonList.GetLength(); ++reasonIndex)
+   {
+     reasonJsonList[reasonIndex].AsString(m_reason[reasonIndex]);
+   }
+   payload.WithArray("reason", std::move(reasonJsonList));
 
   }
 

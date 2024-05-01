@@ -19,7 +19,8 @@ namespace Model
     OPENSEARCH_SERVERLESS,
     PINECONE,
     REDIS_ENTERPRISE_CLOUD,
-    RDS
+    RDS,
+    MONGO_DB_ATLAS
   };
 
 namespace KnowledgeBaseStorageTypeMapper

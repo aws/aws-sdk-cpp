@@ -6120,9 +6120,11 @@ namespace EC2
         }
 
         /**
-         * <p>Deletes the specified transit gateway route table. You must disassociate the
-         * route table from any transit gateway route tables before you can delete
-         * it.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified transit gateway route table. If there are any route
+         * tables associated with the transit gateway route table, you must first run
+         * <a>DisassociateRouteTable</a> before you can delete the transit gateway route
+         * table. This removes any route tables associated with the transit gateway route
+         * table.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRouteTable">AWS
          * API Reference</a></p>
          */

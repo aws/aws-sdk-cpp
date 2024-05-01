@@ -46,36 +46,43 @@ namespace Model
 
 
     /**
+     *  <p>This parameter is not returned by CreateVolume.</p> 
      * <p>Information about the volume attachments.</p>
      */
     inline const Aws::Vector<VolumeAttachment>& GetAttachments() const{ return m_attachments; }
 
     /**
+     *  <p>This parameter is not returned by CreateVolume.</p> 
      * <p>Information about the volume attachments.</p>
      */
     inline void SetAttachments(const Aws::Vector<VolumeAttachment>& value) { m_attachments = value; }
 
     /**
+     *  <p>This parameter is not returned by CreateVolume.</p> 
      * <p>Information about the volume attachments.</p>
      */
     inline void SetAttachments(Aws::Vector<VolumeAttachment>&& value) { m_attachments = std::move(value); }
 
     /**
+     *  <p>This parameter is not returned by CreateVolume.</p> 
      * <p>Information about the volume attachments.</p>
      */
     inline CreateVolumeResponse& WithAttachments(const Aws::Vector<VolumeAttachment>& value) { SetAttachments(value); return *this;}
 
     /**
+     *  <p>This parameter is not returned by CreateVolume.</p> 
      * <p>Information about the volume attachments.</p>
      */
     inline CreateVolumeResponse& WithAttachments(Aws::Vector<VolumeAttachment>&& value) { SetAttachments(std::move(value)); return *this;}
 
     /**
+     *  <p>This parameter is not returned by CreateVolume.</p> 
      * <p>Information about the volume attachments.</p>
      */
     inline CreateVolumeResponse& AddAttachments(const VolumeAttachment& value) { m_attachments.push_back(value); return *this; }
 
     /**
+     *  <p>This parameter is not returned by CreateVolume.</p> 
      * <p>Information about the volume attachments.</p>
      */
     inline CreateVolumeResponse& AddAttachments(VolumeAttachment&& value) { m_attachments.push_back(std::move(value)); return *this; }
@@ -443,16 +450,19 @@ namespace Model
 
 
     /**
+     *  <p>This parameter is not returned by CreateVolume.</p> 
      * <p>Indicates whether the volume was created using fast snapshot restore.</p>
      */
     inline bool GetFastRestored() const{ return m_fastRestored; }
 
     /**
+     *  <p>This parameter is not returned by CreateVolume.</p> 
      * <p>Indicates whether the volume was created using fast snapshot restore.</p>
      */
     inline void SetFastRestored(bool value) { m_fastRestored = value; }
 
     /**
+     *  <p>This parameter is not returned by CreateVolume.</p> 
      * <p>Indicates whether the volume was created using fast snapshot restore.</p>
      */
     inline CreateVolumeResponse& WithFastRestored(bool value) { SetFastRestored(value); return *this;}
@@ -491,26 +501,31 @@ namespace Model
 
 
     /**
+     *  <p>This parameter is not returned by CreateVolume.</p> 
      * <p>Reserved for future use.</p>
      */
     inline const SSEType& GetSseType() const{ return m_sseType; }
 
     /**
+     *  <p>This parameter is not returned by CreateVolume.</p> 
      * <p>Reserved for future use.</p>
      */
     inline void SetSseType(const SSEType& value) { m_sseType = value; }
 
     /**
+     *  <p>This parameter is not returned by CreateVolume.</p> 
      * <p>Reserved for future use.</p>
      */
     inline void SetSseType(SSEType&& value) { m_sseType = std::move(value); }
 
     /**
+     *  <p>This parameter is not returned by CreateVolume.</p> 
      * <p>Reserved for future use.</p>
      */
     inline CreateVolumeResponse& WithSseType(const SSEType& value) { SetSseType(value); return *this;}
 
     /**
+     *  <p>This parameter is not returned by CreateVolume.</p> 
      * <p>Reserved for future use.</p>
      */
     inline CreateVolumeResponse& WithSseType(SSEType&& value) { SetSseType(std::move(value)); return *this;}
