@@ -40,7 +40,7 @@ ListScheduledActionsResult& ListScheduledActionsResult::operator =(const Aws::Am
     Aws::Utils::Array<JsonView> scheduledActionsJsonList = jsonValue.GetArray("scheduledActions");
     for(unsigned scheduledActionsIndex = 0; scheduledActionsIndex < scheduledActionsJsonList.GetLength(); ++scheduledActionsIndex)
     {
-      m_scheduledActions.push_back(scheduledActionsJsonList[scheduledActionsIndex].AsString());
+      m_scheduledActions.push_back(scheduledActionsJsonList[scheduledActionsIndex].AsObject());
     }
   }
 

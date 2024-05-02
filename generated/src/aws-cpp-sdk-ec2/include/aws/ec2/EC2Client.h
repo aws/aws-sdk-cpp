@@ -13431,6 +13431,32 @@ namespace EC2
         }
 
         /**
+         * <p>Gets the public endorsement key associated with the Nitro Trusted Platform
+         * Module (NitroTPM) for the specified instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetInstanceTpmEkPub">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetInstanceTpmEkPubOutcome GetInstanceTpmEkPub(const Model::GetInstanceTpmEkPubRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetInstanceTpmEkPub that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetInstanceTpmEkPubRequestT = Model::GetInstanceTpmEkPubRequest>
+        Model::GetInstanceTpmEkPubOutcomeCallable GetInstanceTpmEkPubCallable(const GetInstanceTpmEkPubRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::GetInstanceTpmEkPub, request);
+        }
+
+        /**
+         * An Async wrapper for GetInstanceTpmEkPub that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetInstanceTpmEkPubRequestT = Model::GetInstanceTpmEkPubRequest>
+        void GetInstanceTpmEkPubAsync(const GetInstanceTpmEkPubRequestT& request, const GetInstanceTpmEkPubResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::GetInstanceTpmEkPub, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of instance types with the specified instance attributes. You
          * can use the response to preview the instance types without launching instances.
          * Note that the response does not consider capacity.</p> <p>When you specify

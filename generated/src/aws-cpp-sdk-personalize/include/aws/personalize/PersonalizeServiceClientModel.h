@@ -21,6 +21,7 @@
 #include <aws/personalize/model/CreateBatchInferenceJobResult.h>
 #include <aws/personalize/model/CreateBatchSegmentJobResult.h>
 #include <aws/personalize/model/CreateCampaignResult.h>
+#include <aws/personalize/model/CreateDataDeletionJobResult.h>
 #include <aws/personalize/model/CreateDatasetResult.h>
 #include <aws/personalize/model/CreateDatasetExportJobResult.h>
 #include <aws/personalize/model/CreateDatasetGroupResult.h>
@@ -36,6 +37,7 @@
 #include <aws/personalize/model/DescribeBatchInferenceJobResult.h>
 #include <aws/personalize/model/DescribeBatchSegmentJobResult.h>
 #include <aws/personalize/model/DescribeCampaignResult.h>
+#include <aws/personalize/model/DescribeDataDeletionJobResult.h>
 #include <aws/personalize/model/DescribeDatasetResult.h>
 #include <aws/personalize/model/DescribeDatasetExportJobResult.h>
 #include <aws/personalize/model/DescribeDatasetGroupResult.h>
@@ -53,6 +55,7 @@
 #include <aws/personalize/model/ListBatchInferenceJobsResult.h>
 #include <aws/personalize/model/ListBatchSegmentJobsResult.h>
 #include <aws/personalize/model/ListCampaignsResult.h>
+#include <aws/personalize/model/ListDataDeletionJobsResult.h>
 #include <aws/personalize/model/ListDatasetExportJobsResult.h>
 #include <aws/personalize/model/ListDatasetGroupsResult.h>
 #include <aws/personalize/model/ListDatasetImportJobsResult.h>
@@ -119,6 +122,7 @@ namespace Aws
       class CreateBatchInferenceJobRequest;
       class CreateBatchSegmentJobRequest;
       class CreateCampaignRequest;
+      class CreateDataDeletionJobRequest;
       class CreateDatasetRequest;
       class CreateDatasetExportJobRequest;
       class CreateDatasetGroupRequest;
@@ -143,6 +147,7 @@ namespace Aws
       class DescribeBatchInferenceJobRequest;
       class DescribeBatchSegmentJobRequest;
       class DescribeCampaignRequest;
+      class DescribeDataDeletionJobRequest;
       class DescribeDatasetRequest;
       class DescribeDatasetExportJobRequest;
       class DescribeDatasetGroupRequest;
@@ -160,6 +165,7 @@ namespace Aws
       class ListBatchInferenceJobsRequest;
       class ListBatchSegmentJobsRequest;
       class ListCampaignsRequest;
+      class ListDataDeletionJobsRequest;
       class ListDatasetExportJobsRequest;
       class ListDatasetGroupsRequest;
       class ListDatasetImportJobsRequest;
@@ -189,6 +195,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateBatchInferenceJobResult, PersonalizeError> CreateBatchInferenceJobOutcome;
       typedef Aws::Utils::Outcome<CreateBatchSegmentJobResult, PersonalizeError> CreateBatchSegmentJobOutcome;
       typedef Aws::Utils::Outcome<CreateCampaignResult, PersonalizeError> CreateCampaignOutcome;
+      typedef Aws::Utils::Outcome<CreateDataDeletionJobResult, PersonalizeError> CreateDataDeletionJobOutcome;
       typedef Aws::Utils::Outcome<CreateDatasetResult, PersonalizeError> CreateDatasetOutcome;
       typedef Aws::Utils::Outcome<CreateDatasetExportJobResult, PersonalizeError> CreateDatasetExportJobOutcome;
       typedef Aws::Utils::Outcome<CreateDatasetGroupResult, PersonalizeError> CreateDatasetGroupOutcome;
@@ -213,6 +220,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeBatchInferenceJobResult, PersonalizeError> DescribeBatchInferenceJobOutcome;
       typedef Aws::Utils::Outcome<DescribeBatchSegmentJobResult, PersonalizeError> DescribeBatchSegmentJobOutcome;
       typedef Aws::Utils::Outcome<DescribeCampaignResult, PersonalizeError> DescribeCampaignOutcome;
+      typedef Aws::Utils::Outcome<DescribeDataDeletionJobResult, PersonalizeError> DescribeDataDeletionJobOutcome;
       typedef Aws::Utils::Outcome<DescribeDatasetResult, PersonalizeError> DescribeDatasetOutcome;
       typedef Aws::Utils::Outcome<DescribeDatasetExportJobResult, PersonalizeError> DescribeDatasetExportJobOutcome;
       typedef Aws::Utils::Outcome<DescribeDatasetGroupResult, PersonalizeError> DescribeDatasetGroupOutcome;
@@ -230,6 +238,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListBatchInferenceJobsResult, PersonalizeError> ListBatchInferenceJobsOutcome;
       typedef Aws::Utils::Outcome<ListBatchSegmentJobsResult, PersonalizeError> ListBatchSegmentJobsOutcome;
       typedef Aws::Utils::Outcome<ListCampaignsResult, PersonalizeError> ListCampaignsOutcome;
+      typedef Aws::Utils::Outcome<ListDataDeletionJobsResult, PersonalizeError> ListDataDeletionJobsOutcome;
       typedef Aws::Utils::Outcome<ListDatasetExportJobsResult, PersonalizeError> ListDatasetExportJobsOutcome;
       typedef Aws::Utils::Outcome<ListDatasetGroupsResult, PersonalizeError> ListDatasetGroupsOutcome;
       typedef Aws::Utils::Outcome<ListDatasetImportJobsResult, PersonalizeError> ListDatasetImportJobsOutcome;
@@ -259,6 +268,7 @@ namespace Aws
       typedef std::future<CreateBatchInferenceJobOutcome> CreateBatchInferenceJobOutcomeCallable;
       typedef std::future<CreateBatchSegmentJobOutcome> CreateBatchSegmentJobOutcomeCallable;
       typedef std::future<CreateCampaignOutcome> CreateCampaignOutcomeCallable;
+      typedef std::future<CreateDataDeletionJobOutcome> CreateDataDeletionJobOutcomeCallable;
       typedef std::future<CreateDatasetOutcome> CreateDatasetOutcomeCallable;
       typedef std::future<CreateDatasetExportJobOutcome> CreateDatasetExportJobOutcomeCallable;
       typedef std::future<CreateDatasetGroupOutcome> CreateDatasetGroupOutcomeCallable;
@@ -283,6 +293,7 @@ namespace Aws
       typedef std::future<DescribeBatchInferenceJobOutcome> DescribeBatchInferenceJobOutcomeCallable;
       typedef std::future<DescribeBatchSegmentJobOutcome> DescribeBatchSegmentJobOutcomeCallable;
       typedef std::future<DescribeCampaignOutcome> DescribeCampaignOutcomeCallable;
+      typedef std::future<DescribeDataDeletionJobOutcome> DescribeDataDeletionJobOutcomeCallable;
       typedef std::future<DescribeDatasetOutcome> DescribeDatasetOutcomeCallable;
       typedef std::future<DescribeDatasetExportJobOutcome> DescribeDatasetExportJobOutcomeCallable;
       typedef std::future<DescribeDatasetGroupOutcome> DescribeDatasetGroupOutcomeCallable;
@@ -300,6 +311,7 @@ namespace Aws
       typedef std::future<ListBatchInferenceJobsOutcome> ListBatchInferenceJobsOutcomeCallable;
       typedef std::future<ListBatchSegmentJobsOutcome> ListBatchSegmentJobsOutcomeCallable;
       typedef std::future<ListCampaignsOutcome> ListCampaignsOutcomeCallable;
+      typedef std::future<ListDataDeletionJobsOutcome> ListDataDeletionJobsOutcomeCallable;
       typedef std::future<ListDatasetExportJobsOutcome> ListDatasetExportJobsOutcomeCallable;
       typedef std::future<ListDatasetGroupsOutcome> ListDatasetGroupsOutcomeCallable;
       typedef std::future<ListDatasetImportJobsOutcome> ListDatasetImportJobsOutcomeCallable;
@@ -332,6 +344,7 @@ namespace Aws
     typedef std::function<void(const PersonalizeClient*, const Model::CreateBatchInferenceJobRequest&, const Model::CreateBatchInferenceJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBatchInferenceJobResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::CreateBatchSegmentJobRequest&, const Model::CreateBatchSegmentJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBatchSegmentJobResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::CreateCampaignRequest&, const Model::CreateCampaignOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCampaignResponseReceivedHandler;
+    typedef std::function<void(const PersonalizeClient*, const Model::CreateDataDeletionJobRequest&, const Model::CreateDataDeletionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataDeletionJobResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::CreateDatasetRequest&, const Model::CreateDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatasetResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::CreateDatasetExportJobRequest&, const Model::CreateDatasetExportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatasetExportJobResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::CreateDatasetGroupRequest&, const Model::CreateDatasetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatasetGroupResponseReceivedHandler;
@@ -356,6 +369,7 @@ namespace Aws
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeBatchInferenceJobRequest&, const Model::DescribeBatchInferenceJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBatchInferenceJobResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeBatchSegmentJobRequest&, const Model::DescribeBatchSegmentJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBatchSegmentJobResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeCampaignRequest&, const Model::DescribeCampaignOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCampaignResponseReceivedHandler;
+    typedef std::function<void(const PersonalizeClient*, const Model::DescribeDataDeletionJobRequest&, const Model::DescribeDataDeletionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDataDeletionJobResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeDatasetRequest&, const Model::DescribeDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDatasetResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeDatasetExportJobRequest&, const Model::DescribeDatasetExportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDatasetExportJobResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeDatasetGroupRequest&, const Model::DescribeDatasetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDatasetGroupResponseReceivedHandler;
@@ -373,6 +387,7 @@ namespace Aws
     typedef std::function<void(const PersonalizeClient*, const Model::ListBatchInferenceJobsRequest&, const Model::ListBatchInferenceJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBatchInferenceJobsResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListBatchSegmentJobsRequest&, const Model::ListBatchSegmentJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBatchSegmentJobsResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListCampaignsRequest&, const Model::ListCampaignsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCampaignsResponseReceivedHandler;
+    typedef std::function<void(const PersonalizeClient*, const Model::ListDataDeletionJobsRequest&, const Model::ListDataDeletionJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataDeletionJobsResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListDatasetExportJobsRequest&, const Model::ListDatasetExportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetExportJobsResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListDatasetGroupsRequest&, const Model::ListDatasetGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetGroupsResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListDatasetImportJobsRequest&, const Model::ListDatasetImportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetImportJobsResponseReceivedHandler;

@@ -45,7 +45,8 @@ TableDescription::TableDescription() :
     m_archivalSummaryHasBeenSet(false),
     m_tableClassSummaryHasBeenSet(false),
     m_deletionProtectionEnabled(false),
-    m_deletionProtectionEnabledHasBeenSet(false)
+    m_deletionProtectionEnabledHasBeenSet(false),
+    m_onDemandThroughputHasBeenSet(false)
 {
 }
 
@@ -76,7 +77,8 @@ TableDescription::TableDescription(JsonView jsonValue) :
     m_archivalSummaryHasBeenSet(false),
     m_tableClassSummaryHasBeenSet(false),
     m_deletionProtectionEnabled(false),
-    m_deletionProtectionEnabledHasBeenSet(false)
+    m_deletionProtectionEnabledHasBeenSet(false),
+    m_onDemandThroughputHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -259,6 +261,13 @@ TableDescription& TableDescription::operator =(JsonView jsonValue)
     m_deletionProtectionEnabledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OnDemandThroughput"))
+  {
+    m_onDemandThroughput = jsonValue.GetObject("OnDemandThroughput");
+
+    m_onDemandThroughputHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -424,6 +433,12 @@ JsonValue TableDescription::Jsonize() const
   if(m_deletionProtectionEnabledHasBeenSet)
   {
    payload.WithBool("DeletionProtectionEnabled", m_deletionProtectionEnabled);
+
+  }
+
+  if(m_onDemandThroughputHasBeenSet)
+  {
+   payload.WithObject("OnDemandThroughput", m_onDemandThroughput.Jsonize());
 
   }
 

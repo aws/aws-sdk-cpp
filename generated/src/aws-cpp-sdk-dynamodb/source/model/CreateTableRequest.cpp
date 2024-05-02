@@ -28,7 +28,8 @@ CreateTableRequest::CreateTableRequest() :
     m_tableClassHasBeenSet(false),
     m_deletionProtectionEnabled(false),
     m_deletionProtectionEnabledHasBeenSet(false),
-    m_resourcePolicyHasBeenSet(false)
+    m_resourcePolicyHasBeenSet(false),
+    m_onDemandThroughputHasBeenSet(false)
 {
 }
 
@@ -134,6 +135,12 @@ Aws::String CreateTableRequest::SerializePayload() const
   if(m_resourcePolicyHasBeenSet)
   {
    payload.WithString("ResourcePolicy", m_resourcePolicy);
+
+  }
+
+  if(m_onDemandThroughputHasBeenSet)
+  {
+   payload.WithObject("OnDemandThroughput", m_onDemandThroughput.Jsonize());
 
   }
 
