@@ -13,6 +13,7 @@
 #include <aws/dynamodb/model/StreamSpecification.h>
 #include <aws/dynamodb/model/SSESpecification.h>
 #include <aws/dynamodb/model/TableClass.h>
+#include <aws/dynamodb/model/OnDemandThroughput.h>
 #include <aws/dynamodb/model/AttributeDefinition.h>
 #include <aws/dynamodb/model/KeySchemaElement.h>
 #include <aws/dynamodb/model/LocalSecondaryIndex.h>
@@ -1228,12 +1229,11 @@ namespace Model
     /**
      * <p>An Amazon Web Services resource-based policy document in JSON format that
      * will be attached to the table.</p> <p>When you attach a resource-based policy
-     * while creating a table, the policy creation is <i>strongly consistent</i>.</p>
-     * <p>The maximum size supported for a resource-based policy document is 20 KB.
-     * DynamoDB counts whitespaces when calculating the size of a policy against this
-     * limit. You can’t request an increase for this limit. For a full list of all
-     * considerations that you should keep in mind while attaching a resource-based
-     * policy, see <a
+     * while creating a table, the policy application is <i>strongly
+     * consistent</i>.</p> <p>The maximum size supported for a resource-based policy
+     * document is 20 KB. DynamoDB counts whitespaces when calculating the size of a
+     * policy against this limit. For a full list of all considerations that apply for
+     * resource-based policies, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-considerations.html">Resource-based
      * policy considerations</a>.</p>
      */
@@ -1242,12 +1242,11 @@ namespace Model
     /**
      * <p>An Amazon Web Services resource-based policy document in JSON format that
      * will be attached to the table.</p> <p>When you attach a resource-based policy
-     * while creating a table, the policy creation is <i>strongly consistent</i>.</p>
-     * <p>The maximum size supported for a resource-based policy document is 20 KB.
-     * DynamoDB counts whitespaces when calculating the size of a policy against this
-     * limit. You can’t request an increase for this limit. For a full list of all
-     * considerations that you should keep in mind while attaching a resource-based
-     * policy, see <a
+     * while creating a table, the policy application is <i>strongly
+     * consistent</i>.</p> <p>The maximum size supported for a resource-based policy
+     * document is 20 KB. DynamoDB counts whitespaces when calculating the size of a
+     * policy against this limit. For a full list of all considerations that apply for
+     * resource-based policies, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-considerations.html">Resource-based
      * policy considerations</a>.</p>
      */
@@ -1256,12 +1255,11 @@ namespace Model
     /**
      * <p>An Amazon Web Services resource-based policy document in JSON format that
      * will be attached to the table.</p> <p>When you attach a resource-based policy
-     * while creating a table, the policy creation is <i>strongly consistent</i>.</p>
-     * <p>The maximum size supported for a resource-based policy document is 20 KB.
-     * DynamoDB counts whitespaces when calculating the size of a policy against this
-     * limit. You can’t request an increase for this limit. For a full list of all
-     * considerations that you should keep in mind while attaching a resource-based
-     * policy, see <a
+     * while creating a table, the policy application is <i>strongly
+     * consistent</i>.</p> <p>The maximum size supported for a resource-based policy
+     * document is 20 KB. DynamoDB counts whitespaces when calculating the size of a
+     * policy against this limit. For a full list of all considerations that apply for
+     * resource-based policies, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-considerations.html">Resource-based
      * policy considerations</a>.</p>
      */
@@ -1270,12 +1268,11 @@ namespace Model
     /**
      * <p>An Amazon Web Services resource-based policy document in JSON format that
      * will be attached to the table.</p> <p>When you attach a resource-based policy
-     * while creating a table, the policy creation is <i>strongly consistent</i>.</p>
-     * <p>The maximum size supported for a resource-based policy document is 20 KB.
-     * DynamoDB counts whitespaces when calculating the size of a policy against this
-     * limit. You can’t request an increase for this limit. For a full list of all
-     * considerations that you should keep in mind while attaching a resource-based
-     * policy, see <a
+     * while creating a table, the policy application is <i>strongly
+     * consistent</i>.</p> <p>The maximum size supported for a resource-based policy
+     * document is 20 KB. DynamoDB counts whitespaces when calculating the size of a
+     * policy against this limit. For a full list of all considerations that apply for
+     * resource-based policies, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-considerations.html">Resource-based
      * policy considerations</a>.</p>
      */
@@ -1284,12 +1281,11 @@ namespace Model
     /**
      * <p>An Amazon Web Services resource-based policy document in JSON format that
      * will be attached to the table.</p> <p>When you attach a resource-based policy
-     * while creating a table, the policy creation is <i>strongly consistent</i>.</p>
-     * <p>The maximum size supported for a resource-based policy document is 20 KB.
-     * DynamoDB counts whitespaces when calculating the size of a policy against this
-     * limit. You can’t request an increase for this limit. For a full list of all
-     * considerations that you should keep in mind while attaching a resource-based
-     * policy, see <a
+     * while creating a table, the policy application is <i>strongly
+     * consistent</i>.</p> <p>The maximum size supported for a resource-based policy
+     * document is 20 KB. DynamoDB counts whitespaces when calculating the size of a
+     * policy against this limit. For a full list of all considerations that apply for
+     * resource-based policies, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-considerations.html">Resource-based
      * policy considerations</a>.</p>
      */
@@ -1298,12 +1294,11 @@ namespace Model
     /**
      * <p>An Amazon Web Services resource-based policy document in JSON format that
      * will be attached to the table.</p> <p>When you attach a resource-based policy
-     * while creating a table, the policy creation is <i>strongly consistent</i>.</p>
-     * <p>The maximum size supported for a resource-based policy document is 20 KB.
-     * DynamoDB counts whitespaces when calculating the size of a policy against this
-     * limit. You can’t request an increase for this limit. For a full list of all
-     * considerations that you should keep in mind while attaching a resource-based
-     * policy, see <a
+     * while creating a table, the policy application is <i>strongly
+     * consistent</i>.</p> <p>The maximum size supported for a resource-based policy
+     * document is 20 KB. DynamoDB counts whitespaces when calculating the size of a
+     * policy against this limit. For a full list of all considerations that apply for
+     * resource-based policies, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-considerations.html">Resource-based
      * policy considerations</a>.</p>
      */
@@ -1312,12 +1307,11 @@ namespace Model
     /**
      * <p>An Amazon Web Services resource-based policy document in JSON format that
      * will be attached to the table.</p> <p>When you attach a resource-based policy
-     * while creating a table, the policy creation is <i>strongly consistent</i>.</p>
-     * <p>The maximum size supported for a resource-based policy document is 20 KB.
-     * DynamoDB counts whitespaces when calculating the size of a policy against this
-     * limit. You can’t request an increase for this limit. For a full list of all
-     * considerations that you should keep in mind while attaching a resource-based
-     * policy, see <a
+     * while creating a table, the policy application is <i>strongly
+     * consistent</i>.</p> <p>The maximum size supported for a resource-based policy
+     * document is 20 KB. DynamoDB counts whitespaces when calculating the size of a
+     * policy against this limit. For a full list of all considerations that apply for
+     * resource-based policies, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-considerations.html">Resource-based
      * policy considerations</a>.</p>
      */
@@ -1326,16 +1320,64 @@ namespace Model
     /**
      * <p>An Amazon Web Services resource-based policy document in JSON format that
      * will be attached to the table.</p> <p>When you attach a resource-based policy
-     * while creating a table, the policy creation is <i>strongly consistent</i>.</p>
-     * <p>The maximum size supported for a resource-based policy document is 20 KB.
-     * DynamoDB counts whitespaces when calculating the size of a policy against this
-     * limit. You can’t request an increase for this limit. For a full list of all
-     * considerations that you should keep in mind while attaching a resource-based
-     * policy, see <a
+     * while creating a table, the policy application is <i>strongly
+     * consistent</i>.</p> <p>The maximum size supported for a resource-based policy
+     * document is 20 KB. DynamoDB counts whitespaces when calculating the size of a
+     * policy against this limit. For a full list of all considerations that apply for
+     * resource-based policies, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-considerations.html">Resource-based
      * policy considerations</a>.</p>
      */
     inline CreateTableRequest& WithResourcePolicy(const char* value) { SetResourcePolicy(value); return *this;}
+
+
+    /**
+     * <p>Sets the maximum number of read and write units for the specified table in
+     * on-demand capacity mode. If you use this parameter, you must specify
+     * <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or
+     * both.</p>
+     */
+    inline const OnDemandThroughput& GetOnDemandThroughput() const{ return m_onDemandThroughput; }
+
+    /**
+     * <p>Sets the maximum number of read and write units for the specified table in
+     * on-demand capacity mode. If you use this parameter, you must specify
+     * <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or
+     * both.</p>
+     */
+    inline bool OnDemandThroughputHasBeenSet() const { return m_onDemandThroughputHasBeenSet; }
+
+    /**
+     * <p>Sets the maximum number of read and write units for the specified table in
+     * on-demand capacity mode. If you use this parameter, you must specify
+     * <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or
+     * both.</p>
+     */
+    inline void SetOnDemandThroughput(const OnDemandThroughput& value) { m_onDemandThroughputHasBeenSet = true; m_onDemandThroughput = value; }
+
+    /**
+     * <p>Sets the maximum number of read and write units for the specified table in
+     * on-demand capacity mode. If you use this parameter, you must specify
+     * <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or
+     * both.</p>
+     */
+    inline void SetOnDemandThroughput(OnDemandThroughput&& value) { m_onDemandThroughputHasBeenSet = true; m_onDemandThroughput = std::move(value); }
+
+    /**
+     * <p>Sets the maximum number of read and write units for the specified table in
+     * on-demand capacity mode. If you use this parameter, you must specify
+     * <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or
+     * both.</p>
+     */
+    inline CreateTableRequest& WithOnDemandThroughput(const OnDemandThroughput& value) { SetOnDemandThroughput(value); return *this;}
+
+    /**
+     * <p>Sets the maximum number of read and write units for the specified table in
+     * on-demand capacity mode. If you use this parameter, you must specify
+     * <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or
+     * both.</p>
+     */
+    inline CreateTableRequest& WithOnDemandThroughput(OnDemandThroughput&& value) { SetOnDemandThroughput(std::move(value)); return *this;}
 
   private:
 
@@ -1377,6 +1419,9 @@ namespace Model
 
     Aws::String m_resourcePolicy;
     bool m_resourcePolicyHasBeenSet = false;
+
+    OnDemandThroughput m_onDemandThroughput;
+    bool m_onDemandThroughputHasBeenSet = false;
   };
 
 } // namespace Model

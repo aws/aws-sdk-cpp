@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dynamodb/model/Projection.h>
 #include <aws/dynamodb/model/ProvisionedThroughput.h>
+#include <aws/dynamodb/model/OnDemandThroughput.h>
 #include <aws/dynamodb/model/KeySchemaElement.h>
 #include <utility>
 
@@ -275,6 +276,25 @@ namespace Model
      */
     inline GlobalSecondaryIndexInfo& WithProvisionedThroughput(ProvisionedThroughput&& value) { SetProvisionedThroughput(std::move(value)); return *this;}
 
+
+    
+    inline const OnDemandThroughput& GetOnDemandThroughput() const{ return m_onDemandThroughput; }
+
+    
+    inline bool OnDemandThroughputHasBeenSet() const { return m_onDemandThroughputHasBeenSet; }
+
+    
+    inline void SetOnDemandThroughput(const OnDemandThroughput& value) { m_onDemandThroughputHasBeenSet = true; m_onDemandThroughput = value; }
+
+    
+    inline void SetOnDemandThroughput(OnDemandThroughput&& value) { m_onDemandThroughputHasBeenSet = true; m_onDemandThroughput = std::move(value); }
+
+    
+    inline GlobalSecondaryIndexInfo& WithOnDemandThroughput(const OnDemandThroughput& value) { SetOnDemandThroughput(value); return *this;}
+
+    
+    inline GlobalSecondaryIndexInfo& WithOnDemandThroughput(OnDemandThroughput&& value) { SetOnDemandThroughput(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_indexName;
@@ -288,6 +308,9 @@ namespace Model
 
     ProvisionedThroughput m_provisionedThroughput;
     bool m_provisionedThroughputHasBeenSet = false;
+
+    OnDemandThroughput m_onDemandThroughput;
+    bool m_onDemandThroughputHasBeenSet = false;
   };
 
 } // namespace Model

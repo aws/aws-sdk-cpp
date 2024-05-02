@@ -31,7 +31,8 @@ GlobalSecondaryIndexDescription::GlobalSecondaryIndexDescription() :
     m_indexSizeBytesHasBeenSet(false),
     m_itemCount(0),
     m_itemCountHasBeenSet(false),
-    m_indexArnHasBeenSet(false)
+    m_indexArnHasBeenSet(false),
+    m_onDemandThroughputHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ GlobalSecondaryIndexDescription::GlobalSecondaryIndexDescription(JsonView jsonVa
     m_indexSizeBytesHasBeenSet(false),
     m_itemCount(0),
     m_itemCountHasBeenSet(false),
-    m_indexArnHasBeenSet(false)
+    m_indexArnHasBeenSet(false),
+    m_onDemandThroughputHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -121,6 +123,13 @@ GlobalSecondaryIndexDescription& GlobalSecondaryIndexDescription::operator =(Jso
     m_indexArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OnDemandThroughput"))
+  {
+    m_onDemandThroughput = jsonValue.GetObject("OnDemandThroughput");
+
+    m_onDemandThroughputHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -183,6 +192,12 @@ JsonValue GlobalSecondaryIndexDescription::Jsonize() const
   if(m_indexArnHasBeenSet)
   {
    payload.WithString("IndexArn", m_indexArn);
+
+  }
+
+  if(m_onDemandThroughputHasBeenSet)
+  {
+   payload.WithObject("OnDemandThroughput", m_onDemandThroughput.Jsonize());
 
   }
 

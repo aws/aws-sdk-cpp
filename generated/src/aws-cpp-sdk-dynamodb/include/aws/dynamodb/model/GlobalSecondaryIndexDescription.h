@@ -10,6 +10,7 @@
 #include <aws/dynamodb/model/Projection.h>
 #include <aws/dynamodb/model/IndexStatus.h>
 #include <aws/dynamodb/model/ProvisionedThroughputDescription.h>
+#include <aws/dynamodb/model/OnDemandThroughput.h>
 #include <aws/dynamodb/model/KeySchemaElement.h>
 #include <utility>
 
@@ -517,6 +518,55 @@ namespace Model
      */
     inline GlobalSecondaryIndexDescription& WithIndexArn(const char* value) { SetIndexArn(value); return *this;}
 
+
+    /**
+     * <p>The maximum number of read and write units for the specified global secondary
+     * index. If you use this parameter, you must specify
+     * <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or
+     * both.</p>
+     */
+    inline const OnDemandThroughput& GetOnDemandThroughput() const{ return m_onDemandThroughput; }
+
+    /**
+     * <p>The maximum number of read and write units for the specified global secondary
+     * index. If you use this parameter, you must specify
+     * <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or
+     * both.</p>
+     */
+    inline bool OnDemandThroughputHasBeenSet() const { return m_onDemandThroughputHasBeenSet; }
+
+    /**
+     * <p>The maximum number of read and write units for the specified global secondary
+     * index. If you use this parameter, you must specify
+     * <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or
+     * both.</p>
+     */
+    inline void SetOnDemandThroughput(const OnDemandThroughput& value) { m_onDemandThroughputHasBeenSet = true; m_onDemandThroughput = value; }
+
+    /**
+     * <p>The maximum number of read and write units for the specified global secondary
+     * index. If you use this parameter, you must specify
+     * <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or
+     * both.</p>
+     */
+    inline void SetOnDemandThroughput(OnDemandThroughput&& value) { m_onDemandThroughputHasBeenSet = true; m_onDemandThroughput = std::move(value); }
+
+    /**
+     * <p>The maximum number of read and write units for the specified global secondary
+     * index. If you use this parameter, you must specify
+     * <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or
+     * both.</p>
+     */
+    inline GlobalSecondaryIndexDescription& WithOnDemandThroughput(const OnDemandThroughput& value) { SetOnDemandThroughput(value); return *this;}
+
+    /**
+     * <p>The maximum number of read and write units for the specified global secondary
+     * index. If you use this parameter, you must specify
+     * <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or
+     * both.</p>
+     */
+    inline GlobalSecondaryIndexDescription& WithOnDemandThroughput(OnDemandThroughput&& value) { SetOnDemandThroughput(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_indexName;
@@ -545,6 +595,9 @@ namespace Model
 
     Aws::String m_indexArn;
     bool m_indexArnHasBeenSet = false;
+
+    OnDemandThroughput m_onDemandThroughput;
+    bool m_onDemandThroughputHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,7 +25,8 @@ UpdateTableRequest::UpdateTableRequest() :
     m_tableClass(TableClass::NOT_SET),
     m_tableClassHasBeenSet(false),
     m_deletionProtectionEnabled(false),
-    m_deletionProtectionEnabledHasBeenSet(false)
+    m_deletionProtectionEnabledHasBeenSet(false),
+    m_onDemandThroughputHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,12 @@ Aws::String UpdateTableRequest::SerializePayload() const
   if(m_deletionProtectionEnabledHasBeenSet)
   {
    payload.WithBool("DeletionProtectionEnabled", m_deletionProtectionEnabled);
+
+  }
+
+  if(m_onDemandThroughputHasBeenSet)
+  {
+   payload.WithObject("OnDemandThroughput", m_onDemandThroughput.Jsonize());
 
   }
 

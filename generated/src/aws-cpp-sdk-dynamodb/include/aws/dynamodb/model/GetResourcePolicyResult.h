@@ -76,43 +76,43 @@ namespace Model
 
 
     /**
-     * <p>A unique string that represents the revision ID of the policy. If you are
+     * <p>A unique string that represents the revision ID of the policy. If you're
      * comparing revision IDs, make sure to always use string comparison logic.</p>
      */
     inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
 
     /**
-     * <p>A unique string that represents the revision ID of the policy. If you are
+     * <p>A unique string that represents the revision ID of the policy. If you're
      * comparing revision IDs, make sure to always use string comparison logic.</p>
      */
     inline void SetRevisionId(const Aws::String& value) { m_revisionId = value; }
 
     /**
-     * <p>A unique string that represents the revision ID of the policy. If you are
+     * <p>A unique string that represents the revision ID of the policy. If you're
      * comparing revision IDs, make sure to always use string comparison logic.</p>
      */
     inline void SetRevisionId(Aws::String&& value) { m_revisionId = std::move(value); }
 
     /**
-     * <p>A unique string that represents the revision ID of the policy. If you are
+     * <p>A unique string that represents the revision ID of the policy. If you're
      * comparing revision IDs, make sure to always use string comparison logic.</p>
      */
     inline void SetRevisionId(const char* value) { m_revisionId.assign(value); }
 
     /**
-     * <p>A unique string that represents the revision ID of the policy. If you are
+     * <p>A unique string that represents the revision ID of the policy. If you're
      * comparing revision IDs, make sure to always use string comparison logic.</p>
      */
     inline GetResourcePolicyResult& WithRevisionId(const Aws::String& value) { SetRevisionId(value); return *this;}
 
     /**
-     * <p>A unique string that represents the revision ID of the policy. If you are
+     * <p>A unique string that represents the revision ID of the policy. If you're
      * comparing revision IDs, make sure to always use string comparison logic.</p>
      */
     inline GetResourcePolicyResult& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique string that represents the revision ID of the policy. If you are
+     * <p>A unique string that represents the revision ID of the policy. If you're
      * comparing revision IDs, make sure to always use string comparison logic.</p>
      */
     inline GetResourcePolicyResult& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}

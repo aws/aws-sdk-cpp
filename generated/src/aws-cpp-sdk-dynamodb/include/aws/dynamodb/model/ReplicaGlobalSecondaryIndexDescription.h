@@ -7,6 +7,7 @@
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/model/ProvisionedThroughputOverride.h>
+#include <aws/dynamodb/model/OnDemandThroughputOverride.h>
 #include <utility>
 
 namespace Aws
@@ -110,6 +111,43 @@ namespace Model
      */
     inline ReplicaGlobalSecondaryIndexDescription& WithProvisionedThroughputOverride(ProvisionedThroughputOverride&& value) { SetProvisionedThroughputOverride(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Overrides the maximum on-demand throughput for the specified global secondary
+     * index in the specified replica table.</p>
+     */
+    inline const OnDemandThroughputOverride& GetOnDemandThroughputOverride() const{ return m_onDemandThroughputOverride; }
+
+    /**
+     * <p>Overrides the maximum on-demand throughput for the specified global secondary
+     * index in the specified replica table.</p>
+     */
+    inline bool OnDemandThroughputOverrideHasBeenSet() const { return m_onDemandThroughputOverrideHasBeenSet; }
+
+    /**
+     * <p>Overrides the maximum on-demand throughput for the specified global secondary
+     * index in the specified replica table.</p>
+     */
+    inline void SetOnDemandThroughputOverride(const OnDemandThroughputOverride& value) { m_onDemandThroughputOverrideHasBeenSet = true; m_onDemandThroughputOverride = value; }
+
+    /**
+     * <p>Overrides the maximum on-demand throughput for the specified global secondary
+     * index in the specified replica table.</p>
+     */
+    inline void SetOnDemandThroughputOverride(OnDemandThroughputOverride&& value) { m_onDemandThroughputOverrideHasBeenSet = true; m_onDemandThroughputOverride = std::move(value); }
+
+    /**
+     * <p>Overrides the maximum on-demand throughput for the specified global secondary
+     * index in the specified replica table.</p>
+     */
+    inline ReplicaGlobalSecondaryIndexDescription& WithOnDemandThroughputOverride(const OnDemandThroughputOverride& value) { SetOnDemandThroughputOverride(value); return *this;}
+
+    /**
+     * <p>Overrides the maximum on-demand throughput for the specified global secondary
+     * index in the specified replica table.</p>
+     */
+    inline ReplicaGlobalSecondaryIndexDescription& WithOnDemandThroughputOverride(OnDemandThroughputOverride&& value) { SetOnDemandThroughputOverride(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_indexName;
@@ -117,6 +155,9 @@ namespace Model
 
     ProvisionedThroughputOverride m_provisionedThroughputOverride;
     bool m_provisionedThroughputOverrideHasBeenSet = false;
+
+    OnDemandThroughputOverride m_onDemandThroughputOverride;
+    bool m_onDemandThroughputOverrideHasBeenSet = false;
   };
 
 } // namespace Model

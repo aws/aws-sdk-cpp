@@ -11,6 +11,7 @@
 #include <aws/dynamodb/model/BillingMode.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dynamodb/model/ProvisionedThroughput.h>
+#include <aws/dynamodb/model/OnDemandThroughput.h>
 #include <aws/dynamodb/model/SSESpecification.h>
 #include <aws/dynamodb/model/GlobalSecondaryIndex.h>
 #include <aws/dynamodb/model/LocalSecondaryIndex.h>
@@ -408,6 +409,25 @@ namespace Model
     inline RestoreTableToPointInTimeRequest& WithProvisionedThroughputOverride(ProvisionedThroughput&& value) { SetProvisionedThroughputOverride(std::move(value)); return *this;}
 
 
+    
+    inline const OnDemandThroughput& GetOnDemandThroughputOverride() const{ return m_onDemandThroughputOverride; }
+
+    
+    inline bool OnDemandThroughputOverrideHasBeenSet() const { return m_onDemandThroughputOverrideHasBeenSet; }
+
+    
+    inline void SetOnDemandThroughputOverride(const OnDemandThroughput& value) { m_onDemandThroughputOverrideHasBeenSet = true; m_onDemandThroughputOverride = value; }
+
+    
+    inline void SetOnDemandThroughputOverride(OnDemandThroughput&& value) { m_onDemandThroughputOverrideHasBeenSet = true; m_onDemandThroughputOverride = std::move(value); }
+
+    
+    inline RestoreTableToPointInTimeRequest& WithOnDemandThroughputOverride(const OnDemandThroughput& value) { SetOnDemandThroughputOverride(value); return *this;}
+
+    
+    inline RestoreTableToPointInTimeRequest& WithOnDemandThroughputOverride(OnDemandThroughput&& value) { SetOnDemandThroughputOverride(std::move(value)); return *this;}
+
+
     /**
      * <p>The new server-side encryption settings for the restored table.</p>
      */
@@ -466,6 +486,9 @@ namespace Model
 
     ProvisionedThroughput m_provisionedThroughputOverride;
     bool m_provisionedThroughputOverrideHasBeenSet = false;
+
+    OnDemandThroughput m_onDemandThroughputOverride;
+    bool m_onDemandThroughputOverrideHasBeenSet = false;
 
     SSESpecification m_sSESpecificationOverride;
     bool m_sSESpecificationOverrideHasBeenSet = false;

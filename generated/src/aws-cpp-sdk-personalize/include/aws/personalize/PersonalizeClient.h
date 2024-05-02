@@ -221,6 +221,66 @@ namespace Personalize
         }
 
         /**
+         * <p>Creates a batch job that deletes all references to specific users from an
+         * Amazon Personalize dataset group in batches. You specify the users to delete in
+         * a CSV file of userIds in an Amazon S3 bucket. After a job completes, Amazon
+         * Personalize no longer trains on the users’ data and no longer considers the
+         * users when generating user segments. For more information about creating a data
+         * deletion job, see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/delete-records.html">Deleting
+         * users</a>.</p> <ul> <li> <p>Your input file must be a CSV file with a single
+         * USER_ID column that lists the users IDs. For more information about preparing
+         * the CSV file, see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/prepare-deletion-input-file.html">Preparing
+         * your data deletion file and uploading it to Amazon S3</a>.</p> </li> <li> <p>To
+         * give Amazon Personalize permission to access your input CSV file of userIds, you
+         * must specify an IAM service role that has permission to read from the data
+         * source. This role needs <code>GetObject</code> and <code>ListBucket</code>
+         * permissions for the bucket and its content. These permissions are the same as
+         * importing data. For information on granting access to your Amazon S3 bucket, see
+         * <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/granting-personalize-s3-access.html">Giving
+         * Amazon Personalize Access to Amazon S3 Resources</a>. </p> </li> </ul> <p> After
+         * you create a job, it can take up to a day to delete all references to the users
+         * from datasets and models. Until the job completes, Amazon Personalize continues
+         * to use the data when training. And if you use a User Segmentation recipe, the
+         * users might appear in user segments. </p> <p> <b>Status</b> </p> <p>A data
+         * deletion job can have one of the following statuses:</p> <ul> <li> <p>PENDING
+         * &gt; IN_PROGRESS &gt; COMPLETED -or- FAILED</p> </li> </ul> <p>To get the status
+         * of the data deletion job, call <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDataDeletionJob.html">DescribeDataDeletionJob</a>
+         * API operation and specify the Amazon Resource Name (ARN) of the job. If the
+         * status is FAILED, the response includes a <code>failureReason</code> key, which
+         * describes why the job failed.</p> <p class="title"> <b>Related APIs</b> </p>
+         * <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListDataDeletionJobs.html">ListDataDeletionJobs</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDataDeletionJob.html">DescribeDataDeletionJob</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDataDeletionJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDataDeletionJobOutcome CreateDataDeletionJob(const Model::CreateDataDeletionJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateDataDeletionJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateDataDeletionJobRequestT = Model::CreateDataDeletionJobRequest>
+        Model::CreateDataDeletionJobOutcomeCallable CreateDataDeletionJobCallable(const CreateDataDeletionJobRequestT& request) const
+        {
+            return SubmitCallable(&PersonalizeClient::CreateDataDeletionJob, request);
+        }
+
+        /**
+         * An Async wrapper for CreateDataDeletionJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateDataDeletionJobRequestT = Model::CreateDataDeletionJobRequest>
+        void CreateDataDeletionJobAsync(const CreateDataDeletionJobRequestT& request, const CreateDataDeletionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PersonalizeClient::CreateDataDeletionJob, request, handler, context);
+        }
+
+        /**
          * <p>Creates an empty dataset and adds it to the specified dataset group. Use <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
          * to import your training data to a dataset.</p> <p>There are 5 types of
@@ -1132,6 +1192,33 @@ namespace Personalize
         }
 
         /**
+         * <p>Describes the data deletion job created by <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataDeletionJob.html">CreateDataDeletionJob</a>,
+         * including the job status.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeDataDeletionJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDataDeletionJobOutcome DescribeDataDeletionJob(const Model::DescribeDataDeletionJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeDataDeletionJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeDataDeletionJobRequestT = Model::DescribeDataDeletionJobRequest>
+        Model::DescribeDataDeletionJobOutcomeCallable DescribeDataDeletionJobCallable(const DescribeDataDeletionJobRequestT& request) const
+        {
+            return SubmitCallable(&PersonalizeClient::DescribeDataDeletionJob, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeDataDeletionJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeDataDeletionJobRequestT = Model::DescribeDataDeletionJobRequest>
+        void DescribeDataDeletionJobAsync(const DescribeDataDeletionJobRequestT& request, const DescribeDataDeletionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PersonalizeClient::DescribeDataDeletionJob, request, handler, context);
+        }
+
+        /**
          * <p>Describes the given dataset. For more information on datasets, see <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.</p><p><h3>See
          * Also:</h3>   <a
@@ -1603,6 +1690,37 @@ namespace Personalize
         void ListCampaignsAsync(const ListCampaignsRequestT& request, const ListCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&PersonalizeClient::ListCampaigns, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of data deletion jobs for a dataset group ordered by creation
+         * time, with the most recent first. When a dataset group is not specified, all the
+         * data deletion jobs associated with the account are listed. The response provides
+         * the properties for each job, including the Amazon Resource Name (ARN). For more
+         * information on data deletion jobs, see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/delete-records.html">Deleting
+         * users</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListDataDeletionJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDataDeletionJobsOutcome ListDataDeletionJobs(const Model::ListDataDeletionJobsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListDataDeletionJobs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListDataDeletionJobsRequestT = Model::ListDataDeletionJobsRequest>
+        Model::ListDataDeletionJobsOutcomeCallable ListDataDeletionJobsCallable(const ListDataDeletionJobsRequestT& request) const
+        {
+            return SubmitCallable(&PersonalizeClient::ListDataDeletionJobs, request);
+        }
+
+        /**
+         * An Async wrapper for ListDataDeletionJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListDataDeletionJobsRequestT = Model::ListDataDeletionJobsRequest>
+        void ListDataDeletionJobsAsync(const ListDataDeletionJobsRequestT& request, const ListDataDeletionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PersonalizeClient::ListDataDeletionJobs, request, handler, context);
         }
 
         /**

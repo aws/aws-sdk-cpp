@@ -24,6 +24,7 @@ RestoreTableToPointInTimeRequest::RestoreTableToPointInTimeRequest() :
     m_globalSecondaryIndexOverrideHasBeenSet(false),
     m_localSecondaryIndexOverrideHasBeenSet(false),
     m_provisionedThroughputOverrideHasBeenSet(false),
+    m_onDemandThroughputOverrideHasBeenSet(false),
     m_sSESpecificationOverrideHasBeenSet(false)
 {
 }
@@ -91,6 +92,12 @@ Aws::String RestoreTableToPointInTimeRequest::SerializePayload() const
   if(m_provisionedThroughputOverrideHasBeenSet)
   {
    payload.WithObject("ProvisionedThroughputOverride", m_provisionedThroughputOverride.Jsonize());
+
+  }
+
+  if(m_onDemandThroughputOverrideHasBeenSet)
+  {
+   payload.WithObject("OnDemandThroughputOverride", m_onDemandThroughputOverride.Jsonize());
 
   }
 

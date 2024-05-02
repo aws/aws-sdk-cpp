@@ -7,6 +7,7 @@
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/model/ProvisionedThroughputOverride.h>
+#include <aws/dynamodb/model/OnDemandThroughputOverride.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dynamodb/model/TableClass.h>
 #include <aws/dynamodb/model/ReplicaGlobalSecondaryIndex.h>
@@ -185,6 +186,55 @@ namespace Model
 
 
     /**
+     * <p>The maximum on-demand throughput settings for the specified replica table
+     * being created. You can only modify <code>MaxReadRequestUnits</code>, because you
+     * can't modify <code>MaxWriteRequestUnits</code> for individual replica tables.
+     * </p>
+     */
+    inline const OnDemandThroughputOverride& GetOnDemandThroughputOverride() const{ return m_onDemandThroughputOverride; }
+
+    /**
+     * <p>The maximum on-demand throughput settings for the specified replica table
+     * being created. You can only modify <code>MaxReadRequestUnits</code>, because you
+     * can't modify <code>MaxWriteRequestUnits</code> for individual replica tables.
+     * </p>
+     */
+    inline bool OnDemandThroughputOverrideHasBeenSet() const { return m_onDemandThroughputOverrideHasBeenSet; }
+
+    /**
+     * <p>The maximum on-demand throughput settings for the specified replica table
+     * being created. You can only modify <code>MaxReadRequestUnits</code>, because you
+     * can't modify <code>MaxWriteRequestUnits</code> for individual replica tables.
+     * </p>
+     */
+    inline void SetOnDemandThroughputOverride(const OnDemandThroughputOverride& value) { m_onDemandThroughputOverrideHasBeenSet = true; m_onDemandThroughputOverride = value; }
+
+    /**
+     * <p>The maximum on-demand throughput settings for the specified replica table
+     * being created. You can only modify <code>MaxReadRequestUnits</code>, because you
+     * can't modify <code>MaxWriteRequestUnits</code> for individual replica tables.
+     * </p>
+     */
+    inline void SetOnDemandThroughputOverride(OnDemandThroughputOverride&& value) { m_onDemandThroughputOverrideHasBeenSet = true; m_onDemandThroughputOverride = std::move(value); }
+
+    /**
+     * <p>The maximum on-demand throughput settings for the specified replica table
+     * being created. You can only modify <code>MaxReadRequestUnits</code>, because you
+     * can't modify <code>MaxWriteRequestUnits</code> for individual replica tables.
+     * </p>
+     */
+    inline CreateReplicationGroupMemberAction& WithOnDemandThroughputOverride(const OnDemandThroughputOverride& value) { SetOnDemandThroughputOverride(value); return *this;}
+
+    /**
+     * <p>The maximum on-demand throughput settings for the specified replica table
+     * being created. You can only modify <code>MaxReadRequestUnits</code>, because you
+     * can't modify <code>MaxWriteRequestUnits</code> for individual replica tables.
+     * </p>
+     */
+    inline CreateReplicationGroupMemberAction& WithOnDemandThroughputOverride(OnDemandThroughputOverride&& value) { SetOnDemandThroughputOverride(std::move(value)); return *this;}
+
+
+    /**
      * <p>Replica-specific global secondary index settings.</p>
      */
     inline const Aws::Vector<ReplicaGlobalSecondaryIndex>& GetGlobalSecondaryIndexes() const{ return m_globalSecondaryIndexes; }
@@ -271,6 +321,9 @@ namespace Model
 
     ProvisionedThroughputOverride m_provisionedThroughputOverride;
     bool m_provisionedThroughputOverrideHasBeenSet = false;
+
+    OnDemandThroughputOverride m_onDemandThroughputOverride;
+    bool m_onDemandThroughputOverrideHasBeenSet = false;
 
     Aws::Vector<ReplicaGlobalSecondaryIndex> m_globalSecondaryIndexes;
     bool m_globalSecondaryIndexesHasBeenSet = false;

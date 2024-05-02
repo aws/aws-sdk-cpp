@@ -7,6 +7,7 @@
 #include <aws/redshift-serverless/RedshiftServerless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/redshift-serverless/model/ScheduledActionAssociation.h>
 #include <utility>
 
 namespace Aws
@@ -84,44 +85,39 @@ namespace Model
 
 
     /**
-     * <p>All of the returned scheduled action objects.</p>
+     * <p>All of the returned scheduled action association objects.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetScheduledActions() const{ return m_scheduledActions; }
+    inline const Aws::Vector<ScheduledActionAssociation>& GetScheduledActions() const{ return m_scheduledActions; }
 
     /**
-     * <p>All of the returned scheduled action objects.</p>
+     * <p>All of the returned scheduled action association objects.</p>
      */
-    inline void SetScheduledActions(const Aws::Vector<Aws::String>& value) { m_scheduledActions = value; }
+    inline void SetScheduledActions(const Aws::Vector<ScheduledActionAssociation>& value) { m_scheduledActions = value; }
 
     /**
-     * <p>All of the returned scheduled action objects.</p>
+     * <p>All of the returned scheduled action association objects.</p>
      */
-    inline void SetScheduledActions(Aws::Vector<Aws::String>&& value) { m_scheduledActions = std::move(value); }
+    inline void SetScheduledActions(Aws::Vector<ScheduledActionAssociation>&& value) { m_scheduledActions = std::move(value); }
 
     /**
-     * <p>All of the returned scheduled action objects.</p>
+     * <p>All of the returned scheduled action association objects.</p>
      */
-    inline ListScheduledActionsResult& WithScheduledActions(const Aws::Vector<Aws::String>& value) { SetScheduledActions(value); return *this;}
+    inline ListScheduledActionsResult& WithScheduledActions(const Aws::Vector<ScheduledActionAssociation>& value) { SetScheduledActions(value); return *this;}
 
     /**
-     * <p>All of the returned scheduled action objects.</p>
+     * <p>All of the returned scheduled action association objects.</p>
      */
-    inline ListScheduledActionsResult& WithScheduledActions(Aws::Vector<Aws::String>&& value) { SetScheduledActions(std::move(value)); return *this;}
+    inline ListScheduledActionsResult& WithScheduledActions(Aws::Vector<ScheduledActionAssociation>&& value) { SetScheduledActions(std::move(value)); return *this;}
 
     /**
-     * <p>All of the returned scheduled action objects.</p>
+     * <p>All of the returned scheduled action association objects.</p>
      */
-    inline ListScheduledActionsResult& AddScheduledActions(const Aws::String& value) { m_scheduledActions.push_back(value); return *this; }
+    inline ListScheduledActionsResult& AddScheduledActions(const ScheduledActionAssociation& value) { m_scheduledActions.push_back(value); return *this; }
 
     /**
-     * <p>All of the returned scheduled action objects.</p>
+     * <p>All of the returned scheduled action association objects.</p>
      */
-    inline ListScheduledActionsResult& AddScheduledActions(Aws::String&& value) { m_scheduledActions.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>All of the returned scheduled action objects.</p>
-     */
-    inline ListScheduledActionsResult& AddScheduledActions(const char* value) { m_scheduledActions.push_back(value); return *this; }
+    inline ListScheduledActionsResult& AddScheduledActions(ScheduledActionAssociation&& value) { m_scheduledActions.push_back(std::move(value)); return *this; }
 
 
     
@@ -149,7 +145,7 @@ namespace Model
 
     Aws::String m_nextToken;
 
-    Aws::Vector<Aws::String> m_scheduledActions;
+    Aws::Vector<ScheduledActionAssociation> m_scheduledActions;
 
     Aws::String m_requestId;
   };

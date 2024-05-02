@@ -16,6 +16,7 @@
 #include <aws/dynamodb/model/SSEDescription.h>
 #include <aws/dynamodb/model/ArchivalSummary.h>
 #include <aws/dynamodb/model/TableClassSummary.h>
+#include <aws/dynamodb/model/OnDemandThroughput.h>
 #include <aws/dynamodb/model/AttributeDefinition.h>
 #include <aws/dynamodb/model/KeySchemaElement.h>
 #include <aws/dynamodb/model/LocalSecondaryIndexDescription.h>
@@ -1784,6 +1785,49 @@ namespace Model
      */
     inline TableDescription& WithDeletionProtectionEnabled(bool value) { SetDeletionProtectionEnabled(value); return *this;}
 
+
+    /**
+     * <p>The maximum number of read and write units for the specified on-demand table.
+     * If you use this parameter, you must specify <code>MaxReadRequestUnits</code>,
+     * <code>MaxWriteRequestUnits</code>, or both.</p>
+     */
+    inline const OnDemandThroughput& GetOnDemandThroughput() const{ return m_onDemandThroughput; }
+
+    /**
+     * <p>The maximum number of read and write units for the specified on-demand table.
+     * If you use this parameter, you must specify <code>MaxReadRequestUnits</code>,
+     * <code>MaxWriteRequestUnits</code>, or both.</p>
+     */
+    inline bool OnDemandThroughputHasBeenSet() const { return m_onDemandThroughputHasBeenSet; }
+
+    /**
+     * <p>The maximum number of read and write units for the specified on-demand table.
+     * If you use this parameter, you must specify <code>MaxReadRequestUnits</code>,
+     * <code>MaxWriteRequestUnits</code>, or both.</p>
+     */
+    inline void SetOnDemandThroughput(const OnDemandThroughput& value) { m_onDemandThroughputHasBeenSet = true; m_onDemandThroughput = value; }
+
+    /**
+     * <p>The maximum number of read and write units for the specified on-demand table.
+     * If you use this parameter, you must specify <code>MaxReadRequestUnits</code>,
+     * <code>MaxWriteRequestUnits</code>, or both.</p>
+     */
+    inline void SetOnDemandThroughput(OnDemandThroughput&& value) { m_onDemandThroughputHasBeenSet = true; m_onDemandThroughput = std::move(value); }
+
+    /**
+     * <p>The maximum number of read and write units for the specified on-demand table.
+     * If you use this parameter, you must specify <code>MaxReadRequestUnits</code>,
+     * <code>MaxWriteRequestUnits</code>, or both.</p>
+     */
+    inline TableDescription& WithOnDemandThroughput(const OnDemandThroughput& value) { SetOnDemandThroughput(value); return *this;}
+
+    /**
+     * <p>The maximum number of read and write units for the specified on-demand table.
+     * If you use this parameter, you must specify <code>MaxReadRequestUnits</code>,
+     * <code>MaxWriteRequestUnits</code>, or both.</p>
+     */
+    inline TableDescription& WithOnDemandThroughput(OnDemandThroughput&& value) { SetOnDemandThroughput(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<AttributeDefinition> m_attributeDefinitions;
@@ -1854,6 +1898,9 @@ namespace Model
 
     bool m_deletionProtectionEnabled;
     bool m_deletionProtectionEnabledHasBeenSet = false;
+
+    OnDemandThroughput m_onDemandThroughput;
+    bool m_onDemandThroughputHasBeenSet = false;
   };
 
 } // namespace Model
