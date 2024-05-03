@@ -13,6 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 GetCisScanReportRequest::GetCisScanReportRequest() : 
+    m_reportFormat(CisReportFormat::NOT_SET),
+    m_reportFormatHasBeenSet(false),
     m_scanArnHasBeenSet(false),
     m_targetAccountsHasBeenSet(false)
 {
@@ -21,6 +23,11 @@ GetCisScanReportRequest::GetCisScanReportRequest() :
 Aws::String GetCisScanReportRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_reportFormatHasBeenSet)
+  {
+   payload.WithString("reportFormat", CisReportFormatMapper::GetNameForCisReportFormat(m_reportFormat));
+  }
 
   if(m_scanArnHasBeenSet)
   {

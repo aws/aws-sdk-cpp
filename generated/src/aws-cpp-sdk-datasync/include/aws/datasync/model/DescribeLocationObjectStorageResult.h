@@ -277,32 +277,37 @@ namespace Model
 
 
     /**
-     * <p>The self-signed certificate that DataSync uses to securely authenticate with
-     * your object storage system.</p>
+     * <p>The certificate chain for DataSync to authenticate with your object storage
+     * system if the system uses a private or self-signed certificate authority
+     * (CA).</p>
      */
     inline const Aws::Utils::ByteBuffer& GetServerCertificate() const{ return m_serverCertificate; }
 
     /**
-     * <p>The self-signed certificate that DataSync uses to securely authenticate with
-     * your object storage system.</p>
+     * <p>The certificate chain for DataSync to authenticate with your object storage
+     * system if the system uses a private or self-signed certificate authority
+     * (CA).</p>
      */
     inline void SetServerCertificate(const Aws::Utils::ByteBuffer& value) { m_serverCertificate = value; }
 
     /**
-     * <p>The self-signed certificate that DataSync uses to securely authenticate with
-     * your object storage system.</p>
+     * <p>The certificate chain for DataSync to authenticate with your object storage
+     * system if the system uses a private or self-signed certificate authority
+     * (CA).</p>
      */
     inline void SetServerCertificate(Aws::Utils::ByteBuffer&& value) { m_serverCertificate = std::move(value); }
 
     /**
-     * <p>The self-signed certificate that DataSync uses to securely authenticate with
-     * your object storage system.</p>
+     * <p>The certificate chain for DataSync to authenticate with your object storage
+     * system if the system uses a private or self-signed certificate authority
+     * (CA).</p>
      */
     inline DescribeLocationObjectStorageResult& WithServerCertificate(const Aws::Utils::ByteBuffer& value) { SetServerCertificate(value); return *this;}
 
     /**
-     * <p>The self-signed certificate that DataSync uses to securely authenticate with
-     * your object storage system.</p>
+     * <p>The certificate chain for DataSync to authenticate with your object storage
+     * system if the system uses a private or self-signed certificate authority
+     * (CA).</p>
      */
     inline DescribeLocationObjectStorageResult& WithServerCertificate(Aws::Utils::ByteBuffer&& value) { SetServerCertificate(std::move(value)); return *this;}
 

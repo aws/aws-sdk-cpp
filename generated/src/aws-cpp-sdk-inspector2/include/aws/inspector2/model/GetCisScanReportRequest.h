@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/inspector2/Inspector2Request.h>
+#include <aws/inspector2/model/CisReportFormat.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
@@ -31,6 +32,49 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "GetCisScanReport"; }
 
     AWS_INSPECTOR2_API Aws::String SerializePayload() const override;
+
+
+    /**
+     * <p> The format of the report. Valid values are <code>PDF</code> and
+     * <code>CSV</code>. If no value is specified, the report format defaults to
+     * <code>PDF</code>. </p>
+     */
+    inline const CisReportFormat& GetReportFormat() const{ return m_reportFormat; }
+
+    /**
+     * <p> The format of the report. Valid values are <code>PDF</code> and
+     * <code>CSV</code>. If no value is specified, the report format defaults to
+     * <code>PDF</code>. </p>
+     */
+    inline bool ReportFormatHasBeenSet() const { return m_reportFormatHasBeenSet; }
+
+    /**
+     * <p> The format of the report. Valid values are <code>PDF</code> and
+     * <code>CSV</code>. If no value is specified, the report format defaults to
+     * <code>PDF</code>. </p>
+     */
+    inline void SetReportFormat(const CisReportFormat& value) { m_reportFormatHasBeenSet = true; m_reportFormat = value; }
+
+    /**
+     * <p> The format of the report. Valid values are <code>PDF</code> and
+     * <code>CSV</code>. If no value is specified, the report format defaults to
+     * <code>PDF</code>. </p>
+     */
+    inline void SetReportFormat(CisReportFormat&& value) { m_reportFormatHasBeenSet = true; m_reportFormat = std::move(value); }
+
+    /**
+     * <p> The format of the report. Valid values are <code>PDF</code> and
+     * <code>CSV</code>. If no value is specified, the report format defaults to
+     * <code>PDF</code>. </p>
+     */
+    inline GetCisScanReportRequest& WithReportFormat(const CisReportFormat& value) { SetReportFormat(value); return *this;}
+
+    /**
+     * <p> The format of the report. Valid values are <code>PDF</code> and
+     * <code>CSV</code>. If no value is specified, the report format defaults to
+     * <code>PDF</code>. </p>
+     */
+    inline GetCisScanReportRequest& WithReportFormat(CisReportFormat&& value) { SetReportFormat(std::move(value)); return *this;}
 
 
     /**
@@ -120,6 +164,9 @@ namespace Model
     inline GetCisScanReportRequest& AddTargetAccounts(const char* value) { m_targetAccountsHasBeenSet = true; m_targetAccounts.push_back(value); return *this; }
 
   private:
+
+    CisReportFormat m_reportFormat;
+    bool m_reportFormatHasBeenSet = false;
 
     Aws::String m_scanArn;
     bool m_scanArnHasBeenSet = false;

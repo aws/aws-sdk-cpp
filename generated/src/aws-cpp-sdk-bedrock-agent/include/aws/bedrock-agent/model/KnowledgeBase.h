@@ -373,9 +373,9 @@ namespace Model
      * <p>The status of the knowledge base. The following statuses are possible:</p>
      * <ul> <li> <p>CREATING – The knowledge base is being created.</p> </li> <li>
      * <p>ACTIVE – The knowledge base is ready to be queried.</p> </li> <li>
-     * <p>DELETING – The knowledge base is being deleted.</p> </li> <li> <p>UPDATING
-     * ��� The knowledge base is being updated.</p> </li> <li> <p>FAILED – The
-     * knowledge base API operation failed.</p> </li> </ul>
+     * <p>DELETING – The knowledge base is being deleted.</p> </li> <li> <p>UPDATING –
+     * The knowledge base is being updated.</p> </li> <li> <p>FAILED – The knowledge
+     * base API operation failed.</p> </li> </ul>
      */
     inline const KnowledgeBaseStatus& GetStatus() const{ return m_status; }
 
@@ -383,9 +383,9 @@ namespace Model
      * <p>The status of the knowledge base. The following statuses are possible:</p>
      * <ul> <li> <p>CREATING – The knowledge base is being created.</p> </li> <li>
      * <p>ACTIVE – The knowledge base is ready to be queried.</p> </li> <li>
-     * <p>DELETING – The knowledge base is being deleted.</p> </li> <li> <p>UPDATING
-     * ��� The knowledge base is being updated.</p> </li> <li> <p>FAILED – The
-     * knowledge base API operation failed.</p> </li> </ul>
+     * <p>DELETING – The knowledge base is being deleted.</p> </li> <li> <p>UPDATING –
+     * The knowledge base is being updated.</p> </li> <li> <p>FAILED – The knowledge
+     * base API operation failed.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
@@ -393,9 +393,9 @@ namespace Model
      * <p>The status of the knowledge base. The following statuses are possible:</p>
      * <ul> <li> <p>CREATING – The knowledge base is being created.</p> </li> <li>
      * <p>ACTIVE – The knowledge base is ready to be queried.</p> </li> <li>
-     * <p>DELETING – The knowledge base is being deleted.</p> </li> <li> <p>UPDATING
-     * ��� The knowledge base is being updated.</p> </li> <li> <p>FAILED – The
-     * knowledge base API operation failed.</p> </li> </ul>
+     * <p>DELETING – The knowledge base is being deleted.</p> </li> <li> <p>UPDATING –
+     * The knowledge base is being updated.</p> </li> <li> <p>FAILED – The knowledge
+     * base API operation failed.</p> </li> </ul>
      */
     inline void SetStatus(const KnowledgeBaseStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
@@ -403,9 +403,9 @@ namespace Model
      * <p>The status of the knowledge base. The following statuses are possible:</p>
      * <ul> <li> <p>CREATING – The knowledge base is being created.</p> </li> <li>
      * <p>ACTIVE – The knowledge base is ready to be queried.</p> </li> <li>
-     * <p>DELETING – The knowledge base is being deleted.</p> </li> <li> <p>UPDATING
-     * ��� The knowledge base is being updated.</p> </li> <li> <p>FAILED – The
-     * knowledge base API operation failed.</p> </li> </ul>
+     * <p>DELETING – The knowledge base is being deleted.</p> </li> <li> <p>UPDATING –
+     * The knowledge base is being updated.</p> </li> <li> <p>FAILED – The knowledge
+     * base API operation failed.</p> </li> </ul>
      */
     inline void SetStatus(KnowledgeBaseStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
@@ -413,9 +413,9 @@ namespace Model
      * <p>The status of the knowledge base. The following statuses are possible:</p>
      * <ul> <li> <p>CREATING – The knowledge base is being created.</p> </li> <li>
      * <p>ACTIVE – The knowledge base is ready to be queried.</p> </li> <li>
-     * <p>DELETING – The knowledge base is being deleted.</p> </li> <li> <p>UPDATING
-     * ��� The knowledge base is being updated.</p> </li> <li> <p>FAILED – The
-     * knowledge base API operation failed.</p> </li> </ul>
+     * <p>DELETING – The knowledge base is being deleted.</p> </li> <li> <p>UPDATING –
+     * The knowledge base is being updated.</p> </li> <li> <p>FAILED – The knowledge
+     * base API operation failed.</p> </li> </ul>
      */
     inline KnowledgeBase& WithStatus(const KnowledgeBaseStatus& value) { SetStatus(value); return *this;}
 
@@ -423,9 +423,9 @@ namespace Model
      * <p>The status of the knowledge base. The following statuses are possible:</p>
      * <ul> <li> <p>CREATING – The knowledge base is being created.</p> </li> <li>
      * <p>ACTIVE – The knowledge base is ready to be queried.</p> </li> <li>
-     * <p>DELETING – The knowledge base is being deleted.</p> </li> <li> <p>UPDATING
-     * ��� The knowledge base is being updated.</p> </li> <li> <p>FAILED – The
-     * knowledge base API operation failed.</p> </li> </ul>
+     * <p>DELETING – The knowledge base is being deleted.</p> </li> <li> <p>UPDATING –
+     * The knowledge base is being updated.</p> </li> <li> <p>FAILED – The knowledge
+     * base API operation failed.</p> </li> </ul>
      */
     inline KnowledgeBase& WithStatus(KnowledgeBaseStatus&& value) { SetStatus(std::move(value)); return *this;}
 

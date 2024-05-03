@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sesv2/model/ReplacementEmailContent.h>
 #include <aws/sesv2/model/MessageTag.h>
+#include <aws/sesv2/model/MessageHeader.h>
 #include <utility>
 
 namespace Aws
@@ -215,6 +216,159 @@ namespace Model
      */
     inline BulkEmailEntry& WithReplacementEmailContent(ReplacementEmailContent&& value) { SetReplacementEmailContent(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The list of message headers associated with the <code>BulkEmailEntry</code>
+     * data type.</p> <ul> <li> <p>Headers Not Present in <code>BulkEmailEntry</code>:
+     * If a header is specified in <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html">
+     * <code>Template</code> </a> but not in <code>BulkEmailEntry</code>, the header
+     * from <code>Template</code> will be added to the outgoing email.</p> </li> <li>
+     * <p>Headers Present in <code>BulkEmailEntry</code>: If a header is specified in
+     * <code>BulkEmailEntry</code>, it takes precedence over any header of the same
+     * name specified in <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html">
+     * <code>Template</code> </a>:</p> <ul> <li> <p>If the header is also defined
+     * within <code>Template</code>, the value from <code>BulkEmailEntry</code> will
+     * replace the header's value in the email.</p> </li> <li> <p>If the header is not
+     * defined within <code>Template</code>, it will simply be added to the email as
+     * specified in <code>BulkEmailEntry</code>.</p> </li> </ul> </li> </ul>
+     */
+    inline const Aws::Vector<MessageHeader>& GetReplacementHeaders() const{ return m_replacementHeaders; }
+
+    /**
+     * <p>The list of message headers associated with the <code>BulkEmailEntry</code>
+     * data type.</p> <ul> <li> <p>Headers Not Present in <code>BulkEmailEntry</code>:
+     * If a header is specified in <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html">
+     * <code>Template</code> </a> but not in <code>BulkEmailEntry</code>, the header
+     * from <code>Template</code> will be added to the outgoing email.</p> </li> <li>
+     * <p>Headers Present in <code>BulkEmailEntry</code>: If a header is specified in
+     * <code>BulkEmailEntry</code>, it takes precedence over any header of the same
+     * name specified in <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html">
+     * <code>Template</code> </a>:</p> <ul> <li> <p>If the header is also defined
+     * within <code>Template</code>, the value from <code>BulkEmailEntry</code> will
+     * replace the header's value in the email.</p> </li> <li> <p>If the header is not
+     * defined within <code>Template</code>, it will simply be added to the email as
+     * specified in <code>BulkEmailEntry</code>.</p> </li> </ul> </li> </ul>
+     */
+    inline bool ReplacementHeadersHasBeenSet() const { return m_replacementHeadersHasBeenSet; }
+
+    /**
+     * <p>The list of message headers associated with the <code>BulkEmailEntry</code>
+     * data type.</p> <ul> <li> <p>Headers Not Present in <code>BulkEmailEntry</code>:
+     * If a header is specified in <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html">
+     * <code>Template</code> </a> but not in <code>BulkEmailEntry</code>, the header
+     * from <code>Template</code> will be added to the outgoing email.</p> </li> <li>
+     * <p>Headers Present in <code>BulkEmailEntry</code>: If a header is specified in
+     * <code>BulkEmailEntry</code>, it takes precedence over any header of the same
+     * name specified in <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html">
+     * <code>Template</code> </a>:</p> <ul> <li> <p>If the header is also defined
+     * within <code>Template</code>, the value from <code>BulkEmailEntry</code> will
+     * replace the header's value in the email.</p> </li> <li> <p>If the header is not
+     * defined within <code>Template</code>, it will simply be added to the email as
+     * specified in <code>BulkEmailEntry</code>.</p> </li> </ul> </li> </ul>
+     */
+    inline void SetReplacementHeaders(const Aws::Vector<MessageHeader>& value) { m_replacementHeadersHasBeenSet = true; m_replacementHeaders = value; }
+
+    /**
+     * <p>The list of message headers associated with the <code>BulkEmailEntry</code>
+     * data type.</p> <ul> <li> <p>Headers Not Present in <code>BulkEmailEntry</code>:
+     * If a header is specified in <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html">
+     * <code>Template</code> </a> but not in <code>BulkEmailEntry</code>, the header
+     * from <code>Template</code> will be added to the outgoing email.</p> </li> <li>
+     * <p>Headers Present in <code>BulkEmailEntry</code>: If a header is specified in
+     * <code>BulkEmailEntry</code>, it takes precedence over any header of the same
+     * name specified in <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html">
+     * <code>Template</code> </a>:</p> <ul> <li> <p>If the header is also defined
+     * within <code>Template</code>, the value from <code>BulkEmailEntry</code> will
+     * replace the header's value in the email.</p> </li> <li> <p>If the header is not
+     * defined within <code>Template</code>, it will simply be added to the email as
+     * specified in <code>BulkEmailEntry</code>.</p> </li> </ul> </li> </ul>
+     */
+    inline void SetReplacementHeaders(Aws::Vector<MessageHeader>&& value) { m_replacementHeadersHasBeenSet = true; m_replacementHeaders = std::move(value); }
+
+    /**
+     * <p>The list of message headers associated with the <code>BulkEmailEntry</code>
+     * data type.</p> <ul> <li> <p>Headers Not Present in <code>BulkEmailEntry</code>:
+     * If a header is specified in <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html">
+     * <code>Template</code> </a> but not in <code>BulkEmailEntry</code>, the header
+     * from <code>Template</code> will be added to the outgoing email.</p> </li> <li>
+     * <p>Headers Present in <code>BulkEmailEntry</code>: If a header is specified in
+     * <code>BulkEmailEntry</code>, it takes precedence over any header of the same
+     * name specified in <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html">
+     * <code>Template</code> </a>:</p> <ul> <li> <p>If the header is also defined
+     * within <code>Template</code>, the value from <code>BulkEmailEntry</code> will
+     * replace the header's value in the email.</p> </li> <li> <p>If the header is not
+     * defined within <code>Template</code>, it will simply be added to the email as
+     * specified in <code>BulkEmailEntry</code>.</p> </li> </ul> </li> </ul>
+     */
+    inline BulkEmailEntry& WithReplacementHeaders(const Aws::Vector<MessageHeader>& value) { SetReplacementHeaders(value); return *this;}
+
+    /**
+     * <p>The list of message headers associated with the <code>BulkEmailEntry</code>
+     * data type.</p> <ul> <li> <p>Headers Not Present in <code>BulkEmailEntry</code>:
+     * If a header is specified in <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html">
+     * <code>Template</code> </a> but not in <code>BulkEmailEntry</code>, the header
+     * from <code>Template</code> will be added to the outgoing email.</p> </li> <li>
+     * <p>Headers Present in <code>BulkEmailEntry</code>: If a header is specified in
+     * <code>BulkEmailEntry</code>, it takes precedence over any header of the same
+     * name specified in <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html">
+     * <code>Template</code> </a>:</p> <ul> <li> <p>If the header is also defined
+     * within <code>Template</code>, the value from <code>BulkEmailEntry</code> will
+     * replace the header's value in the email.</p> </li> <li> <p>If the header is not
+     * defined within <code>Template</code>, it will simply be added to the email as
+     * specified in <code>BulkEmailEntry</code>.</p> </li> </ul> </li> </ul>
+     */
+    inline BulkEmailEntry& WithReplacementHeaders(Aws::Vector<MessageHeader>&& value) { SetReplacementHeaders(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of message headers associated with the <code>BulkEmailEntry</code>
+     * data type.</p> <ul> <li> <p>Headers Not Present in <code>BulkEmailEntry</code>:
+     * If a header is specified in <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html">
+     * <code>Template</code> </a> but not in <code>BulkEmailEntry</code>, the header
+     * from <code>Template</code> will be added to the outgoing email.</p> </li> <li>
+     * <p>Headers Present in <code>BulkEmailEntry</code>: If a header is specified in
+     * <code>BulkEmailEntry</code>, it takes precedence over any header of the same
+     * name specified in <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html">
+     * <code>Template</code> </a>:</p> <ul> <li> <p>If the header is also defined
+     * within <code>Template</code>, the value from <code>BulkEmailEntry</code> will
+     * replace the header's value in the email.</p> </li> <li> <p>If the header is not
+     * defined within <code>Template</code>, it will simply be added to the email as
+     * specified in <code>BulkEmailEntry</code>.</p> </li> </ul> </li> </ul>
+     */
+    inline BulkEmailEntry& AddReplacementHeaders(const MessageHeader& value) { m_replacementHeadersHasBeenSet = true; m_replacementHeaders.push_back(value); return *this; }
+
+    /**
+     * <p>The list of message headers associated with the <code>BulkEmailEntry</code>
+     * data type.</p> <ul> <li> <p>Headers Not Present in <code>BulkEmailEntry</code>:
+     * If a header is specified in <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html">
+     * <code>Template</code> </a> but not in <code>BulkEmailEntry</code>, the header
+     * from <code>Template</code> will be added to the outgoing email.</p> </li> <li>
+     * <p>Headers Present in <code>BulkEmailEntry</code>: If a header is specified in
+     * <code>BulkEmailEntry</code>, it takes precedence over any header of the same
+     * name specified in <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html">
+     * <code>Template</code> </a>:</p> <ul> <li> <p>If the header is also defined
+     * within <code>Template</code>, the value from <code>BulkEmailEntry</code> will
+     * replace the header's value in the email.</p> </li> <li> <p>If the header is not
+     * defined within <code>Template</code>, it will simply be added to the email as
+     * specified in <code>BulkEmailEntry</code>.</p> </li> </ul> </li> </ul>
+     */
+    inline BulkEmailEntry& AddReplacementHeaders(MessageHeader&& value) { m_replacementHeadersHasBeenSet = true; m_replacementHeaders.push_back(std::move(value)); return *this; }
+
   private:
 
     Destination m_destination;
@@ -225,6 +379,9 @@ namespace Model
 
     ReplacementEmailContent m_replacementEmailContent;
     bool m_replacementEmailContentHasBeenSet = false;
+
+    Aws::Vector<MessageHeader> m_replacementHeaders;
+    bool m_replacementHeadersHasBeenSet = false;
   };
 
 } // namespace Model

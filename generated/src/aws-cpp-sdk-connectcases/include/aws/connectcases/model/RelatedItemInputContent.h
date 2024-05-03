@@ -7,6 +7,7 @@
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
 #include <aws/connectcases/model/CommentContent.h>
 #include <aws/connectcases/model/Contact.h>
+#include <aws/connectcases/model/FileContent.h>
 #include <utility>
 
 namespace Aws
@@ -100,6 +101,37 @@ namespace Model
      */
     inline RelatedItemInputContent& WithContact(Contact&& value) { SetContact(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A file of related items.</p>
+     */
+    inline const FileContent& GetFile() const{ return m_file; }
+
+    /**
+     * <p>A file of related items.</p>
+     */
+    inline bool FileHasBeenSet() const { return m_fileHasBeenSet; }
+
+    /**
+     * <p>A file of related items.</p>
+     */
+    inline void SetFile(const FileContent& value) { m_fileHasBeenSet = true; m_file = value; }
+
+    /**
+     * <p>A file of related items.</p>
+     */
+    inline void SetFile(FileContent&& value) { m_fileHasBeenSet = true; m_file = std::move(value); }
+
+    /**
+     * <p>A file of related items.</p>
+     */
+    inline RelatedItemInputContent& WithFile(const FileContent& value) { SetFile(value); return *this;}
+
+    /**
+     * <p>A file of related items.</p>
+     */
+    inline RelatedItemInputContent& WithFile(FileContent&& value) { SetFile(std::move(value)); return *this;}
+
   private:
 
     CommentContent m_comment;
@@ -107,6 +139,9 @@ namespace Model
 
     Contact m_contact;
     bool m_contactHasBeenSet = false;
+
+    FileContent m_file;
+    bool m_fileHasBeenSet = false;
   };
 
 } // namespace Model

@@ -143,7 +143,17 @@ namespace Model
      * <p>The Amazon Connect attributes. These attributes can be accessed in flows just
      * like any other contact attributes.</p> <p>You can have up to 32,768 UTF-8 bytes
      * across all attributes for a contact. Attribute keys can include only
-     * alphanumeric, dash, and underscore characters.</p>
+     * alphanumeric, dash, and underscore characters.</p> <p>When the attributes for a
+     * contact exceed 32 KB, the contact is routed down the Error branch of the flow.
+     * As a mitigation, consider the following options:</p> <ul> <li> <p>Remove
+     * unnecessary attributes by setting their values to empty.</p> </li> <li> <p>If
+     * the attributes are only used in one flow and don't need to be referred to
+     * outside of that flow (for example, by a Lambda or another flow), then use flow
+     * attributes. This way you aren't needlessly persisting the 32 KB of information
+     * from one flow to another. For more information, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/set-contact-attributes.html">Flow
+     * block: Set contact attributes</a> in the <i>Amazon Connect Administrator
+     * Guide</i>. </p> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
 
@@ -151,7 +161,17 @@ namespace Model
      * <p>The Amazon Connect attributes. These attributes can be accessed in flows just
      * like any other contact attributes.</p> <p>You can have up to 32,768 UTF-8 bytes
      * across all attributes for a contact. Attribute keys can include only
-     * alphanumeric, dash, and underscore characters.</p>
+     * alphanumeric, dash, and underscore characters.</p> <p>When the attributes for a
+     * contact exceed 32 KB, the contact is routed down the Error branch of the flow.
+     * As a mitigation, consider the following options:</p> <ul> <li> <p>Remove
+     * unnecessary attributes by setting their values to empty.</p> </li> <li> <p>If
+     * the attributes are only used in one flow and don't need to be referred to
+     * outside of that flow (for example, by a Lambda or another flow), then use flow
+     * attributes. This way you aren't needlessly persisting the 32 KB of information
+     * from one flow to another. For more information, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/set-contact-attributes.html">Flow
+     * block: Set contact attributes</a> in the <i>Amazon Connect Administrator
+     * Guide</i>. </p> </li> </ul>
      */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
@@ -159,7 +179,17 @@ namespace Model
      * <p>The Amazon Connect attributes. These attributes can be accessed in flows just
      * like any other contact attributes.</p> <p>You can have up to 32,768 UTF-8 bytes
      * across all attributes for a contact. Attribute keys can include only
-     * alphanumeric, dash, and underscore characters.</p>
+     * alphanumeric, dash, and underscore characters.</p> <p>When the attributes for a
+     * contact exceed 32 KB, the contact is routed down the Error branch of the flow.
+     * As a mitigation, consider the following options:</p> <ul> <li> <p>Remove
+     * unnecessary attributes by setting their values to empty.</p> </li> <li> <p>If
+     * the attributes are only used in one flow and don't need to be referred to
+     * outside of that flow (for example, by a Lambda or another flow), then use flow
+     * attributes. This way you aren't needlessly persisting the 32 KB of information
+     * from one flow to another. For more information, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/set-contact-attributes.html">Flow
+     * block: Set contact attributes</a> in the <i>Amazon Connect Administrator
+     * Guide</i>. </p> </li> </ul>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
@@ -167,7 +197,17 @@ namespace Model
      * <p>The Amazon Connect attributes. These attributes can be accessed in flows just
      * like any other contact attributes.</p> <p>You can have up to 32,768 UTF-8 bytes
      * across all attributes for a contact. Attribute keys can include only
-     * alphanumeric, dash, and underscore characters.</p>
+     * alphanumeric, dash, and underscore characters.</p> <p>When the attributes for a
+     * contact exceed 32 KB, the contact is routed down the Error branch of the flow.
+     * As a mitigation, consider the following options:</p> <ul> <li> <p>Remove
+     * unnecessary attributes by setting their values to empty.</p> </li> <li> <p>If
+     * the attributes are only used in one flow and don't need to be referred to
+     * outside of that flow (for example, by a Lambda or another flow), then use flow
+     * attributes. This way you aren't needlessly persisting the 32 KB of information
+     * from one flow to another. For more information, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/set-contact-attributes.html">Flow
+     * block: Set contact attributes</a> in the <i>Amazon Connect Administrator
+     * Guide</i>. </p> </li> </ul>
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
@@ -175,7 +215,17 @@ namespace Model
      * <p>The Amazon Connect attributes. These attributes can be accessed in flows just
      * like any other contact attributes.</p> <p>You can have up to 32,768 UTF-8 bytes
      * across all attributes for a contact. Attribute keys can include only
-     * alphanumeric, dash, and underscore characters.</p>
+     * alphanumeric, dash, and underscore characters.</p> <p>When the attributes for a
+     * contact exceed 32 KB, the contact is routed down the Error branch of the flow.
+     * As a mitigation, consider the following options:</p> <ul> <li> <p>Remove
+     * unnecessary attributes by setting their values to empty.</p> </li> <li> <p>If
+     * the attributes are only used in one flow and don't need to be referred to
+     * outside of that flow (for example, by a Lambda or another flow), then use flow
+     * attributes. This way you aren't needlessly persisting the 32 KB of information
+     * from one flow to another. For more information, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/set-contact-attributes.html">Flow
+     * block: Set contact attributes</a> in the <i>Amazon Connect Administrator
+     * Guide</i>. </p> </li> </ul>
      */
     inline UpdateContactAttributesRequest& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
 
@@ -183,7 +233,17 @@ namespace Model
      * <p>The Amazon Connect attributes. These attributes can be accessed in flows just
      * like any other contact attributes.</p> <p>You can have up to 32,768 UTF-8 bytes
      * across all attributes for a contact. Attribute keys can include only
-     * alphanumeric, dash, and underscore characters.</p>
+     * alphanumeric, dash, and underscore characters.</p> <p>When the attributes for a
+     * contact exceed 32 KB, the contact is routed down the Error branch of the flow.
+     * As a mitigation, consider the following options:</p> <ul> <li> <p>Remove
+     * unnecessary attributes by setting their values to empty.</p> </li> <li> <p>If
+     * the attributes are only used in one flow and don't need to be referred to
+     * outside of that flow (for example, by a Lambda or another flow), then use flow
+     * attributes. This way you aren't needlessly persisting the 32 KB of information
+     * from one flow to another. For more information, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/set-contact-attributes.html">Flow
+     * block: Set contact attributes</a> in the <i>Amazon Connect Administrator
+     * Guide</i>. </p> </li> </ul>
      */
     inline UpdateContactAttributesRequest& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
@@ -191,7 +251,17 @@ namespace Model
      * <p>The Amazon Connect attributes. These attributes can be accessed in flows just
      * like any other contact attributes.</p> <p>You can have up to 32,768 UTF-8 bytes
      * across all attributes for a contact. Attribute keys can include only
-     * alphanumeric, dash, and underscore characters.</p>
+     * alphanumeric, dash, and underscore characters.</p> <p>When the attributes for a
+     * contact exceed 32 KB, the contact is routed down the Error branch of the flow.
+     * As a mitigation, consider the following options:</p> <ul> <li> <p>Remove
+     * unnecessary attributes by setting their values to empty.</p> </li> <li> <p>If
+     * the attributes are only used in one flow and don't need to be referred to
+     * outside of that flow (for example, by a Lambda or another flow), then use flow
+     * attributes. This way you aren't needlessly persisting the 32 KB of information
+     * from one flow to another. For more information, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/set-contact-attributes.html">Flow
+     * block: Set contact attributes</a> in the <i>Amazon Connect Administrator
+     * Guide</i>. </p> </li> </ul>
      */
     inline UpdateContactAttributesRequest& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
@@ -199,7 +269,17 @@ namespace Model
      * <p>The Amazon Connect attributes. These attributes can be accessed in flows just
      * like any other contact attributes.</p> <p>You can have up to 32,768 UTF-8 bytes
      * across all attributes for a contact. Attribute keys can include only
-     * alphanumeric, dash, and underscore characters.</p>
+     * alphanumeric, dash, and underscore characters.</p> <p>When the attributes for a
+     * contact exceed 32 KB, the contact is routed down the Error branch of the flow.
+     * As a mitigation, consider the following options:</p> <ul> <li> <p>Remove
+     * unnecessary attributes by setting their values to empty.</p> </li> <li> <p>If
+     * the attributes are only used in one flow and don't need to be referred to
+     * outside of that flow (for example, by a Lambda or another flow), then use flow
+     * attributes. This way you aren't needlessly persisting the 32 KB of information
+     * from one flow to another. For more information, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/set-contact-attributes.html">Flow
+     * block: Set contact attributes</a> in the <i>Amazon Connect Administrator
+     * Guide</i>. </p> </li> </ul>
      */
     inline UpdateContactAttributesRequest& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
@@ -207,7 +287,17 @@ namespace Model
      * <p>The Amazon Connect attributes. These attributes can be accessed in flows just
      * like any other contact attributes.</p> <p>You can have up to 32,768 UTF-8 bytes
      * across all attributes for a contact. Attribute keys can include only
-     * alphanumeric, dash, and underscore characters.</p>
+     * alphanumeric, dash, and underscore characters.</p> <p>When the attributes for a
+     * contact exceed 32 KB, the contact is routed down the Error branch of the flow.
+     * As a mitigation, consider the following options:</p> <ul> <li> <p>Remove
+     * unnecessary attributes by setting their values to empty.</p> </li> <li> <p>If
+     * the attributes are only used in one flow and don't need to be referred to
+     * outside of that flow (for example, by a Lambda or another flow), then use flow
+     * attributes. This way you aren't needlessly persisting the 32 KB of information
+     * from one flow to another. For more information, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/set-contact-attributes.html">Flow
+     * block: Set contact attributes</a> in the <i>Amazon Connect Administrator
+     * Guide</i>. </p> </li> </ul>
      */
     inline UpdateContactAttributesRequest& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
@@ -215,7 +305,17 @@ namespace Model
      * <p>The Amazon Connect attributes. These attributes can be accessed in flows just
      * like any other contact attributes.</p> <p>You can have up to 32,768 UTF-8 bytes
      * across all attributes for a contact. Attribute keys can include only
-     * alphanumeric, dash, and underscore characters.</p>
+     * alphanumeric, dash, and underscore characters.</p> <p>When the attributes for a
+     * contact exceed 32 KB, the contact is routed down the Error branch of the flow.
+     * As a mitigation, consider the following options:</p> <ul> <li> <p>Remove
+     * unnecessary attributes by setting their values to empty.</p> </li> <li> <p>If
+     * the attributes are only used in one flow and don't need to be referred to
+     * outside of that flow (for example, by a Lambda or another flow), then use flow
+     * attributes. This way you aren't needlessly persisting the 32 KB of information
+     * from one flow to another. For more information, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/set-contact-attributes.html">Flow
+     * block: Set contact attributes</a> in the <i>Amazon Connect Administrator
+     * Guide</i>. </p> </li> </ul>
      */
     inline UpdateContactAttributesRequest& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -223,7 +323,17 @@ namespace Model
      * <p>The Amazon Connect attributes. These attributes can be accessed in flows just
      * like any other contact attributes.</p> <p>You can have up to 32,768 UTF-8 bytes
      * across all attributes for a contact. Attribute keys can include only
-     * alphanumeric, dash, and underscore characters.</p>
+     * alphanumeric, dash, and underscore characters.</p> <p>When the attributes for a
+     * contact exceed 32 KB, the contact is routed down the Error branch of the flow.
+     * As a mitigation, consider the following options:</p> <ul> <li> <p>Remove
+     * unnecessary attributes by setting their values to empty.</p> </li> <li> <p>If
+     * the attributes are only used in one flow and don't need to be referred to
+     * outside of that flow (for example, by a Lambda or another flow), then use flow
+     * attributes. This way you aren't needlessly persisting the 32 KB of information
+     * from one flow to another. For more information, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/set-contact-attributes.html">Flow
+     * block: Set contact attributes</a> in the <i>Amazon Connect Administrator
+     * Guide</i>. </p> </li> </ul>
      */
     inline UpdateContactAttributesRequest& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
@@ -231,7 +341,17 @@ namespace Model
      * <p>The Amazon Connect attributes. These attributes can be accessed in flows just
      * like any other contact attributes.</p> <p>You can have up to 32,768 UTF-8 bytes
      * across all attributes for a contact. Attribute keys can include only
-     * alphanumeric, dash, and underscore characters.</p>
+     * alphanumeric, dash, and underscore characters.</p> <p>When the attributes for a
+     * contact exceed 32 KB, the contact is routed down the Error branch of the flow.
+     * As a mitigation, consider the following options:</p> <ul> <li> <p>Remove
+     * unnecessary attributes by setting their values to empty.</p> </li> <li> <p>If
+     * the attributes are only used in one flow and don't need to be referred to
+     * outside of that flow (for example, by a Lambda or another flow), then use flow
+     * attributes. This way you aren't needlessly persisting the 32 KB of information
+     * from one flow to another. For more information, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/set-contact-attributes.html">Flow
+     * block: Set contact attributes</a> in the <i>Amazon Connect Administrator
+     * Guide</i>. </p> </li> </ul>
      */
     inline UpdateContactAttributesRequest& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
@@ -239,7 +359,17 @@ namespace Model
      * <p>The Amazon Connect attributes. These attributes can be accessed in flows just
      * like any other contact attributes.</p> <p>You can have up to 32,768 UTF-8 bytes
      * across all attributes for a contact. Attribute keys can include only
-     * alphanumeric, dash, and underscore characters.</p>
+     * alphanumeric, dash, and underscore characters.</p> <p>When the attributes for a
+     * contact exceed 32 KB, the contact is routed down the Error branch of the flow.
+     * As a mitigation, consider the following options:</p> <ul> <li> <p>Remove
+     * unnecessary attributes by setting their values to empty.</p> </li> <li> <p>If
+     * the attributes are only used in one flow and don't need to be referred to
+     * outside of that flow (for example, by a Lambda or another flow), then use flow
+     * attributes. This way you aren't needlessly persisting the 32 KB of information
+     * from one flow to another. For more information, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/set-contact-attributes.html">Flow
+     * block: Set contact attributes</a> in the <i>Amazon Connect Administrator
+     * Guide</i>. </p> </li> </ul>
      */
     inline UpdateContactAttributesRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 

@@ -42,53 +42,53 @@ namespace Model
 
 
     /**
-     * <p>The timestamp for when the resource was created.</p>
+     * <p>Timestamp at which the resource was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
 
     /**
-     * <p>The timestamp for when the resource was created.</p>
+     * <p>Timestamp at which the resource was created.</p>
      */
     inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
 
     /**
-     * <p>The timestamp for when the resource was created.</p>
+     * <p>Timestamp at which the resource was created.</p>
      */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
-     * <p>The timestamp for when the resource was created.</p>
+     * <p>Timestamp at which the resource was created.</p>
      */
     inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
 
     /**
-     * <p>The timestamp for when the resource was created.</p>
+     * <p>Timestamp at which the resource was created.</p>
      */
     inline GetFieldResponse& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
 
     /**
-     * <p>The timestamp for when the resource was created.</p>
+     * <p>Timestamp at which the resource was created.</p>
      */
     inline GetFieldResponse& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>Indicates whether the resource has been deleted.</p>
+     * <p>Denotes whether or not the resource has been deleted.</p>
      */
     inline bool GetDeleted() const{ return m_deleted; }
 
     /**
-     * <p>Indicates whether the resource has been deleted.</p>
+     * <p>Denotes whether or not the resource has been deleted.</p>
      */
     inline bool DeletedHasBeenSet() const { return m_deletedHasBeenSet; }
 
     /**
-     * <p>Indicates whether the resource has been deleted.</p>
+     * <p>Denotes whether or not the resource has been deleted.</p>
      */
     inline void SetDeleted(bool value) { m_deletedHasBeenSet = true; m_deleted = value; }
 
     /**
-     * <p>Indicates whether the resource has been deleted.</p>
+     * <p>Denotes whether or not the resource has been deleted.</p>
      */
     inline GetFieldResponse& WithDeleted(bool value) { SetDeleted(value); return *this;}
 
@@ -217,32 +217,32 @@ namespace Model
 
 
     /**
-     * <p>The timestamp for when the resource was created or last modified.</p>
+     * <p>Timestamp at which the resource was created or last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * <p>The timestamp for when the resource was created or last modified.</p>
+     * <p>Timestamp at which the resource was created or last modified.</p>
      */
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
 
     /**
-     * <p>The timestamp for when the resource was created or last modified.</p>
+     * <p>Timestamp at which the resource was created or last modified.</p>
      */
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
 
     /**
-     * <p>The timestamp for when the resource was created or last modified.</p>
+     * <p>Timestamp at which the resource was created or last modified.</p>
      */
     inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
 
     /**
-     * <p>The timestamp for when the resource was created or last modified.</p>
+     * <p>Timestamp at which the resource was created or last modified.</p>
      */
     inline GetFieldResponse& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
 
     /**
-     * <p>The timestamp for when the resource was created or last modified.</p>
+     * <p>Timestamp at which the resource was created or last modified.</p>
      */
     inline GetFieldResponse& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 

@@ -60,37 +60,37 @@ namespace Model
 
 
     /**
-     * <p> The URL where a PDF of the CIS scan report can be downloaded. </p>
+     * <p> The URL where a PDF or CSV of the CIS scan report can be downloaded. </p>
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
 
     /**
-     * <p> The URL where a PDF of the CIS scan report can be downloaded. </p>
+     * <p> The URL where a PDF or CSV of the CIS scan report can be downloaded. </p>
      */
     inline void SetUrl(const Aws::String& value) { m_url = value; }
 
     /**
-     * <p> The URL where a PDF of the CIS scan report can be downloaded. </p>
+     * <p> The URL where a PDF or CSV of the CIS scan report can be downloaded. </p>
      */
     inline void SetUrl(Aws::String&& value) { m_url = std::move(value); }
 
     /**
-     * <p> The URL where a PDF of the CIS scan report can be downloaded. </p>
+     * <p> The URL where a PDF or CSV of the CIS scan report can be downloaded. </p>
      */
     inline void SetUrl(const char* value) { m_url.assign(value); }
 
     /**
-     * <p> The URL where a PDF of the CIS scan report can be downloaded. </p>
+     * <p> The URL where a PDF or CSV of the CIS scan report can be downloaded. </p>
      */
     inline GetCisScanReportResult& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
 
     /**
-     * <p> The URL where a PDF of the CIS scan report can be downloaded. </p>
+     * <p> The URL where a PDF or CSV of the CIS scan report can be downloaded. </p>
      */
     inline GetCisScanReportResult& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
 
     /**
-     * <p> The URL where a PDF of the CIS scan report can be downloaded. </p>
+     * <p> The URL where a PDF or CSV of the CIS scan report can be downloaded. </p>
      */
     inline GetCisScanReportResult& WithUrl(const char* value) { SetUrl(value); return *this;}
 

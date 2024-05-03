@@ -33,42 +33,42 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier of the Cases domain. </p>
+     * <p>The unique identifier of the Cases domain.</p>
      */
     inline const Aws::String& GetDomainId() const{ return m_domainId; }
 
     /**
-     * <p>The unique identifier of the Cases domain. </p>
+     * <p>The unique identifier of the Cases domain.</p>
      */
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier of the Cases domain. </p>
+     * <p>The unique identifier of the Cases domain.</p>
      */
     inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
 
     /**
-     * <p>The unique identifier of the Cases domain. </p>
+     * <p>The unique identifier of the Cases domain.</p>
      */
     inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
 
     /**
-     * <p>The unique identifier of the Cases domain. </p>
+     * <p>The unique identifier of the Cases domain.</p>
      */
     inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
 
     /**
-     * <p>The unique identifier of the Cases domain. </p>
+     * <p>The unique identifier of the Cases domain.</p>
      */
     inline DeleteTemplateRequest& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
 
     /**
-     * <p>The unique identifier of the Cases domain. </p>
+     * <p>The unique identifier of the Cases domain.</p>
      */
     inline DeleteTemplateRequest& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the Cases domain. </p>
+     * <p>The unique identifier of the Cases domain.</p>
      */
     inline DeleteTemplateRequest& WithDomainId(const char* value) { SetDomainId(value); return *this;}
 

@@ -30,9 +30,10 @@
 #include <aws/connect/model/DescribePredefinedAttributeRequest.h>
 #include <aws/connect/model/ActivateEvaluationFormRequest.h>
 #include <aws/connect/model/DeleteViewRequest.h>
+#include <aws/connect/model/BatchGetAttachedFileMetadataRequest.h>
 #include <aws/connect/model/DisassociateApprovedOriginRequest.h>
 #include <aws/connect/model/AssociateDefaultVocabularyRequest.h>
-#include <aws/connect/model/DisassociatePhoneNumberContactFlowRequest.h>
+#include <aws/connect/model/CompleteAttachedFileUploadRequest.h>
 #include <aws/connect/model/AssociateFlowRequest.h>
 #include <aws/connect/model/DeleteHoursOfOperationRequest.h>
 #include <aws/connect/model/DeleteTaskTemplateRequest.h>
@@ -40,6 +41,7 @@
 #include <aws/connect/model/BatchDisassociateAnalyticsDataSetRequest.h>
 #include <aws/connect/model/AssociateTrafficDistributionGroupUserRequest.h>
 #include <aws/connect/model/CreateUseCaseRequest.h>
+#include <aws/connect/model/DeleteAttachedFileRequest.h>
 #include <aws/connect/model/DescribeInstanceRequest.h>
 #include <aws/connect/model/DescribeAgentStatusRequest.h>
 #include <aws/connect/model/DeleteContactFlowModuleRequest.h>
@@ -92,7 +94,6 @@
 #include <aws/connect/model/DeleteVocabularyRequest.h>
 #include <aws/connect/model/DeleteQuickConnectRequest.h>
 #include <aws/connect/model/DescribeContactFlowRequest.h>
-#include <aws/connect/model/DisassociateQueueQuickConnectsRequest.h>
 #include <aws/connect/model/CreateAgentStatusRequest.h>
 #include <aws/connect/model/DisassociateInstanceStorageConfigRequest.h>
 #include <aws/connect/model/DescribeInstanceStorageConfigRequest.h>
@@ -101,7 +102,6 @@
 #include <aws/connect/model/CreateTrafficDistributionGroupRequest.h>
 #include <aws/connect/model/DeletePredefinedAttributeRequest.h>
 #include <aws/connect/model/DescribeUserRequest.h>
-#include <aws/connect/model/DisassociateLexBotRequest.h>
 #include <aws/connect/model/CreateParticipantRequest.h>
 #include <aws/connect/model/DescribeHoursOfOperationRequest.h>
 #include <aws/connect/model/DescribeRoutingProfileRequest.h>
@@ -592,6 +592,44 @@ DeleteViewOutcome ConnectClient::DeleteView(const DeleteViewRequest& request) co
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+BatchGetAttachedFileMetadataOutcome ConnectClient::BatchGetAttachedFileMetadata(const BatchGetAttachedFileMetadataRequest& request) const
+{
+  AWS_OPERATION_GUARD(BatchGetAttachedFileMetadata);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetAttachedFileMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchGetAttachedFileMetadata", "Required field: InstanceId, is not set");
+    return BatchGetAttachedFileMetadataOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.AssociatedResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchGetAttachedFileMetadata", "Required field: AssociatedResourceArn, is not set");
+    return BatchGetAttachedFileMetadataOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssociatedResourceArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, BatchGetAttachedFileMetadata, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, BatchGetAttachedFileMetadata, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".BatchGetAttachedFileMetadata",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<BatchGetAttachedFileMetadataOutcome>(
+    [&]()-> BatchGetAttachedFileMetadataOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchGetAttachedFileMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/attached-files/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+      return BatchGetAttachedFileMetadataOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DisassociateApprovedOriginOutcome ConnectClient::DisassociateApprovedOrigin(const DisassociateApprovedOriginRequest& request) const
 {
   AWS_OPERATION_GUARD(DisassociateApprovedOrigin);
@@ -670,39 +708,44 @@ AssociateDefaultVocabularyOutcome ConnectClient::AssociateDefaultVocabulary(cons
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
-DisassociatePhoneNumberContactFlowOutcome ConnectClient::DisassociatePhoneNumberContactFlow(const DisassociatePhoneNumberContactFlowRequest& request) const
+CompleteAttachedFileUploadOutcome ConnectClient::CompleteAttachedFileUpload(const CompleteAttachedFileUploadRequest& request) const
 {
-  AWS_OPERATION_GUARD(DisassociatePhoneNumberContactFlow);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociatePhoneNumberContactFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.PhoneNumberIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DisassociatePhoneNumberContactFlow", "Required field: PhoneNumberId, is not set");
-    return DisassociatePhoneNumberContactFlowOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PhoneNumberId]", false));
-  }
+  AWS_OPERATION_GUARD(CompleteAttachedFileUpload);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CompleteAttachedFileUpload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
-    AWS_LOGSTREAM_ERROR("DisassociatePhoneNumberContactFlow", "Required field: InstanceId, is not set");
-    return DisassociatePhoneNumberContactFlowOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+    AWS_LOGSTREAM_ERROR("CompleteAttachedFileUpload", "Required field: InstanceId, is not set");
+    return CompleteAttachedFileUploadOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DisassociatePhoneNumberContactFlow, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  if (!request.FileIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CompleteAttachedFileUpload", "Required field: FileId, is not set");
+    return CompleteAttachedFileUploadOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FileId]", false));
+  }
+  if (!request.AssociatedResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CompleteAttachedFileUpload", "Required field: AssociatedResourceArn, is not set");
+    return CompleteAttachedFileUploadOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssociatedResourceArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CompleteAttachedFileUpload, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
   auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DisassociatePhoneNumberContactFlow, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DisassociatePhoneNumberContactFlow",
+  AWS_OPERATION_CHECK_PTR(meter, CompleteAttachedFileUpload, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CompleteAttachedFileUpload",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DisassociatePhoneNumberContactFlowOutcome>(
-    [&]()-> DisassociatePhoneNumberContactFlowOutcome {
+  return TracingUtils::MakeCallWithTiming<CompleteAttachedFileUploadOutcome>(
+    [&]()-> CompleteAttachedFileUploadOutcome {
       auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
           [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
           TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
           *meter,
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociatePhoneNumberContactFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/phone-number/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPhoneNumberId());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/contact-flow");
-      return DisassociatePhoneNumberContactFlowOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CompleteAttachedFileUpload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/attached-files/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFileId());
+      return CompleteAttachedFileUploadOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -958,6 +1001,50 @@ CreateUseCaseOutcome ConnectClient::CreateUseCase(const CreateUseCaseRequest& re
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIntegrationAssociationId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/use-cases");
       return CreateUseCaseOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteAttachedFileOutcome ConnectClient::DeleteAttachedFile(const DeleteAttachedFileRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteAttachedFile);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAttachedFile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAttachedFile", "Required field: InstanceId, is not set");
+    return DeleteAttachedFileOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.FileIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAttachedFile", "Required field: FileId, is not set");
+    return DeleteAttachedFileOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FileId]", false));
+  }
+  if (!request.AssociatedResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAttachedFile", "Required field: AssociatedResourceArn, is not set");
+    return DeleteAttachedFileOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssociatedResourceArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteAttachedFile, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteAttachedFile, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteAttachedFile",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteAttachedFileOutcome>(
+    [&]()-> DeleteAttachedFileOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteAttachedFile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/attached-files/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFileId());
+      return DeleteAttachedFileOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2856,46 +2943,6 @@ DescribeContactFlowOutcome ConnectClient::DescribeContactFlow(const DescribeCont
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
-DisassociateQueueQuickConnectsOutcome ConnectClient::DisassociateQueueQuickConnects(const DisassociateQueueQuickConnectsRequest& request) const
-{
-  AWS_OPERATION_GUARD(DisassociateQueueQuickConnects);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateQueueQuickConnects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.InstanceIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DisassociateQueueQuickConnects", "Required field: InstanceId, is not set");
-    return DisassociateQueueQuickConnectsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
-  }
-  if (!request.QueueIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DisassociateQueueQuickConnects", "Required field: QueueId, is not set");
-    return DisassociateQueueQuickConnectsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DisassociateQueueQuickConnects, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DisassociateQueueQuickConnects, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DisassociateQueueQuickConnects",
-    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
-    smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DisassociateQueueQuickConnectsOutcome>(
-    [&]()-> DisassociateQueueQuickConnectsOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateQueueQuickConnects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/disassociate-quick-connects");
-      return DisassociateQueueQuickConnectsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-    },
-    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
-    *meter,
-    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
 CreateAgentStatusOutcome ConnectClient::CreateAgentStatus(const CreateAgentStatusRequest& request) const
 {
   AWS_OPERATION_GUARD(CreateAgentStatus);
@@ -3191,50 +3238,6 @@ DescribeUserOutcome ConnectClient::DescribeUser(const DescribeUserRequest& reque
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserId());
       return DescribeUserOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-    },
-    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
-    *meter,
-    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-DisassociateLexBotOutcome ConnectClient::DisassociateLexBot(const DisassociateLexBotRequest& request) const
-{
-  AWS_OPERATION_GUARD(DisassociateLexBot);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateLexBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.InstanceIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DisassociateLexBot", "Required field: InstanceId, is not set");
-    return DisassociateLexBotOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
-  }
-  if (!request.BotNameHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DisassociateLexBot", "Required field: BotName, is not set");
-    return DisassociateLexBotOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotName]", false));
-  }
-  if (!request.LexRegionHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DisassociateLexBot", "Required field: LexRegion, is not set");
-    return DisassociateLexBotOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LexRegion]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DisassociateLexBot, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DisassociateLexBot, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DisassociateLexBot",
-    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
-    smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DisassociateLexBotOutcome>(
-    [&]()-> DisassociateLexBotOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateLexBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/instance/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/lex-bot");
-      return DisassociateLexBotOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

@@ -45,37 +45,43 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Lambda function containing the business
-     * logic that is carried out upon invoking the action.</p>
+     * logic that is carried out upon invoking the action or the custom control method
+     * for handling the information elicited from the user.</p>
      */
     inline const ActionGroupExecutor& GetActionGroupExecutor() const{ return m_actionGroupExecutor; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Lambda function containing the business
-     * logic that is carried out upon invoking the action.</p>
+     * logic that is carried out upon invoking the action or the custom control method
+     * for handling the information elicited from the user.</p>
      */
     inline bool ActionGroupExecutorHasBeenSet() const { return m_actionGroupExecutorHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Lambda function containing the business
-     * logic that is carried out upon invoking the action.</p>
+     * logic that is carried out upon invoking the action or the custom control method
+     * for handling the information elicited from the user.</p>
      */
     inline void SetActionGroupExecutor(const ActionGroupExecutor& value) { m_actionGroupExecutorHasBeenSet = true; m_actionGroupExecutor = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Lambda function containing the business
-     * logic that is carried out upon invoking the action.</p>
+     * logic that is carried out upon invoking the action or the custom control method
+     * for handling the information elicited from the user.</p>
      */
     inline void SetActionGroupExecutor(ActionGroupExecutor&& value) { m_actionGroupExecutorHasBeenSet = true; m_actionGroupExecutor = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Lambda function containing the business
-     * logic that is carried out upon invoking the action.</p>
+     * logic that is carried out upon invoking the action or the custom control method
+     * for handling the information elicited from the user.</p>
      */
     inline AgentActionGroup& WithActionGroupExecutor(const ActionGroupExecutor& value) { SetActionGroupExecutor(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Lambda function containing the business
-     * logic that is carried out upon invoking the action.</p>
+     * logic that is carried out upon invoking the action or the custom control method
+     * for handling the information elicited from the user.</p>
      */
     inline AgentActionGroup& WithActionGroupExecutor(ActionGroupExecutor&& value) { SetActionGroupExecutor(std::move(value)); return *this;}
 

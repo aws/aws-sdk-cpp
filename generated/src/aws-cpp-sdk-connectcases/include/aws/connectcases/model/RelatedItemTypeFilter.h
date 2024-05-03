@@ -7,6 +7,7 @@
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
 #include <aws/connectcases/model/CommentFilter.h>
 #include <aws/connectcases/model/ContactFilter.h>
+#include <aws/connectcases/model/FileFilter.h>
 #include <utility>
 
 namespace Aws
@@ -100,6 +101,37 @@ namespace Model
      */
     inline RelatedItemTypeFilter& WithContact(ContactFilter&& value) { SetContact(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A filter for related items of this type of <code>File</code>.</p>
+     */
+    inline const FileFilter& GetFile() const{ return m_file; }
+
+    /**
+     * <p>A filter for related items of this type of <code>File</code>.</p>
+     */
+    inline bool FileHasBeenSet() const { return m_fileHasBeenSet; }
+
+    /**
+     * <p>A filter for related items of this type of <code>File</code>.</p>
+     */
+    inline void SetFile(const FileFilter& value) { m_fileHasBeenSet = true; m_file = value; }
+
+    /**
+     * <p>A filter for related items of this type of <code>File</code>.</p>
+     */
+    inline void SetFile(FileFilter&& value) { m_fileHasBeenSet = true; m_file = std::move(value); }
+
+    /**
+     * <p>A filter for related items of this type of <code>File</code>.</p>
+     */
+    inline RelatedItemTypeFilter& WithFile(const FileFilter& value) { SetFile(value); return *this;}
+
+    /**
+     * <p>A filter for related items of this type of <code>File</code>.</p>
+     */
+    inline RelatedItemTypeFilter& WithFile(FileFilter&& value) { SetFile(std::move(value)); return *this;}
+
   private:
 
     CommentFilter m_comment;
@@ -107,6 +139,9 @@ namespace Model
 
     ContactFilter m_contact;
     bool m_contactHasBeenSet = false;
+
+    FileFilter m_file;
+    bool m_fileHasBeenSet = false;
   };
 
 } // namespace Model

@@ -561,6 +561,33 @@ namespace Connect
         }
 
         /**
+         * <p>Allows you to retrieve metadata about multiple attached files on an
+         * associated resource. Each attached file provided in the input list must be
+         * associated with the input AssociatedResourceArn.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchGetAttachedFileMetadata">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetAttachedFileMetadataOutcome BatchGetAttachedFileMetadata(const Model::BatchGetAttachedFileMetadataRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchGetAttachedFileMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchGetAttachedFileMetadataRequestT = Model::BatchGetAttachedFileMetadataRequest>
+        Model::BatchGetAttachedFileMetadataOutcomeCallable BatchGetAttachedFileMetadataCallable(const BatchGetAttachedFileMetadataRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::BatchGetAttachedFileMetadata, request);
+        }
+
+        /**
+         * An Async wrapper for BatchGetAttachedFileMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchGetAttachedFileMetadataRequestT = Model::BatchGetAttachedFileMetadataRequest>
+        void BatchGetAttachedFileMetadataAsync(const BatchGetAttachedFileMetadataRequestT& request, const BatchGetAttachedFileMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::BatchGetAttachedFileMetadata, request, handler, context);
+        }
+
+        /**
          * <p>Retrieve the flow associations for the given resources.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchGetFlowAssociation">AWS
@@ -669,6 +696,33 @@ namespace Connect
         void ClaimPhoneNumberAsync(const ClaimPhoneNumberRequestT& request, const ClaimPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::ClaimPhoneNumber, request, handler, context);
+        }
+
+        /**
+         * <p>Allows you to confirm that the attached file has been uploaded using the
+         * pre-signed URL provided in the StartAttachedFileUpload API.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CompleteAttachedFileUpload">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CompleteAttachedFileUploadOutcome CompleteAttachedFileUpload(const Model::CompleteAttachedFileUploadRequest& request) const;
+
+        /**
+         * A Callable wrapper for CompleteAttachedFileUpload that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CompleteAttachedFileUploadRequestT = Model::CompleteAttachedFileUploadRequest>
+        Model::CompleteAttachedFileUploadOutcomeCallable CompleteAttachedFileUploadCallable(const CompleteAttachedFileUploadRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::CompleteAttachedFileUpload, request);
+        }
+
+        /**
+         * An Async wrapper for CompleteAttachedFileUpload that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CompleteAttachedFileUploadRequestT = Model::CompleteAttachedFileUploadRequest>
+        void CompleteAttachedFileUploadAsync(const CompleteAttachedFileUploadRequestT& request, const CompleteAttachedFileUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::CompleteAttachedFileUpload, request, handler, context);
         }
 
         /**
@@ -1394,6 +1448,33 @@ namespace Connect
         void DeactivateEvaluationFormAsync(const DeactivateEvaluationFormRequestT& request, const DeactivateEvaluationFormResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::DeactivateEvaluationForm, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes an attached file along with the underlying S3 Object.</p> 
+         * <p>The attached file is <b>permanently deleted</b> if S3 bucket versioning is
+         * not enabled.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteAttachedFile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAttachedFileOutcome DeleteAttachedFile(const Model::DeleteAttachedFileRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAttachedFile that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteAttachedFileRequestT = Model::DeleteAttachedFileRequest>
+        Model::DeleteAttachedFileOutcomeCallable DeleteAttachedFileCallable(const DeleteAttachedFileRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::DeleteAttachedFile, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteAttachedFile that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteAttachedFileRequestT = Model::DeleteAttachedFileRequest>
+        void DeleteAttachedFileAsync(const DeleteAttachedFileRequestT& request, const DeleteAttachedFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::DeleteAttachedFile, request, handler, context);
         }
 
         /**
@@ -3029,6 +3110,34 @@ namespace Connect
         void DismissUserContactAsync(const DismissUserContactRequestT& request, const DismissUserContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::DismissUserContact, request, handler, context);
+        }
+
+        /**
+         * <p>Provides a pre-signed URL for download of an approved attached file. This API
+         * also returns metadata about the attached file. It will only return a downloadURL
+         * if the status of the attached file is <code>APPROVED</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetAttachedFile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAttachedFileOutcome GetAttachedFile(const Model::GetAttachedFileRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetAttachedFile that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAttachedFileRequestT = Model::GetAttachedFileRequest>
+        Model::GetAttachedFileOutcomeCallable GetAttachedFileCallable(const GetAttachedFileRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::GetAttachedFile, request);
+        }
+
+        /**
+         * An Async wrapper for GetAttachedFile that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAttachedFileRequestT = Model::GetAttachedFileRequest>
+        void GetAttachedFileAsync(const GetAttachedFileRequestT& request, const GetAttachedFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::GetAttachedFile, request, handler, context);
         }
 
         /**
@@ -5133,6 +5242,35 @@ namespace Connect
         void SendChatIntegrationEventAsync(const SendChatIntegrationEventRequestT& request, const SendChatIntegrationEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::SendChatIntegrationEvent, request, handler, context);
+        }
+
+        /**
+         * <p>Provides a pre-signed Amazon S3 URL in response for uploading your
+         * content.</p>  <p>You may only use this API to upload attachments to a
+         * <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Connect
+         * Case</a>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartAttachedFileUpload">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartAttachedFileUploadOutcome StartAttachedFileUpload(const Model::StartAttachedFileUploadRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartAttachedFileUpload that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartAttachedFileUploadRequestT = Model::StartAttachedFileUploadRequest>
+        Model::StartAttachedFileUploadOutcomeCallable StartAttachedFileUploadCallable(const StartAttachedFileUploadRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::StartAttachedFileUpload, request);
+        }
+
+        /**
+         * An Async wrapper for StartAttachedFileUpload that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartAttachedFileUploadRequestT = Model::StartAttachedFileUploadRequest>
+        void StartAttachedFileUploadAsync(const StartAttachedFileUploadRequestT& request, const StartAttachedFileUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::StartAttachedFileUpload, request, handler, context);
         }
 
         /**
