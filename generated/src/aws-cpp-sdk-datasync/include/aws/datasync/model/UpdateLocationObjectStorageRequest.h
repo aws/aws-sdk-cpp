@@ -359,74 +359,128 @@ namespace Model
 
 
     /**
-     * <p>Specifies a certificate to authenticate with an object storage system that
-     * uses a private or self-signed certificate authority (CA). You must specify a
-     * Base64-encoded <code>.pem</code> file (for example,
-     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The
-     * certificate can be up to 32768 bytes (before Base64 encoding).</p> <p>To use
-     * this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
-     * <p>Updating the certificate doesn't interfere with tasks that you have in
-     * progress.</p>
+     * <p>Specifies a certificate chain for DataSync to authenticate with your object
+     * storage system if the system uses a private or self-signed certificate authority
+     * (CA). You must specify a single <code>.pem</code> file with a full certificate
+     * chain (for example,
+     * <code>file:///home/user/.ssh/object_storage_certificates.pem</code>).</p> <p>The
+     * certificate chain might include:</p> <ul> <li> <p>The object storage system's
+     * certificate</p> </li> <li> <p>All intermediate certificates (if there are
+     * any)</p> </li> <li> <p>The root certificate of the signing CA</p> </li> </ul>
+     * <p>You can concatenate your certificates into a <code>.pem</code> file (which
+     * can be up to 32768 bytes before base64 encoding). The following example
+     * <code>cat</code> command creates an <code>object_storage_certificates.pem</code>
+     * file that includes three certificates:</p> <p> <code>cat
+     * object_server_certificate.pem intermediate_certificate.pem
+     * ca_root_certificate.pem &gt; object_storage_certificates.pem</code> </p> <p>To
+     * use this parameter, configure <code>ServerProtocol</code> to
+     * <code>HTTPS</code>.</p> <p>Updating this parameter doesn't interfere with tasks
+     * that you have in progress.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetServerCertificate() const{ return m_serverCertificate; }
 
     /**
-     * <p>Specifies a certificate to authenticate with an object storage system that
-     * uses a private or self-signed certificate authority (CA). You must specify a
-     * Base64-encoded <code>.pem</code> file (for example,
-     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The
-     * certificate can be up to 32768 bytes (before Base64 encoding).</p> <p>To use
-     * this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
-     * <p>Updating the certificate doesn't interfere with tasks that you have in
-     * progress.</p>
+     * <p>Specifies a certificate chain for DataSync to authenticate with your object
+     * storage system if the system uses a private or self-signed certificate authority
+     * (CA). You must specify a single <code>.pem</code> file with a full certificate
+     * chain (for example,
+     * <code>file:///home/user/.ssh/object_storage_certificates.pem</code>).</p> <p>The
+     * certificate chain might include:</p> <ul> <li> <p>The object storage system's
+     * certificate</p> </li> <li> <p>All intermediate certificates (if there are
+     * any)</p> </li> <li> <p>The root certificate of the signing CA</p> </li> </ul>
+     * <p>You can concatenate your certificates into a <code>.pem</code> file (which
+     * can be up to 32768 bytes before base64 encoding). The following example
+     * <code>cat</code> command creates an <code>object_storage_certificates.pem</code>
+     * file that includes three certificates:</p> <p> <code>cat
+     * object_server_certificate.pem intermediate_certificate.pem
+     * ca_root_certificate.pem &gt; object_storage_certificates.pem</code> </p> <p>To
+     * use this parameter, configure <code>ServerProtocol</code> to
+     * <code>HTTPS</code>.</p> <p>Updating this parameter doesn't interfere with tasks
+     * that you have in progress.</p>
      */
     inline bool ServerCertificateHasBeenSet() const { return m_serverCertificateHasBeenSet; }
 
     /**
-     * <p>Specifies a certificate to authenticate with an object storage system that
-     * uses a private or self-signed certificate authority (CA). You must specify a
-     * Base64-encoded <code>.pem</code> file (for example,
-     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The
-     * certificate can be up to 32768 bytes (before Base64 encoding).</p> <p>To use
-     * this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
-     * <p>Updating the certificate doesn't interfere with tasks that you have in
-     * progress.</p>
+     * <p>Specifies a certificate chain for DataSync to authenticate with your object
+     * storage system if the system uses a private or self-signed certificate authority
+     * (CA). You must specify a single <code>.pem</code> file with a full certificate
+     * chain (for example,
+     * <code>file:///home/user/.ssh/object_storage_certificates.pem</code>).</p> <p>The
+     * certificate chain might include:</p> <ul> <li> <p>The object storage system's
+     * certificate</p> </li> <li> <p>All intermediate certificates (if there are
+     * any)</p> </li> <li> <p>The root certificate of the signing CA</p> </li> </ul>
+     * <p>You can concatenate your certificates into a <code>.pem</code> file (which
+     * can be up to 32768 bytes before base64 encoding). The following example
+     * <code>cat</code> command creates an <code>object_storage_certificates.pem</code>
+     * file that includes three certificates:</p> <p> <code>cat
+     * object_server_certificate.pem intermediate_certificate.pem
+     * ca_root_certificate.pem &gt; object_storage_certificates.pem</code> </p> <p>To
+     * use this parameter, configure <code>ServerProtocol</code> to
+     * <code>HTTPS</code>.</p> <p>Updating this parameter doesn't interfere with tasks
+     * that you have in progress.</p>
      */
     inline void SetServerCertificate(const Aws::Utils::ByteBuffer& value) { m_serverCertificateHasBeenSet = true; m_serverCertificate = value; }
 
     /**
-     * <p>Specifies a certificate to authenticate with an object storage system that
-     * uses a private or self-signed certificate authority (CA). You must specify a
-     * Base64-encoded <code>.pem</code> file (for example,
-     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The
-     * certificate can be up to 32768 bytes (before Base64 encoding).</p> <p>To use
-     * this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
-     * <p>Updating the certificate doesn't interfere with tasks that you have in
-     * progress.</p>
+     * <p>Specifies a certificate chain for DataSync to authenticate with your object
+     * storage system if the system uses a private or self-signed certificate authority
+     * (CA). You must specify a single <code>.pem</code> file with a full certificate
+     * chain (for example,
+     * <code>file:///home/user/.ssh/object_storage_certificates.pem</code>).</p> <p>The
+     * certificate chain might include:</p> <ul> <li> <p>The object storage system's
+     * certificate</p> </li> <li> <p>All intermediate certificates (if there are
+     * any)</p> </li> <li> <p>The root certificate of the signing CA</p> </li> </ul>
+     * <p>You can concatenate your certificates into a <code>.pem</code> file (which
+     * can be up to 32768 bytes before base64 encoding). The following example
+     * <code>cat</code> command creates an <code>object_storage_certificates.pem</code>
+     * file that includes three certificates:</p> <p> <code>cat
+     * object_server_certificate.pem intermediate_certificate.pem
+     * ca_root_certificate.pem &gt; object_storage_certificates.pem</code> </p> <p>To
+     * use this parameter, configure <code>ServerProtocol</code> to
+     * <code>HTTPS</code>.</p> <p>Updating this parameter doesn't interfere with tasks
+     * that you have in progress.</p>
      */
     inline void SetServerCertificate(Aws::Utils::ByteBuffer&& value) { m_serverCertificateHasBeenSet = true; m_serverCertificate = std::move(value); }
 
     /**
-     * <p>Specifies a certificate to authenticate with an object storage system that
-     * uses a private or self-signed certificate authority (CA). You must specify a
-     * Base64-encoded <code>.pem</code> file (for example,
-     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The
-     * certificate can be up to 32768 bytes (before Base64 encoding).</p> <p>To use
-     * this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
-     * <p>Updating the certificate doesn't interfere with tasks that you have in
-     * progress.</p>
+     * <p>Specifies a certificate chain for DataSync to authenticate with your object
+     * storage system if the system uses a private or self-signed certificate authority
+     * (CA). You must specify a single <code>.pem</code> file with a full certificate
+     * chain (for example,
+     * <code>file:///home/user/.ssh/object_storage_certificates.pem</code>).</p> <p>The
+     * certificate chain might include:</p> <ul> <li> <p>The object storage system's
+     * certificate</p> </li> <li> <p>All intermediate certificates (if there are
+     * any)</p> </li> <li> <p>The root certificate of the signing CA</p> </li> </ul>
+     * <p>You can concatenate your certificates into a <code>.pem</code> file (which
+     * can be up to 32768 bytes before base64 encoding). The following example
+     * <code>cat</code> command creates an <code>object_storage_certificates.pem</code>
+     * file that includes three certificates:</p> <p> <code>cat
+     * object_server_certificate.pem intermediate_certificate.pem
+     * ca_root_certificate.pem &gt; object_storage_certificates.pem</code> </p> <p>To
+     * use this parameter, configure <code>ServerProtocol</code> to
+     * <code>HTTPS</code>.</p> <p>Updating this parameter doesn't interfere with tasks
+     * that you have in progress.</p>
      */
     inline UpdateLocationObjectStorageRequest& WithServerCertificate(const Aws::Utils::ByteBuffer& value) { SetServerCertificate(value); return *this;}
 
     /**
-     * <p>Specifies a certificate to authenticate with an object storage system that
-     * uses a private or self-signed certificate authority (CA). You must specify a
-     * Base64-encoded <code>.pem</code> file (for example,
-     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The
-     * certificate can be up to 32768 bytes (before Base64 encoding).</p> <p>To use
-     * this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
-     * <p>Updating the certificate doesn't interfere with tasks that you have in
-     * progress.</p>
+     * <p>Specifies a certificate chain for DataSync to authenticate with your object
+     * storage system if the system uses a private or self-signed certificate authority
+     * (CA). You must specify a single <code>.pem</code> file with a full certificate
+     * chain (for example,
+     * <code>file:///home/user/.ssh/object_storage_certificates.pem</code>).</p> <p>The
+     * certificate chain might include:</p> <ul> <li> <p>The object storage system's
+     * certificate</p> </li> <li> <p>All intermediate certificates (if there are
+     * any)</p> </li> <li> <p>The root certificate of the signing CA</p> </li> </ul>
+     * <p>You can concatenate your certificates into a <code>.pem</code> file (which
+     * can be up to 32768 bytes before base64 encoding). The following example
+     * <code>cat</code> command creates an <code>object_storage_certificates.pem</code>
+     * file that includes three certificates:</p> <p> <code>cat
+     * object_server_certificate.pem intermediate_certificate.pem
+     * ca_root_certificate.pem &gt; object_storage_certificates.pem</code> </p> <p>To
+     * use this parameter, configure <code>ServerProtocol</code> to
+     * <code>HTTPS</code>.</p> <p>Updating this parameter doesn't interfere with tasks
+     * that you have in progress.</p>
      */
     inline UpdateLocationObjectStorageRequest& WithServerCertificate(Aws::Utils::ByteBuffer&& value) { SetServerCertificate(std::move(value)); return *this;}
 

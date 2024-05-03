@@ -67,69 +67,69 @@ namespace Model
 
 
     /**
-     * <p>The timestamp for when the resource was created.</p>
+     * <p>Timestamp at which the resource was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
 
     /**
-     * <p>The timestamp for when the resource was created.</p>
+     * <p>Timestamp at which the resource was created.</p>
      */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTime = value; }
 
     /**
-     * <p>The timestamp for when the resource was created.</p>
+     * <p>Timestamp at which the resource was created.</p>
      */
     inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTime = std::move(value); }
 
     /**
-     * <p>The timestamp for when the resource was created.</p>
+     * <p>Timestamp at which the resource was created.</p>
      */
     inline GetLayoutResult& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
 
     /**
-     * <p>The timestamp for when the resource was created.</p>
+     * <p>Timestamp at which the resource was created.</p>
      */
     inline GetLayoutResult& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>Indicates whether the resource has been deleted.</p>
+     * <p>Denotes whether or not the resource has been deleted.</p>
      */
     inline bool GetDeleted() const{ return m_deleted; }
 
     /**
-     * <p>Indicates whether the resource has been deleted.</p>
+     * <p>Denotes whether or not the resource has been deleted.</p>
      */
     inline void SetDeleted(bool value) { m_deleted = value; }
 
     /**
-     * <p>Indicates whether the resource has been deleted.</p>
+     * <p>Denotes whether or not the resource has been deleted.</p>
      */
     inline GetLayoutResult& WithDeleted(bool value) { SetDeleted(value); return *this;}
 
 
     /**
-     * <p>The timestamp for when the resource was created or last modified.</p>
+     * <p>Timestamp at which the resource was created or last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * <p>The timestamp for when the resource was created or last modified.</p>
+     * <p>Timestamp at which the resource was created or last modified.</p>
      */
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
 
     /**
-     * <p>The timestamp for when the resource was created or last modified.</p>
+     * <p>Timestamp at which the resource was created or last modified.</p>
      */
     inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
 
     /**
-     * <p>The timestamp for when the resource was created or last modified.</p>
+     * <p>Timestamp at which the resource was created or last modified.</p>
      */
     inline GetLayoutResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
 
     /**
-     * <p>The timestamp for when the resource was created or last modified.</p>
+     * <p>Timestamp at which the resource was created or last modified.</p>
      */
     inline GetLayoutResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 

@@ -1644,11 +1644,8 @@ namespace DataSync
         }
 
         /**
-         * <p>Updates some parameters of an existing object storage location that DataSync
-         * accesses for a transfer. For information about creating a self-managed object
-         * storage location, see <a
-         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating
-         * a location for object storage</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates some parameters of an existing DataSync location for an object
+         * storage system.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationObjectStorage">AWS
          * API Reference</a></p>
          */

@@ -29,6 +29,7 @@ AgentAlias::AgentAlias() :
     m_clientTokenHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_failureReasonsHasBeenSet(false),
     m_routingConfigurationHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
 {
@@ -45,6 +46,7 @@ AgentAlias::AgentAlias(JsonView jsonValue) :
     m_clientTokenHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_failureReasonsHasBeenSet(false),
     m_routingConfigurationHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
 {
@@ -117,6 +119,16 @@ AgentAlias& AgentAlias::operator =(JsonView jsonValue)
     m_description = jsonValue.GetString("description");
 
     m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("failureReasons"))
+  {
+    Aws::Utils::Array<JsonView> failureReasonsJsonList = jsonValue.GetArray("failureReasons");
+    for(unsigned failureReasonsIndex = 0; failureReasonsIndex < failureReasonsJsonList.GetLength(); ++failureReasonsIndex)
+    {
+      m_failureReasons.push_back(failureReasonsJsonList[failureReasonsIndex].AsString());
+    }
+    m_failureReasonsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("routingConfiguration"))
@@ -197,6 +209,17 @@ JsonValue AgentAlias::Jsonize() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_failureReasonsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> failureReasonsJsonList(m_failureReasons.size());
+   for(unsigned failureReasonsIndex = 0; failureReasonsIndex < failureReasonsJsonList.GetLength(); ++failureReasonsIndex)
+   {
+     failureReasonsJsonList[failureReasonsIndex].AsString(m_failureReasons[failureReasonsIndex]);
+   }
+   payload.WithArray("failureReasons", std::move(failureReasonsJsonList));
 
   }
 

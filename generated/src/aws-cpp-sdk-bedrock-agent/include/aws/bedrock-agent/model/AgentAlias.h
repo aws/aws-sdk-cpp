@@ -460,6 +460,61 @@ namespace Model
 
 
     /**
+     * <p>Information on the failure of Provisioned Throughput assigned to an agent
+     * alias.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetFailureReasons() const{ return m_failureReasons; }
+
+    /**
+     * <p>Information on the failure of Provisioned Throughput assigned to an agent
+     * alias.</p>
+     */
+    inline bool FailureReasonsHasBeenSet() const { return m_failureReasonsHasBeenSet; }
+
+    /**
+     * <p>Information on the failure of Provisioned Throughput assigned to an agent
+     * alias.</p>
+     */
+    inline void SetFailureReasons(const Aws::Vector<Aws::String>& value) { m_failureReasonsHasBeenSet = true; m_failureReasons = value; }
+
+    /**
+     * <p>Information on the failure of Provisioned Throughput assigned to an agent
+     * alias.</p>
+     */
+    inline void SetFailureReasons(Aws::Vector<Aws::String>&& value) { m_failureReasonsHasBeenSet = true; m_failureReasons = std::move(value); }
+
+    /**
+     * <p>Information on the failure of Provisioned Throughput assigned to an agent
+     * alias.</p>
+     */
+    inline AgentAlias& WithFailureReasons(const Aws::Vector<Aws::String>& value) { SetFailureReasons(value); return *this;}
+
+    /**
+     * <p>Information on the failure of Provisioned Throughput assigned to an agent
+     * alias.</p>
+     */
+    inline AgentAlias& WithFailureReasons(Aws::Vector<Aws::String>&& value) { SetFailureReasons(std::move(value)); return *this;}
+
+    /**
+     * <p>Information on the failure of Provisioned Throughput assigned to an agent
+     * alias.</p>
+     */
+    inline AgentAlias& AddFailureReasons(const Aws::String& value) { m_failureReasonsHasBeenSet = true; m_failureReasons.push_back(value); return *this; }
+
+    /**
+     * <p>Information on the failure of Provisioned Throughput assigned to an agent
+     * alias.</p>
+     */
+    inline AgentAlias& AddFailureReasons(Aws::String&& value) { m_failureReasonsHasBeenSet = true; m_failureReasons.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Information on the failure of Provisioned Throughput assigned to an agent
+     * alias.</p>
+     */
+    inline AgentAlias& AddFailureReasons(const char* value) { m_failureReasonsHasBeenSet = true; m_failureReasons.push_back(value); return *this; }
+
+
+    /**
      * <p>Contains details about the routing configuration of the alias.</p>
      */
     inline const Aws::Vector<AgentAliasRoutingConfigurationListItem>& GetRoutingConfiguration() const{ return m_routingConfiguration; }
@@ -558,6 +613,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_failureReasons;
+    bool m_failureReasonsHasBeenSet = false;
 
     Aws::Vector<AgentAliasRoutingConfigurationListItem> m_routingConfiguration;
     bool m_routingConfigurationHasBeenSet = false;

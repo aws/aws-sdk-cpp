@@ -78,10 +78,54 @@ namespace Model
      */
     inline AgentAliasRoutingConfigurationListItem& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
 
+
+    /**
+     * <p>Information on the Provisioned Throughput assigned to an agent alias.</p>
+     */
+    inline const Aws::String& GetProvisionedThroughput() const{ return m_provisionedThroughput; }
+
+    /**
+     * <p>Information on the Provisioned Throughput assigned to an agent alias.</p>
+     */
+    inline bool ProvisionedThroughputHasBeenSet() const { return m_provisionedThroughputHasBeenSet; }
+
+    /**
+     * <p>Information on the Provisioned Throughput assigned to an agent alias.</p>
+     */
+    inline void SetProvisionedThroughput(const Aws::String& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = value; }
+
+    /**
+     * <p>Information on the Provisioned Throughput assigned to an agent alias.</p>
+     */
+    inline void SetProvisionedThroughput(Aws::String&& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = std::move(value); }
+
+    /**
+     * <p>Information on the Provisioned Throughput assigned to an agent alias.</p>
+     */
+    inline void SetProvisionedThroughput(const char* value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput.assign(value); }
+
+    /**
+     * <p>Information on the Provisioned Throughput assigned to an agent alias.</p>
+     */
+    inline AgentAliasRoutingConfigurationListItem& WithProvisionedThroughput(const Aws::String& value) { SetProvisionedThroughput(value); return *this;}
+
+    /**
+     * <p>Information on the Provisioned Throughput assigned to an agent alias.</p>
+     */
+    inline AgentAliasRoutingConfigurationListItem& WithProvisionedThroughput(Aws::String&& value) { SetProvisionedThroughput(std::move(value)); return *this;}
+
+    /**
+     * <p>Information on the Provisioned Throughput assigned to an agent alias.</p>
+     */
+    inline AgentAliasRoutingConfigurationListItem& WithProvisionedThroughput(const char* value) { SetProvisionedThroughput(value); return *this;}
+
   private:
 
     Aws::String m_agentVersion;
     bool m_agentVersionHasBeenSet = false;
+
+    Aws::String m_provisionedThroughput;
+    bool m_provisionedThroughputHasBeenSet = false;
   };
 
 } // namespace Model

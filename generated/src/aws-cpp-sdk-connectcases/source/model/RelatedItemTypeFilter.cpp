@@ -20,13 +20,15 @@ namespace Model
 
 RelatedItemTypeFilter::RelatedItemTypeFilter() : 
     m_commentHasBeenSet(false),
-    m_contactHasBeenSet(false)
+    m_contactHasBeenSet(false),
+    m_fileHasBeenSet(false)
 {
 }
 
 RelatedItemTypeFilter::RelatedItemTypeFilter(JsonView jsonValue) : 
     m_commentHasBeenSet(false),
-    m_contactHasBeenSet(false)
+    m_contactHasBeenSet(false),
+    m_fileHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ RelatedItemTypeFilter& RelatedItemTypeFilter::operator =(JsonView jsonValue)
     m_contactHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("file"))
+  {
+    m_file = jsonValue.GetObject("file");
+
+    m_fileHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue RelatedItemTypeFilter::Jsonize() const
   if(m_contactHasBeenSet)
   {
    payload.WithObject("contact", m_contact.Jsonize());
+
+  }
+
+  if(m_fileHasBeenSet)
+  {
+   payload.WithObject("file", m_file.Jsonize());
 
   }
 

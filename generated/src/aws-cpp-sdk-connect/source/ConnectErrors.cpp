@@ -9,6 +9,7 @@
 #include <aws/connect/model/PropertyValidationException.h>
 #include <aws/connect/model/InvalidContactFlowException.h>
 #include <aws/connect/model/ResourceInUseException.h>
+#include <aws/connect/model/InvalidRequestException.h>
 #include <aws/connect/model/InvalidContactFlowModuleException.h>
 
 using namespace Aws::Client;
@@ -36,6 +37,12 @@ template<> AWS_CONNECT_API ResourceInUseException ConnectError::GetModeledError(
 {
   assert(this->GetErrorType() == ConnectErrors::RESOURCE_IN_USE);
   return ResourceInUseException(this->GetJsonPayload().View());
+}
+
+template<> AWS_CONNECT_API InvalidRequestException ConnectError::GetModeledError()
+{
+  assert(this->GetErrorType() == ConnectErrors::INVALID_REQUEST);
+  return InvalidRequestException(this->GetJsonPayload().View());
 }
 
 template<> AWS_CONNECT_API InvalidContactFlowModuleException ConnectError::GetModeledError()

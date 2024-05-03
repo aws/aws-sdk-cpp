@@ -26,7 +26,8 @@ namespace Model
 
   /**
    * <p>Contains details about the Lambda function containing the business logic that
-   * is carried out upon invoking the action.</p><p><h3>See Also:</h3>   <a
+   * is carried out upon invoking the action or the custom control method for
+   * handling the information elicited from the user.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ActionGroupExecutor">AWS
    * API Reference</a></p>
    */

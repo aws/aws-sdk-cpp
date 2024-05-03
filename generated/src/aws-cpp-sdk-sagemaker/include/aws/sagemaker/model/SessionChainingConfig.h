@@ -23,7 +23,12 @@ namespace Model
 
   /**
    * <p>Contains information about attribute-based access control (ABAC) for a
-   * training job. </p><p><h3>See Also:</h3>   <a
+   * training job. The session chaining configuration uses Amazon Security Token
+   * Service (STS) for your training job to request temporary, limited-privilege
+   * credentials to tenants. For more information, see <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-access-training-data.html#model-access-training-data-abac">Attribute-based
+   * access control (ABAC) for multi-tenancy training</a>.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SessionChainingConfig">AWS
    * API Reference</a></p>
    */

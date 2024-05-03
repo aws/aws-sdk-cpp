@@ -33,83 +33,83 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier of the Cases domain. </p>
+     * <p>The unique identifier of the Cases domain.</p>
      */
     inline const Aws::String& GetDomainId() const{ return m_domainId; }
 
     /**
-     * <p>The unique identifier of the Cases domain. </p>
+     * <p>The unique identifier of the Cases domain.</p>
      */
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier of the Cases domain. </p>
+     * <p>The unique identifier of the Cases domain.</p>
      */
     inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
 
     /**
-     * <p>The unique identifier of the Cases domain. </p>
+     * <p>The unique identifier of the Cases domain.</p>
      */
     inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
 
     /**
-     * <p>The unique identifier of the Cases domain. </p>
+     * <p>The unique identifier of the Cases domain.</p>
      */
     inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
 
     /**
-     * <p>The unique identifier of the Cases domain. </p>
+     * <p>The unique identifier of the Cases domain.</p>
      */
     inline DeleteFieldRequest& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
 
     /**
-     * <p>The unique identifier of the Cases domain. </p>
+     * <p>The unique identifier of the Cases domain.</p>
      */
     inline DeleteFieldRequest& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the Cases domain. </p>
+     * <p>The unique identifier of the Cases domain.</p>
      */
     inline DeleteFieldRequest& WithDomainId(const char* value) { SetDomainId(value); return *this;}
 
 
     /**
-     * <p>The unique identifier of a field.</p>
+     * <p>Unique identifier of the field.</p>
      */
     inline const Aws::String& GetFieldId() const{ return m_fieldId; }
 
     /**
-     * <p>The unique identifier of a field.</p>
+     * <p>Unique identifier of the field.</p>
      */
     inline bool FieldIdHasBeenSet() const { return m_fieldIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier of a field.</p>
+     * <p>Unique identifier of the field.</p>
      */
     inline void SetFieldId(const Aws::String& value) { m_fieldIdHasBeenSet = true; m_fieldId = value; }
 
     /**
-     * <p>The unique identifier of a field.</p>
+     * <p>Unique identifier of the field.</p>
      */
     inline void SetFieldId(Aws::String&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::move(value); }
 
     /**
-     * <p>The unique identifier of a field.</p>
+     * <p>Unique identifier of the field.</p>
      */
     inline void SetFieldId(const char* value) { m_fieldIdHasBeenSet = true; m_fieldId.assign(value); }
 
     /**
-     * <p>The unique identifier of a field.</p>
+     * <p>Unique identifier of the field.</p>
      */
     inline DeleteFieldRequest& WithFieldId(const Aws::String& value) { SetFieldId(value); return *this;}
 
     /**
-     * <p>The unique identifier of a field.</p>
+     * <p>Unique identifier of the field.</p>
      */
     inline DeleteFieldRequest& WithFieldId(Aws::String&& value) { SetFieldId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of a field.</p>
+     * <p>Unique identifier of the field.</p>
      */
     inline DeleteFieldRequest& WithFieldId(const char* value) { SetFieldId(value); return *this;}
 

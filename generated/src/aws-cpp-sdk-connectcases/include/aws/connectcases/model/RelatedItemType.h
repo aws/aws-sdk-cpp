@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     Contact,
-    Comment
+    Comment,
+    File
   };
 
 namespace RelatedItemTypeMapper

@@ -7,6 +7,7 @@
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
 #include <aws/connectcases/model/CommentContent.h>
 #include <aws/connectcases/model/ContactContent.h>
+#include <aws/connectcases/model/FileContent.h>
 #include <utility>
 
 namespace Aws
@@ -100,6 +101,37 @@ namespace Model
      */
     inline RelatedItemContent& WithContact(ContactContent&& value) { SetContact(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Represents the content of a File to be returned to agents.</p>
+     */
+    inline const FileContent& GetFile() const{ return m_file; }
+
+    /**
+     * <p>Represents the content of a File to be returned to agents.</p>
+     */
+    inline bool FileHasBeenSet() const { return m_fileHasBeenSet; }
+
+    /**
+     * <p>Represents the content of a File to be returned to agents.</p>
+     */
+    inline void SetFile(const FileContent& value) { m_fileHasBeenSet = true; m_file = value; }
+
+    /**
+     * <p>Represents the content of a File to be returned to agents.</p>
+     */
+    inline void SetFile(FileContent&& value) { m_fileHasBeenSet = true; m_file = std::move(value); }
+
+    /**
+     * <p>Represents the content of a File to be returned to agents.</p>
+     */
+    inline RelatedItemContent& WithFile(const FileContent& value) { SetFile(value); return *this;}
+
+    /**
+     * <p>Represents the content of a File to be returned to agents.</p>
+     */
+    inline RelatedItemContent& WithFile(FileContent&& value) { SetFile(std::move(value)); return *this;}
+
   private:
 
     CommentContent m_comment;
@@ -107,6 +139,9 @@ namespace Model
 
     ContactContent m_contact;
     bool m_contactHasBeenSet = false;
+
+    FileContent m_file;
+    bool m_fileHasBeenSet = false;
   };
 
 } // namespace Model
