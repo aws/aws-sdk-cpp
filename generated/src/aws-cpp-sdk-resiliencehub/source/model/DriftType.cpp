@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int ApplicationCompliance_HASH = HashingUtils::HashString("ApplicationCompliance");
+        static const int AppComponentResiliencyComplianceStatus_HASH = HashingUtils::HashString("AppComponentResiliencyComplianceStatus");
 
 
         DriftType GetDriftTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == ApplicationCompliance_HASH)
           {
             return DriftType::ApplicationCompliance;
+          }
+          else if (hashCode == AppComponentResiliencyComplianceStatus_HASH)
+          {
+            return DriftType::AppComponentResiliencyComplianceStatus;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case DriftType::ApplicationCompliance:
             return "ApplicationCompliance";
+          case DriftType::AppComponentResiliencyComplianceStatus:
+            return "AppComponentResiliencyComplianceStatus";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

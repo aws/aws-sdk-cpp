@@ -47,6 +47,7 @@
 #include <aws/resiliencehub/model/ImportResourcesToDraftAppVersionRequest.h>
 #include <aws/resiliencehub/model/ListAlarmRecommendationsRequest.h>
 #include <aws/resiliencehub/model/ListAppAssessmentComplianceDriftsRequest.h>
+#include <aws/resiliencehub/model/ListAppAssessmentResourceDriftsRequest.h>
 #include <aws/resiliencehub/model/ListAppAssessmentsRequest.h>
 #include <aws/resiliencehub/model/ListAppComponentCompliancesRequest.h>
 #include <aws/resiliencehub/model/ListAppComponentRecommendationsRequest.h>
@@ -918,6 +919,33 @@ ListAppAssessmentComplianceDriftsOutcome ResilienceHubClient::ListAppAssessmentC
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ListAppAssessmentResourceDriftsOutcome ResilienceHubClient::ListAppAssessmentResourceDrifts(const ListAppAssessmentResourceDriftsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListAppAssessmentResourceDrifts);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAppAssessmentResourceDrifts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListAppAssessmentResourceDrifts, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListAppAssessmentResourceDrifts, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListAppAssessmentResourceDrifts",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListAppAssessmentResourceDriftsOutcome>(
+    [&]()-> ListAppAssessmentResourceDriftsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAppAssessmentResourceDrifts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/list-app-assessment-resource-drifts");
+      return ListAppAssessmentResourceDriftsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListAppAssessmentsOutcome ResilienceHubClient::ListAppAssessments(const ListAppAssessmentsRequest& request) const
 {
   AWS_OPERATION_GUARD(ListAppAssessments);
@@ -1165,11 +1193,6 @@ ListRecommendationTemplatesOutcome ResilienceHubClient::ListRecommendationTempla
 {
   AWS_OPERATION_GUARD(ListRecommendationTemplates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRecommendationTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AssessmentArnHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("ListRecommendationTemplates", "Required field: AssessmentArn, is not set");
-    return ListRecommendationTemplatesOutcome(Aws::Client::AWSError<ResilienceHubErrors>(ResilienceHubErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssessmentArn]", false));
-  }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListRecommendationTemplates, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
   auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});

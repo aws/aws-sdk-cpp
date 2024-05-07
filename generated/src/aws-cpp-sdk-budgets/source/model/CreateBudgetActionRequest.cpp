@@ -24,7 +24,8 @@ CreateBudgetActionRequest::CreateBudgetActionRequest() :
     m_executionRoleArnHasBeenSet(false),
     m_approvalModel(ApprovalModel::NOT_SET),
     m_approvalModelHasBeenSet(false),
-    m_subscribersHasBeenSet(false)
+    m_subscribersHasBeenSet(false),
+    m_resourceTagsHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,17 @@ Aws::String CreateBudgetActionRequest::SerializePayload() const
      subscribersJsonList[subscribersIndex].AsObject(m_subscribers[subscribersIndex].Jsonize());
    }
    payload.WithArray("Subscribers", std::move(subscribersJsonList));
+
+  }
+
+  if(m_resourceTagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> resourceTagsJsonList(m_resourceTags.size());
+   for(unsigned resourceTagsIndex = 0; resourceTagsIndex < resourceTagsJsonList.GetLength(); ++resourceTagsIndex)
+   {
+     resourceTagsJsonList[resourceTagsIndex].AsObject(m_resourceTags[resourceTagsIndex].Jsonize());
+   }
+   payload.WithArray("ResourceTags", std::move(resourceTagsJsonList));
 
   }
 

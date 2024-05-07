@@ -10,6 +10,7 @@
 #include <aws/budgets/model/Budget.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/budgets/model/NotificationWithSubscribers.h>
+#include <aws/budgets/model/ResourceTag.h>
 #include <utility>
 
 namespace Aws
@@ -184,6 +185,55 @@ namespace Model
      */
     inline CreateBudgetRequest& AddNotificationsWithSubscribers(NotificationWithSubscribers&& value) { m_notificationsWithSubscribersHasBeenSet = true; m_notificationsWithSubscribers.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>An optional list of tags to associate with the specified budget. Each tag
+     * consists of a key and a value, and each key must be unique for the resource.</p>
+     */
+    inline const Aws::Vector<ResourceTag>& GetResourceTags() const{ return m_resourceTags; }
+
+    /**
+     * <p>An optional list of tags to associate with the specified budget. Each tag
+     * consists of a key and a value, and each key must be unique for the resource.</p>
+     */
+    inline bool ResourceTagsHasBeenSet() const { return m_resourceTagsHasBeenSet; }
+
+    /**
+     * <p>An optional list of tags to associate with the specified budget. Each tag
+     * consists of a key and a value, and each key must be unique for the resource.</p>
+     */
+    inline void SetResourceTags(const Aws::Vector<ResourceTag>& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = value; }
+
+    /**
+     * <p>An optional list of tags to associate with the specified budget. Each tag
+     * consists of a key and a value, and each key must be unique for the resource.</p>
+     */
+    inline void SetResourceTags(Aws::Vector<ResourceTag>&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::move(value); }
+
+    /**
+     * <p>An optional list of tags to associate with the specified budget. Each tag
+     * consists of a key and a value, and each key must be unique for the resource.</p>
+     */
+    inline CreateBudgetRequest& WithResourceTags(const Aws::Vector<ResourceTag>& value) { SetResourceTags(value); return *this;}
+
+    /**
+     * <p>An optional list of tags to associate with the specified budget. Each tag
+     * consists of a key and a value, and each key must be unique for the resource.</p>
+     */
+    inline CreateBudgetRequest& WithResourceTags(Aws::Vector<ResourceTag>&& value) { SetResourceTags(std::move(value)); return *this;}
+
+    /**
+     * <p>An optional list of tags to associate with the specified budget. Each tag
+     * consists of a key and a value, and each key must be unique for the resource.</p>
+     */
+    inline CreateBudgetRequest& AddResourceTags(const ResourceTag& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(value); return *this; }
+
+    /**
+     * <p>An optional list of tags to associate with the specified budget. Each tag
+     * consists of a key and a value, and each key must be unique for the resource.</p>
+     */
+    inline CreateBudgetRequest& AddResourceTags(ResourceTag&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_accountId;
@@ -194,6 +244,9 @@ namespace Model
 
     Aws::Vector<NotificationWithSubscribers> m_notificationsWithSubscribers;
     bool m_notificationsWithSubscribersHasBeenSet = false;
+
+    Aws::Vector<ResourceTag> m_resourceTags;
+    bool m_resourceTagsHasBeenSet = false;
   };
 
 } // namespace Model

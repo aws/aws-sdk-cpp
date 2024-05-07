@@ -79,8 +79,10 @@ namespace Route53Profiles
 
         /**
          * <p> Associates a Route 53 Profiles profile with a VPC. A VPC can have only one
-         * Profile associated with it, but a Profile can be associated with up to 5000
-         * VPCs. </p><p><h3>See Also:</h3>   <a
+         * Profile associated with it, but a Profile can be associated with 1000 of VPCs
+         * (and you can request a higher quota). For more information, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities">https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities</a>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/AssociateProfile">AWS
          * API Reference</a></p>
          */

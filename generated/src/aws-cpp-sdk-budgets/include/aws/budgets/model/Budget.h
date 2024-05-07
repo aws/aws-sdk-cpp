@@ -545,8 +545,8 @@ namespace Model
 
     /**
      * <p>The cost filters, such as <code>Region</code>, <code>Service</code>,
-     * <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>,
-     * that are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
+     * <code>LinkedAccount</code>, <code>Tag</code>, or <code>CostCategory</code>, that
+     * are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
      * following services as a <code>Service</code> filter for RI budgets:</p> <ul>
      * <li> <p>Amazon EC2</p> </li> <li> <p>Amazon Redshift</p> </li> <li> <p>Amazon
      * Relational Database Service</p> </li> <li> <p>Amazon ElastiCache</p> </li> <li>
@@ -556,8 +556,8 @@ namespace Model
 
     /**
      * <p>The cost filters, such as <code>Region</code>, <code>Service</code>,
-     * <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>,
-     * that are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
+     * <code>LinkedAccount</code>, <code>Tag</code>, or <code>CostCategory</code>, that
+     * are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
      * following services as a <code>Service</code> filter for RI budgets:</p> <ul>
      * <li> <p>Amazon EC2</p> </li> <li> <p>Amazon Redshift</p> </li> <li> <p>Amazon
      * Relational Database Service</p> </li> <li> <p>Amazon ElastiCache</p> </li> <li>
@@ -567,8 +567,8 @@ namespace Model
 
     /**
      * <p>The cost filters, such as <code>Region</code>, <code>Service</code>,
-     * <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>,
-     * that are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
+     * <code>LinkedAccount</code>, <code>Tag</code>, or <code>CostCategory</code>, that
+     * are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
      * following services as a <code>Service</code> filter for RI budgets:</p> <ul>
      * <li> <p>Amazon EC2</p> </li> <li> <p>Amazon Redshift</p> </li> <li> <p>Amazon
      * Relational Database Service</p> </li> <li> <p>Amazon ElastiCache</p> </li> <li>
@@ -578,8 +578,8 @@ namespace Model
 
     /**
      * <p>The cost filters, such as <code>Region</code>, <code>Service</code>,
-     * <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>,
-     * that are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
+     * <code>LinkedAccount</code>, <code>Tag</code>, or <code>CostCategory</code>, that
+     * are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
      * following services as a <code>Service</code> filter for RI budgets:</p> <ul>
      * <li> <p>Amazon EC2</p> </li> <li> <p>Amazon Redshift</p> </li> <li> <p>Amazon
      * Relational Database Service</p> </li> <li> <p>Amazon ElastiCache</p> </li> <li>
@@ -589,8 +589,8 @@ namespace Model
 
     /**
      * <p>The cost filters, such as <code>Region</code>, <code>Service</code>,
-     * <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>,
-     * that are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
+     * <code>LinkedAccount</code>, <code>Tag</code>, or <code>CostCategory</code>, that
+     * are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
      * following services as a <code>Service</code> filter for RI budgets:</p> <ul>
      * <li> <p>Amazon EC2</p> </li> <li> <p>Amazon Redshift</p> </li> <li> <p>Amazon
      * Relational Database Service</p> </li> <li> <p>Amazon ElastiCache</p> </li> <li>
@@ -600,8 +600,8 @@ namespace Model
 
     /**
      * <p>The cost filters, such as <code>Region</code>, <code>Service</code>,
-     * <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>,
-     * that are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
+     * <code>LinkedAccount</code>, <code>Tag</code>, or <code>CostCategory</code>, that
+     * are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
      * following services as a <code>Service</code> filter for RI budgets:</p> <ul>
      * <li> <p>Amazon EC2</p> </li> <li> <p>Amazon Redshift</p> </li> <li> <p>Amazon
      * Relational Database Service</p> </li> <li> <p>Amazon ElastiCache</p> </li> <li>
@@ -611,8 +611,8 @@ namespace Model
 
     /**
      * <p>The cost filters, such as <code>Region</code>, <code>Service</code>,
-     * <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>,
-     * that are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
+     * <code>LinkedAccount</code>, <code>Tag</code>, or <code>CostCategory</code>, that
+     * are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
      * following services as a <code>Service</code> filter for RI budgets:</p> <ul>
      * <li> <p>Amazon EC2</p> </li> <li> <p>Amazon Redshift</p> </li> <li> <p>Amazon
      * Relational Database Service</p> </li> <li> <p>Amazon ElastiCache</p> </li> <li>
@@ -622,8 +622,8 @@ namespace Model
 
     /**
      * <p>The cost filters, such as <code>Region</code>, <code>Service</code>,
-     * <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>,
-     * that are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
+     * <code>LinkedAccount</code>, <code>Tag</code>, or <code>CostCategory</code>, that
+     * are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
      * following services as a <code>Service</code> filter for RI budgets:</p> <ul>
      * <li> <p>Amazon EC2</p> </li> <li> <p>Amazon Redshift</p> </li> <li> <p>Amazon
      * Relational Database Service</p> </li> <li> <p>Amazon ElastiCache</p> </li> <li>
@@ -633,8 +633,8 @@ namespace Model
 
     /**
      * <p>The cost filters, such as <code>Region</code>, <code>Service</code>,
-     * <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>,
-     * that are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
+     * <code>LinkedAccount</code>, <code>Tag</code>, or <code>CostCategory</code>, that
+     * are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
      * following services as a <code>Service</code> filter for RI budgets:</p> <ul>
      * <li> <p>Amazon EC2</p> </li> <li> <p>Amazon Redshift</p> </li> <li> <p>Amazon
      * Relational Database Service</p> </li> <li> <p>Amazon ElastiCache</p> </li> <li>
@@ -644,8 +644,8 @@ namespace Model
 
     /**
      * <p>The cost filters, such as <code>Region</code>, <code>Service</code>,
-     * <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>,
-     * that are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
+     * <code>LinkedAccount</code>, <code>Tag</code>, or <code>CostCategory</code>, that
+     * are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
      * following services as a <code>Service</code> filter for RI budgets:</p> <ul>
      * <li> <p>Amazon EC2</p> </li> <li> <p>Amazon Redshift</p> </li> <li> <p>Amazon
      * Relational Database Service</p> </li> <li> <p>Amazon ElastiCache</p> </li> <li>
@@ -655,8 +655,8 @@ namespace Model
 
     /**
      * <p>The cost filters, such as <code>Region</code>, <code>Service</code>,
-     * <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>,
-     * that are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
+     * <code>LinkedAccount</code>, <code>Tag</code>, or <code>CostCategory</code>, that
+     * are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
      * following services as a <code>Service</code> filter for RI budgets:</p> <ul>
      * <li> <p>Amazon EC2</p> </li> <li> <p>Amazon Redshift</p> </li> <li> <p>Amazon
      * Relational Database Service</p> </li> <li> <p>Amazon ElastiCache</p> </li> <li>
@@ -666,8 +666,8 @@ namespace Model
 
     /**
      * <p>The cost filters, such as <code>Region</code>, <code>Service</code>,
-     * <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>,
-     * that are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
+     * <code>LinkedAccount</code>, <code>Tag</code>, or <code>CostCategory</code>, that
+     * are applied to a budget.</p> <p>Amazon Web Services Budgets supports the
      * following services as a <code>Service</code> filter for RI budgets:</p> <ul>
      * <li> <p>Amazon EC2</p> </li> <li> <p>Amazon Redshift</p> </li> <li> <p>Amazon
      * Relational Database Service</p> </li> <li> <p>Amazon ElastiCache</p> </li> <li>

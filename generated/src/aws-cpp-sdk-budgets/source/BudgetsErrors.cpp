@@ -19,6 +19,7 @@ namespace BudgetsErrorMapper
 {
 
 static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalErrorException");
+static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
 static const int RESOURCE_LOCKED_HASH = HashingUtils::HashString("ResourceLockedException");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
@@ -35,6 +36,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == INTERNAL_ERROR_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(BudgetsErrors::INTERNAL_ERROR), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BudgetsErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NOT_FOUND_HASH)
   {

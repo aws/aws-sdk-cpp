@@ -16,7 +16,8 @@ namespace Model
   enum class DriftType
   {
     NOT_SET,
-    ApplicationCompliance
+    ApplicationCompliance,
+    AppComponentResiliencyComplianceStatus
   };
 
 namespace DriftTypeMapper
