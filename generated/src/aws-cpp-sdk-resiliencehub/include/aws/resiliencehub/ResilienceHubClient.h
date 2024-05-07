@@ -822,6 +822,32 @@ namespace ResilienceHub
         }
 
         /**
+         * <p>Indicates the list of resource drifts that were detected while running an
+         * assessment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppAssessmentResourceDrifts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAppAssessmentResourceDriftsOutcome ListAppAssessmentResourceDrifts(const Model::ListAppAssessmentResourceDriftsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAppAssessmentResourceDrifts that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAppAssessmentResourceDriftsRequestT = Model::ListAppAssessmentResourceDriftsRequest>
+        Model::ListAppAssessmentResourceDriftsOutcomeCallable ListAppAssessmentResourceDriftsCallable(const ListAppAssessmentResourceDriftsRequestT& request) const
+        {
+            return SubmitCallable(&ResilienceHubClient::ListAppAssessmentResourceDrifts, request);
+        }
+
+        /**
+         * An Async wrapper for ListAppAssessmentResourceDrifts that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAppAssessmentResourceDriftsRequestT = Model::ListAppAssessmentResourceDriftsRequest>
+        void ListAppAssessmentResourceDriftsAsync(const ListAppAssessmentResourceDriftsRequestT& request, const ListAppAssessmentResourceDriftsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ResilienceHubClient::ListAppAssessmentResourceDrifts, request, handler, context);
+        }
+
+        /**
          * <p>Lists the assessments for an Resilience Hub application. You can use request
          * parameters to refine the results for the response object.</p><p><h3>See
          * Also:</h3>   <a

@@ -16,7 +16,9 @@ namespace Model
   enum class DifferenceType
   {
     NOT_SET,
-    NotEqual
+    NotEqual,
+    Added,
+    Removed
   };
 
 namespace DifferenceTypeMapper

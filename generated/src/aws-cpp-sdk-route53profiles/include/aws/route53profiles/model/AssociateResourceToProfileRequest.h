@@ -156,50 +156,66 @@ namespace Model
 
 
     /**
-     * <p> If you are adding a DNS Firewall rule group, include also a priority in this
-     * format: </p> <p> <code>Key=FirewallRuleGroupPriority,Value=100</code> </p>
+     * <p> If you are adding a DNS Firewall rule group, include also a priority. The
+     * priority indicates the processing order for the rule groups, starting with the
+     * priority assinged the lowest value. </p> <p>The allowed values for priority are
+     * between 100 and 9900.</p>
      */
     inline const Aws::String& GetResourceProperties() const{ return m_resourceProperties; }
 
     /**
-     * <p> If you are adding a DNS Firewall rule group, include also a priority in this
-     * format: </p> <p> <code>Key=FirewallRuleGroupPriority,Value=100</code> </p>
+     * <p> If you are adding a DNS Firewall rule group, include also a priority. The
+     * priority indicates the processing order for the rule groups, starting with the
+     * priority assinged the lowest value. </p> <p>The allowed values for priority are
+     * between 100 and 9900.</p>
      */
     inline bool ResourcePropertiesHasBeenSet() const { return m_resourcePropertiesHasBeenSet; }
 
     /**
-     * <p> If you are adding a DNS Firewall rule group, include also a priority in this
-     * format: </p> <p> <code>Key=FirewallRuleGroupPriority,Value=100</code> </p>
+     * <p> If you are adding a DNS Firewall rule group, include also a priority. The
+     * priority indicates the processing order for the rule groups, starting with the
+     * priority assinged the lowest value. </p> <p>The allowed values for priority are
+     * between 100 and 9900.</p>
      */
     inline void SetResourceProperties(const Aws::String& value) { m_resourcePropertiesHasBeenSet = true; m_resourceProperties = value; }
 
     /**
-     * <p> If you are adding a DNS Firewall rule group, include also a priority in this
-     * format: </p> <p> <code>Key=FirewallRuleGroupPriority,Value=100</code> </p>
+     * <p> If you are adding a DNS Firewall rule group, include also a priority. The
+     * priority indicates the processing order for the rule groups, starting with the
+     * priority assinged the lowest value. </p> <p>The allowed values for priority are
+     * between 100 and 9900.</p>
      */
     inline void SetResourceProperties(Aws::String&& value) { m_resourcePropertiesHasBeenSet = true; m_resourceProperties = std::move(value); }
 
     /**
-     * <p> If you are adding a DNS Firewall rule group, include also a priority in this
-     * format: </p> <p> <code>Key=FirewallRuleGroupPriority,Value=100</code> </p>
+     * <p> If you are adding a DNS Firewall rule group, include also a priority. The
+     * priority indicates the processing order for the rule groups, starting with the
+     * priority assinged the lowest value. </p> <p>The allowed values for priority are
+     * between 100 and 9900.</p>
      */
     inline void SetResourceProperties(const char* value) { m_resourcePropertiesHasBeenSet = true; m_resourceProperties.assign(value); }
 
     /**
-     * <p> If you are adding a DNS Firewall rule group, include also a priority in this
-     * format: </p> <p> <code>Key=FirewallRuleGroupPriority,Value=100</code> </p>
+     * <p> If you are adding a DNS Firewall rule group, include also a priority. The
+     * priority indicates the processing order for the rule groups, starting with the
+     * priority assinged the lowest value. </p> <p>The allowed values for priority are
+     * between 100 and 9900.</p>
      */
     inline AssociateResourceToProfileRequest& WithResourceProperties(const Aws::String& value) { SetResourceProperties(value); return *this;}
 
     /**
-     * <p> If you are adding a DNS Firewall rule group, include also a priority in this
-     * format: </p> <p> <code>Key=FirewallRuleGroupPriority,Value=100</code> </p>
+     * <p> If you are adding a DNS Firewall rule group, include also a priority. The
+     * priority indicates the processing order for the rule groups, starting with the
+     * priority assinged the lowest value. </p> <p>The allowed values for priority are
+     * between 100 and 9900.</p>
      */
     inline AssociateResourceToProfileRequest& WithResourceProperties(Aws::String&& value) { SetResourceProperties(std::move(value)); return *this;}
 
     /**
-     * <p> If you are adding a DNS Firewall rule group, include also a priority in this
-     * format: </p> <p> <code>Key=FirewallRuleGroupPriority,Value=100</code> </p>
+     * <p> If you are adding a DNS Firewall rule group, include also a priority. The
+     * priority indicates the processing order for the rule groups, starting with the
+     * priority assinged the lowest value. </p> <p>The allowed values for priority are
+     * between 100 and 9900.</p>
      */
     inline AssociateResourceToProfileRequest& WithResourceProperties(const char* value) { SetResourceProperties(value); return *this;}
 

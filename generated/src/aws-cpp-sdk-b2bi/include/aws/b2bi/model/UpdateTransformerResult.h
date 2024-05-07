@@ -183,44 +183,44 @@ namespace Model
 
 
     /**
-     * <p>Returns the name of the mapping template for the transformer. This template
-     * is used to convert the input document into the correct set of objects.</p>
+     * <p>Returns the mapping template for the transformer. This template is used to
+     * map the parsed EDI file using JSONata or XSLT.</p>
      */
     inline const Aws::String& GetMappingTemplate() const{ return m_mappingTemplate; }
 
     /**
-     * <p>Returns the name of the mapping template for the transformer. This template
-     * is used to convert the input document into the correct set of objects.</p>
+     * <p>Returns the mapping template for the transformer. This template is used to
+     * map the parsed EDI file using JSONata or XSLT.</p>
      */
     inline void SetMappingTemplate(const Aws::String& value) { m_mappingTemplate = value; }
 
     /**
-     * <p>Returns the name of the mapping template for the transformer. This template
-     * is used to convert the input document into the correct set of objects.</p>
+     * <p>Returns the mapping template for the transformer. This template is used to
+     * map the parsed EDI file using JSONata or XSLT.</p>
      */
     inline void SetMappingTemplate(Aws::String&& value) { m_mappingTemplate = std::move(value); }
 
     /**
-     * <p>Returns the name of the mapping template for the transformer. This template
-     * is used to convert the input document into the correct set of objects.</p>
+     * <p>Returns the mapping template for the transformer. This template is used to
+     * map the parsed EDI file using JSONata or XSLT.</p>
      */
     inline void SetMappingTemplate(const char* value) { m_mappingTemplate.assign(value); }
 
     /**
-     * <p>Returns the name of the mapping template for the transformer. This template
-     * is used to convert the input document into the correct set of objects.</p>
+     * <p>Returns the mapping template for the transformer. This template is used to
+     * map the parsed EDI file using JSONata or XSLT.</p>
      */
     inline UpdateTransformerResult& WithMappingTemplate(const Aws::String& value) { SetMappingTemplate(value); return *this;}
 
     /**
-     * <p>Returns the name of the mapping template for the transformer. This template
-     * is used to convert the input document into the correct set of objects.</p>
+     * <p>Returns the mapping template for the transformer. This template is used to
+     * map the parsed EDI file using JSONata or XSLT.</p>
      */
     inline UpdateTransformerResult& WithMappingTemplate(Aws::String&& value) { SetMappingTemplate(std::move(value)); return *this;}
 
     /**
-     * <p>Returns the name of the mapping template for the transformer. This template
-     * is used to convert the input document into the correct set of objects.</p>
+     * <p>Returns the mapping template for the transformer. This template is used to
+     * map the parsed EDI file using JSONata or XSLT.</p>
      */
     inline UpdateTransformerResult& WithMappingTemplate(const char* value) { SetMappingTemplate(value); return *this;}
 

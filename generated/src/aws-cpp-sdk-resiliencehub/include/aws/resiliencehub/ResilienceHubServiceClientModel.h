@@ -44,6 +44,7 @@
 #include <aws/resiliencehub/model/ImportResourcesToDraftAppVersionResult.h>
 #include <aws/resiliencehub/model/ListAlarmRecommendationsResult.h>
 #include <aws/resiliencehub/model/ListAppAssessmentComplianceDriftsResult.h>
+#include <aws/resiliencehub/model/ListAppAssessmentResourceDriftsResult.h>
 #include <aws/resiliencehub/model/ListAppAssessmentsResult.h>
 #include <aws/resiliencehub/model/ListAppComponentCompliancesResult.h>
 #include <aws/resiliencehub/model/ListAppComponentRecommendationsResult.h>
@@ -138,6 +139,7 @@ namespace Aws
       class ImportResourcesToDraftAppVersionRequest;
       class ListAlarmRecommendationsRequest;
       class ListAppAssessmentComplianceDriftsRequest;
+      class ListAppAssessmentResourceDriftsRequest;
       class ListAppAssessmentsRequest;
       class ListAppComponentCompliancesRequest;
       class ListAppComponentRecommendationsRequest;
@@ -195,6 +197,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ImportResourcesToDraftAppVersionResult, ResilienceHubError> ImportResourcesToDraftAppVersionOutcome;
       typedef Aws::Utils::Outcome<ListAlarmRecommendationsResult, ResilienceHubError> ListAlarmRecommendationsOutcome;
       typedef Aws::Utils::Outcome<ListAppAssessmentComplianceDriftsResult, ResilienceHubError> ListAppAssessmentComplianceDriftsOutcome;
+      typedef Aws::Utils::Outcome<ListAppAssessmentResourceDriftsResult, ResilienceHubError> ListAppAssessmentResourceDriftsOutcome;
       typedef Aws::Utils::Outcome<ListAppAssessmentsResult, ResilienceHubError> ListAppAssessmentsOutcome;
       typedef Aws::Utils::Outcome<ListAppComponentCompliancesResult, ResilienceHubError> ListAppComponentCompliancesOutcome;
       typedef Aws::Utils::Outcome<ListAppComponentRecommendationsResult, ResilienceHubError> ListAppComponentRecommendationsOutcome;
@@ -252,6 +255,7 @@ namespace Aws
       typedef std::future<ImportResourcesToDraftAppVersionOutcome> ImportResourcesToDraftAppVersionOutcomeCallable;
       typedef std::future<ListAlarmRecommendationsOutcome> ListAlarmRecommendationsOutcomeCallable;
       typedef std::future<ListAppAssessmentComplianceDriftsOutcome> ListAppAssessmentComplianceDriftsOutcomeCallable;
+      typedef std::future<ListAppAssessmentResourceDriftsOutcome> ListAppAssessmentResourceDriftsOutcomeCallable;
       typedef std::future<ListAppAssessmentsOutcome> ListAppAssessmentsOutcomeCallable;
       typedef std::future<ListAppComponentCompliancesOutcome> ListAppComponentCompliancesOutcomeCallable;
       typedef std::future<ListAppComponentRecommendationsOutcome> ListAppComponentRecommendationsOutcomeCallable;
@@ -312,6 +316,7 @@ namespace Aws
     typedef std::function<void(const ResilienceHubClient*, const Model::ImportResourcesToDraftAppVersionRequest&, const Model::ImportResourcesToDraftAppVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportResourcesToDraftAppVersionResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::ListAlarmRecommendationsRequest&, const Model::ListAlarmRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAlarmRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::ListAppAssessmentComplianceDriftsRequest&, const Model::ListAppAssessmentComplianceDriftsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppAssessmentComplianceDriftsResponseReceivedHandler;
+    typedef std::function<void(const ResilienceHubClient*, const Model::ListAppAssessmentResourceDriftsRequest&, const Model::ListAppAssessmentResourceDriftsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppAssessmentResourceDriftsResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::ListAppAssessmentsRequest&, const Model::ListAppAssessmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppAssessmentsResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::ListAppComponentCompliancesRequest&, const Model::ListAppComponentCompliancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppComponentCompliancesResponseReceivedHandler;
     typedef std::function<void(const ResilienceHubClient*, const Model::ListAppComponentRecommendationsRequest&, const Model::ListAppComponentRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppComponentRecommendationsResponseReceivedHandler;

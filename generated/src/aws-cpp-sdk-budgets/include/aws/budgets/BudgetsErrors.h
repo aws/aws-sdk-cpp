@@ -54,7 +54,8 @@ enum class BudgetsErrors
   INVALID_NEXT_TOKEN,
   INVALID_PARAMETER,
   NOT_FOUND,
-  RESOURCE_LOCKED
+  RESOURCE_LOCKED,
+  SERVICE_QUOTA_EXCEEDED
 };
 
 class AWS_BUDGETS_API BudgetsError : public Aws::Client::AWSError<BudgetsErrors>
