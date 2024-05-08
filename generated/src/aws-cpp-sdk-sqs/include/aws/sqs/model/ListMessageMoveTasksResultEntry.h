@@ -318,25 +318,29 @@ namespace Model
 
     /**
      * <p>The number of messages to be moved from the source queue. This number is
-     * obtained at the time of starting the message movement task.</p>
+     * obtained at the time of starting the message movement task and is only included
+     * after the message movement task is selected to start.</p>
      */
     inline long long GetApproximateNumberOfMessagesToMove() const{ return m_approximateNumberOfMessagesToMove; }
 
     /**
      * <p>The number of messages to be moved from the source queue. This number is
-     * obtained at the time of starting the message movement task.</p>
+     * obtained at the time of starting the message movement task and is only included
+     * after the message movement task is selected to start.</p>
      */
     inline bool ApproximateNumberOfMessagesToMoveHasBeenSet() const { return m_approximateNumberOfMessagesToMoveHasBeenSet; }
 
     /**
      * <p>The number of messages to be moved from the source queue. This number is
-     * obtained at the time of starting the message movement task.</p>
+     * obtained at the time of starting the message movement task and is only included
+     * after the message movement task is selected to start.</p>
      */
     inline void SetApproximateNumberOfMessagesToMove(long long value) { m_approximateNumberOfMessagesToMoveHasBeenSet = true; m_approximateNumberOfMessagesToMove = value; }
 
     /**
      * <p>The number of messages to be moved from the source queue. This number is
-     * obtained at the time of starting the message movement task.</p>
+     * obtained at the time of starting the message movement task and is only included
+     * after the message movement task is selected to start.</p>
      */
     inline ListMessageMoveTasksResultEntry& WithApproximateNumberOfMessagesToMove(long long value) { SetApproximateNumberOfMessagesToMove(value); return *this;}
 

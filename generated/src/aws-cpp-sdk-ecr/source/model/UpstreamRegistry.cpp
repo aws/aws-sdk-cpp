@@ -26,6 +26,7 @@ namespace Aws
         static const int docker_hub_HASH = HashingUtils::HashString("docker-hub");
         static const int github_container_registry_HASH = HashingUtils::HashString("github-container-registry");
         static const int azure_container_registry_HASH = HashingUtils::HashString("azure-container-registry");
+        static const int gitlab_container_registry_HASH = HashingUtils::HashString("gitlab-container-registry");
 
 
         UpstreamRegistry GetUpstreamRegistryForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return UpstreamRegistry::azure_container_registry;
           }
+          else if (hashCode == gitlab_container_registry_HASH)
+          {
+            return UpstreamRegistry::gitlab_container_registry;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -83,6 +88,8 @@ namespace Aws
             return "github-container-registry";
           case UpstreamRegistry::azure_container_registry:
             return "azure-container-registry";
+          case UpstreamRegistry::gitlab_container_registry:
+            return "gitlab-container-registry";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -40,50 +40,50 @@ namespace Model
 
 
     /**
-     * <p>Specifies the engine (<code>standard</code>, <code>neural</code> or
-     * <code>long-form</code>) for Amazon Polly to use when processing input text for
-     * speech synthesis. Using a voice that is not supported for the engine selected
-     * will result in an error.</p>
+     * <p>Specifies the engine (<code>standard</code>, <code>neural</code>,
+     * <code>long-form</code> or <code>generative</code>) for Amazon Polly to use when
+     * processing input text for speech synthesis. Using a voice that is not supported
+     * for the engine selected will result in an error.</p>
      */
     inline const Engine& GetEngine() const{ return m_engine; }
 
     /**
-     * <p>Specifies the engine (<code>standard</code>, <code>neural</code> or
-     * <code>long-form</code>) for Amazon Polly to use when processing input text for
-     * speech synthesis. Using a voice that is not supported for the engine selected
-     * will result in an error.</p>
+     * <p>Specifies the engine (<code>standard</code>, <code>neural</code>,
+     * <code>long-form</code> or <code>generative</code>) for Amazon Polly to use when
+     * processing input text for speech synthesis. Using a voice that is not supported
+     * for the engine selected will result in an error.</p>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
-     * <p>Specifies the engine (<code>standard</code>, <code>neural</code> or
-     * <code>long-form</code>) for Amazon Polly to use when processing input text for
-     * speech synthesis. Using a voice that is not supported for the engine selected
-     * will result in an error.</p>
+     * <p>Specifies the engine (<code>standard</code>, <code>neural</code>,
+     * <code>long-form</code> or <code>generative</code>) for Amazon Polly to use when
+     * processing input text for speech synthesis. Using a voice that is not supported
+     * for the engine selected will result in an error.</p>
      */
     inline void SetEngine(const Engine& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p>Specifies the engine (<code>standard</code>, <code>neural</code> or
-     * <code>long-form</code>) for Amazon Polly to use when processing input text for
-     * speech synthesis. Using a voice that is not supported for the engine selected
-     * will result in an error.</p>
+     * <p>Specifies the engine (<code>standard</code>, <code>neural</code>,
+     * <code>long-form</code> or <code>generative</code>) for Amazon Polly to use when
+     * processing input text for speech synthesis. Using a voice that is not supported
+     * for the engine selected will result in an error.</p>
      */
     inline void SetEngine(Engine&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
-     * <p>Specifies the engine (<code>standard</code>, <code>neural</code> or
-     * <code>long-form</code>) for Amazon Polly to use when processing input text for
-     * speech synthesis. Using a voice that is not supported for the engine selected
-     * will result in an error.</p>
+     * <p>Specifies the engine (<code>standard</code>, <code>neural</code>,
+     * <code>long-form</code> or <code>generative</code>) for Amazon Polly to use when
+     * processing input text for speech synthesis. Using a voice that is not supported
+     * for the engine selected will result in an error.</p>
      */
     inline StartSpeechSynthesisTaskRequest& WithEngine(const Engine& value) { SetEngine(value); return *this;}
 
     /**
-     * <p>Specifies the engine (<code>standard</code>, <code>neural</code> or
-     * <code>long-form</code>) for Amazon Polly to use when processing input text for
-     * speech synthesis. Using a voice that is not supported for the engine selected
-     * will result in an error.</p>
+     * <p>Specifies the engine (<code>standard</code>, <code>neural</code>,
+     * <code>long-form</code> or <code>generative</code>) for Amazon Polly to use when
+     * processing input text for speech synthesis. Using a voice that is not supported
+     * for the engine selected will result in an error.</p>
      */
     inline StartSpeechSynthesisTaskRequest& WithEngine(Engine&& value) { SetEngine(std::move(value)); return *this;}
 
@@ -354,8 +354,9 @@ namespace Model
      * <p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and
      * ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for
      * standard voices is "22050". The default value for neural voices is "24000". The
-     * default value for long-form voices is "24000".</p> <p>Valid values for pcm are
-     * "8000" and "16000" The default value is "16000". </p>
+     * default value for long-form voices is "24000". The default value for generative
+     * voices is "24000".</p> <p>Valid values for pcm are "8000" and "16000" The
+     * default value is "16000". </p>
      */
     inline const Aws::String& GetSampleRate() const{ return m_sampleRate; }
 
@@ -363,8 +364,9 @@ namespace Model
      * <p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and
      * ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for
      * standard voices is "22050". The default value for neural voices is "24000". The
-     * default value for long-form voices is "24000".</p> <p>Valid values for pcm are
-     * "8000" and "16000" The default value is "16000". </p>
+     * default value for long-form voices is "24000". The default value for generative
+     * voices is "24000".</p> <p>Valid values for pcm are "8000" and "16000" The
+     * default value is "16000". </p>
      */
     inline bool SampleRateHasBeenSet() const { return m_sampleRateHasBeenSet; }
 
@@ -372,8 +374,9 @@ namespace Model
      * <p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and
      * ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for
      * standard voices is "22050". The default value for neural voices is "24000". The
-     * default value for long-form voices is "24000".</p> <p>Valid values for pcm are
-     * "8000" and "16000" The default value is "16000". </p>
+     * default value for long-form voices is "24000". The default value for generative
+     * voices is "24000".</p> <p>Valid values for pcm are "8000" and "16000" The
+     * default value is "16000". </p>
      */
     inline void SetSampleRate(const Aws::String& value) { m_sampleRateHasBeenSet = true; m_sampleRate = value; }
 
@@ -381,8 +384,9 @@ namespace Model
      * <p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and
      * ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for
      * standard voices is "22050". The default value for neural voices is "24000". The
-     * default value for long-form voices is "24000".</p> <p>Valid values for pcm are
-     * "8000" and "16000" The default value is "16000". </p>
+     * default value for long-form voices is "24000". The default value for generative
+     * voices is "24000".</p> <p>Valid values for pcm are "8000" and "16000" The
+     * default value is "16000". </p>
      */
     inline void SetSampleRate(Aws::String&& value) { m_sampleRateHasBeenSet = true; m_sampleRate = std::move(value); }
 
@@ -390,8 +394,9 @@ namespace Model
      * <p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and
      * ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for
      * standard voices is "22050". The default value for neural voices is "24000". The
-     * default value for long-form voices is "24000".</p> <p>Valid values for pcm are
-     * "8000" and "16000" The default value is "16000". </p>
+     * default value for long-form voices is "24000". The default value for generative
+     * voices is "24000".</p> <p>Valid values for pcm are "8000" and "16000" The
+     * default value is "16000". </p>
      */
     inline void SetSampleRate(const char* value) { m_sampleRateHasBeenSet = true; m_sampleRate.assign(value); }
 
@@ -399,8 +404,9 @@ namespace Model
      * <p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and
      * ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for
      * standard voices is "22050". The default value for neural voices is "24000". The
-     * default value for long-form voices is "24000".</p> <p>Valid values for pcm are
-     * "8000" and "16000" The default value is "16000". </p>
+     * default value for long-form voices is "24000". The default value for generative
+     * voices is "24000".</p> <p>Valid values for pcm are "8000" and "16000" The
+     * default value is "16000". </p>
      */
     inline StartSpeechSynthesisTaskRequest& WithSampleRate(const Aws::String& value) { SetSampleRate(value); return *this;}
 
@@ -408,8 +414,9 @@ namespace Model
      * <p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and
      * ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for
      * standard voices is "22050". The default value for neural voices is "24000". The
-     * default value for long-form voices is "24000".</p> <p>Valid values for pcm are
-     * "8000" and "16000" The default value is "16000". </p>
+     * default value for long-form voices is "24000". The default value for generative
+     * voices is "24000".</p> <p>Valid values for pcm are "8000" and "16000" The
+     * default value is "16000". </p>
      */
     inline StartSpeechSynthesisTaskRequest& WithSampleRate(Aws::String&& value) { SetSampleRate(std::move(value)); return *this;}
 
@@ -417,8 +424,9 @@ namespace Model
      * <p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and
      * ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for
      * standard voices is "22050". The default value for neural voices is "24000". The
-     * default value for long-form voices is "24000".</p> <p>Valid values for pcm are
-     * "8000" and "16000" The default value is "16000". </p>
+     * default value for long-form voices is "24000". The default value for generative
+     * voices is "24000".</p> <p>Valid values for pcm are "8000" and "16000" The
+     * default value is "16000". </p>
      */
     inline StartSpeechSynthesisTaskRequest& WithSampleRate(const char* value) { SetSampleRate(value); return *this;}
 

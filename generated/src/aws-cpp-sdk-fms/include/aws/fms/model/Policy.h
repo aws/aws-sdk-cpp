@@ -670,7 +670,7 @@ namespace Model
      * <code>ORG_UNIT</code>. For example, the following is a valid map:
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
-     * the following is a valid map: <code>{“ACCOUNT��� : [“accountID1”, “accountID2”],
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
      * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& GetIncludeMap() const{ return m_includeMap; }
@@ -693,7 +693,7 @@ namespace Model
      * <code>ORG_UNIT</code>. For example, the following is a valid map:
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
-     * the following is a valid map: <code>{“ACCOUNT��� : [“accountID1”, “accountID2”],
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
      * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline bool IncludeMapHasBeenSet() const { return m_includeMapHasBeenSet; }
@@ -716,7 +716,7 @@ namespace Model
      * <code>ORG_UNIT</code>. For example, the following is a valid map:
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
-     * the following is a valid map: <code>{“ACCOUNT��� : [“accountID1”, “accountID2”],
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
      * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline void SetIncludeMap(const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& value) { m_includeMapHasBeenSet = true; m_includeMap = value; }
@@ -739,7 +739,7 @@ namespace Model
      * <code>ORG_UNIT</code>. For example, the following is a valid map:
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
-     * the following is a valid map: <code>{“ACCOUNT��� : [“accountID1”, “accountID2”],
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
      * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline void SetIncludeMap(Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>&& value) { m_includeMapHasBeenSet = true; m_includeMap = std::move(value); }
@@ -762,7 +762,7 @@ namespace Model
      * <code>ORG_UNIT</code>. For example, the following is a valid map:
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
-     * the following is a valid map: <code>{“ACCOUNT��� : [“accountID1”, “accountID2”],
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
      * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline Policy& WithIncludeMap(const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& value) { SetIncludeMap(value); return *this;}
@@ -785,7 +785,7 @@ namespace Model
      * <code>ORG_UNIT</code>. For example, the following is a valid map:
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
-     * the following is a valid map: <code>{“ACCOUNT��� : [“accountID1”, “accountID2”],
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
      * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline Policy& WithIncludeMap(Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>&& value) { SetIncludeMap(std::move(value)); return *this;}
@@ -808,7 +808,7 @@ namespace Model
      * <code>ORG_UNIT</code>. For example, the following is a valid map:
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
-     * the following is a valid map: <code>{“ACCOUNT��� : [“accountID1”, “accountID2”],
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
      * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline Policy& AddIncludeMap(const CustomerPolicyScopeIdType& key, const Aws::Vector<Aws::String>& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(key, value); return *this; }
@@ -831,7 +831,7 @@ namespace Model
      * <code>ORG_UNIT</code>. For example, the following is a valid map:
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
-     * the following is a valid map: <code>{“ACCOUNT��� : [“accountID1”, “accountID2”],
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
      * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline Policy& AddIncludeMap(CustomerPolicyScopeIdType&& key, const Aws::Vector<Aws::String>& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(std::move(key), value); return *this; }
@@ -854,7 +854,7 @@ namespace Model
      * <code>ORG_UNIT</code>. For example, the following is a valid map:
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
-     * the following is a valid map: <code>{“ACCOUNT��� : [“accountID1”, “accountID2”],
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
      * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline Policy& AddIncludeMap(const CustomerPolicyScopeIdType& key, Aws::Vector<Aws::String>&& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(key, std::move(value)); return *this; }
@@ -877,7 +877,7 @@ namespace Model
      * <code>ORG_UNIT</code>. For example, the following is a valid map:
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
-     * the following is a valid map: <code>{“ACCOUNT��� : [“accountID1”, “accountID2”],
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
      * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline Policy& AddIncludeMap(CustomerPolicyScopeIdType&& key, Aws::Vector<Aws::String>&& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(std::move(key), std::move(value)); return *this; }
@@ -1161,42 +1161,42 @@ namespace Model
 
 
     /**
-     * <p>The definition of the Network Firewall firewall policy.</p>
+     * <p>Your description of the Firewall Manager policy.</p>
      */
     inline const Aws::String& GetPolicyDescription() const{ return m_policyDescription; }
 
     /**
-     * <p>The definition of the Network Firewall firewall policy.</p>
+     * <p>Your description of the Firewall Manager policy.</p>
      */
     inline bool PolicyDescriptionHasBeenSet() const { return m_policyDescriptionHasBeenSet; }
 
     /**
-     * <p>The definition of the Network Firewall firewall policy.</p>
+     * <p>Your description of the Firewall Manager policy.</p>
      */
     inline void SetPolicyDescription(const Aws::String& value) { m_policyDescriptionHasBeenSet = true; m_policyDescription = value; }
 
     /**
-     * <p>The definition of the Network Firewall firewall policy.</p>
+     * <p>Your description of the Firewall Manager policy.</p>
      */
     inline void SetPolicyDescription(Aws::String&& value) { m_policyDescriptionHasBeenSet = true; m_policyDescription = std::move(value); }
 
     /**
-     * <p>The definition of the Network Firewall firewall policy.</p>
+     * <p>Your description of the Firewall Manager policy.</p>
      */
     inline void SetPolicyDescription(const char* value) { m_policyDescriptionHasBeenSet = true; m_policyDescription.assign(value); }
 
     /**
-     * <p>The definition of the Network Firewall firewall policy.</p>
+     * <p>Your description of the Firewall Manager policy.</p>
      */
     inline Policy& WithPolicyDescription(const Aws::String& value) { SetPolicyDescription(value); return *this;}
 
     /**
-     * <p>The definition of the Network Firewall firewall policy.</p>
+     * <p>Your description of the Firewall Manager policy.</p>
      */
     inline Policy& WithPolicyDescription(Aws::String&& value) { SetPolicyDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The definition of the Network Firewall firewall policy.</p>
+     * <p>Your description of the Firewall Manager policy.</p>
      */
     inline Policy& WithPolicyDescription(const char* value) { SetPolicyDescription(value); return *this;}
 

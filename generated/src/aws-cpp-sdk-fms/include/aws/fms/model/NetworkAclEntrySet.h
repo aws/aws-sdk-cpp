@@ -118,9 +118,8 @@ namespace Model
      * between the custom entries and the policy entries. </p> <p>If forced remediation
      * is disabled, Firewall Manager marks the network ACL as noncompliant and does not
      * try to remediate. For more information about the remediation behavior, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html">Network
-     * access control list (ACL) policies</a> in the <i>Firewall Manager Developer
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html#network-acls-remediation">Remediation
+     * for managed network ACLs</a> in the <i>Firewall Manager Developer Guide</i>.</p>
      */
     inline bool GetForceRemediateForFirstEntries() const{ return m_forceRemediateForFirstEntries; }
 
@@ -130,9 +129,8 @@ namespace Model
      * between the custom entries and the policy entries. </p> <p>If forced remediation
      * is disabled, Firewall Manager marks the network ACL as noncompliant and does not
      * try to remediate. For more information about the remediation behavior, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html">Network
-     * access control list (ACL) policies</a> in the <i>Firewall Manager Developer
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html#network-acls-remediation">Remediation
+     * for managed network ACLs</a> in the <i>Firewall Manager Developer Guide</i>.</p>
      */
     inline bool ForceRemediateForFirstEntriesHasBeenSet() const { return m_forceRemediateForFirstEntriesHasBeenSet; }
 
@@ -142,9 +140,8 @@ namespace Model
      * between the custom entries and the policy entries. </p> <p>If forced remediation
      * is disabled, Firewall Manager marks the network ACL as noncompliant and does not
      * try to remediate. For more information about the remediation behavior, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html">Network
-     * access control list (ACL) policies</a> in the <i>Firewall Manager Developer
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html#network-acls-remediation">Remediation
+     * for managed network ACLs</a> in the <i>Firewall Manager Developer Guide</i>.</p>
      */
     inline void SetForceRemediateForFirstEntries(bool value) { m_forceRemediateForFirstEntriesHasBeenSet = true; m_forceRemediateForFirstEntries = value; }
 
@@ -154,9 +151,8 @@ namespace Model
      * between the custom entries and the policy entries. </p> <p>If forced remediation
      * is disabled, Firewall Manager marks the network ACL as noncompliant and does not
      * try to remediate. For more information about the remediation behavior, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html">Network
-     * access control list (ACL) policies</a> in the <i>Firewall Manager Developer
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html#network-acls-remediation">Remediation
+     * for managed network ACLs</a> in the <i>Firewall Manager Developer Guide</i>.</p>
      */
     inline NetworkAclEntrySet& WithForceRemediateForFirstEntries(bool value) { SetForceRemediateForFirstEntries(value); return *this;}
 
@@ -240,9 +236,8 @@ namespace Model
      * between the custom entries and the policy entries. </p> <p>If forced remediation
      * is disabled, Firewall Manager marks the network ACL as noncompliant and does not
      * try to remediate. For more information about the remediation behavior, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html">Network
-     * access control list (ACL) policies</a> in the <i>Firewall Manager Developer
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html#network-acls-remediation">Remediation
+     * for managed network ACLs</a> in the <i>Firewall Manager Developer Guide</i>.</p>
      */
     inline bool GetForceRemediateForLastEntries() const{ return m_forceRemediateForLastEntries; }
 
@@ -252,9 +247,8 @@ namespace Model
      * between the custom entries and the policy entries. </p> <p>If forced remediation
      * is disabled, Firewall Manager marks the network ACL as noncompliant and does not
      * try to remediate. For more information about the remediation behavior, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html">Network
-     * access control list (ACL) policies</a> in the <i>Firewall Manager Developer
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html#network-acls-remediation">Remediation
+     * for managed network ACLs</a> in the <i>Firewall Manager Developer Guide</i>.</p>
      */
     inline bool ForceRemediateForLastEntriesHasBeenSet() const { return m_forceRemediateForLastEntriesHasBeenSet; }
 
@@ -264,9 +258,8 @@ namespace Model
      * between the custom entries and the policy entries. </p> <p>If forced remediation
      * is disabled, Firewall Manager marks the network ACL as noncompliant and does not
      * try to remediate. For more information about the remediation behavior, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html">Network
-     * access control list (ACL) policies</a> in the <i>Firewall Manager Developer
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html#network-acls-remediation">Remediation
+     * for managed network ACLs</a> in the <i>Firewall Manager Developer Guide</i>.</p>
      */
     inline void SetForceRemediateForLastEntries(bool value) { m_forceRemediateForLastEntriesHasBeenSet = true; m_forceRemediateForLastEntries = value; }
 
@@ -276,9 +269,8 @@ namespace Model
      * between the custom entries and the policy entries. </p> <p>If forced remediation
      * is disabled, Firewall Manager marks the network ACL as noncompliant and does not
      * try to remediate. For more information about the remediation behavior, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html">Network
-     * access control list (ACL) policies</a> in the <i>Firewall Manager Developer
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html#network-acls-remediation">Remediation
+     * for managed network ACLs</a> in the <i>Firewall Manager Developer Guide</i>.</p>
      */
     inline NetworkAclEntrySet& WithForceRemediateForLastEntries(bool value) { SetForceRemediateForLastEntries(value); return *this;}
 

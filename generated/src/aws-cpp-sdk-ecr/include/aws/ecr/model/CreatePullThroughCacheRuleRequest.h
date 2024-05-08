@@ -95,7 +95,9 @@ namespace Model
      * Container Registry (<code>github-container-registry</code>) -
      * <code>ghcr.io</code> </p> </li> <li> <p>Microsoft Azure Container Registry
      * (<code>azure-container-registry</code>) - <code>&lt;custom&gt;.azurecr.io</code>
-     * </p> </li> </ul>
+     * </p> </li> <li> <p>GitLab Container Registry
+     * (<code>gitlab-container-registry</code>) - <code>registry.gitlab.com</code> </p>
+     * </li> </ul>
      */
     inline const Aws::String& GetUpstreamRegistryUrl() const{ return m_upstreamRegistryUrl; }
 
@@ -110,7 +112,9 @@ namespace Model
      * Container Registry (<code>github-container-registry</code>) -
      * <code>ghcr.io</code> </p> </li> <li> <p>Microsoft Azure Container Registry
      * (<code>azure-container-registry</code>) - <code>&lt;custom&gt;.azurecr.io</code>
-     * </p> </li> </ul>
+     * </p> </li> <li> <p>GitLab Container Registry
+     * (<code>gitlab-container-registry</code>) - <code>registry.gitlab.com</code> </p>
+     * </li> </ul>
      */
     inline bool UpstreamRegistryUrlHasBeenSet() const { return m_upstreamRegistryUrlHasBeenSet; }
 
@@ -125,7 +129,9 @@ namespace Model
      * Container Registry (<code>github-container-registry</code>) -
      * <code>ghcr.io</code> </p> </li> <li> <p>Microsoft Azure Container Registry
      * (<code>azure-container-registry</code>) - <code>&lt;custom&gt;.azurecr.io</code>
-     * </p> </li> </ul>
+     * </p> </li> <li> <p>GitLab Container Registry
+     * (<code>gitlab-container-registry</code>) - <code>registry.gitlab.com</code> </p>
+     * </li> </ul>
      */
     inline void SetUpstreamRegistryUrl(const Aws::String& value) { m_upstreamRegistryUrlHasBeenSet = true; m_upstreamRegistryUrl = value; }
 
@@ -140,7 +146,9 @@ namespace Model
      * Container Registry (<code>github-container-registry</code>) -
      * <code>ghcr.io</code> </p> </li> <li> <p>Microsoft Azure Container Registry
      * (<code>azure-container-registry</code>) - <code>&lt;custom&gt;.azurecr.io</code>
-     * </p> </li> </ul>
+     * </p> </li> <li> <p>GitLab Container Registry
+     * (<code>gitlab-container-registry</code>) - <code>registry.gitlab.com</code> </p>
+     * </li> </ul>
      */
     inline void SetUpstreamRegistryUrl(Aws::String&& value) { m_upstreamRegistryUrlHasBeenSet = true; m_upstreamRegistryUrl = std::move(value); }
 
@@ -155,7 +163,9 @@ namespace Model
      * Container Registry (<code>github-container-registry</code>) -
      * <code>ghcr.io</code> </p> </li> <li> <p>Microsoft Azure Container Registry
      * (<code>azure-container-registry</code>) - <code>&lt;custom&gt;.azurecr.io</code>
-     * </p> </li> </ul>
+     * </p> </li> <li> <p>GitLab Container Registry
+     * (<code>gitlab-container-registry</code>) - <code>registry.gitlab.com</code> </p>
+     * </li> </ul>
      */
     inline void SetUpstreamRegistryUrl(const char* value) { m_upstreamRegistryUrlHasBeenSet = true; m_upstreamRegistryUrl.assign(value); }
 
@@ -170,7 +180,9 @@ namespace Model
      * Container Registry (<code>github-container-registry</code>) -
      * <code>ghcr.io</code> </p> </li> <li> <p>Microsoft Azure Container Registry
      * (<code>azure-container-registry</code>) - <code>&lt;custom&gt;.azurecr.io</code>
-     * </p> </li> </ul>
+     * </p> </li> <li> <p>GitLab Container Registry
+     * (<code>gitlab-container-registry</code>) - <code>registry.gitlab.com</code> </p>
+     * </li> </ul>
      */
     inline CreatePullThroughCacheRuleRequest& WithUpstreamRegistryUrl(const Aws::String& value) { SetUpstreamRegistryUrl(value); return *this;}
 
@@ -185,7 +197,9 @@ namespace Model
      * Container Registry (<code>github-container-registry</code>) -
      * <code>ghcr.io</code> </p> </li> <li> <p>Microsoft Azure Container Registry
      * (<code>azure-container-registry</code>) - <code>&lt;custom&gt;.azurecr.io</code>
-     * </p> </li> </ul>
+     * </p> </li> <li> <p>GitLab Container Registry
+     * (<code>gitlab-container-registry</code>) - <code>registry.gitlab.com</code> </p>
+     * </li> </ul>
      */
     inline CreatePullThroughCacheRuleRequest& WithUpstreamRegistryUrl(Aws::String&& value) { SetUpstreamRegistryUrl(std::move(value)); return *this;}
 
@@ -200,7 +214,9 @@ namespace Model
      * Container Registry (<code>github-container-registry</code>) -
      * <code>ghcr.io</code> </p> </li> <li> <p>Microsoft Azure Container Registry
      * (<code>azure-container-registry</code>) - <code>&lt;custom&gt;.azurecr.io</code>
-     * </p> </li> </ul>
+     * </p> </li> <li> <p>GitLab Container Registry
+     * (<code>gitlab-container-registry</code>) - <code>registry.gitlab.com</code> </p>
+     * </li> </ul>
      */
     inline CreatePullThroughCacheRuleRequest& WithUpstreamRegistryUrl(const char* value) { SetUpstreamRegistryUrl(value); return *this;}
 

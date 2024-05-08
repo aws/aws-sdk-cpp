@@ -8,7 +8,7 @@
 #include <aws/sqs/SQSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/sqs/model/QueueAttributeName.h>
+#include <aws/sqs/model/MessageSystemAttributeName.h>
 #include <utility>
 
 namespace Aws
@@ -118,7 +118,7 @@ namespace Model
      * <p> <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p>
      * </li> </ul>
      */
-    inline const Aws::Vector<QueueAttributeName>& GetAttributeNames() const{ return m_attributeNames; }
+    inline const Aws::Vector<MessageSystemAttributeName>& GetMessageSystemAttributeNames() const{ return m_messageSystemAttributeNames; }
 
     /**
      * <p>A list of attributes that need to be returned along with each message. These
@@ -150,7 +150,7 @@ namespace Model
      * <p> <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p>
      * </li> </ul>
      */
-    inline bool AttributeNamesHasBeenSet() const { return m_attributeNamesHasBeenSet; }
+    inline bool MessageSystemAttributeNamesHasBeenSet() const { return m_messageSystemAttributeNamesHasBeenSet; }
 
     /**
      * <p>A list of attributes that need to be returned along with each message. These
@@ -182,7 +182,7 @@ namespace Model
      * <p> <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p>
      * </li> </ul>
      */
-    inline void SetAttributeNames(const Aws::Vector<QueueAttributeName>& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = value; }
+    inline void SetMessageSystemAttributeNames(const Aws::Vector<MessageSystemAttributeName>& value) { m_messageSystemAttributeNamesHasBeenSet = true; m_messageSystemAttributeNames = value; }
 
     /**
      * <p>A list of attributes that need to be returned along with each message. These
@@ -214,7 +214,7 @@ namespace Model
      * <p> <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p>
      * </li> </ul>
      */
-    inline void SetAttributeNames(Aws::Vector<QueueAttributeName>&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = std::move(value); }
+    inline void SetMessageSystemAttributeNames(Aws::Vector<MessageSystemAttributeName>&& value) { m_messageSystemAttributeNamesHasBeenSet = true; m_messageSystemAttributeNames = std::move(value); }
 
     /**
      * <p>A list of attributes that need to be returned along with each message. These
@@ -246,7 +246,7 @@ namespace Model
      * <p> <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p>
      * </li> </ul>
      */
-    inline ReceiveMessageRequest& WithAttributeNames(const Aws::Vector<QueueAttributeName>& value) { SetAttributeNames(value); return *this;}
+    inline ReceiveMessageRequest& WithMessageSystemAttributeNames(const Aws::Vector<MessageSystemAttributeName>& value) { SetMessageSystemAttributeNames(value); return *this;}
 
     /**
      * <p>A list of attributes that need to be returned along with each message. These
@@ -278,7 +278,7 @@ namespace Model
      * <p> <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p>
      * </li> </ul>
      */
-    inline ReceiveMessageRequest& WithAttributeNames(Aws::Vector<QueueAttributeName>&& value) { SetAttributeNames(std::move(value)); return *this;}
+    inline ReceiveMessageRequest& WithMessageSystemAttributeNames(Aws::Vector<MessageSystemAttributeName>&& value) { SetMessageSystemAttributeNames(std::move(value)); return *this;}
 
     /**
      * <p>A list of attributes that need to be returned along with each message. These
@@ -310,7 +310,7 @@ namespace Model
      * <p> <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p>
      * </li> </ul>
      */
-    inline ReceiveMessageRequest& AddAttributeNames(const QueueAttributeName& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
+    inline ReceiveMessageRequest& AddMessageSystemAttributeNames(const MessageSystemAttributeName& value) { m_messageSystemAttributeNamesHasBeenSet = true; m_messageSystemAttributeNames.push_back(value); return *this; }
 
     /**
      * <p>A list of attributes that need to be returned along with each message. These
@@ -342,7 +342,7 @@ namespace Model
      * <p> <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p>
      * </li> </ul>
      */
-    inline ReceiveMessageRequest& AddAttributeNames(QueueAttributeName&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(std::move(value)); return *this; }
+    inline ReceiveMessageRequest& AddMessageSystemAttributeNames(MessageSystemAttributeName&& value) { m_messageSystemAttributeNamesHasBeenSet = true; m_messageSystemAttributeNames.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -570,8 +570,8 @@ namespace Model
      * <p>The duration (in seconds) for which the call waits for a message to arrive in
      * the queue before returning. If a message is available, the call returns sooner
      * than <code>WaitTimeSeconds</code>. If no messages are available and the wait
-     * time expires, the call returns successfully with an empty list of messages.</p>
-     *  <p>To avoid HTTP errors, ensure that the HTTP response timeout for
+     * time expires, the call does not return a message list.</p>  <p>To
+     * avoid HTTP errors, ensure that the HTTP response timeout for
      * <code>ReceiveMessage</code> requests is longer than the
      * <code>WaitTimeSeconds</code> parameter. For example, with the Java SDK, you can
      * set HTTP transport settings using the <a
@@ -586,8 +586,8 @@ namespace Model
      * <p>The duration (in seconds) for which the call waits for a message to arrive in
      * the queue before returning. If a message is available, the call returns sooner
      * than <code>WaitTimeSeconds</code>. If no messages are available and the wait
-     * time expires, the call returns successfully with an empty list of messages.</p>
-     *  <p>To avoid HTTP errors, ensure that the HTTP response timeout for
+     * time expires, the call does not return a message list.</p>  <p>To
+     * avoid HTTP errors, ensure that the HTTP response timeout for
      * <code>ReceiveMessage</code> requests is longer than the
      * <code>WaitTimeSeconds</code> parameter. For example, with the Java SDK, you can
      * set HTTP transport settings using the <a
@@ -602,8 +602,8 @@ namespace Model
      * <p>The duration (in seconds) for which the call waits for a message to arrive in
      * the queue before returning. If a message is available, the call returns sooner
      * than <code>WaitTimeSeconds</code>. If no messages are available and the wait
-     * time expires, the call returns successfully with an empty list of messages.</p>
-     *  <p>To avoid HTTP errors, ensure that the HTTP response timeout for
+     * time expires, the call does not return a message list.</p>  <p>To
+     * avoid HTTP errors, ensure that the HTTP response timeout for
      * <code>ReceiveMessage</code> requests is longer than the
      * <code>WaitTimeSeconds</code> parameter. For example, with the Java SDK, you can
      * set HTTP transport settings using the <a
@@ -618,8 +618,8 @@ namespace Model
      * <p>The duration (in seconds) for which the call waits for a message to arrive in
      * the queue before returning. If a message is available, the call returns sooner
      * than <code>WaitTimeSeconds</code>. If no messages are available and the wait
-     * time expires, the call returns successfully with an empty list of messages.</p>
-     *  <p>To avoid HTTP errors, ensure that the HTTP response timeout for
+     * time expires, the call does not return a message list.</p>  <p>To
+     * avoid HTTP errors, ensure that the HTTP response timeout for
      * <code>ReceiveMessage</code> requests is longer than the
      * <code>WaitTimeSeconds</code> parameter. For example, with the Java SDK, you can
      * set HTTP transport settings using the <a
@@ -641,11 +641,8 @@ namespace Model
      * <ul> <li> <p>You can use <code>ReceiveRequestAttemptId</code> only for 5 minutes
      * after a <code>ReceiveMessage</code> action.</p> </li> <li> <p>When you set
      * <code>FifoQueue</code>, a caller of the <code>ReceiveMessage</code> action can
-     * provide a <code>ReceiveRequestAttemptId</code> explicitly.</p> </li> <li> <p>If
-     * a caller of the <code>ReceiveMessage</code> action doesn't provide a
-     * <code>ReceiveRequestAttemptId</code>, Amazon SQS generates a
-     * <code>ReceiveRequestAttemptId</code>.</p> </li> <li> <p>It is possible to retry
-     * the <code>ReceiveMessage</code> action with the same
+     * provide a <code>ReceiveRequestAttemptId</code> explicitly.</p> </li> <li> <p>It
+     * is possible to retry the <code>ReceiveMessage</code> action with the same
      * <code>ReceiveRequestAttemptId</code> if none of the messages have been modified
      * (deleted or had their visibility changes).</p> </li> <li> <p>During a visibility
      * timeout, subsequent calls with the same <code>ReceiveRequestAttemptId</code>
@@ -691,11 +688,8 @@ namespace Model
      * <ul> <li> <p>You can use <code>ReceiveRequestAttemptId</code> only for 5 minutes
      * after a <code>ReceiveMessage</code> action.</p> </li> <li> <p>When you set
      * <code>FifoQueue</code>, a caller of the <code>ReceiveMessage</code> action can
-     * provide a <code>ReceiveRequestAttemptId</code> explicitly.</p> </li> <li> <p>If
-     * a caller of the <code>ReceiveMessage</code> action doesn't provide a
-     * <code>ReceiveRequestAttemptId</code>, Amazon SQS generates a
-     * <code>ReceiveRequestAttemptId</code>.</p> </li> <li> <p>It is possible to retry
-     * the <code>ReceiveMessage</code> action with the same
+     * provide a <code>ReceiveRequestAttemptId</code> explicitly.</p> </li> <li> <p>It
+     * is possible to retry the <code>ReceiveMessage</code> action with the same
      * <code>ReceiveRequestAttemptId</code> if none of the messages have been modified
      * (deleted or had their visibility changes).</p> </li> <li> <p>During a visibility
      * timeout, subsequent calls with the same <code>ReceiveRequestAttemptId</code>
@@ -741,11 +735,8 @@ namespace Model
      * <ul> <li> <p>You can use <code>ReceiveRequestAttemptId</code> only for 5 minutes
      * after a <code>ReceiveMessage</code> action.</p> </li> <li> <p>When you set
      * <code>FifoQueue</code>, a caller of the <code>ReceiveMessage</code> action can
-     * provide a <code>ReceiveRequestAttemptId</code> explicitly.</p> </li> <li> <p>If
-     * a caller of the <code>ReceiveMessage</code> action doesn't provide a
-     * <code>ReceiveRequestAttemptId</code>, Amazon SQS generates a
-     * <code>ReceiveRequestAttemptId</code>.</p> </li> <li> <p>It is possible to retry
-     * the <code>ReceiveMessage</code> action with the same
+     * provide a <code>ReceiveRequestAttemptId</code> explicitly.</p> </li> <li> <p>It
+     * is possible to retry the <code>ReceiveMessage</code> action with the same
      * <code>ReceiveRequestAttemptId</code> if none of the messages have been modified
      * (deleted or had their visibility changes).</p> </li> <li> <p>During a visibility
      * timeout, subsequent calls with the same <code>ReceiveRequestAttemptId</code>
@@ -791,11 +782,8 @@ namespace Model
      * <ul> <li> <p>You can use <code>ReceiveRequestAttemptId</code> only for 5 minutes
      * after a <code>ReceiveMessage</code> action.</p> </li> <li> <p>When you set
      * <code>FifoQueue</code>, a caller of the <code>ReceiveMessage</code> action can
-     * provide a <code>ReceiveRequestAttemptId</code> explicitly.</p> </li> <li> <p>If
-     * a caller of the <code>ReceiveMessage</code> action doesn't provide a
-     * <code>ReceiveRequestAttemptId</code>, Amazon SQS generates a
-     * <code>ReceiveRequestAttemptId</code>.</p> </li> <li> <p>It is possible to retry
-     * the <code>ReceiveMessage</code> action with the same
+     * provide a <code>ReceiveRequestAttemptId</code> explicitly.</p> </li> <li> <p>It
+     * is possible to retry the <code>ReceiveMessage</code> action with the same
      * <code>ReceiveRequestAttemptId</code> if none of the messages have been modified
      * (deleted or had their visibility changes).</p> </li> <li> <p>During a visibility
      * timeout, subsequent calls with the same <code>ReceiveRequestAttemptId</code>
@@ -841,11 +829,8 @@ namespace Model
      * <ul> <li> <p>You can use <code>ReceiveRequestAttemptId</code> only for 5 minutes
      * after a <code>ReceiveMessage</code> action.</p> </li> <li> <p>When you set
      * <code>FifoQueue</code>, a caller of the <code>ReceiveMessage</code> action can
-     * provide a <code>ReceiveRequestAttemptId</code> explicitly.</p> </li> <li> <p>If
-     * a caller of the <code>ReceiveMessage</code> action doesn't provide a
-     * <code>ReceiveRequestAttemptId</code>, Amazon SQS generates a
-     * <code>ReceiveRequestAttemptId</code>.</p> </li> <li> <p>It is possible to retry
-     * the <code>ReceiveMessage</code> action with the same
+     * provide a <code>ReceiveRequestAttemptId</code> explicitly.</p> </li> <li> <p>It
+     * is possible to retry the <code>ReceiveMessage</code> action with the same
      * <code>ReceiveRequestAttemptId</code> if none of the messages have been modified
      * (deleted or had their visibility changes).</p> </li> <li> <p>During a visibility
      * timeout, subsequent calls with the same <code>ReceiveRequestAttemptId</code>
@@ -891,11 +876,8 @@ namespace Model
      * <ul> <li> <p>You can use <code>ReceiveRequestAttemptId</code> only for 5 minutes
      * after a <code>ReceiveMessage</code> action.</p> </li> <li> <p>When you set
      * <code>FifoQueue</code>, a caller of the <code>ReceiveMessage</code> action can
-     * provide a <code>ReceiveRequestAttemptId</code> explicitly.</p> </li> <li> <p>If
-     * a caller of the <code>ReceiveMessage</code> action doesn't provide a
-     * <code>ReceiveRequestAttemptId</code>, Amazon SQS generates a
-     * <code>ReceiveRequestAttemptId</code>.</p> </li> <li> <p>It is possible to retry
-     * the <code>ReceiveMessage</code> action with the same
+     * provide a <code>ReceiveRequestAttemptId</code> explicitly.</p> </li> <li> <p>It
+     * is possible to retry the <code>ReceiveMessage</code> action with the same
      * <code>ReceiveRequestAttemptId</code> if none of the messages have been modified
      * (deleted or had their visibility changes).</p> </li> <li> <p>During a visibility
      * timeout, subsequent calls with the same <code>ReceiveRequestAttemptId</code>
@@ -941,11 +923,8 @@ namespace Model
      * <ul> <li> <p>You can use <code>ReceiveRequestAttemptId</code> only for 5 minutes
      * after a <code>ReceiveMessage</code> action.</p> </li> <li> <p>When you set
      * <code>FifoQueue</code>, a caller of the <code>ReceiveMessage</code> action can
-     * provide a <code>ReceiveRequestAttemptId</code> explicitly.</p> </li> <li> <p>If
-     * a caller of the <code>ReceiveMessage</code> action doesn't provide a
-     * <code>ReceiveRequestAttemptId</code>, Amazon SQS generates a
-     * <code>ReceiveRequestAttemptId</code>.</p> </li> <li> <p>It is possible to retry
-     * the <code>ReceiveMessage</code> action with the same
+     * provide a <code>ReceiveRequestAttemptId</code> explicitly.</p> </li> <li> <p>It
+     * is possible to retry the <code>ReceiveMessage</code> action with the same
      * <code>ReceiveRequestAttemptId</code> if none of the messages have been modified
      * (deleted or had their visibility changes).</p> </li> <li> <p>During a visibility
      * timeout, subsequent calls with the same <code>ReceiveRequestAttemptId</code>
@@ -991,11 +970,8 @@ namespace Model
      * <ul> <li> <p>You can use <code>ReceiveRequestAttemptId</code> only for 5 minutes
      * after a <code>ReceiveMessage</code> action.</p> </li> <li> <p>When you set
      * <code>FifoQueue</code>, a caller of the <code>ReceiveMessage</code> action can
-     * provide a <code>ReceiveRequestAttemptId</code> explicitly.</p> </li> <li> <p>If
-     * a caller of the <code>ReceiveMessage</code> action doesn't provide a
-     * <code>ReceiveRequestAttemptId</code>, Amazon SQS generates a
-     * <code>ReceiveRequestAttemptId</code>.</p> </li> <li> <p>It is possible to retry
-     * the <code>ReceiveMessage</code> action with the same
+     * provide a <code>ReceiveRequestAttemptId</code> explicitly.</p> </li> <li> <p>It
+     * is possible to retry the <code>ReceiveMessage</code> action with the same
      * <code>ReceiveRequestAttemptId</code> if none of the messages have been modified
      * (deleted or had their visibility changes).</p> </li> <li> <p>During a visibility
      * timeout, subsequent calls with the same <code>ReceiveRequestAttemptId</code>
@@ -1036,8 +1012,8 @@ namespace Model
     Aws::String m_queueUrl;
     bool m_queueUrlHasBeenSet = false;
 
-    Aws::Vector<QueueAttributeName> m_attributeNames;
-    bool m_attributeNamesHasBeenSet = false;
+    Aws::Vector<MessageSystemAttributeName> m_messageSystemAttributeNames;
+    bool m_messageSystemAttributeNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_messageAttributeNames;
     bool m_messageAttributeNamesHasBeenSet = false;
