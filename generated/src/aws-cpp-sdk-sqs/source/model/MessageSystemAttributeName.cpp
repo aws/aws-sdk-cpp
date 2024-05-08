@@ -20,6 +20,7 @@ namespace Aws
       namespace MessageSystemAttributeNameMapper
       {
 
+        static const int All_HASH = HashingUtils::HashString("All");
         static const int SenderId_HASH = HashingUtils::HashString("SenderId");
         static const int SentTimestamp_HASH = HashingUtils::HashString("SentTimestamp");
         static const int ApproximateReceiveCount_HASH = HashingUtils::HashString("ApproximateReceiveCount");
@@ -34,7 +35,11 @@ namespace Aws
         MessageSystemAttributeName GetMessageSystemAttributeNameForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == SenderId_HASH)
+          if (hashCode == All_HASH)
+          {
+            return MessageSystemAttributeName::All;
+          }
+          else if (hashCode == SenderId_HASH)
           {
             return MessageSystemAttributeName::SenderId;
           }
@@ -86,6 +91,8 @@ namespace Aws
           {
           case MessageSystemAttributeName::NOT_SET:
             return {};
+          case MessageSystemAttributeName::All:
+            return "All";
           case MessageSystemAttributeName::SenderId:
             return "SenderId";
           case MessageSystemAttributeName::SentTimestamp:

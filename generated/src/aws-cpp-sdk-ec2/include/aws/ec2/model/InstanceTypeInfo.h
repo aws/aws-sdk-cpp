@@ -24,6 +24,7 @@
 #include <aws/ec2/model/NitroTpmInfo.h>
 #include <aws/ec2/model/MediaAcceleratorInfo.h>
 #include <aws/ec2/model/NeuronInfo.h>
+#include <aws/ec2/model/PhcSupport.h>
 #include <aws/ec2/model/UsageClassType.h>
 #include <aws/ec2/model/RootDeviceType.h>
 #include <aws/ec2/model/VirtualizationType.h>
@@ -958,6 +959,43 @@ namespace Model
      */
     inline InstanceTypeInfo& WithNeuronInfo(NeuronInfo&& value) { SetNeuronInfo(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates whether a local Precision Time Protocol (PTP) hardware clock (PHC)
+     * is supported.</p>
+     */
+    inline const PhcSupport& GetPhcSupport() const{ return m_phcSupport; }
+
+    /**
+     * <p>Indicates whether a local Precision Time Protocol (PTP) hardware clock (PHC)
+     * is supported.</p>
+     */
+    inline bool PhcSupportHasBeenSet() const { return m_phcSupportHasBeenSet; }
+
+    /**
+     * <p>Indicates whether a local Precision Time Protocol (PTP) hardware clock (PHC)
+     * is supported.</p>
+     */
+    inline void SetPhcSupport(const PhcSupport& value) { m_phcSupportHasBeenSet = true; m_phcSupport = value; }
+
+    /**
+     * <p>Indicates whether a local Precision Time Protocol (PTP) hardware clock (PHC)
+     * is supported.</p>
+     */
+    inline void SetPhcSupport(PhcSupport&& value) { m_phcSupportHasBeenSet = true; m_phcSupport = std::move(value); }
+
+    /**
+     * <p>Indicates whether a local Precision Time Protocol (PTP) hardware clock (PHC)
+     * is supported.</p>
+     */
+    inline InstanceTypeInfo& WithPhcSupport(const PhcSupport& value) { SetPhcSupport(value); return *this;}
+
+    /**
+     * <p>Indicates whether a local Precision Time Protocol (PTP) hardware clock (PHC)
+     * is supported.</p>
+     */
+    inline InstanceTypeInfo& WithPhcSupport(PhcSupport&& value) { SetPhcSupport(std::move(value)); return *this;}
+
   private:
 
     InstanceType m_instanceType;
@@ -1046,6 +1084,9 @@ namespace Model
 
     NeuronInfo m_neuronInfo;
     bool m_neuronInfoHasBeenSet = false;
+
+    PhcSupport m_phcSupport;
+    bool m_phcSupportHasBeenSet = false;
   };
 
 } // namespace Model

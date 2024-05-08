@@ -195,7 +195,7 @@ namespace Model
      * example, be <code>alias/<i>MyAlias</i> </code>. For more examples, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
      * in the <i>Key Management Service API Reference</i>. </p> </li> <li> <p>
-     * <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for
+     * <code>KmsDataKeyReusePeriodSeconds</code> �� The length of time, in seconds, for
      * which Amazon SQS can reuse a <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      * key</a> to encrypt or decrypt messages before calling KMS again. An integer
@@ -343,7 +343,7 @@ namespace Model
      * example, be <code>alias/<i>MyAlias</i> </code>. For more examples, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
      * in the <i>Key Management Service API Reference</i>. </p> </li> <li> <p>
-     * <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for
+     * <code>KmsDataKeyReusePeriodSeconds</code> �� The length of time, in seconds, for
      * which Amazon SQS can reuse a <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      * key</a> to encrypt or decrypt messages before calling KMS again. An integer
@@ -491,7 +491,7 @@ namespace Model
      * example, be <code>alias/<i>MyAlias</i> </code>. For more examples, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
      * in the <i>Key Management Service API Reference</i>. </p> </li> <li> <p>
-     * <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for
+     * <code>KmsDataKeyReusePeriodSeconds</code> �� The length of time, in seconds, for
      * which Amazon SQS can reuse a <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      * key</a> to encrypt or decrypt messages before calling KMS again. An integer
@@ -639,7 +639,7 @@ namespace Model
      * example, be <code>alias/<i>MyAlias</i> </code>. For more examples, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
      * in the <i>Key Management Service API Reference</i>. </p> </li> <li> <p>
-     * <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for
+     * <code>KmsDataKeyReusePeriodSeconds</code> �� The length of time, in seconds, for
      * which Amazon SQS can reuse a <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      * key</a> to encrypt or decrypt messages before calling KMS again. An integer
@@ -787,7 +787,7 @@ namespace Model
      * example, be <code>alias/<i>MyAlias</i> </code>. For more examples, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
      * in the <i>Key Management Service API Reference</i>. </p> </li> <li> <p>
-     * <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for
+     * <code>KmsDataKeyReusePeriodSeconds</code> �� The length of time, in seconds, for
      * which Amazon SQS can reuse a <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      * key</a> to encrypt or decrypt messages before calling KMS again. An integer
@@ -935,7 +935,7 @@ namespace Model
      * example, be <code>alias/<i>MyAlias</i> </code>. For more examples, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
      * in the <i>Key Management Service API Reference</i>. </p> </li> <li> <p>
-     * <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for
+     * <code>KmsDataKeyReusePeriodSeconds</code> �� The length of time, in seconds, for
      * which Amazon SQS can reuse a <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      * key</a> to encrypt or decrypt messages before calling KMS again. An integer
@@ -1083,7 +1083,7 @@ namespace Model
      * example, be <code>alias/<i>MyAlias</i> </code>. For more examples, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
      * in the <i>Key Management Service API Reference</i>. </p> </li> <li> <p>
-     * <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for
+     * <code>KmsDataKeyReusePeriodSeconds</code> �� The length of time, in seconds, for
      * which Amazon SQS can reuse a <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      * key</a> to encrypt or decrypt messages before calling KMS again. An integer
@@ -1231,7 +1231,7 @@ namespace Model
      * example, be <code>alias/<i>MyAlias</i> </code>. For more examples, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
      * in the <i>Key Management Service API Reference</i>. </p> </li> <li> <p>
-     * <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for
+     * <code>KmsDataKeyReusePeriodSeconds</code> �� The length of time, in seconds, for
      * which Amazon SQS can reuse a <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      * key</a> to encrypt or decrypt messages before calling KMS again. An integer
@@ -1379,7 +1379,7 @@ namespace Model
      * example, be <code>alias/<i>MyAlias</i> </code>. For more examples, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
      * in the <i>Key Management Service API Reference</i>. </p> </li> <li> <p>
-     * <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for
+     * <code>KmsDataKeyReusePeriodSeconds</code> �� The length of time, in seconds, for
      * which Amazon SQS can reuse a <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      * key</a> to encrypt or decrypt messages before calling KMS again. An integer
@@ -1527,7 +1527,7 @@ namespace Model
      * example, be <code>alias/<i>MyAlias</i> </code>. For more examples, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
      * in the <i>Key Management Service API Reference</i>. </p> </li> <li> <p>
-     * <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for
+     * <code>KmsDataKeyReusePeriodSeconds</code> �� The length of time, in seconds, for
      * which Amazon SQS can reuse a <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      * key</a> to encrypt or decrypt messages before calling KMS again. An integer
@@ -1675,7 +1675,7 @@ namespace Model
      * example, be <code>alias/<i>MyAlias</i> </code>. For more examples, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
      * in the <i>Key Management Service API Reference</i>. </p> </li> <li> <p>
-     * <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for
+     * <code>KmsDataKeyReusePeriodSeconds</code> �� The length of time, in seconds, for
      * which Amazon SQS can reuse a <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      * key</a> to encrypt or decrypt messages before calling KMS again. An integer
@@ -1823,7 +1823,7 @@ namespace Model
      * example, be <code>alias/<i>MyAlias</i> </code>. For more examples, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
      * in the <i>Key Management Service API Reference</i>. </p> </li> <li> <p>
-     * <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for
+     * <code>KmsDataKeyReusePeriodSeconds</code> �� The length of time, in seconds, for
      * which Amazon SQS can reuse a <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      * key</a> to encrypt or decrypt messages before calling KMS again. An integer

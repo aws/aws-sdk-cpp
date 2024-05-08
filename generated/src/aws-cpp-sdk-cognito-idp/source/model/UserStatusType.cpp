@@ -27,6 +27,7 @@ namespace Aws
         static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
         static const int RESET_REQUIRED_HASH = HashingUtils::HashString("RESET_REQUIRED");
         static const int FORCE_CHANGE_PASSWORD_HASH = HashingUtils::HashString("FORCE_CHANGE_PASSWORD");
+        static const int EXTERNAL_PROVIDER_HASH = HashingUtils::HashString("EXTERNAL_PROVIDER");
 
 
         UserStatusType GetUserStatusTypeForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return UserStatusType::FORCE_CHANGE_PASSWORD;
           }
+          else if (hashCode == EXTERNAL_PROVIDER_HASH)
+          {
+            return UserStatusType::EXTERNAL_PROVIDER;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -90,6 +95,8 @@ namespace Aws
             return "RESET_REQUIRED";
           case UserStatusType::FORCE_CHANGE_PASSWORD:
             return "FORCE_CHANGE_PASSWORD";
+          case UserStatusType::EXTERNAL_PROVIDER:
+            return "EXTERNAL_PROVIDER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

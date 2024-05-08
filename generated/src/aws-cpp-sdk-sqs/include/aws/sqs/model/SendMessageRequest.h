@@ -823,7 +823,7 @@ namespace Model
      * <p> <code>ReceiveMessage</code> might return messages with multiple
      * <code>MessageGroupId</code> values. For each <code>MessageGroupId</code>, the
      * messages are sorted by time sent. The caller can't specify a
-     * <code>MessageGroupId</code>.</p> </li> </ul> <p>The length of
+     * <code>MessageGroupId</code>.</p> </li> </ul> <p>The maximum length of
      * <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric
      * characters and punctuation
      * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p>For best
@@ -849,7 +849,7 @@ namespace Model
      * <p> <code>ReceiveMessage</code> might return messages with multiple
      * <code>MessageGroupId</code> values. For each <code>MessageGroupId</code>, the
      * messages are sorted by time sent. The caller can't specify a
-     * <code>MessageGroupId</code>.</p> </li> </ul> <p>The length of
+     * <code>MessageGroupId</code>.</p> </li> </ul> <p>The maximum length of
      * <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric
      * characters and punctuation
      * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p>For best
@@ -875,7 +875,7 @@ namespace Model
      * <p> <code>ReceiveMessage</code> might return messages with multiple
      * <code>MessageGroupId</code> values. For each <code>MessageGroupId</code>, the
      * messages are sorted by time sent. The caller can't specify a
-     * <code>MessageGroupId</code>.</p> </li> </ul> <p>The length of
+     * <code>MessageGroupId</code>.</p> </li> </ul> <p>The maximum length of
      * <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric
      * characters and punctuation
      * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p>For best
@@ -901,7 +901,7 @@ namespace Model
      * <p> <code>ReceiveMessage</code> might return messages with multiple
      * <code>MessageGroupId</code> values. For each <code>MessageGroupId</code>, the
      * messages are sorted by time sent. The caller can't specify a
-     * <code>MessageGroupId</code>.</p> </li> </ul> <p>The length of
+     * <code>MessageGroupId</code>.</p> </li> </ul> <p>The maximum length of
      * <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric
      * characters and punctuation
      * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p>For best
@@ -927,7 +927,7 @@ namespace Model
      * <p> <code>ReceiveMessage</code> might return messages with multiple
      * <code>MessageGroupId</code> values. For each <code>MessageGroupId</code>, the
      * messages are sorted by time sent. The caller can't specify a
-     * <code>MessageGroupId</code>.</p> </li> </ul> <p>The length of
+     * <code>MessageGroupId</code>.</p> </li> </ul> <p>The maximum length of
      * <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric
      * characters and punctuation
      * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p>For best
@@ -953,7 +953,7 @@ namespace Model
      * <p> <code>ReceiveMessage</code> might return messages with multiple
      * <code>MessageGroupId</code> values. For each <code>MessageGroupId</code>, the
      * messages are sorted by time sent. The caller can't specify a
-     * <code>MessageGroupId</code>.</p> </li> </ul> <p>The length of
+     * <code>MessageGroupId</code>.</p> </li> </ul> <p>The maximum length of
      * <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric
      * characters and punctuation
      * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p>For best
@@ -979,7 +979,7 @@ namespace Model
      * <p> <code>ReceiveMessage</code> might return messages with multiple
      * <code>MessageGroupId</code> values. For each <code>MessageGroupId</code>, the
      * messages are sorted by time sent. The caller can't specify a
-     * <code>MessageGroupId</code>.</p> </li> </ul> <p>The length of
+     * <code>MessageGroupId</code>.</p> </li> </ul> <p>The maximum length of
      * <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric
      * characters and punctuation
      * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p>For best
@@ -1005,7 +1005,7 @@ namespace Model
      * <p> <code>ReceiveMessage</code> might return messages with multiple
      * <code>MessageGroupId</code> values. For each <code>MessageGroupId</code>, the
      * messages are sorted by time sent. The caller can't specify a
-     * <code>MessageGroupId</code>.</p> </li> </ul> <p>The length of
+     * <code>MessageGroupId</code>.</p> </li> </ul> <p>The maximum length of
      * <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric
      * characters and punctuation
      * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p>For best

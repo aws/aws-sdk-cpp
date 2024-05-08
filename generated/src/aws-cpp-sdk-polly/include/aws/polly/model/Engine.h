@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     standard,
     neural,
-    long_form
+    long_form,
+    generative
   };
 
 namespace EngineMapper

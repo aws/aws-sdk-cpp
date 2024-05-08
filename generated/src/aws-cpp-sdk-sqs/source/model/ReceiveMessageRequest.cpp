@@ -14,7 +14,7 @@ using namespace Aws::Utils;
 
 ReceiveMessageRequest::ReceiveMessageRequest() : 
     m_queueUrlHasBeenSet(false),
-    m_attributeNamesHasBeenSet(false),
+    m_messageSystemAttributeNamesHasBeenSet(false),
     m_messageAttributeNamesHasBeenSet(false),
     m_maxNumberOfMessages(0),
     m_maxNumberOfMessagesHasBeenSet(false),
@@ -36,14 +36,14 @@ Aws::String ReceiveMessageRequest::SerializePayload() const
 
   }
 
-  if(m_attributeNamesHasBeenSet)
+  if(m_messageSystemAttributeNamesHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> attributeNamesJsonList(m_attributeNames.size());
-   for(unsigned attributeNamesIndex = 0; attributeNamesIndex < attributeNamesJsonList.GetLength(); ++attributeNamesIndex)
+   Aws::Utils::Array<JsonValue> messageSystemAttributeNamesJsonList(m_messageSystemAttributeNames.size());
+   for(unsigned messageSystemAttributeNamesIndex = 0; messageSystemAttributeNamesIndex < messageSystemAttributeNamesJsonList.GetLength(); ++messageSystemAttributeNamesIndex)
    {
-     attributeNamesJsonList[attributeNamesIndex].AsString(QueueAttributeNameMapper::GetNameForQueueAttributeName(m_attributeNames[attributeNamesIndex]));
+     messageSystemAttributeNamesJsonList[messageSystemAttributeNamesIndex].AsString(MessageSystemAttributeNameMapper::GetNameForMessageSystemAttributeName(m_messageSystemAttributeNames[messageSystemAttributeNamesIndex]));
    }
-   payload.WithArray("AttributeNames", std::move(attributeNamesJsonList));
+   payload.WithArray("MessageSystemAttributeNames", std::move(messageSystemAttributeNamesJsonList));
 
   }
 

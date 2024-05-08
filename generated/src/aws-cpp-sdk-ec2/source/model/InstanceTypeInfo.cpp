@@ -61,7 +61,9 @@ InstanceTypeInfo::InstanceTypeInfo() :
     m_nitroTpmSupportHasBeenSet(false),
     m_nitroTpmInfoHasBeenSet(false),
     m_mediaAcceleratorInfoHasBeenSet(false),
-    m_neuronInfoHasBeenSet(false)
+    m_neuronInfoHasBeenSet(false),
+    m_phcSupport(PhcSupport::NOT_SET),
+    m_phcSupportHasBeenSet(false)
 {
 }
 
@@ -106,7 +108,9 @@ InstanceTypeInfo::InstanceTypeInfo(const XmlNode& xmlNode) :
     m_nitroTpmSupportHasBeenSet(false),
     m_nitroTpmInfoHasBeenSet(false),
     m_mediaAcceleratorInfoHasBeenSet(false),
-    m_neuronInfoHasBeenSet(false)
+    m_neuronInfoHasBeenSet(false),
+    m_phcSupport(PhcSupport::NOT_SET),
+    m_phcSupportHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -315,6 +319,12 @@ InstanceTypeInfo& InstanceTypeInfo::operator =(const XmlNode& xmlNode)
       m_neuronInfo = neuronInfoNode;
       m_neuronInfoHasBeenSet = true;
     }
+    XmlNode phcSupportNode = resultNode.FirstChild("phcSupport");
+    if(!phcSupportNode.IsNull())
+    {
+      m_phcSupport = PhcSupportMapper::GetPhcSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(phcSupportNode.GetText()).c_str()).c_str());
+      m_phcSupportHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -509,6 +519,11 @@ void InstanceTypeInfo::OutputToStream(Aws::OStream& oStream, const char* locatio
       m_neuronInfo.OutputToStream(oStream, neuronInfoLocationAndMemberSs.str().c_str());
   }
 
+  if(m_phcSupportHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PhcSupport=" << PhcSupportMapper::GetNameForPhcSupport(m_phcSupport) << "&";
+  }
+
 }
 
 void InstanceTypeInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -670,6 +685,10 @@ void InstanceTypeInfo::OutputToStream(Aws::OStream& oStream, const char* locatio
       Aws::String neuronInfoLocationAndMember(location);
       neuronInfoLocationAndMember += ".NeuronInfo";
       m_neuronInfo.OutputToStream(oStream, neuronInfoLocationAndMember.c_str());
+  }
+  if(m_phcSupportHasBeenSet)
+  {
+      oStream << location << ".PhcSupport=" << PhcSupportMapper::GetNameForPhcSupport(m_phcSupport) << "&";
   }
 }
 
