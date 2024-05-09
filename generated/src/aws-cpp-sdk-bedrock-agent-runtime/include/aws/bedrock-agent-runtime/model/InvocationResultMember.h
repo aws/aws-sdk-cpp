@@ -25,9 +25,13 @@ namespace Model
 {
 
   /**
-   * <p>A result from the action group invocation.</p> <p>This data type is used in
-   * the following API operations:</p> <ul> <li> <p> <a
-   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_RequestSyntax">Retrieve
+   * <p>A result from the invocation of an action. For more information, see <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html">Return
+   * control to the agent developer</a> and <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
+   * session context</a>.</p> <p>This data type is used in the following API
+   * operations:</p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html#API_agent-runtime_InvokeAgent_RequestSyntax">InvokeAgent
    * request</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/InvocationResultMember">AWS
    * API Reference</a></p>

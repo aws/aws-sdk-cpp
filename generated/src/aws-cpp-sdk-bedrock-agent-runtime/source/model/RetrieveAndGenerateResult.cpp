@@ -17,11 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RetrieveAndGenerateResult::RetrieveAndGenerateResult()
+RetrieveAndGenerateResult::RetrieveAndGenerateResult() : 
+    m_guardrailAction(GuadrailAction::NOT_SET)
 {
 }
 
-RetrieveAndGenerateResult::RetrieveAndGenerateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+RetrieveAndGenerateResult::RetrieveAndGenerateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_guardrailAction(GuadrailAction::NOT_SET)
 {
   *this = result;
 }
@@ -36,6 +38,12 @@ RetrieveAndGenerateResult& RetrieveAndGenerateResult::operator =(const Aws::Amaz
     {
       m_citations.push_back(citationsJsonList[citationsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("guardrailAction"))
+  {
+    m_guardrailAction = GuadrailActionMapper::GetGuadrailActionForName(jsonValue.GetString("guardrailAction"));
+
   }
 
   if(jsonValue.ValueExists("output"))

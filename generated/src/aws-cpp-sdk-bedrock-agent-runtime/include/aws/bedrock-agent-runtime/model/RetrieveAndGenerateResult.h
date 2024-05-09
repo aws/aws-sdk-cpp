@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/bedrock-agent-runtime/model/GuadrailAction.h>
 #include <aws/bedrock-agent-runtime/model/RetrieveAndGenerateOutput.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent-runtime/model/Citation.h>
@@ -76,6 +77,32 @@ namespace Model
      * knowledge base, alongside information about the sources.</p>
      */
     inline RetrieveAndGenerateResult& AddCitations(Citation&& value) { m_citations.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Specifies if there is a guardrail intervention in the response.</p>
+     */
+    inline const GuadrailAction& GetGuardrailAction() const{ return m_guardrailAction; }
+
+    /**
+     * <p>Specifies if there is a guardrail intervention in the response.</p>
+     */
+    inline void SetGuardrailAction(const GuadrailAction& value) { m_guardrailAction = value; }
+
+    /**
+     * <p>Specifies if there is a guardrail intervention in the response.</p>
+     */
+    inline void SetGuardrailAction(GuadrailAction&& value) { m_guardrailAction = std::move(value); }
+
+    /**
+     * <p>Specifies if there is a guardrail intervention in the response.</p>
+     */
+    inline RetrieveAndGenerateResult& WithGuardrailAction(const GuadrailAction& value) { SetGuardrailAction(value); return *this;}
+
+    /**
+     * <p>Specifies if there is a guardrail intervention in the response.</p>
+     */
+    inline RetrieveAndGenerateResult& WithGuardrailAction(GuadrailAction&& value) { SetGuardrailAction(std::move(value)); return *this;}
 
 
     /**
@@ -171,6 +198,8 @@ namespace Model
   private:
 
     Aws::Vector<Citation> m_citations;
+
+    GuadrailAction m_guardrailAction;
 
     RetrieveAndGenerateOutput m_output;
 

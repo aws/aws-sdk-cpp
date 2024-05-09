@@ -77,25 +77,25 @@ namespace Model
 
     /**
      * <p>The maximum number of results to return with a single call. To retrieve the
-     * remaining results, make another call with the returned nextToken value. </p>
+     * remaining results, make another call with the returned nextToken value.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of results to return with a single call. To retrieve the
-     * remaining results, make another call with the returned nextToken value. </p>
+     * remaining results, make another call with the returned nextToken value.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to return with a single call. To retrieve the
-     * remaining results, make another call with the returned nextToken value. </p>
+     * remaining results, make another call with the returned nextToken value.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of results to return with a single call. To retrieve the
-     * remaining results, make another call with the returned nextToken value. </p>
+     * remaining results, make another call with the returned nextToken value.</p>
      */
     inline ListApplicationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

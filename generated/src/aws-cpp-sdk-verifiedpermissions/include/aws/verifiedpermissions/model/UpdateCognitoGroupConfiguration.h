@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>A list of user groups and entities from an Amazon Cognito user pool identity
+   * <p>The user group entities from an Amazon Cognito user pool identity
    * source.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/UpdateCognitoGroupConfiguration">AWS
    * API Reference</a></p>

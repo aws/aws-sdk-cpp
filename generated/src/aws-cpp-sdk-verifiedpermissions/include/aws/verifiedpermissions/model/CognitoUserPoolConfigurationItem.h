@@ -33,7 +33,8 @@ namespace Model
    * structure that is part of the response to <a
    * href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListIdentitySources.html">ListIdentitySources</a>.</p>
    * <p>Example:<code>"CognitoUserPoolConfiguration":{"UserPoolArn":"arn:aws:cognito-idp:us-east-1:123456789012:userpool/us-east-1_1a2b3c4d5","ClientIds":
-   * ["a1b2c3d4e5f6g7h8i9j0kalbmc"]}</code> </p><p><h3>See Also:</h3>   <a
+   * ["a1b2c3d4e5f6g7h8i9j0kalbmc"],"groupConfiguration": {"groupEntityType":
+   * "MyCorp::Group"}}</code> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/CognitoUserPoolConfigurationItem">AWS
    * API Reference</a></p>
    */
@@ -257,38 +258,38 @@ namespace Model
 
 
     /**
-     * <p>The configuration of the user groups from an Amazon Cognito user pool
-     * identity source.</p>
+     * <p>The type of entity that a policy store maps to groups from an Amazon Cognito
+     * user pool identity source.</p>
      */
     inline const CognitoGroupConfigurationItem& GetGroupConfiguration() const{ return m_groupConfiguration; }
 
     /**
-     * <p>The configuration of the user groups from an Amazon Cognito user pool
-     * identity source.</p>
+     * <p>The type of entity that a policy store maps to groups from an Amazon Cognito
+     * user pool identity source.</p>
      */
     inline bool GroupConfigurationHasBeenSet() const { return m_groupConfigurationHasBeenSet; }
 
     /**
-     * <p>The configuration of the user groups from an Amazon Cognito user pool
-     * identity source.</p>
+     * <p>The type of entity that a policy store maps to groups from an Amazon Cognito
+     * user pool identity source.</p>
      */
     inline void SetGroupConfiguration(const CognitoGroupConfigurationItem& value) { m_groupConfigurationHasBeenSet = true; m_groupConfiguration = value; }
 
     /**
-     * <p>The configuration of the user groups from an Amazon Cognito user pool
-     * identity source.</p>
+     * <p>The type of entity that a policy store maps to groups from an Amazon Cognito
+     * user pool identity source.</p>
      */
     inline void SetGroupConfiguration(CognitoGroupConfigurationItem&& value) { m_groupConfigurationHasBeenSet = true; m_groupConfiguration = std::move(value); }
 
     /**
-     * <p>The configuration of the user groups from an Amazon Cognito user pool
-     * identity source.</p>
+     * <p>The type of entity that a policy store maps to groups from an Amazon Cognito
+     * user pool identity source.</p>
      */
     inline CognitoUserPoolConfigurationItem& WithGroupConfiguration(const CognitoGroupConfigurationItem& value) { SetGroupConfiguration(value); return *this;}
 
     /**
-     * <p>The configuration of the user groups from an Amazon Cognito user pool
-     * identity source.</p>
+     * <p>The type of entity that a policy store maps to groups from an Amazon Cognito
+     * user pool identity source.</p>
      */
     inline CognitoUserPoolConfigurationItem& WithGroupConfiguration(CognitoGroupConfigurationItem&& value) { SetGroupConfiguration(std::move(value)); return *this;}
 

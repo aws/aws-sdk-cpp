@@ -575,67 +575,67 @@ namespace Model
 
     /**
      * <p> How you want the the rule to evaluate DNS redirection in the DNS redirection
-     * chain, such as CNAME, DNAME, ot ALIAS. </p> <p> <code>Inspect_Redirection_Domain
+     * chain, such as CNAME or DNAME. </p> <p> <code>Inspect_Redirection_Domain
      * </code>(Default) inspects all domains in the redirection chain. The individual
-     * domains in the redirection chain must be added to the allow domain list.</p> <p>
+     * domains in the redirection chain must be added to the domain list.</p> <p>
      * <code>Trust_Redirection_Domain </code> inspects only the first domain in the
-     * redirection chain. You don't need to add the subsequent domains in the
-     * redirection list to the domain alloww list.</p>
+     * redirection chain. You don't need to add the subsequent domains in the domain in
+     * the redirection list to the domain list.</p>
      */
     inline const FirewallDomainRedirectionAction& GetFirewallDomainRedirectionAction() const{ return m_firewallDomainRedirectionAction; }
 
     /**
      * <p> How you want the the rule to evaluate DNS redirection in the DNS redirection
-     * chain, such as CNAME, DNAME, ot ALIAS. </p> <p> <code>Inspect_Redirection_Domain
+     * chain, such as CNAME or DNAME. </p> <p> <code>Inspect_Redirection_Domain
      * </code>(Default) inspects all domains in the redirection chain. The individual
-     * domains in the redirection chain must be added to the allow domain list.</p> <p>
+     * domains in the redirection chain must be added to the domain list.</p> <p>
      * <code>Trust_Redirection_Domain </code> inspects only the first domain in the
-     * redirection chain. You don't need to add the subsequent domains in the
-     * redirection list to the domain alloww list.</p>
+     * redirection chain. You don't need to add the subsequent domains in the domain in
+     * the redirection list to the domain list.</p>
      */
     inline bool FirewallDomainRedirectionActionHasBeenSet() const { return m_firewallDomainRedirectionActionHasBeenSet; }
 
     /**
      * <p> How you want the the rule to evaluate DNS redirection in the DNS redirection
-     * chain, such as CNAME, DNAME, ot ALIAS. </p> <p> <code>Inspect_Redirection_Domain
+     * chain, such as CNAME or DNAME. </p> <p> <code>Inspect_Redirection_Domain
      * </code>(Default) inspects all domains in the redirection chain. The individual
-     * domains in the redirection chain must be added to the allow domain list.</p> <p>
+     * domains in the redirection chain must be added to the domain list.</p> <p>
      * <code>Trust_Redirection_Domain </code> inspects only the first domain in the
-     * redirection chain. You don't need to add the subsequent domains in the
-     * redirection list to the domain alloww list.</p>
+     * redirection chain. You don't need to add the subsequent domains in the domain in
+     * the redirection list to the domain list.</p>
      */
     inline void SetFirewallDomainRedirectionAction(const FirewallDomainRedirectionAction& value) { m_firewallDomainRedirectionActionHasBeenSet = true; m_firewallDomainRedirectionAction = value; }
 
     /**
      * <p> How you want the the rule to evaluate DNS redirection in the DNS redirection
-     * chain, such as CNAME, DNAME, ot ALIAS. </p> <p> <code>Inspect_Redirection_Domain
+     * chain, such as CNAME or DNAME. </p> <p> <code>Inspect_Redirection_Domain
      * </code>(Default) inspects all domains in the redirection chain. The individual
-     * domains in the redirection chain must be added to the allow domain list.</p> <p>
+     * domains in the redirection chain must be added to the domain list.</p> <p>
      * <code>Trust_Redirection_Domain </code> inspects only the first domain in the
-     * redirection chain. You don't need to add the subsequent domains in the
-     * redirection list to the domain alloww list.</p>
+     * redirection chain. You don't need to add the subsequent domains in the domain in
+     * the redirection list to the domain list.</p>
      */
     inline void SetFirewallDomainRedirectionAction(FirewallDomainRedirectionAction&& value) { m_firewallDomainRedirectionActionHasBeenSet = true; m_firewallDomainRedirectionAction = std::move(value); }
 
     /**
      * <p> How you want the the rule to evaluate DNS redirection in the DNS redirection
-     * chain, such as CNAME, DNAME, ot ALIAS. </p> <p> <code>Inspect_Redirection_Domain
+     * chain, such as CNAME or DNAME. </p> <p> <code>Inspect_Redirection_Domain
      * </code>(Default) inspects all domains in the redirection chain. The individual
-     * domains in the redirection chain must be added to the allow domain list.</p> <p>
+     * domains in the redirection chain must be added to the domain list.</p> <p>
      * <code>Trust_Redirection_Domain </code> inspects only the first domain in the
-     * redirection chain. You don't need to add the subsequent domains in the
-     * redirection list to the domain alloww list.</p>
+     * redirection chain. You don't need to add the subsequent domains in the domain in
+     * the redirection list to the domain list.</p>
      */
     inline CreateFirewallRuleRequest& WithFirewallDomainRedirectionAction(const FirewallDomainRedirectionAction& value) { SetFirewallDomainRedirectionAction(value); return *this;}
 
     /**
      * <p> How you want the the rule to evaluate DNS redirection in the DNS redirection
-     * chain, such as CNAME, DNAME, ot ALIAS. </p> <p> <code>Inspect_Redirection_Domain
+     * chain, such as CNAME or DNAME. </p> <p> <code>Inspect_Redirection_Domain
      * </code>(Default) inspects all domains in the redirection chain. The individual
-     * domains in the redirection chain must be added to the allow domain list.</p> <p>
+     * domains in the redirection chain must be added to the domain list.</p> <p>
      * <code>Trust_Redirection_Domain </code> inspects only the first domain in the
-     * redirection chain. You don't need to add the subsequent domains in the
-     * redirection list to the domain alloww list.</p>
+     * redirection chain. You don't need to add the subsequent domains in the domain in
+     * the redirection list to the domain list.</p>
      */
     inline CreateFirewallRuleRequest& WithFirewallDomainRedirectionAction(FirewallDomainRedirectionAction&& value) { SetFirewallDomainRedirectionAction(std::move(value)); return *this;}
 

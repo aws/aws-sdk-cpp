@@ -168,7 +168,7 @@ namespace Model
      * results available. You should check <code>NextToken</code> after every operation
      * to ensure that you receive all of the results.</p> <p>If you do not specify this
      * parameter, the operation defaults to 10 identity sources per response. You can
-     * specify a maximum of 200 identity sources per response.</p>
+     * specify a maximum of 50 identity sources per response.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
@@ -182,7 +182,7 @@ namespace Model
      * results available. You should check <code>NextToken</code> after every operation
      * to ensure that you receive all of the results.</p> <p>If you do not specify this
      * parameter, the operation defaults to 10 identity sources per response. You can
-     * specify a maximum of 200 identity sources per response.</p>
+     * specify a maximum of 50 identity sources per response.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
@@ -196,7 +196,7 @@ namespace Model
      * results available. You should check <code>NextToken</code> after every operation
      * to ensure that you receive all of the results.</p> <p>If you do not specify this
      * parameter, the operation defaults to 10 identity sources per response. You can
-     * specify a maximum of 200 identity sources per response.</p>
+     * specify a maximum of 50 identity sources per response.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
@@ -210,7 +210,7 @@ namespace Model
      * results available. You should check <code>NextToken</code> after every operation
      * to ensure that you receive all of the results.</p> <p>If you do not specify this
      * parameter, the operation defaults to 10 identity sources per response. You can
-     * specify a maximum of 200 identity sources per response.</p>
+     * specify a maximum of 50 identity sources per response.</p>
      */
     inline ListIdentitySourcesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
