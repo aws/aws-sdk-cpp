@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>A list of user groups and entities from an Amazon Cognito user pool identity
-   * source.</p> <p>This data type is part of an <a
+   * <p>The type of entity that a policy store maps to groups from an Amazon Cognito
+   * user pool identity source.</p> <p>This data type is part of an <a
    * href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_CognitoUserPoolConfigurationItem.html">CognitoUserPoolConfigurationDetail</a>
    * structure and is a response parameter to <a
    * href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_GetIdentitySource.html">GetIdentitySource</a>.</p><p><h3>See

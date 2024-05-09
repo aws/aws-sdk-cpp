@@ -25,9 +25,12 @@ PolicyItem::PolicyItem() :
     m_policyTypeHasBeenSet(false),
     m_principalHasBeenSet(false),
     m_resourceHasBeenSet(false),
+    m_actionsHasBeenSet(false),
     m_definitionHasBeenSet(false),
     m_createdDateHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false)
+    m_lastUpdatedDateHasBeenSet(false),
+    m_effect(PolicyEffect::NOT_SET),
+    m_effectHasBeenSet(false)
 {
 }
 
@@ -38,9 +41,12 @@ PolicyItem::PolicyItem(JsonView jsonValue) :
     m_policyTypeHasBeenSet(false),
     m_principalHasBeenSet(false),
     m_resourceHasBeenSet(false),
+    m_actionsHasBeenSet(false),
     m_definitionHasBeenSet(false),
     m_createdDateHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false)
+    m_lastUpdatedDateHasBeenSet(false),
+    m_effect(PolicyEffect::NOT_SET),
+    m_effectHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -82,6 +88,16 @@ PolicyItem& PolicyItem::operator =(JsonView jsonValue)
     m_resourceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("actions"))
+  {
+    Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("actions");
+    for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
+    {
+      m_actions.push_back(actionsJsonList[actionsIndex].AsObject());
+    }
+    m_actionsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("definition"))
   {
     m_definition = jsonValue.GetObject("definition");
@@ -101,6 +117,13 @@ PolicyItem& PolicyItem::operator =(JsonView jsonValue)
     m_lastUpdatedDate = jsonValue.GetString("lastUpdatedDate");
 
     m_lastUpdatedDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("effect"))
+  {
+    m_effect = PolicyEffectMapper::GetPolicyEffectForName(jsonValue.GetString("effect"));
+
+    m_effectHasBeenSet = true;
   }
 
   return *this;
@@ -139,6 +162,17 @@ JsonValue PolicyItem::Jsonize() const
 
   }
 
+  if(m_actionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> actionsJsonList(m_actions.size());
+   for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
+   {
+     actionsJsonList[actionsIndex].AsObject(m_actions[actionsIndex].Jsonize());
+   }
+   payload.WithArray("actions", std::move(actionsJsonList));
+
+  }
+
   if(m_definitionHasBeenSet)
   {
    payload.WithObject("definition", m_definition.Jsonize());
@@ -153,6 +187,11 @@ JsonValue PolicyItem::Jsonize() const
   if(m_lastUpdatedDateHasBeenSet)
   {
    payload.WithString("lastUpdatedDate", m_lastUpdatedDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_effectHasBeenSet)
+  {
+   payload.WithString("effect", PolicyEffectMapper::GetNameForPolicyEffect(m_effect));
   }
 
   return payload;

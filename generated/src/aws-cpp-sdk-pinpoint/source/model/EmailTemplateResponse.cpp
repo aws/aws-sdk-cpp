@@ -26,6 +26,7 @@ EmailTemplateResponse::EmailTemplateResponse() :
     m_lastModifiedDateHasBeenSet(false),
     m_recommenderIdHasBeenSet(false),
     m_subjectHasBeenSet(false),
+    m_headersHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_templateDescriptionHasBeenSet(false),
     m_templateNameHasBeenSet(false),
@@ -44,6 +45,7 @@ EmailTemplateResponse::EmailTemplateResponse(JsonView jsonValue) :
     m_lastModifiedDateHasBeenSet(false),
     m_recommenderIdHasBeenSet(false),
     m_subjectHasBeenSet(false),
+    m_headersHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_templateDescriptionHasBeenSet(false),
     m_templateNameHasBeenSet(false),
@@ -104,6 +106,16 @@ EmailTemplateResponse& EmailTemplateResponse::operator =(JsonView jsonValue)
     m_subject = jsonValue.GetString("Subject");
 
     m_subjectHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Headers"))
+  {
+    Aws::Utils::Array<JsonView> headersJsonList = jsonValue.GetArray("Headers");
+    for(unsigned headersIndex = 0; headersIndex < headersJsonList.GetLength(); ++headersIndex)
+    {
+      m_headers.push_back(headersJsonList[headersIndex].AsObject());
+    }
+    m_headersHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -197,6 +209,17 @@ JsonValue EmailTemplateResponse::Jsonize() const
   if(m_subjectHasBeenSet)
   {
    payload.WithString("Subject", m_subject);
+
+  }
+
+  if(m_headersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> headersJsonList(m_headers.size());
+   for(unsigned headersIndex = 0; headersIndex < headersJsonList.GetLength(); ++headersIndex)
+   {
+     headersJsonList[headersIndex].AsObject(m_headers[headersIndex].Jsonize());
+   }
+   payload.WithArray("Headers", std::move(headersJsonList));
 
   }
 

@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/pinpoint/model/MessageHeader.h>
 #include <utility>
 
 namespace Aws
@@ -137,6 +139,63 @@ namespace Model
 
 
     /**
+     * <p>The list of <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id.html#apps-application-id-campaigns-campaign-id-model-messageheader">MessageHeaders</a>
+     * for the email. You can have up to 15 MessageHeaders for each email.</p>
+     */
+    inline const Aws::Vector<MessageHeader>& GetHeaders() const{ return m_headers; }
+
+    /**
+     * <p>The list of <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id.html#apps-application-id-campaigns-campaign-id-model-messageheader">MessageHeaders</a>
+     * for the email. You can have up to 15 MessageHeaders for each email.</p>
+     */
+    inline bool HeadersHasBeenSet() const { return m_headersHasBeenSet; }
+
+    /**
+     * <p>The list of <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id.html#apps-application-id-campaigns-campaign-id-model-messageheader">MessageHeaders</a>
+     * for the email. You can have up to 15 MessageHeaders for each email.</p>
+     */
+    inline void SetHeaders(const Aws::Vector<MessageHeader>& value) { m_headersHasBeenSet = true; m_headers = value; }
+
+    /**
+     * <p>The list of <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id.html#apps-application-id-campaigns-campaign-id-model-messageheader">MessageHeaders</a>
+     * for the email. You can have up to 15 MessageHeaders for each email.</p>
+     */
+    inline void SetHeaders(Aws::Vector<MessageHeader>&& value) { m_headersHasBeenSet = true; m_headers = std::move(value); }
+
+    /**
+     * <p>The list of <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id.html#apps-application-id-campaigns-campaign-id-model-messageheader">MessageHeaders</a>
+     * for the email. You can have up to 15 MessageHeaders for each email.</p>
+     */
+    inline CampaignEmailMessage& WithHeaders(const Aws::Vector<MessageHeader>& value) { SetHeaders(value); return *this;}
+
+    /**
+     * <p>The list of <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id.html#apps-application-id-campaigns-campaign-id-model-messageheader">MessageHeaders</a>
+     * for the email. You can have up to 15 MessageHeaders for each email.</p>
+     */
+    inline CampaignEmailMessage& WithHeaders(Aws::Vector<MessageHeader>&& value) { SetHeaders(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id.html#apps-application-id-campaigns-campaign-id-model-messageheader">MessageHeaders</a>
+     * for the email. You can have up to 15 MessageHeaders for each email.</p>
+     */
+    inline CampaignEmailMessage& AddHeaders(const MessageHeader& value) { m_headersHasBeenSet = true; m_headers.push_back(value); return *this; }
+
+    /**
+     * <p>The list of <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id.html#apps-application-id-campaigns-campaign-id-model-messageheader">MessageHeaders</a>
+     * for the email. You can have up to 15 MessageHeaders for each email.</p>
+     */
+    inline CampaignEmailMessage& AddHeaders(MessageHeader&& value) { m_headersHasBeenSet = true; m_headers.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The body of the email, in HTML format, for recipients whose email clients
      * render HTML content.</p>
      */
@@ -232,6 +291,9 @@ namespace Model
 
     Aws::String m_fromAddress;
     bool m_fromAddressHasBeenSet = false;
+
+    Aws::Vector<MessageHeader> m_headers;
+    bool m_headersHasBeenSet = false;
 
     Aws::String m_htmlBody;
     bool m_htmlBodyHasBeenSet = false;

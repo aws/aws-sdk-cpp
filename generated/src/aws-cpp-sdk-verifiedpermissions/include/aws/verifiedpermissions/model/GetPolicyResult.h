@@ -8,8 +8,11 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/verifiedpermissions/model/PolicyType.h>
 #include <aws/verifiedpermissions/model/EntityIdentifier.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/verifiedpermissions/model/PolicyDefinitionDetail.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/verifiedpermissions/model/PolicyEffect.h>
+#include <aws/verifiedpermissions/model/ActionIdentifier.h>
 #include <utility>
 
 namespace Aws
@@ -209,6 +212,56 @@ namespace Model
 
 
     /**
+     * <p>The action that a policy permits or forbids. For example, <code>{"actions":
+     * [{"actionId": "ViewPhoto", "actionType": "PhotoFlash::Action"}, {"entityID":
+     * "SharePhoto", "entityType": "PhotoFlash::Action"}]}</code>.</p>
+     */
+    inline const Aws::Vector<ActionIdentifier>& GetActions() const{ return m_actions; }
+
+    /**
+     * <p>The action that a policy permits or forbids. For example, <code>{"actions":
+     * [{"actionId": "ViewPhoto", "actionType": "PhotoFlash::Action"}, {"entityID":
+     * "SharePhoto", "entityType": "PhotoFlash::Action"}]}</code>.</p>
+     */
+    inline void SetActions(const Aws::Vector<ActionIdentifier>& value) { m_actions = value; }
+
+    /**
+     * <p>The action that a policy permits or forbids. For example, <code>{"actions":
+     * [{"actionId": "ViewPhoto", "actionType": "PhotoFlash::Action"}, {"entityID":
+     * "SharePhoto", "entityType": "PhotoFlash::Action"}]}</code>.</p>
+     */
+    inline void SetActions(Aws::Vector<ActionIdentifier>&& value) { m_actions = std::move(value); }
+
+    /**
+     * <p>The action that a policy permits or forbids. For example, <code>{"actions":
+     * [{"actionId": "ViewPhoto", "actionType": "PhotoFlash::Action"}, {"entityID":
+     * "SharePhoto", "entityType": "PhotoFlash::Action"}]}</code>.</p>
+     */
+    inline GetPolicyResult& WithActions(const Aws::Vector<ActionIdentifier>& value) { SetActions(value); return *this;}
+
+    /**
+     * <p>The action that a policy permits or forbids. For example, <code>{"actions":
+     * [{"actionId": "ViewPhoto", "actionType": "PhotoFlash::Action"}, {"entityID":
+     * "SharePhoto", "entityType": "PhotoFlash::Action"}]}</code>.</p>
+     */
+    inline GetPolicyResult& WithActions(Aws::Vector<ActionIdentifier>&& value) { SetActions(std::move(value)); return *this;}
+
+    /**
+     * <p>The action that a policy permits or forbids. For example, <code>{"actions":
+     * [{"actionId": "ViewPhoto", "actionType": "PhotoFlash::Action"}, {"entityID":
+     * "SharePhoto", "entityType": "PhotoFlash::Action"}]}</code>.</p>
+     */
+    inline GetPolicyResult& AddActions(const ActionIdentifier& value) { m_actions.push_back(value); return *this; }
+
+    /**
+     * <p>The action that a policy permits or forbids. For example, <code>{"actions":
+     * [{"actionId": "ViewPhoto", "actionType": "PhotoFlash::Action"}, {"entityID":
+     * "SharePhoto", "entityType": "PhotoFlash::Action"}]}</code>.</p>
+     */
+    inline GetPolicyResult& AddActions(ActionIdentifier&& value) { m_actions.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The definition of the requested policy.</p>
      */
     inline const PolicyDefinitionDetail& GetDefinition() const{ return m_definition; }
@@ -286,6 +339,37 @@ namespace Model
     inline GetPolicyResult& WithLastUpdatedDate(Aws::Utils::DateTime&& value) { SetLastUpdatedDate(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The effect of the decision that a policy returns to an authorization request.
+     * For example, <code>"effect": "Permit"</code>.</p>
+     */
+    inline const PolicyEffect& GetEffect() const{ return m_effect; }
+
+    /**
+     * <p>The effect of the decision that a policy returns to an authorization request.
+     * For example, <code>"effect": "Permit"</code>.</p>
+     */
+    inline void SetEffect(const PolicyEffect& value) { m_effect = value; }
+
+    /**
+     * <p>The effect of the decision that a policy returns to an authorization request.
+     * For example, <code>"effect": "Permit"</code>.</p>
+     */
+    inline void SetEffect(PolicyEffect&& value) { m_effect = std::move(value); }
+
+    /**
+     * <p>The effect of the decision that a policy returns to an authorization request.
+     * For example, <code>"effect": "Permit"</code>.</p>
+     */
+    inline GetPolicyResult& WithEffect(const PolicyEffect& value) { SetEffect(value); return *this;}
+
+    /**
+     * <p>The effect of the decision that a policy returns to an authorization request.
+     * For example, <code>"effect": "Permit"</code>.</p>
+     */
+    inline GetPolicyResult& WithEffect(PolicyEffect&& value) { SetEffect(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -319,11 +403,15 @@ namespace Model
 
     EntityIdentifier m_resource;
 
+    Aws::Vector<ActionIdentifier> m_actions;
+
     PolicyDefinitionDetail m_definition;
 
     Aws::Utils::DateTime m_createdDate;
 
     Aws::Utils::DateTime m_lastUpdatedDate;
+
+    PolicyEffect m_effect;
 
     Aws::String m_requestId;
   };

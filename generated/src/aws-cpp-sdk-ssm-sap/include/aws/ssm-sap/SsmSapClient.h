@@ -340,6 +340,34 @@ namespace SsmSap
         }
 
         /**
+         * <p>Returns a list of operations events.</p> <p>Available parameters include
+         * <code>OperationID</code>, as well as optional parameters
+         * <code>MaxResults</code>, <code>NextToken</code>, and
+         * <code>Filters</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListOperationEvents">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListOperationEventsOutcome ListOperationEvents(const Model::ListOperationEventsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListOperationEvents that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListOperationEventsRequestT = Model::ListOperationEventsRequest>
+        Model::ListOperationEventsOutcomeCallable ListOperationEventsCallable(const ListOperationEventsRequestT& request) const
+        {
+            return SubmitCallable(&SsmSapClient::ListOperationEvents, request);
+        }
+
+        /**
+         * An Async wrapper for ListOperationEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListOperationEventsRequestT = Model::ListOperationEventsRequest>
+        void ListOperationEventsAsync(const ListOperationEventsRequestT& request, const ListOperationEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SsmSapClient::ListOperationEvents, request, handler, context);
+        }
+
+        /**
          * <p>Lists the operations performed by AWS Systems Manager for SAP.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListOperations">AWS
@@ -448,6 +476,32 @@ namespace SsmSap
         }
 
         /**
+         * <p>Request is an operation which starts an application.</p> <p>Parameter
+         * <code>ApplicationId</code> is required.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StartApplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartApplicationOutcome StartApplication(const Model::StartApplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartApplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartApplicationRequestT = Model::StartApplicationRequest>
+        Model::StartApplicationOutcomeCallable StartApplicationCallable(const StartApplicationRequestT& request) const
+        {
+            return SubmitCallable(&SsmSapClient::StartApplication, request);
+        }
+
+        /**
+         * An Async wrapper for StartApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartApplicationRequestT = Model::StartApplicationRequest>
+        void StartApplicationAsync(const StartApplicationRequestT& request, const StartApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SsmSapClient::StartApplication, request, handler, context);
+        }
+
+        /**
          * <p>Refreshes a registered application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StartApplicationRefresh">AWS
          * API Reference</a></p>
@@ -470,6 +524,34 @@ namespace SsmSap
         void StartApplicationRefreshAsync(const StartApplicationRefreshRequestT& request, const StartApplicationRefreshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SsmSapClient::StartApplicationRefresh, request, handler, context);
+        }
+
+        /**
+         * <p>Request is an operation to stop an application.</p> <p>Parameter
+         * <code>ApplicationId</code> is required. Parameters
+         * <code>StopConnectedEntity</code> and <code>IncludeEc2InstanceShutdown</code> are
+         * optional.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StopApplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopApplicationOutcome StopApplication(const Model::StopApplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopApplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopApplicationRequestT = Model::StopApplicationRequest>
+        Model::StopApplicationOutcomeCallable StopApplicationCallable(const StopApplicationRequestT& request) const
+        {
+            return SubmitCallable(&SsmSapClient::StopApplication, request);
+        }
+
+        /**
+         * An Async wrapper for StopApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopApplicationRequestT = Model::StopApplicationRequest>
+        void StopApplicationAsync(const StopApplicationRequestT& request, const StopApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SsmSapClient::StopApplication, request, handler, context);
         }
 
         /**

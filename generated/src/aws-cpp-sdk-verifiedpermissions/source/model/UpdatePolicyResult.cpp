@@ -18,12 +18,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 UpdatePolicyResult::UpdatePolicyResult() : 
-    m_policyType(PolicyType::NOT_SET)
+    m_policyType(PolicyType::NOT_SET),
+    m_effect(PolicyEffect::NOT_SET)
 {
 }
 
 UpdatePolicyResult::UpdatePolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_policyType(PolicyType::NOT_SET)
+    m_policyType(PolicyType::NOT_SET),
+    m_effect(PolicyEffect::NOT_SET)
 {
   *this = result;
 }
@@ -61,6 +63,15 @@ UpdatePolicyResult& UpdatePolicyResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("actions"))
+  {
+    Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("actions");
+    for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
+    {
+      m_actions.push_back(actionsJsonList[actionsIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetString("createdDate");
@@ -70,6 +81,12 @@ UpdatePolicyResult& UpdatePolicyResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("lastUpdatedDate"))
   {
     m_lastUpdatedDate = jsonValue.GetString("lastUpdatedDate");
+
+  }
+
+  if(jsonValue.ValueExists("effect"))
+  {
+    m_effect = PolicyEffectMapper::GetPolicyEffectForName(jsonValue.GetString("effect"));
 
   }
 

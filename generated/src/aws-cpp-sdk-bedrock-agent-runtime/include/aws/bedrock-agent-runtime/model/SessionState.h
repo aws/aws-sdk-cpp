@@ -51,42 +51,98 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the invocation.</p>
+     * <p>The identifier of the invocation of an action. This value must match the
+     * <code>invocationId</code> returned in the <code>InvokeAgent</code> response for
+     * the action whose results are provided in the
+     * <code>returnControlInvocationResults</code> field. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html">Return
+     * control to the agent developer</a> and <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
+     * session context</a>.</p>
      */
     inline const Aws::String& GetInvocationId() const{ return m_invocationId; }
 
     /**
-     * <p>The identifier of the invocation.</p>
+     * <p>The identifier of the invocation of an action. This value must match the
+     * <code>invocationId</code> returned in the <code>InvokeAgent</code> response for
+     * the action whose results are provided in the
+     * <code>returnControlInvocationResults</code> field. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html">Return
+     * control to the agent developer</a> and <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
+     * session context</a>.</p>
      */
     inline bool InvocationIdHasBeenSet() const { return m_invocationIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the invocation.</p>
+     * <p>The identifier of the invocation of an action. This value must match the
+     * <code>invocationId</code> returned in the <code>InvokeAgent</code> response for
+     * the action whose results are provided in the
+     * <code>returnControlInvocationResults</code> field. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html">Return
+     * control to the agent developer</a> and <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
+     * session context</a>.</p>
      */
     inline void SetInvocationId(const Aws::String& value) { m_invocationIdHasBeenSet = true; m_invocationId = value; }
 
     /**
-     * <p>The identifier of the invocation.</p>
+     * <p>The identifier of the invocation of an action. This value must match the
+     * <code>invocationId</code> returned in the <code>InvokeAgent</code> response for
+     * the action whose results are provided in the
+     * <code>returnControlInvocationResults</code> field. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html">Return
+     * control to the agent developer</a> and <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
+     * session context</a>.</p>
      */
     inline void SetInvocationId(Aws::String&& value) { m_invocationIdHasBeenSet = true; m_invocationId = std::move(value); }
 
     /**
-     * <p>The identifier of the invocation.</p>
+     * <p>The identifier of the invocation of an action. This value must match the
+     * <code>invocationId</code> returned in the <code>InvokeAgent</code> response for
+     * the action whose results are provided in the
+     * <code>returnControlInvocationResults</code> field. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html">Return
+     * control to the agent developer</a> and <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
+     * session context</a>.</p>
      */
     inline void SetInvocationId(const char* value) { m_invocationIdHasBeenSet = true; m_invocationId.assign(value); }
 
     /**
-     * <p>The identifier of the invocation.</p>
+     * <p>The identifier of the invocation of an action. This value must match the
+     * <code>invocationId</code> returned in the <code>InvokeAgent</code> response for
+     * the action whose results are provided in the
+     * <code>returnControlInvocationResults</code> field. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html">Return
+     * control to the agent developer</a> and <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
+     * session context</a>.</p>
      */
     inline SessionState& WithInvocationId(const Aws::String& value) { SetInvocationId(value); return *this;}
 
     /**
-     * <p>The identifier of the invocation.</p>
+     * <p>The identifier of the invocation of an action. This value must match the
+     * <code>invocationId</code> returned in the <code>InvokeAgent</code> response for
+     * the action whose results are provided in the
+     * <code>returnControlInvocationResults</code> field. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html">Return
+     * control to the agent developer</a> and <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
+     * session context</a>.</p>
      */
     inline SessionState& WithInvocationId(Aws::String&& value) { SetInvocationId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the invocation.</p>
+     * <p>The identifier of the invocation of an action. This value must match the
+     * <code>invocationId</code> returned in the <code>InvokeAgent</code> response for
+     * the action whose results are provided in the
+     * <code>returnControlInvocationResults</code> field. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html">Return
+     * control to the agent developer</a> and <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
+     * session context</a>.</p>
      */
     inline SessionState& WithInvocationId(const char* value) { SetInvocationId(value); return *this;}
 
@@ -210,42 +266,90 @@ namespace Model
 
 
     /**
-     * <p>Contains information about the results from the action group invocation.</p>
+     * <p>Contains information about the results from the action group invocation. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html">Return
+     * control to the agent developer</a> and <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
+     * session context</a>.</p>  <p>If you include this field, the
+     * <code>inputText</code> field will be ignored.</p> 
      */
     inline const Aws::Vector<InvocationResultMember>& GetReturnControlInvocationResults() const{ return m_returnControlInvocationResults; }
 
     /**
-     * <p>Contains information about the results from the action group invocation.</p>
+     * <p>Contains information about the results from the action group invocation. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html">Return
+     * control to the agent developer</a> and <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
+     * session context</a>.</p>  <p>If you include this field, the
+     * <code>inputText</code> field will be ignored.</p> 
      */
     inline bool ReturnControlInvocationResultsHasBeenSet() const { return m_returnControlInvocationResultsHasBeenSet; }
 
     /**
-     * <p>Contains information about the results from the action group invocation.</p>
+     * <p>Contains information about the results from the action group invocation. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html">Return
+     * control to the agent developer</a> and <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
+     * session context</a>.</p>  <p>If you include this field, the
+     * <code>inputText</code> field will be ignored.</p> 
      */
     inline void SetReturnControlInvocationResults(const Aws::Vector<InvocationResultMember>& value) { m_returnControlInvocationResultsHasBeenSet = true; m_returnControlInvocationResults = value; }
 
     /**
-     * <p>Contains information about the results from the action group invocation.</p>
+     * <p>Contains information about the results from the action group invocation. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html">Return
+     * control to the agent developer</a> and <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
+     * session context</a>.</p>  <p>If you include this field, the
+     * <code>inputText</code> field will be ignored.</p> 
      */
     inline void SetReturnControlInvocationResults(Aws::Vector<InvocationResultMember>&& value) { m_returnControlInvocationResultsHasBeenSet = true; m_returnControlInvocationResults = std::move(value); }
 
     /**
-     * <p>Contains information about the results from the action group invocation.</p>
+     * <p>Contains information about the results from the action group invocation. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html">Return
+     * control to the agent developer</a> and <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
+     * session context</a>.</p>  <p>If you include this field, the
+     * <code>inputText</code> field will be ignored.</p> 
      */
     inline SessionState& WithReturnControlInvocationResults(const Aws::Vector<InvocationResultMember>& value) { SetReturnControlInvocationResults(value); return *this;}
 
     /**
-     * <p>Contains information about the results from the action group invocation.</p>
+     * <p>Contains information about the results from the action group invocation. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html">Return
+     * control to the agent developer</a> and <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
+     * session context</a>.</p>  <p>If you include this field, the
+     * <code>inputText</code> field will be ignored.</p> 
      */
     inline SessionState& WithReturnControlInvocationResults(Aws::Vector<InvocationResultMember>&& value) { SetReturnControlInvocationResults(std::move(value)); return *this;}
 
     /**
-     * <p>Contains information about the results from the action group invocation.</p>
+     * <p>Contains information about the results from the action group invocation. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html">Return
+     * control to the agent developer</a> and <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
+     * session context</a>.</p>  <p>If you include this field, the
+     * <code>inputText</code> field will be ignored.</p> 
      */
     inline SessionState& AddReturnControlInvocationResults(const InvocationResultMember& value) { m_returnControlInvocationResultsHasBeenSet = true; m_returnControlInvocationResults.push_back(value); return *this; }
 
     /**
-     * <p>Contains information about the results from the action group invocation.</p>
+     * <p>Contains information about the results from the action group invocation. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html">Return
+     * control to the agent developer</a> and <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
+     * session context</a>.</p>  <p>If you include this field, the
+     * <code>inputText</code> field will be ignored.</p> 
      */
     inline SessionState& AddReturnControlInvocationResults(InvocationResultMember&& value) { m_returnControlInvocationResultsHasBeenSet = true; m_returnControlInvocationResults.push_back(std::move(value)); return *this; }
 

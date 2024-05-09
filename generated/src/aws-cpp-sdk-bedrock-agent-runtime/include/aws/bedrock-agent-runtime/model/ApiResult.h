@@ -31,7 +31,7 @@ namespace Model
    * group and the response body that was returned.</p> <p>This data type is used in
    * the following API operations:</p> <ul> <li> <p>In the
    * <code>returnControlInvocationResults</code> of the <a
-   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_RequestSyntax">Retrieve
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html#API_agent-runtime_InvokeAgent_RequestSyntax">InvokeAgent
    * request</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/ApiResult">AWS
    * API Reference</a></p>
@@ -195,85 +195,85 @@ namespace Model
 
     /**
      * <p>The response body from the API operation. The key of the object is the
-     * content type. The response may be returned directly or from the Lambda
-     * function.</p>
+     * content type (currently, only <code>TEXT</code> is supported). The response may
+     * be returned directly or from the Lambda function.</p>
      */
     inline const Aws::Map<Aws::String, ContentBody>& GetResponseBody() const{ return m_responseBody; }
 
     /**
      * <p>The response body from the API operation. The key of the object is the
-     * content type. The response may be returned directly or from the Lambda
-     * function.</p>
+     * content type (currently, only <code>TEXT</code> is supported). The response may
+     * be returned directly or from the Lambda function.</p>
      */
     inline bool ResponseBodyHasBeenSet() const { return m_responseBodyHasBeenSet; }
 
     /**
      * <p>The response body from the API operation. The key of the object is the
-     * content type. The response may be returned directly or from the Lambda
-     * function.</p>
+     * content type (currently, only <code>TEXT</code> is supported). The response may
+     * be returned directly or from the Lambda function.</p>
      */
     inline void SetResponseBody(const Aws::Map<Aws::String, ContentBody>& value) { m_responseBodyHasBeenSet = true; m_responseBody = value; }
 
     /**
      * <p>The response body from the API operation. The key of the object is the
-     * content type. The response may be returned directly or from the Lambda
-     * function.</p>
+     * content type (currently, only <code>TEXT</code> is supported). The response may
+     * be returned directly or from the Lambda function.</p>
      */
     inline void SetResponseBody(Aws::Map<Aws::String, ContentBody>&& value) { m_responseBodyHasBeenSet = true; m_responseBody = std::move(value); }
 
     /**
      * <p>The response body from the API operation. The key of the object is the
-     * content type. The response may be returned directly or from the Lambda
-     * function.</p>
+     * content type (currently, only <code>TEXT</code> is supported). The response may
+     * be returned directly or from the Lambda function.</p>
      */
     inline ApiResult& WithResponseBody(const Aws::Map<Aws::String, ContentBody>& value) { SetResponseBody(value); return *this;}
 
     /**
      * <p>The response body from the API operation. The key of the object is the
-     * content type. The response may be returned directly or from the Lambda
-     * function.</p>
+     * content type (currently, only <code>TEXT</code> is supported). The response may
+     * be returned directly or from the Lambda function.</p>
      */
     inline ApiResult& WithResponseBody(Aws::Map<Aws::String, ContentBody>&& value) { SetResponseBody(std::move(value)); return *this;}
 
     /**
      * <p>The response body from the API operation. The key of the object is the
-     * content type. The response may be returned directly or from the Lambda
-     * function.</p>
+     * content type (currently, only <code>TEXT</code> is supported). The response may
+     * be returned directly or from the Lambda function.</p>
      */
     inline ApiResult& AddResponseBody(const Aws::String& key, const ContentBody& value) { m_responseBodyHasBeenSet = true; m_responseBody.emplace(key, value); return *this; }
 
     /**
      * <p>The response body from the API operation. The key of the object is the
-     * content type. The response may be returned directly or from the Lambda
-     * function.</p>
+     * content type (currently, only <code>TEXT</code> is supported). The response may
+     * be returned directly or from the Lambda function.</p>
      */
     inline ApiResult& AddResponseBody(Aws::String&& key, const ContentBody& value) { m_responseBodyHasBeenSet = true; m_responseBody.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The response body from the API operation. The key of the object is the
-     * content type. The response may be returned directly or from the Lambda
-     * function.</p>
+     * content type (currently, only <code>TEXT</code> is supported). The response may
+     * be returned directly or from the Lambda function.</p>
      */
     inline ApiResult& AddResponseBody(const Aws::String& key, ContentBody&& value) { m_responseBodyHasBeenSet = true; m_responseBody.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The response body from the API operation. The key of the object is the
-     * content type. The response may be returned directly or from the Lambda
-     * function.</p>
+     * content type (currently, only <code>TEXT</code> is supported). The response may
+     * be returned directly or from the Lambda function.</p>
      */
     inline ApiResult& AddResponseBody(Aws::String&& key, ContentBody&& value) { m_responseBodyHasBeenSet = true; m_responseBody.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The response body from the API operation. The key of the object is the
-     * content type. The response may be returned directly or from the Lambda
-     * function.</p>
+     * content type (currently, only <code>TEXT</code> is supported). The response may
+     * be returned directly or from the Lambda function.</p>
      */
     inline ApiResult& AddResponseBody(const char* key, ContentBody&& value) { m_responseBodyHasBeenSet = true; m_responseBody.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The response body from the API operation. The key of the object is the
-     * content type. The response may be returned directly or from the Lambda
-     * function.</p>
+     * content type (currently, only <code>TEXT</code> is supported). The response may
+     * be returned directly or from the Lambda function.</p>
      */
     inline ApiResult& AddResponseBody(const char* key, const ContentBody& value) { m_responseBodyHasBeenSet = true; m_responseBody.emplace(key, value); return *this; }
 

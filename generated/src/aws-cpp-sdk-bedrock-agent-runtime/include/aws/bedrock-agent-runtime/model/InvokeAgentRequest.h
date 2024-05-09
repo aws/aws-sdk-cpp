@@ -192,42 +192,58 @@ namespace Model
 
 
     /**
-     * <p>The prompt text to send the agent.</p>
+     * <p>The prompt text to send the agent.</p>  <p>If you include
+     * <code>returnControlInvocationResults</code> in the <code>sessionState</code>
+     * field, the <code>inputText</code> field will be ignored.</p> 
      */
     inline const Aws::String& GetInputText() const{ return m_inputText; }
 
     /**
-     * <p>The prompt text to send the agent.</p>
+     * <p>The prompt text to send the agent.</p>  <p>If you include
+     * <code>returnControlInvocationResults</code> in the <code>sessionState</code>
+     * field, the <code>inputText</code> field will be ignored.</p> 
      */
     inline bool InputTextHasBeenSet() const { return m_inputTextHasBeenSet; }
 
     /**
-     * <p>The prompt text to send the agent.</p>
+     * <p>The prompt text to send the agent.</p>  <p>If you include
+     * <code>returnControlInvocationResults</code> in the <code>sessionState</code>
+     * field, the <code>inputText</code> field will be ignored.</p> 
      */
     inline void SetInputText(const Aws::String& value) { m_inputTextHasBeenSet = true; m_inputText = value; }
 
     /**
-     * <p>The prompt text to send the agent.</p>
+     * <p>The prompt text to send the agent.</p>  <p>If you include
+     * <code>returnControlInvocationResults</code> in the <code>sessionState</code>
+     * field, the <code>inputText</code> field will be ignored.</p> 
      */
     inline void SetInputText(Aws::String&& value) { m_inputTextHasBeenSet = true; m_inputText = std::move(value); }
 
     /**
-     * <p>The prompt text to send the agent.</p>
+     * <p>The prompt text to send the agent.</p>  <p>If you include
+     * <code>returnControlInvocationResults</code> in the <code>sessionState</code>
+     * field, the <code>inputText</code> field will be ignored.</p> 
      */
     inline void SetInputText(const char* value) { m_inputTextHasBeenSet = true; m_inputText.assign(value); }
 
     /**
-     * <p>The prompt text to send the agent.</p>
+     * <p>The prompt text to send the agent.</p>  <p>If you include
+     * <code>returnControlInvocationResults</code> in the <code>sessionState</code>
+     * field, the <code>inputText</code> field will be ignored.</p> 
      */
     inline InvokeAgentRequest& WithInputText(const Aws::String& value) { SetInputText(value); return *this;}
 
     /**
-     * <p>The prompt text to send the agent.</p>
+     * <p>The prompt text to send the agent.</p>  <p>If you include
+     * <code>returnControlInvocationResults</code> in the <code>sessionState</code>
+     * field, the <code>inputText</code> field will be ignored.</p> 
      */
     inline InvokeAgentRequest& WithInputText(Aws::String&& value) { SetInputText(std::move(value)); return *this;}
 
     /**
-     * <p>The prompt text to send the agent.</p>
+     * <p>The prompt text to send the agent.</p>  <p>If you include
+     * <code>returnControlInvocationResults</code> in the <code>sessionState</code>
+     * field, the <code>inputText</code> field will be ignored.</p> 
      */
     inline InvokeAgentRequest& WithInputText(const char* value) { SetInputText(value); return *this;}
 
@@ -285,7 +301,9 @@ namespace Model
      * <p>Contains parameters that specify various attributes of the session. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
-     * session context</a>.</p>
+     * session context</a>.</p>  <p>If you include
+     * <code>returnControlInvocationResults</code> in the <code>sessionState</code>
+     * field, the <code>inputText</code> field will be ignored.</p> 
      */
     inline const SessionState& GetSessionState() const{ return m_sessionState; }
 
@@ -293,7 +311,9 @@ namespace Model
      * <p>Contains parameters that specify various attributes of the session. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
-     * session context</a>.</p>
+     * session context</a>.</p>  <p>If you include
+     * <code>returnControlInvocationResults</code> in the <code>sessionState</code>
+     * field, the <code>inputText</code> field will be ignored.</p> 
      */
     inline bool SessionStateHasBeenSet() const { return m_sessionStateHasBeenSet; }
 
@@ -301,7 +321,9 @@ namespace Model
      * <p>Contains parameters that specify various attributes of the session. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
-     * session context</a>.</p>
+     * session context</a>.</p>  <p>If you include
+     * <code>returnControlInvocationResults</code> in the <code>sessionState</code>
+     * field, the <code>inputText</code> field will be ignored.</p> 
      */
     inline void SetSessionState(const SessionState& value) { m_sessionStateHasBeenSet = true; m_sessionState = value; }
 
@@ -309,7 +331,9 @@ namespace Model
      * <p>Contains parameters that specify various attributes of the session. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
-     * session context</a>.</p>
+     * session context</a>.</p>  <p>If you include
+     * <code>returnControlInvocationResults</code> in the <code>sessionState</code>
+     * field, the <code>inputText</code> field will be ignored.</p> 
      */
     inline void SetSessionState(SessionState&& value) { m_sessionStateHasBeenSet = true; m_sessionState = std::move(value); }
 
@@ -317,7 +341,9 @@ namespace Model
      * <p>Contains parameters that specify various attributes of the session. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
-     * session context</a>.</p>
+     * session context</a>.</p>  <p>If you include
+     * <code>returnControlInvocationResults</code> in the <code>sessionState</code>
+     * field, the <code>inputText</code> field will be ignored.</p> 
      */
     inline InvokeAgentRequest& WithSessionState(const SessionState& value) { SetSessionState(value); return *this;}
 
@@ -325,7 +351,9 @@ namespace Model
      * <p>Contains parameters that specify various attributes of the session. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
-     * session context</a>.</p>
+     * session context</a>.</p>  <p>If you include
+     * <code>returnControlInvocationResults</code> in the <code>sessionState</code>
+     * field, the <code>inputText</code> field will be ignored.</p> 
      */
     inline InvokeAgentRequest& WithSessionState(SessionState&& value) { SetSessionState(std::move(value)); return *this;}
 

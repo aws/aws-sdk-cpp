@@ -6,8 +6,10 @@
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/pinpoint/model/TemplateType.h>
+#include <aws/pinpoint/model/MessageHeader.h>
 #include <utility>
 
 namespace Aws
@@ -385,6 +387,63 @@ namespace Model
 
 
     /**
+     * <p>The list of <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#templates-template-name-email-model-messageheader">MessageHeaders</a>
+     * for the email. You can have up to 15 Headers.</p>
+     */
+    inline const Aws::Vector<MessageHeader>& GetHeaders() const{ return m_headers; }
+
+    /**
+     * <p>The list of <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#templates-template-name-email-model-messageheader">MessageHeaders</a>
+     * for the email. You can have up to 15 Headers.</p>
+     */
+    inline bool HeadersHasBeenSet() const { return m_headersHasBeenSet; }
+
+    /**
+     * <p>The list of <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#templates-template-name-email-model-messageheader">MessageHeaders</a>
+     * for the email. You can have up to 15 Headers.</p>
+     */
+    inline void SetHeaders(const Aws::Vector<MessageHeader>& value) { m_headersHasBeenSet = true; m_headers = value; }
+
+    /**
+     * <p>The list of <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#templates-template-name-email-model-messageheader">MessageHeaders</a>
+     * for the email. You can have up to 15 Headers.</p>
+     */
+    inline void SetHeaders(Aws::Vector<MessageHeader>&& value) { m_headersHasBeenSet = true; m_headers = std::move(value); }
+
+    /**
+     * <p>The list of <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#templates-template-name-email-model-messageheader">MessageHeaders</a>
+     * for the email. You can have up to 15 Headers.</p>
+     */
+    inline EmailTemplateResponse& WithHeaders(const Aws::Vector<MessageHeader>& value) { SetHeaders(value); return *this;}
+
+    /**
+     * <p>The list of <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#templates-template-name-email-model-messageheader">MessageHeaders</a>
+     * for the email. You can have up to 15 Headers.</p>
+     */
+    inline EmailTemplateResponse& WithHeaders(Aws::Vector<MessageHeader>&& value) { SetHeaders(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#templates-template-name-email-model-messageheader">MessageHeaders</a>
+     * for the email. You can have up to 15 Headers.</p>
+     */
+    inline EmailTemplateResponse& AddHeaders(const MessageHeader& value) { m_headersHasBeenSet = true; m_headers.push_back(value); return *this; }
+
+    /**
+     * <p>The list of <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#templates-template-name-email-model-messageheader">MessageHeaders</a>
+     * for the email. You can have up to 15 Headers.</p>
+     */
+    inline EmailTemplateResponse& AddHeaders(MessageHeader&& value) { m_headersHasBeenSet = true; m_headers.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>A string-to-string map of key-value pairs that identifies the tags that are
      * associated with the message template. Each tag consists of a required tag key
      * and an associated tag value.</p>
@@ -722,6 +781,9 @@ namespace Model
 
     Aws::String m_subject;
     bool m_subjectHasBeenSet = false;
+
+    Aws::Vector<MessageHeader> m_headers;
+    bool m_headersHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
