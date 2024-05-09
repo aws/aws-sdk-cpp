@@ -5,6 +5,7 @@
 add_project(benchmark
         "A Cli for running benchmark tests"
         aws-cpp-sdk-s3
+        aws-cpp-sdk-s3-crt
         aws-cpp-sdk-monitoring
         aws-cpp-sdk-core)
 
@@ -24,6 +25,11 @@ if (BUILD_OPTEL_OTLP_BENCHMARKS)
     find_package(CURL REQUIRED)
     find_package(nlohmann_json REQUIRED)
     find_package(opentelemetry-cpp CONFIG REQUIRED)
+endif ()
+
+option(AWS_SDK_BENCHMARK_USE_CRT "Option to use the S3 CRT client instead of the vanilla S3 Client" ON)
+if (AWS_SDK_BENCHMARK_USE_CRT)
+    add_definitions(-DAWS_SDK_BENCHMARK_USE_CRT)
 endif ()
 
 set_compiler_flags(${PROJECT_NAME})
