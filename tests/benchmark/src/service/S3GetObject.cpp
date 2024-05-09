@@ -2,11 +2,23 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
+#ifdef AWS_SDK_BENCHMARK_USE_CRT
+#include <aws/s3-crt/model/CreateBucketRequest.h>
+#include <aws/s3-crt/model/DeleteBucketRequest.h>
+#include <aws/s3-crt/model/PutObjectRequest.h>
+#include <aws/s3-crt/model/GetObjectRequest.h>
+#include <aws/s3-crt/model/DeleteObjectRequest.h>
+using namespace Aws::S3Crt;
+using namespace Aws::S3Crt::Model;
+#else
 #include <aws/s3/model/CreateBucketRequest.h>
 #include <aws/s3/model/DeleteBucketRequest.h>
 #include <aws/s3/model/PutObjectRequest.h>
 #include <aws/s3/model/GetObjectRequest.h>
 #include <aws/s3/model/DeleteObjectRequest.h>
+using namespace Aws::S3;
+using namespace Aws::S3::Model;
+#endif
 #include <aws/core/utils/UUID.h>
 #include <service/S3GetObject.h>
 #include <service/S3Utils.h>
@@ -15,8 +27,6 @@
 
 using namespace Aws;
 using namespace Aws::Utils;
-using namespace Aws::S3;
-using namespace Aws::S3::Model;
 using namespace std::chrono;
 
 Benchmark::TestFunction Benchmark::S3GetObject::CreateTestFunction() {
