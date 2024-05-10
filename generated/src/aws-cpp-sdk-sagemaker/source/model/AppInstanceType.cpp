@@ -77,6 +77,14 @@ namespace Aws
         static const int ml_g5_12xlarge_HASH = HashingUtils::HashString("ml.g5.12xlarge");
         static const int ml_g5_24xlarge_HASH = HashingUtils::HashString("ml.g5.24xlarge");
         static const int ml_g5_48xlarge_HASH = HashingUtils::HashString("ml.g5.48xlarge");
+        static const int ml_g6_xlarge_HASH = HashingUtils::HashString("ml.g6.xlarge");
+        static const int ml_g6_2xlarge_HASH = HashingUtils::HashString("ml.g6.2xlarge");
+        static const int ml_g6_4xlarge_HASH = HashingUtils::HashString("ml.g6.4xlarge");
+        static const int ml_g6_8xlarge_HASH = HashingUtils::HashString("ml.g6.8xlarge");
+        static const int ml_g6_12xlarge_HASH = HashingUtils::HashString("ml.g6.12xlarge");
+        static const int ml_g6_16xlarge_HASH = HashingUtils::HashString("ml.g6.16xlarge");
+        static const int ml_g6_24xlarge_HASH = HashingUtils::HashString("ml.g6.24xlarge");
+        static const int ml_g6_48xlarge_HASH = HashingUtils::HashString("ml.g6.48xlarge");
         static const int ml_geospatial_interactive_HASH = HashingUtils::HashString("ml.geospatial.interactive");
         static const int ml_p4d_24xlarge_HASH = HashingUtils::HashString("ml.p4d.24xlarge");
         static const int ml_p4de_24xlarge_HASH = HashingUtils::HashString("ml.p4de.24xlarge");
@@ -458,6 +466,46 @@ namespace Aws
             enumValue = AppInstanceType::ml_g5_48xlarge;
             return true;
           }
+          else if (hashCode == ml_g6_xlarge_HASH)
+          {
+            enumValue = AppInstanceType::ml_g6_xlarge;
+            return true;
+          }
+          else if (hashCode == ml_g6_2xlarge_HASH)
+          {
+            enumValue = AppInstanceType::ml_g6_2xlarge;
+            return true;
+          }
+          else if (hashCode == ml_g6_4xlarge_HASH)
+          {
+            enumValue = AppInstanceType::ml_g6_4xlarge;
+            return true;
+          }
+          else if (hashCode == ml_g6_8xlarge_HASH)
+          {
+            enumValue = AppInstanceType::ml_g6_8xlarge;
+            return true;
+          }
+          else if (hashCode == ml_g6_12xlarge_HASH)
+          {
+            enumValue = AppInstanceType::ml_g6_12xlarge;
+            return true;
+          }
+          else if (hashCode == ml_g6_16xlarge_HASH)
+          {
+            enumValue = AppInstanceType::ml_g6_16xlarge;
+            return true;
+          }
+          else if (hashCode == ml_g6_24xlarge_HASH)
+          {
+            enumValue = AppInstanceType::ml_g6_24xlarge;
+            return true;
+          }
+          else if (hashCode == ml_g6_48xlarge_HASH)
+          {
+            enumValue = AppInstanceType::ml_g6_48xlarge;
+            return true;
+          }
           else if (hashCode == ml_geospatial_interactive_HASH)
           {
             enumValue = AppInstanceType::ml_geospatial_interactive;
@@ -743,7 +791,11 @@ namespace Aws
             enumValue = AppInstanceType::ml_r7i_8xlarge;
             return true;
           }
-          else if (hashCode == ml_r7i_12xlarge_HASH)
+          return false;
+        }
+        static bool GetEnumForNameHelper1(int hashCode, AppInstanceType& enumValue)
+        {
+          if (hashCode == ml_r7i_12xlarge_HASH)
           {
             enumValue = AppInstanceType::ml_r7i_12xlarge;
             return true;
@@ -783,11 +835,7 @@ namespace Aws
             enumValue = AppInstanceType::ml_m6id_4xlarge;
             return true;
           }
-          return false;
-        }
-        static bool GetEnumForNameHelper1(int hashCode, AppInstanceType& enumValue)
-        {
-          if (hashCode == ml_m6id_8xlarge_HASH)
+          else if (hashCode == ml_m6id_8xlarge_HASH)
           {
             enumValue = AppInstanceType::ml_m6id_8xlarge;
             return true;
@@ -1080,6 +1128,30 @@ namespace Aws
           case AppInstanceType::ml_g5_48xlarge:
             value = "ml.g5.48xlarge";
             return true;
+          case AppInstanceType::ml_g6_xlarge:
+            value = "ml.g6.xlarge";
+            return true;
+          case AppInstanceType::ml_g6_2xlarge:
+            value = "ml.g6.2xlarge";
+            return true;
+          case AppInstanceType::ml_g6_4xlarge:
+            value = "ml.g6.4xlarge";
+            return true;
+          case AppInstanceType::ml_g6_8xlarge:
+            value = "ml.g6.8xlarge";
+            return true;
+          case AppInstanceType::ml_g6_12xlarge:
+            value = "ml.g6.12xlarge";
+            return true;
+          case AppInstanceType::ml_g6_16xlarge:
+            value = "ml.g6.16xlarge";
+            return true;
+          case AppInstanceType::ml_g6_24xlarge:
+            value = "ml.g6.24xlarge";
+            return true;
+          case AppInstanceType::ml_g6_48xlarge:
+            value = "ml.g6.48xlarge";
+            return true;
           case AppInstanceType::ml_geospatial_interactive:
             value = "ml.geospatial.interactive";
             return true;
@@ -1251,6 +1323,14 @@ namespace Aws
           case AppInstanceType::ml_r7i_8xlarge:
             value = "ml.r7i.8xlarge";
             return true;
+          default:
+            return false;
+          }
+        }
+        static bool GetNameForEnumHelper1(AppInstanceType enumValue, Aws::String& value)
+        {
+          switch(enumValue)
+          {
           case AppInstanceType::ml_r7i_12xlarge:
             value = "ml.r7i.12xlarge";
             return true;
@@ -1275,14 +1355,6 @@ namespace Aws
           case AppInstanceType::ml_m6id_4xlarge:
             value = "ml.m6id.4xlarge";
             return true;
-          default:
-            return false;
-          }
-        }
-        static bool GetNameForEnumHelper1(AppInstanceType enumValue, Aws::String& value)
-        {
-          switch(enumValue)
-          {
           case AppInstanceType::ml_m6id_8xlarge:
             value = "ml.m6id.8xlarge";
             return true;

@@ -138,8 +138,9 @@ namespace SSOOIDC
         /**
          * <p>Creates and returns access and refresh tokens for clients and applications
          * that are authenticated using IAM entities. The access token can be used to fetch
-         * short-term credentials for the assigned AWS accounts or to access application
-         * APIs using <code>bearer</code> authentication.</p><p><h3>See Also:</h3>   <a
+         * short-term credentials for the assigned Amazon Web Services accounts or to
+         * access application APIs using <code>bearer</code> authentication.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/CreateTokenWithIAM">AWS
          * API Reference</a></p>
          */

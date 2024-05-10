@@ -20,7 +20,8 @@ CreateTokenRequest::CreateTokenRequest() :
     m_codeHasBeenSet(false),
     m_refreshTokenHasBeenSet(false),
     m_scopeHasBeenSet(false),
-    m_redirectUriHasBeenSet(false)
+    m_redirectUriHasBeenSet(false),
+    m_codeVerifierHasBeenSet(false)
 {
 }
 
@@ -78,6 +79,12 @@ Aws::String CreateTokenRequest::SerializePayload() const
   if(m_redirectUriHasBeenSet)
   {
    payload.WithString("redirectUri", m_redirectUri);
+
+  }
+
+  if(m_codeVerifierHasBeenSet)
+  {
+   payload.WithString("codeVerifier", m_codeVerifier);
 
   }
 

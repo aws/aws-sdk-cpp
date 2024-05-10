@@ -11,6 +11,7 @@
 #include <aws/sso-oidc/model/InvalidRequestRegionException.h>
 #include <aws/sso-oidc/model/InternalServerException.h>
 #include <aws/sso-oidc/model/AuthorizationPendingException.h>
+#include <aws/sso-oidc/model/InvalidRedirectUriException.h>
 #include <aws/sso-oidc/model/ExpiredTokenException.h>
 #include <aws/sso-oidc/model/SlowDownException.h>
 #include <aws/sso-oidc/model/UnauthorizedClientException.h>
@@ -57,6 +58,12 @@ template<> AWS_SSOOIDC_API AuthorizationPendingException SSOOIDCError::GetModele
 {
   assert(this->GetErrorType() == SSOOIDCErrors::AUTHORIZATION_PENDING);
   return AuthorizationPendingException(this->GetJsonPayload().View());
+}
+
+template<> AWS_SSOOIDC_API InvalidRedirectUriException SSOOIDCError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSOOIDCErrors::INVALID_REDIRECT_URI);
+  return InvalidRedirectUriException(this->GetJsonPayload().View());
 }
 
 template<> AWS_SSOOIDC_API ExpiredTokenException SSOOIDCError::GetModeledError()
@@ -115,6 +122,7 @@ static const int INVALID_SCOPE_HASH = HashingUtils::HashString("InvalidScopeExce
 static const int INVALID_REQUEST_REGION_HASH = HashingUtils::HashString("InvalidRequestRegionException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 static const int AUTHORIZATION_PENDING_HASH = HashingUtils::HashString("AuthorizationPendingException");
+static const int INVALID_REDIRECT_URI_HASH = HashingUtils::HashString("InvalidRedirectUriException");
 static const int UNSUPPORTED_GRANT_TYPE_HASH = HashingUtils::HashString("UnsupportedGrantTypeException");
 static const int EXPIRED_TOKEN_HASH = HashingUtils::HashString("ExpiredTokenException");
 static const int UNAUTHORIZED_CLIENT_HASH = HashingUtils::HashString("UnauthorizedClientException");
@@ -146,6 +154,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == AUTHORIZATION_PENDING_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSOOIDCErrors::AUTHORIZATION_PENDING), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == INVALID_REDIRECT_URI_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSOOIDCErrors::INVALID_REDIRECT_URI), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNSUPPORTED_GRANT_TYPE_HASH)
   {

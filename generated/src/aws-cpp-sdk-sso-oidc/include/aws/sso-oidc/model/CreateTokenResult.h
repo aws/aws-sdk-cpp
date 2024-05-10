@@ -33,44 +33,44 @@ namespace Model
 
 
     /**
-     * <p>A bearer token to access AWS accounts and applications assigned to a
-     * user.</p>
+     * <p>A bearer token to access Amazon Web Services accounts and applications
+     * assigned to a user.</p>
      */
     inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
 
     /**
-     * <p>A bearer token to access AWS accounts and applications assigned to a
-     * user.</p>
+     * <p>A bearer token to access Amazon Web Services accounts and applications
+     * assigned to a user.</p>
      */
     inline void SetAccessToken(const Aws::String& value) { m_accessToken = value; }
 
     /**
-     * <p>A bearer token to access AWS accounts and applications assigned to a
-     * user.</p>
+     * <p>A bearer token to access Amazon Web Services accounts and applications
+     * assigned to a user.</p>
      */
     inline void SetAccessToken(Aws::String&& value) { m_accessToken = std::move(value); }
 
     /**
-     * <p>A bearer token to access AWS accounts and applications assigned to a
-     * user.</p>
+     * <p>A bearer token to access Amazon Web Services accounts and applications
+     * assigned to a user.</p>
      */
     inline void SetAccessToken(const char* value) { m_accessToken.assign(value); }
 
     /**
-     * <p>A bearer token to access AWS accounts and applications assigned to a
-     * user.</p>
+     * <p>A bearer token to access Amazon Web Services accounts and applications
+     * assigned to a user.</p>
      */
     inline CreateTokenResult& WithAccessToken(const Aws::String& value) { SetAccessToken(value); return *this;}
 
     /**
-     * <p>A bearer token to access AWS accounts and applications assigned to a
-     * user.</p>
+     * <p>A bearer token to access Amazon Web Services accounts and applications
+     * assigned to a user.</p>
      */
     inline CreateTokenResult& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
 
     /**
-     * <p>A bearer token to access AWS accounts and applications assigned to a
-     * user.</p>
+     * <p>A bearer token to access Amazon Web Services accounts and applications
+     * assigned to a user.</p>
      */
     inline CreateTokenResult& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
 

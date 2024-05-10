@@ -177,6 +177,14 @@ namespace Aws
         static const int ml_r6id_16xlarge_HASH = HashingUtils::HashString("ml.r6id.16xlarge");
         static const int ml_r6id_24xlarge_HASH = HashingUtils::HashString("ml.r6id.24xlarge");
         static const int ml_r6id_32xlarge_HASH = HashingUtils::HashString("ml.r6id.32xlarge");
+        static const int ml_g6_xlarge_HASH = HashingUtils::HashString("ml.g6.xlarge");
+        static const int ml_g6_2xlarge_HASH = HashingUtils::HashString("ml.g6.2xlarge");
+        static const int ml_g6_4xlarge_HASH = HashingUtils::HashString("ml.g6.4xlarge");
+        static const int ml_g6_8xlarge_HASH = HashingUtils::HashString("ml.g6.8xlarge");
+        static const int ml_g6_12xlarge_HASH = HashingUtils::HashString("ml.g6.12xlarge");
+        static const int ml_g6_16xlarge_HASH = HashingUtils::HashString("ml.g6.16xlarge");
+        static const int ml_g6_24xlarge_HASH = HashingUtils::HashString("ml.g6.24xlarge");
+        static const int ml_g6_48xlarge_HASH = HashingUtils::HashString("ml.g6.48xlarge");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -974,6 +982,46 @@ namespace Aws
             enumValue = InstanceType::ml_r6id_32xlarge;
             return true;
           }
+          else if (hashCode == ml_g6_xlarge_HASH)
+          {
+            enumValue = InstanceType::ml_g6_xlarge;
+            return true;
+          }
+          else if (hashCode == ml_g6_2xlarge_HASH)
+          {
+            enumValue = InstanceType::ml_g6_2xlarge;
+            return true;
+          }
+          else if (hashCode == ml_g6_4xlarge_HASH)
+          {
+            enumValue = InstanceType::ml_g6_4xlarge;
+            return true;
+          }
+          else if (hashCode == ml_g6_8xlarge_HASH)
+          {
+            enumValue = InstanceType::ml_g6_8xlarge;
+            return true;
+          }
+          else if (hashCode == ml_g6_12xlarge_HASH)
+          {
+            enumValue = InstanceType::ml_g6_12xlarge;
+            return true;
+          }
+          else if (hashCode == ml_g6_16xlarge_HASH)
+          {
+            enumValue = InstanceType::ml_g6_16xlarge;
+            return true;
+          }
+          else if (hashCode == ml_g6_24xlarge_HASH)
+          {
+            enumValue = InstanceType::ml_g6_24xlarge;
+            return true;
+          }
+          else if (hashCode == ml_g6_48xlarge_HASH)
+          {
+            enumValue = InstanceType::ml_g6_48xlarge;
+            return true;
+          }
           return false;
         }
 
@@ -1459,6 +1507,30 @@ namespace Aws
             return true;
           case InstanceType::ml_r6id_32xlarge:
             value = "ml.r6id.32xlarge";
+            return true;
+          case InstanceType::ml_g6_xlarge:
+            value = "ml.g6.xlarge";
+            return true;
+          case InstanceType::ml_g6_2xlarge:
+            value = "ml.g6.2xlarge";
+            return true;
+          case InstanceType::ml_g6_4xlarge:
+            value = "ml.g6.4xlarge";
+            return true;
+          case InstanceType::ml_g6_8xlarge:
+            value = "ml.g6.8xlarge";
+            return true;
+          case InstanceType::ml_g6_12xlarge:
+            value = "ml.g6.12xlarge";
+            return true;
+          case InstanceType::ml_g6_16xlarge:
+            value = "ml.g6.16xlarge";
+            return true;
+          case InstanceType::ml_g6_24xlarge:
+            value = "ml.g6.24xlarge";
+            return true;
+          case InstanceType::ml_g6_48xlarge:
+            value = "ml.g6.48xlarge";
             return true;
           default:
             return false;
