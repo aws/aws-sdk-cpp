@@ -325,80 +325,80 @@ namespace Model
     /**
      * <p>The most recent deployment source that brought the component to the
      * Greengrass core device. For a thing group deployment or thing deployment, the
-     * source will be the The ID of the deployment. and for local deployments it will
-     * be <code>LOCAL</code>.</p>  <p>Any deployment will attempt to reinstall
-     * currently broken components on the device, which will update the last
-     * installation source.</p> 
+     * source will be the ID of the last deployment that contained the component. For
+     * local deployments it will be <code>LOCAL</code>.</p>  <p>Any deployment
+     * will attempt to reinstall currently broken components on the device, which will
+     * update the last installation source.</p> 
      */
     inline const Aws::String& GetLastInstallationSource() const{ return m_lastInstallationSource; }
 
     /**
      * <p>The most recent deployment source that brought the component to the
      * Greengrass core device. For a thing group deployment or thing deployment, the
-     * source will be the The ID of the deployment. and for local deployments it will
-     * be <code>LOCAL</code>.</p>  <p>Any deployment will attempt to reinstall
-     * currently broken components on the device, which will update the last
-     * installation source.</p> 
+     * source will be the ID of the last deployment that contained the component. For
+     * local deployments it will be <code>LOCAL</code>.</p>  <p>Any deployment
+     * will attempt to reinstall currently broken components on the device, which will
+     * update the last installation source.</p> 
      */
     inline bool LastInstallationSourceHasBeenSet() const { return m_lastInstallationSourceHasBeenSet; }
 
     /**
      * <p>The most recent deployment source that brought the component to the
      * Greengrass core device. For a thing group deployment or thing deployment, the
-     * source will be the The ID of the deployment. and for local deployments it will
-     * be <code>LOCAL</code>.</p>  <p>Any deployment will attempt to reinstall
-     * currently broken components on the device, which will update the last
-     * installation source.</p> 
+     * source will be the ID of the last deployment that contained the component. For
+     * local deployments it will be <code>LOCAL</code>.</p>  <p>Any deployment
+     * will attempt to reinstall currently broken components on the device, which will
+     * update the last installation source.</p> 
      */
     inline void SetLastInstallationSource(const Aws::String& value) { m_lastInstallationSourceHasBeenSet = true; m_lastInstallationSource = value; }
 
     /**
      * <p>The most recent deployment source that brought the component to the
      * Greengrass core device. For a thing group deployment or thing deployment, the
-     * source will be the The ID of the deployment. and for local deployments it will
-     * be <code>LOCAL</code>.</p>  <p>Any deployment will attempt to reinstall
-     * currently broken components on the device, which will update the last
-     * installation source.</p> 
+     * source will be the ID of the last deployment that contained the component. For
+     * local deployments it will be <code>LOCAL</code>.</p>  <p>Any deployment
+     * will attempt to reinstall currently broken components on the device, which will
+     * update the last installation source.</p> 
      */
     inline void SetLastInstallationSource(Aws::String&& value) { m_lastInstallationSourceHasBeenSet = true; m_lastInstallationSource = std::move(value); }
 
     /**
      * <p>The most recent deployment source that brought the component to the
      * Greengrass core device. For a thing group deployment or thing deployment, the
-     * source will be the The ID of the deployment. and for local deployments it will
-     * be <code>LOCAL</code>.</p>  <p>Any deployment will attempt to reinstall
-     * currently broken components on the device, which will update the last
-     * installation source.</p> 
+     * source will be the ID of the last deployment that contained the component. For
+     * local deployments it will be <code>LOCAL</code>.</p>  <p>Any deployment
+     * will attempt to reinstall currently broken components on the device, which will
+     * update the last installation source.</p> 
      */
     inline void SetLastInstallationSource(const char* value) { m_lastInstallationSourceHasBeenSet = true; m_lastInstallationSource.assign(value); }
 
     /**
      * <p>The most recent deployment source that brought the component to the
      * Greengrass core device. For a thing group deployment or thing deployment, the
-     * source will be the The ID of the deployment. and for local deployments it will
-     * be <code>LOCAL</code>.</p>  <p>Any deployment will attempt to reinstall
-     * currently broken components on the device, which will update the last
-     * installation source.</p> 
+     * source will be the ID of the last deployment that contained the component. For
+     * local deployments it will be <code>LOCAL</code>.</p>  <p>Any deployment
+     * will attempt to reinstall currently broken components on the device, which will
+     * update the last installation source.</p> 
      */
     inline InstalledComponent& WithLastInstallationSource(const Aws::String& value) { SetLastInstallationSource(value); return *this;}
 
     /**
      * <p>The most recent deployment source that brought the component to the
      * Greengrass core device. For a thing group deployment or thing deployment, the
-     * source will be the The ID of the deployment. and for local deployments it will
-     * be <code>LOCAL</code>.</p>  <p>Any deployment will attempt to reinstall
-     * currently broken components on the device, which will update the last
-     * installation source.</p> 
+     * source will be the ID of the last deployment that contained the component. For
+     * local deployments it will be <code>LOCAL</code>.</p>  <p>Any deployment
+     * will attempt to reinstall currently broken components on the device, which will
+     * update the last installation source.</p> 
      */
     inline InstalledComponent& WithLastInstallationSource(Aws::String&& value) { SetLastInstallationSource(std::move(value)); return *this;}
 
     /**
      * <p>The most recent deployment source that brought the component to the
      * Greengrass core device. For a thing group deployment or thing deployment, the
-     * source will be the The ID of the deployment. and for local deployments it will
-     * be <code>LOCAL</code>.</p>  <p>Any deployment will attempt to reinstall
-     * currently broken components on the device, which will update the last
-     * installation source.</p> 
+     * source will be the ID of the last deployment that contained the component. For
+     * local deployments it will be <code>LOCAL</code>.</p>  <p>Any deployment
+     * will attempt to reinstall currently broken components on the device, which will
+     * update the last installation source.</p> 
      */
     inline InstalledComponent& WithLastInstallationSource(const char* value) { SetLastInstallationSource(value); return *this;}
 

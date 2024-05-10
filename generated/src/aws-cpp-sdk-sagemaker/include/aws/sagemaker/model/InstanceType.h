@@ -172,7 +172,15 @@ namespace Model
     ml_r6id_12xlarge,
     ml_r6id_16xlarge,
     ml_r6id_24xlarge,
-    ml_r6id_32xlarge
+    ml_r6id_32xlarge,
+    ml_g6_xlarge,
+    ml_g6_2xlarge,
+    ml_g6_4xlarge,
+    ml_g6_8xlarge,
+    ml_g6_12xlarge,
+    ml_g6_16xlarge,
+    ml_g6_24xlarge,
+    ml_g6_48xlarge
   };
 
 namespace InstanceTypeMapper

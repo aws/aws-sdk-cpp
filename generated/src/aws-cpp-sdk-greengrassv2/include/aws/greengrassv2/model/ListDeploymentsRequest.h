@@ -210,21 +210,25 @@ namespace Model
 
     /**
      * <p>The maximum number of results to be returned per paginated request.</p>
+     * <p>Default: <code>50</code> </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of results to be returned per paginated request.</p>
+     * <p>Default: <code>50</code> </p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to be returned per paginated request.</p>
+     * <p>Default: <code>50</code> </p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of results to be returned per paginated request.</p>
+     * <p>Default: <code>50</code> </p>
      */
     inline ListDeploymentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
