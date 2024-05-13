@@ -209,7 +209,7 @@ static size_t WriteData(char* ptr, size_t size, size_t nmemb, void* userdata)
             return 0;
         }
 
-        size_t cur = response->GetResponseBody().tellp();
+        auto cur = response->GetResponseBody().tellp();
         if (response->GetResponseBody().fail()) {
             const auto& ref = response->GetResponseBody();
             AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Unable to query response output position (eof: "
@@ -302,7 +302,7 @@ static size_t ReadBody(char* ptr, size_t size, size_t nmemb, void* userdata, boo
         {
             if (!ioStream->eof() && ioStream->peek() != EOF)
             {
-              amountRead = ioStream->readsome(ptr, amountToRead);
+                amountRead = (size_t) ioStream->readsome(ptr, amountToRead);
             }
             if (amountRead == 0 && !ioStream->eof())
             {

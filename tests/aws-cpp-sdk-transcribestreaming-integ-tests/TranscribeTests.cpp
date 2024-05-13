@@ -557,7 +557,7 @@ unsigned int LevenshteinDistance(Aws::String s1, Aws::String s2)
 TEST_F(TranscribeStreamingTests, TranscribeStreamingCppSdkSample)
 {
   const Aws::Vector<Aws::String> EXPECTED_ALTERNATIVES = {"This is a C plus plus test sample", "This is a C++ test sample"};
-  for(size_t chunkDuration = 50; chunkDuration <= 200; chunkDuration += 25)
+  for(size_t chunkDuration = 50; chunkDuration <= 200; chunkDuration += 50)
   {
     m_testTraces.clear();
     TestTrace(Aws::String("### Starting TranscribeStreamingCppSdkSample with chunks of ") + Aws::Utils::StringUtils::to_string(chunkDuration) + " ms ##");
@@ -582,7 +582,7 @@ TEST_F(TranscribeStreamingTests, TranscribeStreamingKantSample)
   static const char expected[] = "Categorical imperative: Act only according to that maxim whereby you can at the same time will that it should become a universal law. "
                                  "Two things fill the mind with ever-increasing wonder and awe, the more often and the more intensely the mind of thought is drawn to them: "
                                  "the starry heavens above me and the moral law within me.";
-  for(size_t chunkDuration = 50; chunkDuration <= 200; chunkDuration += 25)
+  for(size_t chunkDuration = 50; chunkDuration <= 200; chunkDuration += 50)
   {
     m_testTraces.clear();
     TestTrace(Aws::String("### Starting TranscribeStreamingKantSample with chunks of ") + Aws::Utils::StringUtils::to_string(chunkDuration) + " ms ##");

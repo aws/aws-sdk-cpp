@@ -51,6 +51,7 @@ namespace Aws
             bool DoReceiveResponse(void* httpRequest) const override;
             bool DoQueryHeaders(void* httpRequest, std::shared_ptr<Aws::Http::HttpResponse>& response, Aws::StringStream& ss, uint64_t& read) const override;
             bool DoSendRequest(void* httpRequest) const override;
+            bool DoQueryDataAvailable(void* hHttpRequest, uint64_t& available) const override;
             bool DoReadData(void* hHttpRequest, char* body, uint64_t size, uint64_t& read) const override;
             void* GetClientModule() const override;
 
