@@ -578,6 +578,11 @@ bool WinHttpSyncHttpClient::DoSendRequest(void* hHttpRequest) const
     return (WinHttpSendRequest(hHttpRequest, NULL, NULL, 0, 0, 0, NULL) != 0);
 }
 
+bool WinHttpSyncHttpClient::DoQueryDataAvailable(void* hHttpRequest, uint64_t& available) const
+{
+    return (WinHttpQueryDataAvailable(hHttpRequest, (LPDWORD)&available) != 0);
+}
+
 bool WinHttpSyncHttpClient::DoReadData(void* hHttpRequest, char* body, uint64_t size, uint64_t& read) const
 {
     return (WinHttpReadData(hHttpRequest, body, (DWORD)size, (LPDWORD)&read) != 0);

@@ -69,6 +69,7 @@ namespace
                 auto cognitoClient = Aws::MakeShared<Aws::CognitoIdentity::CognitoIdentityClient>(ALLOCATION_TAG, config);
                 Aws::AccessManagement::AccessManagementClient accessManagementClient(iamClient, cognitoClient);
                 accountId = accessManagementClient.GetAccountId();
+                assert(!accountId.empty()); // AccountId must be set for this test
             }
             m_accountId = accountId;
         }

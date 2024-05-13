@@ -11,12 +11,14 @@ namespace Benchmark {
         std::string service;
         std::string api;
         long durationMillis;
+        size_t maxRepeats;
         bool shouldReportToCloudWatch;
         std::map<std::string, std::string> dimensions;
     };
 
     class Configuration {
     public:
+        static void PrintHelp();
         static Configuration FromArgs(int argc, char *argv[]);
         inline RunConfiguration GetConfiguration() const { return this->runConfiguration; }
     private:
