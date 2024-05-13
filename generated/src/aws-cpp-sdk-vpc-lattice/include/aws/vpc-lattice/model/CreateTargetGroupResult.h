@@ -72,32 +72,27 @@ namespace Model
 
 
     /**
-     * <p>The target group configuration. If <code>type</code> is set to
-     * <code>LAMBDA</code>, this parameter doesn't apply.</p>
+     * <p>The target group configuration.</p>
      */
     inline const TargetGroupConfig& GetConfig() const{ return m_config; }
 
     /**
-     * <p>The target group configuration. If <code>type</code> is set to
-     * <code>LAMBDA</code>, this parameter doesn't apply.</p>
+     * <p>The target group configuration.</p>
      */
     inline void SetConfig(const TargetGroupConfig& value) { m_config = value; }
 
     /**
-     * <p>The target group configuration. If <code>type</code> is set to
-     * <code>LAMBDA</code>, this parameter doesn't apply.</p>
+     * <p>The target group configuration.</p>
      */
     inline void SetConfig(TargetGroupConfig&& value) { m_config = std::move(value); }
 
     /**
-     * <p>The target group configuration. If <code>type</code> is set to
-     * <code>LAMBDA</code>, this parameter doesn't apply.</p>
+     * <p>The target group configuration.</p>
      */
     inline CreateTargetGroupResult& WithConfig(const TargetGroupConfig& value) { SetConfig(value); return *this;}
 
     /**
-     * <p>The target group configuration. If <code>type</code> is set to
-     * <code>LAMBDA</code>, this parameter doesn't apply.</p>
+     * <p>The target group configuration.</p>
      */
     inline CreateTargetGroupResult& WithConfig(TargetGroupConfig&& value) { SetConfig(std::move(value)); return *this;}
 
@@ -175,37 +170,37 @@ namespace Model
 
 
     /**
-     * <p>The operation's status. You can retry the operation if the status is
+     * <p>The status. You can retry the operation if the status is
      * <code>CREATE_FAILED</code>. However, if you retry it while the status is
-     * <code>CREATE_IN_PROGRESS</code>, there is no change in the status. </p>
+     * <code>CREATE_IN_PROGRESS</code>, there is no change in the status.</p>
      */
     inline const TargetGroupStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The operation's status. You can retry the operation if the status is
+     * <p>The status. You can retry the operation if the status is
      * <code>CREATE_FAILED</code>. However, if you retry it while the status is
-     * <code>CREATE_IN_PROGRESS</code>, there is no change in the status. </p>
+     * <code>CREATE_IN_PROGRESS</code>, there is no change in the status.</p>
      */
     inline void SetStatus(const TargetGroupStatus& value) { m_status = value; }
 
     /**
-     * <p>The operation's status. You can retry the operation if the status is
+     * <p>The status. You can retry the operation if the status is
      * <code>CREATE_FAILED</code>. However, if you retry it while the status is
-     * <code>CREATE_IN_PROGRESS</code>, there is no change in the status. </p>
+     * <code>CREATE_IN_PROGRESS</code>, there is no change in the status.</p>
      */
     inline void SetStatus(TargetGroupStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>The operation's status. You can retry the operation if the status is
+     * <p>The status. You can retry the operation if the status is
      * <code>CREATE_FAILED</code>. However, if you retry it while the status is
-     * <code>CREATE_IN_PROGRESS</code>, there is no change in the status. </p>
+     * <code>CREATE_IN_PROGRESS</code>, there is no change in the status.</p>
      */
     inline CreateTargetGroupResult& WithStatus(const TargetGroupStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The operation's status. You can retry the operation if the status is
+     * <p>The status. You can retry the operation if the status is
      * <code>CREATE_FAILED</code>. However, if you retry it while the status is
-     * <code>CREATE_IN_PROGRESS</code>, there is no change in the status. </p>
+     * <code>CREATE_IN_PROGRESS</code>, there is no change in the status.</p>
      */
     inline CreateTargetGroupResult& WithStatus(TargetGroupStatus&& value) { SetStatus(std::move(value)); return *this;}
 

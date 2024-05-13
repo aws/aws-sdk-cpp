@@ -268,32 +268,32 @@ namespace Model
 
 
     /**
-     * <p>The status. If the status is <code>CREATE_FAILED</code>, you will have to
-     * delete and recreate the service.</p>
+     * <p>The status. If the status is <code>CREATE_FAILED</code>, you must delete and
+     * recreate the service.</p>
      */
     inline const ServiceStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status. If the status is <code>CREATE_FAILED</code>, you will have to
-     * delete and recreate the service.</p>
+     * <p>The status. If the status is <code>CREATE_FAILED</code>, you must delete and
+     * recreate the service.</p>
      */
     inline void SetStatus(const ServiceStatus& value) { m_status = value; }
 
     /**
-     * <p>The status. If the status is <code>CREATE_FAILED</code>, you will have to
-     * delete and recreate the service.</p>
+     * <p>The status. If the status is <code>CREATE_FAILED</code>, you must delete and
+     * recreate the service.</p>
      */
     inline void SetStatus(ServiceStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>The status. If the status is <code>CREATE_FAILED</code>, you will have to
-     * delete and recreate the service.</p>
+     * <p>The status. If the status is <code>CREATE_FAILED</code>, you must delete and
+     * recreate the service.</p>
      */
     inline CreateServiceResult& WithStatus(const ServiceStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status. If the status is <code>CREATE_FAILED</code>, you will have to
-     * delete and recreate the service.</p>
+     * <p>The status. If the status is <code>CREATE_FAILED</code>, you must delete and
+     * recreate the service.</p>
      */
     inline CreateServiceResult& WithStatus(ServiceStatus&& value) { SetStatus(std::move(value)); return *this;}
 

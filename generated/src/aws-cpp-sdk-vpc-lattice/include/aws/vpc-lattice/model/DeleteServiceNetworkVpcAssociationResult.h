@@ -107,35 +107,35 @@ namespace Model
 
     /**
      * <p>The status. You can retry the operation if the status is
-     * <code>DELETE_FAILED</code>. However, if you retry it when the status is
+     * <code>DELETE_FAILED</code>. However, if you retry it while the status is
      * <code>DELETE_IN_PROGRESS</code>, there is no change in the status.</p>
      */
     inline const ServiceNetworkVpcAssociationStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The status. You can retry the operation if the status is
-     * <code>DELETE_FAILED</code>. However, if you retry it when the status is
+     * <code>DELETE_FAILED</code>. However, if you retry it while the status is
      * <code>DELETE_IN_PROGRESS</code>, there is no change in the status.</p>
      */
     inline void SetStatus(const ServiceNetworkVpcAssociationStatus& value) { m_status = value; }
 
     /**
      * <p>The status. You can retry the operation if the status is
-     * <code>DELETE_FAILED</code>. However, if you retry it when the status is
+     * <code>DELETE_FAILED</code>. However, if you retry it while the status is
      * <code>DELETE_IN_PROGRESS</code>, there is no change in the status.</p>
      */
     inline void SetStatus(ServiceNetworkVpcAssociationStatus&& value) { m_status = std::move(value); }
 
     /**
      * <p>The status. You can retry the operation if the status is
-     * <code>DELETE_FAILED</code>. However, if you retry it when the status is
+     * <code>DELETE_FAILED</code>. However, if you retry it while the status is
      * <code>DELETE_IN_PROGRESS</code>, there is no change in the status.</p>
      */
     inline DeleteServiceNetworkVpcAssociationResult& WithStatus(const ServiceNetworkVpcAssociationStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The status. You can retry the operation if the status is
-     * <code>DELETE_FAILED</code>. However, if you retry it when the status is
+     * <code>DELETE_FAILED</code>. However, if you retry it while the status is
      * <code>DELETE_IN_PROGRESS</code>, there is no change in the status.</p>
      */
     inline DeleteServiceNetworkVpcAssociationResult& WithStatus(ServiceNetworkVpcAssociationStatus&& value) { SetStatus(std::move(value)); return *this;}

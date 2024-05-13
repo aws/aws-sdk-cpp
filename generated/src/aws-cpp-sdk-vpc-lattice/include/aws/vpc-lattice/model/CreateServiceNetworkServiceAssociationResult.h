@@ -205,27 +205,27 @@ namespace Model
 
 
     /**
-     * <p>The operation's status.</p>
+     * <p>The association status.</p>
      */
     inline const ServiceNetworkServiceAssociationStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The operation's status.</p>
+     * <p>The association status.</p>
      */
     inline void SetStatus(const ServiceNetworkServiceAssociationStatus& value) { m_status = value; }
 
     /**
-     * <p>The operation's status.</p>
+     * <p>The association status.</p>
      */
     inline void SetStatus(ServiceNetworkServiceAssociationStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>The operation's status.</p>
+     * <p>The association status.</p>
      */
     inline CreateServiceNetworkServiceAssociationResult& WithStatus(const ServiceNetworkServiceAssociationStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The operation's status.</p>
+     * <p>The association status.</p>
      */
     inline CreateServiceNetworkServiceAssociationResult& WithStatus(ServiceNetworkServiceAssociationStatus&& value) { SetStatus(std::move(value)); return *this;}
 

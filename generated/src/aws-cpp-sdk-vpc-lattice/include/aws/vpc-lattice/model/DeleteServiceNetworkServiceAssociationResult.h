@@ -106,35 +106,35 @@ namespace Model
 
 
     /**
-     * <p>The operation's status. You can retry the operation if the status is
+     * <p>The status. You can retry the operation if the status is
      * <code>DELETE_FAILED</code>. However, if you retry it when the status is
      * <code>DELETE_IN_PROGRESS</code>, there is no change in the status.</p>
      */
     inline const ServiceNetworkServiceAssociationStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The operation's status. You can retry the operation if the status is
+     * <p>The status. You can retry the operation if the status is
      * <code>DELETE_FAILED</code>. However, if you retry it when the status is
      * <code>DELETE_IN_PROGRESS</code>, there is no change in the status.</p>
      */
     inline void SetStatus(const ServiceNetworkServiceAssociationStatus& value) { m_status = value; }
 
     /**
-     * <p>The operation's status. You can retry the operation if the status is
+     * <p>The status. You can retry the operation if the status is
      * <code>DELETE_FAILED</code>. However, if you retry it when the status is
      * <code>DELETE_IN_PROGRESS</code>, there is no change in the status.</p>
      */
     inline void SetStatus(ServiceNetworkServiceAssociationStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>The operation's status. You can retry the operation if the status is
+     * <p>The status. You can retry the operation if the status is
      * <code>DELETE_FAILED</code>. However, if you retry it when the status is
      * <code>DELETE_IN_PROGRESS</code>, there is no change in the status.</p>
      */
     inline DeleteServiceNetworkServiceAssociationResult& WithStatus(const ServiceNetworkServiceAssociationStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The operation's status. You can retry the operation if the status is
+     * <p>The status. You can retry the operation if the status is
      * <code>DELETE_FAILED</code>. However, if you retry it when the status is
      * <code>DELETE_IN_PROGRESS</code>, there is no change in the status.</p>
      */

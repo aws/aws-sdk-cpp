@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents an object when updating a rule.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a rule update.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/RuleUpdate">AWS
    * API Reference</a></p>
    */

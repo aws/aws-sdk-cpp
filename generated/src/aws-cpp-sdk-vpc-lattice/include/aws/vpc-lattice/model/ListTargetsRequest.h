@@ -144,42 +144,42 @@ namespace Model
 
 
     /**
-     * <p>The targets to list.</p>
+     * <p>The targets.</p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
 
     /**
-     * <p>The targets to list.</p>
+     * <p>The targets.</p>
      */
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
 
     /**
-     * <p>The targets to list.</p>
+     * <p>The targets.</p>
      */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
-     * <p>The targets to list.</p>
+     * <p>The targets.</p>
      */
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
     /**
-     * <p>The targets to list.</p>
+     * <p>The targets.</p>
      */
     inline ListTargetsRequest& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
 
     /**
-     * <p>The targets to list.</p>
+     * <p>The targets.</p>
      */
     inline ListTargetsRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
-     * <p>The targets to list.</p>
+     * <p>The targets.</p>
      */
     inline ListTargetsRequest& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
 
     /**
-     * <p>The targets to list.</p>
+     * <p>The targets.</p>
      */
     inline ListTargetsRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 

@@ -139,37 +139,37 @@ namespace Model
 
 
     /**
-     * <p>The custom domain name of the service. </p>
+     * <p>The custom domain name of the service.</p>
      */
     inline const Aws::String& GetCustomDomainName() const{ return m_customDomainName; }
 
     /**
-     * <p>The custom domain name of the service. </p>
+     * <p>The custom domain name of the service.</p>
      */
     inline void SetCustomDomainName(const Aws::String& value) { m_customDomainName = value; }
 
     /**
-     * <p>The custom domain name of the service. </p>
+     * <p>The custom domain name of the service.</p>
      */
     inline void SetCustomDomainName(Aws::String&& value) { m_customDomainName = std::move(value); }
 
     /**
-     * <p>The custom domain name of the service. </p>
+     * <p>The custom domain name of the service.</p>
      */
     inline void SetCustomDomainName(const char* value) { m_customDomainName.assign(value); }
 
     /**
-     * <p>The custom domain name of the service. </p>
+     * <p>The custom domain name of the service.</p>
      */
     inline GetServiceNetworkServiceAssociationResult& WithCustomDomainName(const Aws::String& value) { SetCustomDomainName(value); return *this;}
 
     /**
-     * <p>The custom domain name of the service. </p>
+     * <p>The custom domain name of the service.</p>
      */
     inline GetServiceNetworkServiceAssociationResult& WithCustomDomainName(Aws::String&& value) { SetCustomDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>The custom domain name of the service. </p>
+     * <p>The custom domain name of the service.</p>
      */
     inline GetServiceNetworkServiceAssociationResult& WithCustomDomainName(const char* value) { SetCustomDomainName(value); return *this;}
 

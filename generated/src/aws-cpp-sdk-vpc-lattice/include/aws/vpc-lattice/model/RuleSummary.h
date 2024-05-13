@@ -158,30 +158,22 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether this is the default rule. Listener rules are created when
-     * you create a listener. Each listener has a default rule for checking connection
-     * requests. </p>
+     * <p>Indicates whether this is the default listener rule.</p>
      */
     inline bool GetIsDefault() const{ return m_isDefault; }
 
     /**
-     * <p>Indicates whether this is the default rule. Listener rules are created when
-     * you create a listener. Each listener has a default rule for checking connection
-     * requests. </p>
+     * <p>Indicates whether this is the default listener rule.</p>
      */
     inline bool IsDefaultHasBeenSet() const { return m_isDefaultHasBeenSet; }
 
     /**
-     * <p>Indicates whether this is the default rule. Listener rules are created when
-     * you create a listener. Each listener has a default rule for checking connection
-     * requests. </p>
+     * <p>Indicates whether this is the default listener rule.</p>
      */
     inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
 
     /**
-     * <p>Indicates whether this is the default rule. Listener rules are created when
-     * you create a listener. Each listener has a default rule for checking connection
-     * requests. </p>
+     * <p>Indicates whether this is the default listener rule.</p>
      */
     inline RuleSummary& WithIsDefault(bool value) { SetIsDefault(value); return *this;}
 
@@ -265,22 +257,22 @@ namespace Model
 
 
     /**
-     * <p> The priority of the rule. </p>
+     * <p>The priority of the rule.</p>
      */
     inline int GetPriority() const{ return m_priority; }
 
     /**
-     * <p> The priority of the rule. </p>
+     * <p>The priority of the rule.</p>
      */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
 
     /**
-     * <p> The priority of the rule. </p>
+     * <p>The priority of the rule.</p>
      */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
-     * <p> The priority of the rule. </p>
+     * <p>The priority of the rule.</p>
      */
     inline RuleSummary& WithPriority(int value) { SetPriority(value); return *this;}
 

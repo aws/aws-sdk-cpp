@@ -120,74 +120,74 @@ namespace Model
 
 
     /**
-     * <p>The ID of the target. If the target type of the target group is
-     * <code>INSTANCE</code>, this is an instance ID. If the target type is
-     * <code>IP</code> , this is an IP address. If the target type is
-     * <code>LAMBDA</code>, this is the ARN of the Lambda function. If the target type
-     * is <code>ALB</code>, this is the ARN of the Application Load Balancer.</p>
+     * <p>The ID of the target. If the target group type is <code>INSTANCE</code>, this
+     * is an instance ID. If the target group type is <code>IP</code>, this is an IP
+     * address. If the target group type is <code>LAMBDA</code>, this is the ARN of a
+     * Lambda function. If the target group type is <code>ALB</code>, this is the ARN
+     * of an Application Load Balancer.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The ID of the target. If the target type of the target group is
-     * <code>INSTANCE</code>, this is an instance ID. If the target type is
-     * <code>IP</code> , this is an IP address. If the target type is
-     * <code>LAMBDA</code>, this is the ARN of the Lambda function. If the target type
-     * is <code>ALB</code>, this is the ARN of the Application Load Balancer.</p>
+     * <p>The ID of the target. If the target group type is <code>INSTANCE</code>, this
+     * is an instance ID. If the target group type is <code>IP</code>, this is an IP
+     * address. If the target group type is <code>LAMBDA</code>, this is the ARN of a
+     * Lambda function. If the target group type is <code>ALB</code>, this is the ARN
+     * of an Application Load Balancer.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The ID of the target. If the target type of the target group is
-     * <code>INSTANCE</code>, this is an instance ID. If the target type is
-     * <code>IP</code> , this is an IP address. If the target type is
-     * <code>LAMBDA</code>, this is the ARN of the Lambda function. If the target type
-     * is <code>ALB</code>, this is the ARN of the Application Load Balancer.</p>
+     * <p>The ID of the target. If the target group type is <code>INSTANCE</code>, this
+     * is an instance ID. If the target group type is <code>IP</code>, this is an IP
+     * address. If the target group type is <code>LAMBDA</code>, this is the ARN of a
+     * Lambda function. If the target group type is <code>ALB</code>, this is the ARN
+     * of an Application Load Balancer.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The ID of the target. If the target type of the target group is
-     * <code>INSTANCE</code>, this is an instance ID. If the target type is
-     * <code>IP</code> , this is an IP address. If the target type is
-     * <code>LAMBDA</code>, this is the ARN of the Lambda function. If the target type
-     * is <code>ALB</code>, this is the ARN of the Application Load Balancer.</p>
+     * <p>The ID of the target. If the target group type is <code>INSTANCE</code>, this
+     * is an instance ID. If the target group type is <code>IP</code>, this is an IP
+     * address. If the target group type is <code>LAMBDA</code>, this is the ARN of a
+     * Lambda function. If the target group type is <code>ALB</code>, this is the ARN
+     * of an Application Load Balancer.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The ID of the target. If the target type of the target group is
-     * <code>INSTANCE</code>, this is an instance ID. If the target type is
-     * <code>IP</code> , this is an IP address. If the target type is
-     * <code>LAMBDA</code>, this is the ARN of the Lambda function. If the target type
-     * is <code>ALB</code>, this is the ARN of the Application Load Balancer.</p>
+     * <p>The ID of the target. If the target group type is <code>INSTANCE</code>, this
+     * is an instance ID. If the target group type is <code>IP</code>, this is an IP
+     * address. If the target group type is <code>LAMBDA</code>, this is the ARN of a
+     * Lambda function. If the target group type is <code>ALB</code>, this is the ARN
+     * of an Application Load Balancer.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The ID of the target. If the target type of the target group is
-     * <code>INSTANCE</code>, this is an instance ID. If the target type is
-     * <code>IP</code> , this is an IP address. If the target type is
-     * <code>LAMBDA</code>, this is the ARN of the Lambda function. If the target type
-     * is <code>ALB</code>, this is the ARN of the Application Load Balancer.</p>
+     * <p>The ID of the target. If the target group type is <code>INSTANCE</code>, this
+     * is an instance ID. If the target group type is <code>IP</code>, this is an IP
+     * address. If the target group type is <code>LAMBDA</code>, this is the ARN of a
+     * Lambda function. If the target group type is <code>ALB</code>, this is the ARN
+     * of an Application Load Balancer.</p>
      */
     inline TargetFailure& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The ID of the target. If the target type of the target group is
-     * <code>INSTANCE</code>, this is an instance ID. If the target type is
-     * <code>IP</code> , this is an IP address. If the target type is
-     * <code>LAMBDA</code>, this is the ARN of the Lambda function. If the target type
-     * is <code>ALB</code>, this is the ARN of the Application Load Balancer.</p>
+     * <p>The ID of the target. If the target group type is <code>INSTANCE</code>, this
+     * is an instance ID. If the target group type is <code>IP</code>, this is an IP
+     * address. If the target group type is <code>LAMBDA</code>, this is the ARN of a
+     * Lambda function. If the target group type is <code>ALB</code>, this is the ARN
+     * of an Application Load Balancer.</p>
      */
     inline TargetFailure& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the target. If the target type of the target group is
-     * <code>INSTANCE</code>, this is an instance ID. If the target type is
-     * <code>IP</code> , this is an IP address. If the target type is
-     * <code>LAMBDA</code>, this is the ARN of the Lambda function. If the target type
-     * is <code>ALB</code>, this is the ARN of the Application Load Balancer.</p>
+     * <p>The ID of the target. If the target group type is <code>INSTANCE</code>, this
+     * is an instance ID. If the target group type is <code>IP</code>, this is an IP
+     * address. If the target group type is <code>LAMBDA</code>, this is the ARN of a
+     * Lambda function. If the target group type is <code>ALB</code>, this is the ARN
+     * of an Application Load Balancer.</p>
      */
     inline TargetFailure& WithId(const char* value) { SetId(value); return *this;}
 

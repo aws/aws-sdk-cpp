@@ -80,45 +80,45 @@ namespace Model
 
     /**
      * <p>Only required if you specify multiple target groups for a forward action. The
-     * "weight" determines how requests are distributed to the target group. For
-     * example, if you specify two target groups, each with a weight of 10, each target
-     * group receives half the requests. If you specify two target groups, one with a
-     * weight of 10 and the other with a weight of 20, the target group with a weight
-     * of 20 receives twice as many requests as the other target group. If there's only
-     * one target group specified, then the default value is 100.</p>
+     * weight determines how requests are distributed to the target group. For example,
+     * if you specify two target groups, each with a weight of 10, each target group
+     * receives half the requests. If you specify two target groups, one with a weight
+     * of 10 and the other with a weight of 20, the target group with a weight of 20
+     * receives twice as many requests as the other target group. If there's only one
+     * target group specified, then the default value is 100.</p>
      */
     inline int GetWeight() const{ return m_weight; }
 
     /**
      * <p>Only required if you specify multiple target groups for a forward action. The
-     * "weight" determines how requests are distributed to the target group. For
-     * example, if you specify two target groups, each with a weight of 10, each target
-     * group receives half the requests. If you specify two target groups, one with a
-     * weight of 10 and the other with a weight of 20, the target group with a weight
-     * of 20 receives twice as many requests as the other target group. If there's only
-     * one target group specified, then the default value is 100.</p>
+     * weight determines how requests are distributed to the target group. For example,
+     * if you specify two target groups, each with a weight of 10, each target group
+     * receives half the requests. If you specify two target groups, one with a weight
+     * of 10 and the other with a weight of 20, the target group with a weight of 20
+     * receives twice as many requests as the other target group. If there's only one
+     * target group specified, then the default value is 100.</p>
      */
     inline bool WeightHasBeenSet() const { return m_weightHasBeenSet; }
 
     /**
      * <p>Only required if you specify multiple target groups for a forward action. The
-     * "weight" determines how requests are distributed to the target group. For
-     * example, if you specify two target groups, each with a weight of 10, each target
-     * group receives half the requests. If you specify two target groups, one with a
-     * weight of 10 and the other with a weight of 20, the target group with a weight
-     * of 20 receives twice as many requests as the other target group. If there's only
-     * one target group specified, then the default value is 100.</p>
+     * weight determines how requests are distributed to the target group. For example,
+     * if you specify two target groups, each with a weight of 10, each target group
+     * receives half the requests. If you specify two target groups, one with a weight
+     * of 10 and the other with a weight of 20, the target group with a weight of 20
+     * receives twice as many requests as the other target group. If there's only one
+     * target group specified, then the default value is 100.</p>
      */
     inline void SetWeight(int value) { m_weightHasBeenSet = true; m_weight = value; }
 
     /**
      * <p>Only required if you specify multiple target groups for a forward action. The
-     * "weight" determines how requests are distributed to the target group. For
-     * example, if you specify two target groups, each with a weight of 10, each target
-     * group receives half the requests. If you specify two target groups, one with a
-     * weight of 10 and the other with a weight of 20, the target group with a weight
-     * of 20 receives twice as many requests as the other target group. If there's only
-     * one target group specified, then the default value is 100.</p>
+     * weight determines how requests are distributed to the target group. For example,
+     * if you specify two target groups, each with a weight of 10, each target group
+     * receives half the requests. If you specify two target groups, one with a weight
+     * of 10 and the other with a weight of 20, the target group with a weight of 20
+     * receives twice as many requests as the other target group. If there's only one
+     * target group specified, then the default value is 100.</p>
      */
     inline WeightedTargetGroup& WithWeight(int value) { SetWeight(value); return *this;}
 

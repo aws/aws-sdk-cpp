@@ -34,56 +34,47 @@ namespace Model
 
 
     /**
-     * <p>The IDs of the security groups. Once you add a security group, it cannot be
-     * removed.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
     /**
-     * <p>The IDs of the security groups. Once you add a security group, it cannot be
-     * removed.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
-     * <p>The IDs of the security groups. Once you add a security group, it cannot be
-     * removed.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
-     * <p>The IDs of the security groups. Once you add a security group, it cannot be
-     * removed.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
-     * <p>The IDs of the security groups. Once you add a security group, it cannot be
-     * removed.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline UpdateServiceNetworkVpcAssociationRequest& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
     /**
-     * <p>The IDs of the security groups. Once you add a security group, it cannot be
-     * removed.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline UpdateServiceNetworkVpcAssociationRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of the security groups. Once you add a security group, it cannot be
-     * removed.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline UpdateServiceNetworkVpcAssociationRequest& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the security groups. Once you add a security group, it cannot be
-     * removed.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline UpdateServiceNetworkVpcAssociationRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The IDs of the security groups. Once you add a security group, it cannot be
-     * removed.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline UpdateServiceNetworkVpcAssociationRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 

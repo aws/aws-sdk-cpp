@@ -22,6 +22,7 @@ namespace Aws
 
         static const int HTTP_HASH = HashingUtils::HashString("HTTP");
         static const int HTTPS_HASH = HashingUtils::HashString("HTTPS");
+        static const int TCP_HASH = HashingUtils::HashString("TCP");
 
 
         TargetGroupProtocol GetTargetGroupProtocolForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == HTTPS_HASH)
           {
             return TargetGroupProtocol::HTTPS;
+          }
+          else if (hashCode == TCP_HASH)
+          {
+            return TargetGroupProtocol::TCP;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "HTTP";
           case TargetGroupProtocol::HTTPS:
             return "HTTPS";
+          case TargetGroupProtocol::TCP:
+            return "TCP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
