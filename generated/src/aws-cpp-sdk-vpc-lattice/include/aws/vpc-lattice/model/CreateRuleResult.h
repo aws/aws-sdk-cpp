@@ -35,37 +35,27 @@ namespace Model
 
 
     /**
-     * <p>The rule action. Each rule must include exactly one of the following types of
-     * actions: <code>forward </code>or <code>fixed-response</code>, and it must be the
-     * last action to be performed.</p>
+     * <p>The rule action.</p>
      */
     inline const RuleAction& GetAction() const{ return m_action; }
 
     /**
-     * <p>The rule action. Each rule must include exactly one of the following types of
-     * actions: <code>forward </code>or <code>fixed-response</code>, and it must be the
-     * last action to be performed.</p>
+     * <p>The rule action.</p>
      */
     inline void SetAction(const RuleAction& value) { m_action = value; }
 
     /**
-     * <p>The rule action. Each rule must include exactly one of the following types of
-     * actions: <code>forward </code>or <code>fixed-response</code>, and it must be the
-     * last action to be performed.</p>
+     * <p>The rule action.</p>
      */
     inline void SetAction(RuleAction&& value) { m_action = std::move(value); }
 
     /**
-     * <p>The rule action. Each rule must include exactly one of the following types of
-     * actions: <code>forward </code>or <code>fixed-response</code>, and it must be the
-     * last action to be performed.</p>
+     * <p>The rule action.</p>
      */
     inline CreateRuleResult& WithAction(const RuleAction& value) { SetAction(value); return *this;}
 
     /**
-     * <p>The rule action. Each rule must include exactly one of the following types of
-     * actions: <code>forward </code>or <code>fixed-response</code>, and it must be the
-     * last action to be performed.</p>
+     * <p>The rule action.</p>
      */
     inline CreateRuleResult& WithAction(RuleAction&& value) { SetAction(std::move(value)); return *this;}
 

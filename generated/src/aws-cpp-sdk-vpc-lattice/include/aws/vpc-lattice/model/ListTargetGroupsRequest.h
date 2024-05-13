@@ -133,42 +133,42 @@ namespace Model
 
 
     /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+     * <p>The ID or Amazon Resource Name (ARN) of the VPC.</p>
      */
     inline const Aws::String& GetVpcIdentifier() const{ return m_vpcIdentifier; }
 
     /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+     * <p>The ID or Amazon Resource Name (ARN) of the VPC.</p>
      */
     inline bool VpcIdentifierHasBeenSet() const { return m_vpcIdentifierHasBeenSet; }
 
     /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+     * <p>The ID or Amazon Resource Name (ARN) of the VPC.</p>
      */
     inline void SetVpcIdentifier(const Aws::String& value) { m_vpcIdentifierHasBeenSet = true; m_vpcIdentifier = value; }
 
     /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+     * <p>The ID or Amazon Resource Name (ARN) of the VPC.</p>
      */
     inline void SetVpcIdentifier(Aws::String&& value) { m_vpcIdentifierHasBeenSet = true; m_vpcIdentifier = std::move(value); }
 
     /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+     * <p>The ID or Amazon Resource Name (ARN) of the VPC.</p>
      */
     inline void SetVpcIdentifier(const char* value) { m_vpcIdentifierHasBeenSet = true; m_vpcIdentifier.assign(value); }
 
     /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+     * <p>The ID or Amazon Resource Name (ARN) of the VPC.</p>
      */
     inline ListTargetGroupsRequest& WithVpcIdentifier(const Aws::String& value) { SetVpcIdentifier(value); return *this;}
 
     /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+     * <p>The ID or Amazon Resource Name (ARN) of the VPC.</p>
      */
     inline ListTargetGroupsRequest& WithVpcIdentifier(Aws::String&& value) { SetVpcIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+     * <p>The ID or Amazon Resource Name (ARN) of the VPC.</p>
      */
     inline ListTargetGroupsRequest& WithVpcIdentifier(const char* value) { SetVpcIdentifier(value); return *this;}
 

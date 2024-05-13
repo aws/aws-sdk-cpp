@@ -38,42 +38,42 @@ namespace Model
 
 
     /**
-     * <p>Additional details about why the validation failed.</p>
+     * <p>Additional information about why the validation failed.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * <p>Additional details about why the validation failed.</p>
+     * <p>Additional information about why the validation failed.</p>
      */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
-     * <p>Additional details about why the validation failed.</p>
+     * <p>Additional information about why the validation failed.</p>
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p>Additional details about why the validation failed.</p>
+     * <p>Additional information about why the validation failed.</p>
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
-     * <p>Additional details about why the validation failed.</p>
+     * <p>Additional information about why the validation failed.</p>
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
-     * <p>Additional details about why the validation failed.</p>
+     * <p>Additional information about why the validation failed.</p>
      */
     inline ValidationExceptionField& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * <p>Additional details about why the validation failed.</p>
+     * <p>Additional information about why the validation failed.</p>
      */
     inline ValidationExceptionField& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
-     * <p>Additional details about why the validation failed.</p>
+     * <p>Additional information about why the validation failed.</p>
      */
     inline ValidationExceptionField& WithMessage(const char* value) { SetMessage(value); return *this;}
 

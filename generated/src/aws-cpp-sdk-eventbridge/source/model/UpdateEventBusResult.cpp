@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eventbridge/model/CreateEventBusResult.h>
+#include <aws/eventbridge/model/UpdateEventBusResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
@@ -17,33 +17,39 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateEventBusResult::CreateEventBusResult()
+UpdateEventBusResult::UpdateEventBusResult()
 {
 }
 
-CreateEventBusResult::CreateEventBusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+UpdateEventBusResult::UpdateEventBusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateEventBusResult& CreateEventBusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
+UpdateEventBusResult& UpdateEventBusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("EventBusArn"))
+  if(jsonValue.ValueExists("Arn"))
   {
-    m_eventBusArn = jsonValue.GetString("EventBusArn");
+    m_arn = jsonValue.GetString("Arn");
 
   }
 
-  if(jsonValue.ValueExists("Description"))
+  if(jsonValue.ValueExists("Name"))
   {
-    m_description = jsonValue.GetString("Description");
+    m_name = jsonValue.GetString("Name");
 
   }
 
   if(jsonValue.ValueExists("KmsKeyIdentifier"))
   {
     m_kmsKeyIdentifier = jsonValue.GetString("KmsKeyIdentifier");
+
+  }
+
+  if(jsonValue.ValueExists("Description"))
+  {
+    m_description = jsonValue.GetString("Description");
 
   }
 

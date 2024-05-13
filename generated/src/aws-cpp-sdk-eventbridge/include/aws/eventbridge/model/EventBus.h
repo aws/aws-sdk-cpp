@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/eventbridge/EventBridge_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -126,6 +127,47 @@ namespace Model
 
 
     /**
+     * <p>The event bus description.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The event bus description.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The event bus description.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>The event bus description.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>The event bus description.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>The event bus description.</p>
+     */
+    inline EventBus& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>The event bus description.</p>
+     */
+    inline EventBus& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>The event bus description.</p>
+     */
+    inline EventBus& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
      * <p>The permissions policy of the event bus, describing which other Amazon Web
      * Services accounts can write events to this event bus.</p>
      */
@@ -173,6 +215,68 @@ namespace Model
      */
     inline EventBus& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
+
+    /**
+     * <p>The time the event bus was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>The time the event bus was created.</p>
+     */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>The time the event bus was created.</p>
+     */
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+
+    /**
+     * <p>The time the event bus was created.</p>
+     */
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
+
+    /**
+     * <p>The time the event bus was created.</p>
+     */
+    inline EventBus& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+
+    /**
+     * <p>The time the event bus was created.</p>
+     */
+    inline EventBus& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The time the event bus was last modified.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+
+    /**
+     * <p>The time the event bus was last modified.</p>
+     */
+    inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
+
+    /**
+     * <p>The time the event bus was last modified.</p>
+     */
+    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
+
+    /**
+     * <p>The time the event bus was last modified.</p>
+     */
+    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
+
+    /**
+     * <p>The time the event bus was last modified.</p>
+     */
+    inline EventBus& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
+
+    /**
+     * <p>The time the event bus was last modified.</p>
+     */
+    inline EventBus& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -181,8 +285,17 @@ namespace Model
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
+
     Aws::String m_policy;
     bool m_policyHasBeenSet = false;
+
+    Aws::Utils::DateTime m_creationTime;
+    bool m_creationTimeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastModifiedTime;
+    bool m_lastModifiedTimeHasBeenSet = false;
   };
 
 } // namespace Model

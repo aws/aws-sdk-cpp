@@ -41,9 +41,39 @@ DescribeEventBusResult& DescribeEventBusResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("Description"))
+  {
+    m_description = jsonValue.GetString("Description");
+
+  }
+
+  if(jsonValue.ValueExists("KmsKeyIdentifier"))
+  {
+    m_kmsKeyIdentifier = jsonValue.GetString("KmsKeyIdentifier");
+
+  }
+
+  if(jsonValue.ValueExists("DeadLetterConfig"))
+  {
+    m_deadLetterConfig = jsonValue.GetObject("DeadLetterConfig");
+
+  }
+
   if(jsonValue.ValueExists("Policy"))
   {
     m_policy = jsonValue.GetString("Policy");
+
+  }
+
+  if(jsonValue.ValueExists("CreationTime"))
+  {
+    m_creationTime = jsonValue.GetDouble("CreationTime");
+
+  }
+
+  if(jsonValue.ValueExists("LastModifiedTime"))
+  {
+    m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
 
   }
 

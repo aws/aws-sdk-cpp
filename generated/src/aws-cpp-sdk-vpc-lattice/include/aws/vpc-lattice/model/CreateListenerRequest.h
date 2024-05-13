@@ -102,62 +102,38 @@ namespace Model
 
 
     /**
-     * <p>The action for the default rule. Each listener has a default rule. Each rule
-     * consists of a priority, one or more actions, and one or more conditions. The
-     * default rule is the rule that's used if no other rules match. Each rule must
-     * include exactly one of the following types of actions: <code>forward </code>or
-     * <code>fixed-response</code>, and it must be the last action to be performed.
-     * </p>
+     * <p>The action for the default rule. Each listener has a default rule. The
+     * default rule is used if no other rules match.</p>
      */
     inline const RuleAction& GetDefaultAction() const{ return m_defaultAction; }
 
     /**
-     * <p>The action for the default rule. Each listener has a default rule. Each rule
-     * consists of a priority, one or more actions, and one or more conditions. The
-     * default rule is the rule that's used if no other rules match. Each rule must
-     * include exactly one of the following types of actions: <code>forward </code>or
-     * <code>fixed-response</code>, and it must be the last action to be performed.
-     * </p>
+     * <p>The action for the default rule. Each listener has a default rule. The
+     * default rule is used if no other rules match.</p>
      */
     inline bool DefaultActionHasBeenSet() const { return m_defaultActionHasBeenSet; }
 
     /**
-     * <p>The action for the default rule. Each listener has a default rule. Each rule
-     * consists of a priority, one or more actions, and one or more conditions. The
-     * default rule is the rule that's used if no other rules match. Each rule must
-     * include exactly one of the following types of actions: <code>forward </code>or
-     * <code>fixed-response</code>, and it must be the last action to be performed.
-     * </p>
+     * <p>The action for the default rule. Each listener has a default rule. The
+     * default rule is used if no other rules match.</p>
      */
     inline void SetDefaultAction(const RuleAction& value) { m_defaultActionHasBeenSet = true; m_defaultAction = value; }
 
     /**
-     * <p>The action for the default rule. Each listener has a default rule. Each rule
-     * consists of a priority, one or more actions, and one or more conditions. The
-     * default rule is the rule that's used if no other rules match. Each rule must
-     * include exactly one of the following types of actions: <code>forward </code>or
-     * <code>fixed-response</code>, and it must be the last action to be performed.
-     * </p>
+     * <p>The action for the default rule. Each listener has a default rule. The
+     * default rule is used if no other rules match.</p>
      */
     inline void SetDefaultAction(RuleAction&& value) { m_defaultActionHasBeenSet = true; m_defaultAction = std::move(value); }
 
     /**
-     * <p>The action for the default rule. Each listener has a default rule. Each rule
-     * consists of a priority, one or more actions, and one or more conditions. The
-     * default rule is the rule that's used if no other rules match. Each rule must
-     * include exactly one of the following types of actions: <code>forward </code>or
-     * <code>fixed-response</code>, and it must be the last action to be performed.
-     * </p>
+     * <p>The action for the default rule. Each listener has a default rule. The
+     * default rule is used if no other rules match.</p>
      */
     inline CreateListenerRequest& WithDefaultAction(const RuleAction& value) { SetDefaultAction(value); return *this;}
 
     /**
-     * <p>The action for the default rule. Each listener has a default rule. Each rule
-     * consists of a priority, one or more actions, and one or more conditions. The
-     * default rule is the rule that's used if no other rules match. Each rule must
-     * include exactly one of the following types of actions: <code>forward </code>or
-     * <code>fixed-response</code>, and it must be the last action to be performed.
-     * </p>
+     * <p>The action for the default rule. Each listener has a default rule. The
+     * default rule is used if no other rules match.</p>
      */
     inline CreateListenerRequest& WithDefaultAction(RuleAction&& value) { SetDefaultAction(std::move(value)); return *this;}
 
@@ -220,61 +196,57 @@ namespace Model
 
 
     /**
-     * <p>The listener port. You can specify a value from <code>1</code> to
-     * <code>65535</code>. For HTTP, the default is <code>80</code>. For HTTPS, the
-     * default is <code>443</code>.</p>
+     * <p>The listener port. You can specify a value from 1 to 65535. For HTTP, the
+     * default is 80. For HTTPS, the default is 443.</p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
-     * <p>The listener port. You can specify a value from <code>1</code> to
-     * <code>65535</code>. For HTTP, the default is <code>80</code>. For HTTPS, the
-     * default is <code>443</code>.</p>
+     * <p>The listener port. You can specify a value from 1 to 65535. For HTTP, the
+     * default is 80. For HTTPS, the default is 443.</p>
      */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
 
     /**
-     * <p>The listener port. You can specify a value from <code>1</code> to
-     * <code>65535</code>. For HTTP, the default is <code>80</code>. For HTTPS, the
-     * default is <code>443</code>.</p>
+     * <p>The listener port. You can specify a value from 1 to 65535. For HTTP, the
+     * default is 80. For HTTPS, the default is 443.</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
-     * <p>The listener port. You can specify a value from <code>1</code> to
-     * <code>65535</code>. For HTTP, the default is <code>80</code>. For HTTPS, the
-     * default is <code>443</code>.</p>
+     * <p>The listener port. You can specify a value from 1 to 65535. For HTTP, the
+     * default is 80. For HTTPS, the default is 443.</p>
      */
     inline CreateListenerRequest& WithPort(int value) { SetPort(value); return *this;}
 
 
     /**
-     * <p>The listener protocol HTTP or HTTPS.</p>
+     * <p>The listener protocol.</p>
      */
     inline const ListenerProtocol& GetProtocol() const{ return m_protocol; }
 
     /**
-     * <p>The listener protocol HTTP or HTTPS.</p>
+     * <p>The listener protocol.</p>
      */
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
-     * <p>The listener protocol HTTP or HTTPS.</p>
+     * <p>The listener protocol.</p>
      */
     inline void SetProtocol(const ListenerProtocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
-     * <p>The listener protocol HTTP or HTTPS.</p>
+     * <p>The listener protocol.</p>
      */
     inline void SetProtocol(ListenerProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
-     * <p>The listener protocol HTTP or HTTPS.</p>
+     * <p>The listener protocol.</p>
      */
     inline CreateListenerRequest& WithProtocol(const ListenerProtocol& value) { SetProtocol(value); return *this;}
 
     /**
-     * <p>The listener protocol HTTP or HTTPS.</p>
+     * <p>The listener protocol.</p>
      */
     inline CreateListenerRequest& WithProtocol(ListenerProtocol&& value) { SetProtocol(std::move(value)); return *this;}
 

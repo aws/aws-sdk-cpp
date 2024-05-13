@@ -184,27 +184,27 @@ namespace Model
 
 
     /**
-     * <p>The operation's status.</p>
+     * <p>The association status.</p>
      */
     inline const ServiceNetworkVpcAssociationStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The operation's status.</p>
+     * <p>The association status.</p>
      */
     inline void SetStatus(const ServiceNetworkVpcAssociationStatus& value) { m_status = value; }
 
     /**
-     * <p>The operation's status.</p>
+     * <p>The association status.</p>
      */
     inline void SetStatus(ServiceNetworkVpcAssociationStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>The operation's status.</p>
+     * <p>The association status.</p>
      */
     inline CreateServiceNetworkVpcAssociationResult& WithStatus(const ServiceNetworkVpcAssociationStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The operation's status.</p>
+     * <p>The association status.</p>
      */
     inline CreateServiceNetworkVpcAssociationResult& WithStatus(ServiceNetworkVpcAssociationStatus&& value) { SetStatus(std::move(value)); return *this;}
 

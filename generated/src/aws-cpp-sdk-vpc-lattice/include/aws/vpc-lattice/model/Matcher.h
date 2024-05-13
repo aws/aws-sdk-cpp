@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The codes to use when checking for a successful response from a target for
-   * health checks.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the codes to use when checking for a successful response from a
+   * target for health checks.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/Matcher">AWS
    * API Reference</a></p>
    */

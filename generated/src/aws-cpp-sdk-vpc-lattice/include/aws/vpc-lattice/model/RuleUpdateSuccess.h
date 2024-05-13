@@ -40,32 +40,32 @@ namespace Model
 
 
     /**
-     * <p>The action for the default rule.</p>
+     * <p>The action for the rule.</p>
      */
     inline const RuleAction& GetAction() const{ return m_action; }
 
     /**
-     * <p>The action for the default rule.</p>
+     * <p>The action for the rule.</p>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
-     * <p>The action for the default rule.</p>
+     * <p>The action for the rule.</p>
      */
     inline void SetAction(const RuleAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
-     * <p>The action for the default rule.</p>
+     * <p>The action for the rule.</p>
      */
     inline void SetAction(RuleAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
-     * <p>The action for the default rule.</p>
+     * <p>The action for the rule.</p>
      */
     inline RuleUpdateSuccess& WithAction(const RuleAction& value) { SetAction(value); return *this;}
 
     /**
-     * <p>The action for the default rule.</p>
+     * <p>The action for the rule.</p>
      */
     inline RuleUpdateSuccess& WithAction(RuleAction&& value) { SetAction(std::move(value)); return *this;}
 

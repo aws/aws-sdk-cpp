@@ -102,38 +102,32 @@ namespace Model
 
 
     /**
-     * <p>The target group configuration. If <code>type</code> is set to
-     * <code>LAMBDA</code>, this parameter doesn't apply.</p>
+     * <p>The target group configuration.</p>
      */
     inline const TargetGroupConfig& GetConfig() const{ return m_config; }
 
     /**
-     * <p>The target group configuration. If <code>type</code> is set to
-     * <code>LAMBDA</code>, this parameter doesn't apply.</p>
+     * <p>The target group configuration.</p>
      */
     inline bool ConfigHasBeenSet() const { return m_configHasBeenSet; }
 
     /**
-     * <p>The target group configuration. If <code>type</code> is set to
-     * <code>LAMBDA</code>, this parameter doesn't apply.</p>
+     * <p>The target group configuration.</p>
      */
     inline void SetConfig(const TargetGroupConfig& value) { m_configHasBeenSet = true; m_config = value; }
 
     /**
-     * <p>The target group configuration. If <code>type</code> is set to
-     * <code>LAMBDA</code>, this parameter doesn't apply.</p>
+     * <p>The target group configuration.</p>
      */
     inline void SetConfig(TargetGroupConfig&& value) { m_configHasBeenSet = true; m_config = std::move(value); }
 
     /**
-     * <p>The target group configuration. If <code>type</code> is set to
-     * <code>LAMBDA</code>, this parameter doesn't apply.</p>
+     * <p>The target group configuration.</p>
      */
     inline CreateTargetGroupRequest& WithConfig(const TargetGroupConfig& value) { SetConfig(value); return *this;}
 
     /**
-     * <p>The target group configuration. If <code>type</code> is set to
-     * <code>LAMBDA</code>, this parameter doesn't apply.</p>
+     * <p>The target group configuration.</p>
      */
     inline CreateTargetGroupRequest& WithConfig(TargetGroupConfig&& value) { SetConfig(std::move(value)); return *this;}
 

@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about an action that returns a custom HTTP response.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>Describes an action that returns a custom HTTP response.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/FixedResponseAction">AWS
    * API Reference</a></p>
    */

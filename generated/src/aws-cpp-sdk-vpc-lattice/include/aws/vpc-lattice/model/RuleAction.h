@@ -25,9 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the action for a rule. Each rule must include exactly one of the
-   * following types of actions: <code>forward </code>or <code>fixed-response</code>,
-   * and it must be the last action to be performed.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the action for a rule.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/RuleAction">AWS
    * API Reference</a></p>
    */
@@ -41,32 +39,32 @@ namespace Model
 
 
     /**
-     * <p> Describes the rule action that returns a custom HTTP response. </p>
+     * <p>The fixed response action. The rule returns a custom HTTP response.</p>
      */
     inline const FixedResponseAction& GetFixedResponse() const{ return m_fixedResponse; }
 
     /**
-     * <p> Describes the rule action that returns a custom HTTP response. </p>
+     * <p>The fixed response action. The rule returns a custom HTTP response.</p>
      */
     inline bool FixedResponseHasBeenSet() const { return m_fixedResponseHasBeenSet; }
 
     /**
-     * <p> Describes the rule action that returns a custom HTTP response. </p>
+     * <p>The fixed response action. The rule returns a custom HTTP response.</p>
      */
     inline void SetFixedResponse(const FixedResponseAction& value) { m_fixedResponseHasBeenSet = true; m_fixedResponse = value; }
 
     /**
-     * <p> Describes the rule action that returns a custom HTTP response. </p>
+     * <p>The fixed response action. The rule returns a custom HTTP response.</p>
      */
     inline void SetFixedResponse(FixedResponseAction&& value) { m_fixedResponseHasBeenSet = true; m_fixedResponse = std::move(value); }
 
     /**
-     * <p> Describes the rule action that returns a custom HTTP response. </p>
+     * <p>The fixed response action. The rule returns a custom HTTP response.</p>
      */
     inline RuleAction& WithFixedResponse(const FixedResponseAction& value) { SetFixedResponse(value); return *this;}
 
     /**
-     * <p> Describes the rule action that returns a custom HTTP response. </p>
+     * <p>The fixed response action. The rule returns a custom HTTP response.</p>
      */
     inline RuleAction& WithFixedResponse(FixedResponseAction&& value) { SetFixedResponse(std::move(value)); return *this;}
 

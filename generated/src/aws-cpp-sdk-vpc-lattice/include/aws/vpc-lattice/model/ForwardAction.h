@@ -46,8 +46,8 @@ namespace Model
      * distributed to individual target groups based on their weights. For example, if
      * two target groups have the same weight, each target group receives half of the
      * traffic.</p> <p>The default value is 1. This means that if only one target group
-     * is provided, there is no need to set the weight; 100% of traffic will go to that
-     * target group.</p>
+     * is provided, there is no need to set the weight; 100% of the traffic goes to
+     * that target group.</p>
      */
     inline const Aws::Vector<WeightedTargetGroup>& GetTargetGroups() const{ return m_targetGroups; }
 
@@ -58,8 +58,8 @@ namespace Model
      * distributed to individual target groups based on their weights. For example, if
      * two target groups have the same weight, each target group receives half of the
      * traffic.</p> <p>The default value is 1. This means that if only one target group
-     * is provided, there is no need to set the weight; 100% of traffic will go to that
-     * target group.</p>
+     * is provided, there is no need to set the weight; 100% of the traffic goes to
+     * that target group.</p>
      */
     inline bool TargetGroupsHasBeenSet() const { return m_targetGroupsHasBeenSet; }
 
@@ -70,8 +70,8 @@ namespace Model
      * distributed to individual target groups based on their weights. For example, if
      * two target groups have the same weight, each target group receives half of the
      * traffic.</p> <p>The default value is 1. This means that if only one target group
-     * is provided, there is no need to set the weight; 100% of traffic will go to that
-     * target group.</p>
+     * is provided, there is no need to set the weight; 100% of the traffic goes to
+     * that target group.</p>
      */
     inline void SetTargetGroups(const Aws::Vector<WeightedTargetGroup>& value) { m_targetGroupsHasBeenSet = true; m_targetGroups = value; }
 
@@ -82,8 +82,8 @@ namespace Model
      * distributed to individual target groups based on their weights. For example, if
      * two target groups have the same weight, each target group receives half of the
      * traffic.</p> <p>The default value is 1. This means that if only one target group
-     * is provided, there is no need to set the weight; 100% of traffic will go to that
-     * target group.</p>
+     * is provided, there is no need to set the weight; 100% of the traffic goes to
+     * that target group.</p>
      */
     inline void SetTargetGroups(Aws::Vector<WeightedTargetGroup>&& value) { m_targetGroupsHasBeenSet = true; m_targetGroups = std::move(value); }
 
@@ -94,8 +94,8 @@ namespace Model
      * distributed to individual target groups based on their weights. For example, if
      * two target groups have the same weight, each target group receives half of the
      * traffic.</p> <p>The default value is 1. This means that if only one target group
-     * is provided, there is no need to set the weight; 100% of traffic will go to that
-     * target group.</p>
+     * is provided, there is no need to set the weight; 100% of the traffic goes to
+     * that target group.</p>
      */
     inline ForwardAction& WithTargetGroups(const Aws::Vector<WeightedTargetGroup>& value) { SetTargetGroups(value); return *this;}
 
@@ -106,8 +106,8 @@ namespace Model
      * distributed to individual target groups based on their weights. For example, if
      * two target groups have the same weight, each target group receives half of the
      * traffic.</p> <p>The default value is 1. This means that if only one target group
-     * is provided, there is no need to set the weight; 100% of traffic will go to that
-     * target group.</p>
+     * is provided, there is no need to set the weight; 100% of the traffic goes to
+     * that target group.</p>
      */
     inline ForwardAction& WithTargetGroups(Aws::Vector<WeightedTargetGroup>&& value) { SetTargetGroups(std::move(value)); return *this;}
 
@@ -118,8 +118,8 @@ namespace Model
      * distributed to individual target groups based on their weights. For example, if
      * two target groups have the same weight, each target group receives half of the
      * traffic.</p> <p>The default value is 1. This means that if only one target group
-     * is provided, there is no need to set the weight; 100% of traffic will go to that
-     * target group.</p>
+     * is provided, there is no need to set the weight; 100% of the traffic goes to
+     * that target group.</p>
      */
     inline ForwardAction& AddTargetGroups(const WeightedTargetGroup& value) { m_targetGroupsHasBeenSet = true; m_targetGroups.push_back(value); return *this; }
 
@@ -130,8 +130,8 @@ namespace Model
      * distributed to individual target groups based on their weights. For example, if
      * two target groups have the same weight, each target group receives half of the
      * traffic.</p> <p>The default value is 1. This means that if only one target group
-     * is provided, there is no need to set the weight; 100% of traffic will go to that
-     * target group.</p>
+     * is provided, there is no need to set the weight; 100% of the traffic goes to
+     * that target group.</p>
      */
     inline ForwardAction& AddTargetGroups(WeightedTargetGroup&& value) { m_targetGroupsHasBeenSet = true; m_targetGroups.push_back(std::move(value)); return *this; }
 

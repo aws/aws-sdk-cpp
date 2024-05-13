@@ -161,73 +161,73 @@ namespace Model
 
 
     /**
-     * <p> The custom domain name of the service. </p>
+     * <p>The custom domain name of the service.</p>
      */
     inline const Aws::String& GetCustomDomainName() const{ return m_customDomainName; }
 
     /**
-     * <p> The custom domain name of the service. </p>
+     * <p>The custom domain name of the service.</p>
      */
     inline bool CustomDomainNameHasBeenSet() const { return m_customDomainNameHasBeenSet; }
 
     /**
-     * <p> The custom domain name of the service. </p>
+     * <p>The custom domain name of the service.</p>
      */
     inline void SetCustomDomainName(const Aws::String& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = value; }
 
     /**
-     * <p> The custom domain name of the service. </p>
+     * <p>The custom domain name of the service.</p>
      */
     inline void SetCustomDomainName(Aws::String&& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = std::move(value); }
 
     /**
-     * <p> The custom domain name of the service. </p>
+     * <p>The custom domain name of the service.</p>
      */
     inline void SetCustomDomainName(const char* value) { m_customDomainNameHasBeenSet = true; m_customDomainName.assign(value); }
 
     /**
-     * <p> The custom domain name of the service. </p>
+     * <p>The custom domain name of the service.</p>
      */
     inline ServiceNetworkServiceAssociationSummary& WithCustomDomainName(const Aws::String& value) { SetCustomDomainName(value); return *this;}
 
     /**
-     * <p> The custom domain name of the service. </p>
+     * <p>The custom domain name of the service.</p>
      */
     inline ServiceNetworkServiceAssociationSummary& WithCustomDomainName(Aws::String&& value) { SetCustomDomainName(std::move(value)); return *this;}
 
     /**
-     * <p> The custom domain name of the service. </p>
+     * <p>The custom domain name of the service.</p>
      */
     inline ServiceNetworkServiceAssociationSummary& WithCustomDomainName(const char* value) { SetCustomDomainName(value); return *this;}
 
 
     /**
-     * <p>DNS information about the service.</p>
+     * <p>The DNS information.</p>
      */
     inline const DnsEntry& GetDnsEntry() const{ return m_dnsEntry; }
 
     /**
-     * <p>DNS information about the service.</p>
+     * <p>The DNS information.</p>
      */
     inline bool DnsEntryHasBeenSet() const { return m_dnsEntryHasBeenSet; }
 
     /**
-     * <p>DNS information about the service.</p>
+     * <p>The DNS information.</p>
      */
     inline void SetDnsEntry(const DnsEntry& value) { m_dnsEntryHasBeenSet = true; m_dnsEntry = value; }
 
     /**
-     * <p>DNS information about the service.</p>
+     * <p>The DNS information.</p>
      */
     inline void SetDnsEntry(DnsEntry&& value) { m_dnsEntryHasBeenSet = true; m_dnsEntry = std::move(value); }
 
     /**
-     * <p>DNS information about the service.</p>
+     * <p>The DNS information.</p>
      */
     inline ServiceNetworkServiceAssociationSummary& WithDnsEntry(const DnsEntry& value) { SetDnsEntry(value); return *this;}
 
     /**
-     * <p>DNS information about the service.</p>
+     * <p>The DNS information.</p>
      */
     inline ServiceNetworkServiceAssociationSummary& WithDnsEntry(DnsEntry&& value) { SetDnsEntry(std::move(value)); return *this;}
 

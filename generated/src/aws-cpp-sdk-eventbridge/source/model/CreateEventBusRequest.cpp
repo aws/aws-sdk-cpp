@@ -15,6 +15,9 @@ using namespace Aws::Utils;
 CreateEventBusRequest::CreateEventBusRequest() : 
     m_nameHasBeenSet(false),
     m_eventSourceNameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_kmsKeyIdentifierHasBeenSet(false),
+    m_deadLetterConfigHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -32,6 +35,24 @@ Aws::String CreateEventBusRequest::SerializePayload() const
   if(m_eventSourceNameHasBeenSet)
   {
    payload.WithString("EventSourceName", m_eventSourceName);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("Description", m_description);
+
+  }
+
+  if(m_kmsKeyIdentifierHasBeenSet)
+  {
+   payload.WithString("KmsKeyIdentifier", m_kmsKeyIdentifier);
+
+  }
+
+  if(m_deadLetterConfigHasBeenSet)
+  {
+   payload.WithObject("DeadLetterConfig", m_deadLetterConfig.Jsonize());
 
   }
 

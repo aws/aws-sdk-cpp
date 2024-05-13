@@ -27,9 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>The health check configuration of a target group. Health check configurations
-   * aren't used for <code>LAMBDA</code> and <code>ALB</code> target
-   * groups.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the health check configuration of a target group. Health check
+   * configurations aren't used for target groups of type <code>LAMBDA</code> or
+   * <code>ALB</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/HealthCheckConfig">AWS
    * API Reference</a></p>
    */
@@ -143,38 +143,32 @@ namespace Model
 
 
     /**
-     * <p>The codes to use when checking for a successful response from a target. These
-     * are called <i>Success codes</i> in the console.</p>
+     * <p>The codes to use when checking for a successful response from a target.</p>
      */
     inline const Matcher& GetMatcher() const{ return m_matcher; }
 
     /**
-     * <p>The codes to use when checking for a successful response from a target. These
-     * are called <i>Success codes</i> in the console.</p>
+     * <p>The codes to use when checking for a successful response from a target.</p>
      */
     inline bool MatcherHasBeenSet() const { return m_matcherHasBeenSet; }
 
     /**
-     * <p>The codes to use when checking for a successful response from a target. These
-     * are called <i>Success codes</i> in the console.</p>
+     * <p>The codes to use when checking for a successful response from a target.</p>
      */
     inline void SetMatcher(const Matcher& value) { m_matcherHasBeenSet = true; m_matcher = value; }
 
     /**
-     * <p>The codes to use when checking for a successful response from a target. These
-     * are called <i>Success codes</i> in the console.</p>
+     * <p>The codes to use when checking for a successful response from a target.</p>
      */
     inline void SetMatcher(Matcher&& value) { m_matcherHasBeenSet = true; m_matcher = std::move(value); }
 
     /**
-     * <p>The codes to use when checking for a successful response from a target. These
-     * are called <i>Success codes</i> in the console.</p>
+     * <p>The codes to use when checking for a successful response from a target.</p>
      */
     inline HealthCheckConfig& WithMatcher(const Matcher& value) { SetMatcher(value); return *this;}
 
     /**
-     * <p>The codes to use when checking for a successful response from a target. These
-     * are called <i>Success codes</i> in the console.</p>
+     * <p>The codes to use when checking for a successful response from a target.</p>
      */
     inline HealthCheckConfig& WithMatcher(Matcher&& value) { SetMatcher(std::move(value)); return *this;}
 

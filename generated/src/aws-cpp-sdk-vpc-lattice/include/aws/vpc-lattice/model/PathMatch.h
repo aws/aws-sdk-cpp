@@ -39,22 +39,22 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the match is case sensitive. Defaults to false.</p>
+     * <p>Indicates whether the match is case sensitive.</p>
      */
     inline bool GetCaseSensitive() const{ return m_caseSensitive; }
 
     /**
-     * <p>Indicates whether the match is case sensitive. Defaults to false.</p>
+     * <p>Indicates whether the match is case sensitive.</p>
      */
     inline bool CaseSensitiveHasBeenSet() const { return m_caseSensitiveHasBeenSet; }
 
     /**
-     * <p>Indicates whether the match is case sensitive. Defaults to false.</p>
+     * <p>Indicates whether the match is case sensitive.</p>
      */
     inline void SetCaseSensitive(bool value) { m_caseSensitiveHasBeenSet = true; m_caseSensitive = value; }
 
     /**
-     * <p>Indicates whether the match is case sensitive. Defaults to false.</p>
+     * <p>Indicates whether the match is case sensitive.</p>
      */
     inline PathMatch& WithCaseSensitive(bool value) { SetCaseSensitive(value); return *this;}
 

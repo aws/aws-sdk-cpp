@@ -108,49 +108,49 @@ namespace Model
     /**
      * <p>The event pattern. For more information, see <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events
-     * and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+     * and Event Patterns</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
      */
     inline const Aws::String& GetEventPattern() const{ return m_eventPattern; }
 
     /**
      * <p>The event pattern. For more information, see <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events
-     * and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+     * and Event Patterns</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
      */
     inline void SetEventPattern(const Aws::String& value) { m_eventPattern = value; }
 
     /**
      * <p>The event pattern. For more information, see <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events
-     * and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+     * and Event Patterns</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
      */
     inline void SetEventPattern(Aws::String&& value) { m_eventPattern = std::move(value); }
 
     /**
      * <p>The event pattern. For more information, see <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events
-     * and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+     * and Event Patterns</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
      */
     inline void SetEventPattern(const char* value) { m_eventPattern.assign(value); }
 
     /**
      * <p>The event pattern. For more information, see <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events
-     * and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+     * and Event Patterns</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
      */
     inline DescribeRuleResult& WithEventPattern(const Aws::String& value) { SetEventPattern(value); return *this;}
 
     /**
      * <p>The event pattern. For more information, see <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events
-     * and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+     * and Event Patterns</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
      */
     inline DescribeRuleResult& WithEventPattern(Aws::String&& value) { SetEventPattern(std::move(value)); return *this;}
 
     /**
      * <p>The event pattern. For more information, see <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events
-     * and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+     * and Event Patterns</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
      */
     inline DescribeRuleResult& WithEventPattern(const char* value) { SetEventPattern(value); return *this;}
 

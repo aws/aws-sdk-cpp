@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     HTTP,
-    HTTPS
+    HTTPS,
+    TLS_PASSTHROUGH
   };
 
 namespace ListenerProtocolMapper

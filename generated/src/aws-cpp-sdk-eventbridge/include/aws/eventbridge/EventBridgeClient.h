@@ -177,8 +177,24 @@ namespace EventBridge
          * archive, incoming events might not immediately start being sent to the archive.
          * Allow a short period of time for changes to take effect. If you do not specify a
          * pattern to filter events sent to the archive, all events are sent to the archive
-         * except replayed events. Replayed events are not sent to an
-         * archive.</p><p><h3>See Also:</h3>   <a
+         * except replayed events. Replayed events are not sent to an archive.</p> 
+         * <p>Archives and schema discovery are not supported for event buses encrypted
+         * using a customer managed key. EventBridge returns an error if:</p> <ul> <li>
+         * <p>You call <code> <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreateArchive.html">CreateArchive</a>
+         * </code> on an event bus set to use a customer managed key for encryption.</p>
+         * </li> <li> <p>You call <code> <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers.html#CreateDiscoverer">CreateDiscoverer</a>
+         * </code> on an event bus set to use a customer managed key for encryption.</p>
+         * </li> <li> <p>You call <code> <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UpdatedEventBus.html">UpdatedEventBus</a>
+         * </code> to set a customer managed key on an event bus with an archives or schema
+         * discovery enabled.</p> </li> </ul> <p>To enable archives or schema discovery on
+         * an event bus, choose to use an Amazon Web Services owned key. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data
+         * encryption in EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateArchive">AWS
          * API Reference</a></p>
          */
@@ -474,8 +490,8 @@ namespace EventBridge
          * endpoints, see <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
          * applications Regional-fault tolerant with global endpoints and event
-         * replication</a> in the <i>Amazon EventBridge User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * replication</a> in the <i> <i>Amazon EventBridge User Guide</i>
+         * </i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteEndpoint">AWS
          * API Reference</a></p>
          */
@@ -672,8 +688,8 @@ namespace EventBridge
          * about global endpoints, see <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
          * applications Regional-fault tolerant with global endpoints and event
-         * replication</a> in the <i>Amazon EventBridge User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * replication</a> in the <i> <i>Amazon EventBridge User Guide</i>
+         * </i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeEndpoint">AWS
          * API Reference</a></p>
          */
@@ -989,8 +1005,8 @@ namespace EventBridge
          * about global endpoints, see <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
          * applications Regional-fault tolerant with global endpoints and event
-         * replication</a> in the <i>Amazon EventBridge User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * replication</a> in the <i> <i>Amazon EventBridge User Guide</i>
+         * </i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListEndpoints">AWS
          * API Reference</a></p>
          */
@@ -1267,12 +1283,12 @@ namespace EventBridge
          * is calculated including the event and any necessary characters and keys of the
          * JSON representation of the event. To learn more, see <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-putevent-size.html">Calculating
-         * PutEvents event entry size</a> in the <i>Amazon EventBridge User Guide</i> </p>
-         * <p>PutEvents accepts the data in JSON format. For the JSON number (integer) data
-         * type, the constraints are: a minimum value of -9,223,372,036,854,775,808 and a
-         * maximum value of 9,223,372,036,854,775,807.</p>  <p>PutEvents will only
-         * process nested JSON up to 1100 levels deep.</p> <p><h3>See Also:</h3>  
-         * <a
+         * PutEvents event entry size</a> in the <i> <i>Amazon EventBridge User Guide</i>
+         * </i> </p> <p>PutEvents accepts the data in JSON format. For the JSON number
+         * (integer) data type, the constraints are: a minimum value of
+         * -9,223,372,036,854,775,808 and a maximum value of 9,223,372,036,854,775,807.</p>
+         *  <p>PutEvents will only process nested JSON up to 1100 levels deep.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/PutEvents">AWS
          * API Reference</a></p>
          */
@@ -1451,11 +1467,11 @@ namespace EventBridge
          * associated with it at one time.</p>  <p>For a list of services you can
          * configure as targets for events, see <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-targets.html">EventBridge
-         * targets</a> in the <i>Amazon EventBridge User Guide</i>.</p> <p>Creating rules
-         * with built-in targets is supported only in the Amazon Web Services Management
-         * Console. The built-in targets are:</p> <ul> <li> <p> <code>Amazon EBS
-         * CreateSnapshot API call</code> </p> </li> <li> <p> <code>Amazon EC2
-         * RebootInstances API call</code> </p> </li> <li> <p> <code>Amazon EC2
+         * targets</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
+         * <p>Creating rules with built-in targets is supported only in the Amazon Web
+         * Services Management Console. The built-in targets are:</p> <ul> <li> <p>
+         * <code>Amazon EBS CreateSnapshot API call</code> </p> </li> <li> <p> <code>Amazon
+         * EC2 RebootInstances API call</code> </p> </li> <li> <p> <code>Amazon EC2
          * StopInstances API call</code> </p> </li> <li> <p> <code>Amazon EC2
          * TerminateInstances API call</code> </p> </li> </ul> <p>For some target types,
          * <code>PutTargets</code> provides target-specific parameters. If the target is a
@@ -1470,9 +1486,9 @@ namespace EventBridge
          * relies on IAM roles that you specify in the <code>RoleARN</code> argument in
          * <code>PutTargets</code>.</p> </li> </ul> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
-         * and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.</p> <p>If
-         * another Amazon Web Services account is in the same region and has granted you
-         * permission (using <code>PutPermission</code>), you can send events to that
+         * and Access Control</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
+         * <p>If another Amazon Web Services account is in the same region and has granted
+         * you permission (using <code>PutPermission</code>), you can send events to that
          * account. Set that account's event bus as a target of the rules in your account.
          * To send the matched events to the other account, specify that account's event
          * bus as the <code>Arn</code> value when you run <code>PutTargets</code>. If your
@@ -1815,8 +1831,8 @@ namespace EventBridge
          * <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making
          * applications Regional-fault tolerant with global endpoints and event
-         * replication</a> in the <i>Amazon EventBridge User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * replication</a> in the <i> <i>Amazon EventBridge User Guide</i>
+         * </i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateEndpoint">AWS
          * API Reference</a></p>
          */
@@ -1838,6 +1854,31 @@ namespace EventBridge
         void UpdateEndpointAsync(const UpdateEndpointRequestT& request, const UpdateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EventBridgeClient::UpdateEndpoint, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the specified event bus.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateEventBus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateEventBusOutcome UpdateEventBus(const Model::UpdateEventBusRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateEventBus that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateEventBusRequestT = Model::UpdateEventBusRequest>
+        Model::UpdateEventBusOutcomeCallable UpdateEventBusCallable(const UpdateEventBusRequestT& request) const
+        {
+            return SubmitCallable(&EventBridgeClient::UpdateEventBus, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateEventBus that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateEventBusRequestT = Model::UpdateEventBusRequest>
+        void UpdateEventBusAsync(const UpdateEventBusRequestT& request, const UpdateEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EventBridgeClient::UpdateEventBus, request, handler, context);
         }
 
 

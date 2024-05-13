@@ -22,6 +22,7 @@ namespace Aws
 
         static const int HTTP_HASH = HashingUtils::HashString("HTTP");
         static const int HTTPS_HASH = HashingUtils::HashString("HTTPS");
+        static const int TLS_PASSTHROUGH_HASH = HashingUtils::HashString("TLS_PASSTHROUGH");
 
 
         ListenerProtocol GetListenerProtocolForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == HTTPS_HASH)
           {
             return ListenerProtocol::HTTPS;
+          }
+          else if (hashCode == TLS_PASSTHROUGH_HASH)
+          {
+            return ListenerProtocol::TLS_PASSTHROUGH;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "HTTP";
           case ListenerProtocol::HTTPS:
             return "HTTPS";
+          case ListenerProtocol::TLS_PASSTHROUGH:
+            return "TLS_PASSTHROUGH";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

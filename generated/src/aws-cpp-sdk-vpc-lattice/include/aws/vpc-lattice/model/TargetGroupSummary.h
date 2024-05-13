@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>Summary information about a target group.</p><p><h3>See Also:</h3>   <a
+   * <p>Summary information about a target group.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/target-groups.html">Target
+   * groups</a> in the <i>Amazon VPC Lattice User Guide</i>.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/TargetGroupSummary">AWS
    * API Reference</a></p>
    */
@@ -165,74 +168,80 @@ namespace Model
 
     /**
      * <p>The type of IP address used for the target group. The possible values are
-     * <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not
-     * specified, the IP address type defaults to <code>ipv4</code>.</p>
+     * <code>IPV4</code> and <code>IPV6</code>. This is an optional parameter. If not
+     * specified, the default is <code>IPV4</code>.</p>
      */
     inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
 
     /**
      * <p>The type of IP address used for the target group. The possible values are
-     * <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not
-     * specified, the IP address type defaults to <code>ipv4</code>.</p>
+     * <code>IPV4</code> and <code>IPV6</code>. This is an optional parameter. If not
+     * specified, the default is <code>IPV4</code>.</p>
      */
     inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
 
     /**
      * <p>The type of IP address used for the target group. The possible values are
-     * <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not
-     * specified, the IP address type defaults to <code>ipv4</code>.</p>
+     * <code>IPV4</code> and <code>IPV6</code>. This is an optional parameter. If not
+     * specified, the default is <code>IPV4</code>.</p>
      */
     inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
 
     /**
      * <p>The type of IP address used for the target group. The possible values are
-     * <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not
-     * specified, the IP address type defaults to <code>ipv4</code>.</p>
+     * <code>IPV4</code> and <code>IPV6</code>. This is an optional parameter. If not
+     * specified, the default is <code>IPV4</code>.</p>
      */
     inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
 
     /**
      * <p>The type of IP address used for the target group. The possible values are
-     * <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not
-     * specified, the IP address type defaults to <code>ipv4</code>.</p>
+     * <code>IPV4</code> and <code>IPV6</code>. This is an optional parameter. If not
+     * specified, the default is <code>IPV4</code>.</p>
      */
     inline TargetGroupSummary& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
 
     /**
      * <p>The type of IP address used for the target group. The possible values are
-     * <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not
-     * specified, the IP address type defaults to <code>ipv4</code>.</p>
+     * <code>IPV4</code> and <code>IPV6</code>. This is an optional parameter. If not
+     * specified, the default is <code>IPV4</code>.</p>
      */
     inline TargetGroupSummary& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
 
 
     /**
-     * <p>Lambda event structure version</p>
+     * <p>The version of the event structure that your Lambda function receives.
+     * Supported only if the target group type is <code>LAMBDA</code>.</p>
      */
     inline const LambdaEventStructureVersion& GetLambdaEventStructureVersion() const{ return m_lambdaEventStructureVersion; }
 
     /**
-     * <p>Lambda event structure version</p>
+     * <p>The version of the event structure that your Lambda function receives.
+     * Supported only if the target group type is <code>LAMBDA</code>.</p>
      */
     inline bool LambdaEventStructureVersionHasBeenSet() const { return m_lambdaEventStructureVersionHasBeenSet; }
 
     /**
-     * <p>Lambda event structure version</p>
+     * <p>The version of the event structure that your Lambda function receives.
+     * Supported only if the target group type is <code>LAMBDA</code>.</p>
      */
     inline void SetLambdaEventStructureVersion(const LambdaEventStructureVersion& value) { m_lambdaEventStructureVersionHasBeenSet = true; m_lambdaEventStructureVersion = value; }
 
     /**
-     * <p>Lambda event structure version</p>
+     * <p>The version of the event structure that your Lambda function receives.
+     * Supported only if the target group type is <code>LAMBDA</code>.</p>
      */
     inline void SetLambdaEventStructureVersion(LambdaEventStructureVersion&& value) { m_lambdaEventStructureVersionHasBeenSet = true; m_lambdaEventStructureVersion = std::move(value); }
 
     /**
-     * <p>Lambda event structure version</p>
+     * <p>The version of the event structure that your Lambda function receives.
+     * Supported only if the target group type is <code>LAMBDA</code>.</p>
      */
     inline TargetGroupSummary& WithLambdaEventStructureVersion(const LambdaEventStructureVersion& value) { SetLambdaEventStructureVersion(value); return *this;}
 
     /**
-     * <p>Lambda event structure version</p>
+     * <p>The version of the event structure that your Lambda function receives.
+     * Supported only if the target group type is <code>LAMBDA</code>.</p>
      */
     inline TargetGroupSummary& WithLambdaEventStructureVersion(LambdaEventStructureVersion&& value) { SetLambdaEventStructureVersion(std::move(value)); return *this;}
 
@@ -368,47 +377,47 @@ namespace Model
 
 
     /**
-     * <p>The list of Amazon Resource Names (ARNs) of the service.</p>
+     * <p>The Amazon Resource Names (ARNs) of the service.</p>
      */
     inline const Aws::Vector<Aws::String>& GetServiceArns() const{ return m_serviceArns; }
 
     /**
-     * <p>The list of Amazon Resource Names (ARNs) of the service.</p>
+     * <p>The Amazon Resource Names (ARNs) of the service.</p>
      */
     inline bool ServiceArnsHasBeenSet() const { return m_serviceArnsHasBeenSet; }
 
     /**
-     * <p>The list of Amazon Resource Names (ARNs) of the service.</p>
+     * <p>The Amazon Resource Names (ARNs) of the service.</p>
      */
     inline void SetServiceArns(const Aws::Vector<Aws::String>& value) { m_serviceArnsHasBeenSet = true; m_serviceArns = value; }
 
     /**
-     * <p>The list of Amazon Resource Names (ARNs) of the service.</p>
+     * <p>The Amazon Resource Names (ARNs) of the service.</p>
      */
     inline void SetServiceArns(Aws::Vector<Aws::String>&& value) { m_serviceArnsHasBeenSet = true; m_serviceArns = std::move(value); }
 
     /**
-     * <p>The list of Amazon Resource Names (ARNs) of the service.</p>
+     * <p>The Amazon Resource Names (ARNs) of the service.</p>
      */
     inline TargetGroupSummary& WithServiceArns(const Aws::Vector<Aws::String>& value) { SetServiceArns(value); return *this;}
 
     /**
-     * <p>The list of Amazon Resource Names (ARNs) of the service.</p>
+     * <p>The Amazon Resource Names (ARNs) of the service.</p>
      */
     inline TargetGroupSummary& WithServiceArns(Aws::Vector<Aws::String>&& value) { SetServiceArns(std::move(value)); return *this;}
 
     /**
-     * <p>The list of Amazon Resource Names (ARNs) of the service.</p>
+     * <p>The Amazon Resource Names (ARNs) of the service.</p>
      */
     inline TargetGroupSummary& AddServiceArns(const Aws::String& value) { m_serviceArnsHasBeenSet = true; m_serviceArns.push_back(value); return *this; }
 
     /**
-     * <p>The list of Amazon Resource Names (ARNs) of the service.</p>
+     * <p>The Amazon Resource Names (ARNs) of the service.</p>
      */
     inline TargetGroupSummary& AddServiceArns(Aws::String&& value) { m_serviceArnsHasBeenSet = true; m_serviceArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The list of Amazon Resource Names (ARNs) of the service.</p>
+     * <p>The Amazon Resource Names (ARNs) of the service.</p>
      */
     inline TargetGroupSummary& AddServiceArns(const char* value) { m_serviceArnsHasBeenSet = true; m_serviceArns.push_back(value); return *this; }
 
