@@ -19,6 +19,8 @@ CreateContactFlowRequest::CreateContactFlowRequest() :
     m_typeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_contentHasBeenSet(false),
+    m_status(ContactFlowStatus::NOT_SET),
+    m_statusHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -48,6 +50,11 @@ Aws::String CreateContactFlowRequest::SerializePayload() const
   {
    payload.WithString("Content", m_content);
 
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("Status", ContactFlowStatusMapper::GetNameForContactFlowStatus(m_status));
   }
 
   if(m_tagsHasBeenSet)

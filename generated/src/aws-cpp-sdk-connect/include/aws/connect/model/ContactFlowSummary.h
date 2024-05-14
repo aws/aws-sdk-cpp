@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/connect/model/ContactFlowType.h>
 #include <aws/connect/model/ContactFlowState.h>
+#include <aws/connect/model/ContactFlowStatus.h>
 #include <utility>
 
 namespace Aws
@@ -226,6 +227,37 @@ namespace Model
      */
     inline ContactFlowSummary& WithContactFlowState(ContactFlowState&& value) { SetContactFlowState(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The status of the contact flow.</p>
+     */
+    inline const ContactFlowStatus& GetContactFlowStatus() const{ return m_contactFlowStatus; }
+
+    /**
+     * <p>The status of the contact flow.</p>
+     */
+    inline bool ContactFlowStatusHasBeenSet() const { return m_contactFlowStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the contact flow.</p>
+     */
+    inline void SetContactFlowStatus(const ContactFlowStatus& value) { m_contactFlowStatusHasBeenSet = true; m_contactFlowStatus = value; }
+
+    /**
+     * <p>The status of the contact flow.</p>
+     */
+    inline void SetContactFlowStatus(ContactFlowStatus&& value) { m_contactFlowStatusHasBeenSet = true; m_contactFlowStatus = std::move(value); }
+
+    /**
+     * <p>The status of the contact flow.</p>
+     */
+    inline ContactFlowSummary& WithContactFlowStatus(const ContactFlowStatus& value) { SetContactFlowStatus(value); return *this;}
+
+    /**
+     * <p>The status of the contact flow.</p>
+     */
+    inline ContactFlowSummary& WithContactFlowStatus(ContactFlowStatus&& value) { SetContactFlowStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -242,6 +274,9 @@ namespace Model
 
     ContactFlowState m_contactFlowState;
     bool m_contactFlowStateHasBeenSet = false;
+
+    ContactFlowStatus m_contactFlowStatus;
+    bool m_contactFlowStatusHasBeenSet = false;
   };
 
 } // namespace Model

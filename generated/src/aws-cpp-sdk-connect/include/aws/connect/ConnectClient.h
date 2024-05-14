@@ -2163,7 +2163,15 @@ namespace Connect
          * <p>Describes the specified flow.</p> <p>You can also create and update flows
          * using the <a
          * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
-         * Connect Flow language</a>.</p><p><h3>See Also:</h3>   <a
+         * Connect Flow language</a>.</p> <p>Use the <code>$SAVED</code> alias in the
+         * request to describe the <code>SAVED</code> content of a Flow. For example,
+         * <code>arn:aws:.../contact-flow/{id}:$SAVED</code>. Once a contact flow is
+         * published, <code>$SAVED</code> needs to be supplied to view saved content that
+         * has not been published.</p> <p>In the response, <b>Status</b> indicates the flow
+         * status as either <code>SAVED</code> or <code>PUBLISHED</code>. The
+         * <code>PUBLISHED</code> status will initiate validation on the content.
+         * <code>SAVED</code> does not initiate validation of the content.
+         * <code>SAVED</code> | <code>PUBLISHED</code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlow">AWS
          * API Reference</a></p>
          */
@@ -2188,7 +2196,11 @@ namespace Connect
         }
 
         /**
-         * <p>Describes the specified flow module.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified flow module.</p> <p>Use the <code>$SAVED</code> alias
+         * in the request to describe the <code>SAVED</code> content of a Flow. For
+         * example, <code>arn:aws:.../contact-flow/{id}:$SAVED</code>. Once a contact flow
+         * is published, <code>$SAVED</code> needs to be supplied to view saved content
+         * that has not been published.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlowModule">AWS
          * API Reference</a></p>
          */
@@ -4924,6 +4936,58 @@ namespace Connect
         }
 
         /**
+         * <p>Searches the flow modules in an Amazon Connect instance, with optional
+         * filtering.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactFlowModules">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchContactFlowModulesOutcome SearchContactFlowModules(const Model::SearchContactFlowModulesRequest& request) const;
+
+        /**
+         * A Callable wrapper for SearchContactFlowModules that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SearchContactFlowModulesRequestT = Model::SearchContactFlowModulesRequest>
+        Model::SearchContactFlowModulesOutcomeCallable SearchContactFlowModulesCallable(const SearchContactFlowModulesRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::SearchContactFlowModules, request);
+        }
+
+        /**
+         * An Async wrapper for SearchContactFlowModules that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SearchContactFlowModulesRequestT = Model::SearchContactFlowModulesRequest>
+        void SearchContactFlowModulesAsync(const SearchContactFlowModulesRequestT& request, const SearchContactFlowModulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::SearchContactFlowModules, request, handler, context);
+        }
+
+        /**
+         * <p>Searches the contact flows in an Amazon Connect instance, with optional
+         * filtering.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactFlows">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchContactFlowsOutcome SearchContactFlows(const Model::SearchContactFlowsRequest& request) const;
+
+        /**
+         * A Callable wrapper for SearchContactFlows that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SearchContactFlowsRequestT = Model::SearchContactFlowsRequest>
+        Model::SearchContactFlowsOutcomeCallable SearchContactFlowsCallable(const SearchContactFlowsRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::SearchContactFlows, request);
+        }
+
+        /**
+         * An Async wrapper for SearchContactFlows that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SearchContactFlowsRequestT = Model::SearchContactFlowsRequest>
+        void SearchContactFlowsAsync(const SearchContactFlowsRequestT& request, const SearchContactFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::SearchContactFlows, request, handler, context);
+        }
+
+        /**
          * <p>Searches contacts in an Amazon Connect instance.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContacts">AWS
@@ -5972,7 +6036,11 @@ namespace Connect
          * <p>Updates the specified flow.</p> <p>You can also create and update flows using
          * the <a
          * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
-         * Connect Flow language</a>.</p><p><h3>See Also:</h3>   <a
+         * Connect Flow language</a>.</p> <p>Use the <code>$SAVED</code> alias in the
+         * request to describe the <code>SAVED</code> content of a Flow. For example,
+         * <code>arn:aws:.../contact-flow/{id}:$SAVED</code>. Once a contact flow is
+         * published, <code>$SAVED</code> needs to be supplied to view saved content that
+         * has not been published.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowContent">AWS
          * API Reference</a></p>
          */
@@ -6022,8 +6090,12 @@ namespace Connect
         }
 
         /**
-         * <p>Updates specified flow module for the specified Amazon Connect instance.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Updates specified flow module for the specified Amazon Connect instance. </p>
+         * <p>Use the <code>$SAVED</code> alias in the request to describe the
+         * <code>SAVED</code> content of a Flow. For example,
+         * <code>arn:aws:.../contact-flow/{id}:$SAVED</code>. Once a contact flow is
+         * published, <code>$SAVED</code> needs to be supplied to view saved content that
+         * has not been published.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowModuleContent">AWS
          * API Reference</a></p>
          */

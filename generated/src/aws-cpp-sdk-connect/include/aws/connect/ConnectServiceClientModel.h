@@ -154,6 +154,8 @@
 #include <aws/connect/model/ResumeContactResult.h>
 #include <aws/connect/model/ResumeContactRecordingResult.h>
 #include <aws/connect/model/SearchAvailablePhoneNumbersResult.h>
+#include <aws/connect/model/SearchContactFlowModulesResult.h>
+#include <aws/connect/model/SearchContactFlowsResult.h>
 #include <aws/connect/model/SearchContactsResult.h>
 #include <aws/connect/model/SearchHoursOfOperationsResult.h>
 #include <aws/connect/model/SearchPredefinedAttributesResult.h>
@@ -413,6 +415,8 @@ namespace Aws
       class ResumeContactRequest;
       class ResumeContactRecordingRequest;
       class SearchAvailablePhoneNumbersRequest;
+      class SearchContactFlowModulesRequest;
+      class SearchContactFlowsRequest;
       class SearchContactsRequest;
       class SearchHoursOfOperationsRequest;
       class SearchPredefinedAttributesRequest;
@@ -664,6 +668,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<ResumeContactResult, ConnectError> ResumeContactOutcome;
       typedef Aws::Utils::Outcome<ResumeContactRecordingResult, ConnectError> ResumeContactRecordingOutcome;
       typedef Aws::Utils::Outcome<SearchAvailablePhoneNumbersResult, ConnectError> SearchAvailablePhoneNumbersOutcome;
+      typedef Aws::Utils::Outcome<SearchContactFlowModulesResult, ConnectError> SearchContactFlowModulesOutcome;
+      typedef Aws::Utils::Outcome<SearchContactFlowsResult, ConnectError> SearchContactFlowsOutcome;
       typedef Aws::Utils::Outcome<SearchContactsResult, ConnectError> SearchContactsOutcome;
       typedef Aws::Utils::Outcome<SearchHoursOfOperationsResult, ConnectError> SearchHoursOfOperationsOutcome;
       typedef Aws::Utils::Outcome<SearchPredefinedAttributesResult, ConnectError> SearchPredefinedAttributesOutcome;
@@ -915,6 +921,8 @@ namespace Aws
       typedef std::future<ResumeContactOutcome> ResumeContactOutcomeCallable;
       typedef std::future<ResumeContactRecordingOutcome> ResumeContactRecordingOutcomeCallable;
       typedef std::future<SearchAvailablePhoneNumbersOutcome> SearchAvailablePhoneNumbersOutcomeCallable;
+      typedef std::future<SearchContactFlowModulesOutcome> SearchContactFlowModulesOutcomeCallable;
+      typedef std::future<SearchContactFlowsOutcome> SearchContactFlowsOutcomeCallable;
       typedef std::future<SearchContactsOutcome> SearchContactsOutcomeCallable;
       typedef std::future<SearchHoursOfOperationsOutcome> SearchHoursOfOperationsOutcomeCallable;
       typedef std::future<SearchPredefinedAttributesOutcome> SearchPredefinedAttributesOutcomeCallable;
@@ -1169,6 +1177,8 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::ResumeContactRequest&, const Model::ResumeContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResumeContactResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ResumeContactRecordingRequest&, const Model::ResumeContactRecordingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResumeContactRecordingResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SearchAvailablePhoneNumbersRequest&, const Model::SearchAvailablePhoneNumbersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchAvailablePhoneNumbersResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::SearchContactFlowModulesRequest&, const Model::SearchContactFlowModulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchContactFlowModulesResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::SearchContactFlowsRequest&, const Model::SearchContactFlowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchContactFlowsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SearchContactsRequest&, const Model::SearchContactsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchContactsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SearchHoursOfOperationsRequest&, const Model::SearchHoursOfOperationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchHoursOfOperationsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SearchPredefinedAttributesRequest&, const Model::SearchPredefinedAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchPredefinedAttributesResponseReceivedHandler;
