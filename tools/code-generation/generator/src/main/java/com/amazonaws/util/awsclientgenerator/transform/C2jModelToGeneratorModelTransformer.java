@@ -115,7 +115,8 @@ public class C2jModelToGeneratorModelTransformer {
 
     private static final Map<String, MemberMapping> RESERVED_REQUEST_MEMBER_MAPPING = ImmutableMap.of(
         "body", new MemberMapping("requestBody", ImmutableSet.of("amplifyuibuilder", "apigateway", "apigateway2", "bedrock-runtime", "glacier", "repostspace")),
-        "headers", new MemberMapping("headerValues", ImmutableSet.of("apigateway"))
+        "headers", new MemberMapping("headerValues", ImmutableSet.of("apigateway")),
+        "Headers", new MemberMapping("headerValues", ImmutableSet.of())
     );
 
     /**
