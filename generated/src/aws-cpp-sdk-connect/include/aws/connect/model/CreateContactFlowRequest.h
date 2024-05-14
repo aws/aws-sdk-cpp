@@ -8,6 +8,7 @@
 #include <aws/connect/ConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/connect/model/ContactFlowType.h>
+#include <aws/connect/model/ContactFlowStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -274,6 +275,55 @@ namespace Model
 
 
     /**
+     * <p>Indicates the flow status as either <code>SAVED</code> or
+     * <code>PUBLISHED</code>. The <code>PUBLISHED</code> status will initiate
+     * validation on the content. the <code>SAVED</code> status does not initiate
+     * validation of the content. <code>SAVED</code> | <code>PUBLISHED</code>.</p>
+     */
+    inline const ContactFlowStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>Indicates the flow status as either <code>SAVED</code> or
+     * <code>PUBLISHED</code>. The <code>PUBLISHED</code> status will initiate
+     * validation on the content. the <code>SAVED</code> status does not initiate
+     * validation of the content. <code>SAVED</code> | <code>PUBLISHED</code>.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>Indicates the flow status as either <code>SAVED</code> or
+     * <code>PUBLISHED</code>. The <code>PUBLISHED</code> status will initiate
+     * validation on the content. the <code>SAVED</code> status does not initiate
+     * validation of the content. <code>SAVED</code> | <code>PUBLISHED</code>.</p>
+     */
+    inline void SetStatus(const ContactFlowStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>Indicates the flow status as either <code>SAVED</code> or
+     * <code>PUBLISHED</code>. The <code>PUBLISHED</code> status will initiate
+     * validation on the content. the <code>SAVED</code> status does not initiate
+     * validation of the content. <code>SAVED</code> | <code>PUBLISHED</code>.</p>
+     */
+    inline void SetStatus(ContactFlowStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>Indicates the flow status as either <code>SAVED</code> or
+     * <code>PUBLISHED</code>. The <code>PUBLISHED</code> status will initiate
+     * validation on the content. the <code>SAVED</code> status does not initiate
+     * validation of the content. <code>SAVED</code> | <code>PUBLISHED</code>.</p>
+     */
+    inline CreateContactFlowRequest& WithStatus(const ContactFlowStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>Indicates the flow status as either <code>SAVED</code> or
+     * <code>PUBLISHED</code>. The <code>PUBLISHED</code> status will initiate
+     * validation on the content. the <code>SAVED</code> status does not initiate
+     * validation of the content. <code>SAVED</code> | <code>PUBLISHED</code>.</p>
+     */
+    inline CreateContactFlowRequest& WithStatus(ContactFlowStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+
+    /**
      * <p>The tags used to organize, track, or control access for this resource. For
      * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
@@ -367,6 +417,9 @@ namespace Model
 
     Aws::String m_content;
     bool m_contentHasBeenSet = false;
+
+    ContactFlowStatus m_status;
+    bool m_statusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

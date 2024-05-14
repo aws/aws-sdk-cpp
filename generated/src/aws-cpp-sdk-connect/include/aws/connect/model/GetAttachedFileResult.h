@@ -245,56 +245,49 @@ namespace Model
     /**
      * <p>The resource to which the attached file is (being) uploaded to. <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a>
-     * are the only current supported resource.</p>  <p>This value must be a
-     * valid ARN.</p> 
+     * are the only current supported resource.</p>
      */
     inline const Aws::String& GetAssociatedResourceArn() const{ return m_associatedResourceArn; }
 
     /**
      * <p>The resource to which the attached file is (being) uploaded to. <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a>
-     * are the only current supported resource.</p>  <p>This value must be a
-     * valid ARN.</p> 
+     * are the only current supported resource.</p>
      */
     inline void SetAssociatedResourceArn(const Aws::String& value) { m_associatedResourceArn = value; }
 
     /**
      * <p>The resource to which the attached file is (being) uploaded to. <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a>
-     * are the only current supported resource.</p>  <p>This value must be a
-     * valid ARN.</p> 
+     * are the only current supported resource.</p>
      */
     inline void SetAssociatedResourceArn(Aws::String&& value) { m_associatedResourceArn = std::move(value); }
 
     /**
      * <p>The resource to which the attached file is (being) uploaded to. <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a>
-     * are the only current supported resource.</p>  <p>This value must be a
-     * valid ARN.</p> 
+     * are the only current supported resource.</p>
      */
     inline void SetAssociatedResourceArn(const char* value) { m_associatedResourceArn.assign(value); }
 
     /**
      * <p>The resource to which the attached file is (being) uploaded to. <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a>
-     * are the only current supported resource.</p>  <p>This value must be a
-     * valid ARN.</p> 
+     * are the only current supported resource.</p>
      */
     inline GetAttachedFileResult& WithAssociatedResourceArn(const Aws::String& value) { SetAssociatedResourceArn(value); return *this;}
 
     /**
      * <p>The resource to which the attached file is (being) uploaded to. <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a>
-     * are the only current supported resource.</p>  <p>This value must be a
-     * valid ARN.</p> 
+     * are the only current supported resource.</p>
      */
     inline GetAttachedFileResult& WithAssociatedResourceArn(Aws::String&& value) { SetAssociatedResourceArn(std::move(value)); return *this;}
 
     /**
      * <p>The resource to which the attached file is (being) uploaded to. <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a>
-     * are the only current supported resource.</p>  <p>This value must be a
-     * valid ARN.</p> 
+     * are the only current supported resource.</p>
      */
     inline GetAttachedFileResult& WithAssociatedResourceArn(const char* value) { SetAssociatedResourceArn(value); return *this;}
 

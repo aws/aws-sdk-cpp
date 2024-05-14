@@ -25,7 +25,9 @@ ContactFlowSummary::ContactFlowSummary() :
     m_contactFlowType(ContactFlowType::NOT_SET),
     m_contactFlowTypeHasBeenSet(false),
     m_contactFlowState(ContactFlowState::NOT_SET),
-    m_contactFlowStateHasBeenSet(false)
+    m_contactFlowStateHasBeenSet(false),
+    m_contactFlowStatus(ContactFlowStatus::NOT_SET),
+    m_contactFlowStatusHasBeenSet(false)
 {
 }
 
@@ -36,7 +38,9 @@ ContactFlowSummary::ContactFlowSummary(JsonView jsonValue) :
     m_contactFlowType(ContactFlowType::NOT_SET),
     m_contactFlowTypeHasBeenSet(false),
     m_contactFlowState(ContactFlowState::NOT_SET),
-    m_contactFlowStateHasBeenSet(false)
+    m_contactFlowStateHasBeenSet(false),
+    m_contactFlowStatus(ContactFlowStatus::NOT_SET),
+    m_contactFlowStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -78,6 +82,13 @@ ContactFlowSummary& ContactFlowSummary::operator =(JsonView jsonValue)
     m_contactFlowStateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ContactFlowStatus"))
+  {
+    m_contactFlowStatus = ContactFlowStatusMapper::GetContactFlowStatusForName(jsonValue.GetString("ContactFlowStatus"));
+
+    m_contactFlowStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -111,6 +122,11 @@ JsonValue ContactFlowSummary::Jsonize() const
   if(m_contactFlowStateHasBeenSet)
   {
    payload.WithString("ContactFlowState", ContactFlowStateMapper::GetNameForContactFlowState(m_contactFlowState));
+  }
+
+  if(m_contactFlowStatusHasBeenSet)
+  {
+   payload.WithString("ContactFlowStatus", ContactFlowStatusMapper::GetNameForContactFlowStatus(m_contactFlowStatus));
   }
 
   return payload;

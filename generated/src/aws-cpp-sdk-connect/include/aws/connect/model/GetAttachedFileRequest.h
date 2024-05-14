@@ -124,22 +124,26 @@ namespace Model
 
 
     /**
-     * <p>Optional override for the expiry of the pre-signed S3 URL in seconds.</p>
+     * <p>Optional override for the expiry of the pre-signed S3 URL in seconds. The
+     * default value is 300.</p>
      */
     inline int GetUrlExpiryInSeconds() const{ return m_urlExpiryInSeconds; }
 
     /**
-     * <p>Optional override for the expiry of the pre-signed S3 URL in seconds.</p>
+     * <p>Optional override for the expiry of the pre-signed S3 URL in seconds. The
+     * default value is 300.</p>
      */
     inline bool UrlExpiryInSecondsHasBeenSet() const { return m_urlExpiryInSecondsHasBeenSet; }
 
     /**
-     * <p>Optional override for the expiry of the pre-signed S3 URL in seconds.</p>
+     * <p>Optional override for the expiry of the pre-signed S3 URL in seconds. The
+     * default value is 300.</p>
      */
     inline void SetUrlExpiryInSeconds(int value) { m_urlExpiryInSecondsHasBeenSet = true; m_urlExpiryInSeconds = value; }
 
     /**
-     * <p>Optional override for the expiry of the pre-signed S3 URL in seconds.</p>
+     * <p>Optional override for the expiry of the pre-signed S3 URL in seconds. The
+     * default value is 300.</p>
      */
     inline GetAttachedFileRequest& WithUrlExpiryInSeconds(int value) { SetUrlExpiryInSeconds(value); return *this;}
 

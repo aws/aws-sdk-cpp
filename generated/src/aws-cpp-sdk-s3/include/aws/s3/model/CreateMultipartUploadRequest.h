@@ -730,7 +730,7 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>id</code> – if the value specified is the
      * canonical user ID of an Amazon Web Services account</p> </li> <li> <p>
      * <code>uri</code> – if you are granting permissions to a predefined group</p>
-     * </li> <li> <p> <code>emailAddress</code> – if the value specified is the email
+     * </li> <li> <p> <code>emailAddress</code> ��� if the value specified is the email
      * address of an Amazon Web Services account</p>  <p>Using email addresses to
      * specify a grantee is only supported in the following Amazon Web Services
      * Regions: </p> <ul> <li> <p>US East (N. Virginia)</p> </li> <li> <p>US West (N.
@@ -764,7 +764,7 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>id</code> – if the value specified is the
      * canonical user ID of an Amazon Web Services account</p> </li> <li> <p>
      * <code>uri</code> – if you are granting permissions to a predefined group</p>
-     * </li> <li> <p> <code>emailAddress</code> – if the value specified is the email
+     * </li> <li> <p> <code>emailAddress</code> ��� if the value specified is the email
      * address of an Amazon Web Services account</p>  <p>Using email addresses to
      * specify a grantee is only supported in the following Amazon Web Services
      * Regions: </p> <ul> <li> <p>US East (N. Virginia)</p> </li> <li> <p>US West (N.
@@ -798,7 +798,7 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>id</code> – if the value specified is the
      * canonical user ID of an Amazon Web Services account</p> </li> <li> <p>
      * <code>uri</code> – if you are granting permissions to a predefined group</p>
-     * </li> <li> <p> <code>emailAddress</code> – if the value specified is the email
+     * </li> <li> <p> <code>emailAddress</code> ��� if the value specified is the email
      * address of an Amazon Web Services account</p>  <p>Using email addresses to
      * specify a grantee is only supported in the following Amazon Web Services
      * Regions: </p> <ul> <li> <p>US East (N. Virginia)</p> </li> <li> <p>US West (N.
@@ -832,7 +832,7 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>id</code> – if the value specified is the
      * canonical user ID of an Amazon Web Services account</p> </li> <li> <p>
      * <code>uri</code> – if you are granting permissions to a predefined group</p>
-     * </li> <li> <p> <code>emailAddress</code> – if the value specified is the email
+     * </li> <li> <p> <code>emailAddress</code> ��� if the value specified is the email
      * address of an Amazon Web Services account</p>  <p>Using email addresses to
      * specify a grantee is only supported in the following Amazon Web Services
      * Regions: </p> <ul> <li> <p>US East (N. Virginia)</p> </li> <li> <p>US West (N.
@@ -866,7 +866,7 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>id</code> – if the value specified is the
      * canonical user ID of an Amazon Web Services account</p> </li> <li> <p>
      * <code>uri</code> – if you are granting permissions to a predefined group</p>
-     * </li> <li> <p> <code>emailAddress</code> – if the value specified is the email
+     * </li> <li> <p> <code>emailAddress</code> ��� if the value specified is the email
      * address of an Amazon Web Services account</p>  <p>Using email addresses to
      * specify a grantee is only supported in the following Amazon Web Services
      * Regions: </p> <ul> <li> <p>US East (N. Virginia)</p> </li> <li> <p>US West (N.
@@ -900,7 +900,7 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>id</code> – if the value specified is the
      * canonical user ID of an Amazon Web Services account</p> </li> <li> <p>
      * <code>uri</code> – if you are granting permissions to a predefined group</p>
-     * </li> <li> <p> <code>emailAddress</code> – if the value specified is the email
+     * </li> <li> <p> <code>emailAddress</code> ��� if the value specified is the email
      * address of an Amazon Web Services account</p>  <p>Using email addresses to
      * specify a grantee is only supported in the following Amazon Web Services
      * Regions: </p> <ul> <li> <p>US East (N. Virginia)</p> </li> <li> <p>US West (N.
@@ -934,7 +934,7 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>id</code> – if the value specified is the
      * canonical user ID of an Amazon Web Services account</p> </li> <li> <p>
      * <code>uri</code> – if you are granting permissions to a predefined group</p>
-     * </li> <li> <p> <code>emailAddress</code> – if the value specified is the email
+     * </li> <li> <p> <code>emailAddress</code> ��� if the value specified is the email
      * address of an Amazon Web Services account</p>  <p>Using email addresses to
      * specify a grantee is only supported in the following Amazon Web Services
      * Regions: </p> <ul> <li> <p>US East (N. Virginia)</p> </li> <li> <p>US West (N.
@@ -968,7 +968,7 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>id</code> – if the value specified is the
      * canonical user ID of an Amazon Web Services account</p> </li> <li> <p>
      * <code>uri</code> – if you are granting permissions to a predefined group</p>
-     * </li> <li> <p> <code>emailAddress</code> – if the value specified is the email
+     * </li> <li> <p> <code>emailAddress</code> ��� if the value specified is the email
      * address of an Amazon Web Services account</p>  <p>Using email addresses to
      * specify a grantee is only supported in the following Amazon Web Services
      * Regions: </p> <ul> <li> <p>US East (N. Virginia)</p> </li> <li> <p>US West (N.
