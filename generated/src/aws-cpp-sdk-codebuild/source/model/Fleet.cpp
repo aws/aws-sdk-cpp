@@ -34,6 +34,8 @@ Fleet::Fleet() :
     m_scalingConfigurationHasBeenSet(false),
     m_overflowBehavior(FleetOverflowBehavior::NOT_SET),
     m_overflowBehaviorHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false),
+    m_fleetServiceRoleHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -54,6 +56,8 @@ Fleet::Fleet(JsonView jsonValue) :
     m_scalingConfigurationHasBeenSet(false),
     m_overflowBehavior(FleetOverflowBehavior::NOT_SET),
     m_overflowBehaviorHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false),
+    m_fleetServiceRoleHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -138,6 +142,20 @@ Fleet& Fleet::operator =(JsonView jsonValue)
     m_overflowBehaviorHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("vpcConfig"))
+  {
+    m_vpcConfig = jsonValue.GetObject("vpcConfig");
+
+    m_vpcConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fleetServiceRole"))
+  {
+    m_fleetServiceRole = jsonValue.GetString("fleetServiceRole");
+
+    m_fleetServiceRoleHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -214,6 +232,18 @@ JsonValue Fleet::Jsonize() const
   if(m_overflowBehaviorHasBeenSet)
   {
    payload.WithString("overflowBehavior", FleetOverflowBehaviorMapper::GetNameForFleetOverflowBehavior(m_overflowBehavior));
+  }
+
+  if(m_vpcConfigHasBeenSet)
+  {
+   payload.WithObject("vpcConfig", m_vpcConfig.Jsonize());
+
+  }
+
+  if(m_fleetServiceRoleHasBeenSet)
+  {
+   payload.WithString("fleetServiceRole", m_fleetServiceRole);
+
   }
 
   if(m_tagsHasBeenSet)

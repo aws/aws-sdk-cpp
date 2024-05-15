@@ -87,49 +87,65 @@ namespace Model
 
     /**
      * <p> For GitHub or GitHub Enterprise, this is the personal access token. For
-     * Bitbucket, this is either the access token or the app password. </p>
+     * Bitbucket, this is either the access token or the app password. For the
+     * <code>authType</code> CODECONNECTIONS, this is the
+     * <code>connectionArn</code>.</p>
      */
     inline const Aws::String& GetToken() const{ return m_token; }
 
     /**
      * <p> For GitHub or GitHub Enterprise, this is the personal access token. For
-     * Bitbucket, this is either the access token or the app password. </p>
+     * Bitbucket, this is either the access token or the app password. For the
+     * <code>authType</code> CODECONNECTIONS, this is the
+     * <code>connectionArn</code>.</p>
      */
     inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
 
     /**
      * <p> For GitHub or GitHub Enterprise, this is the personal access token. For
-     * Bitbucket, this is either the access token or the app password. </p>
+     * Bitbucket, this is either the access token or the app password. For the
+     * <code>authType</code> CODECONNECTIONS, this is the
+     * <code>connectionArn</code>.</p>
      */
     inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
 
     /**
      * <p> For GitHub or GitHub Enterprise, this is the personal access token. For
-     * Bitbucket, this is either the access token or the app password. </p>
+     * Bitbucket, this is either the access token or the app password. For the
+     * <code>authType</code> CODECONNECTIONS, this is the
+     * <code>connectionArn</code>.</p>
      */
     inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = std::move(value); }
 
     /**
      * <p> For GitHub or GitHub Enterprise, this is the personal access token. For
-     * Bitbucket, this is either the access token or the app password. </p>
+     * Bitbucket, this is either the access token or the app password. For the
+     * <code>authType</code> CODECONNECTIONS, this is the
+     * <code>connectionArn</code>.</p>
      */
     inline void SetToken(const char* value) { m_tokenHasBeenSet = true; m_token.assign(value); }
 
     /**
      * <p> For GitHub or GitHub Enterprise, this is the personal access token. For
-     * Bitbucket, this is either the access token or the app password. </p>
+     * Bitbucket, this is either the access token or the app password. For the
+     * <code>authType</code> CODECONNECTIONS, this is the
+     * <code>connectionArn</code>.</p>
      */
     inline ImportSourceCredentialsRequest& WithToken(const Aws::String& value) { SetToken(value); return *this;}
 
     /**
      * <p> For GitHub or GitHub Enterprise, this is the personal access token. For
-     * Bitbucket, this is either the access token or the app password. </p>
+     * Bitbucket, this is either the access token or the app password. For the
+     * <code>authType</code> CODECONNECTIONS, this is the
+     * <code>connectionArn</code>.</p>
      */
     inline ImportSourceCredentialsRequest& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
 
     /**
      * <p> For GitHub or GitHub Enterprise, this is the personal access token. For
-     * Bitbucket, this is either the access token or the app password. </p>
+     * Bitbucket, this is either the access token or the app password. For the
+     * <code>authType</code> CODECONNECTIONS, this is the
+     * <code>connectionArn</code>.</p>
      */
     inline ImportSourceCredentialsRequest& WithToken(const char* value) { SetToken(value); return *this;}
 
@@ -167,43 +183,49 @@ namespace Model
 
     /**
      * <p> The type of authentication used to connect to a GitHub, GitHub Enterprise,
-     * or Bitbucket repository. An OAUTH connection is not supported by the API and
-     * must be created using the CodeBuild console. </p>
+     * GitLab, GitLab Self Managed, or Bitbucket repository. An OAUTH connection is not
+     * supported by the API and must be created using the CodeBuild console. Note that
+     * CODECONNECTIONS is only valid for GitLab and GitLab Self Managed.</p>
      */
     inline const AuthType& GetAuthType() const{ return m_authType; }
 
     /**
      * <p> The type of authentication used to connect to a GitHub, GitHub Enterprise,
-     * or Bitbucket repository. An OAUTH connection is not supported by the API and
-     * must be created using the CodeBuild console. </p>
+     * GitLab, GitLab Self Managed, or Bitbucket repository. An OAUTH connection is not
+     * supported by the API and must be created using the CodeBuild console. Note that
+     * CODECONNECTIONS is only valid for GitLab and GitLab Self Managed.</p>
      */
     inline bool AuthTypeHasBeenSet() const { return m_authTypeHasBeenSet; }
 
     /**
      * <p> The type of authentication used to connect to a GitHub, GitHub Enterprise,
-     * or Bitbucket repository. An OAUTH connection is not supported by the API and
-     * must be created using the CodeBuild console. </p>
+     * GitLab, GitLab Self Managed, or Bitbucket repository. An OAUTH connection is not
+     * supported by the API and must be created using the CodeBuild console. Note that
+     * CODECONNECTIONS is only valid for GitLab and GitLab Self Managed.</p>
      */
     inline void SetAuthType(const AuthType& value) { m_authTypeHasBeenSet = true; m_authType = value; }
 
     /**
      * <p> The type of authentication used to connect to a GitHub, GitHub Enterprise,
-     * or Bitbucket repository. An OAUTH connection is not supported by the API and
-     * must be created using the CodeBuild console. </p>
+     * GitLab, GitLab Self Managed, or Bitbucket repository. An OAUTH connection is not
+     * supported by the API and must be created using the CodeBuild console. Note that
+     * CODECONNECTIONS is only valid for GitLab and GitLab Self Managed.</p>
      */
     inline void SetAuthType(AuthType&& value) { m_authTypeHasBeenSet = true; m_authType = std::move(value); }
 
     /**
      * <p> The type of authentication used to connect to a GitHub, GitHub Enterprise,
-     * or Bitbucket repository. An OAUTH connection is not supported by the API and
-     * must be created using the CodeBuild console. </p>
+     * GitLab, GitLab Self Managed, or Bitbucket repository. An OAUTH connection is not
+     * supported by the API and must be created using the CodeBuild console. Note that
+     * CODECONNECTIONS is only valid for GitLab and GitLab Self Managed.</p>
      */
     inline ImportSourceCredentialsRequest& WithAuthType(const AuthType& value) { SetAuthType(value); return *this;}
 
     /**
      * <p> The type of authentication used to connect to a GitHub, GitHub Enterprise,
-     * or Bitbucket repository. An OAUTH connection is not supported by the API and
-     * must be created using the CodeBuild console. </p>
+     * GitLab, GitLab Self Managed, or Bitbucket repository. An OAUTH connection is not
+     * supported by the API and must be created using the CodeBuild console. Note that
+     * CODECONNECTIONS is only valid for GitLab and GitLab Self Managed.</p>
      */
     inline ImportSourceCredentialsRequest& WithAuthType(AuthType&& value) { SetAuthType(std::move(value)); return *this;}
 

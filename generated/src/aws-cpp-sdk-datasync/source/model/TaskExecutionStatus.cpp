@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int QUEUED_HASH = HashingUtils::HashString("QUEUED");
+        static const int CANCELLING_HASH = HashingUtils::HashString("CANCELLING");
         static const int LAUNCHING_HASH = HashingUtils::HashString("LAUNCHING");
         static const int PREPARING_HASH = HashingUtils::HashString("PREPARING");
         static const int TRANSFERRING_HASH = HashingUtils::HashString("TRANSFERRING");
@@ -35,6 +36,10 @@ namespace Aws
           if (hashCode == QUEUED_HASH)
           {
             return TaskExecutionStatus::QUEUED;
+          }
+          else if (hashCode == CANCELLING_HASH)
+          {
+            return TaskExecutionStatus::CANCELLING;
           }
           else if (hashCode == LAUNCHING_HASH)
           {
@@ -78,6 +83,8 @@ namespace Aws
             return {};
           case TaskExecutionStatus::QUEUED:
             return "QUEUED";
+          case TaskExecutionStatus::CANCELLING:
+            return "CANCELLING";
           case TaskExecutionStatus::LAUNCHING:
             return "LAUNCHING";
           case TaskExecutionStatus::PREPARING:

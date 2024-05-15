@@ -40,199 +40,231 @@ namespace Model
 
     /**
      * <p>The identifier of the compliance standard that was used to determine the
-     * patch compliance status.</p>
+     * patch compliance status.</p> <p>Length Constraints: Minimum length of 1. Maximum
+     * length of 256.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
      * <p>The identifier of the compliance standard that was used to determine the
-     * patch compliance status.</p>
+     * patch compliance status.</p> <p>Length Constraints: Minimum length of 1. Maximum
+     * length of 256.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>The identifier of the compliance standard that was used to determine the
-     * patch compliance status.</p>
+     * patch compliance status.</p> <p>Length Constraints: Minimum length of 1. Maximum
+     * length of 256.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
      * <p>The identifier of the compliance standard that was used to determine the
-     * patch compliance status.</p>
+     * patch compliance status.</p> <p>Length Constraints: Minimum length of 1. Maximum
+     * length of 256.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The identifier of the compliance standard that was used to determine the
-     * patch compliance status.</p>
+     * patch compliance status.</p> <p>Length Constraints: Minimum length of 1. Maximum
+     * length of 256.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
      * <p>The identifier of the compliance standard that was used to determine the
-     * patch compliance status.</p>
+     * patch compliance status.</p> <p>Length Constraints: Minimum length of 1. Maximum
+     * length of 256.</p>
      */
     inline PatchSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
      * <p>The identifier of the compliance standard that was used to determine the
-     * patch compliance status.</p>
+     * patch compliance status.</p> <p>Length Constraints: Minimum length of 1. Maximum
+     * length of 256.</p>
      */
     inline PatchSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the compliance standard that was used to determine the
-     * patch compliance status.</p>
+     * patch compliance status.</p> <p>Length Constraints: Minimum length of 1. Maximum
+     * length of 256.</p>
      */
     inline PatchSummary& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
      * <p>The number of patches from the compliance standard that were installed
-     * successfully.</p>
+     * successfully.</p> <p>The value can be an integer from <code>0</code> to
+     * <code>100000</code>.</p>
      */
     inline int GetInstalledCount() const{ return m_installedCount; }
 
     /**
      * <p>The number of patches from the compliance standard that were installed
-     * successfully.</p>
+     * successfully.</p> <p>The value can be an integer from <code>0</code> to
+     * <code>100000</code>.</p>
      */
     inline bool InstalledCountHasBeenSet() const { return m_installedCountHasBeenSet; }
 
     /**
      * <p>The number of patches from the compliance standard that were installed
-     * successfully.</p>
+     * successfully.</p> <p>The value can be an integer from <code>0</code> to
+     * <code>100000</code>.</p>
      */
     inline void SetInstalledCount(int value) { m_installedCountHasBeenSet = true; m_installedCount = value; }
 
     /**
      * <p>The number of patches from the compliance standard that were installed
-     * successfully.</p>
+     * successfully.</p> <p>The value can be an integer from <code>0</code> to
+     * <code>100000</code>.</p>
      */
     inline PatchSummary& WithInstalledCount(int value) { SetInstalledCount(value); return *this;}
 
 
     /**
      * <p>The number of patches that are part of the compliance standard but are not
-     * installed. The count includes patches that failed to install.</p>
+     * installed. The count includes patches that failed to install.</p> <p>The value
+     * can be an integer from <code>0</code> to <code>100000</code>.</p>
      */
     inline int GetMissingCount() const{ return m_missingCount; }
 
     /**
      * <p>The number of patches that are part of the compliance standard but are not
-     * installed. The count includes patches that failed to install.</p>
+     * installed. The count includes patches that failed to install.</p> <p>The value
+     * can be an integer from <code>0</code> to <code>100000</code>.</p>
      */
     inline bool MissingCountHasBeenSet() const { return m_missingCountHasBeenSet; }
 
     /**
      * <p>The number of patches that are part of the compliance standard but are not
-     * installed. The count includes patches that failed to install.</p>
+     * installed. The count includes patches that failed to install.</p> <p>The value
+     * can be an integer from <code>0</code> to <code>100000</code>.</p>
      */
     inline void SetMissingCount(int value) { m_missingCountHasBeenSet = true; m_missingCount = value; }
 
     /**
      * <p>The number of patches that are part of the compliance standard but are not
-     * installed. The count includes patches that failed to install.</p>
+     * installed. The count includes patches that failed to install.</p> <p>The value
+     * can be an integer from <code>0</code> to <code>100000</code>.</p>
      */
     inline PatchSummary& WithMissingCount(int value) { SetMissingCount(value); return *this;}
 
 
     /**
      * <p>The number of patches from the compliance standard that failed to
-     * install.</p>
+     * install.</p> <p>The value can be an integer from <code>0</code> to
+     * <code>100000</code>.</p>
      */
     inline int GetFailedCount() const{ return m_failedCount; }
 
     /**
      * <p>The number of patches from the compliance standard that failed to
-     * install.</p>
+     * install.</p> <p>The value can be an integer from <code>0</code> to
+     * <code>100000</code>.</p>
      */
     inline bool FailedCountHasBeenSet() const { return m_failedCountHasBeenSet; }
 
     /**
      * <p>The number of patches from the compliance standard that failed to
-     * install.</p>
+     * install.</p> <p>The value can be an integer from <code>0</code> to
+     * <code>100000</code>.</p>
      */
     inline void SetFailedCount(int value) { m_failedCountHasBeenSet = true; m_failedCount = value; }
 
     /**
      * <p>The number of patches from the compliance standard that failed to
-     * install.</p>
+     * install.</p> <p>The value can be an integer from <code>0</code> to
+     * <code>100000</code>.</p>
      */
     inline PatchSummary& WithFailedCount(int value) { SetFailedCount(value); return *this;}
 
 
     /**
      * <p>The number of installed patches that are not part of the compliance
-     * standard.</p>
+     * standard.</p> <p>The value can be an integer from <code>0</code> to
+     * <code>100000</code>.</p>
      */
     inline int GetInstalledOtherCount() const{ return m_installedOtherCount; }
 
     /**
      * <p>The number of installed patches that are not part of the compliance
-     * standard.</p>
+     * standard.</p> <p>The value can be an integer from <code>0</code> to
+     * <code>100000</code>.</p>
      */
     inline bool InstalledOtherCountHasBeenSet() const { return m_installedOtherCountHasBeenSet; }
 
     /**
      * <p>The number of installed patches that are not part of the compliance
-     * standard.</p>
+     * standard.</p> <p>The value can be an integer from <code>0</code> to
+     * <code>100000</code>.</p>
      */
     inline void SetInstalledOtherCount(int value) { m_installedOtherCountHasBeenSet = true; m_installedOtherCount = value; }
 
     /**
      * <p>The number of installed patches that are not part of the compliance
-     * standard.</p>
+     * standard.</p> <p>The value can be an integer from <code>0</code> to
+     * <code>100000</code>.</p>
      */
     inline PatchSummary& WithInstalledOtherCount(int value) { SetInstalledOtherCount(value); return *this;}
 
 
     /**
      * <p>The number of patches that are installed but are also on a list of patches
-     * that the customer rejected.</p>
+     * that the customer rejected.</p> <p>The value can be an integer from
+     * <code>0</code> to <code>100000</code>.</p>
      */
     inline int GetInstalledRejectedCount() const{ return m_installedRejectedCount; }
 
     /**
      * <p>The number of patches that are installed but are also on a list of patches
-     * that the customer rejected.</p>
+     * that the customer rejected.</p> <p>The value can be an integer from
+     * <code>0</code> to <code>100000</code>.</p>
      */
     inline bool InstalledRejectedCountHasBeenSet() const { return m_installedRejectedCountHasBeenSet; }
 
     /**
      * <p>The number of patches that are installed but are also on a list of patches
-     * that the customer rejected.</p>
+     * that the customer rejected.</p> <p>The value can be an integer from
+     * <code>0</code> to <code>100000</code>.</p>
      */
     inline void SetInstalledRejectedCount(int value) { m_installedRejectedCountHasBeenSet = true; m_installedRejectedCount = value; }
 
     /**
      * <p>The number of patches that are installed but are also on a list of patches
-     * that the customer rejected.</p>
+     * that the customer rejected.</p> <p>The value can be an integer from
+     * <code>0</code> to <code>100000</code>.</p>
      */
     inline PatchSummary& WithInstalledRejectedCount(int value) { SetInstalledRejectedCount(value); return *this;}
 
 
     /**
      * <p>The number of patches that were applied, but that require the instance to be
-     * rebooted in order to be marked as installed.</p>
+     * rebooted in order to be marked as installed.</p> <p>The value can be an integer
+     * from <code>0</code> to <code>100000</code>.</p>
      */
     inline int GetInstalledPendingReboot() const{ return m_installedPendingReboot; }
 
     /**
      * <p>The number of patches that were applied, but that require the instance to be
-     * rebooted in order to be marked as installed.</p>
+     * rebooted in order to be marked as installed.</p> <p>The value can be an integer
+     * from <code>0</code> to <code>100000</code>.</p>
      */
     inline bool InstalledPendingRebootHasBeenSet() const { return m_installedPendingRebootHasBeenSet; }
 
     /**
      * <p>The number of patches that were applied, but that require the instance to be
-     * rebooted in order to be marked as installed.</p>
+     * rebooted in order to be marked as installed.</p> <p>The value can be an integer
+     * from <code>0</code> to <code>100000</code>.</p>
      */
     inline void SetInstalledPendingReboot(int value) { m_installedPendingRebootHasBeenSet = true; m_installedPendingReboot = value; }
 
     /**
      * <p>The number of patches that were applied, but that require the instance to be
-     * rebooted in order to be marked as installed.</p>
+     * rebooted in order to be marked as installed.</p> <p>The value can be an integer
+     * from <code>0</code> to <code>100000</code>.</p>
      */
     inline PatchSummary& WithInstalledPendingReboot(int value) { SetInstalledPendingReboot(value); return *this;}
 
@@ -544,91 +576,107 @@ namespace Model
 
 
     /**
-     * <p>The reboot option specified for the instance.</p>
+     * <p>The reboot option specified for the instance.</p> <p>Length Constraints:
+     * Minimum length of 1. Maximum length of 256.</p>
      */
     inline const Aws::String& GetRebootOption() const{ return m_rebootOption; }
 
     /**
-     * <p>The reboot option specified for the instance.</p>
+     * <p>The reboot option specified for the instance.</p> <p>Length Constraints:
+     * Minimum length of 1. Maximum length of 256.</p>
      */
     inline bool RebootOptionHasBeenSet() const { return m_rebootOptionHasBeenSet; }
 
     /**
-     * <p>The reboot option specified for the instance.</p>
+     * <p>The reboot option specified for the instance.</p> <p>Length Constraints:
+     * Minimum length of 1. Maximum length of 256.</p>
      */
     inline void SetRebootOption(const Aws::String& value) { m_rebootOptionHasBeenSet = true; m_rebootOption = value; }
 
     /**
-     * <p>The reboot option specified for the instance.</p>
+     * <p>The reboot option specified for the instance.</p> <p>Length Constraints:
+     * Minimum length of 1. Maximum length of 256.</p>
      */
     inline void SetRebootOption(Aws::String&& value) { m_rebootOptionHasBeenSet = true; m_rebootOption = std::move(value); }
 
     /**
-     * <p>The reboot option specified for the instance.</p>
+     * <p>The reboot option specified for the instance.</p> <p>Length Constraints:
+     * Minimum length of 1. Maximum length of 256.</p>
      */
     inline void SetRebootOption(const char* value) { m_rebootOptionHasBeenSet = true; m_rebootOption.assign(value); }
 
     /**
-     * <p>The reboot option specified for the instance.</p>
+     * <p>The reboot option specified for the instance.</p> <p>Length Constraints:
+     * Minimum length of 1. Maximum length of 256.</p>
      */
     inline PatchSummary& WithRebootOption(const Aws::String& value) { SetRebootOption(value); return *this;}
 
     /**
-     * <p>The reboot option specified for the instance.</p>
+     * <p>The reboot option specified for the instance.</p> <p>Length Constraints:
+     * Minimum length of 1. Maximum length of 256.</p>
      */
     inline PatchSummary& WithRebootOption(Aws::String&& value) { SetRebootOption(std::move(value)); return *this;}
 
     /**
-     * <p>The reboot option specified for the instance.</p>
+     * <p>The reboot option specified for the instance.</p> <p>Length Constraints:
+     * Minimum length of 1. Maximum length of 256.</p>
      */
     inline PatchSummary& WithRebootOption(const char* value) { SetRebootOption(value); return *this;}
 
 
     /**
      * <p>The type of patch operation performed. For Patch Manager, the values are
-     * <code>SCAN</code> and <code>INSTALL</code>. </p>
+     * <code>SCAN</code> and <code>INSTALL</code>.</p> <p>Length Constraints: Minimum
+     * length of 1. Maximum length of 256.</p>
      */
     inline const Aws::String& GetOperation() const{ return m_operation; }
 
     /**
      * <p>The type of patch operation performed. For Patch Manager, the values are
-     * <code>SCAN</code> and <code>INSTALL</code>. </p>
+     * <code>SCAN</code> and <code>INSTALL</code>.</p> <p>Length Constraints: Minimum
+     * length of 1. Maximum length of 256.</p>
      */
     inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
 
     /**
      * <p>The type of patch operation performed. For Patch Manager, the values are
-     * <code>SCAN</code> and <code>INSTALL</code>. </p>
+     * <code>SCAN</code> and <code>INSTALL</code>.</p> <p>Length Constraints: Minimum
+     * length of 1. Maximum length of 256.</p>
      */
     inline void SetOperation(const Aws::String& value) { m_operationHasBeenSet = true; m_operation = value; }
 
     /**
      * <p>The type of patch operation performed. For Patch Manager, the values are
-     * <code>SCAN</code> and <code>INSTALL</code>. </p>
+     * <code>SCAN</code> and <code>INSTALL</code>.</p> <p>Length Constraints: Minimum
+     * length of 1. Maximum length of 256.</p>
      */
     inline void SetOperation(Aws::String&& value) { m_operationHasBeenSet = true; m_operation = std::move(value); }
 
     /**
      * <p>The type of patch operation performed. For Patch Manager, the values are
-     * <code>SCAN</code> and <code>INSTALL</code>. </p>
+     * <code>SCAN</code> and <code>INSTALL</code>.</p> <p>Length Constraints: Minimum
+     * length of 1. Maximum length of 256.</p>
      */
     inline void SetOperation(const char* value) { m_operationHasBeenSet = true; m_operation.assign(value); }
 
     /**
      * <p>The type of patch operation performed. For Patch Manager, the values are
-     * <code>SCAN</code> and <code>INSTALL</code>. </p>
+     * <code>SCAN</code> and <code>INSTALL</code>.</p> <p>Length Constraints: Minimum
+     * length of 1. Maximum length of 256.</p>
      */
     inline PatchSummary& WithOperation(const Aws::String& value) { SetOperation(value); return *this;}
 
     /**
      * <p>The type of patch operation performed. For Patch Manager, the values are
-     * <code>SCAN</code> and <code>INSTALL</code>. </p>
+     * <code>SCAN</code> and <code>INSTALL</code>.</p> <p>Length Constraints: Minimum
+     * length of 1. Maximum length of 256.</p>
      */
     inline PatchSummary& WithOperation(Aws::String&& value) { SetOperation(std::move(value)); return *this;}
 
     /**
      * <p>The type of patch operation performed. For Patch Manager, the values are
-     * <code>SCAN</code> and <code>INSTALL</code>. </p>
+     * <code>SCAN</code> and <code>INSTALL</code>.</p> <p>Length Constraints: Minimum
+     * length of 1. Maximum length of 256.</p>
      */
     inline PatchSummary& WithOperation(const char* value) { SetOperation(value); return *this;}
 

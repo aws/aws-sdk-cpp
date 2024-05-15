@@ -22,6 +22,7 @@ namespace Aws
 
         static const int CREATE_FAILED_HASH = HashingUtils::HashString("CREATE_FAILED");
         static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
+        static const int ACTION_REQUIRED_HASH = HashingUtils::HashString("ACTION_REQUIRED");
 
 
         FleetContextCode GetFleetContextCodeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == UPDATE_FAILED_HASH)
           {
             return FleetContextCode::UPDATE_FAILED;
+          }
+          else if (hashCode == ACTION_REQUIRED_HASH)
+          {
+            return FleetContextCode::ACTION_REQUIRED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "CREATE_FAILED";
           case FleetContextCode::UPDATE_FAILED:
             return "UPDATE_FAILED";
+          case FleetContextCode::ACTION_REQUIRED:
+            return "ACTION_REQUIRED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

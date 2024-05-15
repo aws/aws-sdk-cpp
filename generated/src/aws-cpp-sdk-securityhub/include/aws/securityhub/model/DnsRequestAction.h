@@ -39,83 +39,99 @@ namespace Model
 
 
     /**
-     * <p>The DNS domain that is associated with the DNS request.</p>
+     * <p>The DNS domain that is associated with the DNS request.</p> <p>Length
+     * Constraints: 128.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>The DNS domain that is associated with the DNS request.</p>
+     * <p>The DNS domain that is associated with the DNS request.</p> <p>Length
+     * Constraints: 128.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
-     * <p>The DNS domain that is associated with the DNS request.</p>
+     * <p>The DNS domain that is associated with the DNS request.</p> <p>Length
+     * Constraints: 128.</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * <p>The DNS domain that is associated with the DNS request.</p>
+     * <p>The DNS domain that is associated with the DNS request.</p> <p>Length
+     * Constraints: 128.</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
-     * <p>The DNS domain that is associated with the DNS request.</p>
+     * <p>The DNS domain that is associated with the DNS request.</p> <p>Length
+     * Constraints: 128.</p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
-     * <p>The DNS domain that is associated with the DNS request.</p>
+     * <p>The DNS domain that is associated with the DNS request.</p> <p>Length
+     * Constraints: 128.</p>
      */
     inline DnsRequestAction& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>The DNS domain that is associated with the DNS request.</p>
+     * <p>The DNS domain that is associated with the DNS request.</p> <p>Length
+     * Constraints: 128.</p>
      */
     inline DnsRequestAction& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
-     * <p>The DNS domain that is associated with the DNS request.</p>
+     * <p>The DNS domain that is associated with the DNS request.</p> <p>Length
+     * Constraints: 128.</p>
      */
     inline DnsRequestAction& WithDomain(const char* value) { SetDomain(value); return *this;}
 
 
     /**
-     * <p>The protocol that was used for the DNS request.</p>
+     * <p>The protocol that was used for the DNS request.</p> <p>Length Constraints:
+     * Minimum length of 1. Maximum length of 64.</p>
      */
     inline const Aws::String& GetProtocol() const{ return m_protocol; }
 
     /**
-     * <p>The protocol that was used for the DNS request.</p>
+     * <p>The protocol that was used for the DNS request.</p> <p>Length Constraints:
+     * Minimum length of 1. Maximum length of 64.</p>
      */
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
-     * <p>The protocol that was used for the DNS request.</p>
+     * <p>The protocol that was used for the DNS request.</p> <p>Length Constraints:
+     * Minimum length of 1. Maximum length of 64.</p>
      */
     inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
-     * <p>The protocol that was used for the DNS request.</p>
+     * <p>The protocol that was used for the DNS request.</p> <p>Length Constraints:
+     * Minimum length of 1. Maximum length of 64.</p>
      */
     inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
-     * <p>The protocol that was used for the DNS request.</p>
+     * <p>The protocol that was used for the DNS request.</p> <p>Length Constraints:
+     * Minimum length of 1. Maximum length of 64.</p>
      */
     inline void SetProtocol(const char* value) { m_protocolHasBeenSet = true; m_protocol.assign(value); }
 
     /**
-     * <p>The protocol that was used for the DNS request.</p>
+     * <p>The protocol that was used for the DNS request.</p> <p>Length Constraints:
+     * Minimum length of 1. Maximum length of 64.</p>
      */
     inline DnsRequestAction& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
 
     /**
-     * <p>The protocol that was used for the DNS request.</p>
+     * <p>The protocol that was used for the DNS request.</p> <p>Length Constraints:
+     * Minimum length of 1. Maximum length of 64.</p>
      */
     inline DnsRequestAction& WithProtocol(Aws::String&& value) { SetProtocol(std::move(value)); return *this;}
 
     /**
-     * <p>The protocol that was used for the DNS request.</p>
+     * <p>The protocol that was used for the DNS request.</p> <p>Length Constraints:
+     * Minimum length of 1. Maximum length of 64.</p>
      */
     inline DnsRequestAction& WithProtocol(const char* value) { SetProtocol(value); return *this;}
 

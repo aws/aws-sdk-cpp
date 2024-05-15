@@ -42,91 +42,99 @@ namespace Model
 
 
     /**
-     * <p>The name of the API method that was issued.</p>
+     * <p>The name of the API method that was issued.</p> <p>Length Constraints:
+     * 128.</p>
      */
     inline const Aws::String& GetApi() const{ return m_api; }
 
     /**
-     * <p>The name of the API method that was issued.</p>
+     * <p>The name of the API method that was issued.</p> <p>Length Constraints:
+     * 128.</p>
      */
     inline bool ApiHasBeenSet() const { return m_apiHasBeenSet; }
 
     /**
-     * <p>The name of the API method that was issued.</p>
+     * <p>The name of the API method that was issued.</p> <p>Length Constraints:
+     * 128.</p>
      */
     inline void SetApi(const Aws::String& value) { m_apiHasBeenSet = true; m_api = value; }
 
     /**
-     * <p>The name of the API method that was issued.</p>
+     * <p>The name of the API method that was issued.</p> <p>Length Constraints:
+     * 128.</p>
      */
     inline void SetApi(Aws::String&& value) { m_apiHasBeenSet = true; m_api = std::move(value); }
 
     /**
-     * <p>The name of the API method that was issued.</p>
+     * <p>The name of the API method that was issued.</p> <p>Length Constraints:
+     * 128.</p>
      */
     inline void SetApi(const char* value) { m_apiHasBeenSet = true; m_api.assign(value); }
 
     /**
-     * <p>The name of the API method that was issued.</p>
+     * <p>The name of the API method that was issued.</p> <p>Length Constraints:
+     * 128.</p>
      */
     inline AwsApiCallAction& WithApi(const Aws::String& value) { SetApi(value); return *this;}
 
     /**
-     * <p>The name of the API method that was issued.</p>
+     * <p>The name of the API method that was issued.</p> <p>Length Constraints:
+     * 128.</p>
      */
     inline AwsApiCallAction& WithApi(Aws::String&& value) { SetApi(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the API method that was issued.</p>
+     * <p>The name of the API method that was issued.</p> <p>Length Constraints:
+     * 128.</p>
      */
     inline AwsApiCallAction& WithApi(const char* value) { SetApi(value); return *this;}
 
 
     /**
      * <p>The name of the Amazon Web Services service that the API method belongs
-     * to.</p>
+     * to.</p> <p>Length Constraints: 128.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
 
     /**
      * <p>The name of the Amazon Web Services service that the API method belongs
-     * to.</p>
+     * to.</p> <p>Length Constraints: 128.</p>
      */
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
 
     /**
      * <p>The name of the Amazon Web Services service that the API method belongs
-     * to.</p>
+     * to.</p> <p>Length Constraints: 128.</p>
      */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
      * <p>The name of the Amazon Web Services service that the API method belongs
-     * to.</p>
+     * to.</p> <p>Length Constraints: 128.</p>
      */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
      * <p>The name of the Amazon Web Services service that the API method belongs
-     * to.</p>
+     * to.</p> <p>Length Constraints: 128.</p>
      */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
     /**
      * <p>The name of the Amazon Web Services service that the API method belongs
-     * to.</p>
+     * to.</p> <p>Length Constraints: 128.</p>
      */
     inline AwsApiCallAction& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
 
     /**
      * <p>The name of the Amazon Web Services service that the API method belongs
-     * to.</p>
+     * to.</p> <p>Length Constraints: 128.</p>
      */
     inline AwsApiCallAction& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Amazon Web Services service that the API method belongs
-     * to.</p>
+     * to.</p> <p>Length Constraints: 128.</p>
      */
     inline AwsApiCallAction& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 

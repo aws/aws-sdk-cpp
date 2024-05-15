@@ -40,49 +40,57 @@ namespace Model
 
     /**
      * <p>Describes the recommended steps to take to remediate an issue identified in a
-     * finding.</p>
+     * finding.</p> <p>Length Constraints: Minimum of 1 length. Maximum of 512
+     * length.</p>
      */
     inline const Aws::String& GetText() const{ return m_text; }
 
     /**
      * <p>Describes the recommended steps to take to remediate an issue identified in a
-     * finding.</p>
+     * finding.</p> <p>Length Constraints: Minimum of 1 length. Maximum of 512
+     * length.</p>
      */
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
 
     /**
      * <p>Describes the recommended steps to take to remediate an issue identified in a
-     * finding.</p>
+     * finding.</p> <p>Length Constraints: Minimum of 1 length. Maximum of 512
+     * length.</p>
      */
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
 
     /**
      * <p>Describes the recommended steps to take to remediate an issue identified in a
-     * finding.</p>
+     * finding.</p> <p>Length Constraints: Minimum of 1 length. Maximum of 512
+     * length.</p>
      */
     inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
 
     /**
      * <p>Describes the recommended steps to take to remediate an issue identified in a
-     * finding.</p>
+     * finding.</p> <p>Length Constraints: Minimum of 1 length. Maximum of 512
+     * length.</p>
      */
     inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
 
     /**
      * <p>Describes the recommended steps to take to remediate an issue identified in a
-     * finding.</p>
+     * finding.</p> <p>Length Constraints: Minimum of 1 length. Maximum of 512
+     * length.</p>
      */
     inline Recommendation& WithText(const Aws::String& value) { SetText(value); return *this;}
 
     /**
      * <p>Describes the recommended steps to take to remediate an issue identified in a
-     * finding.</p>
+     * finding.</p> <p>Length Constraints: Minimum of 1 length. Maximum of 512
+     * length.</p>
      */
     inline Recommendation& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
 
     /**
      * <p>Describes the recommended steps to take to remediate an issue identified in a
-     * finding.</p>
+     * finding.</p> <p>Length Constraints: Minimum of 1 length. Maximum of 512
+     * length.</p>
      */
     inline Recommendation& WithText(const char* value) { SetText(value); return *this;}
 

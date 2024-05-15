@@ -12,6 +12,7 @@
 #include <aws/codebuild/model/ComputeType.h>
 #include <aws/codebuild/model/ScalingConfigurationOutput.h>
 #include <aws/codebuild/model/FleetOverflowBehavior.h>
+#include <aws/codebuild/model/VpcConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codebuild/model/Tag.h>
 #include <utility>
@@ -667,7 +668,12 @@ namespace Model
      * <code>QUEUE</code>, your overflow builds need to wait on the existing fleet
      * instance to become available.</p> </li> <li> <p>For overflow behavior
      * <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.</p>
-     * </li> </ul>
+     *  <p>If you choose to set your overflow behavior to on-demand while
+     * creating a VPC-connected fleet, make sure that you add the required VPC
+     * permissions to your project service role. For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-create-vpc-network-interface">Example
+     * policy statement to allow CodeBuild access to Amazon Web Services services
+     * required to create a VPC network interface</a>.</p>  </li> </ul>
      */
     inline const FleetOverflowBehavior& GetOverflowBehavior() const{ return m_overflowBehavior; }
 
@@ -676,7 +682,12 @@ namespace Model
      * <code>QUEUE</code>, your overflow builds need to wait on the existing fleet
      * instance to become available.</p> </li> <li> <p>For overflow behavior
      * <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.</p>
-     * </li> </ul>
+     *  <p>If you choose to set your overflow behavior to on-demand while
+     * creating a VPC-connected fleet, make sure that you add the required VPC
+     * permissions to your project service role. For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-create-vpc-network-interface">Example
+     * policy statement to allow CodeBuild access to Amazon Web Services services
+     * required to create a VPC network interface</a>.</p>  </li> </ul>
      */
     inline bool OverflowBehaviorHasBeenSet() const { return m_overflowBehaviorHasBeenSet; }
 
@@ -685,7 +696,12 @@ namespace Model
      * <code>QUEUE</code>, your overflow builds need to wait on the existing fleet
      * instance to become available.</p> </li> <li> <p>For overflow behavior
      * <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.</p>
-     * </li> </ul>
+     *  <p>If you choose to set your overflow behavior to on-demand while
+     * creating a VPC-connected fleet, make sure that you add the required VPC
+     * permissions to your project service role. For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-create-vpc-network-interface">Example
+     * policy statement to allow CodeBuild access to Amazon Web Services services
+     * required to create a VPC network interface</a>.</p>  </li> </ul>
      */
     inline void SetOverflowBehavior(const FleetOverflowBehavior& value) { m_overflowBehaviorHasBeenSet = true; m_overflowBehavior = value; }
 
@@ -694,7 +710,12 @@ namespace Model
      * <code>QUEUE</code>, your overflow builds need to wait on the existing fleet
      * instance to become available.</p> </li> <li> <p>For overflow behavior
      * <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.</p>
-     * </li> </ul>
+     *  <p>If you choose to set your overflow behavior to on-demand while
+     * creating a VPC-connected fleet, make sure that you add the required VPC
+     * permissions to your project service role. For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-create-vpc-network-interface">Example
+     * policy statement to allow CodeBuild access to Amazon Web Services services
+     * required to create a VPC network interface</a>.</p>  </li> </ul>
      */
     inline void SetOverflowBehavior(FleetOverflowBehavior&& value) { m_overflowBehaviorHasBeenSet = true; m_overflowBehavior = std::move(value); }
 
@@ -703,7 +724,12 @@ namespace Model
      * <code>QUEUE</code>, your overflow builds need to wait on the existing fleet
      * instance to become available.</p> </li> <li> <p>For overflow behavior
      * <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.</p>
-     * </li> </ul>
+     *  <p>If you choose to set your overflow behavior to on-demand while
+     * creating a VPC-connected fleet, make sure that you add the required VPC
+     * permissions to your project service role. For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-create-vpc-network-interface">Example
+     * policy statement to allow CodeBuild access to Amazon Web Services services
+     * required to create a VPC network interface</a>.</p>  </li> </ul>
      */
     inline Fleet& WithOverflowBehavior(const FleetOverflowBehavior& value) { SetOverflowBehavior(value); return *this;}
 
@@ -712,9 +738,74 @@ namespace Model
      * <code>QUEUE</code>, your overflow builds need to wait on the existing fleet
      * instance to become available.</p> </li> <li> <p>For overflow behavior
      * <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.</p>
-     * </li> </ul>
+     *  <p>If you choose to set your overflow behavior to on-demand while
+     * creating a VPC-connected fleet, make sure that you add the required VPC
+     * permissions to your project service role. For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-create-vpc-network-interface">Example
+     * policy statement to allow CodeBuild access to Amazon Web Services services
+     * required to create a VPC network interface</a>.</p>  </li> </ul>
      */
     inline Fleet& WithOverflowBehavior(FleetOverflowBehavior&& value) { SetOverflowBehavior(std::move(value)); return *this;}
+
+
+    
+    inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+
+    
+    inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
+
+    
+    inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
+
+    
+    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
+
+    
+    inline Fleet& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
+
+    
+    inline Fleet& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The service role associated with the compute fleet.</p>
+     */
+    inline const Aws::String& GetFleetServiceRole() const{ return m_fleetServiceRole; }
+
+    /**
+     * <p>The service role associated with the compute fleet.</p>
+     */
+    inline bool FleetServiceRoleHasBeenSet() const { return m_fleetServiceRoleHasBeenSet; }
+
+    /**
+     * <p>The service role associated with the compute fleet.</p>
+     */
+    inline void SetFleetServiceRole(const Aws::String& value) { m_fleetServiceRoleHasBeenSet = true; m_fleetServiceRole = value; }
+
+    /**
+     * <p>The service role associated with the compute fleet.</p>
+     */
+    inline void SetFleetServiceRole(Aws::String&& value) { m_fleetServiceRoleHasBeenSet = true; m_fleetServiceRole = std::move(value); }
+
+    /**
+     * <p>The service role associated with the compute fleet.</p>
+     */
+    inline void SetFleetServiceRole(const char* value) { m_fleetServiceRoleHasBeenSet = true; m_fleetServiceRole.assign(value); }
+
+    /**
+     * <p>The service role associated with the compute fleet.</p>
+     */
+    inline Fleet& WithFleetServiceRole(const Aws::String& value) { SetFleetServiceRole(value); return *this;}
+
+    /**
+     * <p>The service role associated with the compute fleet.</p>
+     */
+    inline Fleet& WithFleetServiceRole(Aws::String&& value) { SetFleetServiceRole(std::move(value)); return *this;}
+
+    /**
+     * <p>The service role associated with the compute fleet.</p>
+     */
+    inline Fleet& WithFleetServiceRole(const char* value) { SetFleetServiceRole(value); return *this;}
 
 
     /**
@@ -807,6 +898,12 @@ namespace Model
 
     FleetOverflowBehavior m_overflowBehavior;
     bool m_overflowBehaviorHasBeenSet = false;
+
+    VpcConfig m_vpcConfig;
+    bool m_vpcConfigHasBeenSet = false;
+
+    Aws::String m_fleetServiceRole;
+    bool m_fleetServiceRoleHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;

@@ -46,7 +46,8 @@ namespace Model
      * <code>Type</code> to one of the supported resource types. For example, if the
      * resource is an EC2 instance, then set <code>Type</code> to
      * <code>AwsEc2Instance</code>.</p> <p>If the resource does not match any of the
-     * provided types, then set <code>Type</code> to <code>Other</code>. </p>
+     * provided types, then set <code>Type</code> to <code>Other</code>. </p> <p>Length
+     * Constraints: Minimum length of 1. Maximum length of 256.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
@@ -55,7 +56,8 @@ namespace Model
      * <code>Type</code> to one of the supported resource types. For example, if the
      * resource is an EC2 instance, then set <code>Type</code> to
      * <code>AwsEc2Instance</code>.</p> <p>If the resource does not match any of the
-     * provided types, then set <code>Type</code> to <code>Other</code>. </p>
+     * provided types, then set <code>Type</code> to <code>Other</code>. </p> <p>Length
+     * Constraints: Minimum length of 1. Maximum length of 256.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -64,7 +66,8 @@ namespace Model
      * <code>Type</code> to one of the supported resource types. For example, if the
      * resource is an EC2 instance, then set <code>Type</code> to
      * <code>AwsEc2Instance</code>.</p> <p>If the resource does not match any of the
-     * provided types, then set <code>Type</code> to <code>Other</code>. </p>
+     * provided types, then set <code>Type</code> to <code>Other</code>. </p> <p>Length
+     * Constraints: Minimum length of 1. Maximum length of 256.</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -73,7 +76,8 @@ namespace Model
      * <code>Type</code> to one of the supported resource types. For example, if the
      * resource is an EC2 instance, then set <code>Type</code> to
      * <code>AwsEc2Instance</code>.</p> <p>If the resource does not match any of the
-     * provided types, then set <code>Type</code> to <code>Other</code>. </p>
+     * provided types, then set <code>Type</code> to <code>Other</code>. </p> <p>Length
+     * Constraints: Minimum length of 1. Maximum length of 256.</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -82,7 +86,8 @@ namespace Model
      * <code>Type</code> to one of the supported resource types. For example, if the
      * resource is an EC2 instance, then set <code>Type</code> to
      * <code>AwsEc2Instance</code>.</p> <p>If the resource does not match any of the
-     * provided types, then set <code>Type</code> to <code>Other</code>. </p>
+     * provided types, then set <code>Type</code> to <code>Other</code>. </p> <p>Length
+     * Constraints: Minimum length of 1. Maximum length of 256.</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
@@ -91,7 +96,8 @@ namespace Model
      * <code>Type</code> to one of the supported resource types. For example, if the
      * resource is an EC2 instance, then set <code>Type</code> to
      * <code>AwsEc2Instance</code>.</p> <p>If the resource does not match any of the
-     * provided types, then set <code>Type</code> to <code>Other</code>. </p>
+     * provided types, then set <code>Type</code> to <code>Other</code>. </p> <p>Length
+     * Constraints: Minimum length of 1. Maximum length of 256.</p>
      */
     inline Resource& WithType(const Aws::String& value) { SetType(value); return *this;}
 
@@ -100,7 +106,8 @@ namespace Model
      * <code>Type</code> to one of the supported resource types. For example, if the
      * resource is an EC2 instance, then set <code>Type</code> to
      * <code>AwsEc2Instance</code>.</p> <p>If the resource does not match any of the
-     * provided types, then set <code>Type</code> to <code>Other</code>. </p>
+     * provided types, then set <code>Type</code> to <code>Other</code>. </p> <p>Length
+     * Constraints: Minimum length of 1. Maximum length of 256.</p>
      */
     inline Resource& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
@@ -109,7 +116,8 @@ namespace Model
      * <code>Type</code> to one of the supported resource types. For example, if the
      * resource is an EC2 instance, then set <code>Type</code> to
      * <code>AwsEc2Instance</code>.</p> <p>If the resource does not match any of the
-     * provided types, then set <code>Type</code> to <code>Other</code>. </p>
+     * provided types, then set <code>Type</code> to <code>Other</code>. </p> <p>Length
+     * Constraints: Minimum length of 1. Maximum length of 256.</p>
      */
     inline Resource& WithType(const char* value) { SetType(value); return *this;}
 
@@ -194,49 +202,57 @@ namespace Model
 
     /**
      * <p>The canonical Amazon Web Services external Region name where this resource is
-     * located.</p>
+     * located.</p> <p>Length Constraints: Minimum length of 1. Maximum length of
+     * 16.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
      * <p>The canonical Amazon Web Services external Region name where this resource is
-     * located.</p>
+     * located.</p> <p>Length Constraints: Minimum length of 1. Maximum length of
+     * 16.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
      * <p>The canonical Amazon Web Services external Region name where this resource is
-     * located.</p>
+     * located.</p> <p>Length Constraints: Minimum length of 1. Maximum length of
+     * 16.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
      * <p>The canonical Amazon Web Services external Region name where this resource is
-     * located.</p>
+     * located.</p> <p>Length Constraints: Minimum length of 1. Maximum length of
+     * 16.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
      * <p>The canonical Amazon Web Services external Region name where this resource is
-     * located.</p>
+     * located.</p> <p>Length Constraints: Minimum length of 1. Maximum length of
+     * 16.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
      * <p>The canonical Amazon Web Services external Region name where this resource is
-     * located.</p>
+     * located.</p> <p>Length Constraints: Minimum length of 1. Maximum length of
+     * 16.</p>
      */
     inline Resource& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
      * <p>The canonical Amazon Web Services external Region name where this resource is
-     * located.</p>
+     * located.</p> <p>Length Constraints: Minimum length of 1. Maximum length of
+     * 16.</p>
      */
     inline Resource& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
      * <p>The canonical Amazon Web Services external Region name where this resource is
-     * located.</p>
+     * located.</p> <p>Length Constraints: Minimum length of 1. Maximum length of
+     * 16.</p>
      */
     inline Resource& WithRegion(const char* value) { SetRegion(value); return *this;}
 
@@ -292,79 +308,105 @@ namespace Model
 
     /**
      * <p>A list of Amazon Web Services tags associated with a resource at the time the
-     * finding was processed.</p>
+     * finding was processed. Tags must follow <a
+     * href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html#tag-conventions">Amazon
+     * Web Services tag naming limits and requirements</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
      * <p>A list of Amazon Web Services tags associated with a resource at the time the
-     * finding was processed.</p>
+     * finding was processed. Tags must follow <a
+     * href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html#tag-conventions">Amazon
+     * Web Services tag naming limits and requirements</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of Amazon Web Services tags associated with a resource at the time the
-     * finding was processed.</p>
+     * finding was processed. Tags must follow <a
+     * href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html#tag-conventions">Amazon
+     * Web Services tag naming limits and requirements</a>.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>A list of Amazon Web Services tags associated with a resource at the time the
-     * finding was processed.</p>
+     * finding was processed. Tags must follow <a
+     * href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html#tag-conventions">Amazon
+     * Web Services tag naming limits and requirements</a>.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>A list of Amazon Web Services tags associated with a resource at the time the
-     * finding was processed.</p>
+     * finding was processed. Tags must follow <a
+     * href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html#tag-conventions">Amazon
+     * Web Services tag naming limits and requirements</a>.</p>
      */
     inline Resource& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
      * <p>A list of Amazon Web Services tags associated with a resource at the time the
-     * finding was processed.</p>
+     * finding was processed. Tags must follow <a
+     * href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html#tag-conventions">Amazon
+     * Web Services tag naming limits and requirements</a>.</p>
      */
     inline Resource& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>A list of Amazon Web Services tags associated with a resource at the time the
-     * finding was processed.</p>
+     * finding was processed. Tags must follow <a
+     * href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html#tag-conventions">Amazon
+     * Web Services tag naming limits and requirements</a>.</p>
      */
     inline Resource& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
      * <p>A list of Amazon Web Services tags associated with a resource at the time the
-     * finding was processed.</p>
+     * finding was processed. Tags must follow <a
+     * href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html#tag-conventions">Amazon
+     * Web Services tag naming limits and requirements</a>.</p>
      */
     inline Resource& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A list of Amazon Web Services tags associated with a resource at the time the
-     * finding was processed.</p>
+     * finding was processed. Tags must follow <a
+     * href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html#tag-conventions">Amazon
+     * Web Services tag naming limits and requirements</a>.</p>
      */
     inline Resource& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A list of Amazon Web Services tags associated with a resource at the time the
-     * finding was processed.</p>
+     * finding was processed. Tags must follow <a
+     * href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html#tag-conventions">Amazon
+     * Web Services tag naming limits and requirements</a>.</p>
      */
     inline Resource& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A list of Amazon Web Services tags associated with a resource at the time the
-     * finding was processed.</p>
+     * finding was processed. Tags must follow <a
+     * href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html#tag-conventions">Amazon
+     * Web Services tag naming limits and requirements</a>.</p>
      */
     inline Resource& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A list of Amazon Web Services tags associated with a resource at the time the
-     * finding was processed.</p>
+     * finding was processed. Tags must follow <a
+     * href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html#tag-conventions">Amazon
+     * Web Services tag naming limits and requirements</a>.</p>
      */
     inline Resource& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A list of Amazon Web Services tags associated with a resource at the time the
-     * finding was processed.</p>
+     * finding was processed. Tags must follow <a
+     * href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html#tag-conventions">Amazon
+     * Web Services tag naming limits and requirements</a>.</p>
      */
     inline Resource& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

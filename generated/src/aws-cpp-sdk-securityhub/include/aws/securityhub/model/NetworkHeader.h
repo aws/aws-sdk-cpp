@@ -40,42 +40,50 @@ namespace Model
 
 
     /**
-     * <p>The protocol used for the component.</p>
+     * <p>The protocol used for the component.</p> <p>Length Constraints: Minimum of 1.
+     * Maximum of 16.</p>
      */
     inline const Aws::String& GetProtocol() const{ return m_protocol; }
 
     /**
-     * <p>The protocol used for the component.</p>
+     * <p>The protocol used for the component.</p> <p>Length Constraints: Minimum of 1.
+     * Maximum of 16.</p>
      */
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
-     * <p>The protocol used for the component.</p>
+     * <p>The protocol used for the component.</p> <p>Length Constraints: Minimum of 1.
+     * Maximum of 16.</p>
      */
     inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
-     * <p>The protocol used for the component.</p>
+     * <p>The protocol used for the component.</p> <p>Length Constraints: Minimum of 1.
+     * Maximum of 16.</p>
      */
     inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
-     * <p>The protocol used for the component.</p>
+     * <p>The protocol used for the component.</p> <p>Length Constraints: Minimum of 1.
+     * Maximum of 16.</p>
      */
     inline void SetProtocol(const char* value) { m_protocolHasBeenSet = true; m_protocol.assign(value); }
 
     /**
-     * <p>The protocol used for the component.</p>
+     * <p>The protocol used for the component.</p> <p>Length Constraints: Minimum of 1.
+     * Maximum of 16.</p>
      */
     inline NetworkHeader& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
 
     /**
-     * <p>The protocol used for the component.</p>
+     * <p>The protocol used for the component.</p> <p>Length Constraints: Minimum of 1.
+     * Maximum of 16.</p>
      */
     inline NetworkHeader& WithProtocol(Aws::String&& value) { SetProtocol(std::move(value)); return *this;}
 
     /**
-     * <p>The protocol used for the component.</p>
+     * <p>The protocol used for the component.</p> <p>Length Constraints: Minimum of 1.
+     * Maximum of 16.</p>
      */
     inline NetworkHeader& WithProtocol(const char* value) { SetProtocol(value); return *this;}
 

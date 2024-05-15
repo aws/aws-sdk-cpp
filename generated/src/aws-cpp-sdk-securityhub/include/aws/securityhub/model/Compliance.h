@@ -53,8 +53,8 @@ namespace Model
      * <code>NOT_AVAILABLE</code> - Check could not be performed due to a service
      * outage, API error, or because the result of the Config evaluation was
      * <code>NOT_APPLICABLE</code>. If the Config evaluation result was
-     * <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically
-     * archives the finding.</p> </li> </ul> </li> </ul>
+     * <code>NOT_APPLICABLE</code> for a Security Hub control, Security Hub
+     * automatically archives the finding after 3 days.</p> </li> </ul> </li> </ul>
      */
     inline const ComplianceStatus& GetStatus() const{ return m_status; }
 
@@ -68,8 +68,8 @@ namespace Model
      * <code>NOT_AVAILABLE</code> - Check could not be performed due to a service
      * outage, API error, or because the result of the Config evaluation was
      * <code>NOT_APPLICABLE</code>. If the Config evaluation result was
-     * <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically
-     * archives the finding.</p> </li> </ul> </li> </ul>
+     * <code>NOT_APPLICABLE</code> for a Security Hub control, Security Hub
+     * automatically archives the finding after 3 days.</p> </li> </ul> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
@@ -83,8 +83,8 @@ namespace Model
      * <code>NOT_AVAILABLE</code> - Check could not be performed due to a service
      * outage, API error, or because the result of the Config evaluation was
      * <code>NOT_APPLICABLE</code>. If the Config evaluation result was
-     * <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically
-     * archives the finding.</p> </li> </ul> </li> </ul>
+     * <code>NOT_APPLICABLE</code> for a Security Hub control, Security Hub
+     * automatically archives the finding after 3 days.</p> </li> </ul> </li> </ul>
      */
     inline void SetStatus(const ComplianceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
@@ -98,8 +98,8 @@ namespace Model
      * <code>NOT_AVAILABLE</code> - Check could not be performed due to a service
      * outage, API error, or because the result of the Config evaluation was
      * <code>NOT_APPLICABLE</code>. If the Config evaluation result was
-     * <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically
-     * archives the finding.</p> </li> </ul> </li> </ul>
+     * <code>NOT_APPLICABLE</code> for a Security Hub control, Security Hub
+     * automatically archives the finding after 3 days.</p> </li> </ul> </li> </ul>
      */
     inline void SetStatus(ComplianceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
@@ -113,8 +113,8 @@ namespace Model
      * <code>NOT_AVAILABLE</code> - Check could not be performed due to a service
      * outage, API error, or because the result of the Config evaluation was
      * <code>NOT_APPLICABLE</code>. If the Config evaluation result was
-     * <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically
-     * archives the finding.</p> </li> </ul> </li> </ul>
+     * <code>NOT_APPLICABLE</code> for a Security Hub control, Security Hub
+     * automatically archives the finding after 3 days.</p> </li> </ul> </li> </ul>
      */
     inline Compliance& WithStatus(const ComplianceStatus& value) { SetStatus(value); return *this;}
 
@@ -128,8 +128,8 @@ namespace Model
      * <code>NOT_AVAILABLE</code> - Check could not be performed due to a service
      * outage, API error, or because the result of the Config evaluation was
      * <code>NOT_APPLICABLE</code>. If the Config evaluation result was
-     * <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically
-     * archives the finding.</p> </li> </ul> </li> </ul>
+     * <code>NOT_APPLICABLE</code> for a Security Hub control, Security Hub
+     * automatically archives the finding after 3 days.</p> </li> </ul> </li> </ul>
      */
     inline Compliance& WithStatus(ComplianceStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -137,63 +137,63 @@ namespace Model
     /**
      * <p>For a control, the industry or regulatory framework requirements that are
      * related to the control. The check for that control is aligned with these
-     * requirements.</p>
+     * requirements.</p> <p>Array Members: Maximum number of 32 items.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRelatedRequirements() const{ return m_relatedRequirements; }
 
     /**
      * <p>For a control, the industry or regulatory framework requirements that are
      * related to the control. The check for that control is aligned with these
-     * requirements.</p>
+     * requirements.</p> <p>Array Members: Maximum number of 32 items.</p>
      */
     inline bool RelatedRequirementsHasBeenSet() const { return m_relatedRequirementsHasBeenSet; }
 
     /**
      * <p>For a control, the industry or regulatory framework requirements that are
      * related to the control. The check for that control is aligned with these
-     * requirements.</p>
+     * requirements.</p> <p>Array Members: Maximum number of 32 items.</p>
      */
     inline void SetRelatedRequirements(const Aws::Vector<Aws::String>& value) { m_relatedRequirementsHasBeenSet = true; m_relatedRequirements = value; }
 
     /**
      * <p>For a control, the industry or regulatory framework requirements that are
      * related to the control. The check for that control is aligned with these
-     * requirements.</p>
+     * requirements.</p> <p>Array Members: Maximum number of 32 items.</p>
      */
     inline void SetRelatedRequirements(Aws::Vector<Aws::String>&& value) { m_relatedRequirementsHasBeenSet = true; m_relatedRequirements = std::move(value); }
 
     /**
      * <p>For a control, the industry or regulatory framework requirements that are
      * related to the control. The check for that control is aligned with these
-     * requirements.</p>
+     * requirements.</p> <p>Array Members: Maximum number of 32 items.</p>
      */
     inline Compliance& WithRelatedRequirements(const Aws::Vector<Aws::String>& value) { SetRelatedRequirements(value); return *this;}
 
     /**
      * <p>For a control, the industry or regulatory framework requirements that are
      * related to the control. The check for that control is aligned with these
-     * requirements.</p>
+     * requirements.</p> <p>Array Members: Maximum number of 32 items.</p>
      */
     inline Compliance& WithRelatedRequirements(Aws::Vector<Aws::String>&& value) { SetRelatedRequirements(std::move(value)); return *this;}
 
     /**
      * <p>For a control, the industry or regulatory framework requirements that are
      * related to the control. The check for that control is aligned with these
-     * requirements.</p>
+     * requirements.</p> <p>Array Members: Maximum number of 32 items.</p>
      */
     inline Compliance& AddRelatedRequirements(const Aws::String& value) { m_relatedRequirementsHasBeenSet = true; m_relatedRequirements.push_back(value); return *this; }
 
     /**
      * <p>For a control, the industry or regulatory framework requirements that are
      * related to the control. The check for that control is aligned with these
-     * requirements.</p>
+     * requirements.</p> <p>Array Members: Maximum number of 32 items.</p>
      */
     inline Compliance& AddRelatedRequirements(Aws::String&& value) { m_relatedRequirementsHasBeenSet = true; m_relatedRequirements.push_back(std::move(value)); return *this; }
 
     /**
      * <p>For a control, the industry or regulatory framework requirements that are
      * related to the control. The check for that control is aligned with these
-     * requirements.</p>
+     * requirements.</p> <p>Array Members: Maximum number of 32 items.</p>
      */
     inline Compliance& AddRelatedRequirements(const char* value) { m_relatedRequirementsHasBeenSet = true; m_relatedRequirements.push_back(value); return *this; }
 

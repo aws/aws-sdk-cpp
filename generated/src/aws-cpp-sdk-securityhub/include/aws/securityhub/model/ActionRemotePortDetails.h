@@ -60,42 +60,42 @@ namespace Model
 
 
     /**
-     * <p>The port name of the remote connection.</p>
+     * <p>The port name of the remote connection.</p> <p>Length Constraints: 128.</p>
      */
     inline const Aws::String& GetPortName() const{ return m_portName; }
 
     /**
-     * <p>The port name of the remote connection.</p>
+     * <p>The port name of the remote connection.</p> <p>Length Constraints: 128.</p>
      */
     inline bool PortNameHasBeenSet() const { return m_portNameHasBeenSet; }
 
     /**
-     * <p>The port name of the remote connection.</p>
+     * <p>The port name of the remote connection.</p> <p>Length Constraints: 128.</p>
      */
     inline void SetPortName(const Aws::String& value) { m_portNameHasBeenSet = true; m_portName = value; }
 
     /**
-     * <p>The port name of the remote connection.</p>
+     * <p>The port name of the remote connection.</p> <p>Length Constraints: 128.</p>
      */
     inline void SetPortName(Aws::String&& value) { m_portNameHasBeenSet = true; m_portName = std::move(value); }
 
     /**
-     * <p>The port name of the remote connection.</p>
+     * <p>The port name of the remote connection.</p> <p>Length Constraints: 128.</p>
      */
     inline void SetPortName(const char* value) { m_portNameHasBeenSet = true; m_portName.assign(value); }
 
     /**
-     * <p>The port name of the remote connection.</p>
+     * <p>The port name of the remote connection.</p> <p>Length Constraints: 128.</p>
      */
     inline ActionRemotePortDetails& WithPortName(const Aws::String& value) { SetPortName(value); return *this;}
 
     /**
-     * <p>The port name of the remote connection.</p>
+     * <p>The port name of the remote connection.</p> <p>Length Constraints: 128.</p>
      */
     inline ActionRemotePortDetails& WithPortName(Aws::String&& value) { SetPortName(std::move(value)); return *this;}
 
     /**
-     * <p>The port name of the remote connection.</p>
+     * <p>The port name of the remote connection.</p> <p>Length Constraints: 128.</p>
      */
     inline ActionRemotePortDetails& WithPortName(const char* value) { SetPortName(value); return *this;}
 

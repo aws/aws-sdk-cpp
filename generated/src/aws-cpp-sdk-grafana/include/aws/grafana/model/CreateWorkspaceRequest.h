@@ -292,56 +292,56 @@ namespace Model
 
     /**
      * <p>Specifies the version of Grafana to support in the new workspace. If not
-     * specified, defaults to the latest version (for example, 9.4).</p> <p>To get a
+     * specified, defaults to the latest version (for example, 10.4).</p> <p>To get a
      * list of supported versions, use the <code>ListVersions</code> operation.</p>
      */
     inline const Aws::String& GetGrafanaVersion() const{ return m_grafanaVersion; }
 
     /**
      * <p>Specifies the version of Grafana to support in the new workspace. If not
-     * specified, defaults to the latest version (for example, 9.4).</p> <p>To get a
+     * specified, defaults to the latest version (for example, 10.4).</p> <p>To get a
      * list of supported versions, use the <code>ListVersions</code> operation.</p>
      */
     inline bool GrafanaVersionHasBeenSet() const { return m_grafanaVersionHasBeenSet; }
 
     /**
      * <p>Specifies the version of Grafana to support in the new workspace. If not
-     * specified, defaults to the latest version (for example, 9.4).</p> <p>To get a
+     * specified, defaults to the latest version (for example, 10.4).</p> <p>To get a
      * list of supported versions, use the <code>ListVersions</code> operation.</p>
      */
     inline void SetGrafanaVersion(const Aws::String& value) { m_grafanaVersionHasBeenSet = true; m_grafanaVersion = value; }
 
     /**
      * <p>Specifies the version of Grafana to support in the new workspace. If not
-     * specified, defaults to the latest version (for example, 9.4).</p> <p>To get a
+     * specified, defaults to the latest version (for example, 10.4).</p> <p>To get a
      * list of supported versions, use the <code>ListVersions</code> operation.</p>
      */
     inline void SetGrafanaVersion(Aws::String&& value) { m_grafanaVersionHasBeenSet = true; m_grafanaVersion = std::move(value); }
 
     /**
      * <p>Specifies the version of Grafana to support in the new workspace. If not
-     * specified, defaults to the latest version (for example, 9.4).</p> <p>To get a
+     * specified, defaults to the latest version (for example, 10.4).</p> <p>To get a
      * list of supported versions, use the <code>ListVersions</code> operation.</p>
      */
     inline void SetGrafanaVersion(const char* value) { m_grafanaVersionHasBeenSet = true; m_grafanaVersion.assign(value); }
 
     /**
      * <p>Specifies the version of Grafana to support in the new workspace. If not
-     * specified, defaults to the latest version (for example, 9.4).</p> <p>To get a
+     * specified, defaults to the latest version (for example, 10.4).</p> <p>To get a
      * list of supported versions, use the <code>ListVersions</code> operation.</p>
      */
     inline CreateWorkspaceRequest& WithGrafanaVersion(const Aws::String& value) { SetGrafanaVersion(value); return *this;}
 
     /**
      * <p>Specifies the version of Grafana to support in the new workspace. If not
-     * specified, defaults to the latest version (for example, 9.4).</p> <p>To get a
+     * specified, defaults to the latest version (for example, 10.4).</p> <p>To get a
      * list of supported versions, use the <code>ListVersions</code> operation.</p>
      */
     inline CreateWorkspaceRequest& WithGrafanaVersion(Aws::String&& value) { SetGrafanaVersion(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the version of Grafana to support in the new workspace. If not
-     * specified, defaults to the latest version (for example, 9.4).</p> <p>To get a
+     * specified, defaults to the latest version (for example, 10.4).</p> <p>To get a
      * list of supported versions, use the <code>ListVersions</code> operation.</p>
      */
     inline CreateWorkspaceRequest& WithGrafanaVersion(const char* value) { SetGrafanaVersion(value); return *this;}

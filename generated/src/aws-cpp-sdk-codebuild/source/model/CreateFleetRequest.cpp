@@ -23,6 +23,8 @@ CreateFleetRequest::CreateFleetRequest() :
     m_scalingConfigurationHasBeenSet(false),
     m_overflowBehavior(FleetOverflowBehavior::NOT_SET),
     m_overflowBehaviorHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false),
+    m_fleetServiceRoleHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -62,6 +64,18 @@ Aws::String CreateFleetRequest::SerializePayload() const
   if(m_overflowBehaviorHasBeenSet)
   {
    payload.WithString("overflowBehavior", FleetOverflowBehaviorMapper::GetNameForFleetOverflowBehavior(m_overflowBehavior));
+  }
+
+  if(m_vpcConfigHasBeenSet)
+  {
+   payload.WithObject("vpcConfig", m_vpcConfig.Jsonize());
+
+  }
+
+  if(m_fleetServiceRoleHasBeenSet)
+  {
+   payload.WithString("fleetServiceRole", m_fleetServiceRole);
+
   }
 
   if(m_tagsHasBeenSet)

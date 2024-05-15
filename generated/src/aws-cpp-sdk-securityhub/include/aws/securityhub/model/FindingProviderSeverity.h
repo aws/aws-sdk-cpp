@@ -71,42 +71,50 @@ namespace Model
 
 
     /**
-     * <p>The finding provider's original value for the severity.</p>
+     * <p>The finding provider's original value for the severity.</p> <p>Length
+     * Constraints: Minimum length of 1. Maximum length of 64.</p>
      */
     inline const Aws::String& GetOriginal() const{ return m_original; }
 
     /**
-     * <p>The finding provider's original value for the severity.</p>
+     * <p>The finding provider's original value for the severity.</p> <p>Length
+     * Constraints: Minimum length of 1. Maximum length of 64.</p>
      */
     inline bool OriginalHasBeenSet() const { return m_originalHasBeenSet; }
 
     /**
-     * <p>The finding provider's original value for the severity.</p>
+     * <p>The finding provider's original value for the severity.</p> <p>Length
+     * Constraints: Minimum length of 1. Maximum length of 64.</p>
      */
     inline void SetOriginal(const Aws::String& value) { m_originalHasBeenSet = true; m_original = value; }
 
     /**
-     * <p>The finding provider's original value for the severity.</p>
+     * <p>The finding provider's original value for the severity.</p> <p>Length
+     * Constraints: Minimum length of 1. Maximum length of 64.</p>
      */
     inline void SetOriginal(Aws::String&& value) { m_originalHasBeenSet = true; m_original = std::move(value); }
 
     /**
-     * <p>The finding provider's original value for the severity.</p>
+     * <p>The finding provider's original value for the severity.</p> <p>Length
+     * Constraints: Minimum length of 1. Maximum length of 64.</p>
      */
     inline void SetOriginal(const char* value) { m_originalHasBeenSet = true; m_original.assign(value); }
 
     /**
-     * <p>The finding provider's original value for the severity.</p>
+     * <p>The finding provider's original value for the severity.</p> <p>Length
+     * Constraints: Minimum length of 1. Maximum length of 64.</p>
      */
     inline FindingProviderSeverity& WithOriginal(const Aws::String& value) { SetOriginal(value); return *this;}
 
     /**
-     * <p>The finding provider's original value for the severity.</p>
+     * <p>The finding provider's original value for the severity.</p> <p>Length
+     * Constraints: Minimum length of 1. Maximum length of 64.</p>
      */
     inline FindingProviderSeverity& WithOriginal(Aws::String&& value) { SetOriginal(std::move(value)); return *this;}
 
     /**
-     * <p>The finding provider's original value for the severity.</p>
+     * <p>The finding provider's original value for the severity.</p> <p>Length
+     * Constraints: Minimum length of 1. Maximum length of 64.</p>
      */
     inline FindingProviderSeverity& WithOriginal(const char* value) { SetOriginal(value); return *this;}
 

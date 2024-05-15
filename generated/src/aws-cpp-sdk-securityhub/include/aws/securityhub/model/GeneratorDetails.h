@@ -134,55 +134,64 @@ namespace Model
 
     /**
      * <p> An array of tags used to identify the detector associated with the finding.
-     * </p>
+     * </p> <p>Array Members: Minimum number of 0 items. Maximum number of 10
+     * items.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLabels() const{ return m_labels; }
 
     /**
      * <p> An array of tags used to identify the detector associated with the finding.
-     * </p>
+     * </p> <p>Array Members: Minimum number of 0 items. Maximum number of 10
+     * items.</p>
      */
     inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
 
     /**
      * <p> An array of tags used to identify the detector associated with the finding.
-     * </p>
+     * </p> <p>Array Members: Minimum number of 0 items. Maximum number of 10
+     * items.</p>
      */
     inline void SetLabels(const Aws::Vector<Aws::String>& value) { m_labelsHasBeenSet = true; m_labels = value; }
 
     /**
      * <p> An array of tags used to identify the detector associated with the finding.
-     * </p>
+     * </p> <p>Array Members: Minimum number of 0 items. Maximum number of 10
+     * items.</p>
      */
     inline void SetLabels(Aws::Vector<Aws::String>&& value) { m_labelsHasBeenSet = true; m_labels = std::move(value); }
 
     /**
      * <p> An array of tags used to identify the detector associated with the finding.
-     * </p>
+     * </p> <p>Array Members: Minimum number of 0 items. Maximum number of 10
+     * items.</p>
      */
     inline GeneratorDetails& WithLabels(const Aws::Vector<Aws::String>& value) { SetLabels(value); return *this;}
 
     /**
      * <p> An array of tags used to identify the detector associated with the finding.
-     * </p>
+     * </p> <p>Array Members: Minimum number of 0 items. Maximum number of 10
+     * items.</p>
      */
     inline GeneratorDetails& WithLabels(Aws::Vector<Aws::String>&& value) { SetLabels(std::move(value)); return *this;}
 
     /**
      * <p> An array of tags used to identify the detector associated with the finding.
-     * </p>
+     * </p> <p>Array Members: Minimum number of 0 items. Maximum number of 10
+     * items.</p>
      */
     inline GeneratorDetails& AddLabels(const Aws::String& value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
 
     /**
      * <p> An array of tags used to identify the detector associated with the finding.
-     * </p>
+     * </p> <p>Array Members: Minimum number of 0 items. Maximum number of 10
+     * items.</p>
      */
     inline GeneratorDetails& AddLabels(Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.push_back(std::move(value)); return *this; }
 
     /**
      * <p> An array of tags used to identify the detector associated with the finding.
-     * </p>
+     * </p> <p>Array Members: Minimum number of 0 items. Maximum number of 10
+     * items.</p>
      */
     inline GeneratorDetails& AddLabels(const char* value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
 

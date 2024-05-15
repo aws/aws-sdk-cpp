@@ -302,6 +302,47 @@ namespace Model
      */
     inline StartDICOMImportJobRequest& WithOutputS3Uri(const char* value) { SetOutputS3Uri(value); return *this;}
 
+
+    /**
+     * <p>The account ID of the source S3 bucket owner.</p>
+     */
+    inline const Aws::String& GetInputOwnerAccountId() const{ return m_inputOwnerAccountId; }
+
+    /**
+     * <p>The account ID of the source S3 bucket owner.</p>
+     */
+    inline bool InputOwnerAccountIdHasBeenSet() const { return m_inputOwnerAccountIdHasBeenSet; }
+
+    /**
+     * <p>The account ID of the source S3 bucket owner.</p>
+     */
+    inline void SetInputOwnerAccountId(const Aws::String& value) { m_inputOwnerAccountIdHasBeenSet = true; m_inputOwnerAccountId = value; }
+
+    /**
+     * <p>The account ID of the source S3 bucket owner.</p>
+     */
+    inline void SetInputOwnerAccountId(Aws::String&& value) { m_inputOwnerAccountIdHasBeenSet = true; m_inputOwnerAccountId = std::move(value); }
+
+    /**
+     * <p>The account ID of the source S3 bucket owner.</p>
+     */
+    inline void SetInputOwnerAccountId(const char* value) { m_inputOwnerAccountIdHasBeenSet = true; m_inputOwnerAccountId.assign(value); }
+
+    /**
+     * <p>The account ID of the source S3 bucket owner.</p>
+     */
+    inline StartDICOMImportJobRequest& WithInputOwnerAccountId(const Aws::String& value) { SetInputOwnerAccountId(value); return *this;}
+
+    /**
+     * <p>The account ID of the source S3 bucket owner.</p>
+     */
+    inline StartDICOMImportJobRequest& WithInputOwnerAccountId(Aws::String&& value) { SetInputOwnerAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>The account ID of the source S3 bucket owner.</p>
+     */
+    inline StartDICOMImportJobRequest& WithInputOwnerAccountId(const char* value) { SetInputOwnerAccountId(value); return *this;}
+
   private:
 
     Aws::String m_jobName;
@@ -321,6 +362,9 @@ namespace Model
 
     Aws::String m_outputS3Uri;
     bool m_outputS3UriHasBeenSet = false;
+
+    Aws::String m_inputOwnerAccountId;
+    bool m_inputOwnerAccountIdHasBeenSet = false;
   };
 
 } // namespace Model
