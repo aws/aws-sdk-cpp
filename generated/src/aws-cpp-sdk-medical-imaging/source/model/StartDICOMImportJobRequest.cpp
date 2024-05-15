@@ -19,7 +19,8 @@ StartDICOMImportJobRequest::StartDICOMImportJobRequest() :
     m_clientTokenHasBeenSet(true),
     m_datastoreIdHasBeenSet(false),
     m_inputS3UriHasBeenSet(false),
-    m_outputS3UriHasBeenSet(false)
+    m_outputS3UriHasBeenSet(false),
+    m_inputOwnerAccountIdHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,12 @@ Aws::String StartDICOMImportJobRequest::SerializePayload() const
   if(m_outputS3UriHasBeenSet)
   {
    payload.WithString("outputS3Uri", m_outputS3Uri);
+
+  }
+
+  if(m_inputOwnerAccountIdHasBeenSet)
+  {
+   payload.WithString("inputOwnerAccountId", m_inputOwnerAccountId);
 
   }
 

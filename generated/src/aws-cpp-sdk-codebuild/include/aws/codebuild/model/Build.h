@@ -999,26 +999,26 @@ namespace Model
 
 
     /**
-     * <p>How long, in minutes, for CodeBuild to wait before timing out this build if
-     * it does not get marked as completed.</p>
+     * <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before
+     * timing out this build if it does not get marked as completed.</p>
      */
     inline int GetTimeoutInMinutes() const{ return m_timeoutInMinutes; }
 
     /**
-     * <p>How long, in minutes, for CodeBuild to wait before timing out this build if
-     * it does not get marked as completed.</p>
+     * <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before
+     * timing out this build if it does not get marked as completed.</p>
      */
     inline bool TimeoutInMinutesHasBeenSet() const { return m_timeoutInMinutesHasBeenSet; }
 
     /**
-     * <p>How long, in minutes, for CodeBuild to wait before timing out this build if
-     * it does not get marked as completed.</p>
+     * <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before
+     * timing out this build if it does not get marked as completed.</p>
      */
     inline void SetTimeoutInMinutes(int value) { m_timeoutInMinutesHasBeenSet = true; m_timeoutInMinutes = value; }
 
     /**
-     * <p>How long, in minutes, for CodeBuild to wait before timing out this build if
-     * it does not get marked as completed.</p>
+     * <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before
+     * timing out this build if it does not get marked as completed.</p>
      */
     inline Build& WithTimeoutInMinutes(int value) { SetTimeoutInMinutes(value); return *this;}
 

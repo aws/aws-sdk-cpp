@@ -208,7 +208,8 @@ namespace Model
      * request ID is specified, it must use the format <code>pr/pull-request-ID</code>
      * (for example <code>pr/25</code>). If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
+     * used.</p> </li> <li> <p>For GitLab: the commit ID, branch, or Git tag to
+     * use.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
      * that corresponds to the version of the source code you want to build. If a
      * branch name is specified, the branch's HEAD commit ID is used. If not specified,
      * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon S3:
@@ -230,7 +231,8 @@ namespace Model
      * request ID is specified, it must use the format <code>pr/pull-request-ID</code>
      * (for example <code>pr/25</code>). If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
+     * used.</p> </li> <li> <p>For GitLab: the commit ID, branch, or Git tag to
+     * use.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
      * that corresponds to the version of the source code you want to build. If a
      * branch name is specified, the branch's HEAD commit ID is used. If not specified,
      * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon S3:
@@ -252,7 +254,8 @@ namespace Model
      * request ID is specified, it must use the format <code>pr/pull-request-ID</code>
      * (for example <code>pr/25</code>). If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
+     * used.</p> </li> <li> <p>For GitLab: the commit ID, branch, or Git tag to
+     * use.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
      * that corresponds to the version of the source code you want to build. If a
      * branch name is specified, the branch's HEAD commit ID is used. If not specified,
      * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon S3:
@@ -274,7 +277,8 @@ namespace Model
      * request ID is specified, it must use the format <code>pr/pull-request-ID</code>
      * (for example <code>pr/25</code>). If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
+     * used.</p> </li> <li> <p>For GitLab: the commit ID, branch, or Git tag to
+     * use.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
      * that corresponds to the version of the source code you want to build. If a
      * branch name is specified, the branch's HEAD commit ID is used. If not specified,
      * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon S3:
@@ -296,7 +300,8 @@ namespace Model
      * request ID is specified, it must use the format <code>pr/pull-request-ID</code>
      * (for example <code>pr/25</code>). If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
+     * used.</p> </li> <li> <p>For GitLab: the commit ID, branch, or Git tag to
+     * use.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
      * that corresponds to the version of the source code you want to build. If a
      * branch name is specified, the branch's HEAD commit ID is used. If not specified,
      * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon S3:
@@ -318,7 +323,8 @@ namespace Model
      * request ID is specified, it must use the format <code>pr/pull-request-ID</code>
      * (for example <code>pr/25</code>). If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
+     * used.</p> </li> <li> <p>For GitLab: the commit ID, branch, or Git tag to
+     * use.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
      * that corresponds to the version of the source code you want to build. If a
      * branch name is specified, the branch's HEAD commit ID is used. If not specified,
      * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon S3:
@@ -340,7 +346,8 @@ namespace Model
      * request ID is specified, it must use the format <code>pr/pull-request-ID</code>
      * (for example <code>pr/25</code>). If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
+     * used.</p> </li> <li> <p>For GitLab: the commit ID, branch, or Git tag to
+     * use.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
      * that corresponds to the version of the source code you want to build. If a
      * branch name is specified, the branch's HEAD commit ID is used. If not specified,
      * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon S3:
@@ -362,7 +369,8 @@ namespace Model
      * request ID is specified, it must use the format <code>pr/pull-request-ID</code>
      * (for example <code>pr/25</code>). If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
+     * used.</p> </li> <li> <p>For GitLab: the commit ID, branch, or Git tag to
+     * use.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
      * that corresponds to the version of the source code you want to build. If a
      * branch name is specified, the branch's HEAD commit ID is used. If not specified,
      * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon S3:
@@ -823,32 +831,44 @@ namespace Model
 
 
     /**
-     * <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
+     * <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p> 
+     * <p>If you're using compute fleets during project creation, do not provide
+     * vpcConfig.</p> 
      */
     inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
 
     /**
-     * <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
+     * <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p> 
+     * <p>If you're using compute fleets during project creation, do not provide
+     * vpcConfig.</p> 
      */
     inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
 
     /**
-     * <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
+     * <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p> 
+     * <p>If you're using compute fleets during project creation, do not provide
+     * vpcConfig.</p> 
      */
     inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
 
     /**
-     * <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
+     * <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p> 
+     * <p>If you're using compute fleets during project creation, do not provide
+     * vpcConfig.</p> 
      */
     inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
 
     /**
-     * <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
+     * <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p> 
+     * <p>If you're using compute fleets during project creation, do not provide
+     * vpcConfig.</p> 
      */
     inline CreateProjectRequest& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
 
     /**
-     * <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
+     * <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p> 
+     * <p>If you're using compute fleets during project creation, do not provide
+     * vpcConfig.</p> 
      */
     inline CreateProjectRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
 

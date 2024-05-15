@@ -24,8 +24,12 @@
 #include <aws/grafana/model/AssociateLicenseRequest.h>
 #include <aws/grafana/model/CreateWorkspaceRequest.h>
 #include <aws/grafana/model/CreateWorkspaceApiKeyRequest.h>
+#include <aws/grafana/model/CreateWorkspaceServiceAccountRequest.h>
+#include <aws/grafana/model/CreateWorkspaceServiceAccountTokenRequest.h>
 #include <aws/grafana/model/DeleteWorkspaceRequest.h>
 #include <aws/grafana/model/DeleteWorkspaceApiKeyRequest.h>
+#include <aws/grafana/model/DeleteWorkspaceServiceAccountRequest.h>
+#include <aws/grafana/model/DeleteWorkspaceServiceAccountTokenRequest.h>
 #include <aws/grafana/model/DescribeWorkspaceRequest.h>
 #include <aws/grafana/model/DescribeWorkspaceAuthenticationRequest.h>
 #include <aws/grafana/model/DescribeWorkspaceConfigurationRequest.h>
@@ -33,6 +37,8 @@
 #include <aws/grafana/model/ListPermissionsRequest.h>
 #include <aws/grafana/model/ListTagsForResourceRequest.h>
 #include <aws/grafana/model/ListVersionsRequest.h>
+#include <aws/grafana/model/ListWorkspaceServiceAccountTokensRequest.h>
+#include <aws/grafana/model/ListWorkspaceServiceAccountsRequest.h>
 #include <aws/grafana/model/ListWorkspacesRequest.h>
 #include <aws/grafana/model/TagResourceRequest.h>
 #include <aws/grafana/model/UntagResourceRequest.h>
@@ -282,6 +288,81 @@ CreateWorkspaceApiKeyOutcome ManagedGrafanaClient::CreateWorkspaceApiKey(const C
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+CreateWorkspaceServiceAccountOutcome ManagedGrafanaClient::CreateWorkspaceServiceAccount(const CreateWorkspaceServiceAccountRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateWorkspaceServiceAccount);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateWorkspaceServiceAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.WorkspaceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateWorkspaceServiceAccount", "Required field: WorkspaceId, is not set");
+    return CreateWorkspaceServiceAccountOutcome(Aws::Client::AWSError<ManagedGrafanaErrors>(ManagedGrafanaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateWorkspaceServiceAccount, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateWorkspaceServiceAccount, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateWorkspaceServiceAccount",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateWorkspaceServiceAccountOutcome>(
+    [&]()-> CreateWorkspaceServiceAccountOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateWorkspaceServiceAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/serviceaccounts");
+      return CreateWorkspaceServiceAccountOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+CreateWorkspaceServiceAccountTokenOutcome ManagedGrafanaClient::CreateWorkspaceServiceAccountToken(const CreateWorkspaceServiceAccountTokenRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateWorkspaceServiceAccountToken);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateWorkspaceServiceAccountToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ServiceAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateWorkspaceServiceAccountToken", "Required field: ServiceAccountId, is not set");
+    return CreateWorkspaceServiceAccountTokenOutcome(Aws::Client::AWSError<ManagedGrafanaErrors>(ManagedGrafanaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ServiceAccountId]", false));
+  }
+  if (!request.WorkspaceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateWorkspaceServiceAccountToken", "Required field: WorkspaceId, is not set");
+    return CreateWorkspaceServiceAccountTokenOutcome(Aws::Client::AWSError<ManagedGrafanaErrors>(ManagedGrafanaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateWorkspaceServiceAccountToken, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateWorkspaceServiceAccountToken, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateWorkspaceServiceAccountToken",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateWorkspaceServiceAccountTokenOutcome>(
+    [&]()-> CreateWorkspaceServiceAccountTokenOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateWorkspaceServiceAccountToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/serviceaccounts/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetServiceAccountId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/tokens");
+      return CreateWorkspaceServiceAccountTokenOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DeleteWorkspaceOutcome ManagedGrafanaClient::DeleteWorkspace(const DeleteWorkspaceRequest& request) const
 {
   AWS_OPERATION_GUARD(DeleteWorkspace);
@@ -349,6 +430,93 @@ DeleteWorkspaceApiKeyOutcome ManagedGrafanaClient::DeleteWorkspaceApiKey(const D
       endpointResolutionOutcome.GetResult().AddPathSegments("/apikeys/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetKeyName());
       return DeleteWorkspaceApiKeyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteWorkspaceServiceAccountOutcome ManagedGrafanaClient::DeleteWorkspaceServiceAccount(const DeleteWorkspaceServiceAccountRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteWorkspaceServiceAccount);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteWorkspaceServiceAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ServiceAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteWorkspaceServiceAccount", "Required field: ServiceAccountId, is not set");
+    return DeleteWorkspaceServiceAccountOutcome(Aws::Client::AWSError<ManagedGrafanaErrors>(ManagedGrafanaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ServiceAccountId]", false));
+  }
+  if (!request.WorkspaceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteWorkspaceServiceAccount", "Required field: WorkspaceId, is not set");
+    return DeleteWorkspaceServiceAccountOutcome(Aws::Client::AWSError<ManagedGrafanaErrors>(ManagedGrafanaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteWorkspaceServiceAccount, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteWorkspaceServiceAccount, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteWorkspaceServiceAccount",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteWorkspaceServiceAccountOutcome>(
+    [&]()-> DeleteWorkspaceServiceAccountOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteWorkspaceServiceAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/serviceaccounts/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetServiceAccountId());
+      return DeleteWorkspaceServiceAccountOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteWorkspaceServiceAccountTokenOutcome ManagedGrafanaClient::DeleteWorkspaceServiceAccountToken(const DeleteWorkspaceServiceAccountTokenRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteWorkspaceServiceAccountToken);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteWorkspaceServiceAccountToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ServiceAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteWorkspaceServiceAccountToken", "Required field: ServiceAccountId, is not set");
+    return DeleteWorkspaceServiceAccountTokenOutcome(Aws::Client::AWSError<ManagedGrafanaErrors>(ManagedGrafanaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ServiceAccountId]", false));
+  }
+  if (!request.TokenIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteWorkspaceServiceAccountToken", "Required field: TokenId, is not set");
+    return DeleteWorkspaceServiceAccountTokenOutcome(Aws::Client::AWSError<ManagedGrafanaErrors>(ManagedGrafanaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TokenId]", false));
+  }
+  if (!request.WorkspaceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteWorkspaceServiceAccountToken", "Required field: WorkspaceId, is not set");
+    return DeleteWorkspaceServiceAccountTokenOutcome(Aws::Client::AWSError<ManagedGrafanaErrors>(ManagedGrafanaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteWorkspaceServiceAccountToken, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteWorkspaceServiceAccountToken, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteWorkspaceServiceAccountToken",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteWorkspaceServiceAccountTokenOutcome>(
+    [&]()-> DeleteWorkspaceServiceAccountTokenOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteWorkspaceServiceAccountToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/serviceaccounts/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetServiceAccountId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/tokens/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTokenId());
+      return DeleteWorkspaceServiceAccountTokenOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -584,6 +752,81 @@ ListVersionsOutcome ManagedGrafanaClient::ListVersions(const ListVersionsRequest
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
       return ListVersionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListWorkspaceServiceAccountTokensOutcome ManagedGrafanaClient::ListWorkspaceServiceAccountTokens(const ListWorkspaceServiceAccountTokensRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListWorkspaceServiceAccountTokens);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListWorkspaceServiceAccountTokens, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ServiceAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListWorkspaceServiceAccountTokens", "Required field: ServiceAccountId, is not set");
+    return ListWorkspaceServiceAccountTokensOutcome(Aws::Client::AWSError<ManagedGrafanaErrors>(ManagedGrafanaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ServiceAccountId]", false));
+  }
+  if (!request.WorkspaceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListWorkspaceServiceAccountTokens", "Required field: WorkspaceId, is not set");
+    return ListWorkspaceServiceAccountTokensOutcome(Aws::Client::AWSError<ManagedGrafanaErrors>(ManagedGrafanaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListWorkspaceServiceAccountTokens, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListWorkspaceServiceAccountTokens, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListWorkspaceServiceAccountTokens",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListWorkspaceServiceAccountTokensOutcome>(
+    [&]()-> ListWorkspaceServiceAccountTokensOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListWorkspaceServiceAccountTokens, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/serviceaccounts/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetServiceAccountId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/tokens");
+      return ListWorkspaceServiceAccountTokensOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListWorkspaceServiceAccountsOutcome ManagedGrafanaClient::ListWorkspaceServiceAccounts(const ListWorkspaceServiceAccountsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListWorkspaceServiceAccounts);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListWorkspaceServiceAccounts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.WorkspaceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListWorkspaceServiceAccounts", "Required field: WorkspaceId, is not set");
+    return ListWorkspaceServiceAccountsOutcome(Aws::Client::AWSError<ManagedGrafanaErrors>(ManagedGrafanaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListWorkspaceServiceAccounts, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListWorkspaceServiceAccounts, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListWorkspaceServiceAccounts",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListWorkspaceServiceAccountsOutcome>(
+    [&]()-> ListWorkspaceServiceAccountsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListWorkspaceServiceAccounts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/serviceaccounts");
+      return ListWorkspaceServiceAccountsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

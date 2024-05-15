@@ -72,42 +72,50 @@ namespace Model
 
 
     /**
-     * <p>The value of a threat intelligence indicator.</p>
+     * <p>The value of a threat intelligence indicator.</p> <p>Length Constraints:
+     * Minimum of 1 length. Maximum of 512 length.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>The value of a threat intelligence indicator.</p>
+     * <p>The value of a threat intelligence indicator.</p> <p>Length Constraints:
+     * Minimum of 1 length. Maximum of 512 length.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>The value of a threat intelligence indicator.</p>
+     * <p>The value of a threat intelligence indicator.</p> <p>Length Constraints:
+     * Minimum of 1 length. Maximum of 512 length.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The value of a threat intelligence indicator.</p>
+     * <p>The value of a threat intelligence indicator.</p> <p>Length Constraints:
+     * Minimum of 1 length. Maximum of 512 length.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>The value of a threat intelligence indicator.</p>
+     * <p>The value of a threat intelligence indicator.</p> <p>Length Constraints:
+     * Minimum of 1 length. Maximum of 512 length.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>The value of a threat intelligence indicator.</p>
+     * <p>The value of a threat intelligence indicator.</p> <p>Length Constraints:
+     * Minimum of 1 length. Maximum of 512 length.</p>
      */
     inline ThreatIntelIndicator& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>The value of a threat intelligence indicator.</p>
+     * <p>The value of a threat intelligence indicator.</p> <p>Length Constraints:
+     * Minimum of 1 length. Maximum of 512 length.</p>
      */
     inline ThreatIntelIndicator& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>The value of a threat intelligence indicator.</p>
+     * <p>The value of a threat intelligence indicator.</p> <p>Length Constraints:
+     * Minimum of 1 length. Maximum of 512 length.</p>
      */
     inline ThreatIntelIndicator& WithValue(const char* value) { SetValue(value); return *this;}
 
@@ -297,42 +305,50 @@ namespace Model
 
 
     /**
-     * <p>The source of the threat intelligence indicator.</p>
+     * <p>The source of the threat intelligence indicator.</p> <p>Length Constraints:
+     * Minimum of 1 length. Maximum of 64 length.</p>
      */
     inline const Aws::String& GetSource() const{ return m_source; }
 
     /**
-     * <p>The source of the threat intelligence indicator.</p>
+     * <p>The source of the threat intelligence indicator.</p> <p>Length Constraints:
+     * Minimum of 1 length. Maximum of 64 length.</p>
      */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
 
     /**
-     * <p>The source of the threat intelligence indicator.</p>
+     * <p>The source of the threat intelligence indicator.</p> <p>Length Constraints:
+     * Minimum of 1 length. Maximum of 64 length.</p>
      */
     inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
-     * <p>The source of the threat intelligence indicator.</p>
+     * <p>The source of the threat intelligence indicator.</p> <p>Length Constraints:
+     * Minimum of 1 length. Maximum of 64 length.</p>
      */
     inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
 
     /**
-     * <p>The source of the threat intelligence indicator.</p>
+     * <p>The source of the threat intelligence indicator.</p> <p>Length Constraints:
+     * Minimum of 1 length. Maximum of 64 length.</p>
      */
     inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
 
     /**
-     * <p>The source of the threat intelligence indicator.</p>
+     * <p>The source of the threat intelligence indicator.</p> <p>Length Constraints:
+     * Minimum of 1 length. Maximum of 64 length.</p>
      */
     inline ThreatIntelIndicator& WithSource(const Aws::String& value) { SetSource(value); return *this;}
 
     /**
-     * <p>The source of the threat intelligence indicator.</p>
+     * <p>The source of the threat intelligence indicator.</p> <p>Length Constraints:
+     * Minimum of 1 length. Maximum of 64 length.</p>
      */
     inline ThreatIntelIndicator& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
 
     /**
-     * <p>The source of the threat intelligence indicator.</p>
+     * <p>The source of the threat intelligence indicator.</p> <p>Length Constraints:
+     * Minimum of 1 length. Maximum of 64 length.</p>
      */
     inline ThreatIntelIndicator& WithSource(const char* value) { SetSource(value); return *this;}
 

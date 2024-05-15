@@ -191,42 +191,50 @@ namespace Model
 
 
     /**
-     * <p>The protocol used to make the network connection request.</p>
+     * <p>The protocol used to make the network connection request.</p> <p>Length
+     * Constraints: Minimum length of 1. Maximum length of 64.</p>
      */
     inline const Aws::String& GetProtocol() const{ return m_protocol; }
 
     /**
-     * <p>The protocol used to make the network connection request.</p>
+     * <p>The protocol used to make the network connection request.</p> <p>Length
+     * Constraints: Minimum length of 1. Maximum length of 64.</p>
      */
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
-     * <p>The protocol used to make the network connection request.</p>
+     * <p>The protocol used to make the network connection request.</p> <p>Length
+     * Constraints: Minimum length of 1. Maximum length of 64.</p>
      */
     inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
-     * <p>The protocol used to make the network connection request.</p>
+     * <p>The protocol used to make the network connection request.</p> <p>Length
+     * Constraints: Minimum length of 1. Maximum length of 64.</p>
      */
     inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
-     * <p>The protocol used to make the network connection request.</p>
+     * <p>The protocol used to make the network connection request.</p> <p>Length
+     * Constraints: Minimum length of 1. Maximum length of 64.</p>
      */
     inline void SetProtocol(const char* value) { m_protocolHasBeenSet = true; m_protocol.assign(value); }
 
     /**
-     * <p>The protocol used to make the network connection request.</p>
+     * <p>The protocol used to make the network connection request.</p> <p>Length
+     * Constraints: Minimum length of 1. Maximum length of 64.</p>
      */
     inline NetworkConnectionAction& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
 
     /**
-     * <p>The protocol used to make the network connection request.</p>
+     * <p>The protocol used to make the network connection request.</p> <p>Length
+     * Constraints: Minimum length of 1. Maximum length of 64.</p>
      */
     inline NetworkConnectionAction& WithProtocol(Aws::String&& value) { SetProtocol(std::move(value)); return *this;}
 
     /**
-     * <p>The protocol used to make the network connection request.</p>
+     * <p>The protocol used to make the network connection request.</p> <p>Length
+     * Constraints: Minimum length of 1. Maximum length of 64.</p>
      */
     inline NetworkConnectionAction& WithProtocol(const char* value) { SetProtocol(value); return *this;}
 

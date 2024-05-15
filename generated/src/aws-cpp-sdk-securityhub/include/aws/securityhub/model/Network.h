@@ -72,42 +72,50 @@ namespace Model
 
 
     /**
-     * <p>The protocol of network-related information about a finding.</p>
+     * <p>The protocol of network-related information about a finding.</p> <p>Length
+     * Constraints: Minimum of 1. Maximum of 16.</p>
      */
     inline const Aws::String& GetProtocol() const{ return m_protocol; }
 
     /**
-     * <p>The protocol of network-related information about a finding.</p>
+     * <p>The protocol of network-related information about a finding.</p> <p>Length
+     * Constraints: Minimum of 1. Maximum of 16.</p>
      */
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
-     * <p>The protocol of network-related information about a finding.</p>
+     * <p>The protocol of network-related information about a finding.</p> <p>Length
+     * Constraints: Minimum of 1. Maximum of 16.</p>
      */
     inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
-     * <p>The protocol of network-related information about a finding.</p>
+     * <p>The protocol of network-related information about a finding.</p> <p>Length
+     * Constraints: Minimum of 1. Maximum of 16.</p>
      */
     inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
-     * <p>The protocol of network-related information about a finding.</p>
+     * <p>The protocol of network-related information about a finding.</p> <p>Length
+     * Constraints: Minimum of 1. Maximum of 16.</p>
      */
     inline void SetProtocol(const char* value) { m_protocolHasBeenSet = true; m_protocol.assign(value); }
 
     /**
-     * <p>The protocol of network-related information about a finding.</p>
+     * <p>The protocol of network-related information about a finding.</p> <p>Length
+     * Constraints: Minimum of 1. Maximum of 16.</p>
      */
     inline Network& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
 
     /**
-     * <p>The protocol of network-related information about a finding.</p>
+     * <p>The protocol of network-related information about a finding.</p> <p>Length
+     * Constraints: Minimum of 1. Maximum of 16.</p>
      */
     inline Network& WithProtocol(Aws::String&& value) { SetProtocol(std::move(value)); return *this;}
 
     /**
-     * <p>The protocol of network-related information about a finding.</p>
+     * <p>The protocol of network-related information about a finding.</p> <p>Length
+     * Constraints: Minimum of 1. Maximum of 16.</p>
      */
     inline Network& WithProtocol(const char* value) { SetProtocol(value); return *this;}
 
@@ -248,41 +256,49 @@ namespace Model
 
     /**
      * <p>The source domain of network-related information about a finding.</p>
+     * <p>Length Constraints: Minimum of 1. Maximum of 128.</p>
      */
     inline const Aws::String& GetSourceDomain() const{ return m_sourceDomain; }
 
     /**
      * <p>The source domain of network-related information about a finding.</p>
+     * <p>Length Constraints: Minimum of 1. Maximum of 128.</p>
      */
     inline bool SourceDomainHasBeenSet() const { return m_sourceDomainHasBeenSet; }
 
     /**
      * <p>The source domain of network-related information about a finding.</p>
+     * <p>Length Constraints: Minimum of 1. Maximum of 128.</p>
      */
     inline void SetSourceDomain(const Aws::String& value) { m_sourceDomainHasBeenSet = true; m_sourceDomain = value; }
 
     /**
      * <p>The source domain of network-related information about a finding.</p>
+     * <p>Length Constraints: Minimum of 1. Maximum of 128.</p>
      */
     inline void SetSourceDomain(Aws::String&& value) { m_sourceDomainHasBeenSet = true; m_sourceDomain = std::move(value); }
 
     /**
      * <p>The source domain of network-related information about a finding.</p>
+     * <p>Length Constraints: Minimum of 1. Maximum of 128.</p>
      */
     inline void SetSourceDomain(const char* value) { m_sourceDomainHasBeenSet = true; m_sourceDomain.assign(value); }
 
     /**
      * <p>The source domain of network-related information about a finding.</p>
+     * <p>Length Constraints: Minimum of 1. Maximum of 128.</p>
      */
     inline Network& WithSourceDomain(const Aws::String& value) { SetSourceDomain(value); return *this;}
 
     /**
      * <p>The source domain of network-related information about a finding.</p>
+     * <p>Length Constraints: Minimum of 1. Maximum of 128.</p>
      */
     inline Network& WithSourceDomain(Aws::String&& value) { SetSourceDomain(std::move(value)); return *this;}
 
     /**
      * <p>The source domain of network-related information about a finding.</p>
+     * <p>Length Constraints: Minimum of 1. Maximum of 128.</p>
      */
     inline Network& WithSourceDomain(const char* value) { SetSourceDomain(value); return *this;}
 
@@ -457,41 +473,49 @@ namespace Model
 
     /**
      * <p>The destination domain of network-related information about a finding.</p>
+     * <p>Length Constraints: Minimum of 1. Maximum of 128.</p>
      */
     inline const Aws::String& GetDestinationDomain() const{ return m_destinationDomain; }
 
     /**
      * <p>The destination domain of network-related information about a finding.</p>
+     * <p>Length Constraints: Minimum of 1. Maximum of 128.</p>
      */
     inline bool DestinationDomainHasBeenSet() const { return m_destinationDomainHasBeenSet; }
 
     /**
      * <p>The destination domain of network-related information about a finding.</p>
+     * <p>Length Constraints: Minimum of 1. Maximum of 128.</p>
      */
     inline void SetDestinationDomain(const Aws::String& value) { m_destinationDomainHasBeenSet = true; m_destinationDomain = value; }
 
     /**
      * <p>The destination domain of network-related information about a finding.</p>
+     * <p>Length Constraints: Minimum of 1. Maximum of 128.</p>
      */
     inline void SetDestinationDomain(Aws::String&& value) { m_destinationDomainHasBeenSet = true; m_destinationDomain = std::move(value); }
 
     /**
      * <p>The destination domain of network-related information about a finding.</p>
+     * <p>Length Constraints: Minimum of 1. Maximum of 128.</p>
      */
     inline void SetDestinationDomain(const char* value) { m_destinationDomainHasBeenSet = true; m_destinationDomain.assign(value); }
 
     /**
      * <p>The destination domain of network-related information about a finding.</p>
+     * <p>Length Constraints: Minimum of 1. Maximum of 128.</p>
      */
     inline Network& WithDestinationDomain(const Aws::String& value) { SetDestinationDomain(value); return *this;}
 
     /**
      * <p>The destination domain of network-related information about a finding.</p>
+     * <p>Length Constraints: Minimum of 1. Maximum of 128.</p>
      */
     inline Network& WithDestinationDomain(Aws::String&& value) { SetDestinationDomain(std::move(value)); return *this;}
 
     /**
      * <p>The destination domain of network-related information about a finding.</p>
+     * <p>Length Constraints: Minimum of 1. Maximum of 128.</p>
      */
     inline Network& WithDestinationDomain(const char* value) { SetDestinationDomain(value); return *this;}
 

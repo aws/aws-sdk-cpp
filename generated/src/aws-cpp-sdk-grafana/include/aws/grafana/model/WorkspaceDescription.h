@@ -417,64 +417,64 @@ namespace Model
     /**
      * <p>The token that ties this workspace to a Grafana Labs account. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register
-     * with Grafana Labs</a>.</p>
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Link
+     * your account with Grafana Labs</a>.</p>
      */
     inline const Aws::String& GetGrafanaToken() const{ return m_grafanaToken; }
 
     /**
      * <p>The token that ties this workspace to a Grafana Labs account. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register
-     * with Grafana Labs</a>.</p>
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Link
+     * your account with Grafana Labs</a>.</p>
      */
     inline bool GrafanaTokenHasBeenSet() const { return m_grafanaTokenHasBeenSet; }
 
     /**
      * <p>The token that ties this workspace to a Grafana Labs account. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register
-     * with Grafana Labs</a>.</p>
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Link
+     * your account with Grafana Labs</a>.</p>
      */
     inline void SetGrafanaToken(const Aws::String& value) { m_grafanaTokenHasBeenSet = true; m_grafanaToken = value; }
 
     /**
      * <p>The token that ties this workspace to a Grafana Labs account. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register
-     * with Grafana Labs</a>.</p>
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Link
+     * your account with Grafana Labs</a>.</p>
      */
     inline void SetGrafanaToken(Aws::String&& value) { m_grafanaTokenHasBeenSet = true; m_grafanaToken = std::move(value); }
 
     /**
      * <p>The token that ties this workspace to a Grafana Labs account. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register
-     * with Grafana Labs</a>.</p>
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Link
+     * your account with Grafana Labs</a>.</p>
      */
     inline void SetGrafanaToken(const char* value) { m_grafanaTokenHasBeenSet = true; m_grafanaToken.assign(value); }
 
     /**
      * <p>The token that ties this workspace to a Grafana Labs account. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register
-     * with Grafana Labs</a>.</p>
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Link
+     * your account with Grafana Labs</a>.</p>
      */
     inline WorkspaceDescription& WithGrafanaToken(const Aws::String& value) { SetGrafanaToken(value); return *this;}
 
     /**
      * <p>The token that ties this workspace to a Grafana Labs account. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register
-     * with Grafana Labs</a>.</p>
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Link
+     * your account with Grafana Labs</a>.</p>
      */
     inline WorkspaceDescription& WithGrafanaToken(Aws::String&& value) { SetGrafanaToken(std::move(value)); return *this;}
 
     /**
      * <p>The token that ties this workspace to a Grafana Labs account. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register
-     * with Grafana Labs</a>.</p>
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Link
+     * your account with Grafana Labs</a>.</p>
      */
     inline WorkspaceDescription& WithGrafanaToken(const char* value) { SetGrafanaToken(value); return *this;}
 

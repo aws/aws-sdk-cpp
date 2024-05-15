@@ -75,49 +75,49 @@ namespace Model
 
     /**
      * <p>Specifies the permission level of the key.</p> <p> Valid values:
-     * <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code> </p>
+     * <code>ADMIN</code>|<code>EDITOR</code>|<code>VIEWER</code> </p>
      */
     inline const Aws::String& GetKeyRole() const{ return m_keyRole; }
 
     /**
      * <p>Specifies the permission level of the key.</p> <p> Valid values:
-     * <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code> </p>
+     * <code>ADMIN</code>|<code>EDITOR</code>|<code>VIEWER</code> </p>
      */
     inline bool KeyRoleHasBeenSet() const { return m_keyRoleHasBeenSet; }
 
     /**
      * <p>Specifies the permission level of the key.</p> <p> Valid values:
-     * <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code> </p>
+     * <code>ADMIN</code>|<code>EDITOR</code>|<code>VIEWER</code> </p>
      */
     inline void SetKeyRole(const Aws::String& value) { m_keyRoleHasBeenSet = true; m_keyRole = value; }
 
     /**
      * <p>Specifies the permission level of the key.</p> <p> Valid values:
-     * <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code> </p>
+     * <code>ADMIN</code>|<code>EDITOR</code>|<code>VIEWER</code> </p>
      */
     inline void SetKeyRole(Aws::String&& value) { m_keyRoleHasBeenSet = true; m_keyRole = std::move(value); }
 
     /**
      * <p>Specifies the permission level of the key.</p> <p> Valid values:
-     * <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code> </p>
+     * <code>ADMIN</code>|<code>EDITOR</code>|<code>VIEWER</code> </p>
      */
     inline void SetKeyRole(const char* value) { m_keyRoleHasBeenSet = true; m_keyRole.assign(value); }
 
     /**
      * <p>Specifies the permission level of the key.</p> <p> Valid values:
-     * <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code> </p>
+     * <code>ADMIN</code>|<code>EDITOR</code>|<code>VIEWER</code> </p>
      */
     inline CreateWorkspaceApiKeyRequest& WithKeyRole(const Aws::String& value) { SetKeyRole(value); return *this;}
 
     /**
      * <p>Specifies the permission level of the key.</p> <p> Valid values:
-     * <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code> </p>
+     * <code>ADMIN</code>|<code>EDITOR</code>|<code>VIEWER</code> </p>
      */
     inline CreateWorkspaceApiKeyRequest& WithKeyRole(Aws::String&& value) { SetKeyRole(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the permission level of the key.</p> <p> Valid values:
-     * <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code> </p>
+     * <code>ADMIN</code>|<code>EDITOR</code>|<code>VIEWER</code> </p>
      */
     inline CreateWorkspaceApiKeyRequest& WithKeyRole(const char* value) { SetKeyRole(value); return *this;}
 

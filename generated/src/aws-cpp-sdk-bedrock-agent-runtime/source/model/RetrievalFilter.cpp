@@ -26,10 +26,12 @@ RetrievalFilter::RetrievalFilter() :
     m_inHasBeenSet(false),
     m_lessThanHasBeenSet(false),
     m_lessThanOrEqualsHasBeenSet(false),
+    m_listContainsHasBeenSet(false),
     m_notEqualsHasBeenSet(false),
     m_notInHasBeenSet(false),
     m_orAllHasBeenSet(false),
-    m_startsWithHasBeenSet(false)
+    m_startsWithHasBeenSet(false),
+    m_stringContainsHasBeenSet(false)
 {
 }
 
@@ -41,10 +43,12 @@ RetrievalFilter::RetrievalFilter(JsonView jsonValue) :
     m_inHasBeenSet(false),
     m_lessThanHasBeenSet(false),
     m_lessThanOrEqualsHasBeenSet(false),
+    m_listContainsHasBeenSet(false),
     m_notEqualsHasBeenSet(false),
     m_notInHasBeenSet(false),
     m_orAllHasBeenSet(false),
-    m_startsWithHasBeenSet(false)
+    m_startsWithHasBeenSet(false),
+    m_stringContainsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -103,6 +107,13 @@ RetrievalFilter& RetrievalFilter::operator =(JsonView jsonValue)
     m_lessThanOrEqualsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("listContains"))
+  {
+    m_listContains = jsonValue.GetObject("listContains");
+
+    m_listContainsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("notEquals"))
   {
     m_notEquals = jsonValue.GetObject("notEquals");
@@ -132,6 +143,13 @@ RetrievalFilter& RetrievalFilter::operator =(JsonView jsonValue)
     m_startsWith = jsonValue.GetObject("startsWith");
 
     m_startsWithHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("stringContains"))
+  {
+    m_stringContains = jsonValue.GetObject("stringContains");
+
+    m_stringContainsHasBeenSet = true;
   }
 
   return *this;
@@ -188,6 +206,12 @@ JsonValue RetrievalFilter::Jsonize() const
 
   }
 
+  if(m_listContainsHasBeenSet)
+  {
+   payload.WithObject("listContains", m_listContains.Jsonize());
+
+  }
+
   if(m_notEqualsHasBeenSet)
   {
    payload.WithObject("notEquals", m_notEquals.Jsonize());
@@ -214,6 +238,12 @@ JsonValue RetrievalFilter::Jsonize() const
   if(m_startsWithHasBeenSet)
   {
    payload.WithObject("startsWith", m_startsWith.Jsonize());
+
+  }
+
+  if(m_stringContainsHasBeenSet)
+  {
+   payload.WithObject("stringContains", m_stringContains.Jsonize());
 
   }
 

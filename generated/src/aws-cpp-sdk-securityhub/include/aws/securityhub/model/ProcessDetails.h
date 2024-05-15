@@ -39,83 +39,99 @@ namespace Model
 
 
     /**
-     * <p>The name of the process.</p>
+     * <p>The name of the process.</p> <p>Length Constraints: Minimum of 1. Maximum of
+     * 64.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the process.</p>
+     * <p>The name of the process.</p> <p>Length Constraints: Minimum of 1. Maximum of
+     * 64.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the process.</p>
+     * <p>The name of the process.</p> <p>Length Constraints: Minimum of 1. Maximum of
+     * 64.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the process.</p>
+     * <p>The name of the process.</p> <p>Length Constraints: Minimum of 1. Maximum of
+     * 64.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the process.</p>
+     * <p>The name of the process.</p> <p>Length Constraints: Minimum of 1. Maximum of
+     * 64.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the process.</p>
+     * <p>The name of the process.</p> <p>Length Constraints: Minimum of 1. Maximum of
+     * 64.</p>
      */
     inline ProcessDetails& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the process.</p>
+     * <p>The name of the process.</p> <p>Length Constraints: Minimum of 1. Maximum of
+     * 64.</p>
      */
     inline ProcessDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the process.</p>
+     * <p>The name of the process.</p> <p>Length Constraints: Minimum of 1. Maximum of
+     * 64.</p>
      */
     inline ProcessDetails& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The path to the process executable.</p>
+     * <p>The path to the process executable.</p> <p>Length Constraints: Minimum of 1.
+     * Maximum of 512.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
     /**
-     * <p>The path to the process executable.</p>
+     * <p>The path to the process executable.</p> <p>Length Constraints: Minimum of 1.
+     * Maximum of 512.</p>
      */
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
 
     /**
-     * <p>The path to the process executable.</p>
+     * <p>The path to the process executable.</p> <p>Length Constraints: Minimum of 1.
+     * Maximum of 512.</p>
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
-     * <p>The path to the process executable.</p>
+     * <p>The path to the process executable.</p> <p>Length Constraints: Minimum of 1.
+     * Maximum of 512.</p>
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
-     * <p>The path to the process executable.</p>
+     * <p>The path to the process executable.</p> <p>Length Constraints: Minimum of 1.
+     * Maximum of 512.</p>
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
     /**
-     * <p>The path to the process executable.</p>
+     * <p>The path to the process executable.</p> <p>Length Constraints: Minimum of 1.
+     * Maximum of 512.</p>
      */
     inline ProcessDetails& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
     /**
-     * <p>The path to the process executable.</p>
+     * <p>The path to the process executable.</p> <p>Length Constraints: Minimum of 1.
+     * Maximum of 512.</p>
      */
     inline ProcessDetails& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
-     * <p>The path to the process executable.</p>
+     * <p>The path to the process executable.</p> <p>Length Constraints: Minimum of 1.
+     * Maximum of 512.</p>
      */
     inline ProcessDetails& WithPath(const char* value) { SetPath(value); return *this;}
 
