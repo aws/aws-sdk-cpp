@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/mwaa/MWAA_EXPORTS.h>
+#include <aws/mwaa/model/UpdateStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/mwaa/model/UpdateError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/mwaa/model/UpdateStatus.h>
 #include <utility>
 
 namespace Aws
@@ -39,6 +39,37 @@ namespace Model
     AWS_MWAA_API LastUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_MWAA_API LastUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MWAA_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The status of the last update on the environment.</p>
+     */
+    inline const UpdateStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the last update on the environment.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the last update on the environment.</p>
+     */
+    inline void SetStatus(const UpdateStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>The status of the last update on the environment.</p>
+     */
+    inline void SetStatus(UpdateStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>The status of the last update on the environment.</p>
+     */
+    inline LastUpdate& WithStatus(const UpdateStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The status of the last update on the environment.</p>
+     */
+    inline LastUpdate& WithStatus(UpdateStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
@@ -151,38 +182,10 @@ namespace Model
      */
     inline LastUpdate& WithSource(const char* value) { SetSource(value); return *this;}
 
-
-    /**
-     * <p>The status of the last update on the environment.</p>
-     */
-    inline const UpdateStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the last update on the environment.</p>
-     */
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the last update on the environment.</p>
-     */
-    inline void SetStatus(const UpdateStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the last update on the environment.</p>
-     */
-    inline void SetStatus(UpdateStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the last update on the environment.</p>
-     */
-    inline LastUpdate& WithStatus(const UpdateStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the last update on the environment.</p>
-     */
-    inline LastUpdate& WithStatus(UpdateStatus&& value) { SetStatus(std::move(value)); return *this;}
-
   private:
+
+    UpdateStatus m_status;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet = false;
@@ -192,9 +195,6 @@ namespace Model
 
     Aws::String m_source;
     bool m_sourceHasBeenSet = false;
-
-    UpdateStatus m_status;
-    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

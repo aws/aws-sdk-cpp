@@ -2187,6 +2187,32 @@ namespace QuickSight
         }
 
         /**
+         * <p>Describes all customer managed key registrations in a Amazon QuickSight
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeKeyRegistration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeKeyRegistrationOutcome DescribeKeyRegistration(const Model::DescribeKeyRegistrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeKeyRegistration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeKeyRegistrationRequestT = Model::DescribeKeyRegistrationRequest>
+        Model::DescribeKeyRegistrationOutcomeCallable DescribeKeyRegistrationCallable(const DescribeKeyRegistrationRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::DescribeKeyRegistration, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeKeyRegistration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeKeyRegistrationRequestT = Model::DescribeKeyRegistrationRequest>
+        void DescribeKeyRegistrationAsync(const DescribeKeyRegistrationRequestT& request, const DescribeKeyRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::DescribeKeyRegistration, request, handler, context);
+        }
+
+        /**
          * <p>Describes the current namespace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeNamespace">AWS
          * API Reference</a></p>
@@ -4487,6 +4513,32 @@ namespace QuickSight
         void UpdateIpRestrictionAsync(const UpdateIpRestrictionRequestT& request, const UpdateIpRestrictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QuickSightClient::UpdateIpRestriction, request, handler, context);
+        }
+
+        /**
+         * <p>Updates a customer managed key in a Amazon QuickSight account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateKeyRegistration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateKeyRegistrationOutcome UpdateKeyRegistration(const Model::UpdateKeyRegistrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateKeyRegistration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateKeyRegistrationRequestT = Model::UpdateKeyRegistrationRequest>
+        Model::UpdateKeyRegistrationOutcomeCallable UpdateKeyRegistrationCallable(const UpdateKeyRegistrationRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::UpdateKeyRegistration, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateKeyRegistration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateKeyRegistrationRequestT = Model::UpdateKeyRegistrationRequest>
+        void UpdateKeyRegistrationAsync(const UpdateKeyRegistrationRequestT& request, const UpdateKeyRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::UpdateKeyRegistration, request, handler, context);
         }
 
         /**

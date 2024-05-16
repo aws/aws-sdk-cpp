@@ -96,6 +96,7 @@
 #include <aws/quicksight/model/DescribeIAMPolicyAssignmentRequest.h>
 #include <aws/quicksight/model/DescribeIngestionRequest.h>
 #include <aws/quicksight/model/DescribeIpRestrictionRequest.h>
+#include <aws/quicksight/model/DescribeKeyRegistrationRequest.h>
 #include <aws/quicksight/model/DescribeNamespaceRequest.h>
 #include <aws/quicksight/model/DescribeRefreshScheduleRequest.h>
 #include <aws/quicksight/model/DescribeRoleCustomPermissionRequest.h>
@@ -178,6 +179,7 @@
 #include <aws/quicksight/model/UpdateIAMPolicyAssignmentRequest.h>
 #include <aws/quicksight/model/UpdateIdentityPropagationConfigRequest.h>
 #include <aws/quicksight/model/UpdateIpRestrictionRequest.h>
+#include <aws/quicksight/model/UpdateKeyRegistrationRequest.h>
 #include <aws/quicksight/model/UpdatePublicSharingSettingsRequest.h>
 #include <aws/quicksight/model/UpdateRefreshScheduleRequest.h>
 #include <aws/quicksight/model/UpdateRoleCustomPermissionRequest.h>
@@ -3490,6 +3492,40 @@ DescribeIpRestrictionOutcome QuickSightClient::DescribeIpRestriction(const Descr
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DescribeKeyRegistrationOutcome QuickSightClient::DescribeKeyRegistration(const DescribeKeyRegistrationRequest& request) const
+{
+  AWS_OPERATION_GUARD(DescribeKeyRegistration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeKeyRegistration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeKeyRegistration", "Required field: AwsAccountId, is not set");
+    return DescribeKeyRegistrationOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeKeyRegistration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeKeyRegistration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeKeyRegistration",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeKeyRegistrationOutcome>(
+    [&]()-> DescribeKeyRegistrationOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeKeyRegistration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/key-registration");
+      return DescribeKeyRegistrationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DescribeNamespaceOutcome QuickSightClient::DescribeNamespace(const DescribeNamespaceRequest& request) const
 {
   AWS_OPERATION_GUARD(DescribeNamespace);
@@ -6730,6 +6766,40 @@ UpdateIpRestrictionOutcome QuickSightClient::UpdateIpRestriction(const UpdateIpR
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/ip-restriction");
       return UpdateIpRestrictionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateKeyRegistrationOutcome QuickSightClient::UpdateKeyRegistration(const UpdateKeyRegistrationRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateKeyRegistration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateKeyRegistration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateKeyRegistration", "Required field: AwsAccountId, is not set");
+    return UpdateKeyRegistrationOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateKeyRegistration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateKeyRegistration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateKeyRegistration",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateKeyRegistrationOutcome>(
+    [&]()-> UpdateKeyRegistrationOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateKeyRegistration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/key-registration");
+      return UpdateKeyRegistrationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

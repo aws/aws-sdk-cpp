@@ -43,70 +43,6 @@ namespace Model
 
 
     /**
-     * <p>A list of security group IDs. For more information, see <a
-     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security
-     * in your VPC on Amazon MWAA</a>.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
-
-    /**
-     * <p>A list of security group IDs. For more information, see <a
-     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security
-     * in your VPC on Amazon MWAA</a>.</p>
-     */
-    inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
-
-    /**
-     * <p>A list of security group IDs. For more information, see <a
-     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security
-     * in your VPC on Amazon MWAA</a>.</p>
-     */
-    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
-
-    /**
-     * <p>A list of security group IDs. For more information, see <a
-     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security
-     * in your VPC on Amazon MWAA</a>.</p>
-     */
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
-
-    /**
-     * <p>A list of security group IDs. For more information, see <a
-     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security
-     * in your VPC on Amazon MWAA</a>.</p>
-     */
-    inline NetworkConfiguration& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
-
-    /**
-     * <p>A list of security group IDs. For more information, see <a
-     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security
-     * in your VPC on Amazon MWAA</a>.</p>
-     */
-    inline NetworkConfiguration& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of security group IDs. For more information, see <a
-     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security
-     * in your VPC on Amazon MWAA</a>.</p>
-     */
-    inline NetworkConfiguration& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
-
-    /**
-     * <p>A list of security group IDs. For more information, see <a
-     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security
-     * in your VPC on Amazon MWAA</a>.</p>
-     */
-    inline NetworkConfiguration& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of security group IDs. For more information, see <a
-     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security
-     * in your VPC on Amazon MWAA</a>.</p>
-     */
-    inline NetworkConfiguration& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
-
-
-    /**
      * <p>A list of subnet IDs. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About
      * networking on Amazon MWAA</a>.</p>
@@ -169,13 +105,77 @@ namespace Model
      */
     inline NetworkConfiguration& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
-  private:
 
-    Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet = false;
+    /**
+     * <p>A list of security group IDs. For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security
+     * in your VPC on Amazon MWAA</a>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+
+    /**
+     * <p>A list of security group IDs. For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security
+     * in your VPC on Amazon MWAA</a>.</p>
+     */
+    inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
+
+    /**
+     * <p>A list of security group IDs. For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security
+     * in your VPC on Amazon MWAA</a>.</p>
+     */
+    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
+
+    /**
+     * <p>A list of security group IDs. For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security
+     * in your VPC on Amazon MWAA</a>.</p>
+     */
+    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
+
+    /**
+     * <p>A list of security group IDs. For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security
+     * in your VPC on Amazon MWAA</a>.</p>
+     */
+    inline NetworkConfiguration& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
+
+    /**
+     * <p>A list of security group IDs. For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security
+     * in your VPC on Amazon MWAA</a>.</p>
+     */
+    inline NetworkConfiguration& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of security group IDs. For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security
+     * in your VPC on Amazon MWAA</a>.</p>
+     */
+    inline NetworkConfiguration& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+
+    /**
+     * <p>A list of security group IDs. For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security
+     * in your VPC on Amazon MWAA</a>.</p>
+     */
+    inline NetworkConfiguration& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of security group IDs. For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security
+     * in your VPC on Amazon MWAA</a>.</p>
+     */
+    inline NetworkConfiguration& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+
+  private:
 
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_securityGroupIds;
+    bool m_securityGroupIdsHasBeenSet = false;
   };
 
 } // namespace Model

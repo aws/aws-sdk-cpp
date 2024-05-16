@@ -16,7 +16,8 @@ UpdateWorkteamRequest::UpdateWorkteamRequest() :
     m_workteamNameHasBeenSet(false),
     m_memberDefinitionsHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_notificationConfigurationHasBeenSet(false)
+    m_notificationConfigurationHasBeenSet(false),
+    m_workerAccessConfigurationHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,12 @@ Aws::String UpdateWorkteamRequest::SerializePayload() const
   if(m_notificationConfigurationHasBeenSet)
   {
    payload.WithObject("NotificationConfiguration", m_notificationConfiguration.Jsonize());
+
+  }
+
+  if(m_workerAccessConfigurationHasBeenSet)
+  {
+   payload.WithObject("WorkerAccessConfiguration", m_workerAccessConfiguration.Jsonize());
 
   }
 

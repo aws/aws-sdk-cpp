@@ -39,31 +39,6 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of results to retrieve per page. For example,
-     * <code>5</code> environments per page.</p>
-     */
-    inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results to retrieve per page. For example,
-     * <code>5</code> environments per page.</p>
-     */
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results to retrieve per page. For example,
-     * <code>5</code> environments per page.</p>
-     */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results to retrieve per page. For example,
-     * <code>5</code> environments per page.</p>
-     */
-    inline ListEnvironmentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
-
-    /**
      * <p>Retrieves the next page of the results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -103,13 +78,38 @@ namespace Model
      */
     inline ListEnvironmentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
-  private:
 
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
+    /**
+     * <p>The maximum number of results to retrieve per page. For example,
+     * <code>5</code> environments per page.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to retrieve per page. For example,
+     * <code>5</code> environments per page.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to retrieve per page. For example,
+     * <code>5</code> environments per page.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>The maximum number of results to retrieve per page. For example,
+     * <code>5</code> environments per page.</p>
+     */
+    inline ListEnvironmentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
+  private:
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/mwaa/MWAA_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mwaa/model/LoggingLevel.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -37,6 +37,68 @@ namespace Model
     AWS_MWAA_API ModuleLoggingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MWAA_API ModuleLoggingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MWAA_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>Indicates whether the Apache Airflow log type (e.g.
+     * <code>DagProcessingLogs</code>) is enabled.</p>
+     */
+    inline bool GetEnabled() const{ return m_enabled; }
+
+    /**
+     * <p>Indicates whether the Apache Airflow log type (e.g.
+     * <code>DagProcessingLogs</code>) is enabled.</p>
+     */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the Apache Airflow log type (e.g.
+     * <code>DagProcessingLogs</code>) is enabled.</p>
+     */
+    inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
+
+    /**
+     * <p>Indicates whether the Apache Airflow log type (e.g.
+     * <code>DagProcessingLogs</code>) is enabled.</p>
+     */
+    inline ModuleLoggingConfiguration& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
+
+    /**
+     * <p>The Apache Airflow log level for the log type (e.g.
+     * <code>DagProcessingLogs</code>). </p>
+     */
+    inline const LoggingLevel& GetLogLevel() const{ return m_logLevel; }
+
+    /**
+     * <p>The Apache Airflow log level for the log type (e.g.
+     * <code>DagProcessingLogs</code>). </p>
+     */
+    inline bool LogLevelHasBeenSet() const { return m_logLevelHasBeenSet; }
+
+    /**
+     * <p>The Apache Airflow log level for the log type (e.g.
+     * <code>DagProcessingLogs</code>). </p>
+     */
+    inline void SetLogLevel(const LoggingLevel& value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
+
+    /**
+     * <p>The Apache Airflow log level for the log type (e.g.
+     * <code>DagProcessingLogs</code>). </p>
+     */
+    inline void SetLogLevel(LoggingLevel&& value) { m_logLevelHasBeenSet = true; m_logLevel = std::move(value); }
+
+    /**
+     * <p>The Apache Airflow log level for the log type (e.g.
+     * <code>DagProcessingLogs</code>). </p>
+     */
+    inline ModuleLoggingConfiguration& WithLogLevel(const LoggingLevel& value) { SetLogLevel(value); return *this;}
+
+    /**
+     * <p>The Apache Airflow log level for the log type (e.g.
+     * <code>DagProcessingLogs</code>). </p>
+     */
+    inline ModuleLoggingConfiguration& WithLogLevel(LoggingLevel&& value) { SetLogLevel(std::move(value)); return *this;}
 
 
     /**
@@ -103,78 +165,16 @@ namespace Model
      */
     inline ModuleLoggingConfiguration& WithCloudWatchLogGroupArn(const char* value) { SetCloudWatchLogGroupArn(value); return *this;}
 
-
-    /**
-     * <p>Indicates whether the Apache Airflow log type (e.g.
-     * <code>DagProcessingLogs</code>) is enabled.</p>
-     */
-    inline bool GetEnabled() const{ return m_enabled; }
-
-    /**
-     * <p>Indicates whether the Apache Airflow log type (e.g.
-     * <code>DagProcessingLogs</code>) is enabled.</p>
-     */
-    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-
-    /**
-     * <p>Indicates whether the Apache Airflow log type (e.g.
-     * <code>DagProcessingLogs</code>) is enabled.</p>
-     */
-    inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-
-    /**
-     * <p>Indicates whether the Apache Airflow log type (e.g.
-     * <code>DagProcessingLogs</code>) is enabled.</p>
-     */
-    inline ModuleLoggingConfiguration& WithEnabled(bool value) { SetEnabled(value); return *this;}
-
-
-    /**
-     * <p>The Apache Airflow log level for the log type (e.g.
-     * <code>DagProcessingLogs</code>). </p>
-     */
-    inline const LoggingLevel& GetLogLevel() const{ return m_logLevel; }
-
-    /**
-     * <p>The Apache Airflow log level for the log type (e.g.
-     * <code>DagProcessingLogs</code>). </p>
-     */
-    inline bool LogLevelHasBeenSet() const { return m_logLevelHasBeenSet; }
-
-    /**
-     * <p>The Apache Airflow log level for the log type (e.g.
-     * <code>DagProcessingLogs</code>). </p>
-     */
-    inline void SetLogLevel(const LoggingLevel& value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
-
-    /**
-     * <p>The Apache Airflow log level for the log type (e.g.
-     * <code>DagProcessingLogs</code>). </p>
-     */
-    inline void SetLogLevel(LoggingLevel&& value) { m_logLevelHasBeenSet = true; m_logLevel = std::move(value); }
-
-    /**
-     * <p>The Apache Airflow log level for the log type (e.g.
-     * <code>DagProcessingLogs</code>). </p>
-     */
-    inline ModuleLoggingConfiguration& WithLogLevel(const LoggingLevel& value) { SetLogLevel(value); return *this;}
-
-    /**
-     * <p>The Apache Airflow log level for the log type (e.g.
-     * <code>DagProcessingLogs</code>). </p>
-     */
-    inline ModuleLoggingConfiguration& WithLogLevel(LoggingLevel&& value) { SetLogLevel(std::move(value)); return *this;}
-
   private:
-
-    Aws::String m_cloudWatchLogGroupArn;
-    bool m_cloudWatchLogGroupArnHasBeenSet = false;
 
     bool m_enabled;
     bool m_enabledHasBeenSet = false;
 
     LoggingLevel m_logLevel;
     bool m_logLevelHasBeenSet = false;
+
+    Aws::String m_cloudWatchLogGroupArn;
+    bool m_cloudWatchLogGroupArnHasBeenSet = false;
   };
 
 } // namespace Model

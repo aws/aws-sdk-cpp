@@ -101,37 +101,6 @@ namespace Model
 
 
     /**
-     * <p>Publishes Airflow task logs to CloudWatch Logs.</p>
-     */
-    inline const ModuleLoggingConfigurationInput& GetTaskLogs() const{ return m_taskLogs; }
-
-    /**
-     * <p>Publishes Airflow task logs to CloudWatch Logs.</p>
-     */
-    inline bool TaskLogsHasBeenSet() const { return m_taskLogsHasBeenSet; }
-
-    /**
-     * <p>Publishes Airflow task logs to CloudWatch Logs.</p>
-     */
-    inline void SetTaskLogs(const ModuleLoggingConfigurationInput& value) { m_taskLogsHasBeenSet = true; m_taskLogs = value; }
-
-    /**
-     * <p>Publishes Airflow task logs to CloudWatch Logs.</p>
-     */
-    inline void SetTaskLogs(ModuleLoggingConfigurationInput&& value) { m_taskLogsHasBeenSet = true; m_taskLogs = std::move(value); }
-
-    /**
-     * <p>Publishes Airflow task logs to CloudWatch Logs.</p>
-     */
-    inline LoggingConfigurationInput& WithTaskLogs(const ModuleLoggingConfigurationInput& value) { SetTaskLogs(value); return *this;}
-
-    /**
-     * <p>Publishes Airflow task logs to CloudWatch Logs.</p>
-     */
-    inline LoggingConfigurationInput& WithTaskLogs(ModuleLoggingConfigurationInput&& value) { SetTaskLogs(std::move(value)); return *this;}
-
-
-    /**
      * <p>Publishes Airflow web server logs to CloudWatch Logs.</p>
      */
     inline const ModuleLoggingConfigurationInput& GetWebserverLogs() const{ return m_webserverLogs; }
@@ -192,6 +161,37 @@ namespace Model
      */
     inline LoggingConfigurationInput& WithWorkerLogs(ModuleLoggingConfigurationInput&& value) { SetWorkerLogs(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Publishes Airflow task logs to CloudWatch Logs.</p>
+     */
+    inline const ModuleLoggingConfigurationInput& GetTaskLogs() const{ return m_taskLogs; }
+
+    /**
+     * <p>Publishes Airflow task logs to CloudWatch Logs.</p>
+     */
+    inline bool TaskLogsHasBeenSet() const { return m_taskLogsHasBeenSet; }
+
+    /**
+     * <p>Publishes Airflow task logs to CloudWatch Logs.</p>
+     */
+    inline void SetTaskLogs(const ModuleLoggingConfigurationInput& value) { m_taskLogsHasBeenSet = true; m_taskLogs = value; }
+
+    /**
+     * <p>Publishes Airflow task logs to CloudWatch Logs.</p>
+     */
+    inline void SetTaskLogs(ModuleLoggingConfigurationInput&& value) { m_taskLogsHasBeenSet = true; m_taskLogs = std::move(value); }
+
+    /**
+     * <p>Publishes Airflow task logs to CloudWatch Logs.</p>
+     */
+    inline LoggingConfigurationInput& WithTaskLogs(const ModuleLoggingConfigurationInput& value) { SetTaskLogs(value); return *this;}
+
+    /**
+     * <p>Publishes Airflow task logs to CloudWatch Logs.</p>
+     */
+    inline LoggingConfigurationInput& WithTaskLogs(ModuleLoggingConfigurationInput&& value) { SetTaskLogs(std::move(value)); return *this;}
+
   private:
 
     ModuleLoggingConfigurationInput m_dagProcessingLogs;
@@ -200,14 +200,14 @@ namespace Model
     ModuleLoggingConfigurationInput m_schedulerLogs;
     bool m_schedulerLogsHasBeenSet = false;
 
-    ModuleLoggingConfigurationInput m_taskLogs;
-    bool m_taskLogsHasBeenSet = false;
-
     ModuleLoggingConfigurationInput m_webserverLogs;
     bool m_webserverLogsHasBeenSet = false;
 
     ModuleLoggingConfigurationInput m_workerLogs;
     bool m_workerLogsHasBeenSet = false;
+
+    ModuleLoggingConfigurationInput m_taskLogs;
+    bool m_taskLogsHasBeenSet = false;
   };
 
 } // namespace Model

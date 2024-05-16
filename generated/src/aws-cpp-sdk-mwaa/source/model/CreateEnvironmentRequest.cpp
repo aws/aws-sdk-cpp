@@ -13,40 +13,104 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateEnvironmentRequest::CreateEnvironmentRequest() : 
-    m_airflowConfigurationOptionsHasBeenSet(false),
-    m_airflowVersionHasBeenSet(false),
-    m_dagS3PathHasBeenSet(false),
-    m_endpointManagement(EndpointManagement::NOT_SET),
-    m_endpointManagementHasBeenSet(false),
-    m_environmentClassHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_executionRoleArnHasBeenSet(false),
-    m_kmsKeyHasBeenSet(false),
-    m_loggingConfigurationHasBeenSet(false),
+    m_sourceBucketArnHasBeenSet(false),
+    m_dagS3PathHasBeenSet(false),
+    m_networkConfigurationHasBeenSet(false),
+    m_pluginsS3PathHasBeenSet(false),
+    m_pluginsS3ObjectVersionHasBeenSet(false),
+    m_requirementsS3PathHasBeenSet(false),
+    m_requirementsS3ObjectVersionHasBeenSet(false),
+    m_startupScriptS3PathHasBeenSet(false),
+    m_startupScriptS3ObjectVersionHasBeenSet(false),
+    m_airflowConfigurationOptionsHasBeenSet(false),
+    m_environmentClassHasBeenSet(false),
     m_maxWorkers(0),
     m_maxWorkersHasBeenSet(false),
-    m_minWorkers(0),
-    m_minWorkersHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false),
-    m_pluginsS3ObjectVersionHasBeenSet(false),
-    m_pluginsS3PathHasBeenSet(false),
-    m_requirementsS3ObjectVersionHasBeenSet(false),
-    m_requirementsS3PathHasBeenSet(false),
-    m_schedulers(0),
-    m_schedulersHasBeenSet(false),
-    m_sourceBucketArnHasBeenSet(false),
-    m_startupScriptS3ObjectVersionHasBeenSet(false),
-    m_startupScriptS3PathHasBeenSet(false),
+    m_kmsKeyHasBeenSet(false),
+    m_airflowVersionHasBeenSet(false),
+    m_loggingConfigurationHasBeenSet(false),
+    m_weeklyMaintenanceWindowStartHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_webserverAccessMode(WebserverAccessMode::NOT_SET),
     m_webserverAccessModeHasBeenSet(false),
-    m_weeklyMaintenanceWindowStartHasBeenSet(false)
+    m_minWorkers(0),
+    m_minWorkersHasBeenSet(false),
+    m_schedulers(0),
+    m_schedulersHasBeenSet(false),
+    m_endpointManagement(EndpointManagement::NOT_SET),
+    m_endpointManagementHasBeenSet(false),
+    m_minWebservers(0),
+    m_minWebserversHasBeenSet(false),
+    m_maxWebservers(0),
+    m_maxWebserversHasBeenSet(false)
 {
 }
 
 Aws::String CreateEnvironmentRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_executionRoleArnHasBeenSet)
+  {
+   payload.WithString("ExecutionRoleArn", m_executionRoleArn);
+
+  }
+
+  if(m_sourceBucketArnHasBeenSet)
+  {
+   payload.WithString("SourceBucketArn", m_sourceBucketArn);
+
+  }
+
+  if(m_dagS3PathHasBeenSet)
+  {
+   payload.WithString("DagS3Path", m_dagS3Path);
+
+  }
+
+  if(m_networkConfigurationHasBeenSet)
+  {
+   payload.WithObject("NetworkConfiguration", m_networkConfiguration.Jsonize());
+
+  }
+
+  if(m_pluginsS3PathHasBeenSet)
+  {
+   payload.WithString("PluginsS3Path", m_pluginsS3Path);
+
+  }
+
+  if(m_pluginsS3ObjectVersionHasBeenSet)
+  {
+   payload.WithString("PluginsS3ObjectVersion", m_pluginsS3ObjectVersion);
+
+  }
+
+  if(m_requirementsS3PathHasBeenSet)
+  {
+   payload.WithString("RequirementsS3Path", m_requirementsS3Path);
+
+  }
+
+  if(m_requirementsS3ObjectVersionHasBeenSet)
+  {
+   payload.WithString("RequirementsS3ObjectVersion", m_requirementsS3ObjectVersion);
+
+  }
+
+  if(m_startupScriptS3PathHasBeenSet)
+  {
+   payload.WithString("StartupScriptS3Path", m_startupScriptS3Path);
+
+  }
+
+  if(m_startupScriptS3ObjectVersionHasBeenSet)
+  {
+   payload.WithString("StartupScriptS3ObjectVersion", m_startupScriptS3ObjectVersion);
+
+  }
 
   if(m_airflowConfigurationOptionsHasBeenSet)
   {
@@ -59,44 +123,9 @@ Aws::String CreateEnvironmentRequest::SerializePayload() const
 
   }
 
-  if(m_airflowVersionHasBeenSet)
-  {
-   payload.WithString("AirflowVersion", m_airflowVersion);
-
-  }
-
-  if(m_dagS3PathHasBeenSet)
-  {
-   payload.WithString("DagS3Path", m_dagS3Path);
-
-  }
-
-  if(m_endpointManagementHasBeenSet)
-  {
-   payload.WithString("EndpointManagement", EndpointManagementMapper::GetNameForEndpointManagement(m_endpointManagement));
-  }
-
   if(m_environmentClassHasBeenSet)
   {
    payload.WithString("EnvironmentClass", m_environmentClass);
-
-  }
-
-  if(m_executionRoleArnHasBeenSet)
-  {
-   payload.WithString("ExecutionRoleArn", m_executionRoleArn);
-
-  }
-
-  if(m_kmsKeyHasBeenSet)
-  {
-   payload.WithString("KmsKey", m_kmsKey);
-
-  }
-
-  if(m_loggingConfigurationHasBeenSet)
-  {
-   payload.WithObject("LoggingConfiguration", m_loggingConfiguration.Jsonize());
 
   }
 
@@ -106,63 +135,27 @@ Aws::String CreateEnvironmentRequest::SerializePayload() const
 
   }
 
-  if(m_minWorkersHasBeenSet)
+  if(m_kmsKeyHasBeenSet)
   {
-   payload.WithInteger("MinWorkers", m_minWorkers);
+   payload.WithString("KmsKey", m_kmsKey);
 
   }
 
-  if(m_networkConfigurationHasBeenSet)
+  if(m_airflowVersionHasBeenSet)
   {
-   payload.WithObject("NetworkConfiguration", m_networkConfiguration.Jsonize());
+   payload.WithString("AirflowVersion", m_airflowVersion);
 
   }
 
-  if(m_pluginsS3ObjectVersionHasBeenSet)
+  if(m_loggingConfigurationHasBeenSet)
   {
-   payload.WithString("PluginsS3ObjectVersion", m_pluginsS3ObjectVersion);
+   payload.WithObject("LoggingConfiguration", m_loggingConfiguration.Jsonize());
 
   }
 
-  if(m_pluginsS3PathHasBeenSet)
+  if(m_weeklyMaintenanceWindowStartHasBeenSet)
   {
-   payload.WithString("PluginsS3Path", m_pluginsS3Path);
-
-  }
-
-  if(m_requirementsS3ObjectVersionHasBeenSet)
-  {
-   payload.WithString("RequirementsS3ObjectVersion", m_requirementsS3ObjectVersion);
-
-  }
-
-  if(m_requirementsS3PathHasBeenSet)
-  {
-   payload.WithString("RequirementsS3Path", m_requirementsS3Path);
-
-  }
-
-  if(m_schedulersHasBeenSet)
-  {
-   payload.WithInteger("Schedulers", m_schedulers);
-
-  }
-
-  if(m_sourceBucketArnHasBeenSet)
-  {
-   payload.WithString("SourceBucketArn", m_sourceBucketArn);
-
-  }
-
-  if(m_startupScriptS3ObjectVersionHasBeenSet)
-  {
-   payload.WithString("StartupScriptS3ObjectVersion", m_startupScriptS3ObjectVersion);
-
-  }
-
-  if(m_startupScriptS3PathHasBeenSet)
-  {
-   payload.WithString("StartupScriptS3Path", m_startupScriptS3Path);
+   payload.WithString("WeeklyMaintenanceWindowStart", m_weeklyMaintenanceWindowStart);
 
   }
 
@@ -182,9 +175,32 @@ Aws::String CreateEnvironmentRequest::SerializePayload() const
    payload.WithString("WebserverAccessMode", WebserverAccessModeMapper::GetNameForWebserverAccessMode(m_webserverAccessMode));
   }
 
-  if(m_weeklyMaintenanceWindowStartHasBeenSet)
+  if(m_minWorkersHasBeenSet)
   {
-   payload.WithString("WeeklyMaintenanceWindowStart", m_weeklyMaintenanceWindowStart);
+   payload.WithInteger("MinWorkers", m_minWorkers);
+
+  }
+
+  if(m_schedulersHasBeenSet)
+  {
+   payload.WithInteger("Schedulers", m_schedulers);
+
+  }
+
+  if(m_endpointManagementHasBeenSet)
+  {
+   payload.WithString("EndpointManagement", EndpointManagementMapper::GetNameForEndpointManagement(m_endpointManagement));
+  }
+
+  if(m_minWebserversHasBeenSet)
+  {
+   payload.WithInteger("MinWebservers", m_minWebservers);
+
+  }
+
+  if(m_maxWebserversHasBeenSet)
+  {
+   payload.WithInteger("MaxWebservers", m_maxWebservers);
 
   }
 
