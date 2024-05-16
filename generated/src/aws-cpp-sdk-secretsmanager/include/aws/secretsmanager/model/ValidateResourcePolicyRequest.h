@@ -35,42 +35,50 @@ namespace Model
 
 
     /**
-     * <p>This field is reserved for internal use.</p>
+     * <p>The ARN or name of the secret with the resource-based policy you want to
+     * validate.</p>
      */
     inline const Aws::String& GetSecretId() const{ return m_secretId; }
 
     /**
-     * <p>This field is reserved for internal use.</p>
+     * <p>The ARN or name of the secret with the resource-based policy you want to
+     * validate.</p>
      */
     inline bool SecretIdHasBeenSet() const { return m_secretIdHasBeenSet; }
 
     /**
-     * <p>This field is reserved for internal use.</p>
+     * <p>The ARN or name of the secret with the resource-based policy you want to
+     * validate.</p>
      */
     inline void SetSecretId(const Aws::String& value) { m_secretIdHasBeenSet = true; m_secretId = value; }
 
     /**
-     * <p>This field is reserved for internal use.</p>
+     * <p>The ARN or name of the secret with the resource-based policy you want to
+     * validate.</p>
      */
     inline void SetSecretId(Aws::String&& value) { m_secretIdHasBeenSet = true; m_secretId = std::move(value); }
 
     /**
-     * <p>This field is reserved for internal use.</p>
+     * <p>The ARN or name of the secret with the resource-based policy you want to
+     * validate.</p>
      */
     inline void SetSecretId(const char* value) { m_secretIdHasBeenSet = true; m_secretId.assign(value); }
 
     /**
-     * <p>This field is reserved for internal use.</p>
+     * <p>The ARN or name of the secret with the resource-based policy you want to
+     * validate.</p>
      */
     inline ValidateResourcePolicyRequest& WithSecretId(const Aws::String& value) { SetSecretId(value); return *this;}
 
     /**
-     * <p>This field is reserved for internal use.</p>
+     * <p>The ARN or name of the secret with the resource-based policy you want to
+     * validate.</p>
      */
     inline ValidateResourcePolicyRequest& WithSecretId(Aws::String&& value) { SetSecretId(std::move(value)); return *this;}
 
     /**
-     * <p>This field is reserved for internal use.</p>
+     * <p>The ARN or name of the secret with the resource-based policy you want to
+     * validate.</p>
      */
     inline ValidateResourcePolicyRequest& WithSecretId(const char* value) { SetSecretId(value); return *this;}
 

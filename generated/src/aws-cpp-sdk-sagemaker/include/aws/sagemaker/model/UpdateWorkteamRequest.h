@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/NotificationConfiguration.h>
+#include <aws/sagemaker/model/WorkerAccessConfiguration.h>
 #include <aws/sagemaker/model/MemberDefinition.h>
 #include <utility>
 
@@ -358,6 +359,49 @@ namespace Model
      */
     inline UpdateWorkteamRequest& WithNotificationConfiguration(NotificationConfiguration&& value) { SetNotificationConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Use this optional parameter to constrain access to an Amazon S3 resource
+     * based on the IP address using supported IAM global condition keys. The Amazon S3
+     * resource is accessed in the worker portal using a Amazon S3 presigned URL.</p>
+     */
+    inline const WorkerAccessConfiguration& GetWorkerAccessConfiguration() const{ return m_workerAccessConfiguration; }
+
+    /**
+     * <p>Use this optional parameter to constrain access to an Amazon S3 resource
+     * based on the IP address using supported IAM global condition keys. The Amazon S3
+     * resource is accessed in the worker portal using a Amazon S3 presigned URL.</p>
+     */
+    inline bool WorkerAccessConfigurationHasBeenSet() const { return m_workerAccessConfigurationHasBeenSet; }
+
+    /**
+     * <p>Use this optional parameter to constrain access to an Amazon S3 resource
+     * based on the IP address using supported IAM global condition keys. The Amazon S3
+     * resource is accessed in the worker portal using a Amazon S3 presigned URL.</p>
+     */
+    inline void SetWorkerAccessConfiguration(const WorkerAccessConfiguration& value) { m_workerAccessConfigurationHasBeenSet = true; m_workerAccessConfiguration = value; }
+
+    /**
+     * <p>Use this optional parameter to constrain access to an Amazon S3 resource
+     * based on the IP address using supported IAM global condition keys. The Amazon S3
+     * resource is accessed in the worker portal using a Amazon S3 presigned URL.</p>
+     */
+    inline void SetWorkerAccessConfiguration(WorkerAccessConfiguration&& value) { m_workerAccessConfigurationHasBeenSet = true; m_workerAccessConfiguration = std::move(value); }
+
+    /**
+     * <p>Use this optional parameter to constrain access to an Amazon S3 resource
+     * based on the IP address using supported IAM global condition keys. The Amazon S3
+     * resource is accessed in the worker portal using a Amazon S3 presigned URL.</p>
+     */
+    inline UpdateWorkteamRequest& WithWorkerAccessConfiguration(const WorkerAccessConfiguration& value) { SetWorkerAccessConfiguration(value); return *this;}
+
+    /**
+     * <p>Use this optional parameter to constrain access to an Amazon S3 resource
+     * based on the IP address using supported IAM global condition keys. The Amazon S3
+     * resource is accessed in the worker portal using a Amazon S3 presigned URL.</p>
+     */
+    inline UpdateWorkteamRequest& WithWorkerAccessConfiguration(WorkerAccessConfiguration&& value) { SetWorkerAccessConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_workteamName;
@@ -371,6 +415,9 @@ namespace Model
 
     NotificationConfiguration m_notificationConfiguration;
     bool m_notificationConfigurationHasBeenSet = false;
+
+    WorkerAccessConfiguration m_workerAccessConfiguration;
+    bool m_workerAccessConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

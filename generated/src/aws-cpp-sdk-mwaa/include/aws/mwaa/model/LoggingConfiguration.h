@@ -113,37 +113,6 @@ namespace Model
 
 
     /**
-     * <p>The Airflow task logs published to CloudWatch Logs and the log level.</p>
-     */
-    inline const ModuleLoggingConfiguration& GetTaskLogs() const{ return m_taskLogs; }
-
-    /**
-     * <p>The Airflow task logs published to CloudWatch Logs and the log level.</p>
-     */
-    inline bool TaskLogsHasBeenSet() const { return m_taskLogsHasBeenSet; }
-
-    /**
-     * <p>The Airflow task logs published to CloudWatch Logs and the log level.</p>
-     */
-    inline void SetTaskLogs(const ModuleLoggingConfiguration& value) { m_taskLogsHasBeenSet = true; m_taskLogs = value; }
-
-    /**
-     * <p>The Airflow task logs published to CloudWatch Logs and the log level.</p>
-     */
-    inline void SetTaskLogs(ModuleLoggingConfiguration&& value) { m_taskLogsHasBeenSet = true; m_taskLogs = std::move(value); }
-
-    /**
-     * <p>The Airflow task logs published to CloudWatch Logs and the log level.</p>
-     */
-    inline LoggingConfiguration& WithTaskLogs(const ModuleLoggingConfiguration& value) { SetTaskLogs(value); return *this;}
-
-    /**
-     * <p>The Airflow task logs published to CloudWatch Logs and the log level.</p>
-     */
-    inline LoggingConfiguration& WithTaskLogs(ModuleLoggingConfiguration&& value) { SetTaskLogs(std::move(value)); return *this;}
-
-
-    /**
      * <p>The Airflow web server logs published to CloudWatch Logs and the log
      * level.</p>
      */
@@ -210,6 +179,37 @@ namespace Model
      */
     inline LoggingConfiguration& WithWorkerLogs(ModuleLoggingConfiguration&& value) { SetWorkerLogs(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Airflow task logs published to CloudWatch Logs and the log level.</p>
+     */
+    inline const ModuleLoggingConfiguration& GetTaskLogs() const{ return m_taskLogs; }
+
+    /**
+     * <p>The Airflow task logs published to CloudWatch Logs and the log level.</p>
+     */
+    inline bool TaskLogsHasBeenSet() const { return m_taskLogsHasBeenSet; }
+
+    /**
+     * <p>The Airflow task logs published to CloudWatch Logs and the log level.</p>
+     */
+    inline void SetTaskLogs(const ModuleLoggingConfiguration& value) { m_taskLogsHasBeenSet = true; m_taskLogs = value; }
+
+    /**
+     * <p>The Airflow task logs published to CloudWatch Logs and the log level.</p>
+     */
+    inline void SetTaskLogs(ModuleLoggingConfiguration&& value) { m_taskLogsHasBeenSet = true; m_taskLogs = std::move(value); }
+
+    /**
+     * <p>The Airflow task logs published to CloudWatch Logs and the log level.</p>
+     */
+    inline LoggingConfiguration& WithTaskLogs(const ModuleLoggingConfiguration& value) { SetTaskLogs(value); return *this;}
+
+    /**
+     * <p>The Airflow task logs published to CloudWatch Logs and the log level.</p>
+     */
+    inline LoggingConfiguration& WithTaskLogs(ModuleLoggingConfiguration&& value) { SetTaskLogs(std::move(value)); return *this;}
+
   private:
 
     ModuleLoggingConfiguration m_dagProcessingLogs;
@@ -218,14 +218,14 @@ namespace Model
     ModuleLoggingConfiguration m_schedulerLogs;
     bool m_schedulerLogsHasBeenSet = false;
 
-    ModuleLoggingConfiguration m_taskLogs;
-    bool m_taskLogsHasBeenSet = false;
-
     ModuleLoggingConfiguration m_webserverLogs;
     bool m_webserverLogsHasBeenSet = false;
 
     ModuleLoggingConfiguration m_workerLogs;
     bool m_workerLogsHasBeenSet = false;
+
+    ModuleLoggingConfiguration m_taskLogs;
+    bool m_taskLogsHasBeenSet = false;
   };
 
 } // namespace Model

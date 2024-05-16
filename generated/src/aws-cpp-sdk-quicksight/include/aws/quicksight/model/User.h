@@ -202,17 +202,17 @@ namespace Model
      * <code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon
      * QuickSight settings.</p> </li> <li> <p> <code>READER_PRO</code>: Reader Pro adds
      * Generative BI capabilities to the Reader role. Reader Pros have access to Amazon
-     * Q Business, can build stories with Amazon Q, and can generate executive
-     * summaries from dashboards.</p> </li> <li> <p> <code>AUTHOR_PRO</code>: Author
-     * Pro adds Generative BI capabilities to the Author role. Author Pros can author
-     * dashboards with natural language with Amazon Q, build stories with Amazon Q,
-     * create Topics for Q&amp;A, and generate executive summaries from dashboards.</p>
-     * </li> <li> <p> <code>ADMIN_PRO</code>: Admin Pros are Author Pros who can also
-     * manage Amazon QuickSight administrative settings. Admin Pro users are billed at
-     * Author Pro pricing.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This role
-     * isn't currently available for use.</p> </li> <li> <p>
-     * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p>
-     * </li> </ul>
+     * Q in Amazon QuickSight, can build stories with Amazon Q, and can generate
+     * executive summaries from dashboards.</p> </li> <li> <p> <code>AUTHOR_PRO</code>:
+     * Author Pro adds Generative BI capabilities to the Author role. Author Pros can
+     * author dashboards with natural language with Amazon Q, build stories with Amazon
+     * Q, create Topics for Q&amp;A, and generate executive summaries from
+     * dashboards.</p> </li> <li> <p> <code>ADMIN_PRO</code>: Admin Pros are Author
+     * Pros who can also manage Amazon QuickSight administrative settings. Admin Pro
+     * users are billed at Author Pro pricing.</p> </li> <li> <p>
+     * <code>RESTRICTED_READER</code>: This role isn't currently available for use.</p>
+     * </li> <li> <p> <code>RESTRICTED_AUTHOR</code>: This role isn't currently
+     * available for use.</p> </li> </ul>
      */
     inline const UserRole& GetRole() const{ return m_role; }
 
@@ -224,17 +224,17 @@ namespace Model
      * <code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon
      * QuickSight settings.</p> </li> <li> <p> <code>READER_PRO</code>: Reader Pro adds
      * Generative BI capabilities to the Reader role. Reader Pros have access to Amazon
-     * Q Business, can build stories with Amazon Q, and can generate executive
-     * summaries from dashboards.</p> </li> <li> <p> <code>AUTHOR_PRO</code>: Author
-     * Pro adds Generative BI capabilities to the Author role. Author Pros can author
-     * dashboards with natural language with Amazon Q, build stories with Amazon Q,
-     * create Topics for Q&amp;A, and generate executive summaries from dashboards.</p>
-     * </li> <li> <p> <code>ADMIN_PRO</code>: Admin Pros are Author Pros who can also
-     * manage Amazon QuickSight administrative settings. Admin Pro users are billed at
-     * Author Pro pricing.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This role
-     * isn't currently available for use.</p> </li> <li> <p>
-     * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p>
-     * </li> </ul>
+     * Q in Amazon QuickSight, can build stories with Amazon Q, and can generate
+     * executive summaries from dashboards.</p> </li> <li> <p> <code>AUTHOR_PRO</code>:
+     * Author Pro adds Generative BI capabilities to the Author role. Author Pros can
+     * author dashboards with natural language with Amazon Q, build stories with Amazon
+     * Q, create Topics for Q&amp;A, and generate executive summaries from
+     * dashboards.</p> </li> <li> <p> <code>ADMIN_PRO</code>: Admin Pros are Author
+     * Pros who can also manage Amazon QuickSight administrative settings. Admin Pro
+     * users are billed at Author Pro pricing.</p> </li> <li> <p>
+     * <code>RESTRICTED_READER</code>: This role isn't currently available for use.</p>
+     * </li> <li> <p> <code>RESTRICTED_AUTHOR</code>: This role isn't currently
+     * available for use.</p> </li> </ul>
      */
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
 
@@ -246,17 +246,17 @@ namespace Model
      * <code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon
      * QuickSight settings.</p> </li> <li> <p> <code>READER_PRO</code>: Reader Pro adds
      * Generative BI capabilities to the Reader role. Reader Pros have access to Amazon
-     * Q Business, can build stories with Amazon Q, and can generate executive
-     * summaries from dashboards.</p> </li> <li> <p> <code>AUTHOR_PRO</code>: Author
-     * Pro adds Generative BI capabilities to the Author role. Author Pros can author
-     * dashboards with natural language with Amazon Q, build stories with Amazon Q,
-     * create Topics for Q&amp;A, and generate executive summaries from dashboards.</p>
-     * </li> <li> <p> <code>ADMIN_PRO</code>: Admin Pros are Author Pros who can also
-     * manage Amazon QuickSight administrative settings. Admin Pro users are billed at
-     * Author Pro pricing.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This role
-     * isn't currently available for use.</p> </li> <li> <p>
-     * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p>
-     * </li> </ul>
+     * Q in Amazon QuickSight, can build stories with Amazon Q, and can generate
+     * executive summaries from dashboards.</p> </li> <li> <p> <code>AUTHOR_PRO</code>:
+     * Author Pro adds Generative BI capabilities to the Author role. Author Pros can
+     * author dashboards with natural language with Amazon Q, build stories with Amazon
+     * Q, create Topics for Q&amp;A, and generate executive summaries from
+     * dashboards.</p> </li> <li> <p> <code>ADMIN_PRO</code>: Admin Pros are Author
+     * Pros who can also manage Amazon QuickSight administrative settings. Admin Pro
+     * users are billed at Author Pro pricing.</p> </li> <li> <p>
+     * <code>RESTRICTED_READER</code>: This role isn't currently available for use.</p>
+     * </li> <li> <p> <code>RESTRICTED_AUTHOR</code>: This role isn't currently
+     * available for use.</p> </li> </ul>
      */
     inline void SetRole(const UserRole& value) { m_roleHasBeenSet = true; m_role = value; }
 
@@ -268,17 +268,17 @@ namespace Model
      * <code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon
      * QuickSight settings.</p> </li> <li> <p> <code>READER_PRO</code>: Reader Pro adds
      * Generative BI capabilities to the Reader role. Reader Pros have access to Amazon
-     * Q Business, can build stories with Amazon Q, and can generate executive
-     * summaries from dashboards.</p> </li> <li> <p> <code>AUTHOR_PRO</code>: Author
-     * Pro adds Generative BI capabilities to the Author role. Author Pros can author
-     * dashboards with natural language with Amazon Q, build stories with Amazon Q,
-     * create Topics for Q&amp;A, and generate executive summaries from dashboards.</p>
-     * </li> <li> <p> <code>ADMIN_PRO</code>: Admin Pros are Author Pros who can also
-     * manage Amazon QuickSight administrative settings. Admin Pro users are billed at
-     * Author Pro pricing.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This role
-     * isn't currently available for use.</p> </li> <li> <p>
-     * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p>
-     * </li> </ul>
+     * Q in Amazon QuickSight, can build stories with Amazon Q, and can generate
+     * executive summaries from dashboards.</p> </li> <li> <p> <code>AUTHOR_PRO</code>:
+     * Author Pro adds Generative BI capabilities to the Author role. Author Pros can
+     * author dashboards with natural language with Amazon Q, build stories with Amazon
+     * Q, create Topics for Q&amp;A, and generate executive summaries from
+     * dashboards.</p> </li> <li> <p> <code>ADMIN_PRO</code>: Admin Pros are Author
+     * Pros who can also manage Amazon QuickSight administrative settings. Admin Pro
+     * users are billed at Author Pro pricing.</p> </li> <li> <p>
+     * <code>RESTRICTED_READER</code>: This role isn't currently available for use.</p>
+     * </li> <li> <p> <code>RESTRICTED_AUTHOR</code>: This role isn't currently
+     * available for use.</p> </li> </ul>
      */
     inline void SetRole(UserRole&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
 
@@ -290,17 +290,17 @@ namespace Model
      * <code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon
      * QuickSight settings.</p> </li> <li> <p> <code>READER_PRO</code>: Reader Pro adds
      * Generative BI capabilities to the Reader role. Reader Pros have access to Amazon
-     * Q Business, can build stories with Amazon Q, and can generate executive
-     * summaries from dashboards.</p> </li> <li> <p> <code>AUTHOR_PRO</code>: Author
-     * Pro adds Generative BI capabilities to the Author role. Author Pros can author
-     * dashboards with natural language with Amazon Q, build stories with Amazon Q,
-     * create Topics for Q&amp;A, and generate executive summaries from dashboards.</p>
-     * </li> <li> <p> <code>ADMIN_PRO</code>: Admin Pros are Author Pros who can also
-     * manage Amazon QuickSight administrative settings. Admin Pro users are billed at
-     * Author Pro pricing.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This role
-     * isn't currently available for use.</p> </li> <li> <p>
-     * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p>
-     * </li> </ul>
+     * Q in Amazon QuickSight, can build stories with Amazon Q, and can generate
+     * executive summaries from dashboards.</p> </li> <li> <p> <code>AUTHOR_PRO</code>:
+     * Author Pro adds Generative BI capabilities to the Author role. Author Pros can
+     * author dashboards with natural language with Amazon Q, build stories with Amazon
+     * Q, create Topics for Q&amp;A, and generate executive summaries from
+     * dashboards.</p> </li> <li> <p> <code>ADMIN_PRO</code>: Admin Pros are Author
+     * Pros who can also manage Amazon QuickSight administrative settings. Admin Pro
+     * users are billed at Author Pro pricing.</p> </li> <li> <p>
+     * <code>RESTRICTED_READER</code>: This role isn't currently available for use.</p>
+     * </li> <li> <p> <code>RESTRICTED_AUTHOR</code>: This role isn't currently
+     * available for use.</p> </li> </ul>
      */
     inline User& WithRole(const UserRole& value) { SetRole(value); return *this;}
 
@@ -312,17 +312,17 @@ namespace Model
      * <code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon
      * QuickSight settings.</p> </li> <li> <p> <code>READER_PRO</code>: Reader Pro adds
      * Generative BI capabilities to the Reader role. Reader Pros have access to Amazon
-     * Q Business, can build stories with Amazon Q, and can generate executive
-     * summaries from dashboards.</p> </li> <li> <p> <code>AUTHOR_PRO</code>: Author
-     * Pro adds Generative BI capabilities to the Author role. Author Pros can author
-     * dashboards with natural language with Amazon Q, build stories with Amazon Q,
-     * create Topics for Q&amp;A, and generate executive summaries from dashboards.</p>
-     * </li> <li> <p> <code>ADMIN_PRO</code>: Admin Pros are Author Pros who can also
-     * manage Amazon QuickSight administrative settings. Admin Pro users are billed at
-     * Author Pro pricing.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This role
-     * isn't currently available for use.</p> </li> <li> <p>
-     * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p>
-     * </li> </ul>
+     * Q in Amazon QuickSight, can build stories with Amazon Q, and can generate
+     * executive summaries from dashboards.</p> </li> <li> <p> <code>AUTHOR_PRO</code>:
+     * Author Pro adds Generative BI capabilities to the Author role. Author Pros can
+     * author dashboards with natural language with Amazon Q, build stories with Amazon
+     * Q, create Topics for Q&amp;A, and generate executive summaries from
+     * dashboards.</p> </li> <li> <p> <code>ADMIN_PRO</code>: Admin Pros are Author
+     * Pros who can also manage Amazon QuickSight administrative settings. Admin Pro
+     * users are billed at Author Pro pricing.</p> </li> <li> <p>
+     * <code>RESTRICTED_READER</code>: This role isn't currently available for use.</p>
+     * </li> <li> <p> <code>RESTRICTED_AUTHOR</code>: This role isn't currently
+     * available for use.</p> </li> </ul>
      */
     inline User& WithRole(UserRole&& value) { SetRole(std::move(value)); return *this;}
 

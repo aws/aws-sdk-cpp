@@ -28,7 +28,8 @@ Workteam::Workteam() :
     m_subDomainHasBeenSet(false),
     m_createDateHasBeenSet(false),
     m_lastUpdatedDateHasBeenSet(false),
-    m_notificationConfigurationHasBeenSet(false)
+    m_notificationConfigurationHasBeenSet(false),
+    m_workerAccessConfigurationHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ Workteam::Workteam(JsonView jsonValue) :
     m_subDomainHasBeenSet(false),
     m_createDateHasBeenSet(false),
     m_lastUpdatedDateHasBeenSet(false),
-    m_notificationConfigurationHasBeenSet(false)
+    m_notificationConfigurationHasBeenSet(false),
+    m_workerAccessConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -125,6 +127,13 @@ Workteam& Workteam::operator =(JsonView jsonValue)
     m_notificationConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("WorkerAccessConfiguration"))
+  {
+    m_workerAccessConfiguration = jsonValue.GetObject("WorkerAccessConfiguration");
+
+    m_workerAccessConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -197,6 +206,12 @@ JsonValue Workteam::Jsonize() const
   if(m_notificationConfigurationHasBeenSet)
   {
    payload.WithObject("NotificationConfiguration", m_notificationConfiguration.Jsonize());
+
+  }
+
+  if(m_workerAccessConfigurationHasBeenSet)
+  {
+   payload.WithObject("WorkerAccessConfiguration", m_workerAccessConfiguration.Jsonize());
 
   }
 

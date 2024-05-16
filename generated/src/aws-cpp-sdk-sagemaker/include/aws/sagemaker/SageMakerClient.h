@@ -1855,8 +1855,8 @@ namespace SageMaker
         }
 
         /**
-         * <p>Creates a space used for real time collaboration in a domain.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a private space or a space used for real time collaboration in a
+         * domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateSpace">AWS
          * API Reference</a></p>
          */

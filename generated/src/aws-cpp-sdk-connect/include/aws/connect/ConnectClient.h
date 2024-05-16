@@ -1008,7 +1008,7 @@ namespace Connect
          * <p>Creates a prompt. For more information about prompts, such as supported file
          * types and maximum length, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/prompts.html">Create
-         * prompts</a> in the <i>Amazon Connect Administrator's Guide</i>.</p><p><h3>See
+         * prompts</a> in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreatePrompt">AWS
          * API Reference</a></p>
@@ -3342,7 +3342,7 @@ namespace Connect
          * description of the historical metrics that are supported by
          * <code>GetMetricDataV2</code> and <code>GetMetricData</code>, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
-         * metrics definitions</a> in the <i>Amazon Connect Administrator's
+         * metrics definitions</a> in the <i>Amazon Connect Administrator
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetMetricDataV2">AWS
          * API Reference</a></p>

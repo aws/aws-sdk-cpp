@@ -40,48 +40,6 @@ namespace Model
 
 
     /**
-     * <p> <b>Internal only</b>. The maximum value of the sample set.</p>
-     */
-    inline double GetMaximum() const{ return m_maximum; }
-
-    /**
-     * <p> <b>Internal only</b>. The maximum value of the sample set.</p>
-     */
-    inline bool MaximumHasBeenSet() const { return m_maximumHasBeenSet; }
-
-    /**
-     * <p> <b>Internal only</b>. The maximum value of the sample set.</p>
-     */
-    inline void SetMaximum(double value) { m_maximumHasBeenSet = true; m_maximum = value; }
-
-    /**
-     * <p> <b>Internal only</b>. The maximum value of the sample set.</p>
-     */
-    inline StatisticSet& WithMaximum(double value) { SetMaximum(value); return *this;}
-
-
-    /**
-     * <p> <b>Internal only</b>. The minimum value of the sample set.</p>
-     */
-    inline double GetMinimum() const{ return m_minimum; }
-
-    /**
-     * <p> <b>Internal only</b>. The minimum value of the sample set.</p>
-     */
-    inline bool MinimumHasBeenSet() const { return m_minimumHasBeenSet; }
-
-    /**
-     * <p> <b>Internal only</b>. The minimum value of the sample set.</p>
-     */
-    inline void SetMinimum(double value) { m_minimumHasBeenSet = true; m_minimum = value; }
-
-    /**
-     * <p> <b>Internal only</b>. The minimum value of the sample set.</p>
-     */
-    inline StatisticSet& WithMinimum(double value) { SetMinimum(value); return *this;}
-
-
-    /**
      * <p> <b>Internal only</b>. The number of samples used for the statistic set.</p>
      */
     inline int GetSampleCount() const{ return m_sampleCount; }
@@ -122,19 +80,61 @@ namespace Model
      */
     inline StatisticSet& WithSum(double value) { SetSum(value); return *this;}
 
+
+    /**
+     * <p> <b>Internal only</b>. The minimum value of the sample set.</p>
+     */
+    inline double GetMinimum() const{ return m_minimum; }
+
+    /**
+     * <p> <b>Internal only</b>. The minimum value of the sample set.</p>
+     */
+    inline bool MinimumHasBeenSet() const { return m_minimumHasBeenSet; }
+
+    /**
+     * <p> <b>Internal only</b>. The minimum value of the sample set.</p>
+     */
+    inline void SetMinimum(double value) { m_minimumHasBeenSet = true; m_minimum = value; }
+
+    /**
+     * <p> <b>Internal only</b>. The minimum value of the sample set.</p>
+     */
+    inline StatisticSet& WithMinimum(double value) { SetMinimum(value); return *this;}
+
+
+    /**
+     * <p> <b>Internal only</b>. The maximum value of the sample set.</p>
+     */
+    inline double GetMaximum() const{ return m_maximum; }
+
+    /**
+     * <p> <b>Internal only</b>. The maximum value of the sample set.</p>
+     */
+    inline bool MaximumHasBeenSet() const { return m_maximumHasBeenSet; }
+
+    /**
+     * <p> <b>Internal only</b>. The maximum value of the sample set.</p>
+     */
+    inline void SetMaximum(double value) { m_maximumHasBeenSet = true; m_maximum = value; }
+
+    /**
+     * <p> <b>Internal only</b>. The maximum value of the sample set.</p>
+     */
+    inline StatisticSet& WithMaximum(double value) { SetMaximum(value); return *this;}
+
   private:
-
-    double m_maximum;
-    bool m_maximumHasBeenSet = false;
-
-    double m_minimum;
-    bool m_minimumHasBeenSet = false;
 
     int m_sampleCount;
     bool m_sampleCountHasBeenSet = false;
 
     double m_sum;
     bool m_sumHasBeenSet = false;
+
+    double m_minimum;
+    bool m_minimumHasBeenSet = false;
+
+    double m_maximum;
+    bool m_maximumHasBeenSet = false;
   };
 
 } // namespace Model

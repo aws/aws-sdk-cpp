@@ -86,38 +86,46 @@ namespace Model
 
 
     /**
-     * <p>The total number of items to return in the response. If the total number of
-     * items available is more than the value specified, a <code>NextToken</code> is
-     * provided in the response. To resume pagination, provide the
-     * <code>NextToken</code> value in the as part of a subsequent call. The default
-     * value is 10.</p>
+     * <p>This parameter defines the maximum number of results that can be returned in
+     * a single response. The <code>MaxResults</code> parameter is an upper bound, not
+     * a target. If there are more results available than the value specified, a
+     * <code>NextToken</code> is provided in the response. The <code>NextToken</code>
+     * indicates that the user should get the next set of results by providing this
+     * token as a part of a subsequent call. The default value for
+     * <code>MaxResults</code> is 10.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The total number of items to return in the response. If the total number of
-     * items available is more than the value specified, a <code>NextToken</code> is
-     * provided in the response. To resume pagination, provide the
-     * <code>NextToken</code> value in the as part of a subsequent call. The default
-     * value is 10.</p>
+     * <p>This parameter defines the maximum number of results that can be returned in
+     * a single response. The <code>MaxResults</code> parameter is an upper bound, not
+     * a target. If there are more results available than the value specified, a
+     * <code>NextToken</code> is provided in the response. The <code>NextToken</code>
+     * indicates that the user should get the next set of results by providing this
+     * token as a part of a subsequent call. The default value for
+     * <code>MaxResults</code> is 10.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The total number of items to return in the response. If the total number of
-     * items available is more than the value specified, a <code>NextToken</code> is
-     * provided in the response. To resume pagination, provide the
-     * <code>NextToken</code> value in the as part of a subsequent call. The default
-     * value is 10.</p>
+     * <p>This parameter defines the maximum number of results that can be returned in
+     * a single response. The <code>MaxResults</code> parameter is an upper bound, not
+     * a target. If there are more results available than the value specified, a
+     * <code>NextToken</code> is provided in the response. The <code>NextToken</code>
+     * indicates that the user should get the next set of results by providing this
+     * token as a part of a subsequent call. The default value for
+     * <code>MaxResults</code> is 10.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The total number of items to return in the response. If the total number of
-     * items available is more than the value specified, a <code>NextToken</code> is
-     * provided in the response. To resume pagination, provide the
-     * <code>NextToken</code> value in the as part of a subsequent call. The default
-     * value is 10.</p>
+     * <p>This parameter defines the maximum number of results that can be returned in
+     * a single response. The <code>MaxResults</code> parameter is an upper bound, not
+     * a target. If there are more results available than the value specified, a
+     * <code>NextToken</code> is provided in the response. The <code>NextToken</code>
+     * indicates that the user should get the next set of results by providing this
+     * token as a part of a subsequent call. The default value for
+     * <code>MaxResults</code> is 10.</p>
      */
     inline ListSpacesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

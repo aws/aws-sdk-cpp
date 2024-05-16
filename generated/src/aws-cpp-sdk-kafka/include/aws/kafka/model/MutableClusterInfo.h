@@ -15,6 +15,7 @@
 #include <aws/kafka/model/EncryptionInfo.h>
 #include <aws/kafka/model/ConnectivityInfo.h>
 #include <aws/kafka/model/StorageMode.h>
+#include <aws/kafka/model/BrokerCountUpdateInfo.h>
 #include <aws/kafka/model/BrokerEBSVolumeInfo.h>
 #include <utility>
 
@@ -631,6 +632,55 @@ namespace Model
      */
     inline MutableClusterInfo& WithStorageMode(StorageMode&& value) { SetStorageMode(std::move(value)); return *this;}
 
+
+    /**
+     * 
+            <p>Describes brokers being changed during a broker count
+     * update.</p>
+         
+     */
+    inline const BrokerCountUpdateInfo& GetBrokerCountUpdateInfo() const{ return m_brokerCountUpdateInfo; }
+
+    /**
+     * 
+            <p>Describes brokers being changed during a broker count
+     * update.</p>
+         
+     */
+    inline bool BrokerCountUpdateInfoHasBeenSet() const { return m_brokerCountUpdateInfoHasBeenSet; }
+
+    /**
+     * 
+            <p>Describes brokers being changed during a broker count
+     * update.</p>
+         
+     */
+    inline void SetBrokerCountUpdateInfo(const BrokerCountUpdateInfo& value) { m_brokerCountUpdateInfoHasBeenSet = true; m_brokerCountUpdateInfo = value; }
+
+    /**
+     * 
+            <p>Describes brokers being changed during a broker count
+     * update.</p>
+         
+     */
+    inline void SetBrokerCountUpdateInfo(BrokerCountUpdateInfo&& value) { m_brokerCountUpdateInfoHasBeenSet = true; m_brokerCountUpdateInfo = std::move(value); }
+
+    /**
+     * 
+            <p>Describes brokers being changed during a broker count
+     * update.</p>
+         
+     */
+    inline MutableClusterInfo& WithBrokerCountUpdateInfo(const BrokerCountUpdateInfo& value) { SetBrokerCountUpdateInfo(value); return *this;}
+
+    /**
+     * 
+            <p>Describes brokers being changed during a broker count
+     * update.</p>
+         
+     */
+    inline MutableClusterInfo& WithBrokerCountUpdateInfo(BrokerCountUpdateInfo&& value) { SetBrokerCountUpdateInfo(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<BrokerEBSVolumeInfo> m_brokerEBSVolumeInfo;
@@ -668,6 +718,9 @@ namespace Model
 
     StorageMode m_storageMode;
     bool m_storageModeHasBeenSet = false;
+
+    BrokerCountUpdateInfo m_brokerCountUpdateInfo;
+    bool m_brokerCountUpdateInfoHasBeenSet = false;
   };
 
 } // namespace Model

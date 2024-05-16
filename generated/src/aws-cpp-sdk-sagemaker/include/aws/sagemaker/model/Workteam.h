@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/NotificationConfiguration.h>
+#include <aws/sagemaker/model/WorkerAccessConfiguration.h>
 #include <aws/sagemaker/model/MemberDefinition.h>
 #include <utility>
 
@@ -479,6 +480,43 @@ namespace Model
      */
     inline Workteam& WithNotificationConfiguration(NotificationConfiguration&& value) { SetNotificationConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Describes any access constraints that have been defined for Amazon S3
+     * resources.</p>
+     */
+    inline const WorkerAccessConfiguration& GetWorkerAccessConfiguration() const{ return m_workerAccessConfiguration; }
+
+    /**
+     * <p>Describes any access constraints that have been defined for Amazon S3
+     * resources.</p>
+     */
+    inline bool WorkerAccessConfigurationHasBeenSet() const { return m_workerAccessConfigurationHasBeenSet; }
+
+    /**
+     * <p>Describes any access constraints that have been defined for Amazon S3
+     * resources.</p>
+     */
+    inline void SetWorkerAccessConfiguration(const WorkerAccessConfiguration& value) { m_workerAccessConfigurationHasBeenSet = true; m_workerAccessConfiguration = value; }
+
+    /**
+     * <p>Describes any access constraints that have been defined for Amazon S3
+     * resources.</p>
+     */
+    inline void SetWorkerAccessConfiguration(WorkerAccessConfiguration&& value) { m_workerAccessConfigurationHasBeenSet = true; m_workerAccessConfiguration = std::move(value); }
+
+    /**
+     * <p>Describes any access constraints that have been defined for Amazon S3
+     * resources.</p>
+     */
+    inline Workteam& WithWorkerAccessConfiguration(const WorkerAccessConfiguration& value) { SetWorkerAccessConfiguration(value); return *this;}
+
+    /**
+     * <p>Describes any access constraints that have been defined for Amazon S3
+     * resources.</p>
+     */
+    inline Workteam& WithWorkerAccessConfiguration(WorkerAccessConfiguration&& value) { SetWorkerAccessConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_workteamName;
@@ -510,6 +548,9 @@ namespace Model
 
     NotificationConfiguration m_notificationConfiguration;
     bool m_notificationConfigurationHasBeenSet = false;
+
+    WorkerAccessConfiguration m_workerAccessConfiguration;
+    bool m_workerAccessConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

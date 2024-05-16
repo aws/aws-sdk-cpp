@@ -29,15 +29,9 @@ CreateWebLoginTokenResult::CreateWebLoginTokenResult(const Aws::AmazonWebService
 CreateWebLoginTokenResult& CreateWebLoginTokenResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("AirflowIdentity"))
+  if(jsonValue.ValueExists("WebToken"))
   {
-    m_airflowIdentity = jsonValue.GetString("AirflowIdentity");
-
-  }
-
-  if(jsonValue.ValueExists("IamIdentity"))
-  {
-    m_iamIdentity = jsonValue.GetString("IamIdentity");
+    m_webToken = jsonValue.GetString("WebToken");
 
   }
 
@@ -47,9 +41,15 @@ CreateWebLoginTokenResult& CreateWebLoginTokenResult::operator =(const Aws::Amaz
 
   }
 
-  if(jsonValue.ValueExists("WebToken"))
+  if(jsonValue.ValueExists("IamIdentity"))
   {
-    m_webToken = jsonValue.GetString("WebToken");
+    m_iamIdentity = jsonValue.GetString("IamIdentity");
+
+  }
+
+  if(jsonValue.ValueExists("AirflowIdentity"))
+  {
+    m_airflowIdentity = jsonValue.GetString("AirflowIdentity");
 
   }
 

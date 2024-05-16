@@ -49,7 +49,7 @@ namespace Model
      * <code>DisconnectReason</code> in the contact record. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
-     * in the <i>Amazon Connect Administrator's Guide</i>. </p>
+     * in the <i>Amazon Connect Administrator Guide</i>. </p>
      */
     inline const Aws::String& GetMetricFilterKey() const{ return m_metricFilterKey; }
 
@@ -60,7 +60,7 @@ namespace Model
      * <code>DisconnectReason</code> in the contact record. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
-     * in the <i>Amazon Connect Administrator's Guide</i>. </p>
+     * in the <i>Amazon Connect Administrator Guide</i>. </p>
      */
     inline bool MetricFilterKeyHasBeenSet() const { return m_metricFilterKeyHasBeenSet; }
 
@@ -71,7 +71,7 @@ namespace Model
      * <code>DisconnectReason</code> in the contact record. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
-     * in the <i>Amazon Connect Administrator's Guide</i>. </p>
+     * in the <i>Amazon Connect Administrator Guide</i>. </p>
      */
     inline void SetMetricFilterKey(const Aws::String& value) { m_metricFilterKeyHasBeenSet = true; m_metricFilterKey = value; }
 
@@ -82,7 +82,7 @@ namespace Model
      * <code>DisconnectReason</code> in the contact record. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
-     * in the <i>Amazon Connect Administrator's Guide</i>. </p>
+     * in the <i>Amazon Connect Administrator Guide</i>. </p>
      */
     inline void SetMetricFilterKey(Aws::String&& value) { m_metricFilterKeyHasBeenSet = true; m_metricFilterKey = std::move(value); }
 
@@ -93,7 +93,7 @@ namespace Model
      * <code>DisconnectReason</code> in the contact record. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
-     * in the <i>Amazon Connect Administrator's Guide</i>. </p>
+     * in the <i>Amazon Connect Administrator Guide</i>. </p>
      */
     inline void SetMetricFilterKey(const char* value) { m_metricFilterKeyHasBeenSet = true; m_metricFilterKey.assign(value); }
 
@@ -104,7 +104,7 @@ namespace Model
      * <code>DisconnectReason</code> in the contact record. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
-     * in the <i>Amazon Connect Administrator's Guide</i>. </p>
+     * in the <i>Amazon Connect Administrator Guide</i>. </p>
      */
     inline MetricFilterV2& WithMetricFilterKey(const Aws::String& value) { SetMetricFilterKey(value); return *this;}
 
@@ -115,7 +115,7 @@ namespace Model
      * <code>DisconnectReason</code> in the contact record. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
-     * in the <i>Amazon Connect Administrator's Guide</i>. </p>
+     * in the <i>Amazon Connect Administrator Guide</i>. </p>
      */
     inline MetricFilterV2& WithMetricFilterKey(Aws::String&& value) { SetMetricFilterKey(std::move(value)); return *this;}
 
@@ -126,7 +126,7 @@ namespace Model
      * <code>DisconnectReason</code> in the contact record. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
-     * in the <i>Amazon Connect Administrator's Guide</i>. </p>
+     * in the <i>Amazon Connect Administrator Guide</i>. </p>
      */
     inline MetricFilterV2& WithMetricFilterKey(const char* value) { SetMetricFilterKey(value); return *this;}
 
