@@ -673,28 +673,28 @@ namespace Model
 
 
     /**
-     * <p>The replacement value in minutes, from 5 to 480 (8 hours), for CodeBuild to
+     * <p>The replacement value in minutes, from 5 to 2160 (36 hours), for CodeBuild to
      * wait before timing out any related build that did not get marked as
      * completed.</p>
      */
     inline int GetTimeoutInMinutes() const{ return m_timeoutInMinutes; }
 
     /**
-     * <p>The replacement value in minutes, from 5 to 480 (8 hours), for CodeBuild to
+     * <p>The replacement value in minutes, from 5 to 2160 (36 hours), for CodeBuild to
      * wait before timing out any related build that did not get marked as
      * completed.</p>
      */
     inline bool TimeoutInMinutesHasBeenSet() const { return m_timeoutInMinutesHasBeenSet; }
 
     /**
-     * <p>The replacement value in minutes, from 5 to 480 (8 hours), for CodeBuild to
+     * <p>The replacement value in minutes, from 5 to 2160 (36 hours), for CodeBuild to
      * wait before timing out any related build that did not get marked as
      * completed.</p>
      */
     inline void SetTimeoutInMinutes(int value) { m_timeoutInMinutesHasBeenSet = true; m_timeoutInMinutes = value; }
 
     /**
-     * <p>The replacement value in minutes, from 5 to 480 (8 hours), for CodeBuild to
+     * <p>The replacement value in minutes, from 5 to 2160 (36 hours), for CodeBuild to
      * wait before timing out any related build that did not get marked as
      * completed.</p>
      */

@@ -92,38 +92,44 @@ namespace Model
 
 
     /**
-     * <p>Specifies the domain of the storage system that is used for file
-     * transfers.</p>
+     * <p>Specifies the domain of the storage system that is used for file transfers.
+     * There are two domains available: Amazon Simple Storage Service (Amazon S3) and
+     * Amazon Elastic File System (Amazon EFS). The default value is S3.</p>
      */
     inline const Domain& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>Specifies the domain of the storage system that is used for file
-     * transfers.</p>
+     * <p>Specifies the domain of the storage system that is used for file transfers.
+     * There are two domains available: Amazon Simple Storage Service (Amazon S3) and
+     * Amazon Elastic File System (Amazon EFS). The default value is S3.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
-     * <p>Specifies the domain of the storage system that is used for file
-     * transfers.</p>
+     * <p>Specifies the domain of the storage system that is used for file transfers.
+     * There are two domains available: Amazon Simple Storage Service (Amazon S3) and
+     * Amazon Elastic File System (Amazon EFS). The default value is S3.</p>
      */
     inline void SetDomain(const Domain& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * <p>Specifies the domain of the storage system that is used for file
-     * transfers.</p>
+     * <p>Specifies the domain of the storage system that is used for file transfers.
+     * There are two domains available: Amazon Simple Storage Service (Amazon S3) and
+     * Amazon Elastic File System (Amazon EFS). The default value is S3.</p>
      */
     inline void SetDomain(Domain&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
-     * <p>Specifies the domain of the storage system that is used for file
-     * transfers.</p>
+     * <p>Specifies the domain of the storage system that is used for file transfers.
+     * There are two domains available: Amazon Simple Storage Service (Amazon S3) and
+     * Amazon Elastic File System (Amazon EFS). The default value is S3.</p>
      */
     inline ListedServer& WithDomain(const Domain& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>Specifies the domain of the storage system that is used for file
-     * transfers.</p>
+     * <p>Specifies the domain of the storage system that is used for file transfers.
+     * There are two domains available: Amazon Simple Storage Service (Amazon S3) and
+     * Amazon Elastic File System (Amazon EFS). The default value is S3.</p>
      */
     inline ListedServer& WithDomain(Domain&& value) { SetDomain(std::move(value)); return *this;}
 

@@ -649,6 +649,31 @@ namespace LakeFormation
         }
 
         /**
+         * <p>Returns the identity of the invoking principal.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetDataLakePrincipal">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDataLakePrincipalOutcome GetDataLakePrincipal(const Model::GetDataLakePrincipalRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDataLakePrincipal that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetDataLakePrincipalRequestT = Model::GetDataLakePrincipalRequest>
+        Model::GetDataLakePrincipalOutcomeCallable GetDataLakePrincipalCallable(const GetDataLakePrincipalRequestT& request) const
+        {
+            return SubmitCallable(&LakeFormationClient::GetDataLakePrincipal, request);
+        }
+
+        /**
+         * An Async wrapper for GetDataLakePrincipal that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetDataLakePrincipalRequestT = Model::GetDataLakePrincipalRequest>
+        void GetDataLakePrincipalAsync(const GetDataLakePrincipalRequestT& request, const GetDataLakePrincipalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LakeFormationClient::GetDataLakePrincipal, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves the list of the data lake administrators of a Lake
          * Formation-managed data lake. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetDataLakeSettings">AWS

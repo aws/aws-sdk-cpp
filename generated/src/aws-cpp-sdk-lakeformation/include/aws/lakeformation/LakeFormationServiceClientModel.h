@@ -39,6 +39,7 @@
 #include <aws/lakeformation/model/DescribeTransactionResult.h>
 #include <aws/lakeformation/model/ExtendTransactionResult.h>
 #include <aws/lakeformation/model/GetDataCellsFilterResult.h>
+#include <aws/lakeformation/model/GetDataLakePrincipalResult.h>
 #include <aws/lakeformation/model/GetDataLakeSettingsResult.h>
 #include <aws/lakeformation/model/GetEffectivePermissionsForPathResult.h>
 #include <aws/lakeformation/model/GetLFTagResult.h>
@@ -133,6 +134,7 @@ namespace Aws
       class DescribeTransactionRequest;
       class ExtendTransactionRequest;
       class GetDataCellsFilterRequest;
+      class GetDataLakePrincipalRequest;
       class GetDataLakeSettingsRequest;
       class GetEffectivePermissionsForPathRequest;
       class GetLFTagRequest;
@@ -190,6 +192,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeTransactionResult, LakeFormationError> DescribeTransactionOutcome;
       typedef Aws::Utils::Outcome<ExtendTransactionResult, LakeFormationError> ExtendTransactionOutcome;
       typedef Aws::Utils::Outcome<GetDataCellsFilterResult, LakeFormationError> GetDataCellsFilterOutcome;
+      typedef Aws::Utils::Outcome<GetDataLakePrincipalResult, LakeFormationError> GetDataLakePrincipalOutcome;
       typedef Aws::Utils::Outcome<GetDataLakeSettingsResult, LakeFormationError> GetDataLakeSettingsOutcome;
       typedef Aws::Utils::Outcome<GetEffectivePermissionsForPathResult, LakeFormationError> GetEffectivePermissionsForPathOutcome;
       typedef Aws::Utils::Outcome<GetLFTagResult, LakeFormationError> GetLFTagOutcome;
@@ -247,6 +250,7 @@ namespace Aws
       typedef std::future<DescribeTransactionOutcome> DescribeTransactionOutcomeCallable;
       typedef std::future<ExtendTransactionOutcome> ExtendTransactionOutcomeCallable;
       typedef std::future<GetDataCellsFilterOutcome> GetDataCellsFilterOutcomeCallable;
+      typedef std::future<GetDataLakePrincipalOutcome> GetDataLakePrincipalOutcomeCallable;
       typedef std::future<GetDataLakeSettingsOutcome> GetDataLakeSettingsOutcomeCallable;
       typedef std::future<GetEffectivePermissionsForPathOutcome> GetEffectivePermissionsForPathOutcomeCallable;
       typedef std::future<GetLFTagOutcome> GetLFTagOutcomeCallable;
@@ -307,6 +311,7 @@ namespace Aws
     typedef std::function<void(const LakeFormationClient*, const Model::DescribeTransactionRequest&, const Model::DescribeTransactionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTransactionResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::ExtendTransactionRequest&, const Model::ExtendTransactionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExtendTransactionResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::GetDataCellsFilterRequest&, const Model::GetDataCellsFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataCellsFilterResponseReceivedHandler;
+    typedef std::function<void(const LakeFormationClient*, const Model::GetDataLakePrincipalRequest&, const Model::GetDataLakePrincipalOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataLakePrincipalResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::GetDataLakeSettingsRequest&, const Model::GetDataLakeSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataLakeSettingsResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::GetEffectivePermissionsForPathRequest&, const Model::GetEffectivePermissionsForPathOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEffectivePermissionsForPathResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::GetLFTagRequest&, const Model::GetLFTagOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLFTagResponseReceivedHandler;

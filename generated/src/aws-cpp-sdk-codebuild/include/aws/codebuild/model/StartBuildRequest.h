@@ -1296,29 +1296,29 @@ namespace Model
 
 
     /**
-     * <p>The number of build timeout minutes, from 5 to 480 (8 hours), that overrides,
-     * for this build only, the latest setting already defined in the build
+     * <p>The number of build timeout minutes, from 5 to 2160 (36 hours), that
+     * overrides, for this build only, the latest setting already defined in the build
      * project.</p>
      */
     inline int GetTimeoutInMinutesOverride() const{ return m_timeoutInMinutesOverride; }
 
     /**
-     * <p>The number of build timeout minutes, from 5 to 480 (8 hours), that overrides,
-     * for this build only, the latest setting already defined in the build
+     * <p>The number of build timeout minutes, from 5 to 2160 (36 hours), that
+     * overrides, for this build only, the latest setting already defined in the build
      * project.</p>
      */
     inline bool TimeoutInMinutesOverrideHasBeenSet() const { return m_timeoutInMinutesOverrideHasBeenSet; }
 
     /**
-     * <p>The number of build timeout minutes, from 5 to 480 (8 hours), that overrides,
-     * for this build only, the latest setting already defined in the build
+     * <p>The number of build timeout minutes, from 5 to 2160 (36 hours), that
+     * overrides, for this build only, the latest setting already defined in the build
      * project.</p>
      */
     inline void SetTimeoutInMinutesOverride(int value) { m_timeoutInMinutesOverrideHasBeenSet = true; m_timeoutInMinutesOverride = value; }
 
     /**
-     * <p>The number of build timeout minutes, from 5 to 480 (8 hours), that overrides,
-     * for this build only, the latest setting already defined in the build
+     * <p>The number of build timeout minutes, from 5 to 2160 (36 hours), that
+     * overrides, for this build only, the latest setting already defined in the build
      * project.</p>
      */
     inline StartBuildRequest& WithTimeoutInMinutesOverride(int value) { SetTimeoutInMinutesOverride(value); return *this;}
