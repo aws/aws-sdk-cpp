@@ -107,8 +107,8 @@ Aws::String ComputeUserAgentString(ClientConfiguration const * const pConfig)
     ss << " exec-env/" << FilterUserAgentToken(awsExecEnv.c_str());
   }
 
-  const Aws::String& profile = pConfig ? pConfig->profileName : "default";
-  Aws::String appId = ClientConfiguration::LoadConfigFromEnvOrProfile("AWS_SDK_UA_APP_ID", profile, "sdk_ua_app_id", {}, "");
+  const Aws::String& appId = pConfig ? pConfig->appId :
+          ClientConfiguration::LoadConfigFromEnvOrProfile("AWS_SDK_UA_APP_ID", "default", "sdk_ua_app_id", {}, "");
   if(!appId.empty())
   {
     ss << " app/" << appId;
@@ -141,11 +141,14 @@ void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
     clientConfig.enableClockSkewAdjustment = true;
     clientConfig.enableHostPrefixInjection = true;
     clientConfig.enableHttpClientTrace = false;
-    clientConfig.profileName = Aws::Auth::GetConfigProfileName();
+    if (clientConfig.profileName.empty())
+    {
+        clientConfig.profileName = Aws::Auth::GetConfigProfileName();
+    }
 
     Aws::String disableCompressionConfig = clientConfig.LoadConfigFromEnvOrProfile(
         DISABLE_REQUEST_COMPRESSION_ENV_VAR,
-        Aws::Auth::GetConfigProfileName(),
+        clientConfig.profileName,
         DISABLE_REQUEST_COMPRESSION_CONFIG_VAR,
         {"TRUE", "FALSE", "true", "false"},
         "false"
@@ -206,6 +209,14 @@ void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
             client->SetEndpoint(ec2MetadataServiceEndpoint);
         }
     }
+
+    clientConfig.appId = clientConfig.LoadConfigFromEnvOrProfile(
+            "AWS_SDK_UA_APP_ID",
+            clientConfig.profileName,
+            "sdk_ua_app_id",
+            {},
+            ""
+    );
 }
 
 void setConfigFromEnvOrProfile(ClientConfiguration &config)
@@ -271,6 +282,9 @@ ClientConfiguration::ClientConfiguration(const ClientConfigurationInitValues &co
 ClientConfiguration::ClientConfiguration(const char* profile, bool shouldDisableIMDS)
 {
     this->disableIMDS = shouldDisableIMDS;
+    if (profile && Aws::Config::HasCachedConfigProfile(profile)) {
+        this->profileName = Aws::String(profile);
+    }
     setLegacyClientConfigurationParameters(*this);
     // Call EC2 Instance Metadata service only once
     Aws::String ec2MetadataRegion;
@@ -293,7 +307,6 @@ ClientConfiguration::ClientConfiguration(const char* profile, bool shouldDisable
     }
 
     if (profile && Aws::Config::HasCachedConfigProfile(profile)) {
-        this->profileName = Aws::String(profile);
         AWS_LOGSTREAM_DEBUG(CLIENT_CONFIG_TAG,
                             "Use user specified profile: [" << this->profileName << "] for ClientConfiguration.");
         auto tmpRegion = Aws::Config::GetCachedConfigProfile(this->profileName).GetRegion();
