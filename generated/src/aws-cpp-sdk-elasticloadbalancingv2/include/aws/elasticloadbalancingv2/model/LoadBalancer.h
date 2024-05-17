@@ -513,44 +513,80 @@ namespace Model
 
 
     /**
-     * <p>The type of IP addresses used by the subnets for your load balancer. The
-     * possible values are <code>ipv4</code> (for IPv4 addresses) and
-     * <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
+     * <p>[Application Load Balancers] The type of IP addresses used for public or
+     * private connections by the subnets attached to your load balancer. The possible
+     * values are <code>ipv4</code> (for only IPv4 addresses), <code>dualstack</code>
+     * (for IPv4 and IPv6 addresses), and <code>dualstack-without-public-ipv4</code>
+     * (for IPv6 only public addresses, with private IPv4 and IPv6 addresses).</p>
+     * <p>[Network Load Balancers and Gateway Load Balancers] The type of IP addresses
+     * used for public or private connections by the subnets attached to your load
+     * balancer. The possible values are <code>ipv4</code> (for only IPv4 addresses)
+     * and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
      */
     inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
 
     /**
-     * <p>The type of IP addresses used by the subnets for your load balancer. The
-     * possible values are <code>ipv4</code> (for IPv4 addresses) and
-     * <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
+     * <p>[Application Load Balancers] The type of IP addresses used for public or
+     * private connections by the subnets attached to your load balancer. The possible
+     * values are <code>ipv4</code> (for only IPv4 addresses), <code>dualstack</code>
+     * (for IPv4 and IPv6 addresses), and <code>dualstack-without-public-ipv4</code>
+     * (for IPv6 only public addresses, with private IPv4 and IPv6 addresses).</p>
+     * <p>[Network Load Balancers and Gateway Load Balancers] The type of IP addresses
+     * used for public or private connections by the subnets attached to your load
+     * balancer. The possible values are <code>ipv4</code> (for only IPv4 addresses)
+     * and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
      */
     inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
 
     /**
-     * <p>The type of IP addresses used by the subnets for your load balancer. The
-     * possible values are <code>ipv4</code> (for IPv4 addresses) and
-     * <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
+     * <p>[Application Load Balancers] The type of IP addresses used for public or
+     * private connections by the subnets attached to your load balancer. The possible
+     * values are <code>ipv4</code> (for only IPv4 addresses), <code>dualstack</code>
+     * (for IPv4 and IPv6 addresses), and <code>dualstack-without-public-ipv4</code>
+     * (for IPv6 only public addresses, with private IPv4 and IPv6 addresses).</p>
+     * <p>[Network Load Balancers and Gateway Load Balancers] The type of IP addresses
+     * used for public or private connections by the subnets attached to your load
+     * balancer. The possible values are <code>ipv4</code> (for only IPv4 addresses)
+     * and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
      */
     inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
 
     /**
-     * <p>The type of IP addresses used by the subnets for your load balancer. The
-     * possible values are <code>ipv4</code> (for IPv4 addresses) and
-     * <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
+     * <p>[Application Load Balancers] The type of IP addresses used for public or
+     * private connections by the subnets attached to your load balancer. The possible
+     * values are <code>ipv4</code> (for only IPv4 addresses), <code>dualstack</code>
+     * (for IPv4 and IPv6 addresses), and <code>dualstack-without-public-ipv4</code>
+     * (for IPv6 only public addresses, with private IPv4 and IPv6 addresses).</p>
+     * <p>[Network Load Balancers and Gateway Load Balancers] The type of IP addresses
+     * used for public or private connections by the subnets attached to your load
+     * balancer. The possible values are <code>ipv4</code> (for only IPv4 addresses)
+     * and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
      */
     inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
 
     /**
-     * <p>The type of IP addresses used by the subnets for your load balancer. The
-     * possible values are <code>ipv4</code> (for IPv4 addresses) and
-     * <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
+     * <p>[Application Load Balancers] The type of IP addresses used for public or
+     * private connections by the subnets attached to your load balancer. The possible
+     * values are <code>ipv4</code> (for only IPv4 addresses), <code>dualstack</code>
+     * (for IPv4 and IPv6 addresses), and <code>dualstack-without-public-ipv4</code>
+     * (for IPv6 only public addresses, with private IPv4 and IPv6 addresses).</p>
+     * <p>[Network Load Balancers and Gateway Load Balancers] The type of IP addresses
+     * used for public or private connections by the subnets attached to your load
+     * balancer. The possible values are <code>ipv4</code> (for only IPv4 addresses)
+     * and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
      */
     inline LoadBalancer& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
 
     /**
-     * <p>The type of IP addresses used by the subnets for your load balancer. The
-     * possible values are <code>ipv4</code> (for IPv4 addresses) and
-     * <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
+     * <p>[Application Load Balancers] The type of IP addresses used for public or
+     * private connections by the subnets attached to your load balancer. The possible
+     * values are <code>ipv4</code> (for only IPv4 addresses), <code>dualstack</code>
+     * (for IPv4 and IPv6 addresses), and <code>dualstack-without-public-ipv4</code>
+     * (for IPv6 only public addresses, with private IPv4 and IPv6 addresses).</p>
+     * <p>[Network Load Balancers and Gateway Load Balancers] The type of IP addresses
+     * used for public or private connections by the subnets attached to your load
+     * balancer. The possible values are <code>ipv4</code> (for only IPv4 addresses)
+     * and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
      */
     inline LoadBalancer& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
 

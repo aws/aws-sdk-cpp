@@ -639,28 +639,28 @@ namespace Model
 
 
     /**
-     * <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before
+     * <p>How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before
      * it times out any build that has not been marked as completed. The default is 60
      * minutes.</p>
      */
     inline int GetTimeoutInMinutes() const{ return m_timeoutInMinutes; }
 
     /**
-     * <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before
+     * <p>How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before
      * it times out any build that has not been marked as completed. The default is 60
      * minutes.</p>
      */
     inline bool TimeoutInMinutesHasBeenSet() const { return m_timeoutInMinutesHasBeenSet; }
 
     /**
-     * <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before
+     * <p>How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before
      * it times out any build that has not been marked as completed. The default is 60
      * minutes.</p>
      */
     inline void SetTimeoutInMinutes(int value) { m_timeoutInMinutesHasBeenSet = true; m_timeoutInMinutes = value; }
 
     /**
-     * <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before
+     * <p>How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before
      * it times out any build that has not been marked as completed. The default is 60
      * minutes.</p>
      */
