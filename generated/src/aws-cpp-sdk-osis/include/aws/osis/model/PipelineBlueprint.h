@@ -119,6 +119,170 @@ namespace Model
      */
     inline PipelineBlueprint& WithPipelineConfigurationBody(const char* value) { SetPipelineConfigurationBody(value); return *this;}
 
+
+    /**
+     * <p>The display name of the blueprint.</p>
+     */
+    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
+    /**
+     * <p>The display name of the blueprint.</p>
+     */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+
+    /**
+     * <p>The display name of the blueprint.</p>
+     */
+    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+
+    /**
+     * <p>The display name of the blueprint.</p>
+     */
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
+
+    /**
+     * <p>The display name of the blueprint.</p>
+     */
+    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
+
+    /**
+     * <p>The display name of the blueprint.</p>
+     */
+    inline PipelineBlueprint& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
+
+    /**
+     * <p>The display name of the blueprint.</p>
+     */
+    inline PipelineBlueprint& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
+
+    /**
+     * <p>The display name of the blueprint.</p>
+     */
+    inline PipelineBlueprint& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+
+
+    /**
+     * <p>A description of the blueprint.</p>
+     */
+    inline const Aws::String& GetDisplayDescription() const{ return m_displayDescription; }
+
+    /**
+     * <p>A description of the blueprint.</p>
+     */
+    inline bool DisplayDescriptionHasBeenSet() const { return m_displayDescriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the blueprint.</p>
+     */
+    inline void SetDisplayDescription(const Aws::String& value) { m_displayDescriptionHasBeenSet = true; m_displayDescription = value; }
+
+    /**
+     * <p>A description of the blueprint.</p>
+     */
+    inline void SetDisplayDescription(Aws::String&& value) { m_displayDescriptionHasBeenSet = true; m_displayDescription = std::move(value); }
+
+    /**
+     * <p>A description of the blueprint.</p>
+     */
+    inline void SetDisplayDescription(const char* value) { m_displayDescriptionHasBeenSet = true; m_displayDescription.assign(value); }
+
+    /**
+     * <p>A description of the blueprint.</p>
+     */
+    inline PipelineBlueprint& WithDisplayDescription(const Aws::String& value) { SetDisplayDescription(value); return *this;}
+
+    /**
+     * <p>A description of the blueprint.</p>
+     */
+    inline PipelineBlueprint& WithDisplayDescription(Aws::String&& value) { SetDisplayDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>A description of the blueprint.</p>
+     */
+    inline PipelineBlueprint& WithDisplayDescription(const char* value) { SetDisplayDescription(value); return *this;}
+
+
+    /**
+     * <p>The name of the service that the blueprint is associated with.</p>
+     */
+    inline const Aws::String& GetService() const{ return m_service; }
+
+    /**
+     * <p>The name of the service that the blueprint is associated with.</p>
+     */
+    inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
+
+    /**
+     * <p>The name of the service that the blueprint is associated with.</p>
+     */
+    inline void SetService(const Aws::String& value) { m_serviceHasBeenSet = true; m_service = value; }
+
+    /**
+     * <p>The name of the service that the blueprint is associated with.</p>
+     */
+    inline void SetService(Aws::String&& value) { m_serviceHasBeenSet = true; m_service = std::move(value); }
+
+    /**
+     * <p>The name of the service that the blueprint is associated with.</p>
+     */
+    inline void SetService(const char* value) { m_serviceHasBeenSet = true; m_service.assign(value); }
+
+    /**
+     * <p>The name of the service that the blueprint is associated with.</p>
+     */
+    inline PipelineBlueprint& WithService(const Aws::String& value) { SetService(value); return *this;}
+
+    /**
+     * <p>The name of the service that the blueprint is associated with.</p>
+     */
+    inline PipelineBlueprint& WithService(Aws::String&& value) { SetService(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the service that the blueprint is associated with.</p>
+     */
+    inline PipelineBlueprint& WithService(const char* value) { SetService(value); return *this;}
+
+
+    /**
+     * <p>The use case that the blueprint relates to.</p>
+     */
+    inline const Aws::String& GetUseCase() const{ return m_useCase; }
+
+    /**
+     * <p>The use case that the blueprint relates to.</p>
+     */
+    inline bool UseCaseHasBeenSet() const { return m_useCaseHasBeenSet; }
+
+    /**
+     * <p>The use case that the blueprint relates to.</p>
+     */
+    inline void SetUseCase(const Aws::String& value) { m_useCaseHasBeenSet = true; m_useCase = value; }
+
+    /**
+     * <p>The use case that the blueprint relates to.</p>
+     */
+    inline void SetUseCase(Aws::String&& value) { m_useCaseHasBeenSet = true; m_useCase = std::move(value); }
+
+    /**
+     * <p>The use case that the blueprint relates to.</p>
+     */
+    inline void SetUseCase(const char* value) { m_useCaseHasBeenSet = true; m_useCase.assign(value); }
+
+    /**
+     * <p>The use case that the blueprint relates to.</p>
+     */
+    inline PipelineBlueprint& WithUseCase(const Aws::String& value) { SetUseCase(value); return *this;}
+
+    /**
+     * <p>The use case that the blueprint relates to.</p>
+     */
+    inline PipelineBlueprint& WithUseCase(Aws::String&& value) { SetUseCase(std::move(value)); return *this;}
+
+    /**
+     * <p>The use case that the blueprint relates to.</p>
+     */
+    inline PipelineBlueprint& WithUseCase(const char* value) { SetUseCase(value); return *this;}
+
   private:
 
     Aws::String m_blueprintName;
@@ -126,6 +290,18 @@ namespace Model
 
     Aws::String m_pipelineConfigurationBody;
     bool m_pipelineConfigurationBodyHasBeenSet = false;
+
+    Aws::String m_displayName;
+    bool m_displayNameHasBeenSet = false;
+
+    Aws::String m_displayDescription;
+    bool m_displayDescriptionHasBeenSet = false;
+
+    Aws::String m_service;
+    bool m_serviceHasBeenSet = false;
+
+    Aws::String m_useCase;
+    bool m_useCaseHasBeenSet = false;
   };
 
 } // namespace Model

@@ -45,92 +45,92 @@ namespace Model
   public:
 
     /**
-     * <p>A list of Availability Zones (AZs) where DB instances in the DB cluster can
-     * be created.</p> <p>For information on Amazon Web Services Regions and
-     * Availability Zones, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing
-     * the Regions and Availability Zones</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p>Valid for Cluster Type: Aurora DB clusters only</p>
+     * <p>A list of Availability Zones (AZs) where you specifically want to create DB
+     * instances in the DB cluster.</p> <p>For information on AZs, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html#Concepts.RegionsAndAvailabilityZones.AvailabilityZones">Availability
+     * Zones</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for Cluster Type:
+     * Aurora DB clusters only</p> <p>Constraints:</p> <ul> <li> <p>Can't specify more
+     * than three AZs.</p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
 
     /**
-     * <p>A list of Availability Zones (AZs) where DB instances in the DB cluster can
-     * be created.</p> <p>For information on Amazon Web Services Regions and
-     * Availability Zones, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing
-     * the Regions and Availability Zones</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p>Valid for Cluster Type: Aurora DB clusters only</p>
+     * <p>A list of Availability Zones (AZs) where you specifically want to create DB
+     * instances in the DB cluster.</p> <p>For information on AZs, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html#Concepts.RegionsAndAvailabilityZones.AvailabilityZones">Availability
+     * Zones</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for Cluster Type:
+     * Aurora DB clusters only</p> <p>Constraints:</p> <ul> <li> <p>Can't specify more
+     * than three AZs.</p> </li> </ul>
      */
     inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
 
     /**
-     * <p>A list of Availability Zones (AZs) where DB instances in the DB cluster can
-     * be created.</p> <p>For information on Amazon Web Services Regions and
-     * Availability Zones, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing
-     * the Regions and Availability Zones</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p>Valid for Cluster Type: Aurora DB clusters only</p>
+     * <p>A list of Availability Zones (AZs) where you specifically want to create DB
+     * instances in the DB cluster.</p> <p>For information on AZs, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html#Concepts.RegionsAndAvailabilityZones.AvailabilityZones">Availability
+     * Zones</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for Cluster Type:
+     * Aurora DB clusters only</p> <p>Constraints:</p> <ul> <li> <p>Can't specify more
+     * than three AZs.</p> </li> </ul>
      */
     inline void SetAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
 
     /**
-     * <p>A list of Availability Zones (AZs) where DB instances in the DB cluster can
-     * be created.</p> <p>For information on Amazon Web Services Regions and
-     * Availability Zones, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing
-     * the Regions and Availability Zones</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p>Valid for Cluster Type: Aurora DB clusters only</p>
+     * <p>A list of Availability Zones (AZs) where you specifically want to create DB
+     * instances in the DB cluster.</p> <p>For information on AZs, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html#Concepts.RegionsAndAvailabilityZones.AvailabilityZones">Availability
+     * Zones</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for Cluster Type:
+     * Aurora DB clusters only</p> <p>Constraints:</p> <ul> <li> <p>Can't specify more
+     * than three AZs.</p> </li> </ul>
      */
     inline void SetAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
 
     /**
-     * <p>A list of Availability Zones (AZs) where DB instances in the DB cluster can
-     * be created.</p> <p>For information on Amazon Web Services Regions and
-     * Availability Zones, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing
-     * the Regions and Availability Zones</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p>Valid for Cluster Type: Aurora DB clusters only</p>
+     * <p>A list of Availability Zones (AZs) where you specifically want to create DB
+     * instances in the DB cluster.</p> <p>For information on AZs, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html#Concepts.RegionsAndAvailabilityZones.AvailabilityZones">Availability
+     * Zones</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for Cluster Type:
+     * Aurora DB clusters only</p> <p>Constraints:</p> <ul> <li> <p>Can't specify more
+     * than three AZs.</p> </li> </ul>
      */
     inline CreateDBClusterRequest& WithAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetAvailabilityZones(value); return *this;}
 
     /**
-     * <p>A list of Availability Zones (AZs) where DB instances in the DB cluster can
-     * be created.</p> <p>For information on Amazon Web Services Regions and
-     * Availability Zones, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing
-     * the Regions and Availability Zones</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p>Valid for Cluster Type: Aurora DB clusters only</p>
+     * <p>A list of Availability Zones (AZs) where you specifically want to create DB
+     * instances in the DB cluster.</p> <p>For information on AZs, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html#Concepts.RegionsAndAvailabilityZones.AvailabilityZones">Availability
+     * Zones</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for Cluster Type:
+     * Aurora DB clusters only</p> <p>Constraints:</p> <ul> <li> <p>Can't specify more
+     * than three AZs.</p> </li> </ul>
      */
     inline CreateDBClusterRequest& WithAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
 
     /**
-     * <p>A list of Availability Zones (AZs) where DB instances in the DB cluster can
-     * be created.</p> <p>For information on Amazon Web Services Regions and
-     * Availability Zones, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing
-     * the Regions and Availability Zones</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p>Valid for Cluster Type: Aurora DB clusters only</p>
+     * <p>A list of Availability Zones (AZs) where you specifically want to create DB
+     * instances in the DB cluster.</p> <p>For information on AZs, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html#Concepts.RegionsAndAvailabilityZones.AvailabilityZones">Availability
+     * Zones</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for Cluster Type:
+     * Aurora DB clusters only</p> <p>Constraints:</p> <ul> <li> <p>Can't specify more
+     * than three AZs.</p> </li> </ul>
      */
     inline CreateDBClusterRequest& AddAvailabilityZones(const Aws::String& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
     /**
-     * <p>A list of Availability Zones (AZs) where DB instances in the DB cluster can
-     * be created.</p> <p>For information on Amazon Web Services Regions and
-     * Availability Zones, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing
-     * the Regions and Availability Zones</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p>Valid for Cluster Type: Aurora DB clusters only</p>
+     * <p>A list of Availability Zones (AZs) where you specifically want to create DB
+     * instances in the DB cluster.</p> <p>For information on AZs, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html#Concepts.RegionsAndAvailabilityZones.AvailabilityZones">Availability
+     * Zones</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for Cluster Type:
+     * Aurora DB clusters only</p> <p>Constraints:</p> <ul> <li> <p>Can't specify more
+     * than three AZs.</p> </li> </ul>
      */
     inline CreateDBClusterRequest& AddAvailabilityZones(Aws::String&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of Availability Zones (AZs) where DB instances in the DB cluster can
-     * be created.</p> <p>For information on Amazon Web Services Regions and
-     * Availability Zones, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing
-     * the Regions and Availability Zones</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p>Valid for Cluster Type: Aurora DB clusters only</p>
+     * <p>A list of Availability Zones (AZs) where you specifically want to create DB
+     * instances in the DB cluster.</p> <p>For information on AZs, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html#Concepts.RegionsAndAvailabilityZones.AvailabilityZones">Availability
+     * Zones</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for Cluster Type:
+     * Aurora DB clusters only</p> <p>Constraints:</p> <ul> <li> <p>Can't specify more
+     * than three AZs.</p> </li> </ul>
      */
     inline CreateDBClusterRequest& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
@@ -590,57 +590,97 @@ namespace Model
 
     /**
      * <p>The database engine to use for this DB cluster.</p> <p>Valid for Cluster
-     * Type: Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid Values:
-     * <code>aurora-mysql | aurora-postgresql | mysql | postgres</code> </p>
+     * Type: Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid Values:</p> <ul>
+     * <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mysql</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>neptune</code> - For
+     * information about using Amazon Neptune, see the <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/intro.html">
+     * <i>Amazon Neptune User Guide</i> </a>.</p> </li> </ul>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
      * <p>The database engine to use for this DB cluster.</p> <p>Valid for Cluster
-     * Type: Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid Values:
-     * <code>aurora-mysql | aurora-postgresql | mysql | postgres</code> </p>
+     * Type: Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid Values:</p> <ul>
+     * <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mysql</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>neptune</code> - For
+     * information about using Amazon Neptune, see the <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/intro.html">
+     * <i>Amazon Neptune User Guide</i> </a>.</p> </li> </ul>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
      * <p>The database engine to use for this DB cluster.</p> <p>Valid for Cluster
-     * Type: Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid Values:
-     * <code>aurora-mysql | aurora-postgresql | mysql | postgres</code> </p>
+     * Type: Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid Values:</p> <ul>
+     * <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mysql</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>neptune</code> - For
+     * information about using Amazon Neptune, see the <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/intro.html">
+     * <i>Amazon Neptune User Guide</i> </a>.</p> </li> </ul>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
      * <p>The database engine to use for this DB cluster.</p> <p>Valid for Cluster
-     * Type: Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid Values:
-     * <code>aurora-mysql | aurora-postgresql | mysql | postgres</code> </p>
+     * Type: Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid Values:</p> <ul>
+     * <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mysql</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>neptune</code> - For
+     * information about using Amazon Neptune, see the <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/intro.html">
+     * <i>Amazon Neptune User Guide</i> </a>.</p> </li> </ul>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
      * <p>The database engine to use for this DB cluster.</p> <p>Valid for Cluster
-     * Type: Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid Values:
-     * <code>aurora-mysql | aurora-postgresql | mysql | postgres</code> </p>
+     * Type: Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid Values:</p> <ul>
+     * <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mysql</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>neptune</code> - For
+     * information about using Amazon Neptune, see the <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/intro.html">
+     * <i>Amazon Neptune User Guide</i> </a>.</p> </li> </ul>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
      * <p>The database engine to use for this DB cluster.</p> <p>Valid for Cluster
-     * Type: Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid Values:
-     * <code>aurora-mysql | aurora-postgresql | mysql | postgres</code> </p>
+     * Type: Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid Values:</p> <ul>
+     * <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mysql</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>neptune</code> - For
+     * information about using Amazon Neptune, see the <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/intro.html">
+     * <i>Amazon Neptune User Guide</i> </a>.</p> </li> </ul>
      */
     inline CreateDBClusterRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
      * <p>The database engine to use for this DB cluster.</p> <p>Valid for Cluster
-     * Type: Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid Values:
-     * <code>aurora-mysql | aurora-postgresql | mysql | postgres</code> </p>
+     * Type: Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid Values:</p> <ul>
+     * <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mysql</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>neptune</code> - For
+     * information about using Amazon Neptune, see the <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/intro.html">
+     * <i>Amazon Neptune User Guide</i> </a>.</p> </li> </ul>
      */
     inline CreateDBClusterRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
      * <p>The database engine to use for this DB cluster.</p> <p>Valid for Cluster
-     * Type: Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid Values:
-     * <code>aurora-mysql | aurora-postgresql | mysql | postgres</code> </p>
+     * Type: Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid Values:</p> <ul>
+     * <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mysql</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>neptune</code> - For
+     * information about using Amazon Neptune, see the <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/intro.html">
+     * <i>Amazon Neptune User Guide</i> </a>.</p> </li> </ul>
      */
     inline CreateDBClusterRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 
@@ -4187,6 +4227,199 @@ namespace Model
 
 
     /**
+     * <p>The life cycle type for this DB cluster.</p>  <p>By default, this value
+     * is set to <code>open-source-rds-extended-support</code>, which enrolls your DB
+     * cluster into Amazon RDS Extended Support. At the end of standard support, you
+     * can avoid charges for Extended Support by setting the value to
+     * <code>open-source-rds-extended-support-disabled</code>. In this case, creating
+     * the DB cluster will fail if the DB major version is past its end of standard
+     * support date.</p>  <p>You can use this setting to enroll your DB cluster
+     * into Amazon RDS Extended Support. With RDS Extended Support, you can run the
+     * selected major engine version on your DB cluster past the end of standard
+     * support for that engine version. For more information, see the following
+     * sections:</p> <ul> <li> <p>Amazon Aurora (PostgreSQL only) - <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using
+     * Amazon RDS Extended Support</a> in the <i>Amazon Aurora User Guide</i> </p>
+     * </li> <li> <p>Amazon RDS - <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using
+     * Amazon RDS Extended Support</a> in the <i>Amazon RDS User Guide</i> </p> </li>
+     * </ul> <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>Valid Values: <code>open-source-rds-extended-support |
+     * open-source-rds-extended-support-disabled</code> </p> <p>Default:
+     * <code>open-source-rds-extended-support</code> </p>
+     */
+    inline const Aws::String& GetEngineLifecycleSupport() const{ return m_engineLifecycleSupport; }
+
+    /**
+     * <p>The life cycle type for this DB cluster.</p>  <p>By default, this value
+     * is set to <code>open-source-rds-extended-support</code>, which enrolls your DB
+     * cluster into Amazon RDS Extended Support. At the end of standard support, you
+     * can avoid charges for Extended Support by setting the value to
+     * <code>open-source-rds-extended-support-disabled</code>. In this case, creating
+     * the DB cluster will fail if the DB major version is past its end of standard
+     * support date.</p>  <p>You can use this setting to enroll your DB cluster
+     * into Amazon RDS Extended Support. With RDS Extended Support, you can run the
+     * selected major engine version on your DB cluster past the end of standard
+     * support for that engine version. For more information, see the following
+     * sections:</p> <ul> <li> <p>Amazon Aurora (PostgreSQL only) - <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using
+     * Amazon RDS Extended Support</a> in the <i>Amazon Aurora User Guide</i> </p>
+     * </li> <li> <p>Amazon RDS - <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using
+     * Amazon RDS Extended Support</a> in the <i>Amazon RDS User Guide</i> </p> </li>
+     * </ul> <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>Valid Values: <code>open-source-rds-extended-support |
+     * open-source-rds-extended-support-disabled</code> </p> <p>Default:
+     * <code>open-source-rds-extended-support</code> </p>
+     */
+    inline bool EngineLifecycleSupportHasBeenSet() const { return m_engineLifecycleSupportHasBeenSet; }
+
+    /**
+     * <p>The life cycle type for this DB cluster.</p>  <p>By default, this value
+     * is set to <code>open-source-rds-extended-support</code>, which enrolls your DB
+     * cluster into Amazon RDS Extended Support. At the end of standard support, you
+     * can avoid charges for Extended Support by setting the value to
+     * <code>open-source-rds-extended-support-disabled</code>. In this case, creating
+     * the DB cluster will fail if the DB major version is past its end of standard
+     * support date.</p>  <p>You can use this setting to enroll your DB cluster
+     * into Amazon RDS Extended Support. With RDS Extended Support, you can run the
+     * selected major engine version on your DB cluster past the end of standard
+     * support for that engine version. For more information, see the following
+     * sections:</p> <ul> <li> <p>Amazon Aurora (PostgreSQL only) - <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using
+     * Amazon RDS Extended Support</a> in the <i>Amazon Aurora User Guide</i> </p>
+     * </li> <li> <p>Amazon RDS - <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using
+     * Amazon RDS Extended Support</a> in the <i>Amazon RDS User Guide</i> </p> </li>
+     * </ul> <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>Valid Values: <code>open-source-rds-extended-support |
+     * open-source-rds-extended-support-disabled</code> </p> <p>Default:
+     * <code>open-source-rds-extended-support</code> </p>
+     */
+    inline void SetEngineLifecycleSupport(const Aws::String& value) { m_engineLifecycleSupportHasBeenSet = true; m_engineLifecycleSupport = value; }
+
+    /**
+     * <p>The life cycle type for this DB cluster.</p>  <p>By default, this value
+     * is set to <code>open-source-rds-extended-support</code>, which enrolls your DB
+     * cluster into Amazon RDS Extended Support. At the end of standard support, you
+     * can avoid charges for Extended Support by setting the value to
+     * <code>open-source-rds-extended-support-disabled</code>. In this case, creating
+     * the DB cluster will fail if the DB major version is past its end of standard
+     * support date.</p>  <p>You can use this setting to enroll your DB cluster
+     * into Amazon RDS Extended Support. With RDS Extended Support, you can run the
+     * selected major engine version on your DB cluster past the end of standard
+     * support for that engine version. For more information, see the following
+     * sections:</p> <ul> <li> <p>Amazon Aurora (PostgreSQL only) - <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using
+     * Amazon RDS Extended Support</a> in the <i>Amazon Aurora User Guide</i> </p>
+     * </li> <li> <p>Amazon RDS - <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using
+     * Amazon RDS Extended Support</a> in the <i>Amazon RDS User Guide</i> </p> </li>
+     * </ul> <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>Valid Values: <code>open-source-rds-extended-support |
+     * open-source-rds-extended-support-disabled</code> </p> <p>Default:
+     * <code>open-source-rds-extended-support</code> </p>
+     */
+    inline void SetEngineLifecycleSupport(Aws::String&& value) { m_engineLifecycleSupportHasBeenSet = true; m_engineLifecycleSupport = std::move(value); }
+
+    /**
+     * <p>The life cycle type for this DB cluster.</p>  <p>By default, this value
+     * is set to <code>open-source-rds-extended-support</code>, which enrolls your DB
+     * cluster into Amazon RDS Extended Support. At the end of standard support, you
+     * can avoid charges for Extended Support by setting the value to
+     * <code>open-source-rds-extended-support-disabled</code>. In this case, creating
+     * the DB cluster will fail if the DB major version is past its end of standard
+     * support date.</p>  <p>You can use this setting to enroll your DB cluster
+     * into Amazon RDS Extended Support. With RDS Extended Support, you can run the
+     * selected major engine version on your DB cluster past the end of standard
+     * support for that engine version. For more information, see the following
+     * sections:</p> <ul> <li> <p>Amazon Aurora (PostgreSQL only) - <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using
+     * Amazon RDS Extended Support</a> in the <i>Amazon Aurora User Guide</i> </p>
+     * </li> <li> <p>Amazon RDS - <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using
+     * Amazon RDS Extended Support</a> in the <i>Amazon RDS User Guide</i> </p> </li>
+     * </ul> <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>Valid Values: <code>open-source-rds-extended-support |
+     * open-source-rds-extended-support-disabled</code> </p> <p>Default:
+     * <code>open-source-rds-extended-support</code> </p>
+     */
+    inline void SetEngineLifecycleSupport(const char* value) { m_engineLifecycleSupportHasBeenSet = true; m_engineLifecycleSupport.assign(value); }
+
+    /**
+     * <p>The life cycle type for this DB cluster.</p>  <p>By default, this value
+     * is set to <code>open-source-rds-extended-support</code>, which enrolls your DB
+     * cluster into Amazon RDS Extended Support. At the end of standard support, you
+     * can avoid charges for Extended Support by setting the value to
+     * <code>open-source-rds-extended-support-disabled</code>. In this case, creating
+     * the DB cluster will fail if the DB major version is past its end of standard
+     * support date.</p>  <p>You can use this setting to enroll your DB cluster
+     * into Amazon RDS Extended Support. With RDS Extended Support, you can run the
+     * selected major engine version on your DB cluster past the end of standard
+     * support for that engine version. For more information, see the following
+     * sections:</p> <ul> <li> <p>Amazon Aurora (PostgreSQL only) - <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using
+     * Amazon RDS Extended Support</a> in the <i>Amazon Aurora User Guide</i> </p>
+     * </li> <li> <p>Amazon RDS - <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using
+     * Amazon RDS Extended Support</a> in the <i>Amazon RDS User Guide</i> </p> </li>
+     * </ul> <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>Valid Values: <code>open-source-rds-extended-support |
+     * open-source-rds-extended-support-disabled</code> </p> <p>Default:
+     * <code>open-source-rds-extended-support</code> </p>
+     */
+    inline CreateDBClusterRequest& WithEngineLifecycleSupport(const Aws::String& value) { SetEngineLifecycleSupport(value); return *this;}
+
+    /**
+     * <p>The life cycle type for this DB cluster.</p>  <p>By default, this value
+     * is set to <code>open-source-rds-extended-support</code>, which enrolls your DB
+     * cluster into Amazon RDS Extended Support. At the end of standard support, you
+     * can avoid charges for Extended Support by setting the value to
+     * <code>open-source-rds-extended-support-disabled</code>. In this case, creating
+     * the DB cluster will fail if the DB major version is past its end of standard
+     * support date.</p>  <p>You can use this setting to enroll your DB cluster
+     * into Amazon RDS Extended Support. With RDS Extended Support, you can run the
+     * selected major engine version on your DB cluster past the end of standard
+     * support for that engine version. For more information, see the following
+     * sections:</p> <ul> <li> <p>Amazon Aurora (PostgreSQL only) - <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using
+     * Amazon RDS Extended Support</a> in the <i>Amazon Aurora User Guide</i> </p>
+     * </li> <li> <p>Amazon RDS - <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using
+     * Amazon RDS Extended Support</a> in the <i>Amazon RDS User Guide</i> </p> </li>
+     * </ul> <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>Valid Values: <code>open-source-rds-extended-support |
+     * open-source-rds-extended-support-disabled</code> </p> <p>Default:
+     * <code>open-source-rds-extended-support</code> </p>
+     */
+    inline CreateDBClusterRequest& WithEngineLifecycleSupport(Aws::String&& value) { SetEngineLifecycleSupport(std::move(value)); return *this;}
+
+    /**
+     * <p>The life cycle type for this DB cluster.</p>  <p>By default, this value
+     * is set to <code>open-source-rds-extended-support</code>, which enrolls your DB
+     * cluster into Amazon RDS Extended Support. At the end of standard support, you
+     * can avoid charges for Extended Support by setting the value to
+     * <code>open-source-rds-extended-support-disabled</code>. In this case, creating
+     * the DB cluster will fail if the DB major version is past its end of standard
+     * support date.</p>  <p>You can use this setting to enroll your DB cluster
+     * into Amazon RDS Extended Support. With RDS Extended Support, you can run the
+     * selected major engine version on your DB cluster past the end of standard
+     * support for that engine version. For more information, see the following
+     * sections:</p> <ul> <li> <p>Amazon Aurora (PostgreSQL only) - <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using
+     * Amazon RDS Extended Support</a> in the <i>Amazon Aurora User Guide</i> </p>
+     * </li> <li> <p>Amazon RDS - <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using
+     * Amazon RDS Extended Support</a> in the <i>Amazon RDS User Guide</i> </p> </li>
+     * </ul> <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>Valid Values: <code>open-source-rds-extended-support |
+     * open-source-rds-extended-support-disabled</code> </p> <p>Default:
+     * <code>open-source-rds-extended-support</code> </p>
+     */
+    inline CreateDBClusterRequest& WithEngineLifecycleSupport(const char* value) { SetEngineLifecycleSupport(value); return *this;}
+
+
+    /**
      * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
      */
     inline const Aws::String& GetSourceRegion() const{ return m_sourceRegion; }
@@ -4386,6 +4619,9 @@ namespace Model
 
     Aws::String m_cACertificateIdentifier;
     bool m_cACertificateIdentifierHasBeenSet = false;
+
+    Aws::String m_engineLifecycleSupport;
+    bool m_engineLifecycleSupportHasBeenSet = false;
 
     Aws::String m_sourceRegion;
     bool m_sourceRegionHasBeenSet = false;

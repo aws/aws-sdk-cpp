@@ -24,6 +24,7 @@ AgentSummary::AgentSummary() :
     m_agentStatus(AgentStatus::NOT_SET),
     m_agentStatusHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_guardrailConfigurationHasBeenSet(false),
     m_latestAgentVersionHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
 {
@@ -35,6 +36,7 @@ AgentSummary::AgentSummary(JsonView jsonValue) :
     m_agentStatus(AgentStatus::NOT_SET),
     m_agentStatusHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_guardrailConfigurationHasBeenSet(false),
     m_latestAgentVersionHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
 {
@@ -69,6 +71,13 @@ AgentSummary& AgentSummary::operator =(JsonView jsonValue)
     m_description = jsonValue.GetString("description");
 
     m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("guardrailConfiguration"))
+  {
+    m_guardrailConfiguration = jsonValue.GetObject("guardrailConfiguration");
+
+    m_guardrailConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("latestAgentVersion"))
@@ -112,6 +121,12 @@ JsonValue AgentSummary::Jsonize() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_guardrailConfigurationHasBeenSet)
+  {
+   payload.WithObject("guardrailConfiguration", m_guardrailConfiguration.Jsonize());
 
   }
 

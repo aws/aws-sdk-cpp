@@ -35,6 +35,12 @@ GetPipelineBlueprintResult& GetPipelineBlueprintResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("Format"))
+  {
+    m_format = jsonValue.GetString("Format");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

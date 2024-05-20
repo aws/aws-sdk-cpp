@@ -15,6 +15,7 @@ CreateGlobalClusterRequest::CreateGlobalClusterRequest() :
     m_sourceDBClusterIdentifierHasBeenSet(false),
     m_engineHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
+    m_engineLifecycleSupportHasBeenSet(false),
     m_deletionProtection(false),
     m_deletionProtectionHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
@@ -45,6 +46,11 @@ Aws::String CreateGlobalClusterRequest::SerializePayload() const
   if(m_engineVersionHasBeenSet)
   {
     ss << "EngineVersion=" << StringUtils::URLEncode(m_engineVersion.c_str()) << "&";
+  }
+
+  if(m_engineLifecycleSupportHasBeenSet)
+  {
+    ss << "EngineLifecycleSupport=" << StringUtils::URLEncode(m_engineLifecycleSupport.c_str()) << "&";
   }
 
   if(m_deletionProtectionHasBeenSet)

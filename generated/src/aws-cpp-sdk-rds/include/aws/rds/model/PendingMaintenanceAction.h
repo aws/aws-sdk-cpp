@@ -43,57 +43,73 @@ namespace Model
 
     /**
      * <p>The type of pending maintenance action that is available for the resource.
-     * Valid actions are <code>system-update</code>, <code>db-upgrade</code>,
-     * <code>hardware-maintenance</code>, and <code>ca-certificate-rotation</code>.</p>
+     * </p> <p>For more information about maintenance actions, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html">Maintaining
+     * a DB instance</a>.</p> <p>Valid Values:<code> system-update | db-upgrade |
+     * hardware-maintenance | ca-certificate-rotation</code> </p>
      */
     inline const Aws::String& GetAction() const{ return m_action; }
 
     /**
      * <p>The type of pending maintenance action that is available for the resource.
-     * Valid actions are <code>system-update</code>, <code>db-upgrade</code>,
-     * <code>hardware-maintenance</code>, and <code>ca-certificate-rotation</code>.</p>
+     * </p> <p>For more information about maintenance actions, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html">Maintaining
+     * a DB instance</a>.</p> <p>Valid Values:<code> system-update | db-upgrade |
+     * hardware-maintenance | ca-certificate-rotation</code> </p>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
      * <p>The type of pending maintenance action that is available for the resource.
-     * Valid actions are <code>system-update</code>, <code>db-upgrade</code>,
-     * <code>hardware-maintenance</code>, and <code>ca-certificate-rotation</code>.</p>
+     * </p> <p>For more information about maintenance actions, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html">Maintaining
+     * a DB instance</a>.</p> <p>Valid Values:<code> system-update | db-upgrade |
+     * hardware-maintenance | ca-certificate-rotation</code> </p>
      */
     inline void SetAction(const Aws::String& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
      * <p>The type of pending maintenance action that is available for the resource.
-     * Valid actions are <code>system-update</code>, <code>db-upgrade</code>,
-     * <code>hardware-maintenance</code>, and <code>ca-certificate-rotation</code>.</p>
+     * </p> <p>For more information about maintenance actions, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html">Maintaining
+     * a DB instance</a>.</p> <p>Valid Values:<code> system-update | db-upgrade |
+     * hardware-maintenance | ca-certificate-rotation</code> </p>
      */
     inline void SetAction(Aws::String&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
      * <p>The type of pending maintenance action that is available for the resource.
-     * Valid actions are <code>system-update</code>, <code>db-upgrade</code>,
-     * <code>hardware-maintenance</code>, and <code>ca-certificate-rotation</code>.</p>
+     * </p> <p>For more information about maintenance actions, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html">Maintaining
+     * a DB instance</a>.</p> <p>Valid Values:<code> system-update | db-upgrade |
+     * hardware-maintenance | ca-certificate-rotation</code> </p>
      */
     inline void SetAction(const char* value) { m_actionHasBeenSet = true; m_action.assign(value); }
 
     /**
      * <p>The type of pending maintenance action that is available for the resource.
-     * Valid actions are <code>system-update</code>, <code>db-upgrade</code>,
-     * <code>hardware-maintenance</code>, and <code>ca-certificate-rotation</code>.</p>
+     * </p> <p>For more information about maintenance actions, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html">Maintaining
+     * a DB instance</a>.</p> <p>Valid Values:<code> system-update | db-upgrade |
+     * hardware-maintenance | ca-certificate-rotation</code> </p>
      */
     inline PendingMaintenanceAction& WithAction(const Aws::String& value) { SetAction(value); return *this;}
 
     /**
      * <p>The type of pending maintenance action that is available for the resource.
-     * Valid actions are <code>system-update</code>, <code>db-upgrade</code>,
-     * <code>hardware-maintenance</code>, and <code>ca-certificate-rotation</code>.</p>
+     * </p> <p>For more information about maintenance actions, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html">Maintaining
+     * a DB instance</a>.</p> <p>Valid Values:<code> system-update | db-upgrade |
+     * hardware-maintenance | ca-certificate-rotation</code> </p>
      */
     inline PendingMaintenanceAction& WithAction(Aws::String&& value) { SetAction(std::move(value)); return *this;}
 
     /**
      * <p>The type of pending maintenance action that is available for the resource.
-     * Valid actions are <code>system-update</code>, <code>db-upgrade</code>,
-     * <code>hardware-maintenance</code>, and <code>ca-certificate-rotation</code>.</p>
+     * </p> <p>For more information about maintenance actions, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html">Maintaining
+     * a DB instance</a>.</p> <p>Valid Values:<code> system-update | db-upgrade |
+     * hardware-maintenance | ca-certificate-rotation</code> </p>
      */
     inline PendingMaintenanceAction& WithAction(const char* value) { SetAction(value); return *this;}
 

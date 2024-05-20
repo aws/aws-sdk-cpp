@@ -7,6 +7,7 @@
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/bedrock-agent/BedrockAgentRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent/model/GuardrailConfiguration.h>
 #include <aws/bedrock-agent/model/PromptOverrideConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
@@ -338,6 +339,43 @@ namespace Model
 
 
     /**
+     * <p>The unique Guardrail configuration assigned to the agent when it is
+     * created.</p>
+     */
+    inline const GuardrailConfiguration& GetGuardrailConfiguration() const{ return m_guardrailConfiguration; }
+
+    /**
+     * <p>The unique Guardrail configuration assigned to the agent when it is
+     * created.</p>
+     */
+    inline bool GuardrailConfigurationHasBeenSet() const { return m_guardrailConfigurationHasBeenSet; }
+
+    /**
+     * <p>The unique Guardrail configuration assigned to the agent when it is
+     * created.</p>
+     */
+    inline void SetGuardrailConfiguration(const GuardrailConfiguration& value) { m_guardrailConfigurationHasBeenSet = true; m_guardrailConfiguration = value; }
+
+    /**
+     * <p>The unique Guardrail configuration assigned to the agent when it is
+     * created.</p>
+     */
+    inline void SetGuardrailConfiguration(GuardrailConfiguration&& value) { m_guardrailConfigurationHasBeenSet = true; m_guardrailConfiguration = std::move(value); }
+
+    /**
+     * <p>The unique Guardrail configuration assigned to the agent when it is
+     * created.</p>
+     */
+    inline CreateAgentRequest& WithGuardrailConfiguration(const GuardrailConfiguration& value) { SetGuardrailConfiguration(value); return *this;}
+
+    /**
+     * <p>The unique Guardrail configuration assigned to the agent when it is
+     * created.</p>
+     */
+    inline CreateAgentRequest& WithGuardrailConfiguration(GuardrailConfiguration&& value) { SetGuardrailConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>The number of seconds for which Amazon Bedrock keeps information about a
      * user's conversation with the agent.</p> <p>A user interaction remains active for
      * the amount of time specified. If no conversation occurs during this time, the
@@ -556,6 +594,9 @@ namespace Model
 
     Aws::String m_foundationModel;
     bool m_foundationModelHasBeenSet = false;
+
+    GuardrailConfiguration m_guardrailConfiguration;
+    bool m_guardrailConfigurationHasBeenSet = false;
 
     int m_idleSessionTTLInSeconds;
     bool m_idleSessionTTLInSecondsHasBeenSet = false;

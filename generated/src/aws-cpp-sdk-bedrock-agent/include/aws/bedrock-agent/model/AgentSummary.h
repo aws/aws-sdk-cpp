@@ -7,6 +7,7 @@
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent/model/AgentStatus.h>
+#include <aws/bedrock-agent/model/GuardrailConfiguration.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -194,6 +195,37 @@ namespace Model
 
 
     /**
+     * <p>The details of the guardrails configuration in the agent summary.</p>
+     */
+    inline const GuardrailConfiguration& GetGuardrailConfiguration() const{ return m_guardrailConfiguration; }
+
+    /**
+     * <p>The details of the guardrails configuration in the agent summary.</p>
+     */
+    inline bool GuardrailConfigurationHasBeenSet() const { return m_guardrailConfigurationHasBeenSet; }
+
+    /**
+     * <p>The details of the guardrails configuration in the agent summary.</p>
+     */
+    inline void SetGuardrailConfiguration(const GuardrailConfiguration& value) { m_guardrailConfigurationHasBeenSet = true; m_guardrailConfiguration = value; }
+
+    /**
+     * <p>The details of the guardrails configuration in the agent summary.</p>
+     */
+    inline void SetGuardrailConfiguration(GuardrailConfiguration&& value) { m_guardrailConfigurationHasBeenSet = true; m_guardrailConfiguration = std::move(value); }
+
+    /**
+     * <p>The details of the guardrails configuration in the agent summary.</p>
+     */
+    inline AgentSummary& WithGuardrailConfiguration(const GuardrailConfiguration& value) { SetGuardrailConfiguration(value); return *this;}
+
+    /**
+     * <p>The details of the guardrails configuration in the agent summary.</p>
+     */
+    inline AgentSummary& WithGuardrailConfiguration(GuardrailConfiguration&& value) { SetGuardrailConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>The latest version of the agent.</p>
      */
     inline const Aws::String& GetLatestAgentVersion() const{ return m_latestAgentVersion; }
@@ -277,6 +309,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    GuardrailConfiguration m_guardrailConfiguration;
+    bool m_guardrailConfigurationHasBeenSet = false;
 
     Aws::String m_latestAgentVersion;
     bool m_latestAgentVersionHasBeenSet = false;

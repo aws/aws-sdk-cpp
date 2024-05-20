@@ -93,7 +93,8 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_dedicatedLogVolume(false),
     m_dedicatedLogVolumeHasBeenSet(false),
     m_multiTenant(false),
-    m_multiTenantHasBeenSet(false)
+    m_multiTenantHasBeenSet(false),
+    m_engineLifecycleSupportHasBeenSet(false)
 {
 }
 
@@ -443,6 +444,11 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
   if(m_multiTenantHasBeenSet)
   {
     ss << "MultiTenant=" << std::boolalpha << m_multiTenant << "&";
+  }
+
+  if(m_engineLifecycleSupportHasBeenSet)
+  {
+    ss << "EngineLifecycleSupport=" << StringUtils::URLEncode(m_engineLifecycleSupport.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

@@ -30,6 +30,7 @@ AgentVersion::AgentVersion() :
     m_descriptionHasBeenSet(false),
     m_failureReasonsHasBeenSet(false),
     m_foundationModelHasBeenSet(false),
+    m_guardrailConfigurationHasBeenSet(false),
     m_idleSessionTTLInSeconds(0),
     m_idleSessionTTLInSecondsHasBeenSet(false),
     m_instructionHasBeenSet(false),
@@ -52,6 +53,7 @@ AgentVersion::AgentVersion(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_failureReasonsHasBeenSet(false),
     m_foundationModelHasBeenSet(false),
+    m_guardrailConfigurationHasBeenSet(false),
     m_idleSessionTTLInSeconds(0),
     m_idleSessionTTLInSecondsHasBeenSet(false),
     m_instructionHasBeenSet(false),
@@ -136,6 +138,13 @@ AgentVersion& AgentVersion::operator =(JsonView jsonValue)
     m_foundationModel = jsonValue.GetString("foundationModel");
 
     m_foundationModelHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("guardrailConfiguration"))
+  {
+    m_guardrailConfiguration = jsonValue.GetObject("guardrailConfiguration");
+
+    m_guardrailConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("idleSessionTTLInSeconds"))
@@ -250,6 +259,12 @@ JsonValue AgentVersion::Jsonize() const
   if(m_foundationModelHasBeenSet)
   {
    payload.WithString("foundationModel", m_foundationModel);
+
+  }
+
+  if(m_guardrailConfigurationHasBeenSet)
+  {
+   payload.WithObject("guardrailConfiguration", m_guardrailConfiguration.Jsonize());
 
   }
 

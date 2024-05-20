@@ -32,6 +32,7 @@
 #include <aws/controltower/model/GetLandingZoneResult.h>
 #include <aws/controltower/model/GetLandingZoneOperationResult.h>
 #include <aws/controltower/model/ListBaselinesResult.h>
+#include <aws/controltower/model/ListControlOperationsResult.h>
 #include <aws/controltower/model/ListEnabledBaselinesResult.h>
 #include <aws/controltower/model/ListEnabledControlsResult.h>
 #include <aws/controltower/model/ListLandingZonesResult.h>
@@ -97,6 +98,7 @@ namespace Aws
       class GetLandingZoneRequest;
       class GetLandingZoneOperationRequest;
       class ListBaselinesRequest;
+      class ListControlOperationsRequest;
       class ListEnabledBaselinesRequest;
       class ListEnabledControlsRequest;
       class ListLandingZonesRequest;
@@ -125,6 +127,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetLandingZoneResult, ControlTowerError> GetLandingZoneOutcome;
       typedef Aws::Utils::Outcome<GetLandingZoneOperationResult, ControlTowerError> GetLandingZoneOperationOutcome;
       typedef Aws::Utils::Outcome<ListBaselinesResult, ControlTowerError> ListBaselinesOutcome;
+      typedef Aws::Utils::Outcome<ListControlOperationsResult, ControlTowerError> ListControlOperationsOutcome;
       typedef Aws::Utils::Outcome<ListEnabledBaselinesResult, ControlTowerError> ListEnabledBaselinesOutcome;
       typedef Aws::Utils::Outcome<ListEnabledControlsResult, ControlTowerError> ListEnabledControlsOutcome;
       typedef Aws::Utils::Outcome<ListLandingZonesResult, ControlTowerError> ListLandingZonesOutcome;
@@ -153,6 +156,7 @@ namespace Aws
       typedef std::future<GetLandingZoneOutcome> GetLandingZoneOutcomeCallable;
       typedef std::future<GetLandingZoneOperationOutcome> GetLandingZoneOperationOutcomeCallable;
       typedef std::future<ListBaselinesOutcome> ListBaselinesOutcomeCallable;
+      typedef std::future<ListControlOperationsOutcome> ListControlOperationsOutcomeCallable;
       typedef std::future<ListEnabledBaselinesOutcome> ListEnabledBaselinesOutcomeCallable;
       typedef std::future<ListEnabledControlsOutcome> ListEnabledControlsOutcomeCallable;
       typedef std::future<ListLandingZonesOutcome> ListLandingZonesOutcomeCallable;
@@ -184,6 +188,7 @@ namespace Aws
     typedef std::function<void(const ControlTowerClient*, const Model::GetLandingZoneRequest&, const Model::GetLandingZoneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLandingZoneResponseReceivedHandler;
     typedef std::function<void(const ControlTowerClient*, const Model::GetLandingZoneOperationRequest&, const Model::GetLandingZoneOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLandingZoneOperationResponseReceivedHandler;
     typedef std::function<void(const ControlTowerClient*, const Model::ListBaselinesRequest&, const Model::ListBaselinesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBaselinesResponseReceivedHandler;
+    typedef std::function<void(const ControlTowerClient*, const Model::ListControlOperationsRequest&, const Model::ListControlOperationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListControlOperationsResponseReceivedHandler;
     typedef std::function<void(const ControlTowerClient*, const Model::ListEnabledBaselinesRequest&, const Model::ListEnabledBaselinesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEnabledBaselinesResponseReceivedHandler;
     typedef std::function<void(const ControlTowerClient*, const Model::ListEnabledControlsRequest&, const Model::ListEnabledControlsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEnabledControlsResponseReceivedHandler;
     typedef std::function<void(const ControlTowerClient*, const Model::ListLandingZonesRequest&, const Model::ListLandingZonesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLandingZonesResponseReceivedHandler;

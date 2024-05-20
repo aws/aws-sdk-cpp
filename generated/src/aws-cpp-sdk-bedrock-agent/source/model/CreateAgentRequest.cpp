@@ -20,6 +20,7 @@ CreateAgentRequest::CreateAgentRequest() :
     m_customerEncryptionKeyArnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_foundationModelHasBeenSet(false),
+    m_guardrailConfigurationHasBeenSet(false),
     m_idleSessionTTLInSeconds(0),
     m_idleSessionTTLInSecondsHasBeenSet(false),
     m_instructionHasBeenSet(false),
@@ -65,6 +66,12 @@ Aws::String CreateAgentRequest::SerializePayload() const
   if(m_foundationModelHasBeenSet)
   {
    payload.WithString("foundationModel", m_foundationModel);
+
+  }
+
+  if(m_guardrailConfigurationHasBeenSet)
+  {
+   payload.WithObject("guardrailConfiguration", m_guardrailConfiguration.Jsonize());
 
   }
 

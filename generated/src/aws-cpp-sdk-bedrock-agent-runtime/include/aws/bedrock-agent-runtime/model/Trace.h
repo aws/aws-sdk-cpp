@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/bedrock-agent-runtime/model/FailureTrace.h>
+#include <aws/bedrock-agent-runtime/model/GuardrailTrace.h>
 #include <aws/bedrock-agent-runtime/model/OrchestrationTrace.h>
 #include <aws/bedrock-agent-runtime/model/PostProcessingTrace.h>
 #include <aws/bedrock-agent-runtime/model/PreProcessingTrace.h>
@@ -74,6 +75,37 @@ namespace Model
      * <p>Contains information about the failure of the interaction.</p>
      */
     inline Trace& WithFailureTrace(FailureTrace&& value) { SetFailureTrace(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The trace details for a trace defined in the Guardrail filter.</p>
+     */
+    inline const GuardrailTrace& GetGuardrailTrace() const{ return m_guardrailTrace; }
+
+    /**
+     * <p>The trace details for a trace defined in the Guardrail filter.</p>
+     */
+    inline bool GuardrailTraceHasBeenSet() const { return m_guardrailTraceHasBeenSet; }
+
+    /**
+     * <p>The trace details for a trace defined in the Guardrail filter.</p>
+     */
+    inline void SetGuardrailTrace(const GuardrailTrace& value) { m_guardrailTraceHasBeenSet = true; m_guardrailTrace = value; }
+
+    /**
+     * <p>The trace details for a trace defined in the Guardrail filter.</p>
+     */
+    inline void SetGuardrailTrace(GuardrailTrace&& value) { m_guardrailTraceHasBeenSet = true; m_guardrailTrace = std::move(value); }
+
+    /**
+     * <p>The trace details for a trace defined in the Guardrail filter.</p>
+     */
+    inline Trace& WithGuardrailTrace(const GuardrailTrace& value) { SetGuardrailTrace(value); return *this;}
+
+    /**
+     * <p>The trace details for a trace defined in the Guardrail filter.</p>
+     */
+    inline Trace& WithGuardrailTrace(GuardrailTrace&& value) { SetGuardrailTrace(std::move(value)); return *this;}
 
 
     /**
@@ -190,6 +222,9 @@ namespace Model
 
     FailureTrace m_failureTrace;
     bool m_failureTraceHasBeenSet = false;
+
+    GuardrailTrace m_guardrailTrace;
+    bool m_guardrailTraceHasBeenSet = false;
 
     OrchestrationTrace m_orchestrationTrace;
     bool m_orchestrationTraceHasBeenSet = false;

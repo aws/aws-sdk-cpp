@@ -20,13 +20,15 @@ namespace Model
 
 VpcOptions::VpcOptions() : 
     m_subnetIdsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
+    m_securityGroupIdsHasBeenSet(false),
+    m_vpcAttachmentOptionsHasBeenSet(false)
 {
 }
 
 VpcOptions::VpcOptions(JsonView jsonValue) : 
     m_subnetIdsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
+    m_securityGroupIdsHasBeenSet(false),
+    m_vpcAttachmentOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +53,13 @@ VpcOptions& VpcOptions::operator =(JsonView jsonValue)
       m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
     }
     m_securityGroupIdsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("VpcAttachmentOptions"))
+  {
+    m_vpcAttachmentOptions = jsonValue.GetObject("VpcAttachmentOptions");
+
+    m_vpcAttachmentOptionsHasBeenSet = true;
   }
 
   return *this;
@@ -79,6 +88,12 @@ JsonValue VpcOptions::Jsonize() const
      securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
    }
    payload.WithArray("SecurityGroupIds", std::move(securityGroupIdsJsonList));
+
+  }
+
+  if(m_vpcAttachmentOptionsHasBeenSet)
+  {
+   payload.WithObject("VpcAttachmentOptions", m_vpcAttachmentOptions.Jsonize());
 
   }
 

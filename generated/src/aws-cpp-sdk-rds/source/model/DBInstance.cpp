@@ -132,7 +132,8 @@ DBInstance::DBInstance() :
     m_isStorageConfigUpgradeAvailable(false),
     m_isStorageConfigUpgradeAvailableHasBeenSet(false),
     m_multiTenant(false),
-    m_multiTenantHasBeenSet(false)
+    m_multiTenantHasBeenSet(false),
+    m_engineLifecycleSupportHasBeenSet(false)
 {
 }
 
@@ -248,7 +249,8 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_isStorageConfigUpgradeAvailable(false),
     m_isStorageConfigUpgradeAvailableHasBeenSet(false),
     m_multiTenant(false),
-    m_multiTenantHasBeenSet(false)
+    m_multiTenantHasBeenSet(false),
+    m_engineLifecycleSupportHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -847,6 +849,12 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_multiTenant = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(multiTenantNode.GetText()).c_str()).c_str());
       m_multiTenantHasBeenSet = true;
     }
+    XmlNode engineLifecycleSupportNode = resultNode.FirstChild("EngineLifecycleSupport");
+    if(!engineLifecycleSupportNode.IsNull())
+    {
+      m_engineLifecycleSupport = Aws::Utils::Xml::DecodeEscapedXmlText(engineLifecycleSupportNode.GetText());
+      m_engineLifecycleSupportHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -1363,6 +1371,11 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".MultiTenant=" << std::boolalpha << m_multiTenant << "&";
   }
 
+  if(m_engineLifecycleSupportHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EngineLifecycleSupport=" << StringUtils::URLEncode(m_engineLifecycleSupport.c_str()) << "&";
+  }
+
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1790,6 +1803,10 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_multiTenantHasBeenSet)
   {
       oStream << location << ".MultiTenant=" << std::boolalpha << m_multiTenant << "&";
+  }
+  if(m_engineLifecycleSupportHasBeenSet)
+  {
+      oStream << location << ".EngineLifecycleSupport=" << StringUtils::URLEncode(m_engineLifecycleSupport.c_str()) << "&";
   }
 }
 

@@ -15,6 +15,7 @@
 #include <aws/osis/model/EncryptionAtRestOptions.h>
 #include <aws/osis/model/VpcEndpoint.h>
 #include <aws/osis/model/ServiceVpcEndpoint.h>
+#include <aws/osis/model/PipelineDestination.h>
 #include <aws/osis/model/Tag.h>
 #include <utility>
 
@@ -494,52 +495,93 @@ namespace Model
 
 
     /**
-     * <p>A list of VPC endpoints that OpenSearch Ingestion has created to other AWS
-     * services.</p>
+     * <p>A list of VPC endpoints that OpenSearch Ingestion has created to other Amazon
+     * Web Services services.</p>
      */
     inline const Aws::Vector<ServiceVpcEndpoint>& GetServiceVpcEndpoints() const{ return m_serviceVpcEndpoints; }
 
     /**
-     * <p>A list of VPC endpoints that OpenSearch Ingestion has created to other AWS
-     * services.</p>
+     * <p>A list of VPC endpoints that OpenSearch Ingestion has created to other Amazon
+     * Web Services services.</p>
      */
     inline bool ServiceVpcEndpointsHasBeenSet() const { return m_serviceVpcEndpointsHasBeenSet; }
 
     /**
-     * <p>A list of VPC endpoints that OpenSearch Ingestion has created to other AWS
-     * services.</p>
+     * <p>A list of VPC endpoints that OpenSearch Ingestion has created to other Amazon
+     * Web Services services.</p>
      */
     inline void SetServiceVpcEndpoints(const Aws::Vector<ServiceVpcEndpoint>& value) { m_serviceVpcEndpointsHasBeenSet = true; m_serviceVpcEndpoints = value; }
 
     /**
-     * <p>A list of VPC endpoints that OpenSearch Ingestion has created to other AWS
-     * services.</p>
+     * <p>A list of VPC endpoints that OpenSearch Ingestion has created to other Amazon
+     * Web Services services.</p>
      */
     inline void SetServiceVpcEndpoints(Aws::Vector<ServiceVpcEndpoint>&& value) { m_serviceVpcEndpointsHasBeenSet = true; m_serviceVpcEndpoints = std::move(value); }
 
     /**
-     * <p>A list of VPC endpoints that OpenSearch Ingestion has created to other AWS
-     * services.</p>
+     * <p>A list of VPC endpoints that OpenSearch Ingestion has created to other Amazon
+     * Web Services services.</p>
      */
     inline Pipeline& WithServiceVpcEndpoints(const Aws::Vector<ServiceVpcEndpoint>& value) { SetServiceVpcEndpoints(value); return *this;}
 
     /**
-     * <p>A list of VPC endpoints that OpenSearch Ingestion has created to other AWS
-     * services.</p>
+     * <p>A list of VPC endpoints that OpenSearch Ingestion has created to other Amazon
+     * Web Services services.</p>
      */
     inline Pipeline& WithServiceVpcEndpoints(Aws::Vector<ServiceVpcEndpoint>&& value) { SetServiceVpcEndpoints(std::move(value)); return *this;}
 
     /**
-     * <p>A list of VPC endpoints that OpenSearch Ingestion has created to other AWS
-     * services.</p>
+     * <p>A list of VPC endpoints that OpenSearch Ingestion has created to other Amazon
+     * Web Services services.</p>
      */
     inline Pipeline& AddServiceVpcEndpoints(const ServiceVpcEndpoint& value) { m_serviceVpcEndpointsHasBeenSet = true; m_serviceVpcEndpoints.push_back(value); return *this; }
 
     /**
-     * <p>A list of VPC endpoints that OpenSearch Ingestion has created to other AWS
-     * services.</p>
+     * <p>A list of VPC endpoints that OpenSearch Ingestion has created to other Amazon
+     * Web Services services.</p>
      */
     inline Pipeline& AddServiceVpcEndpoints(ServiceVpcEndpoint&& value) { m_serviceVpcEndpointsHasBeenSet = true; m_serviceVpcEndpoints.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Destinations to which the pipeline writes data.</p>
+     */
+    inline const Aws::Vector<PipelineDestination>& GetDestinations() const{ return m_destinations; }
+
+    /**
+     * <p>Destinations to which the pipeline writes data.</p>
+     */
+    inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
+
+    /**
+     * <p>Destinations to which the pipeline writes data.</p>
+     */
+    inline void SetDestinations(const Aws::Vector<PipelineDestination>& value) { m_destinationsHasBeenSet = true; m_destinations = value; }
+
+    /**
+     * <p>Destinations to which the pipeline writes data.</p>
+     */
+    inline void SetDestinations(Aws::Vector<PipelineDestination>&& value) { m_destinationsHasBeenSet = true; m_destinations = std::move(value); }
+
+    /**
+     * <p>Destinations to which the pipeline writes data.</p>
+     */
+    inline Pipeline& WithDestinations(const Aws::Vector<PipelineDestination>& value) { SetDestinations(value); return *this;}
+
+    /**
+     * <p>Destinations to which the pipeline writes data.</p>
+     */
+    inline Pipeline& WithDestinations(Aws::Vector<PipelineDestination>&& value) { SetDestinations(std::move(value)); return *this;}
+
+    /**
+     * <p>Destinations to which the pipeline writes data.</p>
+     */
+    inline Pipeline& AddDestinations(const PipelineDestination& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(value); return *this; }
+
+    /**
+     * <p>Destinations to which the pipeline writes data.</p>
+     */
+    inline Pipeline& AddDestinations(PipelineDestination&& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -628,6 +670,9 @@ namespace Model
 
     Aws::Vector<ServiceVpcEndpoint> m_serviceVpcEndpoints;
     bool m_serviceVpcEndpointsHasBeenSet = false;
+
+    Aws::Vector<PipelineDestination> m_destinations;
+    bool m_destinationsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
