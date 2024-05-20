@@ -71,42 +71,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the VPC endpoint that was created.</p>
+     * <p>The unique identifier of the VPC endpoint that was created.</p>
      */
     inline const Aws::String& GetVpcEndpointId() const{ return m_vpcEndpointId; }
 
     /**
-     * <p>The ID of the VPC endpoint that was created.</p>
+     * <p>The unique identifier of the VPC endpoint that was created.</p>
      */
     inline bool VpcEndpointIdHasBeenSet() const { return m_vpcEndpointIdHasBeenSet; }
 
     /**
-     * <p>The ID of the VPC endpoint that was created.</p>
+     * <p>The unique identifier of the VPC endpoint that was created.</p>
      */
     inline void SetVpcEndpointId(const Aws::String& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = value; }
 
     /**
-     * <p>The ID of the VPC endpoint that was created.</p>
+     * <p>The unique identifier of the VPC endpoint that was created.</p>
      */
     inline void SetVpcEndpointId(Aws::String&& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = std::move(value); }
 
     /**
-     * <p>The ID of the VPC endpoint that was created.</p>
+     * <p>The unique identifier of the VPC endpoint that was created.</p>
      */
     inline void SetVpcEndpointId(const char* value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId.assign(value); }
 
     /**
-     * <p>The ID of the VPC endpoint that was created.</p>
+     * <p>The unique identifier of the VPC endpoint that was created.</p>
      */
     inline ServiceVpcEndpoint& WithVpcEndpointId(const Aws::String& value) { SetVpcEndpointId(value); return *this;}
 
     /**
-     * <p>The ID of the VPC endpoint that was created.</p>
+     * <p>The unique identifier of the VPC endpoint that was created.</p>
      */
     inline ServiceVpcEndpoint& WithVpcEndpointId(Aws::String&& value) { SetVpcEndpointId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the VPC endpoint that was created.</p>
+     * <p>The unique identifier of the VPC endpoint that was created.</p>
      */
     inline ServiceVpcEndpoint& WithVpcEndpointId(const char* value) { SetVpcEndpointId(value); return *this;}
 

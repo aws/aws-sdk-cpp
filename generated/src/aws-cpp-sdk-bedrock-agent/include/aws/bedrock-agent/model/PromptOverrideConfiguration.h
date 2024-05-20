@@ -46,7 +46,9 @@ namespace Model
      * <p>The ARN of the Lambda function to use when parsing the raw foundation model
      * output in parts of the agent sequence. If you specify this field, at least one
      * of the <code>promptConfigurations</code> must contain a <code>parserMode</code>
-     * value that is set to <code>OVERRIDDEN</code>.</p>
+     * value that is set to <code>OVERRIDDEN</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/lambda-parser.html">Parser
+     * Lambda function in Agents for Amazon Bedrock</a>.</p>
      */
     inline const Aws::String& GetOverrideLambda() const{ return m_overrideLambda; }
 
@@ -54,7 +56,9 @@ namespace Model
      * <p>The ARN of the Lambda function to use when parsing the raw foundation model
      * output in parts of the agent sequence. If you specify this field, at least one
      * of the <code>promptConfigurations</code> must contain a <code>parserMode</code>
-     * value that is set to <code>OVERRIDDEN</code>.</p>
+     * value that is set to <code>OVERRIDDEN</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/lambda-parser.html">Parser
+     * Lambda function in Agents for Amazon Bedrock</a>.</p>
      */
     inline bool OverrideLambdaHasBeenSet() const { return m_overrideLambdaHasBeenSet; }
 
@@ -62,7 +66,9 @@ namespace Model
      * <p>The ARN of the Lambda function to use when parsing the raw foundation model
      * output in parts of the agent sequence. If you specify this field, at least one
      * of the <code>promptConfigurations</code> must contain a <code>parserMode</code>
-     * value that is set to <code>OVERRIDDEN</code>.</p>
+     * value that is set to <code>OVERRIDDEN</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/lambda-parser.html">Parser
+     * Lambda function in Agents for Amazon Bedrock</a>.</p>
      */
     inline void SetOverrideLambda(const Aws::String& value) { m_overrideLambdaHasBeenSet = true; m_overrideLambda = value; }
 
@@ -70,7 +76,9 @@ namespace Model
      * <p>The ARN of the Lambda function to use when parsing the raw foundation model
      * output in parts of the agent sequence. If you specify this field, at least one
      * of the <code>promptConfigurations</code> must contain a <code>parserMode</code>
-     * value that is set to <code>OVERRIDDEN</code>.</p>
+     * value that is set to <code>OVERRIDDEN</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/lambda-parser.html">Parser
+     * Lambda function in Agents for Amazon Bedrock</a>.</p>
      */
     inline void SetOverrideLambda(Aws::String&& value) { m_overrideLambdaHasBeenSet = true; m_overrideLambda = std::move(value); }
 
@@ -78,7 +86,9 @@ namespace Model
      * <p>The ARN of the Lambda function to use when parsing the raw foundation model
      * output in parts of the agent sequence. If you specify this field, at least one
      * of the <code>promptConfigurations</code> must contain a <code>parserMode</code>
-     * value that is set to <code>OVERRIDDEN</code>.</p>
+     * value that is set to <code>OVERRIDDEN</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/lambda-parser.html">Parser
+     * Lambda function in Agents for Amazon Bedrock</a>.</p>
      */
     inline void SetOverrideLambda(const char* value) { m_overrideLambdaHasBeenSet = true; m_overrideLambda.assign(value); }
 
@@ -86,7 +96,9 @@ namespace Model
      * <p>The ARN of the Lambda function to use when parsing the raw foundation model
      * output in parts of the agent sequence. If you specify this field, at least one
      * of the <code>promptConfigurations</code> must contain a <code>parserMode</code>
-     * value that is set to <code>OVERRIDDEN</code>.</p>
+     * value that is set to <code>OVERRIDDEN</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/lambda-parser.html">Parser
+     * Lambda function in Agents for Amazon Bedrock</a>.</p>
      */
     inline PromptOverrideConfiguration& WithOverrideLambda(const Aws::String& value) { SetOverrideLambda(value); return *this;}
 
@@ -94,7 +106,9 @@ namespace Model
      * <p>The ARN of the Lambda function to use when parsing the raw foundation model
      * output in parts of the agent sequence. If you specify this field, at least one
      * of the <code>promptConfigurations</code> must contain a <code>parserMode</code>
-     * value that is set to <code>OVERRIDDEN</code>.</p>
+     * value that is set to <code>OVERRIDDEN</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/lambda-parser.html">Parser
+     * Lambda function in Agents for Amazon Bedrock</a>.</p>
      */
     inline PromptOverrideConfiguration& WithOverrideLambda(Aws::String&& value) { SetOverrideLambda(std::move(value)); return *this;}
 
@@ -102,7 +116,9 @@ namespace Model
      * <p>The ARN of the Lambda function to use when parsing the raw foundation model
      * output in parts of the agent sequence. If you specify this field, at least one
      * of the <code>promptConfigurations</code> must contain a <code>parserMode</code>
-     * value that is set to <code>OVERRIDDEN</code>.</p>
+     * value that is set to <code>OVERRIDDEN</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/lambda-parser.html">Parser
+     * Lambda function in Agents for Amazon Bedrock</a>.</p>
      */
     inline PromptOverrideConfiguration& WithOverrideLambda(const char* value) { SetOverrideLambda(value); return *this;}
 

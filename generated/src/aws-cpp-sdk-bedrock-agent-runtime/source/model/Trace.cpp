@@ -20,6 +20,7 @@ namespace Model
 
 Trace::Trace() : 
     m_failureTraceHasBeenSet(false),
+    m_guardrailTraceHasBeenSet(false),
     m_orchestrationTraceHasBeenSet(false),
     m_postProcessingTraceHasBeenSet(false),
     m_preProcessingTraceHasBeenSet(false)
@@ -28,6 +29,7 @@ Trace::Trace() :
 
 Trace::Trace(JsonView jsonValue) : 
     m_failureTraceHasBeenSet(false),
+    m_guardrailTraceHasBeenSet(false),
     m_orchestrationTraceHasBeenSet(false),
     m_postProcessingTraceHasBeenSet(false),
     m_preProcessingTraceHasBeenSet(false)
@@ -42,6 +44,13 @@ Trace& Trace::operator =(JsonView jsonValue)
     m_failureTrace = jsonValue.GetObject("failureTrace");
 
     m_failureTraceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("guardrailTrace"))
+  {
+    m_guardrailTrace = jsonValue.GetObject("guardrailTrace");
+
+    m_guardrailTraceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("orchestrationTrace"))
@@ -75,6 +84,12 @@ JsonValue Trace::Jsonize() const
   if(m_failureTraceHasBeenSet)
   {
    payload.WithObject("failureTrace", m_failureTrace.Jsonize());
+
+  }
+
+  if(m_guardrailTraceHasBeenSet)
+  {
+   payload.WithObject("guardrailTrace", m_guardrailTrace.Jsonize());
 
   }
 

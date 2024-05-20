@@ -59,6 +59,42 @@ namespace Model
     inline GetPipelineBlueprintResult& WithBlueprint(PipelineBlueprint&& value) { SetBlueprint(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The format of the blueprint.</p>
+     */
+    inline const Aws::String& GetFormat() const{ return m_format; }
+
+    /**
+     * <p>The format of the blueprint.</p>
+     */
+    inline void SetFormat(const Aws::String& value) { m_format = value; }
+
+    /**
+     * <p>The format of the blueprint.</p>
+     */
+    inline void SetFormat(Aws::String&& value) { m_format = std::move(value); }
+
+    /**
+     * <p>The format of the blueprint.</p>
+     */
+    inline void SetFormat(const char* value) { m_format.assign(value); }
+
+    /**
+     * <p>The format of the blueprint.</p>
+     */
+    inline GetPipelineBlueprintResult& WithFormat(const Aws::String& value) { SetFormat(value); return *this;}
+
+    /**
+     * <p>The format of the blueprint.</p>
+     */
+    inline GetPipelineBlueprintResult& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
+
+    /**
+     * <p>The format of the blueprint.</p>
+     */
+    inline GetPipelineBlueprintResult& WithFormat(const char* value) { SetFormat(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -83,6 +119,8 @@ namespace Model
   private:
 
     PipelineBlueprint m_blueprint;
+
+    Aws::String m_format;
 
     Aws::String m_requestId;
   };

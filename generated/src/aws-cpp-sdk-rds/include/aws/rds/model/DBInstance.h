@@ -3955,6 +3955,55 @@ namespace Model
      */
     inline DBInstance& WithMultiTenant(bool value) { SetMultiTenant(value); return *this;}
 
+
+    /**
+     * <p>The life cycle type for the DB instance.</p> <p>For more information, see
+     * CreateDBInstance.</p>
+     */
+    inline const Aws::String& GetEngineLifecycleSupport() const{ return m_engineLifecycleSupport; }
+
+    /**
+     * <p>The life cycle type for the DB instance.</p> <p>For more information, see
+     * CreateDBInstance.</p>
+     */
+    inline bool EngineLifecycleSupportHasBeenSet() const { return m_engineLifecycleSupportHasBeenSet; }
+
+    /**
+     * <p>The life cycle type for the DB instance.</p> <p>For more information, see
+     * CreateDBInstance.</p>
+     */
+    inline void SetEngineLifecycleSupport(const Aws::String& value) { m_engineLifecycleSupportHasBeenSet = true; m_engineLifecycleSupport = value; }
+
+    /**
+     * <p>The life cycle type for the DB instance.</p> <p>For more information, see
+     * CreateDBInstance.</p>
+     */
+    inline void SetEngineLifecycleSupport(Aws::String&& value) { m_engineLifecycleSupportHasBeenSet = true; m_engineLifecycleSupport = std::move(value); }
+
+    /**
+     * <p>The life cycle type for the DB instance.</p> <p>For more information, see
+     * CreateDBInstance.</p>
+     */
+    inline void SetEngineLifecycleSupport(const char* value) { m_engineLifecycleSupportHasBeenSet = true; m_engineLifecycleSupport.assign(value); }
+
+    /**
+     * <p>The life cycle type for the DB instance.</p> <p>For more information, see
+     * CreateDBInstance.</p>
+     */
+    inline DBInstance& WithEngineLifecycleSupport(const Aws::String& value) { SetEngineLifecycleSupport(value); return *this;}
+
+    /**
+     * <p>The life cycle type for the DB instance.</p> <p>For more information, see
+     * CreateDBInstance.</p>
+     */
+    inline DBInstance& WithEngineLifecycleSupport(Aws::String&& value) { SetEngineLifecycleSupport(std::move(value)); return *this;}
+
+    /**
+     * <p>The life cycle type for the DB instance.</p> <p>For more information, see
+     * CreateDBInstance.</p>
+     */
+    inline DBInstance& WithEngineLifecycleSupport(const char* value) { SetEngineLifecycleSupport(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -4211,6 +4260,9 @@ namespace Model
 
     bool m_multiTenant;
     bool m_multiTenantHasBeenSet = false;
+
+    Aws::String m_engineLifecycleSupport;
+    bool m_engineLifecycleSupportHasBeenSet = false;
   };
 
 } // namespace Model

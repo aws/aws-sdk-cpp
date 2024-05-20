@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent/model/AgentStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/bedrock-agent/model/GuardrailConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -225,6 +226,37 @@ namespace Model
 
 
     /**
+     * <p>The details of the guardrails configuration in the agent version summary.</p>
+     */
+    inline const GuardrailConfiguration& GetGuardrailConfiguration() const{ return m_guardrailConfiguration; }
+
+    /**
+     * <p>The details of the guardrails configuration in the agent version summary.</p>
+     */
+    inline bool GuardrailConfigurationHasBeenSet() const { return m_guardrailConfigurationHasBeenSet; }
+
+    /**
+     * <p>The details of the guardrails configuration in the agent version summary.</p>
+     */
+    inline void SetGuardrailConfiguration(const GuardrailConfiguration& value) { m_guardrailConfigurationHasBeenSet = true; m_guardrailConfiguration = value; }
+
+    /**
+     * <p>The details of the guardrails configuration in the agent version summary.</p>
+     */
+    inline void SetGuardrailConfiguration(GuardrailConfiguration&& value) { m_guardrailConfigurationHasBeenSet = true; m_guardrailConfiguration = std::move(value); }
+
+    /**
+     * <p>The details of the guardrails configuration in the agent version summary.</p>
+     */
+    inline AgentVersionSummary& WithGuardrailConfiguration(const GuardrailConfiguration& value) { SetGuardrailConfiguration(value); return *this;}
+
+    /**
+     * <p>The details of the guardrails configuration in the agent version summary.</p>
+     */
+    inline AgentVersionSummary& WithGuardrailConfiguration(GuardrailConfiguration&& value) { SetGuardrailConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>The time at which the version was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
@@ -270,6 +302,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    GuardrailConfiguration m_guardrailConfiguration;
+    bool m_guardrailConfigurationHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
     bool m_updatedAtHasBeenSet = false;

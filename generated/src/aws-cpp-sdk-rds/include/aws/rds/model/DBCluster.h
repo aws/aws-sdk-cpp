@@ -3393,6 +3393,55 @@ namespace Model
     
     inline DBCluster& WithCertificateDetails(CertificateDetails&& value) { SetCertificateDetails(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The life cycle type for the DB cluster.</p> <p>For more information, see
+     * CreateDBCluster.</p>
+     */
+    inline const Aws::String& GetEngineLifecycleSupport() const{ return m_engineLifecycleSupport; }
+
+    /**
+     * <p>The life cycle type for the DB cluster.</p> <p>For more information, see
+     * CreateDBCluster.</p>
+     */
+    inline bool EngineLifecycleSupportHasBeenSet() const { return m_engineLifecycleSupportHasBeenSet; }
+
+    /**
+     * <p>The life cycle type for the DB cluster.</p> <p>For more information, see
+     * CreateDBCluster.</p>
+     */
+    inline void SetEngineLifecycleSupport(const Aws::String& value) { m_engineLifecycleSupportHasBeenSet = true; m_engineLifecycleSupport = value; }
+
+    /**
+     * <p>The life cycle type for the DB cluster.</p> <p>For more information, see
+     * CreateDBCluster.</p>
+     */
+    inline void SetEngineLifecycleSupport(Aws::String&& value) { m_engineLifecycleSupportHasBeenSet = true; m_engineLifecycleSupport = std::move(value); }
+
+    /**
+     * <p>The life cycle type for the DB cluster.</p> <p>For more information, see
+     * CreateDBCluster.</p>
+     */
+    inline void SetEngineLifecycleSupport(const char* value) { m_engineLifecycleSupportHasBeenSet = true; m_engineLifecycleSupport.assign(value); }
+
+    /**
+     * <p>The life cycle type for the DB cluster.</p> <p>For more information, see
+     * CreateDBCluster.</p>
+     */
+    inline DBCluster& WithEngineLifecycleSupport(const Aws::String& value) { SetEngineLifecycleSupport(value); return *this;}
+
+    /**
+     * <p>The life cycle type for the DB cluster.</p> <p>For more information, see
+     * CreateDBCluster.</p>
+     */
+    inline DBCluster& WithEngineLifecycleSupport(Aws::String&& value) { SetEngineLifecycleSupport(std::move(value)); return *this;}
+
+    /**
+     * <p>The life cycle type for the DB cluster.</p> <p>For more information, see
+     * CreateDBCluster.</p>
+     */
+    inline DBCluster& WithEngineLifecycleSupport(const char* value) { SetEngineLifecycleSupport(value); return *this;}
+
   private:
 
     int m_allocatedStorage;
@@ -3631,6 +3680,9 @@ namespace Model
 
     CertificateDetails m_certificateDetails;
     bool m_certificateDetailsHasBeenSet = false;
+
+    Aws::String m_engineLifecycleSupport;
+    bool m_engineLifecycleSupportHasBeenSet = false;
   };
 
 } // namespace Model

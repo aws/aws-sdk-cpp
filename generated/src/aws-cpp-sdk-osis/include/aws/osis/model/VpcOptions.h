@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/osis/OSIS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/osis/model/VpcAttachmentOptions.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -130,6 +131,37 @@ namespace Model
      */
     inline VpcOptions& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
+
+    /**
+     * <p>Options for attaching a VPC to a pipeline.</p>
+     */
+    inline const VpcAttachmentOptions& GetVpcAttachmentOptions() const{ return m_vpcAttachmentOptions; }
+
+    /**
+     * <p>Options for attaching a VPC to a pipeline.</p>
+     */
+    inline bool VpcAttachmentOptionsHasBeenSet() const { return m_vpcAttachmentOptionsHasBeenSet; }
+
+    /**
+     * <p>Options for attaching a VPC to a pipeline.</p>
+     */
+    inline void SetVpcAttachmentOptions(const VpcAttachmentOptions& value) { m_vpcAttachmentOptionsHasBeenSet = true; m_vpcAttachmentOptions = value; }
+
+    /**
+     * <p>Options for attaching a VPC to a pipeline.</p>
+     */
+    inline void SetVpcAttachmentOptions(VpcAttachmentOptions&& value) { m_vpcAttachmentOptionsHasBeenSet = true; m_vpcAttachmentOptions = std::move(value); }
+
+    /**
+     * <p>Options for attaching a VPC to a pipeline.</p>
+     */
+    inline VpcOptions& WithVpcAttachmentOptions(const VpcAttachmentOptions& value) { SetVpcAttachmentOptions(value); return *this;}
+
+    /**
+     * <p>Options for attaching a VPC to a pipeline.</p>
+     */
+    inline VpcOptions& WithVpcAttachmentOptions(VpcAttachmentOptions&& value) { SetVpcAttachmentOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_subnetIds;
@@ -137,6 +169,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_securityGroupIds;
     bool m_securityGroupIdsHasBeenSet = false;
+
+    VpcAttachmentOptions m_vpcAttachmentOptions;
+    bool m_vpcAttachmentOptionsHasBeenSet = false;
   };
 
 } // namespace Model

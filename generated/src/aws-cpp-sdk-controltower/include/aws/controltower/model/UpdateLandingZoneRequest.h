@@ -75,50 +75,50 @@ namespace Model
 
 
     /**
-     * <p>The <code>manifest.yaml</code> file is a text file that describes your Amazon
-     * Web Services resources. For examples, review <a
-     * href="https://docs.aws.amazon.com/controltower/latest/userguide/the-manifest-file">The
-     * manifest file</a>.</p>
+     * <p>The manifest JSON file is a text file that describes your Amazon Web Services
+     * resources. For examples, review <a
+     * href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch
+     * your landing zone</a>. </p>
      */
     inline Aws::Utils::DocumentView GetManifest() const{ return m_manifest; }
 
     /**
-     * <p>The <code>manifest.yaml</code> file is a text file that describes your Amazon
-     * Web Services resources. For examples, review <a
-     * href="https://docs.aws.amazon.com/controltower/latest/userguide/the-manifest-file">The
-     * manifest file</a>.</p>
+     * <p>The manifest JSON file is a text file that describes your Amazon Web Services
+     * resources. For examples, review <a
+     * href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch
+     * your landing zone</a>. </p>
      */
     inline bool ManifestHasBeenSet() const { return m_manifestHasBeenSet; }
 
     /**
-     * <p>The <code>manifest.yaml</code> file is a text file that describes your Amazon
-     * Web Services resources. For examples, review <a
-     * href="https://docs.aws.amazon.com/controltower/latest/userguide/the-manifest-file">The
-     * manifest file</a>.</p>
+     * <p>The manifest JSON file is a text file that describes your Amazon Web Services
+     * resources. For examples, review <a
+     * href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch
+     * your landing zone</a>. </p>
      */
     inline void SetManifest(const Aws::Utils::Document& value) { m_manifestHasBeenSet = true; m_manifest = value; }
 
     /**
-     * <p>The <code>manifest.yaml</code> file is a text file that describes your Amazon
-     * Web Services resources. For examples, review <a
-     * href="https://docs.aws.amazon.com/controltower/latest/userguide/the-manifest-file">The
-     * manifest file</a>.</p>
+     * <p>The manifest JSON file is a text file that describes your Amazon Web Services
+     * resources. For examples, review <a
+     * href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch
+     * your landing zone</a>. </p>
      */
     inline void SetManifest(Aws::Utils::Document&& value) { m_manifestHasBeenSet = true; m_manifest = std::move(value); }
 
     /**
-     * <p>The <code>manifest.yaml</code> file is a text file that describes your Amazon
-     * Web Services resources. For examples, review <a
-     * href="https://docs.aws.amazon.com/controltower/latest/userguide/the-manifest-file">The
-     * manifest file</a>.</p>
+     * <p>The manifest JSON file is a text file that describes your Amazon Web Services
+     * resources. For examples, review <a
+     * href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch
+     * your landing zone</a>. </p>
      */
     inline UpdateLandingZoneRequest& WithManifest(const Aws::Utils::Document& value) { SetManifest(value); return *this;}
 
     /**
-     * <p>The <code>manifest.yaml</code> file is a text file that describes your Amazon
-     * Web Services resources. For examples, review <a
-     * href="https://docs.aws.amazon.com/controltower/latest/userguide/the-manifest-file">The
-     * manifest file</a>.</p>
+     * <p>The manifest JSON file is a text file that describes your Amazon Web Services
+     * resources. For examples, review <a
+     * href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch
+     * your landing zone</a>. </p>
      */
     inline UpdateLandingZoneRequest& WithManifest(Aws::Utils::Document&& value) { SetManifest(std::move(value)); return *this;}
 

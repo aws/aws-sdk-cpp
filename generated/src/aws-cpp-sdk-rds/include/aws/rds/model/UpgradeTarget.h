@@ -166,25 +166,29 @@ namespace Model
 
     /**
      * <p>Indicates whether the target version is applied to any source DB instances
-     * that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
+     * that have <code>AutoMinorVersionUpgrade</code> set to true.</p> <p>This
+     * parameter is dynamic, and is set by RDS.</p>
      */
     inline bool GetAutoUpgrade() const{ return m_autoUpgrade; }
 
     /**
      * <p>Indicates whether the target version is applied to any source DB instances
-     * that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
+     * that have <code>AutoMinorVersionUpgrade</code> set to true.</p> <p>This
+     * parameter is dynamic, and is set by RDS.</p>
      */
     inline bool AutoUpgradeHasBeenSet() const { return m_autoUpgradeHasBeenSet; }
 
     /**
      * <p>Indicates whether the target version is applied to any source DB instances
-     * that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
+     * that have <code>AutoMinorVersionUpgrade</code> set to true.</p> <p>This
+     * parameter is dynamic, and is set by RDS.</p>
      */
     inline void SetAutoUpgrade(bool value) { m_autoUpgradeHasBeenSet = true; m_autoUpgrade = value; }
 
     /**
      * <p>Indicates whether the target version is applied to any source DB instances
-     * that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
+     * that have <code>AutoMinorVersionUpgrade</code> set to true.</p> <p>This
+     * parameter is dynamic, and is set by RDS.</p>
      */
     inline UpgradeTarget& WithAutoUpgrade(bool value) { SetAutoUpgrade(value); return *this;}
 

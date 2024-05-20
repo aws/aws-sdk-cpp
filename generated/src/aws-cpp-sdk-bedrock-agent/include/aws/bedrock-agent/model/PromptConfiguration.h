@@ -49,7 +49,9 @@ namespace Model
      * template. You can use placeholder variables in the base prompt template to
      * customize the prompt. For more information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Prompt
-     * template placeholder variables</a>.</p>
+     * template placeholder variables</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts-configure.html">Configure
+     * the prompt templates</a>.</p>
      */
     inline const Aws::String& GetBasePromptTemplate() const{ return m_basePromptTemplate; }
 
@@ -58,7 +60,9 @@ namespace Model
      * template. You can use placeholder variables in the base prompt template to
      * customize the prompt. For more information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Prompt
-     * template placeholder variables</a>.</p>
+     * template placeholder variables</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts-configure.html">Configure
+     * the prompt templates</a>.</p>
      */
     inline bool BasePromptTemplateHasBeenSet() const { return m_basePromptTemplateHasBeenSet; }
 
@@ -67,7 +71,9 @@ namespace Model
      * template. You can use placeholder variables in the base prompt template to
      * customize the prompt. For more information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Prompt
-     * template placeholder variables</a>.</p>
+     * template placeholder variables</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts-configure.html">Configure
+     * the prompt templates</a>.</p>
      */
     inline void SetBasePromptTemplate(const Aws::String& value) { m_basePromptTemplateHasBeenSet = true; m_basePromptTemplate = value; }
 
@@ -76,7 +82,9 @@ namespace Model
      * template. You can use placeholder variables in the base prompt template to
      * customize the prompt. For more information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Prompt
-     * template placeholder variables</a>.</p>
+     * template placeholder variables</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts-configure.html">Configure
+     * the prompt templates</a>.</p>
      */
     inline void SetBasePromptTemplate(Aws::String&& value) { m_basePromptTemplateHasBeenSet = true; m_basePromptTemplate = std::move(value); }
 
@@ -85,7 +93,9 @@ namespace Model
      * template. You can use placeholder variables in the base prompt template to
      * customize the prompt. For more information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Prompt
-     * template placeholder variables</a>.</p>
+     * template placeholder variables</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts-configure.html">Configure
+     * the prompt templates</a>.</p>
      */
     inline void SetBasePromptTemplate(const char* value) { m_basePromptTemplateHasBeenSet = true; m_basePromptTemplate.assign(value); }
 
@@ -94,7 +104,9 @@ namespace Model
      * template. You can use placeholder variables in the base prompt template to
      * customize the prompt. For more information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Prompt
-     * template placeholder variables</a>.</p>
+     * template placeholder variables</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts-configure.html">Configure
+     * the prompt templates</a>.</p>
      */
     inline PromptConfiguration& WithBasePromptTemplate(const Aws::String& value) { SetBasePromptTemplate(value); return *this;}
 
@@ -103,7 +115,9 @@ namespace Model
      * template. You can use placeholder variables in the base prompt template to
      * customize the prompt. For more information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Prompt
-     * template placeholder variables</a>.</p>
+     * template placeholder variables</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts-configure.html">Configure
+     * the prompt templates</a>.</p>
      */
     inline PromptConfiguration& WithBasePromptTemplate(Aws::String&& value) { SetBasePromptTemplate(std::move(value)); return *this;}
 
@@ -112,7 +126,9 @@ namespace Model
      * template. You can use placeholder variables in the base prompt template to
      * customize the prompt. For more information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Prompt
-     * template placeholder variables</a>.</p>
+     * template placeholder variables</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts-configure.html">Configure
+     * the prompt templates</a>.</p>
      */
     inline PromptConfiguration& WithBasePromptTemplate(const char* value) { SetBasePromptTemplate(value); return *this;}
 

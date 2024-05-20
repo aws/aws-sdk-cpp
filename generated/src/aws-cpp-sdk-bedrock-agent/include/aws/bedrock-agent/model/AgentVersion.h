@@ -9,6 +9,7 @@
 #include <aws/bedrock-agent/model/AgentStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/bedrock-agent/model/GuardrailConfiguration.h>
 #include <aws/bedrock-agent/model/PromptOverrideConfiguration.h>
 #include <utility>
 
@@ -445,6 +446,37 @@ namespace Model
 
 
     /**
+     * <p>The guardrails configuration assigned to the agent version.</p>
+     */
+    inline const GuardrailConfiguration& GetGuardrailConfiguration() const{ return m_guardrailConfiguration; }
+
+    /**
+     * <p>The guardrails configuration assigned to the agent version.</p>
+     */
+    inline bool GuardrailConfigurationHasBeenSet() const { return m_guardrailConfigurationHasBeenSet; }
+
+    /**
+     * <p>The guardrails configuration assigned to the agent version.</p>
+     */
+    inline void SetGuardrailConfiguration(const GuardrailConfiguration& value) { m_guardrailConfigurationHasBeenSet = true; m_guardrailConfiguration = value; }
+
+    /**
+     * <p>The guardrails configuration assigned to the agent version.</p>
+     */
+    inline void SetGuardrailConfiguration(GuardrailConfiguration&& value) { m_guardrailConfigurationHasBeenSet = true; m_guardrailConfiguration = std::move(value); }
+
+    /**
+     * <p>The guardrails configuration assigned to the agent version.</p>
+     */
+    inline AgentVersion& WithGuardrailConfiguration(const GuardrailConfiguration& value) { SetGuardrailConfiguration(value); return *this;}
+
+    /**
+     * <p>The guardrails configuration assigned to the agent version.</p>
+     */
+    inline AgentVersion& WithGuardrailConfiguration(GuardrailConfiguration&& value) { SetGuardrailConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>The number of seconds for which Amazon Bedrock keeps information about a
      * user's conversation with the agent.</p> <p>A user interaction remains active for
      * the amount of time specified. If no conversation occurs during this time, the
@@ -728,6 +760,9 @@ namespace Model
 
     Aws::String m_foundationModel;
     bool m_foundationModelHasBeenSet = false;
+
+    GuardrailConfiguration m_guardrailConfiguration;
+    bool m_guardrailConfigurationHasBeenSet = false;
 
     int m_idleSessionTTLInSeconds;
     bool m_idleSessionTTLInSecondsHasBeenSet = false;

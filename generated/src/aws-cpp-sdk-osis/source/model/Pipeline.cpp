@@ -37,6 +37,7 @@ Pipeline::Pipeline() :
     m_bufferOptionsHasBeenSet(false),
     m_encryptionAtRestOptionsHasBeenSet(false),
     m_serviceVpcEndpointsHasBeenSet(false),
+    m_destinationsHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -60,6 +61,7 @@ Pipeline::Pipeline(JsonView jsonValue) :
     m_bufferOptionsHasBeenSet(false),
     m_encryptionAtRestOptionsHasBeenSet(false),
     m_serviceVpcEndpointsHasBeenSet(false),
+    m_destinationsHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -181,6 +183,16 @@ Pipeline& Pipeline::operator =(JsonView jsonValue)
     m_serviceVpcEndpointsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Destinations"))
+  {
+    Aws::Utils::Array<JsonView> destinationsJsonList = jsonValue.GetArray("Destinations");
+    for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
+    {
+      m_destinations.push_back(destinationsJsonList[destinationsIndex].AsObject());
+    }
+    m_destinationsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -297,6 +309,17 @@ JsonValue Pipeline::Jsonize() const
      serviceVpcEndpointsJsonList[serviceVpcEndpointsIndex].AsObject(m_serviceVpcEndpoints[serviceVpcEndpointsIndex].Jsonize());
    }
    payload.WithArray("ServiceVpcEndpoints", std::move(serviceVpcEndpointsJsonList));
+
+  }
+
+  if(m_destinationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> destinationsJsonList(m_destinations.size());
+   for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
+   {
+     destinationsJsonList[destinationsIndex].AsObject(m_destinations[destinationsIndex].Jsonize());
+   }
+   payload.WithArray("Destinations", std::move(destinationsJsonList));
 
   }
 

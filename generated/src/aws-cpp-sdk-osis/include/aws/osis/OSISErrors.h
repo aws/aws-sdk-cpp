@@ -48,6 +48,7 @@ enum class OSISErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  DISABLED_OPERATION,
   INTERNAL,
   INVALID_PAGINATION_TOKEN,
   LIMIT_EXCEEDED,

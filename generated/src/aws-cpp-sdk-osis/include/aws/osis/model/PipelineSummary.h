@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/osis/model/PipelineDestination.h>
 #include <aws/osis/model/Tag.h>
 #include <utility>
 
@@ -280,6 +281,47 @@ namespace Model
 
 
     /**
+     * <p>A list of destinations to which the pipeline writes data.</p>
+     */
+    inline const Aws::Vector<PipelineDestination>& GetDestinations() const{ return m_destinations; }
+
+    /**
+     * <p>A list of destinations to which the pipeline writes data.</p>
+     */
+    inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
+
+    /**
+     * <p>A list of destinations to which the pipeline writes data.</p>
+     */
+    inline void SetDestinations(const Aws::Vector<PipelineDestination>& value) { m_destinationsHasBeenSet = true; m_destinations = value; }
+
+    /**
+     * <p>A list of destinations to which the pipeline writes data.</p>
+     */
+    inline void SetDestinations(Aws::Vector<PipelineDestination>&& value) { m_destinationsHasBeenSet = true; m_destinations = std::move(value); }
+
+    /**
+     * <p>A list of destinations to which the pipeline writes data.</p>
+     */
+    inline PipelineSummary& WithDestinations(const Aws::Vector<PipelineDestination>& value) { SetDestinations(value); return *this;}
+
+    /**
+     * <p>A list of destinations to which the pipeline writes data.</p>
+     */
+    inline PipelineSummary& WithDestinations(Aws::Vector<PipelineDestination>&& value) { SetDestinations(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of destinations to which the pipeline writes data.</p>
+     */
+    inline PipelineSummary& AddDestinations(const PipelineDestination& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(value); return *this; }
+
+    /**
+     * <p>A list of destinations to which the pipeline writes data.</p>
+     */
+    inline PipelineSummary& AddDestinations(PipelineDestination&& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>A list of tags associated with the given pipeline.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -344,6 +386,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdatedAt;
     bool m_lastUpdatedAtHasBeenSet = false;
+
+    Aws::Vector<PipelineDestination> m_destinations;
+    bool m_destinationsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;

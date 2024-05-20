@@ -2731,6 +2731,183 @@ namespace Model
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithCACertificateIdentifier(const char* value) { SetCACertificateIdentifier(value); return *this;}
 
+
+    /**
+     * <p>The life cycle type for this DB instance.</p>  <p>By default, this
+     * value is set to <code>open-source-rds-extended-support</code>, which enrolls
+     * your DB instance into Amazon RDS Extended Support. At the end of standard
+     * support, you can avoid charges for Extended Support by setting the value to
+     * <code>open-source-rds-extended-support-disabled</code>. In this case, RDS
+     * automatically upgrades your restored DB instance to a higher engine version, if
+     * the major engine version is past its end of standard support date.</p> 
+     * <p>You can use this setting to enroll your DB instance into Amazon RDS Extended
+     * Support. With RDS Extended Support, you can run the selected major engine
+     * version on your DB instance past the end of standard support for that engine
+     * version. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using
+     * Amazon RDS Extended Support</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting applies only to RDS for MySQL and RDS for PostgreSQL. For Amazon Aurora
+     * DB instances, the life cycle type is managed by the DB cluster.</p> <p>Valid
+     * Values: <code>open-source-rds-extended-support |
+     * open-source-rds-extended-support-disabled</code> </p> <p>Default:
+     * <code>open-source-rds-extended-support</code> </p>
+     */
+    inline const Aws::String& GetEngineLifecycleSupport() const{ return m_engineLifecycleSupport; }
+
+    /**
+     * <p>The life cycle type for this DB instance.</p>  <p>By default, this
+     * value is set to <code>open-source-rds-extended-support</code>, which enrolls
+     * your DB instance into Amazon RDS Extended Support. At the end of standard
+     * support, you can avoid charges for Extended Support by setting the value to
+     * <code>open-source-rds-extended-support-disabled</code>. In this case, RDS
+     * automatically upgrades your restored DB instance to a higher engine version, if
+     * the major engine version is past its end of standard support date.</p> 
+     * <p>You can use this setting to enroll your DB instance into Amazon RDS Extended
+     * Support. With RDS Extended Support, you can run the selected major engine
+     * version on your DB instance past the end of standard support for that engine
+     * version. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using
+     * Amazon RDS Extended Support</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting applies only to RDS for MySQL and RDS for PostgreSQL. For Amazon Aurora
+     * DB instances, the life cycle type is managed by the DB cluster.</p> <p>Valid
+     * Values: <code>open-source-rds-extended-support |
+     * open-source-rds-extended-support-disabled</code> </p> <p>Default:
+     * <code>open-source-rds-extended-support</code> </p>
+     */
+    inline bool EngineLifecycleSupportHasBeenSet() const { return m_engineLifecycleSupportHasBeenSet; }
+
+    /**
+     * <p>The life cycle type for this DB instance.</p>  <p>By default, this
+     * value is set to <code>open-source-rds-extended-support</code>, which enrolls
+     * your DB instance into Amazon RDS Extended Support. At the end of standard
+     * support, you can avoid charges for Extended Support by setting the value to
+     * <code>open-source-rds-extended-support-disabled</code>. In this case, RDS
+     * automatically upgrades your restored DB instance to a higher engine version, if
+     * the major engine version is past its end of standard support date.</p> 
+     * <p>You can use this setting to enroll your DB instance into Amazon RDS Extended
+     * Support. With RDS Extended Support, you can run the selected major engine
+     * version on your DB instance past the end of standard support for that engine
+     * version. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using
+     * Amazon RDS Extended Support</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting applies only to RDS for MySQL and RDS for PostgreSQL. For Amazon Aurora
+     * DB instances, the life cycle type is managed by the DB cluster.</p> <p>Valid
+     * Values: <code>open-source-rds-extended-support |
+     * open-source-rds-extended-support-disabled</code> </p> <p>Default:
+     * <code>open-source-rds-extended-support</code> </p>
+     */
+    inline void SetEngineLifecycleSupport(const Aws::String& value) { m_engineLifecycleSupportHasBeenSet = true; m_engineLifecycleSupport = value; }
+
+    /**
+     * <p>The life cycle type for this DB instance.</p>  <p>By default, this
+     * value is set to <code>open-source-rds-extended-support</code>, which enrolls
+     * your DB instance into Amazon RDS Extended Support. At the end of standard
+     * support, you can avoid charges for Extended Support by setting the value to
+     * <code>open-source-rds-extended-support-disabled</code>. In this case, RDS
+     * automatically upgrades your restored DB instance to a higher engine version, if
+     * the major engine version is past its end of standard support date.</p> 
+     * <p>You can use this setting to enroll your DB instance into Amazon RDS Extended
+     * Support. With RDS Extended Support, you can run the selected major engine
+     * version on your DB instance past the end of standard support for that engine
+     * version. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using
+     * Amazon RDS Extended Support</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting applies only to RDS for MySQL and RDS for PostgreSQL. For Amazon Aurora
+     * DB instances, the life cycle type is managed by the DB cluster.</p> <p>Valid
+     * Values: <code>open-source-rds-extended-support |
+     * open-source-rds-extended-support-disabled</code> </p> <p>Default:
+     * <code>open-source-rds-extended-support</code> </p>
+     */
+    inline void SetEngineLifecycleSupport(Aws::String&& value) { m_engineLifecycleSupportHasBeenSet = true; m_engineLifecycleSupport = std::move(value); }
+
+    /**
+     * <p>The life cycle type for this DB instance.</p>  <p>By default, this
+     * value is set to <code>open-source-rds-extended-support</code>, which enrolls
+     * your DB instance into Amazon RDS Extended Support. At the end of standard
+     * support, you can avoid charges for Extended Support by setting the value to
+     * <code>open-source-rds-extended-support-disabled</code>. In this case, RDS
+     * automatically upgrades your restored DB instance to a higher engine version, if
+     * the major engine version is past its end of standard support date.</p> 
+     * <p>You can use this setting to enroll your DB instance into Amazon RDS Extended
+     * Support. With RDS Extended Support, you can run the selected major engine
+     * version on your DB instance past the end of standard support for that engine
+     * version. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using
+     * Amazon RDS Extended Support</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting applies only to RDS for MySQL and RDS for PostgreSQL. For Amazon Aurora
+     * DB instances, the life cycle type is managed by the DB cluster.</p> <p>Valid
+     * Values: <code>open-source-rds-extended-support |
+     * open-source-rds-extended-support-disabled</code> </p> <p>Default:
+     * <code>open-source-rds-extended-support</code> </p>
+     */
+    inline void SetEngineLifecycleSupport(const char* value) { m_engineLifecycleSupportHasBeenSet = true; m_engineLifecycleSupport.assign(value); }
+
+    /**
+     * <p>The life cycle type for this DB instance.</p>  <p>By default, this
+     * value is set to <code>open-source-rds-extended-support</code>, which enrolls
+     * your DB instance into Amazon RDS Extended Support. At the end of standard
+     * support, you can avoid charges for Extended Support by setting the value to
+     * <code>open-source-rds-extended-support-disabled</code>. In this case, RDS
+     * automatically upgrades your restored DB instance to a higher engine version, if
+     * the major engine version is past its end of standard support date.</p> 
+     * <p>You can use this setting to enroll your DB instance into Amazon RDS Extended
+     * Support. With RDS Extended Support, you can run the selected major engine
+     * version on your DB instance past the end of standard support for that engine
+     * version. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using
+     * Amazon RDS Extended Support</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting applies only to RDS for MySQL and RDS for PostgreSQL. For Amazon Aurora
+     * DB instances, the life cycle type is managed by the DB cluster.</p> <p>Valid
+     * Values: <code>open-source-rds-extended-support |
+     * open-source-rds-extended-support-disabled</code> </p> <p>Default:
+     * <code>open-source-rds-extended-support</code> </p>
+     */
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithEngineLifecycleSupport(const Aws::String& value) { SetEngineLifecycleSupport(value); return *this;}
+
+    /**
+     * <p>The life cycle type for this DB instance.</p>  <p>By default, this
+     * value is set to <code>open-source-rds-extended-support</code>, which enrolls
+     * your DB instance into Amazon RDS Extended Support. At the end of standard
+     * support, you can avoid charges for Extended Support by setting the value to
+     * <code>open-source-rds-extended-support-disabled</code>. In this case, RDS
+     * automatically upgrades your restored DB instance to a higher engine version, if
+     * the major engine version is past its end of standard support date.</p> 
+     * <p>You can use this setting to enroll your DB instance into Amazon RDS Extended
+     * Support. With RDS Extended Support, you can run the selected major engine
+     * version on your DB instance past the end of standard support for that engine
+     * version. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using
+     * Amazon RDS Extended Support</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting applies only to RDS for MySQL and RDS for PostgreSQL. For Amazon Aurora
+     * DB instances, the life cycle type is managed by the DB cluster.</p> <p>Valid
+     * Values: <code>open-source-rds-extended-support |
+     * open-source-rds-extended-support-disabled</code> </p> <p>Default:
+     * <code>open-source-rds-extended-support</code> </p>
+     */
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithEngineLifecycleSupport(Aws::String&& value) { SetEngineLifecycleSupport(std::move(value)); return *this;}
+
+    /**
+     * <p>The life cycle type for this DB instance.</p>  <p>By default, this
+     * value is set to <code>open-source-rds-extended-support</code>, which enrolls
+     * your DB instance into Amazon RDS Extended Support. At the end of standard
+     * support, you can avoid charges for Extended Support by setting the value to
+     * <code>open-source-rds-extended-support-disabled</code>. In this case, RDS
+     * automatically upgrades your restored DB instance to a higher engine version, if
+     * the major engine version is past its end of standard support date.</p> 
+     * <p>You can use this setting to enroll your DB instance into Amazon RDS Extended
+     * Support. With RDS Extended Support, you can run the selected major engine
+     * version on your DB instance past the end of standard support for that engine
+     * version. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using
+     * Amazon RDS Extended Support</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting applies only to RDS for MySQL and RDS for PostgreSQL. For Amazon Aurora
+     * DB instances, the life cycle type is managed by the DB cluster.</p> <p>Valid
+     * Values: <code>open-source-rds-extended-support |
+     * open-source-rds-extended-support-disabled</code> </p> <p>Default:
+     * <code>open-source-rds-extended-support</code> </p>
+     */
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithEngineLifecycleSupport(const char* value) { SetEngineLifecycleSupport(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -2855,6 +3032,9 @@ namespace Model
 
     Aws::String m_cACertificateIdentifier;
     bool m_cACertificateIdentifierHasBeenSet = false;
+
+    Aws::String m_engineLifecycleSupport;
+    bool m_engineLifecycleSupportHasBeenSet = false;
   };
 
 } // namespace Model

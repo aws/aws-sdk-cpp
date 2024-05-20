@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/controltower/ControlTower_EXPORTS.h>
 #include <aws/controltower/ControlTowerRequest.h>
+#include <aws/controltower/model/EnabledControlFilter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -30,6 +31,43 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "ListEnabledControls"; }
 
     AWS_CONTROLTOWER_API Aws::String SerializePayload() const override;
+
+
+    /**
+     * <p>An input filter for the <code>ListCEnabledControls</code> API that lets you
+     * select the types of control operations to view.</p>
+     */
+    inline const EnabledControlFilter& GetFilter() const{ return m_filter; }
+
+    /**
+     * <p>An input filter for the <code>ListCEnabledControls</code> API that lets you
+     * select the types of control operations to view.</p>
+     */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+
+    /**
+     * <p>An input filter for the <code>ListCEnabledControls</code> API that lets you
+     * select the types of control operations to view.</p>
+     */
+    inline void SetFilter(const EnabledControlFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
+
+    /**
+     * <p>An input filter for the <code>ListCEnabledControls</code> API that lets you
+     * select the types of control operations to view.</p>
+     */
+    inline void SetFilter(EnabledControlFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
+
+    /**
+     * <p>An input filter for the <code>ListCEnabledControls</code> API that lets you
+     * select the types of control operations to view.</p>
+     */
+    inline ListEnabledControlsRequest& WithFilter(const EnabledControlFilter& value) { SetFilter(value); return *this;}
+
+    /**
+     * <p>An input filter for the <code>ListCEnabledControls</code> API that lets you
+     * select the types of control operations to view.</p>
+     */
+    inline ListEnabledControlsRequest& WithFilter(EnabledControlFilter&& value) { SetFilter(std::move(value)); return *this;}
 
 
     /**
@@ -167,6 +205,9 @@ namespace Model
     inline ListEnabledControlsRequest& WithTargetIdentifier(const char* value) { SetTargetIdentifier(value); return *this;}
 
   private:
+
+    EnabledControlFilter m_filter;
+    bool m_filterHasBeenSet = false;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;

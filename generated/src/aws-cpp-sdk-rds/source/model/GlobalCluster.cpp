@@ -27,6 +27,7 @@ GlobalCluster::GlobalCluster() :
     m_statusHasBeenSet(false),
     m_engineHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
+    m_engineLifecycleSupportHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
     m_storageEncrypted(false),
     m_storageEncryptedHasBeenSet(false),
@@ -44,6 +45,7 @@ GlobalCluster::GlobalCluster(const XmlNode& xmlNode) :
     m_statusHasBeenSet(false),
     m_engineHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
+    m_engineLifecycleSupportHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
     m_storageEncrypted(false),
     m_storageEncryptedHasBeenSet(false),
@@ -96,6 +98,12 @@ GlobalCluster& GlobalCluster::operator =(const XmlNode& xmlNode)
     {
       m_engineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(engineVersionNode.GetText());
       m_engineVersionHasBeenSet = true;
+    }
+    XmlNode engineLifecycleSupportNode = resultNode.FirstChild("EngineLifecycleSupport");
+    if(!engineLifecycleSupportNode.IsNull())
+    {
+      m_engineLifecycleSupport = Aws::Utils::Xml::DecodeEscapedXmlText(engineLifecycleSupportNode.GetText());
+      m_engineLifecycleSupportHasBeenSet = true;
     }
     XmlNode databaseNameNode = resultNode.FirstChild("DatabaseName");
     if(!databaseNameNode.IsNull())
@@ -170,6 +178,11 @@ void GlobalCluster::OutputToStream(Aws::OStream& oStream, const char* location, 
       oStream << location << index << locationValue << ".EngineVersion=" << StringUtils::URLEncode(m_engineVersion.c_str()) << "&";
   }
 
+  if(m_engineLifecycleSupportHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EngineLifecycleSupport=" << StringUtils::URLEncode(m_engineLifecycleSupport.c_str()) << "&";
+  }
+
   if(m_databaseNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".DatabaseName=" << StringUtils::URLEncode(m_databaseName.c_str()) << "&";
@@ -230,6 +243,10 @@ void GlobalCluster::OutputToStream(Aws::OStream& oStream, const char* location) 
   if(m_engineVersionHasBeenSet)
   {
       oStream << location << ".EngineVersion=" << StringUtils::URLEncode(m_engineVersion.c_str()) << "&";
+  }
+  if(m_engineLifecycleSupportHasBeenSet)
+  {
+      oStream << location << ".EngineLifecycleSupport=" << StringUtils::URLEncode(m_engineLifecycleSupport.c_str()) << "&";
   }
   if(m_databaseNameHasBeenSet)
   {

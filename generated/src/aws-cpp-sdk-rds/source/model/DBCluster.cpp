@@ -124,7 +124,8 @@ DBCluster::DBCluster() :
     m_limitlessDatabaseHasBeenSet(false),
     m_storageThroughput(0),
     m_storageThroughputHasBeenSet(false),
-    m_certificateDetailsHasBeenSet(false)
+    m_certificateDetailsHasBeenSet(false),
+    m_engineLifecycleSupportHasBeenSet(false)
 {
 }
 
@@ -232,7 +233,8 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_limitlessDatabaseHasBeenSet(false),
     m_storageThroughput(0),
     m_storageThroughputHasBeenSet(false),
-    m_certificateDetailsHasBeenSet(false)
+    m_certificateDetailsHasBeenSet(false),
+    m_engineLifecycleSupportHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -783,6 +785,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       m_certificateDetails = certificateDetailsNode;
       m_certificateDetailsHasBeenSet = true;
     }
+    XmlNode engineLifecycleSupportNode = resultNode.FirstChild("EngineLifecycleSupport");
+    if(!engineLifecycleSupportNode.IsNull())
+    {
+      m_engineLifecycleSupport = Aws::Utils::Xml::DecodeEscapedXmlText(engineLifecycleSupportNode.GetText());
+      m_engineLifecycleSupportHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -1257,6 +1265,11 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       m_certificateDetails.OutputToStream(oStream, certificateDetailsLocationAndMemberSs.str().c_str());
   }
 
+  if(m_engineLifecycleSupportHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EngineLifecycleSupport=" << StringUtils::URLEncode(m_engineLifecycleSupport.c_str()) << "&";
+  }
+
 }
 
 void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1648,6 +1661,10 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
       Aws::String certificateDetailsLocationAndMember(location);
       certificateDetailsLocationAndMember += ".CertificateDetails";
       m_certificateDetails.OutputToStream(oStream, certificateDetailsLocationAndMember.c_str());
+  }
+  if(m_engineLifecycleSupportHasBeenSet)
+  {
+      oStream << location << ".EngineLifecycleSupport=" << StringUtils::URLEncode(m_engineLifecycleSupport.c_str()) << "&";
   }
 }
 

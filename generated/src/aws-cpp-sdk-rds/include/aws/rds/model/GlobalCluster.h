@@ -322,6 +322,55 @@ namespace Model
 
 
     /**
+     * <p>The life cycle type for the global cluster.</p> <p>For more information, see
+     * CreateGlobalCluster.</p>
+     */
+    inline const Aws::String& GetEngineLifecycleSupport() const{ return m_engineLifecycleSupport; }
+
+    /**
+     * <p>The life cycle type for the global cluster.</p> <p>For more information, see
+     * CreateGlobalCluster.</p>
+     */
+    inline bool EngineLifecycleSupportHasBeenSet() const { return m_engineLifecycleSupportHasBeenSet; }
+
+    /**
+     * <p>The life cycle type for the global cluster.</p> <p>For more information, see
+     * CreateGlobalCluster.</p>
+     */
+    inline void SetEngineLifecycleSupport(const Aws::String& value) { m_engineLifecycleSupportHasBeenSet = true; m_engineLifecycleSupport = value; }
+
+    /**
+     * <p>The life cycle type for the global cluster.</p> <p>For more information, see
+     * CreateGlobalCluster.</p>
+     */
+    inline void SetEngineLifecycleSupport(Aws::String&& value) { m_engineLifecycleSupportHasBeenSet = true; m_engineLifecycleSupport = std::move(value); }
+
+    /**
+     * <p>The life cycle type for the global cluster.</p> <p>For more information, see
+     * CreateGlobalCluster.</p>
+     */
+    inline void SetEngineLifecycleSupport(const char* value) { m_engineLifecycleSupportHasBeenSet = true; m_engineLifecycleSupport.assign(value); }
+
+    /**
+     * <p>The life cycle type for the global cluster.</p> <p>For more information, see
+     * CreateGlobalCluster.</p>
+     */
+    inline GlobalCluster& WithEngineLifecycleSupport(const Aws::String& value) { SetEngineLifecycleSupport(value); return *this;}
+
+    /**
+     * <p>The life cycle type for the global cluster.</p> <p>For more information, see
+     * CreateGlobalCluster.</p>
+     */
+    inline GlobalCluster& WithEngineLifecycleSupport(Aws::String&& value) { SetEngineLifecycleSupport(std::move(value)); return *this;}
+
+    /**
+     * <p>The life cycle type for the global cluster.</p> <p>For more information, see
+     * CreateGlobalCluster.</p>
+     */
+    inline GlobalCluster& WithEngineLifecycleSupport(const char* value) { SetEngineLifecycleSupport(value); return *this;}
+
+
+    /**
      * <p>The default database name within the new global database cluster.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
@@ -526,6 +575,9 @@ namespace Model
 
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet = false;
+
+    Aws::String m_engineLifecycleSupport;
+    bool m_engineLifecycleSupportHasBeenSet = false;
 
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet = false;

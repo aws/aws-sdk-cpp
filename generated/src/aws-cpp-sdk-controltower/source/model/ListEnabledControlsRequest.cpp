@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListEnabledControlsRequest::ListEnabledControlsRequest() : 
+    m_filterHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
@@ -23,6 +24,12 @@ ListEnabledControlsRequest::ListEnabledControlsRequest() :
 Aws::String ListEnabledControlsRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_filterHasBeenSet)
+  {
+   payload.WithObject("filter", m_filter.Jsonize());
+
+  }
 
   if(m_maxResultsHasBeenSet)
   {

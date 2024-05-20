@@ -11,6 +11,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace OSIS
 {
 namespace Model
@@ -30,6 +34,8 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "GetPipelineBlueprint"; }
 
     AWS_OSIS_API Aws::String SerializePayload() const override;
+
+    AWS_OSIS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -72,10 +78,54 @@ namespace Model
      */
     inline GetPipelineBlueprintRequest& WithBlueprintName(const char* value) { SetBlueprintName(value); return *this;}
 
+
+    /**
+     * <p>The format format of the blueprint to retrieve.</p>
+     */
+    inline const Aws::String& GetFormat() const{ return m_format; }
+
+    /**
+     * <p>The format format of the blueprint to retrieve.</p>
+     */
+    inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
+
+    /**
+     * <p>The format format of the blueprint to retrieve.</p>
+     */
+    inline void SetFormat(const Aws::String& value) { m_formatHasBeenSet = true; m_format = value; }
+
+    /**
+     * <p>The format format of the blueprint to retrieve.</p>
+     */
+    inline void SetFormat(Aws::String&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
+
+    /**
+     * <p>The format format of the blueprint to retrieve.</p>
+     */
+    inline void SetFormat(const char* value) { m_formatHasBeenSet = true; m_format.assign(value); }
+
+    /**
+     * <p>The format format of the blueprint to retrieve.</p>
+     */
+    inline GetPipelineBlueprintRequest& WithFormat(const Aws::String& value) { SetFormat(value); return *this;}
+
+    /**
+     * <p>The format format of the blueprint to retrieve.</p>
+     */
+    inline GetPipelineBlueprintRequest& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
+
+    /**
+     * <p>The format format of the blueprint to retrieve.</p>
+     */
+    inline GetPipelineBlueprintRequest& WithFormat(const char* value) { SetFormat(value); return *this;}
+
   private:
 
     Aws::String m_blueprintName;
     bool m_blueprintNameHasBeenSet = false;
+
+    Aws::String m_format;
+    bool m_formatHasBeenSet = false;
   };
 
 } // namespace Model
