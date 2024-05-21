@@ -1259,49 +1259,49 @@ namespace Model
 
     /**
      * <p>The license model information for this DB instance. This setting doesn't
-     * apply to RDS Custom DB instances.</p>
+     * apply to Amazon Aurora or RDS Custom DB instances.</p>
      */
     inline const Aws::String& GetLicenseModel() const{ return m_licenseModel; }
 
     /**
      * <p>The license model information for this DB instance. This setting doesn't
-     * apply to RDS Custom DB instances.</p>
+     * apply to Amazon Aurora or RDS Custom DB instances.</p>
      */
     inline bool LicenseModelHasBeenSet() const { return m_licenseModelHasBeenSet; }
 
     /**
      * <p>The license model information for this DB instance. This setting doesn't
-     * apply to RDS Custom DB instances.</p>
+     * apply to Amazon Aurora or RDS Custom DB instances.</p>
      */
     inline void SetLicenseModel(const Aws::String& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
 
     /**
      * <p>The license model information for this DB instance. This setting doesn't
-     * apply to RDS Custom DB instances.</p>
+     * apply to Amazon Aurora or RDS Custom DB instances.</p>
      */
     inline void SetLicenseModel(Aws::String&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = std::move(value); }
 
     /**
      * <p>The license model information for this DB instance. This setting doesn't
-     * apply to RDS Custom DB instances.</p>
+     * apply to Amazon Aurora or RDS Custom DB instances.</p>
      */
     inline void SetLicenseModel(const char* value) { m_licenseModelHasBeenSet = true; m_licenseModel.assign(value); }
 
     /**
      * <p>The license model information for this DB instance. This setting doesn't
-     * apply to RDS Custom DB instances.</p>
+     * apply to Amazon Aurora or RDS Custom DB instances.</p>
      */
     inline DBInstance& WithLicenseModel(const Aws::String& value) { SetLicenseModel(value); return *this;}
 
     /**
      * <p>The license model information for this DB instance. This setting doesn't
-     * apply to RDS Custom DB instances.</p>
+     * apply to Amazon Aurora or RDS Custom DB instances.</p>
      */
     inline DBInstance& WithLicenseModel(Aws::String&& value) { SetLicenseModel(std::move(value)); return *this;}
 
     /**
      * <p>The license model information for this DB instance. This setting doesn't
-     * apply to RDS Custom DB instances.</p>
+     * apply to Amazon Aurora or RDS Custom DB instances.</p>
      */
     inline DBInstance& WithLicenseModel(const char* value) { SetLicenseModel(value); return *this;}
 

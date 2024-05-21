@@ -84,7 +84,9 @@ namespace Model
      * default is [<code>"/"</code>]. The default refreshes objects and folders at the
      * root of the Amazon S3 bucket. If <code>Recursive</code> is set to
      * <code>true</code>, the entire S3 bucket that the file share has access to is
-     * refreshed.</p>
+     * refreshed.</p> <p>Do not include <code>/</code> when specifying folder names.
+     * For example, you would specify <code>samplefolder</code> rather than
+     * <code>samplefolder/</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFolderList() const{ return m_folderList; }
 
@@ -93,7 +95,9 @@ namespace Model
      * default is [<code>"/"</code>]. The default refreshes objects and folders at the
      * root of the Amazon S3 bucket. If <code>Recursive</code> is set to
      * <code>true</code>, the entire S3 bucket that the file share has access to is
-     * refreshed.</p>
+     * refreshed.</p> <p>Do not include <code>/</code> when specifying folder names.
+     * For example, you would specify <code>samplefolder</code> rather than
+     * <code>samplefolder/</code>.</p>
      */
     inline bool FolderListHasBeenSet() const { return m_folderListHasBeenSet; }
 
@@ -102,7 +106,9 @@ namespace Model
      * default is [<code>"/"</code>]. The default refreshes objects and folders at the
      * root of the Amazon S3 bucket. If <code>Recursive</code> is set to
      * <code>true</code>, the entire S3 bucket that the file share has access to is
-     * refreshed.</p>
+     * refreshed.</p> <p>Do not include <code>/</code> when specifying folder names.
+     * For example, you would specify <code>samplefolder</code> rather than
+     * <code>samplefolder/</code>.</p>
      */
     inline void SetFolderList(const Aws::Vector<Aws::String>& value) { m_folderListHasBeenSet = true; m_folderList = value; }
 
@@ -111,7 +117,9 @@ namespace Model
      * default is [<code>"/"</code>]. The default refreshes objects and folders at the
      * root of the Amazon S3 bucket. If <code>Recursive</code> is set to
      * <code>true</code>, the entire S3 bucket that the file share has access to is
-     * refreshed.</p>
+     * refreshed.</p> <p>Do not include <code>/</code> when specifying folder names.
+     * For example, you would specify <code>samplefolder</code> rather than
+     * <code>samplefolder/</code>.</p>
      */
     inline void SetFolderList(Aws::Vector<Aws::String>&& value) { m_folderListHasBeenSet = true; m_folderList = std::move(value); }
 
@@ -120,7 +128,9 @@ namespace Model
      * default is [<code>"/"</code>]. The default refreshes objects and folders at the
      * root of the Amazon S3 bucket. If <code>Recursive</code> is set to
      * <code>true</code>, the entire S3 bucket that the file share has access to is
-     * refreshed.</p>
+     * refreshed.</p> <p>Do not include <code>/</code> when specifying folder names.
+     * For example, you would specify <code>samplefolder</code> rather than
+     * <code>samplefolder/</code>.</p>
      */
     inline RefreshCacheRequest& WithFolderList(const Aws::Vector<Aws::String>& value) { SetFolderList(value); return *this;}
 
@@ -129,7 +139,9 @@ namespace Model
      * default is [<code>"/"</code>]. The default refreshes objects and folders at the
      * root of the Amazon S3 bucket. If <code>Recursive</code> is set to
      * <code>true</code>, the entire S3 bucket that the file share has access to is
-     * refreshed.</p>
+     * refreshed.</p> <p>Do not include <code>/</code> when specifying folder names.
+     * For example, you would specify <code>samplefolder</code> rather than
+     * <code>samplefolder/</code>.</p>
      */
     inline RefreshCacheRequest& WithFolderList(Aws::Vector<Aws::String>&& value) { SetFolderList(std::move(value)); return *this;}
 
@@ -138,7 +150,9 @@ namespace Model
      * default is [<code>"/"</code>]. The default refreshes objects and folders at the
      * root of the Amazon S3 bucket. If <code>Recursive</code> is set to
      * <code>true</code>, the entire S3 bucket that the file share has access to is
-     * refreshed.</p>
+     * refreshed.</p> <p>Do not include <code>/</code> when specifying folder names.
+     * For example, you would specify <code>samplefolder</code> rather than
+     * <code>samplefolder/</code>.</p>
      */
     inline RefreshCacheRequest& AddFolderList(const Aws::String& value) { m_folderListHasBeenSet = true; m_folderList.push_back(value); return *this; }
 
@@ -147,7 +161,9 @@ namespace Model
      * default is [<code>"/"</code>]. The default refreshes objects and folders at the
      * root of the Amazon S3 bucket. If <code>Recursive</code> is set to
      * <code>true</code>, the entire S3 bucket that the file share has access to is
-     * refreshed.</p>
+     * refreshed.</p> <p>Do not include <code>/</code> when specifying folder names.
+     * For example, you would specify <code>samplefolder</code> rather than
+     * <code>samplefolder/</code>.</p>
      */
     inline RefreshCacheRequest& AddFolderList(Aws::String&& value) { m_folderListHasBeenSet = true; m_folderList.push_back(std::move(value)); return *this; }
 
@@ -156,7 +172,9 @@ namespace Model
      * default is [<code>"/"</code>]. The default refreshes objects and folders at the
      * root of the Amazon S3 bucket. If <code>Recursive</code> is set to
      * <code>true</code>, the entire S3 bucket that the file share has access to is
-     * refreshed.</p>
+     * refreshed.</p> <p>Do not include <code>/</code> when specifying folder names.
+     * For example, you would specify <code>samplefolder</code> rather than
+     * <code>samplefolder/</code>.</p>
      */
     inline RefreshCacheRequest& AddFolderList(const char* value) { m_folderListHasBeenSet = true; m_folderList.push_back(value); return *this; }
 

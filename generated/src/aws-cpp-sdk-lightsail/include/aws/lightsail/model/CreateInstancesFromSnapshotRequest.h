@@ -311,49 +311,49 @@ namespace Model
 
     /**
      * <p>The bundle of specification information for your virtual private server (or
-     * <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
+     * <i>instance</i>), including the pricing plan (<code>micro_x_x</code>).</p>
      */
     inline const Aws::String& GetBundleId() const{ return m_bundleId; }
 
     /**
      * <p>The bundle of specification information for your virtual private server (or
-     * <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
+     * <i>instance</i>), including the pricing plan (<code>micro_x_x</code>).</p>
      */
     inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }
 
     /**
      * <p>The bundle of specification information for your virtual private server (or
-     * <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
+     * <i>instance</i>), including the pricing plan (<code>micro_x_x</code>).</p>
      */
     inline void SetBundleId(const Aws::String& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
 
     /**
      * <p>The bundle of specification information for your virtual private server (or
-     * <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
+     * <i>instance</i>), including the pricing plan (<code>micro_x_x</code>).</p>
      */
     inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::move(value); }
 
     /**
      * <p>The bundle of specification information for your virtual private server (or
-     * <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
+     * <i>instance</i>), including the pricing plan (<code>micro_x_x</code>).</p>
      */
     inline void SetBundleId(const char* value) { m_bundleIdHasBeenSet = true; m_bundleId.assign(value); }
 
     /**
      * <p>The bundle of specification information for your virtual private server (or
-     * <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
+     * <i>instance</i>), including the pricing plan (<code>micro_x_x</code>).</p>
      */
     inline CreateInstancesFromSnapshotRequest& WithBundleId(const Aws::String& value) { SetBundleId(value); return *this;}
 
     /**
      * <p>The bundle of specification information for your virtual private server (or
-     * <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
+     * <i>instance</i>), including the pricing plan (<code>micro_x_x</code>).</p>
      */
     inline CreateInstancesFromSnapshotRequest& WithBundleId(Aws::String&& value) { SetBundleId(std::move(value)); return *this;}
 
     /**
      * <p>The bundle of specification information for your virtual private server (or
-     * <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
+     * <i>instance</i>), including the pricing plan (<code>micro_x_x</code>).</p>
      */
     inline CreateInstancesFromSnapshotRequest& WithBundleId(const char* value) { SetBundleId(value); return *this;}
 
@@ -604,43 +604,49 @@ namespace Model
 
     /**
      * <p>The IP address type for the instance.</p> <p>The possible values are
-     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
-     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     * <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     * <code>dualstack</code> for IPv4 and IPv6.</p> <p>The default value is
+     * <code>dualstack</code>.</p>
      */
     inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
 
     /**
      * <p>The IP address type for the instance.</p> <p>The possible values are
-     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
-     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     * <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     * <code>dualstack</code> for IPv4 and IPv6.</p> <p>The default value is
+     * <code>dualstack</code>.</p>
      */
     inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
 
     /**
      * <p>The IP address type for the instance.</p> <p>The possible values are
-     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
-     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     * <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     * <code>dualstack</code> for IPv4 and IPv6.</p> <p>The default value is
+     * <code>dualstack</code>.</p>
      */
     inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
 
     /**
      * <p>The IP address type for the instance.</p> <p>The possible values are
-     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
-     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     * <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     * <code>dualstack</code> for IPv4 and IPv6.</p> <p>The default value is
+     * <code>dualstack</code>.</p>
      */
     inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
 
     /**
      * <p>The IP address type for the instance.</p> <p>The possible values are
-     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
-     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     * <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     * <code>dualstack</code> for IPv4 and IPv6.</p> <p>The default value is
+     * <code>dualstack</code>.</p>
      */
     inline CreateInstancesFromSnapshotRequest& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
 
     /**
      * <p>The IP address type for the instance.</p> <p>The possible values are
-     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
-     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     * <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     * <code>dualstack</code> for IPv4 and IPv6.</p> <p>The default value is
+     * <code>dualstack</code>.</p>
      */
     inline CreateInstancesFromSnapshotRequest& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
 

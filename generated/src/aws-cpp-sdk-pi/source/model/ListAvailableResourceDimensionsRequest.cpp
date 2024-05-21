@@ -19,7 +19,8 @@ ListAvailableResourceDimensionsRequest::ListAvailableResourceDimensionsRequest()
     m_metricsHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_authorizedActionsHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,17 @@ Aws::String ListAvailableResourceDimensionsRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("NextToken", m_nextToken);
+
+  }
+
+  if(m_authorizedActionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> authorizedActionsJsonList(m_authorizedActions.size());
+   for(unsigned authorizedActionsIndex = 0; authorizedActionsIndex < authorizedActionsJsonList.GetLength(); ++authorizedActionsIndex)
+   {
+     authorizedActionsJsonList[authorizedActionsIndex].AsString(FineGrainedActionMapper::GetNameForFineGrainedAction(m_authorizedActions[authorizedActionsIndex]));
+   }
+   payload.WithArray("AuthorizedActions", std::move(authorizedActionsJsonList));
 
   }
 

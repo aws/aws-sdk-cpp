@@ -50,7 +50,8 @@ JobRun::JobRun() :
     m_dPUSeconds(0.0),
     m_dPUSecondsHasBeenSet(false),
     m_executionClass(ExecutionClass::NOT_SET),
-    m_executionClassHasBeenSet(false)
+    m_executionClassHasBeenSet(false),
+    m_maintenanceWindowHasBeenSet(false)
 {
 }
 
@@ -86,7 +87,8 @@ JobRun::JobRun(JsonView jsonValue) :
     m_dPUSeconds(0.0),
     m_dPUSecondsHasBeenSet(false),
     m_executionClass(ExecutionClass::NOT_SET),
-    m_executionClassHasBeenSet(false)
+    m_executionClassHasBeenSet(false),
+    m_maintenanceWindowHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -260,6 +262,13 @@ JobRun& JobRun::operator =(JsonView jsonValue)
     m_executionClassHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MaintenanceWindow"))
+  {
+    m_maintenanceWindow = jsonValue.GetString("MaintenanceWindow");
+
+    m_maintenanceWindowHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -407,6 +416,12 @@ JsonValue JobRun::Jsonize() const
   if(m_executionClassHasBeenSet)
   {
    payload.WithString("ExecutionClass", ExecutionClassMapper::GetNameForExecutionClass(m_executionClass));
+  }
+
+  if(m_maintenanceWindowHasBeenSet)
+  {
+   payload.WithString("MaintenanceWindow", m_maintenanceWindow);
+
   }
 
   return payload;

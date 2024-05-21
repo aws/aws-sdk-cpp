@@ -1544,6 +1544,87 @@ namespace Model
      */
     inline CreateJobRequest& WithSourceControlDetails(SourceControlDetails&& value) { SetSourceControlDetails(std::move(value)); return *this;}
 
+
+    /**
+     * <p>This field specifies a day of the week and hour for a maintenance window for
+     * streaming jobs. Glue periodically performs maintenance activities. During these
+     * maintenance windows, Glue will need to restart your streaming jobs.</p> <p>Glue
+     * will restart the job within 3 hours of the specified maintenance window. For
+     * instance, if you set up the maintenance window for Monday at 10:00AM GMT, your
+     * jobs will be restarted between 10:00AM GMT to 1:00PM GMT.</p>
+     */
+    inline const Aws::String& GetMaintenanceWindow() const{ return m_maintenanceWindow; }
+
+    /**
+     * <p>This field specifies a day of the week and hour for a maintenance window for
+     * streaming jobs. Glue periodically performs maintenance activities. During these
+     * maintenance windows, Glue will need to restart your streaming jobs.</p> <p>Glue
+     * will restart the job within 3 hours of the specified maintenance window. For
+     * instance, if you set up the maintenance window for Monday at 10:00AM GMT, your
+     * jobs will be restarted between 10:00AM GMT to 1:00PM GMT.</p>
+     */
+    inline bool MaintenanceWindowHasBeenSet() const { return m_maintenanceWindowHasBeenSet; }
+
+    /**
+     * <p>This field specifies a day of the week and hour for a maintenance window for
+     * streaming jobs. Glue periodically performs maintenance activities. During these
+     * maintenance windows, Glue will need to restart your streaming jobs.</p> <p>Glue
+     * will restart the job within 3 hours of the specified maintenance window. For
+     * instance, if you set up the maintenance window for Monday at 10:00AM GMT, your
+     * jobs will be restarted between 10:00AM GMT to 1:00PM GMT.</p>
+     */
+    inline void SetMaintenanceWindow(const Aws::String& value) { m_maintenanceWindowHasBeenSet = true; m_maintenanceWindow = value; }
+
+    /**
+     * <p>This field specifies a day of the week and hour for a maintenance window for
+     * streaming jobs. Glue periodically performs maintenance activities. During these
+     * maintenance windows, Glue will need to restart your streaming jobs.</p> <p>Glue
+     * will restart the job within 3 hours of the specified maintenance window. For
+     * instance, if you set up the maintenance window for Monday at 10:00AM GMT, your
+     * jobs will be restarted between 10:00AM GMT to 1:00PM GMT.</p>
+     */
+    inline void SetMaintenanceWindow(Aws::String&& value) { m_maintenanceWindowHasBeenSet = true; m_maintenanceWindow = std::move(value); }
+
+    /**
+     * <p>This field specifies a day of the week and hour for a maintenance window for
+     * streaming jobs. Glue periodically performs maintenance activities. During these
+     * maintenance windows, Glue will need to restart your streaming jobs.</p> <p>Glue
+     * will restart the job within 3 hours of the specified maintenance window. For
+     * instance, if you set up the maintenance window for Monday at 10:00AM GMT, your
+     * jobs will be restarted between 10:00AM GMT to 1:00PM GMT.</p>
+     */
+    inline void SetMaintenanceWindow(const char* value) { m_maintenanceWindowHasBeenSet = true; m_maintenanceWindow.assign(value); }
+
+    /**
+     * <p>This field specifies a day of the week and hour for a maintenance window for
+     * streaming jobs. Glue periodically performs maintenance activities. During these
+     * maintenance windows, Glue will need to restart your streaming jobs.</p> <p>Glue
+     * will restart the job within 3 hours of the specified maintenance window. For
+     * instance, if you set up the maintenance window for Monday at 10:00AM GMT, your
+     * jobs will be restarted between 10:00AM GMT to 1:00PM GMT.</p>
+     */
+    inline CreateJobRequest& WithMaintenanceWindow(const Aws::String& value) { SetMaintenanceWindow(value); return *this;}
+
+    /**
+     * <p>This field specifies a day of the week and hour for a maintenance window for
+     * streaming jobs. Glue periodically performs maintenance activities. During these
+     * maintenance windows, Glue will need to restart your streaming jobs.</p> <p>Glue
+     * will restart the job within 3 hours of the specified maintenance window. For
+     * instance, if you set up the maintenance window for Monday at 10:00AM GMT, your
+     * jobs will be restarted between 10:00AM GMT to 1:00PM GMT.</p>
+     */
+    inline CreateJobRequest& WithMaintenanceWindow(Aws::String&& value) { SetMaintenanceWindow(std::move(value)); return *this;}
+
+    /**
+     * <p>This field specifies a day of the week and hour for a maintenance window for
+     * streaming jobs. Glue periodically performs maintenance activities. During these
+     * maintenance windows, Glue will need to restart your streaming jobs.</p> <p>Glue
+     * will restart the job within 3 hours of the specified maintenance window. For
+     * instance, if you set up the maintenance window for Monday at 10:00AM GMT, your
+     * jobs will be restarted between 10:00AM GMT to 1:00PM GMT.</p>
+     */
+    inline CreateJobRequest& WithMaintenanceWindow(const char* value) { SetMaintenanceWindow(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -1608,6 +1689,9 @@ namespace Model
 
     SourceControlDetails m_sourceControlDetails;
     bool m_sourceControlDetailsHasBeenSet = false;
+
+    Aws::String m_maintenanceWindow;
+    bool m_maintenanceWindowHasBeenSet = false;
   };
 
 } // namespace Model

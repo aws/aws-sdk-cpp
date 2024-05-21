@@ -50,50 +50,42 @@ namespace Model
 
 
     /**
-     * <p>The name the user gave the instance
-     * (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+     * <p>The name the user gave the instance (<code>Amazon_Linux_2023-1</code>).</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name the user gave the instance
-     * (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+     * <p>The name the user gave the instance (<code>Amazon_Linux_2023-1</code>).</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name the user gave the instance
-     * (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+     * <p>The name the user gave the instance (<code>Amazon_Linux_2023-1</code>).</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name the user gave the instance
-     * (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+     * <p>The name the user gave the instance (<code>Amazon_Linux_2023-1</code>).</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name the user gave the instance
-     * (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+     * <p>The name the user gave the instance (<code>Amazon_Linux_2023-1</code>).</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name the user gave the instance
-     * (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+     * <p>The name the user gave the instance (<code>Amazon_Linux_2023-1</code>).</p>
      */
     inline Instance& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name the user gave the instance
-     * (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+     * <p>The name the user gave the instance (<code>Amazon_Linux_2023-1</code>).</p>
      */
     inline Instance& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name the user gave the instance
-     * (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+     * <p>The name the user gave the instance (<code>Amazon_Linux_2023-1</code>).</p>
      */
     inline Instance& WithName(const char* value) { SetName(value); return *this;}
 
@@ -369,124 +361,124 @@ namespace Model
 
 
     /**
-     * <p>The blueprint ID (<code>os_amlinux_2016_03</code>).</p>
+     * <p>The blueprint ID (<code>amazon_linux_2023</code>).</p>
      */
     inline const Aws::String& GetBlueprintId() const{ return m_blueprintId; }
 
     /**
-     * <p>The blueprint ID (<code>os_amlinux_2016_03</code>).</p>
+     * <p>The blueprint ID (<code>amazon_linux_2023</code>).</p>
      */
     inline bool BlueprintIdHasBeenSet() const { return m_blueprintIdHasBeenSet; }
 
     /**
-     * <p>The blueprint ID (<code>os_amlinux_2016_03</code>).</p>
+     * <p>The blueprint ID (<code>amazon_linux_2023</code>).</p>
      */
     inline void SetBlueprintId(const Aws::String& value) { m_blueprintIdHasBeenSet = true; m_blueprintId = value; }
 
     /**
-     * <p>The blueprint ID (<code>os_amlinux_2016_03</code>).</p>
+     * <p>The blueprint ID (<code>amazon_linux_2023</code>).</p>
      */
     inline void SetBlueprintId(Aws::String&& value) { m_blueprintIdHasBeenSet = true; m_blueprintId = std::move(value); }
 
     /**
-     * <p>The blueprint ID (<code>os_amlinux_2016_03</code>).</p>
+     * <p>The blueprint ID (<code>amazon_linux_2023</code>).</p>
      */
     inline void SetBlueprintId(const char* value) { m_blueprintIdHasBeenSet = true; m_blueprintId.assign(value); }
 
     /**
-     * <p>The blueprint ID (<code>os_amlinux_2016_03</code>).</p>
+     * <p>The blueprint ID (<code>amazon_linux_2023</code>).</p>
      */
     inline Instance& WithBlueprintId(const Aws::String& value) { SetBlueprintId(value); return *this;}
 
     /**
-     * <p>The blueprint ID (<code>os_amlinux_2016_03</code>).</p>
+     * <p>The blueprint ID (<code>amazon_linux_2023</code>).</p>
      */
     inline Instance& WithBlueprintId(Aws::String&& value) { SetBlueprintId(std::move(value)); return *this;}
 
     /**
-     * <p>The blueprint ID (<code>os_amlinux_2016_03</code>).</p>
+     * <p>The blueprint ID (<code>amazon_linux_2023</code>).</p>
      */
     inline Instance& WithBlueprintId(const char* value) { SetBlueprintId(value); return *this;}
 
 
     /**
-     * <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
+     * <p>The friendly name of the blueprint (<code>Amazon Linux 2023</code>).</p>
      */
     inline const Aws::String& GetBlueprintName() const{ return m_blueprintName; }
 
     /**
-     * <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
+     * <p>The friendly name of the blueprint (<code>Amazon Linux 2023</code>).</p>
      */
     inline bool BlueprintNameHasBeenSet() const { return m_blueprintNameHasBeenSet; }
 
     /**
-     * <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
+     * <p>The friendly name of the blueprint (<code>Amazon Linux 2023</code>).</p>
      */
     inline void SetBlueprintName(const Aws::String& value) { m_blueprintNameHasBeenSet = true; m_blueprintName = value; }
 
     /**
-     * <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
+     * <p>The friendly name of the blueprint (<code>Amazon Linux 2023</code>).</p>
      */
     inline void SetBlueprintName(Aws::String&& value) { m_blueprintNameHasBeenSet = true; m_blueprintName = std::move(value); }
 
     /**
-     * <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
+     * <p>The friendly name of the blueprint (<code>Amazon Linux 2023</code>).</p>
      */
     inline void SetBlueprintName(const char* value) { m_blueprintNameHasBeenSet = true; m_blueprintName.assign(value); }
 
     /**
-     * <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
+     * <p>The friendly name of the blueprint (<code>Amazon Linux 2023</code>).</p>
      */
     inline Instance& WithBlueprintName(const Aws::String& value) { SetBlueprintName(value); return *this;}
 
     /**
-     * <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
+     * <p>The friendly name of the blueprint (<code>Amazon Linux 2023</code>).</p>
      */
     inline Instance& WithBlueprintName(Aws::String&& value) { SetBlueprintName(std::move(value)); return *this;}
 
     /**
-     * <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
+     * <p>The friendly name of the blueprint (<code>Amazon Linux 2023</code>).</p>
      */
     inline Instance& WithBlueprintName(const char* value) { SetBlueprintName(value); return *this;}
 
 
     /**
-     * <p>The bundle for the instance (<code>micro_1_0</code>).</p>
+     * <p>The bundle for the instance (<code>micro_x_x</code>).</p>
      */
     inline const Aws::String& GetBundleId() const{ return m_bundleId; }
 
     /**
-     * <p>The bundle for the instance (<code>micro_1_0</code>).</p>
+     * <p>The bundle for the instance (<code>micro_x_x</code>).</p>
      */
     inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }
 
     /**
-     * <p>The bundle for the instance (<code>micro_1_0</code>).</p>
+     * <p>The bundle for the instance (<code>micro_x_x</code>).</p>
      */
     inline void SetBundleId(const Aws::String& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
 
     /**
-     * <p>The bundle for the instance (<code>micro_1_0</code>).</p>
+     * <p>The bundle for the instance (<code>micro_x_x</code>).</p>
      */
     inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::move(value); }
 
     /**
-     * <p>The bundle for the instance (<code>micro_1_0</code>).</p>
+     * <p>The bundle for the instance (<code>micro_x_x</code>).</p>
      */
     inline void SetBundleId(const char* value) { m_bundleIdHasBeenSet = true; m_bundleId.assign(value); }
 
     /**
-     * <p>The bundle for the instance (<code>micro_1_0</code>).</p>
+     * <p>The bundle for the instance (<code>micro_x_x</code>).</p>
      */
     inline Instance& WithBundleId(const Aws::String& value) { SetBundleId(value); return *this;}
 
     /**
-     * <p>The bundle for the instance (<code>micro_1_0</code>).</p>
+     * <p>The bundle for the instance (<code>micro_x_x</code>).</p>
      */
     inline Instance& WithBundleId(Aws::String&& value) { SetBundleId(std::move(value)); return *this;}
 
     /**
-     * <p>The bundle for the instance (<code>micro_1_0</code>).</p>
+     * <p>The bundle for the instance (<code>micro_x_x</code>).</p>
      */
     inline Instance& WithBundleId(const char* value) { SetBundleId(value); return *this;}
 
@@ -687,43 +679,43 @@ namespace Model
 
     /**
      * <p>The IP address type of the instance.</p> <p>The possible values are
-     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
-     * IPv6.</p>
+     * <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     * <code>dualstack</code> for IPv4 and IPv6.</p>
      */
     inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
 
     /**
      * <p>The IP address type of the instance.</p> <p>The possible values are
-     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
-     * IPv6.</p>
+     * <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     * <code>dualstack</code> for IPv4 and IPv6.</p>
      */
     inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
 
     /**
      * <p>The IP address type of the instance.</p> <p>The possible values are
-     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
-     * IPv6.</p>
+     * <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     * <code>dualstack</code> for IPv4 and IPv6.</p>
      */
     inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
 
     /**
      * <p>The IP address type of the instance.</p> <p>The possible values are
-     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
-     * IPv6.</p>
+     * <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     * <code>dualstack</code> for IPv4 and IPv6.</p>
      */
     inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
 
     /**
      * <p>The IP address type of the instance.</p> <p>The possible values are
-     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
-     * IPv6.</p>
+     * <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     * <code>dualstack</code> for IPv4 and IPv6.</p>
      */
     inline Instance& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
 
     /**
      * <p>The IP address type of the instance.</p> <p>The possible values are
-     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
-     * IPv6.</p>
+     * <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     * <code>dualstack</code> for IPv4 and IPv6.</p>
      */
     inline Instance& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
 

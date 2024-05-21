@@ -39,7 +39,8 @@ CreateJobRequest::CreateJobRequest() :
     m_codeGenConfigurationNodesHasBeenSet(false),
     m_executionClass(ExecutionClass::NOT_SET),
     m_executionClassHasBeenSet(false),
-    m_sourceControlDetailsHasBeenSet(false)
+    m_sourceControlDetailsHasBeenSet(false),
+    m_maintenanceWindowHasBeenSet(false)
 {
 }
 
@@ -188,6 +189,12 @@ Aws::String CreateJobRequest::SerializePayload() const
   if(m_sourceControlDetailsHasBeenSet)
   {
    payload.WithObject("SourceControlDetails", m_sourceControlDetails.Jsonize());
+
+  }
+
+  if(m_maintenanceWindowHasBeenSet)
+  {
+   payload.WithString("MaintenanceWindow", m_maintenanceWindow);
 
   }
 

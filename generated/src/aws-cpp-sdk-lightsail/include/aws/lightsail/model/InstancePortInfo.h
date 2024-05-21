@@ -202,7 +202,11 @@ namespace Model
      * an error is indicated when an instance could not be reached. When you specify
      * <code>icmp</code> as the <code>protocol</code>, you must specify the ICMP type
      * using the <code>fromPort</code> parameter, and ICMP code using the
-     * <code>toPort</code> parameter.</p> </li> </ul>
+     * <code>toPort</code> parameter.</p> </li> <li> <p> <code>icmp6</code> - Internet
+     * Control Message Protocol (ICMP) for IPv6. When you specify <code>icmp6</code> as
+     * the <code>protocol</code>, you must specify the ICMP type using the
+     * <code>fromPort</code> parameter, and ICMP code using the <code>toPort</code>
+     * parameter.</p> </li> </ul>
      */
     inline const NetworkProtocol& GetProtocol() const{ return m_protocol; }
 
@@ -228,7 +232,11 @@ namespace Model
      * an error is indicated when an instance could not be reached. When you specify
      * <code>icmp</code> as the <code>protocol</code>, you must specify the ICMP type
      * using the <code>fromPort</code> parameter, and ICMP code using the
-     * <code>toPort</code> parameter.</p> </li> </ul>
+     * <code>toPort</code> parameter.</p> </li> <li> <p> <code>icmp6</code> - Internet
+     * Control Message Protocol (ICMP) for IPv6. When you specify <code>icmp6</code> as
+     * the <code>protocol</code>, you must specify the ICMP type using the
+     * <code>fromPort</code> parameter, and ICMP code using the <code>toPort</code>
+     * parameter.</p> </li> </ul>
      */
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
@@ -254,7 +262,11 @@ namespace Model
      * an error is indicated when an instance could not be reached. When you specify
      * <code>icmp</code> as the <code>protocol</code>, you must specify the ICMP type
      * using the <code>fromPort</code> parameter, and ICMP code using the
-     * <code>toPort</code> parameter.</p> </li> </ul>
+     * <code>toPort</code> parameter.</p> </li> <li> <p> <code>icmp6</code> - Internet
+     * Control Message Protocol (ICMP) for IPv6. When you specify <code>icmp6</code> as
+     * the <code>protocol</code>, you must specify the ICMP type using the
+     * <code>fromPort</code> parameter, and ICMP code using the <code>toPort</code>
+     * parameter.</p> </li> </ul>
      */
     inline void SetProtocol(const NetworkProtocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
@@ -280,7 +292,11 @@ namespace Model
      * an error is indicated when an instance could not be reached. When you specify
      * <code>icmp</code> as the <code>protocol</code>, you must specify the ICMP type
      * using the <code>fromPort</code> parameter, and ICMP code using the
-     * <code>toPort</code> parameter.</p> </li> </ul>
+     * <code>toPort</code> parameter.</p> </li> <li> <p> <code>icmp6</code> - Internet
+     * Control Message Protocol (ICMP) for IPv6. When you specify <code>icmp6</code> as
+     * the <code>protocol</code>, you must specify the ICMP type using the
+     * <code>fromPort</code> parameter, and ICMP code using the <code>toPort</code>
+     * parameter.</p> </li> </ul>
      */
     inline void SetProtocol(NetworkProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
@@ -306,7 +322,11 @@ namespace Model
      * an error is indicated when an instance could not be reached. When you specify
      * <code>icmp</code> as the <code>protocol</code>, you must specify the ICMP type
      * using the <code>fromPort</code> parameter, and ICMP code using the
-     * <code>toPort</code> parameter.</p> </li> </ul>
+     * <code>toPort</code> parameter.</p> </li> <li> <p> <code>icmp6</code> - Internet
+     * Control Message Protocol (ICMP) for IPv6. When you specify <code>icmp6</code> as
+     * the <code>protocol</code>, you must specify the ICMP type using the
+     * <code>fromPort</code> parameter, and ICMP code using the <code>toPort</code>
+     * parameter.</p> </li> </ul>
      */
     inline InstancePortInfo& WithProtocol(const NetworkProtocol& value) { SetProtocol(value); return *this;}
 
@@ -332,7 +352,11 @@ namespace Model
      * an error is indicated when an instance could not be reached. When you specify
      * <code>icmp</code> as the <code>protocol</code>, you must specify the ICMP type
      * using the <code>fromPort</code> parameter, and ICMP code using the
-     * <code>toPort</code> parameter.</p> </li> </ul>
+     * <code>toPort</code> parameter.</p> </li> <li> <p> <code>icmp6</code> - Internet
+     * Control Message Protocol (ICMP) for IPv6. When you specify <code>icmp6</code> as
+     * the <code>protocol</code>, you must specify the ICMP type using the
+     * <code>fromPort</code> parameter, and ICMP code using the <code>toPort</code>
+     * parameter.</p> </li> </ul>
      */
     inline InstancePortInfo& WithProtocol(NetworkProtocol&& value) { SetProtocol(std::move(value)); return *this;}
 
