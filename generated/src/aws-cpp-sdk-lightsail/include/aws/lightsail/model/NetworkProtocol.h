@@ -19,7 +19,8 @@ namespace Model
     tcp,
     all,
     udp,
-    icmp
+    icmp,
+    icmpv6
   };
 
 namespace NetworkProtocolMapper

@@ -23,6 +23,7 @@ namespace Aws
         static const int ClientSpecified_HASH = HashingUtils::HashString("ClientSpecified");
         static const int MandatorySigning_HASH = HashingUtils::HashString("MandatorySigning");
         static const int MandatoryEncryption_HASH = HashingUtils::HashString("MandatoryEncryption");
+        static const int MandatoryEncryptionNoAes128_HASH = HashingUtils::HashString("MandatoryEncryptionNoAes128");
 
 
         SMBSecurityStrategy GetSMBSecurityStrategyForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == MandatoryEncryption_HASH)
           {
             return SMBSecurityStrategy::MandatoryEncryption;
+          }
+          else if (hashCode == MandatoryEncryptionNoAes128_HASH)
+          {
+            return SMBSecurityStrategy::MandatoryEncryptionNoAes128;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "MandatorySigning";
           case SMBSecurityStrategy::MandatoryEncryption:
             return "MandatoryEncryption";
+          case SMBSecurityStrategy::MandatoryEncryptionNoAes128:
+            return "MandatoryEncryptionNoAes128";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

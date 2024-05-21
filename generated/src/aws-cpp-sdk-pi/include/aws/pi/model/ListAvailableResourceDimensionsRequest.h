@@ -9,6 +9,7 @@
 #include <aws/pi/model/ServiceType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/pi/model/FineGrainedAction.h>
 #include <utility>
 
 namespace Aws
@@ -286,6 +287,79 @@ namespace Model
      */
     inline ListAvailableResourceDimensionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>The actions to discover the dimensions you are authorized to access. If you
+     * specify multiple actions, then the response will contain the dimensions common
+     * for all the actions.</p> <p>When you don't specify this request parameter or
+     * provide an empty list, the response contains all the available dimensions for
+     * the target database engine whether or not you are authorized to access them.</p>
+     */
+    inline const Aws::Vector<FineGrainedAction>& GetAuthorizedActions() const{ return m_authorizedActions; }
+
+    /**
+     * <p>The actions to discover the dimensions you are authorized to access. If you
+     * specify multiple actions, then the response will contain the dimensions common
+     * for all the actions.</p> <p>When you don't specify this request parameter or
+     * provide an empty list, the response contains all the available dimensions for
+     * the target database engine whether or not you are authorized to access them.</p>
+     */
+    inline bool AuthorizedActionsHasBeenSet() const { return m_authorizedActionsHasBeenSet; }
+
+    /**
+     * <p>The actions to discover the dimensions you are authorized to access. If you
+     * specify multiple actions, then the response will contain the dimensions common
+     * for all the actions.</p> <p>When you don't specify this request parameter or
+     * provide an empty list, the response contains all the available dimensions for
+     * the target database engine whether or not you are authorized to access them.</p>
+     */
+    inline void SetAuthorizedActions(const Aws::Vector<FineGrainedAction>& value) { m_authorizedActionsHasBeenSet = true; m_authorizedActions = value; }
+
+    /**
+     * <p>The actions to discover the dimensions you are authorized to access. If you
+     * specify multiple actions, then the response will contain the dimensions common
+     * for all the actions.</p> <p>When you don't specify this request parameter or
+     * provide an empty list, the response contains all the available dimensions for
+     * the target database engine whether or not you are authorized to access them.</p>
+     */
+    inline void SetAuthorizedActions(Aws::Vector<FineGrainedAction>&& value) { m_authorizedActionsHasBeenSet = true; m_authorizedActions = std::move(value); }
+
+    /**
+     * <p>The actions to discover the dimensions you are authorized to access. If you
+     * specify multiple actions, then the response will contain the dimensions common
+     * for all the actions.</p> <p>When you don't specify this request parameter or
+     * provide an empty list, the response contains all the available dimensions for
+     * the target database engine whether or not you are authorized to access them.</p>
+     */
+    inline ListAvailableResourceDimensionsRequest& WithAuthorizedActions(const Aws::Vector<FineGrainedAction>& value) { SetAuthorizedActions(value); return *this;}
+
+    /**
+     * <p>The actions to discover the dimensions you are authorized to access. If you
+     * specify multiple actions, then the response will contain the dimensions common
+     * for all the actions.</p> <p>When you don't specify this request parameter or
+     * provide an empty list, the response contains all the available dimensions for
+     * the target database engine whether or not you are authorized to access them.</p>
+     */
+    inline ListAvailableResourceDimensionsRequest& WithAuthorizedActions(Aws::Vector<FineGrainedAction>&& value) { SetAuthorizedActions(std::move(value)); return *this;}
+
+    /**
+     * <p>The actions to discover the dimensions you are authorized to access. If you
+     * specify multiple actions, then the response will contain the dimensions common
+     * for all the actions.</p> <p>When you don't specify this request parameter or
+     * provide an empty list, the response contains all the available dimensions for
+     * the target database engine whether or not you are authorized to access them.</p>
+     */
+    inline ListAvailableResourceDimensionsRequest& AddAuthorizedActions(const FineGrainedAction& value) { m_authorizedActionsHasBeenSet = true; m_authorizedActions.push_back(value); return *this; }
+
+    /**
+     * <p>The actions to discover the dimensions you are authorized to access. If you
+     * specify multiple actions, then the response will contain the dimensions common
+     * for all the actions.</p> <p>When you don't specify this request parameter or
+     * provide an empty list, the response contains all the available dimensions for
+     * the target database engine whether or not you are authorized to access them.</p>
+     */
+    inline ListAvailableResourceDimensionsRequest& AddAuthorizedActions(FineGrainedAction&& value) { m_authorizedActionsHasBeenSet = true; m_authorizedActions.push_back(std::move(value)); return *this; }
+
   private:
 
     ServiceType m_serviceType;
@@ -302,6 +376,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    Aws::Vector<FineGrainedAction> m_authorizedActions;
+    bool m_authorizedActionsHasBeenSet = false;
   };
 
 } // namespace Model

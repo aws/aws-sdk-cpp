@@ -774,8 +774,15 @@ namespace Model
      * <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a
      * job run can consume resources before it is terminated and enters
      * <code>TIMEOUT</code> status. This value overrides the timeout value set in the
-     * parent job.</p> <p>Streaming jobs do not have a timeout. The default for
-     * non-streaming jobs is 2,880 minutes (48 hours).</p>
+     * parent job.</p> <p>The maximum value for timeout for batch jobs is 7 days or
+     * 10080 minutes. The default is 2880 minutes (48 hours) for batch jobs.</p> <p>Any
+     * existing Glue jobs that have a greater timeout value are defaulted to 7 days.
+     * For instance you have specified a timeout of 20 days for a batch job, it will be
+     * stopped on the 7th day.</p> <p>Streaming jobs must have timeout values less than
+     * 7 days or 10080 minutes. When the value is left blank, the job will be restarted
+     * after 7 days based if you have not setup a maintenance window. If you have setup
+     * maintenance window, it will be restarted during the maintenance window after 7
+     * days.</p>
      */
     inline int GetTimeout() const{ return m_timeout; }
 
@@ -783,8 +790,15 @@ namespace Model
      * <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a
      * job run can consume resources before it is terminated and enters
      * <code>TIMEOUT</code> status. This value overrides the timeout value set in the
-     * parent job.</p> <p>Streaming jobs do not have a timeout. The default for
-     * non-streaming jobs is 2,880 minutes (48 hours).</p>
+     * parent job.</p> <p>The maximum value for timeout for batch jobs is 7 days or
+     * 10080 minutes. The default is 2880 minutes (48 hours) for batch jobs.</p> <p>Any
+     * existing Glue jobs that have a greater timeout value are defaulted to 7 days.
+     * For instance you have specified a timeout of 20 days for a batch job, it will be
+     * stopped on the 7th day.</p> <p>Streaming jobs must have timeout values less than
+     * 7 days or 10080 minutes. When the value is left blank, the job will be restarted
+     * after 7 days based if you have not setup a maintenance window. If you have setup
+     * maintenance window, it will be restarted during the maintenance window after 7
+     * days.</p>
      */
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
 
@@ -792,8 +806,15 @@ namespace Model
      * <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a
      * job run can consume resources before it is terminated and enters
      * <code>TIMEOUT</code> status. This value overrides the timeout value set in the
-     * parent job.</p> <p>Streaming jobs do not have a timeout. The default for
-     * non-streaming jobs is 2,880 minutes (48 hours).</p>
+     * parent job.</p> <p>The maximum value for timeout for batch jobs is 7 days or
+     * 10080 minutes. The default is 2880 minutes (48 hours) for batch jobs.</p> <p>Any
+     * existing Glue jobs that have a greater timeout value are defaulted to 7 days.
+     * For instance you have specified a timeout of 20 days for a batch job, it will be
+     * stopped on the 7th day.</p> <p>Streaming jobs must have timeout values less than
+     * 7 days or 10080 minutes. When the value is left blank, the job will be restarted
+     * after 7 days based if you have not setup a maintenance window. If you have setup
+     * maintenance window, it will be restarted during the maintenance window after 7
+     * days.</p>
      */
     inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
 
@@ -801,8 +822,15 @@ namespace Model
      * <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a
      * job run can consume resources before it is terminated and enters
      * <code>TIMEOUT</code> status. This value overrides the timeout value set in the
-     * parent job.</p> <p>Streaming jobs do not have a timeout. The default for
-     * non-streaming jobs is 2,880 minutes (48 hours).</p>
+     * parent job.</p> <p>The maximum value for timeout for batch jobs is 7 days or
+     * 10080 minutes. The default is 2880 minutes (48 hours) for batch jobs.</p> <p>Any
+     * existing Glue jobs that have a greater timeout value are defaulted to 7 days.
+     * For instance you have specified a timeout of 20 days for a batch job, it will be
+     * stopped on the 7th day.</p> <p>Streaming jobs must have timeout values less than
+     * 7 days or 10080 minutes. When the value is left blank, the job will be restarted
+     * after 7 days based if you have not setup a maintenance window. If you have setup
+     * maintenance window, it will be restarted during the maintenance window after 7
+     * days.</p>
      */
     inline JobRun& WithTimeout(int value) { SetTimeout(value); return *this;}
 
@@ -1435,9 +1463,10 @@ namespace Model
 
 
     /**
-     * <p>This field populates only for Auto Scaling job runs, and represents the total
-     * time each executor ran during the lifecycle of a job run in seconds, multiplied
-     * by a DPU factor (1 for <code>G.1X</code>, 2 for <code>G.2X</code>, or 0.25 for
+     * <p>This field can be set for either job runs with execution class
+     * <code>FLEX</code> or when Auto Scaling is enabled, and represents the total time
+     * each executor ran during the lifecycle of a job run in seconds, multiplied by a
+     * DPU factor (1 for <code>G.1X</code>, 2 for <code>G.2X</code>, or 0.25 for
      * <code>G.025X</code> workers). This value may be different than the
      * <code>executionEngineRuntime</code> * <code>MaxCapacity</code> as in the case of
      * Auto Scaling jobs, as the number of executors running at a given time may be
@@ -1448,9 +1477,10 @@ namespace Model
     inline double GetDPUSeconds() const{ return m_dPUSeconds; }
 
     /**
-     * <p>This field populates only for Auto Scaling job runs, and represents the total
-     * time each executor ran during the lifecycle of a job run in seconds, multiplied
-     * by a DPU factor (1 for <code>G.1X</code>, 2 for <code>G.2X</code>, or 0.25 for
+     * <p>This field can be set for either job runs with execution class
+     * <code>FLEX</code> or when Auto Scaling is enabled, and represents the total time
+     * each executor ran during the lifecycle of a job run in seconds, multiplied by a
+     * DPU factor (1 for <code>G.1X</code>, 2 for <code>G.2X</code>, or 0.25 for
      * <code>G.025X</code> workers). This value may be different than the
      * <code>executionEngineRuntime</code> * <code>MaxCapacity</code> as in the case of
      * Auto Scaling jobs, as the number of executors running at a given time may be
@@ -1461,9 +1491,10 @@ namespace Model
     inline bool DPUSecondsHasBeenSet() const { return m_dPUSecondsHasBeenSet; }
 
     /**
-     * <p>This field populates only for Auto Scaling job runs, and represents the total
-     * time each executor ran during the lifecycle of a job run in seconds, multiplied
-     * by a DPU factor (1 for <code>G.1X</code>, 2 for <code>G.2X</code>, or 0.25 for
+     * <p>This field can be set for either job runs with execution class
+     * <code>FLEX</code> or when Auto Scaling is enabled, and represents the total time
+     * each executor ran during the lifecycle of a job run in seconds, multiplied by a
+     * DPU factor (1 for <code>G.1X</code>, 2 for <code>G.2X</code>, or 0.25 for
      * <code>G.025X</code> workers). This value may be different than the
      * <code>executionEngineRuntime</code> * <code>MaxCapacity</code> as in the case of
      * Auto Scaling jobs, as the number of executors running at a given time may be
@@ -1474,9 +1505,10 @@ namespace Model
     inline void SetDPUSeconds(double value) { m_dPUSecondsHasBeenSet = true; m_dPUSeconds = value; }
 
     /**
-     * <p>This field populates only for Auto Scaling job runs, and represents the total
-     * time each executor ran during the lifecycle of a job run in seconds, multiplied
-     * by a DPU factor (1 for <code>G.1X</code>, 2 for <code>G.2X</code>, or 0.25 for
+     * <p>This field can be set for either job runs with execution class
+     * <code>FLEX</code> or when Auto Scaling is enabled, and represents the total time
+     * each executor ran during the lifecycle of a job run in seconds, multiplied by a
+     * DPU factor (1 for <code>G.1X</code>, 2 for <code>G.2X</code>, or 0.25 for
      * <code>G.025X</code> workers). This value may be different than the
      * <code>executionEngineRuntime</code> * <code>MaxCapacity</code> as in the case of
      * Auto Scaling jobs, as the number of executors running at a given time may be
@@ -1553,6 +1585,87 @@ namespace Model
      */
     inline JobRun& WithExecutionClass(ExecutionClass&& value) { SetExecutionClass(std::move(value)); return *this;}
 
+
+    /**
+     * <p>This field specifies a day of the week and hour for a maintenance window for
+     * streaming jobs. Glue periodically performs maintenance activities. During these
+     * maintenance windows, Glue will need to restart your streaming jobs.</p> <p>Glue
+     * will restart the job within 3 hours of the specified maintenance window. For
+     * instance, if you set up the maintenance window for Monday at 10:00AM GMT, your
+     * jobs will be restarted between 10:00AM GMT to 1:00PM GMT.</p>
+     */
+    inline const Aws::String& GetMaintenanceWindow() const{ return m_maintenanceWindow; }
+
+    /**
+     * <p>This field specifies a day of the week and hour for a maintenance window for
+     * streaming jobs. Glue periodically performs maintenance activities. During these
+     * maintenance windows, Glue will need to restart your streaming jobs.</p> <p>Glue
+     * will restart the job within 3 hours of the specified maintenance window. For
+     * instance, if you set up the maintenance window for Monday at 10:00AM GMT, your
+     * jobs will be restarted between 10:00AM GMT to 1:00PM GMT.</p>
+     */
+    inline bool MaintenanceWindowHasBeenSet() const { return m_maintenanceWindowHasBeenSet; }
+
+    /**
+     * <p>This field specifies a day of the week and hour for a maintenance window for
+     * streaming jobs. Glue periodically performs maintenance activities. During these
+     * maintenance windows, Glue will need to restart your streaming jobs.</p> <p>Glue
+     * will restart the job within 3 hours of the specified maintenance window. For
+     * instance, if you set up the maintenance window for Monday at 10:00AM GMT, your
+     * jobs will be restarted between 10:00AM GMT to 1:00PM GMT.</p>
+     */
+    inline void SetMaintenanceWindow(const Aws::String& value) { m_maintenanceWindowHasBeenSet = true; m_maintenanceWindow = value; }
+
+    /**
+     * <p>This field specifies a day of the week and hour for a maintenance window for
+     * streaming jobs. Glue periodically performs maintenance activities. During these
+     * maintenance windows, Glue will need to restart your streaming jobs.</p> <p>Glue
+     * will restart the job within 3 hours of the specified maintenance window. For
+     * instance, if you set up the maintenance window for Monday at 10:00AM GMT, your
+     * jobs will be restarted between 10:00AM GMT to 1:00PM GMT.</p>
+     */
+    inline void SetMaintenanceWindow(Aws::String&& value) { m_maintenanceWindowHasBeenSet = true; m_maintenanceWindow = std::move(value); }
+
+    /**
+     * <p>This field specifies a day of the week and hour for a maintenance window for
+     * streaming jobs. Glue periodically performs maintenance activities. During these
+     * maintenance windows, Glue will need to restart your streaming jobs.</p> <p>Glue
+     * will restart the job within 3 hours of the specified maintenance window. For
+     * instance, if you set up the maintenance window for Monday at 10:00AM GMT, your
+     * jobs will be restarted between 10:00AM GMT to 1:00PM GMT.</p>
+     */
+    inline void SetMaintenanceWindow(const char* value) { m_maintenanceWindowHasBeenSet = true; m_maintenanceWindow.assign(value); }
+
+    /**
+     * <p>This field specifies a day of the week and hour for a maintenance window for
+     * streaming jobs. Glue periodically performs maintenance activities. During these
+     * maintenance windows, Glue will need to restart your streaming jobs.</p> <p>Glue
+     * will restart the job within 3 hours of the specified maintenance window. For
+     * instance, if you set up the maintenance window for Monday at 10:00AM GMT, your
+     * jobs will be restarted between 10:00AM GMT to 1:00PM GMT.</p>
+     */
+    inline JobRun& WithMaintenanceWindow(const Aws::String& value) { SetMaintenanceWindow(value); return *this;}
+
+    /**
+     * <p>This field specifies a day of the week and hour for a maintenance window for
+     * streaming jobs. Glue periodically performs maintenance activities. During these
+     * maintenance windows, Glue will need to restart your streaming jobs.</p> <p>Glue
+     * will restart the job within 3 hours of the specified maintenance window. For
+     * instance, if you set up the maintenance window for Monday at 10:00AM GMT, your
+     * jobs will be restarted between 10:00AM GMT to 1:00PM GMT.</p>
+     */
+    inline JobRun& WithMaintenanceWindow(Aws::String&& value) { SetMaintenanceWindow(std::move(value)); return *this;}
+
+    /**
+     * <p>This field specifies a day of the week and hour for a maintenance window for
+     * streaming jobs. Glue periodically performs maintenance activities. During these
+     * maintenance windows, Glue will need to restart your streaming jobs.</p> <p>Glue
+     * will restart the job within 3 hours of the specified maintenance window. For
+     * instance, if you set up the maintenance window for Monday at 10:00AM GMT, your
+     * jobs will be restarted between 10:00AM GMT to 1:00PM GMT.</p>
+     */
+    inline JobRun& WithMaintenanceWindow(const char* value) { SetMaintenanceWindow(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -1623,6 +1736,9 @@ namespace Model
 
     ExecutionClass m_executionClass;
     bool m_executionClassHasBeenSet = false;
+
+    Aws::String m_maintenanceWindow;
+    bool m_maintenanceWindowHasBeenSet = false;
   };
 
 } // namespace Model

@@ -584,56 +584,56 @@ namespace Model
 
     /**
      * <p>The blueprint ID from which you created the snapshot
-     * (<code>os_debian_8_3</code>). A blueprint is a virtual private server (or
+     * (<code>amazon_linux_2023</code>). A blueprint is a virtual private server (or
      * <i>instance</i>) image used to create instances quickly.</p>
      */
     inline const Aws::String& GetFromBlueprintId() const{ return m_fromBlueprintId; }
 
     /**
      * <p>The blueprint ID from which you created the snapshot
-     * (<code>os_debian_8_3</code>). A blueprint is a virtual private server (or
+     * (<code>amazon_linux_2023</code>). A blueprint is a virtual private server (or
      * <i>instance</i>) image used to create instances quickly.</p>
      */
     inline bool FromBlueprintIdHasBeenSet() const { return m_fromBlueprintIdHasBeenSet; }
 
     /**
      * <p>The blueprint ID from which you created the snapshot
-     * (<code>os_debian_8_3</code>). A blueprint is a virtual private server (or
+     * (<code>amazon_linux_2023</code>). A blueprint is a virtual private server (or
      * <i>instance</i>) image used to create instances quickly.</p>
      */
     inline void SetFromBlueprintId(const Aws::String& value) { m_fromBlueprintIdHasBeenSet = true; m_fromBlueprintId = value; }
 
     /**
      * <p>The blueprint ID from which you created the snapshot
-     * (<code>os_debian_8_3</code>). A blueprint is a virtual private server (or
+     * (<code>amazon_linux_2023</code>). A blueprint is a virtual private server (or
      * <i>instance</i>) image used to create instances quickly.</p>
      */
     inline void SetFromBlueprintId(Aws::String&& value) { m_fromBlueprintIdHasBeenSet = true; m_fromBlueprintId = std::move(value); }
 
     /**
      * <p>The blueprint ID from which you created the snapshot
-     * (<code>os_debian_8_3</code>). A blueprint is a virtual private server (or
+     * (<code>amazon_linux_2023</code>). A blueprint is a virtual private server (or
      * <i>instance</i>) image used to create instances quickly.</p>
      */
     inline void SetFromBlueprintId(const char* value) { m_fromBlueprintIdHasBeenSet = true; m_fromBlueprintId.assign(value); }
 
     /**
      * <p>The blueprint ID from which you created the snapshot
-     * (<code>os_debian_8_3</code>). A blueprint is a virtual private server (or
+     * (<code>amazon_linux_2023</code>). A blueprint is a virtual private server (or
      * <i>instance</i>) image used to create instances quickly.</p>
      */
     inline InstanceSnapshot& WithFromBlueprintId(const Aws::String& value) { SetFromBlueprintId(value); return *this;}
 
     /**
      * <p>The blueprint ID from which you created the snapshot
-     * (<code>os_debian_8_3</code>). A blueprint is a virtual private server (or
+     * (<code>amazon_linux_2023</code>). A blueprint is a virtual private server (or
      * <i>instance</i>) image used to create instances quickly.</p>
      */
     inline InstanceSnapshot& WithFromBlueprintId(Aws::String&& value) { SetFromBlueprintId(std::move(value)); return *this;}
 
     /**
      * <p>The blueprint ID from which you created the snapshot
-     * (<code>os_debian_8_3</code>). A blueprint is a virtual private server (or
+     * (<code>amazon_linux_2023</code>). A blueprint is a virtual private server (or
      * <i>instance</i>) image used to create instances quickly.</p>
      */
     inline InstanceSnapshot& WithFromBlueprintId(const char* value) { SetFromBlueprintId(value); return *this;}
@@ -641,49 +641,49 @@ namespace Model
 
     /**
      * <p>The bundle ID from which you created the snapshot
-     * (<code>micro_1_0</code>).</p>
+     * (<code>micro_x_x</code>).</p>
      */
     inline const Aws::String& GetFromBundleId() const{ return m_fromBundleId; }
 
     /**
      * <p>The bundle ID from which you created the snapshot
-     * (<code>micro_1_0</code>).</p>
+     * (<code>micro_x_x</code>).</p>
      */
     inline bool FromBundleIdHasBeenSet() const { return m_fromBundleIdHasBeenSet; }
 
     /**
      * <p>The bundle ID from which you created the snapshot
-     * (<code>micro_1_0</code>).</p>
+     * (<code>micro_x_x</code>).</p>
      */
     inline void SetFromBundleId(const Aws::String& value) { m_fromBundleIdHasBeenSet = true; m_fromBundleId = value; }
 
     /**
      * <p>The bundle ID from which you created the snapshot
-     * (<code>micro_1_0</code>).</p>
+     * (<code>micro_x_x</code>).</p>
      */
     inline void SetFromBundleId(Aws::String&& value) { m_fromBundleIdHasBeenSet = true; m_fromBundleId = std::move(value); }
 
     /**
      * <p>The bundle ID from which you created the snapshot
-     * (<code>micro_1_0</code>).</p>
+     * (<code>micro_x_x</code>).</p>
      */
     inline void SetFromBundleId(const char* value) { m_fromBundleIdHasBeenSet = true; m_fromBundleId.assign(value); }
 
     /**
      * <p>The bundle ID from which you created the snapshot
-     * (<code>micro_1_0</code>).</p>
+     * (<code>micro_x_x</code>).</p>
      */
     inline InstanceSnapshot& WithFromBundleId(const Aws::String& value) { SetFromBundleId(value); return *this;}
 
     /**
      * <p>The bundle ID from which you created the snapshot
-     * (<code>micro_1_0</code>).</p>
+     * (<code>micro_x_x</code>).</p>
      */
     inline InstanceSnapshot& WithFromBundleId(Aws::String&& value) { SetFromBundleId(std::move(value)); return *this;}
 
     /**
      * <p>The bundle ID from which you created the snapshot
-     * (<code>micro_1_0</code>).</p>
+     * (<code>micro_x_x</code>).</p>
      */
     inline InstanceSnapshot& WithFromBundleId(const char* value) { SetFromBundleId(value); return *this;}
 

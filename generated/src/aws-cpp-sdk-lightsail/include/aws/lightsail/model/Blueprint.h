@@ -42,50 +42,50 @@ namespace Model
 
 
     /**
-     * <p>The ID for the virtual private server image (<code>app_wordpress_4_4</code>
-     * or <code>app_lamp_7_0</code>).</p>
+     * <p>The ID for the virtual private server image (<code>app_wordpress_x_x</code>
+     * or <code>app_lamp_x_x</code>).</p>
      */
     inline const Aws::String& GetBlueprintId() const{ return m_blueprintId; }
 
     /**
-     * <p>The ID for the virtual private server image (<code>app_wordpress_4_4</code>
-     * or <code>app_lamp_7_0</code>).</p>
+     * <p>The ID for the virtual private server image (<code>app_wordpress_x_x</code>
+     * or <code>app_lamp_x_x</code>).</p>
      */
     inline bool BlueprintIdHasBeenSet() const { return m_blueprintIdHasBeenSet; }
 
     /**
-     * <p>The ID for the virtual private server image (<code>app_wordpress_4_4</code>
-     * or <code>app_lamp_7_0</code>).</p>
+     * <p>The ID for the virtual private server image (<code>app_wordpress_x_x</code>
+     * or <code>app_lamp_x_x</code>).</p>
      */
     inline void SetBlueprintId(const Aws::String& value) { m_blueprintIdHasBeenSet = true; m_blueprintId = value; }
 
     /**
-     * <p>The ID for the virtual private server image (<code>app_wordpress_4_4</code>
-     * or <code>app_lamp_7_0</code>).</p>
+     * <p>The ID for the virtual private server image (<code>app_wordpress_x_x</code>
+     * or <code>app_lamp_x_x</code>).</p>
      */
     inline void SetBlueprintId(Aws::String&& value) { m_blueprintIdHasBeenSet = true; m_blueprintId = std::move(value); }
 
     /**
-     * <p>The ID for the virtual private server image (<code>app_wordpress_4_4</code>
-     * or <code>app_lamp_7_0</code>).</p>
+     * <p>The ID for the virtual private server image (<code>app_wordpress_x_x</code>
+     * or <code>app_lamp_x_x</code>).</p>
      */
     inline void SetBlueprintId(const char* value) { m_blueprintIdHasBeenSet = true; m_blueprintId.assign(value); }
 
     /**
-     * <p>The ID for the virtual private server image (<code>app_wordpress_4_4</code>
-     * or <code>app_lamp_7_0</code>).</p>
+     * <p>The ID for the virtual private server image (<code>app_wordpress_x_x</code>
+     * or <code>app_lamp_x_x</code>).</p>
      */
     inline Blueprint& WithBlueprintId(const Aws::String& value) { SetBlueprintId(value); return *this;}
 
     /**
-     * <p>The ID for the virtual private server image (<code>app_wordpress_4_4</code>
-     * or <code>app_lamp_7_0</code>).</p>
+     * <p>The ID for the virtual private server image (<code>app_wordpress_x_x</code>
+     * or <code>app_lamp_x_x</code>).</p>
      */
     inline Blueprint& WithBlueprintId(Aws::String&& value) { SetBlueprintId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the virtual private server image (<code>app_wordpress_4_4</code>
-     * or <code>app_lamp_7_0</code>).</p>
+     * <p>The ID for the virtual private server image (<code>app_wordpress_x_x</code>
+     * or <code>app_lamp_x_x</code>).</p>
      */
     inline Blueprint& WithBlueprintId(const char* value) { SetBlueprintId(value); return *this;}
 

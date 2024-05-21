@@ -195,73 +195,81 @@ namespace Model
 
     /**
      * <p>A value that indicates the time zone you want to set for the gateway. The
-     * time zone is of the format "GMT-hr:mm" or "GMT+hr:mm". For example, GMT-4:00
-     * indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours
-     * ahead of GMT. The time zone is used, for example, for scheduling snapshots and
-     * your gateway's maintenance schedule.</p>
+     * time zone is of the format "GMT", "GMT-hr:mm", or "GMT+hr:mm". For example, GMT
+     * indicates Greenwich Mean Time without any offset. GMT-4:00 indicates the time is
+     * 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours ahead of GMT. The
+     * time zone is used, for example, for scheduling snapshots and your gateway's
+     * maintenance schedule.</p>
      */
     inline const Aws::String& GetGatewayTimezone() const{ return m_gatewayTimezone; }
 
     /**
      * <p>A value that indicates the time zone you want to set for the gateway. The
-     * time zone is of the format "GMT-hr:mm" or "GMT+hr:mm". For example, GMT-4:00
-     * indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours
-     * ahead of GMT. The time zone is used, for example, for scheduling snapshots and
-     * your gateway's maintenance schedule.</p>
+     * time zone is of the format "GMT", "GMT-hr:mm", or "GMT+hr:mm". For example, GMT
+     * indicates Greenwich Mean Time without any offset. GMT-4:00 indicates the time is
+     * 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours ahead of GMT. The
+     * time zone is used, for example, for scheduling snapshots and your gateway's
+     * maintenance schedule.</p>
      */
     inline bool GatewayTimezoneHasBeenSet() const { return m_gatewayTimezoneHasBeenSet; }
 
     /**
      * <p>A value that indicates the time zone you want to set for the gateway. The
-     * time zone is of the format "GMT-hr:mm" or "GMT+hr:mm". For example, GMT-4:00
-     * indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours
-     * ahead of GMT. The time zone is used, for example, for scheduling snapshots and
-     * your gateway's maintenance schedule.</p>
+     * time zone is of the format "GMT", "GMT-hr:mm", or "GMT+hr:mm". For example, GMT
+     * indicates Greenwich Mean Time without any offset. GMT-4:00 indicates the time is
+     * 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours ahead of GMT. The
+     * time zone is used, for example, for scheduling snapshots and your gateway's
+     * maintenance schedule.</p>
      */
     inline void SetGatewayTimezone(const Aws::String& value) { m_gatewayTimezoneHasBeenSet = true; m_gatewayTimezone = value; }
 
     /**
      * <p>A value that indicates the time zone you want to set for the gateway. The
-     * time zone is of the format "GMT-hr:mm" or "GMT+hr:mm". For example, GMT-4:00
-     * indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours
-     * ahead of GMT. The time zone is used, for example, for scheduling snapshots and
-     * your gateway's maintenance schedule.</p>
+     * time zone is of the format "GMT", "GMT-hr:mm", or "GMT+hr:mm". For example, GMT
+     * indicates Greenwich Mean Time without any offset. GMT-4:00 indicates the time is
+     * 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours ahead of GMT. The
+     * time zone is used, for example, for scheduling snapshots and your gateway's
+     * maintenance schedule.</p>
      */
     inline void SetGatewayTimezone(Aws::String&& value) { m_gatewayTimezoneHasBeenSet = true; m_gatewayTimezone = std::move(value); }
 
     /**
      * <p>A value that indicates the time zone you want to set for the gateway. The
-     * time zone is of the format "GMT-hr:mm" or "GMT+hr:mm". For example, GMT-4:00
-     * indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours
-     * ahead of GMT. The time zone is used, for example, for scheduling snapshots and
-     * your gateway's maintenance schedule.</p>
+     * time zone is of the format "GMT", "GMT-hr:mm", or "GMT+hr:mm". For example, GMT
+     * indicates Greenwich Mean Time without any offset. GMT-4:00 indicates the time is
+     * 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours ahead of GMT. The
+     * time zone is used, for example, for scheduling snapshots and your gateway's
+     * maintenance schedule.</p>
      */
     inline void SetGatewayTimezone(const char* value) { m_gatewayTimezoneHasBeenSet = true; m_gatewayTimezone.assign(value); }
 
     /**
      * <p>A value that indicates the time zone you want to set for the gateway. The
-     * time zone is of the format "GMT-hr:mm" or "GMT+hr:mm". For example, GMT-4:00
-     * indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours
-     * ahead of GMT. The time zone is used, for example, for scheduling snapshots and
-     * your gateway's maintenance schedule.</p>
+     * time zone is of the format "GMT", "GMT-hr:mm", or "GMT+hr:mm". For example, GMT
+     * indicates Greenwich Mean Time without any offset. GMT-4:00 indicates the time is
+     * 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours ahead of GMT. The
+     * time zone is used, for example, for scheduling snapshots and your gateway's
+     * maintenance schedule.</p>
      */
     inline ActivateGatewayRequest& WithGatewayTimezone(const Aws::String& value) { SetGatewayTimezone(value); return *this;}
 
     /**
      * <p>A value that indicates the time zone you want to set for the gateway. The
-     * time zone is of the format "GMT-hr:mm" or "GMT+hr:mm". For example, GMT-4:00
-     * indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours
-     * ahead of GMT. The time zone is used, for example, for scheduling snapshots and
-     * your gateway's maintenance schedule.</p>
+     * time zone is of the format "GMT", "GMT-hr:mm", or "GMT+hr:mm". For example, GMT
+     * indicates Greenwich Mean Time without any offset. GMT-4:00 indicates the time is
+     * 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours ahead of GMT. The
+     * time zone is used, for example, for scheduling snapshots and your gateway's
+     * maintenance schedule.</p>
      */
     inline ActivateGatewayRequest& WithGatewayTimezone(Aws::String&& value) { SetGatewayTimezone(std::move(value)); return *this;}
 
     /**
      * <p>A value that indicates the time zone you want to set for the gateway. The
-     * time zone is of the format "GMT-hr:mm" or "GMT+hr:mm". For example, GMT-4:00
-     * indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours
-     * ahead of GMT. The time zone is used, for example, for scheduling snapshots and
-     * your gateway's maintenance schedule.</p>
+     * time zone is of the format "GMT", "GMT-hr:mm", or "GMT+hr:mm". For example, GMT
+     * indicates Greenwich Mean Time without any offset. GMT-4:00 indicates the time is
+     * 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours ahead of GMT. The
+     * time zone is used, for example, for scheduling snapshots and your gateway's
+     * maintenance schedule.</p>
      */
     inline ActivateGatewayRequest& WithGatewayTimezone(const char* value) { SetGatewayTimezone(value); return *this;}
 
@@ -392,7 +400,7 @@ namespace Model
      * critical to all later functions of the gateway and cannot be changed after
      * activation. The default value is <code>CACHED</code>.</p> <p>Valid Values:
      * <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> |
-     * <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
+     * <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
      */
     inline const Aws::String& GetGatewayType() const{ return m_gatewayType; }
 
@@ -401,7 +409,7 @@ namespace Model
      * critical to all later functions of the gateway and cannot be changed after
      * activation. The default value is <code>CACHED</code>.</p> <p>Valid Values:
      * <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> |
-     * <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
+     * <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
      */
     inline bool GatewayTypeHasBeenSet() const { return m_gatewayTypeHasBeenSet; }
 
@@ -410,7 +418,7 @@ namespace Model
      * critical to all later functions of the gateway and cannot be changed after
      * activation. The default value is <code>CACHED</code>.</p> <p>Valid Values:
      * <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> |
-     * <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
+     * <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
      */
     inline void SetGatewayType(const Aws::String& value) { m_gatewayTypeHasBeenSet = true; m_gatewayType = value; }
 
@@ -419,7 +427,7 @@ namespace Model
      * critical to all later functions of the gateway and cannot be changed after
      * activation. The default value is <code>CACHED</code>.</p> <p>Valid Values:
      * <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> |
-     * <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
+     * <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
      */
     inline void SetGatewayType(Aws::String&& value) { m_gatewayTypeHasBeenSet = true; m_gatewayType = std::move(value); }
 
@@ -428,7 +436,7 @@ namespace Model
      * critical to all later functions of the gateway and cannot be changed after
      * activation. The default value is <code>CACHED</code>.</p> <p>Valid Values:
      * <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> |
-     * <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
+     * <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
      */
     inline void SetGatewayType(const char* value) { m_gatewayTypeHasBeenSet = true; m_gatewayType.assign(value); }
 
@@ -437,7 +445,7 @@ namespace Model
      * critical to all later functions of the gateway and cannot be changed after
      * activation. The default value is <code>CACHED</code>.</p> <p>Valid Values:
      * <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> |
-     * <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
+     * <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
      */
     inline ActivateGatewayRequest& WithGatewayType(const Aws::String& value) { SetGatewayType(value); return *this;}
 
@@ -446,7 +454,7 @@ namespace Model
      * critical to all later functions of the gateway and cannot be changed after
      * activation. The default value is <code>CACHED</code>.</p> <p>Valid Values:
      * <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> |
-     * <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
+     * <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
      */
     inline ActivateGatewayRequest& WithGatewayType(Aws::String&& value) { SetGatewayType(std::move(value)); return *this;}
 
@@ -455,7 +463,7 @@ namespace Model
      * critical to all later functions of the gateway and cannot be changed after
      * activation. The default value is <code>CACHED</code>.</p> <p>Valid Values:
      * <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> |
-     * <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
+     * <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
      */
     inline ActivateGatewayRequest& WithGatewayType(const char* value) { SetGatewayType(value); return *this;}
 

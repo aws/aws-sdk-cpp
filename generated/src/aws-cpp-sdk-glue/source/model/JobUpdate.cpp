@@ -43,7 +43,8 @@ JobUpdate::JobUpdate() :
     m_codeGenConfigurationNodesHasBeenSet(false),
     m_executionClass(ExecutionClass::NOT_SET),
     m_executionClassHasBeenSet(false),
-    m_sourceControlDetailsHasBeenSet(false)
+    m_sourceControlDetailsHasBeenSet(false),
+    m_maintenanceWindowHasBeenSet(false)
 {
 }
 
@@ -72,7 +73,8 @@ JobUpdate::JobUpdate(JsonView jsonValue) :
     m_codeGenConfigurationNodesHasBeenSet(false),
     m_executionClass(ExecutionClass::NOT_SET),
     m_executionClassHasBeenSet(false),
-    m_sourceControlDetailsHasBeenSet(false)
+    m_sourceControlDetailsHasBeenSet(false),
+    m_maintenanceWindowHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -221,6 +223,13 @@ JobUpdate& JobUpdate::operator =(JsonView jsonValue)
     m_sourceControlDetailsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MaintenanceWindow"))
+  {
+    m_maintenanceWindow = jsonValue.GetString("MaintenanceWindow");
+
+    m_maintenanceWindowHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -352,6 +361,12 @@ JsonValue JobUpdate::Jsonize() const
   if(m_sourceControlDetailsHasBeenSet)
   {
    payload.WithObject("SourceControlDetails", m_sourceControlDetails.Jsonize());
+
+  }
+
+  if(m_maintenanceWindowHasBeenSet)
+  {
+   payload.WithString("MaintenanceWindow", m_maintenanceWindow);
 
   }
 

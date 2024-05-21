@@ -105,83 +105,83 @@ namespace Model
 
 
     /**
-     * <p>The bundle ID (<code>micro_1_0</code>).</p>
+     * <p>The bundle ID (<code>micro_x_x</code>).</p>
      */
     inline const Aws::String& GetBundleId() const{ return m_bundleId; }
 
     /**
-     * <p>The bundle ID (<code>micro_1_0</code>).</p>
+     * <p>The bundle ID (<code>micro_x_x</code>).</p>
      */
     inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }
 
     /**
-     * <p>The bundle ID (<code>micro_1_0</code>).</p>
+     * <p>The bundle ID (<code>micro_x_x</code>).</p>
      */
     inline void SetBundleId(const Aws::String& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
 
     /**
-     * <p>The bundle ID (<code>micro_1_0</code>).</p>
+     * <p>The bundle ID (<code>micro_x_x</code>).</p>
      */
     inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::move(value); }
 
     /**
-     * <p>The bundle ID (<code>micro_1_0</code>).</p>
+     * <p>The bundle ID (<code>micro_x_x</code>).</p>
      */
     inline void SetBundleId(const char* value) { m_bundleIdHasBeenSet = true; m_bundleId.assign(value); }
 
     /**
-     * <p>The bundle ID (<code>micro_1_0</code>).</p>
+     * <p>The bundle ID (<code>micro_x_x</code>).</p>
      */
     inline Bundle& WithBundleId(const Aws::String& value) { SetBundleId(value); return *this;}
 
     /**
-     * <p>The bundle ID (<code>micro_1_0</code>).</p>
+     * <p>The bundle ID (<code>micro_x_x</code>).</p>
      */
     inline Bundle& WithBundleId(Aws::String&& value) { SetBundleId(std::move(value)); return *this;}
 
     /**
-     * <p>The bundle ID (<code>micro_1_0</code>).</p>
+     * <p>The bundle ID (<code>micro_x_x</code>).</p>
      */
     inline Bundle& WithBundleId(const char* value) { SetBundleId(value); return *this;}
 
 
     /**
-     * <p>The Amazon EC2 instance type (<code>t2.micro</code>).</p>
+     * <p>The instance type (<code>micro</code>).</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The Amazon EC2 instance type (<code>t2.micro</code>).</p>
+     * <p>The instance type (<code>micro</code>).</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
-     * <p>The Amazon EC2 instance type (<code>t2.micro</code>).</p>
+     * <p>The instance type (<code>micro</code>).</p>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The Amazon EC2 instance type (<code>t2.micro</code>).</p>
+     * <p>The instance type (<code>micro</code>).</p>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>The Amazon EC2 instance type (<code>t2.micro</code>).</p>
+     * <p>The instance type (<code>micro</code>).</p>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
-     * <p>The Amazon EC2 instance type (<code>t2.micro</code>).</p>
+     * <p>The instance type (<code>micro</code>).</p>
      */
     inline Bundle& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The Amazon EC2 instance type (<code>t2.micro</code>).</p>
+     * <p>The instance type (<code>micro</code>).</p>
      */
     inline Bundle& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon EC2 instance type (<code>t2.micro</code>).</p>
+     * <p>The instance type (<code>micro</code>).</p>
      */
     inline Bundle& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 

@@ -29,6 +29,7 @@ namespace Aws
         static const int TIMEOUT_HASH = HashingUtils::HashString("TIMEOUT");
         static const int ERROR__HASH = HashingUtils::HashString("ERROR");
         static const int WAITING_HASH = HashingUtils::HashString("WAITING");
+        static const int EXPIRED_HASH = HashingUtils::HashString("EXPIRED");
 
 
         JobRunState GetJobRunStateForName(const Aws::String& name)
@@ -70,6 +71,10 @@ namespace Aws
           {
             return JobRunState::WAITING;
           }
+          else if (hashCode == EXPIRED_HASH)
+          {
+            return JobRunState::EXPIRED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -104,6 +109,8 @@ namespace Aws
             return "ERROR";
           case JobRunState::WAITING:
             return "WAITING";
+          case JobRunState::EXPIRED:
+            return "EXPIRED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

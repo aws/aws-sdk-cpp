@@ -140,45 +140,94 @@ namespace Model
 
     /**
      * <p>The IP address type to set for the specified resource.</p> <p>The possible
-     * values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4
-     * and IPv6.</p>
+     * values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     * <code>dualstack</code> for IPv4 and IPv6.</p>
      */
     inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
 
     /**
      * <p>The IP address type to set for the specified resource.</p> <p>The possible
-     * values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4
-     * and IPv6.</p>
+     * values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     * <code>dualstack</code> for IPv4 and IPv6.</p>
      */
     inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
 
     /**
      * <p>The IP address type to set for the specified resource.</p> <p>The possible
-     * values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4
-     * and IPv6.</p>
+     * values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     * <code>dualstack</code> for IPv4 and IPv6.</p>
      */
     inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
 
     /**
      * <p>The IP address type to set for the specified resource.</p> <p>The possible
-     * values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4
-     * and IPv6.</p>
+     * values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     * <code>dualstack</code> for IPv4 and IPv6.</p>
      */
     inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
 
     /**
      * <p>The IP address type to set for the specified resource.</p> <p>The possible
-     * values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4
-     * and IPv6.</p>
+     * values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     * <code>dualstack</code> for IPv4 and IPv6.</p>
      */
     inline SetIpAddressTypeRequest& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
 
     /**
      * <p>The IP address type to set for the specified resource.</p> <p>The possible
-     * values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4
-     * and IPv6.</p>
+     * values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     * <code>dualstack</code> for IPv4 and IPv6.</p>
      */
     inline SetIpAddressTypeRequest& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Required parameter to accept the instance bundle update when changing to, and
+     * from, IPv6-only.</p>  <p>An instance bundle will change when switching
+     * from <code>dual-stack</code> or <code>ipv4</code>, to <code>ipv6</code>. It also
+     * changes when switching from <code>ipv6</code>, to <code>dual-stack</code> or
+     * <code>ipv4</code>.</p> <p>You must include this parameter in the command to
+     * update the bundle. For example, if you switch from <code>dual-stack</code> to
+     * <code>ipv6</code>, the bundle will be updated, and billing for the IPv6-only
+     * instance bundle begins immediately.</p> 
+     */
+    inline bool GetAcceptBundleUpdate() const{ return m_acceptBundleUpdate; }
+
+    /**
+     * <p>Required parameter to accept the instance bundle update when changing to, and
+     * from, IPv6-only.</p>  <p>An instance bundle will change when switching
+     * from <code>dual-stack</code> or <code>ipv4</code>, to <code>ipv6</code>. It also
+     * changes when switching from <code>ipv6</code>, to <code>dual-stack</code> or
+     * <code>ipv4</code>.</p> <p>You must include this parameter in the command to
+     * update the bundle. For example, if you switch from <code>dual-stack</code> to
+     * <code>ipv6</code>, the bundle will be updated, and billing for the IPv6-only
+     * instance bundle begins immediately.</p> 
+     */
+    inline bool AcceptBundleUpdateHasBeenSet() const { return m_acceptBundleUpdateHasBeenSet; }
+
+    /**
+     * <p>Required parameter to accept the instance bundle update when changing to, and
+     * from, IPv6-only.</p>  <p>An instance bundle will change when switching
+     * from <code>dual-stack</code> or <code>ipv4</code>, to <code>ipv6</code>. It also
+     * changes when switching from <code>ipv6</code>, to <code>dual-stack</code> or
+     * <code>ipv4</code>.</p> <p>You must include this parameter in the command to
+     * update the bundle. For example, if you switch from <code>dual-stack</code> to
+     * <code>ipv6</code>, the bundle will be updated, and billing for the IPv6-only
+     * instance bundle begins immediately.</p> 
+     */
+    inline void SetAcceptBundleUpdate(bool value) { m_acceptBundleUpdateHasBeenSet = true; m_acceptBundleUpdate = value; }
+
+    /**
+     * <p>Required parameter to accept the instance bundle update when changing to, and
+     * from, IPv6-only.</p>  <p>An instance bundle will change when switching
+     * from <code>dual-stack</code> or <code>ipv4</code>, to <code>ipv6</code>. It also
+     * changes when switching from <code>ipv6</code>, to <code>dual-stack</code> or
+     * <code>ipv4</code>.</p> <p>You must include this parameter in the command to
+     * update the bundle. For example, if you switch from <code>dual-stack</code> to
+     * <code>ipv6</code>, the bundle will be updated, and billing for the IPv6-only
+     * instance bundle begins immediately.</p> 
+     */
+    inline SetIpAddressTypeRequest& WithAcceptBundleUpdate(bool value) { SetAcceptBundleUpdate(value); return *this;}
 
   private:
 
@@ -190,6 +239,9 @@ namespace Model
 
     IpAddressType m_ipAddressType;
     bool m_ipAddressTypeHasBeenSet = false;
+
+    bool m_acceptBundleUpdate;
+    bool m_acceptBundleUpdateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -367,37 +367,43 @@ namespace Model
 
     /**
      * <p>The type of hardware or software platform on which the gateway is
-     * running.</p>
+     * running.</p>  <p>Tape Gateway is no longer available on Snow Family
+     * devices.</p> 
      */
     inline const HostEnvironment& GetHostEnvironment() const{ return m_hostEnvironment; }
 
     /**
      * <p>The type of hardware or software platform on which the gateway is
-     * running.</p>
+     * running.</p>  <p>Tape Gateway is no longer available on Snow Family
+     * devices.</p> 
      */
     inline bool HostEnvironmentHasBeenSet() const { return m_hostEnvironmentHasBeenSet; }
 
     /**
      * <p>The type of hardware or software platform on which the gateway is
-     * running.</p>
+     * running.</p>  <p>Tape Gateway is no longer available on Snow Family
+     * devices.</p> 
      */
     inline void SetHostEnvironment(const HostEnvironment& value) { m_hostEnvironmentHasBeenSet = true; m_hostEnvironment = value; }
 
     /**
      * <p>The type of hardware or software platform on which the gateway is
-     * running.</p>
+     * running.</p>  <p>Tape Gateway is no longer available on Snow Family
+     * devices.</p> 
      */
     inline void SetHostEnvironment(HostEnvironment&& value) { m_hostEnvironmentHasBeenSet = true; m_hostEnvironment = std::move(value); }
 
     /**
      * <p>The type of hardware or software platform on which the gateway is
-     * running.</p>
+     * running.</p>  <p>Tape Gateway is no longer available on Snow Family
+     * devices.</p> 
      */
     inline GatewayInfo& WithHostEnvironment(const HostEnvironment& value) { SetHostEnvironment(value); return *this;}
 
     /**
      * <p>The type of hardware or software platform on which the gateway is
-     * running.</p>
+     * running.</p>  <p>Tape Gateway is no longer available on Snow Family
+     * devices.</p> 
      */
     inline GatewayInfo& WithHostEnvironment(HostEnvironment&& value) { SetHostEnvironment(std::move(value)); return *this;}
 
