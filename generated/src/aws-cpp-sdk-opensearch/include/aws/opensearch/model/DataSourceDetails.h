@@ -7,6 +7,7 @@
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/opensearch/model/DataSourceType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/opensearch/model/DataSourceStatus.h>
 #include <utility>
 
 namespace Aws
@@ -150,6 +151,37 @@ namespace Model
      */
     inline DataSourceDetails& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
+    /**
+     * <p>The status of the data source.</p>
+     */
+    inline const DataSourceStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the data source.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the data source.</p>
+     */
+    inline void SetStatus(const DataSourceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>The status of the data source.</p>
+     */
+    inline void SetStatus(DataSourceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>The status of the data source.</p>
+     */
+    inline DataSourceDetails& WithStatus(const DataSourceStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The status of the data source.</p>
+     */
+    inline DataSourceDetails& WithStatus(DataSourceStatus&& value) { SetStatus(std::move(value)); return *this;}
+
   private:
 
     DataSourceType m_dataSourceType;
@@ -160,6 +192,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    DataSourceStatus m_status;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

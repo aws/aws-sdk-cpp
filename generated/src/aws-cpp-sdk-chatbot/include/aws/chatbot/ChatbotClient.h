@@ -560,6 +560,81 @@ namespace chatbot
         }
 
         /**
+         * Retrieves the list of tags applied to a configuration.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const ListTagsForResourceRequestT& request) const
+        {
+            return SubmitCallable(&ChatbotClient::ListTagsForResource, request);
+        }
+
+        /**
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChatbotClient::ListTagsForResource, request, handler, context);
+        }
+
+        /**
+         * Applies the supplied tags to a configuration.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        Model::TagResourceOutcomeCallable TagResourceCallable(const TagResourceRequestT& request) const
+        {
+            return SubmitCallable(&ChatbotClient::TagResource, request);
+        }
+
+        /**
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        void TagResourceAsync(const TagResourceRequestT& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChatbotClient::TagResource, request, handler, context);
+        }
+
+        /**
+         * Removes the supplied tags from a configuration<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        Model::UntagResourceOutcomeCallable UntagResourceCallable(const UntagResourceRequestT& request) const
+        {
+            return SubmitCallable(&ChatbotClient::UntagResource, request);
+        }
+
+        /**
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChatbotClient::UntagResource, request, handler, context);
+        }
+
+        /**
          * Update Chatbot account level preferences<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/UpdateAccountPreferences">AWS
          * API Reference</a></p>

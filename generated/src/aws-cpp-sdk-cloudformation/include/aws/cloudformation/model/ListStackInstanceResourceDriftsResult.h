@@ -36,43 +36,43 @@ namespace Model
 
 
     /**
-     * <p>A list of <code>StackInstanceResourceDriftSummary</code> structures that
+     * <p>A list of <code>StackInstanceResourceDriftsSummary</code> structures that
      * contain information about the specified stack instances.</p>
      */
     inline const Aws::Vector<StackInstanceResourceDriftsSummary>& GetSummaries() const{ return m_summaries; }
 
     /**
-     * <p>A list of <code>StackInstanceResourceDriftSummary</code> structures that
+     * <p>A list of <code>StackInstanceResourceDriftsSummary</code> structures that
      * contain information about the specified stack instances.</p>
      */
     inline void SetSummaries(const Aws::Vector<StackInstanceResourceDriftsSummary>& value) { m_summaries = value; }
 
     /**
-     * <p>A list of <code>StackInstanceResourceDriftSummary</code> structures that
+     * <p>A list of <code>StackInstanceResourceDriftsSummary</code> structures that
      * contain information about the specified stack instances.</p>
      */
     inline void SetSummaries(Aws::Vector<StackInstanceResourceDriftsSummary>&& value) { m_summaries = std::move(value); }
 
     /**
-     * <p>A list of <code>StackInstanceResourceDriftSummary</code> structures that
+     * <p>A list of <code>StackInstanceResourceDriftsSummary</code> structures that
      * contain information about the specified stack instances.</p>
      */
     inline ListStackInstanceResourceDriftsResult& WithSummaries(const Aws::Vector<StackInstanceResourceDriftsSummary>& value) { SetSummaries(value); return *this;}
 
     /**
-     * <p>A list of <code>StackInstanceResourceDriftSummary</code> structures that
+     * <p>A list of <code>StackInstanceResourceDriftsSummary</code> structures that
      * contain information about the specified stack instances.</p>
      */
     inline ListStackInstanceResourceDriftsResult& WithSummaries(Aws::Vector<StackInstanceResourceDriftsSummary>&& value) { SetSummaries(std::move(value)); return *this;}
 
     /**
-     * <p>A list of <code>StackInstanceResourceDriftSummary</code> structures that
+     * <p>A list of <code>StackInstanceResourceDriftsSummary</code> structures that
      * contain information about the specified stack instances.</p>
      */
     inline ListStackInstanceResourceDriftsResult& AddSummaries(const StackInstanceResourceDriftsSummary& value) { m_summaries.push_back(value); return *this; }
 
     /**
-     * <p>A list of <code>StackInstanceResourceDriftSummary</code> structures that
+     * <p>A list of <code>StackInstanceResourceDriftsSummary</code> structures that
      * contain information about the specified stack instances.</p>
      */
     inline ListStackInstanceResourceDriftsResult& AddSummaries(StackInstanceResourceDriftsSummary&& value) { m_summaries.push_back(std::move(value)); return *this; }

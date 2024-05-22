@@ -18,7 +18,8 @@ CreateChimeWebhookConfigurationRequest::CreateChimeWebhookConfigurationRequest()
     m_snsTopicArnsHasBeenSet(false),
     m_iamRoleArnHasBeenSet(false),
     m_configurationNameHasBeenSet(false),
-    m_loggingLevelHasBeenSet(false)
+    m_loggingLevelHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -64,6 +65,17 @@ Aws::String CreateChimeWebhookConfigurationRequest::SerializePayload() const
   if(m_loggingLevelHasBeenSet)
   {
    payload.WithString("LoggingLevel", m_loggingLevel);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

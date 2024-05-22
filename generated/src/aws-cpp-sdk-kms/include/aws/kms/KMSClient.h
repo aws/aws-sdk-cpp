@@ -2041,18 +2041,18 @@ namespace KMS
          * the original key material</a> into a KMS key whose key material expired or was
          * deleted.</p> <p> <code>GetParametersForImport</code> returns the items that you
          * need to import your key material.</p> <ul> <li> <p>The public key (or "wrapping
-         * key") of an RSA key pair that KMS generates.</p> <p>You will use this public key
-         * to encrypt ("wrap") your key material while it's in transit to KMS. </p> </li>
-         * <li> <p>A import token that ensures that KMS can decrypt your key material and
-         * associate it with the correct KMS key.</p> </li> </ul> <p>The public key and its
-         * import token are permanently linked and must be used together. Each public key
-         * and import token set is valid for 24 hours. The expiration date and time appear
-         * in the <code>ParametersValidTo</code> field in the
-         * <code>GetParametersForImport</code> response. You cannot use an expired public
-         * key or import token in an <a>ImportKeyMaterial</a> request. If your key and
-         * token expire, send another <code>GetParametersForImport</code> request.</p> <p>
-         * <code>GetParametersForImport</code> requires the following information:</p> <ul>
-         * <li> <p>The key ID of the KMS key for which you are importing the key
+         * key") of an asymmetric key pair that KMS generates.</p> <p>You will use this
+         * public key to encrypt ("wrap") your key material while it's in transit to KMS.
+         * </p> </li> <li> <p>A import token that ensures that KMS can decrypt your key
+         * material and associate it with the correct KMS key.</p> </li> </ul> <p>The
+         * public key and its import token are permanently linked and must be used
+         * together. Each public key and import token set is valid for 24 hours. The
+         * expiration date and time appear in the <code>ParametersValidTo</code> field in
+         * the <code>GetParametersForImport</code> response. You cannot use an expired
+         * public key or import token in an <a>ImportKeyMaterial</a> request. If your key
+         * and token expire, send another <code>GetParametersForImport</code> request.</p>
+         * <p> <code>GetParametersForImport</code> requires the following information:</p>
+         * <ul> <li> <p>The key ID of the KMS key for which you are importing the key
          * material.</p> </li> <li> <p>The key spec of the public key ("wrapping key") that
          * you will use to encrypt your key material during import.</p> </li> <li> <p>The
          * wrapping algorithm that you will use with the public key to encrypt your key

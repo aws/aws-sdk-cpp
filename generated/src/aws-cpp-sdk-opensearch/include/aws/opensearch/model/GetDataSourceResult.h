@@ -7,6 +7,7 @@
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/opensearch/model/DataSourceType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/opensearch/model/DataSourceStatus.h>
 #include <utility>
 
 namespace Aws
@@ -137,6 +138,32 @@ namespace Model
     inline GetDataSourceResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
+    /**
+     * <p>The status of the data source response.</p>
+     */
+    inline const DataSourceStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the data source response.</p>
+     */
+    inline void SetStatus(const DataSourceStatus& value) { m_status = value; }
+
+    /**
+     * <p>The status of the data source response.</p>
+     */
+    inline void SetStatus(DataSourceStatus&& value) { m_status = std::move(value); }
+
+    /**
+     * <p>The status of the data source response.</p>
+     */
+    inline GetDataSourceResult& WithStatus(const DataSourceStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The status of the data source response.</p>
+     */
+    inline GetDataSourceResult& WithStatus(DataSourceStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -165,6 +192,8 @@ namespace Model
     Aws::String m_name;
 
     Aws::String m_description;
+
+    DataSourceStatus m_status;
 
     Aws::String m_requestId;
   };

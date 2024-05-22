@@ -14,7 +14,9 @@ DeleteStackRequest::DeleteStackRequest() :
     m_stackNameHasBeenSet(false),
     m_retainResourcesHasBeenSet(false),
     m_roleARNHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false)
+    m_clientRequestTokenHasBeenSet(false),
+    m_deletionMode(DeletionMode::NOT_SET),
+    m_deletionModeHasBeenSet(false)
 {
 }
 
@@ -46,6 +48,11 @@ Aws::String DeleteStackRequest::SerializePayload() const
   if(m_clientRequestTokenHasBeenSet)
   {
     ss << "ClientRequestToken=" << StringUtils::URLEncode(m_clientRequestToken.c_str()) << "&";
+  }
+
+  if(m_deletionModeHasBeenSet)
+  {
+    ss << "DeletionMode=" << DeletionModeMapper::GetNameForDeletionMode(m_deletionMode) << "&";
   }
 
   ss << "Version=2010-05-15";

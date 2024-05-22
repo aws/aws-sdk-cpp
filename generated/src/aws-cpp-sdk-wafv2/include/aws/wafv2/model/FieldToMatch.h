@@ -54,8 +54,11 @@ namespace Model
    * <code>SingleHeader</code>, and <code>Method</code>.</p> </li> <li> <p>In this
    * documentation, the descriptions of the individual fields talk about specifying
    * the web request component to inspect, but for field redaction, you are
-   * specifying the component type to redact from the logs. </p> </li> </ul> </li>
-   * </ul><p><h3>See Also:</h3>   <a
+   * specifying the component type to redact from the logs. </p> </li> <li> <p>If you
+   * have request sampling enabled, the redacted fields configuration for logging has
+   * no impact on sampling. The only way to exclude fields from request sampling is
+   * by disabling sampling in the web ACL visibility configuration. </p> </li> </ul>
+   * </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/FieldToMatch">AWS
    * API Reference</a></p>
    */
@@ -740,7 +743,8 @@ namespace Model
 
 
     /**
-     * <p>Match against the request's JA3 fingerprint. The JA3 fingerprint is a
+     * <p>Available for use with Amazon CloudFront distributions and Application Load
+     * Balancers. Match against the request's JA3 fingerprint. The JA3 fingerprint is a
      * 32-character hash derived from the TLS Client Hello of an incoming request. This
      * fingerprint serves as a unique identifier for the client's TLS configuration.
      * WAF calculates and logs this fingerprint for each request that has enough TLS
@@ -759,7 +763,8 @@ namespace Model
     inline const JA3Fingerprint& GetJA3Fingerprint() const{ return m_jA3Fingerprint; }
 
     /**
-     * <p>Match against the request's JA3 fingerprint. The JA3 fingerprint is a
+     * <p>Available for use with Amazon CloudFront distributions and Application Load
+     * Balancers. Match against the request's JA3 fingerprint. The JA3 fingerprint is a
      * 32-character hash derived from the TLS Client Hello of an incoming request. This
      * fingerprint serves as a unique identifier for the client's TLS configuration.
      * WAF calculates and logs this fingerprint for each request that has enough TLS
@@ -778,7 +783,8 @@ namespace Model
     inline bool JA3FingerprintHasBeenSet() const { return m_jA3FingerprintHasBeenSet; }
 
     /**
-     * <p>Match against the request's JA3 fingerprint. The JA3 fingerprint is a
+     * <p>Available for use with Amazon CloudFront distributions and Application Load
+     * Balancers. Match against the request's JA3 fingerprint. The JA3 fingerprint is a
      * 32-character hash derived from the TLS Client Hello of an incoming request. This
      * fingerprint serves as a unique identifier for the client's TLS configuration.
      * WAF calculates and logs this fingerprint for each request that has enough TLS
@@ -797,7 +803,8 @@ namespace Model
     inline void SetJA3Fingerprint(const JA3Fingerprint& value) { m_jA3FingerprintHasBeenSet = true; m_jA3Fingerprint = value; }
 
     /**
-     * <p>Match against the request's JA3 fingerprint. The JA3 fingerprint is a
+     * <p>Available for use with Amazon CloudFront distributions and Application Load
+     * Balancers. Match against the request's JA3 fingerprint. The JA3 fingerprint is a
      * 32-character hash derived from the TLS Client Hello of an incoming request. This
      * fingerprint serves as a unique identifier for the client's TLS configuration.
      * WAF calculates and logs this fingerprint for each request that has enough TLS
@@ -816,7 +823,8 @@ namespace Model
     inline void SetJA3Fingerprint(JA3Fingerprint&& value) { m_jA3FingerprintHasBeenSet = true; m_jA3Fingerprint = std::move(value); }
 
     /**
-     * <p>Match against the request's JA3 fingerprint. The JA3 fingerprint is a
+     * <p>Available for use with Amazon CloudFront distributions and Application Load
+     * Balancers. Match against the request's JA3 fingerprint. The JA3 fingerprint is a
      * 32-character hash derived from the TLS Client Hello of an incoming request. This
      * fingerprint serves as a unique identifier for the client's TLS configuration.
      * WAF calculates and logs this fingerprint for each request that has enough TLS
@@ -835,7 +843,8 @@ namespace Model
     inline FieldToMatch& WithJA3Fingerprint(const JA3Fingerprint& value) { SetJA3Fingerprint(value); return *this;}
 
     /**
-     * <p>Match against the request's JA3 fingerprint. The JA3 fingerprint is a
+     * <p>Available for use with Amazon CloudFront distributions and Application Load
+     * Balancers. Match against the request's JA3 fingerprint. The JA3 fingerprint is a
      * 32-character hash derived from the TLS Client Hello of an incoming request. This
      * fingerprint serves as a unique identifier for the client's TLS configuration.
      * WAF calculates and logs this fingerprint for each request that has enough TLS

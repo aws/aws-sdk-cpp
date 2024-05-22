@@ -17,11 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDataSourceResult::GetDataSourceResult()
+GetDataSourceResult::GetDataSourceResult() : 
+    m_status(DataSourceStatus::NOT_SET)
 {
 }
 
-GetDataSourceResult::GetDataSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+GetDataSourceResult::GetDataSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_status(DataSourceStatus::NOT_SET)
 {
   *this = result;
 }
@@ -44,6 +46,12 @@ GetDataSourceResult& GetDataSourceResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
+
+  }
+
+  if(jsonValue.ValueExists("Status"))
+  {
+    m_status = DataSourceStatusMapper::GetDataSourceStatusForName(jsonValue.GetString("Status"));
 
   }
 

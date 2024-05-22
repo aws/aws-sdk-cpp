@@ -13,7 +13,11 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 GetLoggingConfigurationRequest::GetLoggingConfigurationRequest() : 
-    m_resourceArnHasBeenSet(false)
+    m_resourceArnHasBeenSet(false),
+    m_logType(LogType::NOT_SET),
+    m_logTypeHasBeenSet(false),
+    m_logScope(LogScope::NOT_SET),
+    m_logScopeHasBeenSet(false)
 {
 }
 
@@ -25,6 +29,16 @@ Aws::String GetLoggingConfigurationRequest::SerializePayload() const
   {
    payload.WithString("ResourceArn", m_resourceArn);
 
+  }
+
+  if(m_logTypeHasBeenSet)
+  {
+   payload.WithString("LogType", LogTypeMapper::GetNameForLogType(m_logType));
+  }
+
+  if(m_logScopeHasBeenSet)
+  {
+   payload.WithString("LogScope", LogScopeMapper::GetNameForLogScope(m_logScope));
   }
 
   return payload.View().WriteReadable();

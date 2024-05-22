@@ -12,6 +12,7 @@
 #include <aws/cloudformation/model/RollbackConfiguration.h>
 #include <aws/cloudformation/model/StackStatus.h>
 #include <aws/cloudformation/model/StackDriftInformation.h>
+#include <aws/cloudformation/model/DeletionMode.h>
 #include <aws/cloudformation/model/DetailedStatus.h>
 #include <aws/cloudformation/model/Parameter.h>
 #include <aws/cloudformation/model/Capability.h>
@@ -1025,6 +1026,67 @@ namespace Model
 
 
     /**
+     * <p>Specifies the deletion mode for the stack. Possible values are:</p> <ul> <li>
+     * <p> <code>STANDARD</code> - Use the standard behavior. Specifying this value is
+     * the same as not specifying this parameter.</p> </li> <li> <p>
+     * <code>FORCE_DELETE_STACK</code> - Delete the stack if it's stuck in a
+     * <code>DELETE_FAILED</code> state due to resource deletion failure.</p> </li>
+     * </ul>
+     */
+    inline const DeletionMode& GetDeletionMode() const{ return m_deletionMode; }
+
+    /**
+     * <p>Specifies the deletion mode for the stack. Possible values are:</p> <ul> <li>
+     * <p> <code>STANDARD</code> - Use the standard behavior. Specifying this value is
+     * the same as not specifying this parameter.</p> </li> <li> <p>
+     * <code>FORCE_DELETE_STACK</code> - Delete the stack if it's stuck in a
+     * <code>DELETE_FAILED</code> state due to resource deletion failure.</p> </li>
+     * </ul>
+     */
+    inline bool DeletionModeHasBeenSet() const { return m_deletionModeHasBeenSet; }
+
+    /**
+     * <p>Specifies the deletion mode for the stack. Possible values are:</p> <ul> <li>
+     * <p> <code>STANDARD</code> - Use the standard behavior. Specifying this value is
+     * the same as not specifying this parameter.</p> </li> <li> <p>
+     * <code>FORCE_DELETE_STACK</code> - Delete the stack if it's stuck in a
+     * <code>DELETE_FAILED</code> state due to resource deletion failure.</p> </li>
+     * </ul>
+     */
+    inline void SetDeletionMode(const DeletionMode& value) { m_deletionModeHasBeenSet = true; m_deletionMode = value; }
+
+    /**
+     * <p>Specifies the deletion mode for the stack. Possible values are:</p> <ul> <li>
+     * <p> <code>STANDARD</code> - Use the standard behavior. Specifying this value is
+     * the same as not specifying this parameter.</p> </li> <li> <p>
+     * <code>FORCE_DELETE_STACK</code> - Delete the stack if it's stuck in a
+     * <code>DELETE_FAILED</code> state due to resource deletion failure.</p> </li>
+     * </ul>
+     */
+    inline void SetDeletionMode(DeletionMode&& value) { m_deletionModeHasBeenSet = true; m_deletionMode = std::move(value); }
+
+    /**
+     * <p>Specifies the deletion mode for the stack. Possible values are:</p> <ul> <li>
+     * <p> <code>STANDARD</code> - Use the standard behavior. Specifying this value is
+     * the same as not specifying this parameter.</p> </li> <li> <p>
+     * <code>FORCE_DELETE_STACK</code> - Delete the stack if it's stuck in a
+     * <code>DELETE_FAILED</code> state due to resource deletion failure.</p> </li>
+     * </ul>
+     */
+    inline Stack& WithDeletionMode(const DeletionMode& value) { SetDeletionMode(value); return *this;}
+
+    /**
+     * <p>Specifies the deletion mode for the stack. Possible values are:</p> <ul> <li>
+     * <p> <code>STANDARD</code> - Use the standard behavior. Specifying this value is
+     * the same as not specifying this parameter.</p> </li> <li> <p>
+     * <code>FORCE_DELETE_STACK</code> - Delete the stack if it's stuck in a
+     * <code>DELETE_FAILED</code> state due to resource deletion failure.</p> </li>
+     * </ul>
+     */
+    inline Stack& WithDeletionMode(DeletionMode&& value) { SetDeletionMode(std::move(value)); return *this;}
+
+
+    /**
      * <p>The detailed status of the resource or stack. If
      * <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource
      * configuration phase has completed and the stabilization of the resources is in
@@ -1160,6 +1222,9 @@ namespace Model
 
     bool m_retainExceptOnCreate;
     bool m_retainExceptOnCreateHasBeenSet = false;
+
+    DeletionMode m_deletionMode;
+    bool m_deletionModeHasBeenSet = false;
 
     DetailedStatus m_detailedStatus;
     bool m_detailedStatusHasBeenSet = false;

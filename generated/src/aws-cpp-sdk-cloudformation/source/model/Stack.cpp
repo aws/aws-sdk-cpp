@@ -49,6 +49,8 @@ Stack::Stack() :
     m_driftInformationHasBeenSet(false),
     m_retainExceptOnCreate(false),
     m_retainExceptOnCreateHasBeenSet(false),
+    m_deletionMode(DeletionMode::NOT_SET),
+    m_deletionModeHasBeenSet(false),
     m_detailedStatus(DetailedStatus::NOT_SET),
     m_detailedStatusHasBeenSet(false)
 {
@@ -83,6 +85,8 @@ Stack::Stack(const XmlNode& xmlNode) :
     m_driftInformationHasBeenSet(false),
     m_retainExceptOnCreate(false),
     m_retainExceptOnCreateHasBeenSet(false),
+    m_deletionMode(DeletionMode::NOT_SET),
+    m_deletionModeHasBeenSet(false),
     m_detailedStatus(DetailedStatus::NOT_SET),
     m_detailedStatusHasBeenSet(false)
 {
@@ -263,6 +267,12 @@ Stack& Stack::operator =(const XmlNode& xmlNode)
       m_retainExceptOnCreate = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(retainExceptOnCreateNode.GetText()).c_str()).c_str());
       m_retainExceptOnCreateHasBeenSet = true;
     }
+    XmlNode deletionModeNode = resultNode.FirstChild("DeletionMode");
+    if(!deletionModeNode.IsNull())
+    {
+      m_deletionMode = DeletionModeMapper::GetDeletionModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deletionModeNode.GetText()).c_str()).c_str());
+      m_deletionModeHasBeenSet = true;
+    }
     XmlNode detailedStatusNode = resultNode.FirstChild("DetailedStatus");
     if(!detailedStatusNode.IsNull())
     {
@@ -421,6 +431,11 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       oStream << location << index << locationValue << ".RetainExceptOnCreate=" << std::boolalpha << m_retainExceptOnCreate << "&";
   }
 
+  if(m_deletionModeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DeletionMode=" << DeletionModeMapper::GetNameForDeletionMode(m_deletionMode) << "&";
+  }
+
   if(m_detailedStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".DetailedStatus=" << DetailedStatusMapper::GetNameForDetailedStatus(m_detailedStatus) << "&";
@@ -551,6 +566,10 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_retainExceptOnCreateHasBeenSet)
   {
       oStream << location << ".RetainExceptOnCreate=" << std::boolalpha << m_retainExceptOnCreate << "&";
+  }
+  if(m_deletionModeHasBeenSet)
+  {
+      oStream << location << ".DeletionMode=" << DeletionModeMapper::GetNameForDeletionMode(m_deletionMode) << "&";
   }
   if(m_detailedStatusHasBeenSet)
   {
