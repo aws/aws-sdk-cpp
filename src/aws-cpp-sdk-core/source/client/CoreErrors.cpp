@@ -82,6 +82,7 @@ void CoreErrorsMapper::InitCoreErrorsMapper()
     s_CoreErrorsMapper->emplace("UnrecognizedClient", AWSError<CoreErrors>(CoreErrors::UNRECOGNIZED_CLIENT, false));
     s_CoreErrorsMapper->emplace("SlowDownException", AWSError<CoreErrors>(CoreErrors::SLOW_DOWN, true));
     s_CoreErrorsMapper->emplace("SlowDown", AWSError<CoreErrors>(CoreErrors::SLOW_DOWN, true));
+    s_CoreErrorsMapper->emplace("QpsLimitExceeded", AWSError<CoreErrors>(CoreErrors::SLOW_DOWN, true));
     s_CoreErrorsMapper->emplace("SignatureDoesNotMatchException", AWSError<CoreErrors>(CoreErrors::SIGNATURE_DOES_NOT_MATCH, false));
     s_CoreErrorsMapper->emplace("SignatureDoesNotMatch", AWSError<CoreErrors>(CoreErrors::SIGNATURE_DOES_NOT_MATCH, false));
     s_CoreErrorsMapper->emplace("InvalidAccessKeyIdException", AWSError<CoreErrors>(CoreErrors::INVALID_ACCESS_KEY_ID, false));
