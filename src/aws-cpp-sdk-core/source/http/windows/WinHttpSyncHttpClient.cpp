@@ -29,6 +29,14 @@ using namespace Aws::Http::Standard;
 using namespace Aws::Utils;
 using namespace Aws::Utils::Logging;
 
+#ifndef WINHTTP_OPTION_ENABLE_HTTP_PROTOCOL
+    /*
+    * Note: this option was introduced in Windows 10, version 1607. Define it if
+    * it does not exist and let option setting for H2/H3 fail if its not supported.
+    */
+    static const DWORD WINHTTP_OPTION_ENABLE_HTTP_PROTOCOL = 133;
+#endif
+
 DWORD ConvertHttpVersionToWinHttpVersion(const Aws::Http::Version version)
 {
     if (version == Version::HTTP_VERSION_NONE)
