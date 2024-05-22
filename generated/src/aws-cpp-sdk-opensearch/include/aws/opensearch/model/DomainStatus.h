@@ -514,42 +514,42 @@ namespace Model
 
 
     /**
-     * <p>The DualStack Hosted Zone Id for the domain. </p>
+     * <p>The dual stack hosted zone ID for the domain. </p>
      */
     inline const Aws::String& GetDomainEndpointV2HostedZoneId() const{ return m_domainEndpointV2HostedZoneId; }
 
     /**
-     * <p>The DualStack Hosted Zone Id for the domain. </p>
+     * <p>The dual stack hosted zone ID for the domain. </p>
      */
     inline bool DomainEndpointV2HostedZoneIdHasBeenSet() const { return m_domainEndpointV2HostedZoneIdHasBeenSet; }
 
     /**
-     * <p>The DualStack Hosted Zone Id for the domain. </p>
+     * <p>The dual stack hosted zone ID for the domain. </p>
      */
     inline void SetDomainEndpointV2HostedZoneId(const Aws::String& value) { m_domainEndpointV2HostedZoneIdHasBeenSet = true; m_domainEndpointV2HostedZoneId = value; }
 
     /**
-     * <p>The DualStack Hosted Zone Id for the domain. </p>
+     * <p>The dual stack hosted zone ID for the domain. </p>
      */
     inline void SetDomainEndpointV2HostedZoneId(Aws::String&& value) { m_domainEndpointV2HostedZoneIdHasBeenSet = true; m_domainEndpointV2HostedZoneId = std::move(value); }
 
     /**
-     * <p>The DualStack Hosted Zone Id for the domain. </p>
+     * <p>The dual stack hosted zone ID for the domain. </p>
      */
     inline void SetDomainEndpointV2HostedZoneId(const char* value) { m_domainEndpointV2HostedZoneIdHasBeenSet = true; m_domainEndpointV2HostedZoneId.assign(value); }
 
     /**
-     * <p>The DualStack Hosted Zone Id for the domain. </p>
+     * <p>The dual stack hosted zone ID for the domain. </p>
      */
     inline DomainStatus& WithDomainEndpointV2HostedZoneId(const Aws::String& value) { SetDomainEndpointV2HostedZoneId(value); return *this;}
 
     /**
-     * <p>The DualStack Hosted Zone Id for the domain. </p>
+     * <p>The dual stack hosted zone ID for the domain. </p>
      */
     inline DomainStatus& WithDomainEndpointV2HostedZoneId(Aws::String&& value) { SetDomainEndpointV2HostedZoneId(std::move(value)); return *this;}
 
     /**
-     * <p>The DualStack Hosted Zone Id for the domain. </p>
+     * <p>The dual stack hosted zone ID for the domain. </p>
      */
     inline DomainStatus& WithDomainEndpointV2HostedZoneId(const char* value) { SetDomainEndpointV2HostedZoneId(value); return *this;}
 

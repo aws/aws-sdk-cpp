@@ -55,14 +55,16 @@ namespace Model
      * This indicates the type of operation specified in the request. </p> </li> <li>
      * <p> <code>UriPath</code>: The value that you want WAF to search for in the URI
      * path, for example, <code>/images/daily-ad.jpg</code>. </p> </li> <li> <p>
-     * <code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The
-     * JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an
-     * incoming request. This fingerprint serves as a unique identifier for the
-     * client's TLS configuration. You can use this choice only with a string match
-     * <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set
-     * to <code>EXACTLY</code>. </p> <p>You can obtain the JA3 fingerprint for client
-     * requests from the web ACL logs. If WAF is able to calculate the fingerprint, it
-     * includes it in the logs. For information about the logging fields, see <a
+     * <code>JA3Fingerprint</code>: Available for use with Amazon CloudFront
+     * distributions and Application Load Balancers. Match against the request's JA3
+     * fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS
+     * Client Hello of an incoming request. This fingerprint serves as a unique
+     * identifier for the client's TLS configuration. You can use this choice only with
+     * a string match <code>ByteMatchStatement</code> with the
+     * <code>PositionalConstraint</code> set to <code>EXACTLY</code>. </p> <p>You can
+     * obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is
+     * able to calculate the fingerprint, it includes it in the logs. For information
+     * about the logging fields, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
      * fields</a> in the <i>WAF Developer Guide</i>. </p> </li> <li> <p>
      * <code>HeaderOrder</code>: The list of header names to match for. WAF creates a
@@ -92,14 +94,16 @@ namespace Model
      * This indicates the type of operation specified in the request. </p> </li> <li>
      * <p> <code>UriPath</code>: The value that you want WAF to search for in the URI
      * path, for example, <code>/images/daily-ad.jpg</code>. </p> </li> <li> <p>
-     * <code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The
-     * JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an
-     * incoming request. This fingerprint serves as a unique identifier for the
-     * client's TLS configuration. You can use this choice only with a string match
-     * <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set
-     * to <code>EXACTLY</code>. </p> <p>You can obtain the JA3 fingerprint for client
-     * requests from the web ACL logs. If WAF is able to calculate the fingerprint, it
-     * includes it in the logs. For information about the logging fields, see <a
+     * <code>JA3Fingerprint</code>: Available for use with Amazon CloudFront
+     * distributions and Application Load Balancers. Match against the request's JA3
+     * fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS
+     * Client Hello of an incoming request. This fingerprint serves as a unique
+     * identifier for the client's TLS configuration. You can use this choice only with
+     * a string match <code>ByteMatchStatement</code> with the
+     * <code>PositionalConstraint</code> set to <code>EXACTLY</code>. </p> <p>You can
+     * obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is
+     * able to calculate the fingerprint, it includes it in the logs. For information
+     * about the logging fields, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
      * fields</a> in the <i>WAF Developer Guide</i>. </p> </li> <li> <p>
      * <code>HeaderOrder</code>: The list of header names to match for. WAF creates a
@@ -129,14 +133,16 @@ namespace Model
      * This indicates the type of operation specified in the request. </p> </li> <li>
      * <p> <code>UriPath</code>: The value that you want WAF to search for in the URI
      * path, for example, <code>/images/daily-ad.jpg</code>. </p> </li> <li> <p>
-     * <code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The
-     * JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an
-     * incoming request. This fingerprint serves as a unique identifier for the
-     * client's TLS configuration. You can use this choice only with a string match
-     * <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set
-     * to <code>EXACTLY</code>. </p> <p>You can obtain the JA3 fingerprint for client
-     * requests from the web ACL logs. If WAF is able to calculate the fingerprint, it
-     * includes it in the logs. For information about the logging fields, see <a
+     * <code>JA3Fingerprint</code>: Available for use with Amazon CloudFront
+     * distributions and Application Load Balancers. Match against the request's JA3
+     * fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS
+     * Client Hello of an incoming request. This fingerprint serves as a unique
+     * identifier for the client's TLS configuration. You can use this choice only with
+     * a string match <code>ByteMatchStatement</code> with the
+     * <code>PositionalConstraint</code> set to <code>EXACTLY</code>. </p> <p>You can
+     * obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is
+     * able to calculate the fingerprint, it includes it in the logs. For information
+     * about the logging fields, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
      * fields</a> in the <i>WAF Developer Guide</i>. </p> </li> <li> <p>
      * <code>HeaderOrder</code>: The list of header names to match for. WAF creates a
@@ -166,14 +172,16 @@ namespace Model
      * This indicates the type of operation specified in the request. </p> </li> <li>
      * <p> <code>UriPath</code>: The value that you want WAF to search for in the URI
      * path, for example, <code>/images/daily-ad.jpg</code>. </p> </li> <li> <p>
-     * <code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The
-     * JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an
-     * incoming request. This fingerprint serves as a unique identifier for the
-     * client's TLS configuration. You can use this choice only with a string match
-     * <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set
-     * to <code>EXACTLY</code>. </p> <p>You can obtain the JA3 fingerprint for client
-     * requests from the web ACL logs. If WAF is able to calculate the fingerprint, it
-     * includes it in the logs. For information about the logging fields, see <a
+     * <code>JA3Fingerprint</code>: Available for use with Amazon CloudFront
+     * distributions and Application Load Balancers. Match against the request's JA3
+     * fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS
+     * Client Hello of an incoming request. This fingerprint serves as a unique
+     * identifier for the client's TLS configuration. You can use this choice only with
+     * a string match <code>ByteMatchStatement</code> with the
+     * <code>PositionalConstraint</code> set to <code>EXACTLY</code>. </p> <p>You can
+     * obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is
+     * able to calculate the fingerprint, it includes it in the logs. For information
+     * about the logging fields, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
      * fields</a> in the <i>WAF Developer Guide</i>. </p> </li> <li> <p>
      * <code>HeaderOrder</code>: The list of header names to match for. WAF creates a
@@ -203,14 +211,16 @@ namespace Model
      * This indicates the type of operation specified in the request. </p> </li> <li>
      * <p> <code>UriPath</code>: The value that you want WAF to search for in the URI
      * path, for example, <code>/images/daily-ad.jpg</code>. </p> </li> <li> <p>
-     * <code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The
-     * JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an
-     * incoming request. This fingerprint serves as a unique identifier for the
-     * client's TLS configuration. You can use this choice only with a string match
-     * <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set
-     * to <code>EXACTLY</code>. </p> <p>You can obtain the JA3 fingerprint for client
-     * requests from the web ACL logs. If WAF is able to calculate the fingerprint, it
-     * includes it in the logs. For information about the logging fields, see <a
+     * <code>JA3Fingerprint</code>: Available for use with Amazon CloudFront
+     * distributions and Application Load Balancers. Match against the request's JA3
+     * fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS
+     * Client Hello of an incoming request. This fingerprint serves as a unique
+     * identifier for the client's TLS configuration. You can use this choice only with
+     * a string match <code>ByteMatchStatement</code> with the
+     * <code>PositionalConstraint</code> set to <code>EXACTLY</code>. </p> <p>You can
+     * obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is
+     * able to calculate the fingerprint, it includes it in the logs. For information
+     * about the logging fields, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
      * fields</a> in the <i>WAF Developer Guide</i>. </p> </li> <li> <p>
      * <code>HeaderOrder</code>: The list of header names to match for. WAF creates a
@@ -240,14 +250,16 @@ namespace Model
      * This indicates the type of operation specified in the request. </p> </li> <li>
      * <p> <code>UriPath</code>: The value that you want WAF to search for in the URI
      * path, for example, <code>/images/daily-ad.jpg</code>. </p> </li> <li> <p>
-     * <code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The
-     * JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an
-     * incoming request. This fingerprint serves as a unique identifier for the
-     * client's TLS configuration. You can use this choice only with a string match
-     * <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set
-     * to <code>EXACTLY</code>. </p> <p>You can obtain the JA3 fingerprint for client
-     * requests from the web ACL logs. If WAF is able to calculate the fingerprint, it
-     * includes it in the logs. For information about the logging fields, see <a
+     * <code>JA3Fingerprint</code>: Available for use with Amazon CloudFront
+     * distributions and Application Load Balancers. Match against the request's JA3
+     * fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS
+     * Client Hello of an incoming request. This fingerprint serves as a unique
+     * identifier for the client's TLS configuration. You can use this choice only with
+     * a string match <code>ByteMatchStatement</code> with the
+     * <code>PositionalConstraint</code> set to <code>EXACTLY</code>. </p> <p>You can
+     * obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is
+     * able to calculate the fingerprint, it includes it in the logs. For information
+     * about the logging fields, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
      * fields</a> in the <i>WAF Developer Guide</i>. </p> </li> <li> <p>
      * <code>HeaderOrder</code>: The list of header names to match for. WAF creates a

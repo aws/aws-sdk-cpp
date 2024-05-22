@@ -8,6 +8,7 @@
 #include <aws/cloudformation/CloudFormationRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cloudformation/model/DeletionMode.h>
 #include <utility>
 
 namespace Aws
@@ -404,6 +405,67 @@ namespace Model
      */
     inline DeleteStackRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
+
+    /**
+     * <p>Specifies the deletion mode for the stack. Possible values are:</p> <ul> <li>
+     * <p> <code>STANDARD</code> - Use the standard behavior. Specifying this value is
+     * the same as not specifying this parameter.</p> </li> <li> <p>
+     * <code>FORCE_DELETE_STACK</code> - Delete the stack if it's stuck in a
+     * <code>DELETE_FAILED</code> state due to resource deletion failure.</p> </li>
+     * </ul>
+     */
+    inline const DeletionMode& GetDeletionMode() const{ return m_deletionMode; }
+
+    /**
+     * <p>Specifies the deletion mode for the stack. Possible values are:</p> <ul> <li>
+     * <p> <code>STANDARD</code> - Use the standard behavior. Specifying this value is
+     * the same as not specifying this parameter.</p> </li> <li> <p>
+     * <code>FORCE_DELETE_STACK</code> - Delete the stack if it's stuck in a
+     * <code>DELETE_FAILED</code> state due to resource deletion failure.</p> </li>
+     * </ul>
+     */
+    inline bool DeletionModeHasBeenSet() const { return m_deletionModeHasBeenSet; }
+
+    /**
+     * <p>Specifies the deletion mode for the stack. Possible values are:</p> <ul> <li>
+     * <p> <code>STANDARD</code> - Use the standard behavior. Specifying this value is
+     * the same as not specifying this parameter.</p> </li> <li> <p>
+     * <code>FORCE_DELETE_STACK</code> - Delete the stack if it's stuck in a
+     * <code>DELETE_FAILED</code> state due to resource deletion failure.</p> </li>
+     * </ul>
+     */
+    inline void SetDeletionMode(const DeletionMode& value) { m_deletionModeHasBeenSet = true; m_deletionMode = value; }
+
+    /**
+     * <p>Specifies the deletion mode for the stack. Possible values are:</p> <ul> <li>
+     * <p> <code>STANDARD</code> - Use the standard behavior. Specifying this value is
+     * the same as not specifying this parameter.</p> </li> <li> <p>
+     * <code>FORCE_DELETE_STACK</code> - Delete the stack if it's stuck in a
+     * <code>DELETE_FAILED</code> state due to resource deletion failure.</p> </li>
+     * </ul>
+     */
+    inline void SetDeletionMode(DeletionMode&& value) { m_deletionModeHasBeenSet = true; m_deletionMode = std::move(value); }
+
+    /**
+     * <p>Specifies the deletion mode for the stack. Possible values are:</p> <ul> <li>
+     * <p> <code>STANDARD</code> - Use the standard behavior. Specifying this value is
+     * the same as not specifying this parameter.</p> </li> <li> <p>
+     * <code>FORCE_DELETE_STACK</code> - Delete the stack if it's stuck in a
+     * <code>DELETE_FAILED</code> state due to resource deletion failure.</p> </li>
+     * </ul>
+     */
+    inline DeleteStackRequest& WithDeletionMode(const DeletionMode& value) { SetDeletionMode(value); return *this;}
+
+    /**
+     * <p>Specifies the deletion mode for the stack. Possible values are:</p> <ul> <li>
+     * <p> <code>STANDARD</code> - Use the standard behavior. Specifying this value is
+     * the same as not specifying this parameter.</p> </li> <li> <p>
+     * <code>FORCE_DELETE_STACK</code> - Delete the stack if it's stuck in a
+     * <code>DELETE_FAILED</code> state due to resource deletion failure.</p> </li>
+     * </ul>
+     */
+    inline DeleteStackRequest& WithDeletionMode(DeletionMode&& value) { SetDeletionMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_stackName;
@@ -417,6 +479,9 @@ namespace Model
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet = false;
+
+    DeletionMode m_deletionMode;
+    bool m_deletionModeHasBeenSet = false;
   };
 
 } // namespace Model

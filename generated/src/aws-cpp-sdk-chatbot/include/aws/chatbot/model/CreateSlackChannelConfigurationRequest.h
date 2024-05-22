@@ -8,6 +8,7 @@
 #include <aws/chatbot/ChatbotRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/chatbot/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -432,6 +433,47 @@ namespace Model
      */
     inline CreateSlackChannelConfigurationRequest& WithUserAuthorizationRequired(bool value) { SetUserAuthorizationRequired(value); return *this;}
 
+
+    /**
+     * A list of tags to apply to the configuration.
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * A list of tags to apply to the configuration.
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * A list of tags to apply to the configuration.
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * A list of tags to apply to the configuration.
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * A list of tags to apply to the configuration.
+     */
+    inline CreateSlackChannelConfigurationRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * A list of tags to apply to the configuration.
+     */
+    inline CreateSlackChannelConfigurationRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * A list of tags to apply to the configuration.
+     */
+    inline CreateSlackChannelConfigurationRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * A list of tags to apply to the configuration.
+     */
+    inline CreateSlackChannelConfigurationRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_slackTeamId;
@@ -460,6 +502,9 @@ namespace Model
 
     bool m_userAuthorizationRequired;
     bool m_userAuthorizationRequiredHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

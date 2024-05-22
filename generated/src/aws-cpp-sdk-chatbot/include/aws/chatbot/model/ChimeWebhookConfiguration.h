@@ -7,6 +7,7 @@
 #include <aws/chatbot/Chatbot_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/chatbot/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -336,6 +337,47 @@ namespace Model
      */
     inline ChimeWebhookConfiguration& WithLoggingLevel(const char* value) { SetLoggingLevel(value); return *this;}
 
+
+    /**
+     * A list of tags applied to the configuration.
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * A list of tags applied to the configuration.
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * A list of tags applied to the configuration.
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * A list of tags applied to the configuration.
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * A list of tags applied to the configuration.
+     */
+    inline ChimeWebhookConfiguration& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * A list of tags applied to the configuration.
+     */
+    inline ChimeWebhookConfiguration& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * A list of tags applied to the configuration.
+     */
+    inline ChimeWebhookConfiguration& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * A list of tags applied to the configuration.
+     */
+    inline ChimeWebhookConfiguration& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_webhookDescription;
@@ -355,6 +397,9 @@ namespace Model
 
     Aws::String m_loggingLevel;
     bool m_loggingLevelHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

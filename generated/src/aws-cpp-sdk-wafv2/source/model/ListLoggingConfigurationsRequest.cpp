@@ -17,7 +17,9 @@ ListLoggingConfigurationsRequest::ListLoggingConfigurationsRequest() :
     m_scopeHasBeenSet(false),
     m_nextMarkerHasBeenSet(false),
     m_limit(0),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_logScope(LogScope::NOT_SET),
+    m_logScopeHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,11 @@ Aws::String ListLoggingConfigurationsRequest::SerializePayload() const
   {
    payload.WithInteger("Limit", m_limit);
 
+  }
+
+  if(m_logScopeHasBeenSet)
+  {
+   payload.WithString("LogScope", LogScopeMapper::GetNameForLogScope(m_logScope));
   }
 
   return payload.View().WriteReadable();

@@ -24,7 +24,8 @@ ChimeWebhookConfiguration::ChimeWebhookConfiguration() :
     m_iamRoleArnHasBeenSet(false),
     m_snsTopicArnsHasBeenSet(false),
     m_configurationNameHasBeenSet(false),
-    m_loggingLevelHasBeenSet(false)
+    m_loggingLevelHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ ChimeWebhookConfiguration::ChimeWebhookConfiguration(JsonView jsonValue) :
     m_iamRoleArnHasBeenSet(false),
     m_snsTopicArnsHasBeenSet(false),
     m_configurationNameHasBeenSet(false),
-    m_loggingLevelHasBeenSet(false)
+    m_loggingLevelHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -86,6 +88,16 @@ ChimeWebhookConfiguration& ChimeWebhookConfiguration::operator =(JsonView jsonVa
     m_loggingLevelHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Tags"))
+  {
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+    {
+      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -131,6 +143,17 @@ JsonValue ChimeWebhookConfiguration::Jsonize() const
   if(m_loggingLevelHasBeenSet)
   {
    payload.WithString("LoggingLevel", m_loggingLevel);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

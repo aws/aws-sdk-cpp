@@ -24,7 +24,8 @@ CreateMicrosoftTeamsChannelConfigurationRequest::CreateMicrosoftTeamsChannelConf
     m_loggingLevelHasBeenSet(false),
     m_guardrailPolicyArnsHasBeenSet(false),
     m_userAuthorizationRequired(false),
-    m_userAuthorizationRequiredHasBeenSet(false)
+    m_userAuthorizationRequiredHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,17 @@ Aws::String CreateMicrosoftTeamsChannelConfigurationRequest::SerializePayload() 
   if(m_userAuthorizationRequiredHasBeenSet)
   {
    payload.WithBool("UserAuthorizationRequired", m_userAuthorizationRequired);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

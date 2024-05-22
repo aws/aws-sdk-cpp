@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     RSA_2048,
     RSA_3072,
-    RSA_4096
+    RSA_4096,
+    SM2
   };
 
 namespace WrappingKeySpecMapper

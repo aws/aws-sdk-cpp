@@ -37,6 +37,9 @@
 #include <aws/chatbot/model/ListMicrosoftTeamsChannelConfigurationsResult.h>
 #include <aws/chatbot/model/ListMicrosoftTeamsConfiguredTeamsResult.h>
 #include <aws/chatbot/model/ListMicrosoftTeamsUserIdentitiesResult.h>
+#include <aws/chatbot/model/ListTagsForResourceResult.h>
+#include <aws/chatbot/model/TagResourceResult.h>
+#include <aws/chatbot/model/UntagResourceResult.h>
 #include <aws/chatbot/model/UpdateAccountPreferencesResult.h>
 #include <aws/chatbot/model/UpdateChimeWebhookConfigurationResult.h>
 #include <aws/chatbot/model/UpdateMicrosoftTeamsChannelConfigurationResult.h>
@@ -100,6 +103,9 @@ namespace Aws
       class ListMicrosoftTeamsChannelConfigurationsRequest;
       class ListMicrosoftTeamsConfiguredTeamsRequest;
       class ListMicrosoftTeamsUserIdentitiesRequest;
+      class ListTagsForResourceRequest;
+      class TagResourceRequest;
+      class UntagResourceRequest;
       class UpdateAccountPreferencesRequest;
       class UpdateChimeWebhookConfigurationRequest;
       class UpdateMicrosoftTeamsChannelConfigurationRequest;
@@ -126,6 +132,9 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListMicrosoftTeamsChannelConfigurationsResult, ChatbotError> ListMicrosoftTeamsChannelConfigurationsOutcome;
       typedef Aws::Utils::Outcome<ListMicrosoftTeamsConfiguredTeamsResult, ChatbotError> ListMicrosoftTeamsConfiguredTeamsOutcome;
       typedef Aws::Utils::Outcome<ListMicrosoftTeamsUserIdentitiesResult, ChatbotError> ListMicrosoftTeamsUserIdentitiesOutcome;
+      typedef Aws::Utils::Outcome<ListTagsForResourceResult, ChatbotError> ListTagsForResourceOutcome;
+      typedef Aws::Utils::Outcome<TagResourceResult, ChatbotError> TagResourceOutcome;
+      typedef Aws::Utils::Outcome<UntagResourceResult, ChatbotError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateAccountPreferencesResult, ChatbotError> UpdateAccountPreferencesOutcome;
       typedef Aws::Utils::Outcome<UpdateChimeWebhookConfigurationResult, ChatbotError> UpdateChimeWebhookConfigurationOutcome;
       typedef Aws::Utils::Outcome<UpdateMicrosoftTeamsChannelConfigurationResult, ChatbotError> UpdateMicrosoftTeamsChannelConfigurationOutcome;
@@ -152,6 +161,9 @@ namespace Aws
       typedef std::future<ListMicrosoftTeamsChannelConfigurationsOutcome> ListMicrosoftTeamsChannelConfigurationsOutcomeCallable;
       typedef std::future<ListMicrosoftTeamsConfiguredTeamsOutcome> ListMicrosoftTeamsConfiguredTeamsOutcomeCallable;
       typedef std::future<ListMicrosoftTeamsUserIdentitiesOutcome> ListMicrosoftTeamsUserIdentitiesOutcomeCallable;
+      typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+      typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+      typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateAccountPreferencesOutcome> UpdateAccountPreferencesOutcomeCallable;
       typedef std::future<UpdateChimeWebhookConfigurationOutcome> UpdateChimeWebhookConfigurationOutcomeCallable;
       typedef std::future<UpdateMicrosoftTeamsChannelConfigurationOutcome> UpdateMicrosoftTeamsChannelConfigurationOutcomeCallable;
@@ -181,6 +193,9 @@ namespace Aws
     typedef std::function<void(const ChatbotClient*, const Model::ListMicrosoftTeamsChannelConfigurationsRequest&, const Model::ListMicrosoftTeamsChannelConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMicrosoftTeamsChannelConfigurationsResponseReceivedHandler;
     typedef std::function<void(const ChatbotClient*, const Model::ListMicrosoftTeamsConfiguredTeamsRequest&, const Model::ListMicrosoftTeamsConfiguredTeamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMicrosoftTeamsConfiguredTeamsResponseReceivedHandler;
     typedef std::function<void(const ChatbotClient*, const Model::ListMicrosoftTeamsUserIdentitiesRequest&, const Model::ListMicrosoftTeamsUserIdentitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMicrosoftTeamsUserIdentitiesResponseReceivedHandler;
+    typedef std::function<void(const ChatbotClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const ChatbotClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const ChatbotClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const ChatbotClient*, const Model::UpdateAccountPreferencesRequest&, const Model::UpdateAccountPreferencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAccountPreferencesResponseReceivedHandler;
     typedef std::function<void(const ChatbotClient*, const Model::UpdateChimeWebhookConfigurationRequest&, const Model::UpdateChimeWebhookConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateChimeWebhookConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChatbotClient*, const Model::UpdateMicrosoftTeamsChannelConfigurationRequest&, const Model::UpdateMicrosoftTeamsChannelConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMicrosoftTeamsChannelConfigurationResponseReceivedHandler;

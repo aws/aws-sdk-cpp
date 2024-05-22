@@ -31,7 +31,8 @@ TeamsChannelConfiguration::TeamsChannelConfiguration() :
     m_loggingLevelHasBeenSet(false),
     m_guardrailPolicyArnsHasBeenSet(false),
     m_userAuthorizationRequired(false),
-    m_userAuthorizationRequiredHasBeenSet(false)
+    m_userAuthorizationRequiredHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ TeamsChannelConfiguration::TeamsChannelConfiguration(JsonView jsonValue) :
     m_loggingLevelHasBeenSet(false),
     m_guardrailPolicyArnsHasBeenSet(false),
     m_userAuthorizationRequired(false),
-    m_userAuthorizationRequiredHasBeenSet(false)
+    m_userAuthorizationRequiredHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -145,6 +147,16 @@ TeamsChannelConfiguration& TeamsChannelConfiguration::operator =(JsonView jsonVa
     m_userAuthorizationRequiredHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Tags"))
+  {
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+    {
+      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -231,6 +243,17 @@ JsonValue TeamsChannelConfiguration::Jsonize() const
   if(m_userAuthorizationRequiredHasBeenSet)
   {
    payload.WithBool("UserAuthorizationRequired", m_userAuthorizationRequired);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

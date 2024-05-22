@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wafv2/model/LoggingFilter.h>
+#include <aws/wafv2/model/LogType.h>
+#include <aws/wafv2/model/LogScope.h>
 #include <aws/wafv2/model/FieldToMatch.h>
 #include <utility>
 
@@ -187,7 +189,10 @@ namespace Model
      * doesn't apply to rules that use the <code>Headers</code>
      * <code>FieldToMatch</code>.</p>  <p>You can specify only the following
      * fields for redaction: <code>UriPath</code>, <code>QueryString</code>,
-     * <code>SingleHeader</code>, and <code>Method</code>.</p> 
+     * <code>SingleHeader</code>, and <code>Method</code>.</p>   <p>This
+     * setting has no impact on request sampling. With request sampling, the only way
+     * to exclude fields is by disabling sampling in the web ACL visibility
+     * configuration. </p> 
      */
     inline const Aws::Vector<FieldToMatch>& GetRedactedFields() const{ return m_redactedFields; }
 
@@ -201,7 +206,10 @@ namespace Model
      * doesn't apply to rules that use the <code>Headers</code>
      * <code>FieldToMatch</code>.</p>  <p>You can specify only the following
      * fields for redaction: <code>UriPath</code>, <code>QueryString</code>,
-     * <code>SingleHeader</code>, and <code>Method</code>.</p> 
+     * <code>SingleHeader</code>, and <code>Method</code>.</p>   <p>This
+     * setting has no impact on request sampling. With request sampling, the only way
+     * to exclude fields is by disabling sampling in the web ACL visibility
+     * configuration. </p> 
      */
     inline bool RedactedFieldsHasBeenSet() const { return m_redactedFieldsHasBeenSet; }
 
@@ -215,7 +223,10 @@ namespace Model
      * doesn't apply to rules that use the <code>Headers</code>
      * <code>FieldToMatch</code>.</p>  <p>You can specify only the following
      * fields for redaction: <code>UriPath</code>, <code>QueryString</code>,
-     * <code>SingleHeader</code>, and <code>Method</code>.</p> 
+     * <code>SingleHeader</code>, and <code>Method</code>.</p>   <p>This
+     * setting has no impact on request sampling. With request sampling, the only way
+     * to exclude fields is by disabling sampling in the web ACL visibility
+     * configuration. </p> 
      */
     inline void SetRedactedFields(const Aws::Vector<FieldToMatch>& value) { m_redactedFieldsHasBeenSet = true; m_redactedFields = value; }
 
@@ -229,7 +240,10 @@ namespace Model
      * doesn't apply to rules that use the <code>Headers</code>
      * <code>FieldToMatch</code>.</p>  <p>You can specify only the following
      * fields for redaction: <code>UriPath</code>, <code>QueryString</code>,
-     * <code>SingleHeader</code>, and <code>Method</code>.</p> 
+     * <code>SingleHeader</code>, and <code>Method</code>.</p>   <p>This
+     * setting has no impact on request sampling. With request sampling, the only way
+     * to exclude fields is by disabling sampling in the web ACL visibility
+     * configuration. </p> 
      */
     inline void SetRedactedFields(Aws::Vector<FieldToMatch>&& value) { m_redactedFieldsHasBeenSet = true; m_redactedFields = std::move(value); }
 
@@ -243,7 +257,10 @@ namespace Model
      * doesn't apply to rules that use the <code>Headers</code>
      * <code>FieldToMatch</code>.</p>  <p>You can specify only the following
      * fields for redaction: <code>UriPath</code>, <code>QueryString</code>,
-     * <code>SingleHeader</code>, and <code>Method</code>.</p> 
+     * <code>SingleHeader</code>, and <code>Method</code>.</p>   <p>This
+     * setting has no impact on request sampling. With request sampling, the only way
+     * to exclude fields is by disabling sampling in the web ACL visibility
+     * configuration. </p> 
      */
     inline LoggingConfiguration& WithRedactedFields(const Aws::Vector<FieldToMatch>& value) { SetRedactedFields(value); return *this;}
 
@@ -257,7 +274,10 @@ namespace Model
      * doesn't apply to rules that use the <code>Headers</code>
      * <code>FieldToMatch</code>.</p>  <p>You can specify only the following
      * fields for redaction: <code>UriPath</code>, <code>QueryString</code>,
-     * <code>SingleHeader</code>, and <code>Method</code>.</p> 
+     * <code>SingleHeader</code>, and <code>Method</code>.</p>   <p>This
+     * setting has no impact on request sampling. With request sampling, the only way
+     * to exclude fields is by disabling sampling in the web ACL visibility
+     * configuration. </p> 
      */
     inline LoggingConfiguration& WithRedactedFields(Aws::Vector<FieldToMatch>&& value) { SetRedactedFields(std::move(value)); return *this;}
 
@@ -271,7 +291,10 @@ namespace Model
      * doesn't apply to rules that use the <code>Headers</code>
      * <code>FieldToMatch</code>.</p>  <p>You can specify only the following
      * fields for redaction: <code>UriPath</code>, <code>QueryString</code>,
-     * <code>SingleHeader</code>, and <code>Method</code>.</p> 
+     * <code>SingleHeader</code>, and <code>Method</code>.</p>   <p>This
+     * setting has no impact on request sampling. With request sampling, the only way
+     * to exclude fields is by disabling sampling in the web ACL visibility
+     * configuration. </p> 
      */
     inline LoggingConfiguration& AddRedactedFields(const FieldToMatch& value) { m_redactedFieldsHasBeenSet = true; m_redactedFields.push_back(value); return *this; }
 
@@ -285,7 +308,10 @@ namespace Model
      * doesn't apply to rules that use the <code>Headers</code>
      * <code>FieldToMatch</code>.</p>  <p>You can specify only the following
      * fields for redaction: <code>UriPath</code>, <code>QueryString</code>,
-     * <code>SingleHeader</code>, and <code>Method</code>.</p> 
+     * <code>SingleHeader</code>, and <code>Method</code>.</p>   <p>This
+     * setting has no impact on request sampling. With request sampling, the only way
+     * to exclude fields is by disabling sampling in the web ACL visibility
+     * configuration. </p> 
      */
     inline LoggingConfiguration& AddRedactedFields(FieldToMatch&& value) { m_redactedFieldsHasBeenSet = true; m_redactedFields.push_back(std::move(value)); return *this; }
 
@@ -361,6 +387,122 @@ namespace Model
      */
     inline LoggingConfiguration& WithLoggingFilter(LoggingFilter&& value) { SetLoggingFilter(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Used to distinguish between various logging options. Currently, there is one
+     * option.</p> <p>Default: <code>WAF_LOGS</code> </p>
+     */
+    inline const LogType& GetLogType() const{ return m_logType; }
+
+    /**
+     * <p>Used to distinguish between various logging options. Currently, there is one
+     * option.</p> <p>Default: <code>WAF_LOGS</code> </p>
+     */
+    inline bool LogTypeHasBeenSet() const { return m_logTypeHasBeenSet; }
+
+    /**
+     * <p>Used to distinguish between various logging options. Currently, there is one
+     * option.</p> <p>Default: <code>WAF_LOGS</code> </p>
+     */
+    inline void SetLogType(const LogType& value) { m_logTypeHasBeenSet = true; m_logType = value; }
+
+    /**
+     * <p>Used to distinguish between various logging options. Currently, there is one
+     * option.</p> <p>Default: <code>WAF_LOGS</code> </p>
+     */
+    inline void SetLogType(LogType&& value) { m_logTypeHasBeenSet = true; m_logType = std::move(value); }
+
+    /**
+     * <p>Used to distinguish between various logging options. Currently, there is one
+     * option.</p> <p>Default: <code>WAF_LOGS</code> </p>
+     */
+    inline LoggingConfiguration& WithLogType(const LogType& value) { SetLogType(value); return *this;}
+
+    /**
+     * <p>Used to distinguish between various logging options. Currently, there is one
+     * option.</p> <p>Default: <code>WAF_LOGS</code> </p>
+     */
+    inline LoggingConfiguration& WithLogType(LogType&& value) { SetLogType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The owner of the logging configuration, which must be set to
+     * <code>CUSTOMER</code> for the configurations that you manage. </p> <p>The log
+     * scope <code>SECURITY_LAKE</code> indicates a configuration that is managed
+     * through Amazon Security Lake. You can use Security Lake to collect log and event
+     * data from various sources for normalization, analysis, and management. For
+     * information, see <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting
+     * data from Amazon Web Services services</a> in the <i>Amazon Security Lake user
+     * guide</i>. </p> <p>Default: <code>CUSTOMER</code> </p>
+     */
+    inline const LogScope& GetLogScope() const{ return m_logScope; }
+
+    /**
+     * <p>The owner of the logging configuration, which must be set to
+     * <code>CUSTOMER</code> for the configurations that you manage. </p> <p>The log
+     * scope <code>SECURITY_LAKE</code> indicates a configuration that is managed
+     * through Amazon Security Lake. You can use Security Lake to collect log and event
+     * data from various sources for normalization, analysis, and management. For
+     * information, see <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting
+     * data from Amazon Web Services services</a> in the <i>Amazon Security Lake user
+     * guide</i>. </p> <p>Default: <code>CUSTOMER</code> </p>
+     */
+    inline bool LogScopeHasBeenSet() const { return m_logScopeHasBeenSet; }
+
+    /**
+     * <p>The owner of the logging configuration, which must be set to
+     * <code>CUSTOMER</code> for the configurations that you manage. </p> <p>The log
+     * scope <code>SECURITY_LAKE</code> indicates a configuration that is managed
+     * through Amazon Security Lake. You can use Security Lake to collect log and event
+     * data from various sources for normalization, analysis, and management. For
+     * information, see <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting
+     * data from Amazon Web Services services</a> in the <i>Amazon Security Lake user
+     * guide</i>. </p> <p>Default: <code>CUSTOMER</code> </p>
+     */
+    inline void SetLogScope(const LogScope& value) { m_logScopeHasBeenSet = true; m_logScope = value; }
+
+    /**
+     * <p>The owner of the logging configuration, which must be set to
+     * <code>CUSTOMER</code> for the configurations that you manage. </p> <p>The log
+     * scope <code>SECURITY_LAKE</code> indicates a configuration that is managed
+     * through Amazon Security Lake. You can use Security Lake to collect log and event
+     * data from various sources for normalization, analysis, and management. For
+     * information, see <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting
+     * data from Amazon Web Services services</a> in the <i>Amazon Security Lake user
+     * guide</i>. </p> <p>Default: <code>CUSTOMER</code> </p>
+     */
+    inline void SetLogScope(LogScope&& value) { m_logScopeHasBeenSet = true; m_logScope = std::move(value); }
+
+    /**
+     * <p>The owner of the logging configuration, which must be set to
+     * <code>CUSTOMER</code> for the configurations that you manage. </p> <p>The log
+     * scope <code>SECURITY_LAKE</code> indicates a configuration that is managed
+     * through Amazon Security Lake. You can use Security Lake to collect log and event
+     * data from various sources for normalization, analysis, and management. For
+     * information, see <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting
+     * data from Amazon Web Services services</a> in the <i>Amazon Security Lake user
+     * guide</i>. </p> <p>Default: <code>CUSTOMER</code> </p>
+     */
+    inline LoggingConfiguration& WithLogScope(const LogScope& value) { SetLogScope(value); return *this;}
+
+    /**
+     * <p>The owner of the logging configuration, which must be set to
+     * <code>CUSTOMER</code> for the configurations that you manage. </p> <p>The log
+     * scope <code>SECURITY_LAKE</code> indicates a configuration that is managed
+     * through Amazon Security Lake. You can use Security Lake to collect log and event
+     * data from various sources for normalization, analysis, and management. For
+     * information, see <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting
+     * data from Amazon Web Services services</a> in the <i>Amazon Security Lake user
+     * guide</i>. </p> <p>Default: <code>CUSTOMER</code> </p>
+     */
+    inline LoggingConfiguration& WithLogScope(LogScope&& value) { SetLogScope(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_resourceArn;
@@ -377,6 +519,12 @@ namespace Model
 
     LoggingFilter m_loggingFilter;
     bool m_loggingFilterHasBeenSet = false;
+
+    LogType m_logType;
+    bool m_logTypeHasBeenSet = false;
+
+    LogScope m_logScope;
+    bool m_logScopeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -357,15 +357,16 @@ namespace Model
      * dynamically lowers the concurrency level to ensure the number of failed accounts
      * never exceeds the value of <code>FailureToleranceCount</code> +1. The initial
      * actual concurrency is set to the lower of either the value of the
-     * <code>MaxConcurrentCount</code>, or the value of <code>MaxConcurrentCount</code>
-     * +1. The actual concurrency is then reduced proportionally by the number of
-     * failures. This is the default behavior.</p> <p>If failure tolerance or Maximum
-     * concurrent accounts are set to percentages, the behavior is similar.</p> </li>
-     * <li> <p> <code>SOFT_FAILURE_TOLERANCE</code>: This option decouples
-     * <code>FailureToleranceCount</code> from the actual concurrency. This allows
-     * stack set operations to run at the concurrency level set by the
-     * <code>MaxConcurrentCount</code> value, or <code>MaxConcurrentPercentage</code>,
-     * regardless of the number of failures.</p> </li> </ul>
+     * <code>MaxConcurrentCount</code>, or the value of
+     * <code>FailureToleranceCount</code> +1. The actual concurrency is then reduced
+     * proportionally by the number of failures. This is the default behavior.</p>
+     * <p>If failure tolerance or Maximum concurrent accounts are set to percentages,
+     * the behavior is similar.</p> </li> <li> <p> <code>SOFT_FAILURE_TOLERANCE</code>:
+     * This option decouples <code>FailureToleranceCount</code> from the actual
+     * concurrency. This allows stack set operations to run at the concurrency level
+     * set by the <code>MaxConcurrentCount</code> value, or
+     * <code>MaxConcurrentPercentage</code>, regardless of the number of failures.</p>
+     * </li> </ul>
      */
     inline const ConcurrencyMode& GetConcurrencyMode() const{ return m_concurrencyMode; }
 
@@ -375,15 +376,16 @@ namespace Model
      * dynamically lowers the concurrency level to ensure the number of failed accounts
      * never exceeds the value of <code>FailureToleranceCount</code> +1. The initial
      * actual concurrency is set to the lower of either the value of the
-     * <code>MaxConcurrentCount</code>, or the value of <code>MaxConcurrentCount</code>
-     * +1. The actual concurrency is then reduced proportionally by the number of
-     * failures. This is the default behavior.</p> <p>If failure tolerance or Maximum
-     * concurrent accounts are set to percentages, the behavior is similar.</p> </li>
-     * <li> <p> <code>SOFT_FAILURE_TOLERANCE</code>: This option decouples
-     * <code>FailureToleranceCount</code> from the actual concurrency. This allows
-     * stack set operations to run at the concurrency level set by the
-     * <code>MaxConcurrentCount</code> value, or <code>MaxConcurrentPercentage</code>,
-     * regardless of the number of failures.</p> </li> </ul>
+     * <code>MaxConcurrentCount</code>, or the value of
+     * <code>FailureToleranceCount</code> +1. The actual concurrency is then reduced
+     * proportionally by the number of failures. This is the default behavior.</p>
+     * <p>If failure tolerance or Maximum concurrent accounts are set to percentages,
+     * the behavior is similar.</p> </li> <li> <p> <code>SOFT_FAILURE_TOLERANCE</code>:
+     * This option decouples <code>FailureToleranceCount</code> from the actual
+     * concurrency. This allows stack set operations to run at the concurrency level
+     * set by the <code>MaxConcurrentCount</code> value, or
+     * <code>MaxConcurrentPercentage</code>, regardless of the number of failures.</p>
+     * </li> </ul>
      */
     inline bool ConcurrencyModeHasBeenSet() const { return m_concurrencyModeHasBeenSet; }
 
@@ -393,15 +395,16 @@ namespace Model
      * dynamically lowers the concurrency level to ensure the number of failed accounts
      * never exceeds the value of <code>FailureToleranceCount</code> +1. The initial
      * actual concurrency is set to the lower of either the value of the
-     * <code>MaxConcurrentCount</code>, or the value of <code>MaxConcurrentCount</code>
-     * +1. The actual concurrency is then reduced proportionally by the number of
-     * failures. This is the default behavior.</p> <p>If failure tolerance or Maximum
-     * concurrent accounts are set to percentages, the behavior is similar.</p> </li>
-     * <li> <p> <code>SOFT_FAILURE_TOLERANCE</code>: This option decouples
-     * <code>FailureToleranceCount</code> from the actual concurrency. This allows
-     * stack set operations to run at the concurrency level set by the
-     * <code>MaxConcurrentCount</code> value, or <code>MaxConcurrentPercentage</code>,
-     * regardless of the number of failures.</p> </li> </ul>
+     * <code>MaxConcurrentCount</code>, or the value of
+     * <code>FailureToleranceCount</code> +1. The actual concurrency is then reduced
+     * proportionally by the number of failures. This is the default behavior.</p>
+     * <p>If failure tolerance or Maximum concurrent accounts are set to percentages,
+     * the behavior is similar.</p> </li> <li> <p> <code>SOFT_FAILURE_TOLERANCE</code>:
+     * This option decouples <code>FailureToleranceCount</code> from the actual
+     * concurrency. This allows stack set operations to run at the concurrency level
+     * set by the <code>MaxConcurrentCount</code> value, or
+     * <code>MaxConcurrentPercentage</code>, regardless of the number of failures.</p>
+     * </li> </ul>
      */
     inline void SetConcurrencyMode(const ConcurrencyMode& value) { m_concurrencyModeHasBeenSet = true; m_concurrencyMode = value; }
 
@@ -411,15 +414,16 @@ namespace Model
      * dynamically lowers the concurrency level to ensure the number of failed accounts
      * never exceeds the value of <code>FailureToleranceCount</code> +1. The initial
      * actual concurrency is set to the lower of either the value of the
-     * <code>MaxConcurrentCount</code>, or the value of <code>MaxConcurrentCount</code>
-     * +1. The actual concurrency is then reduced proportionally by the number of
-     * failures. This is the default behavior.</p> <p>If failure tolerance or Maximum
-     * concurrent accounts are set to percentages, the behavior is similar.</p> </li>
-     * <li> <p> <code>SOFT_FAILURE_TOLERANCE</code>: This option decouples
-     * <code>FailureToleranceCount</code> from the actual concurrency. This allows
-     * stack set operations to run at the concurrency level set by the
-     * <code>MaxConcurrentCount</code> value, or <code>MaxConcurrentPercentage</code>,
-     * regardless of the number of failures.</p> </li> </ul>
+     * <code>MaxConcurrentCount</code>, or the value of
+     * <code>FailureToleranceCount</code> +1. The actual concurrency is then reduced
+     * proportionally by the number of failures. This is the default behavior.</p>
+     * <p>If failure tolerance or Maximum concurrent accounts are set to percentages,
+     * the behavior is similar.</p> </li> <li> <p> <code>SOFT_FAILURE_TOLERANCE</code>:
+     * This option decouples <code>FailureToleranceCount</code> from the actual
+     * concurrency. This allows stack set operations to run at the concurrency level
+     * set by the <code>MaxConcurrentCount</code> value, or
+     * <code>MaxConcurrentPercentage</code>, regardless of the number of failures.</p>
+     * </li> </ul>
      */
     inline void SetConcurrencyMode(ConcurrencyMode&& value) { m_concurrencyModeHasBeenSet = true; m_concurrencyMode = std::move(value); }
 
@@ -429,15 +433,16 @@ namespace Model
      * dynamically lowers the concurrency level to ensure the number of failed accounts
      * never exceeds the value of <code>FailureToleranceCount</code> +1. The initial
      * actual concurrency is set to the lower of either the value of the
-     * <code>MaxConcurrentCount</code>, or the value of <code>MaxConcurrentCount</code>
-     * +1. The actual concurrency is then reduced proportionally by the number of
-     * failures. This is the default behavior.</p> <p>If failure tolerance or Maximum
-     * concurrent accounts are set to percentages, the behavior is similar.</p> </li>
-     * <li> <p> <code>SOFT_FAILURE_TOLERANCE</code>: This option decouples
-     * <code>FailureToleranceCount</code> from the actual concurrency. This allows
-     * stack set operations to run at the concurrency level set by the
-     * <code>MaxConcurrentCount</code> value, or <code>MaxConcurrentPercentage</code>,
-     * regardless of the number of failures.</p> </li> </ul>
+     * <code>MaxConcurrentCount</code>, or the value of
+     * <code>FailureToleranceCount</code> +1. The actual concurrency is then reduced
+     * proportionally by the number of failures. This is the default behavior.</p>
+     * <p>If failure tolerance or Maximum concurrent accounts are set to percentages,
+     * the behavior is similar.</p> </li> <li> <p> <code>SOFT_FAILURE_TOLERANCE</code>:
+     * This option decouples <code>FailureToleranceCount</code> from the actual
+     * concurrency. This allows stack set operations to run at the concurrency level
+     * set by the <code>MaxConcurrentCount</code> value, or
+     * <code>MaxConcurrentPercentage</code>, regardless of the number of failures.</p>
+     * </li> </ul>
      */
     inline StackSetOperationPreferences& WithConcurrencyMode(const ConcurrencyMode& value) { SetConcurrencyMode(value); return *this;}
 
@@ -447,15 +452,16 @@ namespace Model
      * dynamically lowers the concurrency level to ensure the number of failed accounts
      * never exceeds the value of <code>FailureToleranceCount</code> +1. The initial
      * actual concurrency is set to the lower of either the value of the
-     * <code>MaxConcurrentCount</code>, or the value of <code>MaxConcurrentCount</code>
-     * +1. The actual concurrency is then reduced proportionally by the number of
-     * failures. This is the default behavior.</p> <p>If failure tolerance or Maximum
-     * concurrent accounts are set to percentages, the behavior is similar.</p> </li>
-     * <li> <p> <code>SOFT_FAILURE_TOLERANCE</code>: This option decouples
-     * <code>FailureToleranceCount</code> from the actual concurrency. This allows
-     * stack set operations to run at the concurrency level set by the
-     * <code>MaxConcurrentCount</code> value, or <code>MaxConcurrentPercentage</code>,
-     * regardless of the number of failures.</p> </li> </ul>
+     * <code>MaxConcurrentCount</code>, or the value of
+     * <code>FailureToleranceCount</code> +1. The actual concurrency is then reduced
+     * proportionally by the number of failures. This is the default behavior.</p>
+     * <p>If failure tolerance or Maximum concurrent accounts are set to percentages,
+     * the behavior is similar.</p> </li> <li> <p> <code>SOFT_FAILURE_TOLERANCE</code>:
+     * This option decouples <code>FailureToleranceCount</code> from the actual
+     * concurrency. This allows stack set operations to run at the concurrency level
+     * set by the <code>MaxConcurrentCount</code> value, or
+     * <code>MaxConcurrentPercentage</code>, regardless of the number of failures.</p>
+     * </li> </ul>
      */
     inline StackSetOperationPreferences& WithConcurrencyMode(ConcurrencyMode&& value) { SetConcurrencyMode(std::move(value)); return *this;}
 

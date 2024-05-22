@@ -41,24 +41,40 @@ namespace Model
     /**
      * <p>Indicates whether WAF should store a sampling of the web requests that match
      * the rules. You can view the sampled requests through the WAF console. </p>
+     *  <p>Request sampling doesn't provide a field redaction option, and any
+     * field redaction that you specify in your logging configuration doesn't affect
+     * sampling. The only way to exclude fields from request sampling is by disabling
+     * sampling in the web ACL visibility configuration. </p> 
      */
     inline bool GetSampledRequestsEnabled() const{ return m_sampledRequestsEnabled; }
 
     /**
      * <p>Indicates whether WAF should store a sampling of the web requests that match
      * the rules. You can view the sampled requests through the WAF console. </p>
+     *  <p>Request sampling doesn't provide a field redaction option, and any
+     * field redaction that you specify in your logging configuration doesn't affect
+     * sampling. The only way to exclude fields from request sampling is by disabling
+     * sampling in the web ACL visibility configuration. </p> 
      */
     inline bool SampledRequestsEnabledHasBeenSet() const { return m_sampledRequestsEnabledHasBeenSet; }
 
     /**
      * <p>Indicates whether WAF should store a sampling of the web requests that match
      * the rules. You can view the sampled requests through the WAF console. </p>
+     *  <p>Request sampling doesn't provide a field redaction option, and any
+     * field redaction that you specify in your logging configuration doesn't affect
+     * sampling. The only way to exclude fields from request sampling is by disabling
+     * sampling in the web ACL visibility configuration. </p> 
      */
     inline void SetSampledRequestsEnabled(bool value) { m_sampledRequestsEnabledHasBeenSet = true; m_sampledRequestsEnabled = value; }
 
     /**
      * <p>Indicates whether WAF should store a sampling of the web requests that match
      * the rules. You can view the sampled requests through the WAF console. </p>
+     *  <p>Request sampling doesn't provide a field redaction option, and any
+     * field redaction that you specify in your logging configuration doesn't affect
+     * sampling. The only way to exclude fields from request sampling is by disabling
+     * sampling in the web ACL visibility configuration. </p> 
      */
     inline VisibilityConfig& WithSampledRequestsEnabled(bool value) { SetSampledRequestsEnabled(value); return *this;}
 
