@@ -36,26 +36,26 @@ namespace Model
 
 
     /**
-     * <p>The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a
-     * Shutdown event before shutting down an instance.</p>
+     * <p>The time, in seconds, that OpsWorks Stacks waits after triggering a Shutdown
+     * event before shutting down an instance.</p>
      */
     inline int GetExecutionTimeout() const{ return m_executionTimeout; }
 
     /**
-     * <p>The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a
-     * Shutdown event before shutting down an instance.</p>
+     * <p>The time, in seconds, that OpsWorks Stacks waits after triggering a Shutdown
+     * event before shutting down an instance.</p>
      */
     inline bool ExecutionTimeoutHasBeenSet() const { return m_executionTimeoutHasBeenSet; }
 
     /**
-     * <p>The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a
-     * Shutdown event before shutting down an instance.</p>
+     * <p>The time, in seconds, that OpsWorks Stacks waits after triggering a Shutdown
+     * event before shutting down an instance.</p>
      */
     inline void SetExecutionTimeout(int value) { m_executionTimeoutHasBeenSet = true; m_executionTimeout = value; }
 
     /**
-     * <p>The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a
-     * Shutdown event before shutting down an instance.</p>
+     * <p>The time, in seconds, that OpsWorks Stacks waits after triggering a Shutdown
+     * event before shutting down an instance.</p>
      */
     inline ShutdownEventConfiguration& WithExecutionTimeout(int value) { SetExecutionTimeout(value); return *this;}
 

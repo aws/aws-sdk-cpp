@@ -79,42 +79,42 @@ namespace Model
 
 
     /**
-     * <p>The DB instance identifier.</p>
+     * <p>The database instance identifier.</p>
      */
     inline const Aws::String& GetDbInstanceIdentifier() const{ return m_dbInstanceIdentifier; }
 
     /**
-     * <p>The DB instance identifier.</p>
+     * <p>The database instance identifier.</p>
      */
     inline bool DbInstanceIdentifierHasBeenSet() const { return m_dbInstanceIdentifierHasBeenSet; }
 
     /**
-     * <p>The DB instance identifier.</p>
+     * <p>The database instance identifier.</p>
      */
     inline void SetDbInstanceIdentifier(const Aws::String& value) { m_dbInstanceIdentifierHasBeenSet = true; m_dbInstanceIdentifier = value; }
 
     /**
-     * <p>The DB instance identifier.</p>
+     * <p>The database instance identifier.</p>
      */
     inline void SetDbInstanceIdentifier(Aws::String&& value) { m_dbInstanceIdentifierHasBeenSet = true; m_dbInstanceIdentifier = std::move(value); }
 
     /**
-     * <p>The DB instance identifier.</p>
+     * <p>The database instance identifier.</p>
      */
     inline void SetDbInstanceIdentifier(const char* value) { m_dbInstanceIdentifierHasBeenSet = true; m_dbInstanceIdentifier.assign(value); }
 
     /**
-     * <p>The DB instance identifier.</p>
+     * <p>The database instance identifier.</p>
      */
     inline RdsDbInstance& WithDbInstanceIdentifier(const Aws::String& value) { SetDbInstanceIdentifier(value); return *this;}
 
     /**
-     * <p>The DB instance identifier.</p>
+     * <p>The database instance identifier.</p>
      */
     inline RdsDbInstance& WithDbInstanceIdentifier(Aws::String&& value) { SetDbInstanceIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The DB instance identifier.</p>
+     * <p>The database instance identifier.</p>
      */
     inline RdsDbInstance& WithDbInstanceIdentifier(const char* value) { SetDbInstanceIdentifier(value); return *this;}
 
@@ -161,91 +161,91 @@ namespace Model
 
 
     /**
-     * <p>AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the
-     * actual value.</p>
+     * <p>OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual
+     * value.</p>
      */
     inline const Aws::String& GetDbPassword() const{ return m_dbPassword; }
 
     /**
-     * <p>AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the
-     * actual value.</p>
+     * <p>OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual
+     * value.</p>
      */
     inline bool DbPasswordHasBeenSet() const { return m_dbPasswordHasBeenSet; }
 
     /**
-     * <p>AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the
-     * actual value.</p>
+     * <p>OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual
+     * value.</p>
      */
     inline void SetDbPassword(const Aws::String& value) { m_dbPasswordHasBeenSet = true; m_dbPassword = value; }
 
     /**
-     * <p>AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the
-     * actual value.</p>
+     * <p>OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual
+     * value.</p>
      */
     inline void SetDbPassword(Aws::String&& value) { m_dbPasswordHasBeenSet = true; m_dbPassword = std::move(value); }
 
     /**
-     * <p>AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the
-     * actual value.</p>
+     * <p>OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual
+     * value.</p>
      */
     inline void SetDbPassword(const char* value) { m_dbPasswordHasBeenSet = true; m_dbPassword.assign(value); }
 
     /**
-     * <p>AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the
-     * actual value.</p>
+     * <p>OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual
+     * value.</p>
      */
     inline RdsDbInstance& WithDbPassword(const Aws::String& value) { SetDbPassword(value); return *this;}
 
     /**
-     * <p>AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the
-     * actual value.</p>
+     * <p>OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual
+     * value.</p>
      */
     inline RdsDbInstance& WithDbPassword(Aws::String&& value) { SetDbPassword(std::move(value)); return *this;}
 
     /**
-     * <p>AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the
-     * actual value.</p>
+     * <p>OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual
+     * value.</p>
      */
     inline RdsDbInstance& WithDbPassword(const char* value) { SetDbPassword(value); return *this;}
 
 
     /**
-     * <p>The instance's AWS region.</p>
+     * <p>The instance's Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The instance's AWS region.</p>
+     * <p>The instance's Amazon Web Services Region.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>The instance's AWS region.</p>
+     * <p>The instance's Amazon Web Services Region.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The instance's AWS region.</p>
+     * <p>The instance's Amazon Web Services Region.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>The instance's AWS region.</p>
+     * <p>The instance's Amazon Web Services Region.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The instance's AWS region.</p>
+     * <p>The instance's Amazon Web Services Region.</p>
      */
     inline RdsDbInstance& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The instance's AWS region.</p>
+     * <p>The instance's Amazon Web Services Region.</p>
      */
     inline RdsDbInstance& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The instance's AWS region.</p>
+     * <p>The instance's Amazon Web Services Region.</p>
      */
     inline RdsDbInstance& WithRegion(const char* value) { SetRegion(value); return *this;}
 
@@ -374,34 +374,34 @@ namespace Model
 
 
     /**
-     * <p>Set to <code>true</code> if AWS OpsWorks Stacks is unable to discover the
-     * Amazon RDS instance. AWS OpsWorks Stacks attempts to discover the instance only
-     * once. If this value is set to <code>true</code>, you must deregister the
-     * instance, and then register it again.</p>
+     * <p>Set to <code>true</code> if OpsWorks Stacks is unable to discover the Amazon
+     * RDS instance. OpsWorks Stacks attempts to discover the instance only once. If
+     * this value is set to <code>true</code>, you must deregister the instance, and
+     * then register it again.</p>
      */
     inline bool GetMissingOnRds() const{ return m_missingOnRds; }
 
     /**
-     * <p>Set to <code>true</code> if AWS OpsWorks Stacks is unable to discover the
-     * Amazon RDS instance. AWS OpsWorks Stacks attempts to discover the instance only
-     * once. If this value is set to <code>true</code>, you must deregister the
-     * instance, and then register it again.</p>
+     * <p>Set to <code>true</code> if OpsWorks Stacks is unable to discover the Amazon
+     * RDS instance. OpsWorks Stacks attempts to discover the instance only once. If
+     * this value is set to <code>true</code>, you must deregister the instance, and
+     * then register it again.</p>
      */
     inline bool MissingOnRdsHasBeenSet() const { return m_missingOnRdsHasBeenSet; }
 
     /**
-     * <p>Set to <code>true</code> if AWS OpsWorks Stacks is unable to discover the
-     * Amazon RDS instance. AWS OpsWorks Stacks attempts to discover the instance only
-     * once. If this value is set to <code>true</code>, you must deregister the
-     * instance, and then register it again.</p>
+     * <p>Set to <code>true</code> if OpsWorks Stacks is unable to discover the Amazon
+     * RDS instance. OpsWorks Stacks attempts to discover the instance only once. If
+     * this value is set to <code>true</code>, you must deregister the instance, and
+     * then register it again.</p>
      */
     inline void SetMissingOnRds(bool value) { m_missingOnRdsHasBeenSet = true; m_missingOnRds = value; }
 
     /**
-     * <p>Set to <code>true</code> if AWS OpsWorks Stacks is unable to discover the
-     * Amazon RDS instance. AWS OpsWorks Stacks attempts to discover the instance only
-     * once. If this value is set to <code>true</code>, you must deregister the
-     * instance, and then register it again.</p>
+     * <p>Set to <code>true</code> if OpsWorks Stacks is unable to discover the Amazon
+     * RDS instance. OpsWorks Stacks attempts to discover the instance only once. If
+     * this value is set to <code>true</code>, you must deregister the instance, and
+     * then register it again.</p>
      */
     inline RdsDbInstance& WithMissingOnRds(bool value) { SetMissingOnRds(value); return *this;}
 

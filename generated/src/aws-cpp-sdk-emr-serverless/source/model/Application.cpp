@@ -40,7 +40,8 @@ Application::Application() :
     m_imageConfigurationHasBeenSet(false),
     m_workerTypeSpecificationsHasBeenSet(false),
     m_runtimeConfigurationHasBeenSet(false),
-    m_monitoringConfigurationHasBeenSet(false)
+    m_monitoringConfigurationHasBeenSet(false),
+    m_interactiveConfigurationHasBeenSet(false)
 {
 }
 
@@ -66,7 +67,8 @@ Application::Application(JsonView jsonValue) :
     m_imageConfigurationHasBeenSet(false),
     m_workerTypeSpecificationsHasBeenSet(false),
     m_runtimeConfigurationHasBeenSet(false),
-    m_monitoringConfigurationHasBeenSet(false)
+    m_monitoringConfigurationHasBeenSet(false),
+    m_interactiveConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -225,6 +227,13 @@ Application& Application::operator =(JsonView jsonValue)
     m_monitoringConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("interactiveConfiguration"))
+  {
+    m_interactiveConfiguration = jsonValue.GetObject("interactiveConfiguration");
+
+    m_interactiveConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -365,6 +374,12 @@ JsonValue Application::Jsonize() const
   if(m_monitoringConfigurationHasBeenSet)
   {
    payload.WithObject("monitoringConfiguration", m_monitoringConfiguration.Jsonize());
+
+  }
+
+  if(m_interactiveConfigurationHasBeenSet)
+  {
+   payload.WithObject("interactiveConfiguration", m_interactiveConfiguration.Jsonize());
 
   }
 

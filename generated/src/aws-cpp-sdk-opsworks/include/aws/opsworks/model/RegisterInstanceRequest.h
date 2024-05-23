@@ -77,42 +77,58 @@ namespace Model
 
 
     /**
-     * <p>The instance's hostname.</p>
+     * <p>The instance's host name. The following are character limits for instance
+     * host names.</p> <ul> <li> <p>Linux-based instances: 63 characters</p> </li> <li>
+     * <p>Windows-based instances: 15 characters</p> </li> </ul>
      */
     inline const Aws::String& GetHostname() const{ return m_hostname; }
 
     /**
-     * <p>The instance's hostname.</p>
+     * <p>The instance's host name. The following are character limits for instance
+     * host names.</p> <ul> <li> <p>Linux-based instances: 63 characters</p> </li> <li>
+     * <p>Windows-based instances: 15 characters</p> </li> </ul>
      */
     inline bool HostnameHasBeenSet() const { return m_hostnameHasBeenSet; }
 
     /**
-     * <p>The instance's hostname.</p>
+     * <p>The instance's host name. The following are character limits for instance
+     * host names.</p> <ul> <li> <p>Linux-based instances: 63 characters</p> </li> <li>
+     * <p>Windows-based instances: 15 characters</p> </li> </ul>
      */
     inline void SetHostname(const Aws::String& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
 
     /**
-     * <p>The instance's hostname.</p>
+     * <p>The instance's host name. The following are character limits for instance
+     * host names.</p> <ul> <li> <p>Linux-based instances: 63 characters</p> </li> <li>
+     * <p>Windows-based instances: 15 characters</p> </li> </ul>
      */
     inline void SetHostname(Aws::String&& value) { m_hostnameHasBeenSet = true; m_hostname = std::move(value); }
 
     /**
-     * <p>The instance's hostname.</p>
+     * <p>The instance's host name. The following are character limits for instance
+     * host names.</p> <ul> <li> <p>Linux-based instances: 63 characters</p> </li> <li>
+     * <p>Windows-based instances: 15 characters</p> </li> </ul>
      */
     inline void SetHostname(const char* value) { m_hostnameHasBeenSet = true; m_hostname.assign(value); }
 
     /**
-     * <p>The instance's hostname.</p>
+     * <p>The instance's host name. The following are character limits for instance
+     * host names.</p> <ul> <li> <p>Linux-based instances: 63 characters</p> </li> <li>
+     * <p>Windows-based instances: 15 characters</p> </li> </ul>
      */
     inline RegisterInstanceRequest& WithHostname(const Aws::String& value) { SetHostname(value); return *this;}
 
     /**
-     * <p>The instance's hostname.</p>
+     * <p>The instance's host name. The following are character limits for instance
+     * host names.</p> <ul> <li> <p>Linux-based instances: 63 characters</p> </li> <li>
+     * <p>Windows-based instances: 15 characters</p> </li> </ul>
      */
     inline RegisterInstanceRequest& WithHostname(Aws::String&& value) { SetHostname(std::move(value)); return *this;}
 
     /**
-     * <p>The instance's hostname.</p>
+     * <p>The instance's host name. The following are character limits for instance
+     * host names.</p> <ul> <li> <p>Linux-based instances: 63 characters</p> </li> <li>
+     * <p>Windows-based instances: 15 characters</p> </li> </ul>
      */
     inline RegisterInstanceRequest& WithHostname(const char* value) { SetHostname(value); return *this;}
 

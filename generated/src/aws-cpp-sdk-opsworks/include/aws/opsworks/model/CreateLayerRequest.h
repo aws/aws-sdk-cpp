@@ -127,53 +127,61 @@ namespace Model
 
 
     /**
-     * <p>The layer name, which is used by the console.</p>
+     * <p>The layer name, which is used by the console. Layer names can be a maximum of
+     * 32 characters.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The layer name, which is used by the console.</p>
+     * <p>The layer name, which is used by the console. Layer names can be a maximum of
+     * 32 characters.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The layer name, which is used by the console.</p>
+     * <p>The layer name, which is used by the console. Layer names can be a maximum of
+     * 32 characters.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The layer name, which is used by the console.</p>
+     * <p>The layer name, which is used by the console. Layer names can be a maximum of
+     * 32 characters.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The layer name, which is used by the console.</p>
+     * <p>The layer name, which is used by the console. Layer names can be a maximum of
+     * 32 characters.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The layer name, which is used by the console.</p>
+     * <p>The layer name, which is used by the console. Layer names can be a maximum of
+     * 32 characters.</p>
      */
     inline CreateLayerRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The layer name, which is used by the console.</p>
+     * <p>The layer name, which is used by the console. Layer names can be a maximum of
+     * 32 characters.</p>
      */
     inline CreateLayerRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The layer name, which is used by the console.</p>
+     * <p>The layer name, which is used by the console. Layer names can be a maximum of
+     * 32 characters.</p>
      */
     inline CreateLayerRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
      * <p>For custom layers only, use this parameter to specify the layer's short name,
-     * which is used internally by AWS OpsWorks Stacks and by Chef recipes. The short
-     * name is also used as the name for the directory where your app files are
-     * installed. It can have a maximum of 200 characters, which are limited to the
-     * alphanumeric characters, '-', '_', and '.'.</p> <p>The built-in layers' short
-     * names are defined by AWS OpsWorks Stacks. For more information, see the <a
+     * which is used internally by OpsWorks Stacks and by Chef recipes. The short name
+     * is also used as the name for the directory where your app files are installed.
+     * It can have a maximum of 32 characters, which are limited to the alphanumeric
+     * characters, '-', '_', and '.'.</p> <p>Built-in layer short names are defined by
+     * OpsWorks Stacks. For more information, see the <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
      * Reference</a>.</p>
      */
@@ -181,11 +189,11 @@ namespace Model
 
     /**
      * <p>For custom layers only, use this parameter to specify the layer's short name,
-     * which is used internally by AWS OpsWorks Stacks and by Chef recipes. The short
-     * name is also used as the name for the directory where your app files are
-     * installed. It can have a maximum of 200 characters, which are limited to the
-     * alphanumeric characters, '-', '_', and '.'.</p> <p>The built-in layers' short
-     * names are defined by AWS OpsWorks Stacks. For more information, see the <a
+     * which is used internally by OpsWorks Stacks and by Chef recipes. The short name
+     * is also used as the name for the directory where your app files are installed.
+     * It can have a maximum of 32 characters, which are limited to the alphanumeric
+     * characters, '-', '_', and '.'.</p> <p>Built-in layer short names are defined by
+     * OpsWorks Stacks. For more information, see the <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
      * Reference</a>.</p>
      */
@@ -193,11 +201,11 @@ namespace Model
 
     /**
      * <p>For custom layers only, use this parameter to specify the layer's short name,
-     * which is used internally by AWS OpsWorks Stacks and by Chef recipes. The short
-     * name is also used as the name for the directory where your app files are
-     * installed. It can have a maximum of 200 characters, which are limited to the
-     * alphanumeric characters, '-', '_', and '.'.</p> <p>The built-in layers' short
-     * names are defined by AWS OpsWorks Stacks. For more information, see the <a
+     * which is used internally by OpsWorks Stacks and by Chef recipes. The short name
+     * is also used as the name for the directory where your app files are installed.
+     * It can have a maximum of 32 characters, which are limited to the alphanumeric
+     * characters, '-', '_', and '.'.</p> <p>Built-in layer short names are defined by
+     * OpsWorks Stacks. For more information, see the <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
      * Reference</a>.</p>
      */
@@ -205,11 +213,11 @@ namespace Model
 
     /**
      * <p>For custom layers only, use this parameter to specify the layer's short name,
-     * which is used internally by AWS OpsWorks Stacks and by Chef recipes. The short
-     * name is also used as the name for the directory where your app files are
-     * installed. It can have a maximum of 200 characters, which are limited to the
-     * alphanumeric characters, '-', '_', and '.'.</p> <p>The built-in layers' short
-     * names are defined by AWS OpsWorks Stacks. For more information, see the <a
+     * which is used internally by OpsWorks Stacks and by Chef recipes. The short name
+     * is also used as the name for the directory where your app files are installed.
+     * It can have a maximum of 32 characters, which are limited to the alphanumeric
+     * characters, '-', '_', and '.'.</p> <p>Built-in layer short names are defined by
+     * OpsWorks Stacks. For more information, see the <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
      * Reference</a>.</p>
      */
@@ -217,11 +225,11 @@ namespace Model
 
     /**
      * <p>For custom layers only, use this parameter to specify the layer's short name,
-     * which is used internally by AWS OpsWorks Stacks and by Chef recipes. The short
-     * name is also used as the name for the directory where your app files are
-     * installed. It can have a maximum of 200 characters, which are limited to the
-     * alphanumeric characters, '-', '_', and '.'.</p> <p>The built-in layers' short
-     * names are defined by AWS OpsWorks Stacks. For more information, see the <a
+     * which is used internally by OpsWorks Stacks and by Chef recipes. The short name
+     * is also used as the name for the directory where your app files are installed.
+     * It can have a maximum of 32 characters, which are limited to the alphanumeric
+     * characters, '-', '_', and '.'.</p> <p>Built-in layer short names are defined by
+     * OpsWorks Stacks. For more information, see the <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
      * Reference</a>.</p>
      */
@@ -229,11 +237,11 @@ namespace Model
 
     /**
      * <p>For custom layers only, use this parameter to specify the layer's short name,
-     * which is used internally by AWS OpsWorks Stacks and by Chef recipes. The short
-     * name is also used as the name for the directory where your app files are
-     * installed. It can have a maximum of 200 characters, which are limited to the
-     * alphanumeric characters, '-', '_', and '.'.</p> <p>The built-in layers' short
-     * names are defined by AWS OpsWorks Stacks. For more information, see the <a
+     * which is used internally by OpsWorks Stacks and by Chef recipes. The short name
+     * is also used as the name for the directory where your app files are installed.
+     * It can have a maximum of 32 characters, which are limited to the alphanumeric
+     * characters, '-', '_', and '.'.</p> <p>Built-in layer short names are defined by
+     * OpsWorks Stacks. For more information, see the <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
      * Reference</a>.</p>
      */
@@ -241,11 +249,11 @@ namespace Model
 
     /**
      * <p>For custom layers only, use this parameter to specify the layer's short name,
-     * which is used internally by AWS OpsWorks Stacks and by Chef recipes. The short
-     * name is also used as the name for the directory where your app files are
-     * installed. It can have a maximum of 200 characters, which are limited to the
-     * alphanumeric characters, '-', '_', and '.'.</p> <p>The built-in layers' short
-     * names are defined by AWS OpsWorks Stacks. For more information, see the <a
+     * which is used internally by OpsWorks Stacks and by Chef recipes. The short name
+     * is also used as the name for the directory where your app files are installed.
+     * It can have a maximum of 32 characters, which are limited to the alphanumeric
+     * characters, '-', '_', and '.'.</p> <p>Built-in layer short names are defined by
+     * OpsWorks Stacks. For more information, see the <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
      * Reference</a>.</p>
      */
@@ -253,11 +261,11 @@ namespace Model
 
     /**
      * <p>For custom layers only, use this parameter to specify the layer's short name,
-     * which is used internally by AWS OpsWorks Stacks and by Chef recipes. The short
-     * name is also used as the name for the directory where your app files are
-     * installed. It can have a maximum of 200 characters, which are limited to the
-     * alphanumeric characters, '-', '_', and '.'.</p> <p>The built-in layers' short
-     * names are defined by AWS OpsWorks Stacks. For more information, see the <a
+     * which is used internally by OpsWorks Stacks and by Chef recipes. The short name
+     * is also used as the name for the directory where your app files are installed.
+     * It can have a maximum of 32 characters, which are limited to the alphanumeric
+     * characters, '-', '_', and '.'.</p> <p>Built-in layer short names are defined by
+     * OpsWorks Stacks. For more information, see the <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
      * Reference</a>.</p>
      */
@@ -456,7 +464,7 @@ namespace Model
      * attributes to be installed on the layer's instances. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
-     * Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS
+     * Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the
      * CLI. </p>
      */
     inline const Aws::String& GetCustomJson() const{ return m_customJson; }
@@ -466,7 +474,7 @@ namespace Model
      * attributes to be installed on the layer's instances. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
-     * Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS
+     * Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the
      * CLI. </p>
      */
     inline bool CustomJsonHasBeenSet() const { return m_customJsonHasBeenSet; }
@@ -476,7 +484,7 @@ namespace Model
      * attributes to be installed on the layer's instances. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
-     * Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS
+     * Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the
      * CLI. </p>
      */
     inline void SetCustomJson(const Aws::String& value) { m_customJsonHasBeenSet = true; m_customJson = value; }
@@ -486,7 +494,7 @@ namespace Model
      * attributes to be installed on the layer's instances. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
-     * Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS
+     * Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the
      * CLI. </p>
      */
     inline void SetCustomJson(Aws::String&& value) { m_customJsonHasBeenSet = true; m_customJson = std::move(value); }
@@ -496,7 +504,7 @@ namespace Model
      * attributes to be installed on the layer's instances. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
-     * Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS
+     * Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the
      * CLI. </p>
      */
     inline void SetCustomJson(const char* value) { m_customJsonHasBeenSet = true; m_customJson.assign(value); }
@@ -506,7 +514,7 @@ namespace Model
      * attributes to be installed on the layer's instances. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
-     * Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS
+     * Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the
      * CLI. </p>
      */
     inline CreateLayerRequest& WithCustomJson(const Aws::String& value) { SetCustomJson(value); return *this;}
@@ -516,7 +524,7 @@ namespace Model
      * attributes to be installed on the layer's instances. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
-     * Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS
+     * Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the
      * CLI. </p>
      */
     inline CreateLayerRequest& WithCustomJson(Aws::String&& value) { SetCustomJson(std::move(value)); return *this;}
@@ -526,7 +534,7 @@ namespace Model
      * attributes to be installed on the layer's instances. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
-     * Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS
+     * Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the
      * CLI. </p>
      */
     inline CreateLayerRequest& WithCustomJson(const char* value) { SetCustomJson(value); return *this;}

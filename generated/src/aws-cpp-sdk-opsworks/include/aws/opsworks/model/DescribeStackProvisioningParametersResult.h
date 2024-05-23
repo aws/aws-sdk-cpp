@@ -40,37 +40,37 @@ namespace Model
 
 
     /**
-     * <p>The AWS OpsWorks Stacks agent installer's URL.</p>
+     * <p>The OpsWorks Stacks agent installer's URL.</p>
      */
     inline const Aws::String& GetAgentInstallerUrl() const{ return m_agentInstallerUrl; }
 
     /**
-     * <p>The AWS OpsWorks Stacks agent installer's URL.</p>
+     * <p>The OpsWorks Stacks agent installer's URL.</p>
      */
     inline void SetAgentInstallerUrl(const Aws::String& value) { m_agentInstallerUrl = value; }
 
     /**
-     * <p>The AWS OpsWorks Stacks agent installer's URL.</p>
+     * <p>The OpsWorks Stacks agent installer's URL.</p>
      */
     inline void SetAgentInstallerUrl(Aws::String&& value) { m_agentInstallerUrl = std::move(value); }
 
     /**
-     * <p>The AWS OpsWorks Stacks agent installer's URL.</p>
+     * <p>The OpsWorks Stacks agent installer's URL.</p>
      */
     inline void SetAgentInstallerUrl(const char* value) { m_agentInstallerUrl.assign(value); }
 
     /**
-     * <p>The AWS OpsWorks Stacks agent installer's URL.</p>
+     * <p>The OpsWorks Stacks agent installer's URL.</p>
      */
     inline DescribeStackProvisioningParametersResult& WithAgentInstallerUrl(const Aws::String& value) { SetAgentInstallerUrl(value); return *this;}
 
     /**
-     * <p>The AWS OpsWorks Stacks agent installer's URL.</p>
+     * <p>The OpsWorks Stacks agent installer's URL.</p>
      */
     inline DescribeStackProvisioningParametersResult& WithAgentInstallerUrl(Aws::String&& value) { SetAgentInstallerUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS OpsWorks Stacks agent installer's URL.</p>
+     * <p>The OpsWorks Stacks agent installer's URL.</p>
      */
     inline DescribeStackProvisioningParametersResult& WithAgentInstallerUrl(const char* value) { SetAgentInstallerUrl(value); return *this;}
 

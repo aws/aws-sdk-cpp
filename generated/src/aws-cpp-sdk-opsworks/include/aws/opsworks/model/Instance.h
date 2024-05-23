@@ -563,97 +563,113 @@ namespace Model
     /**
      * <p>The instance <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-     * IP address </a>.</p>
+     * IP address</a>.</p>
      */
     inline const Aws::String& GetElasticIp() const{ return m_elasticIp; }
 
     /**
      * <p>The instance <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-     * IP address </a>.</p>
+     * IP address</a>.</p>
      */
     inline bool ElasticIpHasBeenSet() const { return m_elasticIpHasBeenSet; }
 
     /**
      * <p>The instance <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-     * IP address </a>.</p>
+     * IP address</a>.</p>
      */
     inline void SetElasticIp(const Aws::String& value) { m_elasticIpHasBeenSet = true; m_elasticIp = value; }
 
     /**
      * <p>The instance <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-     * IP address </a>.</p>
+     * IP address</a>.</p>
      */
     inline void SetElasticIp(Aws::String&& value) { m_elasticIpHasBeenSet = true; m_elasticIp = std::move(value); }
 
     /**
      * <p>The instance <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-     * IP address </a>.</p>
+     * IP address</a>.</p>
      */
     inline void SetElasticIp(const char* value) { m_elasticIpHasBeenSet = true; m_elasticIp.assign(value); }
 
     /**
      * <p>The instance <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-     * IP address </a>.</p>
+     * IP address</a>.</p>
      */
     inline Instance& WithElasticIp(const Aws::String& value) { SetElasticIp(value); return *this;}
 
     /**
      * <p>The instance <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-     * IP address </a>.</p>
+     * IP address</a>.</p>
      */
     inline Instance& WithElasticIp(Aws::String&& value) { SetElasticIp(std::move(value)); return *this;}
 
     /**
      * <p>The instance <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-     * IP address </a>.</p>
+     * IP address</a>.</p>
      */
     inline Instance& WithElasticIp(const char* value) { SetElasticIp(value); return *this;}
 
 
     /**
-     * <p>The instance host name.</p>
+     * <p>The instance host name. The following are character limits for instance host
+     * names.</p> <ul> <li> <p>Linux-based instances: 63 characters</p> </li> <li>
+     * <p>Windows-based instances: 15 characters</p> </li> </ul>
      */
     inline const Aws::String& GetHostname() const{ return m_hostname; }
 
     /**
-     * <p>The instance host name.</p>
+     * <p>The instance host name. The following are character limits for instance host
+     * names.</p> <ul> <li> <p>Linux-based instances: 63 characters</p> </li> <li>
+     * <p>Windows-based instances: 15 characters</p> </li> </ul>
      */
     inline bool HostnameHasBeenSet() const { return m_hostnameHasBeenSet; }
 
     /**
-     * <p>The instance host name.</p>
+     * <p>The instance host name. The following are character limits for instance host
+     * names.</p> <ul> <li> <p>Linux-based instances: 63 characters</p> </li> <li>
+     * <p>Windows-based instances: 15 characters</p> </li> </ul>
      */
     inline void SetHostname(const Aws::String& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
 
     /**
-     * <p>The instance host name.</p>
+     * <p>The instance host name. The following are character limits for instance host
+     * names.</p> <ul> <li> <p>Linux-based instances: 63 characters</p> </li> <li>
+     * <p>Windows-based instances: 15 characters</p> </li> </ul>
      */
     inline void SetHostname(Aws::String&& value) { m_hostnameHasBeenSet = true; m_hostname = std::move(value); }
 
     /**
-     * <p>The instance host name.</p>
+     * <p>The instance host name. The following are character limits for instance host
+     * names.</p> <ul> <li> <p>Linux-based instances: 63 characters</p> </li> <li>
+     * <p>Windows-based instances: 15 characters</p> </li> </ul>
      */
     inline void SetHostname(const char* value) { m_hostnameHasBeenSet = true; m_hostname.assign(value); }
 
     /**
-     * <p>The instance host name.</p>
+     * <p>The instance host name. The following are character limits for instance host
+     * names.</p> <ul> <li> <p>Linux-based instances: 63 characters</p> </li> <li>
+     * <p>Windows-based instances: 15 characters</p> </li> </ul>
      */
     inline Instance& WithHostname(const Aws::String& value) { SetHostname(value); return *this;}
 
     /**
-     * <p>The instance host name.</p>
+     * <p>The instance host name. The following are character limits for instance host
+     * names.</p> <ul> <li> <p>Linux-based instances: 63 characters</p> </li> <li>
+     * <p>Windows-based instances: 15 characters</p> </li> </ul>
      */
     inline Instance& WithHostname(Aws::String&& value) { SetHostname(std::move(value)); return *this;}
 
     /**
-     * <p>The instance host name.</p>
+     * <p>The instance host name. The following are character limits for instance host
+     * names.</p> <ul> <li> <p>Linux-based instances: 63 characters</p> </li> <li>
+     * <p>Windows-based instances: 15 characters</p> </li> </ul>
      */
     inline Instance& WithHostname(const char* value) { SetHostname(value); return *this;}
 
@@ -710,11 +726,11 @@ namespace Model
     /**
      * <p>Whether to install operating system and package updates when the instance
      * boots. The default value is <code>true</code>. If this value is set to
-     * <code>false</code>, you must then update your instances manually by using
+     * <code>false</code>, you must update instances manually by using
      * <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack
      * command or by manually running <code>yum</code> (Amazon Linux) or
      * <code>apt-get</code> (Ubuntu) on the instances. </p>  <p>We strongly
-     * recommend using the default value of <code>true</code>, to ensure that your
+     * recommend using the default value of <code>true</code> to ensure that your
      * instances have the latest security updates.</p> 
      */
     inline bool GetInstallUpdatesOnBoot() const{ return m_installUpdatesOnBoot; }
@@ -722,11 +738,11 @@ namespace Model
     /**
      * <p>Whether to install operating system and package updates when the instance
      * boots. The default value is <code>true</code>. If this value is set to
-     * <code>false</code>, you must then update your instances manually by using
+     * <code>false</code>, you must update instances manually by using
      * <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack
      * command or by manually running <code>yum</code> (Amazon Linux) or
      * <code>apt-get</code> (Ubuntu) on the instances. </p>  <p>We strongly
-     * recommend using the default value of <code>true</code>, to ensure that your
+     * recommend using the default value of <code>true</code> to ensure that your
      * instances have the latest security updates.</p> 
      */
     inline bool InstallUpdatesOnBootHasBeenSet() const { return m_installUpdatesOnBootHasBeenSet; }
@@ -734,11 +750,11 @@ namespace Model
     /**
      * <p>Whether to install operating system and package updates when the instance
      * boots. The default value is <code>true</code>. If this value is set to
-     * <code>false</code>, you must then update your instances manually by using
+     * <code>false</code>, you must update instances manually by using
      * <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack
      * command or by manually running <code>yum</code> (Amazon Linux) or
      * <code>apt-get</code> (Ubuntu) on the instances. </p>  <p>We strongly
-     * recommend using the default value of <code>true</code>, to ensure that your
+     * recommend using the default value of <code>true</code> to ensure that your
      * instances have the latest security updates.</p> 
      */
     inline void SetInstallUpdatesOnBoot(bool value) { m_installUpdatesOnBootHasBeenSet = true; m_installUpdatesOnBoot = value; }
@@ -746,11 +762,11 @@ namespace Model
     /**
      * <p>Whether to install operating system and package updates when the instance
      * boots. The default value is <code>true</code>. If this value is set to
-     * <code>false</code>, you must then update your instances manually by using
+     * <code>false</code>, you must update instances manually by using
      * <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack
      * command or by manually running <code>yum</code> (Amazon Linux) or
      * <code>apt-get</code> (Ubuntu) on the instances. </p>  <p>We strongly
-     * recommend using the default value of <code>true</code>, to ensure that your
+     * recommend using the default value of <code>true</code> to ensure that your
      * instances have the latest security updates.</p> 
      */
     inline Instance& WithInstallUpdatesOnBoot(bool value) { SetInstallUpdatesOnBoot(value); return *this;}
@@ -1286,42 +1302,42 @@ namespace Model
 
 
     /**
-     * <p>The instance's reported AWS OpsWorks Stacks agent version.</p>
+     * <p>The instance's reported OpsWorks Stacks agent version.</p>
      */
     inline const Aws::String& GetReportedAgentVersion() const{ return m_reportedAgentVersion; }
 
     /**
-     * <p>The instance's reported AWS OpsWorks Stacks agent version.</p>
+     * <p>The instance's reported OpsWorks Stacks agent version.</p>
      */
     inline bool ReportedAgentVersionHasBeenSet() const { return m_reportedAgentVersionHasBeenSet; }
 
     /**
-     * <p>The instance's reported AWS OpsWorks Stacks agent version.</p>
+     * <p>The instance's reported OpsWorks Stacks agent version.</p>
      */
     inline void SetReportedAgentVersion(const Aws::String& value) { m_reportedAgentVersionHasBeenSet = true; m_reportedAgentVersion = value; }
 
     /**
-     * <p>The instance's reported AWS OpsWorks Stacks agent version.</p>
+     * <p>The instance's reported OpsWorks Stacks agent version.</p>
      */
     inline void SetReportedAgentVersion(Aws::String&& value) { m_reportedAgentVersionHasBeenSet = true; m_reportedAgentVersion = std::move(value); }
 
     /**
-     * <p>The instance's reported AWS OpsWorks Stacks agent version.</p>
+     * <p>The instance's reported OpsWorks Stacks agent version.</p>
      */
     inline void SetReportedAgentVersion(const char* value) { m_reportedAgentVersionHasBeenSet = true; m_reportedAgentVersion.assign(value); }
 
     /**
-     * <p>The instance's reported AWS OpsWorks Stacks agent version.</p>
+     * <p>The instance's reported OpsWorks Stacks agent version.</p>
      */
     inline Instance& WithReportedAgentVersion(const Aws::String& value) { SetReportedAgentVersion(value); return *this;}
 
     /**
-     * <p>The instance's reported AWS OpsWorks Stacks agent version.</p>
+     * <p>The instance's reported OpsWorks Stacks agent version.</p>
      */
     inline Instance& WithReportedAgentVersion(Aws::String&& value) { SetReportedAgentVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The instance's reported AWS OpsWorks Stacks agent version.</p>
+     * <p>The instance's reported OpsWorks Stacks agent version.</p>
      */
     inline Instance& WithReportedAgentVersion(const char* value) { SetReportedAgentVersion(value); return *this;}
 

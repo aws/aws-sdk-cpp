@@ -39,37 +39,37 @@ namespace Model
 
 
     /**
-     * <p>The registered instance's AWS OpsWorks Stacks ID.</p>
+     * <p>The registered instance's OpsWorks Stacks ID.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The registered instance's AWS OpsWorks Stacks ID.</p>
+     * <p>The registered instance's OpsWorks Stacks ID.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceId = value; }
 
     /**
-     * <p>The registered instance's AWS OpsWorks Stacks ID.</p>
+     * <p>The registered instance's OpsWorks Stacks ID.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceId = std::move(value); }
 
     /**
-     * <p>The registered instance's AWS OpsWorks Stacks ID.</p>
+     * <p>The registered instance's OpsWorks Stacks ID.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceId.assign(value); }
 
     /**
-     * <p>The registered instance's AWS OpsWorks Stacks ID.</p>
+     * <p>The registered instance's OpsWorks Stacks ID.</p>
      */
     inline RegisterInstanceResult& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The registered instance's AWS OpsWorks Stacks ID.</p>
+     * <p>The registered instance's OpsWorks Stacks ID.</p>
      */
     inline RegisterInstanceResult& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The registered instance's AWS OpsWorks Stacks ID.</p>
+     * <p>The registered instance's OpsWorks Stacks ID.</p>
      */
     inline RegisterInstanceResult& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 

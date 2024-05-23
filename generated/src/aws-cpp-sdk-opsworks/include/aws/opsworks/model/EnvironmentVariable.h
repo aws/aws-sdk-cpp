@@ -160,36 +160,36 @@ namespace Model
 
 
     /**
-     * <p>(Optional) Whether the variable's value will be returned by the
-     * <a>DescribeApps</a> action. To conceal an environment variable's value, set
-     * <code>Secure</code> to <code>true</code>. <code>DescribeApps</code> then returns
+     * <p>(Optional) Whether the variable's value is returned by the
+     * <a>DescribeApps</a> action. To hide an environment variable's value, set
+     * <code>Secure</code> to <code>true</code>. <code>DescribeApps</code> returns
      * <code>*****FILTERED*****</code> instead of the actual value. The default value
      * for <code>Secure</code> is <code>false</code>. </p>
      */
     inline bool GetSecure() const{ return m_secure; }
 
     /**
-     * <p>(Optional) Whether the variable's value will be returned by the
-     * <a>DescribeApps</a> action. To conceal an environment variable's value, set
-     * <code>Secure</code> to <code>true</code>. <code>DescribeApps</code> then returns
+     * <p>(Optional) Whether the variable's value is returned by the
+     * <a>DescribeApps</a> action. To hide an environment variable's value, set
+     * <code>Secure</code> to <code>true</code>. <code>DescribeApps</code> returns
      * <code>*****FILTERED*****</code> instead of the actual value. The default value
      * for <code>Secure</code> is <code>false</code>. </p>
      */
     inline bool SecureHasBeenSet() const { return m_secureHasBeenSet; }
 
     /**
-     * <p>(Optional) Whether the variable's value will be returned by the
-     * <a>DescribeApps</a> action. To conceal an environment variable's value, set
-     * <code>Secure</code> to <code>true</code>. <code>DescribeApps</code> then returns
+     * <p>(Optional) Whether the variable's value is returned by the
+     * <a>DescribeApps</a> action. To hide an environment variable's value, set
+     * <code>Secure</code> to <code>true</code>. <code>DescribeApps</code> returns
      * <code>*****FILTERED*****</code> instead of the actual value. The default value
      * for <code>Secure</code> is <code>false</code>. </p>
      */
     inline void SetSecure(bool value) { m_secureHasBeenSet = true; m_secure = value; }
 
     /**
-     * <p>(Optional) Whether the variable's value will be returned by the
-     * <a>DescribeApps</a> action. To conceal an environment variable's value, set
-     * <code>Secure</code> to <code>true</code>. <code>DescribeApps</code> then returns
+     * <p>(Optional) Whether the variable's value is returned by the
+     * <a>DescribeApps</a> action. To hide an environment variable's value, set
+     * <code>Secure</code> to <code>true</code>. <code>DescribeApps</code> returns
      * <code>*****FILTERED*****</code> instead of the actual value. The default value
      * for <code>Secure</code> is <code>false</code>. </p>
      */

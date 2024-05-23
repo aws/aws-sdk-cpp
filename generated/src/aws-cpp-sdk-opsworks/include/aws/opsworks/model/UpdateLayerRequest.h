@@ -83,139 +83,147 @@ namespace Model
 
 
     /**
-     * <p>The layer name, which is used by the console.</p>
+     * <p>The layer name, which is used by the console. Layer names can be a maximum of
+     * 32 characters.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The layer name, which is used by the console.</p>
+     * <p>The layer name, which is used by the console. Layer names can be a maximum of
+     * 32 characters.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The layer name, which is used by the console.</p>
+     * <p>The layer name, which is used by the console. Layer names can be a maximum of
+     * 32 characters.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The layer name, which is used by the console.</p>
+     * <p>The layer name, which is used by the console. Layer names can be a maximum of
+     * 32 characters.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The layer name, which is used by the console.</p>
+     * <p>The layer name, which is used by the console. Layer names can be a maximum of
+     * 32 characters.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The layer name, which is used by the console.</p>
+     * <p>The layer name, which is used by the console. Layer names can be a maximum of
+     * 32 characters.</p>
      */
     inline UpdateLayerRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The layer name, which is used by the console.</p>
+     * <p>The layer name, which is used by the console. Layer names can be a maximum of
+     * 32 characters.</p>
      */
     inline UpdateLayerRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The layer name, which is used by the console.</p>
+     * <p>The layer name, which is used by the console. Layer names can be a maximum of
+     * 32 characters.</p>
      */
     inline UpdateLayerRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
      * <p>For custom layers only, use this parameter to specify the layer's short name,
-     * which is used internally by AWS OpsWorks Stacks and by Chef. The short name is
-     * also used as the name for the directory where your app files are installed. It
-     * can have a maximum of 200 characters and must be in the following format:
-     * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by
-     * AWS OpsWorks Stacks. For more information, see the <a
+     * which is used internally by OpsWorks Stacks and by Chef. The short name is also
+     * used as the name for the directory where your app files are installed. It can
+     * have a maximum of 32 characters and must be in the following format:
+     * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>Built-in layer short names are defined by OpsWorks
+     * Stacks. For more information, see the <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
-     * Reference</a> </p>
+     * reference</a> in the OpsWorks User Guide. </p>
      */
     inline const Aws::String& GetShortname() const{ return m_shortname; }
 
     /**
      * <p>For custom layers only, use this parameter to specify the layer's short name,
-     * which is used internally by AWS OpsWorks Stacks and by Chef. The short name is
-     * also used as the name for the directory where your app files are installed. It
-     * can have a maximum of 200 characters and must be in the following format:
-     * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by
-     * AWS OpsWorks Stacks. For more information, see the <a
+     * which is used internally by OpsWorks Stacks and by Chef. The short name is also
+     * used as the name for the directory where your app files are installed. It can
+     * have a maximum of 32 characters and must be in the following format:
+     * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>Built-in layer short names are defined by OpsWorks
+     * Stacks. For more information, see the <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
-     * Reference</a> </p>
+     * reference</a> in the OpsWorks User Guide. </p>
      */
     inline bool ShortnameHasBeenSet() const { return m_shortnameHasBeenSet; }
 
     /**
      * <p>For custom layers only, use this parameter to specify the layer's short name,
-     * which is used internally by AWS OpsWorks Stacks and by Chef. The short name is
-     * also used as the name for the directory where your app files are installed. It
-     * can have a maximum of 200 characters and must be in the following format:
-     * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by
-     * AWS OpsWorks Stacks. For more information, see the <a
+     * which is used internally by OpsWorks Stacks and by Chef. The short name is also
+     * used as the name for the directory where your app files are installed. It can
+     * have a maximum of 32 characters and must be in the following format:
+     * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>Built-in layer short names are defined by OpsWorks
+     * Stacks. For more information, see the <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
-     * Reference</a> </p>
+     * reference</a> in the OpsWorks User Guide. </p>
      */
     inline void SetShortname(const Aws::String& value) { m_shortnameHasBeenSet = true; m_shortname = value; }
 
     /**
      * <p>For custom layers only, use this parameter to specify the layer's short name,
-     * which is used internally by AWS OpsWorks Stacks and by Chef. The short name is
-     * also used as the name for the directory where your app files are installed. It
-     * can have a maximum of 200 characters and must be in the following format:
-     * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by
-     * AWS OpsWorks Stacks. For more information, see the <a
+     * which is used internally by OpsWorks Stacks and by Chef. The short name is also
+     * used as the name for the directory where your app files are installed. It can
+     * have a maximum of 32 characters and must be in the following format:
+     * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>Built-in layer short names are defined by OpsWorks
+     * Stacks. For more information, see the <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
-     * Reference</a> </p>
+     * reference</a> in the OpsWorks User Guide. </p>
      */
     inline void SetShortname(Aws::String&& value) { m_shortnameHasBeenSet = true; m_shortname = std::move(value); }
 
     /**
      * <p>For custom layers only, use this parameter to specify the layer's short name,
-     * which is used internally by AWS OpsWorks Stacks and by Chef. The short name is
-     * also used as the name for the directory where your app files are installed. It
-     * can have a maximum of 200 characters and must be in the following format:
-     * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by
-     * AWS OpsWorks Stacks. For more information, see the <a
+     * which is used internally by OpsWorks Stacks and by Chef. The short name is also
+     * used as the name for the directory where your app files are installed. It can
+     * have a maximum of 32 characters and must be in the following format:
+     * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>Built-in layer short names are defined by OpsWorks
+     * Stacks. For more information, see the <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
-     * Reference</a> </p>
+     * reference</a> in the OpsWorks User Guide. </p>
      */
     inline void SetShortname(const char* value) { m_shortnameHasBeenSet = true; m_shortname.assign(value); }
 
     /**
      * <p>For custom layers only, use this parameter to specify the layer's short name,
-     * which is used internally by AWS OpsWorks Stacks and by Chef. The short name is
-     * also used as the name for the directory where your app files are installed. It
-     * can have a maximum of 200 characters and must be in the following format:
-     * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by
-     * AWS OpsWorks Stacks. For more information, see the <a
+     * which is used internally by OpsWorks Stacks and by Chef. The short name is also
+     * used as the name for the directory where your app files are installed. It can
+     * have a maximum of 32 characters and must be in the following format:
+     * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>Built-in layer short names are defined by OpsWorks
+     * Stacks. For more information, see the <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
-     * Reference</a> </p>
+     * reference</a> in the OpsWorks User Guide. </p>
      */
     inline UpdateLayerRequest& WithShortname(const Aws::String& value) { SetShortname(value); return *this;}
 
     /**
      * <p>For custom layers only, use this parameter to specify the layer's short name,
-     * which is used internally by AWS OpsWorks Stacks and by Chef. The short name is
-     * also used as the name for the directory where your app files are installed. It
-     * can have a maximum of 200 characters and must be in the following format:
-     * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by
-     * AWS OpsWorks Stacks. For more information, see the <a
+     * which is used internally by OpsWorks Stacks and by Chef. The short name is also
+     * used as the name for the directory where your app files are installed. It can
+     * have a maximum of 32 characters and must be in the following format:
+     * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>Built-in layer short names are defined by OpsWorks
+     * Stacks. For more information, see the <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
-     * Reference</a> </p>
+     * reference</a> in the OpsWorks User Guide. </p>
      */
     inline UpdateLayerRequest& WithShortname(Aws::String&& value) { SetShortname(std::move(value)); return *this;}
 
     /**
      * <p>For custom layers only, use this parameter to specify the layer's short name,
-     * which is used internally by AWS OpsWorks Stacks and by Chef. The short name is
-     * also used as the name for the directory where your app files are installed. It
-     * can have a maximum of 200 characters and must be in the following format:
-     * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by
-     * AWS OpsWorks Stacks. For more information, see the <a
+     * which is used internally by OpsWorks Stacks and by Chef. The short name is also
+     * used as the name for the directory where your app files are installed. It can
+     * have a maximum of 32 characters and must be in the following format:
+     * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>Built-in layer short names are defined by OpsWorks
+     * Stacks. For more information, see the <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
-     * Reference</a> </p>
+     * reference</a> in the OpsWorks User Guide. </p>
      */
     inline UpdateLayerRequest& WithShortname(const char* value) { SetShortname(value); return *this;}
 

@@ -100,42 +100,42 @@ namespace Model
     /**
      * <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold
      * configuration. If the load exceeds these thresholds for a specified amount of
-     * time, AWS OpsWorks Stacks starts a specified number of instances.</p>
+     * time, OpsWorks Stacks starts a specified number of instances.</p>
      */
     inline const AutoScalingThresholds& GetUpScaling() const{ return m_upScaling; }
 
     /**
      * <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold
      * configuration. If the load exceeds these thresholds for a specified amount of
-     * time, AWS OpsWorks Stacks starts a specified number of instances.</p>
+     * time, OpsWorks Stacks starts a specified number of instances.</p>
      */
     inline bool UpScalingHasBeenSet() const { return m_upScalingHasBeenSet; }
 
     /**
      * <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold
      * configuration. If the load exceeds these thresholds for a specified amount of
-     * time, AWS OpsWorks Stacks starts a specified number of instances.</p>
+     * time, OpsWorks Stacks starts a specified number of instances.</p>
      */
     inline void SetUpScaling(const AutoScalingThresholds& value) { m_upScalingHasBeenSet = true; m_upScaling = value; }
 
     /**
      * <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold
      * configuration. If the load exceeds these thresholds for a specified amount of
-     * time, AWS OpsWorks Stacks starts a specified number of instances.</p>
+     * time, OpsWorks Stacks starts a specified number of instances.</p>
      */
     inline void SetUpScaling(AutoScalingThresholds&& value) { m_upScalingHasBeenSet = true; m_upScaling = std::move(value); }
 
     /**
      * <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold
      * configuration. If the load exceeds these thresholds for a specified amount of
-     * time, AWS OpsWorks Stacks starts a specified number of instances.</p>
+     * time, OpsWorks Stacks starts a specified number of instances.</p>
      */
     inline SetLoadBasedAutoScalingRequest& WithUpScaling(const AutoScalingThresholds& value) { SetUpScaling(value); return *this;}
 
     /**
      * <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold
      * configuration. If the load exceeds these thresholds for a specified amount of
-     * time, AWS OpsWorks Stacks starts a specified number of instances.</p>
+     * time, OpsWorks Stacks starts a specified number of instances.</p>
      */
     inline SetLoadBasedAutoScalingRequest& WithUpScaling(AutoScalingThresholds&& value) { SetUpScaling(std::move(value)); return *this;}
 
@@ -143,42 +143,42 @@ namespace Model
     /**
      * <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold
      * configuration. If the load falls below these thresholds for a specified amount
-     * of time, AWS OpsWorks Stacks stops a specified number of instances.</p>
+     * of time, OpsWorks Stacks stops a specified number of instances.</p>
      */
     inline const AutoScalingThresholds& GetDownScaling() const{ return m_downScaling; }
 
     /**
      * <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold
      * configuration. If the load falls below these thresholds for a specified amount
-     * of time, AWS OpsWorks Stacks stops a specified number of instances.</p>
+     * of time, OpsWorks Stacks stops a specified number of instances.</p>
      */
     inline bool DownScalingHasBeenSet() const { return m_downScalingHasBeenSet; }
 
     /**
      * <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold
      * configuration. If the load falls below these thresholds for a specified amount
-     * of time, AWS OpsWorks Stacks stops a specified number of instances.</p>
+     * of time, OpsWorks Stacks stops a specified number of instances.</p>
      */
     inline void SetDownScaling(const AutoScalingThresholds& value) { m_downScalingHasBeenSet = true; m_downScaling = value; }
 
     /**
      * <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold
      * configuration. If the load falls below these thresholds for a specified amount
-     * of time, AWS OpsWorks Stacks stops a specified number of instances.</p>
+     * of time, OpsWorks Stacks stops a specified number of instances.</p>
      */
     inline void SetDownScaling(AutoScalingThresholds&& value) { m_downScalingHasBeenSet = true; m_downScaling = std::move(value); }
 
     /**
      * <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold
      * configuration. If the load falls below these thresholds for a specified amount
-     * of time, AWS OpsWorks Stacks stops a specified number of instances.</p>
+     * of time, OpsWorks Stacks stops a specified number of instances.</p>
      */
     inline SetLoadBasedAutoScalingRequest& WithDownScaling(const AutoScalingThresholds& value) { SetDownScaling(value); return *this;}
 
     /**
      * <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold
      * configuration. If the load falls below these thresholds for a specified amount
-     * of time, AWS OpsWorks Stacks stops a specified number of instances.</p>
+     * of time, OpsWorks Stacks stops a specified number of instances.</p>
      */
     inline SetLoadBasedAutoScalingRequest& WithDownScaling(AutoScalingThresholds&& value) { SetDownScaling(std::move(value)); return *this;}
 

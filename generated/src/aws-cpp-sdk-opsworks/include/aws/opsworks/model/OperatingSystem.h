@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes supported operating systems in AWS OpsWorks Stacks.</p><p><h3>See
+   * <p>Describes supported operating systems in OpsWorks Stacks.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/OperatingSystem">AWS
    * API Reference</a></p>
@@ -41,99 +41,91 @@ namespace Model
 
 
     /**
-     * <p>The name of the operating system, such as <code>Amazon Linux
-     * 2018.03</code>.</p>
+     * <p>The name of the operating system, such as <code>Amazon Linux 2</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the operating system, such as <code>Amazon Linux
-     * 2018.03</code>.</p>
+     * <p>The name of the operating system, such as <code>Amazon Linux 2</code>.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the operating system, such as <code>Amazon Linux
-     * 2018.03</code>.</p>
+     * <p>The name of the operating system, such as <code>Amazon Linux 2</code>.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the operating system, such as <code>Amazon Linux
-     * 2018.03</code>.</p>
+     * <p>The name of the operating system, such as <code>Amazon Linux 2</code>.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the operating system, such as <code>Amazon Linux
-     * 2018.03</code>.</p>
+     * <p>The name of the operating system, such as <code>Amazon Linux 2</code>.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the operating system, such as <code>Amazon Linux
-     * 2018.03</code>.</p>
+     * <p>The name of the operating system, such as <code>Amazon Linux 2</code>.</p>
      */
     inline OperatingSystem& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the operating system, such as <code>Amazon Linux
-     * 2018.03</code>.</p>
+     * <p>The name of the operating system, such as <code>Amazon Linux 2</code>.</p>
      */
     inline OperatingSystem& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the operating system, such as <code>Amazon Linux
-     * 2018.03</code>.</p>
+     * <p>The name of the operating system, such as <code>Amazon Linux 2</code>.</p>
      */
     inline OperatingSystem& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
      * <p>The ID of a supported operating system, such as <code>Amazon Linux
-     * 2018.03</code>.</p>
+     * 2</code>.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
      * <p>The ID of a supported operating system, such as <code>Amazon Linux
-     * 2018.03</code>.</p>
+     * 2</code>.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>The ID of a supported operating system, such as <code>Amazon Linux
-     * 2018.03</code>.</p>
+     * 2</code>.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
      * <p>The ID of a supported operating system, such as <code>Amazon Linux
-     * 2018.03</code>.</p>
+     * 2</code>.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The ID of a supported operating system, such as <code>Amazon Linux
-     * 2018.03</code>.</p>
+     * 2</code>.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
      * <p>The ID of a supported operating system, such as <code>Amazon Linux
-     * 2018.03</code>.</p>
+     * 2</code>.</p>
      */
     inline OperatingSystem& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
      * <p>The ID of a supported operating system, such as <code>Amazon Linux
-     * 2018.03</code>.</p>
+     * 2</code>.</p>
      */
     inline OperatingSystem& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of a supported operating system, such as <code>Amazon Linux
-     * 2018.03</code>.</p>
+     * 2</code>.</p>
      */
     inline OperatingSystem& WithId(const char* value) { SetId(value); return *this;}
 
@@ -188,49 +180,49 @@ namespace Model
 
 
     /**
-     * <p>Supported configuration manager name and versions for an AWS OpsWorks Stacks
+     * <p>Supported configuration manager name and versions for an OpsWorks Stacks
      * operating system.</p>
      */
     inline const Aws::Vector<OperatingSystemConfigurationManager>& GetConfigurationManagers() const{ return m_configurationManagers; }
 
     /**
-     * <p>Supported configuration manager name and versions for an AWS OpsWorks Stacks
+     * <p>Supported configuration manager name and versions for an OpsWorks Stacks
      * operating system.</p>
      */
     inline bool ConfigurationManagersHasBeenSet() const { return m_configurationManagersHasBeenSet; }
 
     /**
-     * <p>Supported configuration manager name and versions for an AWS OpsWorks Stacks
+     * <p>Supported configuration manager name and versions for an OpsWorks Stacks
      * operating system.</p>
      */
     inline void SetConfigurationManagers(const Aws::Vector<OperatingSystemConfigurationManager>& value) { m_configurationManagersHasBeenSet = true; m_configurationManagers = value; }
 
     /**
-     * <p>Supported configuration manager name and versions for an AWS OpsWorks Stacks
+     * <p>Supported configuration manager name and versions for an OpsWorks Stacks
      * operating system.</p>
      */
     inline void SetConfigurationManagers(Aws::Vector<OperatingSystemConfigurationManager>&& value) { m_configurationManagersHasBeenSet = true; m_configurationManagers = std::move(value); }
 
     /**
-     * <p>Supported configuration manager name and versions for an AWS OpsWorks Stacks
+     * <p>Supported configuration manager name and versions for an OpsWorks Stacks
      * operating system.</p>
      */
     inline OperatingSystem& WithConfigurationManagers(const Aws::Vector<OperatingSystemConfigurationManager>& value) { SetConfigurationManagers(value); return *this;}
 
     /**
-     * <p>Supported configuration manager name and versions for an AWS OpsWorks Stacks
+     * <p>Supported configuration manager name and versions for an OpsWorks Stacks
      * operating system.</p>
      */
     inline OperatingSystem& WithConfigurationManagers(Aws::Vector<OperatingSystemConfigurationManager>&& value) { SetConfigurationManagers(std::move(value)); return *this;}
 
     /**
-     * <p>Supported configuration manager name and versions for an AWS OpsWorks Stacks
+     * <p>Supported configuration manager name and versions for an OpsWorks Stacks
      * operating system.</p>
      */
     inline OperatingSystem& AddConfigurationManagers(const OperatingSystemConfigurationManager& value) { m_configurationManagersHasBeenSet = true; m_configurationManagers.push_back(value); return *this; }
 
     /**
-     * <p>Supported configuration manager name and versions for an AWS OpsWorks Stacks
+     * <p>Supported configuration manager name and versions for an OpsWorks Stacks
      * operating system.</p>
      */
     inline OperatingSystem& AddConfigurationManagers(OperatingSystemConfigurationManager&& value) { m_configurationManagersHasBeenSet = true; m_configurationManagers.push_back(std::move(value)); return *this; }

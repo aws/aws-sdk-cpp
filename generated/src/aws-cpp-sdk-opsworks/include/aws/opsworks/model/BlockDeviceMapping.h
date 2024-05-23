@@ -44,64 +44,64 @@ namespace Model
     /**
      * <p>The device name that is exposed to the instance, such as
      * <code>/dev/sdh</code>. For the root device, you can use the explicit device name
-     * or you can set this parameter to <code>ROOT_DEVICE</code> and AWS OpsWorks
-     * Stacks will provide the correct device name.</p>
+     * or you can set this parameter to <code>ROOT_DEVICE</code> and OpsWorks Stacks
+     * will provide the correct device name.</p>
      */
     inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
 
     /**
      * <p>The device name that is exposed to the instance, such as
      * <code>/dev/sdh</code>. For the root device, you can use the explicit device name
-     * or you can set this parameter to <code>ROOT_DEVICE</code> and AWS OpsWorks
-     * Stacks will provide the correct device name.</p>
+     * or you can set this parameter to <code>ROOT_DEVICE</code> and OpsWorks Stacks
+     * will provide the correct device name.</p>
      */
     inline bool DeviceNameHasBeenSet() const { return m_deviceNameHasBeenSet; }
 
     /**
      * <p>The device name that is exposed to the instance, such as
      * <code>/dev/sdh</code>. For the root device, you can use the explicit device name
-     * or you can set this parameter to <code>ROOT_DEVICE</code> and AWS OpsWorks
-     * Stacks will provide the correct device name.</p>
+     * or you can set this parameter to <code>ROOT_DEVICE</code> and OpsWorks Stacks
+     * will provide the correct device name.</p>
      */
     inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
 
     /**
      * <p>The device name that is exposed to the instance, such as
      * <code>/dev/sdh</code>. For the root device, you can use the explicit device name
-     * or you can set this parameter to <code>ROOT_DEVICE</code> and AWS OpsWorks
-     * Stacks will provide the correct device name.</p>
+     * or you can set this parameter to <code>ROOT_DEVICE</code> and OpsWorks Stacks
+     * will provide the correct device name.</p>
      */
     inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::move(value); }
 
     /**
      * <p>The device name that is exposed to the instance, such as
      * <code>/dev/sdh</code>. For the root device, you can use the explicit device name
-     * or you can set this parameter to <code>ROOT_DEVICE</code> and AWS OpsWorks
-     * Stacks will provide the correct device name.</p>
+     * or you can set this parameter to <code>ROOT_DEVICE</code> and OpsWorks Stacks
+     * will provide the correct device name.</p>
      */
     inline void SetDeviceName(const char* value) { m_deviceNameHasBeenSet = true; m_deviceName.assign(value); }
 
     /**
      * <p>The device name that is exposed to the instance, such as
      * <code>/dev/sdh</code>. For the root device, you can use the explicit device name
-     * or you can set this parameter to <code>ROOT_DEVICE</code> and AWS OpsWorks
-     * Stacks will provide the correct device name.</p>
+     * or you can set this parameter to <code>ROOT_DEVICE</code> and OpsWorks Stacks
+     * will provide the correct device name.</p>
      */
     inline BlockDeviceMapping& WithDeviceName(const Aws::String& value) { SetDeviceName(value); return *this;}
 
     /**
      * <p>The device name that is exposed to the instance, such as
      * <code>/dev/sdh</code>. For the root device, you can use the explicit device name
-     * or you can set this parameter to <code>ROOT_DEVICE</code> and AWS OpsWorks
-     * Stacks will provide the correct device name.</p>
+     * or you can set this parameter to <code>ROOT_DEVICE</code> and OpsWorks Stacks
+     * will provide the correct device name.</p>
      */
     inline BlockDeviceMapping& WithDeviceName(Aws::String&& value) { SetDeviceName(std::move(value)); return *this;}
 
     /**
      * <p>The device name that is exposed to the instance, such as
      * <code>/dev/sdh</code>. For the root device, you can use the explicit device name
-     * or you can set this parameter to <code>ROOT_DEVICE</code> and AWS OpsWorks
-     * Stacks will provide the correct device name.</p>
+     * or you can set this parameter to <code>ROOT_DEVICE</code> and OpsWorks Stacks
+     * will provide the correct device name.</p>
      */
     inline BlockDeviceMapping& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
 
