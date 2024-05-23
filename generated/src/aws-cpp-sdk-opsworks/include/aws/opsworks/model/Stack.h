@@ -85,42 +85,42 @@ namespace Model
 
 
     /**
-     * <p>The stack name.</p>
+     * <p>The stack name. Stack names can be a maximum of 64 characters.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The stack name.</p>
+     * <p>The stack name. Stack names can be a maximum of 64 characters.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The stack name.</p>
+     * <p>The stack name. Stack names can be a maximum of 64 characters.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The stack name.</p>
+     * <p>The stack name. Stack names can be a maximum of 64 characters.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The stack name.</p>
+     * <p>The stack name. Stack names can be a maximum of 64 characters.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The stack name.</p>
+     * <p>The stack name. Stack names can be a maximum of 64 characters.</p>
      */
     inline Stack& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The stack name.</p>
+     * <p>The stack name. Stack names can be a maximum of 64 characters.</p>
      */
     inline Stack& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The stack name.</p>
+     * <p>The stack name. Stack names can be a maximum of 64 characters.</p>
      */
     inline Stack& WithName(const char* value) { SetName(value); return *this;}
 
@@ -167,64 +167,64 @@ namespace Model
 
 
     /**
-     * <p>The stack AWS region, such as "ap-northeast-2". For more information about
-     * AWS regions, see <a
+     * <p>The stack Amazon Web Services Region, such as <code>ap-northeast-2</code>.
+     * For more information about Amazon Web Services Regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The stack AWS region, such as "ap-northeast-2". For more information about
-     * AWS regions, see <a
+     * <p>The stack Amazon Web Services Region, such as <code>ap-northeast-2</code>.
+     * For more information about Amazon Web Services Regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>The stack AWS region, such as "ap-northeast-2". For more information about
-     * AWS regions, see <a
+     * <p>The stack Amazon Web Services Region, such as <code>ap-northeast-2</code>.
+     * For more information about Amazon Web Services Regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The stack AWS region, such as "ap-northeast-2". For more information about
-     * AWS regions, see <a
+     * <p>The stack Amazon Web Services Region, such as <code>ap-northeast-2</code>.
+     * For more information about Amazon Web Services Regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>The stack AWS region, such as "ap-northeast-2". For more information about
-     * AWS regions, see <a
+     * <p>The stack Amazon Web Services Region, such as <code>ap-northeast-2</code>.
+     * For more information about Amazon Web Services Regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The stack AWS region, such as "ap-northeast-2". For more information about
-     * AWS regions, see <a
+     * <p>The stack Amazon Web Services Region, such as <code>ap-northeast-2</code>.
+     * For more information about Amazon Web Services Regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline Stack& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The stack AWS region, such as "ap-northeast-2". For more information about
-     * AWS regions, see <a
+     * <p>The stack Amazon Web Services Region, such as <code>ap-northeast-2</code>.
+     * For more information about Amazon Web Services Regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline Stack& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The stack AWS region, such as "ap-northeast-2". For more information about
-     * AWS regions, see <a
+     * <p>The stack Amazon Web Services Region, such as <code>ap-northeast-2</code>.
+     * For more information about Amazon Web Services Regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
@@ -334,42 +334,42 @@ namespace Model
 
 
     /**
-     * <p>The stack AWS Identity and Access Management (IAM) role.</p>
+     * <p>The stack Identity and Access Management (IAM) role.</p>
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
 
     /**
-     * <p>The stack AWS Identity and Access Management (IAM) role.</p>
+     * <p>The stack Identity and Access Management (IAM) role.</p>
      */
     inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
 
     /**
-     * <p>The stack AWS Identity and Access Management (IAM) role.</p>
+     * <p>The stack Identity and Access Management (IAM) role.</p>
      */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
     /**
-     * <p>The stack AWS Identity and Access Management (IAM) role.</p>
+     * <p>The stack Identity and Access Management (IAM) role.</p>
      */
     inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
 
     /**
-     * <p>The stack AWS Identity and Access Management (IAM) role.</p>
+     * <p>The stack Identity and Access Management (IAM) role.</p>
      */
     inline void SetServiceRoleArn(const char* value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn.assign(value); }
 
     /**
-     * <p>The stack AWS Identity and Access Management (IAM) role.</p>
+     * <p>The stack Identity and Access Management (IAM) role.</p>
      */
     inline Stack& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
 
     /**
-     * <p>The stack AWS Identity and Access Management (IAM) role.</p>
+     * <p>The stack Identity and Access Management (IAM) role.</p>
      */
     inline Stack& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The stack AWS Identity and Access Management (IAM) role.</p>
+     * <p>The stack Identity and Access Management (IAM) role.</p>
      */
     inline Stack& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
@@ -818,25 +818,25 @@ namespace Model
 
 
     /**
-     * <p>Whether the stack automatically associates the AWS OpsWorks Stacks built-in
+     * <p>Whether the stack automatically associates the OpsWorks Stacks built-in
      * security groups with the stack's layers.</p>
      */
     inline bool GetUseOpsworksSecurityGroups() const{ return m_useOpsworksSecurityGroups; }
 
     /**
-     * <p>Whether the stack automatically associates the AWS OpsWorks Stacks built-in
+     * <p>Whether the stack automatically associates the OpsWorks Stacks built-in
      * security groups with the stack's layers.</p>
      */
     inline bool UseOpsworksSecurityGroupsHasBeenSet() const { return m_useOpsworksSecurityGroupsHasBeenSet; }
 
     /**
-     * <p>Whether the stack automatically associates the AWS OpsWorks Stacks built-in
+     * <p>Whether the stack automatically associates the OpsWorks Stacks built-in
      * security groups with the stack's layers.</p>
      */
     inline void SetUseOpsworksSecurityGroups(bool value) { m_useOpsworksSecurityGroupsHasBeenSet = true; m_useOpsworksSecurityGroups = value; }
 
     /**
-     * <p>Whether the stack automatically associates the AWS OpsWorks Stacks built-in
+     * <p>Whether the stack automatically associates the OpsWorks Stacks built-in
      * security groups with the stack's layers.</p>
      */
     inline Stack& WithUseOpsworksSecurityGroups(bool value) { SetUseOpsworksSecurityGroups(value); return *this;}
@@ -998,7 +998,7 @@ namespace Model
      * in the stack, but you can override it when you create an instance. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.</p>
+     * for the Root Device</a>. </p>
      */
     inline const RootDeviceType& GetDefaultRootDeviceType() const{ return m_defaultRootDeviceType; }
 
@@ -1007,7 +1007,7 @@ namespace Model
      * in the stack, but you can override it when you create an instance. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.</p>
+     * for the Root Device</a>. </p>
      */
     inline bool DefaultRootDeviceTypeHasBeenSet() const { return m_defaultRootDeviceTypeHasBeenSet; }
 
@@ -1016,7 +1016,7 @@ namespace Model
      * in the stack, but you can override it when you create an instance. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.</p>
+     * for the Root Device</a>. </p>
      */
     inline void SetDefaultRootDeviceType(const RootDeviceType& value) { m_defaultRootDeviceTypeHasBeenSet = true; m_defaultRootDeviceType = value; }
 
@@ -1025,7 +1025,7 @@ namespace Model
      * in the stack, but you can override it when you create an instance. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.</p>
+     * for the Root Device</a>. </p>
      */
     inline void SetDefaultRootDeviceType(RootDeviceType&& value) { m_defaultRootDeviceTypeHasBeenSet = true; m_defaultRootDeviceType = std::move(value); }
 
@@ -1034,7 +1034,7 @@ namespace Model
      * in the stack, but you can override it when you create an instance. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.</p>
+     * for the Root Device</a>. </p>
      */
     inline Stack& WithDefaultRootDeviceType(const RootDeviceType& value) { SetDefaultRootDeviceType(value); return *this;}
 
@@ -1043,7 +1043,7 @@ namespace Model
      * in the stack, but you can override it when you create an instance. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.</p>
+     * for the Root Device</a>. </p>
      */
     inline Stack& WithDefaultRootDeviceType(RootDeviceType&& value) { SetDefaultRootDeviceType(std::move(value)); return *this;}
 

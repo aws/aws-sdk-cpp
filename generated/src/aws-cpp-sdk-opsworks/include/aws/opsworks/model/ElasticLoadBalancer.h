@@ -39,83 +39,83 @@ namespace Model
 
 
     /**
-     * <p>The Elastic Load Balancing instance's name.</p>
+     * <p>The Elastic Load Balancing instance name.</p>
      */
     inline const Aws::String& GetElasticLoadBalancerName() const{ return m_elasticLoadBalancerName; }
 
     /**
-     * <p>The Elastic Load Balancing instance's name.</p>
+     * <p>The Elastic Load Balancing instance name.</p>
      */
     inline bool ElasticLoadBalancerNameHasBeenSet() const { return m_elasticLoadBalancerNameHasBeenSet; }
 
     /**
-     * <p>The Elastic Load Balancing instance's name.</p>
+     * <p>The Elastic Load Balancing instance name.</p>
      */
     inline void SetElasticLoadBalancerName(const Aws::String& value) { m_elasticLoadBalancerNameHasBeenSet = true; m_elasticLoadBalancerName = value; }
 
     /**
-     * <p>The Elastic Load Balancing instance's name.</p>
+     * <p>The Elastic Load Balancing instance name.</p>
      */
     inline void SetElasticLoadBalancerName(Aws::String&& value) { m_elasticLoadBalancerNameHasBeenSet = true; m_elasticLoadBalancerName = std::move(value); }
 
     /**
-     * <p>The Elastic Load Balancing instance's name.</p>
+     * <p>The Elastic Load Balancing instance name.</p>
      */
     inline void SetElasticLoadBalancerName(const char* value) { m_elasticLoadBalancerNameHasBeenSet = true; m_elasticLoadBalancerName.assign(value); }
 
     /**
-     * <p>The Elastic Load Balancing instance's name.</p>
+     * <p>The Elastic Load Balancing instance name.</p>
      */
     inline ElasticLoadBalancer& WithElasticLoadBalancerName(const Aws::String& value) { SetElasticLoadBalancerName(value); return *this;}
 
     /**
-     * <p>The Elastic Load Balancing instance's name.</p>
+     * <p>The Elastic Load Balancing instance name.</p>
      */
     inline ElasticLoadBalancer& WithElasticLoadBalancerName(Aws::String&& value) { SetElasticLoadBalancerName(std::move(value)); return *this;}
 
     /**
-     * <p>The Elastic Load Balancing instance's name.</p>
+     * <p>The Elastic Load Balancing instance name.</p>
      */
     inline ElasticLoadBalancer& WithElasticLoadBalancerName(const char* value) { SetElasticLoadBalancerName(value); return *this;}
 
 
     /**
-     * <p>The instance's AWS region.</p>
+     * <p>The instance's Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The instance's AWS region.</p>
+     * <p>The instance's Amazon Web Services Region.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>The instance's AWS region.</p>
+     * <p>The instance's Amazon Web Services Region.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The instance's AWS region.</p>
+     * <p>The instance's Amazon Web Services Region.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>The instance's AWS region.</p>
+     * <p>The instance's Amazon Web Services Region.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The instance's AWS region.</p>
+     * <p>The instance's Amazon Web Services Region.</p>
      */
     inline ElasticLoadBalancer& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The instance's AWS region.</p>
+     * <p>The instance's Amazon Web Services Region.</p>
      */
     inline ElasticLoadBalancer& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The instance's AWS region.</p>
+     * <p>The instance's Amazon Web Services Region.</p>
      */
     inline ElasticLoadBalancer& WithRegion(const char* value) { SetRegion(value); return *this;}
 
@@ -162,83 +162,83 @@ namespace Model
 
 
     /**
-     * <p>The ID of the stack that the instance is associated with.</p>
+     * <p>The ID of the stack with which the instance is associated.</p>
      */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
 
     /**
-     * <p>The ID of the stack that the instance is associated with.</p>
+     * <p>The ID of the stack with which the instance is associated.</p>
      */
     inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
 
     /**
-     * <p>The ID of the stack that the instance is associated with.</p>
+     * <p>The ID of the stack with which the instance is associated.</p>
      */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /**
-     * <p>The ID of the stack that the instance is associated with.</p>
+     * <p>The ID of the stack with which the instance is associated.</p>
      */
     inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
 
     /**
-     * <p>The ID of the stack that the instance is associated with.</p>
+     * <p>The ID of the stack with which the instance is associated.</p>
      */
     inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
 
     /**
-     * <p>The ID of the stack that the instance is associated with.</p>
+     * <p>The ID of the stack with which the instance is associated.</p>
      */
     inline ElasticLoadBalancer& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
 
     /**
-     * <p>The ID of the stack that the instance is associated with.</p>
+     * <p>The ID of the stack with which the instance is associated.</p>
      */
     inline ElasticLoadBalancer& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the stack that the instance is associated with.</p>
+     * <p>The ID of the stack with which the instance is associated.</p>
      */
     inline ElasticLoadBalancer& WithStackId(const char* value) { SetStackId(value); return *this;}
 
 
     /**
-     * <p>The ID of the layer that the instance is attached to.</p>
+     * <p>The ID of the layer to which the instance is attached.</p>
      */
     inline const Aws::String& GetLayerId() const{ return m_layerId; }
 
     /**
-     * <p>The ID of the layer that the instance is attached to.</p>
+     * <p>The ID of the layer to which the instance is attached.</p>
      */
     inline bool LayerIdHasBeenSet() const { return m_layerIdHasBeenSet; }
 
     /**
-     * <p>The ID of the layer that the instance is attached to.</p>
+     * <p>The ID of the layer to which the instance is attached.</p>
      */
     inline void SetLayerId(const Aws::String& value) { m_layerIdHasBeenSet = true; m_layerId = value; }
 
     /**
-     * <p>The ID of the layer that the instance is attached to.</p>
+     * <p>The ID of the layer to which the instance is attached.</p>
      */
     inline void SetLayerId(Aws::String&& value) { m_layerIdHasBeenSet = true; m_layerId = std::move(value); }
 
     /**
-     * <p>The ID of the layer that the instance is attached to.</p>
+     * <p>The ID of the layer to which the instance is attached.</p>
      */
     inline void SetLayerId(const char* value) { m_layerIdHasBeenSet = true; m_layerId.assign(value); }
 
     /**
-     * <p>The ID of the layer that the instance is attached to.</p>
+     * <p>The ID of the layer to which the instance is attached.</p>
      */
     inline ElasticLoadBalancer& WithLayerId(const Aws::String& value) { SetLayerId(value); return *this;}
 
     /**
-     * <p>The ID of the layer that the instance is attached to.</p>
+     * <p>The ID of the layer to which the instance is attached.</p>
      */
     inline ElasticLoadBalancer& WithLayerId(Aws::String&& value) { SetLayerId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the layer that the instance is attached to.</p>
+     * <p>The ID of the layer to which the instance is attached.</p>
      */
     inline ElasticLoadBalancer& WithLayerId(const char* value) { SetLayerId(value); return *this;}
 
@@ -377,56 +377,56 @@ namespace Model
 
 
     /**
-     * <p>A list of the EC2 instances that the Elastic Load Balancing instance is
-     * managing traffic for.</p>
+     * <p>A list of the EC2 instances for which the Elastic Load Balancing instance is
+     * managing traffic.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEc2InstanceIds() const{ return m_ec2InstanceIds; }
 
     /**
-     * <p>A list of the EC2 instances that the Elastic Load Balancing instance is
-     * managing traffic for.</p>
+     * <p>A list of the EC2 instances for which the Elastic Load Balancing instance is
+     * managing traffic.</p>
      */
     inline bool Ec2InstanceIdsHasBeenSet() const { return m_ec2InstanceIdsHasBeenSet; }
 
     /**
-     * <p>A list of the EC2 instances that the Elastic Load Balancing instance is
-     * managing traffic for.</p>
+     * <p>A list of the EC2 instances for which the Elastic Load Balancing instance is
+     * managing traffic.</p>
      */
     inline void SetEc2InstanceIds(const Aws::Vector<Aws::String>& value) { m_ec2InstanceIdsHasBeenSet = true; m_ec2InstanceIds = value; }
 
     /**
-     * <p>A list of the EC2 instances that the Elastic Load Balancing instance is
-     * managing traffic for.</p>
+     * <p>A list of the EC2 instances for which the Elastic Load Balancing instance is
+     * managing traffic.</p>
      */
     inline void SetEc2InstanceIds(Aws::Vector<Aws::String>&& value) { m_ec2InstanceIdsHasBeenSet = true; m_ec2InstanceIds = std::move(value); }
 
     /**
-     * <p>A list of the EC2 instances that the Elastic Load Balancing instance is
-     * managing traffic for.</p>
+     * <p>A list of the EC2 instances for which the Elastic Load Balancing instance is
+     * managing traffic.</p>
      */
     inline ElasticLoadBalancer& WithEc2InstanceIds(const Aws::Vector<Aws::String>& value) { SetEc2InstanceIds(value); return *this;}
 
     /**
-     * <p>A list of the EC2 instances that the Elastic Load Balancing instance is
-     * managing traffic for.</p>
+     * <p>A list of the EC2 instances for which the Elastic Load Balancing instance is
+     * managing traffic.</p>
      */
     inline ElasticLoadBalancer& WithEc2InstanceIds(Aws::Vector<Aws::String>&& value) { SetEc2InstanceIds(std::move(value)); return *this;}
 
     /**
-     * <p>A list of the EC2 instances that the Elastic Load Balancing instance is
-     * managing traffic for.</p>
+     * <p>A list of the EC2 instances for which the Elastic Load Balancing instance is
+     * managing traffic.</p>
      */
     inline ElasticLoadBalancer& AddEc2InstanceIds(const Aws::String& value) { m_ec2InstanceIdsHasBeenSet = true; m_ec2InstanceIds.push_back(value); return *this; }
 
     /**
-     * <p>A list of the EC2 instances that the Elastic Load Balancing instance is
-     * managing traffic for.</p>
+     * <p>A list of the EC2 instances for which the Elastic Load Balancing instance is
+     * managing traffic.</p>
      */
     inline ElasticLoadBalancer& AddEc2InstanceIds(Aws::String&& value) { m_ec2InstanceIdsHasBeenSet = true; m_ec2InstanceIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of the EC2 instances that the Elastic Load Balancing instance is
-     * managing traffic for.</p>
+     * <p>A list of the EC2 instances for which the Elastic Load Balancing instance is
+     * managing traffic.</p>
      */
     inline ElasticLoadBalancer& AddEc2InstanceIds(const char* value) { m_ec2InstanceIdsHasBeenSet = true; m_ec2InstanceIds.push_back(value); return *this; }
 

@@ -14,6 +14,7 @@
 #include <aws/emr-serverless/model/NetworkConfiguration.h>
 #include <aws/emr-serverless/model/Architecture.h>
 #include <aws/emr-serverless/model/ImageConfigurationInput.h>
+#include <aws/emr-serverless/model/InteractiveConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/emr-serverless/model/MonitoringConfiguration.h>
 #include <aws/emr-serverless/model/InitialCapacityConfig.h>
@@ -546,6 +547,43 @@ namespace Model
 
 
     /**
+     * <p>The interactive configuration object that contains new interactive use cases
+     * when the application is updated.</p>
+     */
+    inline const InteractiveConfiguration& GetInteractiveConfiguration() const{ return m_interactiveConfiguration; }
+
+    /**
+     * <p>The interactive configuration object that contains new interactive use cases
+     * when the application is updated.</p>
+     */
+    inline bool InteractiveConfigurationHasBeenSet() const { return m_interactiveConfigurationHasBeenSet; }
+
+    /**
+     * <p>The interactive configuration object that contains new interactive use cases
+     * when the application is updated.</p>
+     */
+    inline void SetInteractiveConfiguration(const InteractiveConfiguration& value) { m_interactiveConfigurationHasBeenSet = true; m_interactiveConfiguration = value; }
+
+    /**
+     * <p>The interactive configuration object that contains new interactive use cases
+     * when the application is updated.</p>
+     */
+    inline void SetInteractiveConfiguration(InteractiveConfiguration&& value) { m_interactiveConfigurationHasBeenSet = true; m_interactiveConfiguration = std::move(value); }
+
+    /**
+     * <p>The interactive configuration object that contains new interactive use cases
+     * when the application is updated.</p>
+     */
+    inline UpdateApplicationRequest& WithInteractiveConfiguration(const InteractiveConfiguration& value) { SetInteractiveConfiguration(value); return *this;}
+
+    /**
+     * <p>The interactive configuration object that contains new interactive use cases
+     * when the application is updated.</p>
+     */
+    inline UpdateApplicationRequest& WithInteractiveConfiguration(InteractiveConfiguration&& value) { SetInteractiveConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>The Amazon EMR release label for the application. You can change the release
      * label to use a different release of Amazon EMR.</p>
      */
@@ -728,6 +766,9 @@ namespace Model
 
     Aws::Map<Aws::String, WorkerTypeSpecificationInput> m_workerTypeSpecifications;
     bool m_workerTypeSpecificationsHasBeenSet = false;
+
+    InteractiveConfiguration m_interactiveConfiguration;
+    bool m_interactiveConfigurationHasBeenSet = false;
 
     Aws::String m_releaseLabel;
     bool m_releaseLabelHasBeenSet = false;

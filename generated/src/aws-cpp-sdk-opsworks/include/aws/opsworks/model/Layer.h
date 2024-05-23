@@ -200,42 +200,42 @@ namespace Model
 
 
     /**
-     * <p>The layer name.</p>
+     * <p>The layer name. Layer names can be a maximum of 32 characters.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The layer name.</p>
+     * <p>The layer name. Layer names can be a maximum of 32 characters.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The layer name.</p>
+     * <p>The layer name. Layer names can be a maximum of 32 characters.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The layer name.</p>
+     * <p>The layer name. Layer names can be a maximum of 32 characters.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The layer name.</p>
+     * <p>The layer name. Layer names can be a maximum of 32 characters.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The layer name.</p>
+     * <p>The layer name. Layer names can be a maximum of 32 characters.</p>
      */
     inline Layer& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The layer name.</p>
+     * <p>The layer name. Layer names can be a maximum of 32 characters.</p>
      */
     inline Layer& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The layer name.</p>
+     * <p>The layer name. Layer names can be a maximum of 32 characters.</p>
      */
     inline Layer& WithName(const char* value) { SetName(value); return *this;}
 
@@ -283,108 +283,108 @@ namespace Model
 
     /**
      * <p>The layer attributes.</p> <p>For the <code>HaproxyStatsPassword</code>,
-     * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS
+     * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes,
      * OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual
-     * value</p> <p>For an ECS Cluster layer, AWS OpsWorks Stacks the
+     * value</p> <p>For an ECS Cluster layer, OpsWorks Stacks the
      * <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
      */
     inline const Aws::Map<LayerAttributesKeys, Aws::String>& GetAttributes() const{ return m_attributes; }
 
     /**
      * <p>The layer attributes.</p> <p>For the <code>HaproxyStatsPassword</code>,
-     * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS
+     * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes,
      * OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual
-     * value</p> <p>For an ECS Cluster layer, AWS OpsWorks Stacks the
+     * value</p> <p>For an ECS Cluster layer, OpsWorks Stacks the
      * <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
      */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>The layer attributes.</p> <p>For the <code>HaproxyStatsPassword</code>,
-     * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS
+     * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes,
      * OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual
-     * value</p> <p>For an ECS Cluster layer, AWS OpsWorks Stacks the
+     * value</p> <p>For an ECS Cluster layer, OpsWorks Stacks the
      * <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
      */
     inline void SetAttributes(const Aws::Map<LayerAttributesKeys, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
      * <p>The layer attributes.</p> <p>For the <code>HaproxyStatsPassword</code>,
-     * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS
+     * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes,
      * OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual
-     * value</p> <p>For an ECS Cluster layer, AWS OpsWorks Stacks the
+     * value</p> <p>For an ECS Cluster layer, OpsWorks Stacks the
      * <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
      */
     inline void SetAttributes(Aws::Map<LayerAttributesKeys, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
      * <p>The layer attributes.</p> <p>For the <code>HaproxyStatsPassword</code>,
-     * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS
+     * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes,
      * OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual
-     * value</p> <p>For an ECS Cluster layer, AWS OpsWorks Stacks the
+     * value</p> <p>For an ECS Cluster layer, OpsWorks Stacks the
      * <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
      */
     inline Layer& WithAttributes(const Aws::Map<LayerAttributesKeys, Aws::String>& value) { SetAttributes(value); return *this;}
 
     /**
      * <p>The layer attributes.</p> <p>For the <code>HaproxyStatsPassword</code>,
-     * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS
+     * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes,
      * OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual
-     * value</p> <p>For an ECS Cluster layer, AWS OpsWorks Stacks the
+     * value</p> <p>For an ECS Cluster layer, OpsWorks Stacks the
      * <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
      */
     inline Layer& WithAttributes(Aws::Map<LayerAttributesKeys, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>The layer attributes.</p> <p>For the <code>HaproxyStatsPassword</code>,
-     * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS
+     * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes,
      * OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual
-     * value</p> <p>For an ECS Cluster layer, AWS OpsWorks Stacks the
+     * value</p> <p>For an ECS Cluster layer, OpsWorks Stacks the
      * <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
      */
     inline Layer& AddAttributes(const LayerAttributesKeys& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
     /**
      * <p>The layer attributes.</p> <p>For the <code>HaproxyStatsPassword</code>,
-     * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS
+     * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes,
      * OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual
-     * value</p> <p>For an ECS Cluster layer, AWS OpsWorks Stacks the
+     * value</p> <p>For an ECS Cluster layer, OpsWorks Stacks the
      * <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
      */
     inline Layer& AddAttributes(LayerAttributesKeys&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The layer attributes.</p> <p>For the <code>HaproxyStatsPassword</code>,
-     * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS
+     * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes,
      * OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual
-     * value</p> <p>For an ECS Cluster layer, AWS OpsWorks Stacks the
+     * value</p> <p>For an ECS Cluster layer, OpsWorks Stacks the
      * <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
      */
     inline Layer& AddAttributes(const LayerAttributesKeys& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The layer attributes.</p> <p>For the <code>HaproxyStatsPassword</code>,
-     * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS
+     * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes,
      * OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual
-     * value</p> <p>For an ECS Cluster layer, AWS OpsWorks Stacks the
+     * value</p> <p>For an ECS Cluster layer, OpsWorks Stacks the
      * <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
      */
     inline Layer& AddAttributes(LayerAttributesKeys&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The layer attributes.</p> <p>For the <code>HaproxyStatsPassword</code>,
-     * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS
+     * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes,
      * OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual
-     * value</p> <p>For an ECS Cluster layer, AWS OpsWorks Stacks the
+     * value</p> <p>For an ECS Cluster layer, OpsWorks Stacks the
      * <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
      */
     inline Layer& AddAttributes(LayerAttributesKeys&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The layer attributes.</p> <p>For the <code>HaproxyStatsPassword</code>,
-     * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS
+     * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes,
      * OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual
-     * value</p> <p>For an ECS Cluster layer, AWS OpsWorks Stacks the
+     * value</p> <p>For an ECS Cluster layer, OpsWorks Stacks the
      * <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
      */
     inline Layer& AddAttributes(const LayerAttributesKeys& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
@@ -823,11 +823,11 @@ namespace Model
 
 
     /**
-     * <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>,
+     * <p>OpsWorks Stacks supports five lifecycle events: <b>setup</b>,
      * <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For
-     * each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event.
-     * You can also provide custom recipes for any or all layers and events. AWS
-     * OpsWorks Stacks runs custom event recipes after the standard recipes.
+     * each layer, OpsWorks Stacks runs a set of standard recipes for each event. You
+     * can also provide custom recipes for any or all layers and events. OpsWorks
+     * Stacks runs custom event recipes after the standard recipes.
      * <code>LayerCustomRecipes</code> specifies the custom recipes for a particular
      * layer to be run in response to each of the five events.</p> <p>To specify a
      * recipe, use the cookbook's directory name in the repository followed by two
@@ -839,11 +839,11 @@ namespace Model
     inline const Recipes& GetDefaultRecipes() const{ return m_defaultRecipes; }
 
     /**
-     * <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>,
+     * <p>OpsWorks Stacks supports five lifecycle events: <b>setup</b>,
      * <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For
-     * each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event.
-     * You can also provide custom recipes for any or all layers and events. AWS
-     * OpsWorks Stacks runs custom event recipes after the standard recipes.
+     * each layer, OpsWorks Stacks runs a set of standard recipes for each event. You
+     * can also provide custom recipes for any or all layers and events. OpsWorks
+     * Stacks runs custom event recipes after the standard recipes.
      * <code>LayerCustomRecipes</code> specifies the custom recipes for a particular
      * layer to be run in response to each of the five events.</p> <p>To specify a
      * recipe, use the cookbook's directory name in the repository followed by two
@@ -855,11 +855,11 @@ namespace Model
     inline bool DefaultRecipesHasBeenSet() const { return m_defaultRecipesHasBeenSet; }
 
     /**
-     * <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>,
+     * <p>OpsWorks Stacks supports five lifecycle events: <b>setup</b>,
      * <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For
-     * each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event.
-     * You can also provide custom recipes for any or all layers and events. AWS
-     * OpsWorks Stacks runs custom event recipes after the standard recipes.
+     * each layer, OpsWorks Stacks runs a set of standard recipes for each event. You
+     * can also provide custom recipes for any or all layers and events. OpsWorks
+     * Stacks runs custom event recipes after the standard recipes.
      * <code>LayerCustomRecipes</code> specifies the custom recipes for a particular
      * layer to be run in response to each of the five events.</p> <p>To specify a
      * recipe, use the cookbook's directory name in the repository followed by two
@@ -871,11 +871,11 @@ namespace Model
     inline void SetDefaultRecipes(const Recipes& value) { m_defaultRecipesHasBeenSet = true; m_defaultRecipes = value; }
 
     /**
-     * <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>,
+     * <p>OpsWorks Stacks supports five lifecycle events: <b>setup</b>,
      * <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For
-     * each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event.
-     * You can also provide custom recipes for any or all layers and events. AWS
-     * OpsWorks Stacks runs custom event recipes after the standard recipes.
+     * each layer, OpsWorks Stacks runs a set of standard recipes for each event. You
+     * can also provide custom recipes for any or all layers and events. OpsWorks
+     * Stacks runs custom event recipes after the standard recipes.
      * <code>LayerCustomRecipes</code> specifies the custom recipes for a particular
      * layer to be run in response to each of the five events.</p> <p>To specify a
      * recipe, use the cookbook's directory name in the repository followed by two
@@ -887,11 +887,11 @@ namespace Model
     inline void SetDefaultRecipes(Recipes&& value) { m_defaultRecipesHasBeenSet = true; m_defaultRecipes = std::move(value); }
 
     /**
-     * <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>,
+     * <p>OpsWorks Stacks supports five lifecycle events: <b>setup</b>,
      * <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For
-     * each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event.
-     * You can also provide custom recipes for any or all layers and events. AWS
-     * OpsWorks Stacks runs custom event recipes after the standard recipes.
+     * each layer, OpsWorks Stacks runs a set of standard recipes for each event. You
+     * can also provide custom recipes for any or all layers and events. OpsWorks
+     * Stacks runs custom event recipes after the standard recipes.
      * <code>LayerCustomRecipes</code> specifies the custom recipes for a particular
      * layer to be run in response to each of the five events.</p> <p>To specify a
      * recipe, use the cookbook's directory name in the repository followed by two
@@ -903,11 +903,11 @@ namespace Model
     inline Layer& WithDefaultRecipes(const Recipes& value) { SetDefaultRecipes(value); return *this;}
 
     /**
-     * <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>,
+     * <p>OpsWorks Stacks supports five lifecycle events: <b>setup</b>,
      * <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For
-     * each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event.
-     * You can also provide custom recipes for any or all layers and events. AWS
-     * OpsWorks Stacks runs custom event recipes after the standard recipes.
+     * each layer, OpsWorks Stacks runs a set of standard recipes for each event. You
+     * can also provide custom recipes for any or all layers and events. OpsWorks
+     * Stacks runs custom event recipes after the standard recipes.
      * <code>LayerCustomRecipes</code> specifies the custom recipes for a particular
      * layer to be run in response to each of the five events.</p> <p>To specify a
      * recipe, use the cookbook's directory name in the repository followed by two

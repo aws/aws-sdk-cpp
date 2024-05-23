@@ -16,6 +16,7 @@
 #include <aws/emr-serverless/model/ImageConfigurationInput.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/emr-serverless/model/MonitoringConfiguration.h>
+#include <aws/emr-serverless/model/InteractiveConfiguration.h>
 #include <aws/emr-serverless/model/InitialCapacityConfig.h>
 #include <aws/emr-serverless/model/WorkerTypeSpecificationInput.h>
 #include <aws/emr-serverless/model/Configuration.h>
@@ -808,6 +809,43 @@ namespace Model
      */
     inline CreateApplicationRequest& WithMonitoringConfiguration(MonitoringConfiguration&& value) { SetMonitoringConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The interactive configuration object that enables the interactive use cases
+     * to use when running an application.</p>
+     */
+    inline const InteractiveConfiguration& GetInteractiveConfiguration() const{ return m_interactiveConfiguration; }
+
+    /**
+     * <p>The interactive configuration object that enables the interactive use cases
+     * to use when running an application.</p>
+     */
+    inline bool InteractiveConfigurationHasBeenSet() const { return m_interactiveConfigurationHasBeenSet; }
+
+    /**
+     * <p>The interactive configuration object that enables the interactive use cases
+     * to use when running an application.</p>
+     */
+    inline void SetInteractiveConfiguration(const InteractiveConfiguration& value) { m_interactiveConfigurationHasBeenSet = true; m_interactiveConfiguration = value; }
+
+    /**
+     * <p>The interactive configuration object that enables the interactive use cases
+     * to use when running an application.</p>
+     */
+    inline void SetInteractiveConfiguration(InteractiveConfiguration&& value) { m_interactiveConfigurationHasBeenSet = true; m_interactiveConfiguration = std::move(value); }
+
+    /**
+     * <p>The interactive configuration object that enables the interactive use cases
+     * to use when running an application.</p>
+     */
+    inline CreateApplicationRequest& WithInteractiveConfiguration(const InteractiveConfiguration& value) { SetInteractiveConfiguration(value); return *this;}
+
+    /**
+     * <p>The interactive configuration object that enables the interactive use cases
+     * to use when running an application.</p>
+     */
+    inline CreateApplicationRequest& WithInteractiveConfiguration(InteractiveConfiguration&& value) { SetInteractiveConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -854,6 +892,9 @@ namespace Model
 
     MonitoringConfiguration m_monitoringConfiguration;
     bool m_monitoringConfigurationHasBeenSet = false;
+
+    InteractiveConfiguration m_interactiveConfiguration;
+    bool m_interactiveConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

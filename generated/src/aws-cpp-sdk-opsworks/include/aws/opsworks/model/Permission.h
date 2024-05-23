@@ -79,64 +79,64 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) for an AWS Identity and Access Management
-     * (IAM) role. For more information about IAM ARNs, see <a
+     * <p>The Amazon Resource Name (ARN) for an Identity and Access Management (IAM)
+     * role. For more information about IAM ARNs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline const Aws::String& GetIamUserArn() const{ return m_iamUserArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for an AWS Identity and Access Management
-     * (IAM) role. For more information about IAM ARNs, see <a
+     * <p>The Amazon Resource Name (ARN) for an Identity and Access Management (IAM)
+     * role. For more information about IAM ARNs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline bool IamUserArnHasBeenSet() const { return m_iamUserArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for an AWS Identity and Access Management
-     * (IAM) role. For more information about IAM ARNs, see <a
+     * <p>The Amazon Resource Name (ARN) for an Identity and Access Management (IAM)
+     * role. For more information about IAM ARNs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline void SetIamUserArn(const Aws::String& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for an AWS Identity and Access Management
-     * (IAM) role. For more information about IAM ARNs, see <a
+     * <p>The Amazon Resource Name (ARN) for an Identity and Access Management (IAM)
+     * role. For more information about IAM ARNs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline void SetIamUserArn(Aws::String&& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for an AWS Identity and Access Management
-     * (IAM) role. For more information about IAM ARNs, see <a
+     * <p>The Amazon Resource Name (ARN) for an Identity and Access Management (IAM)
+     * role. For more information about IAM ARNs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline void SetIamUserArn(const char* value) { m_iamUserArnHasBeenSet = true; m_iamUserArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for an AWS Identity and Access Management
-     * (IAM) role. For more information about IAM ARNs, see <a
+     * <p>The Amazon Resource Name (ARN) for an Identity and Access Management (IAM)
+     * role. For more information about IAM ARNs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline Permission& WithIamUserArn(const Aws::String& value) { SetIamUserArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for an AWS Identity and Access Management
-     * (IAM) role. For more information about IAM ARNs, see <a
+     * <p>The Amazon Resource Name (ARN) for an Identity and Access Management (IAM)
+     * role. For more information about IAM ARNs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline Permission& WithIamUserArn(Aws::String&& value) { SetIamUserArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for an AWS Identity and Access Management
-     * (IAM) role. For more information about IAM ARNs, see <a
+     * <p>The Amazon Resource Name (ARN) for an Identity and Access Management (IAM)
+     * role. For more information about IAM ARNs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */

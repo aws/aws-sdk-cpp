@@ -79,42 +79,42 @@ namespace Model
 
 
     /**
-     * <p>The name.</p>
+     * <p>The name, which can be a maximum of 32 characters.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name.</p>
+     * <p>The name, which can be a maximum of 32 characters.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name.</p>
+     * <p>The name, which can be a maximum of 32 characters.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name.</p>
+     * <p>The name, which can be a maximum of 32 characters.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name.</p>
+     * <p>The name, which can be a maximum of 32 characters.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name.</p>
+     * <p>The name, which can be a maximum of 32 characters.</p>
      */
     inline ElasticIp& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name.</p>
+     * <p>The name, which can be a maximum of 32 characters.</p>
      */
     inline ElasticIp& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name.</p>
+     * <p>The name, which can be a maximum of 32 characters.</p>
      */
     inline ElasticIp& WithName(const char* value) { SetName(value); return *this;}
 
@@ -161,56 +161,56 @@ namespace Model
 
 
     /**
-     * <p>The AWS region. For more information, see <a
+     * <p>The Amazon Web Services Region. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The AWS region. For more information, see <a
+     * <p>The Amazon Web Services Region. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>The AWS region. For more information, see <a
+     * <p>The Amazon Web Services Region. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The AWS region. For more information, see <a
+     * <p>The Amazon Web Services Region. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>The AWS region. For more information, see <a
+     * <p>The Amazon Web Services Region. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The AWS region. For more information, see <a
+     * <p>The Amazon Web Services Region. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline ElasticIp& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The AWS region. For more information, see <a
+     * <p>The Amazon Web Services Region. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline ElasticIp& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS region. For more information, see <a
+     * <p>The Amazon Web Services Region. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */

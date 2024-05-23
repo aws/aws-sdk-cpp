@@ -18,40 +18,39 @@ namespace Aws
 namespace OpsWorks
 {
   /**
-   * <fullname>AWS OpsWorks</fullname> <p>Welcome to the <i>AWS OpsWorks Stacks API
+   * <fullname>OpsWorks</fullname> <p>Welcome to the <i>OpsWorks Stacks API
    * Reference</i>. This guide provides descriptions, syntax, and usage examples for
-   * AWS OpsWorks Stacks actions and data types, including common parameters and
-   * error codes. </p> <p>AWS OpsWorks Stacks is an application management service
-   * that provides an integrated experience for overseeing the complete application
-   * lifecycle. For information about this product, go to the <a
-   * href="http://aws.amazon.com/opsworks/">AWS OpsWorks</a> details page. </p> <p>
-   * <b>SDKs and CLI</b> </p> <p>The most common way to use the AWS OpsWorks Stacks
-   * API is by using the AWS Command Line Interface (CLI) or by using one of the AWS
-   * SDKs to implement applications in your preferred language. For more information,
+   * OpsWorks Stacks actions and data types, including common parameters and error
+   * codes. </p> <p>OpsWorks Stacks is an application management service that
+   * provides an integrated experience for managing the complete application
+   * lifecycle. For information about OpsWorks, see the <a
+   * href="http://aws.amazon.com/opsworks/">OpsWorks</a> information page.</p> <p>
+   * <b>SDKs and CLI</b> </p> <p>Use the OpsWorks Stacks API by using the Command
+   * Line Interface (CLI) or by using one of the Amazon Web Services SDKs to
+   * implement applications in your preferred language. For more information,
    * see:</p> <ul> <li> <p> <a
-   * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html">AWS
-   * CLI</a> </p> </li> <li> <p> <a
-   * href="https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/opsworks/AWSOpsWorksClient.html">AWS
-   * SDK for Java</a> </p> </li> <li> <p> <a
-   * href="https://docs.aws.amazon.com/sdkfornet/latest/apidocs/html/N_Amazon_OpsWorks.htm">AWS
-   * SDK for .NET</a> </p> </li> <li> <p> <a
-   * href="https://docs.aws.amazon.com/aws-sdk-php-2/latest/class-Aws.OpsWorks.OpsWorksClient.html">AWS
-   * SDK for PHP 2</a> </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/sdkforruby/api/">AWS SDK for Ruby</a> </p>
-   * </li> <li> <p> <a
-   * href="http://aws.amazon.com/documentation/sdkforjavascript/">AWS SDK for
-   * Node.js</a> </p> </li> <li> <p> <a
-   * href="http://docs.pythonboto.org/en/latest/ref/opsworks.html">AWS SDK for
-   * Python(Boto)</a> </p> </li> </ul> <p> <b>Endpoints</b> </p> <p>AWS OpsWorks
-   * Stacks supports the following endpoints, all HTTPS. You must connect to one of
-   * the following endpoints. Stacks can only be accessed or managed within the
-   * endpoint in which they are created.</p> <ul> <li>
-   * <p>opsworks.us-east-1.amazonaws.com</p> </li> <li>
-   * <p>opsworks.us-east-2.amazonaws.com</p> </li> <li>
+   * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html">CLI</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/opsworks/AWSOpsWorksClient.html">SDK
+   * for Java</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/sdkfornet/v3/apidocs/items/OpsWorks/NOpsWorks.html">SDK
+   * for .NET</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/aws-sdk-php/v3/api/class-Aws.OpsWorks.OpsWorksClient.html">SDK
+   * for PHP</a> </p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/sdkforruby/api/">SDK for Ruby</a> </p> </li>
+   * <li> <p> <a href="http://aws.amazon.com/documentation/sdkforjavascript/">Amazon
+   * Web Services SDK for Node.js</a> </p> </li> <li> <p> <a
+   * href="http://docs.pythonboto.org/en/latest/ref/opsworks.html">SDK for Python
+   * (Boto)</a> </p> </li> </ul> <p> <b>Endpoints</b> </p> <p>OpsWorks Stacks
+   * supports the following endpoints, all HTTPS. You must connect to one of the
+   * following endpoints. Stacks can only be accessed or managed within the endpoint
+   * in which they are created.</p> <ul> <li> <p>opsworks.us-east-1.amazonaws.com</p>
+   * </li> <li> <p>opsworks.us-east-2.amazonaws.com</p> </li> <li>
    * <p>opsworks.us-west-1.amazonaws.com</p> </li> <li>
    * <p>opsworks.us-west-2.amazonaws.com</p> </li> <li>
-   * <p>opsworks.ca-central-1.amazonaws.com (API only; not available in the AWS
-   * console)</p> </li> <li> <p>opsworks.eu-west-1.amazonaws.com</p> </li> <li>
+   * <p>opsworks.ca-central-1.amazonaws.com (API only; not available in the Amazon
+   * Web Services Management Console)</p> </li> <li>
+   * <p>opsworks.eu-west-1.amazonaws.com</p> </li> <li>
    * <p>opsworks.eu-west-2.amazonaws.com</p> </li> <li>
    * <p>opsworks.eu-west-3.amazonaws.com</p> </li> <li>
    * <p>opsworks.eu-central-1.amazonaws.com</p> </li> <li>
@@ -133,11 +132,11 @@ namespace OpsWorks
          * <p>Assign a registered instance to a layer.</p> <ul> <li> <p>You can assign
          * registered on-premises instances to any layer type.</p> </li> <li> <p>You can
          * assign registered Amazon EC2 instances only to custom layers.</p> </li> <li>
-         * <p>You cannot use this action with instances that were created with AWS OpsWorks
+         * <p>You cannot use this action with instances that were created with OpsWorks
          * Stacks.</p> </li> </ul> <p> <b>Required Permissions</b>: To use this action, an
-         * AWS Identity and Access Management (IAM) user must have a Manage permissions
-         * level for the stack or an attached policy that explicitly grants permissions.
-         * For more information on user permissions, see <a
+         * Identity and Access Management (IAM) user must have a Manage permissions level
+         * for the stack or an attached policy that explicitly grants permissions. For more
+         * information on user permissions, see <a
          * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssignInstance">AWS
@@ -234,18 +233,18 @@ namespace OpsWorks
         }
 
         /**
-         * <p>Attaches an Elastic Load Balancing load balancer to a specified layer. AWS
+         * <p>Attaches an Elastic Load Balancing load balancer to a specified layer.
          * OpsWorks Stacks does not support Application Load Balancer. You can only use
-         * Classic Load Balancer with AWS OpsWorks Stacks. For more information, see <a
+         * Classic Load Balancer with OpsWorks Stacks. For more information, see <a
          * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers-elb.html">Elastic
          * Load Balancing</a>.</p>  <p>You must create the Elastic Load Balancing
          * instance separately, by using the Elastic Load Balancing console, API, or CLI.
-         * For more information, see <a
-         * href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/Welcome.html">
-         * Elastic Load Balancing Developer Guide</a>.</p>  <p> <b>Required
-         * Permissions</b>: To use this action, an IAM user must have a Manage permissions
-         * level for the stack, or an attached policy that explicitly grants permissions.
-         * For more information on user permissions, see <a
+         * For more information, see the <a
+         * href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/Welcome.html">Elastic
+         * Load Balancing Developer Guide</a>.</p>  <p> <b>Required Permissions</b>:
+         * To use this action, an IAM user must have a Manage permissions level for the
+         * stack, or an attached policy that explicitly grants permissions. For more
+         * information on user permissions, see <a
          * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AttachElasticLoadBalancer">AWS
@@ -690,8 +689,8 @@ namespace OpsWorks
         }
 
         /**
-         * <p>Deregisters a specified Elastic IP address. The address can then be
-         * registered by another stack. For more information, see <a
+         * <p>Deregisters a specified Elastic IP address. The address can be registered by
+         * another stack after it is deregistered. For more information, see <a
          * href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
          * Management</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM
          * user must have a Manage permissions level for the stack, or an attached policy
@@ -723,9 +722,9 @@ namespace OpsWorks
         }
 
         /**
-         * <p>Deregister a registered Amazon EC2 or on-premises instance. This action
-         * removes the instance from the stack and returns it to your control. This action
-         * cannot be used with instances that were created with AWS OpsWorks Stacks.</p>
+         * <p>Deregister an instance from OpsWorks Stacks. The instance can be a registered
+         * instance (Amazon EC2 or on-premises) or an instance created with OpsWorks. This
+         * action removes the instance from the stack and returns it to your control.</p>
          * <p> <b>Required Permissions</b>: To use this action, an IAM user must have a
          * Manage permissions level for the stack or an attached policy that explicitly
          * grants permissions. For more information on user permissions, see <a
@@ -818,10 +817,10 @@ namespace OpsWorks
         }
 
         /**
-         * <p>Describes the available AWS OpsWorks Stacks agent versions. You must specify
-         * a stack ID or a configuration manager. <code>DescribeAgentVersions</code>
-         * returns a list of available agent versions for the specified stack or
-         * configuration manager.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the available OpsWorks Stacks agent versions. You must specify a
+         * stack ID or a configuration manager. <code>DescribeAgentVersions</code> returns
+         * a list of available agent versions for the specified stack or configuration
+         * manager.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeAgentVersions">AWS
          * API Reference</a></p>
          */
@@ -942,12 +941,12 @@ namespace OpsWorks
         /**
          * <p>Describes Amazon ECS clusters that are registered with a stack. If you
          * specify only a stack ID, you can use the <code>MaxResults</code> and
-         * <code>NextToken</code> parameters to paginate the response. However, AWS
-         * OpsWorks Stacks currently supports only one cluster per layer, so the result set
-         * has a maximum of one element.</p> <p> <b>Required Permissions</b>: To use this
-         * action, an IAM user must have a Show, Deploy, or Manage permissions level for
-         * the stack or an attached policy that explicitly grants permission. For more
-         * information about user permissions, see <a
+         * <code>NextToken</code> parameters to paginate the response. However, OpsWorks
+         * Stacks currently supports only one cluster per layer, so the result set has a
+         * maximum of one element.</p> <p> <b>Required Permissions</b>: To use this action,
+         * an IAM user must have a Show, Deploy, or Manage permissions level for the stack
+         * or an attached policy that explicitly grants permission. For more information
+         * about user permissions, see <a
          * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p> <p>This call accepts only one resource-identifying
          * parameter.</p><p><h3>See Also:</h3>   <a
@@ -1164,7 +1163,7 @@ namespace OpsWorks
         }
 
         /**
-         * <p>Describes the operating systems that are supported by AWS OpsWorks
+         * <p>Describes the operating systems that are supported by OpsWorks
          * Stacks.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeOperatingSystems">AWS
          * API Reference</a></p>
@@ -1282,7 +1281,7 @@ namespace OpsWorks
         }
 
         /**
-         * <p>Describes AWS OpsWorks Stacks service errors.</p> <p> <b>Required
+         * <p>Describes OpsWorks Stacks service errors.</p> <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information about user permissions, see <a
@@ -1745,15 +1744,15 @@ namespace OpsWorks
         }
 
         /**
-         * <p>Registers instances that were created outside of AWS OpsWorks Stacks with a
+         * <p>Registers instances that were created outside of OpsWorks Stacks with a
          * specified stack.</p>  <p>We do not recommend using this action to register
          * instances. The complete registration operation includes two tasks: installing
-         * the AWS OpsWorks Stacks agent on the instance, and registering the instance with
-         * the stack. <code>RegisterInstance</code> handles only the second step. You
-         * should instead use the AWS CLI <code>register</code> command, which performs the
-         * entire registration operation. For more information, see <a
+         * the OpsWorks Stacks agent on the instance, and registering the instance with the
+         * stack. <code>RegisterInstance</code> handles only the second step. You should
+         * instead use the CLI <code>register</code> command, which performs the entire
+         * registration operation. For more information, see <a
          * href="https://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html">
-         * Registering an Instance with an AWS OpsWorks Stacks Stack</a>.</p> 
+         * Registering an Instance with an OpsWorks Stacks Stack</a>.</p> 
          * <p>Registered instances have the same requirements as instances that are created
          * by using the <a>CreateInstance</a> API. For example, registered instances must
          * be running a supported Linux-based operating system, and they must have a
@@ -2083,10 +2082,10 @@ namespace OpsWorks
         }
 
         /**
-         * <p>Apply cost-allocation tags to a specified stack or layer in AWS OpsWorks
-         * Stacks. For more information about how tagging works, see <a
+         * <p>Apply cost-allocation tags to a specified stack or layer in OpsWorks Stacks.
+         * For more information about how tagging works, see <a
          * href="https://docs.aws.amazon.com/opsworks/latest/userguide/tagging.html">Tags</a>
-         * in the AWS OpsWorks User Guide.</p><p><h3>See Also:</h3>   <a
+         * in the OpsWorks User Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/TagResource">AWS
          * API Reference</a></p>
          */
@@ -2114,10 +2113,10 @@ namespace OpsWorks
          * <p>Unassigns a registered instance from all layers that are using the instance.
          * The instance remains in the stack as an unassigned instance, and can be assigned
          * to another layer as needed. You cannot use this action with instances that were
-         * created with AWS OpsWorks Stacks.</p> <p> <b>Required Permissions</b>: To use
-         * this action, an IAM user must have a Manage permissions level for the stack or
-         * an attached policy that explicitly grants permissions. For more information
-         * about user permissions, see <a
+         * created with OpsWorks Stacks.</p> <p> <b>Required Permissions</b>: To use this
+         * action, an IAM user must have a Manage permissions level for the stack or an
+         * attached policy that explicitly grants permissions. For more information about
+         * user permissions, see <a
          * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UnassignInstance">AWS

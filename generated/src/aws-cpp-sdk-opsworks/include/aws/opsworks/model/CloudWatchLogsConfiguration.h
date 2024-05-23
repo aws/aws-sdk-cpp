@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the Amazon CloudWatch logs configuration for a layer.</p><p><h3>See
+   * <p>Describes the Amazon CloudWatch Logs configuration for a layer.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CloudWatchLogsConfiguration">AWS
    * API Reference</a></p>

@@ -77,73 +77,73 @@ namespace Model
 
     /**
      * <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9],
-     * '-', and '_'. If the specified name includes other punctuation marks, AWS
-     * OpsWorks Stacks removes them. For example, <code>my.name</code> will be changed
-     * to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks
-     * Stacks generates one from the IAM user name. </p>
+     * '-', and '_'. If the specified name includes other punctuation marks, OpsWorks
+     * Stacks removes them. For example, <code>my.name</code> is changed to
+     * <code>myname</code>. If you do not specify an SSH user name, OpsWorks Stacks
+     * generates one from the IAM user name. </p>
      */
     inline const Aws::String& GetSshUsername() const{ return m_sshUsername; }
 
     /**
      * <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9],
-     * '-', and '_'. If the specified name includes other punctuation marks, AWS
-     * OpsWorks Stacks removes them. For example, <code>my.name</code> will be changed
-     * to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks
-     * Stacks generates one from the IAM user name. </p>
+     * '-', and '_'. If the specified name includes other punctuation marks, OpsWorks
+     * Stacks removes them. For example, <code>my.name</code> is changed to
+     * <code>myname</code>. If you do not specify an SSH user name, OpsWorks Stacks
+     * generates one from the IAM user name. </p>
      */
     inline bool SshUsernameHasBeenSet() const { return m_sshUsernameHasBeenSet; }
 
     /**
      * <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9],
-     * '-', and '_'. If the specified name includes other punctuation marks, AWS
-     * OpsWorks Stacks removes them. For example, <code>my.name</code> will be changed
-     * to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks
-     * Stacks generates one from the IAM user name. </p>
+     * '-', and '_'. If the specified name includes other punctuation marks, OpsWorks
+     * Stacks removes them. For example, <code>my.name</code> is changed to
+     * <code>myname</code>. If you do not specify an SSH user name, OpsWorks Stacks
+     * generates one from the IAM user name. </p>
      */
     inline void SetSshUsername(const Aws::String& value) { m_sshUsernameHasBeenSet = true; m_sshUsername = value; }
 
     /**
      * <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9],
-     * '-', and '_'. If the specified name includes other punctuation marks, AWS
-     * OpsWorks Stacks removes them. For example, <code>my.name</code> will be changed
-     * to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks
-     * Stacks generates one from the IAM user name. </p>
+     * '-', and '_'. If the specified name includes other punctuation marks, OpsWorks
+     * Stacks removes them. For example, <code>my.name</code> is changed to
+     * <code>myname</code>. If you do not specify an SSH user name, OpsWorks Stacks
+     * generates one from the IAM user name. </p>
      */
     inline void SetSshUsername(Aws::String&& value) { m_sshUsernameHasBeenSet = true; m_sshUsername = std::move(value); }
 
     /**
      * <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9],
-     * '-', and '_'. If the specified name includes other punctuation marks, AWS
-     * OpsWorks Stacks removes them. For example, <code>my.name</code> will be changed
-     * to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks
-     * Stacks generates one from the IAM user name. </p>
+     * '-', and '_'. If the specified name includes other punctuation marks, OpsWorks
+     * Stacks removes them. For example, <code>my.name</code> is changed to
+     * <code>myname</code>. If you do not specify an SSH user name, OpsWorks Stacks
+     * generates one from the IAM user name. </p>
      */
     inline void SetSshUsername(const char* value) { m_sshUsernameHasBeenSet = true; m_sshUsername.assign(value); }
 
     /**
      * <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9],
-     * '-', and '_'. If the specified name includes other punctuation marks, AWS
-     * OpsWorks Stacks removes them. For example, <code>my.name</code> will be changed
-     * to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks
-     * Stacks generates one from the IAM user name. </p>
+     * '-', and '_'. If the specified name includes other punctuation marks, OpsWorks
+     * Stacks removes them. For example, <code>my.name</code> is changed to
+     * <code>myname</code>. If you do not specify an SSH user name, OpsWorks Stacks
+     * generates one from the IAM user name. </p>
      */
     inline CreateUserProfileRequest& WithSshUsername(const Aws::String& value) { SetSshUsername(value); return *this;}
 
     /**
      * <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9],
-     * '-', and '_'. If the specified name includes other punctuation marks, AWS
-     * OpsWorks Stacks removes them. For example, <code>my.name</code> will be changed
-     * to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks
-     * Stacks generates one from the IAM user name. </p>
+     * '-', and '_'. If the specified name includes other punctuation marks, OpsWorks
+     * Stacks removes them. For example, <code>my.name</code> is changed to
+     * <code>myname</code>. If you do not specify an SSH user name, OpsWorks Stacks
+     * generates one from the IAM user name. </p>
      */
     inline CreateUserProfileRequest& WithSshUsername(Aws::String&& value) { SetSshUsername(std::move(value)); return *this;}
 
     /**
      * <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9],
-     * '-', and '_'. If the specified name includes other punctuation marks, AWS
-     * OpsWorks Stacks removes them. For example, <code>my.name</code> will be changed
-     * to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks
-     * Stacks generates one from the IAM user name. </p>
+     * '-', and '_'. If the specified name includes other punctuation marks, OpsWorks
+     * Stacks removes them. For example, <code>my.name</code> is changed to
+     * <code>myname</code>. If you do not specify an SSH user name, OpsWorks Stacks
+     * generates one from the IAM user name. </p>
      */
     inline CreateUserProfileRequest& WithSshUsername(const char* value) { SetSshUsername(value); return *this;}
 

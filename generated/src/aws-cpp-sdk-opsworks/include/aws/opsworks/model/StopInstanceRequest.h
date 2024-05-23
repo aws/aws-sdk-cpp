@@ -78,44 +78,40 @@ namespace Model
     /**
      * <p>Specifies whether to force an instance to stop. If the instance's root device
      * type is <code>ebs</code>, or EBS-backed, adding the <code>Force</code> parameter
-     * to the <code>StopInstances</code> API call disassociates the AWS OpsWorks Stacks
+     * to the <code>StopInstances</code> API call disassociates the OpsWorks Stacks
      * instance from EC2, and forces deletion of <i>only</i> the OpsWorks Stacks
      * instance. You must also delete the formerly-associated instance in EC2 after
-     * troubleshooting and replacing the AWS OpsWorks Stacks instance with a new
-     * one.</p>
+     * troubleshooting and replacing the OpsWorks Stacks instance with a new one.</p>
      */
     inline bool GetForce() const{ return m_force; }
 
     /**
      * <p>Specifies whether to force an instance to stop. If the instance's root device
      * type is <code>ebs</code>, or EBS-backed, adding the <code>Force</code> parameter
-     * to the <code>StopInstances</code> API call disassociates the AWS OpsWorks Stacks
+     * to the <code>StopInstances</code> API call disassociates the OpsWorks Stacks
      * instance from EC2, and forces deletion of <i>only</i> the OpsWorks Stacks
      * instance. You must also delete the formerly-associated instance in EC2 after
-     * troubleshooting and replacing the AWS OpsWorks Stacks instance with a new
-     * one.</p>
+     * troubleshooting and replacing the OpsWorks Stacks instance with a new one.</p>
      */
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
 
     /**
      * <p>Specifies whether to force an instance to stop. If the instance's root device
      * type is <code>ebs</code>, or EBS-backed, adding the <code>Force</code> parameter
-     * to the <code>StopInstances</code> API call disassociates the AWS OpsWorks Stacks
+     * to the <code>StopInstances</code> API call disassociates the OpsWorks Stacks
      * instance from EC2, and forces deletion of <i>only</i> the OpsWorks Stacks
      * instance. You must also delete the formerly-associated instance in EC2 after
-     * troubleshooting and replacing the AWS OpsWorks Stacks instance with a new
-     * one.</p>
+     * troubleshooting and replacing the OpsWorks Stacks instance with a new one.</p>
      */
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
 
     /**
      * <p>Specifies whether to force an instance to stop. If the instance's root device
      * type is <code>ebs</code>, or EBS-backed, adding the <code>Force</code> parameter
-     * to the <code>StopInstances</code> API call disassociates the AWS OpsWorks Stacks
+     * to the <code>StopInstances</code> API call disassociates the OpsWorks Stacks
      * instance from EC2, and forces deletion of <i>only</i> the OpsWorks Stacks
      * instance. You must also delete the formerly-associated instance in EC2 after
-     * troubleshooting and replacing the AWS OpsWorks Stacks instance with a new
-     * one.</p>
+     * troubleshooting and replacing the OpsWorks Stacks instance with a new one.</p>
      */
     inline StopInstanceRequest& WithForce(bool value) { SetForce(value); return *this;}
 

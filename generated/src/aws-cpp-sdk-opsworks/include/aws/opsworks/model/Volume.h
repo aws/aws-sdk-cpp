@@ -120,42 +120,42 @@ namespace Model
 
 
     /**
-     * <p>The volume name.</p>
+     * <p>The volume name. Volume names are a maximum of 128 characters.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The volume name.</p>
+     * <p>The volume name. Volume names are a maximum of 128 characters.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The volume name.</p>
+     * <p>The volume name. Volume names are a maximum of 128 characters.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The volume name.</p>
+     * <p>The volume name. Volume names are a maximum of 128 characters.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The volume name.</p>
+     * <p>The volume name. Volume names are a maximum of 128 characters.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The volume name.</p>
+     * <p>The volume name. Volume names are a maximum of 128 characters.</p>
      */
     inline Volume& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The volume name.</p>
+     * <p>The volume name. Volume names are a maximum of 128 characters.</p>
      */
     inline Volume& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The volume name.</p>
+     * <p>The volume name. Volume names are a maximum of 128 characters.</p>
      */
     inline Volume& WithName(const char* value) { SetName(value); return *this;}
 
@@ -395,56 +395,64 @@ namespace Model
 
 
     /**
-     * <p>The AWS region. For more information about AWS regions, see <a
+     * <p>The Amazon Web Services Region. For more information about Amazon Web
+     * Services Regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The AWS region. For more information about AWS regions, see <a
+     * <p>The Amazon Web Services Region. For more information about Amazon Web
+     * Services Regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>The AWS region. For more information about AWS regions, see <a
+     * <p>The Amazon Web Services Region. For more information about Amazon Web
+     * Services Regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The AWS region. For more information about AWS regions, see <a
+     * <p>The Amazon Web Services Region. For more information about Amazon Web
+     * Services Regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>The AWS region. For more information about AWS regions, see <a
+     * <p>The Amazon Web Services Region. For more information about Amazon Web
+     * Services Regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The AWS region. For more information about AWS regions, see <a
+     * <p>The Amazon Web Services Region. For more information about Amazon Web
+     * Services Regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline Volume& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The AWS region. For more information about AWS regions, see <a
+     * <p>The Amazon Web Services Region. For more information about Amazon Web
+     * Services Regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline Volume& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS region. For more information about AWS regions, see <a
+     * <p>The Amazon Web Services Region. For more information about Amazon Web
+     * Services Regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
@@ -518,9 +526,9 @@ namespace Model
      * <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must
      * have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li> <li> <p>
      * <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput
-     * optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of
+     * optimized HDD volumes must have a minimum size of 125 GiB and a maximum size of
      * 16384 GiB.</p> </li> <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must
-     * have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li> </ul>
+     * have a minimum size of 125 GiB and a maximum size of 16384 GiB.</p> </li> </ul>
      */
     inline const Aws::String& GetVolumeType() const{ return m_volumeType; }
 
@@ -534,9 +542,9 @@ namespace Model
      * <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must
      * have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li> <li> <p>
      * <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput
-     * optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of
+     * optimized HDD volumes must have a minimum size of 125 GiB and a maximum size of
      * 16384 GiB.</p> </li> <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must
-     * have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li> </ul>
+     * have a minimum size of 125 GiB and a maximum size of 16384 GiB.</p> </li> </ul>
      */
     inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
 
@@ -550,9 +558,9 @@ namespace Model
      * <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must
      * have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li> <li> <p>
      * <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput
-     * optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of
+     * optimized HDD volumes must have a minimum size of 125 GiB and a maximum size of
      * 16384 GiB.</p> </li> <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must
-     * have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li> </ul>
+     * have a minimum size of 125 GiB and a maximum size of 16384 GiB.</p> </li> </ul>
      */
     inline void SetVolumeType(const Aws::String& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
@@ -566,9 +574,9 @@ namespace Model
      * <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must
      * have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li> <li> <p>
      * <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput
-     * optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of
+     * optimized HDD volumes must have a minimum size of 125 GiB and a maximum size of
      * 16384 GiB.</p> </li> <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must
-     * have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li> </ul>
+     * have a minimum size of 125 GiB and a maximum size of 16384 GiB.</p> </li> </ul>
      */
     inline void SetVolumeType(Aws::String&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
 
@@ -582,9 +590,9 @@ namespace Model
      * <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must
      * have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li> <li> <p>
      * <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput
-     * optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of
+     * optimized HDD volumes must have a minimum size of 125 GiB and a maximum size of
      * 16384 GiB.</p> </li> <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must
-     * have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li> </ul>
+     * have a minimum size of 125 GiB and a maximum size of 16384 GiB.</p> </li> </ul>
      */
     inline void SetVolumeType(const char* value) { m_volumeTypeHasBeenSet = true; m_volumeType.assign(value); }
 
@@ -598,9 +606,9 @@ namespace Model
      * <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must
      * have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li> <li> <p>
      * <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput
-     * optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of
+     * optimized HDD volumes must have a minimum size of 125 GiB and a maximum size of
      * 16384 GiB.</p> </li> <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must
-     * have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li> </ul>
+     * have a minimum size of 125 GiB and a maximum size of 16384 GiB.</p> </li> </ul>
      */
     inline Volume& WithVolumeType(const Aws::String& value) { SetVolumeType(value); return *this;}
 
@@ -614,9 +622,9 @@ namespace Model
      * <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must
      * have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li> <li> <p>
      * <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput
-     * optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of
+     * optimized HDD volumes must have a minimum size of 125 GiB and a maximum size of
      * 16384 GiB.</p> </li> <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must
-     * have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li> </ul>
+     * have a minimum size of 125 GiB and a maximum size of 16384 GiB.</p> </li> </ul>
      */
     inline Volume& WithVolumeType(Aws::String&& value) { SetVolumeType(std::move(value)); return *this;}
 
@@ -630,9 +638,9 @@ namespace Model
      * <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must
      * have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li> <li> <p>
      * <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput
-     * optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of
+     * optimized HDD volumes must have a minimum size of 125 GiB and a maximum size of
      * 16384 GiB.</p> </li> <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must
-     * have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li> </ul>
+     * have a minimum size of 125 GiB and a maximum size of 16384 GiB.</p> </li> </ul>
      */
     inline Volume& WithVolumeType(const char* value) { SetVolumeType(value); return *this;}
 

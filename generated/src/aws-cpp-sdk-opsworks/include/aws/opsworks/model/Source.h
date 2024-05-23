@@ -195,8 +195,8 @@ namespace Model
      * repositories, set <code>Password</code> to the password.</p> </li> </ul> <p>For
      * more information on how to safely handle IAM credentials, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.</p>
-     * <p>In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code>
-     * instead of the actual value.</p>
+     * <p>In responses, OpsWorks Stacks returns <code>*****FILTERED*****</code> instead
+     * of the actual value.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
 
@@ -207,8 +207,8 @@ namespace Model
      * repositories, set <code>Password</code> to the password.</p> </li> </ul> <p>For
      * more information on how to safely handle IAM credentials, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.</p>
-     * <p>In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code>
-     * instead of the actual value.</p>
+     * <p>In responses, OpsWorks Stacks returns <code>*****FILTERED*****</code> instead
+     * of the actual value.</p>
      */
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
 
@@ -219,8 +219,8 @@ namespace Model
      * repositories, set <code>Password</code> to the password.</p> </li> </ul> <p>For
      * more information on how to safely handle IAM credentials, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.</p>
-     * <p>In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code>
-     * instead of the actual value.</p>
+     * <p>In responses, OpsWorks Stacks returns <code>*****FILTERED*****</code> instead
+     * of the actual value.</p>
      */
     inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
 
@@ -231,8 +231,8 @@ namespace Model
      * repositories, set <code>Password</code> to the password.</p> </li> </ul> <p>For
      * more information on how to safely handle IAM credentials, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.</p>
-     * <p>In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code>
-     * instead of the actual value.</p>
+     * <p>In responses, OpsWorks Stacks returns <code>*****FILTERED*****</code> instead
+     * of the actual value.</p>
      */
     inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
 
@@ -243,8 +243,8 @@ namespace Model
      * repositories, set <code>Password</code> to the password.</p> </li> </ul> <p>For
      * more information on how to safely handle IAM credentials, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.</p>
-     * <p>In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code>
-     * instead of the actual value.</p>
+     * <p>In responses, OpsWorks Stacks returns <code>*****FILTERED*****</code> instead
+     * of the actual value.</p>
      */
     inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
 
@@ -255,8 +255,8 @@ namespace Model
      * repositories, set <code>Password</code> to the password.</p> </li> </ul> <p>For
      * more information on how to safely handle IAM credentials, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.</p>
-     * <p>In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code>
-     * instead of the actual value.</p>
+     * <p>In responses, OpsWorks Stacks returns <code>*****FILTERED*****</code> instead
+     * of the actual value.</p>
      */
     inline Source& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
 
@@ -267,8 +267,8 @@ namespace Model
      * repositories, set <code>Password</code> to the password.</p> </li> </ul> <p>For
      * more information on how to safely handle IAM credentials, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.</p>
-     * <p>In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code>
-     * instead of the actual value.</p>
+     * <p>In responses, OpsWorks Stacks returns <code>*****FILTERED*****</code> instead
+     * of the actual value.</p>
      */
     inline Source& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
 
@@ -279,122 +279,122 @@ namespace Model
      * repositories, set <code>Password</code> to the password.</p> </li> </ul> <p>For
      * more information on how to safely handle IAM credentials, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.</p>
-     * <p>In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code>
-     * instead of the actual value.</p>
+     * <p>In responses, OpsWorks Stacks returns <code>*****FILTERED*****</code> instead
+     * of the actual value.</p>
      */
     inline Source& WithPassword(const char* value) { SetPassword(value); return *this;}
 
 
     /**
-     * <p>In requests, the repository's SSH key.</p> <p>In responses, AWS OpsWorks
-     * Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
+     * <p>In requests, the repository's SSH key.</p> <p>In responses, OpsWorks Stacks
+     * returns <code>*****FILTERED*****</code> instead of the actual value.</p>
      */
     inline const Aws::String& GetSshKey() const{ return m_sshKey; }
 
     /**
-     * <p>In requests, the repository's SSH key.</p> <p>In responses, AWS OpsWorks
-     * Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
+     * <p>In requests, the repository's SSH key.</p> <p>In responses, OpsWorks Stacks
+     * returns <code>*****FILTERED*****</code> instead of the actual value.</p>
      */
     inline bool SshKeyHasBeenSet() const { return m_sshKeyHasBeenSet; }
 
     /**
-     * <p>In requests, the repository's SSH key.</p> <p>In responses, AWS OpsWorks
-     * Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
+     * <p>In requests, the repository's SSH key.</p> <p>In responses, OpsWorks Stacks
+     * returns <code>*****FILTERED*****</code> instead of the actual value.</p>
      */
     inline void SetSshKey(const Aws::String& value) { m_sshKeyHasBeenSet = true; m_sshKey = value; }
 
     /**
-     * <p>In requests, the repository's SSH key.</p> <p>In responses, AWS OpsWorks
-     * Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
+     * <p>In requests, the repository's SSH key.</p> <p>In responses, OpsWorks Stacks
+     * returns <code>*****FILTERED*****</code> instead of the actual value.</p>
      */
     inline void SetSshKey(Aws::String&& value) { m_sshKeyHasBeenSet = true; m_sshKey = std::move(value); }
 
     /**
-     * <p>In requests, the repository's SSH key.</p> <p>In responses, AWS OpsWorks
-     * Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
+     * <p>In requests, the repository's SSH key.</p> <p>In responses, OpsWorks Stacks
+     * returns <code>*****FILTERED*****</code> instead of the actual value.</p>
      */
     inline void SetSshKey(const char* value) { m_sshKeyHasBeenSet = true; m_sshKey.assign(value); }
 
     /**
-     * <p>In requests, the repository's SSH key.</p> <p>In responses, AWS OpsWorks
-     * Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
+     * <p>In requests, the repository's SSH key.</p> <p>In responses, OpsWorks Stacks
+     * returns <code>*****FILTERED*****</code> instead of the actual value.</p>
      */
     inline Source& WithSshKey(const Aws::String& value) { SetSshKey(value); return *this;}
 
     /**
-     * <p>In requests, the repository's SSH key.</p> <p>In responses, AWS OpsWorks
-     * Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
+     * <p>In requests, the repository's SSH key.</p> <p>In responses, OpsWorks Stacks
+     * returns <code>*****FILTERED*****</code> instead of the actual value.</p>
      */
     inline Source& WithSshKey(Aws::String&& value) { SetSshKey(std::move(value)); return *this;}
 
     /**
-     * <p>In requests, the repository's SSH key.</p> <p>In responses, AWS OpsWorks
-     * Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
+     * <p>In requests, the repository's SSH key.</p> <p>In responses, OpsWorks Stacks
+     * returns <code>*****FILTERED*****</code> instead of the actual value.</p>
      */
     inline Source& WithSshKey(const char* value) { SetSshKey(value); return *this;}
 
 
     /**
-     * <p>The application's version. AWS OpsWorks Stacks enables you to easily deploy
-     * new versions of an application. One of the simplest approaches is to have
-     * branches or revisions in your repository that represent different versions that
-     * can potentially be deployed.</p>
+     * <p>The application's version. OpsWorks Stacks enables you to easily deploy new
+     * versions of an application. One of the simplest approaches is to have branches
+     * or revisions in your repository that represent different versions that can
+     * potentially be deployed.</p>
      */
     inline const Aws::String& GetRevision() const{ return m_revision; }
 
     /**
-     * <p>The application's version. AWS OpsWorks Stacks enables you to easily deploy
-     * new versions of an application. One of the simplest approaches is to have
-     * branches or revisions in your repository that represent different versions that
-     * can potentially be deployed.</p>
+     * <p>The application's version. OpsWorks Stacks enables you to easily deploy new
+     * versions of an application. One of the simplest approaches is to have branches
+     * or revisions in your repository that represent different versions that can
+     * potentially be deployed.</p>
      */
     inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
 
     /**
-     * <p>The application's version. AWS OpsWorks Stacks enables you to easily deploy
-     * new versions of an application. One of the simplest approaches is to have
-     * branches or revisions in your repository that represent different versions that
-     * can potentially be deployed.</p>
+     * <p>The application's version. OpsWorks Stacks enables you to easily deploy new
+     * versions of an application. One of the simplest approaches is to have branches
+     * or revisions in your repository that represent different versions that can
+     * potentially be deployed.</p>
      */
     inline void SetRevision(const Aws::String& value) { m_revisionHasBeenSet = true; m_revision = value; }
 
     /**
-     * <p>The application's version. AWS OpsWorks Stacks enables you to easily deploy
-     * new versions of an application. One of the simplest approaches is to have
-     * branches or revisions in your repository that represent different versions that
-     * can potentially be deployed.</p>
+     * <p>The application's version. OpsWorks Stacks enables you to easily deploy new
+     * versions of an application. One of the simplest approaches is to have branches
+     * or revisions in your repository that represent different versions that can
+     * potentially be deployed.</p>
      */
     inline void SetRevision(Aws::String&& value) { m_revisionHasBeenSet = true; m_revision = std::move(value); }
 
     /**
-     * <p>The application's version. AWS OpsWorks Stacks enables you to easily deploy
-     * new versions of an application. One of the simplest approaches is to have
-     * branches or revisions in your repository that represent different versions that
-     * can potentially be deployed.</p>
+     * <p>The application's version. OpsWorks Stacks enables you to easily deploy new
+     * versions of an application. One of the simplest approaches is to have branches
+     * or revisions in your repository that represent different versions that can
+     * potentially be deployed.</p>
      */
     inline void SetRevision(const char* value) { m_revisionHasBeenSet = true; m_revision.assign(value); }
 
     /**
-     * <p>The application's version. AWS OpsWorks Stacks enables you to easily deploy
-     * new versions of an application. One of the simplest approaches is to have
-     * branches or revisions in your repository that represent different versions that
-     * can potentially be deployed.</p>
+     * <p>The application's version. OpsWorks Stacks enables you to easily deploy new
+     * versions of an application. One of the simplest approaches is to have branches
+     * or revisions in your repository that represent different versions that can
+     * potentially be deployed.</p>
      */
     inline Source& WithRevision(const Aws::String& value) { SetRevision(value); return *this;}
 
     /**
-     * <p>The application's version. AWS OpsWorks Stacks enables you to easily deploy
-     * new versions of an application. One of the simplest approaches is to have
-     * branches or revisions in your repository that represent different versions that
-     * can potentially be deployed.</p>
+     * <p>The application's version. OpsWorks Stacks enables you to easily deploy new
+     * versions of an application. One of the simplest approaches is to have branches
+     * or revisions in your repository that represent different versions that can
+     * potentially be deployed.</p>
      */
     inline Source& WithRevision(Aws::String&& value) { SetRevision(std::move(value)); return *this;}
 
     /**
-     * <p>The application's version. AWS OpsWorks Stacks enables you to easily deploy
-     * new versions of an application. One of the simplest approaches is to have
-     * branches or revisions in your repository that represent different versions that
-     * can potentially be deployed.</p>
+     * <p>The application's version. OpsWorks Stacks enables you to easily deploy new
+     * versions of an application. One of the simplest approaches is to have branches
+     * or revisions in your repository that represent different versions that can
+     * potentially be deployed.</p>
      */
     inline Source& WithRevision(const char* value) { SetRevision(value); return *this;}
 

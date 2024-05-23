@@ -155,9 +155,9 @@ namespace Model
      * <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must
      * have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li> <li> <p>
      * <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput
-     * optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of
+     * optimized HDD volumes must have a minimum size of 125 GiB and a maximum size of
      * 16384 GiB.</p> </li> <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must
-     * have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li> </ul>
+     * have a minimum size of 125 GiB and a maximum size of 16384 GiB.</p> </li> </ul>
      */
     inline const Aws::String& GetVolumeType() const{ return m_volumeType; }
 
@@ -171,9 +171,9 @@ namespace Model
      * <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must
      * have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li> <li> <p>
      * <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput
-     * optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of
+     * optimized HDD volumes must have a minimum size of 125 GiB and a maximum size of
      * 16384 GiB.</p> </li> <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must
-     * have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li> </ul>
+     * have a minimum size of 125 GiB and a maximum size of 16384 GiB.</p> </li> </ul>
      */
     inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
 
@@ -187,9 +187,9 @@ namespace Model
      * <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must
      * have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li> <li> <p>
      * <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput
-     * optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of
+     * optimized HDD volumes must have a minimum size of 125 GiB and a maximum size of
      * 16384 GiB.</p> </li> <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must
-     * have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li> </ul>
+     * have a minimum size of 125 GiB and a maximum size of 16384 GiB.</p> </li> </ul>
      */
     inline void SetVolumeType(const Aws::String& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
@@ -203,9 +203,9 @@ namespace Model
      * <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must
      * have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li> <li> <p>
      * <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput
-     * optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of
+     * optimized HDD volumes must have a minimum size of 125 GiB and a maximum size of
      * 16384 GiB.</p> </li> <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must
-     * have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li> </ul>
+     * have a minimum size of 125 GiB and a maximum size of 16384 GiB.</p> </li> </ul>
      */
     inline void SetVolumeType(Aws::String&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
 
@@ -219,9 +219,9 @@ namespace Model
      * <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must
      * have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li> <li> <p>
      * <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput
-     * optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of
+     * optimized HDD volumes must have a minimum size of 125 GiB and a maximum size of
      * 16384 GiB.</p> </li> <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must
-     * have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li> </ul>
+     * have a minimum size of 125 GiB and a maximum size of 16384 GiB.</p> </li> </ul>
      */
     inline void SetVolumeType(const char* value) { m_volumeTypeHasBeenSet = true; m_volumeType.assign(value); }
 
@@ -235,9 +235,9 @@ namespace Model
      * <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must
      * have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li> <li> <p>
      * <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput
-     * optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of
+     * optimized HDD volumes must have a minimum size of 125 GiB and a maximum size of
      * 16384 GiB.</p> </li> <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must
-     * have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li> </ul>
+     * have a minimum size of 125 GiB and a maximum size of 16384 GiB.</p> </li> </ul>
      */
     inline VolumeConfiguration& WithVolumeType(const Aws::String& value) { SetVolumeType(value); return *this;}
 
@@ -251,9 +251,9 @@ namespace Model
      * <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must
      * have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li> <li> <p>
      * <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput
-     * optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of
+     * optimized HDD volumes must have a minimum size of 125 GiB and a maximum size of
      * 16384 GiB.</p> </li> <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must
-     * have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li> </ul>
+     * have a minimum size of 125 GiB and a maximum size of 16384 GiB.</p> </li> </ul>
      */
     inline VolumeConfiguration& WithVolumeType(Aws::String&& value) { SetVolumeType(std::move(value)); return *this;}
 
@@ -267,9 +267,9 @@ namespace Model
      * <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must
      * have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li> <li> <p>
      * <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput
-     * optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of
+     * optimized HDD volumes must have a minimum size of 125 GiB and a maximum size of
      * 16384 GiB.</p> </li> <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must
-     * have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li> </ul>
+     * have a minimum size of 125 GiB and a maximum size of 16384 GiB.</p> </li> </ul>
      */
     inline VolumeConfiguration& WithVolumeType(const char* value) { SetVolumeType(value); return *this;}
 
