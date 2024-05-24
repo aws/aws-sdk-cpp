@@ -261,7 +261,9 @@ namespace DynamoDB
          * (which essentially is two put operations). </p> </li> <li> <p>There are more
          * than 25 requests in the batch.</p> </li> <li> <p>Any individual item in a batch
          * exceeds 400 KB.</p> </li> <li> <p>The total request size exceeds 16 MB.</p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * </li> <li> <p>Any individual items with keys exceeding the key length limits.
+         * For a partition key, the limit is 2048 bytes and for a sort key, the limit is
+         * 1024 bytes.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchWriteItem">AWS
          * API Reference</a></p>
          */
@@ -330,14 +332,11 @@ namespace DynamoDB
         /**
          * <p>Creates a global table from an existing table. A global table creates a
          * replication relationship between two or more DynamoDB tables with the same table
-         * name in the provided Regions. </p>  <p>This operation only applies to
-         * <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-         * 2017.11.29 (Legacy)</a> of global tables. We recommend using <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-         * 2019.11.21 (Current)</a> when creating new global tables, as it provides greater
-         * flexibility, higher efficiency and consumes less write capacity than 2017.11.29
-         * (Legacy). To determine which version you are using, see <a
+         * name in the provided Regions. </p>  <p>For global tables, this
+         * operation only applies to global tables using Version 2019.11.21 (Current
+         * version), as it provides greater flexibility, higher efficiency and consumes
+         * less write capacity than 2017.11.29 (Legacy). To determine which version you are
+         * using, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
          * the version</a>. To update existing global tables from version 2017.11.29
          * (Legacy) to version 2019.11.21 (Current), see <a
@@ -537,18 +536,16 @@ namespace DynamoDB
          * <code>ResourceInUseException</code>. If the specified table does not exist,
          * DynamoDB returns a <code>ResourceNotFoundException</code>. If table is already
          * in the <code>DELETING</code> state, no error is returned. </p> 
-         * <p>This operation only applies to <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-         * 2019.11.21 (Current)</a> of global tables. </p>   <p>DynamoDB
-         * might continue to accept data read and write operations, such as
-         * <code>GetItem</code> and <code>PutItem</code>, on a table in the
-         * <code>DELETING</code> state until the table deletion is complete.</p> 
-         * <p>When you delete a table, any indexes on that table are also deleted.</p>
-         * <p>If you have DynamoDB Streams enabled on the table, then the corresponding
-         * stream on that table goes into the <code>DISABLED</code> state, and the stream
-         * is automatically deleted after 24 hours.</p> <p>Use the
-         * <code>DescribeTable</code> action to check the status of the table.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>For global tables, this operation only applies to global tables using Version
+         * 2019.11.21 (Current version). </p>   <p>DynamoDB might
+         * continue to accept data read and write operations, such as <code>GetItem</code>
+         * and <code>PutItem</code>, on a table in the <code>DELETING</code> state until
+         * the table deletion is complete.</p>  <p>When you delete a table, any
+         * indexes on that table are also deleted.</p> <p>If you have DynamoDB Streams
+         * enabled on the table, then the corresponding stream on that table goes into the
+         * <code>DISABLED</code> state, and the stream is automatically deleted after 24
+         * hours.</p> <p>Use the <code>DescribeTable</code> action to check the status of
+         * the table. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteTable">AWS
          * API Reference</a></p>
          */
@@ -714,14 +711,11 @@ namespace DynamoDB
         }
 
         /**
-         * <p>Returns information about the specified global table.</p>  <p>This
-         * operation only applies to <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-         * 2017.11.29 (Legacy)</a> of global tables. We recommend using <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-         * 2019.11.21 (Current)</a> when creating new global tables, as it provides greater
-         * flexibility, higher efficiency and consumes less write capacity than 2017.11.29
-         * (Legacy). To determine which version you are using, see <a
+         * <p>Returns information about the specified global table.</p>  <p>For
+         * global tables, this operation only applies to global tables using Version
+         * 2019.11.21 (Current version), as it provides greater flexibility, higher
+         * efficiency and consumes less write capacity than 2017.11.29 (Legacy). To
+         * determine which version you are using, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
          * the version</a>. To update existing global tables from version 2017.11.29
          * (Legacy) to version 2019.11.21 (Current), see <a
@@ -751,14 +745,11 @@ namespace DynamoDB
         }
 
         /**
-         * <p>Describes Region-specific settings for a global table.</p> 
-         * <p>This operation only applies to <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-         * 2017.11.29 (Legacy)</a> of global tables. We recommend using <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-         * 2019.11.21 (Current)</a> when creating new global tables, as it provides greater
-         * flexibility, higher efficiency and consumes less write capacity than 2017.11.29
-         * (Legacy). To determine which version you are using, see <a
+         * <p>Describes Region-specific settings for a global table.</p>  <p>For
+         * global tables, this operation only applies to global tables using Version
+         * 2019.11.21 (Current version), as it provides greater flexibility, higher
+         * efficiency and consumes less write capacity than 2017.11.29 (Legacy). To
+         * determine which version you are using, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
          * the version</a>. To update existing global tables from version 2017.11.29
          * (Legacy) to version 2019.11.21 (Current), see <a
@@ -907,10 +898,9 @@ namespace DynamoDB
         /**
          * <p>Returns information about the table, including the current status of the
          * table, when it was created, the primary key schema, and any indexes on the
-         * table.</p>  <p>This operation only applies to <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-         * 2019.11.21 (Current)</a> of global tables. </p>   <p>If you
-         * issue a <code>DescribeTable</code> request immediately after a
+         * table.</p>  <p>For global tables, this operation only applies to
+         * global tables using Version 2019.11.21 (Current version). </p> 
+         *  <p>If you issue a <code>DescribeTable</code> request immediately after a
          * <code>CreateTable</code> request, DynamoDB might return a
          * <code>ResourceNotFoundException</code>. This is because
          * <code>DescribeTable</code> uses an eventually consistent query, and the metadata
@@ -942,10 +932,9 @@ namespace DynamoDB
 
         /**
          * <p>Describes auto scaling settings across replicas of the global table at
-         * once.</p>  <p>This operation only applies to <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-         * 2019.11.21 (Current)</a> of global tables.</p> <p><h3>See Also:</h3>
-         * <a
+         * once.</p>  <p>For global tables, this operation only applies to
+         * global tables using Version 2019.11.21 (Current version).</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTableReplicaAutoScaling">AWS
          * API Reference</a></p>
          */
@@ -1343,13 +1332,10 @@ namespace DynamoDB
 
         /**
          * <p>Lists all global tables that have a replica in the specified Region.</p>
-         *  <p>This operation only applies to <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-         * 2017.11.29 (Legacy)</a> of global tables. We recommend using <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-         * 2019.11.21 (Current)</a> when creating new global tables, as it provides greater
-         * flexibility, higher efficiency and consumes less write capacity than 2017.11.29
-         * (Legacy). To determine which version you are using, see <a
+         *  <p>For global tables, this operation only applies to global tables
+         * using Version 2019.11.21 (Current version), as it provides greater flexibility,
+         * higher efficiency and consumes less write capacity than 2017.11.29 (Legacy). To
+         * determine which version you are using, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
          * the version</a>. To update existing global tables from version 2017.11.29
          * (Legacy) to version 2019.11.21 (Current), see <a
@@ -1994,22 +1980,18 @@ namespace DynamoDB
          * already exist to be able to use this operation. Any replica to be added must be
          * empty, have the same name as the global table, have the same key schema, have
          * DynamoDB Streams enabled, and have the same provisioned and maximum write
-         * capacity units.</p>  <p>This operation only applies to <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-         * 2017.11.29 (Legacy)</a> of global tables. We recommend using <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-         * 2019.11.21 (Current)</a> when creating new global tables, as it provides greater
-         * flexibility, higher efficiency and consumes less write capacity than 2017.11.29
-         * (Legacy). To determine which version you are using, see <a
+         * capacity units.</p>  <p>For global tables, this operation only
+         * applies to global tables using Version 2019.11.21 (Current version), as it
+         * provides greater flexibility, higher efficiency and consumes less write capacity
+         * than 2017.11.29 (Legacy). To determine which version you are using, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
          * the version</a>. To update existing global tables from version 2017.11.29
          * (Legacy) to version 2019.11.21 (Current), see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html">
-         * Updating global tables</a>. </p>   <p> This operation only
-         * applies to <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-         * 2017.11.29</a> of global tables. If you are using global tables <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+         * Updating global tables</a>. </p>   <p> For global tables, this
+         * operation only applies to global tables using Version 2019.11.21 (Current
+         * version). If you are using global tables <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">Version
          * 2019.11.21</a> you can use <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTable.html">UpdateTable</a>
          * instead. </p> <p> Although you can use <code>UpdateGlobalTable</code> to add
@@ -2045,14 +2027,11 @@ namespace DynamoDB
         }
 
         /**
-         * <p>Updates settings for a global table.</p>  <p>This operation only
-         * applies to <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-         * 2017.11.29 (Legacy)</a> of global tables. We recommend using <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-         * 2019.11.21 (Current)</a> when creating new global tables, as it provides greater
-         * flexibility, higher efficiency and consumes less write capacity than 2017.11.29
-         * (Legacy). To determine which version you are using, see <a
+         * <p>Updates settings for a global table.</p>  <p>For global tables,
+         * this operation only applies to global tables using Version 2019.11.21 (Current
+         * version), as it provides greater flexibility, higher efficiency and consumes
+         * less write capacity than 2017.11.29 (Legacy). To determine which version you are
+         * using, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining
          * the version</a>. To update existing global tables from version 2017.11.29
          * (Legacy) to version 2019.11.21 (Current), see <a
@@ -2140,20 +2119,19 @@ namespace DynamoDB
 
         /**
          * <p>Modifies the provisioned throughput settings, global secondary indexes, or
-         * DynamoDB Streams settings for a given table.</p>  <p>This operation
-         * only applies to <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-         * 2019.11.21 (Current)</a> of global tables. </p>  <p>You can only
-         * perform one of the following operations at once:</p> <ul> <li> <p>Modify the
-         * provisioned throughput settings of the table.</p> </li> <li> <p>Remove a global
-         * secondary index from the table.</p> </li> <li> <p>Create a new global secondary
-         * index on the table. After the index begins backfilling, you can use
-         * <code>UpdateTable</code> to perform other operations.</p> </li> </ul> <p>
-         * <code>UpdateTable</code> is an asynchronous operation; while it's executing, the
-         * table status changes from <code>ACTIVE</code> to <code>UPDATING</code>. While
-         * it's <code>UPDATING</code>, you can't issue another <code>UpdateTable</code>
-         * request. When the table returns to the <code>ACTIVE</code> state, the
-         * <code>UpdateTable</code> operation is complete.</p><p><h3>See Also:</h3>   <a
+         * DynamoDB Streams settings for a given table.</p>  <p>For global
+         * tables, this operation only applies to global tables using Version 2019.11.21
+         * (Current version). </p>  <p>You can only perform one of the
+         * following operations at once:</p> <ul> <li> <p>Modify the provisioned throughput
+         * settings of the table.</p> </li> <li> <p>Remove a global secondary index from
+         * the table.</p> </li> <li> <p>Create a new global secondary index on the table.
+         * After the index begins backfilling, you can use <code>UpdateTable</code> to
+         * perform other operations.</p> </li> </ul> <p> <code>UpdateTable</code> is an
+         * asynchronous operation; while it's executing, the table status changes from
+         * <code>ACTIVE</code> to <code>UPDATING</code>. While it's <code>UPDATING</code>,
+         * you can't issue another <code>UpdateTable</code> request. When the table returns
+         * to the <code>ACTIVE</code> state, the <code>UpdateTable</code> operation is
+         * complete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTable">AWS
          * API Reference</a></p>
          */
@@ -2179,10 +2157,8 @@ namespace DynamoDB
 
         /**
          * <p>Updates auto scaling settings on your global tables at once.</p> 
-         * <p>This operation only applies to <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-         * 2019.11.21 (Current)</a> of global tables. </p> <p><h3>See
-         * Also:</h3>   <a
+         * <p>For global tables, this operation only applies to global tables using Version
+         * 2019.11.21 (Current version). </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTableReplicaAutoScaling">AWS
          * API Reference</a></p>
          */

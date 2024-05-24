@@ -820,12 +820,12 @@ namespace Model
      * capacity. This setting can be changed later.</p> <ul> <li> <p>
      * <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for
      * predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned
-     * Mode</a>.</p> </li> <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using
-     * <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html">Provisioned
+     * capacity mode</a>.</p> </li> <li> <p> <code>PAY_PER_REQUEST</code> - We
+     * recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
      * <code>PAY_PER_REQUEST</code> sets the billing mode to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand
-     * Mode</a>. </p> </li> </ul>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/on-demand-capacity-mode.html">On-demand
+     * capacity mode</a>. </p> </li> </ul>
      */
     inline const BillingMode& GetBillingMode() const{ return m_billingMode; }
 
@@ -834,12 +834,12 @@ namespace Model
      * capacity. This setting can be changed later.</p> <ul> <li> <p>
      * <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for
      * predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned
-     * Mode</a>.</p> </li> <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using
-     * <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html">Provisioned
+     * capacity mode</a>.</p> </li> <li> <p> <code>PAY_PER_REQUEST</code> - We
+     * recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
      * <code>PAY_PER_REQUEST</code> sets the billing mode to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand
-     * Mode</a>. </p> </li> </ul>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/on-demand-capacity-mode.html">On-demand
+     * capacity mode</a>. </p> </li> </ul>
      */
     inline bool BillingModeHasBeenSet() const { return m_billingModeHasBeenSet; }
 
@@ -848,12 +848,12 @@ namespace Model
      * capacity. This setting can be changed later.</p> <ul> <li> <p>
      * <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for
      * predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned
-     * Mode</a>.</p> </li> <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using
-     * <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html">Provisioned
+     * capacity mode</a>.</p> </li> <li> <p> <code>PAY_PER_REQUEST</code> - We
+     * recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
      * <code>PAY_PER_REQUEST</code> sets the billing mode to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand
-     * Mode</a>. </p> </li> </ul>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/on-demand-capacity-mode.html">On-demand
+     * capacity mode</a>. </p> </li> </ul>
      */
     inline void SetBillingMode(const BillingMode& value) { m_billingModeHasBeenSet = true; m_billingMode = value; }
 
@@ -862,12 +862,12 @@ namespace Model
      * capacity. This setting can be changed later.</p> <ul> <li> <p>
      * <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for
      * predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned
-     * Mode</a>.</p> </li> <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using
-     * <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html">Provisioned
+     * capacity mode</a>.</p> </li> <li> <p> <code>PAY_PER_REQUEST</code> - We
+     * recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
      * <code>PAY_PER_REQUEST</code> sets the billing mode to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand
-     * Mode</a>. </p> </li> </ul>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/on-demand-capacity-mode.html">On-demand
+     * capacity mode</a>. </p> </li> </ul>
      */
     inline void SetBillingMode(BillingMode&& value) { m_billingModeHasBeenSet = true; m_billingMode = std::move(value); }
 
@@ -876,12 +876,12 @@ namespace Model
      * capacity. This setting can be changed later.</p> <ul> <li> <p>
      * <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for
      * predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned
-     * Mode</a>.</p> </li> <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using
-     * <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html">Provisioned
+     * capacity mode</a>.</p> </li> <li> <p> <code>PAY_PER_REQUEST</code> - We
+     * recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
      * <code>PAY_PER_REQUEST</code> sets the billing mode to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand
-     * Mode</a>. </p> </li> </ul>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/on-demand-capacity-mode.html">On-demand
+     * capacity mode</a>. </p> </li> </ul>
      */
     inline CreateTableRequest& WithBillingMode(const BillingMode& value) { SetBillingMode(value); return *this;}
 
@@ -890,12 +890,12 @@ namespace Model
      * capacity. This setting can be changed later.</p> <ul> <li> <p>
      * <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for
      * predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned
-     * Mode</a>.</p> </li> <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using
-     * <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html">Provisioned
+     * capacity mode</a>.</p> </li> <li> <p> <code>PAY_PER_REQUEST</code> - We
+     * recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
      * <code>PAY_PER_REQUEST</code> sets the billing mode to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand
-     * Mode</a>. </p> </li> </ul>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/on-demand-capacity-mode.html">On-demand
+     * capacity mode</a>. </p> </li> </ul>
      */
     inline CreateTableRequest& WithBillingMode(BillingMode&& value) { SetBillingMode(std::move(value)); return *this;}
 

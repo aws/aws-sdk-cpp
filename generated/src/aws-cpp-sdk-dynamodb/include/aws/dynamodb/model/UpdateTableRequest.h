@@ -170,12 +170,12 @@ namespace Model
      * global secondary indexes over the past 30 minutes.</p> <ul> <li> <p>
      * <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for
      * predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned
-     * Mode</a>.</p> </li> <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using
-     * <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html">Provisioned
+     * capacity mode</a>.</p> </li> <li> <p> <code>PAY_PER_REQUEST</code> - We
+     * recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
      * <code>PAY_PER_REQUEST</code> sets the billing mode to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand
-     * Mode</a>. </p> </li> </ul>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/on-demand-capacity-mode.html">On-demand
+     * capacity mode</a>. </p> </li> </ul>
      */
     inline const BillingMode& GetBillingMode() const{ return m_billingMode; }
 
@@ -187,12 +187,12 @@ namespace Model
      * global secondary indexes over the past 30 minutes.</p> <ul> <li> <p>
      * <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for
      * predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned
-     * Mode</a>.</p> </li> <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using
-     * <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html">Provisioned
+     * capacity mode</a>.</p> </li> <li> <p> <code>PAY_PER_REQUEST</code> - We
+     * recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
      * <code>PAY_PER_REQUEST</code> sets the billing mode to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand
-     * Mode</a>. </p> </li> </ul>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/on-demand-capacity-mode.html">On-demand
+     * capacity mode</a>. </p> </li> </ul>
      */
     inline bool BillingModeHasBeenSet() const { return m_billingModeHasBeenSet; }
 
@@ -204,12 +204,12 @@ namespace Model
      * global secondary indexes over the past 30 minutes.</p> <ul> <li> <p>
      * <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for
      * predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned
-     * Mode</a>.</p> </li> <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using
-     * <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html">Provisioned
+     * capacity mode</a>.</p> </li> <li> <p> <code>PAY_PER_REQUEST</code> - We
+     * recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
      * <code>PAY_PER_REQUEST</code> sets the billing mode to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand
-     * Mode</a>. </p> </li> </ul>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/on-demand-capacity-mode.html">On-demand
+     * capacity mode</a>. </p> </li> </ul>
      */
     inline void SetBillingMode(const BillingMode& value) { m_billingModeHasBeenSet = true; m_billingMode = value; }
 
@@ -221,12 +221,12 @@ namespace Model
      * global secondary indexes over the past 30 minutes.</p> <ul> <li> <p>
      * <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for
      * predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned
-     * Mode</a>.</p> </li> <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using
-     * <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html">Provisioned
+     * capacity mode</a>.</p> </li> <li> <p> <code>PAY_PER_REQUEST</code> - We
+     * recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
      * <code>PAY_PER_REQUEST</code> sets the billing mode to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand
-     * Mode</a>. </p> </li> </ul>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/on-demand-capacity-mode.html">On-demand
+     * capacity mode</a>. </p> </li> </ul>
      */
     inline void SetBillingMode(BillingMode&& value) { m_billingModeHasBeenSet = true; m_billingMode = std::move(value); }
 
@@ -238,12 +238,12 @@ namespace Model
      * global secondary indexes over the past 30 minutes.</p> <ul> <li> <p>
      * <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for
      * predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned
-     * Mode</a>.</p> </li> <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using
-     * <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html">Provisioned
+     * capacity mode</a>.</p> </li> <li> <p> <code>PAY_PER_REQUEST</code> - We
+     * recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
      * <code>PAY_PER_REQUEST</code> sets the billing mode to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand
-     * Mode</a>. </p> </li> </ul>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/on-demand-capacity-mode.html">On-demand
+     * capacity mode</a>. </p> </li> </ul>
      */
     inline UpdateTableRequest& WithBillingMode(const BillingMode& value) { SetBillingMode(value); return *this;}
 
@@ -255,12 +255,12 @@ namespace Model
      * global secondary indexes over the past 30 minutes.</p> <ul> <li> <p>
      * <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for
      * predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned
-     * Mode</a>.</p> </li> <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using
-     * <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html">Provisioned
+     * capacity mode</a>.</p> </li> <li> <p> <code>PAY_PER_REQUEST</code> - We
+     * recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
      * <code>PAY_PER_REQUEST</code> sets the billing mode to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand
-     * Mode</a>. </p> </li> </ul>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/on-demand-capacity-mode.html">On-demand
+     * capacity mode</a>. </p> </li> </ul>
      */
     inline UpdateTableRequest& WithBillingMode(BillingMode&& value) { SetBillingMode(std::move(value)); return *this;}
 
@@ -491,65 +491,57 @@ namespace Model
 
     /**
      * <p>A list of replica update actions (create, delete, or update) for the
-     * table.</p>  <p>This property only applies to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-     * 2019.11.21 (Current)</a> of global tables. </p> 
+     * table.</p>  <p>For global tables, this property only applies to global
+     * tables using Version 2019.11.21 (Current version). </p> 
      */
     inline const Aws::Vector<ReplicationGroupUpdate>& GetReplicaUpdates() const{ return m_replicaUpdates; }
 
     /**
      * <p>A list of replica update actions (create, delete, or update) for the
-     * table.</p>  <p>This property only applies to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-     * 2019.11.21 (Current)</a> of global tables. </p> 
+     * table.</p>  <p>For global tables, this property only applies to global
+     * tables using Version 2019.11.21 (Current version). </p> 
      */
     inline bool ReplicaUpdatesHasBeenSet() const { return m_replicaUpdatesHasBeenSet; }
 
     /**
      * <p>A list of replica update actions (create, delete, or update) for the
-     * table.</p>  <p>This property only applies to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-     * 2019.11.21 (Current)</a> of global tables. </p> 
+     * table.</p>  <p>For global tables, this property only applies to global
+     * tables using Version 2019.11.21 (Current version). </p> 
      */
     inline void SetReplicaUpdates(const Aws::Vector<ReplicationGroupUpdate>& value) { m_replicaUpdatesHasBeenSet = true; m_replicaUpdates = value; }
 
     /**
      * <p>A list of replica update actions (create, delete, or update) for the
-     * table.</p>  <p>This property only applies to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-     * 2019.11.21 (Current)</a> of global tables. </p> 
+     * table.</p>  <p>For global tables, this property only applies to global
+     * tables using Version 2019.11.21 (Current version). </p> 
      */
     inline void SetReplicaUpdates(Aws::Vector<ReplicationGroupUpdate>&& value) { m_replicaUpdatesHasBeenSet = true; m_replicaUpdates = std::move(value); }
 
     /**
      * <p>A list of replica update actions (create, delete, or update) for the
-     * table.</p>  <p>This property only applies to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-     * 2019.11.21 (Current)</a> of global tables. </p> 
+     * table.</p>  <p>For global tables, this property only applies to global
+     * tables using Version 2019.11.21 (Current version). </p> 
      */
     inline UpdateTableRequest& WithReplicaUpdates(const Aws::Vector<ReplicationGroupUpdate>& value) { SetReplicaUpdates(value); return *this;}
 
     /**
      * <p>A list of replica update actions (create, delete, or update) for the
-     * table.</p>  <p>This property only applies to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-     * 2019.11.21 (Current)</a> of global tables. </p> 
+     * table.</p>  <p>For global tables, this property only applies to global
+     * tables using Version 2019.11.21 (Current version). </p> 
      */
     inline UpdateTableRequest& WithReplicaUpdates(Aws::Vector<ReplicationGroupUpdate>&& value) { SetReplicaUpdates(std::move(value)); return *this;}
 
     /**
      * <p>A list of replica update actions (create, delete, or update) for the
-     * table.</p>  <p>This property only applies to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-     * 2019.11.21 (Current)</a> of global tables. </p> 
+     * table.</p>  <p>For global tables, this property only applies to global
+     * tables using Version 2019.11.21 (Current version). </p> 
      */
     inline UpdateTableRequest& AddReplicaUpdates(const ReplicationGroupUpdate& value) { m_replicaUpdatesHasBeenSet = true; m_replicaUpdates.push_back(value); return *this; }
 
     /**
      * <p>A list of replica update actions (create, delete, or update) for the
-     * table.</p>  <p>This property only applies to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-     * 2019.11.21 (Current)</a> of global tables. </p> 
+     * table.</p>  <p>For global tables, this property only applies to global
+     * tables using Version 2019.11.21 (Current version). </p> 
      */
     inline UpdateTableRequest& AddReplicaUpdates(ReplicationGroupUpdate&& value) { m_replicaUpdatesHasBeenSet = true; m_replicaUpdates.push_back(std::move(value)); return *this; }
 
