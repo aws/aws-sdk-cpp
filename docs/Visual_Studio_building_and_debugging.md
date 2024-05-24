@@ -1,4 +1,4 @@
-In this guide we will be setting up and running this ["Hello S3" application](https://docs.aws.amazon.com/sdk-for-cpp/v1/developer-guide/build-cmake.html) in Visual Studio. This was tested with Visual Studio 2022 on Windows 10, but should work on other versions. Please open an issue/discussion if you have any problems following this sample. First we will start with building this sdk in Visual Studio.
+In this guide we will be setting up and running this ["Hello S3" application](https://docs.aws.amazon.com/sdk-for-cpp/v1/developer-guide/build-cmake.html) in Visual Studio. This was tested with Visual Studio 2022 on Windows 10, but should work on other versions. First we will start with building this sdk in Visual Studio.
 
 1. Clone this repository with submoduels
   ```sh
