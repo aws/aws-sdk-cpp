@@ -126,50 +126,50 @@ namespace Model
 
 
     /**
-     * <p>(Optional) The Amazon Resource Name (ARN) of the signal catalog to associate
-     * with the campaign. </p>
+     * <p>The Amazon Resource Name (ARN) of the signal catalog to associate with the
+     * campaign. </p>
      */
     inline const Aws::String& GetSignalCatalogArn() const{ return m_signalCatalogArn; }
 
     /**
-     * <p>(Optional) The Amazon Resource Name (ARN) of the signal catalog to associate
-     * with the campaign. </p>
+     * <p>The Amazon Resource Name (ARN) of the signal catalog to associate with the
+     * campaign. </p>
      */
     inline bool SignalCatalogArnHasBeenSet() const { return m_signalCatalogArnHasBeenSet; }
 
     /**
-     * <p>(Optional) The Amazon Resource Name (ARN) of the signal catalog to associate
-     * with the campaign. </p>
+     * <p>The Amazon Resource Name (ARN) of the signal catalog to associate with the
+     * campaign. </p>
      */
     inline void SetSignalCatalogArn(const Aws::String& value) { m_signalCatalogArnHasBeenSet = true; m_signalCatalogArn = value; }
 
     /**
-     * <p>(Optional) The Amazon Resource Name (ARN) of the signal catalog to associate
-     * with the campaign. </p>
+     * <p>The Amazon Resource Name (ARN) of the signal catalog to associate with the
+     * campaign. </p>
      */
     inline void SetSignalCatalogArn(Aws::String&& value) { m_signalCatalogArnHasBeenSet = true; m_signalCatalogArn = std::move(value); }
 
     /**
-     * <p>(Optional) The Amazon Resource Name (ARN) of the signal catalog to associate
-     * with the campaign. </p>
+     * <p>The Amazon Resource Name (ARN) of the signal catalog to associate with the
+     * campaign. </p>
      */
     inline void SetSignalCatalogArn(const char* value) { m_signalCatalogArnHasBeenSet = true; m_signalCatalogArn.assign(value); }
 
     /**
-     * <p>(Optional) The Amazon Resource Name (ARN) of the signal catalog to associate
-     * with the campaign. </p>
+     * <p>The Amazon Resource Name (ARN) of the signal catalog to associate with the
+     * campaign. </p>
      */
     inline CreateCampaignRequest& WithSignalCatalogArn(const Aws::String& value) { SetSignalCatalogArn(value); return *this;}
 
     /**
-     * <p>(Optional) The Amazon Resource Name (ARN) of the signal catalog to associate
-     * with the campaign. </p>
+     * <p>The Amazon Resource Name (ARN) of the signal catalog to associate with the
+     * campaign. </p>
      */
     inline CreateCampaignRequest& WithSignalCatalogArn(Aws::String&& value) { SetSignalCatalogArn(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) The Amazon Resource Name (ARN) of the signal catalog to associate
-     * with the campaign. </p>
+     * <p>The Amazon Resource Name (ARN) of the signal catalog to associate with the
+     * campaign. </p>
      */
     inline CreateCampaignRequest& WithSignalCatalogArn(const char* value) { SetSignalCatalogArn(value); return *this;}
 

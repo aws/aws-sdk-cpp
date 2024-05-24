@@ -30,8 +30,8 @@ namespace Model
    * total provisioned throughput consumed, along with statistics for the table and
    * any indexes involved in the operation. <code>ConsumedCapacity</code> is only
    * returned if the request asked for it. For more information, see <a
-   * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-   * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p><p><h3>See
+   * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html">Provisioned
+   * capacity mode</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ConsumedCapacity">AWS
    * API Reference</a></p>

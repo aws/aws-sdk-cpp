@@ -7,6 +7,7 @@
 #include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
 #include <aws/iotfleetwise/IoTFleetWiseRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -89,6 +90,116 @@ namespace Model
      * vehicle model. </p>
      */
     inline ListVehiclesRequest& WithModelManifestArn(const char* value) { SetModelManifestArn(value); return *this;}
+
+
+    /**
+     * <p>The fully qualified names of the attributes. For example, the fully qualified
+     * name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAttributeNames() const{ return m_attributeNames; }
+
+    /**
+     * <p>The fully qualified names of the attributes. For example, the fully qualified
+     * name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
+     */
+    inline bool AttributeNamesHasBeenSet() const { return m_attributeNamesHasBeenSet; }
+
+    /**
+     * <p>The fully qualified names of the attributes. For example, the fully qualified
+     * name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
+     */
+    inline void SetAttributeNames(const Aws::Vector<Aws::String>& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = value; }
+
+    /**
+     * <p>The fully qualified names of the attributes. For example, the fully qualified
+     * name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
+     */
+    inline void SetAttributeNames(Aws::Vector<Aws::String>&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = std::move(value); }
+
+    /**
+     * <p>The fully qualified names of the attributes. For example, the fully qualified
+     * name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
+     */
+    inline ListVehiclesRequest& WithAttributeNames(const Aws::Vector<Aws::String>& value) { SetAttributeNames(value); return *this;}
+
+    /**
+     * <p>The fully qualified names of the attributes. For example, the fully qualified
+     * name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
+     */
+    inline ListVehiclesRequest& WithAttributeNames(Aws::Vector<Aws::String>&& value) { SetAttributeNames(std::move(value)); return *this;}
+
+    /**
+     * <p>The fully qualified names of the attributes. For example, the fully qualified
+     * name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
+     */
+    inline ListVehiclesRequest& AddAttributeNames(const Aws::String& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
+
+    /**
+     * <p>The fully qualified names of the attributes. For example, the fully qualified
+     * name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
+     */
+    inline ListVehiclesRequest& AddAttributeNames(Aws::String&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The fully qualified names of the attributes. For example, the fully qualified
+     * name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
+     */
+    inline ListVehiclesRequest& AddAttributeNames(const char* value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
+
+
+    /**
+     * <p>Static information about a vehicle attribute value in string format. For
+     * example:</p> <p> <code>"1.3 L R2"</code> </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAttributeValues() const{ return m_attributeValues; }
+
+    /**
+     * <p>Static information about a vehicle attribute value in string format. For
+     * example:</p> <p> <code>"1.3 L R2"</code> </p>
+     */
+    inline bool AttributeValuesHasBeenSet() const { return m_attributeValuesHasBeenSet; }
+
+    /**
+     * <p>Static information about a vehicle attribute value in string format. For
+     * example:</p> <p> <code>"1.3 L R2"</code> </p>
+     */
+    inline void SetAttributeValues(const Aws::Vector<Aws::String>& value) { m_attributeValuesHasBeenSet = true; m_attributeValues = value; }
+
+    /**
+     * <p>Static information about a vehicle attribute value in string format. For
+     * example:</p> <p> <code>"1.3 L R2"</code> </p>
+     */
+    inline void SetAttributeValues(Aws::Vector<Aws::String>&& value) { m_attributeValuesHasBeenSet = true; m_attributeValues = std::move(value); }
+
+    /**
+     * <p>Static information about a vehicle attribute value in string format. For
+     * example:</p> <p> <code>"1.3 L R2"</code> </p>
+     */
+    inline ListVehiclesRequest& WithAttributeValues(const Aws::Vector<Aws::String>& value) { SetAttributeValues(value); return *this;}
+
+    /**
+     * <p>Static information about a vehicle attribute value in string format. For
+     * example:</p> <p> <code>"1.3 L R2"</code> </p>
+     */
+    inline ListVehiclesRequest& WithAttributeValues(Aws::Vector<Aws::String>&& value) { SetAttributeValues(std::move(value)); return *this;}
+
+    /**
+     * <p>Static information about a vehicle attribute value in string format. For
+     * example:</p> <p> <code>"1.3 L R2"</code> </p>
+     */
+    inline ListVehiclesRequest& AddAttributeValues(const Aws::String& value) { m_attributeValuesHasBeenSet = true; m_attributeValues.push_back(value); return *this; }
+
+    /**
+     * <p>Static information about a vehicle attribute value in string format. For
+     * example:</p> <p> <code>"1.3 L R2"</code> </p>
+     */
+    inline ListVehiclesRequest& AddAttributeValues(Aws::String&& value) { m_attributeValuesHasBeenSet = true; m_attributeValues.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Static information about a vehicle attribute value in string format. For
+     * example:</p> <p> <code>"1.3 L R2"</code> </p>
+     */
+    inline ListVehiclesRequest& AddAttributeValues(const char* value) { m_attributeValuesHasBeenSet = true; m_attributeValues.push_back(value); return *this; }
 
 
     /**
@@ -196,6 +307,12 @@ namespace Model
 
     Aws::String m_modelManifestArn;
     bool m_modelManifestArnHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_attributeNames;
+    bool m_attributeNamesHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_attributeValues;
+    bool m_attributeValuesHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;

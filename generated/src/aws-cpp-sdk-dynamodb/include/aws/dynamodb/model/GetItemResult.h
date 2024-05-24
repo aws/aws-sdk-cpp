@@ -115,8 +115,9 @@ namespace Model
      * <code>ConsumedCapacity</code> is only returned if the
      * <code>ReturnConsumedCapacity</code> parameter was specified. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html#ItemSizeCalculations.Reads">Provisioned
-     * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/read-write-operations.html#read-operation-consumption">Capacity
+     * unit consumption for read operations</a> in the <i>Amazon DynamoDB Developer
+     * Guide</i>.</p>
      */
     inline const ConsumedCapacity& GetConsumedCapacity() const{ return m_consumedCapacity; }
 
@@ -127,8 +128,9 @@ namespace Model
      * <code>ConsumedCapacity</code> is only returned if the
      * <code>ReturnConsumedCapacity</code> parameter was specified. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html#ItemSizeCalculations.Reads">Provisioned
-     * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/read-write-operations.html#read-operation-consumption">Capacity
+     * unit consumption for read operations</a> in the <i>Amazon DynamoDB Developer
+     * Guide</i>.</p>
      */
     inline void SetConsumedCapacity(const ConsumedCapacity& value) { m_consumedCapacity = value; }
 
@@ -139,8 +141,9 @@ namespace Model
      * <code>ConsumedCapacity</code> is only returned if the
      * <code>ReturnConsumedCapacity</code> parameter was specified. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html#ItemSizeCalculations.Reads">Provisioned
-     * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/read-write-operations.html#read-operation-consumption">Capacity
+     * unit consumption for read operations</a> in the <i>Amazon DynamoDB Developer
+     * Guide</i>.</p>
      */
     inline void SetConsumedCapacity(ConsumedCapacity&& value) { m_consumedCapacity = std::move(value); }
 
@@ -151,8 +154,9 @@ namespace Model
      * <code>ConsumedCapacity</code> is only returned if the
      * <code>ReturnConsumedCapacity</code> parameter was specified. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html#ItemSizeCalculations.Reads">Provisioned
-     * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/read-write-operations.html#read-operation-consumption">Capacity
+     * unit consumption for read operations</a> in the <i>Amazon DynamoDB Developer
+     * Guide</i>.</p>
      */
     inline GetItemResult& WithConsumedCapacity(const ConsumedCapacity& value) { SetConsumedCapacity(value); return *this;}
 
@@ -163,8 +167,9 @@ namespace Model
      * <code>ConsumedCapacity</code> is only returned if the
      * <code>ReturnConsumedCapacity</code> parameter was specified. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html#ItemSizeCalculations.Reads">Provisioned
-     * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/read-write-operations.html#read-operation-consumption">Capacity
+     * unit consumption for read operations</a> in the <i>Amazon DynamoDB Developer
+     * Guide</i>.</p>
      */
     inline GetItemResult& WithConsumedCapacity(ConsumedCapacity&& value) { SetConsumedCapacity(std::move(value)); return *this;}
 
