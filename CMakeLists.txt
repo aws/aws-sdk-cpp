@@ -7,7 +7,7 @@ cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
 option(LEGACY_BUILD "If enabled, the SDK will use 1.11.0 version of CMake files to build" ON)
 if (LEGACY_BUILD)
     message(WARNING "In 1.11 releases, we are releasing experimental alternative building mode."
-            "By setting -DLEGACY_MODE=OFF you can test our advances in modern CMake building and "
+            "By setting -DLEGACY_BUILD=OFF you can test our advances in modern CMake building and "
             "provide early feedback. "
             "The legacy support is set by default in 1.11, when you complete build updating scripts please "
             "update the build flags as mentioned in README.md and set -DLEGACY_BUILD=OFF. "
