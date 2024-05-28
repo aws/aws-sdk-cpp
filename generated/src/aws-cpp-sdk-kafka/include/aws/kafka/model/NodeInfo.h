@@ -7,6 +7,7 @@
 #include <aws/kafka/Kafka_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kafka/model/BrokerNodeInfo.h>
+#include <aws/kafka/model/ControllerNodeInfo.h>
 #include <aws/kafka/model/NodeType.h>
 #include <aws/kafka/model/ZookeeperNodeInfo.h>
 #include <utility>
@@ -140,6 +141,49 @@ namespace Model
          
      */
     inline NodeInfo& WithBrokerNodeInfo(BrokerNodeInfo&& value) { SetBrokerNodeInfo(std::move(value)); return *this;}
+
+
+    /**
+     * 
+            <p>The ControllerNodeInfo.</p>
+         
+     */
+    inline const ControllerNodeInfo& GetControllerNodeInfo() const{ return m_controllerNodeInfo; }
+
+    /**
+     * 
+            <p>The ControllerNodeInfo.</p>
+         
+     */
+    inline bool ControllerNodeInfoHasBeenSet() const { return m_controllerNodeInfoHasBeenSet; }
+
+    /**
+     * 
+            <p>The ControllerNodeInfo.</p>
+         
+     */
+    inline void SetControllerNodeInfo(const ControllerNodeInfo& value) { m_controllerNodeInfoHasBeenSet = true; m_controllerNodeInfo = value; }
+
+    /**
+     * 
+            <p>The ControllerNodeInfo.</p>
+         
+     */
+    inline void SetControllerNodeInfo(ControllerNodeInfo&& value) { m_controllerNodeInfoHasBeenSet = true; m_controllerNodeInfo = std::move(value); }
+
+    /**
+     * 
+            <p>The ControllerNodeInfo.</p>
+         
+     */
+    inline NodeInfo& WithControllerNodeInfo(const ControllerNodeInfo& value) { SetControllerNodeInfo(value); return *this;}
+
+    /**
+     * 
+            <p>The ControllerNodeInfo.</p>
+         
+     */
+    inline NodeInfo& WithControllerNodeInfo(ControllerNodeInfo&& value) { SetControllerNodeInfo(std::move(value)); return *this;}
 
 
     /**
@@ -348,6 +392,9 @@ namespace Model
 
     BrokerNodeInfo m_brokerNodeInfo;
     bool m_brokerNodeInfoHasBeenSet = false;
+
+    ControllerNodeInfo m_controllerNodeInfo;
+    bool m_controllerNodeInfoHasBeenSet = false;
 
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet = false;

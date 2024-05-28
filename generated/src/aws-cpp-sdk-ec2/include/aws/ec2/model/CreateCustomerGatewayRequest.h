@@ -44,26 +44,42 @@ namespace Model
   public:
 
     /**
-     * <p>For devices that support BGP, the customer gateway's BGP ASN.</p> <p>Default:
-     * 65000</p>
+     * <p>For customer gateway devices that support BGP, specify the device's ASN. You
+     * must specify either <code>BgpAsn</code> or <code>BgpAsnExtended</code> when
+     * creating the customer gateway. If the ASN is larger than
+     * <code>2,147,483,647</code>, you must use <code>BgpAsnExtended</code>.</p>
+     * <p>Default: 65000</p> <p>Valid values: <code>1</code> to
+     * <code>2,147,483,647</code> </p>
      */
     inline int GetBgpAsn() const{ return m_bgpAsn; }
 
     /**
-     * <p>For devices that support BGP, the customer gateway's BGP ASN.</p> <p>Default:
-     * 65000</p>
+     * <p>For customer gateway devices that support BGP, specify the device's ASN. You
+     * must specify either <code>BgpAsn</code> or <code>BgpAsnExtended</code> when
+     * creating the customer gateway. If the ASN is larger than
+     * <code>2,147,483,647</code>, you must use <code>BgpAsnExtended</code>.</p>
+     * <p>Default: 65000</p> <p>Valid values: <code>1</code> to
+     * <code>2,147,483,647</code> </p>
      */
     inline bool BgpAsnHasBeenSet() const { return m_bgpAsnHasBeenSet; }
 
     /**
-     * <p>For devices that support BGP, the customer gateway's BGP ASN.</p> <p>Default:
-     * 65000</p>
+     * <p>For customer gateway devices that support BGP, specify the device's ASN. You
+     * must specify either <code>BgpAsn</code> or <code>BgpAsnExtended</code> when
+     * creating the customer gateway. If the ASN is larger than
+     * <code>2,147,483,647</code>, you must use <code>BgpAsnExtended</code>.</p>
+     * <p>Default: 65000</p> <p>Valid values: <code>1</code> to
+     * <code>2,147,483,647</code> </p>
      */
     inline void SetBgpAsn(int value) { m_bgpAsnHasBeenSet = true; m_bgpAsn = value; }
 
     /**
-     * <p>For devices that support BGP, the customer gateway's BGP ASN.</p> <p>Default:
-     * 65000</p>
+     * <p>For customer gateway devices that support BGP, specify the device's ASN. You
+     * must specify either <code>BgpAsn</code> or <code>BgpAsnExtended</code> when
+     * creating the customer gateway. If the ASN is larger than
+     * <code>2,147,483,647</code>, you must use <code>BgpAsnExtended</code>.</p>
+     * <p>Default: 65000</p> <p>Valid values: <code>1</code> to
+     * <code>2,147,483,647</code> </p>
      */
     inline CreateCustomerGatewayRequest& WithBgpAsn(int value) { SetBgpAsn(value); return *this;}
 
@@ -286,50 +302,74 @@ namespace Model
 
 
     /**
-     * <p> IPv4 address for the customer gateway device's outside interface. The
-     * address must be static. </p>
+     * <p>IPv4 address for the customer gateway device's outside interface. The address
+     * must be static. If <code>OutsideIpAddressType</code> in your VPN connection
+     * options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or RFC1918
+     * private IPv4 address. If <code>OutsideIpAddressType</code> is set to
+     * <code>PublicIpv4</code>, you can use a public IPv4 address. </p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
 
     /**
-     * <p> IPv4 address for the customer gateway device's outside interface. The
-     * address must be static. </p>
+     * <p>IPv4 address for the customer gateway device's outside interface. The address
+     * must be static. If <code>OutsideIpAddressType</code> in your VPN connection
+     * options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or RFC1918
+     * private IPv4 address. If <code>OutsideIpAddressType</code> is set to
+     * <code>PublicIpv4</code>, you can use a public IPv4 address. </p>
      */
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
 
     /**
-     * <p> IPv4 address for the customer gateway device's outside interface. The
-     * address must be static. </p>
+     * <p>IPv4 address for the customer gateway device's outside interface. The address
+     * must be static. If <code>OutsideIpAddressType</code> in your VPN connection
+     * options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or RFC1918
+     * private IPv4 address. If <code>OutsideIpAddressType</code> is set to
+     * <code>PublicIpv4</code>, you can use a public IPv4 address. </p>
      */
     inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
 
     /**
-     * <p> IPv4 address for the customer gateway device's outside interface. The
-     * address must be static. </p>
+     * <p>IPv4 address for the customer gateway device's outside interface. The address
+     * must be static. If <code>OutsideIpAddressType</code> in your VPN connection
+     * options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or RFC1918
+     * private IPv4 address. If <code>OutsideIpAddressType</code> is set to
+     * <code>PublicIpv4</code>, you can use a public IPv4 address. </p>
      */
     inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
 
     /**
-     * <p> IPv4 address for the customer gateway device's outside interface. The
-     * address must be static. </p>
+     * <p>IPv4 address for the customer gateway device's outside interface. The address
+     * must be static. If <code>OutsideIpAddressType</code> in your VPN connection
+     * options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or RFC1918
+     * private IPv4 address. If <code>OutsideIpAddressType</code> is set to
+     * <code>PublicIpv4</code>, you can use a public IPv4 address. </p>
      */
     inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
 
     /**
-     * <p> IPv4 address for the customer gateway device's outside interface. The
-     * address must be static. </p>
+     * <p>IPv4 address for the customer gateway device's outside interface. The address
+     * must be static. If <code>OutsideIpAddressType</code> in your VPN connection
+     * options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or RFC1918
+     * private IPv4 address. If <code>OutsideIpAddressType</code> is set to
+     * <code>PublicIpv4</code>, you can use a public IPv4 address. </p>
      */
     inline CreateCustomerGatewayRequest& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
 
     /**
-     * <p> IPv4 address for the customer gateway device's outside interface. The
-     * address must be static. </p>
+     * <p>IPv4 address for the customer gateway device's outside interface. The address
+     * must be static. If <code>OutsideIpAddressType</code> in your VPN connection
+     * options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or RFC1918
+     * private IPv4 address. If <code>OutsideIpAddressType</code> is set to
+     * <code>PublicIpv4</code>, you can use a public IPv4 address. </p>
      */
     inline CreateCustomerGatewayRequest& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
 
     /**
-     * <p> IPv4 address for the customer gateway device's outside interface. The
-     * address must be static. </p>
+     * <p>IPv4 address for the customer gateway device's outside interface. The address
+     * must be static. If <code>OutsideIpAddressType</code> in your VPN connection
+     * options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or RFC1918
+     * private IPv4 address. If <code>OutsideIpAddressType</code> is set to
+     * <code>PublicIpv4</code>, you can use a public IPv4 address. </p>
      */
     inline CreateCustomerGatewayRequest& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
@@ -366,6 +406,43 @@ namespace Model
      */
     inline CreateCustomerGatewayRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p>For customer gateway devices that support BGP, specify the device's ASN. You
+     * must specify either <code>BgpAsn</code> or <code>BgpAsnExtended</code> when
+     * creating the customer gateway. If the ASN is larger than
+     * <code>2,147,483,647</code>, you must use <code>BgpAsnExtended</code>.</p>
+     * <p>Valid values: <code>2,147,483,648</code> to <code>4,294,967,295</code> </p>
+     */
+    inline long long GetBgpAsnExtended() const{ return m_bgpAsnExtended; }
+
+    /**
+     * <p>For customer gateway devices that support BGP, specify the device's ASN. You
+     * must specify either <code>BgpAsn</code> or <code>BgpAsnExtended</code> when
+     * creating the customer gateway. If the ASN is larger than
+     * <code>2,147,483,647</code>, you must use <code>BgpAsnExtended</code>.</p>
+     * <p>Valid values: <code>2,147,483,648</code> to <code>4,294,967,295</code> </p>
+     */
+    inline bool BgpAsnExtendedHasBeenSet() const { return m_bgpAsnExtendedHasBeenSet; }
+
+    /**
+     * <p>For customer gateway devices that support BGP, specify the device's ASN. You
+     * must specify either <code>BgpAsn</code> or <code>BgpAsnExtended</code> when
+     * creating the customer gateway. If the ASN is larger than
+     * <code>2,147,483,647</code>, you must use <code>BgpAsnExtended</code>.</p>
+     * <p>Valid values: <code>2,147,483,648</code> to <code>4,294,967,295</code> </p>
+     */
+    inline void SetBgpAsnExtended(long long value) { m_bgpAsnExtendedHasBeenSet = true; m_bgpAsnExtended = value; }
+
+    /**
+     * <p>For customer gateway devices that support BGP, specify the device's ASN. You
+     * must specify either <code>BgpAsn</code> or <code>BgpAsnExtended</code> when
+     * creating the customer gateway. If the ASN is larger than
+     * <code>2,147,483,647</code>, you must use <code>BgpAsnExtended</code>.</p>
+     * <p>Valid values: <code>2,147,483,648</code> to <code>4,294,967,295</code> </p>
+     */
+    inline CreateCustomerGatewayRequest& WithBgpAsnExtended(long long value) { SetBgpAsnExtended(value); return *this;}
+
   private:
 
     int m_bgpAsn;
@@ -391,6 +468,9 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
+
+    long long m_bgpAsnExtended;
+    bool m_bgpAsnExtendedHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,6 +21,7 @@ namespace Model
 NodeInfo::NodeInfo() : 
     m_addedToClusterTimeHasBeenSet(false),
     m_brokerNodeInfoHasBeenSet(false),
+    m_controllerNodeInfoHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_nodeARNHasBeenSet(false),
     m_nodeType(NodeType::NOT_SET),
@@ -32,6 +33,7 @@ NodeInfo::NodeInfo() :
 NodeInfo::NodeInfo(JsonView jsonValue) : 
     m_addedToClusterTimeHasBeenSet(false),
     m_brokerNodeInfoHasBeenSet(false),
+    m_controllerNodeInfoHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_nodeARNHasBeenSet(false),
     m_nodeType(NodeType::NOT_SET),
@@ -55,6 +57,13 @@ NodeInfo& NodeInfo::operator =(JsonView jsonValue)
     m_brokerNodeInfo = jsonValue.GetObject("brokerNodeInfo");
 
     m_brokerNodeInfoHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("controllerNodeInfo"))
+  {
+    m_controllerNodeInfo = jsonValue.GetObject("controllerNodeInfo");
+
+    m_controllerNodeInfoHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("instanceType"))
@@ -101,6 +110,12 @@ JsonValue NodeInfo::Jsonize() const
   if(m_brokerNodeInfoHasBeenSet)
   {
    payload.WithObject("brokerNodeInfo", m_brokerNodeInfo.Jsonize());
+
+  }
+
+  if(m_controllerNodeInfoHasBeenSet)
+  {
+   payload.WithObject("controllerNodeInfo", m_controllerNodeInfo.Jsonize());
 
   }
 
