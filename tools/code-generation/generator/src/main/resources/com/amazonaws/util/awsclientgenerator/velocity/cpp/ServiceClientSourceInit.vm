@@ -101,6 +101,7 @@ ${className}& ${className}::operator=(const ${className} &rhs) {
     if (&rhs == this) {
       return *this;
     }
+    BASECLASS::operator=(rhs);
     m_signerProvider = Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(ALLOCATION_TAG,
           rhs.GetCredentialsProvider(),
           rhs.m_clientConfiguration.identityProviderSupplier(*this),
@@ -115,7 +116,7 @@ ${className}& ${className}::operator=(const ${className} &rhs) {
     return *this;
 }
 
-S3Client::S3Client(${className} &&rhs) :
+S3Client::S3Client(${className} &&rhs) noexcept :
     BASECLASS(rhs.m_clientConfiguration,
         Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(ALLOCATION_TAG,
             rhs.GetCredentialsProvider(),
@@ -130,10 +131,11 @@ S3Client::S3Client(${className} &&rhs) :
     m_executor(std::move(rhs.m_clientConfiguration.executor)),
     m_endpointProvider(std::move(rhs.m_endpointProvider)) {}
 
-${className}& ${className}::operator=(${className} &&rhs) {
+${className}& ${className}::operator=(${className} &&rhs) noexcept {
   if (&rhs == this) {
     return *this;
   }
+  BASECLASS::operator=(std::move(rhs));
   m_signerProvider = Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(ALLOCATION_TAG,
         rhs.GetCredentialsProvider(),
         rhs.m_clientConfiguration.identityProviderSupplier(*this),

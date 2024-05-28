@@ -80,7 +80,7 @@ namespace Aws
          * Recreates member that reference self.
          * @param rhs the source object of the copy.
          */
-        S3CrtClient(S3CrtClient &&rhs);
+        S3CrtClient(S3CrtClient &&rhs) noexcept;
 
         /**
          * Assignment move operator for a S3Client. Copies all members that do not reference self.
@@ -88,7 +88,7 @@ namespace Aws
          * @param rhs the source object of the copy.
          * @return the copied client.
          */
-        S3CrtClient& operator=(S3CrtClient &&rhs);
+        S3CrtClient& operator=(S3CrtClient &&rhs) noexcept;
 
         /* Legacy constructors due deprecation */
        /**
