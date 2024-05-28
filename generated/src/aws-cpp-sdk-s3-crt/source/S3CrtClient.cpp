@@ -176,6 +176,10 @@ S3CrtClient::S3CrtClient(const S3CrtClient &rhs) :
     m_identityProvider(rhs.m_identityProvider){}
 
 S3CrtClient& S3CrtClient::operator=(const S3CrtClient &rhs) {
+    if (&rhs == this) {
+      return *this;
+    }
+    BASECLASS::operator=(rhs);
     m_signerProvider = Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(ALLOCATION_TAG,
           rhs.GetCredentialsProvider(),
           rhs.m_clientConfiguration.identityProviderSupplier(*this),
@@ -190,7 +194,7 @@ S3CrtClient& S3CrtClient::operator=(const S3CrtClient &rhs) {
     return *this;
 }
 
-S3CrtClient::S3CrtClient(S3CrtClient &&rhs) :
+S3CrtClient::S3CrtClient(S3CrtClient &&rhs) noexcept :
     BASECLASS(rhs.m_clientConfiguration,
         Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(ALLOCATION_TAG,
             rhs.GetCredentialsProvider(),
@@ -205,10 +209,11 @@ S3CrtClient::S3CrtClient(S3CrtClient &&rhs) :
     m_executor(std::move(rhs.m_clientConfiguration.executor)),
     m_endpointProvider(std::move(rhs.m_endpointProvider)) {}
 
-S3CrtClient& S3CrtClient::operator=(S3CrtClient &&rhs) {
+S3CrtClient& S3CrtClient::operator=(S3CrtClient &&rhs) noexcept {
   if (&rhs == this) {
     return *this;
   }
+  BASECLASS::operator=(std::move(rhs));
   m_signerProvider = Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(ALLOCATION_TAG,
         rhs.GetCredentialsProvider(),
         rhs.m_clientConfiguration.identityProviderSupplier(*this),
