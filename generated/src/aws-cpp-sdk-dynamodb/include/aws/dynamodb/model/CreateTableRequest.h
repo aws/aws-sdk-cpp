@@ -1235,7 +1235,9 @@ namespace Model
      * policy against this limit. For a full list of all considerations that apply for
      * resource-based policies, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-considerations.html">Resource-based
-     * policy considerations</a>.</p>
+     * policy considerations</a>.</p>  <p>You need to specify the
+     * <code>CreateTable</code> and <code>PutResourcePolicy</code> IAM actions for
+     * authorizing a user to create a table with a resource-based policy.</p> 
      */
     inline const Aws::String& GetResourcePolicy() const{ return m_resourcePolicy; }
 
@@ -1248,7 +1250,9 @@ namespace Model
      * policy against this limit. For a full list of all considerations that apply for
      * resource-based policies, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-considerations.html">Resource-based
-     * policy considerations</a>.</p>
+     * policy considerations</a>.</p>  <p>You need to specify the
+     * <code>CreateTable</code> and <code>PutResourcePolicy</code> IAM actions for
+     * authorizing a user to create a table with a resource-based policy.</p> 
      */
     inline bool ResourcePolicyHasBeenSet() const { return m_resourcePolicyHasBeenSet; }
 
@@ -1261,7 +1265,9 @@ namespace Model
      * policy against this limit. For a full list of all considerations that apply for
      * resource-based policies, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-considerations.html">Resource-based
-     * policy considerations</a>.</p>
+     * policy considerations</a>.</p>  <p>You need to specify the
+     * <code>CreateTable</code> and <code>PutResourcePolicy</code> IAM actions for
+     * authorizing a user to create a table with a resource-based policy.</p> 
      */
     inline void SetResourcePolicy(const Aws::String& value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy = value; }
 
@@ -1274,7 +1280,9 @@ namespace Model
      * policy against this limit. For a full list of all considerations that apply for
      * resource-based policies, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-considerations.html">Resource-based
-     * policy considerations</a>.</p>
+     * policy considerations</a>.</p>  <p>You need to specify the
+     * <code>CreateTable</code> and <code>PutResourcePolicy</code> IAM actions for
+     * authorizing a user to create a table with a resource-based policy.</p> 
      */
     inline void SetResourcePolicy(Aws::String&& value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy = std::move(value); }
 
@@ -1287,7 +1295,9 @@ namespace Model
      * policy against this limit. For a full list of all considerations that apply for
      * resource-based policies, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-considerations.html">Resource-based
-     * policy considerations</a>.</p>
+     * policy considerations</a>.</p>  <p>You need to specify the
+     * <code>CreateTable</code> and <code>PutResourcePolicy</code> IAM actions for
+     * authorizing a user to create a table with a resource-based policy.</p> 
      */
     inline void SetResourcePolicy(const char* value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy.assign(value); }
 
@@ -1300,7 +1310,9 @@ namespace Model
      * policy against this limit. For a full list of all considerations that apply for
      * resource-based policies, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-considerations.html">Resource-based
-     * policy considerations</a>.</p>
+     * policy considerations</a>.</p>  <p>You need to specify the
+     * <code>CreateTable</code> and <code>PutResourcePolicy</code> IAM actions for
+     * authorizing a user to create a table with a resource-based policy.</p> 
      */
     inline CreateTableRequest& WithResourcePolicy(const Aws::String& value) { SetResourcePolicy(value); return *this;}
 
@@ -1313,7 +1325,9 @@ namespace Model
      * policy against this limit. For a full list of all considerations that apply for
      * resource-based policies, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-considerations.html">Resource-based
-     * policy considerations</a>.</p>
+     * policy considerations</a>.</p>  <p>You need to specify the
+     * <code>CreateTable</code> and <code>PutResourcePolicy</code> IAM actions for
+     * authorizing a user to create a table with a resource-based policy.</p> 
      */
     inline CreateTableRequest& WithResourcePolicy(Aws::String&& value) { SetResourcePolicy(std::move(value)); return *this;}
 
@@ -1326,7 +1340,9 @@ namespace Model
      * policy against this limit. For a full list of all considerations that apply for
      * resource-based policies, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-considerations.html">Resource-based
-     * policy considerations</a>.</p>
+     * policy considerations</a>.</p>  <p>You need to specify the
+     * <code>CreateTable</code> and <code>PutResourcePolicy</code> IAM actions for
+     * authorizing a user to create a table with a resource-based policy.</p> 
      */
     inline CreateTableRequest& WithResourcePolicy(const char* value) { SetResourcePolicy(value); return *this;}
 

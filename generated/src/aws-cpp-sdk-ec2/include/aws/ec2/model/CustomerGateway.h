@@ -42,50 +42,58 @@ namespace Model
 
 
     /**
-     * <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
-     * (ASN).</p>
+     * <p>The customer gateway device's Border Gateway Protocol (BGP) Autonomous System
+     * Number (ASN).</p> <p>Valid values: <code>1</code> to <code>2,147,483,647</code>
+     * </p>
      */
     inline const Aws::String& GetBgpAsn() const{ return m_bgpAsn; }
 
     /**
-     * <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
-     * (ASN).</p>
+     * <p>The customer gateway device's Border Gateway Protocol (BGP) Autonomous System
+     * Number (ASN).</p> <p>Valid values: <code>1</code> to <code>2,147,483,647</code>
+     * </p>
      */
     inline bool BgpAsnHasBeenSet() const { return m_bgpAsnHasBeenSet; }
 
     /**
-     * <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
-     * (ASN).</p>
+     * <p>The customer gateway device's Border Gateway Protocol (BGP) Autonomous System
+     * Number (ASN).</p> <p>Valid values: <code>1</code> to <code>2,147,483,647</code>
+     * </p>
      */
     inline void SetBgpAsn(const Aws::String& value) { m_bgpAsnHasBeenSet = true; m_bgpAsn = value; }
 
     /**
-     * <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
-     * (ASN).</p>
+     * <p>The customer gateway device's Border Gateway Protocol (BGP) Autonomous System
+     * Number (ASN).</p> <p>Valid values: <code>1</code> to <code>2,147,483,647</code>
+     * </p>
      */
     inline void SetBgpAsn(Aws::String&& value) { m_bgpAsnHasBeenSet = true; m_bgpAsn = std::move(value); }
 
     /**
-     * <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
-     * (ASN).</p>
+     * <p>The customer gateway device's Border Gateway Protocol (BGP) Autonomous System
+     * Number (ASN).</p> <p>Valid values: <code>1</code> to <code>2,147,483,647</code>
+     * </p>
      */
     inline void SetBgpAsn(const char* value) { m_bgpAsnHasBeenSet = true; m_bgpAsn.assign(value); }
 
     /**
-     * <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
-     * (ASN).</p>
+     * <p>The customer gateway device's Border Gateway Protocol (BGP) Autonomous System
+     * Number (ASN).</p> <p>Valid values: <code>1</code> to <code>2,147,483,647</code>
+     * </p>
      */
     inline CustomerGateway& WithBgpAsn(const Aws::String& value) { SetBgpAsn(value); return *this;}
 
     /**
-     * <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
-     * (ASN).</p>
+     * <p>The customer gateway device's Border Gateway Protocol (BGP) Autonomous System
+     * Number (ASN).</p> <p>Valid values: <code>1</code> to <code>2,147,483,647</code>
+     * </p>
      */
     inline CustomerGateway& WithBgpAsn(Aws::String&& value) { SetBgpAsn(std::move(value)); return *this;}
 
     /**
-     * <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
-     * (ASN).</p>
+     * <p>The customer gateway device's Border Gateway Protocol (BGP) Autonomous System
+     * Number (ASN).</p> <p>Valid values: <code>1</code> to <code>2,147,483,647</code>
+     * </p>
      */
     inline CustomerGateway& WithBgpAsn(const char* value) { SetBgpAsn(value); return *this;}
 
@@ -132,42 +140,74 @@ namespace Model
 
 
     /**
-     * <p>The IP address of the customer gateway device's outside interface.</p>
+     * <p> IPv4 address for the customer gateway device's outside interface. The
+     * address must be static. If <code>OutsideIpAddressType</code> in your VPN
+     * connection options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or
+     * RFC1918 private IPv4 address. If <code>OutsideIpAddressType</code> is set to
+     * <code>PublicIpv4</code>, you can use a public IPv4 address. </p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
 
     /**
-     * <p>The IP address of the customer gateway device's outside interface.</p>
+     * <p> IPv4 address for the customer gateway device's outside interface. The
+     * address must be static. If <code>OutsideIpAddressType</code> in your VPN
+     * connection options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or
+     * RFC1918 private IPv4 address. If <code>OutsideIpAddressType</code> is set to
+     * <code>PublicIpv4</code>, you can use a public IPv4 address. </p>
      */
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
 
     /**
-     * <p>The IP address of the customer gateway device's outside interface.</p>
+     * <p> IPv4 address for the customer gateway device's outside interface. The
+     * address must be static. If <code>OutsideIpAddressType</code> in your VPN
+     * connection options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or
+     * RFC1918 private IPv4 address. If <code>OutsideIpAddressType</code> is set to
+     * <code>PublicIpv4</code>, you can use a public IPv4 address. </p>
      */
     inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
 
     /**
-     * <p>The IP address of the customer gateway device's outside interface.</p>
+     * <p> IPv4 address for the customer gateway device's outside interface. The
+     * address must be static. If <code>OutsideIpAddressType</code> in your VPN
+     * connection options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or
+     * RFC1918 private IPv4 address. If <code>OutsideIpAddressType</code> is set to
+     * <code>PublicIpv4</code>, you can use a public IPv4 address. </p>
      */
     inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
 
     /**
-     * <p>The IP address of the customer gateway device's outside interface.</p>
+     * <p> IPv4 address for the customer gateway device's outside interface. The
+     * address must be static. If <code>OutsideIpAddressType</code> in your VPN
+     * connection options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or
+     * RFC1918 private IPv4 address. If <code>OutsideIpAddressType</code> is set to
+     * <code>PublicIpv4</code>, you can use a public IPv4 address. </p>
      */
     inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
 
     /**
-     * <p>The IP address of the customer gateway device's outside interface.</p>
+     * <p> IPv4 address for the customer gateway device's outside interface. The
+     * address must be static. If <code>OutsideIpAddressType</code> in your VPN
+     * connection options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or
+     * RFC1918 private IPv4 address. If <code>OutsideIpAddressType</code> is set to
+     * <code>PublicIpv4</code>, you can use a public IPv4 address. </p>
      */
     inline CustomerGateway& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
 
     /**
-     * <p>The IP address of the customer gateway device's outside interface.</p>
+     * <p> IPv4 address for the customer gateway device's outside interface. The
+     * address must be static. If <code>OutsideIpAddressType</code> in your VPN
+     * connection options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or
+     * RFC1918 private IPv4 address. If <code>OutsideIpAddressType</code> is set to
+     * <code>PublicIpv4</code>, you can use a public IPv4 address. </p>
      */
     inline CustomerGateway& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
 
     /**
-     * <p>The IP address of the customer gateway device's outside interface.</p>
+     * <p> IPv4 address for the customer gateway device's outside interface. The
+     * address must be static. If <code>OutsideIpAddressType</code> in your VPN
+     * connection options is set to <code>PrivateIpv4</code>, you can use an RFC6598 or
+     * RFC1918 private IPv4 address. If <code>OutsideIpAddressType</code> is set to
+     * <code>PublicIpv4</code>, you can use a public IPv4 address. </p>
      */
     inline CustomerGateway& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
@@ -392,6 +432,63 @@ namespace Model
      */
     inline CustomerGateway& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The customer gateway device's Border Gateway Protocol (BGP) Autonomous System
+     * Number (ASN).</p> <p>Valid values: <code>2,147,483,648</code> to
+     * <code>4,294,967,295</code> </p>
+     */
+    inline const Aws::String& GetBgpAsnExtended() const{ return m_bgpAsnExtended; }
+
+    /**
+     * <p>The customer gateway device's Border Gateway Protocol (BGP) Autonomous System
+     * Number (ASN).</p> <p>Valid values: <code>2,147,483,648</code> to
+     * <code>4,294,967,295</code> </p>
+     */
+    inline bool BgpAsnExtendedHasBeenSet() const { return m_bgpAsnExtendedHasBeenSet; }
+
+    /**
+     * <p>The customer gateway device's Border Gateway Protocol (BGP) Autonomous System
+     * Number (ASN).</p> <p>Valid values: <code>2,147,483,648</code> to
+     * <code>4,294,967,295</code> </p>
+     */
+    inline void SetBgpAsnExtended(const Aws::String& value) { m_bgpAsnExtendedHasBeenSet = true; m_bgpAsnExtended = value; }
+
+    /**
+     * <p>The customer gateway device's Border Gateway Protocol (BGP) Autonomous System
+     * Number (ASN).</p> <p>Valid values: <code>2,147,483,648</code> to
+     * <code>4,294,967,295</code> </p>
+     */
+    inline void SetBgpAsnExtended(Aws::String&& value) { m_bgpAsnExtendedHasBeenSet = true; m_bgpAsnExtended = std::move(value); }
+
+    /**
+     * <p>The customer gateway device's Border Gateway Protocol (BGP) Autonomous System
+     * Number (ASN).</p> <p>Valid values: <code>2,147,483,648</code> to
+     * <code>4,294,967,295</code> </p>
+     */
+    inline void SetBgpAsnExtended(const char* value) { m_bgpAsnExtendedHasBeenSet = true; m_bgpAsnExtended.assign(value); }
+
+    /**
+     * <p>The customer gateway device's Border Gateway Protocol (BGP) Autonomous System
+     * Number (ASN).</p> <p>Valid values: <code>2,147,483,648</code> to
+     * <code>4,294,967,295</code> </p>
+     */
+    inline CustomerGateway& WithBgpAsnExtended(const Aws::String& value) { SetBgpAsnExtended(value); return *this;}
+
+    /**
+     * <p>The customer gateway device's Border Gateway Protocol (BGP) Autonomous System
+     * Number (ASN).</p> <p>Valid values: <code>2,147,483,648</code> to
+     * <code>4,294,967,295</code> </p>
+     */
+    inline CustomerGateway& WithBgpAsnExtended(Aws::String&& value) { SetBgpAsnExtended(std::move(value)); return *this;}
+
+    /**
+     * <p>The customer gateway device's Border Gateway Protocol (BGP) Autonomous System
+     * Number (ASN).</p> <p>Valid values: <code>2,147,483,648</code> to
+     * <code>4,294,967,295</code> </p>
+     */
+    inline CustomerGateway& WithBgpAsnExtended(const char* value) { SetBgpAsnExtended(value); return *this;}
+
   private:
 
     Aws::String m_bgpAsn;
@@ -417,6 +514,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_bgpAsnExtended;
+    bool m_bgpAsnExtendedHasBeenSet = false;
   };
 
 } // namespace Model
