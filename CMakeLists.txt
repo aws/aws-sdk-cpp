@@ -154,9 +154,6 @@ if (LEGACY_BUILD)
         set(STATIC_CRT ON)
     endif ()
 
-    # Add Linker search paths to RPATH so as to fix the problem where some linkers can't find cross-compiled dependent libraries in customer paths when linking executables.
-    set(CMAKE_INSTALL_RPATH_USE_LINK_PATH true)
-
     # build the sdk targets
     project("aws-cpp-sdk-all" VERSION "${PROJECT_VERSION}" LANGUAGES CXX)
 
