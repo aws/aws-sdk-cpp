@@ -20,6 +20,8 @@ namespace Model
 
 Job::Job() : 
     m_nameHasBeenSet(false),
+    m_jobMode(JobMode::NOT_SET),
+    m_jobModeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_logUriHasBeenSet(false),
     m_roleHasBeenSet(false),
@@ -53,6 +55,8 @@ Job::Job() :
 
 Job::Job(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
+    m_jobMode(JobMode::NOT_SET),
+    m_jobModeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_logUriHasBeenSet(false),
     m_roleHasBeenSet(false),
@@ -92,6 +96,13 @@ Job& Job::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("Name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("JobMode"))
+  {
+    m_jobMode = JobModeMapper::GetJobModeForName(jsonValue.GetString("JobMode"));
+
+    m_jobModeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Description"))
@@ -268,6 +279,11 @@ JsonValue Job::Jsonize() const
   {
    payload.WithString("Name", m_name);
 
+  }
+
+  if(m_jobModeHasBeenSet)
+  {
+   payload.WithString("JobMode", JobModeMapper::GetNameForJobMode(m_jobMode));
   }
 
   if(m_descriptionHasBeenSet)

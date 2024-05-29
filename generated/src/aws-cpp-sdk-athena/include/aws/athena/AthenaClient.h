@@ -914,11 +914,14 @@ namespace Athena
 
         /**
          * <p>Returns query execution runtime statistics related to a single execution of a
-         * query if you have access to the workgroup in which the query ran. Query
-         * execution runtime statistics are returned only when
-         * <a>QueryExecutionStatus$State</a> is in a SUCCEEDED or FAILED state. Stage-level
-         * input and output row count and data size statistics are not shown when a query
-         * has row-level filters defined in Lake Formation.</p><p><h3>See Also:</h3>   <a
+         * query if you have access to the workgroup in which the query ran. Statistics
+         * from the <code>Timeline</code> section of the response object are available as
+         * soon as <a>QueryExecutionStatus$State</a> is in a SUCCEEDED or FAILED state. The
+         * remaining non-timeline statistics in the response (like stage-level input and
+         * output row count and data size) are updated asynchronously and may not be
+         * available immediately after a query completes. The non-timeline statistics are
+         * also not included when a query has row-level filters defined in Lake
+         * Formation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryRuntimeStatistics">AWS
          * API Reference</a></p>
          */

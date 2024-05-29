@@ -13,6 +13,14 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/connect/model/WisdomInfo.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/connect/model/RoutingCriteria.h>
+#include <aws/connect/model/Customer.h>
+#include <aws/connect/model/Campaign.h>
+#include <aws/connect/model/AnsweringMachineDetectionStatus.h>
+#include <aws/connect/model/CustomerVoiceActivity.h>
+#include <aws/connect/model/QualityMetrics.h>
+#include <aws/connect/model/DisconnectDetails.h>
+#include <aws/connect/model/SegmentAttributeValue.h>
 #include <utility>
 
 namespace Aws
@@ -950,6 +958,369 @@ namespace Model
      */
     inline Contact& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The timestamp when customer endpoint connected to Amazon Connect.</p>
+     */
+    inline const Aws::Utils::DateTime& GetConnectedToSystemTimestamp() const{ return m_connectedToSystemTimestamp; }
+
+    /**
+     * <p>The timestamp when customer endpoint connected to Amazon Connect.</p>
+     */
+    inline bool ConnectedToSystemTimestampHasBeenSet() const { return m_connectedToSystemTimestampHasBeenSet; }
+
+    /**
+     * <p>The timestamp when customer endpoint connected to Amazon Connect.</p>
+     */
+    inline void SetConnectedToSystemTimestamp(const Aws::Utils::DateTime& value) { m_connectedToSystemTimestampHasBeenSet = true; m_connectedToSystemTimestamp = value; }
+
+    /**
+     * <p>The timestamp when customer endpoint connected to Amazon Connect.</p>
+     */
+    inline void SetConnectedToSystemTimestamp(Aws::Utils::DateTime&& value) { m_connectedToSystemTimestampHasBeenSet = true; m_connectedToSystemTimestamp = std::move(value); }
+
+    /**
+     * <p>The timestamp when customer endpoint connected to Amazon Connect.</p>
+     */
+    inline Contact& WithConnectedToSystemTimestamp(const Aws::Utils::DateTime& value) { SetConnectedToSystemTimestamp(value); return *this;}
+
+    /**
+     * <p>The timestamp when customer endpoint connected to Amazon Connect.</p>
+     */
+    inline Contact& WithConnectedToSystemTimestamp(Aws::Utils::DateTime&& value) { SetConnectedToSystemTimestamp(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Latest routing criteria on the contact.</p>
+     */
+    inline const RoutingCriteria& GetRoutingCriteria() const{ return m_routingCriteria; }
+
+    /**
+     * <p>Latest routing criteria on the contact.</p>
+     */
+    inline bool RoutingCriteriaHasBeenSet() const { return m_routingCriteriaHasBeenSet; }
+
+    /**
+     * <p>Latest routing criteria on the contact.</p>
+     */
+    inline void SetRoutingCriteria(const RoutingCriteria& value) { m_routingCriteriaHasBeenSet = true; m_routingCriteria = value; }
+
+    /**
+     * <p>Latest routing criteria on the contact.</p>
+     */
+    inline void SetRoutingCriteria(RoutingCriteria&& value) { m_routingCriteriaHasBeenSet = true; m_routingCriteria = std::move(value); }
+
+    /**
+     * <p>Latest routing criteria on the contact.</p>
+     */
+    inline Contact& WithRoutingCriteria(const RoutingCriteria& value) { SetRoutingCriteria(value); return *this;}
+
+    /**
+     * <p>Latest routing criteria on the contact.</p>
+     */
+    inline Contact& WithRoutingCriteria(RoutingCriteria&& value) { SetRoutingCriteria(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information about the Customer on the contact.</p>
+     */
+    inline const Customer& GetCustomer() const{ return m_customer; }
+
+    /**
+     * <p>Information about the Customer on the contact.</p>
+     */
+    inline bool CustomerHasBeenSet() const { return m_customerHasBeenSet; }
+
+    /**
+     * <p>Information about the Customer on the contact.</p>
+     */
+    inline void SetCustomer(const Customer& value) { m_customerHasBeenSet = true; m_customer = value; }
+
+    /**
+     * <p>Information about the Customer on the contact.</p>
+     */
+    inline void SetCustomer(Customer&& value) { m_customerHasBeenSet = true; m_customer = std::move(value); }
+
+    /**
+     * <p>Information about the Customer on the contact.</p>
+     */
+    inline Contact& WithCustomer(const Customer& value) { SetCustomer(value); return *this;}
+
+    /**
+     * <p>Information about the Customer on the contact.</p>
+     */
+    inline Contact& WithCustomer(Customer&& value) { SetCustomer(std::move(value)); return *this;}
+
+
+    
+    inline const Campaign& GetCampaign() const{ return m_campaign; }
+
+    
+    inline bool CampaignHasBeenSet() const { return m_campaignHasBeenSet; }
+
+    
+    inline void SetCampaign(const Campaign& value) { m_campaignHasBeenSet = true; m_campaign = value; }
+
+    
+    inline void SetCampaign(Campaign&& value) { m_campaignHasBeenSet = true; m_campaign = std::move(value); }
+
+    
+    inline Contact& WithCampaign(const Campaign& value) { SetCampaign(value); return *this;}
+
+    
+    inline Contact& WithCampaign(Campaign&& value) { SetCampaign(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Indicates how an <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/how-to-create-campaigns.html">outbound
+     * campaign</a> call is actually disposed if the contact is connected to Amazon
+     * Connect.</p>
+     */
+    inline const AnsweringMachineDetectionStatus& GetAnsweringMachineDetectionStatus() const{ return m_answeringMachineDetectionStatus; }
+
+    /**
+     * <p>Indicates how an <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/how-to-create-campaigns.html">outbound
+     * campaign</a> call is actually disposed if the contact is connected to Amazon
+     * Connect.</p>
+     */
+    inline bool AnsweringMachineDetectionStatusHasBeenSet() const { return m_answeringMachineDetectionStatusHasBeenSet; }
+
+    /**
+     * <p>Indicates how an <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/how-to-create-campaigns.html">outbound
+     * campaign</a> call is actually disposed if the contact is connected to Amazon
+     * Connect.</p>
+     */
+    inline void SetAnsweringMachineDetectionStatus(const AnsweringMachineDetectionStatus& value) { m_answeringMachineDetectionStatusHasBeenSet = true; m_answeringMachineDetectionStatus = value; }
+
+    /**
+     * <p>Indicates how an <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/how-to-create-campaigns.html">outbound
+     * campaign</a> call is actually disposed if the contact is connected to Amazon
+     * Connect.</p>
+     */
+    inline void SetAnsweringMachineDetectionStatus(AnsweringMachineDetectionStatus&& value) { m_answeringMachineDetectionStatusHasBeenSet = true; m_answeringMachineDetectionStatus = std::move(value); }
+
+    /**
+     * <p>Indicates how an <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/how-to-create-campaigns.html">outbound
+     * campaign</a> call is actually disposed if the contact is connected to Amazon
+     * Connect.</p>
+     */
+    inline Contact& WithAnsweringMachineDetectionStatus(const AnsweringMachineDetectionStatus& value) { SetAnsweringMachineDetectionStatus(value); return *this;}
+
+    /**
+     * <p>Indicates how an <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/how-to-create-campaigns.html">outbound
+     * campaign</a> call is actually disposed if the contact is connected to Amazon
+     * Connect.</p>
+     */
+    inline Contact& WithAnsweringMachineDetectionStatus(AnsweringMachineDetectionStatus&& value) { SetAnsweringMachineDetectionStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information about customer’s voice activity.</p>
+     */
+    inline const CustomerVoiceActivity& GetCustomerVoiceActivity() const{ return m_customerVoiceActivity; }
+
+    /**
+     * <p>Information about customer’s voice activity.</p>
+     */
+    inline bool CustomerVoiceActivityHasBeenSet() const { return m_customerVoiceActivityHasBeenSet; }
+
+    /**
+     * <p>Information about customer’s voice activity.</p>
+     */
+    inline void SetCustomerVoiceActivity(const CustomerVoiceActivity& value) { m_customerVoiceActivityHasBeenSet = true; m_customerVoiceActivity = value; }
+
+    /**
+     * <p>Information about customer’s voice activity.</p>
+     */
+    inline void SetCustomerVoiceActivity(CustomerVoiceActivity&& value) { m_customerVoiceActivityHasBeenSet = true; m_customerVoiceActivity = std::move(value); }
+
+    /**
+     * <p>Information about customer’s voice activity.</p>
+     */
+    inline Contact& WithCustomerVoiceActivity(const CustomerVoiceActivity& value) { SetCustomerVoiceActivity(value); return *this;}
+
+    /**
+     * <p>Information about customer’s voice activity.</p>
+     */
+    inline Contact& WithCustomerVoiceActivity(CustomerVoiceActivity&& value) { SetCustomerVoiceActivity(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information about the quality of the participant's media connection.</p>
+     */
+    inline const QualityMetrics& GetQualityMetrics() const{ return m_qualityMetrics; }
+
+    /**
+     * <p>Information about the quality of the participant's media connection.</p>
+     */
+    inline bool QualityMetricsHasBeenSet() const { return m_qualityMetricsHasBeenSet; }
+
+    /**
+     * <p>Information about the quality of the participant's media connection.</p>
+     */
+    inline void SetQualityMetrics(const QualityMetrics& value) { m_qualityMetricsHasBeenSet = true; m_qualityMetrics = value; }
+
+    /**
+     * <p>Information about the quality of the participant's media connection.</p>
+     */
+    inline void SetQualityMetrics(QualityMetrics&& value) { m_qualityMetricsHasBeenSet = true; m_qualityMetrics = std::move(value); }
+
+    /**
+     * <p>Information about the quality of the participant's media connection.</p>
+     */
+    inline Contact& WithQualityMetrics(const QualityMetrics& value) { SetQualityMetrics(value); return *this;}
+
+    /**
+     * <p>Information about the quality of the participant's media connection.</p>
+     */
+    inline Contact& WithQualityMetrics(QualityMetrics&& value) { SetQualityMetrics(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information about the call disconnect experience.</p>
+     */
+    inline const DisconnectDetails& GetDisconnectDetails() const{ return m_disconnectDetails; }
+
+    /**
+     * <p>Information about the call disconnect experience.</p>
+     */
+    inline bool DisconnectDetailsHasBeenSet() const { return m_disconnectDetailsHasBeenSet; }
+
+    /**
+     * <p>Information about the call disconnect experience.</p>
+     */
+    inline void SetDisconnectDetails(const DisconnectDetails& value) { m_disconnectDetailsHasBeenSet = true; m_disconnectDetails = value; }
+
+    /**
+     * <p>Information about the call disconnect experience.</p>
+     */
+    inline void SetDisconnectDetails(DisconnectDetails&& value) { m_disconnectDetailsHasBeenSet = true; m_disconnectDetails = std::move(value); }
+
+    /**
+     * <p>Information about the call disconnect experience.</p>
+     */
+    inline Contact& WithDisconnectDetails(const DisconnectDetails& value) { SetDisconnectDetails(value); return *this;}
+
+    /**
+     * <p>Information about the call disconnect experience.</p>
+     */
+    inline Contact& WithDisconnectDetails(DisconnectDetails&& value) { SetDisconnectDetails(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A set of system defined key-value pairs stored on individual contact segments
+     * using an attribute map. The attributes are standard Amazon Connect attributes
+     * and can be accessed in flows. Attribute keys can include only alphanumeric, -,
+     * and _ characters. This field can be used to show channel subtype. For example,
+     * <code>connect:Guide</code> or <code>connect:SMS</code>.</p>
+     */
+    inline const Aws::Map<Aws::String, SegmentAttributeValue>& GetSegmentAttributes() const{ return m_segmentAttributes; }
+
+    /**
+     * <p>A set of system defined key-value pairs stored on individual contact segments
+     * using an attribute map. The attributes are standard Amazon Connect attributes
+     * and can be accessed in flows. Attribute keys can include only alphanumeric, -,
+     * and _ characters. This field can be used to show channel subtype. For example,
+     * <code>connect:Guide</code> or <code>connect:SMS</code>.</p>
+     */
+    inline bool SegmentAttributesHasBeenSet() const { return m_segmentAttributesHasBeenSet; }
+
+    /**
+     * <p>A set of system defined key-value pairs stored on individual contact segments
+     * using an attribute map. The attributes are standard Amazon Connect attributes
+     * and can be accessed in flows. Attribute keys can include only alphanumeric, -,
+     * and _ characters. This field can be used to show channel subtype. For example,
+     * <code>connect:Guide</code> or <code>connect:SMS</code>.</p>
+     */
+    inline void SetSegmentAttributes(const Aws::Map<Aws::String, SegmentAttributeValue>& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes = value; }
+
+    /**
+     * <p>A set of system defined key-value pairs stored on individual contact segments
+     * using an attribute map. The attributes are standard Amazon Connect attributes
+     * and can be accessed in flows. Attribute keys can include only alphanumeric, -,
+     * and _ characters. This field can be used to show channel subtype. For example,
+     * <code>connect:Guide</code> or <code>connect:SMS</code>.</p>
+     */
+    inline void SetSegmentAttributes(Aws::Map<Aws::String, SegmentAttributeValue>&& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes = std::move(value); }
+
+    /**
+     * <p>A set of system defined key-value pairs stored on individual contact segments
+     * using an attribute map. The attributes are standard Amazon Connect attributes
+     * and can be accessed in flows. Attribute keys can include only alphanumeric, -,
+     * and _ characters. This field can be used to show channel subtype. For example,
+     * <code>connect:Guide</code> or <code>connect:SMS</code>.</p>
+     */
+    inline Contact& WithSegmentAttributes(const Aws::Map<Aws::String, SegmentAttributeValue>& value) { SetSegmentAttributes(value); return *this;}
+
+    /**
+     * <p>A set of system defined key-value pairs stored on individual contact segments
+     * using an attribute map. The attributes are standard Amazon Connect attributes
+     * and can be accessed in flows. Attribute keys can include only alphanumeric, -,
+     * and _ characters. This field can be used to show channel subtype. For example,
+     * <code>connect:Guide</code> or <code>connect:SMS</code>.</p>
+     */
+    inline Contact& WithSegmentAttributes(Aws::Map<Aws::String, SegmentAttributeValue>&& value) { SetSegmentAttributes(std::move(value)); return *this;}
+
+    /**
+     * <p>A set of system defined key-value pairs stored on individual contact segments
+     * using an attribute map. The attributes are standard Amazon Connect attributes
+     * and can be accessed in flows. Attribute keys can include only alphanumeric, -,
+     * and _ characters. This field can be used to show channel subtype. For example,
+     * <code>connect:Guide</code> or <code>connect:SMS</code>.</p>
+     */
+    inline Contact& AddSegmentAttributes(const Aws::String& key, const SegmentAttributeValue& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(key, value); return *this; }
+
+    /**
+     * <p>A set of system defined key-value pairs stored on individual contact segments
+     * using an attribute map. The attributes are standard Amazon Connect attributes
+     * and can be accessed in flows. Attribute keys can include only alphanumeric, -,
+     * and _ characters. This field can be used to show channel subtype. For example,
+     * <code>connect:Guide</code> or <code>connect:SMS</code>.</p>
+     */
+    inline Contact& AddSegmentAttributes(Aws::String&& key, const SegmentAttributeValue& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A set of system defined key-value pairs stored on individual contact segments
+     * using an attribute map. The attributes are standard Amazon Connect attributes
+     * and can be accessed in flows. Attribute keys can include only alphanumeric, -,
+     * and _ characters. This field can be used to show channel subtype. For example,
+     * <code>connect:Guide</code> or <code>connect:SMS</code>.</p>
+     */
+    inline Contact& AddSegmentAttributes(const Aws::String& key, SegmentAttributeValue&& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A set of system defined key-value pairs stored on individual contact segments
+     * using an attribute map. The attributes are standard Amazon Connect attributes
+     * and can be accessed in flows. Attribute keys can include only alphanumeric, -,
+     * and _ characters. This field can be used to show channel subtype. For example,
+     * <code>connect:Guide</code> or <code>connect:SMS</code>.</p>
+     */
+    inline Contact& AddSegmentAttributes(Aws::String&& key, SegmentAttributeValue&& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A set of system defined key-value pairs stored on individual contact segments
+     * using an attribute map. The attributes are standard Amazon Connect attributes
+     * and can be accessed in flows. Attribute keys can include only alphanumeric, -,
+     * and _ characters. This field can be used to show channel subtype. For example,
+     * <code>connect:Guide</code> or <code>connect:SMS</code>.</p>
+     */
+    inline Contact& AddSegmentAttributes(const char* key, SegmentAttributeValue&& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A set of system defined key-value pairs stored on individual contact segments
+     * using an attribute map. The attributes are standard Amazon Connect attributes
+     * and can be accessed in flows. Attribute keys can include only alphanumeric, -,
+     * and _ characters. This field can be used to show channel subtype. For example,
+     * <code>connect:Guide</code> or <code>connect:SMS</code>.</p>
+     */
+    inline Contact& AddSegmentAttributes(const char* key, const SegmentAttributeValue& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_arn;
@@ -1020,6 +1391,33 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::Utils::DateTime m_connectedToSystemTimestamp;
+    bool m_connectedToSystemTimestampHasBeenSet = false;
+
+    RoutingCriteria m_routingCriteria;
+    bool m_routingCriteriaHasBeenSet = false;
+
+    Customer m_customer;
+    bool m_customerHasBeenSet = false;
+
+    Campaign m_campaign;
+    bool m_campaignHasBeenSet = false;
+
+    AnsweringMachineDetectionStatus m_answeringMachineDetectionStatus;
+    bool m_answeringMachineDetectionStatusHasBeenSet = false;
+
+    CustomerVoiceActivity m_customerVoiceActivity;
+    bool m_customerVoiceActivityHasBeenSet = false;
+
+    QualityMetrics m_qualityMetrics;
+    bool m_qualityMetricsHasBeenSet = false;
+
+    DisconnectDetails m_disconnectDetails;
+    bool m_disconnectDetailsHasBeenSet = false;
+
+    Aws::Map<Aws::String, SegmentAttributeValue> m_segmentAttributes;
+    bool m_segmentAttributesHasBeenSet = false;
   };
 
 } // namespace Model

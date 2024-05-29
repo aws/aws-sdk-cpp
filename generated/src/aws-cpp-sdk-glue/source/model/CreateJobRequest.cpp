@@ -14,6 +14,8 @@ using namespace Aws::Utils;
 
 CreateJobRequest::CreateJobRequest() : 
     m_nameHasBeenSet(false),
+    m_jobMode(JobMode::NOT_SET),
+    m_jobModeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_logUriHasBeenSet(false),
     m_roleHasBeenSet(false),
@@ -52,6 +54,11 @@ Aws::String CreateJobRequest::SerializePayload() const
   {
    payload.WithString("Name", m_name);
 
+  }
+
+  if(m_jobModeHasBeenSet)
+  {
+   payload.WithString("JobMode", JobModeMapper::GetNameForJobMode(m_jobMode));
   }
 
   if(m_descriptionHasBeenSet)

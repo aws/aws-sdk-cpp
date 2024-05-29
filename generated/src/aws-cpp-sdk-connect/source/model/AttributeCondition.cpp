@@ -1,0 +1,106 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/connect/model/AttributeCondition.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Connect
+{
+namespace Model
+{
+
+AttributeCondition::AttributeCondition() : 
+    m_nameHasBeenSet(false),
+    m_valueHasBeenSet(false),
+    m_proficiencyLevel(0.0),
+    m_proficiencyLevelHasBeenSet(false),
+    m_comparisonOperatorHasBeenSet(false)
+{
+}
+
+AttributeCondition::AttributeCondition(JsonView jsonValue) : 
+    m_nameHasBeenSet(false),
+    m_valueHasBeenSet(false),
+    m_proficiencyLevel(0.0),
+    m_proficiencyLevelHasBeenSet(false),
+    m_comparisonOperatorHasBeenSet(false)
+{
+  *this = jsonValue;
+}
+
+AttributeCondition& AttributeCondition::operator =(JsonView jsonValue)
+{
+  if(jsonValue.ValueExists("Name"))
+  {
+    m_name = jsonValue.GetString("Name");
+
+    m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Value"))
+  {
+    m_value = jsonValue.GetString("Value");
+
+    m_valueHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ProficiencyLevel"))
+  {
+    m_proficiencyLevel = jsonValue.GetDouble("ProficiencyLevel");
+
+    m_proficiencyLevelHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ComparisonOperator"))
+  {
+    m_comparisonOperator = jsonValue.GetString("ComparisonOperator");
+
+    m_comparisonOperatorHasBeenSet = true;
+  }
+
+  return *this;
+}
+
+JsonValue AttributeCondition::Jsonize() const
+{
+  JsonValue payload;
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
+
+  }
+
+  if(m_valueHasBeenSet)
+  {
+   payload.WithString("Value", m_value);
+
+  }
+
+  if(m_proficiencyLevelHasBeenSet)
+  {
+   payload.WithDouble("ProficiencyLevel", m_proficiencyLevel);
+
+  }
+
+  if(m_comparisonOperatorHasBeenSet)
+  {
+   payload.WithString("ComparisonOperator", m_comparisonOperator);
+
+  }
+
+  return payload;
+}
+
+} // namespace Model
+} // namespace Connect
+} // namespace Aws

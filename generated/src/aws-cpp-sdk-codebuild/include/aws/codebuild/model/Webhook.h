@@ -359,6 +359,43 @@ namespace Model
 
 
     /**
+     * <p>If manualCreation is true, CodeBuild doesn't create a webhook in GitHub and
+     * instead returns <code>payloadUrl</code> and <code>secret</code> values for the
+     * webhook. The <code>payloadUrl</code> and <code>secret</code> values in the
+     * output can be used to manually create a webhook within GitHub.</p> 
+     * <p>manualCreation is only available for GitHub webhooks.</p> 
+     */
+    inline bool GetManualCreation() const{ return m_manualCreation; }
+
+    /**
+     * <p>If manualCreation is true, CodeBuild doesn't create a webhook in GitHub and
+     * instead returns <code>payloadUrl</code> and <code>secret</code> values for the
+     * webhook. The <code>payloadUrl</code> and <code>secret</code> values in the
+     * output can be used to manually create a webhook within GitHub.</p> 
+     * <p>manualCreation is only available for GitHub webhooks.</p> 
+     */
+    inline bool ManualCreationHasBeenSet() const { return m_manualCreationHasBeenSet; }
+
+    /**
+     * <p>If manualCreation is true, CodeBuild doesn't create a webhook in GitHub and
+     * instead returns <code>payloadUrl</code> and <code>secret</code> values for the
+     * webhook. The <code>payloadUrl</code> and <code>secret</code> values in the
+     * output can be used to manually create a webhook within GitHub.</p> 
+     * <p>manualCreation is only available for GitHub webhooks.</p> 
+     */
+    inline void SetManualCreation(bool value) { m_manualCreationHasBeenSet = true; m_manualCreation = value; }
+
+    /**
+     * <p>If manualCreation is true, CodeBuild doesn't create a webhook in GitHub and
+     * instead returns <code>payloadUrl</code> and <code>secret</code> values for the
+     * webhook. The <code>payloadUrl</code> and <code>secret</code> values in the
+     * output can be used to manually create a webhook within GitHub.</p> 
+     * <p>manualCreation is only available for GitHub webhooks.</p> 
+     */
+    inline Webhook& WithManualCreation(bool value) { SetManualCreation(value); return *this;}
+
+
+    /**
      * <p>A timestamp that indicates the last time a repository's secret token was
      * modified. </p>
      */
@@ -413,6 +450,9 @@ namespace Model
 
     WebhookBuildType m_buildType;
     bool m_buildTypeHasBeenSet = false;
+
+    bool m_manualCreation;
+    bool m_manualCreationHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedSecret;
     bool m_lastModifiedSecretHasBeenSet = false;

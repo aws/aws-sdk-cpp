@@ -58,9 +58,7 @@ namespace Model
      * the query results location using one of the ways: either in the workgroup using
      * this setting, or for individual queries (client-side), using
      * <a>ResultConfiguration$OutputLocation</a>. If none of them is set, Athena issues
-     * an error that no output location is provided. For more information, see <a
-     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with
-     * query results, recent queries, and output files</a>.</p>
+     * an error that no output location is provided.</p>
      */
     inline const ResultConfiguration& GetResultConfiguration() const{ return m_resultConfiguration; }
 
@@ -71,9 +69,7 @@ namespace Model
      * the query results location using one of the ways: either in the workgroup using
      * this setting, or for individual queries (client-side), using
      * <a>ResultConfiguration$OutputLocation</a>. If none of them is set, Athena issues
-     * an error that no output location is provided. For more information, see <a
-     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with
-     * query results, recent queries, and output files</a>.</p>
+     * an error that no output location is provided.</p>
      */
     inline bool ResultConfigurationHasBeenSet() const { return m_resultConfigurationHasBeenSet; }
 
@@ -84,9 +80,7 @@ namespace Model
      * the query results location using one of the ways: either in the workgroup using
      * this setting, or for individual queries (client-side), using
      * <a>ResultConfiguration$OutputLocation</a>. If none of them is set, Athena issues
-     * an error that no output location is provided. For more information, see <a
-     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with
-     * query results, recent queries, and output files</a>.</p>
+     * an error that no output location is provided.</p>
      */
     inline void SetResultConfiguration(const ResultConfiguration& value) { m_resultConfigurationHasBeenSet = true; m_resultConfiguration = value; }
 
@@ -97,9 +91,7 @@ namespace Model
      * the query results location using one of the ways: either in the workgroup using
      * this setting, or for individual queries (client-side), using
      * <a>ResultConfiguration$OutputLocation</a>. If none of them is set, Athena issues
-     * an error that no output location is provided. For more information, see <a
-     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with
-     * query results, recent queries, and output files</a>.</p>
+     * an error that no output location is provided.</p>
      */
     inline void SetResultConfiguration(ResultConfiguration&& value) { m_resultConfigurationHasBeenSet = true; m_resultConfiguration = std::move(value); }
 
@@ -110,9 +102,7 @@ namespace Model
      * the query results location using one of the ways: either in the workgroup using
      * this setting, or for individual queries (client-side), using
      * <a>ResultConfiguration$OutputLocation</a>. If none of them is set, Athena issues
-     * an error that no output location is provided. For more information, see <a
-     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with
-     * query results, recent queries, and output files</a>.</p>
+     * an error that no output location is provided.</p>
      */
     inline WorkGroupConfiguration& WithResultConfiguration(const ResultConfiguration& value) { SetResultConfiguration(value); return *this;}
 
@@ -123,9 +113,7 @@ namespace Model
      * the query results location using one of the ways: either in the workgroup using
      * this setting, or for individual queries (client-side), using
      * <a>ResultConfiguration$OutputLocation</a>. If none of them is set, Athena issues
-     * an error that no output location is provided. For more information, see <a
-     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with
-     * query results, recent queries, and output files</a>.</p>
+     * an error that no output location is provided.</p>
      */
     inline WorkGroupConfiguration& WithResultConfiguration(ResultConfiguration&& value) { SetResultConfiguration(std::move(value)); return *this;}
 

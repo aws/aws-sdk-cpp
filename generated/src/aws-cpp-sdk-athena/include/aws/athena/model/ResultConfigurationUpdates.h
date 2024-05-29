@@ -43,9 +43,7 @@ namespace Model
 
     /**
      * <p>The location in Amazon S3 where your query and calculation results are
-     * stored, such as <code>s3://path/to/query/bucket/</code>. For more information,
-     * see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working
-     * with query results, recent queries, and output files</a>. If workgroup settings
+     * stored, such as <code>s3://path/to/query/bucket/</code>. If workgroup settings
      * override client-side settings, then the query uses the location for the query
      * results and the encryption configuration that are specified for the workgroup.
      * The "workgroup settings override" is specified in
@@ -57,9 +55,7 @@ namespace Model
 
     /**
      * <p>The location in Amazon S3 where your query and calculation results are
-     * stored, such as <code>s3://path/to/query/bucket/</code>. For more information,
-     * see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working
-     * with query results, recent queries, and output files</a>. If workgroup settings
+     * stored, such as <code>s3://path/to/query/bucket/</code>. If workgroup settings
      * override client-side settings, then the query uses the location for the query
      * results and the encryption configuration that are specified for the workgroup.
      * The "workgroup settings override" is specified in
@@ -71,9 +67,7 @@ namespace Model
 
     /**
      * <p>The location in Amazon S3 where your query and calculation results are
-     * stored, such as <code>s3://path/to/query/bucket/</code>. For more information,
-     * see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working
-     * with query results, recent queries, and output files</a>. If workgroup settings
+     * stored, such as <code>s3://path/to/query/bucket/</code>. If workgroup settings
      * override client-side settings, then the query uses the location for the query
      * results and the encryption configuration that are specified for the workgroup.
      * The "workgroup settings override" is specified in
@@ -85,9 +79,7 @@ namespace Model
 
     /**
      * <p>The location in Amazon S3 where your query and calculation results are
-     * stored, such as <code>s3://path/to/query/bucket/</code>. For more information,
-     * see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working
-     * with query results, recent queries, and output files</a>. If workgroup settings
+     * stored, such as <code>s3://path/to/query/bucket/</code>. If workgroup settings
      * override client-side settings, then the query uses the location for the query
      * results and the encryption configuration that are specified for the workgroup.
      * The "workgroup settings override" is specified in
@@ -99,9 +91,7 @@ namespace Model
 
     /**
      * <p>The location in Amazon S3 where your query and calculation results are
-     * stored, such as <code>s3://path/to/query/bucket/</code>. For more information,
-     * see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working
-     * with query results, recent queries, and output files</a>. If workgroup settings
+     * stored, such as <code>s3://path/to/query/bucket/</code>. If workgroup settings
      * override client-side settings, then the query uses the location for the query
      * results and the encryption configuration that are specified for the workgroup.
      * The "workgroup settings override" is specified in
@@ -113,9 +103,7 @@ namespace Model
 
     /**
      * <p>The location in Amazon S3 where your query and calculation results are
-     * stored, such as <code>s3://path/to/query/bucket/</code>. For more information,
-     * see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working
-     * with query results, recent queries, and output files</a>. If workgroup settings
+     * stored, such as <code>s3://path/to/query/bucket/</code>. If workgroup settings
      * override client-side settings, then the query uses the location for the query
      * results and the encryption configuration that are specified for the workgroup.
      * The "workgroup settings override" is specified in
@@ -127,9 +115,7 @@ namespace Model
 
     /**
      * <p>The location in Amazon S3 where your query and calculation results are
-     * stored, such as <code>s3://path/to/query/bucket/</code>. For more information,
-     * see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working
-     * with query results, recent queries, and output files</a>. If workgroup settings
+     * stored, such as <code>s3://path/to/query/bucket/</code>. If workgroup settings
      * override client-side settings, then the query uses the location for the query
      * results and the encryption configuration that are specified for the workgroup.
      * The "workgroup settings override" is specified in
@@ -141,9 +127,7 @@ namespace Model
 
     /**
      * <p>The location in Amazon S3 where your query and calculation results are
-     * stored, such as <code>s3://path/to/query/bucket/</code>. For more information,
-     * see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working
-     * with query results, recent queries, and output files</a>. If workgroup settings
+     * stored, such as <code>s3://path/to/query/bucket/</code>. If workgroup settings
      * override client-side settings, then the query uses the location for the query
      * results and the encryption configuration that are specified for the workgroup.
      * The "workgroup settings override" is specified in

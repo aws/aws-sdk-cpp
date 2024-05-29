@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glue/model/JobMode.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/glue/model/ExecutionProperty.h>
 #include <aws/glue/model/JobCommand.h>
@@ -86,6 +87,73 @@ namespace Model
      * <p>The name you assign to this job definition.</p>
      */
     inline Job& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>A mode that describes how a job was created. Valid values are:</p> <ul> <li>
+     * <p> <code>SCRIPT</code> - The job was created using the Glue Studio script
+     * editor.</p> </li> <li> <p> <code>VISUAL</code> - The job was created using the
+     * Glue Studio visual editor.</p> </li> <li> <p> <code>NOTEBOOK</code> - The job
+     * was created using an interactive sessions notebook.</p> </li> </ul> <p>When the
+     * <code>JobMode</code> field is missing or null, <code>SCRIPT</code> is assigned
+     * as the default value.</p>
+     */
+    inline const JobMode& GetJobMode() const{ return m_jobMode; }
+
+    /**
+     * <p>A mode that describes how a job was created. Valid values are:</p> <ul> <li>
+     * <p> <code>SCRIPT</code> - The job was created using the Glue Studio script
+     * editor.</p> </li> <li> <p> <code>VISUAL</code> - The job was created using the
+     * Glue Studio visual editor.</p> </li> <li> <p> <code>NOTEBOOK</code> - The job
+     * was created using an interactive sessions notebook.</p> </li> </ul> <p>When the
+     * <code>JobMode</code> field is missing or null, <code>SCRIPT</code> is assigned
+     * as the default value.</p>
+     */
+    inline bool JobModeHasBeenSet() const { return m_jobModeHasBeenSet; }
+
+    /**
+     * <p>A mode that describes how a job was created. Valid values are:</p> <ul> <li>
+     * <p> <code>SCRIPT</code> - The job was created using the Glue Studio script
+     * editor.</p> </li> <li> <p> <code>VISUAL</code> - The job was created using the
+     * Glue Studio visual editor.</p> </li> <li> <p> <code>NOTEBOOK</code> - The job
+     * was created using an interactive sessions notebook.</p> </li> </ul> <p>When the
+     * <code>JobMode</code> field is missing or null, <code>SCRIPT</code> is assigned
+     * as the default value.</p>
+     */
+    inline void SetJobMode(const JobMode& value) { m_jobModeHasBeenSet = true; m_jobMode = value; }
+
+    /**
+     * <p>A mode that describes how a job was created. Valid values are:</p> <ul> <li>
+     * <p> <code>SCRIPT</code> - The job was created using the Glue Studio script
+     * editor.</p> </li> <li> <p> <code>VISUAL</code> - The job was created using the
+     * Glue Studio visual editor.</p> </li> <li> <p> <code>NOTEBOOK</code> - The job
+     * was created using an interactive sessions notebook.</p> </li> </ul> <p>When the
+     * <code>JobMode</code> field is missing or null, <code>SCRIPT</code> is assigned
+     * as the default value.</p>
+     */
+    inline void SetJobMode(JobMode&& value) { m_jobModeHasBeenSet = true; m_jobMode = std::move(value); }
+
+    /**
+     * <p>A mode that describes how a job was created. Valid values are:</p> <ul> <li>
+     * <p> <code>SCRIPT</code> - The job was created using the Glue Studio script
+     * editor.</p> </li> <li> <p> <code>VISUAL</code> - The job was created using the
+     * Glue Studio visual editor.</p> </li> <li> <p> <code>NOTEBOOK</code> - The job
+     * was created using an interactive sessions notebook.</p> </li> </ul> <p>When the
+     * <code>JobMode</code> field is missing or null, <code>SCRIPT</code> is assigned
+     * as the default value.</p>
+     */
+    inline Job& WithJobMode(const JobMode& value) { SetJobMode(value); return *this;}
+
+    /**
+     * <p>A mode that describes how a job was created. Valid values are:</p> <ul> <li>
+     * <p> <code>SCRIPT</code> - The job was created using the Glue Studio script
+     * editor.</p> </li> <li> <p> <code>VISUAL</code> - The job was created using the
+     * Glue Studio visual editor.</p> </li> <li> <p> <code>NOTEBOOK</code> - The job
+     * was created using an interactive sessions notebook.</p> </li> </ul> <p>When the
+     * <code>JobMode</code> field is missing or null, <code>SCRIPT</code> is assigned
+     * as the default value.</p>
+     */
+    inline Job& WithJobMode(JobMode&& value) { SetJobMode(std::move(value)); return *this;}
 
 
     /**
@@ -1582,6 +1650,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    JobMode m_jobMode;
+    bool m_jobModeHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
