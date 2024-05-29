@@ -214,9 +214,7 @@ if (LEGACY_BUILD)
     if (BUILD_DEPS)
         set(CMAKE_INSTALL_RPATH "$ORIGIN")
         list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/crt/aws-crt-cpp/crt/aws-c-common/cmake")
-
         include(AwsFindPackage)
-
         set(IN_SOURCE_BUILD ON)
         set(BUILD_TESTING_PREV ${BUILD_TESTING})
         set(BUILD_TESTING OFF CACHE BOOL "Disable all tests in dependencies.")
@@ -230,6 +228,7 @@ if (LEGACY_BUILD)
         string(REPLACE ";" "${AWS_MODULE_DIR};" AWS_MODULE_PATH "${CMAKE_PREFIX_PATH}${AWS_MODULE_DIR}")
         # Append that generated list to the module search path
         list(APPEND CMAKE_MODULE_PATH ${AWS_MODULE_PATH})
+        include(AwsFindPackage)
         set(IN_SOURCE_BUILD OFF)
     endif ()
     aws_use_package(aws-crt-cpp)
