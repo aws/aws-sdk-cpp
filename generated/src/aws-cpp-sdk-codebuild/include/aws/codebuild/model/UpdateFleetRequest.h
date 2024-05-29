@@ -587,42 +587,74 @@ namespace Model
 
 
     /**
-     * <p>The service role associated with the compute fleet.</p>
+     * <p>The service role associated with the compute fleet. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-permission-policy-fleet-service-role.html">
+     * Allow a user to add a permission policy for a fleet service role</a> in the
+     * <i>CodeBuild User Guide</i>.</p>
      */
     inline const Aws::String& GetFleetServiceRole() const{ return m_fleetServiceRole; }
 
     /**
-     * <p>The service role associated with the compute fleet.</p>
+     * <p>The service role associated with the compute fleet. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-permission-policy-fleet-service-role.html">
+     * Allow a user to add a permission policy for a fleet service role</a> in the
+     * <i>CodeBuild User Guide</i>.</p>
      */
     inline bool FleetServiceRoleHasBeenSet() const { return m_fleetServiceRoleHasBeenSet; }
 
     /**
-     * <p>The service role associated with the compute fleet.</p>
+     * <p>The service role associated with the compute fleet. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-permission-policy-fleet-service-role.html">
+     * Allow a user to add a permission policy for a fleet service role</a> in the
+     * <i>CodeBuild User Guide</i>.</p>
      */
     inline void SetFleetServiceRole(const Aws::String& value) { m_fleetServiceRoleHasBeenSet = true; m_fleetServiceRole = value; }
 
     /**
-     * <p>The service role associated with the compute fleet.</p>
+     * <p>The service role associated with the compute fleet. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-permission-policy-fleet-service-role.html">
+     * Allow a user to add a permission policy for a fleet service role</a> in the
+     * <i>CodeBuild User Guide</i>.</p>
      */
     inline void SetFleetServiceRole(Aws::String&& value) { m_fleetServiceRoleHasBeenSet = true; m_fleetServiceRole = std::move(value); }
 
     /**
-     * <p>The service role associated with the compute fleet.</p>
+     * <p>The service role associated with the compute fleet. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-permission-policy-fleet-service-role.html">
+     * Allow a user to add a permission policy for a fleet service role</a> in the
+     * <i>CodeBuild User Guide</i>.</p>
      */
     inline void SetFleetServiceRole(const char* value) { m_fleetServiceRoleHasBeenSet = true; m_fleetServiceRole.assign(value); }
 
     /**
-     * <p>The service role associated with the compute fleet.</p>
+     * <p>The service role associated with the compute fleet. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-permission-policy-fleet-service-role.html">
+     * Allow a user to add a permission policy for a fleet service role</a> in the
+     * <i>CodeBuild User Guide</i>.</p>
      */
     inline UpdateFleetRequest& WithFleetServiceRole(const Aws::String& value) { SetFleetServiceRole(value); return *this;}
 
     /**
-     * <p>The service role associated with the compute fleet.</p>
+     * <p>The service role associated with the compute fleet. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-permission-policy-fleet-service-role.html">
+     * Allow a user to add a permission policy for a fleet service role</a> in the
+     * <i>CodeBuild User Guide</i>.</p>
      */
     inline UpdateFleetRequest& WithFleetServiceRole(Aws::String&& value) { SetFleetServiceRole(std::move(value)); return *this;}
 
     /**
-     * <p>The service role associated with the compute fleet.</p>
+     * <p>The service role associated with the compute fleet. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-permission-policy-fleet-service-role.html">
+     * Allow a user to add a permission policy for a fleet service role</a> in the
+     * <i>CodeBuild User Guide</i>.</p>
      */
     inline UpdateFleetRequest& WithFleetServiceRole(const char* value) { SetFleetServiceRole(value); return *this;}
 

@@ -22,6 +22,7 @@ namespace Aws
 
         static const int ACCOUNT_HASH = HashingUtils::HashString("ACCOUNT");
         static const int ORGANIZATIONAL_UNIT_HASH = HashingUtils::HashString("ORGANIZATIONAL_UNIT");
+        static const int ROOT_HASH = HashingUtils::HashString("ROOT");
 
 
         TargetType GetTargetTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == ORGANIZATIONAL_UNIT_HASH)
           {
             return TargetType::ORGANIZATIONAL_UNIT;
+          }
+          else if (hashCode == ROOT_HASH)
+          {
+            return TargetType::ROOT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "ACCOUNT";
           case TargetType::ORGANIZATIONAL_UNIT:
             return "ORGANIZATIONAL_UNIT";
+          case TargetType::ROOT:
+            return "ROOT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

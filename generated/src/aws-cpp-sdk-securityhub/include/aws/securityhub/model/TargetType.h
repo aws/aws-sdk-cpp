@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     ACCOUNT,
-    ORGANIZATIONAL_UNIT
+    ORGANIZATIONAL_UNIT,
+    ROOT
   };
 
 namespace TargetTypeMapper

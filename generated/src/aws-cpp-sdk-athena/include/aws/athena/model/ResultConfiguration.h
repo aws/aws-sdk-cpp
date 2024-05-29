@@ -49,12 +49,9 @@ namespace Model
      * must specify the query results location using one of the ways: either for
      * individual queries using either this setting (client-side), or in the workgroup,
      * using <a>WorkGroupConfiguration</a>. If none of them is set, Athena issues an
-     * error that no output location is provided. For more information, see <a
-     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with
-     * query results, recent queries, and output files</a>. If workgroup settings
-     * override client-side settings, then the query uses the settings specified for
-     * the workgroup. See
-     * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+     * error that no output location is provided. If workgroup settings override
+     * client-side settings, then the query uses the settings specified for the
+     * workgroup. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline const Aws::String& GetOutputLocation() const{ return m_outputLocation; }
 
@@ -64,12 +61,9 @@ namespace Model
      * must specify the query results location using one of the ways: either for
      * individual queries using either this setting (client-side), or in the workgroup,
      * using <a>WorkGroupConfiguration</a>. If none of them is set, Athena issues an
-     * error that no output location is provided. For more information, see <a
-     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with
-     * query results, recent queries, and output files</a>. If workgroup settings
-     * override client-side settings, then the query uses the settings specified for
-     * the workgroup. See
-     * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+     * error that no output location is provided. If workgroup settings override
+     * client-side settings, then the query uses the settings specified for the
+     * workgroup. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline bool OutputLocationHasBeenSet() const { return m_outputLocationHasBeenSet; }
 
@@ -79,12 +73,9 @@ namespace Model
      * must specify the query results location using one of the ways: either for
      * individual queries using either this setting (client-side), or in the workgroup,
      * using <a>WorkGroupConfiguration</a>. If none of them is set, Athena issues an
-     * error that no output location is provided. For more information, see <a
-     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with
-     * query results, recent queries, and output files</a>. If workgroup settings
-     * override client-side settings, then the query uses the settings specified for
-     * the workgroup. See
-     * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+     * error that no output location is provided. If workgroup settings override
+     * client-side settings, then the query uses the settings specified for the
+     * workgroup. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline void SetOutputLocation(const Aws::String& value) { m_outputLocationHasBeenSet = true; m_outputLocation = value; }
 
@@ -94,12 +85,9 @@ namespace Model
      * must specify the query results location using one of the ways: either for
      * individual queries using either this setting (client-side), or in the workgroup,
      * using <a>WorkGroupConfiguration</a>. If none of them is set, Athena issues an
-     * error that no output location is provided. For more information, see <a
-     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with
-     * query results, recent queries, and output files</a>. If workgroup settings
-     * override client-side settings, then the query uses the settings specified for
-     * the workgroup. See
-     * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+     * error that no output location is provided. If workgroup settings override
+     * client-side settings, then the query uses the settings specified for the
+     * workgroup. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline void SetOutputLocation(Aws::String&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = std::move(value); }
 
@@ -109,12 +97,9 @@ namespace Model
      * must specify the query results location using one of the ways: either for
      * individual queries using either this setting (client-side), or in the workgroup,
      * using <a>WorkGroupConfiguration</a>. If none of them is set, Athena issues an
-     * error that no output location is provided. For more information, see <a
-     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with
-     * query results, recent queries, and output files</a>. If workgroup settings
-     * override client-side settings, then the query uses the settings specified for
-     * the workgroup. See
-     * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+     * error that no output location is provided. If workgroup settings override
+     * client-side settings, then the query uses the settings specified for the
+     * workgroup. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline void SetOutputLocation(const char* value) { m_outputLocationHasBeenSet = true; m_outputLocation.assign(value); }
 
@@ -124,12 +109,9 @@ namespace Model
      * must specify the query results location using one of the ways: either for
      * individual queries using either this setting (client-side), or in the workgroup,
      * using <a>WorkGroupConfiguration</a>. If none of them is set, Athena issues an
-     * error that no output location is provided. For more information, see <a
-     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with
-     * query results, recent queries, and output files</a>. If workgroup settings
-     * override client-side settings, then the query uses the settings specified for
-     * the workgroup. See
-     * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+     * error that no output location is provided. If workgroup settings override
+     * client-side settings, then the query uses the settings specified for the
+     * workgroup. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline ResultConfiguration& WithOutputLocation(const Aws::String& value) { SetOutputLocation(value); return *this;}
 
@@ -139,12 +121,9 @@ namespace Model
      * must specify the query results location using one of the ways: either for
      * individual queries using either this setting (client-side), or in the workgroup,
      * using <a>WorkGroupConfiguration</a>. If none of them is set, Athena issues an
-     * error that no output location is provided. For more information, see <a
-     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with
-     * query results, recent queries, and output files</a>. If workgroup settings
-     * override client-side settings, then the query uses the settings specified for
-     * the workgroup. See
-     * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+     * error that no output location is provided. If workgroup settings override
+     * client-side settings, then the query uses the settings specified for the
+     * workgroup. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline ResultConfiguration& WithOutputLocation(Aws::String&& value) { SetOutputLocation(std::move(value)); return *this;}
 
@@ -154,12 +133,9 @@ namespace Model
      * must specify the query results location using one of the ways: either for
      * individual queries using either this setting (client-side), or in the workgroup,
      * using <a>WorkGroupConfiguration</a>. If none of them is set, Athena issues an
-     * error that no output location is provided. For more information, see <a
-     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with
-     * query results, recent queries, and output files</a>. If workgroup settings
-     * override client-side settings, then the query uses the settings specified for
-     * the workgroup. See
-     * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+     * error that no output location is provided. If workgroup settings override
+     * client-side settings, then the query uses the settings specified for the
+     * workgroup. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline ResultConfiguration& WithOutputLocation(const char* value) { SetOutputLocation(value); return *this;}
 

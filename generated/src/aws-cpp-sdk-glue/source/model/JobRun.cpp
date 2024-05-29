@@ -25,6 +25,8 @@ JobRun::JobRun() :
     m_previousRunIdHasBeenSet(false),
     m_triggerNameHasBeenSet(false),
     m_jobNameHasBeenSet(false),
+    m_jobMode(JobMode::NOT_SET),
+    m_jobModeHasBeenSet(false),
     m_startedOnHasBeenSet(false),
     m_lastModifiedOnHasBeenSet(false),
     m_completedOnHasBeenSet(false),
@@ -62,6 +64,8 @@ JobRun::JobRun(JsonView jsonValue) :
     m_previousRunIdHasBeenSet(false),
     m_triggerNameHasBeenSet(false),
     m_jobNameHasBeenSet(false),
+    m_jobMode(JobMode::NOT_SET),
+    m_jobModeHasBeenSet(false),
     m_startedOnHasBeenSet(false),
     m_lastModifiedOnHasBeenSet(false),
     m_completedOnHasBeenSet(false),
@@ -128,6 +132,13 @@ JobRun& JobRun::operator =(JsonView jsonValue)
     m_jobName = jsonValue.GetString("JobName");
 
     m_jobNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("JobMode"))
+  {
+    m_jobMode = JobModeMapper::GetJobModeForName(jsonValue.GetString("JobMode"));
+
+    m_jobModeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("StartedOn"))
@@ -304,6 +315,11 @@ JsonValue JobRun::Jsonize() const
   {
    payload.WithString("JobName", m_jobName);
 
+  }
+
+  if(m_jobModeHasBeenSet)
+  {
+   payload.WithString("JobMode", JobModeMapper::GetNameForJobMode(m_jobMode));
   }
 
   if(m_startedOnHasBeenSet)

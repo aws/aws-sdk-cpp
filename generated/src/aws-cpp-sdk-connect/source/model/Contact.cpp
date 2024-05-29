@@ -47,7 +47,17 @@ Contact::Contact() :
     m_queueTimeAdjustmentSecondsHasBeenSet(false),
     m_queuePriority(0),
     m_queuePriorityHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_connectedToSystemTimestampHasBeenSet(false),
+    m_routingCriteriaHasBeenSet(false),
+    m_customerHasBeenSet(false),
+    m_campaignHasBeenSet(false),
+    m_answeringMachineDetectionStatus(AnsweringMachineDetectionStatus::NOT_SET),
+    m_answeringMachineDetectionStatusHasBeenSet(false),
+    m_customerVoiceActivityHasBeenSet(false),
+    m_qualityMetricsHasBeenSet(false),
+    m_disconnectDetailsHasBeenSet(false),
+    m_segmentAttributesHasBeenSet(false)
 {
 }
 
@@ -80,7 +90,17 @@ Contact::Contact(JsonView jsonValue) :
     m_queueTimeAdjustmentSecondsHasBeenSet(false),
     m_queuePriority(0),
     m_queuePriorityHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_connectedToSystemTimestampHasBeenSet(false),
+    m_routingCriteriaHasBeenSet(false),
+    m_customerHasBeenSet(false),
+    m_campaignHasBeenSet(false),
+    m_answeringMachineDetectionStatus(AnsweringMachineDetectionStatus::NOT_SET),
+    m_answeringMachineDetectionStatusHasBeenSet(false),
+    m_customerVoiceActivityHasBeenSet(false),
+    m_qualityMetricsHasBeenSet(false),
+    m_disconnectDetailsHasBeenSet(false),
+    m_segmentAttributesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -251,6 +271,72 @@ Contact& Contact::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ConnectedToSystemTimestamp"))
+  {
+    m_connectedToSystemTimestamp = jsonValue.GetDouble("ConnectedToSystemTimestamp");
+
+    m_connectedToSystemTimestampHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RoutingCriteria"))
+  {
+    m_routingCriteria = jsonValue.GetObject("RoutingCriteria");
+
+    m_routingCriteriaHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Customer"))
+  {
+    m_customer = jsonValue.GetObject("Customer");
+
+    m_customerHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Campaign"))
+  {
+    m_campaign = jsonValue.GetObject("Campaign");
+
+    m_campaignHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AnsweringMachineDetectionStatus"))
+  {
+    m_answeringMachineDetectionStatus = AnsweringMachineDetectionStatusMapper::GetAnsweringMachineDetectionStatusForName(jsonValue.GetString("AnsweringMachineDetectionStatus"));
+
+    m_answeringMachineDetectionStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CustomerVoiceActivity"))
+  {
+    m_customerVoiceActivity = jsonValue.GetObject("CustomerVoiceActivity");
+
+    m_customerVoiceActivityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("QualityMetrics"))
+  {
+    m_qualityMetrics = jsonValue.GetObject("QualityMetrics");
+
+    m_qualityMetricsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DisconnectDetails"))
+  {
+    m_disconnectDetails = jsonValue.GetObject("DisconnectDetails");
+
+    m_disconnectDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SegmentAttributes"))
+  {
+    Aws::Map<Aws::String, JsonView> segmentAttributesJsonMap = jsonValue.GetObject("SegmentAttributes").GetAllObjects();
+    for(auto& segmentAttributesItem : segmentAttributesJsonMap)
+    {
+      m_segmentAttributes[segmentAttributesItem.first] = segmentAttributesItem.second.AsObject();
+    }
+    m_segmentAttributesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -390,6 +476,63 @@ JsonValue Contact::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_connectedToSystemTimestampHasBeenSet)
+  {
+   payload.WithDouble("ConnectedToSystemTimestamp", m_connectedToSystemTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_routingCriteriaHasBeenSet)
+  {
+   payload.WithObject("RoutingCriteria", m_routingCriteria.Jsonize());
+
+  }
+
+  if(m_customerHasBeenSet)
+  {
+   payload.WithObject("Customer", m_customer.Jsonize());
+
+  }
+
+  if(m_campaignHasBeenSet)
+  {
+   payload.WithObject("Campaign", m_campaign.Jsonize());
+
+  }
+
+  if(m_answeringMachineDetectionStatusHasBeenSet)
+  {
+   payload.WithString("AnsweringMachineDetectionStatus", AnsweringMachineDetectionStatusMapper::GetNameForAnsweringMachineDetectionStatus(m_answeringMachineDetectionStatus));
+  }
+
+  if(m_customerVoiceActivityHasBeenSet)
+  {
+   payload.WithObject("CustomerVoiceActivity", m_customerVoiceActivity.Jsonize());
+
+  }
+
+  if(m_qualityMetricsHasBeenSet)
+  {
+   payload.WithObject("QualityMetrics", m_qualityMetrics.Jsonize());
+
+  }
+
+  if(m_disconnectDetailsHasBeenSet)
+  {
+   payload.WithObject("DisconnectDetails", m_disconnectDetails.Jsonize());
+
+  }
+
+  if(m_segmentAttributesHasBeenSet)
+  {
+   JsonValue segmentAttributesJsonMap;
+   for(auto& segmentAttributesItem : m_segmentAttributes)
+   {
+     segmentAttributesJsonMap.WithObject(segmentAttributesItem.first, segmentAttributesItem.second.Jsonize());
+   }
+   payload.WithObject("SegmentAttributes", std::move(segmentAttributesJsonMap));
 
   }
 

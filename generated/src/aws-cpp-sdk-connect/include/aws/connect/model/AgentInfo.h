@@ -7,6 +7,9 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/connect/model/HierarchyGroups.h>
+#include <aws/connect/model/DeviceInfo.h>
+#include <aws/connect/model/ParticipantCapabilities.h>
 #include <utility>
 
 namespace Aws
@@ -131,6 +134,87 @@ namespace Model
      */
     inline AgentInfo& WithAgentPauseDurationInSeconds(int value) { SetAgentPauseDurationInSeconds(value); return *this;}
 
+
+    /**
+     * <p>The agent hierarchy groups for the agent.</p>
+     */
+    inline const HierarchyGroups& GetHierarchyGroups() const{ return m_hierarchyGroups; }
+
+    /**
+     * <p>The agent hierarchy groups for the agent.</p>
+     */
+    inline bool HierarchyGroupsHasBeenSet() const { return m_hierarchyGroupsHasBeenSet; }
+
+    /**
+     * <p>The agent hierarchy groups for the agent.</p>
+     */
+    inline void SetHierarchyGroups(const HierarchyGroups& value) { m_hierarchyGroupsHasBeenSet = true; m_hierarchyGroups = value; }
+
+    /**
+     * <p>The agent hierarchy groups for the agent.</p>
+     */
+    inline void SetHierarchyGroups(HierarchyGroups&& value) { m_hierarchyGroupsHasBeenSet = true; m_hierarchyGroups = std::move(value); }
+
+    /**
+     * <p>The agent hierarchy groups for the agent.</p>
+     */
+    inline AgentInfo& WithHierarchyGroups(const HierarchyGroups& value) { SetHierarchyGroups(value); return *this;}
+
+    /**
+     * <p>The agent hierarchy groups for the agent.</p>
+     */
+    inline AgentInfo& WithHierarchyGroups(HierarchyGroups&& value) { SetHierarchyGroups(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information regarding Agent’s device.</p>
+     */
+    inline const DeviceInfo& GetDeviceInfo() const{ return m_deviceInfo; }
+
+    /**
+     * <p>Information regarding Agent’s device.</p>
+     */
+    inline bool DeviceInfoHasBeenSet() const { return m_deviceInfoHasBeenSet; }
+
+    /**
+     * <p>Information regarding Agent’s device.</p>
+     */
+    inline void SetDeviceInfo(const DeviceInfo& value) { m_deviceInfoHasBeenSet = true; m_deviceInfo = value; }
+
+    /**
+     * <p>Information regarding Agent’s device.</p>
+     */
+    inline void SetDeviceInfo(DeviceInfo&& value) { m_deviceInfoHasBeenSet = true; m_deviceInfo = std::move(value); }
+
+    /**
+     * <p>Information regarding Agent’s device.</p>
+     */
+    inline AgentInfo& WithDeviceInfo(const DeviceInfo& value) { SetDeviceInfo(value); return *this;}
+
+    /**
+     * <p>Information regarding Agent’s device.</p>
+     */
+    inline AgentInfo& WithDeviceInfo(DeviceInfo&& value) { SetDeviceInfo(std::move(value)); return *this;}
+
+
+    
+    inline const ParticipantCapabilities& GetCapabilities() const{ return m_capabilities; }
+
+    
+    inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
+
+    
+    inline void SetCapabilities(const ParticipantCapabilities& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
+
+    
+    inline void SetCapabilities(ParticipantCapabilities&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
+
+    
+    inline AgentInfo& WithCapabilities(const ParticipantCapabilities& value) { SetCapabilities(value); return *this;}
+
+    
+    inline AgentInfo& WithCapabilities(ParticipantCapabilities&& value) { SetCapabilities(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -141,6 +225,15 @@ namespace Model
 
     int m_agentPauseDurationInSeconds;
     bool m_agentPauseDurationInSecondsHasBeenSet = false;
+
+    HierarchyGroups m_hierarchyGroups;
+    bool m_hierarchyGroupsHasBeenSet = false;
+
+    DeviceInfo m_deviceInfo;
+    bool m_deviceInfoHasBeenSet = false;
+
+    ParticipantCapabilities m_capabilities;
+    bool m_capabilitiesHasBeenSet = false;
   };
 
 } // namespace Model

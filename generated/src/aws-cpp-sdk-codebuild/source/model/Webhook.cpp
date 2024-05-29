@@ -26,6 +26,8 @@ Webhook::Webhook() :
     m_filterGroupsHasBeenSet(false),
     m_buildType(WebhookBuildType::NOT_SET),
     m_buildTypeHasBeenSet(false),
+    m_manualCreation(false),
+    m_manualCreationHasBeenSet(false),
     m_lastModifiedSecretHasBeenSet(false)
 {
 }
@@ -38,6 +40,8 @@ Webhook::Webhook(JsonView jsonValue) :
     m_filterGroupsHasBeenSet(false),
     m_buildType(WebhookBuildType::NOT_SET),
     m_buildTypeHasBeenSet(false),
+    m_manualCreation(false),
+    m_manualCreationHasBeenSet(false),
     m_lastModifiedSecretHasBeenSet(false)
 {
   *this = jsonValue;
@@ -97,6 +101,13 @@ Webhook& Webhook::operator =(JsonView jsonValue)
     m_buildTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("manualCreation"))
+  {
+    m_manualCreation = jsonValue.GetBool("manualCreation");
+
+    m_manualCreationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("lastModifiedSecret"))
   {
     m_lastModifiedSecret = jsonValue.GetDouble("lastModifiedSecret");
@@ -154,6 +165,12 @@ JsonValue Webhook::Jsonize() const
   if(m_buildTypeHasBeenSet)
   {
    payload.WithString("buildType", WebhookBuildTypeMapper::GetNameForWebhookBuildType(m_buildType));
+  }
+
+  if(m_manualCreationHasBeenSet)
+  {
+   payload.WithBool("manualCreation", m_manualCreation);
+
   }
 
   if(m_lastModifiedSecretHasBeenSet)

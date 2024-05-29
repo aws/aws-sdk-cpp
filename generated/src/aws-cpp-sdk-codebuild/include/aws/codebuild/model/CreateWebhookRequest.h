@@ -262,6 +262,43 @@ namespace Model
      */
     inline CreateWebhookRequest& WithBuildType(WebhookBuildType&& value) { SetBuildType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>If manualCreation is true, CodeBuild doesn't create a webhook in GitHub and
+     * instead returns <code>payloadUrl</code> and <code>secret</code> values for the
+     * webhook. The <code>payloadUrl</code> and <code>secret</code> values in the
+     * output can be used to manually create a webhook within GitHub.</p> 
+     * <p>manualCreation is only available for GitHub webhooks.</p> 
+     */
+    inline bool GetManualCreation() const{ return m_manualCreation; }
+
+    /**
+     * <p>If manualCreation is true, CodeBuild doesn't create a webhook in GitHub and
+     * instead returns <code>payloadUrl</code> and <code>secret</code> values for the
+     * webhook. The <code>payloadUrl</code> and <code>secret</code> values in the
+     * output can be used to manually create a webhook within GitHub.</p> 
+     * <p>manualCreation is only available for GitHub webhooks.</p> 
+     */
+    inline bool ManualCreationHasBeenSet() const { return m_manualCreationHasBeenSet; }
+
+    /**
+     * <p>If manualCreation is true, CodeBuild doesn't create a webhook in GitHub and
+     * instead returns <code>payloadUrl</code> and <code>secret</code> values for the
+     * webhook. The <code>payloadUrl</code> and <code>secret</code> values in the
+     * output can be used to manually create a webhook within GitHub.</p> 
+     * <p>manualCreation is only available for GitHub webhooks.</p> 
+     */
+    inline void SetManualCreation(bool value) { m_manualCreationHasBeenSet = true; m_manualCreation = value; }
+
+    /**
+     * <p>If manualCreation is true, CodeBuild doesn't create a webhook in GitHub and
+     * instead returns <code>payloadUrl</code> and <code>secret</code> values for the
+     * webhook. The <code>payloadUrl</code> and <code>secret</code> values in the
+     * output can be used to manually create a webhook within GitHub.</p> 
+     * <p>manualCreation is only available for GitHub webhooks.</p> 
+     */
+    inline CreateWebhookRequest& WithManualCreation(bool value) { SetManualCreation(value); return *this;}
+
   private:
 
     Aws::String m_projectName;
@@ -275,6 +312,9 @@ namespace Model
 
     WebhookBuildType m_buildType;
     bool m_buildTypeHasBeenSet = false;
+
+    bool m_manualCreation;
+    bool m_manualCreationHasBeenSet = false;
   };
 
 } // namespace Model
