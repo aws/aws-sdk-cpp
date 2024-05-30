@@ -47,6 +47,8 @@ ModelPackage::ModelPackage() :
     m_samplePayloadUrlHasBeenSet(false),
     m_additionalInferenceSpecificationsHasBeenSet(false),
     m_sourceUriHasBeenSet(false),
+    m_securityConfigHasBeenSet(false),
+    m_modelCardHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_customerMetadataPropertiesHasBeenSet(false),
     m_driftCheckBaselinesHasBeenSet(false),
@@ -84,6 +86,8 @@ ModelPackage::ModelPackage(JsonView jsonValue) :
     m_samplePayloadUrlHasBeenSet(false),
     m_additionalInferenceSpecificationsHasBeenSet(false),
     m_sourceUriHasBeenSet(false),
+    m_securityConfigHasBeenSet(false),
+    m_modelCardHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_customerMetadataPropertiesHasBeenSet(false),
     m_driftCheckBaselinesHasBeenSet(false),
@@ -264,6 +268,20 @@ ModelPackage& ModelPackage::operator =(JsonView jsonValue)
     m_sourceUri = jsonValue.GetString("SourceUri");
 
     m_sourceUriHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SecurityConfig"))
+  {
+    m_securityConfig = jsonValue.GetObject("SecurityConfig");
+
+    m_securityConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ModelCard"))
+  {
+    m_modelCard = jsonValue.GetObject("ModelCard");
+
+    m_modelCardHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Tags"))
@@ -449,6 +467,18 @@ JsonValue ModelPackage::Jsonize() const
   if(m_sourceUriHasBeenSet)
   {
    payload.WithString("SourceUri", m_sourceUri);
+
+  }
+
+  if(m_securityConfigHasBeenSet)
+  {
+   payload.WithObject("SecurityConfig", m_securityConfig.Jsonize());
+
+  }
+
+  if(m_modelCardHasBeenSet)
+  {
+   payload.WithObject("ModelCard", m_modelCard.Jsonize());
 
   }
 

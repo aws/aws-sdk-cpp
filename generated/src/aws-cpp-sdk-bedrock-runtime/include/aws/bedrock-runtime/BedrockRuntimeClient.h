@@ -78,6 +78,78 @@ namespace BedrockRuntime
         virtual ~BedrockRuntimeClient();
 
         /**
+         * <p>Sends messages to the specified Amazon Bedrock model. <code>Converse</code>
+         * provides a consistent interface that works with all models that support
+         * messages. This allows you to write code once and use it with different models.
+         * Should a model have unique inference parameters, you can also pass those unique
+         * parameters to the model. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run
+         * inference</a> in the Bedrock User Guide.</p> <p>This operation requires
+         * permission for the <code>bedrock:InvokeModel</code> action. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/Converse">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ConverseOutcome Converse(const Model::ConverseRequest& request) const;
+
+        /**
+         * A Callable wrapper for Converse that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ConverseRequestT = Model::ConverseRequest>
+        Model::ConverseOutcomeCallable ConverseCallable(const ConverseRequestT& request) const
+        {
+            return SubmitCallable(&BedrockRuntimeClient::Converse, request);
+        }
+
+        /**
+         * An Async wrapper for Converse that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ConverseRequestT = Model::ConverseRequest>
+        void ConverseAsync(const ConverseRequestT& request, const ConverseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockRuntimeClient::Converse, request, handler, context);
+        }
+
+        /**
+         * <p>Sends messages to the specified Amazon Bedrock model and returns the response
+         * in a stream. <code>ConverseStream</code> provides a consistent API that works
+         * with all Amazon Bedrock models that support messages. This allows you to write
+         * code once and use it with different models. Should a model have unique inference
+         * parameters, you can also pass those unique parameters to the model. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run
+         * inference</a> in the Bedrock User Guide.</p> <p>To find out if a model supports
+         * streaming, call <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetFoundationModel.html">GetFoundationModel</a>
+         * and check the <code>responseStreamingSupported</code> field in the response.</p>
+         * <p>For example code, see <i>Invoke model with streaming code example</i> in the
+         * <i>Amazon Bedrock User Guide</i>. </p> <p>This operation requires permission for
+         * the <code>bedrock:InvokeModelWithResponseStream</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ConverseStream">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ConverseStreamOutcome ConverseStream(Model::ConverseStreamRequest& request) const;
+
+        /**
+         * A Callable wrapper for ConverseStream that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ConverseStreamRequestT = Model::ConverseStreamRequest>
+        Model::ConverseStreamOutcomeCallable ConverseStreamCallable(ConverseStreamRequestT& request) const
+        {
+            return SubmitCallable(&BedrockRuntimeClient::ConverseStream, request);
+        }
+
+        /**
+         * An Async wrapper for ConverseStream that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ConverseStreamRequestT = Model::ConverseStreamRequest>
+        void ConverseStreamAsync(ConverseStreamRequestT& request, const ConverseStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockRuntimeClient::ConverseStream, request, handler, context);
+        }
+
+        /**
          * <p>Invokes the specified Amazon Bedrock model to run inference using the prompt
          * and inference parameters provided in the request body. You use model inference
          * to generate text, images, and embeddings.</p> <p>For example code, see <i>Invoke

@@ -609,6 +609,52 @@ namespace Model
      */
     inline RoutingProfile& WithIsDefault(bool value) { SetIsDefault(value); return *this;}
 
+
+    /**
+     * <p>The IDs of the associated queue.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAssociatedQueueIds() const{ return m_associatedQueueIds; }
+
+    /**
+     * <p>The IDs of the associated queue.</p>
+     */
+    inline bool AssociatedQueueIdsHasBeenSet() const { return m_associatedQueueIdsHasBeenSet; }
+
+    /**
+     * <p>The IDs of the associated queue.</p>
+     */
+    inline void SetAssociatedQueueIds(const Aws::Vector<Aws::String>& value) { m_associatedQueueIdsHasBeenSet = true; m_associatedQueueIds = value; }
+
+    /**
+     * <p>The IDs of the associated queue.</p>
+     */
+    inline void SetAssociatedQueueIds(Aws::Vector<Aws::String>&& value) { m_associatedQueueIdsHasBeenSet = true; m_associatedQueueIds = std::move(value); }
+
+    /**
+     * <p>The IDs of the associated queue.</p>
+     */
+    inline RoutingProfile& WithAssociatedQueueIds(const Aws::Vector<Aws::String>& value) { SetAssociatedQueueIds(value); return *this;}
+
+    /**
+     * <p>The IDs of the associated queue.</p>
+     */
+    inline RoutingProfile& WithAssociatedQueueIds(Aws::Vector<Aws::String>&& value) { SetAssociatedQueueIds(std::move(value)); return *this;}
+
+    /**
+     * <p>The IDs of the associated queue.</p>
+     */
+    inline RoutingProfile& AddAssociatedQueueIds(const Aws::String& value) { m_associatedQueueIdsHasBeenSet = true; m_associatedQueueIds.push_back(value); return *this; }
+
+    /**
+     * <p>The IDs of the associated queue.</p>
+     */
+    inline RoutingProfile& AddAssociatedQueueIds(Aws::String&& value) { m_associatedQueueIdsHasBeenSet = true; m_associatedQueueIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The IDs of the associated queue.</p>
+     */
+    inline RoutingProfile& AddAssociatedQueueIds(const char* value) { m_associatedQueueIdsHasBeenSet = true; m_associatedQueueIds.push_back(value); return *this; }
+
   private:
 
     Aws::String m_instanceId;
@@ -652,6 +698,9 @@ namespace Model
 
     bool m_isDefault;
     bool m_isDefaultHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_associatedQueueIds;
+    bool m_associatedQueueIdsHasBeenSet = false;
   };
 
 } // namespace Model

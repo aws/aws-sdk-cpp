@@ -1,0 +1,399 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
+#include <aws/bedrock-runtime/model/MessageStartEvent.h>
+#include <aws/bedrock-runtime/model/ContentBlockStartEvent.h>
+#include <aws/bedrock-runtime/model/ContentBlockDeltaEvent.h>
+#include <aws/bedrock-runtime/model/ContentBlockStopEvent.h>
+#include <aws/bedrock-runtime/model/MessageStopEvent.h>
+#include <aws/bedrock-runtime/model/ConverseStreamMetadataEvent.h>
+#include <aws/bedrock-runtime/model/InternalServerException.h>
+#include <aws/bedrock-runtime/model/ModelStreamErrorException.h>
+#include <aws/bedrock-runtime/model/ValidationException.h>
+#include <aws/bedrock-runtime/model/ThrottlingException.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace BedrockRuntime
+{
+namespace Model
+{
+
+  /**
+   * <p>The messages output stream</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ConverseStreamOutput">AWS
+   * API Reference</a></p>
+   */
+  class ConverseStreamOutput
+  {
+  public:
+    AWS_BEDROCKRUNTIME_API ConverseStreamOutput();
+    AWS_BEDROCKRUNTIME_API ConverseStreamOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BEDROCKRUNTIME_API ConverseStreamOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>Message start information.</p>
+     */
+    inline const MessageStartEvent& GetMessageStart() const{ return m_messageStart; }
+
+    /**
+     * <p>Message start information.</p>
+     */
+    inline bool MessageStartHasBeenSet() const { return m_messageStartHasBeenSet; }
+
+    /**
+     * <p>Message start information.</p>
+     */
+    inline void SetMessageStart(const MessageStartEvent& value) { m_messageStartHasBeenSet = true; m_messageStart = value; }
+
+    /**
+     * <p>Message start information.</p>
+     */
+    inline void SetMessageStart(MessageStartEvent&& value) { m_messageStartHasBeenSet = true; m_messageStart = std::move(value); }
+
+    /**
+     * <p>Message start information.</p>
+     */
+    inline ConverseStreamOutput& WithMessageStart(const MessageStartEvent& value) { SetMessageStart(value); return *this;}
+
+    /**
+     * <p>Message start information.</p>
+     */
+    inline ConverseStreamOutput& WithMessageStart(MessageStartEvent&& value) { SetMessageStart(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Start information for a content block.</p>
+     */
+    inline const ContentBlockStartEvent& GetContentBlockStart() const{ return m_contentBlockStart; }
+
+    /**
+     * <p>Start information for a content block.</p>
+     */
+    inline bool ContentBlockStartHasBeenSet() const { return m_contentBlockStartHasBeenSet; }
+
+    /**
+     * <p>Start information for a content block.</p>
+     */
+    inline void SetContentBlockStart(const ContentBlockStartEvent& value) { m_contentBlockStartHasBeenSet = true; m_contentBlockStart = value; }
+
+    /**
+     * <p>Start information for a content block.</p>
+     */
+    inline void SetContentBlockStart(ContentBlockStartEvent&& value) { m_contentBlockStartHasBeenSet = true; m_contentBlockStart = std::move(value); }
+
+    /**
+     * <p>Start information for a content block.</p>
+     */
+    inline ConverseStreamOutput& WithContentBlockStart(const ContentBlockStartEvent& value) { SetContentBlockStart(value); return *this;}
+
+    /**
+     * <p>Start information for a content block.</p>
+     */
+    inline ConverseStreamOutput& WithContentBlockStart(ContentBlockStartEvent&& value) { SetContentBlockStart(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The messages output content block delta.</p>
+     */
+    inline const ContentBlockDeltaEvent& GetContentBlockDelta() const{ return m_contentBlockDelta; }
+
+    /**
+     * <p>The messages output content block delta.</p>
+     */
+    inline bool ContentBlockDeltaHasBeenSet() const { return m_contentBlockDeltaHasBeenSet; }
+
+    /**
+     * <p>The messages output content block delta.</p>
+     */
+    inline void SetContentBlockDelta(const ContentBlockDeltaEvent& value) { m_contentBlockDeltaHasBeenSet = true; m_contentBlockDelta = value; }
+
+    /**
+     * <p>The messages output content block delta.</p>
+     */
+    inline void SetContentBlockDelta(ContentBlockDeltaEvent&& value) { m_contentBlockDeltaHasBeenSet = true; m_contentBlockDelta = std::move(value); }
+
+    /**
+     * <p>The messages output content block delta.</p>
+     */
+    inline ConverseStreamOutput& WithContentBlockDelta(const ContentBlockDeltaEvent& value) { SetContentBlockDelta(value); return *this;}
+
+    /**
+     * <p>The messages output content block delta.</p>
+     */
+    inline ConverseStreamOutput& WithContentBlockDelta(ContentBlockDeltaEvent&& value) { SetContentBlockDelta(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Stop information for a content block.</p>
+     */
+    inline const ContentBlockStopEvent& GetContentBlockStop() const{ return m_contentBlockStop; }
+
+    /**
+     * <p>Stop information for a content block.</p>
+     */
+    inline bool ContentBlockStopHasBeenSet() const { return m_contentBlockStopHasBeenSet; }
+
+    /**
+     * <p>Stop information for a content block.</p>
+     */
+    inline void SetContentBlockStop(const ContentBlockStopEvent& value) { m_contentBlockStopHasBeenSet = true; m_contentBlockStop = value; }
+
+    /**
+     * <p>Stop information for a content block.</p>
+     */
+    inline void SetContentBlockStop(ContentBlockStopEvent&& value) { m_contentBlockStopHasBeenSet = true; m_contentBlockStop = std::move(value); }
+
+    /**
+     * <p>Stop information for a content block.</p>
+     */
+    inline ConverseStreamOutput& WithContentBlockStop(const ContentBlockStopEvent& value) { SetContentBlockStop(value); return *this;}
+
+    /**
+     * <p>Stop information for a content block.</p>
+     */
+    inline ConverseStreamOutput& WithContentBlockStop(ContentBlockStopEvent&& value) { SetContentBlockStop(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Message stop information.</p>
+     */
+    inline const MessageStopEvent& GetMessageStop() const{ return m_messageStop; }
+
+    /**
+     * <p>Message stop information.</p>
+     */
+    inline bool MessageStopHasBeenSet() const { return m_messageStopHasBeenSet; }
+
+    /**
+     * <p>Message stop information.</p>
+     */
+    inline void SetMessageStop(const MessageStopEvent& value) { m_messageStopHasBeenSet = true; m_messageStop = value; }
+
+    /**
+     * <p>Message stop information.</p>
+     */
+    inline void SetMessageStop(MessageStopEvent&& value) { m_messageStopHasBeenSet = true; m_messageStop = std::move(value); }
+
+    /**
+     * <p>Message stop information.</p>
+     */
+    inline ConverseStreamOutput& WithMessageStop(const MessageStopEvent& value) { SetMessageStop(value); return *this;}
+
+    /**
+     * <p>Message stop information.</p>
+     */
+    inline ConverseStreamOutput& WithMessageStop(MessageStopEvent&& value) { SetMessageStop(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Metadata for the converse output stream.</p>
+     */
+    inline const ConverseStreamMetadataEvent& GetMetadata() const{ return m_metadata; }
+
+    /**
+     * <p>Metadata for the converse output stream.</p>
+     */
+    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+
+    /**
+     * <p>Metadata for the converse output stream.</p>
+     */
+    inline void SetMetadata(const ConverseStreamMetadataEvent& value) { m_metadataHasBeenSet = true; m_metadata = value; }
+
+    /**
+     * <p>Metadata for the converse output stream.</p>
+     */
+    inline void SetMetadata(ConverseStreamMetadataEvent&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
+
+    /**
+     * <p>Metadata for the converse output stream.</p>
+     */
+    inline ConverseStreamOutput& WithMetadata(const ConverseStreamMetadataEvent& value) { SetMetadata(value); return *this;}
+
+    /**
+     * <p>Metadata for the converse output stream.</p>
+     */
+    inline ConverseStreamOutput& WithMetadata(ConverseStreamMetadataEvent&& value) { SetMetadata(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An internal server error occurred. Retry your request.</p>
+     */
+    inline const InternalServerException& GetInternalServerException() const{ return m_internalServerException; }
+
+    /**
+     * <p>An internal server error occurred. Retry your request.</p>
+     */
+    inline bool InternalServerExceptionHasBeenSet() const { return m_internalServerExceptionHasBeenSet; }
+
+    /**
+     * <p>An internal server error occurred. Retry your request.</p>
+     */
+    inline void SetInternalServerException(const InternalServerException& value) { m_internalServerExceptionHasBeenSet = true; m_internalServerException = value; }
+
+    /**
+     * <p>An internal server error occurred. Retry your request.</p>
+     */
+    inline void SetInternalServerException(InternalServerException&& value) { m_internalServerExceptionHasBeenSet = true; m_internalServerException = std::move(value); }
+
+    /**
+     * <p>An internal server error occurred. Retry your request.</p>
+     */
+    inline ConverseStreamOutput& WithInternalServerException(const InternalServerException& value) { SetInternalServerException(value); return *this;}
+
+    /**
+     * <p>An internal server error occurred. Retry your request.</p>
+     */
+    inline ConverseStreamOutput& WithInternalServerException(InternalServerException&& value) { SetInternalServerException(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A streaming error occurred. Retry your request.</p>
+     */
+    inline const ModelStreamErrorException& GetModelStreamErrorException() const{ return m_modelStreamErrorException; }
+
+    /**
+     * <p>A streaming error occurred. Retry your request.</p>
+     */
+    inline bool ModelStreamErrorExceptionHasBeenSet() const { return m_modelStreamErrorExceptionHasBeenSet; }
+
+    /**
+     * <p>A streaming error occurred. Retry your request.</p>
+     */
+    inline void SetModelStreamErrorException(const ModelStreamErrorException& value) { m_modelStreamErrorExceptionHasBeenSet = true; m_modelStreamErrorException = value; }
+
+    /**
+     * <p>A streaming error occurred. Retry your request.</p>
+     */
+    inline void SetModelStreamErrorException(ModelStreamErrorException&& value) { m_modelStreamErrorExceptionHasBeenSet = true; m_modelStreamErrorException = std::move(value); }
+
+    /**
+     * <p>A streaming error occurred. Retry your request.</p>
+     */
+    inline ConverseStreamOutput& WithModelStreamErrorException(const ModelStreamErrorException& value) { SetModelStreamErrorException(value); return *this;}
+
+    /**
+     * <p>A streaming error occurred. Retry your request.</p>
+     */
+    inline ConverseStreamOutput& WithModelStreamErrorException(ModelStreamErrorException&& value) { SetModelStreamErrorException(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Input validation failed. Check your request parameters and retry the
+     * request.</p>
+     */
+    inline const ValidationException& GetValidationException() const{ return m_validationException; }
+
+    /**
+     * <p>Input validation failed. Check your request parameters and retry the
+     * request.</p>
+     */
+    inline bool ValidationExceptionHasBeenSet() const { return m_validationExceptionHasBeenSet; }
+
+    /**
+     * <p>Input validation failed. Check your request parameters and retry the
+     * request.</p>
+     */
+    inline void SetValidationException(const ValidationException& value) { m_validationExceptionHasBeenSet = true; m_validationException = value; }
+
+    /**
+     * <p>Input validation failed. Check your request parameters and retry the
+     * request.</p>
+     */
+    inline void SetValidationException(ValidationException&& value) { m_validationExceptionHasBeenSet = true; m_validationException = std::move(value); }
+
+    /**
+     * <p>Input validation failed. Check your request parameters and retry the
+     * request.</p>
+     */
+    inline ConverseStreamOutput& WithValidationException(const ValidationException& value) { SetValidationException(value); return *this;}
+
+    /**
+     * <p>Input validation failed. Check your request parameters and retry the
+     * request.</p>
+     */
+    inline ConverseStreamOutput& WithValidationException(ValidationException&& value) { SetValidationException(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The number of requests exceeds the limit. Resubmit your request later.</p>
+     */
+    inline const ThrottlingException& GetThrottlingException() const{ return m_throttlingException; }
+
+    /**
+     * <p>The number of requests exceeds the limit. Resubmit your request later.</p>
+     */
+    inline bool ThrottlingExceptionHasBeenSet() const { return m_throttlingExceptionHasBeenSet; }
+
+    /**
+     * <p>The number of requests exceeds the limit. Resubmit your request later.</p>
+     */
+    inline void SetThrottlingException(const ThrottlingException& value) { m_throttlingExceptionHasBeenSet = true; m_throttlingException = value; }
+
+    /**
+     * <p>The number of requests exceeds the limit. Resubmit your request later.</p>
+     */
+    inline void SetThrottlingException(ThrottlingException&& value) { m_throttlingExceptionHasBeenSet = true; m_throttlingException = std::move(value); }
+
+    /**
+     * <p>The number of requests exceeds the limit. Resubmit your request later.</p>
+     */
+    inline ConverseStreamOutput& WithThrottlingException(const ThrottlingException& value) { SetThrottlingException(value); return *this;}
+
+    /**
+     * <p>The number of requests exceeds the limit. Resubmit your request later.</p>
+     */
+    inline ConverseStreamOutput& WithThrottlingException(ThrottlingException&& value) { SetThrottlingException(std::move(value)); return *this;}
+
+  private:
+
+    MessageStartEvent m_messageStart;
+    bool m_messageStartHasBeenSet = false;
+
+    ContentBlockStartEvent m_contentBlockStart;
+    bool m_contentBlockStartHasBeenSet = false;
+
+    ContentBlockDeltaEvent m_contentBlockDelta;
+    bool m_contentBlockDeltaHasBeenSet = false;
+
+    ContentBlockStopEvent m_contentBlockStop;
+    bool m_contentBlockStopHasBeenSet = false;
+
+    MessageStopEvent m_messageStop;
+    bool m_messageStopHasBeenSet = false;
+
+    ConverseStreamMetadataEvent m_metadata;
+    bool m_metadataHasBeenSet = false;
+
+    InternalServerException m_internalServerException;
+    bool m_internalServerExceptionHasBeenSet = false;
+
+    ModelStreamErrorException m_modelStreamErrorException;
+    bool m_modelStreamErrorExceptionHasBeenSet = false;
+
+    ValidationException m_validationException;
+    bool m_validationExceptionHasBeenSet = false;
+
+    ThrottlingException m_throttlingException;
+    bool m_throttlingExceptionHasBeenSet = false;
+  };
+
+} // namespace Model
+} // namespace BedrockRuntime
+} // namespace Aws

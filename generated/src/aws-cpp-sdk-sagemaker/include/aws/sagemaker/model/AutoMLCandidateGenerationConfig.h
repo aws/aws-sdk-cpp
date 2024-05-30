@@ -250,21 +250,21 @@ namespace Model
 
 
     /**
-     * <p>Stores the configuration information for the selection of algorithms used to
-     * train the model candidates.</p> <p>The list of available algorithms to choose
-     * from depends on the training mode set in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobConfig.html">
-     * <code>AutoMLJobConfig.Mode</code> </a>.</p> <ul> <li> <p>
-     * <code>AlgorithmsConfig</code> should not be set in <code>AUTO</code> training
-     * mode.</p> </li> <li> <p>When <code>AlgorithmsConfig</code> is provided, one
-     * <code>AutoMLAlgorithms</code> attribute must be set and one only.</p> <p>If the
-     * list of algorithms provided as values for <code>AutoMLAlgorithms</code> is
-     * empty, <code>AutoMLCandidateGenerationConfig</code> uses the full set of
-     * algorithms for the given training mode.</p> </li> <li> <p>When
-     * <code>AlgorithmsConfig</code> is not provided,
-     * <code>AutoMLCandidateGenerationConfig</code> uses the full set of algorithms for
-     * the given training mode.</p> </li> </ul> <p>For the list of all algorithms per
-     * training mode, see <a
+     * <p>Stores the configuration information for the selection of algorithms trained
+     * on tabular data.</p> <p>The list of available algorithms to choose from depends
+     * on the training mode set in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TabularJobConfig.html">
+     * <code>TabularJobConfig.Mode</code> </a>.</p> <ul> <li> <p>
+     * <code>AlgorithmsConfig</code> should not be set if the training mode is set on
+     * <code>AUTO</code>.</p> </li> <li> <p>When <code>AlgorithmsConfig</code> is
+     * provided, one <code>AutoMLAlgorithms</code> attribute must be set and one
+     * only.</p> <p>If the list of algorithms provided as values for
+     * <code>AutoMLAlgorithms</code> is empty, <code>CandidateGenerationConfig</code>
+     * uses the full set of algorithms for the given training mode.</p> </li> <li>
+     * <p>When <code>AlgorithmsConfig</code> is not provided,
+     * <code>CandidateGenerationConfig</code> uses the full set of algorithms for the
+     * given training mode.</p> </li> </ul> <p>For the list of all algorithms per
+     * problem type and training mode, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">
      * AutoMLAlgorithmConfig</a>.</p> <p>For more information on each algorithm, see
      * the <a
@@ -274,21 +274,21 @@ namespace Model
     inline const Aws::Vector<AutoMLAlgorithmConfig>& GetAlgorithmsConfig() const{ return m_algorithmsConfig; }
 
     /**
-     * <p>Stores the configuration information for the selection of algorithms used to
-     * train the model candidates.</p> <p>The list of available algorithms to choose
-     * from depends on the training mode set in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobConfig.html">
-     * <code>AutoMLJobConfig.Mode</code> </a>.</p> <ul> <li> <p>
-     * <code>AlgorithmsConfig</code> should not be set in <code>AUTO</code> training
-     * mode.</p> </li> <li> <p>When <code>AlgorithmsConfig</code> is provided, one
-     * <code>AutoMLAlgorithms</code> attribute must be set and one only.</p> <p>If the
-     * list of algorithms provided as values for <code>AutoMLAlgorithms</code> is
-     * empty, <code>AutoMLCandidateGenerationConfig</code> uses the full set of
-     * algorithms for the given training mode.</p> </li> <li> <p>When
-     * <code>AlgorithmsConfig</code> is not provided,
-     * <code>AutoMLCandidateGenerationConfig</code> uses the full set of algorithms for
-     * the given training mode.</p> </li> </ul> <p>For the list of all algorithms per
-     * training mode, see <a
+     * <p>Stores the configuration information for the selection of algorithms trained
+     * on tabular data.</p> <p>The list of available algorithms to choose from depends
+     * on the training mode set in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TabularJobConfig.html">
+     * <code>TabularJobConfig.Mode</code> </a>.</p> <ul> <li> <p>
+     * <code>AlgorithmsConfig</code> should not be set if the training mode is set on
+     * <code>AUTO</code>.</p> </li> <li> <p>When <code>AlgorithmsConfig</code> is
+     * provided, one <code>AutoMLAlgorithms</code> attribute must be set and one
+     * only.</p> <p>If the list of algorithms provided as values for
+     * <code>AutoMLAlgorithms</code> is empty, <code>CandidateGenerationConfig</code>
+     * uses the full set of algorithms for the given training mode.</p> </li> <li>
+     * <p>When <code>AlgorithmsConfig</code> is not provided,
+     * <code>CandidateGenerationConfig</code> uses the full set of algorithms for the
+     * given training mode.</p> </li> </ul> <p>For the list of all algorithms per
+     * problem type and training mode, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">
      * AutoMLAlgorithmConfig</a>.</p> <p>For more information on each algorithm, see
      * the <a
@@ -298,21 +298,21 @@ namespace Model
     inline bool AlgorithmsConfigHasBeenSet() const { return m_algorithmsConfigHasBeenSet; }
 
     /**
-     * <p>Stores the configuration information for the selection of algorithms used to
-     * train the model candidates.</p> <p>The list of available algorithms to choose
-     * from depends on the training mode set in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobConfig.html">
-     * <code>AutoMLJobConfig.Mode</code> </a>.</p> <ul> <li> <p>
-     * <code>AlgorithmsConfig</code> should not be set in <code>AUTO</code> training
-     * mode.</p> </li> <li> <p>When <code>AlgorithmsConfig</code> is provided, one
-     * <code>AutoMLAlgorithms</code> attribute must be set and one only.</p> <p>If the
-     * list of algorithms provided as values for <code>AutoMLAlgorithms</code> is
-     * empty, <code>AutoMLCandidateGenerationConfig</code> uses the full set of
-     * algorithms for the given training mode.</p> </li> <li> <p>When
-     * <code>AlgorithmsConfig</code> is not provided,
-     * <code>AutoMLCandidateGenerationConfig</code> uses the full set of algorithms for
-     * the given training mode.</p> </li> </ul> <p>For the list of all algorithms per
-     * training mode, see <a
+     * <p>Stores the configuration information for the selection of algorithms trained
+     * on tabular data.</p> <p>The list of available algorithms to choose from depends
+     * on the training mode set in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TabularJobConfig.html">
+     * <code>TabularJobConfig.Mode</code> </a>.</p> <ul> <li> <p>
+     * <code>AlgorithmsConfig</code> should not be set if the training mode is set on
+     * <code>AUTO</code>.</p> </li> <li> <p>When <code>AlgorithmsConfig</code> is
+     * provided, one <code>AutoMLAlgorithms</code> attribute must be set and one
+     * only.</p> <p>If the list of algorithms provided as values for
+     * <code>AutoMLAlgorithms</code> is empty, <code>CandidateGenerationConfig</code>
+     * uses the full set of algorithms for the given training mode.</p> </li> <li>
+     * <p>When <code>AlgorithmsConfig</code> is not provided,
+     * <code>CandidateGenerationConfig</code> uses the full set of algorithms for the
+     * given training mode.</p> </li> </ul> <p>For the list of all algorithms per
+     * problem type and training mode, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">
      * AutoMLAlgorithmConfig</a>.</p> <p>For more information on each algorithm, see
      * the <a
@@ -322,21 +322,21 @@ namespace Model
     inline void SetAlgorithmsConfig(const Aws::Vector<AutoMLAlgorithmConfig>& value) { m_algorithmsConfigHasBeenSet = true; m_algorithmsConfig = value; }
 
     /**
-     * <p>Stores the configuration information for the selection of algorithms used to
-     * train the model candidates.</p> <p>The list of available algorithms to choose
-     * from depends on the training mode set in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobConfig.html">
-     * <code>AutoMLJobConfig.Mode</code> </a>.</p> <ul> <li> <p>
-     * <code>AlgorithmsConfig</code> should not be set in <code>AUTO</code> training
-     * mode.</p> </li> <li> <p>When <code>AlgorithmsConfig</code> is provided, one
-     * <code>AutoMLAlgorithms</code> attribute must be set and one only.</p> <p>If the
-     * list of algorithms provided as values for <code>AutoMLAlgorithms</code> is
-     * empty, <code>AutoMLCandidateGenerationConfig</code> uses the full set of
-     * algorithms for the given training mode.</p> </li> <li> <p>When
-     * <code>AlgorithmsConfig</code> is not provided,
-     * <code>AutoMLCandidateGenerationConfig</code> uses the full set of algorithms for
-     * the given training mode.</p> </li> </ul> <p>For the list of all algorithms per
-     * training mode, see <a
+     * <p>Stores the configuration information for the selection of algorithms trained
+     * on tabular data.</p> <p>The list of available algorithms to choose from depends
+     * on the training mode set in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TabularJobConfig.html">
+     * <code>TabularJobConfig.Mode</code> </a>.</p> <ul> <li> <p>
+     * <code>AlgorithmsConfig</code> should not be set if the training mode is set on
+     * <code>AUTO</code>.</p> </li> <li> <p>When <code>AlgorithmsConfig</code> is
+     * provided, one <code>AutoMLAlgorithms</code> attribute must be set and one
+     * only.</p> <p>If the list of algorithms provided as values for
+     * <code>AutoMLAlgorithms</code> is empty, <code>CandidateGenerationConfig</code>
+     * uses the full set of algorithms for the given training mode.</p> </li> <li>
+     * <p>When <code>AlgorithmsConfig</code> is not provided,
+     * <code>CandidateGenerationConfig</code> uses the full set of algorithms for the
+     * given training mode.</p> </li> </ul> <p>For the list of all algorithms per
+     * problem type and training mode, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">
      * AutoMLAlgorithmConfig</a>.</p> <p>For more information on each algorithm, see
      * the <a
@@ -346,21 +346,21 @@ namespace Model
     inline void SetAlgorithmsConfig(Aws::Vector<AutoMLAlgorithmConfig>&& value) { m_algorithmsConfigHasBeenSet = true; m_algorithmsConfig = std::move(value); }
 
     /**
-     * <p>Stores the configuration information for the selection of algorithms used to
-     * train the model candidates.</p> <p>The list of available algorithms to choose
-     * from depends on the training mode set in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobConfig.html">
-     * <code>AutoMLJobConfig.Mode</code> </a>.</p> <ul> <li> <p>
-     * <code>AlgorithmsConfig</code> should not be set in <code>AUTO</code> training
-     * mode.</p> </li> <li> <p>When <code>AlgorithmsConfig</code> is provided, one
-     * <code>AutoMLAlgorithms</code> attribute must be set and one only.</p> <p>If the
-     * list of algorithms provided as values for <code>AutoMLAlgorithms</code> is
-     * empty, <code>AutoMLCandidateGenerationConfig</code> uses the full set of
-     * algorithms for the given training mode.</p> </li> <li> <p>When
-     * <code>AlgorithmsConfig</code> is not provided,
-     * <code>AutoMLCandidateGenerationConfig</code> uses the full set of algorithms for
-     * the given training mode.</p> </li> </ul> <p>For the list of all algorithms per
-     * training mode, see <a
+     * <p>Stores the configuration information for the selection of algorithms trained
+     * on tabular data.</p> <p>The list of available algorithms to choose from depends
+     * on the training mode set in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TabularJobConfig.html">
+     * <code>TabularJobConfig.Mode</code> </a>.</p> <ul> <li> <p>
+     * <code>AlgorithmsConfig</code> should not be set if the training mode is set on
+     * <code>AUTO</code>.</p> </li> <li> <p>When <code>AlgorithmsConfig</code> is
+     * provided, one <code>AutoMLAlgorithms</code> attribute must be set and one
+     * only.</p> <p>If the list of algorithms provided as values for
+     * <code>AutoMLAlgorithms</code> is empty, <code>CandidateGenerationConfig</code>
+     * uses the full set of algorithms for the given training mode.</p> </li> <li>
+     * <p>When <code>AlgorithmsConfig</code> is not provided,
+     * <code>CandidateGenerationConfig</code> uses the full set of algorithms for the
+     * given training mode.</p> </li> </ul> <p>For the list of all algorithms per
+     * problem type and training mode, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">
      * AutoMLAlgorithmConfig</a>.</p> <p>For more information on each algorithm, see
      * the <a
@@ -370,21 +370,21 @@ namespace Model
     inline AutoMLCandidateGenerationConfig& WithAlgorithmsConfig(const Aws::Vector<AutoMLAlgorithmConfig>& value) { SetAlgorithmsConfig(value); return *this;}
 
     /**
-     * <p>Stores the configuration information for the selection of algorithms used to
-     * train the model candidates.</p> <p>The list of available algorithms to choose
-     * from depends on the training mode set in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobConfig.html">
-     * <code>AutoMLJobConfig.Mode</code> </a>.</p> <ul> <li> <p>
-     * <code>AlgorithmsConfig</code> should not be set in <code>AUTO</code> training
-     * mode.</p> </li> <li> <p>When <code>AlgorithmsConfig</code> is provided, one
-     * <code>AutoMLAlgorithms</code> attribute must be set and one only.</p> <p>If the
-     * list of algorithms provided as values for <code>AutoMLAlgorithms</code> is
-     * empty, <code>AutoMLCandidateGenerationConfig</code> uses the full set of
-     * algorithms for the given training mode.</p> </li> <li> <p>When
-     * <code>AlgorithmsConfig</code> is not provided,
-     * <code>AutoMLCandidateGenerationConfig</code> uses the full set of algorithms for
-     * the given training mode.</p> </li> </ul> <p>For the list of all algorithms per
-     * training mode, see <a
+     * <p>Stores the configuration information for the selection of algorithms trained
+     * on tabular data.</p> <p>The list of available algorithms to choose from depends
+     * on the training mode set in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TabularJobConfig.html">
+     * <code>TabularJobConfig.Mode</code> </a>.</p> <ul> <li> <p>
+     * <code>AlgorithmsConfig</code> should not be set if the training mode is set on
+     * <code>AUTO</code>.</p> </li> <li> <p>When <code>AlgorithmsConfig</code> is
+     * provided, one <code>AutoMLAlgorithms</code> attribute must be set and one
+     * only.</p> <p>If the list of algorithms provided as values for
+     * <code>AutoMLAlgorithms</code> is empty, <code>CandidateGenerationConfig</code>
+     * uses the full set of algorithms for the given training mode.</p> </li> <li>
+     * <p>When <code>AlgorithmsConfig</code> is not provided,
+     * <code>CandidateGenerationConfig</code> uses the full set of algorithms for the
+     * given training mode.</p> </li> </ul> <p>For the list of all algorithms per
+     * problem type and training mode, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">
      * AutoMLAlgorithmConfig</a>.</p> <p>For more information on each algorithm, see
      * the <a
@@ -394,21 +394,21 @@ namespace Model
     inline AutoMLCandidateGenerationConfig& WithAlgorithmsConfig(Aws::Vector<AutoMLAlgorithmConfig>&& value) { SetAlgorithmsConfig(std::move(value)); return *this;}
 
     /**
-     * <p>Stores the configuration information for the selection of algorithms used to
-     * train the model candidates.</p> <p>The list of available algorithms to choose
-     * from depends on the training mode set in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobConfig.html">
-     * <code>AutoMLJobConfig.Mode</code> </a>.</p> <ul> <li> <p>
-     * <code>AlgorithmsConfig</code> should not be set in <code>AUTO</code> training
-     * mode.</p> </li> <li> <p>When <code>AlgorithmsConfig</code> is provided, one
-     * <code>AutoMLAlgorithms</code> attribute must be set and one only.</p> <p>If the
-     * list of algorithms provided as values for <code>AutoMLAlgorithms</code> is
-     * empty, <code>AutoMLCandidateGenerationConfig</code> uses the full set of
-     * algorithms for the given training mode.</p> </li> <li> <p>When
-     * <code>AlgorithmsConfig</code> is not provided,
-     * <code>AutoMLCandidateGenerationConfig</code> uses the full set of algorithms for
-     * the given training mode.</p> </li> </ul> <p>For the list of all algorithms per
-     * training mode, see <a
+     * <p>Stores the configuration information for the selection of algorithms trained
+     * on tabular data.</p> <p>The list of available algorithms to choose from depends
+     * on the training mode set in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TabularJobConfig.html">
+     * <code>TabularJobConfig.Mode</code> </a>.</p> <ul> <li> <p>
+     * <code>AlgorithmsConfig</code> should not be set if the training mode is set on
+     * <code>AUTO</code>.</p> </li> <li> <p>When <code>AlgorithmsConfig</code> is
+     * provided, one <code>AutoMLAlgorithms</code> attribute must be set and one
+     * only.</p> <p>If the list of algorithms provided as values for
+     * <code>AutoMLAlgorithms</code> is empty, <code>CandidateGenerationConfig</code>
+     * uses the full set of algorithms for the given training mode.</p> </li> <li>
+     * <p>When <code>AlgorithmsConfig</code> is not provided,
+     * <code>CandidateGenerationConfig</code> uses the full set of algorithms for the
+     * given training mode.</p> </li> </ul> <p>For the list of all algorithms per
+     * problem type and training mode, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">
      * AutoMLAlgorithmConfig</a>.</p> <p>For more information on each algorithm, see
      * the <a
@@ -418,21 +418,21 @@ namespace Model
     inline AutoMLCandidateGenerationConfig& AddAlgorithmsConfig(const AutoMLAlgorithmConfig& value) { m_algorithmsConfigHasBeenSet = true; m_algorithmsConfig.push_back(value); return *this; }
 
     /**
-     * <p>Stores the configuration information for the selection of algorithms used to
-     * train the model candidates.</p> <p>The list of available algorithms to choose
-     * from depends on the training mode set in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobConfig.html">
-     * <code>AutoMLJobConfig.Mode</code> </a>.</p> <ul> <li> <p>
-     * <code>AlgorithmsConfig</code> should not be set in <code>AUTO</code> training
-     * mode.</p> </li> <li> <p>When <code>AlgorithmsConfig</code> is provided, one
-     * <code>AutoMLAlgorithms</code> attribute must be set and one only.</p> <p>If the
-     * list of algorithms provided as values for <code>AutoMLAlgorithms</code> is
-     * empty, <code>AutoMLCandidateGenerationConfig</code> uses the full set of
-     * algorithms for the given training mode.</p> </li> <li> <p>When
-     * <code>AlgorithmsConfig</code> is not provided,
-     * <code>AutoMLCandidateGenerationConfig</code> uses the full set of algorithms for
-     * the given training mode.</p> </li> </ul> <p>For the list of all algorithms per
-     * training mode, see <a
+     * <p>Stores the configuration information for the selection of algorithms trained
+     * on tabular data.</p> <p>The list of available algorithms to choose from depends
+     * on the training mode set in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TabularJobConfig.html">
+     * <code>TabularJobConfig.Mode</code> </a>.</p> <ul> <li> <p>
+     * <code>AlgorithmsConfig</code> should not be set if the training mode is set on
+     * <code>AUTO</code>.</p> </li> <li> <p>When <code>AlgorithmsConfig</code> is
+     * provided, one <code>AutoMLAlgorithms</code> attribute must be set and one
+     * only.</p> <p>If the list of algorithms provided as values for
+     * <code>AutoMLAlgorithms</code> is empty, <code>CandidateGenerationConfig</code>
+     * uses the full set of algorithms for the given training mode.</p> </li> <li>
+     * <p>When <code>AlgorithmsConfig</code> is not provided,
+     * <code>CandidateGenerationConfig</code> uses the full set of algorithms for the
+     * given training mode.</p> </li> </ul> <p>For the list of all algorithms per
+     * problem type and training mode, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">
      * AutoMLAlgorithmConfig</a>.</p> <p>For more information on each algorithm, see
      * the <a

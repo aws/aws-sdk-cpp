@@ -25,13 +25,17 @@ namespace Model
 {
 
   /**
-   * <p>The Amazon S3 buckets, Lambda functions, or Amazon DynamoDB tables that you
-   * specify in your event selectors for your trail to log data events. Data events
-   * provide information about the resource operations performed on or within a
-   * resource itself. These are also known as data plane operations. You can specify
-   * up to 250 data resources for a trail.</p>  <p>The total number of allowed
-   * data resources is 250. This number can be distributed between 1 and 5 event
-   * selectors, but the total cannot exceed 250 across all selectors for the
+   * <p>Data events provide information about the resource operations performed on or
+   * within a resource itself. These are also known as data plane operations. You can
+   * specify up to 250 data resources for a trail.</p> <p>Configure the
+   * <code>DataResource</code> to specify the resource type and resource ARNs for
+   * which you want to log data events.</p> <p>You can specify the following resource
+   * types in your event selectors for your trail:</p> <ul> <li> <p>
+   * <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
+   * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
+   * <code>AWS::S3::Object</code> </p> </li> </ul>  <p>The total number of
+   * allowed data resources is 250. This number can be distributed between 1 and 5
+   * event selectors, but the total cannot exceed 250 across all selectors for the
    * trail.</p> <p>If you are using advanced event selectors, the maximum total
    * number of values for all conditions, across all advanced event selectors for the
    * trail, is 500.</p>  <p>The following example demonstrates how logging
@@ -173,8 +177,8 @@ namespace Model
 
     /**
      * <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the
-     * specified objects.</p> <ul> <li> <p>To log data events for all objects in all S3
-     * buckets in your Amazon Web Services account, specify the prefix as
+     * specified resource type.</p> <ul> <li> <p>To log data events for all objects in
+     * all S3 buckets in your Amazon Web Services account, specify the prefix as
      * <code>arn:aws:s3</code>.</p>  <p>This also enables logging of data event
      * activity performed by any user or role in your Amazon Web Services account, even
      * if that activity is performed on a bucket that belongs to another Amazon Web
@@ -205,8 +209,8 @@ namespace Model
 
     /**
      * <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the
-     * specified objects.</p> <ul> <li> <p>To log data events for all objects in all S3
-     * buckets in your Amazon Web Services account, specify the prefix as
+     * specified resource type.</p> <ul> <li> <p>To log data events for all objects in
+     * all S3 buckets in your Amazon Web Services account, specify the prefix as
      * <code>arn:aws:s3</code>.</p>  <p>This also enables logging of data event
      * activity performed by any user or role in your Amazon Web Services account, even
      * if that activity is performed on a bucket that belongs to another Amazon Web
@@ -237,8 +241,8 @@ namespace Model
 
     /**
      * <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the
-     * specified objects.</p> <ul> <li> <p>To log data events for all objects in all S3
-     * buckets in your Amazon Web Services account, specify the prefix as
+     * specified resource type.</p> <ul> <li> <p>To log data events for all objects in
+     * all S3 buckets in your Amazon Web Services account, specify the prefix as
      * <code>arn:aws:s3</code>.</p>  <p>This also enables logging of data event
      * activity performed by any user or role in your Amazon Web Services account, even
      * if that activity is performed on a bucket that belongs to another Amazon Web
@@ -269,8 +273,8 @@ namespace Model
 
     /**
      * <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the
-     * specified objects.</p> <ul> <li> <p>To log data events for all objects in all S3
-     * buckets in your Amazon Web Services account, specify the prefix as
+     * specified resource type.</p> <ul> <li> <p>To log data events for all objects in
+     * all S3 buckets in your Amazon Web Services account, specify the prefix as
      * <code>arn:aws:s3</code>.</p>  <p>This also enables logging of data event
      * activity performed by any user or role in your Amazon Web Services account, even
      * if that activity is performed on a bucket that belongs to another Amazon Web
@@ -301,8 +305,8 @@ namespace Model
 
     /**
      * <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the
-     * specified objects.</p> <ul> <li> <p>To log data events for all objects in all S3
-     * buckets in your Amazon Web Services account, specify the prefix as
+     * specified resource type.</p> <ul> <li> <p>To log data events for all objects in
+     * all S3 buckets in your Amazon Web Services account, specify the prefix as
      * <code>arn:aws:s3</code>.</p>  <p>This also enables logging of data event
      * activity performed by any user or role in your Amazon Web Services account, even
      * if that activity is performed on a bucket that belongs to another Amazon Web
@@ -333,8 +337,8 @@ namespace Model
 
     /**
      * <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the
-     * specified objects.</p> <ul> <li> <p>To log data events for all objects in all S3
-     * buckets in your Amazon Web Services account, specify the prefix as
+     * specified resource type.</p> <ul> <li> <p>To log data events for all objects in
+     * all S3 buckets in your Amazon Web Services account, specify the prefix as
      * <code>arn:aws:s3</code>.</p>  <p>This also enables logging of data event
      * activity performed by any user or role in your Amazon Web Services account, even
      * if that activity is performed on a bucket that belongs to another Amazon Web
@@ -365,8 +369,8 @@ namespace Model
 
     /**
      * <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the
-     * specified objects.</p> <ul> <li> <p>To log data events for all objects in all S3
-     * buckets in your Amazon Web Services account, specify the prefix as
+     * specified resource type.</p> <ul> <li> <p>To log data events for all objects in
+     * all S3 buckets in your Amazon Web Services account, specify the prefix as
      * <code>arn:aws:s3</code>.</p>  <p>This also enables logging of data event
      * activity performed by any user or role in your Amazon Web Services account, even
      * if that activity is performed on a bucket that belongs to another Amazon Web
@@ -397,8 +401,8 @@ namespace Model
 
     /**
      * <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the
-     * specified objects.</p> <ul> <li> <p>To log data events for all objects in all S3
-     * buckets in your Amazon Web Services account, specify the prefix as
+     * specified resource type.</p> <ul> <li> <p>To log data events for all objects in
+     * all S3 buckets in your Amazon Web Services account, specify the prefix as
      * <code>arn:aws:s3</code>.</p>  <p>This also enables logging of data event
      * activity performed by any user or role in your Amazon Web Services account, even
      * if that activity is performed on a bucket that belongs to another Amazon Web
@@ -429,8 +433,8 @@ namespace Model
 
     /**
      * <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the
-     * specified objects.</p> <ul> <li> <p>To log data events for all objects in all S3
-     * buckets in your Amazon Web Services account, specify the prefix as
+     * specified resource type.</p> <ul> <li> <p>To log data events for all objects in
+     * all S3 buckets in your Amazon Web Services account, specify the prefix as
      * <code>arn:aws:s3</code>.</p>  <p>This also enables logging of data event
      * activity performed by any user or role in your Amazon Web Services account, even
      * if that activity is performed on a bucket that belongs to another Amazon Web

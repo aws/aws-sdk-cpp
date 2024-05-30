@@ -10,6 +10,8 @@
 #include <aws/emr-serverless/model/JobDriver.h>
 #include <aws/emr-serverless/model/ConfigurationOverrides.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/emr-serverless/model/JobRunMode.h>
+#include <aws/emr-serverless/model/RetryPolicy.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -360,6 +362,68 @@ namespace Model
      */
     inline StartJobRunRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * <p>The mode of the job run when it starts.</p>
+     */
+    inline const JobRunMode& GetMode() const{ return m_mode; }
+
+    /**
+     * <p>The mode of the job run when it starts.</p>
+     */
+    inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
+
+    /**
+     * <p>The mode of the job run when it starts.</p>
+     */
+    inline void SetMode(const JobRunMode& value) { m_modeHasBeenSet = true; m_mode = value; }
+
+    /**
+     * <p>The mode of the job run when it starts.</p>
+     */
+    inline void SetMode(JobRunMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
+
+    /**
+     * <p>The mode of the job run when it starts.</p>
+     */
+    inline StartJobRunRequest& WithMode(const JobRunMode& value) { SetMode(value); return *this;}
+
+    /**
+     * <p>The mode of the job run when it starts.</p>
+     */
+    inline StartJobRunRequest& WithMode(JobRunMode&& value) { SetMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The retry policy when job run starts.</p>
+     */
+    inline const RetryPolicy& GetRetryPolicy() const{ return m_retryPolicy; }
+
+    /**
+     * <p>The retry policy when job run starts.</p>
+     */
+    inline bool RetryPolicyHasBeenSet() const { return m_retryPolicyHasBeenSet; }
+
+    /**
+     * <p>The retry policy when job run starts.</p>
+     */
+    inline void SetRetryPolicy(const RetryPolicy& value) { m_retryPolicyHasBeenSet = true; m_retryPolicy = value; }
+
+    /**
+     * <p>The retry policy when job run starts.</p>
+     */
+    inline void SetRetryPolicy(RetryPolicy&& value) { m_retryPolicyHasBeenSet = true; m_retryPolicy = std::move(value); }
+
+    /**
+     * <p>The retry policy when job run starts.</p>
+     */
+    inline StartJobRunRequest& WithRetryPolicy(const RetryPolicy& value) { SetRetryPolicy(value); return *this;}
+
+    /**
+     * <p>The retry policy when job run starts.</p>
+     */
+    inline StartJobRunRequest& WithRetryPolicy(RetryPolicy&& value) { SetRetryPolicy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_applicationId;
@@ -385,6 +449,12 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    JobRunMode m_mode;
+    bool m_modeHasBeenSet = false;
+
+    RetryPolicy m_retryPolicy;
+    bool m_retryPolicyHasBeenSet = false;
   };
 
 } // namespace Model

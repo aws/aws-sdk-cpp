@@ -64,9 +64,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
      * Responses</a> in the Amazon S3 API Reference. </p>  <p>This error occurs
      * only when there is a problem with the destination S3 bucket, and does not occur
-     * for requests that time out. To resolve the issue, create a new bucket, and then
-     * call <code>UpdateTrail</code> to specify the new bucket; or fix the existing
-     * objects so that CloudTrail can again write to the bucket.</p> 
+     * for requests that time out. To resolve the issue, fix the <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-s3-bucket-policy-for-cloudtrail.html">bucket
+     * policy</a> so that CloudTrail can write to the bucket; or create a new bucket
+     * and call <code>UpdateTrail</code> to specify the new bucket.</p> 
      */
     inline const Aws::String& GetLatestDeliveryError() const{ return m_latestDeliveryError; }
 
@@ -76,9 +77,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
      * Responses</a> in the Amazon S3 API Reference. </p>  <p>This error occurs
      * only when there is a problem with the destination S3 bucket, and does not occur
-     * for requests that time out. To resolve the issue, create a new bucket, and then
-     * call <code>UpdateTrail</code> to specify the new bucket; or fix the existing
-     * objects so that CloudTrail can again write to the bucket.</p> 
+     * for requests that time out. To resolve the issue, fix the <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-s3-bucket-policy-for-cloudtrail.html">bucket
+     * policy</a> so that CloudTrail can write to the bucket; or create a new bucket
+     * and call <code>UpdateTrail</code> to specify the new bucket.</p> 
      */
     inline void SetLatestDeliveryError(const Aws::String& value) { m_latestDeliveryError = value; }
 
@@ -88,9 +90,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
      * Responses</a> in the Amazon S3 API Reference. </p>  <p>This error occurs
      * only when there is a problem with the destination S3 bucket, and does not occur
-     * for requests that time out. To resolve the issue, create a new bucket, and then
-     * call <code>UpdateTrail</code> to specify the new bucket; or fix the existing
-     * objects so that CloudTrail can again write to the bucket.</p> 
+     * for requests that time out. To resolve the issue, fix the <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-s3-bucket-policy-for-cloudtrail.html">bucket
+     * policy</a> so that CloudTrail can write to the bucket; or create a new bucket
+     * and call <code>UpdateTrail</code> to specify the new bucket.</p> 
      */
     inline void SetLatestDeliveryError(Aws::String&& value) { m_latestDeliveryError = std::move(value); }
 
@@ -100,9 +103,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
      * Responses</a> in the Amazon S3 API Reference. </p>  <p>This error occurs
      * only when there is a problem with the destination S3 bucket, and does not occur
-     * for requests that time out. To resolve the issue, create a new bucket, and then
-     * call <code>UpdateTrail</code> to specify the new bucket; or fix the existing
-     * objects so that CloudTrail can again write to the bucket.</p> 
+     * for requests that time out. To resolve the issue, fix the <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-s3-bucket-policy-for-cloudtrail.html">bucket
+     * policy</a> so that CloudTrail can write to the bucket; or create a new bucket
+     * and call <code>UpdateTrail</code> to specify the new bucket.</p> 
      */
     inline void SetLatestDeliveryError(const char* value) { m_latestDeliveryError.assign(value); }
 
@@ -112,9 +116,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
      * Responses</a> in the Amazon S3 API Reference. </p>  <p>This error occurs
      * only when there is a problem with the destination S3 bucket, and does not occur
-     * for requests that time out. To resolve the issue, create a new bucket, and then
-     * call <code>UpdateTrail</code> to specify the new bucket; or fix the existing
-     * objects so that CloudTrail can again write to the bucket.</p> 
+     * for requests that time out. To resolve the issue, fix the <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-s3-bucket-policy-for-cloudtrail.html">bucket
+     * policy</a> so that CloudTrail can write to the bucket; or create a new bucket
+     * and call <code>UpdateTrail</code> to specify the new bucket.</p> 
      */
     inline GetTrailStatusResult& WithLatestDeliveryError(const Aws::String& value) { SetLatestDeliveryError(value); return *this;}
 
@@ -124,9 +129,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
      * Responses</a> in the Amazon S3 API Reference. </p>  <p>This error occurs
      * only when there is a problem with the destination S3 bucket, and does not occur
-     * for requests that time out. To resolve the issue, create a new bucket, and then
-     * call <code>UpdateTrail</code> to specify the new bucket; or fix the existing
-     * objects so that CloudTrail can again write to the bucket.</p> 
+     * for requests that time out. To resolve the issue, fix the <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-s3-bucket-policy-for-cloudtrail.html">bucket
+     * policy</a> so that CloudTrail can write to the bucket; or create a new bucket
+     * and call <code>UpdateTrail</code> to specify the new bucket.</p> 
      */
     inline GetTrailStatusResult& WithLatestDeliveryError(Aws::String&& value) { SetLatestDeliveryError(std::move(value)); return *this;}
 
@@ -136,9 +142,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
      * Responses</a> in the Amazon S3 API Reference. </p>  <p>This error occurs
      * only when there is a problem with the destination S3 bucket, and does not occur
-     * for requests that time out. To resolve the issue, create a new bucket, and then
-     * call <code>UpdateTrail</code> to specify the new bucket; or fix the existing
-     * objects so that CloudTrail can again write to the bucket.</p> 
+     * for requests that time out. To resolve the issue, fix the <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-s3-bucket-policy-for-cloudtrail.html">bucket
+     * policy</a> so that CloudTrail can write to the bucket; or create a new bucket
+     * and call <code>UpdateTrail</code> to specify the new bucket.</p> 
      */
     inline GetTrailStatusResult& WithLatestDeliveryError(const char* value) { SetLatestDeliveryError(value); return *this;}
 
@@ -435,9 +442,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
      * Responses</a> in the Amazon S3 API Reference. </p>  <p>This error occurs
      * only when there is a problem with the destination S3 bucket, and does not occur
-     * for requests that time out. To resolve the issue, create a new bucket, and then
-     * call <code>UpdateTrail</code> to specify the new bucket; or fix the existing
-     * objects so that CloudTrail can again write to the bucket.</p> 
+     * for requests that time out. To resolve the issue, fix the <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-s3-bucket-policy-for-cloudtrail.html">bucket
+     * policy</a> so that CloudTrail can write to the bucket; or create a new bucket
+     * and call <code>UpdateTrail</code> to specify the new bucket.</p> 
      */
     inline const Aws::String& GetLatestDigestDeliveryError() const{ return m_latestDigestDeliveryError; }
 
@@ -447,9 +455,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
      * Responses</a> in the Amazon S3 API Reference. </p>  <p>This error occurs
      * only when there is a problem with the destination S3 bucket, and does not occur
-     * for requests that time out. To resolve the issue, create a new bucket, and then
-     * call <code>UpdateTrail</code> to specify the new bucket; or fix the existing
-     * objects so that CloudTrail can again write to the bucket.</p> 
+     * for requests that time out. To resolve the issue, fix the <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-s3-bucket-policy-for-cloudtrail.html">bucket
+     * policy</a> so that CloudTrail can write to the bucket; or create a new bucket
+     * and call <code>UpdateTrail</code> to specify the new bucket.</p> 
      */
     inline void SetLatestDigestDeliveryError(const Aws::String& value) { m_latestDigestDeliveryError = value; }
 
@@ -459,9 +468,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
      * Responses</a> in the Amazon S3 API Reference. </p>  <p>This error occurs
      * only when there is a problem with the destination S3 bucket, and does not occur
-     * for requests that time out. To resolve the issue, create a new bucket, and then
-     * call <code>UpdateTrail</code> to specify the new bucket; or fix the existing
-     * objects so that CloudTrail can again write to the bucket.</p> 
+     * for requests that time out. To resolve the issue, fix the <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-s3-bucket-policy-for-cloudtrail.html">bucket
+     * policy</a> so that CloudTrail can write to the bucket; or create a new bucket
+     * and call <code>UpdateTrail</code> to specify the new bucket.</p> 
      */
     inline void SetLatestDigestDeliveryError(Aws::String&& value) { m_latestDigestDeliveryError = std::move(value); }
 
@@ -471,9 +481,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
      * Responses</a> in the Amazon S3 API Reference. </p>  <p>This error occurs
      * only when there is a problem with the destination S3 bucket, and does not occur
-     * for requests that time out. To resolve the issue, create a new bucket, and then
-     * call <code>UpdateTrail</code> to specify the new bucket; or fix the existing
-     * objects so that CloudTrail can again write to the bucket.</p> 
+     * for requests that time out. To resolve the issue, fix the <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-s3-bucket-policy-for-cloudtrail.html">bucket
+     * policy</a> so that CloudTrail can write to the bucket; or create a new bucket
+     * and call <code>UpdateTrail</code> to specify the new bucket.</p> 
      */
     inline void SetLatestDigestDeliveryError(const char* value) { m_latestDigestDeliveryError.assign(value); }
 
@@ -483,9 +494,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
      * Responses</a> in the Amazon S3 API Reference. </p>  <p>This error occurs
      * only when there is a problem with the destination S3 bucket, and does not occur
-     * for requests that time out. To resolve the issue, create a new bucket, and then
-     * call <code>UpdateTrail</code> to specify the new bucket; or fix the existing
-     * objects so that CloudTrail can again write to the bucket.</p> 
+     * for requests that time out. To resolve the issue, fix the <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-s3-bucket-policy-for-cloudtrail.html">bucket
+     * policy</a> so that CloudTrail can write to the bucket; or create a new bucket
+     * and call <code>UpdateTrail</code> to specify the new bucket.</p> 
      */
     inline GetTrailStatusResult& WithLatestDigestDeliveryError(const Aws::String& value) { SetLatestDigestDeliveryError(value); return *this;}
 
@@ -495,9 +507,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
      * Responses</a> in the Amazon S3 API Reference. </p>  <p>This error occurs
      * only when there is a problem with the destination S3 bucket, and does not occur
-     * for requests that time out. To resolve the issue, create a new bucket, and then
-     * call <code>UpdateTrail</code> to specify the new bucket; or fix the existing
-     * objects so that CloudTrail can again write to the bucket.</p> 
+     * for requests that time out. To resolve the issue, fix the <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-s3-bucket-policy-for-cloudtrail.html">bucket
+     * policy</a> so that CloudTrail can write to the bucket; or create a new bucket
+     * and call <code>UpdateTrail</code> to specify the new bucket.</p> 
      */
     inline GetTrailStatusResult& WithLatestDigestDeliveryError(Aws::String&& value) { SetLatestDigestDeliveryError(std::move(value)); return *this;}
 
@@ -507,9 +520,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
      * Responses</a> in the Amazon S3 API Reference. </p>  <p>This error occurs
      * only when there is a problem with the destination S3 bucket, and does not occur
-     * for requests that time out. To resolve the issue, create a new bucket, and then
-     * call <code>UpdateTrail</code> to specify the new bucket; or fix the existing
-     * objects so that CloudTrail can again write to the bucket.</p> 
+     * for requests that time out. To resolve the issue, fix the <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-s3-bucket-policy-for-cloudtrail.html">bucket
+     * policy</a> so that CloudTrail can write to the bucket; or create a new bucket
+     * and call <code>UpdateTrail</code> to specify the new bucket.</p> 
      */
     inline GetTrailStatusResult& WithLatestDigestDeliveryError(const char* value) { SetLatestDigestDeliveryError(value); return *this;}
 

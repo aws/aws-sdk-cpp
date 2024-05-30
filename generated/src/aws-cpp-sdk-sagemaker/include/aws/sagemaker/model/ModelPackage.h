@@ -17,6 +17,8 @@
 #include <aws/sagemaker/model/MetadataProperties.h>
 #include <aws/sagemaker/model/ModelMetrics.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/ModelPackageSecurityConfig.h>
+#include <aws/sagemaker/model/ModelPackageModelCard.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/sagemaker/model/DriftCheckBaselines.h>
 #include <aws/sagemaker/model/SkipModelValidation.h>
@@ -1012,6 +1014,44 @@ namespace Model
     inline ModelPackage& WithSourceUri(const char* value) { SetSourceUri(value); return *this;}
 
 
+    
+    inline const ModelPackageSecurityConfig& GetSecurityConfig() const{ return m_securityConfig; }
+
+    
+    inline bool SecurityConfigHasBeenSet() const { return m_securityConfigHasBeenSet; }
+
+    
+    inline void SetSecurityConfig(const ModelPackageSecurityConfig& value) { m_securityConfigHasBeenSet = true; m_securityConfig = value; }
+
+    
+    inline void SetSecurityConfig(ModelPackageSecurityConfig&& value) { m_securityConfigHasBeenSet = true; m_securityConfig = std::move(value); }
+
+    
+    inline ModelPackage& WithSecurityConfig(const ModelPackageSecurityConfig& value) { SetSecurityConfig(value); return *this;}
+
+    
+    inline ModelPackage& WithSecurityConfig(ModelPackageSecurityConfig&& value) { SetSecurityConfig(std::move(value)); return *this;}
+
+
+    
+    inline const ModelPackageModelCard& GetModelCard() const{ return m_modelCard; }
+
+    
+    inline bool ModelCardHasBeenSet() const { return m_modelCardHasBeenSet; }
+
+    
+    inline void SetModelCard(const ModelPackageModelCard& value) { m_modelCardHasBeenSet = true; m_modelCard = value; }
+
+    
+    inline void SetModelCard(ModelPackageModelCard&& value) { m_modelCardHasBeenSet = true; m_modelCard = std::move(value); }
+
+    
+    inline ModelPackage& WithModelCard(const ModelPackageModelCard& value) { SetModelCard(value); return *this;}
+
+    
+    inline ModelPackage& WithModelCard(ModelPackageModelCard&& value) { SetModelCard(std::move(value)); return *this;}
+
+
     /**
      * <p>A list of the tags associated with the model package. For more information,
      * see <a
@@ -1291,6 +1331,12 @@ namespace Model
 
     Aws::String m_sourceUri;
     bool m_sourceUriHasBeenSet = false;
+
+    ModelPackageSecurityConfig m_securityConfig;
+    bool m_securityConfigHasBeenSet = false;
+
+    ModelPackageModelCard m_modelCard;
+    bool m_modelCardHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;

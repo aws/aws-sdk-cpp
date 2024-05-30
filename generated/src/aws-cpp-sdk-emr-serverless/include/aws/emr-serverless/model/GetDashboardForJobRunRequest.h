@@ -11,6 +11,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace EMRServerless
 {
 namespace Model
@@ -30,6 +34,8 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "GetDashboardForJobRun"; }
 
     AWS_EMRSERVERLESS_API Aws::String SerializePayload() const override;
+
+    AWS_EMRSERVERLESS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -113,6 +119,31 @@ namespace Model
      */
     inline GetDashboardForJobRunRequest& WithJobRunId(const char* value) { SetJobRunId(value); return *this;}
 
+
+    /**
+     * <p>An optimal parameter that indicates the amount of attempts for the job. If
+     * not specified, this value defaults to the attempt of the latest job.</p>
+     */
+    inline int GetAttempt() const{ return m_attempt; }
+
+    /**
+     * <p>An optimal parameter that indicates the amount of attempts for the job. If
+     * not specified, this value defaults to the attempt of the latest job.</p>
+     */
+    inline bool AttemptHasBeenSet() const { return m_attemptHasBeenSet; }
+
+    /**
+     * <p>An optimal parameter that indicates the amount of attempts for the job. If
+     * not specified, this value defaults to the attempt of the latest job.</p>
+     */
+    inline void SetAttempt(int value) { m_attemptHasBeenSet = true; m_attempt = value; }
+
+    /**
+     * <p>An optimal parameter that indicates the amount of attempts for the job. If
+     * not specified, this value defaults to the attempt of the latest job.</p>
+     */
+    inline GetDashboardForJobRunRequest& WithAttempt(int value) { SetAttempt(value); return *this;}
+
   private:
 
     Aws::String m_applicationId;
@@ -120,6 +151,9 @@ namespace Model
 
     Aws::String m_jobRunId;
     bool m_jobRunIdHasBeenSet = false;
+
+    int m_attempt;
+    bool m_attemptHasBeenSet = false;
   };
 
 } // namespace Model

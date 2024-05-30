@@ -27,7 +27,8 @@ TimeSeriesForecastingJobConfig::TimeSeriesForecastingJobConfig() :
     m_forecastQuantilesHasBeenSet(false),
     m_transformationsHasBeenSet(false),
     m_timeSeriesConfigHasBeenSet(false),
-    m_holidayConfigHasBeenSet(false)
+    m_holidayConfigHasBeenSet(false),
+    m_candidateGenerationConfigHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ TimeSeriesForecastingJobConfig::TimeSeriesForecastingJobConfig(JsonView jsonValu
     m_forecastQuantilesHasBeenSet(false),
     m_transformationsHasBeenSet(false),
     m_timeSeriesConfigHasBeenSet(false),
-    m_holidayConfigHasBeenSet(false)
+    m_holidayConfigHasBeenSet(false),
+    m_candidateGenerationConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -109,6 +111,13 @@ TimeSeriesForecastingJobConfig& TimeSeriesForecastingJobConfig::operator =(JsonV
     m_holidayConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CandidateGenerationConfig"))
+  {
+    m_candidateGenerationConfig = jsonValue.GetObject("CandidateGenerationConfig");
+
+    m_candidateGenerationConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -171,6 +180,12 @@ JsonValue TimeSeriesForecastingJobConfig::Jsonize() const
      holidayConfigJsonList[holidayConfigIndex].AsObject(m_holidayConfig[holidayConfigIndex].Jsonize());
    }
    payload.WithArray("HolidayConfig", std::move(holidayConfigJsonList));
+
+  }
+
+  if(m_candidateGenerationConfigHasBeenSet)
+  {
+   payload.WithObject("CandidateGenerationConfig", m_candidateGenerationConfig.Jsonize());
 
   }
 

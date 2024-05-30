@@ -28,6 +28,7 @@
 #include <aws/emr-serverless/model/GetDashboardForJobRunRequest.h>
 #include <aws/emr-serverless/model/GetJobRunRequest.h>
 #include <aws/emr-serverless/model/ListApplicationsRequest.h>
+#include <aws/emr-serverless/model/ListJobRunAttemptsRequest.h>
 #include <aws/emr-serverless/model/ListJobRunsRequest.h>
 #include <aws/emr-serverless/model/ListTagsForResourceRequest.h>
 #include <aws/emr-serverless/model/StartApplicationRequest.h>
@@ -412,6 +413,47 @@ ListApplicationsOutcome EMRServerlessClient::ListApplications(const ListApplicat
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/applications");
       return ListApplicationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListJobRunAttemptsOutcome EMRServerlessClient::ListJobRunAttempts(const ListJobRunAttemptsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListJobRunAttempts);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListJobRunAttempts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListJobRunAttempts", "Required field: ApplicationId, is not set");
+    return ListJobRunAttemptsOutcome(Aws::Client::AWSError<EMRServerlessErrors>(EMRServerlessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.JobRunIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListJobRunAttempts", "Required field: JobRunId, is not set");
+    return ListJobRunAttemptsOutcome(Aws::Client::AWSError<EMRServerlessErrors>(EMRServerlessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobRunId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListJobRunAttempts, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListJobRunAttempts, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListJobRunAttempts",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListJobRunAttemptsOutcome>(
+    [&]()-> ListJobRunAttemptsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListJobRunAttempts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/jobruns/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobRunId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/attempts");
+      return ListJobRunAttemptsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

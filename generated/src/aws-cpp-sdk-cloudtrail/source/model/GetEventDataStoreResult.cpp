@@ -130,6 +130,15 @@ GetEventDataStoreResult& GetEventDataStoreResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("PartitionKeys"))
+  {
+    Aws::Utils::Array<JsonView> partitionKeysJsonList = jsonValue.GetArray("PartitionKeys");
+    for(unsigned partitionKeysIndex = 0; partitionKeysIndex < partitionKeysJsonList.GetLength(); ++partitionKeysIndex)
+    {
+      m_partitionKeys.push_back(partitionKeysJsonList[partitionKeysIndex].AsObject());
+    }
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

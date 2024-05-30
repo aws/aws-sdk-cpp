@@ -29,6 +29,12 @@ namespace Aws
         static const int extra_trees_HASH = HashingUtils::HashString("extra-trees");
         static const int nn_torch_HASH = HashingUtils::HashString("nn-torch");
         static const int fastai_HASH = HashingUtils::HashString("fastai");
+        static const int cnn_qr_HASH = HashingUtils::HashString("cnn-qr");
+        static const int deepar_HASH = HashingUtils::HashString("deepar");
+        static const int prophet_HASH = HashingUtils::HashString("prophet");
+        static const int npts_HASH = HashingUtils::HashString("npts");
+        static const int arima_HASH = HashingUtils::HashString("arima");
+        static const int ets_HASH = HashingUtils::HashString("ets");
 
 
         AutoMLAlgorithm GetAutoMLAlgorithmForName(const Aws::String& name)
@@ -70,6 +76,30 @@ namespace Aws
           {
             return AutoMLAlgorithm::fastai;
           }
+          else if (hashCode == cnn_qr_HASH)
+          {
+            return AutoMLAlgorithm::cnn_qr;
+          }
+          else if (hashCode == deepar_HASH)
+          {
+            return AutoMLAlgorithm::deepar;
+          }
+          else if (hashCode == prophet_HASH)
+          {
+            return AutoMLAlgorithm::prophet;
+          }
+          else if (hashCode == npts_HASH)
+          {
+            return AutoMLAlgorithm::npts;
+          }
+          else if (hashCode == arima_HASH)
+          {
+            return AutoMLAlgorithm::arima;
+          }
+          else if (hashCode == ets_HASH)
+          {
+            return AutoMLAlgorithm::ets;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -104,6 +134,18 @@ namespace Aws
             return "nn-torch";
           case AutoMLAlgorithm::fastai:
             return "fastai";
+          case AutoMLAlgorithm::cnn_qr:
+            return "cnn-qr";
+          case AutoMLAlgorithm::deepar:
+            return "deepar";
+          case AutoMLAlgorithm::prophet:
+            return "prophet";
+          case AutoMLAlgorithm::npts:
+            return "npts";
+          case AutoMLAlgorithm::arima:
+            return "arima";
+          case AutoMLAlgorithm::ets:
+            return "ets";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
