@@ -710,6 +710,8 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
         curl_easy_setopt(connectionHandle, CURLOPT_URL, url.c_str());
         curl_easy_setopt(connectionHandle, CURLOPT_WRITEFUNCTION, WriteData);
         curl_easy_setopt(connectionHandle, CURLOPT_WRITEDATA, &writeContext);
+        curl_easy_setopt(connectionHandle, CURLOPT_BUFFERSIZE, 256 * 1024);
+
         curl_easy_setopt(connectionHandle, CURLOPT_HEADERFUNCTION, WriteHeader);
         curl_easy_setopt(connectionHandle, CURLOPT_HEADERDATA, &writeContext);
 

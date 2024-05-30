@@ -4,6 +4,7 @@
  */
 
 #include <aws/core/utils/stream/ResponseStream.h>
+#include <aws/core/utils/stream/AwsStreamBuf.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/logging/LogMacros.h>
 
@@ -148,5 +149,6 @@ static const char* RESPONSE_STREAM_FACTORY_TAG = "ResponseStreamFactory";
 
 Aws::IOStream* Aws::Utils::Stream::DefaultResponseStreamFactoryMethod() 
 {
-    return Aws::New<Aws::Utils::Stream::DefaultUnderlyingStream>(RESPONSE_STREAM_FACTORY_TAG);
+    //return Aws::New<Aws::Utils::Stream::DefaultUnderlyingStream>(RESPONSE_STREAM_FACTORY_TAG);
+    return Aws::New<Aws::Utils::Stream::DefaultUnderlyingStream>(RESPONSE_STREAM_FACTORY_TAG, Aws::MakeUnique<Aws::Utils::Stream::AwsStreamBuf>(RESPONSE_STREAM_FACTORY_TAG));
 }
