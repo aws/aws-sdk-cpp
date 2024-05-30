@@ -129,6 +129,7 @@ Please make sure to check out our resources too before opening an issue:
   * [Add as CMake external project](./docs/CMake_External_Project.md)
   * [Building for Docker](https://github.com/aws/aws-sdk-cpp/tree/master/CI/docker-file) (To build for Docker, ensure your container meets the [minimum requirements](#minimum-requirements))
   * [Building on an EC2 instance](https://github.com/aws/aws-sdk-cpp/wiki/Building-the-SDK-from-source-on-EC2)
+  * [VisualnStudio building and debugging](./docs/Visual_Studio_building_and_debugging.md)
 * SDK usage
   * [API Docs](https://sdk.amazonaws.com/cpp/api/LATEST/index.html)
   * [Using the SDK](./docs/SDK_usage_guide.md)
