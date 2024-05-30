@@ -4603,9 +4603,14 @@ namespace SageMaker
 
         /**
          * <p>Returns a description of the specified model package, which is used to create
-         * SageMaker models or list them on Amazon Web Services Marketplace.</p> <p>To
-         * create models in SageMaker, buyers can subscribe to model packages listed on
-         * Amazon Web Services Marketplace.</p><p><h3>See Also:</h3>   <a
+         * SageMaker models or list them on Amazon Web Services Marketplace.</p>
+         *  <p>If you provided a KMS Key ID when you created your model package,
+         * you will see the <a
+         * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Decrypt.html">KMS
+         * Decrypt</a> API call in your CloudTrail logs when you use this API.</p>
+         *  <p>To create models in SageMaker, buyers can subscribe to model
+         * packages listed on Amazon Web Services Marketplace.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelPackage">AWS
          * API Reference</a></p>
          */

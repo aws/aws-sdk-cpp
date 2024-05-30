@@ -209,9 +209,11 @@ namespace Aws
          * <p>Adds metadata tags to an Amazon RDS resource. These tags can also be used
          * with cost allocation reporting to track cost associated with Amazon RDS
          * resources, or used in a Condition statement in an IAM policy for Amazon RDS.</p>
-         * <p>For an overview on tagging Amazon RDS resources, see <a
-         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging
-         * Amazon RDS Resources</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>For an overview on tagging your relational database resources, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging
+         * Amazon RDS Resources</a> or <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html">Tagging
+         * Amazon Aurora and Amazon RDS Resources</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddTagsToResource">AWS
          * API Reference</a></p>
          */

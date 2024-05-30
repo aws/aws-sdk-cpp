@@ -22,7 +22,10 @@ StartJobRunRequest::StartJobRunRequest() :
     m_tagsHasBeenSet(false),
     m_executionTimeoutMinutes(0),
     m_executionTimeoutMinutesHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_mode(JobRunMode::NOT_SET),
+    m_modeHasBeenSet(false),
+    m_retryPolicyHasBeenSet(false)
 {
 }
 
@@ -74,6 +77,17 @@ Aws::String StartJobRunRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_modeHasBeenSet)
+  {
+   payload.WithString("mode", JobRunModeMapper::GetNameForJobRunMode(m_mode));
+  }
+
+  if(m_retryPolicyHasBeenSet)
+  {
+   payload.WithObject("retryPolicy", m_retryPolicy.Jsonize());
 
   }
 

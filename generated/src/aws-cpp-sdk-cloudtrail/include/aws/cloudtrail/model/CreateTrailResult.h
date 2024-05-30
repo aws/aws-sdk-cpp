@@ -120,7 +120,7 @@ namespace Model
     /**
      * <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket
      * you have designated for log file delivery. For more information, see <a
-     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/get-and-view-cloudtrail-log-files.html#cloudtrail-find-log-files">Finding
      * Your CloudTrail Log Files</a>.</p>
      */
     inline const Aws::String& GetS3KeyPrefix() const{ return m_s3KeyPrefix; }
@@ -128,7 +128,7 @@ namespace Model
     /**
      * <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket
      * you have designated for log file delivery. For more information, see <a
-     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/get-and-view-cloudtrail-log-files.html#cloudtrail-find-log-files">Finding
      * Your CloudTrail Log Files</a>.</p>
      */
     inline void SetS3KeyPrefix(const Aws::String& value) { m_s3KeyPrefix = value; }
@@ -136,7 +136,7 @@ namespace Model
     /**
      * <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket
      * you have designated for log file delivery. For more information, see <a
-     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/get-and-view-cloudtrail-log-files.html#cloudtrail-find-log-files">Finding
      * Your CloudTrail Log Files</a>.</p>
      */
     inline void SetS3KeyPrefix(Aws::String&& value) { m_s3KeyPrefix = std::move(value); }
@@ -144,7 +144,7 @@ namespace Model
     /**
      * <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket
      * you have designated for log file delivery. For more information, see <a
-     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/get-and-view-cloudtrail-log-files.html#cloudtrail-find-log-files">Finding
      * Your CloudTrail Log Files</a>.</p>
      */
     inline void SetS3KeyPrefix(const char* value) { m_s3KeyPrefix.assign(value); }
@@ -152,7 +152,7 @@ namespace Model
     /**
      * <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket
      * you have designated for log file delivery. For more information, see <a
-     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/get-and-view-cloudtrail-log-files.html#cloudtrail-find-log-files">Finding
      * Your CloudTrail Log Files</a>.</p>
      */
     inline CreateTrailResult& WithS3KeyPrefix(const Aws::String& value) { SetS3KeyPrefix(value); return *this;}
@@ -160,7 +160,7 @@ namespace Model
     /**
      * <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket
      * you have designated for log file delivery. For more information, see <a
-     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/get-and-view-cloudtrail-log-files.html#cloudtrail-find-log-files">Finding
      * Your CloudTrail Log Files</a>.</p>
      */
     inline CreateTrailResult& WithS3KeyPrefix(Aws::String&& value) { SetS3KeyPrefix(std::move(value)); return *this;}
@@ -168,7 +168,7 @@ namespace Model
     /**
      * <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket
      * you have designated for log file delivery. For more information, see <a
-     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/get-and-view-cloudtrail-log-files.html#cloudtrail-find-log-files">Finding
      * Your CloudTrail Log Files</a>.</p>
      */
     inline CreateTrailResult& WithS3KeyPrefix(const char* value) { SetS3KeyPrefix(value); return *this;}

@@ -24,7 +24,13 @@ namespace Model
     randomforest,
     extra_trees,
     nn_torch,
-    fastai
+    fastai,
+    cnn_qr,
+    deepar,
+    prophet,
+    npts,
+    arima,
+    ets
   };
 
 namespace AutoMLAlgorithmMapper

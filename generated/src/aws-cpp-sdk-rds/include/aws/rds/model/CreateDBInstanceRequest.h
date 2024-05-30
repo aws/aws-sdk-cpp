@@ -51,9 +51,9 @@ namespace Model
      * to 64 alphanumeric characters.</p> </li> <li> <p>Can't be a word reserved by the
      * database engine.</p> </li> </ul> </dd> <dt>Amazon Aurora PostgreSQL</dt> <dd>
      * <p>The name of the database to create when the primary DB instance of the Aurora
-     * PostgreSQL DB cluster is created. If this parameter isn't specified for an
-     * Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created
-     * in the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 63
+     * PostgreSQL DB cluster is created. A database named <code>postgres</code> is
+     * always created. If this parameter is specified, an additional database with this
+     * name is created.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 63
      * alphanumeric characters.</p> </li> <li> <p>Must begin with a letter. Subsequent
      * characters can be letters, underscores, or digits (0 to 9).</p> </li> <li>
      * <p>Can't be a word reserved by the database engine.</p> </li> </ul> </dd>
@@ -91,14 +91,14 @@ namespace Model
      * <code>null</code>, or any other reserved word, for <code>DBName</code>.</p>
      * <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be
      * longer than 8 characters.</p> </li> </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd>
-     * <p>The name of the database to create when the DB instance is created. If this
-     * parameter isn't specified, a database named <code>postgres</code> is created in
-     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63
-     * letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a letter.
-     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-     * <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
-     * </ul> </dd> <dt>RDS for SQL Server</dt> <dd> <p>Not applicable. Must be
-     * null.</p> </dd> </dl>
+     * <p>The name of the database to create when the DB instance is created. A
+     * database named <code>postgres</code> is always created. If this parameter is
+     * specified, an additional database with this name is created.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
+     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
+     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine.</p> </li> </ul> </dd> <dt>RDS for SQL
+     * Server</dt> <dd> <p>Not applicable. Must be null.</p> </dd> </dl>
      */
     inline const Aws::String& GetDBName() const{ return m_dBName; }
 
@@ -111,9 +111,9 @@ namespace Model
      * to 64 alphanumeric characters.</p> </li> <li> <p>Can't be a word reserved by the
      * database engine.</p> </li> </ul> </dd> <dt>Amazon Aurora PostgreSQL</dt> <dd>
      * <p>The name of the database to create when the primary DB instance of the Aurora
-     * PostgreSQL DB cluster is created. If this parameter isn't specified for an
-     * Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created
-     * in the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 63
+     * PostgreSQL DB cluster is created. A database named <code>postgres</code> is
+     * always created. If this parameter is specified, an additional database with this
+     * name is created.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 63
      * alphanumeric characters.</p> </li> <li> <p>Must begin with a letter. Subsequent
      * characters can be letters, underscores, or digits (0 to 9).</p> </li> <li>
      * <p>Can't be a word reserved by the database engine.</p> </li> </ul> </dd>
@@ -151,14 +151,14 @@ namespace Model
      * <code>null</code>, or any other reserved word, for <code>DBName</code>.</p>
      * <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be
      * longer than 8 characters.</p> </li> </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd>
-     * <p>The name of the database to create when the DB instance is created. If this
-     * parameter isn't specified, a database named <code>postgres</code> is created in
-     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63
-     * letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a letter.
-     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-     * <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
-     * </ul> </dd> <dt>RDS for SQL Server</dt> <dd> <p>Not applicable. Must be
-     * null.</p> </dd> </dl>
+     * <p>The name of the database to create when the DB instance is created. A
+     * database named <code>postgres</code> is always created. If this parameter is
+     * specified, an additional database with this name is created.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
+     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
+     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine.</p> </li> </ul> </dd> <dt>RDS for SQL
+     * Server</dt> <dd> <p>Not applicable. Must be null.</p> </dd> </dl>
      */
     inline bool DBNameHasBeenSet() const { return m_dBNameHasBeenSet; }
 
@@ -171,9 +171,9 @@ namespace Model
      * to 64 alphanumeric characters.</p> </li> <li> <p>Can't be a word reserved by the
      * database engine.</p> </li> </ul> </dd> <dt>Amazon Aurora PostgreSQL</dt> <dd>
      * <p>The name of the database to create when the primary DB instance of the Aurora
-     * PostgreSQL DB cluster is created. If this parameter isn't specified for an
-     * Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created
-     * in the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 63
+     * PostgreSQL DB cluster is created. A database named <code>postgres</code> is
+     * always created. If this parameter is specified, an additional database with this
+     * name is created.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 63
      * alphanumeric characters.</p> </li> <li> <p>Must begin with a letter. Subsequent
      * characters can be letters, underscores, or digits (0 to 9).</p> </li> <li>
      * <p>Can't be a word reserved by the database engine.</p> </li> </ul> </dd>
@@ -211,14 +211,14 @@ namespace Model
      * <code>null</code>, or any other reserved word, for <code>DBName</code>.</p>
      * <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be
      * longer than 8 characters.</p> </li> </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd>
-     * <p>The name of the database to create when the DB instance is created. If this
-     * parameter isn't specified, a database named <code>postgres</code> is created in
-     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63
-     * letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a letter.
-     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-     * <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
-     * </ul> </dd> <dt>RDS for SQL Server</dt> <dd> <p>Not applicable. Must be
-     * null.</p> </dd> </dl>
+     * <p>The name of the database to create when the DB instance is created. A
+     * database named <code>postgres</code> is always created. If this parameter is
+     * specified, an additional database with this name is created.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
+     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
+     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine.</p> </li> </ul> </dd> <dt>RDS for SQL
+     * Server</dt> <dd> <p>Not applicable. Must be null.</p> </dd> </dl>
      */
     inline void SetDBName(const Aws::String& value) { m_dBNameHasBeenSet = true; m_dBName = value; }
 
@@ -231,9 +231,9 @@ namespace Model
      * to 64 alphanumeric characters.</p> </li> <li> <p>Can't be a word reserved by the
      * database engine.</p> </li> </ul> </dd> <dt>Amazon Aurora PostgreSQL</dt> <dd>
      * <p>The name of the database to create when the primary DB instance of the Aurora
-     * PostgreSQL DB cluster is created. If this parameter isn't specified for an
-     * Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created
-     * in the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 63
+     * PostgreSQL DB cluster is created. A database named <code>postgres</code> is
+     * always created. If this parameter is specified, an additional database with this
+     * name is created.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 63
      * alphanumeric characters.</p> </li> <li> <p>Must begin with a letter. Subsequent
      * characters can be letters, underscores, or digits (0 to 9).</p> </li> <li>
      * <p>Can't be a word reserved by the database engine.</p> </li> </ul> </dd>
@@ -271,14 +271,14 @@ namespace Model
      * <code>null</code>, or any other reserved word, for <code>DBName</code>.</p>
      * <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be
      * longer than 8 characters.</p> </li> </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd>
-     * <p>The name of the database to create when the DB instance is created. If this
-     * parameter isn't specified, a database named <code>postgres</code> is created in
-     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63
-     * letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a letter.
-     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-     * <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
-     * </ul> </dd> <dt>RDS for SQL Server</dt> <dd> <p>Not applicable. Must be
-     * null.</p> </dd> </dl>
+     * <p>The name of the database to create when the DB instance is created. A
+     * database named <code>postgres</code> is always created. If this parameter is
+     * specified, an additional database with this name is created.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
+     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
+     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine.</p> </li> </ul> </dd> <dt>RDS for SQL
+     * Server</dt> <dd> <p>Not applicable. Must be null.</p> </dd> </dl>
      */
     inline void SetDBName(Aws::String&& value) { m_dBNameHasBeenSet = true; m_dBName = std::move(value); }
 
@@ -291,9 +291,9 @@ namespace Model
      * to 64 alphanumeric characters.</p> </li> <li> <p>Can't be a word reserved by the
      * database engine.</p> </li> </ul> </dd> <dt>Amazon Aurora PostgreSQL</dt> <dd>
      * <p>The name of the database to create when the primary DB instance of the Aurora
-     * PostgreSQL DB cluster is created. If this parameter isn't specified for an
-     * Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created
-     * in the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 63
+     * PostgreSQL DB cluster is created. A database named <code>postgres</code> is
+     * always created. If this parameter is specified, an additional database with this
+     * name is created.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 63
      * alphanumeric characters.</p> </li> <li> <p>Must begin with a letter. Subsequent
      * characters can be letters, underscores, or digits (0 to 9).</p> </li> <li>
      * <p>Can't be a word reserved by the database engine.</p> </li> </ul> </dd>
@@ -331,14 +331,14 @@ namespace Model
      * <code>null</code>, or any other reserved word, for <code>DBName</code>.</p>
      * <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be
      * longer than 8 characters.</p> </li> </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd>
-     * <p>The name of the database to create when the DB instance is created. If this
-     * parameter isn't specified, a database named <code>postgres</code> is created in
-     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63
-     * letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a letter.
-     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-     * <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
-     * </ul> </dd> <dt>RDS for SQL Server</dt> <dd> <p>Not applicable. Must be
-     * null.</p> </dd> </dl>
+     * <p>The name of the database to create when the DB instance is created. A
+     * database named <code>postgres</code> is always created. If this parameter is
+     * specified, an additional database with this name is created.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
+     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
+     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine.</p> </li> </ul> </dd> <dt>RDS for SQL
+     * Server</dt> <dd> <p>Not applicable. Must be null.</p> </dd> </dl>
      */
     inline void SetDBName(const char* value) { m_dBNameHasBeenSet = true; m_dBName.assign(value); }
 
@@ -351,9 +351,9 @@ namespace Model
      * to 64 alphanumeric characters.</p> </li> <li> <p>Can't be a word reserved by the
      * database engine.</p> </li> </ul> </dd> <dt>Amazon Aurora PostgreSQL</dt> <dd>
      * <p>The name of the database to create when the primary DB instance of the Aurora
-     * PostgreSQL DB cluster is created. If this parameter isn't specified for an
-     * Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created
-     * in the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 63
+     * PostgreSQL DB cluster is created. A database named <code>postgres</code> is
+     * always created. If this parameter is specified, an additional database with this
+     * name is created.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 63
      * alphanumeric characters.</p> </li> <li> <p>Must begin with a letter. Subsequent
      * characters can be letters, underscores, or digits (0 to 9).</p> </li> <li>
      * <p>Can't be a word reserved by the database engine.</p> </li> </ul> </dd>
@@ -391,14 +391,14 @@ namespace Model
      * <code>null</code>, or any other reserved word, for <code>DBName</code>.</p>
      * <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be
      * longer than 8 characters.</p> </li> </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd>
-     * <p>The name of the database to create when the DB instance is created. If this
-     * parameter isn't specified, a database named <code>postgres</code> is created in
-     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63
-     * letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a letter.
-     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-     * <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
-     * </ul> </dd> <dt>RDS for SQL Server</dt> <dd> <p>Not applicable. Must be
-     * null.</p> </dd> </dl>
+     * <p>The name of the database to create when the DB instance is created. A
+     * database named <code>postgres</code> is always created. If this parameter is
+     * specified, an additional database with this name is created.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
+     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
+     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine.</p> </li> </ul> </dd> <dt>RDS for SQL
+     * Server</dt> <dd> <p>Not applicable. Must be null.</p> </dd> </dl>
      */
     inline CreateDBInstanceRequest& WithDBName(const Aws::String& value) { SetDBName(value); return *this;}
 
@@ -411,9 +411,9 @@ namespace Model
      * to 64 alphanumeric characters.</p> </li> <li> <p>Can't be a word reserved by the
      * database engine.</p> </li> </ul> </dd> <dt>Amazon Aurora PostgreSQL</dt> <dd>
      * <p>The name of the database to create when the primary DB instance of the Aurora
-     * PostgreSQL DB cluster is created. If this parameter isn't specified for an
-     * Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created
-     * in the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 63
+     * PostgreSQL DB cluster is created. A database named <code>postgres</code> is
+     * always created. If this parameter is specified, an additional database with this
+     * name is created.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 63
      * alphanumeric characters.</p> </li> <li> <p>Must begin with a letter. Subsequent
      * characters can be letters, underscores, or digits (0 to 9).</p> </li> <li>
      * <p>Can't be a word reserved by the database engine.</p> </li> </ul> </dd>
@@ -451,14 +451,14 @@ namespace Model
      * <code>null</code>, or any other reserved word, for <code>DBName</code>.</p>
      * <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be
      * longer than 8 characters.</p> </li> </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd>
-     * <p>The name of the database to create when the DB instance is created. If this
-     * parameter isn't specified, a database named <code>postgres</code> is created in
-     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63
-     * letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a letter.
-     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-     * <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
-     * </ul> </dd> <dt>RDS for SQL Server</dt> <dd> <p>Not applicable. Must be
-     * null.</p> </dd> </dl>
+     * <p>The name of the database to create when the DB instance is created. A
+     * database named <code>postgres</code> is always created. If this parameter is
+     * specified, an additional database with this name is created.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
+     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
+     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine.</p> </li> </ul> </dd> <dt>RDS for SQL
+     * Server</dt> <dd> <p>Not applicable. Must be null.</p> </dd> </dl>
      */
     inline CreateDBInstanceRequest& WithDBName(Aws::String&& value) { SetDBName(std::move(value)); return *this;}
 
@@ -471,9 +471,9 @@ namespace Model
      * to 64 alphanumeric characters.</p> </li> <li> <p>Can't be a word reserved by the
      * database engine.</p> </li> </ul> </dd> <dt>Amazon Aurora PostgreSQL</dt> <dd>
      * <p>The name of the database to create when the primary DB instance of the Aurora
-     * PostgreSQL DB cluster is created. If this parameter isn't specified for an
-     * Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created
-     * in the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 63
+     * PostgreSQL DB cluster is created. A database named <code>postgres</code> is
+     * always created. If this parameter is specified, an additional database with this
+     * name is created.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 63
      * alphanumeric characters.</p> </li> <li> <p>Must begin with a letter. Subsequent
      * characters can be letters, underscores, or digits (0 to 9).</p> </li> <li>
      * <p>Can't be a word reserved by the database engine.</p> </li> </ul> </dd>
@@ -511,14 +511,14 @@ namespace Model
      * <code>null</code>, or any other reserved word, for <code>DBName</code>.</p>
      * <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be
      * longer than 8 characters.</p> </li> </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd>
-     * <p>The name of the database to create when the DB instance is created. If this
-     * parameter isn't specified, a database named <code>postgres</code> is created in
-     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63
-     * letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a letter.
-     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-     * <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
-     * </ul> </dd> <dt>RDS for SQL Server</dt> <dd> <p>Not applicable. Must be
-     * null.</p> </dd> </dl>
+     * <p>The name of the database to create when the DB instance is created. A
+     * database named <code>postgres</code> is always created. If this parameter is
+     * specified, an additional database with this name is created.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
+     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
+     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine.</p> </li> </ul> </dd> <dt>RDS for SQL
+     * Server</dt> <dd> <p>Not applicable. Must be null.</p> </dd> </dl>
      */
     inline CreateDBInstanceRequest& WithDBName(const char* value) { SetDBName(value); return *this;}
 

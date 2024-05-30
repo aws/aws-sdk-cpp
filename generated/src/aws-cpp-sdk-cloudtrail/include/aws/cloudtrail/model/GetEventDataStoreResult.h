@@ -12,6 +12,7 @@
 #include <aws/cloudtrail/model/BillingMode.h>
 #include <aws/cloudtrail/model/FederationStatus.h>
 #include <aws/cloudtrail/model/AdvancedEventSelector.h>
+#include <aws/cloudtrail/model/PartitionKey.h>
 #include <utility>
 
 namespace Aws
@@ -481,6 +482,56 @@ namespace Model
     inline GetEventDataStoreResult& WithFederationRoleArn(const char* value) { SetFederationRoleArn(value); return *this;}
 
 
+    /**
+     * <p>The partition keys for the event data store. To improve query performance and
+     * efficiency, CloudTrail Lake organizes event data into partitions based on values
+     * derived from partition keys.</p>
+     */
+    inline const Aws::Vector<PartitionKey>& GetPartitionKeys() const{ return m_partitionKeys; }
+
+    /**
+     * <p>The partition keys for the event data store. To improve query performance and
+     * efficiency, CloudTrail Lake organizes event data into partitions based on values
+     * derived from partition keys.</p>
+     */
+    inline void SetPartitionKeys(const Aws::Vector<PartitionKey>& value) { m_partitionKeys = value; }
+
+    /**
+     * <p>The partition keys for the event data store. To improve query performance and
+     * efficiency, CloudTrail Lake organizes event data into partitions based on values
+     * derived from partition keys.</p>
+     */
+    inline void SetPartitionKeys(Aws::Vector<PartitionKey>&& value) { m_partitionKeys = std::move(value); }
+
+    /**
+     * <p>The partition keys for the event data store. To improve query performance and
+     * efficiency, CloudTrail Lake organizes event data into partitions based on values
+     * derived from partition keys.</p>
+     */
+    inline GetEventDataStoreResult& WithPartitionKeys(const Aws::Vector<PartitionKey>& value) { SetPartitionKeys(value); return *this;}
+
+    /**
+     * <p>The partition keys for the event data store. To improve query performance and
+     * efficiency, CloudTrail Lake organizes event data into partitions based on values
+     * derived from partition keys.</p>
+     */
+    inline GetEventDataStoreResult& WithPartitionKeys(Aws::Vector<PartitionKey>&& value) { SetPartitionKeys(std::move(value)); return *this;}
+
+    /**
+     * <p>The partition keys for the event data store. To improve query performance and
+     * efficiency, CloudTrail Lake organizes event data into partitions based on values
+     * derived from partition keys.</p>
+     */
+    inline GetEventDataStoreResult& AddPartitionKeys(const PartitionKey& value) { m_partitionKeys.push_back(value); return *this; }
+
+    /**
+     * <p>The partition keys for the event data store. To improve query performance and
+     * efficiency, CloudTrail Lake organizes event data into partitions based on values
+     * derived from partition keys.</p>
+     */
+    inline GetEventDataStoreResult& AddPartitionKeys(PartitionKey&& value) { m_partitionKeys.push_back(std::move(value)); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -531,6 +582,8 @@ namespace Model
     FederationStatus m_federationStatus;
 
     Aws::String m_federationRoleArn;
+
+    Aws::Vector<PartitionKey> m_partitionKeys;
 
     Aws::String m_requestId;
   };

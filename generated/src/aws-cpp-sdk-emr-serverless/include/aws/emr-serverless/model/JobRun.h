@@ -14,6 +14,8 @@
 #include <aws/emr-serverless/model/TotalResourceUtilization.h>
 #include <aws/emr-serverless/model/NetworkConfiguration.h>
 #include <aws/emr-serverless/model/ResourceUtilization.h>
+#include <aws/emr-serverless/model/JobRunMode.h>
+#include <aws/emr-serverless/model/RetryPolicy.h>
 #include <utility>
 
 namespace Aws
@@ -778,6 +780,151 @@ namespace Model
      */
     inline JobRun& WithBilledResourceUtilization(ResourceUtilization&& value) { SetBilledResourceUtilization(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The mode of the job run.</p>
+     */
+    inline const JobRunMode& GetMode() const{ return m_mode; }
+
+    /**
+     * <p>The mode of the job run.</p>
+     */
+    inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
+
+    /**
+     * <p>The mode of the job run.</p>
+     */
+    inline void SetMode(const JobRunMode& value) { m_modeHasBeenSet = true; m_mode = value; }
+
+    /**
+     * <p>The mode of the job run.</p>
+     */
+    inline void SetMode(JobRunMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
+
+    /**
+     * <p>The mode of the job run.</p>
+     */
+    inline JobRun& WithMode(const JobRunMode& value) { SetMode(value); return *this;}
+
+    /**
+     * <p>The mode of the job run.</p>
+     */
+    inline JobRun& WithMode(JobRunMode&& value) { SetMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The retry policy of the job run.</p>
+     */
+    inline const RetryPolicy& GetRetryPolicy() const{ return m_retryPolicy; }
+
+    /**
+     * <p>The retry policy of the job run.</p>
+     */
+    inline bool RetryPolicyHasBeenSet() const { return m_retryPolicyHasBeenSet; }
+
+    /**
+     * <p>The retry policy of the job run.</p>
+     */
+    inline void SetRetryPolicy(const RetryPolicy& value) { m_retryPolicyHasBeenSet = true; m_retryPolicy = value; }
+
+    /**
+     * <p>The retry policy of the job run.</p>
+     */
+    inline void SetRetryPolicy(RetryPolicy&& value) { m_retryPolicyHasBeenSet = true; m_retryPolicy = std::move(value); }
+
+    /**
+     * <p>The retry policy of the job run.</p>
+     */
+    inline JobRun& WithRetryPolicy(const RetryPolicy& value) { SetRetryPolicy(value); return *this;}
+
+    /**
+     * <p>The retry policy of the job run.</p>
+     */
+    inline JobRun& WithRetryPolicy(RetryPolicy&& value) { SetRetryPolicy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The attempt of the job run.</p>
+     */
+    inline int GetAttempt() const{ return m_attempt; }
+
+    /**
+     * <p>The attempt of the job run.</p>
+     */
+    inline bool AttemptHasBeenSet() const { return m_attemptHasBeenSet; }
+
+    /**
+     * <p>The attempt of the job run.</p>
+     */
+    inline void SetAttempt(int value) { m_attemptHasBeenSet = true; m_attempt = value; }
+
+    /**
+     * <p>The attempt of the job run.</p>
+     */
+    inline JobRun& WithAttempt(int value) { SetAttempt(value); return *this;}
+
+
+    /**
+     * <p>The date and time of when the job run attempt was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetAttemptCreatedAt() const{ return m_attemptCreatedAt; }
+
+    /**
+     * <p>The date and time of when the job run attempt was created.</p>
+     */
+    inline bool AttemptCreatedAtHasBeenSet() const { return m_attemptCreatedAtHasBeenSet; }
+
+    /**
+     * <p>The date and time of when the job run attempt was created.</p>
+     */
+    inline void SetAttemptCreatedAt(const Aws::Utils::DateTime& value) { m_attemptCreatedAtHasBeenSet = true; m_attemptCreatedAt = value; }
+
+    /**
+     * <p>The date and time of when the job run attempt was created.</p>
+     */
+    inline void SetAttemptCreatedAt(Aws::Utils::DateTime&& value) { m_attemptCreatedAtHasBeenSet = true; m_attemptCreatedAt = std::move(value); }
+
+    /**
+     * <p>The date and time of when the job run attempt was created.</p>
+     */
+    inline JobRun& WithAttemptCreatedAt(const Aws::Utils::DateTime& value) { SetAttemptCreatedAt(value); return *this;}
+
+    /**
+     * <p>The date and time of when the job run attempt was created.</p>
+     */
+    inline JobRun& WithAttemptCreatedAt(Aws::Utils::DateTime&& value) { SetAttemptCreatedAt(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The date and time of when the job run attempt was last updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetAttemptUpdatedAt() const{ return m_attemptUpdatedAt; }
+
+    /**
+     * <p>The date and time of when the job run attempt was last updated.</p>
+     */
+    inline bool AttemptUpdatedAtHasBeenSet() const { return m_attemptUpdatedAtHasBeenSet; }
+
+    /**
+     * <p>The date and time of when the job run attempt was last updated.</p>
+     */
+    inline void SetAttemptUpdatedAt(const Aws::Utils::DateTime& value) { m_attemptUpdatedAtHasBeenSet = true; m_attemptUpdatedAt = value; }
+
+    /**
+     * <p>The date and time of when the job run attempt was last updated.</p>
+     */
+    inline void SetAttemptUpdatedAt(Aws::Utils::DateTime&& value) { m_attemptUpdatedAtHasBeenSet = true; m_attemptUpdatedAt = std::move(value); }
+
+    /**
+     * <p>The date and time of when the job run attempt was last updated.</p>
+     */
+    inline JobRun& WithAttemptUpdatedAt(const Aws::Utils::DateTime& value) { SetAttemptUpdatedAt(value); return *this;}
+
+    /**
+     * <p>The date and time of when the job run attempt was last updated.</p>
+     */
+    inline JobRun& WithAttemptUpdatedAt(Aws::Utils::DateTime&& value) { SetAttemptUpdatedAt(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_applicationId;
@@ -836,6 +983,21 @@ namespace Model
 
     ResourceUtilization m_billedResourceUtilization;
     bool m_billedResourceUtilizationHasBeenSet = false;
+
+    JobRunMode m_mode;
+    bool m_modeHasBeenSet = false;
+
+    RetryPolicy m_retryPolicy;
+    bool m_retryPolicyHasBeenSet = false;
+
+    int m_attempt;
+    bool m_attemptHasBeenSet = false;
+
+    Aws::Utils::DateTime m_attemptCreatedAt;
+    bool m_attemptCreatedAtHasBeenSet = false;
+
+    Aws::Utils::DateTime m_attemptUpdatedAt;
+    bool m_attemptUpdatedAtHasBeenSet = false;
   };
 
 } // namespace Model

@@ -86,9 +86,9 @@ namespace Model
 
 
     /**
-     * <p>This parameter defines the maximum number of results that can be returned in
-     * a single response. The <code>MaxResults</code> parameter is an upper bound, not
-     * a target. If there are more results available than the value specified, a
+     * <p>This parameter defines the maximum number of results that can be return in a
+     * single response. The <code>MaxResults</code> parameter is an upper bound, not a
+     * target. If there are more results available than the value specified, a
      * <code>NextToken</code> is provided in the response. The <code>NextToken</code>
      * indicates that the user should get the next set of results by providing this
      * token as a part of a subsequent call. The default value for
@@ -97,9 +97,9 @@ namespace Model
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>This parameter defines the maximum number of results that can be returned in
-     * a single response. The <code>MaxResults</code> parameter is an upper bound, not
-     * a target. If there are more results available than the value specified, a
+     * <p>This parameter defines the maximum number of results that can be return in a
+     * single response. The <code>MaxResults</code> parameter is an upper bound, not a
+     * target. If there are more results available than the value specified, a
      * <code>NextToken</code> is provided in the response. The <code>NextToken</code>
      * indicates that the user should get the next set of results by providing this
      * token as a part of a subsequent call. The default value for
@@ -108,9 +108,9 @@ namespace Model
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>This parameter defines the maximum number of results that can be returned in
-     * a single response. The <code>MaxResults</code> parameter is an upper bound, not
-     * a target. If there are more results available than the value specified, a
+     * <p>This parameter defines the maximum number of results that can be return in a
+     * single response. The <code>MaxResults</code> parameter is an upper bound, not a
+     * target. If there are more results available than the value specified, a
      * <code>NextToken</code> is provided in the response. The <code>NextToken</code>
      * indicates that the user should get the next set of results by providing this
      * token as a part of a subsequent call. The default value for
@@ -119,9 +119,9 @@ namespace Model
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>This parameter defines the maximum number of results that can be returned in
-     * a single response. The <code>MaxResults</code> parameter is an upper bound, not
-     * a target. If there are more results available than the value specified, a
+     * <p>This parameter defines the maximum number of results that can be return in a
+     * single response. The <code>MaxResults</code> parameter is an upper bound, not a
+     * target. If there are more results available than the value specified, a
      * <code>NextToken</code> is provided in the response. The <code>NextToken</code>
      * indicates that the user should get the next set of results by providing this
      * token as a part of a subsequent call. The default value for

@@ -36,7 +36,8 @@ RoutingProfile::RoutingProfile() :
     m_lastModifiedTimeHasBeenSet(false),
     m_lastModifiedRegionHasBeenSet(false),
     m_isDefault(false),
-    m_isDefaultHasBeenSet(false)
+    m_isDefaultHasBeenSet(false),
+    m_associatedQueueIdsHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ RoutingProfile::RoutingProfile(JsonView jsonValue) :
     m_lastModifiedTimeHasBeenSet(false),
     m_lastModifiedRegionHasBeenSet(false),
     m_isDefault(false),
-    m_isDefaultHasBeenSet(false)
+    m_isDefaultHasBeenSet(false),
+    m_associatedQueueIdsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -169,6 +171,16 @@ RoutingProfile& RoutingProfile::operator =(JsonView jsonValue)
     m_isDefaultHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AssociatedQueueIds"))
+  {
+    Aws::Utils::Array<JsonView> associatedQueueIdsJsonList = jsonValue.GetArray("AssociatedQueueIds");
+    for(unsigned associatedQueueIdsIndex = 0; associatedQueueIdsIndex < associatedQueueIdsJsonList.GetLength(); ++associatedQueueIdsIndex)
+    {
+      m_associatedQueueIds.push_back(associatedQueueIdsJsonList[associatedQueueIdsIndex].AsString());
+    }
+    m_associatedQueueIdsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -265,6 +277,17 @@ JsonValue RoutingProfile::Jsonize() const
   if(m_isDefaultHasBeenSet)
   {
    payload.WithBool("IsDefault", m_isDefault);
+
+  }
+
+  if(m_associatedQueueIdsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> associatedQueueIdsJsonList(m_associatedQueueIds.size());
+   for(unsigned associatedQueueIdsIndex = 0; associatedQueueIdsIndex < associatedQueueIdsJsonList.GetLength(); ++associatedQueueIdsIndex)
+   {
+     associatedQueueIdsJsonList[associatedQueueIdsIndex].AsString(m_associatedQueueIds[associatedQueueIdsIndex]);
+   }
+   payload.WithArray("AssociatedQueueIds", std::move(associatedQueueIdsJsonList));
 
   }
 

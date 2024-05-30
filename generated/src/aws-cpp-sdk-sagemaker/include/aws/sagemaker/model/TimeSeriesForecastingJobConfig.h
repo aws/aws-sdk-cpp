@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/TimeSeriesTransformations.h>
 #include <aws/sagemaker/model/TimeSeriesConfig.h>
+#include <aws/sagemaker/model/CandidateGenerationConfig.h>
 #include <aws/sagemaker/model/HolidayConfigAttributes.h>
 #include <utility>
 
@@ -547,6 +548,25 @@ namespace Model
      */
     inline TimeSeriesForecastingJobConfig& AddHolidayConfig(HolidayConfigAttributes&& value) { m_holidayConfigHasBeenSet = true; m_holidayConfig.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const CandidateGenerationConfig& GetCandidateGenerationConfig() const{ return m_candidateGenerationConfig; }
+
+    
+    inline bool CandidateGenerationConfigHasBeenSet() const { return m_candidateGenerationConfigHasBeenSet; }
+
+    
+    inline void SetCandidateGenerationConfig(const CandidateGenerationConfig& value) { m_candidateGenerationConfigHasBeenSet = true; m_candidateGenerationConfig = value; }
+
+    
+    inline void SetCandidateGenerationConfig(CandidateGenerationConfig&& value) { m_candidateGenerationConfigHasBeenSet = true; m_candidateGenerationConfig = std::move(value); }
+
+    
+    inline TimeSeriesForecastingJobConfig& WithCandidateGenerationConfig(const CandidateGenerationConfig& value) { SetCandidateGenerationConfig(value); return *this;}
+
+    
+    inline TimeSeriesForecastingJobConfig& WithCandidateGenerationConfig(CandidateGenerationConfig&& value) { SetCandidateGenerationConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_featureSpecificationS3Uri;
@@ -572,6 +592,9 @@ namespace Model
 
     Aws::Vector<HolidayConfigAttributes> m_holidayConfig;
     bool m_holidayConfigHasBeenSet = false;
+
+    CandidateGenerationConfig m_candidateGenerationConfig;
+    bool m_candidateGenerationConfigHasBeenSet = false;
   };
 
 } // namespace Model

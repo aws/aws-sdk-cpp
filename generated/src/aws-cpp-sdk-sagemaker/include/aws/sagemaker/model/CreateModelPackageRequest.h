@@ -17,6 +17,8 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/sagemaker/model/DriftCheckBaselines.h>
 #include <aws/sagemaker/model/SkipModelValidation.h>
+#include <aws/sagemaker/model/ModelPackageSecurityConfig.h>
+#include <aws/sagemaker/model/ModelPackageModelCard.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <aws/sagemaker/model/AdditionalInferenceSpecificationDefinition.h>
 #include <utility>
@@ -1111,6 +1113,128 @@ namespace Model
      */
     inline CreateModelPackageRequest& WithSourceUri(const char* value) { SetSourceUri(value); return *this;}
 
+
+    /**
+     * <p>The KMS Key ID (<code>KMSKeyId</code>) used for encryption of model package
+     * information.</p>
+     */
+    inline const ModelPackageSecurityConfig& GetSecurityConfig() const{ return m_securityConfig; }
+
+    /**
+     * <p>The KMS Key ID (<code>KMSKeyId</code>) used for encryption of model package
+     * information.</p>
+     */
+    inline bool SecurityConfigHasBeenSet() const { return m_securityConfigHasBeenSet; }
+
+    /**
+     * <p>The KMS Key ID (<code>KMSKeyId</code>) used for encryption of model package
+     * information.</p>
+     */
+    inline void SetSecurityConfig(const ModelPackageSecurityConfig& value) { m_securityConfigHasBeenSet = true; m_securityConfig = value; }
+
+    /**
+     * <p>The KMS Key ID (<code>KMSKeyId</code>) used for encryption of model package
+     * information.</p>
+     */
+    inline void SetSecurityConfig(ModelPackageSecurityConfig&& value) { m_securityConfigHasBeenSet = true; m_securityConfig = std::move(value); }
+
+    /**
+     * <p>The KMS Key ID (<code>KMSKeyId</code>) used for encryption of model package
+     * information.</p>
+     */
+    inline CreateModelPackageRequest& WithSecurityConfig(const ModelPackageSecurityConfig& value) { SetSecurityConfig(value); return *this;}
+
+    /**
+     * <p>The KMS Key ID (<code>KMSKeyId</code>) used for encryption of model package
+     * information.</p>
+     */
+    inline CreateModelPackageRequest& WithSecurityConfig(ModelPackageSecurityConfig&& value) { SetSecurityConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The model card associated with the model package. Since
+     * <code>ModelPackageModelCard</code> is tied to a model package, it is a specific
+     * usage of a model card and its schema is simplified compared to the schema of
+     * <code>ModelCard</code>. The <code>ModelPackageModelCard</code> schema does not
+     * include <code>model_package_details</code>, and <code>model_overview</code> is
+     * composed of the <code>model_creator</code> and <code>model_artifact</code>
+     * properties. For more information about the model card associated with the model
+     * package, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html">View
+     * the Details of a Model Version</a>.</p>
+     */
+    inline const ModelPackageModelCard& GetModelCard() const{ return m_modelCard; }
+
+    /**
+     * <p>The model card associated with the model package. Since
+     * <code>ModelPackageModelCard</code> is tied to a model package, it is a specific
+     * usage of a model card and its schema is simplified compared to the schema of
+     * <code>ModelCard</code>. The <code>ModelPackageModelCard</code> schema does not
+     * include <code>model_package_details</code>, and <code>model_overview</code> is
+     * composed of the <code>model_creator</code> and <code>model_artifact</code>
+     * properties. For more information about the model card associated with the model
+     * package, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html">View
+     * the Details of a Model Version</a>.</p>
+     */
+    inline bool ModelCardHasBeenSet() const { return m_modelCardHasBeenSet; }
+
+    /**
+     * <p>The model card associated with the model package. Since
+     * <code>ModelPackageModelCard</code> is tied to a model package, it is a specific
+     * usage of a model card and its schema is simplified compared to the schema of
+     * <code>ModelCard</code>. The <code>ModelPackageModelCard</code> schema does not
+     * include <code>model_package_details</code>, and <code>model_overview</code> is
+     * composed of the <code>model_creator</code> and <code>model_artifact</code>
+     * properties. For more information about the model card associated with the model
+     * package, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html">View
+     * the Details of a Model Version</a>.</p>
+     */
+    inline void SetModelCard(const ModelPackageModelCard& value) { m_modelCardHasBeenSet = true; m_modelCard = value; }
+
+    /**
+     * <p>The model card associated with the model package. Since
+     * <code>ModelPackageModelCard</code> is tied to a model package, it is a specific
+     * usage of a model card and its schema is simplified compared to the schema of
+     * <code>ModelCard</code>. The <code>ModelPackageModelCard</code> schema does not
+     * include <code>model_package_details</code>, and <code>model_overview</code> is
+     * composed of the <code>model_creator</code> and <code>model_artifact</code>
+     * properties. For more information about the model card associated with the model
+     * package, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html">View
+     * the Details of a Model Version</a>.</p>
+     */
+    inline void SetModelCard(ModelPackageModelCard&& value) { m_modelCardHasBeenSet = true; m_modelCard = std::move(value); }
+
+    /**
+     * <p>The model card associated with the model package. Since
+     * <code>ModelPackageModelCard</code> is tied to a model package, it is a specific
+     * usage of a model card and its schema is simplified compared to the schema of
+     * <code>ModelCard</code>. The <code>ModelPackageModelCard</code> schema does not
+     * include <code>model_package_details</code>, and <code>model_overview</code> is
+     * composed of the <code>model_creator</code> and <code>model_artifact</code>
+     * properties. For more information about the model card associated with the model
+     * package, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html">View
+     * the Details of a Model Version</a>.</p>
+     */
+    inline CreateModelPackageRequest& WithModelCard(const ModelPackageModelCard& value) { SetModelCard(value); return *this;}
+
+    /**
+     * <p>The model card associated with the model package. Since
+     * <code>ModelPackageModelCard</code> is tied to a model package, it is a specific
+     * usage of a model card and its schema is simplified compared to the schema of
+     * <code>ModelCard</code>. The <code>ModelPackageModelCard</code> schema does not
+     * include <code>model_package_details</code>, and <code>model_overview</code> is
+     * composed of the <code>model_creator</code> and <code>model_artifact</code>
+     * properties. For more information about the model card associated with the model
+     * package, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html">View
+     * the Details of a Model Version</a>.</p>
+     */
+    inline CreateModelPackageRequest& WithModelCard(ModelPackageModelCard&& value) { SetModelCard(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_modelPackageName;
@@ -1172,6 +1296,12 @@ namespace Model
 
     Aws::String m_sourceUri;
     bool m_sourceUriHasBeenSet = false;
+
+    ModelPackageSecurityConfig m_securityConfig;
+    bool m_securityConfigHasBeenSet = false;
+
+    ModelPackageModelCard m_modelCard;
+    bool m_modelCardHasBeenSet = false;
   };
 
 } // namespace Model

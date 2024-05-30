@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent/model/EmbeddingModelConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -86,10 +87,50 @@ namespace Model
      */
     inline VectorKnowledgeBaseConfiguration& WithEmbeddingModelArn(const char* value) { SetEmbeddingModelArn(value); return *this;}
 
+
+    /**
+     * <p>The embeddings model configuration details for the vector model used in
+     * Knowledge Base.</p>
+     */
+    inline const EmbeddingModelConfiguration& GetEmbeddingModelConfiguration() const{ return m_embeddingModelConfiguration; }
+
+    /**
+     * <p>The embeddings model configuration details for the vector model used in
+     * Knowledge Base.</p>
+     */
+    inline bool EmbeddingModelConfigurationHasBeenSet() const { return m_embeddingModelConfigurationHasBeenSet; }
+
+    /**
+     * <p>The embeddings model configuration details for the vector model used in
+     * Knowledge Base.</p>
+     */
+    inline void SetEmbeddingModelConfiguration(const EmbeddingModelConfiguration& value) { m_embeddingModelConfigurationHasBeenSet = true; m_embeddingModelConfiguration = value; }
+
+    /**
+     * <p>The embeddings model configuration details for the vector model used in
+     * Knowledge Base.</p>
+     */
+    inline void SetEmbeddingModelConfiguration(EmbeddingModelConfiguration&& value) { m_embeddingModelConfigurationHasBeenSet = true; m_embeddingModelConfiguration = std::move(value); }
+
+    /**
+     * <p>The embeddings model configuration details for the vector model used in
+     * Knowledge Base.</p>
+     */
+    inline VectorKnowledgeBaseConfiguration& WithEmbeddingModelConfiguration(const EmbeddingModelConfiguration& value) { SetEmbeddingModelConfiguration(value); return *this;}
+
+    /**
+     * <p>The embeddings model configuration details for the vector model used in
+     * Knowledge Base.</p>
+     */
+    inline VectorKnowledgeBaseConfiguration& WithEmbeddingModelConfiguration(EmbeddingModelConfiguration&& value) { SetEmbeddingModelConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_embeddingModelArn;
     bool m_embeddingModelArnHasBeenSet = false;
+
+    EmbeddingModelConfiguration m_embeddingModelConfiguration;
+    bool m_embeddingModelConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

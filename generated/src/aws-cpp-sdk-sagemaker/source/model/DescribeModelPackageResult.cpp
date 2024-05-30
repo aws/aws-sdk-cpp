@@ -207,6 +207,18 @@ DescribeModelPackageResult& DescribeModelPackageResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("SecurityConfig"))
+  {
+    m_securityConfig = jsonValue.GetObject("SecurityConfig");
+
+  }
+
+  if(jsonValue.ValueExists("ModelCard"))
+  {
+    m_modelCard = jsonValue.GetObject("ModelCard");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

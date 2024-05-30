@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/emr-serverless/model/JobRunMode.h>
 #include <aws/emr-serverless/model/JobRunState.h>
 #include <utility>
 
@@ -254,6 +255,37 @@ namespace Model
      */
     inline ListJobRunsRequest& AddStates(JobRunState&& value) { m_statesHasBeenSet = true; m_states.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The mode of the job runs to list.</p>
+     */
+    inline const JobRunMode& GetMode() const{ return m_mode; }
+
+    /**
+     * <p>The mode of the job runs to list.</p>
+     */
+    inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
+
+    /**
+     * <p>The mode of the job runs to list.</p>
+     */
+    inline void SetMode(const JobRunMode& value) { m_modeHasBeenSet = true; m_mode = value; }
+
+    /**
+     * <p>The mode of the job runs to list.</p>
+     */
+    inline void SetMode(JobRunMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
+
+    /**
+     * <p>The mode of the job runs to list.</p>
+     */
+    inline ListJobRunsRequest& WithMode(const JobRunMode& value) { SetMode(value); return *this;}
+
+    /**
+     * <p>The mode of the job runs to list.</p>
+     */
+    inline ListJobRunsRequest& WithMode(JobRunMode&& value) { SetMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_applicationId;
@@ -273,6 +305,9 @@ namespace Model
 
     Aws::Vector<JobRunState> m_states;
     bool m_statesHasBeenSet = false;
+
+    JobRunMode m_mode;
+    bool m_modeHasBeenSet = false;
   };
 
 } // namespace Model

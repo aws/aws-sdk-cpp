@@ -277,6 +277,31 @@ namespace EMRServerless
         }
 
         /**
+         * <p>Lists all attempt of a job run.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/ListJobRunAttempts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListJobRunAttemptsOutcome ListJobRunAttempts(const Model::ListJobRunAttemptsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListJobRunAttempts that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListJobRunAttemptsRequestT = Model::ListJobRunAttemptsRequest>
+        Model::ListJobRunAttemptsOutcomeCallable ListJobRunAttemptsCallable(const ListJobRunAttemptsRequestT& request) const
+        {
+            return SubmitCallable(&EMRServerlessClient::ListJobRunAttempts, request);
+        }
+
+        /**
+         * An Async wrapper for ListJobRunAttempts that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListJobRunAttemptsRequestT = Model::ListJobRunAttemptsRequest>
+        void ListJobRunAttemptsAsync(const ListJobRunAttemptsRequestT& request, const ListJobRunAttemptsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EMRServerlessClient::ListJobRunAttempts, request, handler, context);
+        }
+
+        /**
          * <p>Lists job runs based on a set of parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/ListJobRuns">AWS
          * API Reference</a></p>

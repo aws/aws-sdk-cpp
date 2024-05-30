@@ -111,6 +111,7 @@ namespace Model
      * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
      * <code>AWS::NeptuneGraph::Graph</code> </p> </li> <li> <p>
      * <code>AWS::PCAConnectorAD::Connector</code> </p> </li> <li> <p>
+     * <code>AWS::QApps:QApp</code> </p> </li> <li> <p>
      * <code>AWS::QBusiness::Application</code> </p> </li> <li> <p>
      * <code>AWS::QBusiness::DataSource</code> </p> </li> <li> <p>
      * <code>AWS::QBusiness::Index</code> </p> </li> <li> <p>
@@ -126,26 +127,31 @@ namespace Model
      * <code>AWS::ServiceDiscovery::Service</code> </p> </li> <li> <p>
      * <code>AWS::SCN::Instance</code> </p> </li> <li> <p>
      * <code>AWS::SNS::PlatformEndpoint</code> </p> </li> <li> <p>
-     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p> <code>AWS::SWF::Domain</code>
-     * </p> </li> <li> <p> <code>AWS::SQS::Queue</code> </p> </li> <li> <p>
+     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p> <code>AWS::SQS::Queue</code>
+     * </p> </li> <li> <p> <code>AWS::SSM::ManagedNode</code> </p> </li> <li> <p>
      * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
+     * <code>AWS::SWF::Domain</code> </p> </li> <li> <p>
      * <code>AWS::ThinClient::Device</code> </p> </li> <li> <p>
      * <code>AWS::ThinClient::Environment</code> </p> </li> <li> <p>
      * <code>AWS::Timestream::Database</code> </p> </li> <li> <p>
      * <code>AWS::Timestream::Table</code> </p> </li> <li> <p>
-     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul> <p> You can
-     * have only one <code>resources.type</code> ﬁeld per selector. To log data events
-     * on more than one resource type, add another selector.</p> </li> <li> <p> <b>
+     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> <li> <p>
+     * <code>AWS::XRay::Trace</code> </p> </li> </ul> <p> You can have only one
+     * <code>resources.type</code> ﬁeld per selector. To log data events on more than
+     * one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with
      * <code>resources.ARN</code>, but if you use <code>Equals</code> or
      * <code>NotEquals</code>, the value must exactly match the ARN of a valid resource
-     * of the type you've speciﬁed in the template as the value of resources.type. For
-     * example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be
-     * in one of the following formats. To log all data events for all objects in a
-     * specific S3 bucket, use the <code>StartsWith</code> operator, and include only
-     * the bucket ARN as the matching value.</p> <p>The trailing slash is intentional;
-     * do not exclude it. Replace the text between less than and greater than symbols
-     * (&lt;&gt;) with resource-specific information. </p> <ul> <li> <p>
+     * of the type you've speciﬁed in the template as the value of resources.type.</p>
+     *  <p>You can't use the <code>resources.ARN</code> field to filter resource
+     * types that do not have ARNs.</p>  <p>The <code>resources.ARN</code> field
+     * can be set one of the following.</p> <p>If resources.type equals
+     * <code>AWS::S3::Object</code>, the ARN must be in one of the following formats.
+     * To log all data events for all objects in a specific S3 bucket, use the
+     * <code>StartsWith</code> operator, and include only the bucket ARN as the
+     * matching value.</p> <p>The trailing slash is intentional; do not exclude it.
+     * Replace the text between less than and greater than symbols (&lt;&gt;) with
+     * resource-specific information. </p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:s3:::&lt;bucket_name&gt;/</code> </p> </li> <li> <p>
      * <code>arn:&lt;partition&gt;:s3:::&lt;bucket_name&gt;/&lt;object_path&gt;/</code>
      * </p> </li> </ul> <p>When resources.type equals
@@ -314,6 +320,11 @@ namespace Model
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:pca-connector-ad:&lt;region&gt;:&lt;account_ID&gt;:connector/&lt;connector_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::QApps:QApp</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:qapps:&lt;region&gt;:&lt;account_ID&gt;:application/&lt;application_UUID&gt;/qapp/&lt;qapp_UUID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::QBusiness::Application</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
@@ -399,20 +410,27 @@ namespace Model
      * <p>
      * <code>arn:&lt;partition&gt;:sns:&lt;region&gt;:&lt;account_ID&gt;:&lt;topic_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or
-     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
-     * <p>
-     * <code>arn:&lt;partition&gt;:swf:&lt;region&gt;:&lt;account_ID&gt;:domain/&lt;domain_name&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SQS::Queue</code>, and the operator is set to <code>Equals</code> or
      * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
      * <p>
      * <code>arn:&lt;partition&gt;:sqs:&lt;region&gt;:&lt;account_ID&gt;:&lt;queue_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::SSM::ManagedNode</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
+     * following formats:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:ssm:&lt;region&gt;:&lt;account_ID&gt;:managed-instance/&lt;instance_ID&gt;</code>
+     * </p> </li> <li> <p>
+     * <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;:&lt;account_ID&gt;:instance/&lt;instance_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SSMMessages::ControlChannel</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:ssmmessages:&lt;region&gt;:&lt;account_ID&gt;:control-channel/&lt;channel_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:swf:&lt;region&gt;:&lt;account_ID&gt;:domain/&lt;domain_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::ThinClient::Device</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -514,6 +532,7 @@ namespace Model
      * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
      * <code>AWS::NeptuneGraph::Graph</code> </p> </li> <li> <p>
      * <code>AWS::PCAConnectorAD::Connector</code> </p> </li> <li> <p>
+     * <code>AWS::QApps:QApp</code> </p> </li> <li> <p>
      * <code>AWS::QBusiness::Application</code> </p> </li> <li> <p>
      * <code>AWS::QBusiness::DataSource</code> </p> </li> <li> <p>
      * <code>AWS::QBusiness::Index</code> </p> </li> <li> <p>
@@ -529,26 +548,31 @@ namespace Model
      * <code>AWS::ServiceDiscovery::Service</code> </p> </li> <li> <p>
      * <code>AWS::SCN::Instance</code> </p> </li> <li> <p>
      * <code>AWS::SNS::PlatformEndpoint</code> </p> </li> <li> <p>
-     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p> <code>AWS::SWF::Domain</code>
-     * </p> </li> <li> <p> <code>AWS::SQS::Queue</code> </p> </li> <li> <p>
+     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p> <code>AWS::SQS::Queue</code>
+     * </p> </li> <li> <p> <code>AWS::SSM::ManagedNode</code> </p> </li> <li> <p>
      * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
+     * <code>AWS::SWF::Domain</code> </p> </li> <li> <p>
      * <code>AWS::ThinClient::Device</code> </p> </li> <li> <p>
      * <code>AWS::ThinClient::Environment</code> </p> </li> <li> <p>
      * <code>AWS::Timestream::Database</code> </p> </li> <li> <p>
      * <code>AWS::Timestream::Table</code> </p> </li> <li> <p>
-     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul> <p> You can
-     * have only one <code>resources.type</code> ﬁeld per selector. To log data events
-     * on more than one resource type, add another selector.</p> </li> <li> <p> <b>
+     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> <li> <p>
+     * <code>AWS::XRay::Trace</code> </p> </li> </ul> <p> You can have only one
+     * <code>resources.type</code> ﬁeld per selector. To log data events on more than
+     * one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with
      * <code>resources.ARN</code>, but if you use <code>Equals</code> or
      * <code>NotEquals</code>, the value must exactly match the ARN of a valid resource
-     * of the type you've speciﬁed in the template as the value of resources.type. For
-     * example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be
-     * in one of the following formats. To log all data events for all objects in a
-     * specific S3 bucket, use the <code>StartsWith</code> operator, and include only
-     * the bucket ARN as the matching value.</p> <p>The trailing slash is intentional;
-     * do not exclude it. Replace the text between less than and greater than symbols
-     * (&lt;&gt;) with resource-specific information. </p> <ul> <li> <p>
+     * of the type you've speciﬁed in the template as the value of resources.type.</p>
+     *  <p>You can't use the <code>resources.ARN</code> field to filter resource
+     * types that do not have ARNs.</p>  <p>The <code>resources.ARN</code> field
+     * can be set one of the following.</p> <p>If resources.type equals
+     * <code>AWS::S3::Object</code>, the ARN must be in one of the following formats.
+     * To log all data events for all objects in a specific S3 bucket, use the
+     * <code>StartsWith</code> operator, and include only the bucket ARN as the
+     * matching value.</p> <p>The trailing slash is intentional; do not exclude it.
+     * Replace the text between less than and greater than symbols (&lt;&gt;) with
+     * resource-specific information. </p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:s3:::&lt;bucket_name&gt;/</code> </p> </li> <li> <p>
      * <code>arn:&lt;partition&gt;:s3:::&lt;bucket_name&gt;/&lt;object_path&gt;/</code>
      * </p> </li> </ul> <p>When resources.type equals
@@ -717,6 +741,11 @@ namespace Model
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:pca-connector-ad:&lt;region&gt;:&lt;account_ID&gt;:connector/&lt;connector_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::QApps:QApp</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:qapps:&lt;region&gt;:&lt;account_ID&gt;:application/&lt;application_UUID&gt;/qapp/&lt;qapp_UUID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::QBusiness::Application</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
@@ -802,20 +831,27 @@ namespace Model
      * <p>
      * <code>arn:&lt;partition&gt;:sns:&lt;region&gt;:&lt;account_ID&gt;:&lt;topic_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or
-     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
-     * <p>
-     * <code>arn:&lt;partition&gt;:swf:&lt;region&gt;:&lt;account_ID&gt;:domain/&lt;domain_name&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SQS::Queue</code>, and the operator is set to <code>Equals</code> or
      * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
      * <p>
      * <code>arn:&lt;partition&gt;:sqs:&lt;region&gt;:&lt;account_ID&gt;:&lt;queue_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::SSM::ManagedNode</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
+     * following formats:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:ssm:&lt;region&gt;:&lt;account_ID&gt;:managed-instance/&lt;instance_ID&gt;</code>
+     * </p> </li> <li> <p>
+     * <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;:&lt;account_ID&gt;:instance/&lt;instance_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SSMMessages::ControlChannel</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:ssmmessages:&lt;region&gt;:&lt;account_ID&gt;:control-channel/&lt;channel_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:swf:&lt;region&gt;:&lt;account_ID&gt;:domain/&lt;domain_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::ThinClient::Device</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -917,6 +953,7 @@ namespace Model
      * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
      * <code>AWS::NeptuneGraph::Graph</code> </p> </li> <li> <p>
      * <code>AWS::PCAConnectorAD::Connector</code> </p> </li> <li> <p>
+     * <code>AWS::QApps:QApp</code> </p> </li> <li> <p>
      * <code>AWS::QBusiness::Application</code> </p> </li> <li> <p>
      * <code>AWS::QBusiness::DataSource</code> </p> </li> <li> <p>
      * <code>AWS::QBusiness::Index</code> </p> </li> <li> <p>
@@ -932,26 +969,31 @@ namespace Model
      * <code>AWS::ServiceDiscovery::Service</code> </p> </li> <li> <p>
      * <code>AWS::SCN::Instance</code> </p> </li> <li> <p>
      * <code>AWS::SNS::PlatformEndpoint</code> </p> </li> <li> <p>
-     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p> <code>AWS::SWF::Domain</code>
-     * </p> </li> <li> <p> <code>AWS::SQS::Queue</code> </p> </li> <li> <p>
+     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p> <code>AWS::SQS::Queue</code>
+     * </p> </li> <li> <p> <code>AWS::SSM::ManagedNode</code> </p> </li> <li> <p>
      * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
+     * <code>AWS::SWF::Domain</code> </p> </li> <li> <p>
      * <code>AWS::ThinClient::Device</code> </p> </li> <li> <p>
      * <code>AWS::ThinClient::Environment</code> </p> </li> <li> <p>
      * <code>AWS::Timestream::Database</code> </p> </li> <li> <p>
      * <code>AWS::Timestream::Table</code> </p> </li> <li> <p>
-     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul> <p> You can
-     * have only one <code>resources.type</code> ﬁeld per selector. To log data events
-     * on more than one resource type, add another selector.</p> </li> <li> <p> <b>
+     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> <li> <p>
+     * <code>AWS::XRay::Trace</code> </p> </li> </ul> <p> You can have only one
+     * <code>resources.type</code> ﬁeld per selector. To log data events on more than
+     * one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with
      * <code>resources.ARN</code>, but if you use <code>Equals</code> or
      * <code>NotEquals</code>, the value must exactly match the ARN of a valid resource
-     * of the type you've speciﬁed in the template as the value of resources.type. For
-     * example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be
-     * in one of the following formats. To log all data events for all objects in a
-     * specific S3 bucket, use the <code>StartsWith</code> operator, and include only
-     * the bucket ARN as the matching value.</p> <p>The trailing slash is intentional;
-     * do not exclude it. Replace the text between less than and greater than symbols
-     * (&lt;&gt;) with resource-specific information. </p> <ul> <li> <p>
+     * of the type you've speciﬁed in the template as the value of resources.type.</p>
+     *  <p>You can't use the <code>resources.ARN</code> field to filter resource
+     * types that do not have ARNs.</p>  <p>The <code>resources.ARN</code> field
+     * can be set one of the following.</p> <p>If resources.type equals
+     * <code>AWS::S3::Object</code>, the ARN must be in one of the following formats.
+     * To log all data events for all objects in a specific S3 bucket, use the
+     * <code>StartsWith</code> operator, and include only the bucket ARN as the
+     * matching value.</p> <p>The trailing slash is intentional; do not exclude it.
+     * Replace the text between less than and greater than symbols (&lt;&gt;) with
+     * resource-specific information. </p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:s3:::&lt;bucket_name&gt;/</code> </p> </li> <li> <p>
      * <code>arn:&lt;partition&gt;:s3:::&lt;bucket_name&gt;/&lt;object_path&gt;/</code>
      * </p> </li> </ul> <p>When resources.type equals
@@ -1120,6 +1162,11 @@ namespace Model
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:pca-connector-ad:&lt;region&gt;:&lt;account_ID&gt;:connector/&lt;connector_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::QApps:QApp</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:qapps:&lt;region&gt;:&lt;account_ID&gt;:application/&lt;application_UUID&gt;/qapp/&lt;qapp_UUID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::QBusiness::Application</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
@@ -1205,20 +1252,27 @@ namespace Model
      * <p>
      * <code>arn:&lt;partition&gt;:sns:&lt;region&gt;:&lt;account_ID&gt;:&lt;topic_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or
-     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
-     * <p>
-     * <code>arn:&lt;partition&gt;:swf:&lt;region&gt;:&lt;account_ID&gt;:domain/&lt;domain_name&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SQS::Queue</code>, and the operator is set to <code>Equals</code> or
      * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
      * <p>
      * <code>arn:&lt;partition&gt;:sqs:&lt;region&gt;:&lt;account_ID&gt;:&lt;queue_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::SSM::ManagedNode</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
+     * following formats:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:ssm:&lt;region&gt;:&lt;account_ID&gt;:managed-instance/&lt;instance_ID&gt;</code>
+     * </p> </li> <li> <p>
+     * <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;:&lt;account_ID&gt;:instance/&lt;instance_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SSMMessages::ControlChannel</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:ssmmessages:&lt;region&gt;:&lt;account_ID&gt;:control-channel/&lt;channel_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:swf:&lt;region&gt;:&lt;account_ID&gt;:domain/&lt;domain_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::ThinClient::Device</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -1320,6 +1374,7 @@ namespace Model
      * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
      * <code>AWS::NeptuneGraph::Graph</code> </p> </li> <li> <p>
      * <code>AWS::PCAConnectorAD::Connector</code> </p> </li> <li> <p>
+     * <code>AWS::QApps:QApp</code> </p> </li> <li> <p>
      * <code>AWS::QBusiness::Application</code> </p> </li> <li> <p>
      * <code>AWS::QBusiness::DataSource</code> </p> </li> <li> <p>
      * <code>AWS::QBusiness::Index</code> </p> </li> <li> <p>
@@ -1335,26 +1390,31 @@ namespace Model
      * <code>AWS::ServiceDiscovery::Service</code> </p> </li> <li> <p>
      * <code>AWS::SCN::Instance</code> </p> </li> <li> <p>
      * <code>AWS::SNS::PlatformEndpoint</code> </p> </li> <li> <p>
-     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p> <code>AWS::SWF::Domain</code>
-     * </p> </li> <li> <p> <code>AWS::SQS::Queue</code> </p> </li> <li> <p>
+     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p> <code>AWS::SQS::Queue</code>
+     * </p> </li> <li> <p> <code>AWS::SSM::ManagedNode</code> </p> </li> <li> <p>
      * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
+     * <code>AWS::SWF::Domain</code> </p> </li> <li> <p>
      * <code>AWS::ThinClient::Device</code> </p> </li> <li> <p>
      * <code>AWS::ThinClient::Environment</code> </p> </li> <li> <p>
      * <code>AWS::Timestream::Database</code> </p> </li> <li> <p>
      * <code>AWS::Timestream::Table</code> </p> </li> <li> <p>
-     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul> <p> You can
-     * have only one <code>resources.type</code> ﬁeld per selector. To log data events
-     * on more than one resource type, add another selector.</p> </li> <li> <p> <b>
+     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> <li> <p>
+     * <code>AWS::XRay::Trace</code> </p> </li> </ul> <p> You can have only one
+     * <code>resources.type</code> ﬁeld per selector. To log data events on more than
+     * one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with
      * <code>resources.ARN</code>, but if you use <code>Equals</code> or
      * <code>NotEquals</code>, the value must exactly match the ARN of a valid resource
-     * of the type you've speciﬁed in the template as the value of resources.type. For
-     * example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be
-     * in one of the following formats. To log all data events for all objects in a
-     * specific S3 bucket, use the <code>StartsWith</code> operator, and include only
-     * the bucket ARN as the matching value.</p> <p>The trailing slash is intentional;
-     * do not exclude it. Replace the text between less than and greater than symbols
-     * (&lt;&gt;) with resource-specific information. </p> <ul> <li> <p>
+     * of the type you've speciﬁed in the template as the value of resources.type.</p>
+     *  <p>You can't use the <code>resources.ARN</code> field to filter resource
+     * types that do not have ARNs.</p>  <p>The <code>resources.ARN</code> field
+     * can be set one of the following.</p> <p>If resources.type equals
+     * <code>AWS::S3::Object</code>, the ARN must be in one of the following formats.
+     * To log all data events for all objects in a specific S3 bucket, use the
+     * <code>StartsWith</code> operator, and include only the bucket ARN as the
+     * matching value.</p> <p>The trailing slash is intentional; do not exclude it.
+     * Replace the text between less than and greater than symbols (&lt;&gt;) with
+     * resource-specific information. </p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:s3:::&lt;bucket_name&gt;/</code> </p> </li> <li> <p>
      * <code>arn:&lt;partition&gt;:s3:::&lt;bucket_name&gt;/&lt;object_path&gt;/</code>
      * </p> </li> </ul> <p>When resources.type equals
@@ -1523,6 +1583,11 @@ namespace Model
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:pca-connector-ad:&lt;region&gt;:&lt;account_ID&gt;:connector/&lt;connector_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::QApps:QApp</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:qapps:&lt;region&gt;:&lt;account_ID&gt;:application/&lt;application_UUID&gt;/qapp/&lt;qapp_UUID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::QBusiness::Application</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
@@ -1608,20 +1673,27 @@ namespace Model
      * <p>
      * <code>arn:&lt;partition&gt;:sns:&lt;region&gt;:&lt;account_ID&gt;:&lt;topic_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or
-     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
-     * <p>
-     * <code>arn:&lt;partition&gt;:swf:&lt;region&gt;:&lt;account_ID&gt;:domain/&lt;domain_name&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SQS::Queue</code>, and the operator is set to <code>Equals</code> or
      * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
      * <p>
      * <code>arn:&lt;partition&gt;:sqs:&lt;region&gt;:&lt;account_ID&gt;:&lt;queue_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::SSM::ManagedNode</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
+     * following formats:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:ssm:&lt;region&gt;:&lt;account_ID&gt;:managed-instance/&lt;instance_ID&gt;</code>
+     * </p> </li> <li> <p>
+     * <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;:&lt;account_ID&gt;:instance/&lt;instance_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SSMMessages::ControlChannel</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:ssmmessages:&lt;region&gt;:&lt;account_ID&gt;:control-channel/&lt;channel_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:swf:&lt;region&gt;:&lt;account_ID&gt;:domain/&lt;domain_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::ThinClient::Device</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -1723,6 +1795,7 @@ namespace Model
      * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
      * <code>AWS::NeptuneGraph::Graph</code> </p> </li> <li> <p>
      * <code>AWS::PCAConnectorAD::Connector</code> </p> </li> <li> <p>
+     * <code>AWS::QApps:QApp</code> </p> </li> <li> <p>
      * <code>AWS::QBusiness::Application</code> </p> </li> <li> <p>
      * <code>AWS::QBusiness::DataSource</code> </p> </li> <li> <p>
      * <code>AWS::QBusiness::Index</code> </p> </li> <li> <p>
@@ -1738,26 +1811,31 @@ namespace Model
      * <code>AWS::ServiceDiscovery::Service</code> </p> </li> <li> <p>
      * <code>AWS::SCN::Instance</code> </p> </li> <li> <p>
      * <code>AWS::SNS::PlatformEndpoint</code> </p> </li> <li> <p>
-     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p> <code>AWS::SWF::Domain</code>
-     * </p> </li> <li> <p> <code>AWS::SQS::Queue</code> </p> </li> <li> <p>
+     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p> <code>AWS::SQS::Queue</code>
+     * </p> </li> <li> <p> <code>AWS::SSM::ManagedNode</code> </p> </li> <li> <p>
      * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
+     * <code>AWS::SWF::Domain</code> </p> </li> <li> <p>
      * <code>AWS::ThinClient::Device</code> </p> </li> <li> <p>
      * <code>AWS::ThinClient::Environment</code> </p> </li> <li> <p>
      * <code>AWS::Timestream::Database</code> </p> </li> <li> <p>
      * <code>AWS::Timestream::Table</code> </p> </li> <li> <p>
-     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul> <p> You can
-     * have only one <code>resources.type</code> ﬁeld per selector. To log data events
-     * on more than one resource type, add another selector.</p> </li> <li> <p> <b>
+     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> <li> <p>
+     * <code>AWS::XRay::Trace</code> </p> </li> </ul> <p> You can have only one
+     * <code>resources.type</code> ﬁeld per selector. To log data events on more than
+     * one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with
      * <code>resources.ARN</code>, but if you use <code>Equals</code> or
      * <code>NotEquals</code>, the value must exactly match the ARN of a valid resource
-     * of the type you've speciﬁed in the template as the value of resources.type. For
-     * example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be
-     * in one of the following formats. To log all data events for all objects in a
-     * specific S3 bucket, use the <code>StartsWith</code> operator, and include only
-     * the bucket ARN as the matching value.</p> <p>The trailing slash is intentional;
-     * do not exclude it. Replace the text between less than and greater than symbols
-     * (&lt;&gt;) with resource-specific information. </p> <ul> <li> <p>
+     * of the type you've speciﬁed in the template as the value of resources.type.</p>
+     *  <p>You can't use the <code>resources.ARN</code> field to filter resource
+     * types that do not have ARNs.</p>  <p>The <code>resources.ARN</code> field
+     * can be set one of the following.</p> <p>If resources.type equals
+     * <code>AWS::S3::Object</code>, the ARN must be in one of the following formats.
+     * To log all data events for all objects in a specific S3 bucket, use the
+     * <code>StartsWith</code> operator, and include only the bucket ARN as the
+     * matching value.</p> <p>The trailing slash is intentional; do not exclude it.
+     * Replace the text between less than and greater than symbols (&lt;&gt;) with
+     * resource-specific information. </p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:s3:::&lt;bucket_name&gt;/</code> </p> </li> <li> <p>
      * <code>arn:&lt;partition&gt;:s3:::&lt;bucket_name&gt;/&lt;object_path&gt;/</code>
      * </p> </li> </ul> <p>When resources.type equals
@@ -1926,6 +2004,11 @@ namespace Model
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:pca-connector-ad:&lt;region&gt;:&lt;account_ID&gt;:connector/&lt;connector_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::QApps:QApp</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:qapps:&lt;region&gt;:&lt;account_ID&gt;:application/&lt;application_UUID&gt;/qapp/&lt;qapp_UUID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::QBusiness::Application</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
@@ -2011,20 +2094,27 @@ namespace Model
      * <p>
      * <code>arn:&lt;partition&gt;:sns:&lt;region&gt;:&lt;account_ID&gt;:&lt;topic_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or
-     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
-     * <p>
-     * <code>arn:&lt;partition&gt;:swf:&lt;region&gt;:&lt;account_ID&gt;:domain/&lt;domain_name&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SQS::Queue</code>, and the operator is set to <code>Equals</code> or
      * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
      * <p>
      * <code>arn:&lt;partition&gt;:sqs:&lt;region&gt;:&lt;account_ID&gt;:&lt;queue_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::SSM::ManagedNode</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
+     * following formats:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:ssm:&lt;region&gt;:&lt;account_ID&gt;:managed-instance/&lt;instance_ID&gt;</code>
+     * </p> </li> <li> <p>
+     * <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;:&lt;account_ID&gt;:instance/&lt;instance_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SSMMessages::ControlChannel</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:ssmmessages:&lt;region&gt;:&lt;account_ID&gt;:control-channel/&lt;channel_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:swf:&lt;region&gt;:&lt;account_ID&gt;:domain/&lt;domain_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::ThinClient::Device</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -2126,6 +2216,7 @@ namespace Model
      * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
      * <code>AWS::NeptuneGraph::Graph</code> </p> </li> <li> <p>
      * <code>AWS::PCAConnectorAD::Connector</code> </p> </li> <li> <p>
+     * <code>AWS::QApps:QApp</code> </p> </li> <li> <p>
      * <code>AWS::QBusiness::Application</code> </p> </li> <li> <p>
      * <code>AWS::QBusiness::DataSource</code> </p> </li> <li> <p>
      * <code>AWS::QBusiness::Index</code> </p> </li> <li> <p>
@@ -2141,26 +2232,31 @@ namespace Model
      * <code>AWS::ServiceDiscovery::Service</code> </p> </li> <li> <p>
      * <code>AWS::SCN::Instance</code> </p> </li> <li> <p>
      * <code>AWS::SNS::PlatformEndpoint</code> </p> </li> <li> <p>
-     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p> <code>AWS::SWF::Domain</code>
-     * </p> </li> <li> <p> <code>AWS::SQS::Queue</code> </p> </li> <li> <p>
+     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p> <code>AWS::SQS::Queue</code>
+     * </p> </li> <li> <p> <code>AWS::SSM::ManagedNode</code> </p> </li> <li> <p>
      * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
+     * <code>AWS::SWF::Domain</code> </p> </li> <li> <p>
      * <code>AWS::ThinClient::Device</code> </p> </li> <li> <p>
      * <code>AWS::ThinClient::Environment</code> </p> </li> <li> <p>
      * <code>AWS::Timestream::Database</code> </p> </li> <li> <p>
      * <code>AWS::Timestream::Table</code> </p> </li> <li> <p>
-     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul> <p> You can
-     * have only one <code>resources.type</code> ﬁeld per selector. To log data events
-     * on more than one resource type, add another selector.</p> </li> <li> <p> <b>
+     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> <li> <p>
+     * <code>AWS::XRay::Trace</code> </p> </li> </ul> <p> You can have only one
+     * <code>resources.type</code> ﬁeld per selector. To log data events on more than
+     * one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with
      * <code>resources.ARN</code>, but if you use <code>Equals</code> or
      * <code>NotEquals</code>, the value must exactly match the ARN of a valid resource
-     * of the type you've speciﬁed in the template as the value of resources.type. For
-     * example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be
-     * in one of the following formats. To log all data events for all objects in a
-     * specific S3 bucket, use the <code>StartsWith</code> operator, and include only
-     * the bucket ARN as the matching value.</p> <p>The trailing slash is intentional;
-     * do not exclude it. Replace the text between less than and greater than symbols
-     * (&lt;&gt;) with resource-specific information. </p> <ul> <li> <p>
+     * of the type you've speciﬁed in the template as the value of resources.type.</p>
+     *  <p>You can't use the <code>resources.ARN</code> field to filter resource
+     * types that do not have ARNs.</p>  <p>The <code>resources.ARN</code> field
+     * can be set one of the following.</p> <p>If resources.type equals
+     * <code>AWS::S3::Object</code>, the ARN must be in one of the following formats.
+     * To log all data events for all objects in a specific S3 bucket, use the
+     * <code>StartsWith</code> operator, and include only the bucket ARN as the
+     * matching value.</p> <p>The trailing slash is intentional; do not exclude it.
+     * Replace the text between less than and greater than symbols (&lt;&gt;) with
+     * resource-specific information. </p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:s3:::&lt;bucket_name&gt;/</code> </p> </li> <li> <p>
      * <code>arn:&lt;partition&gt;:s3:::&lt;bucket_name&gt;/&lt;object_path&gt;/</code>
      * </p> </li> </ul> <p>When resources.type equals
@@ -2329,6 +2425,11 @@ namespace Model
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:pca-connector-ad:&lt;region&gt;:&lt;account_ID&gt;:connector/&lt;connector_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::QApps:QApp</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:qapps:&lt;region&gt;:&lt;account_ID&gt;:application/&lt;application_UUID&gt;/qapp/&lt;qapp_UUID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::QBusiness::Application</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
@@ -2414,20 +2515,27 @@ namespace Model
      * <p>
      * <code>arn:&lt;partition&gt;:sns:&lt;region&gt;:&lt;account_ID&gt;:&lt;topic_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or
-     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
-     * <p>
-     * <code>arn:&lt;partition&gt;:swf:&lt;region&gt;:&lt;account_ID&gt;:domain/&lt;domain_name&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SQS::Queue</code>, and the operator is set to <code>Equals</code> or
      * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
      * <p>
      * <code>arn:&lt;partition&gt;:sqs:&lt;region&gt;:&lt;account_ID&gt;:&lt;queue_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::SSM::ManagedNode</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
+     * following formats:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:ssm:&lt;region&gt;:&lt;account_ID&gt;:managed-instance/&lt;instance_ID&gt;</code>
+     * </p> </li> <li> <p>
+     * <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;:&lt;account_ID&gt;:instance/&lt;instance_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SSMMessages::ControlChannel</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:ssmmessages:&lt;region&gt;:&lt;account_ID&gt;:control-channel/&lt;channel_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:swf:&lt;region&gt;:&lt;account_ID&gt;:domain/&lt;domain_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::ThinClient::Device</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -2529,6 +2637,7 @@ namespace Model
      * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
      * <code>AWS::NeptuneGraph::Graph</code> </p> </li> <li> <p>
      * <code>AWS::PCAConnectorAD::Connector</code> </p> </li> <li> <p>
+     * <code>AWS::QApps:QApp</code> </p> </li> <li> <p>
      * <code>AWS::QBusiness::Application</code> </p> </li> <li> <p>
      * <code>AWS::QBusiness::DataSource</code> </p> </li> <li> <p>
      * <code>AWS::QBusiness::Index</code> </p> </li> <li> <p>
@@ -2544,26 +2653,31 @@ namespace Model
      * <code>AWS::ServiceDiscovery::Service</code> </p> </li> <li> <p>
      * <code>AWS::SCN::Instance</code> </p> </li> <li> <p>
      * <code>AWS::SNS::PlatformEndpoint</code> </p> </li> <li> <p>
-     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p> <code>AWS::SWF::Domain</code>
-     * </p> </li> <li> <p> <code>AWS::SQS::Queue</code> </p> </li> <li> <p>
+     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p> <code>AWS::SQS::Queue</code>
+     * </p> </li> <li> <p> <code>AWS::SSM::ManagedNode</code> </p> </li> <li> <p>
      * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
+     * <code>AWS::SWF::Domain</code> </p> </li> <li> <p>
      * <code>AWS::ThinClient::Device</code> </p> </li> <li> <p>
      * <code>AWS::ThinClient::Environment</code> </p> </li> <li> <p>
      * <code>AWS::Timestream::Database</code> </p> </li> <li> <p>
      * <code>AWS::Timestream::Table</code> </p> </li> <li> <p>
-     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul> <p> You can
-     * have only one <code>resources.type</code> ﬁeld per selector. To log data events
-     * on more than one resource type, add another selector.</p> </li> <li> <p> <b>
+     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> <li> <p>
+     * <code>AWS::XRay::Trace</code> </p> </li> </ul> <p> You can have only one
+     * <code>resources.type</code> ﬁeld per selector. To log data events on more than
+     * one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with
      * <code>resources.ARN</code>, but if you use <code>Equals</code> or
      * <code>NotEquals</code>, the value must exactly match the ARN of a valid resource
-     * of the type you've speciﬁed in the template as the value of resources.type. For
-     * example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be
-     * in one of the following formats. To log all data events for all objects in a
-     * specific S3 bucket, use the <code>StartsWith</code> operator, and include only
-     * the bucket ARN as the matching value.</p> <p>The trailing slash is intentional;
-     * do not exclude it. Replace the text between less than and greater than symbols
-     * (&lt;&gt;) with resource-specific information. </p> <ul> <li> <p>
+     * of the type you've speciﬁed in the template as the value of resources.type.</p>
+     *  <p>You can't use the <code>resources.ARN</code> field to filter resource
+     * types that do not have ARNs.</p>  <p>The <code>resources.ARN</code> field
+     * can be set one of the following.</p> <p>If resources.type equals
+     * <code>AWS::S3::Object</code>, the ARN must be in one of the following formats.
+     * To log all data events for all objects in a specific S3 bucket, use the
+     * <code>StartsWith</code> operator, and include only the bucket ARN as the
+     * matching value.</p> <p>The trailing slash is intentional; do not exclude it.
+     * Replace the text between less than and greater than symbols (&lt;&gt;) with
+     * resource-specific information. </p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:s3:::&lt;bucket_name&gt;/</code> </p> </li> <li> <p>
      * <code>arn:&lt;partition&gt;:s3:::&lt;bucket_name&gt;/&lt;object_path&gt;/</code>
      * </p> </li> </ul> <p>When resources.type equals
@@ -2732,6 +2846,11 @@ namespace Model
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:pca-connector-ad:&lt;region&gt;:&lt;account_ID&gt;:connector/&lt;connector_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::QApps:QApp</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:qapps:&lt;region&gt;:&lt;account_ID&gt;:application/&lt;application_UUID&gt;/qapp/&lt;qapp_UUID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::QBusiness::Application</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
@@ -2817,20 +2936,27 @@ namespace Model
      * <p>
      * <code>arn:&lt;partition&gt;:sns:&lt;region&gt;:&lt;account_ID&gt;:&lt;topic_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or
-     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
-     * <p>
-     * <code>arn:&lt;partition&gt;:swf:&lt;region&gt;:&lt;account_ID&gt;:domain/&lt;domain_name&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SQS::Queue</code>, and the operator is set to <code>Equals</code> or
      * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
      * <p>
      * <code>arn:&lt;partition&gt;:sqs:&lt;region&gt;:&lt;account_ID&gt;:&lt;queue_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::SSM::ManagedNode</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
+     * following formats:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:ssm:&lt;region&gt;:&lt;account_ID&gt;:managed-instance/&lt;instance_ID&gt;</code>
+     * </p> </li> <li> <p>
+     * <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;:&lt;account_ID&gt;:instance/&lt;instance_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SSMMessages::ControlChannel</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:ssmmessages:&lt;region&gt;:&lt;account_ID&gt;:control-channel/&lt;channel_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:swf:&lt;region&gt;:&lt;account_ID&gt;:domain/&lt;domain_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::ThinClient::Device</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -2932,6 +3058,7 @@ namespace Model
      * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
      * <code>AWS::NeptuneGraph::Graph</code> </p> </li> <li> <p>
      * <code>AWS::PCAConnectorAD::Connector</code> </p> </li> <li> <p>
+     * <code>AWS::QApps:QApp</code> </p> </li> <li> <p>
      * <code>AWS::QBusiness::Application</code> </p> </li> <li> <p>
      * <code>AWS::QBusiness::DataSource</code> </p> </li> <li> <p>
      * <code>AWS::QBusiness::Index</code> </p> </li> <li> <p>
@@ -2947,26 +3074,31 @@ namespace Model
      * <code>AWS::ServiceDiscovery::Service</code> </p> </li> <li> <p>
      * <code>AWS::SCN::Instance</code> </p> </li> <li> <p>
      * <code>AWS::SNS::PlatformEndpoint</code> </p> </li> <li> <p>
-     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p> <code>AWS::SWF::Domain</code>
-     * </p> </li> <li> <p> <code>AWS::SQS::Queue</code> </p> </li> <li> <p>
+     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p> <code>AWS::SQS::Queue</code>
+     * </p> </li> <li> <p> <code>AWS::SSM::ManagedNode</code> </p> </li> <li> <p>
      * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
+     * <code>AWS::SWF::Domain</code> </p> </li> <li> <p>
      * <code>AWS::ThinClient::Device</code> </p> </li> <li> <p>
      * <code>AWS::ThinClient::Environment</code> </p> </li> <li> <p>
      * <code>AWS::Timestream::Database</code> </p> </li> <li> <p>
      * <code>AWS::Timestream::Table</code> </p> </li> <li> <p>
-     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul> <p> You can
-     * have only one <code>resources.type</code> ﬁeld per selector. To log data events
-     * on more than one resource type, add another selector.</p> </li> <li> <p> <b>
+     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> <li> <p>
+     * <code>AWS::XRay::Trace</code> </p> </li> </ul> <p> You can have only one
+     * <code>resources.type</code> ﬁeld per selector. To log data events on more than
+     * one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with
      * <code>resources.ARN</code>, but if you use <code>Equals</code> or
      * <code>NotEquals</code>, the value must exactly match the ARN of a valid resource
-     * of the type you've speciﬁed in the template as the value of resources.type. For
-     * example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be
-     * in one of the following formats. To log all data events for all objects in a
-     * specific S3 bucket, use the <code>StartsWith</code> operator, and include only
-     * the bucket ARN as the matching value.</p> <p>The trailing slash is intentional;
-     * do not exclude it. Replace the text between less than and greater than symbols
-     * (&lt;&gt;) with resource-specific information. </p> <ul> <li> <p>
+     * of the type you've speciﬁed in the template as the value of resources.type.</p>
+     *  <p>You can't use the <code>resources.ARN</code> field to filter resource
+     * types that do not have ARNs.</p>  <p>The <code>resources.ARN</code> field
+     * can be set one of the following.</p> <p>If resources.type equals
+     * <code>AWS::S3::Object</code>, the ARN must be in one of the following formats.
+     * To log all data events for all objects in a specific S3 bucket, use the
+     * <code>StartsWith</code> operator, and include only the bucket ARN as the
+     * matching value.</p> <p>The trailing slash is intentional; do not exclude it.
+     * Replace the text between less than and greater than symbols (&lt;&gt;) with
+     * resource-specific information. </p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:s3:::&lt;bucket_name&gt;/</code> </p> </li> <li> <p>
      * <code>arn:&lt;partition&gt;:s3:::&lt;bucket_name&gt;/&lt;object_path&gt;/</code>
      * </p> </li> </ul> <p>When resources.type equals
@@ -3135,6 +3267,11 @@ namespace Model
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:pca-connector-ad:&lt;region&gt;:&lt;account_ID&gt;:connector/&lt;connector_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::QApps:QApp</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:qapps:&lt;region&gt;:&lt;account_ID&gt;:application/&lt;application_UUID&gt;/qapp/&lt;qapp_UUID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::QBusiness::Application</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
@@ -3220,20 +3357,27 @@ namespace Model
      * <p>
      * <code>arn:&lt;partition&gt;:sns:&lt;region&gt;:&lt;account_ID&gt;:&lt;topic_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or
-     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
-     * <p>
-     * <code>arn:&lt;partition&gt;:swf:&lt;region&gt;:&lt;account_ID&gt;:domain/&lt;domain_name&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SQS::Queue</code>, and the operator is set to <code>Equals</code> or
      * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
      * <p>
      * <code>arn:&lt;partition&gt;:sqs:&lt;region&gt;:&lt;account_ID&gt;:&lt;queue_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::SSM::ManagedNode</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
+     * following formats:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:ssm:&lt;region&gt;:&lt;account_ID&gt;:managed-instance/&lt;instance_ID&gt;</code>
+     * </p> </li> <li> <p>
+     * <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;:&lt;account_ID&gt;:instance/&lt;instance_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SSMMessages::ControlChannel</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:ssmmessages:&lt;region&gt;:&lt;account_ID&gt;:control-channel/&lt;channel_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:swf:&lt;region&gt;:&lt;account_ID&gt;:domain/&lt;domain_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::ThinClient::Device</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following

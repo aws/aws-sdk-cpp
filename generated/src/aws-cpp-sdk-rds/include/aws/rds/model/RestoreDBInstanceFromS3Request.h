@@ -2094,50 +2094,74 @@ namespace Model
 
 
     /**
-     * <p>An Amazon Web Services Identity and Access Management (IAM) role to allow
-     * Amazon RDS to access your Amazon S3 bucket.</p>
+     * <p>An Amazon Web Services Identity and Access Management (IAM) role with a trust
+     * policy and a permissions policy that allows Amazon RDS to access your Amazon S3
+     * bucket. For information about this role, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html#MySQL.Procedural.Importing.Enabling.IAM">
+     * Creating an IAM role manually</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline const Aws::String& GetS3IngestionRoleArn() const{ return m_s3IngestionRoleArn; }
 
     /**
-     * <p>An Amazon Web Services Identity and Access Management (IAM) role to allow
-     * Amazon RDS to access your Amazon S3 bucket.</p>
+     * <p>An Amazon Web Services Identity and Access Management (IAM) role with a trust
+     * policy and a permissions policy that allows Amazon RDS to access your Amazon S3
+     * bucket. For information about this role, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html#MySQL.Procedural.Importing.Enabling.IAM">
+     * Creating an IAM role manually</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline bool S3IngestionRoleArnHasBeenSet() const { return m_s3IngestionRoleArnHasBeenSet; }
 
     /**
-     * <p>An Amazon Web Services Identity and Access Management (IAM) role to allow
-     * Amazon RDS to access your Amazon S3 bucket.</p>
+     * <p>An Amazon Web Services Identity and Access Management (IAM) role with a trust
+     * policy and a permissions policy that allows Amazon RDS to access your Amazon S3
+     * bucket. For information about this role, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html#MySQL.Procedural.Importing.Enabling.IAM">
+     * Creating an IAM role manually</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetS3IngestionRoleArn(const Aws::String& value) { m_s3IngestionRoleArnHasBeenSet = true; m_s3IngestionRoleArn = value; }
 
     /**
-     * <p>An Amazon Web Services Identity and Access Management (IAM) role to allow
-     * Amazon RDS to access your Amazon S3 bucket.</p>
+     * <p>An Amazon Web Services Identity and Access Management (IAM) role with a trust
+     * policy and a permissions policy that allows Amazon RDS to access your Amazon S3
+     * bucket. For information about this role, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html#MySQL.Procedural.Importing.Enabling.IAM">
+     * Creating an IAM role manually</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetS3IngestionRoleArn(Aws::String&& value) { m_s3IngestionRoleArnHasBeenSet = true; m_s3IngestionRoleArn = std::move(value); }
 
     /**
-     * <p>An Amazon Web Services Identity and Access Management (IAM) role to allow
-     * Amazon RDS to access your Amazon S3 bucket.</p>
+     * <p>An Amazon Web Services Identity and Access Management (IAM) role with a trust
+     * policy and a permissions policy that allows Amazon RDS to access your Amazon S3
+     * bucket. For information about this role, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html#MySQL.Procedural.Importing.Enabling.IAM">
+     * Creating an IAM role manually</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetS3IngestionRoleArn(const char* value) { m_s3IngestionRoleArnHasBeenSet = true; m_s3IngestionRoleArn.assign(value); }
 
     /**
-     * <p>An Amazon Web Services Identity and Access Management (IAM) role to allow
-     * Amazon RDS to access your Amazon S3 bucket.</p>
+     * <p>An Amazon Web Services Identity and Access Management (IAM) role with a trust
+     * policy and a permissions policy that allows Amazon RDS to access your Amazon S3
+     * bucket. For information about this role, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html#MySQL.Procedural.Importing.Enabling.IAM">
+     * Creating an IAM role manually</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline RestoreDBInstanceFromS3Request& WithS3IngestionRoleArn(const Aws::String& value) { SetS3IngestionRoleArn(value); return *this;}
 
     /**
-     * <p>An Amazon Web Services Identity and Access Management (IAM) role to allow
-     * Amazon RDS to access your Amazon S3 bucket.</p>
+     * <p>An Amazon Web Services Identity and Access Management (IAM) role with a trust
+     * policy and a permissions policy that allows Amazon RDS to access your Amazon S3
+     * bucket. For information about this role, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html#MySQL.Procedural.Importing.Enabling.IAM">
+     * Creating an IAM role manually</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline RestoreDBInstanceFromS3Request& WithS3IngestionRoleArn(Aws::String&& value) { SetS3IngestionRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>An Amazon Web Services Identity and Access Management (IAM) role to allow
-     * Amazon RDS to access your Amazon S3 bucket.</p>
+     * <p>An Amazon Web Services Identity and Access Management (IAM) role with a trust
+     * policy and a permissions policy that allows Amazon RDS to access your Amazon S3
+     * bucket. For information about this role, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html#MySQL.Procedural.Importing.Enabling.IAM">
+     * Creating an IAM role manually</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline RestoreDBInstanceFromS3Request& WithS3IngestionRoleArn(const char* value) { SetS3IngestionRoleArn(value); return *this;}
 

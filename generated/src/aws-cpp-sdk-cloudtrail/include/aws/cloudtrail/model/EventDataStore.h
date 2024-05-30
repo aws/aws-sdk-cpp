@@ -27,7 +27,7 @@ namespace Model
    * <p>A storage lake of event data against which you can run complex SQL-based
    * queries. An event data store can include events that you have logged on your
    * account. To select events for an event data store, use <a
-   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#creating-data-event-selectors-advanced">advanced
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-concepts.html#adv-event-selectors">advanced
    * event selectors</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/EventDataStore">AWS
    * API Reference</a></p>
