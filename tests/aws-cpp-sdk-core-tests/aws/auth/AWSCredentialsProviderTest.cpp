@@ -299,7 +299,7 @@ TEST_F(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientReturnsGoodD
 {
     auto mockClient = Aws::MakeShared<MockEC2MetadataClient>(AllocationTag);
 
-    const char* validCredentials = R"({ "AccessKeyId": "goodAccessKey", "SecretAccessKey": "goodSecretKey", "Token": "goodToken", "Code": "Success", "Expiration": "2047-04-19T00:00:00Z" })";
+    const char* validCredentials = R"({ "AccessKeyId": "goodAccessKey", "SecretAccessKey": "goodSecretKey", "Token": "goodToken", "Code": "Success", "Expiration": "2037-04-19T00:00:00Z" })";
     mockClient->SetMockedCredentialsValue(validCredentials);
 
     InstanceProfileCredentialsProvider provider(Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(AllocationTag, mockClient), 1000 * 60 * 15);
