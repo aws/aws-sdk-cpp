@@ -103,6 +103,42 @@ namespace Model
 
 
     /**
+     * <p>Details about the error that causes a scan to fail to be retrieved.</p>
+     */
+    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+
+    /**
+     * <p>Details about the error that causes a scan to fail to be retrieved.</p>
+     */
+    inline void SetErrorMessage(const Aws::String& value) { m_errorMessage = value; }
+
+    /**
+     * <p>Details about the error that causes a scan to fail to be retrieved.</p>
+     */
+    inline void SetErrorMessage(Aws::String&& value) { m_errorMessage = std::move(value); }
+
+    /**
+     * <p>Details about the error that causes a scan to fail to be retrieved.</p>
+     */
+    inline void SetErrorMessage(const char* value) { m_errorMessage.assign(value); }
+
+    /**
+     * <p>Details about the error that causes a scan to fail to be retrieved.</p>
+     */
+    inline GetScanResult& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
+
+    /**
+     * <p>Details about the error that causes a scan to fail to be retrieved.</p>
+     */
+    inline GetScanResult& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>Details about the error that causes a scan to fail to be retrieved.</p>
+     */
+    inline GetScanResult& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+
+
+    /**
      * <p>The number of times a scan has been re-run on a revised resource.</p>
      */
     inline long long GetNumberOfRevisions() const{ return m_numberOfRevisions; }
@@ -227,31 +263,31 @@ namespace Model
 
 
     /**
-     * <p>The current state of the scan. Pass either <code>InProgress</code>,
+     * <p>The current state of the scan. Returns either <code>InProgress</code>,
      * <code>Successful</code>, or <code>Failed</code>.</p>
      */
     inline const ScanState& GetScanState() const{ return m_scanState; }
 
     /**
-     * <p>The current state of the scan. Pass either <code>InProgress</code>,
+     * <p>The current state of the scan. Returns either <code>InProgress</code>,
      * <code>Successful</code>, or <code>Failed</code>.</p>
      */
     inline void SetScanState(const ScanState& value) { m_scanState = value; }
 
     /**
-     * <p>The current state of the scan. Pass either <code>InProgress</code>,
+     * <p>The current state of the scan. Returns either <code>InProgress</code>,
      * <code>Successful</code>, or <code>Failed</code>.</p>
      */
     inline void SetScanState(ScanState&& value) { m_scanState = std::move(value); }
 
     /**
-     * <p>The current state of the scan. Pass either <code>InProgress</code>,
+     * <p>The current state of the scan. Returns either <code>InProgress</code>,
      * <code>Successful</code>, or <code>Failed</code>.</p>
      */
     inline GetScanResult& WithScanState(const ScanState& value) { SetScanState(value); return *this;}
 
     /**
-     * <p>The current state of the scan. Pass either <code>InProgress</code>,
+     * <p>The current state of the scan. Returns either <code>InProgress</code>,
      * <code>Successful</code>, or <code>Failed</code>.</p>
      */
     inline GetScanResult& WithScanState(ScanState&& value) { SetScanState(std::move(value)); return *this;}
@@ -314,6 +350,8 @@ namespace Model
     AnalysisType m_analysisType;
 
     Aws::Utils::DateTime m_createdAt;
+
+    Aws::String m_errorMessage;
 
     long long m_numberOfRevisions;
 

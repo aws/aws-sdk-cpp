@@ -53,9 +53,9 @@ namespace Model
      * <code>WORKFLOW_JOB_QUEUED</code>. The <code>EVENT</code> patterns are specified
      * as a comma-separated string. For example, <code>PUSH, PULL_REQUEST_CREATED,
      * PULL_REQUEST_UPDATED</code> filters all push, pull request created, and pull
-     * request updated events. </p>  <p> The <code>PULL_REQUEST_REOPENED</code>
-     * works with GitHub and GitHub Enterprise only. The <code>RELEASED</code>,
-     * <code>PRERELEASED</code>, and <code>WORKFLOW_JOB_QUEUED</code> work with GitHub
+     * request updated events. </p>  <p> Types <code>PULL_REQUEST_REOPENED</code>
+     * and <code>WORKFLOW_JOB_QUEUED</code> work with GitHub and GitHub Enterprise
+     * only. Types <code>RELEASED</code> and <code>PRERELEASED</code> work with GitHub
      * only.</p>  </li> </ul> </li> <li> <p>ACTOR_ACCOUNT_ID</p> <ul> <li> <p> A
      * webhook event triggers a build when a GitHub, GitHub Enterprise, or Bitbucket
      * account ID matches the regular expression <code>pattern</code>. </p> </li> </ul>
@@ -106,9 +106,9 @@ namespace Model
      * <code>WORKFLOW_JOB_QUEUED</code>. The <code>EVENT</code> patterns are specified
      * as a comma-separated string. For example, <code>PUSH, PULL_REQUEST_CREATED,
      * PULL_REQUEST_UPDATED</code> filters all push, pull request created, and pull
-     * request updated events. </p>  <p> The <code>PULL_REQUEST_REOPENED</code>
-     * works with GitHub and GitHub Enterprise only. The <code>RELEASED</code>,
-     * <code>PRERELEASED</code>, and <code>WORKFLOW_JOB_QUEUED</code> work with GitHub
+     * request updated events. </p>  <p> Types <code>PULL_REQUEST_REOPENED</code>
+     * and <code>WORKFLOW_JOB_QUEUED</code> work with GitHub and GitHub Enterprise
+     * only. Types <code>RELEASED</code> and <code>PRERELEASED</code> work with GitHub
      * only.</p>  </li> </ul> </li> <li> <p>ACTOR_ACCOUNT_ID</p> <ul> <li> <p> A
      * webhook event triggers a build when a GitHub, GitHub Enterprise, or Bitbucket
      * account ID matches the regular expression <code>pattern</code>. </p> </li> </ul>
@@ -159,9 +159,9 @@ namespace Model
      * <code>WORKFLOW_JOB_QUEUED</code>. The <code>EVENT</code> patterns are specified
      * as a comma-separated string. For example, <code>PUSH, PULL_REQUEST_CREATED,
      * PULL_REQUEST_UPDATED</code> filters all push, pull request created, and pull
-     * request updated events. </p>  <p> The <code>PULL_REQUEST_REOPENED</code>
-     * works with GitHub and GitHub Enterprise only. The <code>RELEASED</code>,
-     * <code>PRERELEASED</code>, and <code>WORKFLOW_JOB_QUEUED</code> work with GitHub
+     * request updated events. </p>  <p> Types <code>PULL_REQUEST_REOPENED</code>
+     * and <code>WORKFLOW_JOB_QUEUED</code> work with GitHub and GitHub Enterprise
+     * only. Types <code>RELEASED</code> and <code>PRERELEASED</code> work with GitHub
      * only.</p>  </li> </ul> </li> <li> <p>ACTOR_ACCOUNT_ID</p> <ul> <li> <p> A
      * webhook event triggers a build when a GitHub, GitHub Enterprise, or Bitbucket
      * account ID matches the regular expression <code>pattern</code>. </p> </li> </ul>
@@ -212,9 +212,9 @@ namespace Model
      * <code>WORKFLOW_JOB_QUEUED</code>. The <code>EVENT</code> patterns are specified
      * as a comma-separated string. For example, <code>PUSH, PULL_REQUEST_CREATED,
      * PULL_REQUEST_UPDATED</code> filters all push, pull request created, and pull
-     * request updated events. </p>  <p> The <code>PULL_REQUEST_REOPENED</code>
-     * works with GitHub and GitHub Enterprise only. The <code>RELEASED</code>,
-     * <code>PRERELEASED</code>, and <code>WORKFLOW_JOB_QUEUED</code> work with GitHub
+     * request updated events. </p>  <p> Types <code>PULL_REQUEST_REOPENED</code>
+     * and <code>WORKFLOW_JOB_QUEUED</code> work with GitHub and GitHub Enterprise
+     * only. Types <code>RELEASED</code> and <code>PRERELEASED</code> work with GitHub
      * only.</p>  </li> </ul> </li> <li> <p>ACTOR_ACCOUNT_ID</p> <ul> <li> <p> A
      * webhook event triggers a build when a GitHub, GitHub Enterprise, or Bitbucket
      * account ID matches the regular expression <code>pattern</code>. </p> </li> </ul>
@@ -265,9 +265,9 @@ namespace Model
      * <code>WORKFLOW_JOB_QUEUED</code>. The <code>EVENT</code> patterns are specified
      * as a comma-separated string. For example, <code>PUSH, PULL_REQUEST_CREATED,
      * PULL_REQUEST_UPDATED</code> filters all push, pull request created, and pull
-     * request updated events. </p>  <p> The <code>PULL_REQUEST_REOPENED</code>
-     * works with GitHub and GitHub Enterprise only. The <code>RELEASED</code>,
-     * <code>PRERELEASED</code>, and <code>WORKFLOW_JOB_QUEUED</code> work with GitHub
+     * request updated events. </p>  <p> Types <code>PULL_REQUEST_REOPENED</code>
+     * and <code>WORKFLOW_JOB_QUEUED</code> work with GitHub and GitHub Enterprise
+     * only. Types <code>RELEASED</code> and <code>PRERELEASED</code> work with GitHub
      * only.</p>  </li> </ul> </li> <li> <p>ACTOR_ACCOUNT_ID</p> <ul> <li> <p> A
      * webhook event triggers a build when a GitHub, GitHub Enterprise, or Bitbucket
      * account ID matches the regular expression <code>pattern</code>. </p> </li> </ul>
@@ -318,9 +318,9 @@ namespace Model
      * <code>WORKFLOW_JOB_QUEUED</code>. The <code>EVENT</code> patterns are specified
      * as a comma-separated string. For example, <code>PUSH, PULL_REQUEST_CREATED,
      * PULL_REQUEST_UPDATED</code> filters all push, pull request created, and pull
-     * request updated events. </p>  <p> The <code>PULL_REQUEST_REOPENED</code>
-     * works with GitHub and GitHub Enterprise only. The <code>RELEASED</code>,
-     * <code>PRERELEASED</code>, and <code>WORKFLOW_JOB_QUEUED</code> work with GitHub
+     * request updated events. </p>  <p> Types <code>PULL_REQUEST_REOPENED</code>
+     * and <code>WORKFLOW_JOB_QUEUED</code> work with GitHub and GitHub Enterprise
+     * only. Types <code>RELEASED</code> and <code>PRERELEASED</code> work with GitHub
      * only.</p>  </li> </ul> </li> <li> <p>ACTOR_ACCOUNT_ID</p> <ul> <li> <p> A
      * webhook event triggers a build when a GitHub, GitHub Enterprise, or Bitbucket
      * account ID matches the regular expression <code>pattern</code>. </p> </li> </ul>

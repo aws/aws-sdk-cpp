@@ -34,37 +34,44 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the uploaded code resource. </p>
+     * <p>The identifier for the uploaded code resource. Pass this to
+     * <code>CreateScan</code> to use the uploaded resources.</p>
      */
     inline const Aws::String& GetCodeArtifactId() const{ return m_codeArtifactId; }
 
     /**
-     * <p>The identifier for the uploaded code resource. </p>
+     * <p>The identifier for the uploaded code resource. Pass this to
+     * <code>CreateScan</code> to use the uploaded resources.</p>
      */
     inline void SetCodeArtifactId(const Aws::String& value) { m_codeArtifactId = value; }
 
     /**
-     * <p>The identifier for the uploaded code resource. </p>
+     * <p>The identifier for the uploaded code resource. Pass this to
+     * <code>CreateScan</code> to use the uploaded resources.</p>
      */
     inline void SetCodeArtifactId(Aws::String&& value) { m_codeArtifactId = std::move(value); }
 
     /**
-     * <p>The identifier for the uploaded code resource. </p>
+     * <p>The identifier for the uploaded code resource. Pass this to
+     * <code>CreateScan</code> to use the uploaded resources.</p>
      */
     inline void SetCodeArtifactId(const char* value) { m_codeArtifactId.assign(value); }
 
     /**
-     * <p>The identifier for the uploaded code resource. </p>
+     * <p>The identifier for the uploaded code resource. Pass this to
+     * <code>CreateScan</code> to use the uploaded resources.</p>
      */
     inline CreateUploadUrlResult& WithCodeArtifactId(const Aws::String& value) { SetCodeArtifactId(value); return *this;}
 
     /**
-     * <p>The identifier for the uploaded code resource. </p>
+     * <p>The identifier for the uploaded code resource. Pass this to
+     * <code>CreateScan</code> to use the uploaded resources.</p>
      */
     inline CreateUploadUrlResult& WithCodeArtifactId(Aws::String&& value) { SetCodeArtifactId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the uploaded code resource. </p>
+     * <p>The identifier for the uploaded code resource. Pass this to
+     * <code>CreateScan</code> to use the uploaded resources.</p>
      */
     inline CreateUploadUrlResult& WithCodeArtifactId(const char* value) { SetCodeArtifactId(value); return *this;}
 
@@ -143,44 +150,44 @@ namespace Model
 
 
     /**
-     * <p>A pre-signed S3 URL. You can upload the code file you want to scan and add
-     * the required <code>requestHeaders</code> using any HTTP client.</p>
+     * <p>A pre-signed S3 URL. You can upload the code file you want to scan with the
+     * required <code>requestHeaders</code> using any HTTP client.</p>
      */
     inline const Aws::String& GetS3Url() const{ return m_s3Url; }
 
     /**
-     * <p>A pre-signed S3 URL. You can upload the code file you want to scan and add
-     * the required <code>requestHeaders</code> using any HTTP client.</p>
+     * <p>A pre-signed S3 URL. You can upload the code file you want to scan with the
+     * required <code>requestHeaders</code> using any HTTP client.</p>
      */
     inline void SetS3Url(const Aws::String& value) { m_s3Url = value; }
 
     /**
-     * <p>A pre-signed S3 URL. You can upload the code file you want to scan and add
-     * the required <code>requestHeaders</code> using any HTTP client.</p>
+     * <p>A pre-signed S3 URL. You can upload the code file you want to scan with the
+     * required <code>requestHeaders</code> using any HTTP client.</p>
      */
     inline void SetS3Url(Aws::String&& value) { m_s3Url = std::move(value); }
 
     /**
-     * <p>A pre-signed S3 URL. You can upload the code file you want to scan and add
-     * the required <code>requestHeaders</code> using any HTTP client.</p>
+     * <p>A pre-signed S3 URL. You can upload the code file you want to scan with the
+     * required <code>requestHeaders</code> using any HTTP client.</p>
      */
     inline void SetS3Url(const char* value) { m_s3Url.assign(value); }
 
     /**
-     * <p>A pre-signed S3 URL. You can upload the code file you want to scan and add
-     * the required <code>requestHeaders</code> using any HTTP client.</p>
+     * <p>A pre-signed S3 URL. You can upload the code file you want to scan with the
+     * required <code>requestHeaders</code> using any HTTP client.</p>
      */
     inline CreateUploadUrlResult& WithS3Url(const Aws::String& value) { SetS3Url(value); return *this;}
 
     /**
-     * <p>A pre-signed S3 URL. You can upload the code file you want to scan and add
-     * the required <code>requestHeaders</code> using any HTTP client.</p>
+     * <p>A pre-signed S3 URL. You can upload the code file you want to scan with the
+     * required <code>requestHeaders</code> using any HTTP client.</p>
      */
     inline CreateUploadUrlResult& WithS3Url(Aws::String&& value) { SetS3Url(std::move(value)); return *this;}
 
     /**
-     * <p>A pre-signed S3 URL. You can upload the code file you want to scan and add
-     * the required <code>requestHeaders</code> using any HTTP client.</p>
+     * <p>A pre-signed S3 URL. You can upload the code file you want to scan with the
+     * required <code>requestHeaders</code> using any HTTP client.</p>
      */
     inline CreateUploadUrlResult& WithS3Url(const char* value) { SetS3Url(value); return *this;}
 

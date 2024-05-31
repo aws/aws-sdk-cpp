@@ -181,171 +181,302 @@ namespace Model
 
 
     /**
-     * <p>The settings specified for the deployment. For more information on the
-     * specifications required for creating a deployment, see <a
-     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications.html">Workload
-     * specifications</a>.</p>
+     * <p>The settings specified for the deployment. These settings define how to
+     * deploy and configure your resources created by the deployment. For more
+     * information about the specifications required for creating a deployment for a
+     * SAP workload, see <a
+     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications-sap.html">SAP
+     * deployment specifications</a>. To retrieve the specifications required to create
+     * a deployment for other workloads, use the <a
+     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetWorkloadDeploymentPattern.html">
+     * <code>GetWorkloadDeploymentPattern</code> </a> operation.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetSpecifications() const{ return m_specifications; }
 
     /**
-     * <p>The settings specified for the deployment. For more information on the
-     * specifications required for creating a deployment, see <a
-     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications.html">Workload
-     * specifications</a>.</p>
+     * <p>The settings specified for the deployment. These settings define how to
+     * deploy and configure your resources created by the deployment. For more
+     * information about the specifications required for creating a deployment for a
+     * SAP workload, see <a
+     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications-sap.html">SAP
+     * deployment specifications</a>. To retrieve the specifications required to create
+     * a deployment for other workloads, use the <a
+     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetWorkloadDeploymentPattern.html">
+     * <code>GetWorkloadDeploymentPattern</code> </a> operation.</p>
      */
     inline bool SpecificationsHasBeenSet() const { return m_specificationsHasBeenSet; }
 
     /**
-     * <p>The settings specified for the deployment. For more information on the
-     * specifications required for creating a deployment, see <a
-     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications.html">Workload
-     * specifications</a>.</p>
+     * <p>The settings specified for the deployment. These settings define how to
+     * deploy and configure your resources created by the deployment. For more
+     * information about the specifications required for creating a deployment for a
+     * SAP workload, see <a
+     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications-sap.html">SAP
+     * deployment specifications</a>. To retrieve the specifications required to create
+     * a deployment for other workloads, use the <a
+     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetWorkloadDeploymentPattern.html">
+     * <code>GetWorkloadDeploymentPattern</code> </a> operation.</p>
      */
     inline void SetSpecifications(const Aws::Map<Aws::String, Aws::String>& value) { m_specificationsHasBeenSet = true; m_specifications = value; }
 
     /**
-     * <p>The settings specified for the deployment. For more information on the
-     * specifications required for creating a deployment, see <a
-     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications.html">Workload
-     * specifications</a>.</p>
+     * <p>The settings specified for the deployment. These settings define how to
+     * deploy and configure your resources created by the deployment. For more
+     * information about the specifications required for creating a deployment for a
+     * SAP workload, see <a
+     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications-sap.html">SAP
+     * deployment specifications</a>. To retrieve the specifications required to create
+     * a deployment for other workloads, use the <a
+     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetWorkloadDeploymentPattern.html">
+     * <code>GetWorkloadDeploymentPattern</code> </a> operation.</p>
      */
     inline void SetSpecifications(Aws::Map<Aws::String, Aws::String>&& value) { m_specificationsHasBeenSet = true; m_specifications = std::move(value); }
 
     /**
-     * <p>The settings specified for the deployment. For more information on the
-     * specifications required for creating a deployment, see <a
-     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications.html">Workload
-     * specifications</a>.</p>
+     * <p>The settings specified for the deployment. These settings define how to
+     * deploy and configure your resources created by the deployment. For more
+     * information about the specifications required for creating a deployment for a
+     * SAP workload, see <a
+     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications-sap.html">SAP
+     * deployment specifications</a>. To retrieve the specifications required to create
+     * a deployment for other workloads, use the <a
+     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetWorkloadDeploymentPattern.html">
+     * <code>GetWorkloadDeploymentPattern</code> </a> operation.</p>
      */
     inline CreateDeploymentRequest& WithSpecifications(const Aws::Map<Aws::String, Aws::String>& value) { SetSpecifications(value); return *this;}
 
     /**
-     * <p>The settings specified for the deployment. For more information on the
-     * specifications required for creating a deployment, see <a
-     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications.html">Workload
-     * specifications</a>.</p>
+     * <p>The settings specified for the deployment. These settings define how to
+     * deploy and configure your resources created by the deployment. For more
+     * information about the specifications required for creating a deployment for a
+     * SAP workload, see <a
+     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications-sap.html">SAP
+     * deployment specifications</a>. To retrieve the specifications required to create
+     * a deployment for other workloads, use the <a
+     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetWorkloadDeploymentPattern.html">
+     * <code>GetWorkloadDeploymentPattern</code> </a> operation.</p>
      */
     inline CreateDeploymentRequest& WithSpecifications(Aws::Map<Aws::String, Aws::String>&& value) { SetSpecifications(std::move(value)); return *this;}
 
     /**
-     * <p>The settings specified for the deployment. For more information on the
-     * specifications required for creating a deployment, see <a
-     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications.html">Workload
-     * specifications</a>.</p>
+     * <p>The settings specified for the deployment. These settings define how to
+     * deploy and configure your resources created by the deployment. For more
+     * information about the specifications required for creating a deployment for a
+     * SAP workload, see <a
+     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications-sap.html">SAP
+     * deployment specifications</a>. To retrieve the specifications required to create
+     * a deployment for other workloads, use the <a
+     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetWorkloadDeploymentPattern.html">
+     * <code>GetWorkloadDeploymentPattern</code> </a> operation.</p>
      */
     inline CreateDeploymentRequest& AddSpecifications(const Aws::String& key, const Aws::String& value) { m_specificationsHasBeenSet = true; m_specifications.emplace(key, value); return *this; }
 
     /**
-     * <p>The settings specified for the deployment. For more information on the
-     * specifications required for creating a deployment, see <a
-     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications.html">Workload
-     * specifications</a>.</p>
+     * <p>The settings specified for the deployment. These settings define how to
+     * deploy and configure your resources created by the deployment. For more
+     * information about the specifications required for creating a deployment for a
+     * SAP workload, see <a
+     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications-sap.html">SAP
+     * deployment specifications</a>. To retrieve the specifications required to create
+     * a deployment for other workloads, use the <a
+     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetWorkloadDeploymentPattern.html">
+     * <code>GetWorkloadDeploymentPattern</code> </a> operation.</p>
      */
     inline CreateDeploymentRequest& AddSpecifications(Aws::String&& key, const Aws::String& value) { m_specificationsHasBeenSet = true; m_specifications.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The settings specified for the deployment. For more information on the
-     * specifications required for creating a deployment, see <a
-     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications.html">Workload
-     * specifications</a>.</p>
+     * <p>The settings specified for the deployment. These settings define how to
+     * deploy and configure your resources created by the deployment. For more
+     * information about the specifications required for creating a deployment for a
+     * SAP workload, see <a
+     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications-sap.html">SAP
+     * deployment specifications</a>. To retrieve the specifications required to create
+     * a deployment for other workloads, use the <a
+     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetWorkloadDeploymentPattern.html">
+     * <code>GetWorkloadDeploymentPattern</code> </a> operation.</p>
      */
     inline CreateDeploymentRequest& AddSpecifications(const Aws::String& key, Aws::String&& value) { m_specificationsHasBeenSet = true; m_specifications.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The settings specified for the deployment. For more information on the
-     * specifications required for creating a deployment, see <a
-     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications.html">Workload
-     * specifications</a>.</p>
+     * <p>The settings specified for the deployment. These settings define how to
+     * deploy and configure your resources created by the deployment. For more
+     * information about the specifications required for creating a deployment for a
+     * SAP workload, see <a
+     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications-sap.html">SAP
+     * deployment specifications</a>. To retrieve the specifications required to create
+     * a deployment for other workloads, use the <a
+     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetWorkloadDeploymentPattern.html">
+     * <code>GetWorkloadDeploymentPattern</code> </a> operation.</p>
      */
     inline CreateDeploymentRequest& AddSpecifications(Aws::String&& key, Aws::String&& value) { m_specificationsHasBeenSet = true; m_specifications.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The settings specified for the deployment. For more information on the
-     * specifications required for creating a deployment, see <a
-     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications.html">Workload
-     * specifications</a>.</p>
+     * <p>The settings specified for the deployment. These settings define how to
+     * deploy and configure your resources created by the deployment. For more
+     * information about the specifications required for creating a deployment for a
+     * SAP workload, see <a
+     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications-sap.html">SAP
+     * deployment specifications</a>. To retrieve the specifications required to create
+     * a deployment for other workloads, use the <a
+     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetWorkloadDeploymentPattern.html">
+     * <code>GetWorkloadDeploymentPattern</code> </a> operation.</p>
      */
     inline CreateDeploymentRequest& AddSpecifications(const char* key, Aws::String&& value) { m_specificationsHasBeenSet = true; m_specifications.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The settings specified for the deployment. For more information on the
-     * specifications required for creating a deployment, see <a
-     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications.html">Workload
-     * specifications</a>.</p>
+     * <p>The settings specified for the deployment. These settings define how to
+     * deploy and configure your resources created by the deployment. For more
+     * information about the specifications required for creating a deployment for a
+     * SAP workload, see <a
+     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications-sap.html">SAP
+     * deployment specifications</a>. To retrieve the specifications required to create
+     * a deployment for other workloads, use the <a
+     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetWorkloadDeploymentPattern.html">
+     * <code>GetWorkloadDeploymentPattern</code> </a> operation.</p>
      */
     inline CreateDeploymentRequest& AddSpecifications(Aws::String&& key, const char* value) { m_specificationsHasBeenSet = true; m_specifications.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The settings specified for the deployment. For more information on the
-     * specifications required for creating a deployment, see <a
-     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications.html">Workload
-     * specifications</a>.</p>
+     * <p>The settings specified for the deployment. These settings define how to
+     * deploy and configure your resources created by the deployment. For more
+     * information about the specifications required for creating a deployment for a
+     * SAP workload, see <a
+     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications-sap.html">SAP
+     * deployment specifications</a>. To retrieve the specifications required to create
+     * a deployment for other workloads, use the <a
+     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetWorkloadDeploymentPattern.html">
+     * <code>GetWorkloadDeploymentPattern</code> </a> operation.</p>
      */
     inline CreateDeploymentRequest& AddSpecifications(const char* key, const char* value) { m_specificationsHasBeenSet = true; m_specifications.emplace(key, value); return *this; }
 
 
     /**
+     * <p>The tags to add to the deployment.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags to add to the deployment.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags to add to the deployment.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags to add to the deployment.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags to add to the deployment.</p>
+     */
+    inline CreateDeploymentRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags to add to the deployment.</p>
+     */
+    inline CreateDeploymentRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags to add to the deployment.</p>
+     */
+    inline CreateDeploymentRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The tags to add to the deployment.</p>
+     */
+    inline CreateDeploymentRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags to add to the deployment.</p>
+     */
+    inline CreateDeploymentRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags to add to the deployment.</p>
+     */
+    inline CreateDeploymentRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The tags to add to the deployment.</p>
+     */
+    inline CreateDeploymentRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags to add to the deployment.</p>
+     */
+    inline CreateDeploymentRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags to add to the deployment.</p>
+     */
+    inline CreateDeploymentRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+
+    /**
      * <p>The name of the workload. You can use the <a
-     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html">
-     * <code>ListWorkloadDeploymentPatterns</code> </a> operation to discover supported
-     * values for this parameter.</p>
+     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloads.html">
+     * <code>ListWorkloads</code> </a> operation to discover supported values for this
+     * parameter.</p>
      */
     inline const Aws::String& GetWorkloadName() const{ return m_workloadName; }
 
     /**
      * <p>The name of the workload. You can use the <a
-     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html">
-     * <code>ListWorkloadDeploymentPatterns</code> </a> operation to discover supported
-     * values for this parameter.</p>
+     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloads.html">
+     * <code>ListWorkloads</code> </a> operation to discover supported values for this
+     * parameter.</p>
      */
     inline bool WorkloadNameHasBeenSet() const { return m_workloadNameHasBeenSet; }
 
     /**
      * <p>The name of the workload. You can use the <a
-     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html">
-     * <code>ListWorkloadDeploymentPatterns</code> </a> operation to discover supported
-     * values for this parameter.</p>
+     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloads.html">
+     * <code>ListWorkloads</code> </a> operation to discover supported values for this
+     * parameter.</p>
      */
     inline void SetWorkloadName(const Aws::String& value) { m_workloadNameHasBeenSet = true; m_workloadName = value; }
 
     /**
      * <p>The name of the workload. You can use the <a
-     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html">
-     * <code>ListWorkloadDeploymentPatterns</code> </a> operation to discover supported
-     * values for this parameter.</p>
+     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloads.html">
+     * <code>ListWorkloads</code> </a> operation to discover supported values for this
+     * parameter.</p>
      */
     inline void SetWorkloadName(Aws::String&& value) { m_workloadNameHasBeenSet = true; m_workloadName = std::move(value); }
 
     /**
      * <p>The name of the workload. You can use the <a
-     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html">
-     * <code>ListWorkloadDeploymentPatterns</code> </a> operation to discover supported
-     * values for this parameter.</p>
+     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloads.html">
+     * <code>ListWorkloads</code> </a> operation to discover supported values for this
+     * parameter.</p>
      */
     inline void SetWorkloadName(const char* value) { m_workloadNameHasBeenSet = true; m_workloadName.assign(value); }
 
     /**
      * <p>The name of the workload. You can use the <a
-     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html">
-     * <code>ListWorkloadDeploymentPatterns</code> </a> operation to discover supported
-     * values for this parameter.</p>
+     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloads.html">
+     * <code>ListWorkloads</code> </a> operation to discover supported values for this
+     * parameter.</p>
      */
     inline CreateDeploymentRequest& WithWorkloadName(const Aws::String& value) { SetWorkloadName(value); return *this;}
 
     /**
      * <p>The name of the workload. You can use the <a
-     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html">
-     * <code>ListWorkloadDeploymentPatterns</code> </a> operation to discover supported
-     * values for this parameter.</p>
+     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloads.html">
+     * <code>ListWorkloads</code> </a> operation to discover supported values for this
+     * parameter.</p>
      */
     inline CreateDeploymentRequest& WithWorkloadName(Aws::String&& value) { SetWorkloadName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the workload. You can use the <a
-     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html">
-     * <code>ListWorkloadDeploymentPatterns</code> </a> operation to discover supported
-     * values for this parameter.</p>
+     * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloads.html">
+     * <code>ListWorkloads</code> </a> operation to discover supported values for this
+     * parameter.</p>
      */
     inline CreateDeploymentRequest& WithWorkloadName(const char* value) { SetWorkloadName(value); return *this;}
 
@@ -362,6 +493,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_specifications;
     bool m_specificationsHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_workloadName;
     bool m_workloadNameHasBeenSet = false;

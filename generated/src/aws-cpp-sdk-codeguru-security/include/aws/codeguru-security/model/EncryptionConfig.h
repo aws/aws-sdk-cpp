@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about account-level configuration.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about the encryption configuration for an account. Required to
+   * call <code>UpdateAccountConfiguration</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/EncryptionConfig">AWS
    * API Reference</a></p>
    */
@@ -38,50 +39,50 @@ namespace Model
 
 
     /**
-     * <p>The KMS key ARN to use for encryption. This must be provided as a header when
-     * uploading your code resource.</p>
+     * <p>The KMS key ARN that is used for encryption. If an AWS-managed key is used
+     * for encryption, returns empty.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
 
     /**
-     * <p>The KMS key ARN to use for encryption. This must be provided as a header when
-     * uploading your code resource.</p>
+     * <p>The KMS key ARN that is used for encryption. If an AWS-managed key is used
+     * for encryption, returns empty.</p>
      */
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
 
     /**
-     * <p>The KMS key ARN to use for encryption. This must be provided as a header when
-     * uploading your code resource.</p>
+     * <p>The KMS key ARN that is used for encryption. If an AWS-managed key is used
+     * for encryption, returns empty.</p>
      */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
 
     /**
-     * <p>The KMS key ARN to use for encryption. This must be provided as a header when
-     * uploading your code resource.</p>
+     * <p>The KMS key ARN that is used for encryption. If an AWS-managed key is used
+     * for encryption, returns empty.</p>
      */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
 
     /**
-     * <p>The KMS key ARN to use for encryption. This must be provided as a header when
-     * uploading your code resource.</p>
+     * <p>The KMS key ARN that is used for encryption. If an AWS-managed key is used
+     * for encryption, returns empty.</p>
      */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
 
     /**
-     * <p>The KMS key ARN to use for encryption. This must be provided as a header when
-     * uploading your code resource.</p>
+     * <p>The KMS key ARN that is used for encryption. If an AWS-managed key is used
+     * for encryption, returns empty.</p>
      */
     inline EncryptionConfig& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
 
     /**
-     * <p>The KMS key ARN to use for encryption. This must be provided as a header when
-     * uploading your code resource.</p>
+     * <p>The KMS key ARN that is used for encryption. If an AWS-managed key is used
+     * for encryption, returns empty.</p>
      */
     inline EncryptionConfig& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The KMS key ARN to use for encryption. This must be provided as a header when
-     * uploading your code resource.</p>
+     * <p>The KMS key ARN that is used for encryption. If an AWS-managed key is used
+     * for encryption, returns empty.</p>
      */
     inline EncryptionConfig& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
 

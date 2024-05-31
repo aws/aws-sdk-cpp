@@ -28,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about summary metrics in an account.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>A summary of metrics for an account as of a specified date.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/MetricsSummary">AWS
    * API Reference</a></p>
    */
@@ -44,49 +44,49 @@ namespace Model
 
     /**
      * <p>A list of <code>CategoryWithFindingNum</code> objects for the top 5 finding
-     * categories with the most open findings in an account.</p>
+     * categories with the most findings.</p>
      */
     inline const Aws::Vector<CategoryWithFindingNum>& GetCategoriesWithMostFindings() const{ return m_categoriesWithMostFindings; }
 
     /**
      * <p>A list of <code>CategoryWithFindingNum</code> objects for the top 5 finding
-     * categories with the most open findings in an account.</p>
+     * categories with the most findings.</p>
      */
     inline bool CategoriesWithMostFindingsHasBeenSet() const { return m_categoriesWithMostFindingsHasBeenSet; }
 
     /**
      * <p>A list of <code>CategoryWithFindingNum</code> objects for the top 5 finding
-     * categories with the most open findings in an account.</p>
+     * categories with the most findings.</p>
      */
     inline void SetCategoriesWithMostFindings(const Aws::Vector<CategoryWithFindingNum>& value) { m_categoriesWithMostFindingsHasBeenSet = true; m_categoriesWithMostFindings = value; }
 
     /**
      * <p>A list of <code>CategoryWithFindingNum</code> objects for the top 5 finding
-     * categories with the most open findings in an account.</p>
+     * categories with the most findings.</p>
      */
     inline void SetCategoriesWithMostFindings(Aws::Vector<CategoryWithFindingNum>&& value) { m_categoriesWithMostFindingsHasBeenSet = true; m_categoriesWithMostFindings = std::move(value); }
 
     /**
      * <p>A list of <code>CategoryWithFindingNum</code> objects for the top 5 finding
-     * categories with the most open findings in an account.</p>
+     * categories with the most findings.</p>
      */
     inline MetricsSummary& WithCategoriesWithMostFindings(const Aws::Vector<CategoryWithFindingNum>& value) { SetCategoriesWithMostFindings(value); return *this;}
 
     /**
      * <p>A list of <code>CategoryWithFindingNum</code> objects for the top 5 finding
-     * categories with the most open findings in an account.</p>
+     * categories with the most findings.</p>
      */
     inline MetricsSummary& WithCategoriesWithMostFindings(Aws::Vector<CategoryWithFindingNum>&& value) { SetCategoriesWithMostFindings(std::move(value)); return *this;}
 
     /**
      * <p>A list of <code>CategoryWithFindingNum</code> objects for the top 5 finding
-     * categories with the most open findings in an account.</p>
+     * categories with the most findings.</p>
      */
     inline MetricsSummary& AddCategoriesWithMostFindings(const CategoryWithFindingNum& value) { m_categoriesWithMostFindingsHasBeenSet = true; m_categoriesWithMostFindings.push_back(value); return *this; }
 
     /**
      * <p>A list of <code>CategoryWithFindingNum</code> objects for the top 5 finding
-     * categories with the most open findings in an account.</p>
+     * categories with the most findings.</p>
      */
     inline MetricsSummary& AddCategoriesWithMostFindings(CategoryWithFindingNum&& value) { m_categoriesWithMostFindingsHasBeenSet = true; m_categoriesWithMostFindings.push_back(std::move(value)); return *this; }
 
@@ -123,130 +123,130 @@ namespace Model
 
 
     /**
-     * <p>The number of open findings of each severity in an account.</p>
+     * <p>The number of open findings of each severity.</p>
      */
     inline const FindingMetricsValuePerSeverity& GetOpenFindings() const{ return m_openFindings; }
 
     /**
-     * <p>The number of open findings of each severity in an account.</p>
+     * <p>The number of open findings of each severity.</p>
      */
     inline bool OpenFindingsHasBeenSet() const { return m_openFindingsHasBeenSet; }
 
     /**
-     * <p>The number of open findings of each severity in an account.</p>
+     * <p>The number of open findings of each severity.</p>
      */
     inline void SetOpenFindings(const FindingMetricsValuePerSeverity& value) { m_openFindingsHasBeenSet = true; m_openFindings = value; }
 
     /**
-     * <p>The number of open findings of each severity in an account.</p>
+     * <p>The number of open findings of each severity.</p>
      */
     inline void SetOpenFindings(FindingMetricsValuePerSeverity&& value) { m_openFindingsHasBeenSet = true; m_openFindings = std::move(value); }
 
     /**
-     * <p>The number of open findings of each severity in an account.</p>
+     * <p>The number of open findings of each severity.</p>
      */
     inline MetricsSummary& WithOpenFindings(const FindingMetricsValuePerSeverity& value) { SetOpenFindings(value); return *this;}
 
     /**
-     * <p>The number of open findings of each severity in an account.</p>
+     * <p>The number of open findings of each severity.</p>
      */
     inline MetricsSummary& WithOpenFindings(FindingMetricsValuePerSeverity&& value) { SetOpenFindings(std::move(value)); return *this;}
 
 
     /**
      * <p>A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans
-     * with the most number of open findings in an account.</p>
+     * with the most number of open critical findings.</p>
      */
     inline const Aws::Vector<ScanNameWithFindingNum>& GetScansWithMostOpenCriticalFindings() const{ return m_scansWithMostOpenCriticalFindings; }
 
     /**
      * <p>A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans
-     * with the most number of open findings in an account.</p>
+     * with the most number of open critical findings.</p>
      */
     inline bool ScansWithMostOpenCriticalFindingsHasBeenSet() const { return m_scansWithMostOpenCriticalFindingsHasBeenSet; }
 
     /**
      * <p>A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans
-     * with the most number of open findings in an account.</p>
+     * with the most number of open critical findings.</p>
      */
     inline void SetScansWithMostOpenCriticalFindings(const Aws::Vector<ScanNameWithFindingNum>& value) { m_scansWithMostOpenCriticalFindingsHasBeenSet = true; m_scansWithMostOpenCriticalFindings = value; }
 
     /**
      * <p>A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans
-     * with the most number of open findings in an account.</p>
+     * with the most number of open critical findings.</p>
      */
     inline void SetScansWithMostOpenCriticalFindings(Aws::Vector<ScanNameWithFindingNum>&& value) { m_scansWithMostOpenCriticalFindingsHasBeenSet = true; m_scansWithMostOpenCriticalFindings = std::move(value); }
 
     /**
      * <p>A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans
-     * with the most number of open findings in an account.</p>
+     * with the most number of open critical findings.</p>
      */
     inline MetricsSummary& WithScansWithMostOpenCriticalFindings(const Aws::Vector<ScanNameWithFindingNum>& value) { SetScansWithMostOpenCriticalFindings(value); return *this;}
 
     /**
      * <p>A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans
-     * with the most number of open findings in an account.</p>
+     * with the most number of open critical findings.</p>
      */
     inline MetricsSummary& WithScansWithMostOpenCriticalFindings(Aws::Vector<ScanNameWithFindingNum>&& value) { SetScansWithMostOpenCriticalFindings(std::move(value)); return *this;}
 
     /**
      * <p>A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans
-     * with the most number of open findings in an account.</p>
+     * with the most number of open critical findings.</p>
      */
     inline MetricsSummary& AddScansWithMostOpenCriticalFindings(const ScanNameWithFindingNum& value) { m_scansWithMostOpenCriticalFindingsHasBeenSet = true; m_scansWithMostOpenCriticalFindings.push_back(value); return *this; }
 
     /**
      * <p>A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans
-     * with the most number of open findings in an account.</p>
+     * with the most number of open critical findings.</p>
      */
     inline MetricsSummary& AddScansWithMostOpenCriticalFindings(ScanNameWithFindingNum&& value) { m_scansWithMostOpenCriticalFindingsHasBeenSet = true; m_scansWithMostOpenCriticalFindings.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans
-     * with the most number of open critical findings in an account.</p>
+     * with the most number of open findings.</p>
      */
     inline const Aws::Vector<ScanNameWithFindingNum>& GetScansWithMostOpenFindings() const{ return m_scansWithMostOpenFindings; }
 
     /**
      * <p>A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans
-     * with the most number of open critical findings in an account.</p>
+     * with the most number of open findings.</p>
      */
     inline bool ScansWithMostOpenFindingsHasBeenSet() const { return m_scansWithMostOpenFindingsHasBeenSet; }
 
     /**
      * <p>A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans
-     * with the most number of open critical findings in an account.</p>
+     * with the most number of open findings.</p>
      */
     inline void SetScansWithMostOpenFindings(const Aws::Vector<ScanNameWithFindingNum>& value) { m_scansWithMostOpenFindingsHasBeenSet = true; m_scansWithMostOpenFindings = value; }
 
     /**
      * <p>A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans
-     * with the most number of open critical findings in an account.</p>
+     * with the most number of open findings.</p>
      */
     inline void SetScansWithMostOpenFindings(Aws::Vector<ScanNameWithFindingNum>&& value) { m_scansWithMostOpenFindingsHasBeenSet = true; m_scansWithMostOpenFindings = std::move(value); }
 
     /**
      * <p>A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans
-     * with the most number of open critical findings in an account.</p>
+     * with the most number of open findings.</p>
      */
     inline MetricsSummary& WithScansWithMostOpenFindings(const Aws::Vector<ScanNameWithFindingNum>& value) { SetScansWithMostOpenFindings(value); return *this;}
 
     /**
      * <p>A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans
-     * with the most number of open critical findings in an account.</p>
+     * with the most number of open findings.</p>
      */
     inline MetricsSummary& WithScansWithMostOpenFindings(Aws::Vector<ScanNameWithFindingNum>&& value) { SetScansWithMostOpenFindings(std::move(value)); return *this;}
 
     /**
      * <p>A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans
-     * with the most number of open critical findings in an account.</p>
+     * with the most number of open findings.</p>
      */
     inline MetricsSummary& AddScansWithMostOpenFindings(const ScanNameWithFindingNum& value) { m_scansWithMostOpenFindingsHasBeenSet = true; m_scansWithMostOpenFindings.push_back(value); return *this; }
 
     /**
      * <p>A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans
-     * with the most number of open critical findings in an account.</p>
+     * with the most number of open findings.</p>
      */
     inline MetricsSummary& AddScansWithMostOpenFindings(ScanNameWithFindingNum&& value) { m_scansWithMostOpenFindingsHasBeenSet = true; m_scansWithMostOpenFindings.push_back(std::move(value)); return *this; }
 

@@ -35,49 +35,57 @@ namespace Model
 
     /**
      * <p>The ARN of the <code>ScanName</code> object. You can retrieve this ARN by
-     * calling <code>ListScans</code> or <code>GetScan</code>.</p>
+     * calling <code>CreateScan</code>, <code>ListScans</code>, or
+     * <code>GetScan</code>.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
      * <p>The ARN of the <code>ScanName</code> object. You can retrieve this ARN by
-     * calling <code>ListScans</code> or <code>GetScan</code>.</p>
+     * calling <code>CreateScan</code>, <code>ListScans</code>, or
+     * <code>GetScan</code>.</p>
      */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
     /**
      * <p>The ARN of the <code>ScanName</code> object. You can retrieve this ARN by
-     * calling <code>ListScans</code> or <code>GetScan</code>.</p>
+     * calling <code>CreateScan</code>, <code>ListScans</code>, or
+     * <code>GetScan</code>.</p>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
      * <p>The ARN of the <code>ScanName</code> object. You can retrieve this ARN by
-     * calling <code>ListScans</code> or <code>GetScan</code>.</p>
+     * calling <code>CreateScan</code>, <code>ListScans</code>, or
+     * <code>GetScan</code>.</p>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
      * <p>The ARN of the <code>ScanName</code> object. You can retrieve this ARN by
-     * calling <code>ListScans</code> or <code>GetScan</code>.</p>
+     * calling <code>CreateScan</code>, <code>ListScans</code>, or
+     * <code>GetScan</code>.</p>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     /**
      * <p>The ARN of the <code>ScanName</code> object. You can retrieve this ARN by
-     * calling <code>ListScans</code> or <code>GetScan</code>.</p>
+     * calling <code>CreateScan</code>, <code>ListScans</code>, or
+     * <code>GetScan</code>.</p>
      */
     inline TagResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
     /**
      * <p>The ARN of the <code>ScanName</code> object. You can retrieve this ARN by
-     * calling <code>ListScans</code> or <code>GetScan</code>.</p>
+     * calling <code>CreateScan</code>, <code>ListScans</code>, or
+     * <code>GetScan</code>.</p>
      */
     inline TagResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the <code>ScanName</code> object. You can retrieve this ARN by
-     * calling <code>ListScans</code> or <code>GetScan</code>.</p>
+     * calling <code>CreateScan</code>, <code>ListScans</code>, or
+     * <code>GetScan</code>.</p>
      */
     inline TagResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 

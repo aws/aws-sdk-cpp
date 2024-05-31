@@ -43,8 +43,8 @@ namespace Model
      * <p>The maximum number of results to return in the response. Use this parameter
      * when paginating results. If additional results exist beyond the number you
      * specify, the <code>nextToken</code> element is returned in the response. Use
-     * <code>nextToken</code> in a subsequent request to retrieve additional
-     * results.</p>
+     * <code>nextToken</code> in a subsequent request to retrieve additional results.
+     * If not specified, returns 1000 results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
@@ -52,8 +52,8 @@ namespace Model
      * <p>The maximum number of results to return in the response. Use this parameter
      * when paginating results. If additional results exist beyond the number you
      * specify, the <code>nextToken</code> element is returned in the response. Use
-     * <code>nextToken</code> in a subsequent request to retrieve additional
-     * results.</p>
+     * <code>nextToken</code> in a subsequent request to retrieve additional results.
+     * If not specified, returns 1000 results.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
@@ -61,8 +61,8 @@ namespace Model
      * <p>The maximum number of results to return in the response. Use this parameter
      * when paginating results. If additional results exist beyond the number you
      * specify, the <code>nextToken</code> element is returned in the response. Use
-     * <code>nextToken</code> in a subsequent request to retrieve additional
-     * results.</p>
+     * <code>nextToken</code> in a subsequent request to retrieve additional results.
+     * If not specified, returns 1000 results.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
@@ -70,8 +70,8 @@ namespace Model
      * <p>The maximum number of results to return in the response. Use this parameter
      * when paginating results. If additional results exist beyond the number you
      * specify, the <code>nextToken</code> element is returned in the response. Use
-     * <code>nextToken</code> in a subsequent request to retrieve additional
-     * results.</p>
+     * <code>nextToken</code> in a subsequent request to retrieve additional results.
+     * If not specified, returns 1000 results.</p>
      */
     inline GetFindingsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

@@ -1598,8 +1598,9 @@ namespace Model
     /**
      * <p>Specifies the strategy to use to update the AUTH token. This parameter must
      * be specified with the <code>auth-token</code> parameter. Possible values:</p>
-     * <ul> <li> <p>Rotate</p> </li> <li> <p>Set</p> </li> </ul> <p> For more
-     * information, see <a
+     * <ul> <li> <p>ROTATE - default, if no update strategy is provided</p> </li> <li>
+     * <p>SET - allowed only after ROTATE</p> </li> <li> <p>DELETE - allowed only when
+     * transitioning to RBAC</p> </li> </ul> <p> For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
      * Users with Redis AUTH</a> </p>
      */
@@ -1608,8 +1609,9 @@ namespace Model
     /**
      * <p>Specifies the strategy to use to update the AUTH token. This parameter must
      * be specified with the <code>auth-token</code> parameter. Possible values:</p>
-     * <ul> <li> <p>Rotate</p> </li> <li> <p>Set</p> </li> </ul> <p> For more
-     * information, see <a
+     * <ul> <li> <p>ROTATE - default, if no update strategy is provided</p> </li> <li>
+     * <p>SET - allowed only after ROTATE</p> </li> <li> <p>DELETE - allowed only when
+     * transitioning to RBAC</p> </li> </ul> <p> For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
      * Users with Redis AUTH</a> </p>
      */
@@ -1618,8 +1620,9 @@ namespace Model
     /**
      * <p>Specifies the strategy to use to update the AUTH token. This parameter must
      * be specified with the <code>auth-token</code> parameter. Possible values:</p>
-     * <ul> <li> <p>Rotate</p> </li> <li> <p>Set</p> </li> </ul> <p> For more
-     * information, see <a
+     * <ul> <li> <p>ROTATE - default, if no update strategy is provided</p> </li> <li>
+     * <p>SET - allowed only after ROTATE</p> </li> <li> <p>DELETE - allowed only when
+     * transitioning to RBAC</p> </li> </ul> <p> For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
      * Users with Redis AUTH</a> </p>
      */
@@ -1628,8 +1631,9 @@ namespace Model
     /**
      * <p>Specifies the strategy to use to update the AUTH token. This parameter must
      * be specified with the <code>auth-token</code> parameter. Possible values:</p>
-     * <ul> <li> <p>Rotate</p> </li> <li> <p>Set</p> </li> </ul> <p> For more
-     * information, see <a
+     * <ul> <li> <p>ROTATE - default, if no update strategy is provided</p> </li> <li>
+     * <p>SET - allowed only after ROTATE</p> </li> <li> <p>DELETE - allowed only when
+     * transitioning to RBAC</p> </li> </ul> <p> For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
      * Users with Redis AUTH</a> </p>
      */
@@ -1638,8 +1642,9 @@ namespace Model
     /**
      * <p>Specifies the strategy to use to update the AUTH token. This parameter must
      * be specified with the <code>auth-token</code> parameter. Possible values:</p>
-     * <ul> <li> <p>Rotate</p> </li> <li> <p>Set</p> </li> </ul> <p> For more
-     * information, see <a
+     * <ul> <li> <p>ROTATE - default, if no update strategy is provided</p> </li> <li>
+     * <p>SET - allowed only after ROTATE</p> </li> <li> <p>DELETE - allowed only when
+     * transitioning to RBAC</p> </li> </ul> <p> For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
      * Users with Redis AUTH</a> </p>
      */
@@ -1648,8 +1653,9 @@ namespace Model
     /**
      * <p>Specifies the strategy to use to update the AUTH token. This parameter must
      * be specified with the <code>auth-token</code> parameter. Possible values:</p>
-     * <ul> <li> <p>Rotate</p> </li> <li> <p>Set</p> </li> </ul> <p> For more
-     * information, see <a
+     * <ul> <li> <p>ROTATE - default, if no update strategy is provided</p> </li> <li>
+     * <p>SET - allowed only after ROTATE</p> </li> <li> <p>DELETE - allowed only when
+     * transitioning to RBAC</p> </li> </ul> <p> For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
      * Users with Redis AUTH</a> </p>
      */

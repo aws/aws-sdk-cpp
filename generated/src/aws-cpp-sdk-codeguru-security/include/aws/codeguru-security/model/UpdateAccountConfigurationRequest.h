@@ -33,38 +33,50 @@ namespace Model
 
 
     /**
-     * <p>The KMS key ARN you want to use for encryption. Defaults to service-side
-     * encryption if missing.</p>
+     * <p>The customer-managed KMS key ARN you want to use for encryption. If not
+     * specified, CodeGuru Security will use an AWS-managed key for encryption. If you
+     * previously specified a customer-managed KMS key and want CodeGuru Security to
+     * use an AWS-managed key for encryption instead, pass nothing.</p>
      */
     inline const EncryptionConfig& GetEncryptionConfig() const{ return m_encryptionConfig; }
 
     /**
-     * <p>The KMS key ARN you want to use for encryption. Defaults to service-side
-     * encryption if missing.</p>
+     * <p>The customer-managed KMS key ARN you want to use for encryption. If not
+     * specified, CodeGuru Security will use an AWS-managed key for encryption. If you
+     * previously specified a customer-managed KMS key and want CodeGuru Security to
+     * use an AWS-managed key for encryption instead, pass nothing.</p>
      */
     inline bool EncryptionConfigHasBeenSet() const { return m_encryptionConfigHasBeenSet; }
 
     /**
-     * <p>The KMS key ARN you want to use for encryption. Defaults to service-side
-     * encryption if missing.</p>
+     * <p>The customer-managed KMS key ARN you want to use for encryption. If not
+     * specified, CodeGuru Security will use an AWS-managed key for encryption. If you
+     * previously specified a customer-managed KMS key and want CodeGuru Security to
+     * use an AWS-managed key for encryption instead, pass nothing.</p>
      */
     inline void SetEncryptionConfig(const EncryptionConfig& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = value; }
 
     /**
-     * <p>The KMS key ARN you want to use for encryption. Defaults to service-side
-     * encryption if missing.</p>
+     * <p>The customer-managed KMS key ARN you want to use for encryption. If not
+     * specified, CodeGuru Security will use an AWS-managed key for encryption. If you
+     * previously specified a customer-managed KMS key and want CodeGuru Security to
+     * use an AWS-managed key for encryption instead, pass nothing.</p>
      */
     inline void SetEncryptionConfig(EncryptionConfig&& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = std::move(value); }
 
     /**
-     * <p>The KMS key ARN you want to use for encryption. Defaults to service-side
-     * encryption if missing.</p>
+     * <p>The customer-managed KMS key ARN you want to use for encryption. If not
+     * specified, CodeGuru Security will use an AWS-managed key for encryption. If you
+     * previously specified a customer-managed KMS key and want CodeGuru Security to
+     * use an AWS-managed key for encryption instead, pass nothing.</p>
      */
     inline UpdateAccountConfigurationRequest& WithEncryptionConfig(const EncryptionConfig& value) { SetEncryptionConfig(value); return *this;}
 
     /**
-     * <p>The KMS key ARN you want to use for encryption. Defaults to service-side
-     * encryption if missing.</p>
+     * <p>The customer-managed KMS key ARN you want to use for encryption. If not
+     * specified, CodeGuru Security will use an AWS-managed key for encryption. If you
+     * previously specified a customer-managed KMS key and want CodeGuru Security to
+     * use an AWS-managed key for encryption instead, pass nothing.</p>
      */
     inline UpdateAccountConfigurationRequest& WithEncryptionConfig(EncryptionConfig&& value) { SetEncryptionConfig(std::move(value)); return *this;}
 

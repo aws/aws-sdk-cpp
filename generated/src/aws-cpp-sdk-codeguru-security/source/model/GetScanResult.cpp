@@ -47,6 +47,12 @@ GetScanResult& GetScanResult::operator =(const Aws::AmazonWebServiceResult<JsonV
 
   }
 
+  if(jsonValue.ValueExists("errorMessage"))
+  {
+    m_errorMessage = jsonValue.GetString("errorMessage");
+
+  }
+
   if(jsonValue.ValueExists("numberOfRevisions"))
   {
     m_numberOfRevisions = jsonValue.GetInt64("numberOfRevisions");

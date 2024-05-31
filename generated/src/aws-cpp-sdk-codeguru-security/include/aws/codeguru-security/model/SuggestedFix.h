@@ -39,42 +39,50 @@ namespace Model
 
 
     /**
-     * <p>The suggested code to add to your file. </p>
+     * <p>The suggested code fix. If applicable, includes code patch to replace your
+     * source code. </p>
      */
     inline const Aws::String& GetCode() const{ return m_code; }
 
     /**
-     * <p>The suggested code to add to your file. </p>
+     * <p>The suggested code fix. If applicable, includes code patch to replace your
+     * source code. </p>
      */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
 
     /**
-     * <p>The suggested code to add to your file. </p>
+     * <p>The suggested code fix. If applicable, includes code patch to replace your
+     * source code. </p>
      */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
-     * <p>The suggested code to add to your file. </p>
+     * <p>The suggested code fix. If applicable, includes code patch to replace your
+     * source code. </p>
      */
     inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
 
     /**
-     * <p>The suggested code to add to your file. </p>
+     * <p>The suggested code fix. If applicable, includes code patch to replace your
+     * source code. </p>
      */
     inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
 
     /**
-     * <p>The suggested code to add to your file. </p>
+     * <p>The suggested code fix. If applicable, includes code patch to replace your
+     * source code. </p>
      */
     inline SuggestedFix& WithCode(const Aws::String& value) { SetCode(value); return *this;}
 
     /**
-     * <p>The suggested code to add to your file. </p>
+     * <p>The suggested code fix. If applicable, includes code patch to replace your
+     * source code. </p>
      */
     inline SuggestedFix& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
 
     /**
-     * <p>The suggested code to add to your file. </p>
+     * <p>The suggested code fix. If applicable, includes code patch to replace your
+     * source code. </p>
      */
     inline SuggestedFix& WithCode(const char* value) { SetCode(value); return *this;}
 
