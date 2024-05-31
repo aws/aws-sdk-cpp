@@ -75,7 +75,7 @@ namespace Model
      * <p>An optional marker returned from a prior request. Use this marker for
      * pagination of results from this operation. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * MaxRecords. &gt;</p>
+     * MaxRecords.&gt;</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
@@ -83,7 +83,7 @@ namespace Model
      * <p>An optional marker returned from a prior request. Use this marker for
      * pagination of results from this operation. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * MaxRecords. &gt;</p>
+     * MaxRecords.&gt;</p>
      */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
@@ -91,7 +91,7 @@ namespace Model
      * <p>An optional marker returned from a prior request. Use this marker for
      * pagination of results from this operation. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * MaxRecords. &gt;</p>
+     * MaxRecords.&gt;</p>
      */
     inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
@@ -99,7 +99,7 @@ namespace Model
      * <p>An optional marker returned from a prior request. Use this marker for
      * pagination of results from this operation. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * MaxRecords. &gt;</p>
+     * MaxRecords.&gt;</p>
      */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
@@ -107,7 +107,7 @@ namespace Model
      * <p>An optional marker returned from a prior request. Use this marker for
      * pagination of results from this operation. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * MaxRecords. &gt;</p>
+     * MaxRecords.&gt;</p>
      */
     inline DescribeUserGroupsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
@@ -115,7 +115,7 @@ namespace Model
      * <p>An optional marker returned from a prior request. Use this marker for
      * pagination of results from this operation. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * MaxRecords. &gt;</p>
+     * MaxRecords.&gt;</p>
      */
     inline DescribeUserGroupsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
@@ -123,7 +123,7 @@ namespace Model
      * <p>An optional marker returned from a prior request. Use this marker for
      * pagination of results from this operation. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * MaxRecords. &gt;</p>
+     * MaxRecords.&gt;</p>
      */
     inline DescribeUserGroupsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 

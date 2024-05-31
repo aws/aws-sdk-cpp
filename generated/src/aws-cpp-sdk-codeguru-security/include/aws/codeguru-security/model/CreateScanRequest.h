@@ -150,32 +150,32 @@ namespace Model
 
 
     /**
-     * <p>The identifier for an input resource used to create a scan.</p>
+     * <p>The identifier for the resource object to be scanned.</p>
      */
     inline const ResourceId& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>The identifier for an input resource used to create a scan.</p>
+     * <p>The identifier for the resource object to be scanned.</p>
      */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
-     * <p>The identifier for an input resource used to create a scan.</p>
+     * <p>The identifier for the resource object to be scanned.</p>
      */
     inline void SetResourceId(const ResourceId& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>The identifier for an input resource used to create a scan.</p>
+     * <p>The identifier for the resource object to be scanned.</p>
      */
     inline void SetResourceId(ResourceId&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * <p>The identifier for an input resource used to create a scan.</p>
+     * <p>The identifier for the resource object to be scanned.</p>
      */
     inline CreateScanRequest& WithResourceId(const ResourceId& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>The identifier for an input resource used to create a scan.</p>
+     * <p>The identifier for the resource object to be scanned.</p>
      */
     inline CreateScanRequest& WithResourceId(ResourceId&& value) { SetResourceId(std::move(value)); return *this;}
 
@@ -183,56 +183,56 @@ namespace Model
     /**
      * <p>The unique name that CodeGuru Security uses to track revisions across
      * multiple scans of the same resource. Only allowed for a <code>STANDARD</code>
-     * scan type. If not specified, it will be auto generated. </p>
+     * scan type. </p>
      */
     inline const Aws::String& GetScanName() const{ return m_scanName; }
 
     /**
      * <p>The unique name that CodeGuru Security uses to track revisions across
      * multiple scans of the same resource. Only allowed for a <code>STANDARD</code>
-     * scan type. If not specified, it will be auto generated. </p>
+     * scan type. </p>
      */
     inline bool ScanNameHasBeenSet() const { return m_scanNameHasBeenSet; }
 
     /**
      * <p>The unique name that CodeGuru Security uses to track revisions across
      * multiple scans of the same resource. Only allowed for a <code>STANDARD</code>
-     * scan type. If not specified, it will be auto generated. </p>
+     * scan type. </p>
      */
     inline void SetScanName(const Aws::String& value) { m_scanNameHasBeenSet = true; m_scanName = value; }
 
     /**
      * <p>The unique name that CodeGuru Security uses to track revisions across
      * multiple scans of the same resource. Only allowed for a <code>STANDARD</code>
-     * scan type. If not specified, it will be auto generated. </p>
+     * scan type. </p>
      */
     inline void SetScanName(Aws::String&& value) { m_scanNameHasBeenSet = true; m_scanName = std::move(value); }
 
     /**
      * <p>The unique name that CodeGuru Security uses to track revisions across
      * multiple scans of the same resource. Only allowed for a <code>STANDARD</code>
-     * scan type. If not specified, it will be auto generated. </p>
+     * scan type. </p>
      */
     inline void SetScanName(const char* value) { m_scanNameHasBeenSet = true; m_scanName.assign(value); }
 
     /**
      * <p>The unique name that CodeGuru Security uses to track revisions across
      * multiple scans of the same resource. Only allowed for a <code>STANDARD</code>
-     * scan type. If not specified, it will be auto generated. </p>
+     * scan type. </p>
      */
     inline CreateScanRequest& WithScanName(const Aws::String& value) { SetScanName(value); return *this;}
 
     /**
      * <p>The unique name that CodeGuru Security uses to track revisions across
      * multiple scans of the same resource. Only allowed for a <code>STANDARD</code>
-     * scan type. If not specified, it will be auto generated. </p>
+     * scan type. </p>
      */
     inline CreateScanRequest& WithScanName(Aws::String&& value) { SetScanName(std::move(value)); return *this;}
 
     /**
      * <p>The unique name that CodeGuru Security uses to track revisions across
      * multiple scans of the same resource. Only allowed for a <code>STANDARD</code>
-     * scan type. If not specified, it will be auto generated. </p>
+     * scan type. </p>
      */
     inline CreateScanRequest& WithScanName(const char* value) { SetScanName(value); return *this;}
 

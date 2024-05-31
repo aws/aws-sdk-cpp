@@ -40,32 +40,38 @@ namespace Model
 
 
     /**
-     * <p>The end date of the interval which you want to retrieve metrics from.</p>
+     * <p>The end date of the interval which you want to retrieve metrics from. Round
+     * to the nearest day.</p>
      */
     inline const Aws::Utils::DateTime& GetEndDate() const{ return m_endDate; }
 
     /**
-     * <p>The end date of the interval which you want to retrieve metrics from.</p>
+     * <p>The end date of the interval which you want to retrieve metrics from. Round
+     * to the nearest day.</p>
      */
     inline bool EndDateHasBeenSet() const { return m_endDateHasBeenSet; }
 
     /**
-     * <p>The end date of the interval which you want to retrieve metrics from.</p>
+     * <p>The end date of the interval which you want to retrieve metrics from. Round
+     * to the nearest day.</p>
      */
     inline void SetEndDate(const Aws::Utils::DateTime& value) { m_endDateHasBeenSet = true; m_endDate = value; }
 
     /**
-     * <p>The end date of the interval which you want to retrieve metrics from.</p>
+     * <p>The end date of the interval which you want to retrieve metrics from. Round
+     * to the nearest day.</p>
      */
     inline void SetEndDate(Aws::Utils::DateTime&& value) { m_endDateHasBeenSet = true; m_endDate = std::move(value); }
 
     /**
-     * <p>The end date of the interval which you want to retrieve metrics from.</p>
+     * <p>The end date of the interval which you want to retrieve metrics from. Round
+     * to the nearest day.</p>
      */
     inline ListFindingsMetricsRequest& WithEndDate(const Aws::Utils::DateTime& value) { SetEndDate(value); return *this;}
 
     /**
-     * <p>The end date of the interval which you want to retrieve metrics from.</p>
+     * <p>The end date of the interval which you want to retrieve metrics from. Round
+     * to the nearest day.</p>
      */
     inline ListFindingsMetricsRequest& WithEndDate(Aws::Utils::DateTime&& value) { SetEndDate(std::move(value)); return *this;}
 
@@ -74,8 +80,8 @@ namespace Model
      * <p>The maximum number of results to return in the response. Use this parameter
      * when paginating results. If additional results exist beyond the number you
      * specify, the <code>nextToken</code> element is returned in the response. Use
-     * <code>nextToken</code> in a subsequent request to retrieve additional
-     * results.</p>
+     * <code>nextToken</code> in a subsequent request to retrieve additional results.
+     * If not specified, returns 1000 results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
@@ -83,8 +89,8 @@ namespace Model
      * <p>The maximum number of results to return in the response. Use this parameter
      * when paginating results. If additional results exist beyond the number you
      * specify, the <code>nextToken</code> element is returned in the response. Use
-     * <code>nextToken</code> in a subsequent request to retrieve additional
-     * results.</p>
+     * <code>nextToken</code> in a subsequent request to retrieve additional results.
+     * If not specified, returns 1000 results.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
@@ -92,8 +98,8 @@ namespace Model
      * <p>The maximum number of results to return in the response. Use this parameter
      * when paginating results. If additional results exist beyond the number you
      * specify, the <code>nextToken</code> element is returned in the response. Use
-     * <code>nextToken</code> in a subsequent request to retrieve additional
-     * results.</p>
+     * <code>nextToken</code> in a subsequent request to retrieve additional results.
+     * If not specified, returns 1000 results.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
@@ -101,8 +107,8 @@ namespace Model
      * <p>The maximum number of results to return in the response. Use this parameter
      * when paginating results. If additional results exist beyond the number you
      * specify, the <code>nextToken</code> element is returned in the response. Use
-     * <code>nextToken</code> in a subsequent request to retrieve additional
-     * results.</p>
+     * <code>nextToken</code> in a subsequent request to retrieve additional results.
+     * If not specified, returns 1000 results.</p>
      */
     inline ListFindingsMetricsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -173,32 +179,38 @@ namespace Model
 
 
     /**
-     * <p>The start date of the interval which you want to retrieve metrics from.</p>
+     * <p>The start date of the interval which you want to retrieve metrics from.
+     * Rounds to the nearest day.</p>
      */
     inline const Aws::Utils::DateTime& GetStartDate() const{ return m_startDate; }
 
     /**
-     * <p>The start date of the interval which you want to retrieve metrics from.</p>
+     * <p>The start date of the interval which you want to retrieve metrics from.
+     * Rounds to the nearest day.</p>
      */
     inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
 
     /**
-     * <p>The start date of the interval which you want to retrieve metrics from.</p>
+     * <p>The start date of the interval which you want to retrieve metrics from.
+     * Rounds to the nearest day.</p>
      */
     inline void SetStartDate(const Aws::Utils::DateTime& value) { m_startDateHasBeenSet = true; m_startDate = value; }
 
     /**
-     * <p>The start date of the interval which you want to retrieve metrics from.</p>
+     * <p>The start date of the interval which you want to retrieve metrics from.
+     * Rounds to the nearest day.</p>
      */
     inline void SetStartDate(Aws::Utils::DateTime&& value) { m_startDateHasBeenSet = true; m_startDate = std::move(value); }
 
     /**
-     * <p>The start date of the interval which you want to retrieve metrics from.</p>
+     * <p>The start date of the interval which you want to retrieve metrics from.
+     * Rounds to the nearest day.</p>
      */
     inline ListFindingsMetricsRequest& WithStartDate(const Aws::Utils::DateTime& value) { SetStartDate(value); return *this;}
 
     /**
-     * <p>The start date of the interval which you want to retrieve metrics from.</p>
+     * <p>The start date of the interval which you want to retrieve metrics from.
+     * Rounds to the nearest day.</p>
      */
     inline ListFindingsMetricsRequest& WithStartDate(Aws::Utils::DateTime&& value) { SetStartDate(std::move(value)); return *this;}
 

@@ -34,42 +34,47 @@ namespace Model
 
 
     /**
-     * <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN to use
-     * for encryption. By default, CodeGuru Security uses an AWS-managed key for
+     * <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN that is
+     * used for encryption. By default, CodeGuru Security uses an AWS-managed key for
      * encryption. To specify your own key, call
-     * <code>UpdateAccountConfiguration</code>.</p>
+     * <code>UpdateAccountConfiguration</code>. If you do not specify a
+     * customer-managed key, returns empty.</p>
      */
     inline const EncryptionConfig& GetEncryptionConfig() const{ return m_encryptionConfig; }
 
     /**
-     * <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN to use
-     * for encryption. By default, CodeGuru Security uses an AWS-managed key for
+     * <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN that is
+     * used for encryption. By default, CodeGuru Security uses an AWS-managed key for
      * encryption. To specify your own key, call
-     * <code>UpdateAccountConfiguration</code>.</p>
+     * <code>UpdateAccountConfiguration</code>. If you do not specify a
+     * customer-managed key, returns empty.</p>
      */
     inline void SetEncryptionConfig(const EncryptionConfig& value) { m_encryptionConfig = value; }
 
     /**
-     * <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN to use
-     * for encryption. By default, CodeGuru Security uses an AWS-managed key for
+     * <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN that is
+     * used for encryption. By default, CodeGuru Security uses an AWS-managed key for
      * encryption. To specify your own key, call
-     * <code>UpdateAccountConfiguration</code>.</p>
+     * <code>UpdateAccountConfiguration</code>. If you do not specify a
+     * customer-managed key, returns empty.</p>
      */
     inline void SetEncryptionConfig(EncryptionConfig&& value) { m_encryptionConfig = std::move(value); }
 
     /**
-     * <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN to use
-     * for encryption. By default, CodeGuru Security uses an AWS-managed key for
+     * <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN that is
+     * used for encryption. By default, CodeGuru Security uses an AWS-managed key for
      * encryption. To specify your own key, call
-     * <code>UpdateAccountConfiguration</code>.</p>
+     * <code>UpdateAccountConfiguration</code>. If you do not specify a
+     * customer-managed key, returns empty.</p>
      */
     inline GetAccountConfigurationResult& WithEncryptionConfig(const EncryptionConfig& value) { SetEncryptionConfig(value); return *this;}
 
     /**
-     * <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN to use
-     * for encryption. By default, CodeGuru Security uses an AWS-managed key for
+     * <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN that is
+     * used for encryption. By default, CodeGuru Security uses an AWS-managed key for
      * encryption. To specify your own key, call
-     * <code>UpdateAccountConfiguration</code>.</p>
+     * <code>UpdateAccountConfiguration</code>. If you do not specify a
+     * customer-managed key, returns empty.</p>
      */
     inline GetAccountConfigurationResult& WithEncryptionConfig(EncryptionConfig&& value) { SetEncryptionConfig(std::move(value)); return *this;}
 

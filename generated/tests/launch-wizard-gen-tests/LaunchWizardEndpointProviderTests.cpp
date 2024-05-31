@@ -74,7 +74,7 @@ protected:
 };
 
 Aws::UniquePtrSafeDeleted<Aws::Vector<LaunchWizardEndpointProviderEndpointTestCase>> LaunchWizardEndpointProviderTests::TEST_CASES;
-const size_t LaunchWizardEndpointProviderTests::TEST_CASES_SZ = 26;
+const size_t LaunchWizardEndpointProviderTests::TEST_CASES_SZ = 25;
 
 Aws::Vector<LaunchWizardEndpointProviderEndpointTestCase> LaunchWizardEndpointProviderTests::getTestCase() {
 
@@ -282,12 +282,6 @@ Aws::Vector<LaunchWizardEndpointProviderEndpointTestCase> LaunchWizardEndpointPr
     {}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Missing Region"} // expect
-  },
-  /*TEST CASE 25*/
-  {"Partition doesn't support DualStack", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"DualStack is enabled but this partition does not support DualStack"} // expect
   }
   };
   return test_cases;

@@ -289,49 +289,49 @@ namespace Model
 
     /**
      * <p>The identifier for the component that generated a finding such as
-     * AWSCodeGuruSecurity or AWSInspector.</p>
+     * AmazonCodeGuruSecurity.</p>
      */
     inline const Aws::String& GetGeneratorId() const{ return m_generatorId; }
 
     /**
      * <p>The identifier for the component that generated a finding such as
-     * AWSCodeGuruSecurity or AWSInspector.</p>
+     * AmazonCodeGuruSecurity.</p>
      */
     inline bool GeneratorIdHasBeenSet() const { return m_generatorIdHasBeenSet; }
 
     /**
      * <p>The identifier for the component that generated a finding such as
-     * AWSCodeGuruSecurity or AWSInspector.</p>
+     * AmazonCodeGuruSecurity.</p>
      */
     inline void SetGeneratorId(const Aws::String& value) { m_generatorIdHasBeenSet = true; m_generatorId = value; }
 
     /**
      * <p>The identifier for the component that generated a finding such as
-     * AWSCodeGuruSecurity or AWSInspector.</p>
+     * AmazonCodeGuruSecurity.</p>
      */
     inline void SetGeneratorId(Aws::String&& value) { m_generatorIdHasBeenSet = true; m_generatorId = std::move(value); }
 
     /**
      * <p>The identifier for the component that generated a finding such as
-     * AWSCodeGuruSecurity or AWSInspector.</p>
+     * AmazonCodeGuruSecurity.</p>
      */
     inline void SetGeneratorId(const char* value) { m_generatorIdHasBeenSet = true; m_generatorId.assign(value); }
 
     /**
      * <p>The identifier for the component that generated a finding such as
-     * AWSCodeGuruSecurity or AWSInspector.</p>
+     * AmazonCodeGuruSecurity.</p>
      */
     inline Finding& WithGeneratorId(const Aws::String& value) { SetGeneratorId(value); return *this;}
 
     /**
      * <p>The identifier for the component that generated a finding such as
-     * AWSCodeGuruSecurity or AWSInspector.</p>
+     * AmazonCodeGuruSecurity.</p>
      */
     inline Finding& WithGeneratorId(Aws::String&& value) { SetGeneratorId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the component that generated a finding such as
-     * AWSCodeGuruSecurity or AWSInspector.</p>
+     * AmazonCodeGuruSecurity.</p>
      */
     inline Finding& WithGeneratorId(const char* value) { SetGeneratorId(value); return *this;}
 
@@ -481,32 +481,50 @@ namespace Model
 
 
     /**
-     * <p>The severity of the finding.</p>
+     * <p>The severity of the finding. Severity can be critical, high, medium, low, or
+     * informational. For information on severity levels, see <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/security-ug/findings-overview.html#severity-distribution">Finding
+     * severity</a> in the <i>Amazon CodeGuru Security User Guide</i>.</p>
      */
     inline const Severity& GetSeverity() const{ return m_severity; }
 
     /**
-     * <p>The severity of the finding.</p>
+     * <p>The severity of the finding. Severity can be critical, high, medium, low, or
+     * informational. For information on severity levels, see <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/security-ug/findings-overview.html#severity-distribution">Finding
+     * severity</a> in the <i>Amazon CodeGuru Security User Guide</i>.</p>
      */
     inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
 
     /**
-     * <p>The severity of the finding.</p>
+     * <p>The severity of the finding. Severity can be critical, high, medium, low, or
+     * informational. For information on severity levels, see <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/security-ug/findings-overview.html#severity-distribution">Finding
+     * severity</a> in the <i>Amazon CodeGuru Security User Guide</i>.</p>
      */
     inline void SetSeverity(const Severity& value) { m_severityHasBeenSet = true; m_severity = value; }
 
     /**
-     * <p>The severity of the finding.</p>
+     * <p>The severity of the finding. Severity can be critical, high, medium, low, or
+     * informational. For information on severity levels, see <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/security-ug/findings-overview.html#severity-distribution">Finding
+     * severity</a> in the <i>Amazon CodeGuru Security User Guide</i>.</p>
      */
     inline void SetSeverity(Severity&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
 
     /**
-     * <p>The severity of the finding.</p>
+     * <p>The severity of the finding. Severity can be critical, high, medium, low, or
+     * informational. For information on severity levels, see <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/security-ug/findings-overview.html#severity-distribution">Finding
+     * severity</a> in the <i>Amazon CodeGuru Security User Guide</i>.</p>
      */
     inline Finding& WithSeverity(const Severity& value) { SetSeverity(value); return *this;}
 
     /**
-     * <p>The severity of the finding.</p>
+     * <p>The severity of the finding. Severity can be critical, high, medium, low, or
+     * informational. For information on severity levels, see <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/security-ug/findings-overview.html#severity-distribution">Finding
+     * severity</a> in the <i>Amazon CodeGuru Security User Guide</i>.</p>
      */
     inline Finding& WithSeverity(Severity&& value) { SetSeverity(std::move(value)); return *this;}
 

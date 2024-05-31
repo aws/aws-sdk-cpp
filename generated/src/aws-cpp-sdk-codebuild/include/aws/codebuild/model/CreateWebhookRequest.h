@@ -267,8 +267,8 @@ namespace Model
      * <p>If manualCreation is true, CodeBuild doesn't create a webhook in GitHub and
      * instead returns <code>payloadUrl</code> and <code>secret</code> values for the
      * webhook. The <code>payloadUrl</code> and <code>secret</code> values in the
-     * output can be used to manually create a webhook within GitHub.</p> 
-     * <p>manualCreation is only available for GitHub webhooks.</p> 
+     * output can be used to manually create a webhook within GitHub.</p>  <p>
+     * <code>manualCreation</code> is only available for GitHub webhooks.</p> 
      */
     inline bool GetManualCreation() const{ return m_manualCreation; }
 
@@ -276,8 +276,8 @@ namespace Model
      * <p>If manualCreation is true, CodeBuild doesn't create a webhook in GitHub and
      * instead returns <code>payloadUrl</code> and <code>secret</code> values for the
      * webhook. The <code>payloadUrl</code> and <code>secret</code> values in the
-     * output can be used to manually create a webhook within GitHub.</p> 
-     * <p>manualCreation is only available for GitHub webhooks.</p> 
+     * output can be used to manually create a webhook within GitHub.</p>  <p>
+     * <code>manualCreation</code> is only available for GitHub webhooks.</p> 
      */
     inline bool ManualCreationHasBeenSet() const { return m_manualCreationHasBeenSet; }
 
@@ -285,8 +285,8 @@ namespace Model
      * <p>If manualCreation is true, CodeBuild doesn't create a webhook in GitHub and
      * instead returns <code>payloadUrl</code> and <code>secret</code> values for the
      * webhook. The <code>payloadUrl</code> and <code>secret</code> values in the
-     * output can be used to manually create a webhook within GitHub.</p> 
-     * <p>manualCreation is only available for GitHub webhooks.</p> 
+     * output can be used to manually create a webhook within GitHub.</p>  <p>
+     * <code>manualCreation</code> is only available for GitHub webhooks.</p> 
      */
     inline void SetManualCreation(bool value) { m_manualCreationHasBeenSet = true; m_manualCreation = value; }
 
@@ -294,8 +294,8 @@ namespace Model
      * <p>If manualCreation is true, CodeBuild doesn't create a webhook in GitHub and
      * instead returns <code>payloadUrl</code> and <code>secret</code> values for the
      * webhook. The <code>payloadUrl</code> and <code>secret</code> values in the
-     * output can be used to manually create a webhook within GitHub.</p> 
-     * <p>manualCreation is only available for GitHub webhooks.</p> 
+     * output can be used to manually create a webhook within GitHub.</p>  <p>
+     * <code>manualCreation</code> is only available for GitHub webhooks.</p> 
      */
     inline CreateWebhookRequest& WithManualCreation(bool value) { SetManualCreation(value); return *this;}
 

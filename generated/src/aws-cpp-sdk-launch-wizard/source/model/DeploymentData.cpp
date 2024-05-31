@@ -21,6 +21,7 @@ namespace Model
 DeploymentData::DeploymentData() : 
     m_createdAtHasBeenSet(false),
     m_deletedAtHasBeenSet(false),
+    m_deploymentArnHasBeenSet(false),
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_patternNameHasBeenSet(false),
@@ -28,6 +29,7 @@ DeploymentData::DeploymentData() :
     m_specificationsHasBeenSet(false),
     m_status(DeploymentStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_workloadNameHasBeenSet(false)
 {
 }
@@ -35,6 +37,7 @@ DeploymentData::DeploymentData() :
 DeploymentData::DeploymentData(JsonView jsonValue) : 
     m_createdAtHasBeenSet(false),
     m_deletedAtHasBeenSet(false),
+    m_deploymentArnHasBeenSet(false),
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_patternNameHasBeenSet(false),
@@ -42,6 +45,7 @@ DeploymentData::DeploymentData(JsonView jsonValue) :
     m_specificationsHasBeenSet(false),
     m_status(DeploymentStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_workloadNameHasBeenSet(false)
 {
   *this = jsonValue;
@@ -61,6 +65,13 @@ DeploymentData& DeploymentData::operator =(JsonView jsonValue)
     m_deletedAt = jsonValue.GetDouble("deletedAt");
 
     m_deletedAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("deploymentArn"))
+  {
+    m_deploymentArn = jsonValue.GetString("deploymentArn");
+
+    m_deploymentArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("id"))
@@ -108,6 +119,16 @@ DeploymentData& DeploymentData::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("workloadName"))
   {
     m_workloadName = jsonValue.GetString("workloadName");
@@ -130,6 +151,12 @@ JsonValue DeploymentData::Jsonize() const
   if(m_deletedAtHasBeenSet)
   {
    payload.WithDouble("deletedAt", m_deletedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_deploymentArnHasBeenSet)
+  {
+   payload.WithString("deploymentArn", m_deploymentArn);
+
   }
 
   if(m_idHasBeenSet)
@@ -170,6 +197,17 @@ JsonValue DeploymentData::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", DeploymentStatusMapper::GetNameForDeploymentStatus(m_status));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
+
   }
 
   if(m_workloadNameHasBeenSet)
