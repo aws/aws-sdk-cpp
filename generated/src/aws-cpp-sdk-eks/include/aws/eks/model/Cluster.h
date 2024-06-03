@@ -893,44 +893,32 @@ namespace Model
 
 
     /**
-     * <p>An object representing the health of your local Amazon EKS cluster on an
-     * Amazon Web Services Outpost. This object isn't available for clusters on the
-     * Amazon Web Services cloud.</p>
+     * <p>An object representing the health of your Amazon EKS cluster.</p>
      */
     inline const ClusterHealth& GetHealth() const{ return m_health; }
 
     /**
-     * <p>An object representing the health of your local Amazon EKS cluster on an
-     * Amazon Web Services Outpost. This object isn't available for clusters on the
-     * Amazon Web Services cloud.</p>
+     * <p>An object representing the health of your Amazon EKS cluster.</p>
      */
     inline bool HealthHasBeenSet() const { return m_healthHasBeenSet; }
 
     /**
-     * <p>An object representing the health of your local Amazon EKS cluster on an
-     * Amazon Web Services Outpost. This object isn't available for clusters on the
-     * Amazon Web Services cloud.</p>
+     * <p>An object representing the health of your Amazon EKS cluster.</p>
      */
     inline void SetHealth(const ClusterHealth& value) { m_healthHasBeenSet = true; m_health = value; }
 
     /**
-     * <p>An object representing the health of your local Amazon EKS cluster on an
-     * Amazon Web Services Outpost. This object isn't available for clusters on the
-     * Amazon Web Services cloud.</p>
+     * <p>An object representing the health of your Amazon EKS cluster.</p>
      */
     inline void SetHealth(ClusterHealth&& value) { m_healthHasBeenSet = true; m_health = std::move(value); }
 
     /**
-     * <p>An object representing the health of your local Amazon EKS cluster on an
-     * Amazon Web Services Outpost. This object isn't available for clusters on the
-     * Amazon Web Services cloud.</p>
+     * <p>An object representing the health of your Amazon EKS cluster.</p>
      */
     inline Cluster& WithHealth(const ClusterHealth& value) { SetHealth(value); return *this;}
 
     /**
-     * <p>An object representing the health of your local Amazon EKS cluster on an
-     * Amazon Web Services Outpost. This object isn't available for clusters on the
-     * Amazon Web Services cloud.</p>
+     * <p>An object representing the health of your Amazon EKS cluster.</p>
      */
     inline Cluster& WithHealth(ClusterHealth&& value) { SetHealth(std::move(value)); return *this;}
 

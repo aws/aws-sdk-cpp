@@ -26,9 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>An issue with your local Amazon EKS cluster on an Amazon Web Services
-   * Outpost. You can't use this API with an Amazon EKS cluster on the Amazon Web
-   * Services cloud.</p><p><h3>See Also:</h3>   <a
+   * <p>An issue with your Amazon EKS cluster.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ClusterIssue">AWS
    * API Reference</a></p>
    */

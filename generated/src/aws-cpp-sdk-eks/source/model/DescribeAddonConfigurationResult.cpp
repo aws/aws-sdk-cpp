@@ -47,6 +47,15 @@ DescribeAddonConfigurationResult& DescribeAddonConfigurationResult::operator =(c
 
   }
 
+  if(jsonValue.ValueExists("podIdentityConfiguration"))
+  {
+    Aws::Utils::Array<JsonView> podIdentityConfigurationJsonList = jsonValue.GetArray("podIdentityConfiguration");
+    for(unsigned podIdentityConfigurationIndex = 0; podIdentityConfigurationIndex < podIdentityConfigurationJsonList.GetLength(); ++podIdentityConfigurationIndex)
+    {
+      m_podIdentityConfiguration.push_back(podIdentityConfigurationJsonList[podIdentityConfigurationIndex].AsObject());
+    }
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

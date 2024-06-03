@@ -23,7 +23,8 @@ PodIdentityAssociationSummary::PodIdentityAssociationSummary() :
     m_namespaceHasBeenSet(false),
     m_serviceAccountHasBeenSet(false),
     m_associationArnHasBeenSet(false),
-    m_associationIdHasBeenSet(false)
+    m_associationIdHasBeenSet(false),
+    m_ownerArnHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ PodIdentityAssociationSummary::PodIdentityAssociationSummary(JsonView jsonValue)
     m_namespaceHasBeenSet(false),
     m_serviceAccountHasBeenSet(false),
     m_associationArnHasBeenSet(false),
-    m_associationIdHasBeenSet(false)
+    m_associationIdHasBeenSet(false),
+    m_ownerArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -74,6 +76,13 @@ PodIdentityAssociationSummary& PodIdentityAssociationSummary::operator =(JsonVie
     m_associationIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ownerArn"))
+  {
+    m_ownerArn = jsonValue.GetString("ownerArn");
+
+    m_ownerArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -108,6 +117,12 @@ JsonValue PodIdentityAssociationSummary::Jsonize() const
   if(m_associationIdHasBeenSet)
   {
    payload.WithString("associationId", m_associationId);
+
+  }
+
+  if(m_ownerArnHasBeenSet)
+  {
+   payload.WithString("ownerArn", m_ownerArn);
 
   }
 

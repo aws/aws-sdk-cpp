@@ -24,8 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes the backend properties associated with an Amplify
-   * <code>Branch</code>.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the backend associated with an Amplify <code>Branch</code>.</p>
+   * <p>This property is available to Amplify Gen 2 apps only. When you deploy an
+   * application with Amplify Gen 2, you provision the app's backend infrastructure
+   * using Typescript code.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/Backend">AWS API
    * Reference</a></p>
    */

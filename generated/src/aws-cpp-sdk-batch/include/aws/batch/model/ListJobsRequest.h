@@ -244,50 +244,66 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of results returned by <code>ListJobs</code> in paginated
-     * output. When this parameter is used, <code>ListJobs</code> only returns
-     * <code>maxResults</code> results in a single page and a <code>nextToken</code>
-     * response element. The remaining results of the initial request can be seen by
-     * sending another <code>ListJobs</code> request with the returned
-     * <code>nextToken</code> value. This value can be between 1 and 100. If this
-     * parameter isn't used, then <code>ListJobs</code> returns up to 100 results and a
-     * <code>nextToken</code> value if applicable.</p>
+     * <p>The maximum number of results returned by <code>ListJobs</code> in a
+     * paginated output. When this parameter is used, <code>ListJobs</code> returns up
+     * to <code>maxResults</code> results in a single page and a <code>nextToken</code>
+     * response element, if applicable. The remaining results of the initial request
+     * can be seen by sending another <code>ListJobs</code> request with the returned
+     * <code>nextToken</code> value.</p> <p>The following outlines key parameters and
+     * limitations:</p> <ul> <li> <p>The minimum value is 1. </p> </li> <li> <p>When
+     * <code>--job-status</code> is used, Batch returns up to 1000 values. </p> </li>
+     * <li> <p>When <code>--filters</code> is used, Batch returns up to 100 values.</p>
+     * </li> <li> <p>If neither parameter is used, then <code>ListJobs</code> returns
+     * up to 1000 results (jobs that are in the <code>RUNNING</code> status) and a
+     * <code>nextToken</code> value, if applicable.</p> </li> </ul>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results returned by <code>ListJobs</code> in paginated
-     * output. When this parameter is used, <code>ListJobs</code> only returns
-     * <code>maxResults</code> results in a single page and a <code>nextToken</code>
-     * response element. The remaining results of the initial request can be seen by
-     * sending another <code>ListJobs</code> request with the returned
-     * <code>nextToken</code> value. This value can be between 1 and 100. If this
-     * parameter isn't used, then <code>ListJobs</code> returns up to 100 results and a
-     * <code>nextToken</code> value if applicable.</p>
+     * <p>The maximum number of results returned by <code>ListJobs</code> in a
+     * paginated output. When this parameter is used, <code>ListJobs</code> returns up
+     * to <code>maxResults</code> results in a single page and a <code>nextToken</code>
+     * response element, if applicable. The remaining results of the initial request
+     * can be seen by sending another <code>ListJobs</code> request with the returned
+     * <code>nextToken</code> value.</p> <p>The following outlines key parameters and
+     * limitations:</p> <ul> <li> <p>The minimum value is 1. </p> </li> <li> <p>When
+     * <code>--job-status</code> is used, Batch returns up to 1000 values. </p> </li>
+     * <li> <p>When <code>--filters</code> is used, Batch returns up to 100 values.</p>
+     * </li> <li> <p>If neither parameter is used, then <code>ListJobs</code> returns
+     * up to 1000 results (jobs that are in the <code>RUNNING</code> status) and a
+     * <code>nextToken</code> value, if applicable.</p> </li> </ul>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of results returned by <code>ListJobs</code> in paginated
-     * output. When this parameter is used, <code>ListJobs</code> only returns
-     * <code>maxResults</code> results in a single page and a <code>nextToken</code>
-     * response element. The remaining results of the initial request can be seen by
-     * sending another <code>ListJobs</code> request with the returned
-     * <code>nextToken</code> value. This value can be between 1 and 100. If this
-     * parameter isn't used, then <code>ListJobs</code> returns up to 100 results and a
-     * <code>nextToken</code> value if applicable.</p>
+     * <p>The maximum number of results returned by <code>ListJobs</code> in a
+     * paginated output. When this parameter is used, <code>ListJobs</code> returns up
+     * to <code>maxResults</code> results in a single page and a <code>nextToken</code>
+     * response element, if applicable. The remaining results of the initial request
+     * can be seen by sending another <code>ListJobs</code> request with the returned
+     * <code>nextToken</code> value.</p> <p>The following outlines key parameters and
+     * limitations:</p> <ul> <li> <p>The minimum value is 1. </p> </li> <li> <p>When
+     * <code>--job-status</code> is used, Batch returns up to 1000 values. </p> </li>
+     * <li> <p>When <code>--filters</code> is used, Batch returns up to 100 values.</p>
+     * </li> <li> <p>If neither parameter is used, then <code>ListJobs</code> returns
+     * up to 1000 results (jobs that are in the <code>RUNNING</code> status) and a
+     * <code>nextToken</code> value, if applicable.</p> </li> </ul>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results returned by <code>ListJobs</code> in paginated
-     * output. When this parameter is used, <code>ListJobs</code> only returns
-     * <code>maxResults</code> results in a single page and a <code>nextToken</code>
-     * response element. The remaining results of the initial request can be seen by
-     * sending another <code>ListJobs</code> request with the returned
-     * <code>nextToken</code> value. This value can be between 1 and 100. If this
-     * parameter isn't used, then <code>ListJobs</code> returns up to 100 results and a
-     * <code>nextToken</code> value if applicable.</p>
+     * <p>The maximum number of results returned by <code>ListJobs</code> in a
+     * paginated output. When this parameter is used, <code>ListJobs</code> returns up
+     * to <code>maxResults</code> results in a single page and a <code>nextToken</code>
+     * response element, if applicable. The remaining results of the initial request
+     * can be seen by sending another <code>ListJobs</code> request with the returned
+     * <code>nextToken</code> value.</p> <p>The following outlines key parameters and
+     * limitations:</p> <ul> <li> <p>The minimum value is 1. </p> </li> <li> <p>When
+     * <code>--job-status</code> is used, Batch returns up to 1000 values. </p> </li>
+     * <li> <p>When <code>--filters</code> is used, Batch returns up to 100 values.</p>
+     * </li> <li> <p>If neither parameter is used, then <code>ListJobs</code> returns
+     * up to 1000 results (jobs that are in the <code>RUNNING</code> status) and a
+     * <code>nextToken</code> value, if applicable.</p> </li> </ul>
      */
     inline ListJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

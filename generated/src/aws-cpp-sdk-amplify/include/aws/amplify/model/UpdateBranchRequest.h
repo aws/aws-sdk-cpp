@@ -647,87 +647,115 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) for a backend environment that is part of an
-     * Amplify app. </p>
+     * <p>The Amazon Resource Name (ARN) for a backend environment that is part of a
+     * Gen 1 Amplify app. </p> <p>This field is available to Amplify Gen 1 apps only
+     * where the backend is created using Amplify Studio or the Amplify command line
+     * interface (CLI).</p>
      */
     inline const Aws::String& GetBackendEnvironmentArn() const{ return m_backendEnvironmentArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for a backend environment that is part of an
-     * Amplify app. </p>
+     * <p>The Amazon Resource Name (ARN) for a backend environment that is part of a
+     * Gen 1 Amplify app. </p> <p>This field is available to Amplify Gen 1 apps only
+     * where the backend is created using Amplify Studio or the Amplify command line
+     * interface (CLI).</p>
      */
     inline bool BackendEnvironmentArnHasBeenSet() const { return m_backendEnvironmentArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for a backend environment that is part of an
-     * Amplify app. </p>
+     * <p>The Amazon Resource Name (ARN) for a backend environment that is part of a
+     * Gen 1 Amplify app. </p> <p>This field is available to Amplify Gen 1 apps only
+     * where the backend is created using Amplify Studio or the Amplify command line
+     * interface (CLI).</p>
      */
     inline void SetBackendEnvironmentArn(const Aws::String& value) { m_backendEnvironmentArnHasBeenSet = true; m_backendEnvironmentArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for a backend environment that is part of an
-     * Amplify app. </p>
+     * <p>The Amazon Resource Name (ARN) for a backend environment that is part of a
+     * Gen 1 Amplify app. </p> <p>This field is available to Amplify Gen 1 apps only
+     * where the backend is created using Amplify Studio or the Amplify command line
+     * interface (CLI).</p>
      */
     inline void SetBackendEnvironmentArn(Aws::String&& value) { m_backendEnvironmentArnHasBeenSet = true; m_backendEnvironmentArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for a backend environment that is part of an
-     * Amplify app. </p>
+     * <p>The Amazon Resource Name (ARN) for a backend environment that is part of a
+     * Gen 1 Amplify app. </p> <p>This field is available to Amplify Gen 1 apps only
+     * where the backend is created using Amplify Studio or the Amplify command line
+     * interface (CLI).</p>
      */
     inline void SetBackendEnvironmentArn(const char* value) { m_backendEnvironmentArnHasBeenSet = true; m_backendEnvironmentArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for a backend environment that is part of an
-     * Amplify app. </p>
+     * <p>The Amazon Resource Name (ARN) for a backend environment that is part of a
+     * Gen 1 Amplify app. </p> <p>This field is available to Amplify Gen 1 apps only
+     * where the backend is created using Amplify Studio or the Amplify command line
+     * interface (CLI).</p>
      */
     inline UpdateBranchRequest& WithBackendEnvironmentArn(const Aws::String& value) { SetBackendEnvironmentArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for a backend environment that is part of an
-     * Amplify app. </p>
+     * <p>The Amazon Resource Name (ARN) for a backend environment that is part of a
+     * Gen 1 Amplify app. </p> <p>This field is available to Amplify Gen 1 apps only
+     * where the backend is created using Amplify Studio or the Amplify command line
+     * interface (CLI).</p>
      */
     inline UpdateBranchRequest& WithBackendEnvironmentArn(Aws::String&& value) { SetBackendEnvironmentArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for a backend environment that is part of an
-     * Amplify app. </p>
+     * <p>The Amazon Resource Name (ARN) for a backend environment that is part of a
+     * Gen 1 Amplify app. </p> <p>This field is available to Amplify Gen 1 apps only
+     * where the backend is created using Amplify Studio or the Amplify command line
+     * interface (CLI).</p>
      */
     inline UpdateBranchRequest& WithBackendEnvironmentArn(const char* value) { SetBackendEnvironmentArn(value); return *this;}
 
 
     /**
      * <p>The backend for a <code>Branch</code> of an Amplify app. Use for a backend
-     * created from an CloudFormation stack.</p>
+     * created from an CloudFormation stack.</p> <p>This field is available to Amplify
+     * Gen 2 apps only. When you deploy an application with Amplify Gen 2, you
+     * provision the app's backend infrastructure using Typescript code.</p>
      */
     inline const Backend& GetBackend() const{ return m_backend; }
 
     /**
      * <p>The backend for a <code>Branch</code> of an Amplify app. Use for a backend
-     * created from an CloudFormation stack.</p>
+     * created from an CloudFormation stack.</p> <p>This field is available to Amplify
+     * Gen 2 apps only. When you deploy an application with Amplify Gen 2, you
+     * provision the app's backend infrastructure using Typescript code.</p>
      */
     inline bool BackendHasBeenSet() const { return m_backendHasBeenSet; }
 
     /**
      * <p>The backend for a <code>Branch</code> of an Amplify app. Use for a backend
-     * created from an CloudFormation stack.</p>
+     * created from an CloudFormation stack.</p> <p>This field is available to Amplify
+     * Gen 2 apps only. When you deploy an application with Amplify Gen 2, you
+     * provision the app's backend infrastructure using Typescript code.</p>
      */
     inline void SetBackend(const Backend& value) { m_backendHasBeenSet = true; m_backend = value; }
 
     /**
      * <p>The backend for a <code>Branch</code> of an Amplify app. Use for a backend
-     * created from an CloudFormation stack.</p>
+     * created from an CloudFormation stack.</p> <p>This field is available to Amplify
+     * Gen 2 apps only. When you deploy an application with Amplify Gen 2, you
+     * provision the app's backend infrastructure using Typescript code.</p>
      */
     inline void SetBackend(Backend&& value) { m_backendHasBeenSet = true; m_backend = std::move(value); }
 
     /**
      * <p>The backend for a <code>Branch</code> of an Amplify app. Use for a backend
-     * created from an CloudFormation stack.</p>
+     * created from an CloudFormation stack.</p> <p>This field is available to Amplify
+     * Gen 2 apps only. When you deploy an application with Amplify Gen 2, you
+     * provision the app's backend infrastructure using Typescript code.</p>
      */
     inline UpdateBranchRequest& WithBackend(const Backend& value) { SetBackend(value); return *this;}
 
     /**
      * <p>The backend for a <code>Branch</code> of an Amplify app. Use for a backend
-     * created from an CloudFormation stack.</p>
+     * created from an CloudFormation stack.</p> <p>This field is available to Amplify
+     * Gen 2 apps only. When you deploy an application with Amplify Gen 2, you
+     * provision the app's backend infrastructure using Typescript code.</p>
      */
     inline UpdateBranchRequest& WithBackend(Backend&& value) { SetBackend(std::move(value)); return *this;}
 

@@ -531,6 +531,32 @@ namespace Batch
         }
 
         /**
+         * <p>Provides a list of the first 100 <code>RUNNABLE</code> jobs associated to a
+         * single job queue.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/GetJobQueueSnapshot">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetJobQueueSnapshotOutcome GetJobQueueSnapshot(const Model::GetJobQueueSnapshotRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetJobQueueSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetJobQueueSnapshotRequestT = Model::GetJobQueueSnapshotRequest>
+        Model::GetJobQueueSnapshotOutcomeCallable GetJobQueueSnapshotCallable(const GetJobQueueSnapshotRequestT& request) const
+        {
+            return SubmitCallable(&BatchClient::GetJobQueueSnapshot, request);
+        }
+
+        /**
+         * An Async wrapper for GetJobQueueSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetJobQueueSnapshotRequestT = Model::GetJobQueueSnapshotRequest>
+        void GetJobQueueSnapshotAsync(const GetJobQueueSnapshotRequestT& request, const GetJobQueueSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BatchClient::GetJobQueueSnapshot, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of Batch jobs.</p> <p>You must specify only one of the
          * following items:</p> <ul> <li> <p>A job queue ID to return a list of jobs in
          * that job queue</p> </li> <li> <p>A multi-node parallel job ID to return a list

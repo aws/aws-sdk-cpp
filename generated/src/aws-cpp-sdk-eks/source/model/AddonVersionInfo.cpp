@@ -23,7 +23,9 @@ AddonVersionInfo::AddonVersionInfo() :
     m_architectureHasBeenSet(false),
     m_compatibilitiesHasBeenSet(false),
     m_requiresConfiguration(false),
-    m_requiresConfigurationHasBeenSet(false)
+    m_requiresConfigurationHasBeenSet(false),
+    m_requiresIamPermissions(false),
+    m_requiresIamPermissionsHasBeenSet(false)
 {
 }
 
@@ -32,7 +34,9 @@ AddonVersionInfo::AddonVersionInfo(JsonView jsonValue) :
     m_architectureHasBeenSet(false),
     m_compatibilitiesHasBeenSet(false),
     m_requiresConfiguration(false),
-    m_requiresConfigurationHasBeenSet(false)
+    m_requiresConfigurationHasBeenSet(false),
+    m_requiresIamPermissions(false),
+    m_requiresIamPermissionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -73,6 +77,13 @@ AddonVersionInfo& AddonVersionInfo::operator =(JsonView jsonValue)
     m_requiresConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("requiresIamPermissions"))
+  {
+    m_requiresIamPermissions = jsonValue.GetBool("requiresIamPermissions");
+
+    m_requiresIamPermissionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -111,6 +122,12 @@ JsonValue AddonVersionInfo::Jsonize() const
   if(m_requiresConfigurationHasBeenSet)
   {
    payload.WithBool("requiresConfiguration", m_requiresConfiguration);
+
+  }
+
+  if(m_requiresIamPermissionsHasBeenSet)
+  {
+   payload.WithBool("requiresIamPermissions", m_requiresIamPermissions);
 
   }
 

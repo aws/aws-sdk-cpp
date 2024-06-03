@@ -33,7 +33,8 @@ Addon::Addon() :
     m_publisherHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_marketplaceInformationHasBeenSet(false),
-    m_configurationValuesHasBeenSet(false)
+    m_configurationValuesHasBeenSet(false),
+    m_podIdentityAssociationsHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ Addon::Addon(JsonView jsonValue) :
     m_publisherHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_marketplaceInformationHasBeenSet(false),
-    m_configurationValuesHasBeenSet(false)
+    m_configurationValuesHasBeenSet(false),
+    m_podIdentityAssociationsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -160,6 +162,16 @@ Addon& Addon::operator =(JsonView jsonValue)
     m_configurationValuesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("podIdentityAssociations"))
+  {
+    Aws::Utils::Array<JsonView> podIdentityAssociationsJsonList = jsonValue.GetArray("podIdentityAssociations");
+    for(unsigned podIdentityAssociationsIndex = 0; podIdentityAssociationsIndex < podIdentityAssociationsJsonList.GetLength(); ++podIdentityAssociationsIndex)
+    {
+      m_podIdentityAssociations.push_back(podIdentityAssociationsJsonList[podIdentityAssociationsIndex].AsString());
+    }
+    m_podIdentityAssociationsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -250,6 +262,17 @@ JsonValue Addon::Jsonize() const
   if(m_configurationValuesHasBeenSet)
   {
    payload.WithString("configurationValues", m_configurationValues);
+
+  }
+
+  if(m_podIdentityAssociationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> podIdentityAssociationsJsonList(m_podIdentityAssociations.size());
+   for(unsigned podIdentityAssociationsIndex = 0; podIdentityAssociationsIndex < podIdentityAssociationsJsonList.GetLength(); ++podIdentityAssociationsIndex)
+   {
+     podIdentityAssociationsJsonList[podIdentityAssociationsIndex].AsString(m_podIdentityAssociations[podIdentityAssociationsIndex]);
+   }
+   payload.WithArray("podIdentityAssociations", std::move(podIdentityAssociationsJsonList));
 
   }
 
