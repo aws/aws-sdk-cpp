@@ -8,6 +8,8 @@
 #include <aws/eks/EKSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/eks/model/ResolveConflicts.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/eks/model/AddonPodIdentityAssociations.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -502,6 +504,95 @@ namespace Model
      */
     inline UpdateAddonRequest& WithConfigurationValues(const char* value) { SetConfigurationValues(value); return *this;}
 
+
+    /**
+     * <p>An array of Pod Identity Assocations to be updated. Each EKS Pod Identity
+     * association maps a Kubernetes service account to an IAM Role. If this value is
+     * left blank, no change. If an empty array is provided, existing Pod Identity
+     * Assocations owned by the Addon are deleted.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/add-ons-iam.html">Attach
+     * an IAM Role to an Amazon EKS add-on using Pod Identity</a> in the EKS User
+     * Guide.</p>
+     */
+    inline const Aws::Vector<AddonPodIdentityAssociations>& GetPodIdentityAssociations() const{ return m_podIdentityAssociations; }
+
+    /**
+     * <p>An array of Pod Identity Assocations to be updated. Each EKS Pod Identity
+     * association maps a Kubernetes service account to an IAM Role. If this value is
+     * left blank, no change. If an empty array is provided, existing Pod Identity
+     * Assocations owned by the Addon are deleted.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/add-ons-iam.html">Attach
+     * an IAM Role to an Amazon EKS add-on using Pod Identity</a> in the EKS User
+     * Guide.</p>
+     */
+    inline bool PodIdentityAssociationsHasBeenSet() const { return m_podIdentityAssociationsHasBeenSet; }
+
+    /**
+     * <p>An array of Pod Identity Assocations to be updated. Each EKS Pod Identity
+     * association maps a Kubernetes service account to an IAM Role. If this value is
+     * left blank, no change. If an empty array is provided, existing Pod Identity
+     * Assocations owned by the Addon are deleted.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/add-ons-iam.html">Attach
+     * an IAM Role to an Amazon EKS add-on using Pod Identity</a> in the EKS User
+     * Guide.</p>
+     */
+    inline void SetPodIdentityAssociations(const Aws::Vector<AddonPodIdentityAssociations>& value) { m_podIdentityAssociationsHasBeenSet = true; m_podIdentityAssociations = value; }
+
+    /**
+     * <p>An array of Pod Identity Assocations to be updated. Each EKS Pod Identity
+     * association maps a Kubernetes service account to an IAM Role. If this value is
+     * left blank, no change. If an empty array is provided, existing Pod Identity
+     * Assocations owned by the Addon are deleted.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/add-ons-iam.html">Attach
+     * an IAM Role to an Amazon EKS add-on using Pod Identity</a> in the EKS User
+     * Guide.</p>
+     */
+    inline void SetPodIdentityAssociations(Aws::Vector<AddonPodIdentityAssociations>&& value) { m_podIdentityAssociationsHasBeenSet = true; m_podIdentityAssociations = std::move(value); }
+
+    /**
+     * <p>An array of Pod Identity Assocations to be updated. Each EKS Pod Identity
+     * association maps a Kubernetes service account to an IAM Role. If this value is
+     * left blank, no change. If an empty array is provided, existing Pod Identity
+     * Assocations owned by the Addon are deleted.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/add-ons-iam.html">Attach
+     * an IAM Role to an Amazon EKS add-on using Pod Identity</a> in the EKS User
+     * Guide.</p>
+     */
+    inline UpdateAddonRequest& WithPodIdentityAssociations(const Aws::Vector<AddonPodIdentityAssociations>& value) { SetPodIdentityAssociations(value); return *this;}
+
+    /**
+     * <p>An array of Pod Identity Assocations to be updated. Each EKS Pod Identity
+     * association maps a Kubernetes service account to an IAM Role. If this value is
+     * left blank, no change. If an empty array is provided, existing Pod Identity
+     * Assocations owned by the Addon are deleted.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/add-ons-iam.html">Attach
+     * an IAM Role to an Amazon EKS add-on using Pod Identity</a> in the EKS User
+     * Guide.</p>
+     */
+    inline UpdateAddonRequest& WithPodIdentityAssociations(Aws::Vector<AddonPodIdentityAssociations>&& value) { SetPodIdentityAssociations(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of Pod Identity Assocations to be updated. Each EKS Pod Identity
+     * association maps a Kubernetes service account to an IAM Role. If this value is
+     * left blank, no change. If an empty array is provided, existing Pod Identity
+     * Assocations owned by the Addon are deleted.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/add-ons-iam.html">Attach
+     * an IAM Role to an Amazon EKS add-on using Pod Identity</a> in the EKS User
+     * Guide.</p>
+     */
+    inline UpdateAddonRequest& AddPodIdentityAssociations(const AddonPodIdentityAssociations& value) { m_podIdentityAssociationsHasBeenSet = true; m_podIdentityAssociations.push_back(value); return *this; }
+
+    /**
+     * <p>An array of Pod Identity Assocations to be updated. Each EKS Pod Identity
+     * association maps a Kubernetes service account to an IAM Role. If this value is
+     * left blank, no change. If an empty array is provided, existing Pod Identity
+     * Assocations owned by the Addon are deleted.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/add-ons-iam.html">Attach
+     * an IAM Role to an Amazon EKS add-on using Pod Identity</a> in the EKS User
+     * Guide.</p>
+     */
+    inline UpdateAddonRequest& AddPodIdentityAssociations(AddonPodIdentityAssociations&& value) { m_podIdentityAssociationsHasBeenSet = true; m_podIdentityAssociations.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_clusterName;
@@ -524,6 +615,9 @@ namespace Model
 
     Aws::String m_configurationValues;
     bool m_configurationValuesHasBeenSet = false;
+
+    Aws::Vector<AddonPodIdentityAssociations> m_podIdentityAssociations;
+    bool m_podIdentityAssociationsHasBeenSet = false;
   };
 
 } // namespace Model

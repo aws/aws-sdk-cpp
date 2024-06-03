@@ -25,8 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes the backend environment for an Amplify app. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Describes the backend environment associated with a <code>Branch</code> of a
+   * Gen 1 Amplify app. Amplify Gen 1 applications are created using Amplify Studio
+   * or the Amplify command line interface (CLI).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/BackendEnvironment">AWS
    * API Reference</a></p>
    */

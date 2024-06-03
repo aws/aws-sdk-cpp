@@ -187,6 +187,31 @@ namespace Model
      */
     inline AddonVersionInfo& WithRequiresConfiguration(bool value) { SetRequiresConfiguration(value); return *this;}
 
+
+    /**
+     * <p>Indicates if the Addon requires IAM Permissions to operate, such as
+     * networking permissions.</p>
+     */
+    inline bool GetRequiresIamPermissions() const{ return m_requiresIamPermissions; }
+
+    /**
+     * <p>Indicates if the Addon requires IAM Permissions to operate, such as
+     * networking permissions.</p>
+     */
+    inline bool RequiresIamPermissionsHasBeenSet() const { return m_requiresIamPermissionsHasBeenSet; }
+
+    /**
+     * <p>Indicates if the Addon requires IAM Permissions to operate, such as
+     * networking permissions.</p>
+     */
+    inline void SetRequiresIamPermissions(bool value) { m_requiresIamPermissionsHasBeenSet = true; m_requiresIamPermissions = value; }
+
+    /**
+     * <p>Indicates if the Addon requires IAM Permissions to operate, such as
+     * networking permissions.</p>
+     */
+    inline AddonVersionInfo& WithRequiresIamPermissions(bool value) { SetRequiresIamPermissions(value); return *this;}
+
   private:
 
     Aws::String m_addonVersion;
@@ -200,6 +225,9 @@ namespace Model
 
     bool m_requiresConfiguration;
     bool m_requiresConfigurationHasBeenSet = false;
+
+    bool m_requiresIamPermissions;
+    bool m_requiresIamPermissionsHasBeenSet = false;
   };
 
 } // namespace Model

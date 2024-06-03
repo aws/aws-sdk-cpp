@@ -280,8 +280,8 @@ namespace EKS
          * you create an Amazon EKS cluster, you must configure your Kubernetes tooling to
          * communicate with the API server and launch nodes into your cluster. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing
-         * Cluster Authentication</a> and <a
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-auth.html">Allowing
+         * users to access your cluster</a> and <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching
          * Amazon EKS nodes</a> in the <i>Amazon EKS User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -342,14 +342,14 @@ namespace EKS
          * least one Fargate profile in a cluster to be able to run pods on Fargate.</p>
          * <p>The Fargate profile allows an administrator to declare which pods run on
          * Fargate and specify which pods run on which Fargate profile. This declaration is
-         * done through the profile’s selectors. Each profile can have up to five selectors
-         * that contain a namespace and labels. A namespace is required for every selector.
-         * The label field consists of multiple optional key-value pairs. Pods that match
-         * the selectors are scheduled on Fargate. If a to-be-scheduled pod matches any of
-         * the selectors in the Fargate profile, then that pod is run on Fargate.</p>
-         * <p>When you create a Fargate profile, you must specify a pod execution role to
-         * use with the pods that are scheduled with the profile. This role is added to the
-         * cluster's Kubernetes <a
+         * done through the profile���s selectors. Each profile can have up to five
+         * selectors that contain a namespace and labels. A namespace is required for every
+         * selector. The label field consists of multiple optional key-value pairs. Pods
+         * that match the selectors are scheduled on Fargate. If a to-be-scheduled pod
+         * matches any of the selectors in the Fargate profile, then that pod is run on
+         * Fargate.</p> <p>When you create a Fargate profile, you must specify a pod
+         * execution role to use with the pods that are scheduled with the profile. This
+         * role is added to the cluster's Kubernetes <a
          * href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/">Role Based
          * Access Control</a> (RBAC) for authorization so that the <code>kubelet</code>
          * that is running on the Fargate infrastructure can register with your Amazon EKS
@@ -396,10 +396,11 @@ namespace EKS
          * version for the respective minor Kubernetes version of the cluster, unless you
          * deploy a custom AMI using a launch template. For more information about using
          * launch templates, see <a
-         * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-         * template support</a>.</p> <p>An Amazon EKS managed node group is an Amazon EC2
-         * Auto Scaling group and associated Amazon EC2 instances that are managed by
-         * Amazon Web Services for an Amazon EKS cluster. For more information, see <a
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
+         * managed nodes with launch templates</a>.</p> <p>An Amazon EKS managed node group
+         * is an Amazon EC2 Auto Scaling group and associated Amazon EC2 instances that are
+         * managed by Amazon Web Services for an Amazon EKS cluster. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed
          * node groups</a> in the <i>Amazon EKS User Guide</i>.</p>  <p>Windows AMI
          * types are only supported for commercial Amazon Web Services Regions that support

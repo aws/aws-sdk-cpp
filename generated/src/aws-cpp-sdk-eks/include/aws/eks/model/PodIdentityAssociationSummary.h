@@ -272,6 +272,47 @@ namespace Model
      */
     inline PodIdentityAssociationSummary& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
 
+
+    /**
+     * <p>If defined, the Pod Identity Association is owned by an Amazon EKS Addon.</p>
+     */
+    inline const Aws::String& GetOwnerArn() const{ return m_ownerArn; }
+
+    /**
+     * <p>If defined, the Pod Identity Association is owned by an Amazon EKS Addon.</p>
+     */
+    inline bool OwnerArnHasBeenSet() const { return m_ownerArnHasBeenSet; }
+
+    /**
+     * <p>If defined, the Pod Identity Association is owned by an Amazon EKS Addon.</p>
+     */
+    inline void SetOwnerArn(const Aws::String& value) { m_ownerArnHasBeenSet = true; m_ownerArn = value; }
+
+    /**
+     * <p>If defined, the Pod Identity Association is owned by an Amazon EKS Addon.</p>
+     */
+    inline void SetOwnerArn(Aws::String&& value) { m_ownerArnHasBeenSet = true; m_ownerArn = std::move(value); }
+
+    /**
+     * <p>If defined, the Pod Identity Association is owned by an Amazon EKS Addon.</p>
+     */
+    inline void SetOwnerArn(const char* value) { m_ownerArnHasBeenSet = true; m_ownerArn.assign(value); }
+
+    /**
+     * <p>If defined, the Pod Identity Association is owned by an Amazon EKS Addon.</p>
+     */
+    inline PodIdentityAssociationSummary& WithOwnerArn(const Aws::String& value) { SetOwnerArn(value); return *this;}
+
+    /**
+     * <p>If defined, the Pod Identity Association is owned by an Amazon EKS Addon.</p>
+     */
+    inline PodIdentityAssociationSummary& WithOwnerArn(Aws::String&& value) { SetOwnerArn(std::move(value)); return *this;}
+
+    /**
+     * <p>If defined, the Pod Identity Association is owned by an Amazon EKS Addon.</p>
+     */
+    inline PodIdentityAssociationSummary& WithOwnerArn(const char* value) { SetOwnerArn(value); return *this;}
+
   private:
 
     Aws::String m_clusterName;
@@ -288,6 +329,9 @@ namespace Model
 
     Aws::String m_associationId;
     bool m_associationIdHasBeenSet = false;
+
+    Aws::String m_ownerArn;
+    bool m_ownerArnHasBeenSet = false;
   };
 
 } // namespace Model

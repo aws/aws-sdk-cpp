@@ -124,8 +124,8 @@ namespace Model
      * <code>launchTemplate</code>, and your launch template uses a custom AMI, then
      * don't specify <code>version</code>, or the node group update will fail. For more
      * information about using launch templates with Amazon EKS, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
+     * managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
@@ -137,8 +137,8 @@ namespace Model
      * <code>launchTemplate</code>, and your launch template uses a custom AMI, then
      * don't specify <code>version</code>, or the node group update will fail. For more
      * information about using launch templates with Amazon EKS, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
+     * managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
@@ -150,8 +150,8 @@ namespace Model
      * <code>launchTemplate</code>, and your launch template uses a custom AMI, then
      * don't specify <code>version</code>, or the node group update will fail. For more
      * information about using launch templates with Amazon EKS, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
+     * managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
@@ -163,8 +163,8 @@ namespace Model
      * <code>launchTemplate</code>, and your launch template uses a custom AMI, then
      * don't specify <code>version</code>, or the node group update will fail. For more
      * information about using launch templates with Amazon EKS, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
+     * managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
@@ -176,8 +176,8 @@ namespace Model
      * <code>launchTemplate</code>, and your launch template uses a custom AMI, then
      * don't specify <code>version</code>, or the node group update will fail. For more
      * information about using launch templates with Amazon EKS, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
+     * managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
@@ -189,8 +189,8 @@ namespace Model
      * <code>launchTemplate</code>, and your launch template uses a custom AMI, then
      * don't specify <code>version</code>, or the node group update will fail. For more
      * information about using launch templates with Amazon EKS, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
+     * managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline UpdateNodegroupVersionRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
@@ -202,8 +202,8 @@ namespace Model
      * <code>launchTemplate</code>, and your launch template uses a custom AMI, then
      * don't specify <code>version</code>, or the node group update will fail. For more
      * information about using launch templates with Amazon EKS, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
+     * managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline UpdateNodegroupVersionRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
@@ -215,8 +215,8 @@ namespace Model
      * <code>launchTemplate</code>, and your launch template uses a custom AMI, then
      * don't specify <code>version</code>, or the node group update will fail. For more
      * information about using launch templates with Amazon EKS, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
+     * managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline UpdateNodegroupVersionRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 
@@ -235,8 +235,8 @@ namespace Model
      * custom AMI, then don't specify <code>releaseVersion</code>, or the node group
      * update will fail. For more information about using launch templates with Amazon
      * EKS, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
+     * managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline const Aws::String& GetReleaseVersion() const{ return m_releaseVersion; }
 
@@ -254,8 +254,8 @@ namespace Model
      * custom AMI, then don't specify <code>releaseVersion</code>, or the node group
      * update will fail. For more information about using launch templates with Amazon
      * EKS, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
+     * managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline bool ReleaseVersionHasBeenSet() const { return m_releaseVersionHasBeenSet; }
 
@@ -273,8 +273,8 @@ namespace Model
      * custom AMI, then don't specify <code>releaseVersion</code>, or the node group
      * update will fail. For more information about using launch templates with Amazon
      * EKS, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
+     * managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline void SetReleaseVersion(const Aws::String& value) { m_releaseVersionHasBeenSet = true; m_releaseVersion = value; }
 
@@ -292,8 +292,8 @@ namespace Model
      * custom AMI, then don't specify <code>releaseVersion</code>, or the node group
      * update will fail. For more information about using launch templates with Amazon
      * EKS, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
+     * managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline void SetReleaseVersion(Aws::String&& value) { m_releaseVersionHasBeenSet = true; m_releaseVersion = std::move(value); }
 
@@ -311,8 +311,8 @@ namespace Model
      * custom AMI, then don't specify <code>releaseVersion</code>, or the node group
      * update will fail. For more information about using launch templates with Amazon
      * EKS, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
+     * managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline void SetReleaseVersion(const char* value) { m_releaseVersionHasBeenSet = true; m_releaseVersion.assign(value); }
 
@@ -330,8 +330,8 @@ namespace Model
      * custom AMI, then don't specify <code>releaseVersion</code>, or the node group
      * update will fail. For more information about using launch templates with Amazon
      * EKS, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
+     * managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline UpdateNodegroupVersionRequest& WithReleaseVersion(const Aws::String& value) { SetReleaseVersion(value); return *this;}
 
@@ -349,8 +349,8 @@ namespace Model
      * custom AMI, then don't specify <code>releaseVersion</code>, or the node group
      * update will fail. For more information about using launch templates with Amazon
      * EKS, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
+     * managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline UpdateNodegroupVersionRequest& WithReleaseVersion(Aws::String&& value) { SetReleaseVersion(std::move(value)); return *this;}
 
@@ -368,8 +368,8 @@ namespace Model
      * custom AMI, then don't specify <code>releaseVersion</code>, or the node group
      * update will fail. For more information about using launch templates with Amazon
      * EKS, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-     * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
+     * managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline UpdateNodegroupVersionRequest& WithReleaseVersion(const char* value) { SetReleaseVersion(value); return *this;}
 

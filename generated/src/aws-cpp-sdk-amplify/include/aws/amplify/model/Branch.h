@@ -1099,49 +1099,65 @@ namespace Model
 
     /**
      * <p> The Amazon Resource Name (ARN) for a backend environment that is part of an
-     * Amplify app. </p>
+     * Amplify app. </p> <p>This property is available to Amplify Gen 1 apps only. When
+     * you deploy an application with Amplify Gen 2, you provision the app's backend
+     * infrastructure using Typescript code.</p>
      */
     inline const Aws::String& GetBackendEnvironmentArn() const{ return m_backendEnvironmentArn; }
 
     /**
      * <p> The Amazon Resource Name (ARN) for a backend environment that is part of an
-     * Amplify app. </p>
+     * Amplify app. </p> <p>This property is available to Amplify Gen 1 apps only. When
+     * you deploy an application with Amplify Gen 2, you provision the app's backend
+     * infrastructure using Typescript code.</p>
      */
     inline bool BackendEnvironmentArnHasBeenSet() const { return m_backendEnvironmentArnHasBeenSet; }
 
     /**
      * <p> The Amazon Resource Name (ARN) for a backend environment that is part of an
-     * Amplify app. </p>
+     * Amplify app. </p> <p>This property is available to Amplify Gen 1 apps only. When
+     * you deploy an application with Amplify Gen 2, you provision the app's backend
+     * infrastructure using Typescript code.</p>
      */
     inline void SetBackendEnvironmentArn(const Aws::String& value) { m_backendEnvironmentArnHasBeenSet = true; m_backendEnvironmentArn = value; }
 
     /**
      * <p> The Amazon Resource Name (ARN) for a backend environment that is part of an
-     * Amplify app. </p>
+     * Amplify app. </p> <p>This property is available to Amplify Gen 1 apps only. When
+     * you deploy an application with Amplify Gen 2, you provision the app's backend
+     * infrastructure using Typescript code.</p>
      */
     inline void SetBackendEnvironmentArn(Aws::String&& value) { m_backendEnvironmentArnHasBeenSet = true; m_backendEnvironmentArn = std::move(value); }
 
     /**
      * <p> The Amazon Resource Name (ARN) for a backend environment that is part of an
-     * Amplify app. </p>
+     * Amplify app. </p> <p>This property is available to Amplify Gen 1 apps only. When
+     * you deploy an application with Amplify Gen 2, you provision the app's backend
+     * infrastructure using Typescript code.</p>
      */
     inline void SetBackendEnvironmentArn(const char* value) { m_backendEnvironmentArnHasBeenSet = true; m_backendEnvironmentArn.assign(value); }
 
     /**
      * <p> The Amazon Resource Name (ARN) for a backend environment that is part of an
-     * Amplify app. </p>
+     * Amplify app. </p> <p>This property is available to Amplify Gen 1 apps only. When
+     * you deploy an application with Amplify Gen 2, you provision the app's backend
+     * infrastructure using Typescript code.</p>
      */
     inline Branch& WithBackendEnvironmentArn(const Aws::String& value) { SetBackendEnvironmentArn(value); return *this;}
 
     /**
      * <p> The Amazon Resource Name (ARN) for a backend environment that is part of an
-     * Amplify app. </p>
+     * Amplify app. </p> <p>This property is available to Amplify Gen 1 apps only. When
+     * you deploy an application with Amplify Gen 2, you provision the app's backend
+     * infrastructure using Typescript code.</p>
      */
     inline Branch& WithBackendEnvironmentArn(Aws::String&& value) { SetBackendEnvironmentArn(std::move(value)); return *this;}
 
     /**
      * <p> The Amazon Resource Name (ARN) for a backend environment that is part of an
-     * Amplify app. </p>
+     * Amplify app. </p> <p>This property is available to Amplify Gen 1 apps only. When
+     * you deploy an application with Amplify Gen 2, you provision the app's backend
+     * infrastructure using Typescript code.</p>
      */
     inline Branch& WithBackendEnvironmentArn(const char* value) { SetBackendEnvironmentArn(value); return *this;}
 

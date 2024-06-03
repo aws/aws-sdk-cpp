@@ -47,6 +47,7 @@ namespace Aws
         static const int SecurityGroups_HASH = HashingUtils::HashString("SecurityGroups");
         static const int Subnets_HASH = HashingUtils::HashString("Subnets");
         static const int AuthenticationMode_HASH = HashingUtils::HashString("AuthenticationMode");
+        static const int PodIdentityAssociations_HASH = HashingUtils::HashString("PodIdentityAssociations");
 
 
         UpdateParamType GetUpdateParamTypeForName(const Aws::String& name)
@@ -160,6 +161,10 @@ namespace Aws
           {
             return UpdateParamType::AuthenticationMode;
           }
+          else if (hashCode == PodIdentityAssociations_HASH)
+          {
+            return UpdateParamType::PodIdentityAssociations;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -230,6 +235,8 @@ namespace Aws
             return "Subnets";
           case UpdateParamType::AuthenticationMode:
             return "AuthenticationMode";
+          case UpdateParamType::PodIdentityAssociations:
+            return "PodIdentityAssociations";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

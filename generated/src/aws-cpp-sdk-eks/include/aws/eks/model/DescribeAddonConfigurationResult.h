@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/eks/EKS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/eks/model/AddonPodIdentityConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -168,6 +170,49 @@ namespace Model
     inline DescribeAddonConfigurationResult& WithConfigurationSchema(const char* value) { SetConfigurationSchema(value); return *this;}
 
 
+    /**
+     * <p>The Kubernetes service account name used by the addon, and any suggested IAM
+     * policies. Use this information to create an IAM Role for the Addon.</p>
+     */
+    inline const Aws::Vector<AddonPodIdentityConfiguration>& GetPodIdentityConfiguration() const{ return m_podIdentityConfiguration; }
+
+    /**
+     * <p>The Kubernetes service account name used by the addon, and any suggested IAM
+     * policies. Use this information to create an IAM Role for the Addon.</p>
+     */
+    inline void SetPodIdentityConfiguration(const Aws::Vector<AddonPodIdentityConfiguration>& value) { m_podIdentityConfiguration = value; }
+
+    /**
+     * <p>The Kubernetes service account name used by the addon, and any suggested IAM
+     * policies. Use this information to create an IAM Role for the Addon.</p>
+     */
+    inline void SetPodIdentityConfiguration(Aws::Vector<AddonPodIdentityConfiguration>&& value) { m_podIdentityConfiguration = std::move(value); }
+
+    /**
+     * <p>The Kubernetes service account name used by the addon, and any suggested IAM
+     * policies. Use this information to create an IAM Role for the Addon.</p>
+     */
+    inline DescribeAddonConfigurationResult& WithPodIdentityConfiguration(const Aws::Vector<AddonPodIdentityConfiguration>& value) { SetPodIdentityConfiguration(value); return *this;}
+
+    /**
+     * <p>The Kubernetes service account name used by the addon, and any suggested IAM
+     * policies. Use this information to create an IAM Role for the Addon.</p>
+     */
+    inline DescribeAddonConfigurationResult& WithPodIdentityConfiguration(Aws::Vector<AddonPodIdentityConfiguration>&& value) { SetPodIdentityConfiguration(std::move(value)); return *this;}
+
+    /**
+     * <p>The Kubernetes service account name used by the addon, and any suggested IAM
+     * policies. Use this information to create an IAM Role for the Addon.</p>
+     */
+    inline DescribeAddonConfigurationResult& AddPodIdentityConfiguration(const AddonPodIdentityConfiguration& value) { m_podIdentityConfiguration.push_back(value); return *this; }
+
+    /**
+     * <p>The Kubernetes service account name used by the addon, and any suggested IAM
+     * policies. Use this information to create an IAM Role for the Addon.</p>
+     */
+    inline DescribeAddonConfigurationResult& AddPodIdentityConfiguration(AddonPodIdentityConfiguration&& value) { m_podIdentityConfiguration.push_back(std::move(value)); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -196,6 +241,8 @@ namespace Model
     Aws::String m_addonVersion;
 
     Aws::String m_configurationSchema;
+
+    Aws::Vector<AddonPodIdentityConfiguration> m_podIdentityConfiguration;
 
     Aws::String m_requestId;
   };
