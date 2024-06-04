@@ -26,8 +26,16 @@ namespace Model
 {
 
   /**
-   * <p>The parameters for using a self-managed Apache Kafka stream as a
-   * source.</p><p><h3>See Also:</h3>   <a
+   * <p>The parameters for using a self-managed Apache Kafka stream as a source.</p>
+   * <p>A <i>self managed</i> cluster refers to any Apache Kafka cluster not hosted
+   * by Amazon Web Services. This includes both clusters you manage yourself, as well
+   * as those hosted by a third-party provider, such as <a
+   * href="https://www.confluent.io/">Confluent Cloud</a>, <a
+   * href="https://www.cloudkarafka.com/">CloudKarafka</a>, or <a
+   * href="https://redpanda.com/">Redpanda</a>. For more information, see <a
+   * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-kafka.html">Apache
+   * Kafka streams as a source</a> in the <i>Amazon EventBridge User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pipes-2015-10-07/UpdatePipeSourceSelfManagedKafkaParameters">AWS
    * API Reference</a></p>
    */
@@ -62,6 +70,27 @@ namespace Model
 
 
     /**
+     * <p>The maximum length of a time to wait for events.</p>
+     */
+    inline int GetMaximumBatchingWindowInSeconds() const{ return m_maximumBatchingWindowInSeconds; }
+
+    /**
+     * <p>The maximum length of a time to wait for events.</p>
+     */
+    inline bool MaximumBatchingWindowInSecondsHasBeenSet() const { return m_maximumBatchingWindowInSecondsHasBeenSet; }
+
+    /**
+     * <p>The maximum length of a time to wait for events.</p>
+     */
+    inline void SetMaximumBatchingWindowInSeconds(int value) { m_maximumBatchingWindowInSecondsHasBeenSet = true; m_maximumBatchingWindowInSeconds = value; }
+
+    /**
+     * <p>The maximum length of a time to wait for events.</p>
+     */
+    inline UpdatePipeSourceSelfManagedKafkaParameters& WithMaximumBatchingWindowInSeconds(int value) { SetMaximumBatchingWindowInSeconds(value); return *this;}
+
+
+    /**
      * <p>The credentials needed to access the resource.</p>
      */
     inline const SelfManagedKafkaAccessConfigurationCredentials& GetCredentials() const{ return m_credentials; }
@@ -90,27 +119,6 @@ namespace Model
      * <p>The credentials needed to access the resource.</p>
      */
     inline UpdatePipeSourceSelfManagedKafkaParameters& WithCredentials(SelfManagedKafkaAccessConfigurationCredentials&& value) { SetCredentials(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The maximum length of a time to wait for events.</p>
-     */
-    inline int GetMaximumBatchingWindowInSeconds() const{ return m_maximumBatchingWindowInSeconds; }
-
-    /**
-     * <p>The maximum length of a time to wait for events.</p>
-     */
-    inline bool MaximumBatchingWindowInSecondsHasBeenSet() const { return m_maximumBatchingWindowInSecondsHasBeenSet; }
-
-    /**
-     * <p>The maximum length of a time to wait for events.</p>
-     */
-    inline void SetMaximumBatchingWindowInSeconds(int value) { m_maximumBatchingWindowInSecondsHasBeenSet = true; m_maximumBatchingWindowInSeconds = value; }
-
-    /**
-     * <p>The maximum length of a time to wait for events.</p>
-     */
-    inline UpdatePipeSourceSelfManagedKafkaParameters& WithMaximumBatchingWindowInSeconds(int value) { SetMaximumBatchingWindowInSeconds(value); return *this;}
 
 
     /**
@@ -195,11 +203,11 @@ namespace Model
     int m_batchSize;
     bool m_batchSizeHasBeenSet = false;
 
-    SelfManagedKafkaAccessConfigurationCredentials m_credentials;
-    bool m_credentialsHasBeenSet = false;
-
     int m_maximumBatchingWindowInSeconds;
     bool m_maximumBatchingWindowInSecondsHasBeenSet = false;
+
+    SelfManagedKafkaAccessConfigurationCredentials m_credentials;
+    bool m_credentialsHasBeenSet = false;
 
     Aws::String m_serverRootCaCertificate;
     bool m_serverRootCaCertificateHasBeenSet = false;

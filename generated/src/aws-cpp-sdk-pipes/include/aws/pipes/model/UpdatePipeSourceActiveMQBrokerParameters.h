@@ -39,27 +39,6 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of records to include in each batch.</p>
-     */
-    inline int GetBatchSize() const{ return m_batchSize; }
-
-    /**
-     * <p>The maximum number of records to include in each batch.</p>
-     */
-    inline bool BatchSizeHasBeenSet() const { return m_batchSizeHasBeenSet; }
-
-    /**
-     * <p>The maximum number of records to include in each batch.</p>
-     */
-    inline void SetBatchSize(int value) { m_batchSizeHasBeenSet = true; m_batchSize = value; }
-
-    /**
-     * <p>The maximum number of records to include in each batch.</p>
-     */
-    inline UpdatePipeSourceActiveMQBrokerParameters& WithBatchSize(int value) { SetBatchSize(value); return *this;}
-
-
-    /**
      * <p>The credentials needed to access the resource.</p>
      */
     inline const MQBrokerAccessCredentials& GetCredentials() const{ return m_credentials; }
@@ -91,6 +70,27 @@ namespace Model
 
 
     /**
+     * <p>The maximum number of records to include in each batch.</p>
+     */
+    inline int GetBatchSize() const{ return m_batchSize; }
+
+    /**
+     * <p>The maximum number of records to include in each batch.</p>
+     */
+    inline bool BatchSizeHasBeenSet() const { return m_batchSizeHasBeenSet; }
+
+    /**
+     * <p>The maximum number of records to include in each batch.</p>
+     */
+    inline void SetBatchSize(int value) { m_batchSizeHasBeenSet = true; m_batchSize = value; }
+
+    /**
+     * <p>The maximum number of records to include in each batch.</p>
+     */
+    inline UpdatePipeSourceActiveMQBrokerParameters& WithBatchSize(int value) { SetBatchSize(value); return *this;}
+
+
+    /**
      * <p>The maximum length of a time to wait for events.</p>
      */
     inline int GetMaximumBatchingWindowInSeconds() const{ return m_maximumBatchingWindowInSeconds; }
@@ -112,11 +112,11 @@ namespace Model
 
   private:
 
-    int m_batchSize;
-    bool m_batchSizeHasBeenSet = false;
-
     MQBrokerAccessCredentials m_credentials;
     bool m_credentialsHasBeenSet = false;
+
+    int m_batchSize;
+    bool m_batchSizeHasBeenSet = false;
 
     int m_maximumBatchingWindowInSeconds;
     bool m_maximumBatchingWindowInSecondsHasBeenSet = false;

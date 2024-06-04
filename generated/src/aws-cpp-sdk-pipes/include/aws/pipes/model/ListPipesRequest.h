@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/pipes/Pipes_EXPORTS.h>
 #include <aws/pipes/PipesRequest.h>
-#include <aws/pipes/model/PipeState.h>
-#include <aws/pipes/model/RequestedPipeState.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pipes/model/RequestedPipeState.h>
+#include <aws/pipes/model/PipeState.h>
 #include <utility>
 
 namespace Aws
@@ -38,89 +38,6 @@ namespace Model
     AWS_PIPES_API Aws::String SerializePayload() const override;
 
     AWS_PIPES_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
-
-    /**
-     * <p>The state the pipe is in.</p>
-     */
-    inline const PipeState& GetCurrentState() const{ return m_currentState; }
-
-    /**
-     * <p>The state the pipe is in.</p>
-     */
-    inline bool CurrentStateHasBeenSet() const { return m_currentStateHasBeenSet; }
-
-    /**
-     * <p>The state the pipe is in.</p>
-     */
-    inline void SetCurrentState(const PipeState& value) { m_currentStateHasBeenSet = true; m_currentState = value; }
-
-    /**
-     * <p>The state the pipe is in.</p>
-     */
-    inline void SetCurrentState(PipeState&& value) { m_currentStateHasBeenSet = true; m_currentState = std::move(value); }
-
-    /**
-     * <p>The state the pipe is in.</p>
-     */
-    inline ListPipesRequest& WithCurrentState(const PipeState& value) { SetCurrentState(value); return *this;}
-
-    /**
-     * <p>The state the pipe is in.</p>
-     */
-    inline ListPipesRequest& WithCurrentState(PipeState&& value) { SetCurrentState(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The state the pipe should be in.</p>
-     */
-    inline const RequestedPipeState& GetDesiredState() const{ return m_desiredState; }
-
-    /**
-     * <p>The state the pipe should be in.</p>
-     */
-    inline bool DesiredStateHasBeenSet() const { return m_desiredStateHasBeenSet; }
-
-    /**
-     * <p>The state the pipe should be in.</p>
-     */
-    inline void SetDesiredState(const RequestedPipeState& value) { m_desiredStateHasBeenSet = true; m_desiredState = value; }
-
-    /**
-     * <p>The state the pipe should be in.</p>
-     */
-    inline void SetDesiredState(RequestedPipeState&& value) { m_desiredStateHasBeenSet = true; m_desiredState = std::move(value); }
-
-    /**
-     * <p>The state the pipe should be in.</p>
-     */
-    inline ListPipesRequest& WithDesiredState(const RequestedPipeState& value) { SetDesiredState(value); return *this;}
-
-    /**
-     * <p>The state the pipe should be in.</p>
-     */
-    inline ListPipesRequest& WithDesiredState(RequestedPipeState&& value) { SetDesiredState(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The maximum number of pipes to include in the response.</p>
-     */
-    inline int GetLimit() const{ return m_limit; }
-
-    /**
-     * <p>The maximum number of pipes to include in the response.</p>
-     */
-    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
-
-    /**
-     * <p>The maximum number of pipes to include in the response.</p>
-     */
-    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
-
-    /**
-     * <p>The maximum number of pipes to include in the response.</p>
-     */
-    inline ListPipesRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
 
     /**
@@ -181,76 +98,65 @@ namespace Model
 
 
     /**
-     * <p>If <code>nextToken</code> is returned, there are more results available. The
-     * value of <code>nextToken</code> is a unique pagination token for each page. Make
-     * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. Using
-     * an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+     * <p>The state the pipe should be in.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const RequestedPipeState& GetDesiredState() const{ return m_desiredState; }
 
     /**
-     * <p>If <code>nextToken</code> is returned, there are more results available. The
-     * value of <code>nextToken</code> is a unique pagination token for each page. Make
-     * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. Using
-     * an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+     * <p>The state the pipe should be in.</p>
      */
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+    inline bool DesiredStateHasBeenSet() const { return m_desiredStateHasBeenSet; }
 
     /**
-     * <p>If <code>nextToken</code> is returned, there are more results available. The
-     * value of <code>nextToken</code> is a unique pagination token for each page. Make
-     * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. Using
-     * an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+     * <p>The state the pipe should be in.</p>
      */
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetDesiredState(const RequestedPipeState& value) { m_desiredStateHasBeenSet = true; m_desiredState = value; }
 
     /**
-     * <p>If <code>nextToken</code> is returned, there are more results available. The
-     * value of <code>nextToken</code> is a unique pagination token for each page. Make
-     * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. Using
-     * an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+     * <p>The state the pipe should be in.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
+    inline void SetDesiredState(RequestedPipeState&& value) { m_desiredStateHasBeenSet = true; m_desiredState = std::move(value); }
 
     /**
-     * <p>If <code>nextToken</code> is returned, there are more results available. The
-     * value of <code>nextToken</code> is a unique pagination token for each page. Make
-     * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. Using
-     * an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+     * <p>The state the pipe should be in.</p>
      */
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
+    inline ListPipesRequest& WithDesiredState(const RequestedPipeState& value) { SetDesiredState(value); return *this;}
 
     /**
-     * <p>If <code>nextToken</code> is returned, there are more results available. The
-     * value of <code>nextToken</code> is a unique pagination token for each page. Make
-     * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. Using
-     * an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+     * <p>The state the pipe should be in.</p>
      */
-    inline ListPipesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListPipesRequest& WithDesiredState(RequestedPipeState&& value) { SetDesiredState(std::move(value)); return *this;}
+
 
     /**
-     * <p>If <code>nextToken</code> is returned, there are more results available. The
-     * value of <code>nextToken</code> is a unique pagination token for each page. Make
-     * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. Using
-     * an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+     * <p>The state the pipe is in.</p>
      */
-    inline ListPipesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+    inline const PipeState& GetCurrentState() const{ return m_currentState; }
 
     /**
-     * <p>If <code>nextToken</code> is returned, there are more results available. The
-     * value of <code>nextToken</code> is a unique pagination token for each page. Make
-     * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. Using
-     * an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+     * <p>The state the pipe is in.</p>
      */
-    inline ListPipesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline bool CurrentStateHasBeenSet() const { return m_currentStateHasBeenSet; }
+
+    /**
+     * <p>The state the pipe is in.</p>
+     */
+    inline void SetCurrentState(const PipeState& value) { m_currentStateHasBeenSet = true; m_currentState = value; }
+
+    /**
+     * <p>The state the pipe is in.</p>
+     */
+    inline void SetCurrentState(PipeState&& value) { m_currentStateHasBeenSet = true; m_currentState = std::move(value); }
+
+    /**
+     * <p>The state the pipe is in.</p>
+     */
+    inline ListPipesRequest& WithCurrentState(const PipeState& value) { SetCurrentState(value); return *this;}
+
+    /**
+     * <p>The state the pipe is in.</p>
+     */
+    inline ListPipesRequest& WithCurrentState(PipeState&& value) { SetCurrentState(std::move(value)); return *this;}
 
 
     /**
@@ -334,28 +240,122 @@ namespace Model
      */
     inline ListPipesRequest& WithTargetPrefix(const char* value) { SetTargetPrefix(value); return *this;}
 
+
+    /**
+     * <p>If <code>nextToken</code> is returned, there are more results available. The
+     * value of <code>nextToken</code> is a unique pagination token for each page. Make
+     * the call again using the returned token to retrieve the next page. Keep all
+     * other arguments unchanged. Each pagination token expires after 24 hours. Using
+     * an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>If <code>nextToken</code> is returned, there are more results available. The
+     * value of <code>nextToken</code> is a unique pagination token for each page. Make
+     * the call again using the returned token to retrieve the next page. Keep all
+     * other arguments unchanged. Each pagination token expires after 24 hours. Using
+     * an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>If <code>nextToken</code> is returned, there are more results available. The
+     * value of <code>nextToken</code> is a unique pagination token for each page. Make
+     * the call again using the returned token to retrieve the next page. Keep all
+     * other arguments unchanged. Each pagination token expires after 24 hours. Using
+     * an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /**
+     * <p>If <code>nextToken</code> is returned, there are more results available. The
+     * value of <code>nextToken</code> is a unique pagination token for each page. Make
+     * the call again using the returned token to retrieve the next page. Keep all
+     * other arguments unchanged. Each pagination token expires after 24 hours. Using
+     * an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
+
+    /**
+     * <p>If <code>nextToken</code> is returned, there are more results available. The
+     * value of <code>nextToken</code> is a unique pagination token for each page. Make
+     * the call again using the returned token to retrieve the next page. Keep all
+     * other arguments unchanged. Each pagination token expires after 24 hours. Using
+     * an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
+
+    /**
+     * <p>If <code>nextToken</code> is returned, there are more results available. The
+     * value of <code>nextToken</code> is a unique pagination token for each page. Make
+     * the call again using the returned token to retrieve the next page. Keep all
+     * other arguments unchanged. Each pagination token expires after 24 hours. Using
+     * an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+     */
+    inline ListPipesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>If <code>nextToken</code> is returned, there are more results available. The
+     * value of <code>nextToken</code> is a unique pagination token for each page. Make
+     * the call again using the returned token to retrieve the next page. Keep all
+     * other arguments unchanged. Each pagination token expires after 24 hours. Using
+     * an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+     */
+    inline ListPipesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * <p>If <code>nextToken</code> is returned, there are more results available. The
+     * value of <code>nextToken</code> is a unique pagination token for each page. Make
+     * the call again using the returned token to retrieve the next page. Keep all
+     * other arguments unchanged. Each pagination token expires after 24 hours. Using
+     * an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+     */
+    inline ListPipesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
+
+    /**
+     * <p>The maximum number of pipes to include in the response.</p>
+     */
+    inline int GetLimit() const{ return m_limit; }
+
+    /**
+     * <p>The maximum number of pipes to include in the response.</p>
+     */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of pipes to include in the response.</p>
+     */
+    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
+
+    /**
+     * <p>The maximum number of pipes to include in the response.</p>
+     */
+    inline ListPipesRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
   private:
-
-    PipeState m_currentState;
-    bool m_currentStateHasBeenSet = false;
-
-    RequestedPipeState m_desiredState;
-    bool m_desiredStateHasBeenSet = false;
-
-    int m_limit;
-    bool m_limitHasBeenSet = false;
 
     Aws::String m_namePrefix;
     bool m_namePrefixHasBeenSet = false;
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
+    RequestedPipeState m_desiredState;
+    bool m_desiredStateHasBeenSet = false;
+
+    PipeState m_currentState;
+    bool m_currentStateHasBeenSet = false;
 
     Aws::String m_sourcePrefix;
     bool m_sourcePrefixHasBeenSet = false;
 
     Aws::String m_targetPrefix;
     bool m_targetPrefixHasBeenSet = false;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
+
+    int m_limit;
+    bool m_limitHasBeenSet = false;
   };
 
 } // namespace Model

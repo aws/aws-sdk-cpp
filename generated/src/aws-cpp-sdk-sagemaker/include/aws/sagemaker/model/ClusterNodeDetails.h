@@ -10,6 +10,7 @@
 #include <aws/sagemaker/model/ClusterInstanceType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/ClusterLifeCycleConfig.h>
+#include <aws/sagemaker/model/ClusterInstancePlacement.h>
 #include <utility>
 
 namespace Aws
@@ -272,6 +273,119 @@ namespace Model
      */
     inline ClusterNodeDetails& WithThreadsPerCore(int value) { SetThreadsPerCore(value); return *this;}
 
+
+    /**
+     * <p>The private primary IP address of the SageMaker HyperPod cluster node.</p>
+     */
+    inline const Aws::String& GetPrivatePrimaryIp() const{ return m_privatePrimaryIp; }
+
+    /**
+     * <p>The private primary IP address of the SageMaker HyperPod cluster node.</p>
+     */
+    inline bool PrivatePrimaryIpHasBeenSet() const { return m_privatePrimaryIpHasBeenSet; }
+
+    /**
+     * <p>The private primary IP address of the SageMaker HyperPod cluster node.</p>
+     */
+    inline void SetPrivatePrimaryIp(const Aws::String& value) { m_privatePrimaryIpHasBeenSet = true; m_privatePrimaryIp = value; }
+
+    /**
+     * <p>The private primary IP address of the SageMaker HyperPod cluster node.</p>
+     */
+    inline void SetPrivatePrimaryIp(Aws::String&& value) { m_privatePrimaryIpHasBeenSet = true; m_privatePrimaryIp = std::move(value); }
+
+    /**
+     * <p>The private primary IP address of the SageMaker HyperPod cluster node.</p>
+     */
+    inline void SetPrivatePrimaryIp(const char* value) { m_privatePrimaryIpHasBeenSet = true; m_privatePrimaryIp.assign(value); }
+
+    /**
+     * <p>The private primary IP address of the SageMaker HyperPod cluster node.</p>
+     */
+    inline ClusterNodeDetails& WithPrivatePrimaryIp(const Aws::String& value) { SetPrivatePrimaryIp(value); return *this;}
+
+    /**
+     * <p>The private primary IP address of the SageMaker HyperPod cluster node.</p>
+     */
+    inline ClusterNodeDetails& WithPrivatePrimaryIp(Aws::String&& value) { SetPrivatePrimaryIp(std::move(value)); return *this;}
+
+    /**
+     * <p>The private primary IP address of the SageMaker HyperPod cluster node.</p>
+     */
+    inline ClusterNodeDetails& WithPrivatePrimaryIp(const char* value) { SetPrivatePrimaryIp(value); return *this;}
+
+
+    /**
+     * <p>The private DNS hostname of the SageMaker HyperPod cluster node.</p>
+     */
+    inline const Aws::String& GetPrivateDnsHostname() const{ return m_privateDnsHostname; }
+
+    /**
+     * <p>The private DNS hostname of the SageMaker HyperPod cluster node.</p>
+     */
+    inline bool PrivateDnsHostnameHasBeenSet() const { return m_privateDnsHostnameHasBeenSet; }
+
+    /**
+     * <p>The private DNS hostname of the SageMaker HyperPod cluster node.</p>
+     */
+    inline void SetPrivateDnsHostname(const Aws::String& value) { m_privateDnsHostnameHasBeenSet = true; m_privateDnsHostname = value; }
+
+    /**
+     * <p>The private DNS hostname of the SageMaker HyperPod cluster node.</p>
+     */
+    inline void SetPrivateDnsHostname(Aws::String&& value) { m_privateDnsHostnameHasBeenSet = true; m_privateDnsHostname = std::move(value); }
+
+    /**
+     * <p>The private DNS hostname of the SageMaker HyperPod cluster node.</p>
+     */
+    inline void SetPrivateDnsHostname(const char* value) { m_privateDnsHostnameHasBeenSet = true; m_privateDnsHostname.assign(value); }
+
+    /**
+     * <p>The private DNS hostname of the SageMaker HyperPod cluster node.</p>
+     */
+    inline ClusterNodeDetails& WithPrivateDnsHostname(const Aws::String& value) { SetPrivateDnsHostname(value); return *this;}
+
+    /**
+     * <p>The private DNS hostname of the SageMaker HyperPod cluster node.</p>
+     */
+    inline ClusterNodeDetails& WithPrivateDnsHostname(Aws::String&& value) { SetPrivateDnsHostname(std::move(value)); return *this;}
+
+    /**
+     * <p>The private DNS hostname of the SageMaker HyperPod cluster node.</p>
+     */
+    inline ClusterNodeDetails& WithPrivateDnsHostname(const char* value) { SetPrivateDnsHostname(value); return *this;}
+
+
+    /**
+     * <p>The placement details of the SageMaker HyperPod cluster node.</p>
+     */
+    inline const ClusterInstancePlacement& GetPlacement() const{ return m_placement; }
+
+    /**
+     * <p>The placement details of the SageMaker HyperPod cluster node.</p>
+     */
+    inline bool PlacementHasBeenSet() const { return m_placementHasBeenSet; }
+
+    /**
+     * <p>The placement details of the SageMaker HyperPod cluster node.</p>
+     */
+    inline void SetPlacement(const ClusterInstancePlacement& value) { m_placementHasBeenSet = true; m_placement = value; }
+
+    /**
+     * <p>The placement details of the SageMaker HyperPod cluster node.</p>
+     */
+    inline void SetPlacement(ClusterInstancePlacement&& value) { m_placementHasBeenSet = true; m_placement = std::move(value); }
+
+    /**
+     * <p>The placement details of the SageMaker HyperPod cluster node.</p>
+     */
+    inline ClusterNodeDetails& WithPlacement(const ClusterInstancePlacement& value) { SetPlacement(value); return *this;}
+
+    /**
+     * <p>The placement details of the SageMaker HyperPod cluster node.</p>
+     */
+    inline ClusterNodeDetails& WithPlacement(ClusterInstancePlacement&& value) { SetPlacement(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_instanceGroupName;
@@ -294,6 +408,15 @@ namespace Model
 
     int m_threadsPerCore;
     bool m_threadsPerCoreHasBeenSet = false;
+
+    Aws::String m_privatePrimaryIp;
+    bool m_privatePrimaryIpHasBeenSet = false;
+
+    Aws::String m_privateDnsHostname;
+    bool m_privateDnsHostnameHasBeenSet = false;
+
+    ClusterInstancePlacement m_placement;
+    bool m_placementHasBeenSet = false;
   };
 
 } // namespace Model

@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/pipes/Pipes_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
-#include <aws/pipes/model/PipeState.h>
 #include <aws/pipes/model/RequestedPipeState.h>
+#include <aws/pipes/model/PipeState.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -40,6 +40,47 @@ namespace Model
     AWS_PIPES_API Pipe(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API Pipe& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The name of the pipe.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the pipe.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the pipe.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>The name of the pipe.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * <p>The name of the pipe.</p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p>The name of the pipe.</p>
+     */
+    inline Pipe& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>The name of the pipe.</p>
+     */
+    inline Pipe& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the pipe.</p>
+     */
+    inline Pipe& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
@@ -84,34 +125,34 @@ namespace Model
 
 
     /**
-     * <p>The time the pipe was created.</p>
+     * <p>The state the pipe should be in.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const RequestedPipeState& GetDesiredState() const{ return m_desiredState; }
 
     /**
-     * <p>The time the pipe was created.</p>
+     * <p>The state the pipe should be in.</p>
      */
-    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+    inline bool DesiredStateHasBeenSet() const { return m_desiredStateHasBeenSet; }
 
     /**
-     * <p>The time the pipe was created.</p>
+     * <p>The state the pipe should be in.</p>
      */
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+    inline void SetDesiredState(const RequestedPipeState& value) { m_desiredStateHasBeenSet = true; m_desiredState = value; }
 
     /**
-     * <p>The time the pipe was created.</p>
+     * <p>The state the pipe should be in.</p>
      */
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
+    inline void SetDesiredState(RequestedPipeState&& value) { m_desiredStateHasBeenSet = true; m_desiredState = std::move(value); }
 
     /**
-     * <p>The time the pipe was created.</p>
+     * <p>The state the pipe should be in.</p>
      */
-    inline Pipe& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+    inline Pipe& WithDesiredState(const RequestedPipeState& value) { SetDesiredState(value); return *this;}
 
     /**
-     * <p>The time the pipe was created.</p>
+     * <p>The state the pipe should be in.</p>
      */
-    inline Pipe& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline Pipe& WithDesiredState(RequestedPipeState&& value) { SetDesiredState(std::move(value)); return *this;}
 
 
     /**
@@ -146,75 +187,75 @@ namespace Model
 
 
     /**
-     * <p>The state the pipe should be in.</p>
+     * <p>The reason the pipe is in its current state.</p>
      */
-    inline const RequestedPipeState& GetDesiredState() const{ return m_desiredState; }
+    inline const Aws::String& GetStateReason() const{ return m_stateReason; }
 
     /**
-     * <p>The state the pipe should be in.</p>
+     * <p>The reason the pipe is in its current state.</p>
      */
-    inline bool DesiredStateHasBeenSet() const { return m_desiredStateHasBeenSet; }
+    inline bool StateReasonHasBeenSet() const { return m_stateReasonHasBeenSet; }
 
     /**
-     * <p>The state the pipe should be in.</p>
+     * <p>The reason the pipe is in its current state.</p>
      */
-    inline void SetDesiredState(const RequestedPipeState& value) { m_desiredStateHasBeenSet = true; m_desiredState = value; }
+    inline void SetStateReason(const Aws::String& value) { m_stateReasonHasBeenSet = true; m_stateReason = value; }
 
     /**
-     * <p>The state the pipe should be in.</p>
+     * <p>The reason the pipe is in its current state.</p>
      */
-    inline void SetDesiredState(RequestedPipeState&& value) { m_desiredStateHasBeenSet = true; m_desiredState = std::move(value); }
+    inline void SetStateReason(Aws::String&& value) { m_stateReasonHasBeenSet = true; m_stateReason = std::move(value); }
 
     /**
-     * <p>The state the pipe should be in.</p>
+     * <p>The reason the pipe is in its current state.</p>
      */
-    inline Pipe& WithDesiredState(const RequestedPipeState& value) { SetDesiredState(value); return *this;}
+    inline void SetStateReason(const char* value) { m_stateReasonHasBeenSet = true; m_stateReason.assign(value); }
 
     /**
-     * <p>The state the pipe should be in.</p>
+     * <p>The reason the pipe is in its current state.</p>
      */
-    inline Pipe& WithDesiredState(RequestedPipeState&& value) { SetDesiredState(std::move(value)); return *this;}
+    inline Pipe& WithStateReason(const Aws::String& value) { SetStateReason(value); return *this;}
+
+    /**
+     * <p>The reason the pipe is in its current state.</p>
+     */
+    inline Pipe& WithStateReason(Aws::String&& value) { SetStateReason(std::move(value)); return *this;}
+
+    /**
+     * <p>The reason the pipe is in its current state.</p>
+     */
+    inline Pipe& WithStateReason(const char* value) { SetStateReason(value); return *this;}
 
 
     /**
-     * <p>The ARN of the enrichment resource.</p>
+     * <p>The time the pipe was created.</p>
      */
-    inline const Aws::String& GetEnrichment() const{ return m_enrichment; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>The ARN of the enrichment resource.</p>
+     * <p>The time the pipe was created.</p>
      */
-    inline bool EnrichmentHasBeenSet() const { return m_enrichmentHasBeenSet; }
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
-     * <p>The ARN of the enrichment resource.</p>
+     * <p>The time the pipe was created.</p>
      */
-    inline void SetEnrichment(const Aws::String& value) { m_enrichmentHasBeenSet = true; m_enrichment = value; }
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>The ARN of the enrichment resource.</p>
+     * <p>The time the pipe was created.</p>
      */
-    inline void SetEnrichment(Aws::String&& value) { m_enrichmentHasBeenSet = true; m_enrichment = std::move(value); }
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
-     * <p>The ARN of the enrichment resource.</p>
+     * <p>The time the pipe was created.</p>
      */
-    inline void SetEnrichment(const char* value) { m_enrichmentHasBeenSet = true; m_enrichment.assign(value); }
+    inline Pipe& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>The ARN of the enrichment resource.</p>
+     * <p>The time the pipe was created.</p>
      */
-    inline Pipe& WithEnrichment(const Aws::String& value) { SetEnrichment(value); return *this;}
-
-    /**
-     * <p>The ARN of the enrichment resource.</p>
-     */
-    inline Pipe& WithEnrichment(Aws::String&& value) { SetEnrichment(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the enrichment resource.</p>
-     */
-    inline Pipe& WithEnrichment(const char* value) { SetEnrichment(value); return *this;}
+    inline Pipe& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
     /**
@@ -261,47 +302,6 @@ namespace Model
 
 
     /**
-     * <p>The name of the pipe.</p>
-     */
-    inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline Pipe& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline Pipe& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline Pipe& WithName(const char* value) { SetName(value); return *this;}
-
-
-    /**
      * <p>The ARN of the source resource.</p>
      */
     inline const Aws::String& GetSource() const{ return m_source; }
@@ -340,47 +340,6 @@ namespace Model
      * <p>The ARN of the source resource.</p>
      */
     inline Pipe& WithSource(const char* value) { SetSource(value); return *this;}
-
-
-    /**
-     * <p>The reason the pipe is in its current state.</p>
-     */
-    inline const Aws::String& GetStateReason() const{ return m_stateReason; }
-
-    /**
-     * <p>The reason the pipe is in its current state.</p>
-     */
-    inline bool StateReasonHasBeenSet() const { return m_stateReasonHasBeenSet; }
-
-    /**
-     * <p>The reason the pipe is in its current state.</p>
-     */
-    inline void SetStateReason(const Aws::String& value) { m_stateReasonHasBeenSet = true; m_stateReason = value; }
-
-    /**
-     * <p>The reason the pipe is in its current state.</p>
-     */
-    inline void SetStateReason(Aws::String&& value) { m_stateReasonHasBeenSet = true; m_stateReason = std::move(value); }
-
-    /**
-     * <p>The reason the pipe is in its current state.</p>
-     */
-    inline void SetStateReason(const char* value) { m_stateReasonHasBeenSet = true; m_stateReason.assign(value); }
-
-    /**
-     * <p>The reason the pipe is in its current state.</p>
-     */
-    inline Pipe& WithStateReason(const Aws::String& value) { SetStateReason(value); return *this;}
-
-    /**
-     * <p>The reason the pipe is in its current state.</p>
-     */
-    inline Pipe& WithStateReason(Aws::String&& value) { SetStateReason(std::move(value)); return *this;}
-
-    /**
-     * <p>The reason the pipe is in its current state.</p>
-     */
-    inline Pipe& WithStateReason(const char* value) { SetStateReason(value); return *this;}
 
 
     /**
@@ -423,37 +382,78 @@ namespace Model
      */
     inline Pipe& WithTarget(const char* value) { SetTarget(value); return *this;}
 
+
+    /**
+     * <p>The ARN of the enrichment resource.</p>
+     */
+    inline const Aws::String& GetEnrichment() const{ return m_enrichment; }
+
+    /**
+     * <p>The ARN of the enrichment resource.</p>
+     */
+    inline bool EnrichmentHasBeenSet() const { return m_enrichmentHasBeenSet; }
+
+    /**
+     * <p>The ARN of the enrichment resource.</p>
+     */
+    inline void SetEnrichment(const Aws::String& value) { m_enrichmentHasBeenSet = true; m_enrichment = value; }
+
+    /**
+     * <p>The ARN of the enrichment resource.</p>
+     */
+    inline void SetEnrichment(Aws::String&& value) { m_enrichmentHasBeenSet = true; m_enrichment = std::move(value); }
+
+    /**
+     * <p>The ARN of the enrichment resource.</p>
+     */
+    inline void SetEnrichment(const char* value) { m_enrichmentHasBeenSet = true; m_enrichment.assign(value); }
+
+    /**
+     * <p>The ARN of the enrichment resource.</p>
+     */
+    inline Pipe& WithEnrichment(const Aws::String& value) { SetEnrichment(value); return *this;}
+
+    /**
+     * <p>The ARN of the enrichment resource.</p>
+     */
+    inline Pipe& WithEnrichment(Aws::String&& value) { SetEnrichment(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the enrichment resource.</p>
+     */
+    inline Pipe& WithEnrichment(const char* value) { SetEnrichment(value); return *this;}
+
   private:
-
-    Aws::String m_arn;
-    bool m_arnHasBeenSet = false;
-
-    Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet = false;
-
-    PipeState m_currentState;
-    bool m_currentStateHasBeenSet = false;
-
-    RequestedPipeState m_desiredState;
-    bool m_desiredStateHasBeenSet = false;
-
-    Aws::String m_enrichment;
-    bool m_enrichmentHasBeenSet = false;
-
-    Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    Aws::String m_source;
-    bool m_sourceHasBeenSet = false;
+    Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
+
+    RequestedPipeState m_desiredState;
+    bool m_desiredStateHasBeenSet = false;
+
+    PipeState m_currentState;
+    bool m_currentStateHasBeenSet = false;
 
     Aws::String m_stateReason;
     bool m_stateReasonHasBeenSet = false;
 
+    Aws::Utils::DateTime m_creationTime;
+    bool m_creationTimeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastModifiedTime;
+    bool m_lastModifiedTimeHasBeenSet = false;
+
+    Aws::String m_source;
+    bool m_sourceHasBeenSet = false;
+
     Aws::String m_target;
     bool m_targetHasBeenSet = false;
+
+    Aws::String m_enrichment;
+    bool m_enrichmentHasBeenSet = false;
   };
 
 } // namespace Model

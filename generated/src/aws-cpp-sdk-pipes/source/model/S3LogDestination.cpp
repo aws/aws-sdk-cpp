@@ -20,19 +20,19 @@ namespace Model
 
 S3LogDestination::S3LogDestination() : 
     m_bucketNameHasBeenSet(false),
+    m_prefixHasBeenSet(false),
     m_bucketOwnerHasBeenSet(false),
     m_outputFormat(S3OutputFormat::NOT_SET),
-    m_outputFormatHasBeenSet(false),
-    m_prefixHasBeenSet(false)
+    m_outputFormatHasBeenSet(false)
 {
 }
 
 S3LogDestination::S3LogDestination(JsonView jsonValue) : 
     m_bucketNameHasBeenSet(false),
+    m_prefixHasBeenSet(false),
     m_bucketOwnerHasBeenSet(false),
     m_outputFormat(S3OutputFormat::NOT_SET),
-    m_outputFormatHasBeenSet(false),
-    m_prefixHasBeenSet(false)
+    m_outputFormatHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -44,6 +44,13 @@ S3LogDestination& S3LogDestination::operator =(JsonView jsonValue)
     m_bucketName = jsonValue.GetString("BucketName");
 
     m_bucketNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Prefix"))
+  {
+    m_prefix = jsonValue.GetString("Prefix");
+
+    m_prefixHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("BucketOwner"))
@@ -60,13 +67,6 @@ S3LogDestination& S3LogDestination::operator =(JsonView jsonValue)
     m_outputFormatHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("Prefix"))
-  {
-    m_prefix = jsonValue.GetString("Prefix");
-
-    m_prefixHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -80,6 +80,12 @@ JsonValue S3LogDestination::Jsonize() const
 
   }
 
+  if(m_prefixHasBeenSet)
+  {
+   payload.WithString("Prefix", m_prefix);
+
+  }
+
   if(m_bucketOwnerHasBeenSet)
   {
    payload.WithString("BucketOwner", m_bucketOwner);
@@ -89,12 +95,6 @@ JsonValue S3LogDestination::Jsonize() const
   if(m_outputFormatHasBeenSet)
   {
    payload.WithString("OutputFormat", S3OutputFormatMapper::GetNameForS3OutputFormat(m_outputFormat));
-  }
-
-  if(m_prefixHasBeenSet)
-  {
-   payload.WithString("Prefix", m_prefix);
-
   }
 
   return payload;

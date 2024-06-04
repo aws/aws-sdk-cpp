@@ -3770,7 +3770,7 @@ namespace SageMaker
         }
 
         /**
-         * <p>Retrieves information of an instance (also called a <i>node</i>
+         * <p>Retrieves information of a node (also called a <i>instance</i>
          * interchangeably) of a SageMaker HyperPod cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeClusterNode">AWS
          * API Reference</a></p>

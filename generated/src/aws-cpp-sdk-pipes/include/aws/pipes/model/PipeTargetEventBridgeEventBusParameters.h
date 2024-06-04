@@ -40,55 +40,6 @@ namespace Model
 
 
     /**
-     * <p>A free-form string, with a maximum of 128 characters, used to decide what
-     * fields to expect in the event detail.</p>
-     */
-    inline const Aws::String& GetDetailType() const{ return m_detailType; }
-
-    /**
-     * <p>A free-form string, with a maximum of 128 characters, used to decide what
-     * fields to expect in the event detail.</p>
-     */
-    inline bool DetailTypeHasBeenSet() const { return m_detailTypeHasBeenSet; }
-
-    /**
-     * <p>A free-form string, with a maximum of 128 characters, used to decide what
-     * fields to expect in the event detail.</p>
-     */
-    inline void SetDetailType(const Aws::String& value) { m_detailTypeHasBeenSet = true; m_detailType = value; }
-
-    /**
-     * <p>A free-form string, with a maximum of 128 characters, used to decide what
-     * fields to expect in the event detail.</p>
-     */
-    inline void SetDetailType(Aws::String&& value) { m_detailTypeHasBeenSet = true; m_detailType = std::move(value); }
-
-    /**
-     * <p>A free-form string, with a maximum of 128 characters, used to decide what
-     * fields to expect in the event detail.</p>
-     */
-    inline void SetDetailType(const char* value) { m_detailTypeHasBeenSet = true; m_detailType.assign(value); }
-
-    /**
-     * <p>A free-form string, with a maximum of 128 characters, used to decide what
-     * fields to expect in the event detail.</p>
-     */
-    inline PipeTargetEventBridgeEventBusParameters& WithDetailType(const Aws::String& value) { SetDetailType(value); return *this;}
-
-    /**
-     * <p>A free-form string, with a maximum of 128 characters, used to decide what
-     * fields to expect in the event detail.</p>
-     */
-    inline PipeTargetEventBridgeEventBusParameters& WithDetailType(Aws::String&& value) { SetDetailType(std::move(value)); return *this;}
-
-    /**
-     * <p>A free-form string, with a maximum of 128 characters, used to decide what
-     * fields to expect in the event detail.</p>
-     */
-    inline PipeTargetEventBridgeEventBusParameters& WithDetailType(const char* value) { SetDetailType(value); return *this;}
-
-
-    /**
      * <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is
      * https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
      * <code>abcde.veo</code>.</p>
@@ -143,6 +94,96 @@ namespace Model
      * <code>abcde.veo</code>.</p>
      */
     inline PipeTargetEventBridgeEventBusParameters& WithEndpointId(const char* value) { SetEndpointId(value); return *this;}
+
+
+    /**
+     * <p>A free-form string, with a maximum of 128 characters, used to decide what
+     * fields to expect in the event detail.</p>
+     */
+    inline const Aws::String& GetDetailType() const{ return m_detailType; }
+
+    /**
+     * <p>A free-form string, with a maximum of 128 characters, used to decide what
+     * fields to expect in the event detail.</p>
+     */
+    inline bool DetailTypeHasBeenSet() const { return m_detailTypeHasBeenSet; }
+
+    /**
+     * <p>A free-form string, with a maximum of 128 characters, used to decide what
+     * fields to expect in the event detail.</p>
+     */
+    inline void SetDetailType(const Aws::String& value) { m_detailTypeHasBeenSet = true; m_detailType = value; }
+
+    /**
+     * <p>A free-form string, with a maximum of 128 characters, used to decide what
+     * fields to expect in the event detail.</p>
+     */
+    inline void SetDetailType(Aws::String&& value) { m_detailTypeHasBeenSet = true; m_detailType = std::move(value); }
+
+    /**
+     * <p>A free-form string, with a maximum of 128 characters, used to decide what
+     * fields to expect in the event detail.</p>
+     */
+    inline void SetDetailType(const char* value) { m_detailTypeHasBeenSet = true; m_detailType.assign(value); }
+
+    /**
+     * <p>A free-form string, with a maximum of 128 characters, used to decide what
+     * fields to expect in the event detail.</p>
+     */
+    inline PipeTargetEventBridgeEventBusParameters& WithDetailType(const Aws::String& value) { SetDetailType(value); return *this;}
+
+    /**
+     * <p>A free-form string, with a maximum of 128 characters, used to decide what
+     * fields to expect in the event detail.</p>
+     */
+    inline PipeTargetEventBridgeEventBusParameters& WithDetailType(Aws::String&& value) { SetDetailType(std::move(value)); return *this;}
+
+    /**
+     * <p>A free-form string, with a maximum of 128 characters, used to decide what
+     * fields to expect in the event detail.</p>
+     */
+    inline PipeTargetEventBridgeEventBusParameters& WithDetailType(const char* value) { SetDetailType(value); return *this;}
+
+
+    /**
+     * <p>The source of the event.</p>
+     */
+    inline const Aws::String& GetSource() const{ return m_source; }
+
+    /**
+     * <p>The source of the event.</p>
+     */
+    inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+
+    /**
+     * <p>The source of the event.</p>
+     */
+    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
+
+    /**
+     * <p>The source of the event.</p>
+     */
+    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
+
+    /**
+     * <p>The source of the event.</p>
+     */
+    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
+
+    /**
+     * <p>The source of the event.</p>
+     */
+    inline PipeTargetEventBridgeEventBusParameters& WithSource(const Aws::String& value) { SetSource(value); return *this;}
+
+    /**
+     * <p>The source of the event.</p>
+     */
+    inline PipeTargetEventBridgeEventBusParameters& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
+
+    /**
+     * <p>The source of the event.</p>
+     */
+    inline PipeTargetEventBridgeEventBusParameters& WithSource(const char* value) { SetSource(value); return *this;}
 
 
     /**
@@ -207,47 +248,6 @@ namespace Model
      * present.</p>
      */
     inline PipeTargetEventBridgeEventBusParameters& AddResources(const char* value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
-
-
-    /**
-     * <p>The source of the event.</p>
-     */
-    inline const Aws::String& GetSource() const{ return m_source; }
-
-    /**
-     * <p>The source of the event.</p>
-     */
-    inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-
-    /**
-     * <p>The source of the event.</p>
-     */
-    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-
-    /**
-     * <p>The source of the event.</p>
-     */
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-
-    /**
-     * <p>The source of the event.</p>
-     */
-    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-
-    /**
-     * <p>The source of the event.</p>
-     */
-    inline PipeTargetEventBridgeEventBusParameters& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-
-    /**
-     * <p>The source of the event.</p>
-     */
-    inline PipeTargetEventBridgeEventBusParameters& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-
-    /**
-     * <p>The source of the event.</p>
-     */
-    inline PipeTargetEventBridgeEventBusParameters& WithSource(const char* value) { SetSource(value); return *this;}
 
 
     /**
@@ -324,17 +324,17 @@ namespace Model
 
   private:
 
-    Aws::String m_detailType;
-    bool m_detailTypeHasBeenSet = false;
-
     Aws::String m_endpointId;
     bool m_endpointIdHasBeenSet = false;
 
-    Aws::Vector<Aws::String> m_resources;
-    bool m_resourcesHasBeenSet = false;
+    Aws::String m_detailType;
+    bool m_detailTypeHasBeenSet = false;
 
     Aws::String m_source;
     bool m_sourceHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_resources;
+    bool m_resourcesHasBeenSet = false;
 
     Aws::String m_time;
     bool m_timeHasBeenSet = false;

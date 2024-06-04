@@ -34,27 +34,27 @@ namespace Model
 
 
     /**
-     * <p>The details of the instance.</p>
+     * <p>The details of the SageMaker HyperPod cluster node.</p>
      */
     inline const ClusterNodeDetails& GetNodeDetails() const{ return m_nodeDetails; }
 
     /**
-     * <p>The details of the instance.</p>
+     * <p>The details of the SageMaker HyperPod cluster node.</p>
      */
     inline void SetNodeDetails(const ClusterNodeDetails& value) { m_nodeDetails = value; }
 
     /**
-     * <p>The details of the instance.</p>
+     * <p>The details of the SageMaker HyperPod cluster node.</p>
      */
     inline void SetNodeDetails(ClusterNodeDetails&& value) { m_nodeDetails = std::move(value); }
 
     /**
-     * <p>The details of the instance.</p>
+     * <p>The details of the SageMaker HyperPod cluster node.</p>
      */
     inline DescribeClusterNodeResult& WithNodeDetails(const ClusterNodeDetails& value) { SetNodeDetails(value); return *this;}
 
     /**
-     * <p>The details of the instance.</p>
+     * <p>The details of the SageMaker HyperPod cluster node.</p>
      */
     inline DescribeClusterNodeResult& WithNodeDetails(ClusterNodeDetails&& value) { SetNodeDetails(std::move(value)); return *this;}
 

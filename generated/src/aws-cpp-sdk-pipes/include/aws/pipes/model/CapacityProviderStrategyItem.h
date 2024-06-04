@@ -40,39 +40,6 @@ namespace Model
 
 
     /**
-     * <p>The base value designates how many tasks, at a minimum, to run on the
-     * specified capacity provider. Only one capacity provider in a capacity provider
-     * strategy can have a base defined. If no value is specified, the default value of
-     * 0 is used. </p>
-     */
-    inline int GetBase() const{ return m_base; }
-
-    /**
-     * <p>The base value designates how many tasks, at a minimum, to run on the
-     * specified capacity provider. Only one capacity provider in a capacity provider
-     * strategy can have a base defined. If no value is specified, the default value of
-     * 0 is used. </p>
-     */
-    inline bool BaseHasBeenSet() const { return m_baseHasBeenSet; }
-
-    /**
-     * <p>The base value designates how many tasks, at a minimum, to run on the
-     * specified capacity provider. Only one capacity provider in a capacity provider
-     * strategy can have a base defined. If no value is specified, the default value of
-     * 0 is used. </p>
-     */
-    inline void SetBase(int value) { m_baseHasBeenSet = true; m_base = value; }
-
-    /**
-     * <p>The base value designates how many tasks, at a minimum, to run on the
-     * specified capacity provider. Only one capacity provider in a capacity provider
-     * strategy can have a base defined. If no value is specified, the default value of
-     * 0 is used. </p>
-     */
-    inline CapacityProviderStrategyItem& WithBase(int value) { SetBase(value); return *this;}
-
-
-    /**
      * <p>The short name of the capacity provider.</p>
      */
     inline const Aws::String& GetCapacityProvider() const{ return m_capacityProvider; }
@@ -141,16 +108,49 @@ namespace Model
      */
     inline CapacityProviderStrategyItem& WithWeight(int value) { SetWeight(value); return *this;}
 
-  private:
 
-    int m_base;
-    bool m_baseHasBeenSet = false;
+    /**
+     * <p>The base value designates how many tasks, at a minimum, to run on the
+     * specified capacity provider. Only one capacity provider in a capacity provider
+     * strategy can have a base defined. If no value is specified, the default value of
+     * 0 is used. </p>
+     */
+    inline int GetBase() const{ return m_base; }
+
+    /**
+     * <p>The base value designates how many tasks, at a minimum, to run on the
+     * specified capacity provider. Only one capacity provider in a capacity provider
+     * strategy can have a base defined. If no value is specified, the default value of
+     * 0 is used. </p>
+     */
+    inline bool BaseHasBeenSet() const { return m_baseHasBeenSet; }
+
+    /**
+     * <p>The base value designates how many tasks, at a minimum, to run on the
+     * specified capacity provider. Only one capacity provider in a capacity provider
+     * strategy can have a base defined. If no value is specified, the default value of
+     * 0 is used. </p>
+     */
+    inline void SetBase(int value) { m_baseHasBeenSet = true; m_base = value; }
+
+    /**
+     * <p>The base value designates how many tasks, at a minimum, to run on the
+     * specified capacity provider. Only one capacity provider in a capacity provider
+     * strategy can have a base defined. If no value is specified, the default value of
+     * 0 is used. </p>
+     */
+    inline CapacityProviderStrategyItem& WithBase(int value) { SetBase(value); return *this;}
+
+  private:
 
     Aws::String m_capacityProvider;
     bool m_capacityProviderHasBeenSet = false;
 
     int m_weight;
     bool m_weightHasBeenSet = false;
+
+    int m_base;
+    bool m_baseHasBeenSet = false;
   };
 
 } // namespace Model

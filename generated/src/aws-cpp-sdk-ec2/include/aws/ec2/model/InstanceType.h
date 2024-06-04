@@ -811,7 +811,16 @@ namespace Model
     g6_24xlarge,
     g6_48xlarge,
     gr6_4xlarge,
-    gr6_8xlarge
+    gr6_8xlarge,
+    c7i_flex_large,
+    c7i_flex_xlarge,
+    c7i_flex_2xlarge,
+    c7i_flex_4xlarge,
+    c7i_flex_8xlarge,
+    u7i_12tb_224xlarge,
+    u7in_16tb_224xlarge,
+    u7in_24tb_224xlarge,
+    u7in_32tb_224xlarge
   };
 
 namespace InstanceTypeMapper

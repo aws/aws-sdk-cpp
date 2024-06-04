@@ -18,14 +18,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribePipeResult::DescribePipeResult() : 
-    m_currentState(PipeState::NOT_SET),
-    m_desiredState(RequestedPipeStateDescribeResponse::NOT_SET)
+    m_desiredState(RequestedPipeStateDescribeResponse::NOT_SET),
+    m_currentState(PipeState::NOT_SET)
 {
 }
 
 DescribePipeResult::DescribePipeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_currentState(PipeState::NOT_SET),
-    m_desiredState(RequestedPipeStateDescribeResponse::NOT_SET)
+    m_desiredState(RequestedPipeStateDescribeResponse::NOT_SET),
+    m_currentState(PipeState::NOT_SET)
 {
   *this = result;
 }
@@ -39,15 +39,9 @@ DescribePipeResult& DescribePipeResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
-  if(jsonValue.ValueExists("CreationTime"))
+  if(jsonValue.ValueExists("Name"))
   {
-    m_creationTime = jsonValue.GetDouble("CreationTime");
-
-  }
-
-  if(jsonValue.ValueExists("CurrentState"))
-  {
-    m_currentState = PipeStateMapper::GetPipeStateForName(jsonValue.GetString("CurrentState"));
+    m_name = jsonValue.GetString("Name");
 
   }
 
@@ -63,39 +57,15 @@ DescribePipeResult& DescribePipeResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
-  if(jsonValue.ValueExists("Enrichment"))
+  if(jsonValue.ValueExists("CurrentState"))
   {
-    m_enrichment = jsonValue.GetString("Enrichment");
+    m_currentState = PipeStateMapper::GetPipeStateForName(jsonValue.GetString("CurrentState"));
 
   }
 
-  if(jsonValue.ValueExists("EnrichmentParameters"))
+  if(jsonValue.ValueExists("StateReason"))
   {
-    m_enrichmentParameters = jsonValue.GetObject("EnrichmentParameters");
-
-  }
-
-  if(jsonValue.ValueExists("LastModifiedTime"))
-  {
-    m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
-  }
-
-  if(jsonValue.ValueExists("LogConfiguration"))
-  {
-    m_logConfiguration = jsonValue.GetObject("LogConfiguration");
-
-  }
-
-  if(jsonValue.ValueExists("Name"))
-  {
-    m_name = jsonValue.GetString("Name");
-
-  }
-
-  if(jsonValue.ValueExists("RoleArn"))
-  {
-    m_roleArn = jsonValue.GetString("RoleArn");
+    m_stateReason = jsonValue.GetString("StateReason");
 
   }
 
@@ -111,9 +81,33 @@ DescribePipeResult& DescribePipeResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
-  if(jsonValue.ValueExists("StateReason"))
+  if(jsonValue.ValueExists("Enrichment"))
   {
-    m_stateReason = jsonValue.GetString("StateReason");
+    m_enrichment = jsonValue.GetString("Enrichment");
+
+  }
+
+  if(jsonValue.ValueExists("EnrichmentParameters"))
+  {
+    m_enrichmentParameters = jsonValue.GetObject("EnrichmentParameters");
+
+  }
+
+  if(jsonValue.ValueExists("Target"))
+  {
+    m_target = jsonValue.GetString("Target");
+
+  }
+
+  if(jsonValue.ValueExists("TargetParameters"))
+  {
+    m_targetParameters = jsonValue.GetObject("TargetParameters");
+
+  }
+
+  if(jsonValue.ValueExists("RoleArn"))
+  {
+    m_roleArn = jsonValue.GetString("RoleArn");
 
   }
 
@@ -126,15 +120,21 @@ DescribePipeResult& DescribePipeResult::operator =(const Aws::AmazonWebServiceRe
     }
   }
 
-  if(jsonValue.ValueExists("Target"))
+  if(jsonValue.ValueExists("CreationTime"))
   {
-    m_target = jsonValue.GetString("Target");
+    m_creationTime = jsonValue.GetDouble("CreationTime");
 
   }
 
-  if(jsonValue.ValueExists("TargetParameters"))
+  if(jsonValue.ValueExists("LastModifiedTime"))
   {
-    m_targetParameters = jsonValue.GetObject("TargetParameters");
+    m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
+
+  }
+
+  if(jsonValue.ValueExists("LogConfiguration"))
+  {
+    m_logConfiguration = jsonValue.GetObject("LogConfiguration");
 
   }
 

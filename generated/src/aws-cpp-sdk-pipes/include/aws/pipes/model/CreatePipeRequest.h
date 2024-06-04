@@ -8,11 +8,11 @@
 #include <aws/pipes/PipesRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pipes/model/RequestedPipeState.h>
-#include <aws/pipes/model/PipeEnrichmentParameters.h>
-#include <aws/pipes/model/PipeLogConfigurationParameters.h>
 #include <aws/pipes/model/PipeSourceParameters.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/pipes/model/PipeEnrichmentParameters.h>
 #include <aws/pipes/model/PipeTargetParameters.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/pipes/model/PipeLogConfigurationParameters.h>
 #include <utility>
 
 namespace Aws
@@ -36,6 +36,47 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "CreatePipe"; }
 
     AWS_PIPES_API Aws::String SerializePayload() const override;
+
+
+    /**
+     * <p>The name of the pipe.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the pipe.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the pipe.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>The name of the pipe.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * <p>The name of the pipe.</p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p>The name of the pipe.</p>
+     */
+    inline CreatePipeRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>The name of the pipe.</p>
+     */
+    inline CreatePipeRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the pipe.</p>
+     */
+    inline CreatePipeRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
@@ -111,191 +152,6 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the enrichment resource.</p>
-     */
-    inline const Aws::String& GetEnrichment() const{ return m_enrichment; }
-
-    /**
-     * <p>The ARN of the enrichment resource.</p>
-     */
-    inline bool EnrichmentHasBeenSet() const { return m_enrichmentHasBeenSet; }
-
-    /**
-     * <p>The ARN of the enrichment resource.</p>
-     */
-    inline void SetEnrichment(const Aws::String& value) { m_enrichmentHasBeenSet = true; m_enrichment = value; }
-
-    /**
-     * <p>The ARN of the enrichment resource.</p>
-     */
-    inline void SetEnrichment(Aws::String&& value) { m_enrichmentHasBeenSet = true; m_enrichment = std::move(value); }
-
-    /**
-     * <p>The ARN of the enrichment resource.</p>
-     */
-    inline void SetEnrichment(const char* value) { m_enrichmentHasBeenSet = true; m_enrichment.assign(value); }
-
-    /**
-     * <p>The ARN of the enrichment resource.</p>
-     */
-    inline CreatePipeRequest& WithEnrichment(const Aws::String& value) { SetEnrichment(value); return *this;}
-
-    /**
-     * <p>The ARN of the enrichment resource.</p>
-     */
-    inline CreatePipeRequest& WithEnrichment(Aws::String&& value) { SetEnrichment(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the enrichment resource.</p>
-     */
-    inline CreatePipeRequest& WithEnrichment(const char* value) { SetEnrichment(value); return *this;}
-
-
-    /**
-     * <p>The parameters required to set up enrichment on your pipe.</p>
-     */
-    inline const PipeEnrichmentParameters& GetEnrichmentParameters() const{ return m_enrichmentParameters; }
-
-    /**
-     * <p>The parameters required to set up enrichment on your pipe.</p>
-     */
-    inline bool EnrichmentParametersHasBeenSet() const { return m_enrichmentParametersHasBeenSet; }
-
-    /**
-     * <p>The parameters required to set up enrichment on your pipe.</p>
-     */
-    inline void SetEnrichmentParameters(const PipeEnrichmentParameters& value) { m_enrichmentParametersHasBeenSet = true; m_enrichmentParameters = value; }
-
-    /**
-     * <p>The parameters required to set up enrichment on your pipe.</p>
-     */
-    inline void SetEnrichmentParameters(PipeEnrichmentParameters&& value) { m_enrichmentParametersHasBeenSet = true; m_enrichmentParameters = std::move(value); }
-
-    /**
-     * <p>The parameters required to set up enrichment on your pipe.</p>
-     */
-    inline CreatePipeRequest& WithEnrichmentParameters(const PipeEnrichmentParameters& value) { SetEnrichmentParameters(value); return *this;}
-
-    /**
-     * <p>The parameters required to set up enrichment on your pipe.</p>
-     */
-    inline CreatePipeRequest& WithEnrichmentParameters(PipeEnrichmentParameters&& value) { SetEnrichmentParameters(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The logging configuration settings for the pipe.</p>
-     */
-    inline const PipeLogConfigurationParameters& GetLogConfiguration() const{ return m_logConfiguration; }
-
-    /**
-     * <p>The logging configuration settings for the pipe.</p>
-     */
-    inline bool LogConfigurationHasBeenSet() const { return m_logConfigurationHasBeenSet; }
-
-    /**
-     * <p>The logging configuration settings for the pipe.</p>
-     */
-    inline void SetLogConfiguration(const PipeLogConfigurationParameters& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = value; }
-
-    /**
-     * <p>The logging configuration settings for the pipe.</p>
-     */
-    inline void SetLogConfiguration(PipeLogConfigurationParameters&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::move(value); }
-
-    /**
-     * <p>The logging configuration settings for the pipe.</p>
-     */
-    inline CreatePipeRequest& WithLogConfiguration(const PipeLogConfigurationParameters& value) { SetLogConfiguration(value); return *this;}
-
-    /**
-     * <p>The logging configuration settings for the pipe.</p>
-     */
-    inline CreatePipeRequest& WithLogConfiguration(PipeLogConfigurationParameters&& value) { SetLogConfiguration(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline CreatePipeRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline CreatePipeRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline CreatePipeRequest& WithName(const char* value) { SetName(value); return *this;}
-
-
-    /**
-     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
-     */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-
-    /**
-     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
-     */
-    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
-     */
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-
-    /**
-     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
-     */
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
-     */
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-
-    /**
-     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
-     */
-    inline CreatePipeRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
-     */
-    inline CreatePipeRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
-     */
-    inline CreatePipeRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
-
-
-    /**
      * <p>The ARN of the source resource.</p>
      */
     inline const Aws::String& GetSource() const{ return m_source; }
@@ -368,69 +224,75 @@ namespace Model
 
 
     /**
-     * <p>The list of key-value pairs to associate with the pipe.</p>
+     * <p>The ARN of the enrichment resource.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::String& GetEnrichment() const{ return m_enrichment; }
 
     /**
-     * <p>The list of key-value pairs to associate with the pipe.</p>
+     * <p>The ARN of the enrichment resource.</p>
      */
-    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+    inline bool EnrichmentHasBeenSet() const { return m_enrichmentHasBeenSet; }
 
     /**
-     * <p>The list of key-value pairs to associate with the pipe.</p>
+     * <p>The ARN of the enrichment resource.</p>
      */
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetEnrichment(const Aws::String& value) { m_enrichmentHasBeenSet = true; m_enrichment = value; }
 
     /**
-     * <p>The list of key-value pairs to associate with the pipe.</p>
+     * <p>The ARN of the enrichment resource.</p>
      */
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+    inline void SetEnrichment(Aws::String&& value) { m_enrichmentHasBeenSet = true; m_enrichment = std::move(value); }
 
     /**
-     * <p>The list of key-value pairs to associate with the pipe.</p>
+     * <p>The ARN of the enrichment resource.</p>
      */
-    inline CreatePipeRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+    inline void SetEnrichment(const char* value) { m_enrichmentHasBeenSet = true; m_enrichment.assign(value); }
 
     /**
-     * <p>The list of key-value pairs to associate with the pipe.</p>
+     * <p>The ARN of the enrichment resource.</p>
      */
-    inline CreatePipeRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+    inline CreatePipeRequest& WithEnrichment(const Aws::String& value) { SetEnrichment(value); return *this;}
 
     /**
-     * <p>The list of key-value pairs to associate with the pipe.</p>
+     * <p>The ARN of the enrichment resource.</p>
      */
-    inline CreatePipeRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    inline CreatePipeRequest& WithEnrichment(Aws::String&& value) { SetEnrichment(std::move(value)); return *this;}
 
     /**
-     * <p>The list of key-value pairs to associate with the pipe.</p>
+     * <p>The ARN of the enrichment resource.</p>
      */
-    inline CreatePipeRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+    inline CreatePipeRequest& WithEnrichment(const char* value) { SetEnrichment(value); return *this;}
+
 
     /**
-     * <p>The list of key-value pairs to associate with the pipe.</p>
+     * <p>The parameters required to set up enrichment on your pipe.</p>
      */
-    inline CreatePipeRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+    inline const PipeEnrichmentParameters& GetEnrichmentParameters() const{ return m_enrichmentParameters; }
 
     /**
-     * <p>The list of key-value pairs to associate with the pipe.</p>
+     * <p>The parameters required to set up enrichment on your pipe.</p>
      */
-    inline CreatePipeRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+    inline bool EnrichmentParametersHasBeenSet() const { return m_enrichmentParametersHasBeenSet; }
 
     /**
-     * <p>The list of key-value pairs to associate with the pipe.</p>
+     * <p>The parameters required to set up enrichment on your pipe.</p>
      */
-    inline CreatePipeRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+    inline void SetEnrichmentParameters(const PipeEnrichmentParameters& value) { m_enrichmentParametersHasBeenSet = true; m_enrichmentParameters = value; }
 
     /**
-     * <p>The list of key-value pairs to associate with the pipe.</p>
+     * <p>The parameters required to set up enrichment on your pipe.</p>
      */
-    inline CreatePipeRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+    inline void SetEnrichmentParameters(PipeEnrichmentParameters&& value) { m_enrichmentParametersHasBeenSet = true; m_enrichmentParameters = std::move(value); }
 
     /**
-     * <p>The list of key-value pairs to associate with the pipe.</p>
+     * <p>The parameters required to set up enrichment on your pipe.</p>
      */
-    inline CreatePipeRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    inline CreatePipeRequest& WithEnrichmentParameters(const PipeEnrichmentParameters& value) { SetEnrichmentParameters(value); return *this;}
+
+    /**
+     * <p>The parameters required to set up enrichment on your pipe.</p>
+     */
+    inline CreatePipeRequest& WithEnrichmentParameters(PipeEnrichmentParameters&& value) { SetEnrichmentParameters(std::move(value)); return *this;}
 
 
     /**
@@ -528,7 +390,148 @@ namespace Model
      */
     inline CreatePipeRequest& WithTargetParameters(PipeTargetParameters&& value) { SetTargetParameters(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
+     */
+    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
+     */
+    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+
+    /**
+     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
+     */
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
+     */
+    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
+
+    /**
+     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
+     */
+    inline CreatePipeRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
+     */
+    inline CreatePipeRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
+     */
+    inline CreatePipeRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
+
+    /**
+     * <p>The list of key-value pairs to associate with the pipe.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The list of key-value pairs to associate with the pipe.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The list of key-value pairs to associate with the pipe.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The list of key-value pairs to associate with the pipe.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The list of key-value pairs to associate with the pipe.</p>
+     */
+    inline CreatePipeRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The list of key-value pairs to associate with the pipe.</p>
+     */
+    inline CreatePipeRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of key-value pairs to associate with the pipe.</p>
+     */
+    inline CreatePipeRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The list of key-value pairs to associate with the pipe.</p>
+     */
+    inline CreatePipeRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The list of key-value pairs to associate with the pipe.</p>
+     */
+    inline CreatePipeRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The list of key-value pairs to associate with the pipe.</p>
+     */
+    inline CreatePipeRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The list of key-value pairs to associate with the pipe.</p>
+     */
+    inline CreatePipeRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The list of key-value pairs to associate with the pipe.</p>
+     */
+    inline CreatePipeRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The list of key-value pairs to associate with the pipe.</p>
+     */
+    inline CreatePipeRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>The logging configuration settings for the pipe.</p>
+     */
+    inline const PipeLogConfigurationParameters& GetLogConfiguration() const{ return m_logConfiguration; }
+
+    /**
+     * <p>The logging configuration settings for the pipe.</p>
+     */
+    inline bool LogConfigurationHasBeenSet() const { return m_logConfigurationHasBeenSet; }
+
+    /**
+     * <p>The logging configuration settings for the pipe.</p>
+     */
+    inline void SetLogConfiguration(const PipeLogConfigurationParameters& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = value; }
+
+    /**
+     * <p>The logging configuration settings for the pipe.</p>
+     */
+    inline void SetLogConfiguration(PipeLogConfigurationParameters&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::move(value); }
+
+    /**
+     * <p>The logging configuration settings for the pipe.</p>
+     */
+    inline CreatePipeRequest& WithLogConfiguration(const PipeLogConfigurationParameters& value) { SetLogConfiguration(value); return *this;}
+
+    /**
+     * <p>The logging configuration settings for the pipe.</p>
+     */
+    inline CreatePipeRequest& WithLogConfiguration(PipeLogConfigurationParameters&& value) { SetLogConfiguration(std::move(value)); return *this;}
+
   private:
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
@@ -536,35 +539,32 @@ namespace Model
     RequestedPipeState m_desiredState;
     bool m_desiredStateHasBeenSet = false;
 
-    Aws::String m_enrichment;
-    bool m_enrichmentHasBeenSet = false;
-
-    PipeEnrichmentParameters m_enrichmentParameters;
-    bool m_enrichmentParametersHasBeenSet = false;
-
-    PipeLogConfigurationParameters m_logConfiguration;
-    bool m_logConfigurationHasBeenSet = false;
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-
-    Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet = false;
-
     Aws::String m_source;
     bool m_sourceHasBeenSet = false;
 
     PipeSourceParameters m_sourceParameters;
     bool m_sourceParametersHasBeenSet = false;
 
-    Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet = false;
+    Aws::String m_enrichment;
+    bool m_enrichmentHasBeenSet = false;
+
+    PipeEnrichmentParameters m_enrichmentParameters;
+    bool m_enrichmentParametersHasBeenSet = false;
 
     Aws::String m_target;
     bool m_targetHasBeenSet = false;
 
     PipeTargetParameters m_targetParameters;
     bool m_targetParametersHasBeenSet = false;
+
+    Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
+
+    PipeLogConfigurationParameters m_logConfiguration;
+    bool m_logConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -63,47 +63,6 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the quota that caused the exception.</p>
-     */
-    inline const Aws::String& GetQuotaCode() const{ return m_quotaCode; }
-
-    /**
-     * <p>The identifier of the quota that caused the exception.</p>
-     */
-    inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }
-
-    /**
-     * <p>The identifier of the quota that caused the exception.</p>
-     */
-    inline void SetQuotaCode(const Aws::String& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = value; }
-
-    /**
-     * <p>The identifier of the quota that caused the exception.</p>
-     */
-    inline void SetQuotaCode(Aws::String&& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = std::move(value); }
-
-    /**
-     * <p>The identifier of the quota that caused the exception.</p>
-     */
-    inline void SetQuotaCode(const char* value) { m_quotaCodeHasBeenSet = true; m_quotaCode.assign(value); }
-
-    /**
-     * <p>The identifier of the quota that caused the exception.</p>
-     */
-    inline ServiceQuotaExceededException& WithQuotaCode(const Aws::String& value) { SetQuotaCode(value); return *this;}
-
-    /**
-     * <p>The identifier of the quota that caused the exception.</p>
-     */
-    inline ServiceQuotaExceededException& WithQuotaCode(Aws::String&& value) { SetQuotaCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the quota that caused the exception.</p>
-     */
-    inline ServiceQuotaExceededException& WithQuotaCode(const char* value) { SetQuotaCode(value); return *this;}
-
-
-    /**
      * <p>The ID of the resource that caused the exception.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
@@ -225,13 +184,51 @@ namespace Model
      */
     inline ServiceQuotaExceededException& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
 
+
+    /**
+     * <p>The identifier of the quota that caused the exception.</p>
+     */
+    inline const Aws::String& GetQuotaCode() const{ return m_quotaCode; }
+
+    /**
+     * <p>The identifier of the quota that caused the exception.</p>
+     */
+    inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }
+
+    /**
+     * <p>The identifier of the quota that caused the exception.</p>
+     */
+    inline void SetQuotaCode(const Aws::String& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = value; }
+
+    /**
+     * <p>The identifier of the quota that caused the exception.</p>
+     */
+    inline void SetQuotaCode(Aws::String&& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = std::move(value); }
+
+    /**
+     * <p>The identifier of the quota that caused the exception.</p>
+     */
+    inline void SetQuotaCode(const char* value) { m_quotaCodeHasBeenSet = true; m_quotaCode.assign(value); }
+
+    /**
+     * <p>The identifier of the quota that caused the exception.</p>
+     */
+    inline ServiceQuotaExceededException& WithQuotaCode(const Aws::String& value) { SetQuotaCode(value); return *this;}
+
+    /**
+     * <p>The identifier of the quota that caused the exception.</p>
+     */
+    inline ServiceQuotaExceededException& WithQuotaCode(Aws::String&& value) { SetQuotaCode(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the quota that caused the exception.</p>
+     */
+    inline ServiceQuotaExceededException& WithQuotaCode(const char* value) { SetQuotaCode(value); return *this;}
+
   private:
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
-
-    Aws::String m_quotaCode;
-    bool m_quotaCodeHasBeenSet = false;
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
@@ -241,6 +238,9 @@ namespace Model
 
     Aws::String m_serviceCode;
     bool m_serviceCodeHasBeenSet = false;
+
+    Aws::String m_quotaCode;
+    bool m_quotaCodeHasBeenSet = false;
   };
 
 } // namespace Model

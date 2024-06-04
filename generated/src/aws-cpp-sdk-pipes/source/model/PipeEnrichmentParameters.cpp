@@ -19,32 +19,32 @@ namespace Model
 {
 
 PipeEnrichmentParameters::PipeEnrichmentParameters() : 
-    m_httpParametersHasBeenSet(false),
-    m_inputTemplateHasBeenSet(false)
+    m_inputTemplateHasBeenSet(false),
+    m_httpParametersHasBeenSet(false)
 {
 }
 
 PipeEnrichmentParameters::PipeEnrichmentParameters(JsonView jsonValue) : 
-    m_httpParametersHasBeenSet(false),
-    m_inputTemplateHasBeenSet(false)
+    m_inputTemplateHasBeenSet(false),
+    m_httpParametersHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 PipeEnrichmentParameters& PipeEnrichmentParameters::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("HttpParameters"))
-  {
-    m_httpParameters = jsonValue.GetObject("HttpParameters");
-
-    m_httpParametersHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("InputTemplate"))
   {
     m_inputTemplate = jsonValue.GetString("InputTemplate");
 
     m_inputTemplateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("HttpParameters"))
+  {
+    m_httpParameters = jsonValue.GetObject("HttpParameters");
+
+    m_httpParametersHasBeenSet = true;
   }
 
   return *this;
@@ -54,15 +54,15 @@ JsonValue PipeEnrichmentParameters::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_httpParametersHasBeenSet)
-  {
-   payload.WithObject("HttpParameters", m_httpParameters.Jsonize());
-
-  }
-
   if(m_inputTemplateHasBeenSet)
   {
    payload.WithString("InputTemplate", m_inputTemplate);
+
+  }
+
+  if(m_httpParametersHasBeenSet)
+  {
+   payload.WithObject("HttpParameters", m_httpParameters.Jsonize());
 
   }
 

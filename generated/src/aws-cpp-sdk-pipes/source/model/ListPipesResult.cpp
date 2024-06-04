@@ -29,12 +29,6 @@ ListPipesResult::ListPipesResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 ListPipesResult& ListPipesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
-    m_nextToken = jsonValue.GetString("NextToken");
-
-  }
-
   if(jsonValue.ValueExists("Pipes"))
   {
     Aws::Utils::Array<JsonView> pipesJsonList = jsonValue.GetArray("Pipes");
@@ -42,6 +36,12 @@ ListPipesResult& ListPipesResult::operator =(const Aws::AmazonWebServiceResult<J
     {
       m_pipes.push_back(pipesJsonList[pipesIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+
   }
 
 
