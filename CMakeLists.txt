@@ -220,7 +220,7 @@ if (LEGACY_BUILD)
         set(BUILD_TESTING OFF CACHE BOOL "Disable all tests in dependencies.")
         # TODO: Use same BUILD_SHARED_LIBS for Aws Common Runtime dependencies.
         set(CRT_BUILD_SHARED_LIBS ${BUILD_SHARED_LIBS})
-        add_subdirectory(crt/aws-crt-cpp)
+        add_subdirectory(crt/aws-crt-cpp/crt/aws-c-common)
         set(BUILD_TESTING ${BUILD_TESTING_PREV})
     else ()
         # This is required in order to append /lib/cmake to each element in CMAKE_PREFIX_PATH
