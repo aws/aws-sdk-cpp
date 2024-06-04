@@ -21,9 +21,9 @@ namespace Model
 UpdatePipeSourceSelfManagedKafkaParameters::UpdatePipeSourceSelfManagedKafkaParameters() : 
     m_batchSize(0),
     m_batchSizeHasBeenSet(false),
-    m_credentialsHasBeenSet(false),
     m_maximumBatchingWindowInSeconds(0),
     m_maximumBatchingWindowInSecondsHasBeenSet(false),
+    m_credentialsHasBeenSet(false),
     m_serverRootCaCertificateHasBeenSet(false),
     m_vpcHasBeenSet(false)
 {
@@ -32,9 +32,9 @@ UpdatePipeSourceSelfManagedKafkaParameters::UpdatePipeSourceSelfManagedKafkaPara
 UpdatePipeSourceSelfManagedKafkaParameters::UpdatePipeSourceSelfManagedKafkaParameters(JsonView jsonValue) : 
     m_batchSize(0),
     m_batchSizeHasBeenSet(false),
-    m_credentialsHasBeenSet(false),
     m_maximumBatchingWindowInSeconds(0),
     m_maximumBatchingWindowInSecondsHasBeenSet(false),
+    m_credentialsHasBeenSet(false),
     m_serverRootCaCertificateHasBeenSet(false),
     m_vpcHasBeenSet(false)
 {
@@ -50,18 +50,18 @@ UpdatePipeSourceSelfManagedKafkaParameters& UpdatePipeSourceSelfManagedKafkaPara
     m_batchSizeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("Credentials"))
-  {
-    m_credentials = jsonValue.GetObject("Credentials");
-
-    m_credentialsHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("MaximumBatchingWindowInSeconds"))
   {
     m_maximumBatchingWindowInSeconds = jsonValue.GetInteger("MaximumBatchingWindowInSeconds");
 
     m_maximumBatchingWindowInSecondsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Credentials"))
+  {
+    m_credentials = jsonValue.GetObject("Credentials");
+
+    m_credentialsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ServerRootCaCertificate"))
@@ -91,15 +91,15 @@ JsonValue UpdatePipeSourceSelfManagedKafkaParameters::Jsonize() const
 
   }
 
-  if(m_credentialsHasBeenSet)
-  {
-   payload.WithObject("Credentials", m_credentials.Jsonize());
-
-  }
-
   if(m_maximumBatchingWindowInSecondsHasBeenSet)
   {
    payload.WithInteger("MaximumBatchingWindowInSeconds", m_maximumBatchingWindowInSeconds);
+
+  }
+
+  if(m_credentialsHasBeenSet)
+  {
+   payload.WithObject("Credentials", m_credentials.Jsonize());
 
   }
 

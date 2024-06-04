@@ -8,10 +8,10 @@
 #include <aws/pipes/PipesRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pipes/model/RequestedPipeState.h>
-#include <aws/pipes/model/PipeEnrichmentParameters.h>
-#include <aws/pipes/model/PipeLogConfigurationParameters.h>
 #include <aws/pipes/model/UpdatePipeSourceParameters.h>
+#include <aws/pipes/model/PipeEnrichmentParameters.h>
 #include <aws/pipes/model/PipeTargetParameters.h>
+#include <aws/pipes/model/PipeLogConfigurationParameters.h>
 #include <utility>
 
 namespace Aws
@@ -35,6 +35,47 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "UpdatePipe"; }
 
     AWS_PIPES_API Aws::String SerializePayload() const override;
+
+
+    /**
+     * <p>The name of the pipe.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the pipe.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the pipe.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>The name of the pipe.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * <p>The name of the pipe.</p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p>The name of the pipe.</p>
+     */
+    inline UpdatePipeRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>The name of the pipe.</p>
+     */
+    inline UpdatePipeRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the pipe.</p>
+     */
+    inline UpdatePipeRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
@@ -110,6 +151,37 @@ namespace Model
 
 
     /**
+     * <p>The parameters required to set up a source for your pipe.</p>
+     */
+    inline const UpdatePipeSourceParameters& GetSourceParameters() const{ return m_sourceParameters; }
+
+    /**
+     * <p>The parameters required to set up a source for your pipe.</p>
+     */
+    inline bool SourceParametersHasBeenSet() const { return m_sourceParametersHasBeenSet; }
+
+    /**
+     * <p>The parameters required to set up a source for your pipe.</p>
+     */
+    inline void SetSourceParameters(const UpdatePipeSourceParameters& value) { m_sourceParametersHasBeenSet = true; m_sourceParameters = value; }
+
+    /**
+     * <p>The parameters required to set up a source for your pipe.</p>
+     */
+    inline void SetSourceParameters(UpdatePipeSourceParameters&& value) { m_sourceParametersHasBeenSet = true; m_sourceParameters = std::move(value); }
+
+    /**
+     * <p>The parameters required to set up a source for your pipe.</p>
+     */
+    inline UpdatePipeRequest& WithSourceParameters(const UpdatePipeSourceParameters& value) { SetSourceParameters(value); return *this;}
+
+    /**
+     * <p>The parameters required to set up a source for your pipe.</p>
+     */
+    inline UpdatePipeRequest& WithSourceParameters(UpdatePipeSourceParameters&& value) { SetSourceParameters(std::move(value)); return *this;}
+
+
+    /**
      * <p>The ARN of the enrichment resource.</p>
      */
     inline const Aws::String& GetEnrichment() const{ return m_enrichment; }
@@ -179,150 +251,6 @@ namespace Model
      * <p>The parameters required to set up enrichment on your pipe.</p>
      */
     inline UpdatePipeRequest& WithEnrichmentParameters(PipeEnrichmentParameters&& value) { SetEnrichmentParameters(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The logging configuration settings for the pipe.</p>
-     */
-    inline const PipeLogConfigurationParameters& GetLogConfiguration() const{ return m_logConfiguration; }
-
-    /**
-     * <p>The logging configuration settings for the pipe.</p>
-     */
-    inline bool LogConfigurationHasBeenSet() const { return m_logConfigurationHasBeenSet; }
-
-    /**
-     * <p>The logging configuration settings for the pipe.</p>
-     */
-    inline void SetLogConfiguration(const PipeLogConfigurationParameters& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = value; }
-
-    /**
-     * <p>The logging configuration settings for the pipe.</p>
-     */
-    inline void SetLogConfiguration(PipeLogConfigurationParameters&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::move(value); }
-
-    /**
-     * <p>The logging configuration settings for the pipe.</p>
-     */
-    inline UpdatePipeRequest& WithLogConfiguration(const PipeLogConfigurationParameters& value) { SetLogConfiguration(value); return *this;}
-
-    /**
-     * <p>The logging configuration settings for the pipe.</p>
-     */
-    inline UpdatePipeRequest& WithLogConfiguration(PipeLogConfigurationParameters&& value) { SetLogConfiguration(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline UpdatePipeRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline UpdatePipeRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline UpdatePipeRequest& WithName(const char* value) { SetName(value); return *this;}
-
-
-    /**
-     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
-     */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-
-    /**
-     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
-     */
-    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
-     */
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-
-    /**
-     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
-     */
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
-     */
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-
-    /**
-     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
-     */
-    inline UpdatePipeRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
-     */
-    inline UpdatePipeRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
-     */
-    inline UpdatePipeRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
-
-
-    /**
-     * <p>The parameters required to set up a source for your pipe.</p>
-     */
-    inline const UpdatePipeSourceParameters& GetSourceParameters() const{ return m_sourceParameters; }
-
-    /**
-     * <p>The parameters required to set up a source for your pipe.</p>
-     */
-    inline bool SourceParametersHasBeenSet() const { return m_sourceParametersHasBeenSet; }
-
-    /**
-     * <p>The parameters required to set up a source for your pipe.</p>
-     */
-    inline void SetSourceParameters(const UpdatePipeSourceParameters& value) { m_sourceParametersHasBeenSet = true; m_sourceParameters = value; }
-
-    /**
-     * <p>The parameters required to set up a source for your pipe.</p>
-     */
-    inline void SetSourceParameters(UpdatePipeSourceParameters&& value) { m_sourceParametersHasBeenSet = true; m_sourceParameters = std::move(value); }
-
-    /**
-     * <p>The parameters required to set up a source for your pipe.</p>
-     */
-    inline UpdatePipeRequest& WithSourceParameters(const UpdatePipeSourceParameters& value) { SetSourceParameters(value); return *this;}
-
-    /**
-     * <p>The parameters required to set up a source for your pipe.</p>
-     */
-    inline UpdatePipeRequest& WithSourceParameters(UpdatePipeSourceParameters&& value) { SetSourceParameters(std::move(value)); return *this;}
 
 
     /**
@@ -420,7 +348,82 @@ namespace Model
      */
     inline UpdatePipeRequest& WithTargetParameters(PipeTargetParameters&& value) { SetTargetParameters(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
+     */
+    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
+     */
+    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+
+    /**
+     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
+     */
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
+     */
+    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
+
+    /**
+     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
+     */
+    inline UpdatePipeRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
+     */
+    inline UpdatePipeRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
+     */
+    inline UpdatePipeRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
+
+    /**
+     * <p>The logging configuration settings for the pipe.</p>
+     */
+    inline const PipeLogConfigurationParameters& GetLogConfiguration() const{ return m_logConfiguration; }
+
+    /**
+     * <p>The logging configuration settings for the pipe.</p>
+     */
+    inline bool LogConfigurationHasBeenSet() const { return m_logConfigurationHasBeenSet; }
+
+    /**
+     * <p>The logging configuration settings for the pipe.</p>
+     */
+    inline void SetLogConfiguration(const PipeLogConfigurationParameters& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = value; }
+
+    /**
+     * <p>The logging configuration settings for the pipe.</p>
+     */
+    inline void SetLogConfiguration(PipeLogConfigurationParameters&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::move(value); }
+
+    /**
+     * <p>The logging configuration settings for the pipe.</p>
+     */
+    inline UpdatePipeRequest& WithLogConfiguration(const PipeLogConfigurationParameters& value) { SetLogConfiguration(value); return *this;}
+
+    /**
+     * <p>The logging configuration settings for the pipe.</p>
+     */
+    inline UpdatePipeRequest& WithLogConfiguration(PipeLogConfigurationParameters&& value) { SetLogConfiguration(std::move(value)); return *this;}
+
   private:
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
@@ -428,29 +431,26 @@ namespace Model
     RequestedPipeState m_desiredState;
     bool m_desiredStateHasBeenSet = false;
 
+    UpdatePipeSourceParameters m_sourceParameters;
+    bool m_sourceParametersHasBeenSet = false;
+
     Aws::String m_enrichment;
     bool m_enrichmentHasBeenSet = false;
 
     PipeEnrichmentParameters m_enrichmentParameters;
     bool m_enrichmentParametersHasBeenSet = false;
 
-    PipeLogConfigurationParameters m_logConfiguration;
-    bool m_logConfigurationHasBeenSet = false;
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-
-    Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet = false;
-
-    UpdatePipeSourceParameters m_sourceParameters;
-    bool m_sourceParametersHasBeenSet = false;
-
     Aws::String m_target;
     bool m_targetHasBeenSet = false;
 
     PipeTargetParameters m_targetParameters;
     bool m_targetParametersHasBeenSet = false;
+
+    Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
+
+    PipeLogConfigurationParameters m_logConfiguration;
+    bool m_logConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

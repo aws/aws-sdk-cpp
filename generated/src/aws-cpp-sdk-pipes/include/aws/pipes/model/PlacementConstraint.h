@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/pipes/Pipes_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pipes/model/PlacementConstraintType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -39,6 +39,49 @@ namespace Model
     AWS_PIPES_API PlacementConstraint(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API PlacementConstraint& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The type of constraint. Use distinctInstance to ensure that each task in a
+     * particular group is running on a different container instance. Use memberOf to
+     * restrict the selection to a group of valid candidates. </p>
+     */
+    inline const PlacementConstraintType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of constraint. Use distinctInstance to ensure that each task in a
+     * particular group is running on a different container instance. Use memberOf to
+     * restrict the selection to a group of valid candidates. </p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of constraint. Use distinctInstance to ensure that each task in a
+     * particular group is running on a different container instance. Use memberOf to
+     * restrict the selection to a group of valid candidates. </p>
+     */
+    inline void SetType(const PlacementConstraintType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The type of constraint. Use distinctInstance to ensure that each task in a
+     * particular group is running on a different container instance. Use memberOf to
+     * restrict the selection to a group of valid candidates. </p>
+     */
+    inline void SetType(PlacementConstraintType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>The type of constraint. Use distinctInstance to ensure that each task in a
+     * particular group is running on a different container instance. Use memberOf to
+     * restrict the selection to a group of valid candidates. </p>
+     */
+    inline PlacementConstraint& WithType(const PlacementConstraintType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The type of constraint. Use distinctInstance to ensure that each task in a
+     * particular group is running on a different container instance. Use memberOf to
+     * restrict the selection to a group of valid candidates. </p>
+     */
+    inline PlacementConstraint& WithType(PlacementConstraintType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
@@ -113,56 +156,13 @@ namespace Model
      */
     inline PlacementConstraint& WithExpression(const char* value) { SetExpression(value); return *this;}
 
-
-    /**
-     * <p>The type of constraint. Use distinctInstance to ensure that each task in a
-     * particular group is running on a different container instance. Use memberOf to
-     * restrict the selection to a group of valid candidates. </p>
-     */
-    inline const PlacementConstraintType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of constraint. Use distinctInstance to ensure that each task in a
-     * particular group is running on a different container instance. Use memberOf to
-     * restrict the selection to a group of valid candidates. </p>
-     */
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of constraint. Use distinctInstance to ensure that each task in a
-     * particular group is running on a different container instance. Use memberOf to
-     * restrict the selection to a group of valid candidates. </p>
-     */
-    inline void SetType(const PlacementConstraintType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of constraint. Use distinctInstance to ensure that each task in a
-     * particular group is running on a different container instance. Use memberOf to
-     * restrict the selection to a group of valid candidates. </p>
-     */
-    inline void SetType(PlacementConstraintType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of constraint. Use distinctInstance to ensure that each task in a
-     * particular group is running on a different container instance. Use memberOf to
-     * restrict the selection to a group of valid candidates. </p>
-     */
-    inline PlacementConstraint& WithType(const PlacementConstraintType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of constraint. Use distinctInstance to ensure that each task in a
-     * particular group is running on a different container instance. Use memberOf to
-     * restrict the selection to a group of valid candidates. </p>
-     */
-    inline PlacementConstraint& WithType(PlacementConstraintType&& value) { SetType(std::move(value)); return *this;}
-
   private:
-
-    Aws::String m_expression;
-    bool m_expressionHasBeenSet = false;
 
     PlacementConstraintType m_type;
     bool m_typeHasBeenSet = false;
+
+    Aws::String m_expression;
+    bool m_expressionHasBeenSet = false;
   };
 
 } // namespace Model

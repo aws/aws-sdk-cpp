@@ -5,14 +5,14 @@
 
 #pragma once
 #include <aws/pipes/Pipes_EXPORTS.h>
-#include <aws/pipes/model/UpdatePipeSourceActiveMQBrokerParameters.h>
-#include <aws/pipes/model/UpdatePipeSourceDynamoDBStreamParameters.h>
 #include <aws/pipes/model/FilterCriteria.h>
 #include <aws/pipes/model/UpdatePipeSourceKinesisStreamParameters.h>
-#include <aws/pipes/model/UpdatePipeSourceManagedStreamingKafkaParameters.h>
-#include <aws/pipes/model/UpdatePipeSourceRabbitMQBrokerParameters.h>
-#include <aws/pipes/model/UpdatePipeSourceSelfManagedKafkaParameters.h>
+#include <aws/pipes/model/UpdatePipeSourceDynamoDBStreamParameters.h>
 #include <aws/pipes/model/UpdatePipeSourceSqsQueueParameters.h>
+#include <aws/pipes/model/UpdatePipeSourceActiveMQBrokerParameters.h>
+#include <aws/pipes/model/UpdatePipeSourceRabbitMQBrokerParameters.h>
+#include <aws/pipes/model/UpdatePipeSourceManagedStreamingKafkaParameters.h>
+#include <aws/pipes/model/UpdatePipeSourceSelfManagedKafkaParameters.h>
 #include <utility>
 
 namespace Aws
@@ -43,68 +43,6 @@ namespace Model
     AWS_PIPES_API UpdatePipeSourceParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API UpdatePipeSourceParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The parameters for using an Active MQ broker as a source.</p>
-     */
-    inline const UpdatePipeSourceActiveMQBrokerParameters& GetActiveMQBrokerParameters() const{ return m_activeMQBrokerParameters; }
-
-    /**
-     * <p>The parameters for using an Active MQ broker as a source.</p>
-     */
-    inline bool ActiveMQBrokerParametersHasBeenSet() const { return m_activeMQBrokerParametersHasBeenSet; }
-
-    /**
-     * <p>The parameters for using an Active MQ broker as a source.</p>
-     */
-    inline void SetActiveMQBrokerParameters(const UpdatePipeSourceActiveMQBrokerParameters& value) { m_activeMQBrokerParametersHasBeenSet = true; m_activeMQBrokerParameters = value; }
-
-    /**
-     * <p>The parameters for using an Active MQ broker as a source.</p>
-     */
-    inline void SetActiveMQBrokerParameters(UpdatePipeSourceActiveMQBrokerParameters&& value) { m_activeMQBrokerParametersHasBeenSet = true; m_activeMQBrokerParameters = std::move(value); }
-
-    /**
-     * <p>The parameters for using an Active MQ broker as a source.</p>
-     */
-    inline UpdatePipeSourceParameters& WithActiveMQBrokerParameters(const UpdatePipeSourceActiveMQBrokerParameters& value) { SetActiveMQBrokerParameters(value); return *this;}
-
-    /**
-     * <p>The parameters for using an Active MQ broker as a source.</p>
-     */
-    inline UpdatePipeSourceParameters& WithActiveMQBrokerParameters(UpdatePipeSourceActiveMQBrokerParameters&& value) { SetActiveMQBrokerParameters(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The parameters for using a DynamoDB stream as a source.</p>
-     */
-    inline const UpdatePipeSourceDynamoDBStreamParameters& GetDynamoDBStreamParameters() const{ return m_dynamoDBStreamParameters; }
-
-    /**
-     * <p>The parameters for using a DynamoDB stream as a source.</p>
-     */
-    inline bool DynamoDBStreamParametersHasBeenSet() const { return m_dynamoDBStreamParametersHasBeenSet; }
-
-    /**
-     * <p>The parameters for using a DynamoDB stream as a source.</p>
-     */
-    inline void SetDynamoDBStreamParameters(const UpdatePipeSourceDynamoDBStreamParameters& value) { m_dynamoDBStreamParametersHasBeenSet = true; m_dynamoDBStreamParameters = value; }
-
-    /**
-     * <p>The parameters for using a DynamoDB stream as a source.</p>
-     */
-    inline void SetDynamoDBStreamParameters(UpdatePipeSourceDynamoDBStreamParameters&& value) { m_dynamoDBStreamParametersHasBeenSet = true; m_dynamoDBStreamParameters = std::move(value); }
-
-    /**
-     * <p>The parameters for using a DynamoDB stream as a source.</p>
-     */
-    inline UpdatePipeSourceParameters& WithDynamoDBStreamParameters(const UpdatePipeSourceDynamoDBStreamParameters& value) { SetDynamoDBStreamParameters(value); return *this;}
-
-    /**
-     * <p>The parameters for using a DynamoDB stream as a source.</p>
-     */
-    inline UpdatePipeSourceParameters& WithDynamoDBStreamParameters(UpdatePipeSourceDynamoDBStreamParameters&& value) { SetDynamoDBStreamParameters(std::move(value)); return *this;}
 
 
     /**
@@ -194,34 +132,96 @@ namespace Model
 
 
     /**
-     * <p>The parameters for using an MSK stream as a source.</p>
+     * <p>The parameters for using a DynamoDB stream as a source.</p>
      */
-    inline const UpdatePipeSourceManagedStreamingKafkaParameters& GetManagedStreamingKafkaParameters() const{ return m_managedStreamingKafkaParameters; }
+    inline const UpdatePipeSourceDynamoDBStreamParameters& GetDynamoDBStreamParameters() const{ return m_dynamoDBStreamParameters; }
 
     /**
-     * <p>The parameters for using an MSK stream as a source.</p>
+     * <p>The parameters for using a DynamoDB stream as a source.</p>
      */
-    inline bool ManagedStreamingKafkaParametersHasBeenSet() const { return m_managedStreamingKafkaParametersHasBeenSet; }
+    inline bool DynamoDBStreamParametersHasBeenSet() const { return m_dynamoDBStreamParametersHasBeenSet; }
 
     /**
-     * <p>The parameters for using an MSK stream as a source.</p>
+     * <p>The parameters for using a DynamoDB stream as a source.</p>
      */
-    inline void SetManagedStreamingKafkaParameters(const UpdatePipeSourceManagedStreamingKafkaParameters& value) { m_managedStreamingKafkaParametersHasBeenSet = true; m_managedStreamingKafkaParameters = value; }
+    inline void SetDynamoDBStreamParameters(const UpdatePipeSourceDynamoDBStreamParameters& value) { m_dynamoDBStreamParametersHasBeenSet = true; m_dynamoDBStreamParameters = value; }
 
     /**
-     * <p>The parameters for using an MSK stream as a source.</p>
+     * <p>The parameters for using a DynamoDB stream as a source.</p>
      */
-    inline void SetManagedStreamingKafkaParameters(UpdatePipeSourceManagedStreamingKafkaParameters&& value) { m_managedStreamingKafkaParametersHasBeenSet = true; m_managedStreamingKafkaParameters = std::move(value); }
+    inline void SetDynamoDBStreamParameters(UpdatePipeSourceDynamoDBStreamParameters&& value) { m_dynamoDBStreamParametersHasBeenSet = true; m_dynamoDBStreamParameters = std::move(value); }
 
     /**
-     * <p>The parameters for using an MSK stream as a source.</p>
+     * <p>The parameters for using a DynamoDB stream as a source.</p>
      */
-    inline UpdatePipeSourceParameters& WithManagedStreamingKafkaParameters(const UpdatePipeSourceManagedStreamingKafkaParameters& value) { SetManagedStreamingKafkaParameters(value); return *this;}
+    inline UpdatePipeSourceParameters& WithDynamoDBStreamParameters(const UpdatePipeSourceDynamoDBStreamParameters& value) { SetDynamoDBStreamParameters(value); return *this;}
 
     /**
-     * <p>The parameters for using an MSK stream as a source.</p>
+     * <p>The parameters for using a DynamoDB stream as a source.</p>
      */
-    inline UpdatePipeSourceParameters& WithManagedStreamingKafkaParameters(UpdatePipeSourceManagedStreamingKafkaParameters&& value) { SetManagedStreamingKafkaParameters(std::move(value)); return *this;}
+    inline UpdatePipeSourceParameters& WithDynamoDBStreamParameters(UpdatePipeSourceDynamoDBStreamParameters&& value) { SetDynamoDBStreamParameters(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The parameters for using a Amazon SQS stream as a source.</p>
+     */
+    inline const UpdatePipeSourceSqsQueueParameters& GetSqsQueueParameters() const{ return m_sqsQueueParameters; }
+
+    /**
+     * <p>The parameters for using a Amazon SQS stream as a source.</p>
+     */
+    inline bool SqsQueueParametersHasBeenSet() const { return m_sqsQueueParametersHasBeenSet; }
+
+    /**
+     * <p>The parameters for using a Amazon SQS stream as a source.</p>
+     */
+    inline void SetSqsQueueParameters(const UpdatePipeSourceSqsQueueParameters& value) { m_sqsQueueParametersHasBeenSet = true; m_sqsQueueParameters = value; }
+
+    /**
+     * <p>The parameters for using a Amazon SQS stream as a source.</p>
+     */
+    inline void SetSqsQueueParameters(UpdatePipeSourceSqsQueueParameters&& value) { m_sqsQueueParametersHasBeenSet = true; m_sqsQueueParameters = std::move(value); }
+
+    /**
+     * <p>The parameters for using a Amazon SQS stream as a source.</p>
+     */
+    inline UpdatePipeSourceParameters& WithSqsQueueParameters(const UpdatePipeSourceSqsQueueParameters& value) { SetSqsQueueParameters(value); return *this;}
+
+    /**
+     * <p>The parameters for using a Amazon SQS stream as a source.</p>
+     */
+    inline UpdatePipeSourceParameters& WithSqsQueueParameters(UpdatePipeSourceSqsQueueParameters&& value) { SetSqsQueueParameters(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The parameters for using an Active MQ broker as a source.</p>
+     */
+    inline const UpdatePipeSourceActiveMQBrokerParameters& GetActiveMQBrokerParameters() const{ return m_activeMQBrokerParameters; }
+
+    /**
+     * <p>The parameters for using an Active MQ broker as a source.</p>
+     */
+    inline bool ActiveMQBrokerParametersHasBeenSet() const { return m_activeMQBrokerParametersHasBeenSet; }
+
+    /**
+     * <p>The parameters for using an Active MQ broker as a source.</p>
+     */
+    inline void SetActiveMQBrokerParameters(const UpdatePipeSourceActiveMQBrokerParameters& value) { m_activeMQBrokerParametersHasBeenSet = true; m_activeMQBrokerParameters = value; }
+
+    /**
+     * <p>The parameters for using an Active MQ broker as a source.</p>
+     */
+    inline void SetActiveMQBrokerParameters(UpdatePipeSourceActiveMQBrokerParameters&& value) { m_activeMQBrokerParametersHasBeenSet = true; m_activeMQBrokerParameters = std::move(value); }
+
+    /**
+     * <p>The parameters for using an Active MQ broker as a source.</p>
+     */
+    inline UpdatePipeSourceParameters& WithActiveMQBrokerParameters(const UpdatePipeSourceActiveMQBrokerParameters& value) { SetActiveMQBrokerParameters(value); return *this;}
+
+    /**
+     * <p>The parameters for using an Active MQ broker as a source.</p>
+     */
+    inline UpdatePipeSourceParameters& WithActiveMQBrokerParameters(UpdatePipeSourceActiveMQBrokerParameters&& value) { SetActiveMQBrokerParameters(std::move(value)); return *this;}
 
 
     /**
@@ -256,73 +256,115 @@ namespace Model
 
 
     /**
+     * <p>The parameters for using an MSK stream as a source.</p>
+     */
+    inline const UpdatePipeSourceManagedStreamingKafkaParameters& GetManagedStreamingKafkaParameters() const{ return m_managedStreamingKafkaParameters; }
+
+    /**
+     * <p>The parameters for using an MSK stream as a source.</p>
+     */
+    inline bool ManagedStreamingKafkaParametersHasBeenSet() const { return m_managedStreamingKafkaParametersHasBeenSet; }
+
+    /**
+     * <p>The parameters for using an MSK stream as a source.</p>
+     */
+    inline void SetManagedStreamingKafkaParameters(const UpdatePipeSourceManagedStreamingKafkaParameters& value) { m_managedStreamingKafkaParametersHasBeenSet = true; m_managedStreamingKafkaParameters = value; }
+
+    /**
+     * <p>The parameters for using an MSK stream as a source.</p>
+     */
+    inline void SetManagedStreamingKafkaParameters(UpdatePipeSourceManagedStreamingKafkaParameters&& value) { m_managedStreamingKafkaParametersHasBeenSet = true; m_managedStreamingKafkaParameters = std::move(value); }
+
+    /**
+     * <p>The parameters for using an MSK stream as a source.</p>
+     */
+    inline UpdatePipeSourceParameters& WithManagedStreamingKafkaParameters(const UpdatePipeSourceManagedStreamingKafkaParameters& value) { SetManagedStreamingKafkaParameters(value); return *this;}
+
+    /**
+     * <p>The parameters for using an MSK stream as a source.</p>
+     */
+    inline UpdatePipeSourceParameters& WithManagedStreamingKafkaParameters(UpdatePipeSourceManagedStreamingKafkaParameters&& value) { SetManagedStreamingKafkaParameters(std::move(value)); return *this;}
+
+
+    /**
      * <p>The parameters for using a self-managed Apache Kafka stream as a source.</p>
+     * <p>A <i>self managed</i> cluster refers to any Apache Kafka cluster not hosted
+     * by Amazon Web Services. This includes both clusters you manage yourself, as well
+     * as those hosted by a third-party provider, such as <a
+     * href="https://www.confluent.io/">Confluent Cloud</a>, <a
+     * href="https://www.cloudkarafka.com/">CloudKarafka</a>, or <a
+     * href="https://redpanda.com/">Redpanda</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-kafka.html">Apache
+     * Kafka streams as a source</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline const UpdatePipeSourceSelfManagedKafkaParameters& GetSelfManagedKafkaParameters() const{ return m_selfManagedKafkaParameters; }
 
     /**
      * <p>The parameters for using a self-managed Apache Kafka stream as a source.</p>
+     * <p>A <i>self managed</i> cluster refers to any Apache Kafka cluster not hosted
+     * by Amazon Web Services. This includes both clusters you manage yourself, as well
+     * as those hosted by a third-party provider, such as <a
+     * href="https://www.confluent.io/">Confluent Cloud</a>, <a
+     * href="https://www.cloudkarafka.com/">CloudKarafka</a>, or <a
+     * href="https://redpanda.com/">Redpanda</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-kafka.html">Apache
+     * Kafka streams as a source</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline bool SelfManagedKafkaParametersHasBeenSet() const { return m_selfManagedKafkaParametersHasBeenSet; }
 
     /**
      * <p>The parameters for using a self-managed Apache Kafka stream as a source.</p>
+     * <p>A <i>self managed</i> cluster refers to any Apache Kafka cluster not hosted
+     * by Amazon Web Services. This includes both clusters you manage yourself, as well
+     * as those hosted by a third-party provider, such as <a
+     * href="https://www.confluent.io/">Confluent Cloud</a>, <a
+     * href="https://www.cloudkarafka.com/">CloudKarafka</a>, or <a
+     * href="https://redpanda.com/">Redpanda</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-kafka.html">Apache
+     * Kafka streams as a source</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline void SetSelfManagedKafkaParameters(const UpdatePipeSourceSelfManagedKafkaParameters& value) { m_selfManagedKafkaParametersHasBeenSet = true; m_selfManagedKafkaParameters = value; }
 
     /**
      * <p>The parameters for using a self-managed Apache Kafka stream as a source.</p>
+     * <p>A <i>self managed</i> cluster refers to any Apache Kafka cluster not hosted
+     * by Amazon Web Services. This includes both clusters you manage yourself, as well
+     * as those hosted by a third-party provider, such as <a
+     * href="https://www.confluent.io/">Confluent Cloud</a>, <a
+     * href="https://www.cloudkarafka.com/">CloudKarafka</a>, or <a
+     * href="https://redpanda.com/">Redpanda</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-kafka.html">Apache
+     * Kafka streams as a source</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline void SetSelfManagedKafkaParameters(UpdatePipeSourceSelfManagedKafkaParameters&& value) { m_selfManagedKafkaParametersHasBeenSet = true; m_selfManagedKafkaParameters = std::move(value); }
 
     /**
      * <p>The parameters for using a self-managed Apache Kafka stream as a source.</p>
+     * <p>A <i>self managed</i> cluster refers to any Apache Kafka cluster not hosted
+     * by Amazon Web Services. This includes both clusters you manage yourself, as well
+     * as those hosted by a third-party provider, such as <a
+     * href="https://www.confluent.io/">Confluent Cloud</a>, <a
+     * href="https://www.cloudkarafka.com/">CloudKarafka</a>, or <a
+     * href="https://redpanda.com/">Redpanda</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-kafka.html">Apache
+     * Kafka streams as a source</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline UpdatePipeSourceParameters& WithSelfManagedKafkaParameters(const UpdatePipeSourceSelfManagedKafkaParameters& value) { SetSelfManagedKafkaParameters(value); return *this;}
 
     /**
      * <p>The parameters for using a self-managed Apache Kafka stream as a source.</p>
+     * <p>A <i>self managed</i> cluster refers to any Apache Kafka cluster not hosted
+     * by Amazon Web Services. This includes both clusters you manage yourself, as well
+     * as those hosted by a third-party provider, such as <a
+     * href="https://www.confluent.io/">Confluent Cloud</a>, <a
+     * href="https://www.cloudkarafka.com/">CloudKarafka</a>, or <a
+     * href="https://redpanda.com/">Redpanda</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-kafka.html">Apache
+     * Kafka streams as a source</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline UpdatePipeSourceParameters& WithSelfManagedKafkaParameters(UpdatePipeSourceSelfManagedKafkaParameters&& value) { SetSelfManagedKafkaParameters(std::move(value)); return *this;}
 
-
-    /**
-     * <p>The parameters for using a Amazon SQS stream as a source.</p>
-     */
-    inline const UpdatePipeSourceSqsQueueParameters& GetSqsQueueParameters() const{ return m_sqsQueueParameters; }
-
-    /**
-     * <p>The parameters for using a Amazon SQS stream as a source.</p>
-     */
-    inline bool SqsQueueParametersHasBeenSet() const { return m_sqsQueueParametersHasBeenSet; }
-
-    /**
-     * <p>The parameters for using a Amazon SQS stream as a source.</p>
-     */
-    inline void SetSqsQueueParameters(const UpdatePipeSourceSqsQueueParameters& value) { m_sqsQueueParametersHasBeenSet = true; m_sqsQueueParameters = value; }
-
-    /**
-     * <p>The parameters for using a Amazon SQS stream as a source.</p>
-     */
-    inline void SetSqsQueueParameters(UpdatePipeSourceSqsQueueParameters&& value) { m_sqsQueueParametersHasBeenSet = true; m_sqsQueueParameters = std::move(value); }
-
-    /**
-     * <p>The parameters for using a Amazon SQS stream as a source.</p>
-     */
-    inline UpdatePipeSourceParameters& WithSqsQueueParameters(const UpdatePipeSourceSqsQueueParameters& value) { SetSqsQueueParameters(value); return *this;}
-
-    /**
-     * <p>The parameters for using a Amazon SQS stream as a source.</p>
-     */
-    inline UpdatePipeSourceParameters& WithSqsQueueParameters(UpdatePipeSourceSqsQueueParameters&& value) { SetSqsQueueParameters(std::move(value)); return *this;}
-
   private:
-
-    UpdatePipeSourceActiveMQBrokerParameters m_activeMQBrokerParameters;
-    bool m_activeMQBrokerParametersHasBeenSet = false;
-
-    UpdatePipeSourceDynamoDBStreamParameters m_dynamoDBStreamParameters;
-    bool m_dynamoDBStreamParametersHasBeenSet = false;
 
     FilterCriteria m_filterCriteria;
     bool m_filterCriteriaHasBeenSet = false;
@@ -330,17 +372,23 @@ namespace Model
     UpdatePipeSourceKinesisStreamParameters m_kinesisStreamParameters;
     bool m_kinesisStreamParametersHasBeenSet = false;
 
-    UpdatePipeSourceManagedStreamingKafkaParameters m_managedStreamingKafkaParameters;
-    bool m_managedStreamingKafkaParametersHasBeenSet = false;
+    UpdatePipeSourceDynamoDBStreamParameters m_dynamoDBStreamParameters;
+    bool m_dynamoDBStreamParametersHasBeenSet = false;
+
+    UpdatePipeSourceSqsQueueParameters m_sqsQueueParameters;
+    bool m_sqsQueueParametersHasBeenSet = false;
+
+    UpdatePipeSourceActiveMQBrokerParameters m_activeMQBrokerParameters;
+    bool m_activeMQBrokerParametersHasBeenSet = false;
 
     UpdatePipeSourceRabbitMQBrokerParameters m_rabbitMQBrokerParameters;
     bool m_rabbitMQBrokerParametersHasBeenSet = false;
 
+    UpdatePipeSourceManagedStreamingKafkaParameters m_managedStreamingKafkaParameters;
+    bool m_managedStreamingKafkaParametersHasBeenSet = false;
+
     UpdatePipeSourceSelfManagedKafkaParameters m_selfManagedKafkaParameters;
     bool m_selfManagedKafkaParametersHasBeenSet = false;
-
-    UpdatePipeSourceSqsQueueParameters m_sqsQueueParameters;
-    bool m_sqsQueueParametersHasBeenSet = false;
   };
 
 } // namespace Model

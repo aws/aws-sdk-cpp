@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/pipes/Pipes_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -38,6 +38,61 @@ namespace Model
     AWS_PIPES_API PipeTargetHttpParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API PipeTargetHttpParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The path parameter values to be used to populate API Gateway REST API or
+     * EventBridge ApiDestination path wildcards ("*").</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetPathParameterValues() const{ return m_pathParameterValues; }
+
+    /**
+     * <p>The path parameter values to be used to populate API Gateway REST API or
+     * EventBridge ApiDestination path wildcards ("*").</p>
+     */
+    inline bool PathParameterValuesHasBeenSet() const { return m_pathParameterValuesHasBeenSet; }
+
+    /**
+     * <p>The path parameter values to be used to populate API Gateway REST API or
+     * EventBridge ApiDestination path wildcards ("*").</p>
+     */
+    inline void SetPathParameterValues(const Aws::Vector<Aws::String>& value) { m_pathParameterValuesHasBeenSet = true; m_pathParameterValues = value; }
+
+    /**
+     * <p>The path parameter values to be used to populate API Gateway REST API or
+     * EventBridge ApiDestination path wildcards ("*").</p>
+     */
+    inline void SetPathParameterValues(Aws::Vector<Aws::String>&& value) { m_pathParameterValuesHasBeenSet = true; m_pathParameterValues = std::move(value); }
+
+    /**
+     * <p>The path parameter values to be used to populate API Gateway REST API or
+     * EventBridge ApiDestination path wildcards ("*").</p>
+     */
+    inline PipeTargetHttpParameters& WithPathParameterValues(const Aws::Vector<Aws::String>& value) { SetPathParameterValues(value); return *this;}
+
+    /**
+     * <p>The path parameter values to be used to populate API Gateway REST API or
+     * EventBridge ApiDestination path wildcards ("*").</p>
+     */
+    inline PipeTargetHttpParameters& WithPathParameterValues(Aws::Vector<Aws::String>&& value) { SetPathParameterValues(std::move(value)); return *this;}
+
+    /**
+     * <p>The path parameter values to be used to populate API Gateway REST API or
+     * EventBridge ApiDestination path wildcards ("*").</p>
+     */
+    inline PipeTargetHttpParameters& AddPathParameterValues(const Aws::String& value) { m_pathParameterValuesHasBeenSet = true; m_pathParameterValues.push_back(value); return *this; }
+
+    /**
+     * <p>The path parameter values to be used to populate API Gateway REST API or
+     * EventBridge ApiDestination path wildcards ("*").</p>
+     */
+    inline PipeTargetHttpParameters& AddPathParameterValues(Aws::String&& value) { m_pathParameterValuesHasBeenSet = true; m_pathParameterValues.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The path parameter values to be used to populate API Gateway REST API or
+     * EventBridge ApiDestination path wildcards ("*").</p>
+     */
+    inline PipeTargetHttpParameters& AddPathParameterValues(const char* value) { m_pathParameterValuesHasBeenSet = true; m_pathParameterValues.push_back(value); return *this; }
 
 
     /**
@@ -120,61 +175,6 @@ namespace Model
 
 
     /**
-     * <p>The path parameter values to be used to populate API Gateway REST API or
-     * EventBridge ApiDestination path wildcards ("*").</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetPathParameterValues() const{ return m_pathParameterValues; }
-
-    /**
-     * <p>The path parameter values to be used to populate API Gateway REST API or
-     * EventBridge ApiDestination path wildcards ("*").</p>
-     */
-    inline bool PathParameterValuesHasBeenSet() const { return m_pathParameterValuesHasBeenSet; }
-
-    /**
-     * <p>The path parameter values to be used to populate API Gateway REST API or
-     * EventBridge ApiDestination path wildcards ("*").</p>
-     */
-    inline void SetPathParameterValues(const Aws::Vector<Aws::String>& value) { m_pathParameterValuesHasBeenSet = true; m_pathParameterValues = value; }
-
-    /**
-     * <p>The path parameter values to be used to populate API Gateway REST API or
-     * EventBridge ApiDestination path wildcards ("*").</p>
-     */
-    inline void SetPathParameterValues(Aws::Vector<Aws::String>&& value) { m_pathParameterValuesHasBeenSet = true; m_pathParameterValues = std::move(value); }
-
-    /**
-     * <p>The path parameter values to be used to populate API Gateway REST API or
-     * EventBridge ApiDestination path wildcards ("*").</p>
-     */
-    inline PipeTargetHttpParameters& WithPathParameterValues(const Aws::Vector<Aws::String>& value) { SetPathParameterValues(value); return *this;}
-
-    /**
-     * <p>The path parameter values to be used to populate API Gateway REST API or
-     * EventBridge ApiDestination path wildcards ("*").</p>
-     */
-    inline PipeTargetHttpParameters& WithPathParameterValues(Aws::Vector<Aws::String>&& value) { SetPathParameterValues(std::move(value)); return *this;}
-
-    /**
-     * <p>The path parameter values to be used to populate API Gateway REST API or
-     * EventBridge ApiDestination path wildcards ("*").</p>
-     */
-    inline PipeTargetHttpParameters& AddPathParameterValues(const Aws::String& value) { m_pathParameterValuesHasBeenSet = true; m_pathParameterValues.push_back(value); return *this; }
-
-    /**
-     * <p>The path parameter values to be used to populate API Gateway REST API or
-     * EventBridge ApiDestination path wildcards ("*").</p>
-     */
-    inline PipeTargetHttpParameters& AddPathParameterValues(Aws::String&& value) { m_pathParameterValuesHasBeenSet = true; m_pathParameterValues.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The path parameter values to be used to populate API Gateway REST API or
-     * EventBridge ApiDestination path wildcards ("*").</p>
-     */
-    inline PipeTargetHttpParameters& AddPathParameterValues(const char* value) { m_pathParameterValuesHasBeenSet = true; m_pathParameterValues.push_back(value); return *this; }
-
-
-    /**
      * <p>The query string keys/values that need to be sent as part of request invoking
      * the API Gateway REST API or EventBridge ApiDestination.</p>
      */
@@ -254,11 +254,11 @@ namespace Model
 
   private:
 
-    Aws::Map<Aws::String, Aws::String> m_headerParameters;
-    bool m_headerParametersHasBeenSet = false;
-
     Aws::Vector<Aws::String> m_pathParameterValues;
     bool m_pathParameterValuesHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_headerParameters;
+    bool m_headerParametersHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_queryStringParameters;
     bool m_queryStringParametersHasBeenSet = false;

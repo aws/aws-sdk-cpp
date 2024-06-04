@@ -89,6 +89,79 @@ namespace Model
 
 
     /**
+     * <p>The prefix text with which to begin Amazon S3 log object names.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
+     * objects using prefixes</a> in the <i>Amazon Simple Storage Service User
+     * Guide</i>.</p>
+     */
+    inline const Aws::String& GetPrefix() const{ return m_prefix; }
+
+    /**
+     * <p>The prefix text with which to begin Amazon S3 log object names.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
+     * objects using prefixes</a> in the <i>Amazon Simple Storage Service User
+     * Guide</i>.</p>
+     */
+    inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
+
+    /**
+     * <p>The prefix text with which to begin Amazon S3 log object names.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
+     * objects using prefixes</a> in the <i>Amazon Simple Storage Service User
+     * Guide</i>.</p>
+     */
+    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
+
+    /**
+     * <p>The prefix text with which to begin Amazon S3 log object names.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
+     * objects using prefixes</a> in the <i>Amazon Simple Storage Service User
+     * Guide</i>.</p>
+     */
+    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
+
+    /**
+     * <p>The prefix text with which to begin Amazon S3 log object names.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
+     * objects using prefixes</a> in the <i>Amazon Simple Storage Service User
+     * Guide</i>.</p>
+     */
+    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
+
+    /**
+     * <p>The prefix text with which to begin Amazon S3 log object names.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
+     * objects using prefixes</a> in the <i>Amazon Simple Storage Service User
+     * Guide</i>.</p>
+     */
+    inline S3LogDestination& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
+
+    /**
+     * <p>The prefix text with which to begin Amazon S3 log object names.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
+     * objects using prefixes</a> in the <i>Amazon Simple Storage Service User
+     * Guide</i>.</p>
+     */
+    inline S3LogDestination& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
+
+    /**
+     * <p>The prefix text with which to begin Amazon S3 log object names.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
+     * objects using prefixes</a> in the <i>Amazon Simple Storage Service User
+     * Guide</i>.</p>
+     */
+    inline S3LogDestination& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+
+
+    /**
      * <p>The Amazon Web Services account that owns the Amazon S3 bucket to which
      * EventBridge delivers the log records for the pipe.</p>
      */
@@ -185,92 +258,19 @@ namespace Model
      */
     inline S3LogDestination& WithOutputFormat(S3OutputFormat&& value) { SetOutputFormat(std::move(value)); return *this;}
 
-
-    /**
-     * <p>The prefix text with which to begin Amazon S3 log object names.</p> <p>For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
-     * objects using prefixes</a> in the <i>Amazon Simple Storage Service User
-     * Guide</i>.</p>
-     */
-    inline const Aws::String& GetPrefix() const{ return m_prefix; }
-
-    /**
-     * <p>The prefix text with which to begin Amazon S3 log object names.</p> <p>For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
-     * objects using prefixes</a> in the <i>Amazon Simple Storage Service User
-     * Guide</i>.</p>
-     */
-    inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-
-    /**
-     * <p>The prefix text with which to begin Amazon S3 log object names.</p> <p>For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
-     * objects using prefixes</a> in the <i>Amazon Simple Storage Service User
-     * Guide</i>.</p>
-     */
-    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-
-    /**
-     * <p>The prefix text with which to begin Amazon S3 log object names.</p> <p>For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
-     * objects using prefixes</a> in the <i>Amazon Simple Storage Service User
-     * Guide</i>.</p>
-     */
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-
-    /**
-     * <p>The prefix text with which to begin Amazon S3 log object names.</p> <p>For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
-     * objects using prefixes</a> in the <i>Amazon Simple Storage Service User
-     * Guide</i>.</p>
-     */
-    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-
-    /**
-     * <p>The prefix text with which to begin Amazon S3 log object names.</p> <p>For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
-     * objects using prefixes</a> in the <i>Amazon Simple Storage Service User
-     * Guide</i>.</p>
-     */
-    inline S3LogDestination& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-
-    /**
-     * <p>The prefix text with which to begin Amazon S3 log object names.</p> <p>For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
-     * objects using prefixes</a> in the <i>Amazon Simple Storage Service User
-     * Guide</i>.</p>
-     */
-    inline S3LogDestination& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-
-    /**
-     * <p>The prefix text with which to begin Amazon S3 log object names.</p> <p>For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
-     * objects using prefixes</a> in the <i>Amazon Simple Storage Service User
-     * Guide</i>.</p>
-     */
-    inline S3LogDestination& WithPrefix(const char* value) { SetPrefix(value); return *this;}
-
   private:
 
     Aws::String m_bucketName;
     bool m_bucketNameHasBeenSet = false;
+
+    Aws::String m_prefix;
+    bool m_prefixHasBeenSet = false;
 
     Aws::String m_bucketOwner;
     bool m_bucketOwnerHasBeenSet = false;
 
     S3OutputFormat m_outputFormat;
     bool m_outputFormatHasBeenSet = false;
-
-    Aws::String m_prefix;
-    bool m_prefixHasBeenSet = false;
   };
 
 } // namespace Model

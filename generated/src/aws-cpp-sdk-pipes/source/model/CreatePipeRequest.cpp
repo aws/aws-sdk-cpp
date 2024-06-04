@@ -13,19 +13,19 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreatePipeRequest::CreatePipeRequest() : 
+    m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_desiredState(RequestedPipeState::NOT_SET),
     m_desiredStateHasBeenSet(false),
-    m_enrichmentHasBeenSet(false),
-    m_enrichmentParametersHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_sourceParametersHasBeenSet(false),
-    m_tagsHasBeenSet(false),
+    m_enrichmentHasBeenSet(false),
+    m_enrichmentParametersHasBeenSet(false),
     m_targetHasBeenSet(false),
-    m_targetParametersHasBeenSet(false)
+    m_targetParametersHasBeenSet(false),
+    m_roleArnHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_logConfigurationHasBeenSet(false)
 {
 }
 
@@ -44,6 +44,18 @@ Aws::String CreatePipeRequest::SerializePayload() const
    payload.WithString("DesiredState", RequestedPipeStateMapper::GetNameForRequestedPipeState(m_desiredState));
   }
 
+  if(m_sourceHasBeenSet)
+  {
+   payload.WithString("Source", m_source);
+
+  }
+
+  if(m_sourceParametersHasBeenSet)
+  {
+   payload.WithObject("SourceParameters", m_sourceParameters.Jsonize());
+
+  }
+
   if(m_enrichmentHasBeenSet)
   {
    payload.WithString("Enrichment", m_enrichment);
@@ -56,27 +68,21 @@ Aws::String CreatePipeRequest::SerializePayload() const
 
   }
 
-  if(m_logConfigurationHasBeenSet)
+  if(m_targetHasBeenSet)
   {
-   payload.WithObject("LogConfiguration", m_logConfiguration.Jsonize());
+   payload.WithString("Target", m_target);
+
+  }
+
+  if(m_targetParametersHasBeenSet)
+  {
+   payload.WithObject("TargetParameters", m_targetParameters.Jsonize());
 
   }
 
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("RoleArn", m_roleArn);
-
-  }
-
-  if(m_sourceHasBeenSet)
-  {
-   payload.WithString("Source", m_source);
-
-  }
-
-  if(m_sourceParametersHasBeenSet)
-  {
-   payload.WithObject("SourceParameters", m_sourceParameters.Jsonize());
 
   }
 
@@ -91,15 +97,9 @@ Aws::String CreatePipeRequest::SerializePayload() const
 
   }
 
-  if(m_targetHasBeenSet)
+  if(m_logConfigurationHasBeenSet)
   {
-   payload.WithString("Target", m_target);
-
-  }
-
-  if(m_targetParametersHasBeenSet)
-  {
-   payload.WithObject("TargetParameters", m_targetParameters.Jsonize());
+   payload.WithObject("LogConfiguration", m_logConfiguration.Jsonize());
 
   }
 

@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/pipes/Pipes_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/pipes/model/SelfManagedKafkaAccessConfigurationCredentials.h>
 #include <aws/pipes/model/SelfManagedKafkaStartPosition.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/pipes/model/SelfManagedKafkaAccessConfigurationCredentials.h>
 #include <aws/pipes/model/SelfManagedKafkaAccessConfigurationVpc.h>
 #include <utility>
 
@@ -28,8 +28,16 @@ namespace Model
 {
 
   /**
-   * <p>The parameters for using a self-managed Apache Kafka stream as a
-   * source.</p><p><h3>See Also:</h3>   <a
+   * <p>The parameters for using a self-managed Apache Kafka stream as a source.</p>
+   * <p>A <i>self managed</i> cluster refers to any Apache Kafka cluster not hosted
+   * by Amazon Web Services. This includes both clusters you manage yourself, as well
+   * as those hosted by a third-party provider, such as <a
+   * href="https://www.confluent.io/">Confluent Cloud</a>, <a
+   * href="https://www.cloudkarafka.com/">CloudKarafka</a>, or <a
+   * href="https://redpanda.com/">Redpanda</a>. For more information, see <a
+   * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-kafka.html">Apache
+   * Kafka streams as a source</a> in the <i>Amazon EventBridge User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pipes-2015-10-07/PipeSourceSelfManagedKafkaParameters">AWS
    * API Reference</a></p>
    */
@@ -40,6 +48,78 @@ namespace Model
     AWS_PIPES_API PipeSourceSelfManagedKafkaParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API PipeSourceSelfManagedKafkaParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The name of the topic that the pipe will read from.</p>
+     */
+    inline const Aws::String& GetTopicName() const{ return m_topicName; }
+
+    /**
+     * <p>The name of the topic that the pipe will read from.</p>
+     */
+    inline bool TopicNameHasBeenSet() const { return m_topicNameHasBeenSet; }
+
+    /**
+     * <p>The name of the topic that the pipe will read from.</p>
+     */
+    inline void SetTopicName(const Aws::String& value) { m_topicNameHasBeenSet = true; m_topicName = value; }
+
+    /**
+     * <p>The name of the topic that the pipe will read from.</p>
+     */
+    inline void SetTopicName(Aws::String&& value) { m_topicNameHasBeenSet = true; m_topicName = std::move(value); }
+
+    /**
+     * <p>The name of the topic that the pipe will read from.</p>
+     */
+    inline void SetTopicName(const char* value) { m_topicNameHasBeenSet = true; m_topicName.assign(value); }
+
+    /**
+     * <p>The name of the topic that the pipe will read from.</p>
+     */
+    inline PipeSourceSelfManagedKafkaParameters& WithTopicName(const Aws::String& value) { SetTopicName(value); return *this;}
+
+    /**
+     * <p>The name of the topic that the pipe will read from.</p>
+     */
+    inline PipeSourceSelfManagedKafkaParameters& WithTopicName(Aws::String&& value) { SetTopicName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the topic that the pipe will read from.</p>
+     */
+    inline PipeSourceSelfManagedKafkaParameters& WithTopicName(const char* value) { SetTopicName(value); return *this;}
+
+
+    /**
+     * <p>(Streams only) The position in a stream from which to start reading.</p>
+     */
+    inline const SelfManagedKafkaStartPosition& GetStartingPosition() const{ return m_startingPosition; }
+
+    /**
+     * <p>(Streams only) The position in a stream from which to start reading.</p>
+     */
+    inline bool StartingPositionHasBeenSet() const { return m_startingPositionHasBeenSet; }
+
+    /**
+     * <p>(Streams only) The position in a stream from which to start reading.</p>
+     */
+    inline void SetStartingPosition(const SelfManagedKafkaStartPosition& value) { m_startingPositionHasBeenSet = true; m_startingPosition = value; }
+
+    /**
+     * <p>(Streams only) The position in a stream from which to start reading.</p>
+     */
+    inline void SetStartingPosition(SelfManagedKafkaStartPosition&& value) { m_startingPositionHasBeenSet = true; m_startingPosition = std::move(value); }
+
+    /**
+     * <p>(Streams only) The position in a stream from which to start reading.</p>
+     */
+    inline PipeSourceSelfManagedKafkaParameters& WithStartingPosition(const SelfManagedKafkaStartPosition& value) { SetStartingPosition(value); return *this;}
+
+    /**
+     * <p>(Streams only) The position in a stream from which to start reading.</p>
+     */
+    inline PipeSourceSelfManagedKafkaParameters& WithStartingPosition(SelfManagedKafkaStartPosition&& value) { SetStartingPosition(std::move(value)); return *this;}
 
 
     /**
@@ -107,6 +187,27 @@ namespace Model
      * <p>The maximum number of records to include in each batch.</p>
      */
     inline PipeSourceSelfManagedKafkaParameters& WithBatchSize(int value) { SetBatchSize(value); return *this;}
+
+
+    /**
+     * <p>The maximum length of a time to wait for events.</p>
+     */
+    inline int GetMaximumBatchingWindowInSeconds() const{ return m_maximumBatchingWindowInSeconds; }
+
+    /**
+     * <p>The maximum length of a time to wait for events.</p>
+     */
+    inline bool MaximumBatchingWindowInSecondsHasBeenSet() const { return m_maximumBatchingWindowInSecondsHasBeenSet; }
+
+    /**
+     * <p>The maximum length of a time to wait for events.</p>
+     */
+    inline void SetMaximumBatchingWindowInSeconds(int value) { m_maximumBatchingWindowInSecondsHasBeenSet = true; m_maximumBatchingWindowInSeconds = value; }
+
+    /**
+     * <p>The maximum length of a time to wait for events.</p>
+     */
+    inline PipeSourceSelfManagedKafkaParameters& WithMaximumBatchingWindowInSeconds(int value) { SetMaximumBatchingWindowInSeconds(value); return *this;}
 
 
     /**
@@ -182,27 +283,6 @@ namespace Model
 
 
     /**
-     * <p>The maximum length of a time to wait for events.</p>
-     */
-    inline int GetMaximumBatchingWindowInSeconds() const{ return m_maximumBatchingWindowInSeconds; }
-
-    /**
-     * <p>The maximum length of a time to wait for events.</p>
-     */
-    inline bool MaximumBatchingWindowInSecondsHasBeenSet() const { return m_maximumBatchingWindowInSecondsHasBeenSet; }
-
-    /**
-     * <p>The maximum length of a time to wait for events.</p>
-     */
-    inline void SetMaximumBatchingWindowInSeconds(int value) { m_maximumBatchingWindowInSecondsHasBeenSet = true; m_maximumBatchingWindowInSeconds = value; }
-
-    /**
-     * <p>The maximum length of a time to wait for events.</p>
-     */
-    inline PipeSourceSelfManagedKafkaParameters& WithMaximumBatchingWindowInSeconds(int value) { SetMaximumBatchingWindowInSeconds(value); return *this;}
-
-
-    /**
      * <p>The ARN of the Secrets Manager secret used for certification.</p>
      */
     inline const Aws::String& GetServerRootCaCertificate() const{ return m_serverRootCaCertificate; }
@@ -244,78 +324,6 @@ namespace Model
 
 
     /**
-     * <p>(Streams only) The position in a stream from which to start reading.</p>
-     */
-    inline const SelfManagedKafkaStartPosition& GetStartingPosition() const{ return m_startingPosition; }
-
-    /**
-     * <p>(Streams only) The position in a stream from which to start reading.</p>
-     */
-    inline bool StartingPositionHasBeenSet() const { return m_startingPositionHasBeenSet; }
-
-    /**
-     * <p>(Streams only) The position in a stream from which to start reading.</p>
-     */
-    inline void SetStartingPosition(const SelfManagedKafkaStartPosition& value) { m_startingPositionHasBeenSet = true; m_startingPosition = value; }
-
-    /**
-     * <p>(Streams only) The position in a stream from which to start reading.</p>
-     */
-    inline void SetStartingPosition(SelfManagedKafkaStartPosition&& value) { m_startingPositionHasBeenSet = true; m_startingPosition = std::move(value); }
-
-    /**
-     * <p>(Streams only) The position in a stream from which to start reading.</p>
-     */
-    inline PipeSourceSelfManagedKafkaParameters& WithStartingPosition(const SelfManagedKafkaStartPosition& value) { SetStartingPosition(value); return *this;}
-
-    /**
-     * <p>(Streams only) The position in a stream from which to start reading.</p>
-     */
-    inline PipeSourceSelfManagedKafkaParameters& WithStartingPosition(SelfManagedKafkaStartPosition&& value) { SetStartingPosition(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The name of the topic that the pipe will read from.</p>
-     */
-    inline const Aws::String& GetTopicName() const{ return m_topicName; }
-
-    /**
-     * <p>The name of the topic that the pipe will read from.</p>
-     */
-    inline bool TopicNameHasBeenSet() const { return m_topicNameHasBeenSet; }
-
-    /**
-     * <p>The name of the topic that the pipe will read from.</p>
-     */
-    inline void SetTopicName(const Aws::String& value) { m_topicNameHasBeenSet = true; m_topicName = value; }
-
-    /**
-     * <p>The name of the topic that the pipe will read from.</p>
-     */
-    inline void SetTopicName(Aws::String&& value) { m_topicNameHasBeenSet = true; m_topicName = std::move(value); }
-
-    /**
-     * <p>The name of the topic that the pipe will read from.</p>
-     */
-    inline void SetTopicName(const char* value) { m_topicNameHasBeenSet = true; m_topicName.assign(value); }
-
-    /**
-     * <p>The name of the topic that the pipe will read from.</p>
-     */
-    inline PipeSourceSelfManagedKafkaParameters& WithTopicName(const Aws::String& value) { SetTopicName(value); return *this;}
-
-    /**
-     * <p>The name of the topic that the pipe will read from.</p>
-     */
-    inline PipeSourceSelfManagedKafkaParameters& WithTopicName(Aws::String&& value) { SetTopicName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the topic that the pipe will read from.</p>
-     */
-    inline PipeSourceSelfManagedKafkaParameters& WithTopicName(const char* value) { SetTopicName(value); return *this;}
-
-
-    /**
      * <p>This structure specifies the VPC subnets and security groups for the stream,
      * and whether a public IP address is to be used.</p>
      */
@@ -353,11 +361,20 @@ namespace Model
 
   private:
 
+    Aws::String m_topicName;
+    bool m_topicNameHasBeenSet = false;
+
+    SelfManagedKafkaStartPosition m_startingPosition;
+    bool m_startingPositionHasBeenSet = false;
+
     Aws::Vector<Aws::String> m_additionalBootstrapServers;
     bool m_additionalBootstrapServersHasBeenSet = false;
 
     int m_batchSize;
     bool m_batchSizeHasBeenSet = false;
+
+    int m_maximumBatchingWindowInSeconds;
+    bool m_maximumBatchingWindowInSecondsHasBeenSet = false;
 
     Aws::String m_consumerGroupID;
     bool m_consumerGroupIDHasBeenSet = false;
@@ -365,17 +382,8 @@ namespace Model
     SelfManagedKafkaAccessConfigurationCredentials m_credentials;
     bool m_credentialsHasBeenSet = false;
 
-    int m_maximumBatchingWindowInSeconds;
-    bool m_maximumBatchingWindowInSecondsHasBeenSet = false;
-
     Aws::String m_serverRootCaCertificate;
     bool m_serverRootCaCertificateHasBeenSet = false;
-
-    SelfManagedKafkaStartPosition m_startingPosition;
-    bool m_startingPositionHasBeenSet = false;
-
-    Aws::String m_topicName;
-    bool m_topicNameHasBeenSet = false;
 
     SelfManagedKafkaAccessConfigurationVpc m_vpc;
     bool m_vpcHasBeenSet = false;

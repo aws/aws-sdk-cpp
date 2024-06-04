@@ -6,14 +6,14 @@
 #pragma once
 #include <aws/pipes/Pipes_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
-#include <aws/pipes/model/PipeState.h>
 #include <aws/pipes/model/RequestedPipeStateDescribeResponse.h>
-#include <aws/pipes/model/PipeEnrichmentParameters.h>
-#include <aws/pipes/model/PipeLogConfiguration.h>
+#include <aws/pipes/model/PipeState.h>
 #include <aws/pipes/model/PipeSourceParameters.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/pipes/model/PipeEnrichmentParameters.h>
 #include <aws/pipes/model/PipeTargetParameters.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/pipes/model/PipeLogConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -77,55 +77,39 @@ namespace Model
 
 
     /**
-     * <p>The time the pipe was created.</p>
+     * <p>The name of the pipe.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The time the pipe was created.</p>
+     * <p>The name of the pipe.</p>
      */
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
+    inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
-     * <p>The time the pipe was created.</p>
+     * <p>The name of the pipe.</p>
      */
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
+    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
-     * <p>The time the pipe was created.</p>
+     * <p>The name of the pipe.</p>
      */
-    inline DescribePipeResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+    inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
-     * <p>The time the pipe was created.</p>
+     * <p>The name of the pipe.</p>
      */
-    inline DescribePipeResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The state the pipe is in.</p>
-     */
-    inline const PipeState& GetCurrentState() const{ return m_currentState; }
+    inline DescribePipeResult& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The state the pipe is in.</p>
+     * <p>The name of the pipe.</p>
      */
-    inline void SetCurrentState(const PipeState& value) { m_currentState = value; }
+    inline DescribePipeResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The state the pipe is in.</p>
+     * <p>The name of the pipe.</p>
      */
-    inline void SetCurrentState(PipeState&& value) { m_currentState = std::move(value); }
-
-    /**
-     * <p>The state the pipe is in.</p>
-     */
-    inline DescribePipeResult& WithCurrentState(const PipeState& value) { SetCurrentState(value); return *this;}
-
-    /**
-     * <p>The state the pipe is in.</p>
-     */
-    inline DescribePipeResult& WithCurrentState(PipeState&& value) { SetCurrentState(std::move(value)); return *this;}
+    inline DescribePipeResult& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
@@ -191,199 +175,65 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the enrichment resource.</p>
+     * <p>The state the pipe is in.</p>
      */
-    inline const Aws::String& GetEnrichment() const{ return m_enrichment; }
+    inline const PipeState& GetCurrentState() const{ return m_currentState; }
 
     /**
-     * <p>The ARN of the enrichment resource.</p>
+     * <p>The state the pipe is in.</p>
      */
-    inline void SetEnrichment(const Aws::String& value) { m_enrichment = value; }
+    inline void SetCurrentState(const PipeState& value) { m_currentState = value; }
 
     /**
-     * <p>The ARN of the enrichment resource.</p>
+     * <p>The state the pipe is in.</p>
      */
-    inline void SetEnrichment(Aws::String&& value) { m_enrichment = std::move(value); }
+    inline void SetCurrentState(PipeState&& value) { m_currentState = std::move(value); }
 
     /**
-     * <p>The ARN of the enrichment resource.</p>
+     * <p>The state the pipe is in.</p>
      */
-    inline void SetEnrichment(const char* value) { m_enrichment.assign(value); }
+    inline DescribePipeResult& WithCurrentState(const PipeState& value) { SetCurrentState(value); return *this;}
 
     /**
-     * <p>The ARN of the enrichment resource.</p>
+     * <p>The state the pipe is in.</p>
      */
-    inline DescribePipeResult& WithEnrichment(const Aws::String& value) { SetEnrichment(value); return *this;}
-
-    /**
-     * <p>The ARN of the enrichment resource.</p>
-     */
-    inline DescribePipeResult& WithEnrichment(Aws::String&& value) { SetEnrichment(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the enrichment resource.</p>
-     */
-    inline DescribePipeResult& WithEnrichment(const char* value) { SetEnrichment(value); return *this;}
+    inline DescribePipeResult& WithCurrentState(PipeState&& value) { SetCurrentState(std::move(value)); return *this;}
 
 
     /**
-     * <p>The parameters required to set up enrichment on your pipe.</p>
+     * <p>The reason the pipe is in its current state.</p>
      */
-    inline const PipeEnrichmentParameters& GetEnrichmentParameters() const{ return m_enrichmentParameters; }
+    inline const Aws::String& GetStateReason() const{ return m_stateReason; }
 
     /**
-     * <p>The parameters required to set up enrichment on your pipe.</p>
+     * <p>The reason the pipe is in its current state.</p>
      */
-    inline void SetEnrichmentParameters(const PipeEnrichmentParameters& value) { m_enrichmentParameters = value; }
+    inline void SetStateReason(const Aws::String& value) { m_stateReason = value; }
 
     /**
-     * <p>The parameters required to set up enrichment on your pipe.</p>
+     * <p>The reason the pipe is in its current state.</p>
      */
-    inline void SetEnrichmentParameters(PipeEnrichmentParameters&& value) { m_enrichmentParameters = std::move(value); }
+    inline void SetStateReason(Aws::String&& value) { m_stateReason = std::move(value); }
 
     /**
-     * <p>The parameters required to set up enrichment on your pipe.</p>
+     * <p>The reason the pipe is in its current state.</p>
      */
-    inline DescribePipeResult& WithEnrichmentParameters(const PipeEnrichmentParameters& value) { SetEnrichmentParameters(value); return *this;}
+    inline void SetStateReason(const char* value) { m_stateReason.assign(value); }
 
     /**
-     * <p>The parameters required to set up enrichment on your pipe.</p>
+     * <p>The reason the pipe is in its current state.</p>
      */
-    inline DescribePipeResult& WithEnrichmentParameters(PipeEnrichmentParameters&& value) { SetEnrichmentParameters(std::move(value)); return *this;}
-
+    inline DescribePipeResult& WithStateReason(const Aws::String& value) { SetStateReason(value); return *this;}
 
     /**
-     * <p>When the pipe was last updated, in <a
-     * href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a>
-     * (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+     * <p>The reason the pipe is in its current state.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline DescribePipeResult& WithStateReason(Aws::String&& value) { SetStateReason(std::move(value)); return *this;}
 
     /**
-     * <p>When the pipe was last updated, in <a
-     * href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a>
-     * (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+     * <p>The reason the pipe is in its current state.</p>
      */
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
-
-    /**
-     * <p>When the pipe was last updated, in <a
-     * href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a>
-     * (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-     */
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
-
-    /**
-     * <p>When the pipe was last updated, in <a
-     * href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a>
-     * (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-     */
-    inline DescribePipeResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-
-    /**
-     * <p>When the pipe was last updated, in <a
-     * href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a>
-     * (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-     */
-    inline DescribePipeResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The logging configuration settings for the pipe.</p>
-     */
-    inline const PipeLogConfiguration& GetLogConfiguration() const{ return m_logConfiguration; }
-
-    /**
-     * <p>The logging configuration settings for the pipe.</p>
-     */
-    inline void SetLogConfiguration(const PipeLogConfiguration& value) { m_logConfiguration = value; }
-
-    /**
-     * <p>The logging configuration settings for the pipe.</p>
-     */
-    inline void SetLogConfiguration(PipeLogConfiguration&& value) { m_logConfiguration = std::move(value); }
-
-    /**
-     * <p>The logging configuration settings for the pipe.</p>
-     */
-    inline DescribePipeResult& WithLogConfiguration(const PipeLogConfiguration& value) { SetLogConfiguration(value); return *this;}
-
-    /**
-     * <p>The logging configuration settings for the pipe.</p>
-     */
-    inline DescribePipeResult& WithLogConfiguration(PipeLogConfiguration&& value) { SetLogConfiguration(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline void SetName(const Aws::String& value) { m_name = value; }
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline void SetName(const char* value) { m_name.assign(value); }
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline DescribePipeResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline DescribePipeResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline DescribePipeResult& WithName(const char* value) { SetName(value); return *this;}
-
-
-    /**
-     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
-     */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-
-    /**
-     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
-     */
-    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
-
-    /**
-     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
-     */
-    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
-     */
-    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
-
-    /**
-     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
-     */
-    inline DescribePipeResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
-     */
-    inline DescribePipeResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
-     */
-    inline DescribePipeResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    inline DescribePipeResult& WithStateReason(const char* value) { SetStateReason(value); return *this;}
 
 
     /**
@@ -449,100 +299,65 @@ namespace Model
 
 
     /**
-     * <p>The reason the pipe is in its current state.</p>
+     * <p>The ARN of the enrichment resource.</p>
      */
-    inline const Aws::String& GetStateReason() const{ return m_stateReason; }
+    inline const Aws::String& GetEnrichment() const{ return m_enrichment; }
 
     /**
-     * <p>The reason the pipe is in its current state.</p>
+     * <p>The ARN of the enrichment resource.</p>
      */
-    inline void SetStateReason(const Aws::String& value) { m_stateReason = value; }
+    inline void SetEnrichment(const Aws::String& value) { m_enrichment = value; }
 
     /**
-     * <p>The reason the pipe is in its current state.</p>
+     * <p>The ARN of the enrichment resource.</p>
      */
-    inline void SetStateReason(Aws::String&& value) { m_stateReason = std::move(value); }
+    inline void SetEnrichment(Aws::String&& value) { m_enrichment = std::move(value); }
 
     /**
-     * <p>The reason the pipe is in its current state.</p>
+     * <p>The ARN of the enrichment resource.</p>
      */
-    inline void SetStateReason(const char* value) { m_stateReason.assign(value); }
+    inline void SetEnrichment(const char* value) { m_enrichment.assign(value); }
 
     /**
-     * <p>The reason the pipe is in its current state.</p>
+     * <p>The ARN of the enrichment resource.</p>
      */
-    inline DescribePipeResult& WithStateReason(const Aws::String& value) { SetStateReason(value); return *this;}
+    inline DescribePipeResult& WithEnrichment(const Aws::String& value) { SetEnrichment(value); return *this;}
 
     /**
-     * <p>The reason the pipe is in its current state.</p>
+     * <p>The ARN of the enrichment resource.</p>
      */
-    inline DescribePipeResult& WithStateReason(Aws::String&& value) { SetStateReason(std::move(value)); return *this;}
+    inline DescribePipeResult& WithEnrichment(Aws::String&& value) { SetEnrichment(std::move(value)); return *this;}
 
     /**
-     * <p>The reason the pipe is in its current state.</p>
+     * <p>The ARN of the enrichment resource.</p>
      */
-    inline DescribePipeResult& WithStateReason(const char* value) { SetStateReason(value); return *this;}
+    inline DescribePipeResult& WithEnrichment(const char* value) { SetEnrichment(value); return *this;}
 
 
     /**
-     * <p>The list of key-value pairs to associate with the pipe.</p>
+     * <p>The parameters required to set up enrichment on your pipe.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const PipeEnrichmentParameters& GetEnrichmentParameters() const{ return m_enrichmentParameters; }
 
     /**
-     * <p>The list of key-value pairs to associate with the pipe.</p>
+     * <p>The parameters required to set up enrichment on your pipe.</p>
      */
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
+    inline void SetEnrichmentParameters(const PipeEnrichmentParameters& value) { m_enrichmentParameters = value; }
 
     /**
-     * <p>The list of key-value pairs to associate with the pipe.</p>
+     * <p>The parameters required to set up enrichment on your pipe.</p>
      */
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
+    inline void SetEnrichmentParameters(PipeEnrichmentParameters&& value) { m_enrichmentParameters = std::move(value); }
 
     /**
-     * <p>The list of key-value pairs to associate with the pipe.</p>
+     * <p>The parameters required to set up enrichment on your pipe.</p>
      */
-    inline DescribePipeResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+    inline DescribePipeResult& WithEnrichmentParameters(const PipeEnrichmentParameters& value) { SetEnrichmentParameters(value); return *this;}
 
     /**
-     * <p>The list of key-value pairs to associate with the pipe.</p>
+     * <p>The parameters required to set up enrichment on your pipe.</p>
      */
-    inline DescribePipeResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of key-value pairs to associate with the pipe.</p>
-     */
-    inline DescribePipeResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-
-    /**
-     * <p>The list of key-value pairs to associate with the pipe.</p>
-     */
-    inline DescribePipeResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The list of key-value pairs to associate with the pipe.</p>
-     */
-    inline DescribePipeResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The list of key-value pairs to associate with the pipe.</p>
-     */
-    inline DescribePipeResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The list of key-value pairs to associate with the pipe.</p>
-     */
-    inline DescribePipeResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The list of key-value pairs to associate with the pipe.</p>
-     */
-    inline DescribePipeResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The list of key-value pairs to associate with the pipe.</p>
-     */
-    inline DescribePipeResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline DescribePipeResult& WithEnrichmentParameters(PipeEnrichmentParameters&& value) { SetEnrichmentParameters(std::move(value)); return *this;}
 
 
     /**
@@ -627,6 +442,191 @@ namespace Model
     inline DescribePipeResult& WithTargetParameters(PipeTargetParameters&& value) { SetTargetParameters(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
+     */
+    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
+     */
+    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
+
+    /**
+     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
+     */
+    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
+     */
+    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
+
+    /**
+     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
+     */
+    inline DescribePipeResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
+     */
+    inline DescribePipeResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the role that allows the pipe to send data to the target.</p>
+     */
+    inline DescribePipeResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
+
+    /**
+     * <p>The list of key-value pairs to associate with the pipe.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The list of key-value pairs to associate with the pipe.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
+
+    /**
+     * <p>The list of key-value pairs to associate with the pipe.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
+
+    /**
+     * <p>The list of key-value pairs to associate with the pipe.</p>
+     */
+    inline DescribePipeResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The list of key-value pairs to associate with the pipe.</p>
+     */
+    inline DescribePipeResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of key-value pairs to associate with the pipe.</p>
+     */
+    inline DescribePipeResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The list of key-value pairs to associate with the pipe.</p>
+     */
+    inline DescribePipeResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The list of key-value pairs to associate with the pipe.</p>
+     */
+    inline DescribePipeResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The list of key-value pairs to associate with the pipe.</p>
+     */
+    inline DescribePipeResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The list of key-value pairs to associate with the pipe.</p>
+     */
+    inline DescribePipeResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The list of key-value pairs to associate with the pipe.</p>
+     */
+    inline DescribePipeResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The list of key-value pairs to associate with the pipe.</p>
+     */
+    inline DescribePipeResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>The time the pipe was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>The time the pipe was created.</p>
+     */
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
+
+    /**
+     * <p>The time the pipe was created.</p>
+     */
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
+
+    /**
+     * <p>The time the pipe was created.</p>
+     */
+    inline DescribePipeResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+
+    /**
+     * <p>The time the pipe was created.</p>
+     */
+    inline DescribePipeResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>When the pipe was last updated, in <a
+     * href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a>
+     * (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+
+    /**
+     * <p>When the pipe was last updated, in <a
+     * href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a>
+     * (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+     */
+    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
+
+    /**
+     * <p>When the pipe was last updated, in <a
+     * href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a>
+     * (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+     */
+    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
+
+    /**
+     * <p>When the pipe was last updated, in <a
+     * href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a>
+     * (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+     */
+    inline DescribePipeResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
+
+    /**
+     * <p>When the pipe was last updated, in <a
+     * href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a>
+     * (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+     */
+    inline DescribePipeResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The logging configuration settings for the pipe.</p>
+     */
+    inline const PipeLogConfiguration& GetLogConfiguration() const{ return m_logConfiguration; }
+
+    /**
+     * <p>The logging configuration settings for the pipe.</p>
+     */
+    inline void SetLogConfiguration(const PipeLogConfiguration& value) { m_logConfiguration = value; }
+
+    /**
+     * <p>The logging configuration settings for the pipe.</p>
+     */
+    inline void SetLogConfiguration(PipeLogConfiguration&& value) { m_logConfiguration = std::move(value); }
+
+    /**
+     * <p>The logging configuration settings for the pipe.</p>
+     */
+    inline DescribePipeResult& WithLogConfiguration(const PipeLogConfiguration& value) { SetLogConfiguration(value); return *this;}
+
+    /**
+     * <p>The logging configuration settings for the pipe.</p>
+     */
+    inline DescribePipeResult& WithLogConfiguration(PipeLogConfiguration&& value) { SetLogConfiguration(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -652,37 +652,37 @@ namespace Model
 
     Aws::String m_arn;
 
-    Aws::Utils::DateTime m_creationTime;
-
-    PipeState m_currentState;
+    Aws::String m_name;
 
     Aws::String m_description;
 
     RequestedPipeStateDescribeResponse m_desiredState;
 
-    Aws::String m_enrichment;
+    PipeState m_currentState;
 
-    PipeEnrichmentParameters m_enrichmentParameters;
-
-    Aws::Utils::DateTime m_lastModifiedTime;
-
-    PipeLogConfiguration m_logConfiguration;
-
-    Aws::String m_name;
-
-    Aws::String m_roleArn;
+    Aws::String m_stateReason;
 
     Aws::String m_source;
 
     PipeSourceParameters m_sourceParameters;
 
-    Aws::String m_stateReason;
+    Aws::String m_enrichment;
 
-    Aws::Map<Aws::String, Aws::String> m_tags;
+    PipeEnrichmentParameters m_enrichmentParameters;
 
     Aws::String m_target;
 
     PipeTargetParameters m_targetParameters;
+
+    Aws::String m_roleArn;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+
+    Aws::Utils::DateTime m_creationTime;
+
+    Aws::Utils::DateTime m_lastModifiedTime;
+
+    PipeLogConfiguration m_logConfiguration;
 
     Aws::String m_requestId;
   };

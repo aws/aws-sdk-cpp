@@ -5,11 +5,11 @@
 
 #pragma once
 #include <aws/pipes/Pipes_EXPORTS.h>
-#include <aws/pipes/model/CloudwatchLogsLogDestination.h>
-#include <aws/pipes/model/FirehoseLogDestination.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/pipes/model/LogLevel.h>
 #include <aws/pipes/model/S3LogDestination.h>
+#include <aws/pipes/model/FirehoseLogDestination.h>
+#include <aws/pipes/model/CloudwatchLogsLogDestination.h>
+#include <aws/pipes/model/LogLevel.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/pipes/model/IncludeExecutionDataOption.h>
 #include <utility>
 
@@ -44,6 +44,68 @@ namespace Model
 
 
     /**
+     * <p>The Amazon S3 logging configuration settings for the pipe.</p>
+     */
+    inline const S3LogDestination& GetS3LogDestination() const{ return m_s3LogDestination; }
+
+    /**
+     * <p>The Amazon S3 logging configuration settings for the pipe.</p>
+     */
+    inline bool S3LogDestinationHasBeenSet() const { return m_s3LogDestinationHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 logging configuration settings for the pipe.</p>
+     */
+    inline void SetS3LogDestination(const S3LogDestination& value) { m_s3LogDestinationHasBeenSet = true; m_s3LogDestination = value; }
+
+    /**
+     * <p>The Amazon S3 logging configuration settings for the pipe.</p>
+     */
+    inline void SetS3LogDestination(S3LogDestination&& value) { m_s3LogDestinationHasBeenSet = true; m_s3LogDestination = std::move(value); }
+
+    /**
+     * <p>The Amazon S3 logging configuration settings for the pipe.</p>
+     */
+    inline PipeLogConfiguration& WithS3LogDestination(const S3LogDestination& value) { SetS3LogDestination(value); return *this;}
+
+    /**
+     * <p>The Amazon S3 logging configuration settings for the pipe.</p>
+     */
+    inline PipeLogConfiguration& WithS3LogDestination(S3LogDestination&& value) { SetS3LogDestination(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Amazon Data Firehose logging configuration settings for the pipe.</p>
+     */
+    inline const FirehoseLogDestination& GetFirehoseLogDestination() const{ return m_firehoseLogDestination; }
+
+    /**
+     * <p>The Amazon Data Firehose logging configuration settings for the pipe.</p>
+     */
+    inline bool FirehoseLogDestinationHasBeenSet() const { return m_firehoseLogDestinationHasBeenSet; }
+
+    /**
+     * <p>The Amazon Data Firehose logging configuration settings for the pipe.</p>
+     */
+    inline void SetFirehoseLogDestination(const FirehoseLogDestination& value) { m_firehoseLogDestinationHasBeenSet = true; m_firehoseLogDestination = value; }
+
+    /**
+     * <p>The Amazon Data Firehose logging configuration settings for the pipe.</p>
+     */
+    inline void SetFirehoseLogDestination(FirehoseLogDestination&& value) { m_firehoseLogDestinationHasBeenSet = true; m_firehoseLogDestination = std::move(value); }
+
+    /**
+     * <p>The Amazon Data Firehose logging configuration settings for the pipe.</p>
+     */
+    inline PipeLogConfiguration& WithFirehoseLogDestination(const FirehoseLogDestination& value) { SetFirehoseLogDestination(value); return *this;}
+
+    /**
+     * <p>The Amazon Data Firehose logging configuration settings for the pipe.</p>
+     */
+    inline PipeLogConfiguration& WithFirehoseLogDestination(FirehoseLogDestination&& value) { SetFirehoseLogDestination(std::move(value)); return *this;}
+
+
+    /**
      * <p>The Amazon CloudWatch Logs logging configuration settings for the pipe.</p>
      */
     inline const CloudwatchLogsLogDestination& GetCloudwatchLogsLogDestination() const{ return m_cloudwatchLogsLogDestination; }
@@ -75,40 +137,40 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Kinesis Data Firehose logging configuration settings for the
-     * pipe.</p>
+     * <p>The level of logging detail to include. This applies to all log destinations
+     * for the pipe.</p>
      */
-    inline const FirehoseLogDestination& GetFirehoseLogDestination() const{ return m_firehoseLogDestination; }
+    inline const LogLevel& GetLevel() const{ return m_level; }
 
     /**
-     * <p>The Amazon Kinesis Data Firehose logging configuration settings for the
-     * pipe.</p>
+     * <p>The level of logging detail to include. This applies to all log destinations
+     * for the pipe.</p>
      */
-    inline bool FirehoseLogDestinationHasBeenSet() const { return m_firehoseLogDestinationHasBeenSet; }
+    inline bool LevelHasBeenSet() const { return m_levelHasBeenSet; }
 
     /**
-     * <p>The Amazon Kinesis Data Firehose logging configuration settings for the
-     * pipe.</p>
+     * <p>The level of logging detail to include. This applies to all log destinations
+     * for the pipe.</p>
      */
-    inline void SetFirehoseLogDestination(const FirehoseLogDestination& value) { m_firehoseLogDestinationHasBeenSet = true; m_firehoseLogDestination = value; }
+    inline void SetLevel(const LogLevel& value) { m_levelHasBeenSet = true; m_level = value; }
 
     /**
-     * <p>The Amazon Kinesis Data Firehose logging configuration settings for the
-     * pipe.</p>
+     * <p>The level of logging detail to include. This applies to all log destinations
+     * for the pipe.</p>
      */
-    inline void SetFirehoseLogDestination(FirehoseLogDestination&& value) { m_firehoseLogDestinationHasBeenSet = true; m_firehoseLogDestination = std::move(value); }
+    inline void SetLevel(LogLevel&& value) { m_levelHasBeenSet = true; m_level = std::move(value); }
 
     /**
-     * <p>The Amazon Kinesis Data Firehose logging configuration settings for the
-     * pipe.</p>
+     * <p>The level of logging detail to include. This applies to all log destinations
+     * for the pipe.</p>
      */
-    inline PipeLogConfiguration& WithFirehoseLogDestination(const FirehoseLogDestination& value) { SetFirehoseLogDestination(value); return *this;}
+    inline PipeLogConfiguration& WithLevel(const LogLevel& value) { SetLevel(value); return *this;}
 
     /**
-     * <p>The Amazon Kinesis Data Firehose logging configuration settings for the
-     * pipe.</p>
+     * <p>The level of logging detail to include. This applies to all log destinations
+     * for the pipe.</p>
      */
-    inline PipeLogConfiguration& WithFirehoseLogDestination(FirehoseLogDestination&& value) { SetFirehoseLogDestination(std::move(value)); return *this;}
+    inline PipeLogConfiguration& WithLevel(LogLevel&& value) { SetLevel(std::move(value)); return *this;}
 
 
     /**
@@ -191,90 +253,22 @@ namespace Model
      */
     inline PipeLogConfiguration& AddIncludeExecutionData(IncludeExecutionDataOption&& value) { m_includeExecutionDataHasBeenSet = true; m_includeExecutionData.push_back(std::move(value)); return *this; }
 
-
-    /**
-     * <p>The level of logging detail to include. This applies to all log destinations
-     * for the pipe.</p>
-     */
-    inline const LogLevel& GetLevel() const{ return m_level; }
-
-    /**
-     * <p>The level of logging detail to include. This applies to all log destinations
-     * for the pipe.</p>
-     */
-    inline bool LevelHasBeenSet() const { return m_levelHasBeenSet; }
-
-    /**
-     * <p>The level of logging detail to include. This applies to all log destinations
-     * for the pipe.</p>
-     */
-    inline void SetLevel(const LogLevel& value) { m_levelHasBeenSet = true; m_level = value; }
-
-    /**
-     * <p>The level of logging detail to include. This applies to all log destinations
-     * for the pipe.</p>
-     */
-    inline void SetLevel(LogLevel&& value) { m_levelHasBeenSet = true; m_level = std::move(value); }
-
-    /**
-     * <p>The level of logging detail to include. This applies to all log destinations
-     * for the pipe.</p>
-     */
-    inline PipeLogConfiguration& WithLevel(const LogLevel& value) { SetLevel(value); return *this;}
-
-    /**
-     * <p>The level of logging detail to include. This applies to all log destinations
-     * for the pipe.</p>
-     */
-    inline PipeLogConfiguration& WithLevel(LogLevel&& value) { SetLevel(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The Amazon S3 logging configuration settings for the pipe.</p>
-     */
-    inline const S3LogDestination& GetS3LogDestination() const{ return m_s3LogDestination; }
-
-    /**
-     * <p>The Amazon S3 logging configuration settings for the pipe.</p>
-     */
-    inline bool S3LogDestinationHasBeenSet() const { return m_s3LogDestinationHasBeenSet; }
-
-    /**
-     * <p>The Amazon S3 logging configuration settings for the pipe.</p>
-     */
-    inline void SetS3LogDestination(const S3LogDestination& value) { m_s3LogDestinationHasBeenSet = true; m_s3LogDestination = value; }
-
-    /**
-     * <p>The Amazon S3 logging configuration settings for the pipe.</p>
-     */
-    inline void SetS3LogDestination(S3LogDestination&& value) { m_s3LogDestinationHasBeenSet = true; m_s3LogDestination = std::move(value); }
-
-    /**
-     * <p>The Amazon S3 logging configuration settings for the pipe.</p>
-     */
-    inline PipeLogConfiguration& WithS3LogDestination(const S3LogDestination& value) { SetS3LogDestination(value); return *this;}
-
-    /**
-     * <p>The Amazon S3 logging configuration settings for the pipe.</p>
-     */
-    inline PipeLogConfiguration& WithS3LogDestination(S3LogDestination&& value) { SetS3LogDestination(std::move(value)); return *this;}
-
   private:
 
-    CloudwatchLogsLogDestination m_cloudwatchLogsLogDestination;
-    bool m_cloudwatchLogsLogDestinationHasBeenSet = false;
+    S3LogDestination m_s3LogDestination;
+    bool m_s3LogDestinationHasBeenSet = false;
 
     FirehoseLogDestination m_firehoseLogDestination;
     bool m_firehoseLogDestinationHasBeenSet = false;
 
-    Aws::Vector<IncludeExecutionDataOption> m_includeExecutionData;
-    bool m_includeExecutionDataHasBeenSet = false;
+    CloudwatchLogsLogDestination m_cloudwatchLogsLogDestination;
+    bool m_cloudwatchLogsLogDestinationHasBeenSet = false;
 
     LogLevel m_level;
     bool m_levelHasBeenSet = false;
 
-    S3LogDestination m_s3LogDestination;
-    bool m_s3LogDestinationHasBeenSet = false;
+    Aws::Vector<IncludeExecutionDataOption> m_includeExecutionData;
+    bool m_includeExecutionDataHasBeenSet = false;
   };
 
 } // namespace Model

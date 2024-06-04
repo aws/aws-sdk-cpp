@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/pipes/Pipes_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pipes/model/PlacementStrategyType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -39,6 +39,73 @@ namespace Model
     AWS_PIPES_API PlacementStrategy(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API PlacementStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The type of placement strategy. The random placement strategy randomly places
+     * tasks on available candidates. The spread placement strategy spreads placement
+     * across available candidates evenly based on the field parameter. The binpack
+     * strategy places tasks on available candidates that have the least available
+     * amount of the resource that is specified with the field parameter. For example,
+     * if you binpack on memory, a task is placed on the instance with the least amount
+     * of remaining memory (but still enough to run the task). </p>
+     */
+    inline const PlacementStrategyType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of placement strategy. The random placement strategy randomly places
+     * tasks on available candidates. The spread placement strategy spreads placement
+     * across available candidates evenly based on the field parameter. The binpack
+     * strategy places tasks on available candidates that have the least available
+     * amount of the resource that is specified with the field parameter. For example,
+     * if you binpack on memory, a task is placed on the instance with the least amount
+     * of remaining memory (but still enough to run the task). </p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of placement strategy. The random placement strategy randomly places
+     * tasks on available candidates. The spread placement strategy spreads placement
+     * across available candidates evenly based on the field parameter. The binpack
+     * strategy places tasks on available candidates that have the least available
+     * amount of the resource that is specified with the field parameter. For example,
+     * if you binpack on memory, a task is placed on the instance with the least amount
+     * of remaining memory (but still enough to run the task). </p>
+     */
+    inline void SetType(const PlacementStrategyType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The type of placement strategy. The random placement strategy randomly places
+     * tasks on available candidates. The spread placement strategy spreads placement
+     * across available candidates evenly based on the field parameter. The binpack
+     * strategy places tasks on available candidates that have the least available
+     * amount of the resource that is specified with the field parameter. For example,
+     * if you binpack on memory, a task is placed on the instance with the least amount
+     * of remaining memory (but still enough to run the task). </p>
+     */
+    inline void SetType(PlacementStrategyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>The type of placement strategy. The random placement strategy randomly places
+     * tasks on available candidates. The spread placement strategy spreads placement
+     * across available candidates evenly based on the field parameter. The binpack
+     * strategy places tasks on available candidates that have the least available
+     * amount of the resource that is specified with the field parameter. For example,
+     * if you binpack on memory, a task is placed on the instance with the least amount
+     * of remaining memory (but still enough to run the task). </p>
+     */
+    inline PlacementStrategy& WithType(const PlacementStrategyType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The type of placement strategy. The random placement strategy randomly places
+     * tasks on available candidates. The spread placement strategy spreads placement
+     * across available candidates evenly based on the field parameter. The binpack
+     * strategy places tasks on available candidates that have the least available
+     * amount of the resource that is specified with the field parameter. For example,
+     * if you binpack on memory, a task is placed on the instance with the least amount
+     * of remaining memory (but still enough to run the task). </p>
+     */
+    inline PlacementStrategy& WithType(PlacementStrategyType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
@@ -121,80 +188,13 @@ namespace Model
      */
     inline PlacementStrategy& WithField(const char* value) { SetField(value); return *this;}
 
-
-    /**
-     * <p>The type of placement strategy. The random placement strategy randomly places
-     * tasks on available candidates. The spread placement strategy spreads placement
-     * across available candidates evenly based on the field parameter. The binpack
-     * strategy places tasks on available candidates that have the least available
-     * amount of the resource that is specified with the field parameter. For example,
-     * if you binpack on memory, a task is placed on the instance with the least amount
-     * of remaining memory (but still enough to run the task). </p>
-     */
-    inline const PlacementStrategyType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of placement strategy. The random placement strategy randomly places
-     * tasks on available candidates. The spread placement strategy spreads placement
-     * across available candidates evenly based on the field parameter. The binpack
-     * strategy places tasks on available candidates that have the least available
-     * amount of the resource that is specified with the field parameter. For example,
-     * if you binpack on memory, a task is placed on the instance with the least amount
-     * of remaining memory (but still enough to run the task). </p>
-     */
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of placement strategy. The random placement strategy randomly places
-     * tasks on available candidates. The spread placement strategy spreads placement
-     * across available candidates evenly based on the field parameter. The binpack
-     * strategy places tasks on available candidates that have the least available
-     * amount of the resource that is specified with the field parameter. For example,
-     * if you binpack on memory, a task is placed on the instance with the least amount
-     * of remaining memory (but still enough to run the task). </p>
-     */
-    inline void SetType(const PlacementStrategyType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of placement strategy. The random placement strategy randomly places
-     * tasks on available candidates. The spread placement strategy spreads placement
-     * across available candidates evenly based on the field parameter. The binpack
-     * strategy places tasks on available candidates that have the least available
-     * amount of the resource that is specified with the field parameter. For example,
-     * if you binpack on memory, a task is placed on the instance with the least amount
-     * of remaining memory (but still enough to run the task). </p>
-     */
-    inline void SetType(PlacementStrategyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of placement strategy. The random placement strategy randomly places
-     * tasks on available candidates. The spread placement strategy spreads placement
-     * across available candidates evenly based on the field parameter. The binpack
-     * strategy places tasks on available candidates that have the least available
-     * amount of the resource that is specified with the field parameter. For example,
-     * if you binpack on memory, a task is placed on the instance with the least amount
-     * of remaining memory (but still enough to run the task). </p>
-     */
-    inline PlacementStrategy& WithType(const PlacementStrategyType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of placement strategy. The random placement strategy randomly places
-     * tasks on available candidates. The spread placement strategy spreads placement
-     * across available candidates evenly based on the field parameter. The binpack
-     * strategy places tasks on available candidates that have the least available
-     * amount of the resource that is specified with the field parameter. For example,
-     * if you binpack on memory, a task is placed on the instance with the least amount
-     * of remaining memory (but still enough to run the task). </p>
-     */
-    inline PlacementStrategy& WithType(PlacementStrategyType&& value) { SetType(std::move(value)); return *this;}
-
   private:
-
-    Aws::String m_field;
-    bool m_fieldHasBeenSet = false;
 
     PlacementStrategyType m_type;
     bool m_typeHasBeenSet = false;
+
+    Aws::String m_field;
+    bool m_fieldHasBeenSet = false;
   };
 
 } // namespace Model

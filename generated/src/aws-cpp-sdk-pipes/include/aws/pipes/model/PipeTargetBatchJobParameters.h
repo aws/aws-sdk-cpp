@@ -5,12 +5,12 @@
 
 #pragma once
 #include <aws/pipes/Pipes_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pipes/model/BatchArrayProperties.h>
+#include <aws/pipes/model/BatchRetryStrategy.h>
 #include <aws/pipes/model/BatchContainerOverrides.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/pipes/model/BatchRetryStrategy.h>
 #include <aws/pipes/model/BatchJobDependency.h>
 #include <utility>
 
@@ -42,175 +42,6 @@ namespace Model
     AWS_PIPES_API PipeTargetBatchJobParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API PipeTargetBatchJobParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The array properties for the submitted job, such as the size of the array.
-     * The array size can be between 2 and 10,000. If you specify array properties for
-     * a job, it becomes an array job. This parameter is used only if the target is an
-     * Batch job.</p>
-     */
-    inline const BatchArrayProperties& GetArrayProperties() const{ return m_arrayProperties; }
-
-    /**
-     * <p>The array properties for the submitted job, such as the size of the array.
-     * The array size can be between 2 and 10,000. If you specify array properties for
-     * a job, it becomes an array job. This parameter is used only if the target is an
-     * Batch job.</p>
-     */
-    inline bool ArrayPropertiesHasBeenSet() const { return m_arrayPropertiesHasBeenSet; }
-
-    /**
-     * <p>The array properties for the submitted job, such as the size of the array.
-     * The array size can be between 2 and 10,000. If you specify array properties for
-     * a job, it becomes an array job. This parameter is used only if the target is an
-     * Batch job.</p>
-     */
-    inline void SetArrayProperties(const BatchArrayProperties& value) { m_arrayPropertiesHasBeenSet = true; m_arrayProperties = value; }
-
-    /**
-     * <p>The array properties for the submitted job, such as the size of the array.
-     * The array size can be between 2 and 10,000. If you specify array properties for
-     * a job, it becomes an array job. This parameter is used only if the target is an
-     * Batch job.</p>
-     */
-    inline void SetArrayProperties(BatchArrayProperties&& value) { m_arrayPropertiesHasBeenSet = true; m_arrayProperties = std::move(value); }
-
-    /**
-     * <p>The array properties for the submitted job, such as the size of the array.
-     * The array size can be between 2 and 10,000. If you specify array properties for
-     * a job, it becomes an array job. This parameter is used only if the target is an
-     * Batch job.</p>
-     */
-    inline PipeTargetBatchJobParameters& WithArrayProperties(const BatchArrayProperties& value) { SetArrayProperties(value); return *this;}
-
-    /**
-     * <p>The array properties for the submitted job, such as the size of the array.
-     * The array size can be between 2 and 10,000. If you specify array properties for
-     * a job, it becomes an array job. This parameter is used only if the target is an
-     * Batch job.</p>
-     */
-    inline PipeTargetBatchJobParameters& WithArrayProperties(BatchArrayProperties&& value) { SetArrayProperties(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The overrides that are sent to a container.</p>
-     */
-    inline const BatchContainerOverrides& GetContainerOverrides() const{ return m_containerOverrides; }
-
-    /**
-     * <p>The overrides that are sent to a container.</p>
-     */
-    inline bool ContainerOverridesHasBeenSet() const { return m_containerOverridesHasBeenSet; }
-
-    /**
-     * <p>The overrides that are sent to a container.</p>
-     */
-    inline void SetContainerOverrides(const BatchContainerOverrides& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = value; }
-
-    /**
-     * <p>The overrides that are sent to a container.</p>
-     */
-    inline void SetContainerOverrides(BatchContainerOverrides&& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = std::move(value); }
-
-    /**
-     * <p>The overrides that are sent to a container.</p>
-     */
-    inline PipeTargetBatchJobParameters& WithContainerOverrides(const BatchContainerOverrides& value) { SetContainerOverrides(value); return *this;}
-
-    /**
-     * <p>The overrides that are sent to a container.</p>
-     */
-    inline PipeTargetBatchJobParameters& WithContainerOverrides(BatchContainerOverrides&& value) { SetContainerOverrides(std::move(value)); return *this;}
-
-
-    /**
-     * <p>A list of dependencies for the job. A job can depend upon a maximum of 20
-     * jobs. You can specify a <code>SEQUENTIAL</code> type dependency without
-     * specifying a job ID for array jobs so that each child array job completes
-     * sequentially, starting at index 0. You can also specify an <code>N_TO_N</code>
-     * type dependency with a job ID for array jobs. In that case, each index child of
-     * this job must wait for the corresponding index child of each dependency to
-     * complete before it can begin.</p>
-     */
-    inline const Aws::Vector<BatchJobDependency>& GetDependsOn() const{ return m_dependsOn; }
-
-    /**
-     * <p>A list of dependencies for the job. A job can depend upon a maximum of 20
-     * jobs. You can specify a <code>SEQUENTIAL</code> type dependency without
-     * specifying a job ID for array jobs so that each child array job completes
-     * sequentially, starting at index 0. You can also specify an <code>N_TO_N</code>
-     * type dependency with a job ID for array jobs. In that case, each index child of
-     * this job must wait for the corresponding index child of each dependency to
-     * complete before it can begin.</p>
-     */
-    inline bool DependsOnHasBeenSet() const { return m_dependsOnHasBeenSet; }
-
-    /**
-     * <p>A list of dependencies for the job. A job can depend upon a maximum of 20
-     * jobs. You can specify a <code>SEQUENTIAL</code> type dependency without
-     * specifying a job ID for array jobs so that each child array job completes
-     * sequentially, starting at index 0. You can also specify an <code>N_TO_N</code>
-     * type dependency with a job ID for array jobs. In that case, each index child of
-     * this job must wait for the corresponding index child of each dependency to
-     * complete before it can begin.</p>
-     */
-    inline void SetDependsOn(const Aws::Vector<BatchJobDependency>& value) { m_dependsOnHasBeenSet = true; m_dependsOn = value; }
-
-    /**
-     * <p>A list of dependencies for the job. A job can depend upon a maximum of 20
-     * jobs. You can specify a <code>SEQUENTIAL</code> type dependency without
-     * specifying a job ID for array jobs so that each child array job completes
-     * sequentially, starting at index 0. You can also specify an <code>N_TO_N</code>
-     * type dependency with a job ID for array jobs. In that case, each index child of
-     * this job must wait for the corresponding index child of each dependency to
-     * complete before it can begin.</p>
-     */
-    inline void SetDependsOn(Aws::Vector<BatchJobDependency>&& value) { m_dependsOnHasBeenSet = true; m_dependsOn = std::move(value); }
-
-    /**
-     * <p>A list of dependencies for the job. A job can depend upon a maximum of 20
-     * jobs. You can specify a <code>SEQUENTIAL</code> type dependency without
-     * specifying a job ID for array jobs so that each child array job completes
-     * sequentially, starting at index 0. You can also specify an <code>N_TO_N</code>
-     * type dependency with a job ID for array jobs. In that case, each index child of
-     * this job must wait for the corresponding index child of each dependency to
-     * complete before it can begin.</p>
-     */
-    inline PipeTargetBatchJobParameters& WithDependsOn(const Aws::Vector<BatchJobDependency>& value) { SetDependsOn(value); return *this;}
-
-    /**
-     * <p>A list of dependencies for the job. A job can depend upon a maximum of 20
-     * jobs. You can specify a <code>SEQUENTIAL</code> type dependency without
-     * specifying a job ID for array jobs so that each child array job completes
-     * sequentially, starting at index 0. You can also specify an <code>N_TO_N</code>
-     * type dependency with a job ID for array jobs. In that case, each index child of
-     * this job must wait for the corresponding index child of each dependency to
-     * complete before it can begin.</p>
-     */
-    inline PipeTargetBatchJobParameters& WithDependsOn(Aws::Vector<BatchJobDependency>&& value) { SetDependsOn(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of dependencies for the job. A job can depend upon a maximum of 20
-     * jobs. You can specify a <code>SEQUENTIAL</code> type dependency without
-     * specifying a job ID for array jobs so that each child array job completes
-     * sequentially, starting at index 0. You can also specify an <code>N_TO_N</code>
-     * type dependency with a job ID for array jobs. In that case, each index child of
-     * this job must wait for the corresponding index child of each dependency to
-     * complete before it can begin.</p>
-     */
-    inline PipeTargetBatchJobParameters& AddDependsOn(const BatchJobDependency& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(value); return *this; }
-
-    /**
-     * <p>A list of dependencies for the job. A job can depend upon a maximum of 20
-     * jobs. You can specify a <code>SEQUENTIAL</code> type dependency without
-     * specifying a job ID for array jobs so that each child array job completes
-     * sequentially, starting at index 0. You can also specify an <code>N_TO_N</code>
-     * type dependency with a job ID for array jobs. In that case, each index child of
-     * this job must wait for the corresponding index child of each dependency to
-     * complete before it can begin.</p>
-     */
-    inline PipeTargetBatchJobParameters& AddDependsOn(BatchJobDependency&& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -336,6 +167,212 @@ namespace Model
 
 
     /**
+     * <p>The array properties for the submitted job, such as the size of the array.
+     * The array size can be between 2 and 10,000. If you specify array properties for
+     * a job, it becomes an array job. This parameter is used only if the target is an
+     * Batch job.</p>
+     */
+    inline const BatchArrayProperties& GetArrayProperties() const{ return m_arrayProperties; }
+
+    /**
+     * <p>The array properties for the submitted job, such as the size of the array.
+     * The array size can be between 2 and 10,000. If you specify array properties for
+     * a job, it becomes an array job. This parameter is used only if the target is an
+     * Batch job.</p>
+     */
+    inline bool ArrayPropertiesHasBeenSet() const { return m_arrayPropertiesHasBeenSet; }
+
+    /**
+     * <p>The array properties for the submitted job, such as the size of the array.
+     * The array size can be between 2 and 10,000. If you specify array properties for
+     * a job, it becomes an array job. This parameter is used only if the target is an
+     * Batch job.</p>
+     */
+    inline void SetArrayProperties(const BatchArrayProperties& value) { m_arrayPropertiesHasBeenSet = true; m_arrayProperties = value; }
+
+    /**
+     * <p>The array properties for the submitted job, such as the size of the array.
+     * The array size can be between 2 and 10,000. If you specify array properties for
+     * a job, it becomes an array job. This parameter is used only if the target is an
+     * Batch job.</p>
+     */
+    inline void SetArrayProperties(BatchArrayProperties&& value) { m_arrayPropertiesHasBeenSet = true; m_arrayProperties = std::move(value); }
+
+    /**
+     * <p>The array properties for the submitted job, such as the size of the array.
+     * The array size can be between 2 and 10,000. If you specify array properties for
+     * a job, it becomes an array job. This parameter is used only if the target is an
+     * Batch job.</p>
+     */
+    inline PipeTargetBatchJobParameters& WithArrayProperties(const BatchArrayProperties& value) { SetArrayProperties(value); return *this;}
+
+    /**
+     * <p>The array properties for the submitted job, such as the size of the array.
+     * The array size can be between 2 and 10,000. If you specify array properties for
+     * a job, it becomes an array job. This parameter is used only if the target is an
+     * Batch job.</p>
+     */
+    inline PipeTargetBatchJobParameters& WithArrayProperties(BatchArrayProperties&& value) { SetArrayProperties(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The retry strategy to use for failed jobs. When a retry strategy is specified
+     * here, it overrides the retry strategy defined in the job definition.</p>
+     */
+    inline const BatchRetryStrategy& GetRetryStrategy() const{ return m_retryStrategy; }
+
+    /**
+     * <p>The retry strategy to use for failed jobs. When a retry strategy is specified
+     * here, it overrides the retry strategy defined in the job definition.</p>
+     */
+    inline bool RetryStrategyHasBeenSet() const { return m_retryStrategyHasBeenSet; }
+
+    /**
+     * <p>The retry strategy to use for failed jobs. When a retry strategy is specified
+     * here, it overrides the retry strategy defined in the job definition.</p>
+     */
+    inline void SetRetryStrategy(const BatchRetryStrategy& value) { m_retryStrategyHasBeenSet = true; m_retryStrategy = value; }
+
+    /**
+     * <p>The retry strategy to use for failed jobs. When a retry strategy is specified
+     * here, it overrides the retry strategy defined in the job definition.</p>
+     */
+    inline void SetRetryStrategy(BatchRetryStrategy&& value) { m_retryStrategyHasBeenSet = true; m_retryStrategy = std::move(value); }
+
+    /**
+     * <p>The retry strategy to use for failed jobs. When a retry strategy is specified
+     * here, it overrides the retry strategy defined in the job definition.</p>
+     */
+    inline PipeTargetBatchJobParameters& WithRetryStrategy(const BatchRetryStrategy& value) { SetRetryStrategy(value); return *this;}
+
+    /**
+     * <p>The retry strategy to use for failed jobs. When a retry strategy is specified
+     * here, it overrides the retry strategy defined in the job definition.</p>
+     */
+    inline PipeTargetBatchJobParameters& WithRetryStrategy(BatchRetryStrategy&& value) { SetRetryStrategy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The overrides that are sent to a container.</p>
+     */
+    inline const BatchContainerOverrides& GetContainerOverrides() const{ return m_containerOverrides; }
+
+    /**
+     * <p>The overrides that are sent to a container.</p>
+     */
+    inline bool ContainerOverridesHasBeenSet() const { return m_containerOverridesHasBeenSet; }
+
+    /**
+     * <p>The overrides that are sent to a container.</p>
+     */
+    inline void SetContainerOverrides(const BatchContainerOverrides& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = value; }
+
+    /**
+     * <p>The overrides that are sent to a container.</p>
+     */
+    inline void SetContainerOverrides(BatchContainerOverrides&& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = std::move(value); }
+
+    /**
+     * <p>The overrides that are sent to a container.</p>
+     */
+    inline PipeTargetBatchJobParameters& WithContainerOverrides(const BatchContainerOverrides& value) { SetContainerOverrides(value); return *this;}
+
+    /**
+     * <p>The overrides that are sent to a container.</p>
+     */
+    inline PipeTargetBatchJobParameters& WithContainerOverrides(BatchContainerOverrides&& value) { SetContainerOverrides(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A list of dependencies for the job. A job can depend upon a maximum of 20
+     * jobs. You can specify a <code>SEQUENTIAL</code> type dependency without
+     * specifying a job ID for array jobs so that each child array job completes
+     * sequentially, starting at index 0. You can also specify an <code>N_TO_N</code>
+     * type dependency with a job ID for array jobs. In that case, each index child of
+     * this job must wait for the corresponding index child of each dependency to
+     * complete before it can begin.</p>
+     */
+    inline const Aws::Vector<BatchJobDependency>& GetDependsOn() const{ return m_dependsOn; }
+
+    /**
+     * <p>A list of dependencies for the job. A job can depend upon a maximum of 20
+     * jobs. You can specify a <code>SEQUENTIAL</code> type dependency without
+     * specifying a job ID for array jobs so that each child array job completes
+     * sequentially, starting at index 0. You can also specify an <code>N_TO_N</code>
+     * type dependency with a job ID for array jobs. In that case, each index child of
+     * this job must wait for the corresponding index child of each dependency to
+     * complete before it can begin.</p>
+     */
+    inline bool DependsOnHasBeenSet() const { return m_dependsOnHasBeenSet; }
+
+    /**
+     * <p>A list of dependencies for the job. A job can depend upon a maximum of 20
+     * jobs. You can specify a <code>SEQUENTIAL</code> type dependency without
+     * specifying a job ID for array jobs so that each child array job completes
+     * sequentially, starting at index 0. You can also specify an <code>N_TO_N</code>
+     * type dependency with a job ID for array jobs. In that case, each index child of
+     * this job must wait for the corresponding index child of each dependency to
+     * complete before it can begin.</p>
+     */
+    inline void SetDependsOn(const Aws::Vector<BatchJobDependency>& value) { m_dependsOnHasBeenSet = true; m_dependsOn = value; }
+
+    /**
+     * <p>A list of dependencies for the job. A job can depend upon a maximum of 20
+     * jobs. You can specify a <code>SEQUENTIAL</code> type dependency without
+     * specifying a job ID for array jobs so that each child array job completes
+     * sequentially, starting at index 0. You can also specify an <code>N_TO_N</code>
+     * type dependency with a job ID for array jobs. In that case, each index child of
+     * this job must wait for the corresponding index child of each dependency to
+     * complete before it can begin.</p>
+     */
+    inline void SetDependsOn(Aws::Vector<BatchJobDependency>&& value) { m_dependsOnHasBeenSet = true; m_dependsOn = std::move(value); }
+
+    /**
+     * <p>A list of dependencies for the job. A job can depend upon a maximum of 20
+     * jobs. You can specify a <code>SEQUENTIAL</code> type dependency without
+     * specifying a job ID for array jobs so that each child array job completes
+     * sequentially, starting at index 0. You can also specify an <code>N_TO_N</code>
+     * type dependency with a job ID for array jobs. In that case, each index child of
+     * this job must wait for the corresponding index child of each dependency to
+     * complete before it can begin.</p>
+     */
+    inline PipeTargetBatchJobParameters& WithDependsOn(const Aws::Vector<BatchJobDependency>& value) { SetDependsOn(value); return *this;}
+
+    /**
+     * <p>A list of dependencies for the job. A job can depend upon a maximum of 20
+     * jobs. You can specify a <code>SEQUENTIAL</code> type dependency without
+     * specifying a job ID for array jobs so that each child array job completes
+     * sequentially, starting at index 0. You can also specify an <code>N_TO_N</code>
+     * type dependency with a job ID for array jobs. In that case, each index child of
+     * this job must wait for the corresponding index child of each dependency to
+     * complete before it can begin.</p>
+     */
+    inline PipeTargetBatchJobParameters& WithDependsOn(Aws::Vector<BatchJobDependency>&& value) { SetDependsOn(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of dependencies for the job. A job can depend upon a maximum of 20
+     * jobs. You can specify a <code>SEQUENTIAL</code> type dependency without
+     * specifying a job ID for array jobs so that each child array job completes
+     * sequentially, starting at index 0. You can also specify an <code>N_TO_N</code>
+     * type dependency with a job ID for array jobs. In that case, each index child of
+     * this job must wait for the corresponding index child of each dependency to
+     * complete before it can begin.</p>
+     */
+    inline PipeTargetBatchJobParameters& AddDependsOn(const BatchJobDependency& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(value); return *this; }
+
+    /**
+     * <p>A list of dependencies for the job. A job can depend upon a maximum of 20
+     * jobs. You can specify a <code>SEQUENTIAL</code> type dependency without
+     * specifying a job ID for array jobs so that each child array job completes
+     * sequentially, starting at index 0. You can also specify an <code>N_TO_N</code>
+     * type dependency with a job ID for array jobs. In that case, each index child of
+     * this job must wait for the corresponding index child of each dependency to
+     * complete before it can begin.</p>
+     */
+    inline PipeTargetBatchJobParameters& AddDependsOn(BatchJobDependency&& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>Additional parameters passed to the job that replace parameter substitution
      * placeholders that are set in the job definition. Parameters are specified as a
      * key and value pair mapping. Parameters included here override any corresponding
@@ -439,53 +476,7 @@ namespace Model
      */
     inline PipeTargetBatchJobParameters& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
-
-    /**
-     * <p>The retry strategy to use for failed jobs. When a retry strategy is specified
-     * here, it overrides the retry strategy defined in the job definition.</p>
-     */
-    inline const BatchRetryStrategy& GetRetryStrategy() const{ return m_retryStrategy; }
-
-    /**
-     * <p>The retry strategy to use for failed jobs. When a retry strategy is specified
-     * here, it overrides the retry strategy defined in the job definition.</p>
-     */
-    inline bool RetryStrategyHasBeenSet() const { return m_retryStrategyHasBeenSet; }
-
-    /**
-     * <p>The retry strategy to use for failed jobs. When a retry strategy is specified
-     * here, it overrides the retry strategy defined in the job definition.</p>
-     */
-    inline void SetRetryStrategy(const BatchRetryStrategy& value) { m_retryStrategyHasBeenSet = true; m_retryStrategy = value; }
-
-    /**
-     * <p>The retry strategy to use for failed jobs. When a retry strategy is specified
-     * here, it overrides the retry strategy defined in the job definition.</p>
-     */
-    inline void SetRetryStrategy(BatchRetryStrategy&& value) { m_retryStrategyHasBeenSet = true; m_retryStrategy = std::move(value); }
-
-    /**
-     * <p>The retry strategy to use for failed jobs. When a retry strategy is specified
-     * here, it overrides the retry strategy defined in the job definition.</p>
-     */
-    inline PipeTargetBatchJobParameters& WithRetryStrategy(const BatchRetryStrategy& value) { SetRetryStrategy(value); return *this;}
-
-    /**
-     * <p>The retry strategy to use for failed jobs. When a retry strategy is specified
-     * here, it overrides the retry strategy defined in the job definition.</p>
-     */
-    inline PipeTargetBatchJobParameters& WithRetryStrategy(BatchRetryStrategy&& value) { SetRetryStrategy(std::move(value)); return *this;}
-
   private:
-
-    BatchArrayProperties m_arrayProperties;
-    bool m_arrayPropertiesHasBeenSet = false;
-
-    BatchContainerOverrides m_containerOverrides;
-    bool m_containerOverridesHasBeenSet = false;
-
-    Aws::Vector<BatchJobDependency> m_dependsOn;
-    bool m_dependsOnHasBeenSet = false;
 
     Aws::String m_jobDefinition;
     bool m_jobDefinitionHasBeenSet = false;
@@ -493,11 +484,20 @@ namespace Model
     Aws::String m_jobName;
     bool m_jobNameHasBeenSet = false;
 
-    Aws::Map<Aws::String, Aws::String> m_parameters;
-    bool m_parametersHasBeenSet = false;
+    BatchArrayProperties m_arrayProperties;
+    bool m_arrayPropertiesHasBeenSet = false;
 
     BatchRetryStrategy m_retryStrategy;
     bool m_retryStrategyHasBeenSet = false;
+
+    BatchContainerOverrides m_containerOverrides;
+    bool m_containerOverridesHasBeenSet = false;
+
+    Aws::Vector<BatchJobDependency> m_dependsOn;
+    bool m_dependsOnHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_parameters;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

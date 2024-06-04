@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/pipes/Pipes_EXPORTS.h>
-#include <aws/pipes/model/AssignPublicIp.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/pipes/model/AssignPublicIp.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -43,46 +43,58 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the task's elastic network interface receives a public IP
-     * address. You can specify <code>ENABLED</code> only when <code>LaunchType</code>
-     * in <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
+     * <p>Specifies the subnets associated with the task. These subnets must all be in
+     * the same VPC. You can specify as many as 16 subnets.</p>
      */
-    inline const AssignPublicIp& GetAssignPublicIp() const{ return m_assignPublicIp; }
+    inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
 
     /**
-     * <p>Specifies whether the task's elastic network interface receives a public IP
-     * address. You can specify <code>ENABLED</code> only when <code>LaunchType</code>
-     * in <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
+     * <p>Specifies the subnets associated with the task. These subnets must all be in
+     * the same VPC. You can specify as many as 16 subnets.</p>
      */
-    inline bool AssignPublicIpHasBeenSet() const { return m_assignPublicIpHasBeenSet; }
+    inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
 
     /**
-     * <p>Specifies whether the task's elastic network interface receives a public IP
-     * address. You can specify <code>ENABLED</code> only when <code>LaunchType</code>
-     * in <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
+     * <p>Specifies the subnets associated with the task. These subnets must all be in
+     * the same VPC. You can specify as many as 16 subnets.</p>
      */
-    inline void SetAssignPublicIp(const AssignPublicIp& value) { m_assignPublicIpHasBeenSet = true; m_assignPublicIp = value; }
+    inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
 
     /**
-     * <p>Specifies whether the task's elastic network interface receives a public IP
-     * address. You can specify <code>ENABLED</code> only when <code>LaunchType</code>
-     * in <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
+     * <p>Specifies the subnets associated with the task. These subnets must all be in
+     * the same VPC. You can specify as many as 16 subnets.</p>
      */
-    inline void SetAssignPublicIp(AssignPublicIp&& value) { m_assignPublicIpHasBeenSet = true; m_assignPublicIp = std::move(value); }
+    inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnetsHasBeenSet = true; m_subnets = std::move(value); }
 
     /**
-     * <p>Specifies whether the task's elastic network interface receives a public IP
-     * address. You can specify <code>ENABLED</code> only when <code>LaunchType</code>
-     * in <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
+     * <p>Specifies the subnets associated with the task. These subnets must all be in
+     * the same VPC. You can specify as many as 16 subnets.</p>
      */
-    inline AwsVpcConfiguration& WithAssignPublicIp(const AssignPublicIp& value) { SetAssignPublicIp(value); return *this;}
+    inline AwsVpcConfiguration& WithSubnets(const Aws::Vector<Aws::String>& value) { SetSubnets(value); return *this;}
 
     /**
-     * <p>Specifies whether the task's elastic network interface receives a public IP
-     * address. You can specify <code>ENABLED</code> only when <code>LaunchType</code>
-     * in <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
+     * <p>Specifies the subnets associated with the task. These subnets must all be in
+     * the same VPC. You can specify as many as 16 subnets.</p>
      */
-    inline AwsVpcConfiguration& WithAssignPublicIp(AssignPublicIp&& value) { SetAssignPublicIp(std::move(value)); return *this;}
+    inline AwsVpcConfiguration& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the subnets associated with the task. These subnets must all be in
+     * the same VPC. You can specify as many as 16 subnets.</p>
+     */
+    inline AwsVpcConfiguration& AddSubnets(const Aws::String& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies the subnets associated with the task. These subnets must all be in
+     * the same VPC. You can specify as many as 16 subnets.</p>
+     */
+    inline AwsVpcConfiguration& AddSubnets(Aws::String&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Specifies the subnets associated with the task. These subnets must all be in
+     * the same VPC. You can specify as many as 16 subnets.</p>
+     */
+    inline AwsVpcConfiguration& AddSubnets(const char* value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
 
     /**
@@ -159,69 +171,57 @@ namespace Model
 
 
     /**
-     * <p>Specifies the subnets associated with the task. These subnets must all be in
-     * the same VPC. You can specify as many as 16 subnets.</p>
+     * <p>Specifies whether the task's elastic network interface receives a public IP
+     * address. You can specify <code>ENABLED</code> only when <code>LaunchType</code>
+     * in <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
+    inline const AssignPublicIp& GetAssignPublicIp() const{ return m_assignPublicIp; }
 
     /**
-     * <p>Specifies the subnets associated with the task. These subnets must all be in
-     * the same VPC. You can specify as many as 16 subnets.</p>
+     * <p>Specifies whether the task's elastic network interface receives a public IP
+     * address. You can specify <code>ENABLED</code> only when <code>LaunchType</code>
+     * in <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
      */
-    inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
+    inline bool AssignPublicIpHasBeenSet() const { return m_assignPublicIpHasBeenSet; }
 
     /**
-     * <p>Specifies the subnets associated with the task. These subnets must all be in
-     * the same VPC. You can specify as many as 16 subnets.</p>
+     * <p>Specifies whether the task's elastic network interface receives a public IP
+     * address. You can specify <code>ENABLED</code> only when <code>LaunchType</code>
+     * in <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
      */
-    inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
+    inline void SetAssignPublicIp(const AssignPublicIp& value) { m_assignPublicIpHasBeenSet = true; m_assignPublicIp = value; }
 
     /**
-     * <p>Specifies the subnets associated with the task. These subnets must all be in
-     * the same VPC. You can specify as many as 16 subnets.</p>
+     * <p>Specifies whether the task's elastic network interface receives a public IP
+     * address. You can specify <code>ENABLED</code> only when <code>LaunchType</code>
+     * in <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
      */
-    inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnetsHasBeenSet = true; m_subnets = std::move(value); }
+    inline void SetAssignPublicIp(AssignPublicIp&& value) { m_assignPublicIpHasBeenSet = true; m_assignPublicIp = std::move(value); }
 
     /**
-     * <p>Specifies the subnets associated with the task. These subnets must all be in
-     * the same VPC. You can specify as many as 16 subnets.</p>
+     * <p>Specifies whether the task's elastic network interface receives a public IP
+     * address. You can specify <code>ENABLED</code> only when <code>LaunchType</code>
+     * in <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
      */
-    inline AwsVpcConfiguration& WithSubnets(const Aws::Vector<Aws::String>& value) { SetSubnets(value); return *this;}
+    inline AwsVpcConfiguration& WithAssignPublicIp(const AssignPublicIp& value) { SetAssignPublicIp(value); return *this;}
 
     /**
-     * <p>Specifies the subnets associated with the task. These subnets must all be in
-     * the same VPC. You can specify as many as 16 subnets.</p>
+     * <p>Specifies whether the task's elastic network interface receives a public IP
+     * address. You can specify <code>ENABLED</code> only when <code>LaunchType</code>
+     * in <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
      */
-    inline AwsVpcConfiguration& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the subnets associated with the task. These subnets must all be in
-     * the same VPC. You can specify as many as 16 subnets.</p>
-     */
-    inline AwsVpcConfiguration& AddSubnets(const Aws::String& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
-
-    /**
-     * <p>Specifies the subnets associated with the task. These subnets must all be in
-     * the same VPC. You can specify as many as 16 subnets.</p>
-     */
-    inline AwsVpcConfiguration& AddSubnets(Aws::String&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Specifies the subnets associated with the task. These subnets must all be in
-     * the same VPC. You can specify as many as 16 subnets.</p>
-     */
-    inline AwsVpcConfiguration& AddSubnets(const char* value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
+    inline AwsVpcConfiguration& WithAssignPublicIp(AssignPublicIp&& value) { SetAssignPublicIp(std::move(value)); return *this;}
 
   private:
 
-    AssignPublicIp m_assignPublicIp;
-    bool m_assignPublicIpHasBeenSet = false;
+    Aws::Vector<Aws::String> m_subnets;
+    bool m_subnetsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroups;
     bool m_securityGroupsHasBeenSet = false;
 
-    Aws::Vector<Aws::String> m_subnets;
-    bool m_subnetsHasBeenSet = false;
+    AssignPublicIp m_assignPublicIp;
+    bool m_assignPublicIpHasBeenSet = false;
   };
 
 } // namespace Model

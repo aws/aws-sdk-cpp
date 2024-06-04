@@ -22,14 +22,14 @@ PipeSourceKinesisStreamParameters::PipeSourceKinesisStreamParameters() :
     m_batchSize(0),
     m_batchSizeHasBeenSet(false),
     m_deadLetterConfigHasBeenSet(false),
+    m_onPartialBatchItemFailure(OnPartialBatchItemFailureStreams::NOT_SET),
+    m_onPartialBatchItemFailureHasBeenSet(false),
     m_maximumBatchingWindowInSeconds(0),
     m_maximumBatchingWindowInSecondsHasBeenSet(false),
     m_maximumRecordAgeInSeconds(0),
     m_maximumRecordAgeInSecondsHasBeenSet(false),
     m_maximumRetryAttempts(0),
     m_maximumRetryAttemptsHasBeenSet(false),
-    m_onPartialBatchItemFailure(OnPartialBatchItemFailureStreams::NOT_SET),
-    m_onPartialBatchItemFailureHasBeenSet(false),
     m_parallelizationFactor(0),
     m_parallelizationFactorHasBeenSet(false),
     m_startingPosition(KinesisStreamStartPosition::NOT_SET),
@@ -42,14 +42,14 @@ PipeSourceKinesisStreamParameters::PipeSourceKinesisStreamParameters(JsonView js
     m_batchSize(0),
     m_batchSizeHasBeenSet(false),
     m_deadLetterConfigHasBeenSet(false),
+    m_onPartialBatchItemFailure(OnPartialBatchItemFailureStreams::NOT_SET),
+    m_onPartialBatchItemFailureHasBeenSet(false),
     m_maximumBatchingWindowInSeconds(0),
     m_maximumBatchingWindowInSecondsHasBeenSet(false),
     m_maximumRecordAgeInSeconds(0),
     m_maximumRecordAgeInSecondsHasBeenSet(false),
     m_maximumRetryAttempts(0),
     m_maximumRetryAttemptsHasBeenSet(false),
-    m_onPartialBatchItemFailure(OnPartialBatchItemFailureStreams::NOT_SET),
-    m_onPartialBatchItemFailureHasBeenSet(false),
     m_parallelizationFactor(0),
     m_parallelizationFactorHasBeenSet(false),
     m_startingPosition(KinesisStreamStartPosition::NOT_SET),
@@ -75,6 +75,13 @@ PipeSourceKinesisStreamParameters& PipeSourceKinesisStreamParameters::operator =
     m_deadLetterConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OnPartialBatchItemFailure"))
+  {
+    m_onPartialBatchItemFailure = OnPartialBatchItemFailureStreamsMapper::GetOnPartialBatchItemFailureStreamsForName(jsonValue.GetString("OnPartialBatchItemFailure"));
+
+    m_onPartialBatchItemFailureHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("MaximumBatchingWindowInSeconds"))
   {
     m_maximumBatchingWindowInSeconds = jsonValue.GetInteger("MaximumBatchingWindowInSeconds");
@@ -94,13 +101,6 @@ PipeSourceKinesisStreamParameters& PipeSourceKinesisStreamParameters::operator =
     m_maximumRetryAttempts = jsonValue.GetInteger("MaximumRetryAttempts");
 
     m_maximumRetryAttemptsHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("OnPartialBatchItemFailure"))
-  {
-    m_onPartialBatchItemFailure = OnPartialBatchItemFailureStreamsMapper::GetOnPartialBatchItemFailureStreamsForName(jsonValue.GetString("OnPartialBatchItemFailure"));
-
-    m_onPartialBatchItemFailureHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ParallelizationFactor"))
@@ -143,6 +143,11 @@ JsonValue PipeSourceKinesisStreamParameters::Jsonize() const
 
   }
 
+  if(m_onPartialBatchItemFailureHasBeenSet)
+  {
+   payload.WithString("OnPartialBatchItemFailure", OnPartialBatchItemFailureStreamsMapper::GetNameForOnPartialBatchItemFailureStreams(m_onPartialBatchItemFailure));
+  }
+
   if(m_maximumBatchingWindowInSecondsHasBeenSet)
   {
    payload.WithInteger("MaximumBatchingWindowInSeconds", m_maximumBatchingWindowInSeconds);
@@ -159,11 +164,6 @@ JsonValue PipeSourceKinesisStreamParameters::Jsonize() const
   {
    payload.WithInteger("MaximumRetryAttempts", m_maximumRetryAttempts);
 
-  }
-
-  if(m_onPartialBatchItemFailureHasBeenSet)
-  {
-   payload.WithString("OnPartialBatchItemFailure", OnPartialBatchItemFailureStreamsMapper::GetNameForOnPartialBatchItemFailureStreams(m_onPartialBatchItemFailure));
   }
 
   if(m_parallelizationFactorHasBeenSet)

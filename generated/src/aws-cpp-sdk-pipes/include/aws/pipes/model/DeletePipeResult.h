@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/pipes/Pipes_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
-#include <aws/pipes/model/PipeState.h>
 #include <aws/pipes/model/RequestedPipeStateDescribeResponse.h>
+#include <aws/pipes/model/PipeState.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -72,29 +72,65 @@ namespace Model
 
 
     /**
-     * <p>The time the pipe was created.</p>
+     * <p>The name of the pipe.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The time the pipe was created.</p>
+     * <p>The name of the pipe.</p>
      */
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
+    inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
-     * <p>The time the pipe was created.</p>
+     * <p>The name of the pipe.</p>
      */
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
+    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
-     * <p>The time the pipe was created.</p>
+     * <p>The name of the pipe.</p>
      */
-    inline DeletePipeResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+    inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
-     * <p>The time the pipe was created.</p>
+     * <p>The name of the pipe.</p>
      */
-    inline DeletePipeResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline DeletePipeResult& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>The name of the pipe.</p>
+     */
+    inline DeletePipeResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the pipe.</p>
+     */
+    inline DeletePipeResult& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>The state the pipe should be in.</p>
+     */
+    inline const RequestedPipeStateDescribeResponse& GetDesiredState() const{ return m_desiredState; }
+
+    /**
+     * <p>The state the pipe should be in.</p>
+     */
+    inline void SetDesiredState(const RequestedPipeStateDescribeResponse& value) { m_desiredState = value; }
+
+    /**
+     * <p>The state the pipe should be in.</p>
+     */
+    inline void SetDesiredState(RequestedPipeStateDescribeResponse&& value) { m_desiredState = std::move(value); }
+
+    /**
+     * <p>The state the pipe should be in.</p>
+     */
+    inline DeletePipeResult& WithDesiredState(const RequestedPipeStateDescribeResponse& value) { SetDesiredState(value); return *this;}
+
+    /**
+     * <p>The state the pipe should be in.</p>
+     */
+    inline DeletePipeResult& WithDesiredState(RequestedPipeStateDescribeResponse&& value) { SetDesiredState(std::move(value)); return *this;}
 
 
     /**
@@ -124,29 +160,29 @@ namespace Model
 
 
     /**
-     * <p>The state the pipe should be in.</p>
+     * <p>The time the pipe was created.</p>
      */
-    inline const RequestedPipeStateDescribeResponse& GetDesiredState() const{ return m_desiredState; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>The state the pipe should be in.</p>
+     * <p>The time the pipe was created.</p>
      */
-    inline void SetDesiredState(const RequestedPipeStateDescribeResponse& value) { m_desiredState = value; }
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
 
     /**
-     * <p>The state the pipe should be in.</p>
+     * <p>The time the pipe was created.</p>
      */
-    inline void SetDesiredState(RequestedPipeStateDescribeResponse&& value) { m_desiredState = std::move(value); }
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
 
     /**
-     * <p>The state the pipe should be in.</p>
+     * <p>The time the pipe was created.</p>
      */
-    inline DeletePipeResult& WithDesiredState(const RequestedPipeStateDescribeResponse& value) { SetDesiredState(value); return *this;}
+    inline DeletePipeResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>The state the pipe should be in.</p>
+     * <p>The time the pipe was created.</p>
      */
-    inline DeletePipeResult& WithDesiredState(RequestedPipeStateDescribeResponse&& value) { SetDesiredState(std::move(value)); return *this;}
+    inline DeletePipeResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
     /**
@@ -185,42 +221,6 @@ namespace Model
     inline DeletePipeResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 
 
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline void SetName(const Aws::String& value) { m_name = value; }
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline void SetName(const char* value) { m_name.assign(value); }
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline DeletePipeResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline DeletePipeResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the pipe.</p>
-     */
-    inline DeletePipeResult& WithName(const char* value) { SetName(value); return *this;}
-
-
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -246,15 +246,15 @@ namespace Model
 
     Aws::String m_arn;
 
-    Aws::Utils::DateTime m_creationTime;
-
-    PipeState m_currentState;
+    Aws::String m_name;
 
     RequestedPipeStateDescribeResponse m_desiredState;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    PipeState m_currentState;
 
-    Aws::String m_name;
+    Aws::Utils::DateTime m_creationTime;
+
+    Aws::Utils::DateTime m_lastModifiedTime;
 
     Aws::String m_requestId;
   };

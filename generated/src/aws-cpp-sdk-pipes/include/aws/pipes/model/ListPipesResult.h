@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/pipes/Pipes_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pipes/model/Pipe.h>
 #include <utility>
 
@@ -32,6 +32,42 @@ namespace Model
     AWS_PIPES_API ListPipesResult();
     AWS_PIPES_API ListPipesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PIPES_API ListPipesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>The pipes returned by the call.</p>
+     */
+    inline const Aws::Vector<Pipe>& GetPipes() const{ return m_pipes; }
+
+    /**
+     * <p>The pipes returned by the call.</p>
+     */
+    inline void SetPipes(const Aws::Vector<Pipe>& value) { m_pipes = value; }
+
+    /**
+     * <p>The pipes returned by the call.</p>
+     */
+    inline void SetPipes(Aws::Vector<Pipe>&& value) { m_pipes = std::move(value); }
+
+    /**
+     * <p>The pipes returned by the call.</p>
+     */
+    inline ListPipesResult& WithPipes(const Aws::Vector<Pipe>& value) { SetPipes(value); return *this;}
+
+    /**
+     * <p>The pipes returned by the call.</p>
+     */
+    inline ListPipesResult& WithPipes(Aws::Vector<Pipe>&& value) { SetPipes(std::move(value)); return *this;}
+
+    /**
+     * <p>The pipes returned by the call.</p>
+     */
+    inline ListPipesResult& AddPipes(const Pipe& value) { m_pipes.push_back(value); return *this; }
+
+    /**
+     * <p>The pipes returned by the call.</p>
+     */
+    inline ListPipesResult& AddPipes(Pipe&& value) { m_pipes.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -98,42 +134,6 @@ namespace Model
     inline ListPipesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
-    /**
-     * <p>The pipes returned by the call.</p>
-     */
-    inline const Aws::Vector<Pipe>& GetPipes() const{ return m_pipes; }
-
-    /**
-     * <p>The pipes returned by the call.</p>
-     */
-    inline void SetPipes(const Aws::Vector<Pipe>& value) { m_pipes = value; }
-
-    /**
-     * <p>The pipes returned by the call.</p>
-     */
-    inline void SetPipes(Aws::Vector<Pipe>&& value) { m_pipes = std::move(value); }
-
-    /**
-     * <p>The pipes returned by the call.</p>
-     */
-    inline ListPipesResult& WithPipes(const Aws::Vector<Pipe>& value) { SetPipes(value); return *this;}
-
-    /**
-     * <p>The pipes returned by the call.</p>
-     */
-    inline ListPipesResult& WithPipes(Aws::Vector<Pipe>&& value) { SetPipes(std::move(value)); return *this;}
-
-    /**
-     * <p>The pipes returned by the call.</p>
-     */
-    inline ListPipesResult& AddPipes(const Pipe& value) { m_pipes.push_back(value); return *this; }
-
-    /**
-     * <p>The pipes returned by the call.</p>
-     */
-    inline ListPipesResult& AddPipes(Pipe&& value) { m_pipes.push_back(std::move(value)); return *this; }
-
-
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -157,9 +157,9 @@ namespace Model
 
   private:
 
-    Aws::String m_nextToken;
-
     Aws::Vector<Pipe> m_pipes;
+
+    Aws::String m_nextToken;
 
     Aws::String m_requestId;
   };

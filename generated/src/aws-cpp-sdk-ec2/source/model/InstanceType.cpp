@@ -816,6 +816,15 @@ namespace Aws
         static const int g6_48xlarge_HASH = HashingUtils::HashString("g6.48xlarge");
         static const int gr6_4xlarge_HASH = HashingUtils::HashString("gr6.4xlarge");
         static const int gr6_8xlarge_HASH = HashingUtils::HashString("gr6.8xlarge");
+        static const int c7i_flex_large_HASH = HashingUtils::HashString("c7i-flex.large");
+        static const int c7i_flex_xlarge_HASH = HashingUtils::HashString("c7i-flex.xlarge");
+        static const int c7i_flex_2xlarge_HASH = HashingUtils::HashString("c7i-flex.2xlarge");
+        static const int c7i_flex_4xlarge_HASH = HashingUtils::HashString("c7i-flex.4xlarge");
+        static const int c7i_flex_8xlarge_HASH = HashingUtils::HashString("c7i-flex.8xlarge");
+        static const int u7i_12tb_224xlarge_HASH = HashingUtils::HashString("u7i-12tb.224xlarge");
+        static const int u7in_16tb_224xlarge_HASH = HashingUtils::HashString("u7in-16tb.224xlarge");
+        static const int u7in_24tb_224xlarge_HASH = HashingUtils::HashString("u7in-24tb.224xlarge");
+        static const int u7in_32tb_224xlarge_HASH = HashingUtils::HashString("u7in-32tb.224xlarge");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -4828,6 +4837,51 @@ namespace Aws
             enumValue = InstanceType::gr6_8xlarge;
             return true;
           }
+          else if (hashCode == c7i_flex_large_HASH)
+          {
+            enumValue = InstanceType::c7i_flex_large;
+            return true;
+          }
+          else if (hashCode == c7i_flex_xlarge_HASH)
+          {
+            enumValue = InstanceType::c7i_flex_xlarge;
+            return true;
+          }
+          else if (hashCode == c7i_flex_2xlarge_HASH)
+          {
+            enumValue = InstanceType::c7i_flex_2xlarge;
+            return true;
+          }
+          else if (hashCode == c7i_flex_4xlarge_HASH)
+          {
+            enumValue = InstanceType::c7i_flex_4xlarge;
+            return true;
+          }
+          else if (hashCode == c7i_flex_8xlarge_HASH)
+          {
+            enumValue = InstanceType::c7i_flex_8xlarge;
+            return true;
+          }
+          else if (hashCode == u7i_12tb_224xlarge_HASH)
+          {
+            enumValue = InstanceType::u7i_12tb_224xlarge;
+            return true;
+          }
+          else if (hashCode == u7in_16tb_224xlarge_HASH)
+          {
+            enumValue = InstanceType::u7in_16tb_224xlarge;
+            return true;
+          }
+          else if (hashCode == u7in_24tb_224xlarge_HASH)
+          {
+            enumValue = InstanceType::u7in_24tb_224xlarge;
+            return true;
+          }
+          else if (hashCode == u7in_32tb_224xlarge_HASH)
+          {
+            enumValue = InstanceType::u7in_32tb_224xlarge;
+            return true;
+          }
           return false;
         }
 
@@ -7270,6 +7324,33 @@ namespace Aws
             return true;
           case InstanceType::gr6_8xlarge:
             value = "gr6.8xlarge";
+            return true;
+          case InstanceType::c7i_flex_large:
+            value = "c7i-flex.large";
+            return true;
+          case InstanceType::c7i_flex_xlarge:
+            value = "c7i-flex.xlarge";
+            return true;
+          case InstanceType::c7i_flex_2xlarge:
+            value = "c7i-flex.2xlarge";
+            return true;
+          case InstanceType::c7i_flex_4xlarge:
+            value = "c7i-flex.4xlarge";
+            return true;
+          case InstanceType::c7i_flex_8xlarge:
+            value = "c7i-flex.8xlarge";
+            return true;
+          case InstanceType::u7i_12tb_224xlarge:
+            value = "u7i-12tb.224xlarge";
+            return true;
+          case InstanceType::u7in_16tb_224xlarge:
+            value = "u7in-16tb.224xlarge";
+            return true;
+          case InstanceType::u7in_24tb_224xlarge:
+            value = "u7in-24tb.224xlarge";
+            return true;
+          case InstanceType::u7in_32tb_224xlarge:
+            value = "u7in-32tb.224xlarge";
             return true;
           default:
             return false;

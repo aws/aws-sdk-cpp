@@ -93,6 +93,49 @@ namespace Model
 
 
     /**
+     * <p>(Streams only) Define how to handle item process failures.
+     * <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all
+     * the records are processed or there is one failed message left in the batch.</p>
+     */
+    inline const OnPartialBatchItemFailureStreams& GetOnPartialBatchItemFailure() const{ return m_onPartialBatchItemFailure; }
+
+    /**
+     * <p>(Streams only) Define how to handle item process failures.
+     * <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all
+     * the records are processed or there is one failed message left in the batch.</p>
+     */
+    inline bool OnPartialBatchItemFailureHasBeenSet() const { return m_onPartialBatchItemFailureHasBeenSet; }
+
+    /**
+     * <p>(Streams only) Define how to handle item process failures.
+     * <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all
+     * the records are processed or there is one failed message left in the batch.</p>
+     */
+    inline void SetOnPartialBatchItemFailure(const OnPartialBatchItemFailureStreams& value) { m_onPartialBatchItemFailureHasBeenSet = true; m_onPartialBatchItemFailure = value; }
+
+    /**
+     * <p>(Streams only) Define how to handle item process failures.
+     * <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all
+     * the records are processed or there is one failed message left in the batch.</p>
+     */
+    inline void SetOnPartialBatchItemFailure(OnPartialBatchItemFailureStreams&& value) { m_onPartialBatchItemFailureHasBeenSet = true; m_onPartialBatchItemFailure = std::move(value); }
+
+    /**
+     * <p>(Streams only) Define how to handle item process failures.
+     * <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all
+     * the records are processed or there is one failed message left in the batch.</p>
+     */
+    inline PipeSourceDynamoDBStreamParameters& WithOnPartialBatchItemFailure(const OnPartialBatchItemFailureStreams& value) { SetOnPartialBatchItemFailure(value); return *this;}
+
+    /**
+     * <p>(Streams only) Define how to handle item process failures.
+     * <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all
+     * the records are processed or there is one failed message left in the batch.</p>
+     */
+    inline PipeSourceDynamoDBStreamParameters& WithOnPartialBatchItemFailure(OnPartialBatchItemFailureStreams&& value) { SetOnPartialBatchItemFailure(std::move(value)); return *this;}
+
+
+    /**
      * <p>The maximum length of a time to wait for events.</p>
      */
     inline int GetMaximumBatchingWindowInSeconds() const{ return m_maximumBatchingWindowInSeconds; }
@@ -176,49 +219,6 @@ namespace Model
 
 
     /**
-     * <p>(Streams only) Define how to handle item process failures.
-     * <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all
-     * the records are processed or there is one failed message left in the batch.</p>
-     */
-    inline const OnPartialBatchItemFailureStreams& GetOnPartialBatchItemFailure() const{ return m_onPartialBatchItemFailure; }
-
-    /**
-     * <p>(Streams only) Define how to handle item process failures.
-     * <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all
-     * the records are processed or there is one failed message left in the batch.</p>
-     */
-    inline bool OnPartialBatchItemFailureHasBeenSet() const { return m_onPartialBatchItemFailureHasBeenSet; }
-
-    /**
-     * <p>(Streams only) Define how to handle item process failures.
-     * <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all
-     * the records are processed or there is one failed message left in the batch.</p>
-     */
-    inline void SetOnPartialBatchItemFailure(const OnPartialBatchItemFailureStreams& value) { m_onPartialBatchItemFailureHasBeenSet = true; m_onPartialBatchItemFailure = value; }
-
-    /**
-     * <p>(Streams only) Define how to handle item process failures.
-     * <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all
-     * the records are processed or there is one failed message left in the batch.</p>
-     */
-    inline void SetOnPartialBatchItemFailure(OnPartialBatchItemFailureStreams&& value) { m_onPartialBatchItemFailureHasBeenSet = true; m_onPartialBatchItemFailure = std::move(value); }
-
-    /**
-     * <p>(Streams only) Define how to handle item process failures.
-     * <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all
-     * the records are processed or there is one failed message left in the batch.</p>
-     */
-    inline PipeSourceDynamoDBStreamParameters& WithOnPartialBatchItemFailure(const OnPartialBatchItemFailureStreams& value) { SetOnPartialBatchItemFailure(value); return *this;}
-
-    /**
-     * <p>(Streams only) Define how to handle item process failures.
-     * <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all
-     * the records are processed or there is one failed message left in the batch.</p>
-     */
-    inline PipeSourceDynamoDBStreamParameters& WithOnPartialBatchItemFailure(OnPartialBatchItemFailureStreams&& value) { SetOnPartialBatchItemFailure(std::move(value)); return *this;}
-
-
-    /**
      * <p>(Streams only) The number of batches to process concurrently from each shard.
      * The default value is 1.</p>
      */
@@ -281,6 +281,9 @@ namespace Model
     DeadLetterConfig m_deadLetterConfig;
     bool m_deadLetterConfigHasBeenSet = false;
 
+    OnPartialBatchItemFailureStreams m_onPartialBatchItemFailure;
+    bool m_onPartialBatchItemFailureHasBeenSet = false;
+
     int m_maximumBatchingWindowInSeconds;
     bool m_maximumBatchingWindowInSecondsHasBeenSet = false;
 
@@ -289,9 +292,6 @@ namespace Model
 
     int m_maximumRetryAttempts;
     bool m_maximumRetryAttemptsHasBeenSet = false;
-
-    OnPartialBatchItemFailureStreams m_onPartialBatchItemFailure;
-    bool m_onPartialBatchItemFailureHasBeenSet = false;
 
     int m_parallelizationFactor;
     bool m_parallelizationFactorHasBeenSet = false;
