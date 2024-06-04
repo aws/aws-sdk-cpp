@@ -66,10 +66,10 @@ namespace Aws
              */
             Array(size_t capacity,
                   size_t length,
-                  UniqueArrayPtr<T> m_data)
+                  UniqueArrayPtr<T> data)
                 : m_capacity(capacity),
                   m_length(length),
-                  m_data(std::move(m_data))
+                  m_data(std::move(data))
             {
             }
 
