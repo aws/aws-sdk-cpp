@@ -73,8 +73,10 @@ file(GLOB UTILS_STREAM_HEADERS "include/aws/core/utils/stream/*.h")
 file(GLOB CJSON_HEADERS "include/aws/core/external/cjson/*.h")
 file(GLOB TINYXML2_HEADERS "include/aws/core/external/tinyxml2/tinyxml2.h")
 file(GLOB SMITHY_HEADERS "include/smithy/*.h")
+file(GLOB SMITHY_CLIENT_HEADERS "include/smithy/client/*.h" "include/smithy/client/impl/*.h")
 file(GLOB SMITHY_TRACING_HEADERS "include/smithy/tracing/*.h")
 file(GLOB SMITHY_IDENTITY_HEADERS "include/smithy/identity/*.h")
+file(GLOB SMITHY_IDENTITY_AUTH_HEADERS "include/smithy/identity/auth/*.h" "include/smithy/identity/auth/impl/*.h")
 file(GLOB SMITHY_IDENTITY_IDENTITY_HEADERS "include/smithy/identity/identity/*.h" "include/smithy/identity/identity/impl/*.h")
 file(GLOB SMITHY_IDENTITY_RESOLVER_HEADERS "include/smithy/identity/resolver/*.h" "include/smithy/identity/resolver/impl/*.h")
 
@@ -109,6 +111,7 @@ file(GLOB UTILS_MEMORY_STL_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/memo
 file(GLOB UTILS_STREAM_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/stream/*.cpp")
 file(GLOB UTILS_CRYPTO_FACTORY_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/crypto/factory/*.cpp")
 file(GLOB SMITHY_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/smithy/*.cpp")
+file(GLOB SMITHY_CLIENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/smithy/client/*.cpp")
 file(GLOB SMITHY_IDENTITY_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/smithy/identity/*.cpp")
 file(GLOB SMITHY_TRACING_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/smithy/tracing/*.cpp")
 
@@ -287,6 +290,7 @@ file(GLOB AWS_NATIVE_SDK_COMMON_SRC
     ${UTILS_MEMORY_STL_SOURCE}
     ${UTILS_CRYPTO_CRT_SOURCE}
     ${SMITHY_SOURCE}
+    ${SMITHY_CLIENT_SOURCE}
     ${SMITHY_IDENTITY_SOURCE}
     ${SMITHY_TRACING_SOURCE}
 )
@@ -328,8 +332,10 @@ file(GLOB AWS_NATIVE_SDK_COMMON_HEADERS
   ${HTTP_CURL_CLIENT_HEADERS}
   ${HTTP_WINDOWS_CLIENT_HEADERS}
   ${SMITHY_HEADERS}
+  ${SMITHY_CLIENT_HEADERS}
   ${SMITHY_TRACING_HEADERS}
   ${SMITHY_IDENTITY_HEADERS}
+  ${SMITHY_IDENTITY_AUTH_HEADERS}
   ${SMITHY_IDENTITY_IDENTITY_HEADERS}
   ${SMITHY_IDENTITY_RESOLVER_HEADERS}
   ${OPTEL_HEADERS}
@@ -448,7 +454,9 @@ if(MSVC)
     source_group("Header Files\\aws\\core\\external\\cjson" FILES ${CJSON_HEADERS})
     source_group("Header Files\\aws\\core\\external\\tinyxml2" FILES ${TINYXML2_HEADERS})
     source_group("Header Files\\smithy" FILES ${SMITHY_HEADERS})
+    source_group("Header Files\\smithy\\client" FILES ${SMITHY_CLIENT_HEADERS})
     source_group("Header Files\\smithy\\tracing" FILES ${SMITHY_TRACING_HEADERS})
+    source_group("Header Files\\smithy\\identity\\auth" FILES ${SMITHY_IDENTITY_AUTH_HEADERS})
     source_group("Header Files\\smithy\\identity\\identity" FILES ${SMITHY_IDENTITY_IDENTITY_HEADERS})
     source_group("Header Files\\smithy\\identity\\resolver" FILES ${SMITHY_IDENTITY_RESOLVER_HEADERS})
 
@@ -497,6 +505,7 @@ if(MSVC)
     source_group("Source Files\\utils\\component-registry" FILES ${UTILS_COMPONENT_REGISTRY_SOURCE})
     source_group("Source Files\\utils\\memory\\stl" FILES ${UTILS_MEMORY_STL_SOURCE})
     source_group("Source Files\\smithy" FILES ${SMITHY_SOURCE})
+    source_group("Source Files\\smithy\\client" FILES ${SMITHY_CLIENT_SOURCE})
     source_group("Source Files\\smithy\\identity" FILES ${SMITHY_IDENTITY_SOURCE})
     source_group("Source Files\\smithy\\tracing" FILES ${SMITHY_TRACING_SOURCE})
 
@@ -707,8 +716,10 @@ install (FILES ${UTILS_THREADING_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/c
 install (FILES ${CJSON_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/external/cjson)
 install (FILES ${TINYXML2_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/external/tinyxml2)
 install (FILES ${SMITHY_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/smithy)
+install (FILES ${SMITHY_CLIENT_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/smithy/client)
 install (FILES ${SMITHY_TRACING_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/smithy/tracing)
 install (FILES ${SMITHY_IDENTITY_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/smithy/identity)
+install (FILES ${SMITHY_IDENTITY_AUTH_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/smithy/identity/auth)
 install (FILES ${SMITHY_IDENTITY_IDENTITY_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/smithy/identity/identity)
 install (FILES ${SMITHY_IDENTITY_RESOLVER_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/smithy/identity/resolver)
 
