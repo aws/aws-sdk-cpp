@@ -13,25 +13,20 @@ namespace Glue
 {
 namespace Model
 {
-  enum class ConnectionType
+  enum class AuthenticationType
   {
     NOT_SET,
-    JDBC,
-    SFTP,
-    MONGODB,
-    KAFKA,
-    NETWORK,
-    MARKETPLACE,
-    CUSTOM,
-    SALESFORCE
+    BASIC,
+    OAUTH2,
+    CUSTOM
   };
 
-namespace ConnectionTypeMapper
+namespace AuthenticationTypeMapper
 {
-AWS_GLUE_API ConnectionType GetConnectionTypeForName(const Aws::String& name);
+AWS_GLUE_API AuthenticationType GetAuthenticationTypeForName(const Aws::String& name);
 
-AWS_GLUE_API Aws::String GetNameForConnectionType(ConnectionType value);
-} // namespace ConnectionTypeMapper
+AWS_GLUE_API Aws::String GetNameForAuthenticationType(AuthenticationType value);
+} // namespace AuthenticationTypeMapper
 } // namespace Model
 } // namespace Glue
 } // namespace Aws

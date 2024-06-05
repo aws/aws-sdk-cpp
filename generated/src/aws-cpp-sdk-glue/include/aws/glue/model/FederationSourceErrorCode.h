@@ -16,10 +16,15 @@ namespace Model
   enum class FederationSourceErrorCode
   {
     NOT_SET,
+    AccessDeniedException,
+    EntityNotFoundException,
+    InvalidCredentialsException,
+    InvalidInputException,
     InvalidResponseException,
     OperationTimeoutException,
     OperationNotSupportedException,
     InternalServiceException,
+    PartialFailureException,
     ThrottlingException
   };
 
