@@ -19,11 +19,13 @@ In this guide we will be setting up and running this ["Hello S3" application](ht
 
    - Other [CMake parameters](https://github.com/aws/aws-sdk-cpp/blob/main/docs/CMake_Parameters.md) can be added, but for this example we only need the above.
    - Change any other CMake settings for the aws-sdk-cpp at this time. e.g., Configuration type, Build root, Install directory, etc. (But you can leave them as default for this guide)
-   - You can also change the cmake generator by clicking on the advanced options and selecting the generator that you want from the list.
+   - You can also change the cmake generator by clicking on `Show advanced settings` and selecting the generator that you want from the list. (`Visual Studio 17 2022` works and is a decent chose if you don't know which to pick)
    - Note: The install directory defaults to `${projectDir}\out\install\${name}` rather than the aws-sdk-cpp default on Windows of `\Program Files (x86)\aws-cpp-sdk-all`.
 4. Click `Save and generate CMake cache to load variables` to do the same (or press Ctrl+S on CMakeSettings.json)
 
     ![4 1 Save and generate CMake](https://github.com/aws/aws-sdk-cpp/assets/5644066/26385400-4448-42de-9022-8e317f999b7f)
+
+- Note: If you select a Visual Studio generator (rather than the default `ninja`) you will generate a soluction file (.sln). You can then open this file as a project and complete the build and install steps from there. Before you build and install you will want to right click `ALL_BUILD` in the Solution Explorer and click `Set s Startup Project`
 
 5. Build this sdk by clicking on `Build` and then `Build All`
 
