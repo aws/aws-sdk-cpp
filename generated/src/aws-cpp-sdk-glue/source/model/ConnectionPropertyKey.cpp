@@ -62,6 +62,7 @@ namespace Aws
         static const int KAFKA_SASL_GSSAPI_KRB5_CONF_HASH = HashingUtils::HashString("KAFKA_SASL_GSSAPI_KRB5_CONF");
         static const int KAFKA_SASL_GSSAPI_SERVICE_HASH = HashingUtils::HashString("KAFKA_SASL_GSSAPI_SERVICE");
         static const int KAFKA_SASL_GSSAPI_PRINCIPAL_HASH = HashingUtils::HashString("KAFKA_SASL_GSSAPI_PRINCIPAL");
+        static const int ROLE_ARN_HASH = HashingUtils::HashString("ROLE_ARN");
 
 
         ConnectionPropertyKey GetConnectionPropertyKeyForName(const Aws::String& name)
@@ -235,6 +236,10 @@ namespace Aws
           {
             return ConnectionPropertyKey::KAFKA_SASL_GSSAPI_PRINCIPAL;
           }
+          else if (hashCode == ROLE_ARN_HASH)
+          {
+            return ConnectionPropertyKey::ROLE_ARN;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -335,6 +340,8 @@ namespace Aws
             return "KAFKA_SASL_GSSAPI_SERVICE";
           case ConnectionPropertyKey::KAFKA_SASL_GSSAPI_PRINCIPAL:
             return "KAFKA_SASL_GSSAPI_PRINCIPAL";
+          case ConnectionPropertyKey::ROLE_ARN:
+            return "ROLE_ARN";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -27,6 +27,7 @@ namespace Aws
         static const int NETWORK_HASH = HashingUtils::HashString("NETWORK");
         static const int MARKETPLACE_HASH = HashingUtils::HashString("MARKETPLACE");
         static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
+        static const int SALESFORCE_HASH = HashingUtils::HashString("SALESFORCE");
 
 
         ConnectionType GetConnectionTypeForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return ConnectionType::CUSTOM;
           }
+          else if (hashCode == SALESFORCE_HASH)
+          {
+            return ConnectionType::SALESFORCE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -90,6 +95,8 @@ namespace Aws
             return "MARKETPLACE";
           case ConnectionType::CUSTOM:
             return "CUSTOM";
+          case ConnectionType::SALESFORCE:
+            return "SALESFORCE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

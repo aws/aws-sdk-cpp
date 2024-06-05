@@ -11,6 +11,8 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/glue/model/PhysicalConnectionRequirements.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/glue/model/ConnectionStatus.h>
+#include <aws/glue/model/AuthenticationConfiguration.h>
 #include <aws/glue/model/ConnectionPropertyKey.h>
 #include <utility>
 
@@ -1512,106 +1514,106 @@ namespace Model
 
 
     /**
-     * <p>A map of physical connection requirements, such as virtual private cloud
-     * (VPC) and <code>SecurityGroup</code>, that are needed to make this connection
+     * <p>The physical connection requirements, such as virtual private cloud (VPC) and
+     * <code>SecurityGroup</code>, that are needed to make this connection
      * successfully.</p>
      */
     inline const PhysicalConnectionRequirements& GetPhysicalConnectionRequirements() const{ return m_physicalConnectionRequirements; }
 
     /**
-     * <p>A map of physical connection requirements, such as virtual private cloud
-     * (VPC) and <code>SecurityGroup</code>, that are needed to make this connection
+     * <p>The physical connection requirements, such as virtual private cloud (VPC) and
+     * <code>SecurityGroup</code>, that are needed to make this connection
      * successfully.</p>
      */
     inline bool PhysicalConnectionRequirementsHasBeenSet() const { return m_physicalConnectionRequirementsHasBeenSet; }
 
     /**
-     * <p>A map of physical connection requirements, such as virtual private cloud
-     * (VPC) and <code>SecurityGroup</code>, that are needed to make this connection
+     * <p>The physical connection requirements, such as virtual private cloud (VPC) and
+     * <code>SecurityGroup</code>, that are needed to make this connection
      * successfully.</p>
      */
     inline void SetPhysicalConnectionRequirements(const PhysicalConnectionRequirements& value) { m_physicalConnectionRequirementsHasBeenSet = true; m_physicalConnectionRequirements = value; }
 
     /**
-     * <p>A map of physical connection requirements, such as virtual private cloud
-     * (VPC) and <code>SecurityGroup</code>, that are needed to make this connection
+     * <p>The physical connection requirements, such as virtual private cloud (VPC) and
+     * <code>SecurityGroup</code>, that are needed to make this connection
      * successfully.</p>
      */
     inline void SetPhysicalConnectionRequirements(PhysicalConnectionRequirements&& value) { m_physicalConnectionRequirementsHasBeenSet = true; m_physicalConnectionRequirements = std::move(value); }
 
     /**
-     * <p>A map of physical connection requirements, such as virtual private cloud
-     * (VPC) and <code>SecurityGroup</code>, that are needed to make this connection
+     * <p>The physical connection requirements, such as virtual private cloud (VPC) and
+     * <code>SecurityGroup</code>, that are needed to make this connection
      * successfully.</p>
      */
     inline Connection& WithPhysicalConnectionRequirements(const PhysicalConnectionRequirements& value) { SetPhysicalConnectionRequirements(value); return *this;}
 
     /**
-     * <p>A map of physical connection requirements, such as virtual private cloud
-     * (VPC) and <code>SecurityGroup</code>, that are needed to make this connection
+     * <p>The physical connection requirements, such as virtual private cloud (VPC) and
+     * <code>SecurityGroup</code>, that are needed to make this connection
      * successfully.</p>
      */
     inline Connection& WithPhysicalConnectionRequirements(PhysicalConnectionRequirements&& value) { SetPhysicalConnectionRequirements(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time that this connection definition was created.</p>
+     * <p>The timestamp of the time that this connection definition was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>The time that this connection definition was created.</p>
+     * <p>The timestamp of the time that this connection definition was created.</p>
      */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
-     * <p>The time that this connection definition was created.</p>
+     * <p>The timestamp of the time that this connection definition was created.</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>The time that this connection definition was created.</p>
+     * <p>The timestamp of the time that this connection definition was created.</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
-     * <p>The time that this connection definition was created.</p>
+     * <p>The timestamp of the time that this connection definition was created.</p>
      */
     inline Connection& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>The time that this connection definition was created.</p>
+     * <p>The timestamp of the time that this connection definition was created.</p>
      */
     inline Connection& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The last time that this connection definition was updated.</p>
+     * <p>The timestamp of the last time the connection definition was updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
 
     /**
-     * <p>The last time that this connection definition was updated.</p>
+     * <p>The timestamp of the last time the connection definition was updated.</p>
      */
     inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
 
     /**
-     * <p>The last time that this connection definition was updated.</p>
+     * <p>The timestamp of the last time the connection definition was updated.</p>
      */
     inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
 
     /**
-     * <p>The last time that this connection definition was updated.</p>
+     * <p>The timestamp of the last time the connection definition was updated.</p>
      */
     inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
 
     /**
-     * <p>The last time that this connection definition was updated.</p>
+     * <p>The timestamp of the last time the connection definition was updated.</p>
      */
     inline Connection& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
 
     /**
-     * <p>The last time that this connection definition was updated.</p>
+     * <p>The timestamp of the last time the connection definition was updated.</p>
      */
     inline Connection& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
 
@@ -1656,6 +1658,146 @@ namespace Model
      */
     inline Connection& WithLastUpdatedBy(const char* value) { SetLastUpdatedBy(value); return *this;}
 
+
+    /**
+     * <p>The status of the connection. Can be one of: <code>READY</code>,
+     * <code>IN_PROGRESS</code>, or <code>FAILED</code>.</p>
+     */
+    inline const ConnectionStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the connection. Can be one of: <code>READY</code>,
+     * <code>IN_PROGRESS</code>, or <code>FAILED</code>.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the connection. Can be one of: <code>READY</code>,
+     * <code>IN_PROGRESS</code>, or <code>FAILED</code>.</p>
+     */
+    inline void SetStatus(const ConnectionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>The status of the connection. Can be one of: <code>READY</code>,
+     * <code>IN_PROGRESS</code>, or <code>FAILED</code>.</p>
+     */
+    inline void SetStatus(ConnectionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>The status of the connection. Can be one of: <code>READY</code>,
+     * <code>IN_PROGRESS</code>, or <code>FAILED</code>.</p>
+     */
+    inline Connection& WithStatus(const ConnectionStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The status of the connection. Can be one of: <code>READY</code>,
+     * <code>IN_PROGRESS</code>, or <code>FAILED</code>.</p>
+     */
+    inline Connection& WithStatus(ConnectionStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The reason for the connection status.</p>
+     */
+    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+
+    /**
+     * <p>The reason for the connection status.</p>
+     */
+    inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
+
+    /**
+     * <p>The reason for the connection status.</p>
+     */
+    inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
+
+    /**
+     * <p>The reason for the connection status.</p>
+     */
+    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
+
+    /**
+     * <p>The reason for the connection status.</p>
+     */
+    inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
+
+    /**
+     * <p>The reason for the connection status.</p>
+     */
+    inline Connection& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
+
+    /**
+     * <p>The reason for the connection status.</p>
+     */
+    inline Connection& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
+
+    /**
+     * <p>The reason for the connection status.</p>
+     */
+    inline Connection& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+
+
+    /**
+     * <p>A timestamp of the time this connection was last validated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastConnectionValidationTime() const{ return m_lastConnectionValidationTime; }
+
+    /**
+     * <p>A timestamp of the time this connection was last validated.</p>
+     */
+    inline bool LastConnectionValidationTimeHasBeenSet() const { return m_lastConnectionValidationTimeHasBeenSet; }
+
+    /**
+     * <p>A timestamp of the time this connection was last validated.</p>
+     */
+    inline void SetLastConnectionValidationTime(const Aws::Utils::DateTime& value) { m_lastConnectionValidationTimeHasBeenSet = true; m_lastConnectionValidationTime = value; }
+
+    /**
+     * <p>A timestamp of the time this connection was last validated.</p>
+     */
+    inline void SetLastConnectionValidationTime(Aws::Utils::DateTime&& value) { m_lastConnectionValidationTimeHasBeenSet = true; m_lastConnectionValidationTime = std::move(value); }
+
+    /**
+     * <p>A timestamp of the time this connection was last validated.</p>
+     */
+    inline Connection& WithLastConnectionValidationTime(const Aws::Utils::DateTime& value) { SetLastConnectionValidationTime(value); return *this;}
+
+    /**
+     * <p>A timestamp of the time this connection was last validated.</p>
+     */
+    inline Connection& WithLastConnectionValidationTime(Aws::Utils::DateTime&& value) { SetLastConnectionValidationTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The authentication properties of the connection.</p>
+     */
+    inline const AuthenticationConfiguration& GetAuthenticationConfiguration() const{ return m_authenticationConfiguration; }
+
+    /**
+     * <p>The authentication properties of the connection.</p>
+     */
+    inline bool AuthenticationConfigurationHasBeenSet() const { return m_authenticationConfigurationHasBeenSet; }
+
+    /**
+     * <p>The authentication properties of the connection.</p>
+     */
+    inline void SetAuthenticationConfiguration(const AuthenticationConfiguration& value) { m_authenticationConfigurationHasBeenSet = true; m_authenticationConfiguration = value; }
+
+    /**
+     * <p>The authentication properties of the connection.</p>
+     */
+    inline void SetAuthenticationConfiguration(AuthenticationConfiguration&& value) { m_authenticationConfigurationHasBeenSet = true; m_authenticationConfiguration = std::move(value); }
+
+    /**
+     * <p>The authentication properties of the connection.</p>
+     */
+    inline Connection& WithAuthenticationConfiguration(const AuthenticationConfiguration& value) { SetAuthenticationConfiguration(value); return *this;}
+
+    /**
+     * <p>The authentication properties of the connection.</p>
+     */
+    inline Connection& WithAuthenticationConfiguration(AuthenticationConfiguration&& value) { SetAuthenticationConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -1684,6 +1826,18 @@ namespace Model
 
     Aws::String m_lastUpdatedBy;
     bool m_lastUpdatedByHasBeenSet = false;
+
+    ConnectionStatus m_status;
+    bool m_statusHasBeenSet = false;
+
+    Aws::String m_statusReason;
+    bool m_statusReasonHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastConnectionValidationTime;
+    bool m_lastConnectionValidationTimeHasBeenSet = false;
+
+    AuthenticationConfiguration m_authenticationConfiguration;
+    bool m_authenticationConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

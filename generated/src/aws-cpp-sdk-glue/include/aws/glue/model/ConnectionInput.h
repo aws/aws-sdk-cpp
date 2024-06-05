@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/glue/model/PhysicalConnectionRequirements.h>
+#include <aws/glue/model/AuthenticationConfigurationInput.h>
 #include <aws/glue/model/ConnectionPropertyKey.h>
 #include <utility>
 
@@ -44,50 +45,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the connection. Connection will not function as expected without
-     * a name.</p>
+     * <p>The name of the connection.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the connection. Connection will not function as expected without
-     * a name.</p>
+     * <p>The name of the connection.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the connection. Connection will not function as expected without
-     * a name.</p>
+     * <p>The name of the connection.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the connection. Connection will not function as expected without
-     * a name.</p>
+     * <p>The name of the connection.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the connection. Connection will not function as expected without
-     * a name.</p>
+     * <p>The name of the connection.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the connection. Connection will not function as expected without
-     * a name.</p>
+     * <p>The name of the connection.</p>
      */
     inline ConnectionInput& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the connection. Connection will not function as expected without
-     * a name.</p>
+     * <p>The name of the connection.</p>
      */
     inline ConnectionInput& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the connection. Connection will not function as expected without
-     * a name.</p>
+     * <p>The name of the connection.</p>
      */
     inline ConnectionInput& WithName(const char* value) { SetName(value); return *this;}
 
@@ -172,15 +165,18 @@ namespace Model
      * ConnectionParameters.</p> <ul> <li> <p>Required:
      * <code>CONNECTION_URL</code>.</p> </li> <li> <p>Required: All of
      * (<code>USERNAME</code>, <code>PASSWORD</code>) or <code>SECRET_ID</code>.</p>
-     * </li> </ul> </li> <li> <p> <code>NETWORK</code> - Designates a network
-     * connection to a data source within an Amazon Virtual Private Cloud environment
-     * (Amazon VPC).</p> <p> <code>NETWORK</code> Connections do not require
-     * ConnectionParameters. Instead, provide a PhysicalConnectionRequirements.</p>
-     * </li> <li> <p> <code>MARKETPLACE</code> - Uses configuration settings contained
-     * in a connector purchased from Amazon Web Services Marketplace to read from and
-     * write to data stores that are not natively supported by Glue.</p> <p>
-     * <code>MARKETPLACE</code> Connections use the following ConnectionParameters.</p>
-     * <ul> <li> <p>Required: <code>CONNECTOR_TYPE</code>, <code>CONNECTOR_URL</code>,
+     * </li> </ul> </li> <li> <p> <code>SALESFORCE</code> - Designates a connection to
+     * Salesforce using OAuth authencation.</p> <ul> <li> <p>Requires the
+     * <code>AuthenticationConfiguration</code> member to be configured.</p> </li>
+     * </ul> </li> <li> <p> <code>NETWORK</code> - Designates a network connection to a
+     * data source within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
+     * <p> <code>NETWORK</code> Connections do not require ConnectionParameters.
+     * Instead, provide a PhysicalConnectionRequirements.</p> </li> <li> <p>
+     * <code>MARKETPLACE</code> - Uses configuration settings contained in a connector
+     * purchased from Amazon Web Services Marketplace to read from and write to data
+     * stores that are not natively supported by Glue.</p> <p> <code>MARKETPLACE</code>
+     * Connections use the following ConnectionParameters.</p> <ul> <li> <p>Required:
+     * <code>CONNECTOR_TYPE</code>, <code>CONNECTOR_URL</code>,
      * <code>CONNECTOR_CLASS_NAME</code>, <code>CONNECTION_URL</code>.</p> </li> <li>
      * <p>Required for <code>JDBC</code> <code>CONNECTOR_TYPE</code> connections: All
      * of (<code>USERNAME</code>, <code>PASSWORD</code>) or <code>SECRET_ID</code>.</p>
@@ -236,15 +232,18 @@ namespace Model
      * ConnectionParameters.</p> <ul> <li> <p>Required:
      * <code>CONNECTION_URL</code>.</p> </li> <li> <p>Required: All of
      * (<code>USERNAME</code>, <code>PASSWORD</code>) or <code>SECRET_ID</code>.</p>
-     * </li> </ul> </li> <li> <p> <code>NETWORK</code> - Designates a network
-     * connection to a data source within an Amazon Virtual Private Cloud environment
-     * (Amazon VPC).</p> <p> <code>NETWORK</code> Connections do not require
-     * ConnectionParameters. Instead, provide a PhysicalConnectionRequirements.</p>
-     * </li> <li> <p> <code>MARKETPLACE</code> - Uses configuration settings contained
-     * in a connector purchased from Amazon Web Services Marketplace to read from and
-     * write to data stores that are not natively supported by Glue.</p> <p>
-     * <code>MARKETPLACE</code> Connections use the following ConnectionParameters.</p>
-     * <ul> <li> <p>Required: <code>CONNECTOR_TYPE</code>, <code>CONNECTOR_URL</code>,
+     * </li> </ul> </li> <li> <p> <code>SALESFORCE</code> - Designates a connection to
+     * Salesforce using OAuth authencation.</p> <ul> <li> <p>Requires the
+     * <code>AuthenticationConfiguration</code> member to be configured.</p> </li>
+     * </ul> </li> <li> <p> <code>NETWORK</code> - Designates a network connection to a
+     * data source within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
+     * <p> <code>NETWORK</code> Connections do not require ConnectionParameters.
+     * Instead, provide a PhysicalConnectionRequirements.</p> </li> <li> <p>
+     * <code>MARKETPLACE</code> - Uses configuration settings contained in a connector
+     * purchased from Amazon Web Services Marketplace to read from and write to data
+     * stores that are not natively supported by Glue.</p> <p> <code>MARKETPLACE</code>
+     * Connections use the following ConnectionParameters.</p> <ul> <li> <p>Required:
+     * <code>CONNECTOR_TYPE</code>, <code>CONNECTOR_URL</code>,
      * <code>CONNECTOR_CLASS_NAME</code>, <code>CONNECTION_URL</code>.</p> </li> <li>
      * <p>Required for <code>JDBC</code> <code>CONNECTOR_TYPE</code> connections: All
      * of (<code>USERNAME</code>, <code>PASSWORD</code>) or <code>SECRET_ID</code>.</p>
@@ -300,15 +299,18 @@ namespace Model
      * ConnectionParameters.</p> <ul> <li> <p>Required:
      * <code>CONNECTION_URL</code>.</p> </li> <li> <p>Required: All of
      * (<code>USERNAME</code>, <code>PASSWORD</code>) or <code>SECRET_ID</code>.</p>
-     * </li> </ul> </li> <li> <p> <code>NETWORK</code> - Designates a network
-     * connection to a data source within an Amazon Virtual Private Cloud environment
-     * (Amazon VPC).</p> <p> <code>NETWORK</code> Connections do not require
-     * ConnectionParameters. Instead, provide a PhysicalConnectionRequirements.</p>
-     * </li> <li> <p> <code>MARKETPLACE</code> - Uses configuration settings contained
-     * in a connector purchased from Amazon Web Services Marketplace to read from and
-     * write to data stores that are not natively supported by Glue.</p> <p>
-     * <code>MARKETPLACE</code> Connections use the following ConnectionParameters.</p>
-     * <ul> <li> <p>Required: <code>CONNECTOR_TYPE</code>, <code>CONNECTOR_URL</code>,
+     * </li> </ul> </li> <li> <p> <code>SALESFORCE</code> - Designates a connection to
+     * Salesforce using OAuth authencation.</p> <ul> <li> <p>Requires the
+     * <code>AuthenticationConfiguration</code> member to be configured.</p> </li>
+     * </ul> </li> <li> <p> <code>NETWORK</code> - Designates a network connection to a
+     * data source within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
+     * <p> <code>NETWORK</code> Connections do not require ConnectionParameters.
+     * Instead, provide a PhysicalConnectionRequirements.</p> </li> <li> <p>
+     * <code>MARKETPLACE</code> - Uses configuration settings contained in a connector
+     * purchased from Amazon Web Services Marketplace to read from and write to data
+     * stores that are not natively supported by Glue.</p> <p> <code>MARKETPLACE</code>
+     * Connections use the following ConnectionParameters.</p> <ul> <li> <p>Required:
+     * <code>CONNECTOR_TYPE</code>, <code>CONNECTOR_URL</code>,
      * <code>CONNECTOR_CLASS_NAME</code>, <code>CONNECTION_URL</code>.</p> </li> <li>
      * <p>Required for <code>JDBC</code> <code>CONNECTOR_TYPE</code> connections: All
      * of (<code>USERNAME</code>, <code>PASSWORD</code>) or <code>SECRET_ID</code>.</p>
@@ -364,15 +366,18 @@ namespace Model
      * ConnectionParameters.</p> <ul> <li> <p>Required:
      * <code>CONNECTION_URL</code>.</p> </li> <li> <p>Required: All of
      * (<code>USERNAME</code>, <code>PASSWORD</code>) or <code>SECRET_ID</code>.</p>
-     * </li> </ul> </li> <li> <p> <code>NETWORK</code> - Designates a network
-     * connection to a data source within an Amazon Virtual Private Cloud environment
-     * (Amazon VPC).</p> <p> <code>NETWORK</code> Connections do not require
-     * ConnectionParameters. Instead, provide a PhysicalConnectionRequirements.</p>
-     * </li> <li> <p> <code>MARKETPLACE</code> - Uses configuration settings contained
-     * in a connector purchased from Amazon Web Services Marketplace to read from and
-     * write to data stores that are not natively supported by Glue.</p> <p>
-     * <code>MARKETPLACE</code> Connections use the following ConnectionParameters.</p>
-     * <ul> <li> <p>Required: <code>CONNECTOR_TYPE</code>, <code>CONNECTOR_URL</code>,
+     * </li> </ul> </li> <li> <p> <code>SALESFORCE</code> - Designates a connection to
+     * Salesforce using OAuth authencation.</p> <ul> <li> <p>Requires the
+     * <code>AuthenticationConfiguration</code> member to be configured.</p> </li>
+     * </ul> </li> <li> <p> <code>NETWORK</code> - Designates a network connection to a
+     * data source within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
+     * <p> <code>NETWORK</code> Connections do not require ConnectionParameters.
+     * Instead, provide a PhysicalConnectionRequirements.</p> </li> <li> <p>
+     * <code>MARKETPLACE</code> - Uses configuration settings contained in a connector
+     * purchased from Amazon Web Services Marketplace to read from and write to data
+     * stores that are not natively supported by Glue.</p> <p> <code>MARKETPLACE</code>
+     * Connections use the following ConnectionParameters.</p> <ul> <li> <p>Required:
+     * <code>CONNECTOR_TYPE</code>, <code>CONNECTOR_URL</code>,
      * <code>CONNECTOR_CLASS_NAME</code>, <code>CONNECTION_URL</code>.</p> </li> <li>
      * <p>Required for <code>JDBC</code> <code>CONNECTOR_TYPE</code> connections: All
      * of (<code>USERNAME</code>, <code>PASSWORD</code>) or <code>SECRET_ID</code>.</p>
@@ -428,15 +433,18 @@ namespace Model
      * ConnectionParameters.</p> <ul> <li> <p>Required:
      * <code>CONNECTION_URL</code>.</p> </li> <li> <p>Required: All of
      * (<code>USERNAME</code>, <code>PASSWORD</code>) or <code>SECRET_ID</code>.</p>
-     * </li> </ul> </li> <li> <p> <code>NETWORK</code> - Designates a network
-     * connection to a data source within an Amazon Virtual Private Cloud environment
-     * (Amazon VPC).</p> <p> <code>NETWORK</code> Connections do not require
-     * ConnectionParameters. Instead, provide a PhysicalConnectionRequirements.</p>
-     * </li> <li> <p> <code>MARKETPLACE</code> - Uses configuration settings contained
-     * in a connector purchased from Amazon Web Services Marketplace to read from and
-     * write to data stores that are not natively supported by Glue.</p> <p>
-     * <code>MARKETPLACE</code> Connections use the following ConnectionParameters.</p>
-     * <ul> <li> <p>Required: <code>CONNECTOR_TYPE</code>, <code>CONNECTOR_URL</code>,
+     * </li> </ul> </li> <li> <p> <code>SALESFORCE</code> - Designates a connection to
+     * Salesforce using OAuth authencation.</p> <ul> <li> <p>Requires the
+     * <code>AuthenticationConfiguration</code> member to be configured.</p> </li>
+     * </ul> </li> <li> <p> <code>NETWORK</code> - Designates a network connection to a
+     * data source within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
+     * <p> <code>NETWORK</code> Connections do not require ConnectionParameters.
+     * Instead, provide a PhysicalConnectionRequirements.</p> </li> <li> <p>
+     * <code>MARKETPLACE</code> - Uses configuration settings contained in a connector
+     * purchased from Amazon Web Services Marketplace to read from and write to data
+     * stores that are not natively supported by Glue.</p> <p> <code>MARKETPLACE</code>
+     * Connections use the following ConnectionParameters.</p> <ul> <li> <p>Required:
+     * <code>CONNECTOR_TYPE</code>, <code>CONNECTOR_URL</code>,
      * <code>CONNECTOR_CLASS_NAME</code>, <code>CONNECTION_URL</code>.</p> </li> <li>
      * <p>Required for <code>JDBC</code> <code>CONNECTOR_TYPE</code> connections: All
      * of (<code>USERNAME</code>, <code>PASSWORD</code>) or <code>SECRET_ID</code>.</p>
@@ -492,15 +500,18 @@ namespace Model
      * ConnectionParameters.</p> <ul> <li> <p>Required:
      * <code>CONNECTION_URL</code>.</p> </li> <li> <p>Required: All of
      * (<code>USERNAME</code>, <code>PASSWORD</code>) or <code>SECRET_ID</code>.</p>
-     * </li> </ul> </li> <li> <p> <code>NETWORK</code> - Designates a network
-     * connection to a data source within an Amazon Virtual Private Cloud environment
-     * (Amazon VPC).</p> <p> <code>NETWORK</code> Connections do not require
-     * ConnectionParameters. Instead, provide a PhysicalConnectionRequirements.</p>
-     * </li> <li> <p> <code>MARKETPLACE</code> - Uses configuration settings contained
-     * in a connector purchased from Amazon Web Services Marketplace to read from and
-     * write to data stores that are not natively supported by Glue.</p> <p>
-     * <code>MARKETPLACE</code> Connections use the following ConnectionParameters.</p>
-     * <ul> <li> <p>Required: <code>CONNECTOR_TYPE</code>, <code>CONNECTOR_URL</code>,
+     * </li> </ul> </li> <li> <p> <code>SALESFORCE</code> - Designates a connection to
+     * Salesforce using OAuth authencation.</p> <ul> <li> <p>Requires the
+     * <code>AuthenticationConfiguration</code> member to be configured.</p> </li>
+     * </ul> </li> <li> <p> <code>NETWORK</code> - Designates a network connection to a
+     * data source within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
+     * <p> <code>NETWORK</code> Connections do not require ConnectionParameters.
+     * Instead, provide a PhysicalConnectionRequirements.</p> </li> <li> <p>
+     * <code>MARKETPLACE</code> - Uses configuration settings contained in a connector
+     * purchased from Amazon Web Services Marketplace to read from and write to data
+     * stores that are not natively supported by Glue.</p> <p> <code>MARKETPLACE</code>
+     * Connections use the following ConnectionParameters.</p> <ul> <li> <p>Required:
+     * <code>CONNECTOR_TYPE</code>, <code>CONNECTOR_URL</code>,
      * <code>CONNECTOR_CLASS_NAME</code>, <code>CONNECTION_URL</code>.</p> </li> <li>
      * <p>Required for <code>JDBC</code> <code>CONNECTOR_TYPE</code> connections: All
      * of (<code>USERNAME</code>, <code>PASSWORD</code>) or <code>SECRET_ID</code>.</p>
@@ -626,46 +637,108 @@ namespace Model
 
 
     /**
-     * <p>A map of physical connection requirements, such as virtual private cloud
-     * (VPC) and <code>SecurityGroup</code>, that are needed to successfully make this
+     * <p>The physical connection requirements, such as virtual private cloud (VPC) and
+     * <code>SecurityGroup</code>, that are needed to successfully make this
      * connection.</p>
      */
     inline const PhysicalConnectionRequirements& GetPhysicalConnectionRequirements() const{ return m_physicalConnectionRequirements; }
 
     /**
-     * <p>A map of physical connection requirements, such as virtual private cloud
-     * (VPC) and <code>SecurityGroup</code>, that are needed to successfully make this
+     * <p>The physical connection requirements, such as virtual private cloud (VPC) and
+     * <code>SecurityGroup</code>, that are needed to successfully make this
      * connection.</p>
      */
     inline bool PhysicalConnectionRequirementsHasBeenSet() const { return m_physicalConnectionRequirementsHasBeenSet; }
 
     /**
-     * <p>A map of physical connection requirements, such as virtual private cloud
-     * (VPC) and <code>SecurityGroup</code>, that are needed to successfully make this
+     * <p>The physical connection requirements, such as virtual private cloud (VPC) and
+     * <code>SecurityGroup</code>, that are needed to successfully make this
      * connection.</p>
      */
     inline void SetPhysicalConnectionRequirements(const PhysicalConnectionRequirements& value) { m_physicalConnectionRequirementsHasBeenSet = true; m_physicalConnectionRequirements = value; }
 
     /**
-     * <p>A map of physical connection requirements, such as virtual private cloud
-     * (VPC) and <code>SecurityGroup</code>, that are needed to successfully make this
+     * <p>The physical connection requirements, such as virtual private cloud (VPC) and
+     * <code>SecurityGroup</code>, that are needed to successfully make this
      * connection.</p>
      */
     inline void SetPhysicalConnectionRequirements(PhysicalConnectionRequirements&& value) { m_physicalConnectionRequirementsHasBeenSet = true; m_physicalConnectionRequirements = std::move(value); }
 
     /**
-     * <p>A map of physical connection requirements, such as virtual private cloud
-     * (VPC) and <code>SecurityGroup</code>, that are needed to successfully make this
+     * <p>The physical connection requirements, such as virtual private cloud (VPC) and
+     * <code>SecurityGroup</code>, that are needed to successfully make this
      * connection.</p>
      */
     inline ConnectionInput& WithPhysicalConnectionRequirements(const PhysicalConnectionRequirements& value) { SetPhysicalConnectionRequirements(value); return *this;}
 
     /**
-     * <p>A map of physical connection requirements, such as virtual private cloud
-     * (VPC) and <code>SecurityGroup</code>, that are needed to successfully make this
+     * <p>The physical connection requirements, such as virtual private cloud (VPC) and
+     * <code>SecurityGroup</code>, that are needed to successfully make this
      * connection.</p>
      */
     inline ConnectionInput& WithPhysicalConnectionRequirements(PhysicalConnectionRequirements&& value) { SetPhysicalConnectionRequirements(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The authentication properties of the connection. Used for a Salesforce
+     * connection.</p>
+     */
+    inline const AuthenticationConfigurationInput& GetAuthenticationConfiguration() const{ return m_authenticationConfiguration; }
+
+    /**
+     * <p>The authentication properties of the connection. Used for a Salesforce
+     * connection.</p>
+     */
+    inline bool AuthenticationConfigurationHasBeenSet() const { return m_authenticationConfigurationHasBeenSet; }
+
+    /**
+     * <p>The authentication properties of the connection. Used for a Salesforce
+     * connection.</p>
+     */
+    inline void SetAuthenticationConfiguration(const AuthenticationConfigurationInput& value) { m_authenticationConfigurationHasBeenSet = true; m_authenticationConfiguration = value; }
+
+    /**
+     * <p>The authentication properties of the connection. Used for a Salesforce
+     * connection.</p>
+     */
+    inline void SetAuthenticationConfiguration(AuthenticationConfigurationInput&& value) { m_authenticationConfigurationHasBeenSet = true; m_authenticationConfiguration = std::move(value); }
+
+    /**
+     * <p>The authentication properties of the connection. Used for a Salesforce
+     * connection.</p>
+     */
+    inline ConnectionInput& WithAuthenticationConfiguration(const AuthenticationConfigurationInput& value) { SetAuthenticationConfiguration(value); return *this;}
+
+    /**
+     * <p>The authentication properties of the connection. Used for a Salesforce
+     * connection.</p>
+     */
+    inline ConnectionInput& WithAuthenticationConfiguration(AuthenticationConfigurationInput&& value) { SetAuthenticationConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A flag to validate the credentials during create connection. Used for a
+     * Salesforce connection. Default is true. </p>
+     */
+    inline bool GetValidateCredentials() const{ return m_validateCredentials; }
+
+    /**
+     * <p>A flag to validate the credentials during create connection. Used for a
+     * Salesforce connection. Default is true. </p>
+     */
+    inline bool ValidateCredentialsHasBeenSet() const { return m_validateCredentialsHasBeenSet; }
+
+    /**
+     * <p>A flag to validate the credentials during create connection. Used for a
+     * Salesforce connection. Default is true. </p>
+     */
+    inline void SetValidateCredentials(bool value) { m_validateCredentialsHasBeenSet = true; m_validateCredentials = value; }
+
+    /**
+     * <p>A flag to validate the credentials during create connection. Used for a
+     * Salesforce connection. Default is true. </p>
+     */
+    inline ConnectionInput& WithValidateCredentials(bool value) { SetValidateCredentials(value); return *this;}
 
   private:
 
@@ -686,6 +759,12 @@ namespace Model
 
     PhysicalConnectionRequirements m_physicalConnectionRequirements;
     bool m_physicalConnectionRequirementsHasBeenSet = false;
+
+    AuthenticationConfigurationInput m_authenticationConfiguration;
+    bool m_authenticationConfigurationHasBeenSet = false;
+
+    bool m_validateCredentials;
+    bool m_validateCredentialsHasBeenSet = false;
   };
 
 } // namespace Model

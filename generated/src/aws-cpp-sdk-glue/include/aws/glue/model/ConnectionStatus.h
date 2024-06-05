@@ -13,25 +13,20 @@ namespace Glue
 {
 namespace Model
 {
-  enum class ConnectionType
+  enum class ConnectionStatus
   {
     NOT_SET,
-    JDBC,
-    SFTP,
-    MONGODB,
-    KAFKA,
-    NETWORK,
-    MARKETPLACE,
-    CUSTOM,
-    SALESFORCE
+    READY,
+    IN_PROGRESS,
+    FAILED
   };
 
-namespace ConnectionTypeMapper
+namespace ConnectionStatusMapper
 {
-AWS_GLUE_API ConnectionType GetConnectionTypeForName(const Aws::String& name);
+AWS_GLUE_API ConnectionStatus GetConnectionStatusForName(const Aws::String& name);
 
-AWS_GLUE_API Aws::String GetNameForConnectionType(ConnectionType value);
-} // namespace ConnectionTypeMapper
+AWS_GLUE_API Aws::String GetNameForConnectionStatus(ConnectionStatus value);
+} // namespace ConnectionStatusMapper
 } // namespace Model
 } // namespace Glue
 } // namespace Aws

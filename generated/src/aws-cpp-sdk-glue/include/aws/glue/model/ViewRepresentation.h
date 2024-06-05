@@ -188,8 +188,8 @@ namespace Model
      * <p>The expanded SQL for the view. This SQL is used by engines while processing a
      * query on a view. Engines may perform operations during view creation to
      * transform <code>ViewOriginalText</code> to <code>ViewExpandedText</code>. For
-     * example:</p> <ul> <li> <p>Fully qualify identifiers: <code>SELECT * from table1
-     * → SELECT * from db1.table1</code> </p> </li> </ul>
+     * example:</p> <ul> <li> <p>Fully qualified identifiers: <code>SELECT * from
+     * table1 -&gt; SELECT * from db1.table1</code> </p> </li> </ul>
      */
     inline const Aws::String& GetViewExpandedText() const{ return m_viewExpandedText; }
 
@@ -197,8 +197,8 @@ namespace Model
      * <p>The expanded SQL for the view. This SQL is used by engines while processing a
      * query on a view. Engines may perform operations during view creation to
      * transform <code>ViewOriginalText</code> to <code>ViewExpandedText</code>. For
-     * example:</p> <ul> <li> <p>Fully qualify identifiers: <code>SELECT * from table1
-     * → SELECT * from db1.table1</code> </p> </li> </ul>
+     * example:</p> <ul> <li> <p>Fully qualified identifiers: <code>SELECT * from
+     * table1 -&gt; SELECT * from db1.table1</code> </p> </li> </ul>
      */
     inline bool ViewExpandedTextHasBeenSet() const { return m_viewExpandedTextHasBeenSet; }
 
@@ -206,8 +206,8 @@ namespace Model
      * <p>The expanded SQL for the view. This SQL is used by engines while processing a
      * query on a view. Engines may perform operations during view creation to
      * transform <code>ViewOriginalText</code> to <code>ViewExpandedText</code>. For
-     * example:</p> <ul> <li> <p>Fully qualify identifiers: <code>SELECT * from table1
-     * → SELECT * from db1.table1</code> </p> </li> </ul>
+     * example:</p> <ul> <li> <p>Fully qualified identifiers: <code>SELECT * from
+     * table1 -&gt; SELECT * from db1.table1</code> </p> </li> </ul>
      */
     inline void SetViewExpandedText(const Aws::String& value) { m_viewExpandedTextHasBeenSet = true; m_viewExpandedText = value; }
 
@@ -215,8 +215,8 @@ namespace Model
      * <p>The expanded SQL for the view. This SQL is used by engines while processing a
      * query on a view. Engines may perform operations during view creation to
      * transform <code>ViewOriginalText</code> to <code>ViewExpandedText</code>. For
-     * example:</p> <ul> <li> <p>Fully qualify identifiers: <code>SELECT * from table1
-     * → SELECT * from db1.table1</code> </p> </li> </ul>
+     * example:</p> <ul> <li> <p>Fully qualified identifiers: <code>SELECT * from
+     * table1 -&gt; SELECT * from db1.table1</code> </p> </li> </ul>
      */
     inline void SetViewExpandedText(Aws::String&& value) { m_viewExpandedTextHasBeenSet = true; m_viewExpandedText = std::move(value); }
 
@@ -224,8 +224,8 @@ namespace Model
      * <p>The expanded SQL for the view. This SQL is used by engines while processing a
      * query on a view. Engines may perform operations during view creation to
      * transform <code>ViewOriginalText</code> to <code>ViewExpandedText</code>. For
-     * example:</p> <ul> <li> <p>Fully qualify identifiers: <code>SELECT * from table1
-     * → SELECT * from db1.table1</code> </p> </li> </ul>
+     * example:</p> <ul> <li> <p>Fully qualified identifiers: <code>SELECT * from
+     * table1 -&gt; SELECT * from db1.table1</code> </p> </li> </ul>
      */
     inline void SetViewExpandedText(const char* value) { m_viewExpandedTextHasBeenSet = true; m_viewExpandedText.assign(value); }
 
@@ -233,8 +233,8 @@ namespace Model
      * <p>The expanded SQL for the view. This SQL is used by engines while processing a
      * query on a view. Engines may perform operations during view creation to
      * transform <code>ViewOriginalText</code> to <code>ViewExpandedText</code>. For
-     * example:</p> <ul> <li> <p>Fully qualify identifiers: <code>SELECT * from table1
-     * → SELECT * from db1.table1</code> </p> </li> </ul>
+     * example:</p> <ul> <li> <p>Fully qualified identifiers: <code>SELECT * from
+     * table1 -&gt; SELECT * from db1.table1</code> </p> </li> </ul>
      */
     inline ViewRepresentation& WithViewExpandedText(const Aws::String& value) { SetViewExpandedText(value); return *this;}
 
@@ -242,8 +242,8 @@ namespace Model
      * <p>The expanded SQL for the view. This SQL is used by engines while processing a
      * query on a view. Engines may perform operations during view creation to
      * transform <code>ViewOriginalText</code> to <code>ViewExpandedText</code>. For
-     * example:</p> <ul> <li> <p>Fully qualify identifiers: <code>SELECT * from table1
-     * → SELECT * from db1.table1</code> </p> </li> </ul>
+     * example:</p> <ul> <li> <p>Fully qualified identifiers: <code>SELECT * from
+     * table1 -&gt; SELECT * from db1.table1</code> </p> </li> </ul>
      */
     inline ViewRepresentation& WithViewExpandedText(Aws::String&& value) { SetViewExpandedText(std::move(value)); return *this;}
 
@@ -251,8 +251,8 @@ namespace Model
      * <p>The expanded SQL for the view. This SQL is used by engines while processing a
      * query on a view. Engines may perform operations during view creation to
      * transform <code>ViewOriginalText</code> to <code>ViewExpandedText</code>. For
-     * example:</p> <ul> <li> <p>Fully qualify identifiers: <code>SELECT * from table1
-     * → SELECT * from db1.table1</code> </p> </li> </ul>
+     * example:</p> <ul> <li> <p>Fully qualified identifiers: <code>SELECT * from
+     * table1 -&gt; SELECT * from db1.table1</code> </p> </li> </ul>
      */
     inline ViewRepresentation& WithViewExpandedText(const char* value) { SetViewExpandedText(value); return *this;}
 

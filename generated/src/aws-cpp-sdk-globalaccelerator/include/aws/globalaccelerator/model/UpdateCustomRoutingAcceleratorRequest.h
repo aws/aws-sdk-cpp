@@ -8,6 +8,7 @@
 #include <aws/globalaccelerator/GlobalAcceleratorRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/globalaccelerator/model/IpAddressType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -171,6 +172,52 @@ namespace Model
 
 
     /**
+     * <p>The IP addresses for an accelerator.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetIpAddresses() const{ return m_ipAddresses; }
+
+    /**
+     * <p>The IP addresses for an accelerator.</p>
+     */
+    inline bool IpAddressesHasBeenSet() const { return m_ipAddressesHasBeenSet; }
+
+    /**
+     * <p>The IP addresses for an accelerator.</p>
+     */
+    inline void SetIpAddresses(const Aws::Vector<Aws::String>& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = value; }
+
+    /**
+     * <p>The IP addresses for an accelerator.</p>
+     */
+    inline void SetIpAddresses(Aws::Vector<Aws::String>&& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = std::move(value); }
+
+    /**
+     * <p>The IP addresses for an accelerator.</p>
+     */
+    inline UpdateCustomRoutingAcceleratorRequest& WithIpAddresses(const Aws::Vector<Aws::String>& value) { SetIpAddresses(value); return *this;}
+
+    /**
+     * <p>The IP addresses for an accelerator.</p>
+     */
+    inline UpdateCustomRoutingAcceleratorRequest& WithIpAddresses(Aws::Vector<Aws::String>&& value) { SetIpAddresses(std::move(value)); return *this;}
+
+    /**
+     * <p>The IP addresses for an accelerator.</p>
+     */
+    inline UpdateCustomRoutingAcceleratorRequest& AddIpAddresses(const Aws::String& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses.push_back(value); return *this; }
+
+    /**
+     * <p>The IP addresses for an accelerator.</p>
+     */
+    inline UpdateCustomRoutingAcceleratorRequest& AddIpAddresses(Aws::String&& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The IP addresses for an accelerator.</p>
+     */
+    inline UpdateCustomRoutingAcceleratorRequest& AddIpAddresses(const char* value) { m_ipAddressesHasBeenSet = true; m_ipAddresses.push_back(value); return *this; }
+
+
+    /**
      * <p>Indicates whether an accelerator is enabled. The value is true or false. The
      * default value is true. </p> <p>If the value is set to true, the accelerator
      * cannot be deleted. If set to false, the accelerator can be deleted.</p>
@@ -208,6 +255,9 @@ namespace Model
 
     IpAddressType m_ipAddressType;
     bool m_ipAddressTypeHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_ipAddresses;
+    bool m_ipAddressesHasBeenSet = false;
 
     bool m_enabled;
     bool m_enabledHasBeenSet = false;
