@@ -7,8 +7,8 @@
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/location/LocationServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/location/model/ApiKeyRestrictions.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -33,6 +33,110 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "CreateKey"; }
 
     AWS_LOCATIONSERVICE_API Aws::String SerializePayload() const override;
+
+
+    /**
+     * <p>A custom name for the API key resource.</p> <p>Requirements:</p> <ul> <li>
+     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
+     * (.), and underscores (_). </p> </li> <li> <p>Must be a unique API key name.</p>
+     * </li> <li> <p>No spaces allowed. For example, <code>ExampleAPIKey</code>.</p>
+     * </li> </ul>
+     */
+    inline const Aws::String& GetKeyName() const{ return m_keyName; }
+
+    /**
+     * <p>A custom name for the API key resource.</p> <p>Requirements:</p> <ul> <li>
+     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
+     * (.), and underscores (_). </p> </li> <li> <p>Must be a unique API key name.</p>
+     * </li> <li> <p>No spaces allowed. For example, <code>ExampleAPIKey</code>.</p>
+     * </li> </ul>
+     */
+    inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
+
+    /**
+     * <p>A custom name for the API key resource.</p> <p>Requirements:</p> <ul> <li>
+     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
+     * (.), and underscores (_). </p> </li> <li> <p>Must be a unique API key name.</p>
+     * </li> <li> <p>No spaces allowed. For example, <code>ExampleAPIKey</code>.</p>
+     * </li> </ul>
+     */
+    inline void SetKeyName(const Aws::String& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
+
+    /**
+     * <p>A custom name for the API key resource.</p> <p>Requirements:</p> <ul> <li>
+     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
+     * (.), and underscores (_). </p> </li> <li> <p>Must be a unique API key name.</p>
+     * </li> <li> <p>No spaces allowed. For example, <code>ExampleAPIKey</code>.</p>
+     * </li> </ul>
+     */
+    inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = std::move(value); }
+
+    /**
+     * <p>A custom name for the API key resource.</p> <p>Requirements:</p> <ul> <li>
+     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
+     * (.), and underscores (_). </p> </li> <li> <p>Must be a unique API key name.</p>
+     * </li> <li> <p>No spaces allowed. For example, <code>ExampleAPIKey</code>.</p>
+     * </li> </ul>
+     */
+    inline void SetKeyName(const char* value) { m_keyNameHasBeenSet = true; m_keyName.assign(value); }
+
+    /**
+     * <p>A custom name for the API key resource.</p> <p>Requirements:</p> <ul> <li>
+     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
+     * (.), and underscores (_). </p> </li> <li> <p>Must be a unique API key name.</p>
+     * </li> <li> <p>No spaces allowed. For example, <code>ExampleAPIKey</code>.</p>
+     * </li> </ul>
+     */
+    inline CreateKeyRequest& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
+
+    /**
+     * <p>A custom name for the API key resource.</p> <p>Requirements:</p> <ul> <li>
+     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
+     * (.), and underscores (_). </p> </li> <li> <p>Must be a unique API key name.</p>
+     * </li> <li> <p>No spaces allowed. For example, <code>ExampleAPIKey</code>.</p>
+     * </li> </ul>
+     */
+    inline CreateKeyRequest& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
+
+    /**
+     * <p>A custom name for the API key resource.</p> <p>Requirements:</p> <ul> <li>
+     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
+     * (.), and underscores (_). </p> </li> <li> <p>Must be a unique API key name.</p>
+     * </li> <li> <p>No spaces allowed. For example, <code>ExampleAPIKey</code>.</p>
+     * </li> </ul>
+     */
+    inline CreateKeyRequest& WithKeyName(const char* value) { SetKeyName(value); return *this;}
+
+
+    /**
+     * <p>The API key restrictions for the API key resource.</p>
+     */
+    inline const ApiKeyRestrictions& GetRestrictions() const{ return m_restrictions; }
+
+    /**
+     * <p>The API key restrictions for the API key resource.</p>
+     */
+    inline bool RestrictionsHasBeenSet() const { return m_restrictionsHasBeenSet; }
+
+    /**
+     * <p>The API key restrictions for the API key resource.</p>
+     */
+    inline void SetRestrictions(const ApiKeyRestrictions& value) { m_restrictionsHasBeenSet = true; m_restrictions = value; }
+
+    /**
+     * <p>The API key restrictions for the API key resource.</p>
+     */
+    inline void SetRestrictions(ApiKeyRestrictions&& value) { m_restrictionsHasBeenSet = true; m_restrictions = std::move(value); }
+
+    /**
+     * <p>The API key restrictions for the API key resource.</p>
+     */
+    inline CreateKeyRequest& WithRestrictions(const ApiKeyRestrictions& value) { SetRestrictions(value); return *this;}
+
+    /**
+     * <p>The API key restrictions for the API key resource.</p>
+     */
+    inline CreateKeyRequest& WithRestrictions(ApiKeyRestrictions&& value) { SetRestrictions(std::move(value)); return *this;}
 
 
     /**
@@ -126,79 +230,6 @@ namespace Model
 
 
     /**
-     * <p>A custom name for the API key resource.</p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
-     * (.), and underscores (_). </p> </li> <li> <p>Must be a unique API key name.</p>
-     * </li> <li> <p>No spaces allowed. For example, <code>ExampleAPIKey</code>.</p>
-     * </li> </ul>
-     */
-    inline const Aws::String& GetKeyName() const{ return m_keyName; }
-
-    /**
-     * <p>A custom name for the API key resource.</p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
-     * (.), and underscores (_). </p> </li> <li> <p>Must be a unique API key name.</p>
-     * </li> <li> <p>No spaces allowed. For example, <code>ExampleAPIKey</code>.</p>
-     * </li> </ul>
-     */
-    inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
-
-    /**
-     * <p>A custom name for the API key resource.</p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
-     * (.), and underscores (_). </p> </li> <li> <p>Must be a unique API key name.</p>
-     * </li> <li> <p>No spaces allowed. For example, <code>ExampleAPIKey</code>.</p>
-     * </li> </ul>
-     */
-    inline void SetKeyName(const Aws::String& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
-
-    /**
-     * <p>A custom name for the API key resource.</p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
-     * (.), and underscores (_). </p> </li> <li> <p>Must be a unique API key name.</p>
-     * </li> <li> <p>No spaces allowed. For example, <code>ExampleAPIKey</code>.</p>
-     * </li> </ul>
-     */
-    inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = std::move(value); }
-
-    /**
-     * <p>A custom name for the API key resource.</p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
-     * (.), and underscores (_). </p> </li> <li> <p>Must be a unique API key name.</p>
-     * </li> <li> <p>No spaces allowed. For example, <code>ExampleAPIKey</code>.</p>
-     * </li> </ul>
-     */
-    inline void SetKeyName(const char* value) { m_keyNameHasBeenSet = true; m_keyName.assign(value); }
-
-    /**
-     * <p>A custom name for the API key resource.</p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
-     * (.), and underscores (_). </p> </li> <li> <p>Must be a unique API key name.</p>
-     * </li> <li> <p>No spaces allowed. For example, <code>ExampleAPIKey</code>.</p>
-     * </li> </ul>
-     */
-    inline CreateKeyRequest& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
-
-    /**
-     * <p>A custom name for the API key resource.</p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
-     * (.), and underscores (_). </p> </li> <li> <p>Must be a unique API key name.</p>
-     * </li> <li> <p>No spaces allowed. For example, <code>ExampleAPIKey</code>.</p>
-     * </li> </ul>
-     */
-    inline CreateKeyRequest& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
-
-    /**
-     * <p>A custom name for the API key resource.</p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
-     * (.), and underscores (_). </p> </li> <li> <p>Must be a unique API key name.</p>
-     * </li> <li> <p>No spaces allowed. For example, <code>ExampleAPIKey</code>.</p>
-     * </li> </ul>
-     */
-    inline CreateKeyRequest& WithKeyName(const char* value) { SetKeyName(value); return *this;}
-
-
-    /**
      * <p>Optionally set to <code>true</code> to set no expiration time for the API
      * key. One of <code>NoExpiry</code> or <code>ExpireTime</code> must be set.</p>
      */
@@ -221,37 +252,6 @@ namespace Model
      * key. One of <code>NoExpiry</code> or <code>ExpireTime</code> must be set.</p>
      */
     inline CreateKeyRequest& WithNoExpiry(bool value) { SetNoExpiry(value); return *this;}
-
-
-    /**
-     * <p>The API key restrictions for the API key resource.</p>
-     */
-    inline const ApiKeyRestrictions& GetRestrictions() const{ return m_restrictions; }
-
-    /**
-     * <p>The API key restrictions for the API key resource.</p>
-     */
-    inline bool RestrictionsHasBeenSet() const { return m_restrictionsHasBeenSet; }
-
-    /**
-     * <p>The API key restrictions for the API key resource.</p>
-     */
-    inline void SetRestrictions(const ApiKeyRestrictions& value) { m_restrictionsHasBeenSet = true; m_restrictions = value; }
-
-    /**
-     * <p>The API key restrictions for the API key resource.</p>
-     */
-    inline void SetRestrictions(ApiKeyRestrictions&& value) { m_restrictionsHasBeenSet = true; m_restrictions = std::move(value); }
-
-    /**
-     * <p>The API key restrictions for the API key resource.</p>
-     */
-    inline CreateKeyRequest& WithRestrictions(const ApiKeyRestrictions& value) { SetRestrictions(value); return *this;}
-
-    /**
-     * <p>The API key restrictions for the API key resource.</p>
-     */
-    inline CreateKeyRequest& WithRestrictions(ApiKeyRestrictions&& value) { SetRestrictions(std::move(value)); return *this;}
 
 
     /**
@@ -425,20 +425,20 @@ namespace Model
 
   private:
 
+    Aws::String m_keyName;
+    bool m_keyNameHasBeenSet = false;
+
+    ApiKeyRestrictions m_restrictions;
+    bool m_restrictionsHasBeenSet = false;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_expireTime;
     bool m_expireTimeHasBeenSet = false;
 
-    Aws::String m_keyName;
-    bool m_keyNameHasBeenSet = false;
-
     bool m_noExpiry;
     bool m_noExpiryHasBeenSet = false;
-
-    ApiKeyRestrictions m_restrictions;
-    bool m_restrictionsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

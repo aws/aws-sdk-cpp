@@ -81,60 +81,99 @@ namespace Model
 
 
     /**
-     * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
-     * key</a> to authorize the request.</p>
+     * <p>Specifies the longitude and latitude of the position to query.</p> <p> This
+     * parameter must contain a pair of numbers. The first number represents the X
+     * coordinate, or longitude; the second number represents the Y coordinate, or
+     * latitude.</p> <p>For example, <code>[-123.1174, 49.2847]</code> represents a
+     * position with longitude <code>-123.1174</code> and latitude
+     * <code>49.2847</code>.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::Vector<double>& GetPosition() const{ return m_position; }
 
     /**
-     * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
-     * key</a> to authorize the request.</p>
+     * <p>Specifies the longitude and latitude of the position to query.</p> <p> This
+     * parameter must contain a pair of numbers. The first number represents the X
+     * coordinate, or longitude; the second number represents the Y coordinate, or
+     * latitude.</p> <p>For example, <code>[-123.1174, 49.2847]</code> represents a
+     * position with longitude <code>-123.1174</code> and latitude
+     * <code>49.2847</code>.</p>
      */
-    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+    inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
 
     /**
-     * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
-     * key</a> to authorize the request.</p>
+     * <p>Specifies the longitude and latitude of the position to query.</p> <p> This
+     * parameter must contain a pair of numbers. The first number represents the X
+     * coordinate, or longitude; the second number represents the Y coordinate, or
+     * latitude.</p> <p>For example, <code>[-123.1174, 49.2847]</code> represents a
+     * position with longitude <code>-123.1174</code> and latitude
+     * <code>49.2847</code>.</p>
      */
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetPosition(const Aws::Vector<double>& value) { m_positionHasBeenSet = true; m_position = value; }
 
     /**
-     * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
-     * key</a> to authorize the request.</p>
+     * <p>Specifies the longitude and latitude of the position to query.</p> <p> This
+     * parameter must contain a pair of numbers. The first number represents the X
+     * coordinate, or longitude; the second number represents the Y coordinate, or
+     * latitude.</p> <p>For example, <code>[-123.1174, 49.2847]</code> represents a
+     * position with longitude <code>-123.1174</code> and latitude
+     * <code>49.2847</code>.</p>
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
+    inline void SetPosition(Aws::Vector<double>&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
 
     /**
-     * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
-     * key</a> to authorize the request.</p>
+     * <p>Specifies the longitude and latitude of the position to query.</p> <p> This
+     * parameter must contain a pair of numbers. The first number represents the X
+     * coordinate, or longitude; the second number represents the Y coordinate, or
+     * latitude.</p> <p>For example, <code>[-123.1174, 49.2847]</code> represents a
+     * position with longitude <code>-123.1174</code> and latitude
+     * <code>49.2847</code>.</p>
      */
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
+    inline SearchPlaceIndexForPositionRequest& WithPosition(const Aws::Vector<double>& value) { SetPosition(value); return *this;}
 
     /**
-     * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
-     * key</a> to authorize the request.</p>
+     * <p>Specifies the longitude and latitude of the position to query.</p> <p> This
+     * parameter must contain a pair of numbers. The first number represents the X
+     * coordinate, or longitude; the second number represents the Y coordinate, or
+     * latitude.</p> <p>For example, <code>[-123.1174, 49.2847]</code> represents a
+     * position with longitude <code>-123.1174</code> and latitude
+     * <code>49.2847</code>.</p>
      */
-    inline SearchPlaceIndexForPositionRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
+    inline SearchPlaceIndexForPositionRequest& WithPosition(Aws::Vector<double>&& value) { SetPosition(std::move(value)); return *this;}
 
     /**
-     * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
-     * key</a> to authorize the request.</p>
+     * <p>Specifies the longitude and latitude of the position to query.</p> <p> This
+     * parameter must contain a pair of numbers. The first number represents the X
+     * coordinate, or longitude; the second number represents the Y coordinate, or
+     * latitude.</p> <p>For example, <code>[-123.1174, 49.2847]</code> represents a
+     * position with longitude <code>-123.1174</code> and latitude
+     * <code>49.2847</code>.</p>
      */
-    inline SearchPlaceIndexForPositionRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
+    inline SearchPlaceIndexForPositionRequest& AddPosition(double value) { m_positionHasBeenSet = true; m_position.push_back(value); return *this; }
+
 
     /**
-     * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
-     * key</a> to authorize the request.</p>
+     * <p>An optional parameter. The maximum number of results returned per
+     * request.</p> <p>Default value: <code>50</code> </p>
      */
-    inline SearchPlaceIndexForPositionRequest& WithKey(const char* value) { SetKey(value); return *this;}
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>An optional parameter. The maximum number of results returned per
+     * request.</p> <p>Default value: <code>50</code> </p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>An optional parameter. The maximum number of results returned per
+     * request.</p> <p>Default value: <code>50</code> </p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>An optional parameter. The maximum number of results returned per
+     * request.</p> <p>Default value: <code>50</code> </p>
+     */
+    inline SearchPlaceIndexForPositionRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
@@ -275,116 +314,77 @@ namespace Model
 
 
     /**
-     * <p>An optional parameter. The maximum number of results returned per
-     * request.</p> <p>Default value: <code>50</code> </p>
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * <p>An optional parameter. The maximum number of results returned per
-     * request.</p> <p>Default value: <code>50</code> </p>
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
      */
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
-     * <p>An optional parameter. The maximum number of results returned per
-     * request.</p> <p>Default value: <code>50</code> </p>
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
      */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p>An optional parameter. The maximum number of results returned per
-     * request.</p> <p>Default value: <code>50</code> </p>
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
      */
-    inline SearchPlaceIndexForPositionRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
-
-    /**
-     * <p>Specifies the longitude and latitude of the position to query.</p> <p> This
-     * parameter must contain a pair of numbers. The first number represents the X
-     * coordinate, or longitude; the second number represents the Y coordinate, or
-     * latitude.</p> <p>For example, <code>[-123.1174, 49.2847]</code> represents a
-     * position with longitude <code>-123.1174</code> and latitude
-     * <code>49.2847</code>.</p>
-     */
-    inline const Aws::Vector<double>& GetPosition() const{ return m_position; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p>Specifies the longitude and latitude of the position to query.</p> <p> This
-     * parameter must contain a pair of numbers. The first number represents the X
-     * coordinate, or longitude; the second number represents the Y coordinate, or
-     * latitude.</p> <p>For example, <code>[-123.1174, 49.2847]</code> represents a
-     * position with longitude <code>-123.1174</code> and latitude
-     * <code>49.2847</code>.</p>
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
      */
-    inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
+    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * <p>Specifies the longitude and latitude of the position to query.</p> <p> This
-     * parameter must contain a pair of numbers. The first number represents the X
-     * coordinate, or longitude; the second number represents the Y coordinate, or
-     * latitude.</p> <p>For example, <code>[-123.1174, 49.2847]</code> represents a
-     * position with longitude <code>-123.1174</code> and latitude
-     * <code>49.2847</code>.</p>
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
      */
-    inline void SetPosition(const Aws::Vector<double>& value) { m_positionHasBeenSet = true; m_position = value; }
+    inline SearchPlaceIndexForPositionRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * <p>Specifies the longitude and latitude of the position to query.</p> <p> This
-     * parameter must contain a pair of numbers. The first number represents the X
-     * coordinate, or longitude; the second number represents the Y coordinate, or
-     * latitude.</p> <p>For example, <code>[-123.1174, 49.2847]</code> represents a
-     * position with longitude <code>-123.1174</code> and latitude
-     * <code>49.2847</code>.</p>
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
      */
-    inline void SetPosition(Aws::Vector<double>&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
+    inline SearchPlaceIndexForPositionRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the longitude and latitude of the position to query.</p> <p> This
-     * parameter must contain a pair of numbers. The first number represents the X
-     * coordinate, or longitude; the second number represents the Y coordinate, or
-     * latitude.</p> <p>For example, <code>[-123.1174, 49.2847]</code> represents a
-     * position with longitude <code>-123.1174</code> and latitude
-     * <code>49.2847</code>.</p>
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
      */
-    inline SearchPlaceIndexForPositionRequest& WithPosition(const Aws::Vector<double>& value) { SetPosition(value); return *this;}
-
-    /**
-     * <p>Specifies the longitude and latitude of the position to query.</p> <p> This
-     * parameter must contain a pair of numbers. The first number represents the X
-     * coordinate, or longitude; the second number represents the Y coordinate, or
-     * latitude.</p> <p>For example, <code>[-123.1174, 49.2847]</code> represents a
-     * position with longitude <code>-123.1174</code> and latitude
-     * <code>49.2847</code>.</p>
-     */
-    inline SearchPlaceIndexForPositionRequest& WithPosition(Aws::Vector<double>&& value) { SetPosition(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the longitude and latitude of the position to query.</p> <p> This
-     * parameter must contain a pair of numbers. The first number represents the X
-     * coordinate, or longitude; the second number represents the Y coordinate, or
-     * latitude.</p> <p>For example, <code>[-123.1174, 49.2847]</code> represents a
-     * position with longitude <code>-123.1174</code> and latitude
-     * <code>49.2847</code>.</p>
-     */
-    inline SearchPlaceIndexForPositionRequest& AddPosition(double value) { m_positionHasBeenSet = true; m_position.push_back(value); return *this; }
+    inline SearchPlaceIndexForPositionRequest& WithKey(const char* value) { SetKey(value); return *this;}
 
   private:
 
     Aws::String m_indexName;
     bool m_indexNameHasBeenSet = false;
 
-    Aws::String m_key;
-    bool m_keyHasBeenSet = false;
-
-    Aws::String m_language;
-    bool m_languageHasBeenSet = false;
+    Aws::Vector<double> m_position;
+    bool m_positionHasBeenSet = false;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
 
-    Aws::Vector<double> m_position;
-    bool m_positionHasBeenSet = false;
+    Aws::String m_language;
+    bool m_languageHasBeenSet = false;
+
+    Aws::String m_key;
+    bool m_keyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,7 +32,8 @@ TableInput::TableInput() :
     m_viewExpandedTextHasBeenSet(false),
     m_tableTypeHasBeenSet(false),
     m_parametersHasBeenSet(false),
-    m_targetTableHasBeenSet(false)
+    m_targetTableHasBeenSet(false),
+    m_viewDefinitionHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ TableInput::TableInput(JsonView jsonValue) :
     m_viewExpandedTextHasBeenSet(false),
     m_tableTypeHasBeenSet(false),
     m_parametersHasBeenSet(false),
-    m_targetTableHasBeenSet(false)
+    m_targetTableHasBeenSet(false),
+    m_viewDefinitionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -154,6 +156,13 @@ TableInput& TableInput::operator =(JsonView jsonValue)
     m_targetTableHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ViewDefinition"))
+  {
+    m_viewDefinition = jsonValue.GetObject("ViewDefinition");
+
+    m_viewDefinitionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -244,6 +253,12 @@ JsonValue TableInput::Jsonize() const
   if(m_targetTableHasBeenSet)
   {
    payload.WithObject("TargetTable", m_targetTable.Jsonize());
+
+  }
+
+  if(m_viewDefinitionHasBeenSet)
+  {
+   payload.WithObject("ViewDefinition", m_viewDefinition.Jsonize());
 
   }
 

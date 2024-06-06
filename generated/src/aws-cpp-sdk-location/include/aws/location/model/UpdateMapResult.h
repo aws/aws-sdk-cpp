@@ -34,6 +34,42 @@ namespace Model
 
 
     /**
+     * <p>The name of the updated map resource.</p>
+     */
+    inline const Aws::String& GetMapName() const{ return m_mapName; }
+
+    /**
+     * <p>The name of the updated map resource.</p>
+     */
+    inline void SetMapName(const Aws::String& value) { m_mapName = value; }
+
+    /**
+     * <p>The name of the updated map resource.</p>
+     */
+    inline void SetMapName(Aws::String&& value) { m_mapName = std::move(value); }
+
+    /**
+     * <p>The name of the updated map resource.</p>
+     */
+    inline void SetMapName(const char* value) { m_mapName.assign(value); }
+
+    /**
+     * <p>The name of the updated map resource.</p>
+     */
+    inline UpdateMapResult& WithMapName(const Aws::String& value) { SetMapName(value); return *this;}
+
+    /**
+     * <p>The name of the updated map resource.</p>
+     */
+    inline UpdateMapResult& WithMapName(Aws::String&& value) { SetMapName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the updated map resource.</p>
+     */
+    inline UpdateMapResult& WithMapName(const char* value) { SetMapName(value); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) of the updated map resource. Used to specify a
      * resource across AWS.</p> <ul> <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li> </ul>
@@ -81,42 +117,6 @@ namespace Model
      * <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li> </ul>
      */
     inline UpdateMapResult& WithMapArn(const char* value) { SetMapArn(value); return *this;}
-
-
-    /**
-     * <p>The name of the updated map resource.</p>
-     */
-    inline const Aws::String& GetMapName() const{ return m_mapName; }
-
-    /**
-     * <p>The name of the updated map resource.</p>
-     */
-    inline void SetMapName(const Aws::String& value) { m_mapName = value; }
-
-    /**
-     * <p>The name of the updated map resource.</p>
-     */
-    inline void SetMapName(Aws::String&& value) { m_mapName = std::move(value); }
-
-    /**
-     * <p>The name of the updated map resource.</p>
-     */
-    inline void SetMapName(const char* value) { m_mapName.assign(value); }
-
-    /**
-     * <p>The name of the updated map resource.</p>
-     */
-    inline UpdateMapResult& WithMapName(const Aws::String& value) { SetMapName(value); return *this;}
-
-    /**
-     * <p>The name of the updated map resource.</p>
-     */
-    inline UpdateMapResult& WithMapName(Aws::String&& value) { SetMapName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the updated map resource.</p>
-     */
-    inline UpdateMapResult& WithMapName(const char* value) { SetMapName(value); return *this;}
 
 
     /**
@@ -178,9 +178,9 @@ namespace Model
 
   private:
 
-    Aws::String m_mapArn;
-
     Aws::String m_mapName;
+
+    Aws::String m_mapArn;
 
     Aws::Utils::DateTime m_updateTime;
 

@@ -13,6 +13,7 @@
 #include <aws/firehose/model/SnowflakeRetryOptions.h>
 #include <aws/firehose/model/SnowflakeS3BackupMode.h>
 #include <aws/firehose/model/S3DestinationUpdate.h>
+#include <aws/firehose/model/SecretsManagerConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -830,6 +831,37 @@ namespace Model
     
     inline SnowflakeDestinationUpdate& WithS3Update(S3DestinationUpdate&& value) { SetS3Update(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Describes the Secrets Manager configuration in Snowflake. </p>
+     */
+    inline const SecretsManagerConfiguration& GetSecretsManagerConfiguration() const{ return m_secretsManagerConfiguration; }
+
+    /**
+     * <p> Describes the Secrets Manager configuration in Snowflake. </p>
+     */
+    inline bool SecretsManagerConfigurationHasBeenSet() const { return m_secretsManagerConfigurationHasBeenSet; }
+
+    /**
+     * <p> Describes the Secrets Manager configuration in Snowflake. </p>
+     */
+    inline void SetSecretsManagerConfiguration(const SecretsManagerConfiguration& value) { m_secretsManagerConfigurationHasBeenSet = true; m_secretsManagerConfiguration = value; }
+
+    /**
+     * <p> Describes the Secrets Manager configuration in Snowflake. </p>
+     */
+    inline void SetSecretsManagerConfiguration(SecretsManagerConfiguration&& value) { m_secretsManagerConfigurationHasBeenSet = true; m_secretsManagerConfiguration = std::move(value); }
+
+    /**
+     * <p> Describes the Secrets Manager configuration in Snowflake. </p>
+     */
+    inline SnowflakeDestinationUpdate& WithSecretsManagerConfiguration(const SecretsManagerConfiguration& value) { SetSecretsManagerConfiguration(value); return *this;}
+
+    /**
+     * <p> Describes the Secrets Manager configuration in Snowflake. </p>
+     */
+    inline SnowflakeDestinationUpdate& WithSecretsManagerConfiguration(SecretsManagerConfiguration&& value) { SetSecretsManagerConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_accountUrl;
@@ -882,6 +914,9 @@ namespace Model
 
     S3DestinationUpdate m_s3Update;
     bool m_s3UpdateHasBeenSet = false;
+
+    SecretsManagerConfiguration m_secretsManagerConfiguration;
+    bool m_secretsManagerConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

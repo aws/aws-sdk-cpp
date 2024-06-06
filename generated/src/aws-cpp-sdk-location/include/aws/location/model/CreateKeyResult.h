@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/location/LocationService_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -31,42 +31,6 @@ namespace Model
     AWS_LOCATIONSERVICE_API CreateKeyResult();
     AWS_LOCATIONSERVICE_API CreateKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOCATIONSERVICE_API CreateKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>The timestamp for when the API key resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-     */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
-
-    /**
-     * <p>The timestamp for when the API key resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-     */
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTime = value; }
-
-    /**
-     * <p>The timestamp for when the API key resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-     */
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTime = std::move(value); }
-
-    /**
-     * <p>The timestamp for when the API key resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-     */
-    inline CreateKeyResult& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
-
-    /**
-     * <p>The timestamp for when the API key resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-     */
-    inline CreateKeyResult& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
 
 
     /**
@@ -212,6 +176,42 @@ namespace Model
     inline CreateKeyResult& WithKeyName(const char* value) { SetKeyName(value); return *this;}
 
 
+    /**
+     * <p>The timestamp for when the API key resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     */
+    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+
+    /**
+     * <p>The timestamp for when the API key resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     */
+    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTime = value; }
+
+    /**
+     * <p>The timestamp for when the API key resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     */
+    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTime = std::move(value); }
+
+    /**
+     * <p>The timestamp for when the API key resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     */
+    inline CreateKeyResult& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
+
+    /**
+     * <p>The timestamp for when the API key resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     */
+    inline CreateKeyResult& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -235,13 +235,13 @@ namespace Model
 
   private:
 
-    Aws::Utils::DateTime m_createTime;
-
     Aws::String m_key;
 
     Aws::String m_keyArn;
 
     Aws::String m_keyName;
+
+    Aws::Utils::DateTime m_createTime;
 
     Aws::String m_requestId;
   };

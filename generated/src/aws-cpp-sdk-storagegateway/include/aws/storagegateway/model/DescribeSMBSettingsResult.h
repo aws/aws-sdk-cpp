@@ -210,19 +210,19 @@ namespace Model
      * established based on what is negotiated by the client. This option is
      * recommended when you want to maximize compatibility across different clients in
      * your environment. Supported only for S3 File Gateway.</p> </li> <li> <p>
-     * <code>MandatorySigning</code>: If you use this option, File Gateway only allows
-     * connections from SMBv2 or SMBv3 clients that have signing turned on. This option
-     * works with SMB clients on Microsoft Windows Vista, Windows Server 2008, or
-     * later. </p> </li> <li> <p> <code>MandatoryEncryption</code>: If you use this
-     * option, File Gateway only allows connections from SMBv3 clients that have
+     * <code>MandatorySigning</code>: If you choose this option, File Gateway only
+     * allows connections from SMBv2 or SMBv3 clients that have signing turned on. This
+     * option works with SMB clients on Microsoft Windows Vista, Windows Server 2008,
+     * or later. </p> </li> <li> <p> <code>MandatoryEncryption</code>: If you choose
+     * this option, File Gateway only allows connections from SMBv3 clients that have
      * encryption turned on. Both 256-bit and 128-bit algorithms are allowed. This
      * option is recommended for environments that handle sensitive data. It works with
      * SMB clients on Microsoft Windows 8, Windows Server 2012, or later.</p> </li>
-     * <li> <p> <code>EnforceEncryption</code>: If you use this option, File Gateway
-     * only allows connections from SMBv3 clients that use 256-bit AES encryption
-     * algorithms. 128-bit algorithms are not allowed. This option is recommended for
-     * environments that handle sensitive data. It works with SMB clients on Microsoft
-     * Windows 8, Windows Server 2012, or later.</p> </li> </ul>
+     * <li> <p> <code>MandatoryEncryptionNoAes128</code>: If you choose this option,
+     * File Gateway only allows connections from SMBv3 clients that use 256-bit AES
+     * encryption algorithms. 128-bit algorithms are not allowed. This option is
+     * recommended for environments that handle sensitive data. It works with SMB
+     * clients on Microsoft Windows 8, Windows Server 2012, or later.</p> </li> </ul>
      */
     inline const SMBSecurityStrategy& GetSMBSecurityStrategy() const{ return m_sMBSecurityStrategy; }
 
@@ -232,19 +232,19 @@ namespace Model
      * established based on what is negotiated by the client. This option is
      * recommended when you want to maximize compatibility across different clients in
      * your environment. Supported only for S3 File Gateway.</p> </li> <li> <p>
-     * <code>MandatorySigning</code>: If you use this option, File Gateway only allows
-     * connections from SMBv2 or SMBv3 clients that have signing turned on. This option
-     * works with SMB clients on Microsoft Windows Vista, Windows Server 2008, or
-     * later. </p> </li> <li> <p> <code>MandatoryEncryption</code>: If you use this
-     * option, File Gateway only allows connections from SMBv3 clients that have
+     * <code>MandatorySigning</code>: If you choose this option, File Gateway only
+     * allows connections from SMBv2 or SMBv3 clients that have signing turned on. This
+     * option works with SMB clients on Microsoft Windows Vista, Windows Server 2008,
+     * or later. </p> </li> <li> <p> <code>MandatoryEncryption</code>: If you choose
+     * this option, File Gateway only allows connections from SMBv3 clients that have
      * encryption turned on. Both 256-bit and 128-bit algorithms are allowed. This
      * option is recommended for environments that handle sensitive data. It works with
      * SMB clients on Microsoft Windows 8, Windows Server 2012, or later.</p> </li>
-     * <li> <p> <code>EnforceEncryption</code>: If you use this option, File Gateway
-     * only allows connections from SMBv3 clients that use 256-bit AES encryption
-     * algorithms. 128-bit algorithms are not allowed. This option is recommended for
-     * environments that handle sensitive data. It works with SMB clients on Microsoft
-     * Windows 8, Windows Server 2012, or later.</p> </li> </ul>
+     * <li> <p> <code>MandatoryEncryptionNoAes128</code>: If you choose this option,
+     * File Gateway only allows connections from SMBv3 clients that use 256-bit AES
+     * encryption algorithms. 128-bit algorithms are not allowed. This option is
+     * recommended for environments that handle sensitive data. It works with SMB
+     * clients on Microsoft Windows 8, Windows Server 2012, or later.</p> </li> </ul>
      */
     inline void SetSMBSecurityStrategy(const SMBSecurityStrategy& value) { m_sMBSecurityStrategy = value; }
 
@@ -254,19 +254,19 @@ namespace Model
      * established based on what is negotiated by the client. This option is
      * recommended when you want to maximize compatibility across different clients in
      * your environment. Supported only for S3 File Gateway.</p> </li> <li> <p>
-     * <code>MandatorySigning</code>: If you use this option, File Gateway only allows
-     * connections from SMBv2 or SMBv3 clients that have signing turned on. This option
-     * works with SMB clients on Microsoft Windows Vista, Windows Server 2008, or
-     * later. </p> </li> <li> <p> <code>MandatoryEncryption</code>: If you use this
-     * option, File Gateway only allows connections from SMBv3 clients that have
+     * <code>MandatorySigning</code>: If you choose this option, File Gateway only
+     * allows connections from SMBv2 or SMBv3 clients that have signing turned on. This
+     * option works with SMB clients on Microsoft Windows Vista, Windows Server 2008,
+     * or later. </p> </li> <li> <p> <code>MandatoryEncryption</code>: If you choose
+     * this option, File Gateway only allows connections from SMBv3 clients that have
      * encryption turned on. Both 256-bit and 128-bit algorithms are allowed. This
      * option is recommended for environments that handle sensitive data. It works with
      * SMB clients on Microsoft Windows 8, Windows Server 2012, or later.</p> </li>
-     * <li> <p> <code>EnforceEncryption</code>: If you use this option, File Gateway
-     * only allows connections from SMBv3 clients that use 256-bit AES encryption
-     * algorithms. 128-bit algorithms are not allowed. This option is recommended for
-     * environments that handle sensitive data. It works with SMB clients on Microsoft
-     * Windows 8, Windows Server 2012, or later.</p> </li> </ul>
+     * <li> <p> <code>MandatoryEncryptionNoAes128</code>: If you choose this option,
+     * File Gateway only allows connections from SMBv3 clients that use 256-bit AES
+     * encryption algorithms. 128-bit algorithms are not allowed. This option is
+     * recommended for environments that handle sensitive data. It works with SMB
+     * clients on Microsoft Windows 8, Windows Server 2012, or later.</p> </li> </ul>
      */
     inline void SetSMBSecurityStrategy(SMBSecurityStrategy&& value) { m_sMBSecurityStrategy = std::move(value); }
 
@@ -276,19 +276,19 @@ namespace Model
      * established based on what is negotiated by the client. This option is
      * recommended when you want to maximize compatibility across different clients in
      * your environment. Supported only for S3 File Gateway.</p> </li> <li> <p>
-     * <code>MandatorySigning</code>: If you use this option, File Gateway only allows
-     * connections from SMBv2 or SMBv3 clients that have signing turned on. This option
-     * works with SMB clients on Microsoft Windows Vista, Windows Server 2008, or
-     * later. </p> </li> <li> <p> <code>MandatoryEncryption</code>: If you use this
-     * option, File Gateway only allows connections from SMBv3 clients that have
+     * <code>MandatorySigning</code>: If you choose this option, File Gateway only
+     * allows connections from SMBv2 or SMBv3 clients that have signing turned on. This
+     * option works with SMB clients on Microsoft Windows Vista, Windows Server 2008,
+     * or later. </p> </li> <li> <p> <code>MandatoryEncryption</code>: If you choose
+     * this option, File Gateway only allows connections from SMBv3 clients that have
      * encryption turned on. Both 256-bit and 128-bit algorithms are allowed. This
      * option is recommended for environments that handle sensitive data. It works with
      * SMB clients on Microsoft Windows 8, Windows Server 2012, or later.</p> </li>
-     * <li> <p> <code>EnforceEncryption</code>: If you use this option, File Gateway
-     * only allows connections from SMBv3 clients that use 256-bit AES encryption
-     * algorithms. 128-bit algorithms are not allowed. This option is recommended for
-     * environments that handle sensitive data. It works with SMB clients on Microsoft
-     * Windows 8, Windows Server 2012, or later.</p> </li> </ul>
+     * <li> <p> <code>MandatoryEncryptionNoAes128</code>: If you choose this option,
+     * File Gateway only allows connections from SMBv3 clients that use 256-bit AES
+     * encryption algorithms. 128-bit algorithms are not allowed. This option is
+     * recommended for environments that handle sensitive data. It works with SMB
+     * clients on Microsoft Windows 8, Windows Server 2012, or later.</p> </li> </ul>
      */
     inline DescribeSMBSettingsResult& WithSMBSecurityStrategy(const SMBSecurityStrategy& value) { SetSMBSecurityStrategy(value); return *this;}
 
@@ -298,19 +298,19 @@ namespace Model
      * established based on what is negotiated by the client. This option is
      * recommended when you want to maximize compatibility across different clients in
      * your environment. Supported only for S3 File Gateway.</p> </li> <li> <p>
-     * <code>MandatorySigning</code>: If you use this option, File Gateway only allows
-     * connections from SMBv2 or SMBv3 clients that have signing turned on. This option
-     * works with SMB clients on Microsoft Windows Vista, Windows Server 2008, or
-     * later. </p> </li> <li> <p> <code>MandatoryEncryption</code>: If you use this
-     * option, File Gateway only allows connections from SMBv3 clients that have
+     * <code>MandatorySigning</code>: If you choose this option, File Gateway only
+     * allows connections from SMBv2 or SMBv3 clients that have signing turned on. This
+     * option works with SMB clients on Microsoft Windows Vista, Windows Server 2008,
+     * or later. </p> </li> <li> <p> <code>MandatoryEncryption</code>: If you choose
+     * this option, File Gateway only allows connections from SMBv3 clients that have
      * encryption turned on. Both 256-bit and 128-bit algorithms are allowed. This
      * option is recommended for environments that handle sensitive data. It works with
      * SMB clients on Microsoft Windows 8, Windows Server 2012, or later.</p> </li>
-     * <li> <p> <code>EnforceEncryption</code>: If you use this option, File Gateway
-     * only allows connections from SMBv3 clients that use 256-bit AES encryption
-     * algorithms. 128-bit algorithms are not allowed. This option is recommended for
-     * environments that handle sensitive data. It works with SMB clients on Microsoft
-     * Windows 8, Windows Server 2012, or later.</p> </li> </ul>
+     * <li> <p> <code>MandatoryEncryptionNoAes128</code>: If you choose this option,
+     * File Gateway only allows connections from SMBv3 clients that use 256-bit AES
+     * encryption algorithms. 128-bit algorithms are not allowed. This option is
+     * recommended for environments that handle sensitive data. It works with SMB
+     * clients on Microsoft Windows 8, Windows Server 2012, or later.</p> </li> </ul>
      */
     inline DescribeSMBSettingsResult& WithSMBSecurityStrategy(SMBSecurityStrategy&& value) { SetSMBSecurityStrategy(std::move(value)); return *this;}
 

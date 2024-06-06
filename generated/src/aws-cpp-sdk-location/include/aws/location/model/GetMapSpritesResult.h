@@ -49,42 +49,6 @@ namespace Model
 
 
     /**
-     * <p>The HTTP Cache-Control directive for the value.</p>
-     */
-    inline const Aws::String& GetCacheControl() const{ return m_cacheControl; }
-
-    /**
-     * <p>The HTTP Cache-Control directive for the value.</p>
-     */
-    inline void SetCacheControl(const Aws::String& value) { m_cacheControl = value; }
-
-    /**
-     * <p>The HTTP Cache-Control directive for the value.</p>
-     */
-    inline void SetCacheControl(Aws::String&& value) { m_cacheControl = std::move(value); }
-
-    /**
-     * <p>The HTTP Cache-Control directive for the value.</p>
-     */
-    inline void SetCacheControl(const char* value) { m_cacheControl.assign(value); }
-
-    /**
-     * <p>The HTTP Cache-Control directive for the value.</p>
-     */
-    inline GetMapSpritesResult& WithCacheControl(const Aws::String& value) { SetCacheControl(value); return *this;}
-
-    /**
-     * <p>The HTTP Cache-Control directive for the value.</p>
-     */
-    inline GetMapSpritesResult& WithCacheControl(Aws::String&& value) { SetCacheControl(std::move(value)); return *this;}
-
-    /**
-     * <p>The HTTP Cache-Control directive for the value.</p>
-     */
-    inline GetMapSpritesResult& WithCacheControl(const char* value) { SetCacheControl(value); return *this;}
-
-
-    /**
      * <p>The content type of the sprite sheet and offsets. For example, the sprite
      * sheet content type is <code>image/png</code>, and the sprite offset JSON
      * document is <code>application/json</code>. </p>
@@ -134,6 +98,42 @@ namespace Model
     inline GetMapSpritesResult& WithContentType(const char* value) { SetContentType(value); return *this;}
 
 
+    /**
+     * <p>The HTTP Cache-Control directive for the value.</p>
+     */
+    inline const Aws::String& GetCacheControl() const{ return m_cacheControl; }
+
+    /**
+     * <p>The HTTP Cache-Control directive for the value.</p>
+     */
+    inline void SetCacheControl(const Aws::String& value) { m_cacheControl = value; }
+
+    /**
+     * <p>The HTTP Cache-Control directive for the value.</p>
+     */
+    inline void SetCacheControl(Aws::String&& value) { m_cacheControl = std::move(value); }
+
+    /**
+     * <p>The HTTP Cache-Control directive for the value.</p>
+     */
+    inline void SetCacheControl(const char* value) { m_cacheControl.assign(value); }
+
+    /**
+     * <p>The HTTP Cache-Control directive for the value.</p>
+     */
+    inline GetMapSpritesResult& WithCacheControl(const Aws::String& value) { SetCacheControl(value); return *this;}
+
+    /**
+     * <p>The HTTP Cache-Control directive for the value.</p>
+     */
+    inline GetMapSpritesResult& WithCacheControl(Aws::String&& value) { SetCacheControl(std::move(value)); return *this;}
+
+    /**
+     * <p>The HTTP Cache-Control directive for the value.</p>
+     */
+    inline GetMapSpritesResult& WithCacheControl(const char* value) { SetCacheControl(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -159,9 +159,9 @@ namespace Model
 
     Aws::Utils::Stream::ResponseStream m_blob;
 
-    Aws::String m_cacheControl;
-
     Aws::String m_contentType;
+
+    Aws::String m_cacheControl;
 
     Aws::String m_requestId;
   };

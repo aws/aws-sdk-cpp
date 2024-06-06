@@ -21,15 +21,18 @@
 #include <aws/account/AccountClient.h>
 #include <aws/account/AccountErrorMarshaller.h>
 #include <aws/account/AccountEndpointProvider.h>
+#include <aws/account/model/AcceptPrimaryEmailUpdateRequest.h>
 #include <aws/account/model/DeleteAlternateContactRequest.h>
 #include <aws/account/model/DisableRegionRequest.h>
 #include <aws/account/model/EnableRegionRequest.h>
 #include <aws/account/model/GetAlternateContactRequest.h>
 #include <aws/account/model/GetContactInformationRequest.h>
+#include <aws/account/model/GetPrimaryEmailRequest.h>
 #include <aws/account/model/GetRegionOptStatusRequest.h>
 #include <aws/account/model/ListRegionsRequest.h>
 #include <aws/account/model/PutAlternateContactRequest.h>
 #include <aws/account/model/PutContactInformationRequest.h>
+#include <aws/account/model/StartPrimaryEmailUpdateRequest.h>
 
 #include <smithy/tracing/TracingUtils.h>
 
@@ -171,6 +174,33 @@ void AccountClient::OverrideEndpoint(const Aws::String& endpoint)
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
 
+AcceptPrimaryEmailUpdateOutcome AccountClient::AcceptPrimaryEmailUpdate(const AcceptPrimaryEmailUpdateRequest& request) const
+{
+  AWS_OPERATION_GUARD(AcceptPrimaryEmailUpdate);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AcceptPrimaryEmailUpdate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, AcceptPrimaryEmailUpdate, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, AcceptPrimaryEmailUpdate, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".AcceptPrimaryEmailUpdate",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<AcceptPrimaryEmailUpdateOutcome>(
+    [&]()-> AcceptPrimaryEmailUpdateOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AcceptPrimaryEmailUpdate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/acceptPrimaryEmailUpdate");
+      return AcceptPrimaryEmailUpdateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DeleteAlternateContactOutcome AccountClient::DeleteAlternateContact(const DeleteAlternateContactRequest& request) const
 {
   AWS_OPERATION_GUARD(DeleteAlternateContact);
@@ -306,6 +336,33 @@ GetContactInformationOutcome AccountClient::GetContactInformation(const GetConta
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetPrimaryEmailOutcome AccountClient::GetPrimaryEmail(const GetPrimaryEmailRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetPrimaryEmail);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPrimaryEmail, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetPrimaryEmail, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetPrimaryEmail, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetPrimaryEmail",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetPrimaryEmailOutcome>(
+    [&]()-> GetPrimaryEmailOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPrimaryEmail, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/getPrimaryEmail");
+      return GetPrimaryEmailOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetRegionOptStatusOutcome AccountClient::GetRegionOptStatus(const GetRegionOptStatusRequest& request) const
 {
   AWS_OPERATION_GUARD(GetRegionOptStatus);
@@ -408,6 +465,33 @@ PutContactInformationOutcome AccountClient::PutContactInformation(const PutConta
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutContactInformation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/putContactInformation");
       return PutContactInformationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+StartPrimaryEmailUpdateOutcome AccountClient::StartPrimaryEmailUpdate(const StartPrimaryEmailUpdateRequest& request) const
+{
+  AWS_OPERATION_GUARD(StartPrimaryEmailUpdate);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartPrimaryEmailUpdate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StartPrimaryEmailUpdate, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, StartPrimaryEmailUpdate, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StartPrimaryEmailUpdate",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<StartPrimaryEmailUpdateOutcome>(
+    [&]()-> StartPrimaryEmailUpdateOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartPrimaryEmailUpdate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/startPrimaryEmailUpdate");
+      return StartPrimaryEmailUpdateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

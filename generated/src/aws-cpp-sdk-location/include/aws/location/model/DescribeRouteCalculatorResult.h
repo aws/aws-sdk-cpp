@@ -35,6 +35,42 @@ namespace Model
 
 
     /**
+     * <p>The name of the route calculator resource being described.</p>
+     */
+    inline const Aws::String& GetCalculatorName() const{ return m_calculatorName; }
+
+    /**
+     * <p>The name of the route calculator resource being described.</p>
+     */
+    inline void SetCalculatorName(const Aws::String& value) { m_calculatorName = value; }
+
+    /**
+     * <p>The name of the route calculator resource being described.</p>
+     */
+    inline void SetCalculatorName(Aws::String&& value) { m_calculatorName = std::move(value); }
+
+    /**
+     * <p>The name of the route calculator resource being described.</p>
+     */
+    inline void SetCalculatorName(const char* value) { m_calculatorName.assign(value); }
+
+    /**
+     * <p>The name of the route calculator resource being described.</p>
+     */
+    inline DescribeRouteCalculatorResult& WithCalculatorName(const Aws::String& value) { SetCalculatorName(value); return *this;}
+
+    /**
+     * <p>The name of the route calculator resource being described.</p>
+     */
+    inline DescribeRouteCalculatorResult& WithCalculatorName(Aws::String&& value) { SetCalculatorName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the route calculator resource being described.</p>
+     */
+    inline DescribeRouteCalculatorResult& WithCalculatorName(const char* value) { SetCalculatorName(value); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN
      * when you specify a resource across Amazon Web Services.</p> <ul> <li> <p>Format
      * example:
@@ -99,39 +135,39 @@ namespace Model
 
 
     /**
-     * <p>The name of the route calculator resource being described.</p>
+     * <p>The optional description of the route calculator resource.</p>
      */
-    inline const Aws::String& GetCalculatorName() const{ return m_calculatorName; }
+    inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The name of the route calculator resource being described.</p>
+     * <p>The optional description of the route calculator resource.</p>
      */
-    inline void SetCalculatorName(const Aws::String& value) { m_calculatorName = value; }
+    inline void SetDescription(const Aws::String& value) { m_description = value; }
 
     /**
-     * <p>The name of the route calculator resource being described.</p>
+     * <p>The optional description of the route calculator resource.</p>
      */
-    inline void SetCalculatorName(Aws::String&& value) { m_calculatorName = std::move(value); }
+    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
 
     /**
-     * <p>The name of the route calculator resource being described.</p>
+     * <p>The optional description of the route calculator resource.</p>
      */
-    inline void SetCalculatorName(const char* value) { m_calculatorName.assign(value); }
+    inline void SetDescription(const char* value) { m_description.assign(value); }
 
     /**
-     * <p>The name of the route calculator resource being described.</p>
+     * <p>The optional description of the route calculator resource.</p>
      */
-    inline DescribeRouteCalculatorResult& WithCalculatorName(const Aws::String& value) { SetCalculatorName(value); return *this;}
+    inline DescribeRouteCalculatorResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The name of the route calculator resource being described.</p>
+     * <p>The optional description of the route calculator resource.</p>
      */
-    inline DescribeRouteCalculatorResult& WithCalculatorName(Aws::String&& value) { SetCalculatorName(std::move(value)); return *this;}
+    inline DescribeRouteCalculatorResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the route calculator resource being described.</p>
+     * <p>The optional description of the route calculator resource.</p>
      */
-    inline DescribeRouteCalculatorResult& WithCalculatorName(const char* value) { SetCalculatorName(value); return *this;}
+    inline DescribeRouteCalculatorResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
@@ -173,6 +209,47 @@ namespace Model
      * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
      */
     inline DescribeRouteCalculatorResult& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The timestamp when the route calculator resource was last updated in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>For example,
+     * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
+     */
+    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
+
+    /**
+     * <p>The timestamp when the route calculator resource was last updated in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>For example,
+     * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
+     */
+    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTime = value; }
+
+    /**
+     * <p>The timestamp when the route calculator resource was last updated in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>For example,
+     * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
+     */
+    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTime = std::move(value); }
+
+    /**
+     * <p>The timestamp when the route calculator resource was last updated in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>For example,
+     * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
+     */
+    inline DescribeRouteCalculatorResult& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
+
+    /**
+     * <p>The timestamp when the route calculator resource was last updated in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>For example,
+     * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
+     */
+    inline DescribeRouteCalculatorResult& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
 
 
     /**
@@ -247,42 +324,6 @@ namespace Model
 
 
     /**
-     * <p>The optional description of the route calculator resource.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The optional description of the route calculator resource.</p>
-     */
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-
-    /**
-     * <p>The optional description of the route calculator resource.</p>
-     */
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-
-    /**
-     * <p>The optional description of the route calculator resource.</p>
-     */
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-
-    /**
-     * <p>The optional description of the route calculator resource.</p>
-     */
-    inline DescribeRouteCalculatorResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The optional description of the route calculator resource.</p>
-     */
-    inline DescribeRouteCalculatorResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The optional description of the route calculator resource.</p>
-     */
-    inline DescribeRouteCalculatorResult& WithDescription(const char* value) { SetDescription(value); return *this;}
-
-
-    /**
      * <p>Tags associated with route calculator resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -343,47 +384,6 @@ namespace Model
     inline DescribeRouteCalculatorResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
 
-    /**
-     * <p>The timestamp when the route calculator resource was last updated in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>For example,
-     * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
-     */
-    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
-
-    /**
-     * <p>The timestamp when the route calculator resource was last updated in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>For example,
-     * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
-     */
-    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTime = value; }
-
-    /**
-     * <p>The timestamp when the route calculator resource was last updated in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>For example,
-     * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
-     */
-    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTime = std::move(value); }
-
-    /**
-     * <p>The timestamp when the route calculator resource was last updated in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>For example,
-     * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
-     */
-    inline DescribeRouteCalculatorResult& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
-
-    /**
-     * <p>The timestamp when the route calculator resource was last updated in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>For example,
-     * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
-     */
-    inline DescribeRouteCalculatorResult& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
-
-
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -407,19 +407,19 @@ namespace Model
 
   private:
 
-    Aws::String m_calculatorArn;
-
     Aws::String m_calculatorName;
 
-    Aws::Utils::DateTime m_createTime;
-
-    Aws::String m_dataSource;
+    Aws::String m_calculatorArn;
 
     Aws::String m_description;
 
-    Aws::Map<Aws::String, Aws::String> m_tags;
+    Aws::Utils::DateTime m_createTime;
 
     Aws::Utils::DateTime m_updateTime;
+
+    Aws::String m_dataSource;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
 
     Aws::String m_requestId;
   };

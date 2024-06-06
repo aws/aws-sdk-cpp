@@ -7,8 +7,8 @@
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/location/model/BatchPutGeofenceError.h>
 #include <aws/location/model/BatchPutGeofenceSuccess.h>
+#include <aws/location/model/BatchPutGeofenceError.h>
 #include <utility>
 
 namespace Aws
@@ -33,49 +33,6 @@ namespace Model
     AWS_LOCATIONSERVICE_API BatchPutGeofenceResult();
     AWS_LOCATIONSERVICE_API BatchPutGeofenceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOCATIONSERVICE_API BatchPutGeofenceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>Contains additional error details for each geofence that failed to be stored
-     * in a geofence collection.</p>
-     */
-    inline const Aws::Vector<BatchPutGeofenceError>& GetErrors() const{ return m_errors; }
-
-    /**
-     * <p>Contains additional error details for each geofence that failed to be stored
-     * in a geofence collection.</p>
-     */
-    inline void SetErrors(const Aws::Vector<BatchPutGeofenceError>& value) { m_errors = value; }
-
-    /**
-     * <p>Contains additional error details for each geofence that failed to be stored
-     * in a geofence collection.</p>
-     */
-    inline void SetErrors(Aws::Vector<BatchPutGeofenceError>&& value) { m_errors = std::move(value); }
-
-    /**
-     * <p>Contains additional error details for each geofence that failed to be stored
-     * in a geofence collection.</p>
-     */
-    inline BatchPutGeofenceResult& WithErrors(const Aws::Vector<BatchPutGeofenceError>& value) { SetErrors(value); return *this;}
-
-    /**
-     * <p>Contains additional error details for each geofence that failed to be stored
-     * in a geofence collection.</p>
-     */
-    inline BatchPutGeofenceResult& WithErrors(Aws::Vector<BatchPutGeofenceError>&& value) { SetErrors(std::move(value)); return *this;}
-
-    /**
-     * <p>Contains additional error details for each geofence that failed to be stored
-     * in a geofence collection.</p>
-     */
-    inline BatchPutGeofenceResult& AddErrors(const BatchPutGeofenceError& value) { m_errors.push_back(value); return *this; }
-
-    /**
-     * <p>Contains additional error details for each geofence that failed to be stored
-     * in a geofence collection.</p>
-     */
-    inline BatchPutGeofenceResult& AddErrors(BatchPutGeofenceError&& value) { m_errors.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -121,6 +78,49 @@ namespace Model
     inline BatchPutGeofenceResult& AddSuccesses(BatchPutGeofenceSuccess&& value) { m_successes.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>Contains additional error details for each geofence that failed to be stored
+     * in a geofence collection.</p>
+     */
+    inline const Aws::Vector<BatchPutGeofenceError>& GetErrors() const{ return m_errors; }
+
+    /**
+     * <p>Contains additional error details for each geofence that failed to be stored
+     * in a geofence collection.</p>
+     */
+    inline void SetErrors(const Aws::Vector<BatchPutGeofenceError>& value) { m_errors = value; }
+
+    /**
+     * <p>Contains additional error details for each geofence that failed to be stored
+     * in a geofence collection.</p>
+     */
+    inline void SetErrors(Aws::Vector<BatchPutGeofenceError>&& value) { m_errors = std::move(value); }
+
+    /**
+     * <p>Contains additional error details for each geofence that failed to be stored
+     * in a geofence collection.</p>
+     */
+    inline BatchPutGeofenceResult& WithErrors(const Aws::Vector<BatchPutGeofenceError>& value) { SetErrors(value); return *this;}
+
+    /**
+     * <p>Contains additional error details for each geofence that failed to be stored
+     * in a geofence collection.</p>
+     */
+    inline BatchPutGeofenceResult& WithErrors(Aws::Vector<BatchPutGeofenceError>&& value) { SetErrors(std::move(value)); return *this;}
+
+    /**
+     * <p>Contains additional error details for each geofence that failed to be stored
+     * in a geofence collection.</p>
+     */
+    inline BatchPutGeofenceResult& AddErrors(const BatchPutGeofenceError& value) { m_errors.push_back(value); return *this; }
+
+    /**
+     * <p>Contains additional error details for each geofence that failed to be stored
+     * in a geofence collection.</p>
+     */
+    inline BatchPutGeofenceResult& AddErrors(BatchPutGeofenceError&& value) { m_errors.push_back(std::move(value)); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -144,9 +144,9 @@ namespace Model
 
   private:
 
-    Aws::Vector<BatchPutGeofenceError> m_errors;
-
     Aws::Vector<BatchPutGeofenceSuccess> m_successes;
+
+    Aws::Vector<BatchPutGeofenceError> m_errors;
 
     Aws::String m_requestId;
   };

@@ -15,8 +15,8 @@ using namespace Aws::Utils;
 CreateGeofenceCollectionRequest::CreateGeofenceCollectionRequest() : 
     m_collectionNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -36,12 +36,6 @@ Aws::String CreateGeofenceCollectionRequest::SerializePayload() const
 
   }
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
-   payload.WithString("KmsKeyId", m_kmsKeyId);
-
-  }
-
   if(m_tagsHasBeenSet)
   {
    JsonValue tagsJsonMap;
@@ -50,6 +44,12 @@ Aws::String CreateGeofenceCollectionRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+   payload.WithString("KmsKeyId", m_kmsKeyId);
 
   }
 

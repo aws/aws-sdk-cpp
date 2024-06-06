@@ -148,71 +148,6 @@ namespace Model
 
 
     /**
-     * <p>A key identifier for an <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
-     * Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name,
-     * or alias ARN. </p>
-     */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
-
-    /**
-     * <p>A key identifier for an <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
-     * Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name,
-     * or alias ARN. </p>
-     */
-    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-
-    /**
-     * <p>A key identifier for an <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
-     * Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name,
-     * or alias ARN. </p>
-     */
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-
-    /**
-     * <p>A key identifier for an <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
-     * Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name,
-     * or alias ARN. </p>
-     */
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-
-    /**
-     * <p>A key identifier for an <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
-     * Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name,
-     * or alias ARN. </p>
-     */
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-
-    /**
-     * <p>A key identifier for an <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
-     * Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name,
-     * or alias ARN. </p>
-     */
-    inline CreateGeofenceCollectionRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-
-    /**
-     * <p>A key identifier for an <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
-     * Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name,
-     * or alias ARN. </p>
-     */
-    inline CreateGeofenceCollectionRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-
-    /**
-     * <p>A key identifier for an <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
-     * Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name,
-     * or alias ARN. </p>
-     */
-    inline CreateGeofenceCollectionRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
-
-
-    /**
      * <p>Applies one or more tags to the geofence collection. A tag is a key-value
      * pair helps manage, identify, search, and filter your resources by labelling
      * them.</p> <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul>
@@ -381,6 +316,71 @@ namespace Model
      */
     inline CreateGeofenceCollectionRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>A key identifier for an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name,
+     * or alias ARN. </p>
+     */
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>A key identifier for an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name,
+     * or alias ARN. </p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
+
+    /**
+     * <p>A key identifier for an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name,
+     * or alias ARN. </p>
+     */
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+
+    /**
+     * <p>A key identifier for an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name,
+     * or alias ARN. </p>
+     */
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
+
+    /**
+     * <p>A key identifier for an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name,
+     * or alias ARN. </p>
+     */
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
+
+    /**
+     * <p>A key identifier for an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name,
+     * or alias ARN. </p>
+     */
+    inline CreateGeofenceCollectionRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /**
+     * <p>A key identifier for an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name,
+     * or alias ARN. </p>
+     */
+    inline CreateGeofenceCollectionRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>A key identifier for an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name,
+     * or alias ARN. </p>
+     */
+    inline CreateGeofenceCollectionRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
   private:
 
     Aws::String m_collectionName;
@@ -389,11 +389,11 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet = false;
-
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

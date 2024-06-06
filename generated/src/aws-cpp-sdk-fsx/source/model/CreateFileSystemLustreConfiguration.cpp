@@ -40,7 +40,8 @@ CreateFileSystemLustreConfiguration::CreateFileSystemLustreConfiguration() :
     m_dataCompressionType(DataCompressionType::NOT_SET),
     m_dataCompressionTypeHasBeenSet(false),
     m_logConfigurationHasBeenSet(false),
-    m_rootSquashConfigurationHasBeenSet(false)
+    m_rootSquashConfigurationHasBeenSet(false),
+    m_metadataConfigurationHasBeenSet(false)
 {
 }
 
@@ -66,7 +67,8 @@ CreateFileSystemLustreConfiguration::CreateFileSystemLustreConfiguration(JsonVie
     m_dataCompressionType(DataCompressionType::NOT_SET),
     m_dataCompressionTypeHasBeenSet(false),
     m_logConfigurationHasBeenSet(false),
-    m_rootSquashConfigurationHasBeenSet(false)
+    m_rootSquashConfigurationHasBeenSet(false),
+    m_metadataConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -171,6 +173,13 @@ CreateFileSystemLustreConfiguration& CreateFileSystemLustreConfiguration::operat
     m_rootSquashConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MetadataConfiguration"))
+  {
+    m_metadataConfiguration = jsonValue.GetObject("MetadataConfiguration");
+
+    m_metadataConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -255,6 +264,12 @@ JsonValue CreateFileSystemLustreConfiguration::Jsonize() const
   if(m_rootSquashConfigurationHasBeenSet)
   {
    payload.WithObject("RootSquashConfiguration", m_rootSquashConfiguration.Jsonize());
+
+  }
+
+  if(m_metadataConfigurationHasBeenSet)
+  {
+   payload.WithObject("MetadataConfiguration", m_metadataConfiguration.Jsonize());
 
   }
 

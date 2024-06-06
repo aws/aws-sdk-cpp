@@ -465,50 +465,82 @@ namespace Model
 
 
     /**
-     * <p>The state or region of the primary contact address. This field is required in
-     * selected countries.</p>
+     * <p>The state or region of the primary contact address. If the mailing address is
+     * within the United States (US), the value in this field can be either a two
+     * character state code (for example, <code>NJ</code>) or the full state name (for
+     * example, <code>New Jersey</code>). This field is required in the following
+     * countries: <code>US</code>, <code>CA</code>, <code>GB</code>, <code>DE</code>,
+     * <code>JP</code>, <code>IN</code>, and <code>BR</code>.</p>
      */
     inline const Aws::String& GetStateOrRegion() const{ return m_stateOrRegion; }
 
     /**
-     * <p>The state or region of the primary contact address. This field is required in
-     * selected countries.</p>
+     * <p>The state or region of the primary contact address. If the mailing address is
+     * within the United States (US), the value in this field can be either a two
+     * character state code (for example, <code>NJ</code>) or the full state name (for
+     * example, <code>New Jersey</code>). This field is required in the following
+     * countries: <code>US</code>, <code>CA</code>, <code>GB</code>, <code>DE</code>,
+     * <code>JP</code>, <code>IN</code>, and <code>BR</code>.</p>
      */
     inline bool StateOrRegionHasBeenSet() const { return m_stateOrRegionHasBeenSet; }
 
     /**
-     * <p>The state or region of the primary contact address. This field is required in
-     * selected countries.</p>
+     * <p>The state or region of the primary contact address. If the mailing address is
+     * within the United States (US), the value in this field can be either a two
+     * character state code (for example, <code>NJ</code>) or the full state name (for
+     * example, <code>New Jersey</code>). This field is required in the following
+     * countries: <code>US</code>, <code>CA</code>, <code>GB</code>, <code>DE</code>,
+     * <code>JP</code>, <code>IN</code>, and <code>BR</code>.</p>
      */
     inline void SetStateOrRegion(const Aws::String& value) { m_stateOrRegionHasBeenSet = true; m_stateOrRegion = value; }
 
     /**
-     * <p>The state or region of the primary contact address. This field is required in
-     * selected countries.</p>
+     * <p>The state or region of the primary contact address. If the mailing address is
+     * within the United States (US), the value in this field can be either a two
+     * character state code (for example, <code>NJ</code>) or the full state name (for
+     * example, <code>New Jersey</code>). This field is required in the following
+     * countries: <code>US</code>, <code>CA</code>, <code>GB</code>, <code>DE</code>,
+     * <code>JP</code>, <code>IN</code>, and <code>BR</code>.</p>
      */
     inline void SetStateOrRegion(Aws::String&& value) { m_stateOrRegionHasBeenSet = true; m_stateOrRegion = std::move(value); }
 
     /**
-     * <p>The state or region of the primary contact address. This field is required in
-     * selected countries.</p>
+     * <p>The state or region of the primary contact address. If the mailing address is
+     * within the United States (US), the value in this field can be either a two
+     * character state code (for example, <code>NJ</code>) or the full state name (for
+     * example, <code>New Jersey</code>). This field is required in the following
+     * countries: <code>US</code>, <code>CA</code>, <code>GB</code>, <code>DE</code>,
+     * <code>JP</code>, <code>IN</code>, and <code>BR</code>.</p>
      */
     inline void SetStateOrRegion(const char* value) { m_stateOrRegionHasBeenSet = true; m_stateOrRegion.assign(value); }
 
     /**
-     * <p>The state or region of the primary contact address. This field is required in
-     * selected countries.</p>
+     * <p>The state or region of the primary contact address. If the mailing address is
+     * within the United States (US), the value in this field can be either a two
+     * character state code (for example, <code>NJ</code>) or the full state name (for
+     * example, <code>New Jersey</code>). This field is required in the following
+     * countries: <code>US</code>, <code>CA</code>, <code>GB</code>, <code>DE</code>,
+     * <code>JP</code>, <code>IN</code>, and <code>BR</code>.</p>
      */
     inline ContactInformation& WithStateOrRegion(const Aws::String& value) { SetStateOrRegion(value); return *this;}
 
     /**
-     * <p>The state or region of the primary contact address. This field is required in
-     * selected countries.</p>
+     * <p>The state or region of the primary contact address. If the mailing address is
+     * within the United States (US), the value in this field can be either a two
+     * character state code (for example, <code>NJ</code>) or the full state name (for
+     * example, <code>New Jersey</code>). This field is required in the following
+     * countries: <code>US</code>, <code>CA</code>, <code>GB</code>, <code>DE</code>,
+     * <code>JP</code>, <code>IN</code>, and <code>BR</code>.</p>
      */
     inline ContactInformation& WithStateOrRegion(Aws::String&& value) { SetStateOrRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The state or region of the primary contact address. This field is required in
-     * selected countries.</p>
+     * <p>The state or region of the primary contact address. If the mailing address is
+     * within the United States (US), the value in this field can be either a two
+     * character state code (for example, <code>NJ</code>) or the full state name (for
+     * example, <code>New Jersey</code>). This field is required in the following
+     * countries: <code>US</code>, <code>CA</code>, <code>GB</code>, <code>DE</code>,
+     * <code>JP</code>, <code>IN</code>, and <code>BR</code>.</p>
      */
     inline ContactInformation& WithStateOrRegion(const char* value) { SetStateOrRegion(value); return *this;}
 

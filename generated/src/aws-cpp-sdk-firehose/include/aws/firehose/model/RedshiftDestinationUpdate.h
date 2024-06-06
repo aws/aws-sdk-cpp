@@ -12,6 +12,7 @@
 #include <aws/firehose/model/ProcessingConfiguration.h>
 #include <aws/firehose/model/RedshiftS3BackupMode.h>
 #include <aws/firehose/model/CloudWatchLoggingOptions.h>
+#include <aws/firehose/model/SecretsManagerConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -490,6 +491,43 @@ namespace Model
      */
     inline RedshiftDestinationUpdate& WithCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { SetCloudWatchLoggingOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The configuration that defines how you access secrets for Amazon Redshift.
+     * </p>
+     */
+    inline const SecretsManagerConfiguration& GetSecretsManagerConfiguration() const{ return m_secretsManagerConfiguration; }
+
+    /**
+     * <p> The configuration that defines how you access secrets for Amazon Redshift.
+     * </p>
+     */
+    inline bool SecretsManagerConfigurationHasBeenSet() const { return m_secretsManagerConfigurationHasBeenSet; }
+
+    /**
+     * <p> The configuration that defines how you access secrets for Amazon Redshift.
+     * </p>
+     */
+    inline void SetSecretsManagerConfiguration(const SecretsManagerConfiguration& value) { m_secretsManagerConfigurationHasBeenSet = true; m_secretsManagerConfiguration = value; }
+
+    /**
+     * <p> The configuration that defines how you access secrets for Amazon Redshift.
+     * </p>
+     */
+    inline void SetSecretsManagerConfiguration(SecretsManagerConfiguration&& value) { m_secretsManagerConfigurationHasBeenSet = true; m_secretsManagerConfiguration = std::move(value); }
+
+    /**
+     * <p> The configuration that defines how you access secrets for Amazon Redshift.
+     * </p>
+     */
+    inline RedshiftDestinationUpdate& WithSecretsManagerConfiguration(const SecretsManagerConfiguration& value) { SetSecretsManagerConfiguration(value); return *this;}
+
+    /**
+     * <p> The configuration that defines how you access secrets for Amazon Redshift.
+     * </p>
+     */
+    inline RedshiftDestinationUpdate& WithSecretsManagerConfiguration(SecretsManagerConfiguration&& value) { SetSecretsManagerConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_roleARN;
@@ -524,6 +562,9 @@ namespace Model
 
     CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
     bool m_cloudWatchLoggingOptionsHasBeenSet = false;
+
+    SecretsManagerConfiguration m_secretsManagerConfiguration;
+    bool m_secretsManagerConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

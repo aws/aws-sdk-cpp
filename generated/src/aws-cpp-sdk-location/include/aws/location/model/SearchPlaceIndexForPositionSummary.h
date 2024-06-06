@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/location/LocationService_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -37,6 +37,67 @@ namespace Model
     AWS_LOCATIONSERVICE_API SearchPlaceIndexForPositionSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API SearchPlaceIndexForPositionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The position specified in the request.</p>
+     */
+    inline const Aws::Vector<double>& GetPosition() const{ return m_position; }
+
+    /**
+     * <p>The position specified in the request.</p>
+     */
+    inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
+
+    /**
+     * <p>The position specified in the request.</p>
+     */
+    inline void SetPosition(const Aws::Vector<double>& value) { m_positionHasBeenSet = true; m_position = value; }
+
+    /**
+     * <p>The position specified in the request.</p>
+     */
+    inline void SetPosition(Aws::Vector<double>&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
+
+    /**
+     * <p>The position specified in the request.</p>
+     */
+    inline SearchPlaceIndexForPositionSummary& WithPosition(const Aws::Vector<double>& value) { SetPosition(value); return *this;}
+
+    /**
+     * <p>The position specified in the request.</p>
+     */
+    inline SearchPlaceIndexForPositionSummary& WithPosition(Aws::Vector<double>&& value) { SetPosition(std::move(value)); return *this;}
+
+    /**
+     * <p>The position specified in the request.</p>
+     */
+    inline SearchPlaceIndexForPositionSummary& AddPosition(double value) { m_positionHasBeenSet = true; m_position.push_back(value); return *this; }
+
+
+    /**
+     * <p>Contains the optional result count limit that is specified in the
+     * request.</p> <p>Default value: <code>50</code> </p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>Contains the optional result count limit that is specified in the
+     * request.</p> <p>Default value: <code>50</code> </p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>Contains the optional result count limit that is specified in the
+     * request.</p> <p>Default value: <code>50</code> </p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>Contains the optional result count limit that is specified in the
+     * request.</p> <p>Default value: <code>50</code> </p>
+     */
+    inline SearchPlaceIndexForPositionSummary& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
@@ -176,80 +237,19 @@ namespace Model
      */
     inline SearchPlaceIndexForPositionSummary& WithLanguage(const char* value) { SetLanguage(value); return *this;}
 
-
-    /**
-     * <p>Contains the optional result count limit that is specified in the
-     * request.</p> <p>Default value: <code>50</code> </p>
-     */
-    inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>Contains the optional result count limit that is specified in the
-     * request.</p> <p>Default value: <code>50</code> </p>
-     */
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>Contains the optional result count limit that is specified in the
-     * request.</p> <p>Default value: <code>50</code> </p>
-     */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>Contains the optional result count limit that is specified in the
-     * request.</p> <p>Default value: <code>50</code> </p>
-     */
-    inline SearchPlaceIndexForPositionSummary& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
-
-    /**
-     * <p>The position specified in the request.</p>
-     */
-    inline const Aws::Vector<double>& GetPosition() const{ return m_position; }
-
-    /**
-     * <p>The position specified in the request.</p>
-     */
-    inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
-
-    /**
-     * <p>The position specified in the request.</p>
-     */
-    inline void SetPosition(const Aws::Vector<double>& value) { m_positionHasBeenSet = true; m_position = value; }
-
-    /**
-     * <p>The position specified in the request.</p>
-     */
-    inline void SetPosition(Aws::Vector<double>&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
-
-    /**
-     * <p>The position specified in the request.</p>
-     */
-    inline SearchPlaceIndexForPositionSummary& WithPosition(const Aws::Vector<double>& value) { SetPosition(value); return *this;}
-
-    /**
-     * <p>The position specified in the request.</p>
-     */
-    inline SearchPlaceIndexForPositionSummary& WithPosition(Aws::Vector<double>&& value) { SetPosition(std::move(value)); return *this;}
-
-    /**
-     * <p>The position specified in the request.</p>
-     */
-    inline SearchPlaceIndexForPositionSummary& AddPosition(double value) { m_positionHasBeenSet = true; m_position.push_back(value); return *this; }
-
   private:
+
+    Aws::Vector<double> m_position;
+    bool m_positionHasBeenSet = false;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_dataSource;
     bool m_dataSourceHasBeenSet = false;
 
     Aws::String m_language;
     bool m_languageHasBeenSet = false;
-
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
-
-    Aws::Vector<double> m_position;
-    bool m_positionHasBeenSet = false;
   };
 
 } // namespace Model

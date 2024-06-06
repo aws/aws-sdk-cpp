@@ -186,7 +186,7 @@ namespace Model
      * repository that links to the cache. The path can be in one of two formats:</p>
      * <ul> <li> <p>If you are not using the <code>DataRepositorySubdirectories</code>
      * parameter, the path is to an NFS Export directory (or one of its subdirectories)
-     * in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore
+     * in the format <code>nfs://nfs-domain-name/exportpath</code>. You can therefore
      * link a single NFS Export to a single data repository association.</p> </li> <li>
      * <p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the
      * path is the domain name of the NFS file system in the format
@@ -203,7 +203,7 @@ namespace Model
      * repository that links to the cache. The path can be in one of two formats:</p>
      * <ul> <li> <p>If you are not using the <code>DataRepositorySubdirectories</code>
      * parameter, the path is to an NFS Export directory (or one of its subdirectories)
-     * in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore
+     * in the format <code>nfs://nfs-domain-name/exportpath</code>. You can therefore
      * link a single NFS Export to a single data repository association.</p> </li> <li>
      * <p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the
      * path is the domain name of the NFS file system in the format
@@ -220,7 +220,7 @@ namespace Model
      * repository that links to the cache. The path can be in one of two formats:</p>
      * <ul> <li> <p>If you are not using the <code>DataRepositorySubdirectories</code>
      * parameter, the path is to an NFS Export directory (or one of its subdirectories)
-     * in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore
+     * in the format <code>nfs://nfs-domain-name/exportpath</code>. You can therefore
      * link a single NFS Export to a single data repository association.</p> </li> <li>
      * <p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the
      * path is the domain name of the NFS file system in the format
@@ -237,7 +237,7 @@ namespace Model
      * repository that links to the cache. The path can be in one of two formats:</p>
      * <ul> <li> <p>If you are not using the <code>DataRepositorySubdirectories</code>
      * parameter, the path is to an NFS Export directory (or one of its subdirectories)
-     * in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore
+     * in the format <code>nfs://nfs-domain-name/exportpath</code>. You can therefore
      * link a single NFS Export to a single data repository association.</p> </li> <li>
      * <p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the
      * path is the domain name of the NFS file system in the format
@@ -254,7 +254,7 @@ namespace Model
      * repository that links to the cache. The path can be in one of two formats:</p>
      * <ul> <li> <p>If you are not using the <code>DataRepositorySubdirectories</code>
      * parameter, the path is to an NFS Export directory (or one of its subdirectories)
-     * in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore
+     * in the format <code>nfs://nfs-domain-name/exportpath</code>. You can therefore
      * link a single NFS Export to a single data repository association.</p> </li> <li>
      * <p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the
      * path is the domain name of the NFS file system in the format
@@ -271,7 +271,7 @@ namespace Model
      * repository that links to the cache. The path can be in one of two formats:</p>
      * <ul> <li> <p>If you are not using the <code>DataRepositorySubdirectories</code>
      * parameter, the path is to an NFS Export directory (or one of its subdirectories)
-     * in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore
+     * in the format <code>nfs://nfs-domain-name/exportpath</code>. You can therefore
      * link a single NFS Export to a single data repository association.</p> </li> <li>
      * <p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the
      * path is the domain name of the NFS file system in the format
@@ -288,7 +288,7 @@ namespace Model
      * repository that links to the cache. The path can be in one of two formats:</p>
      * <ul> <li> <p>If you are not using the <code>DataRepositorySubdirectories</code>
      * parameter, the path is to an NFS Export directory (or one of its subdirectories)
-     * in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore
+     * in the format <code>nfs://nfs-domain-name/exportpath</code>. You can therefore
      * link a single NFS Export to a single data repository association.</p> </li> <li>
      * <p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the
      * path is the domain name of the NFS file system in the format
@@ -305,7 +305,7 @@ namespace Model
      * repository that links to the cache. The path can be in one of two formats:</p>
      * <ul> <li> <p>If you are not using the <code>DataRepositorySubdirectories</code>
      * parameter, the path is to an NFS Export directory (or one of its subdirectories)
-     * in the format <code>nsf://nfs-domain-name/exportpath</code>. You can therefore
+     * in the format <code>nfs://nfs-domain-name/exportpath</code>. You can therefore
      * link a single NFS Export to a single data repository association.</p> </li> <li>
      * <p>If you are using the <code>DataRepositorySubdirectories</code> parameter, the
      * path is the domain name of the NFS file system in the format

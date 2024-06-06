@@ -200,32 +200,56 @@ namespace Model
 
 
     /**
-     * <p>Specifies the size of the gateway's metadata cache.</p>
+     * <p>Specifies the size of the gateway's metadata cache. This setting impacts
+     * gateway performance and hardware recommendations. For more information, see <a
+     * href="https://docs.aws.amazon.com/filegateway/latest/files3/performance-multiple-file-shares.html">Performance
+     * guidance for gateways with multiple file shares</a> in the <i>Amazon S3 File
+     * Gateway User Guide</i>.</p>
      */
     inline const GatewayCapacity& GetGatewayCapacity() const{ return m_gatewayCapacity; }
 
     /**
-     * <p>Specifies the size of the gateway's metadata cache.</p>
+     * <p>Specifies the size of the gateway's metadata cache. This setting impacts
+     * gateway performance and hardware recommendations. For more information, see <a
+     * href="https://docs.aws.amazon.com/filegateway/latest/files3/performance-multiple-file-shares.html">Performance
+     * guidance for gateways with multiple file shares</a> in the <i>Amazon S3 File
+     * Gateway User Guide</i>.</p>
      */
     inline bool GatewayCapacityHasBeenSet() const { return m_gatewayCapacityHasBeenSet; }
 
     /**
-     * <p>Specifies the size of the gateway's metadata cache.</p>
+     * <p>Specifies the size of the gateway's metadata cache. This setting impacts
+     * gateway performance and hardware recommendations. For more information, see <a
+     * href="https://docs.aws.amazon.com/filegateway/latest/files3/performance-multiple-file-shares.html">Performance
+     * guidance for gateways with multiple file shares</a> in the <i>Amazon S3 File
+     * Gateway User Guide</i>.</p>
      */
     inline void SetGatewayCapacity(const GatewayCapacity& value) { m_gatewayCapacityHasBeenSet = true; m_gatewayCapacity = value; }
 
     /**
-     * <p>Specifies the size of the gateway's metadata cache.</p>
+     * <p>Specifies the size of the gateway's metadata cache. This setting impacts
+     * gateway performance and hardware recommendations. For more information, see <a
+     * href="https://docs.aws.amazon.com/filegateway/latest/files3/performance-multiple-file-shares.html">Performance
+     * guidance for gateways with multiple file shares</a> in the <i>Amazon S3 File
+     * Gateway User Guide</i>.</p>
      */
     inline void SetGatewayCapacity(GatewayCapacity&& value) { m_gatewayCapacityHasBeenSet = true; m_gatewayCapacity = std::move(value); }
 
     /**
-     * <p>Specifies the size of the gateway's metadata cache.</p>
+     * <p>Specifies the size of the gateway's metadata cache. This setting impacts
+     * gateway performance and hardware recommendations. For more information, see <a
+     * href="https://docs.aws.amazon.com/filegateway/latest/files3/performance-multiple-file-shares.html">Performance
+     * guidance for gateways with multiple file shares</a> in the <i>Amazon S3 File
+     * Gateway User Guide</i>.</p>
      */
     inline UpdateGatewayInformationRequest& WithGatewayCapacity(const GatewayCapacity& value) { SetGatewayCapacity(value); return *this;}
 
     /**
-     * <p>Specifies the size of the gateway's metadata cache.</p>
+     * <p>Specifies the size of the gateway's metadata cache. This setting impacts
+     * gateway performance and hardware recommendations. For more information, see <a
+     * href="https://docs.aws.amazon.com/filegateway/latest/files3/performance-multiple-file-shares.html">Performance
+     * guidance for gateways with multiple file shares</a> in the <i>Amazon S3 File
+     * Gateway User Guide</i>.</p>
      */
     inline UpdateGatewayInformationRequest& WithGatewayCapacity(GatewayCapacity&& value) { SetGatewayCapacity(std::move(value)); return *this;}
 

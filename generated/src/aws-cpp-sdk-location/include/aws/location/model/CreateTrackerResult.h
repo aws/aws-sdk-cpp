@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/location/LocationService_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -34,39 +34,39 @@ namespace Model
 
 
     /**
-     * <p>The timestamp for when the tracker resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     * <p>The name of the tracker resource.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+    inline const Aws::String& GetTrackerName() const{ return m_trackerName; }
 
     /**
-     * <p>The timestamp for when the tracker resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     * <p>The name of the tracker resource.</p>
      */
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTime = value; }
+    inline void SetTrackerName(const Aws::String& value) { m_trackerName = value; }
 
     /**
-     * <p>The timestamp for when the tracker resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     * <p>The name of the tracker resource.</p>
      */
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTime = std::move(value); }
+    inline void SetTrackerName(Aws::String&& value) { m_trackerName = std::move(value); }
 
     /**
-     * <p>The timestamp for when the tracker resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     * <p>The name of the tracker resource.</p>
      */
-    inline CreateTrackerResult& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
+    inline void SetTrackerName(const char* value) { m_trackerName.assign(value); }
 
     /**
-     * <p>The timestamp for when the tracker resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     * <p>The name of the tracker resource.</p>
      */
-    inline CreateTrackerResult& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    inline CreateTrackerResult& WithTrackerName(const Aws::String& value) { SetTrackerName(value); return *this;}
+
+    /**
+     * <p>The name of the tracker resource.</p>
+     */
+    inline CreateTrackerResult& WithTrackerName(Aws::String&& value) { SetTrackerName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the tracker resource.</p>
+     */
+    inline CreateTrackerResult& WithTrackerName(const char* value) { SetTrackerName(value); return *this;}
 
 
     /**
@@ -127,39 +127,39 @@ namespace Model
 
 
     /**
-     * <p>The name of the tracker resource.</p>
+     * <p>The timestamp for when the tracker resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
-    inline const Aws::String& GetTrackerName() const{ return m_trackerName; }
+    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
 
     /**
-     * <p>The name of the tracker resource.</p>
+     * <p>The timestamp for when the tracker resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
-    inline void SetTrackerName(const Aws::String& value) { m_trackerName = value; }
+    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTime = value; }
 
     /**
-     * <p>The name of the tracker resource.</p>
+     * <p>The timestamp for when the tracker resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
-    inline void SetTrackerName(Aws::String&& value) { m_trackerName = std::move(value); }
+    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTime = std::move(value); }
 
     /**
-     * <p>The name of the tracker resource.</p>
+     * <p>The timestamp for when the tracker resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
-    inline void SetTrackerName(const char* value) { m_trackerName.assign(value); }
+    inline CreateTrackerResult& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
 
     /**
-     * <p>The name of the tracker resource.</p>
+     * <p>The timestamp for when the tracker resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
-    inline CreateTrackerResult& WithTrackerName(const Aws::String& value) { SetTrackerName(value); return *this;}
-
-    /**
-     * <p>The name of the tracker resource.</p>
-     */
-    inline CreateTrackerResult& WithTrackerName(Aws::String&& value) { SetTrackerName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the tracker resource.</p>
-     */
-    inline CreateTrackerResult& WithTrackerName(const char* value) { SetTrackerName(value); return *this;}
+    inline CreateTrackerResult& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
 
 
     
@@ -185,11 +185,11 @@ namespace Model
 
   private:
 
-    Aws::Utils::DateTime m_createTime;
+    Aws::String m_trackerName;
 
     Aws::String m_trackerArn;
 
-    Aws::String m_trackerName;
+    Aws::Utils::DateTime m_createTime;
 
     Aws::String m_requestId;
   };

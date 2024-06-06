@@ -13,8 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 GetDevicePositionRequest::GetDevicePositionRequest() : 
-    m_deviceIdHasBeenSet(false),
-    m_trackerNameHasBeenSet(false)
+    m_trackerNameHasBeenSet(false),
+    m_deviceIdHasBeenSet(false)
 {
 }
 

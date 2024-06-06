@@ -33,6 +33,55 @@ namespace Model
 
 
     /**
+     * <p>The tracker resource whose associated geofence collections you want to
+     * list.</p>
+     */
+    inline const Aws::String& GetTrackerName() const{ return m_trackerName; }
+
+    /**
+     * <p>The tracker resource whose associated geofence collections you want to
+     * list.</p>
+     */
+    inline bool TrackerNameHasBeenSet() const { return m_trackerNameHasBeenSet; }
+
+    /**
+     * <p>The tracker resource whose associated geofence collections you want to
+     * list.</p>
+     */
+    inline void SetTrackerName(const Aws::String& value) { m_trackerNameHasBeenSet = true; m_trackerName = value; }
+
+    /**
+     * <p>The tracker resource whose associated geofence collections you want to
+     * list.</p>
+     */
+    inline void SetTrackerName(Aws::String&& value) { m_trackerNameHasBeenSet = true; m_trackerName = std::move(value); }
+
+    /**
+     * <p>The tracker resource whose associated geofence collections you want to
+     * list.</p>
+     */
+    inline void SetTrackerName(const char* value) { m_trackerNameHasBeenSet = true; m_trackerName.assign(value); }
+
+    /**
+     * <p>The tracker resource whose associated geofence collections you want to
+     * list.</p>
+     */
+    inline ListTrackerConsumersRequest& WithTrackerName(const Aws::String& value) { SetTrackerName(value); return *this;}
+
+    /**
+     * <p>The tracker resource whose associated geofence collections you want to
+     * list.</p>
+     */
+    inline ListTrackerConsumersRequest& WithTrackerName(Aws::String&& value) { SetTrackerName(std::move(value)); return *this;}
+
+    /**
+     * <p>The tracker resource whose associated geofence collections you want to
+     * list.</p>
+     */
+    inline ListTrackerConsumersRequest& WithTrackerName(const char* value) { SetTrackerName(value); return *this;}
+
+
+    /**
      * <p>An optional limit for the number of resources returned in a single call. </p>
      * <p>Default value: <code>100</code> </p>
      */
@@ -113,65 +162,16 @@ namespace Model
      */
     inline ListTrackerConsumersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
-
-    /**
-     * <p>The tracker resource whose associated geofence collections you want to
-     * list.</p>
-     */
-    inline const Aws::String& GetTrackerName() const{ return m_trackerName; }
-
-    /**
-     * <p>The tracker resource whose associated geofence collections you want to
-     * list.</p>
-     */
-    inline bool TrackerNameHasBeenSet() const { return m_trackerNameHasBeenSet; }
-
-    /**
-     * <p>The tracker resource whose associated geofence collections you want to
-     * list.</p>
-     */
-    inline void SetTrackerName(const Aws::String& value) { m_trackerNameHasBeenSet = true; m_trackerName = value; }
-
-    /**
-     * <p>The tracker resource whose associated geofence collections you want to
-     * list.</p>
-     */
-    inline void SetTrackerName(Aws::String&& value) { m_trackerNameHasBeenSet = true; m_trackerName = std::move(value); }
-
-    /**
-     * <p>The tracker resource whose associated geofence collections you want to
-     * list.</p>
-     */
-    inline void SetTrackerName(const char* value) { m_trackerNameHasBeenSet = true; m_trackerName.assign(value); }
-
-    /**
-     * <p>The tracker resource whose associated geofence collections you want to
-     * list.</p>
-     */
-    inline ListTrackerConsumersRequest& WithTrackerName(const Aws::String& value) { SetTrackerName(value); return *this;}
-
-    /**
-     * <p>The tracker resource whose associated geofence collections you want to
-     * list.</p>
-     */
-    inline ListTrackerConsumersRequest& WithTrackerName(Aws::String&& value) { SetTrackerName(std::move(value)); return *this;}
-
-    /**
-     * <p>The tracker resource whose associated geofence collections you want to
-     * list.</p>
-     */
-    inline ListTrackerConsumersRequest& WithTrackerName(const char* value) { SetTrackerName(value); return *this;}
-
   private:
+
+    Aws::String m_trackerName;
+    bool m_trackerNameHasBeenSet = false;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
-
-    Aws::String m_trackerName;
-    bool m_trackerNameHasBeenSet = false;
   };
 
 } // namespace Model

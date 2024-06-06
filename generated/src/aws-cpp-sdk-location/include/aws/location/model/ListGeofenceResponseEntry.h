@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/location/LocationService_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/location/model/GeofenceGeometry.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -27,8 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains a list of geofences stored in a given geofence
-   * collection.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains a list of geofences stored in a given geofence collection.</p>
+   *  <p>The returned geometry will always match the geometry format used when
+   * the geofence was created.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListGeofenceResponseEntry">AWS
    * API Reference</a></p>
    */
@@ -39,49 +40,6 @@ namespace Model
     AWS_LOCATIONSERVICE_API ListGeofenceResponseEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API ListGeofenceResponseEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The timestamp for when the geofence was stored in a geofence collection in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-     */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
-
-    /**
-     * <p>The timestamp for when the geofence was stored in a geofence collection in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-     */
-    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
-
-    /**
-     * <p>The timestamp for when the geofence was stored in a geofence collection in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-     */
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
-
-    /**
-     * <p>The timestamp for when the geofence was stored in a geofence collection in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-     */
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
-
-    /**
-     * <p>The timestamp for when the geofence was stored in a geofence collection in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-     */
-    inline ListGeofenceResponseEntry& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
-
-    /**
-     * <p>The timestamp for when the geofence was stored in a geofence collection in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-     */
-    inline ListGeofenceResponseEntry& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
 
 
     /**
@@ -123,98 +81,6 @@ namespace Model
      * <p>The geofence identifier.</p>
      */
     inline ListGeofenceResponseEntry& WithGeofenceId(const char* value) { SetGeofenceId(value); return *this;}
-
-
-    /**
-     * <p>User defined properties of the geofence. A property is a key-value pair
-     * stored with the geofence and added to any geofence event triggered with that
-     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
-     */
-    inline const Aws::Map<Aws::String, Aws::String>& GetGeofenceProperties() const{ return m_geofenceProperties; }
-
-    /**
-     * <p>User defined properties of the geofence. A property is a key-value pair
-     * stored with the geofence and added to any geofence event triggered with that
-     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
-     */
-    inline bool GeofencePropertiesHasBeenSet() const { return m_geofencePropertiesHasBeenSet; }
-
-    /**
-     * <p>User defined properties of the geofence. A property is a key-value pair
-     * stored with the geofence and added to any geofence event triggered with that
-     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
-     */
-    inline void SetGeofenceProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties = value; }
-
-    /**
-     * <p>User defined properties of the geofence. A property is a key-value pair
-     * stored with the geofence and added to any geofence event triggered with that
-     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
-     */
-    inline void SetGeofenceProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties = std::move(value); }
-
-    /**
-     * <p>User defined properties of the geofence. A property is a key-value pair
-     * stored with the geofence and added to any geofence event triggered with that
-     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
-     */
-    inline ListGeofenceResponseEntry& WithGeofenceProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetGeofenceProperties(value); return *this;}
-
-    /**
-     * <p>User defined properties of the geofence. A property is a key-value pair
-     * stored with the geofence and added to any geofence event triggered with that
-     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
-     */
-    inline ListGeofenceResponseEntry& WithGeofenceProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetGeofenceProperties(std::move(value)); return *this;}
-
-    /**
-     * <p>User defined properties of the geofence. A property is a key-value pair
-     * stored with the geofence and added to any geofence event triggered with that
-     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
-     */
-    inline ListGeofenceResponseEntry& AddGeofenceProperties(const Aws::String& key, const Aws::String& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(key, value); return *this; }
-
-    /**
-     * <p>User defined properties of the geofence. A property is a key-value pair
-     * stored with the geofence and added to any geofence event triggered with that
-     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
-     */
-    inline ListGeofenceResponseEntry& AddGeofenceProperties(Aws::String&& key, const Aws::String& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>User defined properties of the geofence. A property is a key-value pair
-     * stored with the geofence and added to any geofence event triggered with that
-     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
-     */
-    inline ListGeofenceResponseEntry& AddGeofenceProperties(const Aws::String& key, Aws::String&& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>User defined properties of the geofence. A property is a key-value pair
-     * stored with the geofence and added to any geofence event triggered with that
-     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
-     */
-    inline ListGeofenceResponseEntry& AddGeofenceProperties(Aws::String&& key, Aws::String&& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>User defined properties of the geofence. A property is a key-value pair
-     * stored with the geofence and added to any geofence event triggered with that
-     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
-     */
-    inline ListGeofenceResponseEntry& AddGeofenceProperties(const char* key, Aws::String&& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>User defined properties of the geofence. A property is a key-value pair
-     * stored with the geofence and added to any geofence event triggered with that
-     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
-     */
-    inline ListGeofenceResponseEntry& AddGeofenceProperties(Aws::String&& key, const char* value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>User defined properties of the geofence. A property is a key-value pair
-     * stored with the geofence and added to any geofence event triggered with that
-     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
-     */
-    inline ListGeofenceResponseEntry& AddGeofenceProperties(const char* key, const char* value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(key, value); return *this; }
 
 
     /**
@@ -346,6 +212,49 @@ namespace Model
 
 
     /**
+     * <p>The timestamp for when the geofence was stored in a geofence collection in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+     */
+    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+
+    /**
+     * <p>The timestamp for when the geofence was stored in a geofence collection in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+     */
+    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
+
+    /**
+     * <p>The timestamp for when the geofence was stored in a geofence collection in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+     */
+    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+
+    /**
+     * <p>The timestamp for when the geofence was stored in a geofence collection in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+     */
+    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
+
+    /**
+     * <p>The timestamp for when the geofence was stored in a geofence collection in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+     */
+    inline ListGeofenceResponseEntry& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
+
+    /**
+     * <p>The timestamp for when the geofence was stored in a geofence collection in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+     */
+    inline ListGeofenceResponseEntry& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+
+
+    /**
      * <p>The timestamp for when the geofence was last updated in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
@@ -387,16 +296,102 @@ namespace Model
      */
     inline ListGeofenceResponseEntry& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
 
-  private:
 
-    Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet = false;
+    /**
+     * <p>User defined properties of the geofence. A property is a key-value pair
+     * stored with the geofence and added to any geofence event triggered with that
+     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetGeofenceProperties() const{ return m_geofenceProperties; }
+
+    /**
+     * <p>User defined properties of the geofence. A property is a key-value pair
+     * stored with the geofence and added to any geofence event triggered with that
+     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
+     */
+    inline bool GeofencePropertiesHasBeenSet() const { return m_geofencePropertiesHasBeenSet; }
+
+    /**
+     * <p>User defined properties of the geofence. A property is a key-value pair
+     * stored with the geofence and added to any geofence event triggered with that
+     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
+     */
+    inline void SetGeofenceProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties = value; }
+
+    /**
+     * <p>User defined properties of the geofence. A property is a key-value pair
+     * stored with the geofence and added to any geofence event triggered with that
+     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
+     */
+    inline void SetGeofenceProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties = std::move(value); }
+
+    /**
+     * <p>User defined properties of the geofence. A property is a key-value pair
+     * stored with the geofence and added to any geofence event triggered with that
+     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
+     */
+    inline ListGeofenceResponseEntry& WithGeofenceProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetGeofenceProperties(value); return *this;}
+
+    /**
+     * <p>User defined properties of the geofence. A property is a key-value pair
+     * stored with the geofence and added to any geofence event triggered with that
+     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
+     */
+    inline ListGeofenceResponseEntry& WithGeofenceProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetGeofenceProperties(std::move(value)); return *this;}
+
+    /**
+     * <p>User defined properties of the geofence. A property is a key-value pair
+     * stored with the geofence and added to any geofence event triggered with that
+     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
+     */
+    inline ListGeofenceResponseEntry& AddGeofenceProperties(const Aws::String& key, const Aws::String& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(key, value); return *this; }
+
+    /**
+     * <p>User defined properties of the geofence. A property is a key-value pair
+     * stored with the geofence and added to any geofence event triggered with that
+     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
+     */
+    inline ListGeofenceResponseEntry& AddGeofenceProperties(Aws::String&& key, const Aws::String& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>User defined properties of the geofence. A property is a key-value pair
+     * stored with the geofence and added to any geofence event triggered with that
+     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
+     */
+    inline ListGeofenceResponseEntry& AddGeofenceProperties(const Aws::String& key, Aws::String&& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>User defined properties of the geofence. A property is a key-value pair
+     * stored with the geofence and added to any geofence event triggered with that
+     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
+     */
+    inline ListGeofenceResponseEntry& AddGeofenceProperties(Aws::String&& key, Aws::String&& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>User defined properties of the geofence. A property is a key-value pair
+     * stored with the geofence and added to any geofence event triggered with that
+     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
+     */
+    inline ListGeofenceResponseEntry& AddGeofenceProperties(const char* key, Aws::String&& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>User defined properties of the geofence. A property is a key-value pair
+     * stored with the geofence and added to any geofence event triggered with that
+     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
+     */
+    inline ListGeofenceResponseEntry& AddGeofenceProperties(Aws::String&& key, const char* value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>User defined properties of the geofence. A property is a key-value pair
+     * stored with the geofence and added to any geofence event triggered with that
+     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
+     */
+    inline ListGeofenceResponseEntry& AddGeofenceProperties(const char* key, const char* value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(key, value); return *this; }
+
+  private:
 
     Aws::String m_geofenceId;
     bool m_geofenceIdHasBeenSet = false;
-
-    Aws::Map<Aws::String, Aws::String> m_geofenceProperties;
-    bool m_geofencePropertiesHasBeenSet = false;
 
     GeofenceGeometry m_geometry;
     bool m_geometryHasBeenSet = false;
@@ -404,8 +399,14 @@ namespace Model
     Aws::String m_status;
     bool m_statusHasBeenSet = false;
 
+    Aws::Utils::DateTime m_createTime;
+    bool m_createTimeHasBeenSet = false;
+
     Aws::Utils::DateTime m_updateTime;
     bool m_updateTimeHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_geofenceProperties;
+    bool m_geofencePropertiesHasBeenSet = false;
   };
 
 } // namespace Model

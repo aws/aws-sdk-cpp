@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/location/LocationService_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/location/model/SearchPlaceIndexForSuggestionsSummary.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/location/model/SearchForSuggestionsResult.h>
 #include <utility>
@@ -33,42 +33,6 @@ namespace Model
     AWS_LOCATIONSERVICE_API SearchPlaceIndexForSuggestionsResult();
     AWS_LOCATIONSERVICE_API SearchPlaceIndexForSuggestionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOCATIONSERVICE_API SearchPlaceIndexForSuggestionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>A list of place suggestions that best match the search text.</p>
-     */
-    inline const Aws::Vector<SearchForSuggestionsResult>& GetResults() const{ return m_results; }
-
-    /**
-     * <p>A list of place suggestions that best match the search text.</p>
-     */
-    inline void SetResults(const Aws::Vector<SearchForSuggestionsResult>& value) { m_results = value; }
-
-    /**
-     * <p>A list of place suggestions that best match the search text.</p>
-     */
-    inline void SetResults(Aws::Vector<SearchForSuggestionsResult>&& value) { m_results = std::move(value); }
-
-    /**
-     * <p>A list of place suggestions that best match the search text.</p>
-     */
-    inline SearchPlaceIndexForSuggestionsResult& WithResults(const Aws::Vector<SearchForSuggestionsResult>& value) { SetResults(value); return *this;}
-
-    /**
-     * <p>A list of place suggestions that best match the search text.</p>
-     */
-    inline SearchPlaceIndexForSuggestionsResult& WithResults(Aws::Vector<SearchForSuggestionsResult>&& value) { SetResults(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of place suggestions that best match the search text.</p>
-     */
-    inline SearchPlaceIndexForSuggestionsResult& AddResults(const SearchForSuggestionsResult& value) { m_results.push_back(value); return *this; }
-
-    /**
-     * <p>A list of place suggestions that best match the search text.</p>
-     */
-    inline SearchPlaceIndexForSuggestionsResult& AddResults(SearchForSuggestionsResult&& value) { m_results.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -117,6 +81,42 @@ namespace Model
     inline SearchPlaceIndexForSuggestionsResult& WithSummary(SearchPlaceIndexForSuggestionsSummary&& value) { SetSummary(std::move(value)); return *this;}
 
 
+    /**
+     * <p>A list of place suggestions that best match the search text.</p>
+     */
+    inline const Aws::Vector<SearchForSuggestionsResult>& GetResults() const{ return m_results; }
+
+    /**
+     * <p>A list of place suggestions that best match the search text.</p>
+     */
+    inline void SetResults(const Aws::Vector<SearchForSuggestionsResult>& value) { m_results = value; }
+
+    /**
+     * <p>A list of place suggestions that best match the search text.</p>
+     */
+    inline void SetResults(Aws::Vector<SearchForSuggestionsResult>&& value) { m_results = std::move(value); }
+
+    /**
+     * <p>A list of place suggestions that best match the search text.</p>
+     */
+    inline SearchPlaceIndexForSuggestionsResult& WithResults(const Aws::Vector<SearchForSuggestionsResult>& value) { SetResults(value); return *this;}
+
+    /**
+     * <p>A list of place suggestions that best match the search text.</p>
+     */
+    inline SearchPlaceIndexForSuggestionsResult& WithResults(Aws::Vector<SearchForSuggestionsResult>&& value) { SetResults(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of place suggestions that best match the search text.</p>
+     */
+    inline SearchPlaceIndexForSuggestionsResult& AddResults(const SearchForSuggestionsResult& value) { m_results.push_back(value); return *this; }
+
+    /**
+     * <p>A list of place suggestions that best match the search text.</p>
+     */
+    inline SearchPlaceIndexForSuggestionsResult& AddResults(SearchForSuggestionsResult&& value) { m_results.push_back(std::move(value)); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -140,9 +140,9 @@ namespace Model
 
   private:
 
-    Aws::Vector<SearchForSuggestionsResult> m_results;
-
     SearchPlaceIndexForSuggestionsSummary m_summary;
+
+    Aws::Vector<SearchForSuggestionsResult> m_results;
 
     Aws::String m_requestId;
   };

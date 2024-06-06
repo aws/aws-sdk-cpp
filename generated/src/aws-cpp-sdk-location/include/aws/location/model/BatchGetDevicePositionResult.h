@@ -7,8 +7,8 @@
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/location/model/DevicePosition.h>
 #include <aws/location/model/BatchGetDevicePositionError.h>
+#include <aws/location/model/DevicePosition.h>
 #include <utility>
 
 namespace Aws
@@ -33,49 +33,6 @@ namespace Model
     AWS_LOCATIONSERVICE_API BatchGetDevicePositionResult();
     AWS_LOCATIONSERVICE_API BatchGetDevicePositionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOCATIONSERVICE_API BatchGetDevicePositionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>Contains device position details such as the device ID, position, and
-     * timestamps for when the position was received and sampled.</p>
-     */
-    inline const Aws::Vector<DevicePosition>& GetDevicePositions() const{ return m_devicePositions; }
-
-    /**
-     * <p>Contains device position details such as the device ID, position, and
-     * timestamps for when the position was received and sampled.</p>
-     */
-    inline void SetDevicePositions(const Aws::Vector<DevicePosition>& value) { m_devicePositions = value; }
-
-    /**
-     * <p>Contains device position details such as the device ID, position, and
-     * timestamps for when the position was received and sampled.</p>
-     */
-    inline void SetDevicePositions(Aws::Vector<DevicePosition>&& value) { m_devicePositions = std::move(value); }
-
-    /**
-     * <p>Contains device position details such as the device ID, position, and
-     * timestamps for when the position was received and sampled.</p>
-     */
-    inline BatchGetDevicePositionResult& WithDevicePositions(const Aws::Vector<DevicePosition>& value) { SetDevicePositions(value); return *this;}
-
-    /**
-     * <p>Contains device position details such as the device ID, position, and
-     * timestamps for when the position was received and sampled.</p>
-     */
-    inline BatchGetDevicePositionResult& WithDevicePositions(Aws::Vector<DevicePosition>&& value) { SetDevicePositions(std::move(value)); return *this;}
-
-    /**
-     * <p>Contains device position details such as the device ID, position, and
-     * timestamps for when the position was received and sampled.</p>
-     */
-    inline BatchGetDevicePositionResult& AddDevicePositions(const DevicePosition& value) { m_devicePositions.push_back(value); return *this; }
-
-    /**
-     * <p>Contains device position details such as the device ID, position, and
-     * timestamps for when the position was received and sampled.</p>
-     */
-    inline BatchGetDevicePositionResult& AddDevicePositions(DevicePosition&& value) { m_devicePositions.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -121,6 +78,49 @@ namespace Model
     inline BatchGetDevicePositionResult& AddErrors(BatchGetDevicePositionError&& value) { m_errors.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>Contains device position details such as the device ID, position, and
+     * timestamps for when the position was received and sampled.</p>
+     */
+    inline const Aws::Vector<DevicePosition>& GetDevicePositions() const{ return m_devicePositions; }
+
+    /**
+     * <p>Contains device position details such as the device ID, position, and
+     * timestamps for when the position was received and sampled.</p>
+     */
+    inline void SetDevicePositions(const Aws::Vector<DevicePosition>& value) { m_devicePositions = value; }
+
+    /**
+     * <p>Contains device position details such as the device ID, position, and
+     * timestamps for when the position was received and sampled.</p>
+     */
+    inline void SetDevicePositions(Aws::Vector<DevicePosition>&& value) { m_devicePositions = std::move(value); }
+
+    /**
+     * <p>Contains device position details such as the device ID, position, and
+     * timestamps for when the position was received and sampled.</p>
+     */
+    inline BatchGetDevicePositionResult& WithDevicePositions(const Aws::Vector<DevicePosition>& value) { SetDevicePositions(value); return *this;}
+
+    /**
+     * <p>Contains device position details such as the device ID, position, and
+     * timestamps for when the position was received and sampled.</p>
+     */
+    inline BatchGetDevicePositionResult& WithDevicePositions(Aws::Vector<DevicePosition>&& value) { SetDevicePositions(std::move(value)); return *this;}
+
+    /**
+     * <p>Contains device position details such as the device ID, position, and
+     * timestamps for when the position was received and sampled.</p>
+     */
+    inline BatchGetDevicePositionResult& AddDevicePositions(const DevicePosition& value) { m_devicePositions.push_back(value); return *this; }
+
+    /**
+     * <p>Contains device position details such as the device ID, position, and
+     * timestamps for when the position was received and sampled.</p>
+     */
+    inline BatchGetDevicePositionResult& AddDevicePositions(DevicePosition&& value) { m_devicePositions.push_back(std::move(value)); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -144,9 +144,9 @@ namespace Model
 
   private:
 
-    Aws::Vector<DevicePosition> m_devicePositions;
-
     Aws::Vector<BatchGetDevicePositionError> m_errors;
+
+    Aws::Vector<DevicePosition> m_devicePositions;
 
     Aws::String m_requestId;
   };

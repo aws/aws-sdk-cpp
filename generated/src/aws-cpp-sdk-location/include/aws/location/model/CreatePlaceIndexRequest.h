@@ -35,6 +35,79 @@ namespace Model
 
 
     /**
+     * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
+     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
+     * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
+     * resource name.</p> </li> <li> <p>No spaces allowed. For example,
+     * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
+     */
+    inline const Aws::String& GetIndexName() const{ return m_indexName; }
+
+    /**
+     * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
+     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
+     * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
+     * resource name.</p> </li> <li> <p>No spaces allowed. For example,
+     * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
+     */
+    inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
+
+    /**
+     * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
+     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
+     * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
+     * resource name.</p> </li> <li> <p>No spaces allowed. For example,
+     * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
+     */
+    inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
+
+    /**
+     * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
+     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
+     * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
+     * resource name.</p> </li> <li> <p>No spaces allowed. For example,
+     * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
+     */
+    inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
+
+    /**
+     * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
+     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
+     * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
+     * resource name.</p> </li> <li> <p>No spaces allowed. For example,
+     * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
+     */
+    inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
+
+    /**
+     * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
+     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
+     * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
+     * resource name.</p> </li> <li> <p>No spaces allowed. For example,
+     * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
+     */
+    inline CreatePlaceIndexRequest& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
+
+    /**
+     * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
+     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
+     * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
+     * resource name.</p> </li> <li> <p>No spaces allowed. For example,
+     * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
+     */
+    inline CreatePlaceIndexRequest& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
+     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
+     * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
+     * resource name.</p> </li> <li> <p>No spaces allowed. For example,
+     * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
+     */
+    inline CreatePlaceIndexRequest& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+
+
+    /**
      * <p>Specifies the geospatial data provider for the new place index.</p> 
      * <p>This field is case-sensitive. Enter the valid values as shown. For example,
      * entering <code>HERE</code> returns an error.</p>  <p>Valid values
@@ -292,37 +365,6 @@ namespace Model
 
 
     /**
-     * <p>Specifies the data storage option requesting Places.</p>
-     */
-    inline const DataSourceConfiguration& GetDataSourceConfiguration() const{ return m_dataSourceConfiguration; }
-
-    /**
-     * <p>Specifies the data storage option requesting Places.</p>
-     */
-    inline bool DataSourceConfigurationHasBeenSet() const { return m_dataSourceConfigurationHasBeenSet; }
-
-    /**
-     * <p>Specifies the data storage option requesting Places.</p>
-     */
-    inline void SetDataSourceConfiguration(const DataSourceConfiguration& value) { m_dataSourceConfigurationHasBeenSet = true; m_dataSourceConfiguration = value; }
-
-    /**
-     * <p>Specifies the data storage option requesting Places.</p>
-     */
-    inline void SetDataSourceConfiguration(DataSourceConfiguration&& value) { m_dataSourceConfigurationHasBeenSet = true; m_dataSourceConfiguration = std::move(value); }
-
-    /**
-     * <p>Specifies the data storage option requesting Places.</p>
-     */
-    inline CreatePlaceIndexRequest& WithDataSourceConfiguration(const DataSourceConfiguration& value) { SetDataSourceConfiguration(value); return *this;}
-
-    /**
-     * <p>Specifies the data storage option requesting Places.</p>
-     */
-    inline CreatePlaceIndexRequest& WithDataSourceConfiguration(DataSourceConfiguration&& value) { SetDataSourceConfiguration(std::move(value)); return *this;}
-
-
-    /**
      * <p>The optional description for the place index resource.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -364,76 +406,34 @@ namespace Model
 
 
     /**
-     * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
-     * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
-     * resource name.</p> </li> <li> <p>No spaces allowed. For example,
-     * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
+     * <p>Specifies the data storage option requesting Places.</p>
      */
-    inline const Aws::String& GetIndexName() const{ return m_indexName; }
+    inline const DataSourceConfiguration& GetDataSourceConfiguration() const{ return m_dataSourceConfiguration; }
 
     /**
-     * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
-     * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
-     * resource name.</p> </li> <li> <p>No spaces allowed. For example,
-     * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
+     * <p>Specifies the data storage option requesting Places.</p>
      */
-    inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
+    inline bool DataSourceConfigurationHasBeenSet() const { return m_dataSourceConfigurationHasBeenSet; }
 
     /**
-     * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
-     * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
-     * resource name.</p> </li> <li> <p>No spaces allowed. For example,
-     * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
+     * <p>Specifies the data storage option requesting Places.</p>
      */
-    inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
+    inline void SetDataSourceConfiguration(const DataSourceConfiguration& value) { m_dataSourceConfigurationHasBeenSet = true; m_dataSourceConfiguration = value; }
 
     /**
-     * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
-     * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
-     * resource name.</p> </li> <li> <p>No spaces allowed. For example,
-     * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
+     * <p>Specifies the data storage option requesting Places.</p>
      */
-    inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
+    inline void SetDataSourceConfiguration(DataSourceConfiguration&& value) { m_dataSourceConfigurationHasBeenSet = true; m_dataSourceConfiguration = std::move(value); }
 
     /**
-     * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
-     * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
-     * resource name.</p> </li> <li> <p>No spaces allowed. For example,
-     * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
+     * <p>Specifies the data storage option requesting Places.</p>
      */
-    inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
+    inline CreatePlaceIndexRequest& WithDataSourceConfiguration(const DataSourceConfiguration& value) { SetDataSourceConfiguration(value); return *this;}
 
     /**
-     * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
-     * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
-     * resource name.</p> </li> <li> <p>No spaces allowed. For example,
-     * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
+     * <p>Specifies the data storage option requesting Places.</p>
      */
-    inline CreatePlaceIndexRequest& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
-
-    /**
-     * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
-     * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
-     * resource name.</p> </li> <li> <p>No spaces allowed. For example,
-     * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
-     */
-    inline CreatePlaceIndexRequest& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
-     * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
-     * resource name.</p> </li> <li> <p>No spaces allowed. For example,
-     * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
-     */
-    inline CreatePlaceIndexRequest& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+    inline CreatePlaceIndexRequest& WithDataSourceConfiguration(DataSourceConfiguration&& value) { SetDataSourceConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -607,17 +607,17 @@ namespace Model
 
   private:
 
+    Aws::String m_indexName;
+    bool m_indexNameHasBeenSet = false;
+
     Aws::String m_dataSource;
     bool m_dataSourceHasBeenSet = false;
-
-    DataSourceConfiguration m_dataSourceConfiguration;
-    bool m_dataSourceConfigurationHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Aws::String m_indexName;
-    bool m_indexNameHasBeenSet = false;
+    DataSourceConfiguration m_dataSourceConfiguration;
+    bool m_dataSourceConfigurationHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

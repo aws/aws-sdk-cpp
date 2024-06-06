@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/location/LocationService_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -34,39 +34,39 @@ namespace Model
 
 
     /**
-     * <p>The timestamp for when the place index resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     * <p>The name for the place index resource.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+    inline const Aws::String& GetIndexName() const{ return m_indexName; }
 
     /**
-     * <p>The timestamp for when the place index resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     * <p>The name for the place index resource.</p>
      */
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTime = value; }
+    inline void SetIndexName(const Aws::String& value) { m_indexName = value; }
 
     /**
-     * <p>The timestamp for when the place index resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     * <p>The name for the place index resource.</p>
      */
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTime = std::move(value); }
+    inline void SetIndexName(Aws::String&& value) { m_indexName = std::move(value); }
 
     /**
-     * <p>The timestamp for when the place index resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     * <p>The name for the place index resource.</p>
      */
-    inline CreatePlaceIndexResult& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
+    inline void SetIndexName(const char* value) { m_indexName.assign(value); }
 
     /**
-     * <p>The timestamp for when the place index resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     * <p>The name for the place index resource.</p>
      */
-    inline CreatePlaceIndexResult& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    inline CreatePlaceIndexResult& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
+
+    /**
+     * <p>The name for the place index resource.</p>
+     */
+    inline CreatePlaceIndexResult& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name for the place index resource.</p>
+     */
+    inline CreatePlaceIndexResult& WithIndexName(const char* value) { SetIndexName(value); return *this;}
 
 
     /**
@@ -127,39 +127,39 @@ namespace Model
 
 
     /**
-     * <p>The name for the place index resource.</p>
+     * <p>The timestamp for when the place index resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
-    inline const Aws::String& GetIndexName() const{ return m_indexName; }
+    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
 
     /**
-     * <p>The name for the place index resource.</p>
+     * <p>The timestamp for when the place index resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
-    inline void SetIndexName(const Aws::String& value) { m_indexName = value; }
+    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTime = value; }
 
     /**
-     * <p>The name for the place index resource.</p>
+     * <p>The timestamp for when the place index resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
-    inline void SetIndexName(Aws::String&& value) { m_indexName = std::move(value); }
+    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTime = std::move(value); }
 
     /**
-     * <p>The name for the place index resource.</p>
+     * <p>The timestamp for when the place index resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
-    inline void SetIndexName(const char* value) { m_indexName.assign(value); }
+    inline CreatePlaceIndexResult& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
 
     /**
-     * <p>The name for the place index resource.</p>
+     * <p>The timestamp for when the place index resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
-    inline CreatePlaceIndexResult& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
-
-    /**
-     * <p>The name for the place index resource.</p>
-     */
-    inline CreatePlaceIndexResult& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name for the place index resource.</p>
-     */
-    inline CreatePlaceIndexResult& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+    inline CreatePlaceIndexResult& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
 
 
     
@@ -185,11 +185,11 @@ namespace Model
 
   private:
 
-    Aws::Utils::DateTime m_createTime;
+    Aws::String m_indexName;
 
     Aws::String m_indexArn;
 
-    Aws::String m_indexName;
+    Aws::Utils::DateTime m_createTime;
 
     Aws::String m_requestId;
   };

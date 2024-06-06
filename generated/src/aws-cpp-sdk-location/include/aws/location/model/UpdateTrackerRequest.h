@@ -34,6 +34,47 @@ namespace Model
 
 
     /**
+     * <p>The name of the tracker resource to update.</p>
+     */
+    inline const Aws::String& GetTrackerName() const{ return m_trackerName; }
+
+    /**
+     * <p>The name of the tracker resource to update.</p>
+     */
+    inline bool TrackerNameHasBeenSet() const { return m_trackerNameHasBeenSet; }
+
+    /**
+     * <p>The name of the tracker resource to update.</p>
+     */
+    inline void SetTrackerName(const Aws::String& value) { m_trackerNameHasBeenSet = true; m_trackerName = value; }
+
+    /**
+     * <p>The name of the tracker resource to update.</p>
+     */
+    inline void SetTrackerName(Aws::String&& value) { m_trackerNameHasBeenSet = true; m_trackerName = std::move(value); }
+
+    /**
+     * <p>The name of the tracker resource to update.</p>
+     */
+    inline void SetTrackerName(const char* value) { m_trackerNameHasBeenSet = true; m_trackerName.assign(value); }
+
+    /**
+     * <p>The name of the tracker resource to update.</p>
+     */
+    inline UpdateTrackerRequest& WithTrackerName(const Aws::String& value) { SetTrackerName(value); return *this;}
+
+    /**
+     * <p>The name of the tracker resource to update.</p>
+     */
+    inline UpdateTrackerRequest& WithTrackerName(Aws::String&& value) { SetTrackerName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the tracker resource to update.</p>
+     */
+    inline UpdateTrackerRequest& WithTrackerName(const char* value) { SetTrackerName(value); return *this;}
+
+
+    /**
      * <p>Updates the description for the tracker resource.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -72,72 +113,6 @@ namespace Model
      * <p>Updates the description for the tracker resource.</p>
      */
     inline UpdateTrackerRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
-
-
-    /**
-     * <p>Whether to enable position <code>UPDATE</code> events from this tracker to be
-     * sent to EventBridge.</p>  <p>You do not need enable this feature to get
-     * <code>ENTER</code> and <code>EXIT</code> events for geofences with this tracker.
-     * Those events are always sent to EventBridge.</p> 
-     */
-    inline bool GetEventBridgeEnabled() const{ return m_eventBridgeEnabled; }
-
-    /**
-     * <p>Whether to enable position <code>UPDATE</code> events from this tracker to be
-     * sent to EventBridge.</p>  <p>You do not need enable this feature to get
-     * <code>ENTER</code> and <code>EXIT</code> events for geofences with this tracker.
-     * Those events are always sent to EventBridge.</p> 
-     */
-    inline bool EventBridgeEnabledHasBeenSet() const { return m_eventBridgeEnabledHasBeenSet; }
-
-    /**
-     * <p>Whether to enable position <code>UPDATE</code> events from this tracker to be
-     * sent to EventBridge.</p>  <p>You do not need enable this feature to get
-     * <code>ENTER</code> and <code>EXIT</code> events for geofences with this tracker.
-     * Those events are always sent to EventBridge.</p> 
-     */
-    inline void SetEventBridgeEnabled(bool value) { m_eventBridgeEnabledHasBeenSet = true; m_eventBridgeEnabled = value; }
-
-    /**
-     * <p>Whether to enable position <code>UPDATE</code> events from this tracker to be
-     * sent to EventBridge.</p>  <p>You do not need enable this feature to get
-     * <code>ENTER</code> and <code>EXIT</code> events for geofences with this tracker.
-     * Those events are always sent to EventBridge.</p> 
-     */
-    inline UpdateTrackerRequest& WithEventBridgeEnabled(bool value) { SetEventBridgeEnabled(value); return *this;}
-
-
-    /**
-     * <p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
-     * Web Services KMS customer managed key</a>.</p> <p>This parameter is only used if
-     * you are using a KMS customer managed key.</p>
-     */
-    inline bool GetKmsKeyEnableGeospatialQueries() const{ return m_kmsKeyEnableGeospatialQueries; }
-
-    /**
-     * <p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
-     * Web Services KMS customer managed key</a>.</p> <p>This parameter is only used if
-     * you are using a KMS customer managed key.</p>
-     */
-    inline bool KmsKeyEnableGeospatialQueriesHasBeenSet() const { return m_kmsKeyEnableGeospatialQueriesHasBeenSet; }
-
-    /**
-     * <p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
-     * Web Services KMS customer managed key</a>.</p> <p>This parameter is only used if
-     * you are using a KMS customer managed key.</p>
-     */
-    inline void SetKmsKeyEnableGeospatialQueries(bool value) { m_kmsKeyEnableGeospatialQueriesHasBeenSet = true; m_kmsKeyEnableGeospatialQueries = value; }
-
-    /**
-     * <p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
-     * Web Services KMS customer managed key</a>.</p> <p>This parameter is only used if
-     * you are using a KMS customer managed key.</p>
-     */
-    inline UpdateTrackerRequest& WithKmsKeyEnableGeospatialQueries(bool value) { SetKmsKeyEnableGeospatialQueries(value); return *this;}
 
 
     /**
@@ -280,61 +255,86 @@ namespace Model
 
 
     /**
-     * <p>The name of the tracker resource to update.</p>
+     * <p>Whether to enable position <code>UPDATE</code> events from this tracker to be
+     * sent to EventBridge.</p>  <p>You do not need enable this feature to get
+     * <code>ENTER</code> and <code>EXIT</code> events for geofences with this tracker.
+     * Those events are always sent to EventBridge.</p> 
      */
-    inline const Aws::String& GetTrackerName() const{ return m_trackerName; }
+    inline bool GetEventBridgeEnabled() const{ return m_eventBridgeEnabled; }
 
     /**
-     * <p>The name of the tracker resource to update.</p>
+     * <p>Whether to enable position <code>UPDATE</code> events from this tracker to be
+     * sent to EventBridge.</p>  <p>You do not need enable this feature to get
+     * <code>ENTER</code> and <code>EXIT</code> events for geofences with this tracker.
+     * Those events are always sent to EventBridge.</p> 
      */
-    inline bool TrackerNameHasBeenSet() const { return m_trackerNameHasBeenSet; }
+    inline bool EventBridgeEnabledHasBeenSet() const { return m_eventBridgeEnabledHasBeenSet; }
 
     /**
-     * <p>The name of the tracker resource to update.</p>
+     * <p>Whether to enable position <code>UPDATE</code> events from this tracker to be
+     * sent to EventBridge.</p>  <p>You do not need enable this feature to get
+     * <code>ENTER</code> and <code>EXIT</code> events for geofences with this tracker.
+     * Those events are always sent to EventBridge.</p> 
      */
-    inline void SetTrackerName(const Aws::String& value) { m_trackerNameHasBeenSet = true; m_trackerName = value; }
+    inline void SetEventBridgeEnabled(bool value) { m_eventBridgeEnabledHasBeenSet = true; m_eventBridgeEnabled = value; }
 
     /**
-     * <p>The name of the tracker resource to update.</p>
+     * <p>Whether to enable position <code>UPDATE</code> events from this tracker to be
+     * sent to EventBridge.</p>  <p>You do not need enable this feature to get
+     * <code>ENTER</code> and <code>EXIT</code> events for geofences with this tracker.
+     * Those events are always sent to EventBridge.</p> 
      */
-    inline void SetTrackerName(Aws::String&& value) { m_trackerNameHasBeenSet = true; m_trackerName = std::move(value); }
+    inline UpdateTrackerRequest& WithEventBridgeEnabled(bool value) { SetEventBridgeEnabled(value); return *this;}
+
 
     /**
-     * <p>The name of the tracker resource to update.</p>
+     * <p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>.</p> <p>This parameter is only used if
+     * you are using a KMS customer managed key.</p>
      */
-    inline void SetTrackerName(const char* value) { m_trackerNameHasBeenSet = true; m_trackerName.assign(value); }
+    inline bool GetKmsKeyEnableGeospatialQueries() const{ return m_kmsKeyEnableGeospatialQueries; }
 
     /**
-     * <p>The name of the tracker resource to update.</p>
+     * <p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>.</p> <p>This parameter is only used if
+     * you are using a KMS customer managed key.</p>
      */
-    inline UpdateTrackerRequest& WithTrackerName(const Aws::String& value) { SetTrackerName(value); return *this;}
+    inline bool KmsKeyEnableGeospatialQueriesHasBeenSet() const { return m_kmsKeyEnableGeospatialQueriesHasBeenSet; }
 
     /**
-     * <p>The name of the tracker resource to update.</p>
+     * <p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>.</p> <p>This parameter is only used if
+     * you are using a KMS customer managed key.</p>
      */
-    inline UpdateTrackerRequest& WithTrackerName(Aws::String&& value) { SetTrackerName(std::move(value)); return *this;}
+    inline void SetKmsKeyEnableGeospatialQueries(bool value) { m_kmsKeyEnableGeospatialQueriesHasBeenSet = true; m_kmsKeyEnableGeospatialQueries = value; }
 
     /**
-     * <p>The name of the tracker resource to update.</p>
+     * <p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>.</p> <p>This parameter is only used if
+     * you are using a KMS customer managed key.</p>
      */
-    inline UpdateTrackerRequest& WithTrackerName(const char* value) { SetTrackerName(value); return *this;}
+    inline UpdateTrackerRequest& WithKmsKeyEnableGeospatialQueries(bool value) { SetKmsKeyEnableGeospatialQueries(value); return *this;}
 
   private:
 
+    Aws::String m_trackerName;
+    bool m_trackerNameHasBeenSet = false;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    PositionFiltering m_positionFiltering;
+    bool m_positionFilteringHasBeenSet = false;
 
     bool m_eventBridgeEnabled;
     bool m_eventBridgeEnabledHasBeenSet = false;
 
     bool m_kmsKeyEnableGeospatialQueries;
     bool m_kmsKeyEnableGeospatialQueriesHasBeenSet = false;
-
-    PositionFiltering m_positionFiltering;
-    bool m_positionFilteringHasBeenSet = false;
-
-    Aws::String m_trackerName;
-    bool m_trackerNameHasBeenSet = false;
   };
 
 } // namespace Model

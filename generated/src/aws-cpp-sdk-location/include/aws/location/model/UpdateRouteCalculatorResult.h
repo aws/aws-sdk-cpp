@@ -34,6 +34,42 @@ namespace Model
 
 
     /**
+     * <p>The name of the updated route calculator resource.</p>
+     */
+    inline const Aws::String& GetCalculatorName() const{ return m_calculatorName; }
+
+    /**
+     * <p>The name of the updated route calculator resource.</p>
+     */
+    inline void SetCalculatorName(const Aws::String& value) { m_calculatorName = value; }
+
+    /**
+     * <p>The name of the updated route calculator resource.</p>
+     */
+    inline void SetCalculatorName(Aws::String&& value) { m_calculatorName = std::move(value); }
+
+    /**
+     * <p>The name of the updated route calculator resource.</p>
+     */
+    inline void SetCalculatorName(const char* value) { m_calculatorName.assign(value); }
+
+    /**
+     * <p>The name of the updated route calculator resource.</p>
+     */
+    inline UpdateRouteCalculatorResult& WithCalculatorName(const Aws::String& value) { SetCalculatorName(value); return *this;}
+
+    /**
+     * <p>The name of the updated route calculator resource.</p>
+     */
+    inline UpdateRouteCalculatorResult& WithCalculatorName(Aws::String&& value) { SetCalculatorName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the updated route calculator resource.</p>
+     */
+    inline UpdateRouteCalculatorResult& WithCalculatorName(const char* value) { SetCalculatorName(value); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) of the updated route calculator resource. Used
      * to specify a resource across AWS.</p> <ul> <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:route- calculator/ExampleCalculator</code>
@@ -88,42 +124,6 @@ namespace Model
      * </p> </li> </ul>
      */
     inline UpdateRouteCalculatorResult& WithCalculatorArn(const char* value) { SetCalculatorArn(value); return *this;}
-
-
-    /**
-     * <p>The name of the updated route calculator resource.</p>
-     */
-    inline const Aws::String& GetCalculatorName() const{ return m_calculatorName; }
-
-    /**
-     * <p>The name of the updated route calculator resource.</p>
-     */
-    inline void SetCalculatorName(const Aws::String& value) { m_calculatorName = value; }
-
-    /**
-     * <p>The name of the updated route calculator resource.</p>
-     */
-    inline void SetCalculatorName(Aws::String&& value) { m_calculatorName = std::move(value); }
-
-    /**
-     * <p>The name of the updated route calculator resource.</p>
-     */
-    inline void SetCalculatorName(const char* value) { m_calculatorName.assign(value); }
-
-    /**
-     * <p>The name of the updated route calculator resource.</p>
-     */
-    inline UpdateRouteCalculatorResult& WithCalculatorName(const Aws::String& value) { SetCalculatorName(value); return *this;}
-
-    /**
-     * <p>The name of the updated route calculator resource.</p>
-     */
-    inline UpdateRouteCalculatorResult& WithCalculatorName(Aws::String&& value) { SetCalculatorName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the updated route calculator resource.</p>
-     */
-    inline UpdateRouteCalculatorResult& WithCalculatorName(const char* value) { SetCalculatorName(value); return *this;}
 
 
     /**
@@ -185,9 +185,9 @@ namespace Model
 
   private:
 
-    Aws::String m_calculatorArn;
-
     Aws::String m_calculatorName;
+
+    Aws::String m_calculatorArn;
 
     Aws::Utils::DateTime m_updateTime;
 

@@ -29,9 +29,9 @@ CreateMapResult::CreateMapResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 CreateMapResult& CreateMapResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("CreateTime"))
+  if(jsonValue.ValueExists("MapName"))
   {
-    m_createTime = jsonValue.GetString("CreateTime");
+    m_mapName = jsonValue.GetString("MapName");
 
   }
 
@@ -41,9 +41,9 @@ CreateMapResult& CreateMapResult::operator =(const Aws::AmazonWebServiceResult<J
 
   }
 
-  if(jsonValue.ValueExists("MapName"))
+  if(jsonValue.ValueExists("CreateTime"))
   {
-    m_mapName = jsonValue.GetString("MapName");
+    m_createTime = jsonValue.GetString("CreateTime");
 
   }
 

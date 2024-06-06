@@ -29,15 +29,15 @@ UpdatePlaceIndexResult::UpdatePlaceIndexResult(const Aws::AmazonWebServiceResult
 UpdatePlaceIndexResult& UpdatePlaceIndexResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("IndexArn"))
-  {
-    m_indexArn = jsonValue.GetString("IndexArn");
-
-  }
-
   if(jsonValue.ValueExists("IndexName"))
   {
     m_indexName = jsonValue.GetString("IndexName");
+
+  }
+
+  if(jsonValue.ValueExists("IndexArn"))
+  {
+    m_indexArn = jsonValue.GetString("IndexArn");
 
   }
 

@@ -7,11 +7,11 @@
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/location/LocationServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/location/model/CalculateRouteCarModeOptions.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/location/model/TravelMode.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/location/model/DistanceUnit.h>
-#include <aws/location/model/TravelMode.h>
+#include <aws/location/model/CalculateRouteCarModeOptions.h>
 #include <aws/location/model/CalculateRouteTruckModeOptions.h>
 #include <utility>
 
@@ -91,90 +91,6 @@ namespace Model
      * the route matrix. </p>
      */
     inline CalculateRouteMatrixRequest& WithCalculatorName(const char* value) { SetCalculatorName(value); return *this;}
-
-
-    /**
-     * <p>Specifies route preferences when traveling by <code>Car</code>, such as
-     * avoiding routes that use ferries or tolls.</p> <p>Requirements:
-     * <code>TravelMode</code> must be specified as <code>Car</code>.</p>
-     */
-    inline const CalculateRouteCarModeOptions& GetCarModeOptions() const{ return m_carModeOptions; }
-
-    /**
-     * <p>Specifies route preferences when traveling by <code>Car</code>, such as
-     * avoiding routes that use ferries or tolls.</p> <p>Requirements:
-     * <code>TravelMode</code> must be specified as <code>Car</code>.</p>
-     */
-    inline bool CarModeOptionsHasBeenSet() const { return m_carModeOptionsHasBeenSet; }
-
-    /**
-     * <p>Specifies route preferences when traveling by <code>Car</code>, such as
-     * avoiding routes that use ferries or tolls.</p> <p>Requirements:
-     * <code>TravelMode</code> must be specified as <code>Car</code>.</p>
-     */
-    inline void SetCarModeOptions(const CalculateRouteCarModeOptions& value) { m_carModeOptionsHasBeenSet = true; m_carModeOptions = value; }
-
-    /**
-     * <p>Specifies route preferences when traveling by <code>Car</code>, such as
-     * avoiding routes that use ferries or tolls.</p> <p>Requirements:
-     * <code>TravelMode</code> must be specified as <code>Car</code>.</p>
-     */
-    inline void SetCarModeOptions(CalculateRouteCarModeOptions&& value) { m_carModeOptionsHasBeenSet = true; m_carModeOptions = std::move(value); }
-
-    /**
-     * <p>Specifies route preferences when traveling by <code>Car</code>, such as
-     * avoiding routes that use ferries or tolls.</p> <p>Requirements:
-     * <code>TravelMode</code> must be specified as <code>Car</code>.</p>
-     */
-    inline CalculateRouteMatrixRequest& WithCarModeOptions(const CalculateRouteCarModeOptions& value) { SetCarModeOptions(value); return *this;}
-
-    /**
-     * <p>Specifies route preferences when traveling by <code>Car</code>, such as
-     * avoiding routes that use ferries or tolls.</p> <p>Requirements:
-     * <code>TravelMode</code> must be specified as <code>Car</code>.</p>
-     */
-    inline CalculateRouteMatrixRequest& WithCarModeOptions(CalculateRouteCarModeOptions&& value) { SetCarModeOptions(std::move(value)); return *this;}
-
-
-    /**
-     * <p>Sets the time of departure as the current time. Uses the current time to
-     * calculate the route matrix. You can't set both <code>DepartureTime</code> and
-     * <code>DepartNow</code>. If neither is set, the best time of day to travel with
-     * the best traffic conditions is used to calculate the route matrix.</p>
-     * <p>Default Value: <code>false</code> </p> <p>Valid Values: <code>false</code> |
-     * <code>true</code> </p>
-     */
-    inline bool GetDepartNow() const{ return m_departNow; }
-
-    /**
-     * <p>Sets the time of departure as the current time. Uses the current time to
-     * calculate the route matrix. You can't set both <code>DepartureTime</code> and
-     * <code>DepartNow</code>. If neither is set, the best time of day to travel with
-     * the best traffic conditions is used to calculate the route matrix.</p>
-     * <p>Default Value: <code>false</code> </p> <p>Valid Values: <code>false</code> |
-     * <code>true</code> </p>
-     */
-    inline bool DepartNowHasBeenSet() const { return m_departNowHasBeenSet; }
-
-    /**
-     * <p>Sets the time of departure as the current time. Uses the current time to
-     * calculate the route matrix. You can't set both <code>DepartureTime</code> and
-     * <code>DepartNow</code>. If neither is set, the best time of day to travel with
-     * the best traffic conditions is used to calculate the route matrix.</p>
-     * <p>Default Value: <code>false</code> </p> <p>Valid Values: <code>false</code> |
-     * <code>true</code> </p>
-     */
-    inline void SetDepartNow(bool value) { m_departNowHasBeenSet = true; m_departNow = value; }
-
-    /**
-     * <p>Sets the time of departure as the current time. Uses the current time to
-     * calculate the route matrix. You can't set both <code>DepartureTime</code> and
-     * <code>DepartNow</code>. If neither is set, the best time of day to travel with
-     * the best traffic conditions is used to calculate the route matrix.</p>
-     * <p>Default Value: <code>false</code> </p> <p>Valid Values: <code>false</code> |
-     * <code>true</code> </p>
-     */
-    inline CalculateRouteMatrixRequest& WithDepartNow(bool value) { SetDepartNow(value); return *this;}
 
 
     /**
@@ -339,85 +255,6 @@ namespace Model
 
 
     /**
-     * <p>Specifies the desired time of departure. Uses the given time to calculate the
-     * route matrix. You can't set both <code>DepartureTime</code> and
-     * <code>DepartNow</code>. If neither is set, the best time of day to travel with
-     * the best traffic conditions is used to calculate the route matrix.</p> 
-     * <p>Setting a departure time in the past returns a <code>400
-     * ValidationException</code> error.</p>  <ul> <li> <p>In <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example,
-     * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
-     */
-    inline const Aws::Utils::DateTime& GetDepartureTime() const{ return m_departureTime; }
-
-    /**
-     * <p>Specifies the desired time of departure. Uses the given time to calculate the
-     * route matrix. You can't set both <code>DepartureTime</code> and
-     * <code>DepartNow</code>. If neither is set, the best time of day to travel with
-     * the best traffic conditions is used to calculate the route matrix.</p> 
-     * <p>Setting a departure time in the past returns a <code>400
-     * ValidationException</code> error.</p>  <ul> <li> <p>In <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example,
-     * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
-     */
-    inline bool DepartureTimeHasBeenSet() const { return m_departureTimeHasBeenSet; }
-
-    /**
-     * <p>Specifies the desired time of departure. Uses the given time to calculate the
-     * route matrix. You can't set both <code>DepartureTime</code> and
-     * <code>DepartNow</code>. If neither is set, the best time of day to travel with
-     * the best traffic conditions is used to calculate the route matrix.</p> 
-     * <p>Setting a departure time in the past returns a <code>400
-     * ValidationException</code> error.</p>  <ul> <li> <p>In <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example,
-     * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
-     */
-    inline void SetDepartureTime(const Aws::Utils::DateTime& value) { m_departureTimeHasBeenSet = true; m_departureTime = value; }
-
-    /**
-     * <p>Specifies the desired time of departure. Uses the given time to calculate the
-     * route matrix. You can't set both <code>DepartureTime</code> and
-     * <code>DepartNow</code>. If neither is set, the best time of day to travel with
-     * the best traffic conditions is used to calculate the route matrix.</p> 
-     * <p>Setting a departure time in the past returns a <code>400
-     * ValidationException</code> error.</p>  <ul> <li> <p>In <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example,
-     * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
-     */
-    inline void SetDepartureTime(Aws::Utils::DateTime&& value) { m_departureTimeHasBeenSet = true; m_departureTime = std::move(value); }
-
-    /**
-     * <p>Specifies the desired time of departure. Uses the given time to calculate the
-     * route matrix. You can't set both <code>DepartureTime</code> and
-     * <code>DepartNow</code>. If neither is set, the best time of day to travel with
-     * the best traffic conditions is used to calculate the route matrix.</p> 
-     * <p>Setting a departure time in the past returns a <code>400
-     * ValidationException</code> error.</p>  <ul> <li> <p>In <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example,
-     * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
-     */
-    inline CalculateRouteMatrixRequest& WithDepartureTime(const Aws::Utils::DateTime& value) { SetDepartureTime(value); return *this;}
-
-    /**
-     * <p>Specifies the desired time of departure. Uses the given time to calculate the
-     * route matrix. You can't set both <code>DepartureTime</code> and
-     * <code>DepartNow</code>. If neither is set, the best time of day to travel with
-     * the best traffic conditions is used to calculate the route matrix.</p> 
-     * <p>Setting a departure time in the past returns a <code>400
-     * ValidationException</code> error.</p>  <ul> <li> <p>In <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example,
-     * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
-     */
-    inline CalculateRouteMatrixRequest& WithDepartureTime(Aws::Utils::DateTime&& value) { SetDepartureTime(std::move(value)); return *this;}
-
-
-    /**
      * <p>The list of destination positions for the route matrix. An array of points,
      * each of which is itself a 2-value array defined in <a
      * href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
@@ -579,100 +416,6 @@ namespace Model
 
 
     /**
-     * <p>Set the unit system to specify the distance.</p> <p>Default Value:
-     * <code>Kilometers</code> </p>
-     */
-    inline const DistanceUnit& GetDistanceUnit() const{ return m_distanceUnit; }
-
-    /**
-     * <p>Set the unit system to specify the distance.</p> <p>Default Value:
-     * <code>Kilometers</code> </p>
-     */
-    inline bool DistanceUnitHasBeenSet() const { return m_distanceUnitHasBeenSet; }
-
-    /**
-     * <p>Set the unit system to specify the distance.</p> <p>Default Value:
-     * <code>Kilometers</code> </p>
-     */
-    inline void SetDistanceUnit(const DistanceUnit& value) { m_distanceUnitHasBeenSet = true; m_distanceUnit = value; }
-
-    /**
-     * <p>Set the unit system to specify the distance.</p> <p>Default Value:
-     * <code>Kilometers</code> </p>
-     */
-    inline void SetDistanceUnit(DistanceUnit&& value) { m_distanceUnitHasBeenSet = true; m_distanceUnit = std::move(value); }
-
-    /**
-     * <p>Set the unit system to specify the distance.</p> <p>Default Value:
-     * <code>Kilometers</code> </p>
-     */
-    inline CalculateRouteMatrixRequest& WithDistanceUnit(const DistanceUnit& value) { SetDistanceUnit(value); return *this;}
-
-    /**
-     * <p>Set the unit system to specify the distance.</p> <p>Default Value:
-     * <code>Kilometers</code> </p>
-     */
-    inline CalculateRouteMatrixRequest& WithDistanceUnit(DistanceUnit&& value) { SetDistanceUnit(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
-     * key</a> to authorize the request.</p>
-     */
-    inline const Aws::String& GetKey() const{ return m_key; }
-
-    /**
-     * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
-     * key</a> to authorize the request.</p>
-     */
-    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-
-    /**
-     * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
-     * key</a> to authorize the request.</p>
-     */
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-
-    /**
-     * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
-     * key</a> to authorize the request.</p>
-     */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-
-    /**
-     * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
-     * key</a> to authorize the request.</p>
-     */
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-
-    /**
-     * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
-     * key</a> to authorize the request.</p>
-     */
-    inline CalculateRouteMatrixRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-
-    /**
-     * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
-     * key</a> to authorize the request.</p>
-     */
-    inline CalculateRouteMatrixRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
-     * key</a> to authorize the request.</p>
-     */
-    inline CalculateRouteMatrixRequest& WithKey(const char* value) { SetKey(value); return *this;}
-
-
-    /**
      * <p>Specifies the mode of transport when calculating a route. Used in estimating
      * the speed of travel and road compatibility.</p> <p>The <code>TravelMode</code>
      * you specify also determines how you specify route preferences: </p> <ul> <li>
@@ -776,6 +519,206 @@ namespace Model
 
 
     /**
+     * <p>Specifies the desired time of departure. Uses the given time to calculate the
+     * route matrix. You can't set both <code>DepartureTime</code> and
+     * <code>DepartNow</code>. If neither is set, the best time of day to travel with
+     * the best traffic conditions is used to calculate the route matrix.</p> 
+     * <p>Setting a departure time in the past returns a <code>400
+     * ValidationException</code> error.</p>  <ul> <li> <p>In <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example,
+     * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
+     */
+    inline const Aws::Utils::DateTime& GetDepartureTime() const{ return m_departureTime; }
+
+    /**
+     * <p>Specifies the desired time of departure. Uses the given time to calculate the
+     * route matrix. You can't set both <code>DepartureTime</code> and
+     * <code>DepartNow</code>. If neither is set, the best time of day to travel with
+     * the best traffic conditions is used to calculate the route matrix.</p> 
+     * <p>Setting a departure time in the past returns a <code>400
+     * ValidationException</code> error.</p>  <ul> <li> <p>In <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example,
+     * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
+     */
+    inline bool DepartureTimeHasBeenSet() const { return m_departureTimeHasBeenSet; }
+
+    /**
+     * <p>Specifies the desired time of departure. Uses the given time to calculate the
+     * route matrix. You can't set both <code>DepartureTime</code> and
+     * <code>DepartNow</code>. If neither is set, the best time of day to travel with
+     * the best traffic conditions is used to calculate the route matrix.</p> 
+     * <p>Setting a departure time in the past returns a <code>400
+     * ValidationException</code> error.</p>  <ul> <li> <p>In <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example,
+     * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
+     */
+    inline void SetDepartureTime(const Aws::Utils::DateTime& value) { m_departureTimeHasBeenSet = true; m_departureTime = value; }
+
+    /**
+     * <p>Specifies the desired time of departure. Uses the given time to calculate the
+     * route matrix. You can't set both <code>DepartureTime</code> and
+     * <code>DepartNow</code>. If neither is set, the best time of day to travel with
+     * the best traffic conditions is used to calculate the route matrix.</p> 
+     * <p>Setting a departure time in the past returns a <code>400
+     * ValidationException</code> error.</p>  <ul> <li> <p>In <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example,
+     * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
+     */
+    inline void SetDepartureTime(Aws::Utils::DateTime&& value) { m_departureTimeHasBeenSet = true; m_departureTime = std::move(value); }
+
+    /**
+     * <p>Specifies the desired time of departure. Uses the given time to calculate the
+     * route matrix. You can't set both <code>DepartureTime</code> and
+     * <code>DepartNow</code>. If neither is set, the best time of day to travel with
+     * the best traffic conditions is used to calculate the route matrix.</p> 
+     * <p>Setting a departure time in the past returns a <code>400
+     * ValidationException</code> error.</p>  <ul> <li> <p>In <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example,
+     * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
+     */
+    inline CalculateRouteMatrixRequest& WithDepartureTime(const Aws::Utils::DateTime& value) { SetDepartureTime(value); return *this;}
+
+    /**
+     * <p>Specifies the desired time of departure. Uses the given time to calculate the
+     * route matrix. You can't set both <code>DepartureTime</code> and
+     * <code>DepartNow</code>. If neither is set, the best time of day to travel with
+     * the best traffic conditions is used to calculate the route matrix.</p> 
+     * <p>Setting a departure time in the past returns a <code>400
+     * ValidationException</code> error.</p>  <ul> <li> <p>In <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example,
+     * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
+     */
+    inline CalculateRouteMatrixRequest& WithDepartureTime(Aws::Utils::DateTime&& value) { SetDepartureTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Sets the time of departure as the current time. Uses the current time to
+     * calculate the route matrix. You can't set both <code>DepartureTime</code> and
+     * <code>DepartNow</code>. If neither is set, the best time of day to travel with
+     * the best traffic conditions is used to calculate the route matrix.</p>
+     * <p>Default Value: <code>false</code> </p> <p>Valid Values: <code>false</code> |
+     * <code>true</code> </p>
+     */
+    inline bool GetDepartNow() const{ return m_departNow; }
+
+    /**
+     * <p>Sets the time of departure as the current time. Uses the current time to
+     * calculate the route matrix. You can't set both <code>DepartureTime</code> and
+     * <code>DepartNow</code>. If neither is set, the best time of day to travel with
+     * the best traffic conditions is used to calculate the route matrix.</p>
+     * <p>Default Value: <code>false</code> </p> <p>Valid Values: <code>false</code> |
+     * <code>true</code> </p>
+     */
+    inline bool DepartNowHasBeenSet() const { return m_departNowHasBeenSet; }
+
+    /**
+     * <p>Sets the time of departure as the current time. Uses the current time to
+     * calculate the route matrix. You can't set both <code>DepartureTime</code> and
+     * <code>DepartNow</code>. If neither is set, the best time of day to travel with
+     * the best traffic conditions is used to calculate the route matrix.</p>
+     * <p>Default Value: <code>false</code> </p> <p>Valid Values: <code>false</code> |
+     * <code>true</code> </p>
+     */
+    inline void SetDepartNow(bool value) { m_departNowHasBeenSet = true; m_departNow = value; }
+
+    /**
+     * <p>Sets the time of departure as the current time. Uses the current time to
+     * calculate the route matrix. You can't set both <code>DepartureTime</code> and
+     * <code>DepartNow</code>. If neither is set, the best time of day to travel with
+     * the best traffic conditions is used to calculate the route matrix.</p>
+     * <p>Default Value: <code>false</code> </p> <p>Valid Values: <code>false</code> |
+     * <code>true</code> </p>
+     */
+    inline CalculateRouteMatrixRequest& WithDepartNow(bool value) { SetDepartNow(value); return *this;}
+
+
+    /**
+     * <p>Set the unit system to specify the distance.</p> <p>Default Value:
+     * <code>Kilometers</code> </p>
+     */
+    inline const DistanceUnit& GetDistanceUnit() const{ return m_distanceUnit; }
+
+    /**
+     * <p>Set the unit system to specify the distance.</p> <p>Default Value:
+     * <code>Kilometers</code> </p>
+     */
+    inline bool DistanceUnitHasBeenSet() const { return m_distanceUnitHasBeenSet; }
+
+    /**
+     * <p>Set the unit system to specify the distance.</p> <p>Default Value:
+     * <code>Kilometers</code> </p>
+     */
+    inline void SetDistanceUnit(const DistanceUnit& value) { m_distanceUnitHasBeenSet = true; m_distanceUnit = value; }
+
+    /**
+     * <p>Set the unit system to specify the distance.</p> <p>Default Value:
+     * <code>Kilometers</code> </p>
+     */
+    inline void SetDistanceUnit(DistanceUnit&& value) { m_distanceUnitHasBeenSet = true; m_distanceUnit = std::move(value); }
+
+    /**
+     * <p>Set the unit system to specify the distance.</p> <p>Default Value:
+     * <code>Kilometers</code> </p>
+     */
+    inline CalculateRouteMatrixRequest& WithDistanceUnit(const DistanceUnit& value) { SetDistanceUnit(value); return *this;}
+
+    /**
+     * <p>Set the unit system to specify the distance.</p> <p>Default Value:
+     * <code>Kilometers</code> </p>
+     */
+    inline CalculateRouteMatrixRequest& WithDistanceUnit(DistanceUnit&& value) { SetDistanceUnit(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies route preferences when traveling by <code>Car</code>, such as
+     * avoiding routes that use ferries or tolls.</p> <p>Requirements:
+     * <code>TravelMode</code> must be specified as <code>Car</code>.</p>
+     */
+    inline const CalculateRouteCarModeOptions& GetCarModeOptions() const{ return m_carModeOptions; }
+
+    /**
+     * <p>Specifies route preferences when traveling by <code>Car</code>, such as
+     * avoiding routes that use ferries or tolls.</p> <p>Requirements:
+     * <code>TravelMode</code> must be specified as <code>Car</code>.</p>
+     */
+    inline bool CarModeOptionsHasBeenSet() const { return m_carModeOptionsHasBeenSet; }
+
+    /**
+     * <p>Specifies route preferences when traveling by <code>Car</code>, such as
+     * avoiding routes that use ferries or tolls.</p> <p>Requirements:
+     * <code>TravelMode</code> must be specified as <code>Car</code>.</p>
+     */
+    inline void SetCarModeOptions(const CalculateRouteCarModeOptions& value) { m_carModeOptionsHasBeenSet = true; m_carModeOptions = value; }
+
+    /**
+     * <p>Specifies route preferences when traveling by <code>Car</code>, such as
+     * avoiding routes that use ferries or tolls.</p> <p>Requirements:
+     * <code>TravelMode</code> must be specified as <code>Car</code>.</p>
+     */
+    inline void SetCarModeOptions(CalculateRouteCarModeOptions&& value) { m_carModeOptionsHasBeenSet = true; m_carModeOptions = std::move(value); }
+
+    /**
+     * <p>Specifies route preferences when traveling by <code>Car</code>, such as
+     * avoiding routes that use ferries or tolls.</p> <p>Requirements:
+     * <code>TravelMode</code> must be specified as <code>Car</code>.</p>
+     */
+    inline CalculateRouteMatrixRequest& WithCarModeOptions(const CalculateRouteCarModeOptions& value) { SetCarModeOptions(value); return *this;}
+
+    /**
+     * <p>Specifies route preferences when traveling by <code>Car</code>, such as
+     * avoiding routes that use ferries or tolls.</p> <p>Requirements:
+     * <code>TravelMode</code> must be specified as <code>Car</code>.</p>
+     */
+    inline CalculateRouteMatrixRequest& WithCarModeOptions(CalculateRouteCarModeOptions&& value) { SetCarModeOptions(std::move(value)); return *this;}
+
+
+    /**
      * <p>Specifies route preferences when traveling by <code>Truck</code>, such as
      * avoiding routes that use ferries or tolls, and truck specifications to consider
      * when choosing an optimal road.</p> <p>Requirements: <code>TravelMode</code> must
@@ -823,37 +766,94 @@ namespace Model
      */
     inline CalculateRouteMatrixRequest& WithTruckModeOptions(CalculateRouteTruckModeOptions&& value) { SetTruckModeOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
+     */
+    inline const Aws::String& GetKey() const{ return m_key; }
+
+    /**
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
+     */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
+     */
+    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
+
+    /**
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
+     */
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
+
+    /**
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
+     */
+    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
+
+    /**
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
+     */
+    inline CalculateRouteMatrixRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
+
+    /**
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
+     */
+    inline CalculateRouteMatrixRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
+
+    /**
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
+     */
+    inline CalculateRouteMatrixRequest& WithKey(const char* value) { SetKey(value); return *this;}
+
   private:
 
     Aws::String m_calculatorName;
     bool m_calculatorNameHasBeenSet = false;
 
-    CalculateRouteCarModeOptions m_carModeOptions;
-    bool m_carModeOptionsHasBeenSet = false;
-
-    bool m_departNow;
-    bool m_departNowHasBeenSet = false;
-
     Aws::Vector<Aws::Vector<double>> m_departurePositions;
     bool m_departurePositionsHasBeenSet = false;
-
-    Aws::Utils::DateTime m_departureTime;
-    bool m_departureTimeHasBeenSet = false;
 
     Aws::Vector<Aws::Vector<double>> m_destinationPositions;
     bool m_destinationPositionsHasBeenSet = false;
 
-    DistanceUnit m_distanceUnit;
-    bool m_distanceUnitHasBeenSet = false;
-
-    Aws::String m_key;
-    bool m_keyHasBeenSet = false;
-
     TravelMode m_travelMode;
     bool m_travelModeHasBeenSet = false;
 
+    Aws::Utils::DateTime m_departureTime;
+    bool m_departureTimeHasBeenSet = false;
+
+    bool m_departNow;
+    bool m_departNowHasBeenSet = false;
+
+    DistanceUnit m_distanceUnit;
+    bool m_distanceUnitHasBeenSet = false;
+
+    CalculateRouteCarModeOptions m_carModeOptions;
+    bool m_carModeOptionsHasBeenSet = false;
+
     CalculateRouteTruckModeOptions m_truckModeOptions;
     bool m_truckModeOptionsHasBeenSet = false;
+
+    Aws::String m_key;
+    bool m_keyHasBeenSet = false;
   };
 
 } // namespace Model

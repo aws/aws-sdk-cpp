@@ -19,21 +19,21 @@ namespace Model
 {
 
 ListKeysResponseEntry::ListKeysResponseEntry() : 
-    m_createTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_expireTimeHasBeenSet(false),
     m_keyNameHasBeenSet(false),
+    m_expireTimeHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_restrictionsHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
 {
 }
 
 ListKeysResponseEntry::ListKeysResponseEntry(JsonView jsonValue) : 
-    m_createTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_expireTimeHasBeenSet(false),
     m_keyNameHasBeenSet(false),
+    m_expireTimeHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_restrictionsHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -41,18 +41,11 @@ ListKeysResponseEntry::ListKeysResponseEntry(JsonView jsonValue) :
 
 ListKeysResponseEntry& ListKeysResponseEntry::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("CreateTime"))
+  if(jsonValue.ValueExists("KeyName"))
   {
-    m_createTime = jsonValue.GetString("CreateTime");
+    m_keyName = jsonValue.GetString("KeyName");
 
-    m_createTimeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("Description"))
-  {
-    m_description = jsonValue.GetString("Description");
-
-    m_descriptionHasBeenSet = true;
+    m_keyNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ExpireTime"))
@@ -62,11 +55,11 @@ ListKeysResponseEntry& ListKeysResponseEntry::operator =(JsonView jsonValue)
     m_expireTimeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("KeyName"))
+  if(jsonValue.ValueExists("Description"))
   {
-    m_keyName = jsonValue.GetString("KeyName");
+    m_description = jsonValue.GetString("Description");
 
-    m_keyNameHasBeenSet = true;
+    m_descriptionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Restrictions"))
@@ -74,6 +67,13 @@ ListKeysResponseEntry& ListKeysResponseEntry::operator =(JsonView jsonValue)
     m_restrictions = jsonValue.GetObject("Restrictions");
 
     m_restrictionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CreateTime"))
+  {
+    m_createTime = jsonValue.GetString("CreateTime");
+
+    m_createTimeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("UpdateTime"))
@@ -90,14 +90,9 @@ JsonValue ListKeysResponseEntry::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_createTimeHasBeenSet)
+  if(m_keyNameHasBeenSet)
   {
-   payload.WithString("CreateTime", m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
+   payload.WithString("KeyName", m_keyName);
 
   }
 
@@ -106,9 +101,9 @@ JsonValue ListKeysResponseEntry::Jsonize() const
    payload.WithString("ExpireTime", m_expireTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_keyNameHasBeenSet)
+  if(m_descriptionHasBeenSet)
   {
-   payload.WithString("KeyName", m_keyName);
+   payload.WithString("Description", m_description);
 
   }
 
@@ -116,6 +111,11 @@ JsonValue ListKeysResponseEntry::Jsonize() const
   {
    payload.WithObject("Restrictions", m_restrictions.Jsonize());
 
+  }
+
+  if(m_createTimeHasBeenSet)
+  {
+   payload.WithString("CreateTime", m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_updateTimeHasBeenSet)

@@ -29,6 +29,12 @@ SearchPlaceIndexForTextResult::SearchPlaceIndexForTextResult(const Aws::AmazonWe
 SearchPlaceIndexForTextResult& SearchPlaceIndexForTextResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("Summary"))
+  {
+    m_summary = jsonValue.GetObject("Summary");
+
+  }
+
   if(jsonValue.ValueExists("Results"))
   {
     Aws::Utils::Array<JsonView> resultsJsonList = jsonValue.GetArray("Results");
@@ -36,12 +42,6 @@ SearchPlaceIndexForTextResult& SearchPlaceIndexForTextResult::operator =(const A
     {
       m_results.push_back(resultsJsonList[resultsIndex].AsObject());
     }
-  }
-
-  if(jsonValue.ValueExists("Summary"))
-  {
-    m_summary = jsonValue.GetObject("Summary");
-
   }
 
 

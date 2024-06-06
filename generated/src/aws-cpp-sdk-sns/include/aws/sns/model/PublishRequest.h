@@ -481,9 +481,8 @@ namespace Model
      * <p>Optional parameter to be used as the "Subject" line when the message is
      * delivered to email endpoints. This field will also be included, if present, in
      * the standard JSON messages delivered to other endpoints.</p> <p>Constraints:
-     * Subjects must be ASCII text that begins with a letter, number, or punctuation
-     * mark; must not include line breaks or control characters; and must be less than
-     * 100 characters long.</p>
+     * Subjects must be UTF-8 text with no line breaks or control characters, and less
+     * than 100 characters long.</p>
      */
     inline const Aws::String& GetSubject() const{ return m_subject; }
 
@@ -491,9 +490,8 @@ namespace Model
      * <p>Optional parameter to be used as the "Subject" line when the message is
      * delivered to email endpoints. This field will also be included, if present, in
      * the standard JSON messages delivered to other endpoints.</p> <p>Constraints:
-     * Subjects must be ASCII text that begins with a letter, number, or punctuation
-     * mark; must not include line breaks or control characters; and must be less than
-     * 100 characters long.</p>
+     * Subjects must be UTF-8 text with no line breaks or control characters, and less
+     * than 100 characters long.</p>
      */
     inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
 
@@ -501,9 +499,8 @@ namespace Model
      * <p>Optional parameter to be used as the "Subject" line when the message is
      * delivered to email endpoints. This field will also be included, if present, in
      * the standard JSON messages delivered to other endpoints.</p> <p>Constraints:
-     * Subjects must be ASCII text that begins with a letter, number, or punctuation
-     * mark; must not include line breaks or control characters; and must be less than
-     * 100 characters long.</p>
+     * Subjects must be UTF-8 text with no line breaks or control characters, and less
+     * than 100 characters long.</p>
      */
     inline void SetSubject(const Aws::String& value) { m_subjectHasBeenSet = true; m_subject = value; }
 
@@ -511,9 +508,8 @@ namespace Model
      * <p>Optional parameter to be used as the "Subject" line when the message is
      * delivered to email endpoints. This field will also be included, if present, in
      * the standard JSON messages delivered to other endpoints.</p> <p>Constraints:
-     * Subjects must be ASCII text that begins with a letter, number, or punctuation
-     * mark; must not include line breaks or control characters; and must be less than
-     * 100 characters long.</p>
+     * Subjects must be UTF-8 text with no line breaks or control characters, and less
+     * than 100 characters long.</p>
      */
     inline void SetSubject(Aws::String&& value) { m_subjectHasBeenSet = true; m_subject = std::move(value); }
 
@@ -521,9 +517,8 @@ namespace Model
      * <p>Optional parameter to be used as the "Subject" line when the message is
      * delivered to email endpoints. This field will also be included, if present, in
      * the standard JSON messages delivered to other endpoints.</p> <p>Constraints:
-     * Subjects must be ASCII text that begins with a letter, number, or punctuation
-     * mark; must not include line breaks or control characters; and must be less than
-     * 100 characters long.</p>
+     * Subjects must be UTF-8 text with no line breaks or control characters, and less
+     * than 100 characters long.</p>
      */
     inline void SetSubject(const char* value) { m_subjectHasBeenSet = true; m_subject.assign(value); }
 
@@ -531,9 +526,8 @@ namespace Model
      * <p>Optional parameter to be used as the "Subject" line when the message is
      * delivered to email endpoints. This field will also be included, if present, in
      * the standard JSON messages delivered to other endpoints.</p> <p>Constraints:
-     * Subjects must be ASCII text that begins with a letter, number, or punctuation
-     * mark; must not include line breaks or control characters; and must be less than
-     * 100 characters long.</p>
+     * Subjects must be UTF-8 text with no line breaks or control characters, and less
+     * than 100 characters long.</p>
      */
     inline PublishRequest& WithSubject(const Aws::String& value) { SetSubject(value); return *this;}
 
@@ -541,9 +535,8 @@ namespace Model
      * <p>Optional parameter to be used as the "Subject" line when the message is
      * delivered to email endpoints. This field will also be included, if present, in
      * the standard JSON messages delivered to other endpoints.</p> <p>Constraints:
-     * Subjects must be ASCII text that begins with a letter, number, or punctuation
-     * mark; must not include line breaks or control characters; and must be less than
-     * 100 characters long.</p>
+     * Subjects must be UTF-8 text with no line breaks or control characters, and less
+     * than 100 characters long.</p>
      */
     inline PublishRequest& WithSubject(Aws::String&& value) { SetSubject(std::move(value)); return *this;}
 
@@ -551,9 +544,8 @@ namespace Model
      * <p>Optional parameter to be used as the "Subject" line when the message is
      * delivered to email endpoints. This field will also be included, if present, in
      * the standard JSON messages delivered to other endpoints.</p> <p>Constraints:
-     * Subjects must be ASCII text that begins with a letter, number, or punctuation
-     * mark; must not include line breaks or control characters; and must be less than
-     * 100 characters long.</p>
+     * Subjects must be UTF-8 text with no line breaks or control characters, and less
+     * than 100 characters long.</p>
      */
     inline PublishRequest& WithSubject(const char* value) { SetSubject(value); return *this;}
 

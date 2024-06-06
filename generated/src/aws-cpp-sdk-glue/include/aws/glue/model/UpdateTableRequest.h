@@ -8,6 +8,7 @@
 #include <aws/glue/GlueRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/model/TableInput.h>
+#include <aws/glue/model/ViewUpdateAction.h>
 #include <utility>
 
 namespace Aws
@@ -280,6 +281,62 @@ namespace Model
      */
     inline UpdateTableRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
+
+    /**
+     * <p>The operation to be performed when updating the view.</p>
+     */
+    inline const ViewUpdateAction& GetViewUpdateAction() const{ return m_viewUpdateAction; }
+
+    /**
+     * <p>The operation to be performed when updating the view.</p>
+     */
+    inline bool ViewUpdateActionHasBeenSet() const { return m_viewUpdateActionHasBeenSet; }
+
+    /**
+     * <p>The operation to be performed when updating the view.</p>
+     */
+    inline void SetViewUpdateAction(const ViewUpdateAction& value) { m_viewUpdateActionHasBeenSet = true; m_viewUpdateAction = value; }
+
+    /**
+     * <p>The operation to be performed when updating the view.</p>
+     */
+    inline void SetViewUpdateAction(ViewUpdateAction&& value) { m_viewUpdateActionHasBeenSet = true; m_viewUpdateAction = std::move(value); }
+
+    /**
+     * <p>The operation to be performed when updating the view.</p>
+     */
+    inline UpdateTableRequest& WithViewUpdateAction(const ViewUpdateAction& value) { SetViewUpdateAction(value); return *this;}
+
+    /**
+     * <p>The operation to be performed when updating the view.</p>
+     */
+    inline UpdateTableRequest& WithViewUpdateAction(ViewUpdateAction&& value) { SetViewUpdateAction(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A flag that can be set to true to ignore matching storage descriptor and
+     * subobject matching requirements.</p>
+     */
+    inline bool GetForce() const{ return m_force; }
+
+    /**
+     * <p>A flag that can be set to true to ignore matching storage descriptor and
+     * subobject matching requirements.</p>
+     */
+    inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
+
+    /**
+     * <p>A flag that can be set to true to ignore matching storage descriptor and
+     * subobject matching requirements.</p>
+     */
+    inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
+
+    /**
+     * <p>A flag that can be set to true to ignore matching storage descriptor and
+     * subobject matching requirements.</p>
+     */
+    inline UpdateTableRequest& WithForce(bool value) { SetForce(value); return *this;}
+
   private:
 
     Aws::String m_catalogId;
@@ -299,6 +356,12 @@ namespace Model
 
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet = false;
+
+    ViewUpdateAction m_viewUpdateAction;
+    bool m_viewUpdateActionHasBeenSet = false;
+
+    bool m_force;
+    bool m_forceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -271,8 +271,9 @@ namespace Model
      * accessing the data uses a Microsoft Windows user as the service account.</p>
      * </li> <li> <p> <code>MIXED</code> This is an advanced setting. For more
      * information, see <a
-     * href="fsx/latest/ONTAPGuide/volume-security-style.html">Volume security
-     * style</a> in the Amazon FSx for NetApp ONTAP User Guide.</p> </li> </ul> <p/>
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style.html">Volume
+     * security style</a> in the Amazon FSx for NetApp ONTAP User Guide.</p> </li>
+     * </ul> <p/>
      */
     inline const StorageVirtualMachineRootVolumeSecurityStyle& GetRootVolumeSecurityStyle() const{ return m_rootVolumeSecurityStyle; }
 
@@ -286,8 +287,9 @@ namespace Model
      * accessing the data uses a Microsoft Windows user as the service account.</p>
      * </li> <li> <p> <code>MIXED</code> This is an advanced setting. For more
      * information, see <a
-     * href="fsx/latest/ONTAPGuide/volume-security-style.html">Volume security
-     * style</a> in the Amazon FSx for NetApp ONTAP User Guide.</p> </li> </ul> <p/>
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style.html">Volume
+     * security style</a> in the Amazon FSx for NetApp ONTAP User Guide.</p> </li>
+     * </ul> <p/>
      */
     inline bool RootVolumeSecurityStyleHasBeenSet() const { return m_rootVolumeSecurityStyleHasBeenSet; }
 
@@ -301,8 +303,9 @@ namespace Model
      * accessing the data uses a Microsoft Windows user as the service account.</p>
      * </li> <li> <p> <code>MIXED</code> This is an advanced setting. For more
      * information, see <a
-     * href="fsx/latest/ONTAPGuide/volume-security-style.html">Volume security
-     * style</a> in the Amazon FSx for NetApp ONTAP User Guide.</p> </li> </ul> <p/>
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style.html">Volume
+     * security style</a> in the Amazon FSx for NetApp ONTAP User Guide.</p> </li>
+     * </ul> <p/>
      */
     inline void SetRootVolumeSecurityStyle(const StorageVirtualMachineRootVolumeSecurityStyle& value) { m_rootVolumeSecurityStyleHasBeenSet = true; m_rootVolumeSecurityStyle = value; }
 
@@ -316,8 +319,9 @@ namespace Model
      * accessing the data uses a Microsoft Windows user as the service account.</p>
      * </li> <li> <p> <code>MIXED</code> This is an advanced setting. For more
      * information, see <a
-     * href="fsx/latest/ONTAPGuide/volume-security-style.html">Volume security
-     * style</a> in the Amazon FSx for NetApp ONTAP User Guide.</p> </li> </ul> <p/>
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style.html">Volume
+     * security style</a> in the Amazon FSx for NetApp ONTAP User Guide.</p> </li>
+     * </ul> <p/>
      */
     inline void SetRootVolumeSecurityStyle(StorageVirtualMachineRootVolumeSecurityStyle&& value) { m_rootVolumeSecurityStyleHasBeenSet = true; m_rootVolumeSecurityStyle = std::move(value); }
 
@@ -331,8 +335,9 @@ namespace Model
      * accessing the data uses a Microsoft Windows user as the service account.</p>
      * </li> <li> <p> <code>MIXED</code> This is an advanced setting. For more
      * information, see <a
-     * href="fsx/latest/ONTAPGuide/volume-security-style.html">Volume security
-     * style</a> in the Amazon FSx for NetApp ONTAP User Guide.</p> </li> </ul> <p/>
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style.html">Volume
+     * security style</a> in the Amazon FSx for NetApp ONTAP User Guide.</p> </li>
+     * </ul> <p/>
      */
     inline CreateStorageVirtualMachineRequest& WithRootVolumeSecurityStyle(const StorageVirtualMachineRootVolumeSecurityStyle& value) { SetRootVolumeSecurityStyle(value); return *this;}
 
@@ -346,8 +351,9 @@ namespace Model
      * accessing the data uses a Microsoft Windows user as the service account.</p>
      * </li> <li> <p> <code>MIXED</code> This is an advanced setting. For more
      * information, see <a
-     * href="fsx/latest/ONTAPGuide/volume-security-style.html">Volume security
-     * style</a> in the Amazon FSx for NetApp ONTAP User Guide.</p> </li> </ul> <p/>
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style.html">Volume
+     * security style</a> in the Amazon FSx for NetApp ONTAP User Guide.</p> </li>
+     * </ul> <p/>
      */
     inline CreateStorageVirtualMachineRequest& WithRootVolumeSecurityStyle(StorageVirtualMachineRootVolumeSecurityStyle&& value) { SetRootVolumeSecurityStyle(std::move(value)); return *this;}
 

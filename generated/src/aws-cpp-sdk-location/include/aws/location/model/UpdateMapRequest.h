@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/location/LocationServiceRequest.h>
-#include <aws/location/model/MapConfigurationUpdate.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/location/model/MapConfigurationUpdate.h>
 #include <utility>
 
 namespace Aws
@@ -34,40 +34,44 @@ namespace Model
 
 
     /**
-     * <p>Updates the parts of the map configuration that can be updated, including the
-     * political view.</p>
+     * <p>The name of the map resource to update.</p>
      */
-    inline const MapConfigurationUpdate& GetConfigurationUpdate() const{ return m_configurationUpdate; }
+    inline const Aws::String& GetMapName() const{ return m_mapName; }
 
     /**
-     * <p>Updates the parts of the map configuration that can be updated, including the
-     * political view.</p>
+     * <p>The name of the map resource to update.</p>
      */
-    inline bool ConfigurationUpdateHasBeenSet() const { return m_configurationUpdateHasBeenSet; }
+    inline bool MapNameHasBeenSet() const { return m_mapNameHasBeenSet; }
 
     /**
-     * <p>Updates the parts of the map configuration that can be updated, including the
-     * political view.</p>
+     * <p>The name of the map resource to update.</p>
      */
-    inline void SetConfigurationUpdate(const MapConfigurationUpdate& value) { m_configurationUpdateHasBeenSet = true; m_configurationUpdate = value; }
+    inline void SetMapName(const Aws::String& value) { m_mapNameHasBeenSet = true; m_mapName = value; }
 
     /**
-     * <p>Updates the parts of the map configuration that can be updated, including the
-     * political view.</p>
+     * <p>The name of the map resource to update.</p>
      */
-    inline void SetConfigurationUpdate(MapConfigurationUpdate&& value) { m_configurationUpdateHasBeenSet = true; m_configurationUpdate = std::move(value); }
+    inline void SetMapName(Aws::String&& value) { m_mapNameHasBeenSet = true; m_mapName = std::move(value); }
 
     /**
-     * <p>Updates the parts of the map configuration that can be updated, including the
-     * political view.</p>
+     * <p>The name of the map resource to update.</p>
      */
-    inline UpdateMapRequest& WithConfigurationUpdate(const MapConfigurationUpdate& value) { SetConfigurationUpdate(value); return *this;}
+    inline void SetMapName(const char* value) { m_mapNameHasBeenSet = true; m_mapName.assign(value); }
 
     /**
-     * <p>Updates the parts of the map configuration that can be updated, including the
-     * political view.</p>
+     * <p>The name of the map resource to update.</p>
      */
-    inline UpdateMapRequest& WithConfigurationUpdate(MapConfigurationUpdate&& value) { SetConfigurationUpdate(std::move(value)); return *this;}
+    inline UpdateMapRequest& WithMapName(const Aws::String& value) { SetMapName(value); return *this;}
+
+    /**
+     * <p>The name of the map resource to update.</p>
+     */
+    inline UpdateMapRequest& WithMapName(Aws::String&& value) { SetMapName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the map resource to update.</p>
+     */
+    inline UpdateMapRequest& WithMapName(const char* value) { SetMapName(value); return *this;}
 
 
     /**
@@ -112,55 +116,51 @@ namespace Model
 
 
     /**
-     * <p>The name of the map resource to update.</p>
+     * <p>Updates the parts of the map configuration that can be updated, including the
+     * political view.</p>
      */
-    inline const Aws::String& GetMapName() const{ return m_mapName; }
+    inline const MapConfigurationUpdate& GetConfigurationUpdate() const{ return m_configurationUpdate; }
 
     /**
-     * <p>The name of the map resource to update.</p>
+     * <p>Updates the parts of the map configuration that can be updated, including the
+     * political view.</p>
      */
-    inline bool MapNameHasBeenSet() const { return m_mapNameHasBeenSet; }
+    inline bool ConfigurationUpdateHasBeenSet() const { return m_configurationUpdateHasBeenSet; }
 
     /**
-     * <p>The name of the map resource to update.</p>
+     * <p>Updates the parts of the map configuration that can be updated, including the
+     * political view.</p>
      */
-    inline void SetMapName(const Aws::String& value) { m_mapNameHasBeenSet = true; m_mapName = value; }
+    inline void SetConfigurationUpdate(const MapConfigurationUpdate& value) { m_configurationUpdateHasBeenSet = true; m_configurationUpdate = value; }
 
     /**
-     * <p>The name of the map resource to update.</p>
+     * <p>Updates the parts of the map configuration that can be updated, including the
+     * political view.</p>
      */
-    inline void SetMapName(Aws::String&& value) { m_mapNameHasBeenSet = true; m_mapName = std::move(value); }
+    inline void SetConfigurationUpdate(MapConfigurationUpdate&& value) { m_configurationUpdateHasBeenSet = true; m_configurationUpdate = std::move(value); }
 
     /**
-     * <p>The name of the map resource to update.</p>
+     * <p>Updates the parts of the map configuration that can be updated, including the
+     * political view.</p>
      */
-    inline void SetMapName(const char* value) { m_mapNameHasBeenSet = true; m_mapName.assign(value); }
+    inline UpdateMapRequest& WithConfigurationUpdate(const MapConfigurationUpdate& value) { SetConfigurationUpdate(value); return *this;}
 
     /**
-     * <p>The name of the map resource to update.</p>
+     * <p>Updates the parts of the map configuration that can be updated, including the
+     * political view.</p>
      */
-    inline UpdateMapRequest& WithMapName(const Aws::String& value) { SetMapName(value); return *this;}
-
-    /**
-     * <p>The name of the map resource to update.</p>
-     */
-    inline UpdateMapRequest& WithMapName(Aws::String&& value) { SetMapName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the map resource to update.</p>
-     */
-    inline UpdateMapRequest& WithMapName(const char* value) { SetMapName(value); return *this;}
+    inline UpdateMapRequest& WithConfigurationUpdate(MapConfigurationUpdate&& value) { SetConfigurationUpdate(std::move(value)); return *this;}
 
   private:
 
-    MapConfigurationUpdate m_configurationUpdate;
-    bool m_configurationUpdateHasBeenSet = false;
+    Aws::String m_mapName;
+    bool m_mapNameHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Aws::String m_mapName;
-    bool m_mapNameHasBeenSet = false;
+    MapConfigurationUpdate m_configurationUpdate;
+    bool m_configurationUpdateHasBeenSet = false;
   };
 
 } // namespace Model

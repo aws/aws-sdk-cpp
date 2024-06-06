@@ -13,8 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 BatchGetDevicePositionRequest::BatchGetDevicePositionRequest() : 
-    m_deviceIdsHasBeenSet(false),
-    m_trackerNameHasBeenSet(false)
+    m_trackerNameHasBeenSet(false),
+    m_deviceIdsHasBeenSet(false)
 {
 }
 

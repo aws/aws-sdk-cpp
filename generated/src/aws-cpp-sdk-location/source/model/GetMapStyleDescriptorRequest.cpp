@@ -16,8 +16,8 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 GetMapStyleDescriptorRequest::GetMapStyleDescriptorRequest() : 
-    m_keyHasBeenSet(false),
-    m_mapNameHasBeenSet(false)
+    m_mapNameHasBeenSet(false),
+    m_keyHasBeenSet(false)
 {
 }
 

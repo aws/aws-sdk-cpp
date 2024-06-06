@@ -12,6 +12,7 @@
 #include <aws/fsx/model/DataCompressionType.h>
 #include <aws/fsx/model/LustreLogConfiguration.h>
 #include <aws/fsx/model/LustreRootSquashConfiguration.h>
+#include <aws/fsx/model/FileSystemLustreMetadataConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -653,6 +654,43 @@ namespace Model
      */
     inline LustreFileSystemConfiguration& WithRootSquashConfiguration(LustreRootSquashConfiguration&& value) { SetRootSquashConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Lustre metadata performance configuration for an Amazon FSx for Lustre
+     * file system using a <code>PERSISTENT_2</code> deployment type.</p>
+     */
+    inline const FileSystemLustreMetadataConfiguration& GetMetadataConfiguration() const{ return m_metadataConfiguration; }
+
+    /**
+     * <p>The Lustre metadata performance configuration for an Amazon FSx for Lustre
+     * file system using a <code>PERSISTENT_2</code> deployment type.</p>
+     */
+    inline bool MetadataConfigurationHasBeenSet() const { return m_metadataConfigurationHasBeenSet; }
+
+    /**
+     * <p>The Lustre metadata performance configuration for an Amazon FSx for Lustre
+     * file system using a <code>PERSISTENT_2</code> deployment type.</p>
+     */
+    inline void SetMetadataConfiguration(const FileSystemLustreMetadataConfiguration& value) { m_metadataConfigurationHasBeenSet = true; m_metadataConfiguration = value; }
+
+    /**
+     * <p>The Lustre metadata performance configuration for an Amazon FSx for Lustre
+     * file system using a <code>PERSISTENT_2</code> deployment type.</p>
+     */
+    inline void SetMetadataConfiguration(FileSystemLustreMetadataConfiguration&& value) { m_metadataConfigurationHasBeenSet = true; m_metadataConfiguration = std::move(value); }
+
+    /**
+     * <p>The Lustre metadata performance configuration for an Amazon FSx for Lustre
+     * file system using a <code>PERSISTENT_2</code> deployment type.</p>
+     */
+    inline LustreFileSystemConfiguration& WithMetadataConfiguration(const FileSystemLustreMetadataConfiguration& value) { SetMetadataConfiguration(value); return *this;}
+
+    /**
+     * <p>The Lustre metadata performance configuration for an Amazon FSx for Lustre
+     * file system using a <code>PERSISTENT_2</code> deployment type.</p>
+     */
+    inline LustreFileSystemConfiguration& WithMetadataConfiguration(FileSystemLustreMetadataConfiguration&& value) { SetMetadataConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_weeklyMaintenanceStartTime;
@@ -690,6 +728,9 @@ namespace Model
 
     LustreRootSquashConfiguration m_rootSquashConfiguration;
     bool m_rootSquashConfigurationHasBeenSet = false;
+
+    FileSystemLustreMetadataConfiguration m_metadataConfiguration;
+    bool m_metadataConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

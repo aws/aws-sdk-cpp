@@ -29,24 +29,6 @@ DescribeKeyResult::DescribeKeyResult(const Aws::AmazonWebServiceResult<JsonValue
 DescribeKeyResult& DescribeKeyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("CreateTime"))
-  {
-    m_createTime = jsonValue.GetString("CreateTime");
-
-  }
-
-  if(jsonValue.ValueExists("Description"))
-  {
-    m_description = jsonValue.GetString("Description");
-
-  }
-
-  if(jsonValue.ValueExists("ExpireTime"))
-  {
-    m_expireTime = jsonValue.GetString("ExpireTime");
-
-  }
-
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
@@ -71,6 +53,30 @@ DescribeKeyResult& DescribeKeyResult::operator =(const Aws::AmazonWebServiceResu
 
   }
 
+  if(jsonValue.ValueExists("CreateTime"))
+  {
+    m_createTime = jsonValue.GetString("CreateTime");
+
+  }
+
+  if(jsonValue.ValueExists("ExpireTime"))
+  {
+    m_expireTime = jsonValue.GetString("ExpireTime");
+
+  }
+
+  if(jsonValue.ValueExists("UpdateTime"))
+  {
+    m_updateTime = jsonValue.GetString("UpdateTime");
+
+  }
+
+  if(jsonValue.ValueExists("Description"))
+  {
+    m_description = jsonValue.GetString("Description");
+
+  }
+
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -78,12 +84,6 @@ DescribeKeyResult& DescribeKeyResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
-  }
-
-  if(jsonValue.ValueExists("UpdateTime"))
-  {
-    m_updateTime = jsonValue.GetString("UpdateTime");
-
   }
 
 

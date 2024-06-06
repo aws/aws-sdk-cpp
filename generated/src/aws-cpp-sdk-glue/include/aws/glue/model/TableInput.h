@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/glue/model/TableIdentifier.h>
+#include <aws/glue/model/ViewDefinitionInput.h>
 #include <aws/glue/model/Column.h>
 #include <utility>
 
@@ -664,6 +665,43 @@ namespace Model
      */
     inline TableInput& WithTargetTable(TableIdentifier&& value) { SetTargetTable(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A structure that contains all the information that defines the view,
+     * including the dialect or dialects for the view, and the query.</p>
+     */
+    inline const ViewDefinitionInput& GetViewDefinition() const{ return m_viewDefinition; }
+
+    /**
+     * <p>A structure that contains all the information that defines the view,
+     * including the dialect or dialects for the view, and the query.</p>
+     */
+    inline bool ViewDefinitionHasBeenSet() const { return m_viewDefinitionHasBeenSet; }
+
+    /**
+     * <p>A structure that contains all the information that defines the view,
+     * including the dialect or dialects for the view, and the query.</p>
+     */
+    inline void SetViewDefinition(const ViewDefinitionInput& value) { m_viewDefinitionHasBeenSet = true; m_viewDefinition = value; }
+
+    /**
+     * <p>A structure that contains all the information that defines the view,
+     * including the dialect or dialects for the view, and the query.</p>
+     */
+    inline void SetViewDefinition(ViewDefinitionInput&& value) { m_viewDefinitionHasBeenSet = true; m_viewDefinition = std::move(value); }
+
+    /**
+     * <p>A structure that contains all the information that defines the view,
+     * including the dialect or dialects for the view, and the query.</p>
+     */
+    inline TableInput& WithViewDefinition(const ViewDefinitionInput& value) { SetViewDefinition(value); return *this;}
+
+    /**
+     * <p>A structure that contains all the information that defines the view,
+     * including the dialect or dialects for the view, and the query.</p>
+     */
+    inline TableInput& WithViewDefinition(ViewDefinitionInput&& value) { SetViewDefinition(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -704,6 +742,9 @@ namespace Model
 
     TableIdentifier m_targetTable;
     bool m_targetTableHasBeenSet = false;
+
+    ViewDefinitionInput m_viewDefinition;
+    bool m_viewDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

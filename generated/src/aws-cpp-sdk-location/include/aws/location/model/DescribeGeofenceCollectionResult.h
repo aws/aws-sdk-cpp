@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -32,6 +32,42 @@ namespace Model
     AWS_LOCATIONSERVICE_API DescribeGeofenceCollectionResult();
     AWS_LOCATIONSERVICE_API DescribeGeofenceCollectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOCATIONSERVICE_API DescribeGeofenceCollectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>The name of the geofence collection.</p>
+     */
+    inline const Aws::String& GetCollectionName() const{ return m_collectionName; }
+
+    /**
+     * <p>The name of the geofence collection.</p>
+     */
+    inline void SetCollectionName(const Aws::String& value) { m_collectionName = value; }
+
+    /**
+     * <p>The name of the geofence collection.</p>
+     */
+    inline void SetCollectionName(Aws::String&& value) { m_collectionName = std::move(value); }
+
+    /**
+     * <p>The name of the geofence collection.</p>
+     */
+    inline void SetCollectionName(const char* value) { m_collectionName.assign(value); }
+
+    /**
+     * <p>The name of the geofence collection.</p>
+     */
+    inline DescribeGeofenceCollectionResult& WithCollectionName(const Aws::String& value) { SetCollectionName(value); return *this;}
+
+    /**
+     * <p>The name of the geofence collection.</p>
+     */
+    inline DescribeGeofenceCollectionResult& WithCollectionName(Aws::String&& value) { SetCollectionName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the geofence collection.</p>
+     */
+    inline DescribeGeofenceCollectionResult& WithCollectionName(const char* value) { SetCollectionName(value); return *this;}
 
 
     /**
@@ -99,78 +135,6 @@ namespace Model
 
 
     /**
-     * <p>The name of the geofence collection.</p>
-     */
-    inline const Aws::String& GetCollectionName() const{ return m_collectionName; }
-
-    /**
-     * <p>The name of the geofence collection.</p>
-     */
-    inline void SetCollectionName(const Aws::String& value) { m_collectionName = value; }
-
-    /**
-     * <p>The name of the geofence collection.</p>
-     */
-    inline void SetCollectionName(Aws::String&& value) { m_collectionName = std::move(value); }
-
-    /**
-     * <p>The name of the geofence collection.</p>
-     */
-    inline void SetCollectionName(const char* value) { m_collectionName.assign(value); }
-
-    /**
-     * <p>The name of the geofence collection.</p>
-     */
-    inline DescribeGeofenceCollectionResult& WithCollectionName(const Aws::String& value) { SetCollectionName(value); return *this;}
-
-    /**
-     * <p>The name of the geofence collection.</p>
-     */
-    inline DescribeGeofenceCollectionResult& WithCollectionName(Aws::String&& value) { SetCollectionName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the geofence collection.</p>
-     */
-    inline DescribeGeofenceCollectionResult& WithCollectionName(const char* value) { SetCollectionName(value); return *this;}
-
-
-    /**
-     * <p>The timestamp for when the geofence resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-     */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
-
-    /**
-     * <p>The timestamp for when the geofence resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-     */
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTime = value; }
-
-    /**
-     * <p>The timestamp for when the geofence resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-     */
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTime = std::move(value); }
-
-    /**
-     * <p>The timestamp for when the geofence resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-     */
-    inline DescribeGeofenceCollectionResult& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
-
-    /**
-     * <p>The timestamp for when the geofence resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-     */
-    inline DescribeGeofenceCollectionResult& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
-
-
-    /**
      * <p>The optional description for the geofence collection.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -204,22 +168,6 @@ namespace Model
      * <p>The optional description for the geofence collection.</p>
      */
     inline DescribeGeofenceCollectionResult& WithDescription(const char* value) { SetDescription(value); return *this;}
-
-
-    /**
-     * <p>The number of geofences in the geofence collection.</p>
-     */
-    inline int GetGeofenceCount() const{ return m_geofenceCount; }
-
-    /**
-     * <p>The number of geofences in the geofence collection.</p>
-     */
-    inline void SetGeofenceCount(int value) { m_geofenceCount = value; }
-
-    /**
-     * <p>The number of geofences in the geofence collection.</p>
-     */
-    inline DescribeGeofenceCollectionResult& WithGeofenceCount(int value) { SetGeofenceCount(value); return *this;}
 
 
     /**
@@ -341,6 +289,42 @@ namespace Model
 
 
     /**
+     * <p>The timestamp for when the geofence resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+     */
+    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+
+    /**
+     * <p>The timestamp for when the geofence resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+     */
+    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTime = value; }
+
+    /**
+     * <p>The timestamp for when the geofence resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+     */
+    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTime = std::move(value); }
+
+    /**
+     * <p>The timestamp for when the geofence resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+     */
+    inline DescribeGeofenceCollectionResult& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
+
+    /**
+     * <p>The timestamp for when the geofence resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+     */
+    inline DescribeGeofenceCollectionResult& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+
+
+    /**
      * <p>The timestamp for when the geofence collection was last updated in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
@@ -376,6 +360,22 @@ namespace Model
     inline DescribeGeofenceCollectionResult& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The number of geofences in the geofence collection.</p>
+     */
+    inline int GetGeofenceCount() const{ return m_geofenceCount; }
+
+    /**
+     * <p>The number of geofences in the geofence collection.</p>
+     */
+    inline void SetGeofenceCount(int value) { m_geofenceCount = value; }
+
+    /**
+     * <p>The number of geofences in the geofence collection.</p>
+     */
+    inline DescribeGeofenceCollectionResult& WithGeofenceCount(int value) { SetGeofenceCount(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -399,21 +399,21 @@ namespace Model
 
   private:
 
-    Aws::String m_collectionArn;
-
     Aws::String m_collectionName;
 
-    Aws::Utils::DateTime m_createTime;
+    Aws::String m_collectionArn;
 
     Aws::String m_description;
-
-    int m_geofenceCount;
 
     Aws::String m_kmsKeyId;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
 
+    Aws::Utils::DateTime m_createTime;
+
     Aws::Utils::DateTime m_updateTime;
+
+    int m_geofenceCount;
 
     Aws::String m_requestId;
   };

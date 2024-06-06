@@ -29,15 +29,15 @@ CreateGeofenceCollectionResult::CreateGeofenceCollectionResult(const Aws::Amazon
 CreateGeofenceCollectionResult& CreateGeofenceCollectionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("CollectionArn"))
-  {
-    m_collectionArn = jsonValue.GetString("CollectionArn");
-
-  }
-
   if(jsonValue.ValueExists("CollectionName"))
   {
     m_collectionName = jsonValue.GetString("CollectionName");
+
+  }
+
+  if(jsonValue.ValueExists("CollectionArn"))
+  {
+    m_collectionArn = jsonValue.GetString("CollectionArn");
 
   }
 

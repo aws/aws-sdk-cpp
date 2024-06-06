@@ -13,9 +13,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateMapRequest::CreateMapRequest() : 
+    m_mapNameHasBeenSet(false),
     m_configurationHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_mapNameHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -23,6 +23,12 @@ CreateMapRequest::CreateMapRequest() :
 Aws::String CreateMapRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_mapNameHasBeenSet)
+  {
+   payload.WithString("MapName", m_mapName);
+
+  }
 
   if(m_configurationHasBeenSet)
   {
@@ -33,12 +39,6 @@ Aws::String CreateMapRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
-
-  }
-
-  if(m_mapNameHasBeenSet)
-  {
-   payload.WithString("MapName", m_mapName);
 
   }
 

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/location/LocationService_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/location/model/ApiKeyRestrictions.h>
 #include <utility>
 
@@ -41,87 +41,44 @@ namespace Model
 
 
     /**
-     * <p>The timestamp of when the API key was created, in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+     * <p>The name of the API key resource.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+    inline const Aws::String& GetKeyName() const{ return m_keyName; }
 
     /**
-     * <p>The timestamp of when the API key was created, in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+     * <p>The name of the API key resource.</p>
      */
-    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
+    inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
 
     /**
-     * <p>The timestamp of when the API key was created, in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+     * <p>The name of the API key resource.</p>
      */
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+    inline void SetKeyName(const Aws::String& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
 
     /**
-     * <p>The timestamp of when the API key was created, in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+     * <p>The name of the API key resource.</p>
      */
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
+    inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = std::move(value); }
 
     /**
-     * <p>The timestamp of when the API key was created, in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+     * <p>The name of the API key resource.</p>
      */
-    inline ListKeysResponseEntry& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
+    inline void SetKeyName(const char* value) { m_keyNameHasBeenSet = true; m_keyName.assign(value); }
 
     /**
-     * <p>The timestamp of when the API key was created, in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+     * <p>The name of the API key resource.</p>
      */
-    inline ListKeysResponseEntry& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
-
+    inline ListKeysResponseEntry& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
 
     /**
-     * <p>The optional description for the API key resource.</p>
+     * <p>The name of the API key resource.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline ListKeysResponseEntry& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
 
     /**
-     * <p>The optional description for the API key resource.</p>
+     * <p>The name of the API key resource.</p>
      */
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The optional description for the API key resource.</p>
-     */
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The optional description for the API key resource.</p>
-     */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The optional description for the API key resource.</p>
-     */
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The optional description for the API key resource.</p>
-     */
-    inline ListKeysResponseEntry& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The optional description for the API key resource.</p>
-     */
-    inline ListKeysResponseEntry& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The optional description for the API key resource.</p>
-     */
-    inline ListKeysResponseEntry& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline ListKeysResponseEntry& WithKeyName(const char* value) { SetKeyName(value); return *this;}
 
 
     /**
@@ -168,44 +125,44 @@ namespace Model
 
 
     /**
-     * <p>The name of the API key resource.</p>
+     * <p>The optional description for the API key resource.</p>
      */
-    inline const Aws::String& GetKeyName() const{ return m_keyName; }
+    inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The name of the API key resource.</p>
+     * <p>The optional description for the API key resource.</p>
      */
-    inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The name of the API key resource.</p>
+     * <p>The optional description for the API key resource.</p>
      */
-    inline void SetKeyName(const Aws::String& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The name of the API key resource.</p>
+     * <p>The optional description for the API key resource.</p>
      */
-    inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = std::move(value); }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The name of the API key resource.</p>
+     * <p>The optional description for the API key resource.</p>
      */
-    inline void SetKeyName(const char* value) { m_keyNameHasBeenSet = true; m_keyName.assign(value); }
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The name of the API key resource.</p>
+     * <p>The optional description for the API key resource.</p>
      */
-    inline ListKeysResponseEntry& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
+    inline ListKeysResponseEntry& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The name of the API key resource.</p>
+     * <p>The optional description for the API key resource.</p>
      */
-    inline ListKeysResponseEntry& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
+    inline ListKeysResponseEntry& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the API key resource.</p>
+     * <p>The optional description for the API key resource.</p>
      */
-    inline ListKeysResponseEntry& WithKeyName(const char* value) { SetKeyName(value); return *this;}
+    inline ListKeysResponseEntry& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     
@@ -225,6 +182,49 @@ namespace Model
 
     
     inline ListKeysResponseEntry& WithRestrictions(ApiKeyRestrictions&& value) { SetRestrictions(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The timestamp of when the API key was created, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+
+    /**
+     * <p>The timestamp of when the API key was created, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+     */
+    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
+
+    /**
+     * <p>The timestamp of when the API key was created, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+     */
+    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+
+    /**
+     * <p>The timestamp of when the API key was created, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+     */
+    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
+
+    /**
+     * <p>The timestamp of when the API key was created, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+     */
+    inline ListKeysResponseEntry& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
+
+    /**
+     * <p>The timestamp of when the API key was created, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+     */
+    inline ListKeysResponseEntry& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
 
 
     /**
@@ -271,20 +271,20 @@ namespace Model
 
   private:
 
-    Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
+    Aws::String m_keyName;
+    bool m_keyNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_expireTime;
     bool m_expireTimeHasBeenSet = false;
 
-    Aws::String m_keyName;
-    bool m_keyNameHasBeenSet = false;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     ApiKeyRestrictions m_restrictions;
     bool m_restrictionsHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createTime;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateTime;
     bool m_updateTimeHasBeenSet = false;

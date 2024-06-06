@@ -29,9 +29,9 @@ CreateTrackerResult::CreateTrackerResult(const Aws::AmazonWebServiceResult<JsonV
 CreateTrackerResult& CreateTrackerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("CreateTime"))
+  if(jsonValue.ValueExists("TrackerName"))
   {
-    m_createTime = jsonValue.GetString("CreateTime");
+    m_trackerName = jsonValue.GetString("TrackerName");
 
   }
 
@@ -41,9 +41,9 @@ CreateTrackerResult& CreateTrackerResult::operator =(const Aws::AmazonWebService
 
   }
 
-  if(jsonValue.ValueExists("TrackerName"))
+  if(jsonValue.ValueExists("CreateTime"))
   {
-    m_trackerName = jsonValue.GetString("TrackerName");
+    m_createTime = jsonValue.GetString("CreateTime");
 
   }
 

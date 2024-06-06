@@ -13,13 +13,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateKeyRequest::UpdateKeyRequest() : 
+    m_keyNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_expireTimeHasBeenSet(false),
-    m_forceUpdate(false),
-    m_forceUpdateHasBeenSet(false),
-    m_keyNameHasBeenSet(false),
     m_noExpiry(false),
     m_noExpiryHasBeenSet(false),
+    m_forceUpdate(false),
+    m_forceUpdateHasBeenSet(false),
     m_restrictionsHasBeenSet(false)
 {
 }
@@ -39,15 +39,15 @@ Aws::String UpdateKeyRequest::SerializePayload() const
    payload.WithString("ExpireTime", m_expireTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_forceUpdateHasBeenSet)
-  {
-   payload.WithBool("ForceUpdate", m_forceUpdate);
-
-  }
-
   if(m_noExpiryHasBeenSet)
   {
    payload.WithBool("NoExpiry", m_noExpiry);
+
+  }
+
+  if(m_forceUpdateHasBeenSet)
+  {
+   payload.WithBool("ForceUpdate", m_forceUpdate);
 
   }
 

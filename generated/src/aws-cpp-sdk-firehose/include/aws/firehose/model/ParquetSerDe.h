@@ -27,8 +27,8 @@ namespace Model
   /**
    * <p>A serializer to use for converting data to the Parquet format before storing
    * it in Amazon S3. For more information, see <a
-   * href="https://parquet.apache.org/documentation/latest/">Apache
-   * Parquet</a>.</p><p><h3>See Also:</h3>   <a
+   * href="https://parquet.apache.org/docs/">Apache Parquet</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ParquetSerDe">AWS
    * API Reference</a></p>
    */

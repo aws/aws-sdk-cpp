@@ -117,8 +117,8 @@ namespace Model
 
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
-     * lists the names, descriptions, and values of the special request parameters that
-     * the <code>CreateTopic</code> action uses:</p> <ul> <li> <p>
+     * lists names, descriptions, and values of the special request parameters that the
+     * <code>CreateTopic</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>DisplayName</code> – The display name to use for a topic with SMS
@@ -170,8 +170,8 @@ namespace Model
 
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
-     * lists the names, descriptions, and values of the special request parameters that
-     * the <code>CreateTopic</code> action uses:</p> <ul> <li> <p>
+     * lists names, descriptions, and values of the special request parameters that the
+     * <code>CreateTopic</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>DisplayName</code> – The display name to use for a topic with SMS
@@ -223,8 +223,8 @@ namespace Model
 
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
-     * lists the names, descriptions, and values of the special request parameters that
-     * the <code>CreateTopic</code> action uses:</p> <ul> <li> <p>
+     * lists names, descriptions, and values of the special request parameters that the
+     * <code>CreateTopic</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>DisplayName</code> – The display name to use for a topic with SMS
@@ -276,8 +276,8 @@ namespace Model
 
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
-     * lists the names, descriptions, and values of the special request parameters that
-     * the <code>CreateTopic</code> action uses:</p> <ul> <li> <p>
+     * lists names, descriptions, and values of the special request parameters that the
+     * <code>CreateTopic</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>DisplayName</code> – The display name to use for a topic with SMS
@@ -329,8 +329,8 @@ namespace Model
 
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
-     * lists the names, descriptions, and values of the special request parameters that
-     * the <code>CreateTopic</code> action uses:</p> <ul> <li> <p>
+     * lists names, descriptions, and values of the special request parameters that the
+     * <code>CreateTopic</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>DisplayName</code> – The display name to use for a topic with SMS
@@ -382,8 +382,8 @@ namespace Model
 
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
-     * lists the names, descriptions, and values of the special request parameters that
-     * the <code>CreateTopic</code> action uses:</p> <ul> <li> <p>
+     * lists names, descriptions, and values of the special request parameters that the
+     * <code>CreateTopic</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>DisplayName</code> – The display name to use for a topic with SMS
@@ -435,8 +435,8 @@ namespace Model
 
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
-     * lists the names, descriptions, and values of the special request parameters that
-     * the <code>CreateTopic</code> action uses:</p> <ul> <li> <p>
+     * lists names, descriptions, and values of the special request parameters that the
+     * <code>CreateTopic</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>DisplayName</code> – The display name to use for a topic with SMS
@@ -488,8 +488,8 @@ namespace Model
 
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
-     * lists the names, descriptions, and values of the special request parameters that
-     * the <code>CreateTopic</code> action uses:</p> <ul> <li> <p>
+     * lists names, descriptions, and values of the special request parameters that the
+     * <code>CreateTopic</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>DisplayName</code> – The display name to use for a topic with SMS
@@ -541,8 +541,8 @@ namespace Model
 
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
-     * lists the names, descriptions, and values of the special request parameters that
-     * the <code>CreateTopic</code> action uses:</p> <ul> <li> <p>
+     * lists names, descriptions, and values of the special request parameters that the
+     * <code>CreateTopic</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>DisplayName</code> – The display name to use for a topic with SMS
@@ -594,8 +594,8 @@ namespace Model
 
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
-     * lists the names, descriptions, and values of the special request parameters that
-     * the <code>CreateTopic</code> action uses:</p> <ul> <li> <p>
+     * lists names, descriptions, and values of the special request parameters that the
+     * <code>CreateTopic</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>DisplayName</code> – The display name to use for a topic with SMS
@@ -647,8 +647,8 @@ namespace Model
 
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
-     * lists the names, descriptions, and values of the special request parameters that
-     * the <code>CreateTopic</code> action uses:</p> <ul> <li> <p>
+     * lists names, descriptions, and values of the special request parameters that the
+     * <code>CreateTopic</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>DisplayName</code> – The display name to use for a topic with SMS
@@ -700,8 +700,8 @@ namespace Model
 
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
-     * lists the names, descriptions, and values of the special request parameters that
-     * the <code>CreateTopic</code> action uses:</p> <ul> <li> <p>
+     * lists names, descriptions, and values of the special request parameters that the
+     * <code>CreateTopic</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>DisplayName</code> – The display name to use for a topic with SMS
@@ -753,8 +753,8 @@ namespace Model
 
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
-     * lists the names, descriptions, and values of the special request parameters that
-     * the <code>CreateTopic</code> action uses:</p> <ul> <li> <p>
+     * lists names, descriptions, and values of the special request parameters that the
+     * <code>CreateTopic</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>DisplayName</code> – The display name to use for a topic with SMS

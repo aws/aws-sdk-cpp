@@ -29,15 +29,21 @@ DescribeRouteCalculatorResult::DescribeRouteCalculatorResult(const Aws::AmazonWe
 DescribeRouteCalculatorResult& DescribeRouteCalculatorResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("CalculatorName"))
+  {
+    m_calculatorName = jsonValue.GetString("CalculatorName");
+
+  }
+
   if(jsonValue.ValueExists("CalculatorArn"))
   {
     m_calculatorArn = jsonValue.GetString("CalculatorArn");
 
   }
 
-  if(jsonValue.ValueExists("CalculatorName"))
+  if(jsonValue.ValueExists("Description"))
   {
-    m_calculatorName = jsonValue.GetString("CalculatorName");
+    m_description = jsonValue.GetString("Description");
 
   }
 
@@ -47,15 +53,15 @@ DescribeRouteCalculatorResult& DescribeRouteCalculatorResult::operator =(const A
 
   }
 
-  if(jsonValue.ValueExists("DataSource"))
+  if(jsonValue.ValueExists("UpdateTime"))
   {
-    m_dataSource = jsonValue.GetString("DataSource");
+    m_updateTime = jsonValue.GetString("UpdateTime");
 
   }
 
-  if(jsonValue.ValueExists("Description"))
+  if(jsonValue.ValueExists("DataSource"))
   {
-    m_description = jsonValue.GetString("Description");
+    m_dataSource = jsonValue.GetString("DataSource");
 
   }
 
@@ -66,12 +72,6 @@ DescribeRouteCalculatorResult& DescribeRouteCalculatorResult::operator =(const A
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
-  }
-
-  if(jsonValue.ValueExists("UpdateTime"))
-  {
-    m_updateTime = jsonValue.GetString("UpdateTime");
-
   }
 
 

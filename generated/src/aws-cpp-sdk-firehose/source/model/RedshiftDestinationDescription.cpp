@@ -29,7 +29,8 @@ RedshiftDestinationDescription::RedshiftDestinationDescription() :
     m_s3BackupMode(RedshiftS3BackupMode::NOT_SET),
     m_s3BackupModeHasBeenSet(false),
     m_s3BackupDescriptionHasBeenSet(false),
-    m_cloudWatchLoggingOptionsHasBeenSet(false)
+    m_cloudWatchLoggingOptionsHasBeenSet(false),
+    m_secretsManagerConfigurationHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ RedshiftDestinationDescription::RedshiftDestinationDescription(JsonView jsonValu
     m_s3BackupMode(RedshiftS3BackupMode::NOT_SET),
     m_s3BackupModeHasBeenSet(false),
     m_s3BackupDescriptionHasBeenSet(false),
-    m_cloudWatchLoggingOptionsHasBeenSet(false)
+    m_cloudWatchLoggingOptionsHasBeenSet(false),
+    m_secretsManagerConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -121,6 +123,13 @@ RedshiftDestinationDescription& RedshiftDestinationDescription::operator =(JsonV
     m_cloudWatchLoggingOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SecretsManagerConfiguration"))
+  {
+    m_secretsManagerConfiguration = jsonValue.GetObject("SecretsManagerConfiguration");
+
+    m_secretsManagerConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -184,6 +193,12 @@ JsonValue RedshiftDestinationDescription::Jsonize() const
   if(m_cloudWatchLoggingOptionsHasBeenSet)
   {
    payload.WithObject("CloudWatchLoggingOptions", m_cloudWatchLoggingOptions.Jsonize());
+
+  }
+
+  if(m_secretsManagerConfigurationHasBeenSet)
+  {
+   payload.WithObject("SecretsManagerConfiguration", m_secretsManagerConfiguration.Jsonize());
 
   }
 

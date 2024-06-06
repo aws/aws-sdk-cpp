@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/location/LocationService_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -37,6 +37,47 @@ namespace Model
     AWS_LOCATIONSERVICE_API SearchPlaceIndexForSuggestionsSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API SearchPlaceIndexForSuggestionsSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The free-form partial text input specified in the request.</p>
+     */
+    inline const Aws::String& GetText() const{ return m_text; }
+
+    /**
+     * <p>The free-form partial text input specified in the request.</p>
+     */
+    inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
+
+    /**
+     * <p>The free-form partial text input specified in the request.</p>
+     */
+    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
+
+    /**
+     * <p>The free-form partial text input specified in the request.</p>
+     */
+    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
+
+    /**
+     * <p>The free-form partial text input specified in the request.</p>
+     */
+    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
+
+    /**
+     * <p>The free-form partial text input specified in the request.</p>
+     */
+    inline SearchPlaceIndexForSuggestionsSummary& WithText(const Aws::String& value) { SetText(value); return *this;}
+
+    /**
+     * <p>The free-form partial text input specified in the request.</p>
+     */
+    inline SearchPlaceIndexForSuggestionsSummary& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
+
+    /**
+     * <p>The free-form partial text input specified in the request.</p>
+     */
+    inline SearchPlaceIndexForSuggestionsSummary& WithText(const char* value) { SetText(value); return *this;}
 
 
     /**
@@ -108,6 +149,116 @@ namespace Model
      * <code>49.2847</code>.</p>
      */
     inline SearchPlaceIndexForSuggestionsSummary& AddBiasPosition(double value) { m_biasPositionHasBeenSet = true; m_biasPosition.push_back(value); return *this; }
+
+
+    /**
+     * <p>Contains the coordinates for the optional bounding box specified in the
+     * request.</p>
+     */
+    inline const Aws::Vector<double>& GetFilterBBox() const{ return m_filterBBox; }
+
+    /**
+     * <p>Contains the coordinates for the optional bounding box specified in the
+     * request.</p>
+     */
+    inline bool FilterBBoxHasBeenSet() const { return m_filterBBoxHasBeenSet; }
+
+    /**
+     * <p>Contains the coordinates for the optional bounding box specified in the
+     * request.</p>
+     */
+    inline void SetFilterBBox(const Aws::Vector<double>& value) { m_filterBBoxHasBeenSet = true; m_filterBBox = value; }
+
+    /**
+     * <p>Contains the coordinates for the optional bounding box specified in the
+     * request.</p>
+     */
+    inline void SetFilterBBox(Aws::Vector<double>&& value) { m_filterBBoxHasBeenSet = true; m_filterBBox = std::move(value); }
+
+    /**
+     * <p>Contains the coordinates for the optional bounding box specified in the
+     * request.</p>
+     */
+    inline SearchPlaceIndexForSuggestionsSummary& WithFilterBBox(const Aws::Vector<double>& value) { SetFilterBBox(value); return *this;}
+
+    /**
+     * <p>Contains the coordinates for the optional bounding box specified in the
+     * request.</p>
+     */
+    inline SearchPlaceIndexForSuggestionsSummary& WithFilterBBox(Aws::Vector<double>&& value) { SetFilterBBox(std::move(value)); return *this;}
+
+    /**
+     * <p>Contains the coordinates for the optional bounding box specified in the
+     * request.</p>
+     */
+    inline SearchPlaceIndexForSuggestionsSummary& AddFilterBBox(double value) { m_filterBBoxHasBeenSet = true; m_filterBBox.push_back(value); return *this; }
+
+
+    /**
+     * <p>Contains the optional country filter specified in the request.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetFilterCountries() const{ return m_filterCountries; }
+
+    /**
+     * <p>Contains the optional country filter specified in the request.</p>
+     */
+    inline bool FilterCountriesHasBeenSet() const { return m_filterCountriesHasBeenSet; }
+
+    /**
+     * <p>Contains the optional country filter specified in the request.</p>
+     */
+    inline void SetFilterCountries(const Aws::Vector<Aws::String>& value) { m_filterCountriesHasBeenSet = true; m_filterCountries = value; }
+
+    /**
+     * <p>Contains the optional country filter specified in the request.</p>
+     */
+    inline void SetFilterCountries(Aws::Vector<Aws::String>&& value) { m_filterCountriesHasBeenSet = true; m_filterCountries = std::move(value); }
+
+    /**
+     * <p>Contains the optional country filter specified in the request.</p>
+     */
+    inline SearchPlaceIndexForSuggestionsSummary& WithFilterCountries(const Aws::Vector<Aws::String>& value) { SetFilterCountries(value); return *this;}
+
+    /**
+     * <p>Contains the optional country filter specified in the request.</p>
+     */
+    inline SearchPlaceIndexForSuggestionsSummary& WithFilterCountries(Aws::Vector<Aws::String>&& value) { SetFilterCountries(std::move(value)); return *this;}
+
+    /**
+     * <p>Contains the optional country filter specified in the request.</p>
+     */
+    inline SearchPlaceIndexForSuggestionsSummary& AddFilterCountries(const Aws::String& value) { m_filterCountriesHasBeenSet = true; m_filterCountries.push_back(value); return *this; }
+
+    /**
+     * <p>Contains the optional country filter specified in the request.</p>
+     */
+    inline SearchPlaceIndexForSuggestionsSummary& AddFilterCountries(Aws::String&& value) { m_filterCountriesHasBeenSet = true; m_filterCountries.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Contains the optional country filter specified in the request.</p>
+     */
+    inline SearchPlaceIndexForSuggestionsSummary& AddFilterCountries(const char* value) { m_filterCountriesHasBeenSet = true; m_filterCountries.push_back(value); return *this; }
+
+
+    /**
+     * <p>Contains the optional result count limit specified in the request.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>Contains the optional result count limit specified in the request.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>Contains the optional result count limit specified in the request.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>Contains the optional result count limit specified in the request.</p>
+     */
+    inline SearchPlaceIndexForSuggestionsSummary& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
@@ -192,141 +343,6 @@ namespace Model
 
 
     /**
-     * <p>Contains the coordinates for the optional bounding box specified in the
-     * request.</p>
-     */
-    inline const Aws::Vector<double>& GetFilterBBox() const{ return m_filterBBox; }
-
-    /**
-     * <p>Contains the coordinates for the optional bounding box specified in the
-     * request.</p>
-     */
-    inline bool FilterBBoxHasBeenSet() const { return m_filterBBoxHasBeenSet; }
-
-    /**
-     * <p>Contains the coordinates for the optional bounding box specified in the
-     * request.</p>
-     */
-    inline void SetFilterBBox(const Aws::Vector<double>& value) { m_filterBBoxHasBeenSet = true; m_filterBBox = value; }
-
-    /**
-     * <p>Contains the coordinates for the optional bounding box specified in the
-     * request.</p>
-     */
-    inline void SetFilterBBox(Aws::Vector<double>&& value) { m_filterBBoxHasBeenSet = true; m_filterBBox = std::move(value); }
-
-    /**
-     * <p>Contains the coordinates for the optional bounding box specified in the
-     * request.</p>
-     */
-    inline SearchPlaceIndexForSuggestionsSummary& WithFilterBBox(const Aws::Vector<double>& value) { SetFilterBBox(value); return *this;}
-
-    /**
-     * <p>Contains the coordinates for the optional bounding box specified in the
-     * request.</p>
-     */
-    inline SearchPlaceIndexForSuggestionsSummary& WithFilterBBox(Aws::Vector<double>&& value) { SetFilterBBox(std::move(value)); return *this;}
-
-    /**
-     * <p>Contains the coordinates for the optional bounding box specified in the
-     * request.</p>
-     */
-    inline SearchPlaceIndexForSuggestionsSummary& AddFilterBBox(double value) { m_filterBBoxHasBeenSet = true; m_filterBBox.push_back(value); return *this; }
-
-
-    /**
-     * <p>The optional category filter specified in the request.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetFilterCategories() const{ return m_filterCategories; }
-
-    /**
-     * <p>The optional category filter specified in the request.</p>
-     */
-    inline bool FilterCategoriesHasBeenSet() const { return m_filterCategoriesHasBeenSet; }
-
-    /**
-     * <p>The optional category filter specified in the request.</p>
-     */
-    inline void SetFilterCategories(const Aws::Vector<Aws::String>& value) { m_filterCategoriesHasBeenSet = true; m_filterCategories = value; }
-
-    /**
-     * <p>The optional category filter specified in the request.</p>
-     */
-    inline void SetFilterCategories(Aws::Vector<Aws::String>&& value) { m_filterCategoriesHasBeenSet = true; m_filterCategories = std::move(value); }
-
-    /**
-     * <p>The optional category filter specified in the request.</p>
-     */
-    inline SearchPlaceIndexForSuggestionsSummary& WithFilterCategories(const Aws::Vector<Aws::String>& value) { SetFilterCategories(value); return *this;}
-
-    /**
-     * <p>The optional category filter specified in the request.</p>
-     */
-    inline SearchPlaceIndexForSuggestionsSummary& WithFilterCategories(Aws::Vector<Aws::String>&& value) { SetFilterCategories(std::move(value)); return *this;}
-
-    /**
-     * <p>The optional category filter specified in the request.</p>
-     */
-    inline SearchPlaceIndexForSuggestionsSummary& AddFilterCategories(const Aws::String& value) { m_filterCategoriesHasBeenSet = true; m_filterCategories.push_back(value); return *this; }
-
-    /**
-     * <p>The optional category filter specified in the request.</p>
-     */
-    inline SearchPlaceIndexForSuggestionsSummary& AddFilterCategories(Aws::String&& value) { m_filterCategoriesHasBeenSet = true; m_filterCategories.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The optional category filter specified in the request.</p>
-     */
-    inline SearchPlaceIndexForSuggestionsSummary& AddFilterCategories(const char* value) { m_filterCategoriesHasBeenSet = true; m_filterCategories.push_back(value); return *this; }
-
-
-    /**
-     * <p>Contains the optional country filter specified in the request.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetFilterCountries() const{ return m_filterCountries; }
-
-    /**
-     * <p>Contains the optional country filter specified in the request.</p>
-     */
-    inline bool FilterCountriesHasBeenSet() const { return m_filterCountriesHasBeenSet; }
-
-    /**
-     * <p>Contains the optional country filter specified in the request.</p>
-     */
-    inline void SetFilterCountries(const Aws::Vector<Aws::String>& value) { m_filterCountriesHasBeenSet = true; m_filterCountries = value; }
-
-    /**
-     * <p>Contains the optional country filter specified in the request.</p>
-     */
-    inline void SetFilterCountries(Aws::Vector<Aws::String>&& value) { m_filterCountriesHasBeenSet = true; m_filterCountries = std::move(value); }
-
-    /**
-     * <p>Contains the optional country filter specified in the request.</p>
-     */
-    inline SearchPlaceIndexForSuggestionsSummary& WithFilterCountries(const Aws::Vector<Aws::String>& value) { SetFilterCountries(value); return *this;}
-
-    /**
-     * <p>Contains the optional country filter specified in the request.</p>
-     */
-    inline SearchPlaceIndexForSuggestionsSummary& WithFilterCountries(Aws::Vector<Aws::String>&& value) { SetFilterCountries(std::move(value)); return *this;}
-
-    /**
-     * <p>Contains the optional country filter specified in the request.</p>
-     */
-    inline SearchPlaceIndexForSuggestionsSummary& AddFilterCountries(const Aws::String& value) { m_filterCountriesHasBeenSet = true; m_filterCountries.push_back(value); return *this; }
-
-    /**
-     * <p>Contains the optional country filter specified in the request.</p>
-     */
-    inline SearchPlaceIndexForSuggestionsSummary& AddFilterCountries(Aws::String&& value) { m_filterCountriesHasBeenSet = true; m_filterCountries.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Contains the optional country filter specified in the request.</p>
-     */
-    inline SearchPlaceIndexForSuggestionsSummary& AddFilterCountries(const char* value) { m_filterCountriesHasBeenSet = true; m_filterCountries.push_back(value); return *this; }
-
-
-    /**
      * <p>The preferred language used to return results. Matches the language in the
      * request. The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP
      * 47</a> language tag, for example, <code>en</code> for English.</p>
@@ -384,91 +400,75 @@ namespace Model
 
 
     /**
-     * <p>Contains the optional result count limit specified in the request.</p>
+     * <p>The optional category filter specified in the request.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline const Aws::Vector<Aws::String>& GetFilterCategories() const{ return m_filterCategories; }
 
     /**
-     * <p>Contains the optional result count limit specified in the request.</p>
+     * <p>The optional category filter specified in the request.</p>
      */
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline bool FilterCategoriesHasBeenSet() const { return m_filterCategoriesHasBeenSet; }
 
     /**
-     * <p>Contains the optional result count limit specified in the request.</p>
+     * <p>The optional category filter specified in the request.</p>
      */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetFilterCategories(const Aws::Vector<Aws::String>& value) { m_filterCategoriesHasBeenSet = true; m_filterCategories = value; }
 
     /**
-     * <p>Contains the optional result count limit specified in the request.</p>
+     * <p>The optional category filter specified in the request.</p>
      */
-    inline SearchPlaceIndexForSuggestionsSummary& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
-
-    /**
-     * <p>The free-form partial text input specified in the request.</p>
-     */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline void SetFilterCategories(Aws::Vector<Aws::String>&& value) { m_filterCategoriesHasBeenSet = true; m_filterCategories = std::move(value); }
 
     /**
-     * <p>The free-form partial text input specified in the request.</p>
+     * <p>The optional category filter specified in the request.</p>
      */
-    inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
+    inline SearchPlaceIndexForSuggestionsSummary& WithFilterCategories(const Aws::Vector<Aws::String>& value) { SetFilterCategories(value); return *this;}
 
     /**
-     * <p>The free-form partial text input specified in the request.</p>
+     * <p>The optional category filter specified in the request.</p>
      */
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
+    inline SearchPlaceIndexForSuggestionsSummary& WithFilterCategories(Aws::Vector<Aws::String>&& value) { SetFilterCategories(std::move(value)); return *this;}
 
     /**
-     * <p>The free-form partial text input specified in the request.</p>
+     * <p>The optional category filter specified in the request.</p>
      */
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
+    inline SearchPlaceIndexForSuggestionsSummary& AddFilterCategories(const Aws::String& value) { m_filterCategoriesHasBeenSet = true; m_filterCategories.push_back(value); return *this; }
 
     /**
-     * <p>The free-form partial text input specified in the request.</p>
+     * <p>The optional category filter specified in the request.</p>
      */
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
+    inline SearchPlaceIndexForSuggestionsSummary& AddFilterCategories(Aws::String&& value) { m_filterCategoriesHasBeenSet = true; m_filterCategories.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The free-form partial text input specified in the request.</p>
+     * <p>The optional category filter specified in the request.</p>
      */
-    inline SearchPlaceIndexForSuggestionsSummary& WithText(const Aws::String& value) { SetText(value); return *this;}
-
-    /**
-     * <p>The free-form partial text input specified in the request.</p>
-     */
-    inline SearchPlaceIndexForSuggestionsSummary& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-
-    /**
-     * <p>The free-form partial text input specified in the request.</p>
-     */
-    inline SearchPlaceIndexForSuggestionsSummary& WithText(const char* value) { SetText(value); return *this;}
+    inline SearchPlaceIndexForSuggestionsSummary& AddFilterCategories(const char* value) { m_filterCategoriesHasBeenSet = true; m_filterCategories.push_back(value); return *this; }
 
   private:
+
+    Aws::String m_text;
+    bool m_textHasBeenSet = false;
 
     Aws::Vector<double> m_biasPosition;
     bool m_biasPositionHasBeenSet = false;
 
-    Aws::String m_dataSource;
-    bool m_dataSourceHasBeenSet = false;
-
     Aws::Vector<double> m_filterBBox;
     bool m_filterBBoxHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_filterCategories;
-    bool m_filterCategoriesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_filterCountries;
     bool m_filterCountriesHasBeenSet = false;
 
-    Aws::String m_language;
-    bool m_languageHasBeenSet = false;
-
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
 
-    Aws::String m_text;
-    bool m_textHasBeenSet = false;
+    Aws::String m_dataSource;
+    bool m_dataSourceHasBeenSet = false;
+
+    Aws::String m_language;
+    bool m_languageHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_filterCategories;
+    bool m_filterCategoriesHasBeenSet = false;
   };
 
 } // namespace Model

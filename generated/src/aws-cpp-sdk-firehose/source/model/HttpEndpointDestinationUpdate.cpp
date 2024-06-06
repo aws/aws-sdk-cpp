@@ -28,7 +28,8 @@ HttpEndpointDestinationUpdate::HttpEndpointDestinationUpdate() :
     m_retryOptionsHasBeenSet(false),
     m_s3BackupMode(HttpEndpointS3BackupMode::NOT_SET),
     m_s3BackupModeHasBeenSet(false),
-    m_s3UpdateHasBeenSet(false)
+    m_s3UpdateHasBeenSet(false),
+    m_secretsManagerConfigurationHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ HttpEndpointDestinationUpdate::HttpEndpointDestinationUpdate(JsonView jsonValue)
     m_retryOptionsHasBeenSet(false),
     m_s3BackupMode(HttpEndpointS3BackupMode::NOT_SET),
     m_s3BackupModeHasBeenSet(false),
-    m_s3UpdateHasBeenSet(false)
+    m_s3UpdateHasBeenSet(false),
+    m_secretsManagerConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -112,6 +114,13 @@ HttpEndpointDestinationUpdate& HttpEndpointDestinationUpdate::operator =(JsonVie
     m_s3UpdateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SecretsManagerConfiguration"))
+  {
+    m_secretsManagerConfiguration = jsonValue.GetObject("SecretsManagerConfiguration");
+
+    m_secretsManagerConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -169,6 +178,12 @@ JsonValue HttpEndpointDestinationUpdate::Jsonize() const
   if(m_s3UpdateHasBeenSet)
   {
    payload.WithObject("S3Update", m_s3Update.Jsonize());
+
+  }
+
+  if(m_secretsManagerConfigurationHasBeenSet)
+  {
+   payload.WithObject("SecretsManagerConfiguration", m_secretsManagerConfiguration.Jsonize());
 
   }
 

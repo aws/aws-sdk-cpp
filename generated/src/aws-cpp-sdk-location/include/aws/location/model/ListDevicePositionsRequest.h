@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/location/LocationServiceRequest.h>
-#include <aws/location/model/TrackingFilterGeometry.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/location/model/TrackingFilterGeometry.h>
 #include <utility>
 
 namespace Aws
@@ -34,34 +34,44 @@ namespace Model
 
 
     /**
-     * <p>The geometry used to filter device positions.</p>
+     * <p>The tracker resource containing the requested devices.</p>
      */
-    inline const TrackingFilterGeometry& GetFilterGeometry() const{ return m_filterGeometry; }
+    inline const Aws::String& GetTrackerName() const{ return m_trackerName; }
 
     /**
-     * <p>The geometry used to filter device positions.</p>
+     * <p>The tracker resource containing the requested devices.</p>
      */
-    inline bool FilterGeometryHasBeenSet() const { return m_filterGeometryHasBeenSet; }
+    inline bool TrackerNameHasBeenSet() const { return m_trackerNameHasBeenSet; }
 
     /**
-     * <p>The geometry used to filter device positions.</p>
+     * <p>The tracker resource containing the requested devices.</p>
      */
-    inline void SetFilterGeometry(const TrackingFilterGeometry& value) { m_filterGeometryHasBeenSet = true; m_filterGeometry = value; }
+    inline void SetTrackerName(const Aws::String& value) { m_trackerNameHasBeenSet = true; m_trackerName = value; }
 
     /**
-     * <p>The geometry used to filter device positions.</p>
+     * <p>The tracker resource containing the requested devices.</p>
      */
-    inline void SetFilterGeometry(TrackingFilterGeometry&& value) { m_filterGeometryHasBeenSet = true; m_filterGeometry = std::move(value); }
+    inline void SetTrackerName(Aws::String&& value) { m_trackerNameHasBeenSet = true; m_trackerName = std::move(value); }
 
     /**
-     * <p>The geometry used to filter device positions.</p>
+     * <p>The tracker resource containing the requested devices.</p>
      */
-    inline ListDevicePositionsRequest& WithFilterGeometry(const TrackingFilterGeometry& value) { SetFilterGeometry(value); return *this;}
+    inline void SetTrackerName(const char* value) { m_trackerNameHasBeenSet = true; m_trackerName.assign(value); }
 
     /**
-     * <p>The geometry used to filter device positions.</p>
+     * <p>The tracker resource containing the requested devices.</p>
      */
-    inline ListDevicePositionsRequest& WithFilterGeometry(TrackingFilterGeometry&& value) { SetFilterGeometry(std::move(value)); return *this;}
+    inline ListDevicePositionsRequest& WithTrackerName(const Aws::String& value) { SetTrackerName(value); return *this;}
+
+    /**
+     * <p>The tracker resource containing the requested devices.</p>
+     */
+    inline ListDevicePositionsRequest& WithTrackerName(Aws::String&& value) { SetTrackerName(std::move(value)); return *this;}
+
+    /**
+     * <p>The tracker resource containing the requested devices.</p>
+     */
+    inline ListDevicePositionsRequest& WithTrackerName(const char* value) { SetTrackerName(value); return *this;}
 
 
     /**
@@ -147,49 +157,39 @@ namespace Model
 
 
     /**
-     * <p>The tracker resource containing the requested devices.</p>
+     * <p>The geometry used to filter device positions.</p>
      */
-    inline const Aws::String& GetTrackerName() const{ return m_trackerName; }
+    inline const TrackingFilterGeometry& GetFilterGeometry() const{ return m_filterGeometry; }
 
     /**
-     * <p>The tracker resource containing the requested devices.</p>
+     * <p>The geometry used to filter device positions.</p>
      */
-    inline bool TrackerNameHasBeenSet() const { return m_trackerNameHasBeenSet; }
+    inline bool FilterGeometryHasBeenSet() const { return m_filterGeometryHasBeenSet; }
 
     /**
-     * <p>The tracker resource containing the requested devices.</p>
+     * <p>The geometry used to filter device positions.</p>
      */
-    inline void SetTrackerName(const Aws::String& value) { m_trackerNameHasBeenSet = true; m_trackerName = value; }
+    inline void SetFilterGeometry(const TrackingFilterGeometry& value) { m_filterGeometryHasBeenSet = true; m_filterGeometry = value; }
 
     /**
-     * <p>The tracker resource containing the requested devices.</p>
+     * <p>The geometry used to filter device positions.</p>
      */
-    inline void SetTrackerName(Aws::String&& value) { m_trackerNameHasBeenSet = true; m_trackerName = std::move(value); }
+    inline void SetFilterGeometry(TrackingFilterGeometry&& value) { m_filterGeometryHasBeenSet = true; m_filterGeometry = std::move(value); }
 
     /**
-     * <p>The tracker resource containing the requested devices.</p>
+     * <p>The geometry used to filter device positions.</p>
      */
-    inline void SetTrackerName(const char* value) { m_trackerNameHasBeenSet = true; m_trackerName.assign(value); }
+    inline ListDevicePositionsRequest& WithFilterGeometry(const TrackingFilterGeometry& value) { SetFilterGeometry(value); return *this;}
 
     /**
-     * <p>The tracker resource containing the requested devices.</p>
+     * <p>The geometry used to filter device positions.</p>
      */
-    inline ListDevicePositionsRequest& WithTrackerName(const Aws::String& value) { SetTrackerName(value); return *this;}
-
-    /**
-     * <p>The tracker resource containing the requested devices.</p>
-     */
-    inline ListDevicePositionsRequest& WithTrackerName(Aws::String&& value) { SetTrackerName(std::move(value)); return *this;}
-
-    /**
-     * <p>The tracker resource containing the requested devices.</p>
-     */
-    inline ListDevicePositionsRequest& WithTrackerName(const char* value) { SetTrackerName(value); return *this;}
+    inline ListDevicePositionsRequest& WithFilterGeometry(TrackingFilterGeometry&& value) { SetFilterGeometry(std::move(value)); return *this;}
 
   private:
 
-    TrackingFilterGeometry m_filterGeometry;
-    bool m_filterGeometryHasBeenSet = false;
+    Aws::String m_trackerName;
+    bool m_trackerNameHasBeenSet = false;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
@@ -197,8 +197,8 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_trackerName;
-    bool m_trackerNameHasBeenSet = false;
+    TrackingFilterGeometry m_filterGeometry;
+    bool m_filterGeometryHasBeenSet = false;
   };
 
 } // namespace Model

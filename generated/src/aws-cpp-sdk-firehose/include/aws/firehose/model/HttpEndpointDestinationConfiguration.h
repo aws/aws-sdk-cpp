@@ -14,6 +14,7 @@
 #include <aws/firehose/model/HttpEndpointRetryOptions.h>
 #include <aws/firehose/model/HttpEndpointS3BackupMode.h>
 #include <aws/firehose/model/S3DestinationConfiguration.h>
+#include <aws/firehose/model/SecretsManagerConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -152,38 +153,38 @@ namespace Model
 
 
     /**
-     * <p>The configuration of the requeste sent to the HTTP endpoint specified as the
-     * destination.</p>
+     * <p>The configuration of the request sent to the HTTP endpoint that is specified
+     * as the destination.</p>
      */
     inline const HttpEndpointRequestConfiguration& GetRequestConfiguration() const{ return m_requestConfiguration; }
 
     /**
-     * <p>The configuration of the requeste sent to the HTTP endpoint specified as the
-     * destination.</p>
+     * <p>The configuration of the request sent to the HTTP endpoint that is specified
+     * as the destination.</p>
      */
     inline bool RequestConfigurationHasBeenSet() const { return m_requestConfigurationHasBeenSet; }
 
     /**
-     * <p>The configuration of the requeste sent to the HTTP endpoint specified as the
-     * destination.</p>
+     * <p>The configuration of the request sent to the HTTP endpoint that is specified
+     * as the destination.</p>
      */
     inline void SetRequestConfiguration(const HttpEndpointRequestConfiguration& value) { m_requestConfigurationHasBeenSet = true; m_requestConfiguration = value; }
 
     /**
-     * <p>The configuration of the requeste sent to the HTTP endpoint specified as the
-     * destination.</p>
+     * <p>The configuration of the request sent to the HTTP endpoint that is specified
+     * as the destination.</p>
      */
     inline void SetRequestConfiguration(HttpEndpointRequestConfiguration&& value) { m_requestConfigurationHasBeenSet = true; m_requestConfiguration = std::move(value); }
 
     /**
-     * <p>The configuration of the requeste sent to the HTTP endpoint specified as the
-     * destination.</p>
+     * <p>The configuration of the request sent to the HTTP endpoint that is specified
+     * as the destination.</p>
      */
     inline HttpEndpointDestinationConfiguration& WithRequestConfiguration(const HttpEndpointRequestConfiguration& value) { SetRequestConfiguration(value); return *this;}
 
     /**
-     * <p>The configuration of the requeste sent to the HTTP endpoint specified as the
-     * destination.</p>
+     * <p>The configuration of the request sent to the HTTP endpoint that is specified
+     * as the destination.</p>
      */
     inline HttpEndpointDestinationConfiguration& WithRequestConfiguration(HttpEndpointRequestConfiguration&& value) { SetRequestConfiguration(std::move(value)); return *this;}
 
@@ -366,6 +367,43 @@ namespace Model
     
     inline HttpEndpointDestinationConfiguration& WithS3Configuration(S3DestinationConfiguration&& value) { SetS3Configuration(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The configuration that defines how you access secrets for HTTP Endpoint
+     * destination. </p>
+     */
+    inline const SecretsManagerConfiguration& GetSecretsManagerConfiguration() const{ return m_secretsManagerConfiguration; }
+
+    /**
+     * <p> The configuration that defines how you access secrets for HTTP Endpoint
+     * destination. </p>
+     */
+    inline bool SecretsManagerConfigurationHasBeenSet() const { return m_secretsManagerConfigurationHasBeenSet; }
+
+    /**
+     * <p> The configuration that defines how you access secrets for HTTP Endpoint
+     * destination. </p>
+     */
+    inline void SetSecretsManagerConfiguration(const SecretsManagerConfiguration& value) { m_secretsManagerConfigurationHasBeenSet = true; m_secretsManagerConfiguration = value; }
+
+    /**
+     * <p> The configuration that defines how you access secrets for HTTP Endpoint
+     * destination. </p>
+     */
+    inline void SetSecretsManagerConfiguration(SecretsManagerConfiguration&& value) { m_secretsManagerConfigurationHasBeenSet = true; m_secretsManagerConfiguration = std::move(value); }
+
+    /**
+     * <p> The configuration that defines how you access secrets for HTTP Endpoint
+     * destination. </p>
+     */
+    inline HttpEndpointDestinationConfiguration& WithSecretsManagerConfiguration(const SecretsManagerConfiguration& value) { SetSecretsManagerConfiguration(value); return *this;}
+
+    /**
+     * <p> The configuration that defines how you access secrets for HTTP Endpoint
+     * destination. </p>
+     */
+    inline HttpEndpointDestinationConfiguration& WithSecretsManagerConfiguration(SecretsManagerConfiguration&& value) { SetSecretsManagerConfiguration(std::move(value)); return *this;}
+
   private:
 
     HttpEndpointConfiguration m_endpointConfiguration;
@@ -394,6 +432,9 @@ namespace Model
 
     S3DestinationConfiguration m_s3Configuration;
     bool m_s3ConfigurationHasBeenSet = false;
+
+    SecretsManagerConfiguration m_secretsManagerConfiguration;
+    bool m_secretsManagerConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

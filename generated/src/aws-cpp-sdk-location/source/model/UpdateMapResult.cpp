@@ -29,15 +29,15 @@ UpdateMapResult::UpdateMapResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 UpdateMapResult& UpdateMapResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("MapArn"))
-  {
-    m_mapArn = jsonValue.GetString("MapArn");
-
-  }
-
   if(jsonValue.ValueExists("MapName"))
   {
     m_mapName = jsonValue.GetString("MapName");
+
+  }
+
+  if(jsonValue.ValueExists("MapArn"))
+  {
+    m_mapArn = jsonValue.GetString("MapArn");
 
   }
 

@@ -429,32 +429,32 @@ namespace Model
 
 
     /**
-     * <p>Update to the Snowflake destination condiguration settings</p>
+     * <p>Update to the Snowflake destination configuration settings.</p>
      */
     inline const SnowflakeDestinationUpdate& GetSnowflakeDestinationUpdate() const{ return m_snowflakeDestinationUpdate; }
 
     /**
-     * <p>Update to the Snowflake destination condiguration settings</p>
+     * <p>Update to the Snowflake destination configuration settings.</p>
      */
     inline bool SnowflakeDestinationUpdateHasBeenSet() const { return m_snowflakeDestinationUpdateHasBeenSet; }
 
     /**
-     * <p>Update to the Snowflake destination condiguration settings</p>
+     * <p>Update to the Snowflake destination configuration settings.</p>
      */
     inline void SetSnowflakeDestinationUpdate(const SnowflakeDestinationUpdate& value) { m_snowflakeDestinationUpdateHasBeenSet = true; m_snowflakeDestinationUpdate = value; }
 
     /**
-     * <p>Update to the Snowflake destination condiguration settings</p>
+     * <p>Update to the Snowflake destination configuration settings.</p>
      */
     inline void SetSnowflakeDestinationUpdate(SnowflakeDestinationUpdate&& value) { m_snowflakeDestinationUpdateHasBeenSet = true; m_snowflakeDestinationUpdate = std::move(value); }
 
     /**
-     * <p>Update to the Snowflake destination condiguration settings</p>
+     * <p>Update to the Snowflake destination configuration settings.</p>
      */
     inline UpdateDestinationRequest& WithSnowflakeDestinationUpdate(const SnowflakeDestinationUpdate& value) { SetSnowflakeDestinationUpdate(value); return *this;}
 
     /**
-     * <p>Update to the Snowflake destination condiguration settings</p>
+     * <p>Update to the Snowflake destination configuration settings.</p>
      */
     inline UpdateDestinationRequest& WithSnowflakeDestinationUpdate(SnowflakeDestinationUpdate&& value) { SetSnowflakeDestinationUpdate(std::move(value)); return *this;}
 

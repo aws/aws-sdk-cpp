@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/location/LocationService_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/location/model/SearchPlaceIndexForTextSummary.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/location/model/SearchForTextResult.h>
 #include <utility>
@@ -33,6 +33,57 @@ namespace Model
     AWS_LOCATIONSERVICE_API SearchPlaceIndexForTextResult();
     AWS_LOCATIONSERVICE_API SearchPlaceIndexForTextResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOCATIONSERVICE_API SearchPlaceIndexForTextResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>Contains a summary of the request. Echoes the input values for
+     * <code>BiasPosition</code>, <code>FilterBBox</code>,
+     * <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>,
+     * and <code>Text</code>. Also includes the <code>DataSource</code> of the place
+     * index and the bounding box, <code>ResultBBox</code>, which surrounds the search
+     * results. </p>
+     */
+    inline const SearchPlaceIndexForTextSummary& GetSummary() const{ return m_summary; }
+
+    /**
+     * <p>Contains a summary of the request. Echoes the input values for
+     * <code>BiasPosition</code>, <code>FilterBBox</code>,
+     * <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>,
+     * and <code>Text</code>. Also includes the <code>DataSource</code> of the place
+     * index and the bounding box, <code>ResultBBox</code>, which surrounds the search
+     * results. </p>
+     */
+    inline void SetSummary(const SearchPlaceIndexForTextSummary& value) { m_summary = value; }
+
+    /**
+     * <p>Contains a summary of the request. Echoes the input values for
+     * <code>BiasPosition</code>, <code>FilterBBox</code>,
+     * <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>,
+     * and <code>Text</code>. Also includes the <code>DataSource</code> of the place
+     * index and the bounding box, <code>ResultBBox</code>, which surrounds the search
+     * results. </p>
+     */
+    inline void SetSummary(SearchPlaceIndexForTextSummary&& value) { m_summary = std::move(value); }
+
+    /**
+     * <p>Contains a summary of the request. Echoes the input values for
+     * <code>BiasPosition</code>, <code>FilterBBox</code>,
+     * <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>,
+     * and <code>Text</code>. Also includes the <code>DataSource</code> of the place
+     * index and the bounding box, <code>ResultBBox</code>, which surrounds the search
+     * results. </p>
+     */
+    inline SearchPlaceIndexForTextResult& WithSummary(const SearchPlaceIndexForTextSummary& value) { SetSummary(value); return *this;}
+
+    /**
+     * <p>Contains a summary of the request. Echoes the input values for
+     * <code>BiasPosition</code>, <code>FilterBBox</code>,
+     * <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>,
+     * and <code>Text</code>. Also includes the <code>DataSource</code> of the place
+     * index and the bounding box, <code>ResultBBox</code>, which surrounds the search
+     * results. </p>
+     */
+    inline SearchPlaceIndexForTextResult& WithSummary(SearchPlaceIndexForTextSummary&& value) { SetSummary(std::move(value)); return *this;}
 
 
     /**
@@ -92,57 +143,6 @@ namespace Model
     inline SearchPlaceIndexForTextResult& AddResults(SearchForTextResult&& value) { m_results.push_back(std::move(value)); return *this; }
 
 
-    /**
-     * <p>Contains a summary of the request. Echoes the input values for
-     * <code>BiasPosition</code>, <code>FilterBBox</code>,
-     * <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>,
-     * and <code>Text</code>. Also includes the <code>DataSource</code> of the place
-     * index and the bounding box, <code>ResultBBox</code>, which surrounds the search
-     * results. </p>
-     */
-    inline const SearchPlaceIndexForTextSummary& GetSummary() const{ return m_summary; }
-
-    /**
-     * <p>Contains a summary of the request. Echoes the input values for
-     * <code>BiasPosition</code>, <code>FilterBBox</code>,
-     * <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>,
-     * and <code>Text</code>. Also includes the <code>DataSource</code> of the place
-     * index and the bounding box, <code>ResultBBox</code>, which surrounds the search
-     * results. </p>
-     */
-    inline void SetSummary(const SearchPlaceIndexForTextSummary& value) { m_summary = value; }
-
-    /**
-     * <p>Contains a summary of the request. Echoes the input values for
-     * <code>BiasPosition</code>, <code>FilterBBox</code>,
-     * <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>,
-     * and <code>Text</code>. Also includes the <code>DataSource</code> of the place
-     * index and the bounding box, <code>ResultBBox</code>, which surrounds the search
-     * results. </p>
-     */
-    inline void SetSummary(SearchPlaceIndexForTextSummary&& value) { m_summary = std::move(value); }
-
-    /**
-     * <p>Contains a summary of the request. Echoes the input values for
-     * <code>BiasPosition</code>, <code>FilterBBox</code>,
-     * <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>,
-     * and <code>Text</code>. Also includes the <code>DataSource</code> of the place
-     * index and the bounding box, <code>ResultBBox</code>, which surrounds the search
-     * results. </p>
-     */
-    inline SearchPlaceIndexForTextResult& WithSummary(const SearchPlaceIndexForTextSummary& value) { SetSummary(value); return *this;}
-
-    /**
-     * <p>Contains a summary of the request. Echoes the input values for
-     * <code>BiasPosition</code>, <code>FilterBBox</code>,
-     * <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>,
-     * and <code>Text</code>. Also includes the <code>DataSource</code> of the place
-     * index and the bounding box, <code>ResultBBox</code>, which surrounds the search
-     * results. </p>
-     */
-    inline SearchPlaceIndexForTextResult& WithSummary(SearchPlaceIndexForTextSummary&& value) { SetSummary(std::move(value)); return *this;}
-
-
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -166,9 +166,9 @@ namespace Model
 
   private:
 
-    Aws::Vector<SearchForTextResult> m_results;
-
     SearchPlaceIndexForTextSummary m_summary;
+
+    Aws::Vector<SearchForTextResult> m_results;
 
     Aws::String m_requestId;
   };

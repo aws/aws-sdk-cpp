@@ -93,104 +93,128 @@ namespace Model
     /**
      * <p>The message to send. The minimum size is one character. The maximum size is
      * 256 KiB.</p>  <p>A message can include only XML, JSON, and
-     * unformatted text. The following Unicode characters are allowed:</p> <p>
-     * <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to
-     * <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> |
-     * <code>#x10000</code> to <code>#x10FFFF</code> </p> <p>Any characters not
-     * included in this list will be rejected. For more information, see the <a
-     * href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for
-     * characters</a>.</p> 
+     * unformatted text. The following Unicode characters are allowed. For more
+     * information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C
+     * specification for characters</a>.</p> <p> <code>#x9</code> | <code>#xA</code> |
+     * <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
+     * <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to
+     * <code>#x10FFFF</code> </p> <p>Amazon SQS does not throw an exception or
+     * completely reject the message if it contains invalid characters. Instead, it
+     * replaces those invalid characters with <code>U+FFFD</code> before storing the
+     * message in the queue, as long as the message body contains at least one valid
+     * character.</p> 
      */
     inline const Aws::String& GetMessageBody() const{ return m_messageBody; }
 
     /**
      * <p>The message to send. The minimum size is one character. The maximum size is
      * 256 KiB.</p>  <p>A message can include only XML, JSON, and
-     * unformatted text. The following Unicode characters are allowed:</p> <p>
-     * <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to
-     * <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> |
-     * <code>#x10000</code> to <code>#x10FFFF</code> </p> <p>Any characters not
-     * included in this list will be rejected. For more information, see the <a
-     * href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for
-     * characters</a>.</p> 
+     * unformatted text. The following Unicode characters are allowed. For more
+     * information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C
+     * specification for characters</a>.</p> <p> <code>#x9</code> | <code>#xA</code> |
+     * <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
+     * <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to
+     * <code>#x10FFFF</code> </p> <p>Amazon SQS does not throw an exception or
+     * completely reject the message if it contains invalid characters. Instead, it
+     * replaces those invalid characters with <code>U+FFFD</code> before storing the
+     * message in the queue, as long as the message body contains at least one valid
+     * character.</p> 
      */
     inline bool MessageBodyHasBeenSet() const { return m_messageBodyHasBeenSet; }
 
     /**
      * <p>The message to send. The minimum size is one character. The maximum size is
      * 256 KiB.</p>  <p>A message can include only XML, JSON, and
-     * unformatted text. The following Unicode characters are allowed:</p> <p>
-     * <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to
-     * <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> |
-     * <code>#x10000</code> to <code>#x10FFFF</code> </p> <p>Any characters not
-     * included in this list will be rejected. For more information, see the <a
-     * href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for
-     * characters</a>.</p> 
+     * unformatted text. The following Unicode characters are allowed. For more
+     * information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C
+     * specification for characters</a>.</p> <p> <code>#x9</code> | <code>#xA</code> |
+     * <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
+     * <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to
+     * <code>#x10FFFF</code> </p> <p>Amazon SQS does not throw an exception or
+     * completely reject the message if it contains invalid characters. Instead, it
+     * replaces those invalid characters with <code>U+FFFD</code> before storing the
+     * message in the queue, as long as the message body contains at least one valid
+     * character.</p> 
      */
     inline void SetMessageBody(const Aws::String& value) { m_messageBodyHasBeenSet = true; m_messageBody = value; }
 
     /**
      * <p>The message to send. The minimum size is one character. The maximum size is
      * 256 KiB.</p>  <p>A message can include only XML, JSON, and
-     * unformatted text. The following Unicode characters are allowed:</p> <p>
-     * <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to
-     * <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> |
-     * <code>#x10000</code> to <code>#x10FFFF</code> </p> <p>Any characters not
-     * included in this list will be rejected. For more information, see the <a
-     * href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for
-     * characters</a>.</p> 
+     * unformatted text. The following Unicode characters are allowed. For more
+     * information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C
+     * specification for characters</a>.</p> <p> <code>#x9</code> | <code>#xA</code> |
+     * <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
+     * <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to
+     * <code>#x10FFFF</code> </p> <p>Amazon SQS does not throw an exception or
+     * completely reject the message if it contains invalid characters. Instead, it
+     * replaces those invalid characters with <code>U+FFFD</code> before storing the
+     * message in the queue, as long as the message body contains at least one valid
+     * character.</p> 
      */
     inline void SetMessageBody(Aws::String&& value) { m_messageBodyHasBeenSet = true; m_messageBody = std::move(value); }
 
     /**
      * <p>The message to send. The minimum size is one character. The maximum size is
      * 256 KiB.</p>  <p>A message can include only XML, JSON, and
-     * unformatted text. The following Unicode characters are allowed:</p> <p>
-     * <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to
-     * <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> |
-     * <code>#x10000</code> to <code>#x10FFFF</code> </p> <p>Any characters not
-     * included in this list will be rejected. For more information, see the <a
-     * href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for
-     * characters</a>.</p> 
+     * unformatted text. The following Unicode characters are allowed. For more
+     * information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C
+     * specification for characters</a>.</p> <p> <code>#x9</code> | <code>#xA</code> |
+     * <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
+     * <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to
+     * <code>#x10FFFF</code> </p> <p>Amazon SQS does not throw an exception or
+     * completely reject the message if it contains invalid characters. Instead, it
+     * replaces those invalid characters with <code>U+FFFD</code> before storing the
+     * message in the queue, as long as the message body contains at least one valid
+     * character.</p> 
      */
     inline void SetMessageBody(const char* value) { m_messageBodyHasBeenSet = true; m_messageBody.assign(value); }
 
     /**
      * <p>The message to send. The minimum size is one character. The maximum size is
      * 256 KiB.</p>  <p>A message can include only XML, JSON, and
-     * unformatted text. The following Unicode characters are allowed:</p> <p>
-     * <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to
-     * <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> |
-     * <code>#x10000</code> to <code>#x10FFFF</code> </p> <p>Any characters not
-     * included in this list will be rejected. For more information, see the <a
-     * href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for
-     * characters</a>.</p> 
+     * unformatted text. The following Unicode characters are allowed. For more
+     * information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C
+     * specification for characters</a>.</p> <p> <code>#x9</code> | <code>#xA</code> |
+     * <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
+     * <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to
+     * <code>#x10FFFF</code> </p> <p>Amazon SQS does not throw an exception or
+     * completely reject the message if it contains invalid characters. Instead, it
+     * replaces those invalid characters with <code>U+FFFD</code> before storing the
+     * message in the queue, as long as the message body contains at least one valid
+     * character.</p> 
      */
     inline SendMessageRequest& WithMessageBody(const Aws::String& value) { SetMessageBody(value); return *this;}
 
     /**
      * <p>The message to send. The minimum size is one character. The maximum size is
      * 256 KiB.</p>  <p>A message can include only XML, JSON, and
-     * unformatted text. The following Unicode characters are allowed:</p> <p>
-     * <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to
-     * <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> |
-     * <code>#x10000</code> to <code>#x10FFFF</code> </p> <p>Any characters not
-     * included in this list will be rejected. For more information, see the <a
-     * href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for
-     * characters</a>.</p> 
+     * unformatted text. The following Unicode characters are allowed. For more
+     * information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C
+     * specification for characters</a>.</p> <p> <code>#x9</code> | <code>#xA</code> |
+     * <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
+     * <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to
+     * <code>#x10FFFF</code> </p> <p>Amazon SQS does not throw an exception or
+     * completely reject the message if it contains invalid characters. Instead, it
+     * replaces those invalid characters with <code>U+FFFD</code> before storing the
+     * message in the queue, as long as the message body contains at least one valid
+     * character.</p> 
      */
     inline SendMessageRequest& WithMessageBody(Aws::String&& value) { SetMessageBody(std::move(value)); return *this;}
 
     /**
      * <p>The message to send. The minimum size is one character. The maximum size is
      * 256 KiB.</p>  <p>A message can include only XML, JSON, and
-     * unformatted text. The following Unicode characters are allowed:</p> <p>
-     * <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to
-     * <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> |
-     * <code>#x10000</code> to <code>#x10FFFF</code> </p> <p>Any characters not
-     * included in this list will be rejected. For more information, see the <a
-     * href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for
-     * characters</a>.</p> 
+     * unformatted text. The following Unicode characters are allowed. For more
+     * information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C
+     * specification for characters</a>.</p> <p> <code>#x9</code> | <code>#xA</code> |
+     * <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
+     * <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to
+     * <code>#x10FFFF</code> </p> <p>Amazon SQS does not throw an exception or
+     * completely reject the message if it contains invalid characters. Instead, it
+     * replaces those invalid characters with <code>U+FFFD</code> before storing the
+     * message in the queue, as long as the message body contains at least one valid
+     * character.</p> 
      */
     inline SendMessageRequest& WithMessageBody(const char* value) { SetMessageBody(value); return *this;}
 
