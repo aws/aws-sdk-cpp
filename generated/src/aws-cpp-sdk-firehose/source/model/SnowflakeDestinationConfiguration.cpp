@@ -38,7 +38,8 @@ SnowflakeDestinationConfiguration::SnowflakeDestinationConfiguration() :
     m_retryOptionsHasBeenSet(false),
     m_s3BackupMode(SnowflakeS3BackupMode::NOT_SET),
     m_s3BackupModeHasBeenSet(false),
-    m_s3ConfigurationHasBeenSet(false)
+    m_s3ConfigurationHasBeenSet(false),
+    m_secretsManagerConfigurationHasBeenSet(false)
 {
 }
 
@@ -62,7 +63,8 @@ SnowflakeDestinationConfiguration::SnowflakeDestinationConfiguration(JsonView js
     m_retryOptionsHasBeenSet(false),
     m_s3BackupMode(SnowflakeS3BackupMode::NOT_SET),
     m_s3BackupModeHasBeenSet(false),
-    m_s3ConfigurationHasBeenSet(false)
+    m_s3ConfigurationHasBeenSet(false),
+    m_secretsManagerConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -195,6 +197,13 @@ SnowflakeDestinationConfiguration& SnowflakeDestinationConfiguration::operator =
     m_s3ConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SecretsManagerConfiguration"))
+  {
+    m_secretsManagerConfiguration = jsonValue.GetObject("SecretsManagerConfiguration");
+
+    m_secretsManagerConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -305,6 +314,12 @@ JsonValue SnowflakeDestinationConfiguration::Jsonize() const
   if(m_s3ConfigurationHasBeenSet)
   {
    payload.WithObject("S3Configuration", m_s3Configuration.Jsonize());
+
+  }
+
+  if(m_secretsManagerConfigurationHasBeenSet)
+  {
+   payload.WithObject("SecretsManagerConfiguration", m_secretsManagerConfiguration.Jsonize());
 
   }
 

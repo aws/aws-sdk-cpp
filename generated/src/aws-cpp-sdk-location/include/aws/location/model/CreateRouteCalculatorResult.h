@@ -34,6 +34,49 @@ namespace Model
 
 
     /**
+     * <p>The name of the route calculator resource. </p> <ul> <li> <p>For example,
+     * <code>ExampleRouteCalculator</code>.</p> </li> </ul>
+     */
+    inline const Aws::String& GetCalculatorName() const{ return m_calculatorName; }
+
+    /**
+     * <p>The name of the route calculator resource. </p> <ul> <li> <p>For example,
+     * <code>ExampleRouteCalculator</code>.</p> </li> </ul>
+     */
+    inline void SetCalculatorName(const Aws::String& value) { m_calculatorName = value; }
+
+    /**
+     * <p>The name of the route calculator resource. </p> <ul> <li> <p>For example,
+     * <code>ExampleRouteCalculator</code>.</p> </li> </ul>
+     */
+    inline void SetCalculatorName(Aws::String&& value) { m_calculatorName = std::move(value); }
+
+    /**
+     * <p>The name of the route calculator resource. </p> <ul> <li> <p>For example,
+     * <code>ExampleRouteCalculator</code>.</p> </li> </ul>
+     */
+    inline void SetCalculatorName(const char* value) { m_calculatorName.assign(value); }
+
+    /**
+     * <p>The name of the route calculator resource. </p> <ul> <li> <p>For example,
+     * <code>ExampleRouteCalculator</code>.</p> </li> </ul>
+     */
+    inline CreateRouteCalculatorResult& WithCalculatorName(const Aws::String& value) { SetCalculatorName(value); return *this;}
+
+    /**
+     * <p>The name of the route calculator resource. </p> <ul> <li> <p>For example,
+     * <code>ExampleRouteCalculator</code>.</p> </li> </ul>
+     */
+    inline CreateRouteCalculatorResult& WithCalculatorName(Aws::String&& value) { SetCalculatorName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the route calculator resource. </p> <ul> <li> <p>For example,
+     * <code>ExampleRouteCalculator</code>.</p> </li> </ul>
+     */
+    inline CreateRouteCalculatorResult& WithCalculatorName(const char* value) { SetCalculatorName(value); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) for the route calculator resource. Use the ARN
      * when you specify a resource across all Amazon Web Services.</p> <ul> <li>
      * <p>Format example:
@@ -95,49 +138,6 @@ namespace Model
      * </p> </li> </ul>
      */
     inline CreateRouteCalculatorResult& WithCalculatorArn(const char* value) { SetCalculatorArn(value); return *this;}
-
-
-    /**
-     * <p>The name of the route calculator resource. </p> <ul> <li> <p>For example,
-     * <code>ExampleRouteCalculator</code>.</p> </li> </ul>
-     */
-    inline const Aws::String& GetCalculatorName() const{ return m_calculatorName; }
-
-    /**
-     * <p>The name of the route calculator resource. </p> <ul> <li> <p>For example,
-     * <code>ExampleRouteCalculator</code>.</p> </li> </ul>
-     */
-    inline void SetCalculatorName(const Aws::String& value) { m_calculatorName = value; }
-
-    /**
-     * <p>The name of the route calculator resource. </p> <ul> <li> <p>For example,
-     * <code>ExampleRouteCalculator</code>.</p> </li> </ul>
-     */
-    inline void SetCalculatorName(Aws::String&& value) { m_calculatorName = std::move(value); }
-
-    /**
-     * <p>The name of the route calculator resource. </p> <ul> <li> <p>For example,
-     * <code>ExampleRouteCalculator</code>.</p> </li> </ul>
-     */
-    inline void SetCalculatorName(const char* value) { m_calculatorName.assign(value); }
-
-    /**
-     * <p>The name of the route calculator resource. </p> <ul> <li> <p>For example,
-     * <code>ExampleRouteCalculator</code>.</p> </li> </ul>
-     */
-    inline CreateRouteCalculatorResult& WithCalculatorName(const Aws::String& value) { SetCalculatorName(value); return *this;}
-
-    /**
-     * <p>The name of the route calculator resource. </p> <ul> <li> <p>For example,
-     * <code>ExampleRouteCalculator</code>.</p> </li> </ul>
-     */
-    inline CreateRouteCalculatorResult& WithCalculatorName(Aws::String&& value) { SetCalculatorName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the route calculator resource. </p> <ul> <li> <p>For example,
-     * <code>ExampleRouteCalculator</code>.</p> </li> </ul>
-     */
-    inline CreateRouteCalculatorResult& WithCalculatorName(const char* value) { SetCalculatorName(value); return *this;}
 
 
     /**
@@ -204,9 +204,9 @@ namespace Model
 
   private:
 
-    Aws::String m_calculatorArn;
-
     Aws::String m_calculatorName;
+
+    Aws::String m_calculatorArn;
 
     Aws::Utils::DateTime m_createTime;
 

@@ -29,25 +29,10 @@ GetGeofenceResult::GetGeofenceResult(const Aws::AmazonWebServiceResult<JsonValue
 GetGeofenceResult& GetGeofenceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("CreateTime"))
-  {
-    m_createTime = jsonValue.GetString("CreateTime");
-
-  }
-
   if(jsonValue.ValueExists("GeofenceId"))
   {
     m_geofenceId = jsonValue.GetString("GeofenceId");
 
-  }
-
-  if(jsonValue.ValueExists("GeofenceProperties"))
-  {
-    Aws::Map<Aws::String, JsonView> geofencePropertiesJsonMap = jsonValue.GetObject("GeofenceProperties").GetAllObjects();
-    for(auto& geofencePropertiesItem : geofencePropertiesJsonMap)
-    {
-      m_geofenceProperties[geofencePropertiesItem.first] = geofencePropertiesItem.second.AsString();
-    }
   }
 
   if(jsonValue.ValueExists("Geometry"))
@@ -62,10 +47,25 @@ GetGeofenceResult& GetGeofenceResult::operator =(const Aws::AmazonWebServiceResu
 
   }
 
+  if(jsonValue.ValueExists("CreateTime"))
+  {
+    m_createTime = jsonValue.GetString("CreateTime");
+
+  }
+
   if(jsonValue.ValueExists("UpdateTime"))
   {
     m_updateTime = jsonValue.GetString("UpdateTime");
 
+  }
+
+  if(jsonValue.ValueExists("GeofenceProperties"))
+  {
+    Aws::Map<Aws::String, JsonView> geofencePropertiesJsonMap = jsonValue.GetObject("GeofenceProperties").GetAllObjects();
+    for(auto& geofencePropertiesItem : geofencePropertiesJsonMap)
+    {
+      m_geofenceProperties[geofencePropertiesItem.first] = geofencePropertiesItem.second.AsString();
+    }
   }
 
 

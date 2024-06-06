@@ -29,12 +29,6 @@ CreateKeyResult::CreateKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 CreateKeyResult& CreateKeyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("CreateTime"))
-  {
-    m_createTime = jsonValue.GetString("CreateTime");
-
-  }
-
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
@@ -50,6 +44,12 @@ CreateKeyResult& CreateKeyResult::operator =(const Aws::AmazonWebServiceResult<J
   if(jsonValue.ValueExists("KeyName"))
   {
     m_keyName = jsonValue.GetString("KeyName");
+
+  }
+
+  if(jsonValue.ValueExists("CreateTime"))
+  {
+    m_createTime = jsonValue.GetString("CreateTime");
 
   }
 

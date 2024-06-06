@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/location/LocationServiceRequest.h>
-#include <aws/location/model/ApiKeyFilter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/location/model/ApiKeyFilter.h>
 #include <utility>
 
 namespace Aws
@@ -31,43 +31,6 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "ListKeys"; }
 
     AWS_LOCATIONSERVICE_API Aws::String SerializePayload() const override;
-
-
-    /**
-     * <p>Optionally filter the list to only <code>Active</code> or
-     * <code>Expired</code> API keys.</p>
-     */
-    inline const ApiKeyFilter& GetFilter() const{ return m_filter; }
-
-    /**
-     * <p>Optionally filter the list to only <code>Active</code> or
-     * <code>Expired</code> API keys.</p>
-     */
-    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-
-    /**
-     * <p>Optionally filter the list to only <code>Active</code> or
-     * <code>Expired</code> API keys.</p>
-     */
-    inline void SetFilter(const ApiKeyFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-
-    /**
-     * <p>Optionally filter the list to only <code>Active</code> or
-     * <code>Expired</code> API keys.</p>
-     */
-    inline void SetFilter(ApiKeyFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-
-    /**
-     * <p>Optionally filter the list to only <code>Active</code> or
-     * <code>Expired</code> API keys.</p>
-     */
-    inline ListKeysRequest& WithFilter(const ApiKeyFilter& value) { SetFilter(value); return *this;}
-
-    /**
-     * <p>Optionally filter the list to only <code>Active</code> or
-     * <code>Expired</code> API keys.</p>
-     */
-    inline ListKeysRequest& WithFilter(ApiKeyFilter&& value) { SetFilter(std::move(value)); return *this;}
 
 
     /**
@@ -151,16 +114,53 @@ namespace Model
      */
     inline ListKeysRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
-  private:
 
-    ApiKeyFilter m_filter;
-    bool m_filterHasBeenSet = false;
+    /**
+     * <p>Optionally filter the list to only <code>Active</code> or
+     * <code>Expired</code> API keys.</p>
+     */
+    inline const ApiKeyFilter& GetFilter() const{ return m_filter; }
+
+    /**
+     * <p>Optionally filter the list to only <code>Active</code> or
+     * <code>Expired</code> API keys.</p>
+     */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+
+    /**
+     * <p>Optionally filter the list to only <code>Active</code> or
+     * <code>Expired</code> API keys.</p>
+     */
+    inline void SetFilter(const ApiKeyFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
+
+    /**
+     * <p>Optionally filter the list to only <code>Active</code> or
+     * <code>Expired</code> API keys.</p>
+     */
+    inline void SetFilter(ApiKeyFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
+
+    /**
+     * <p>Optionally filter the list to only <code>Active</code> or
+     * <code>Expired</code> API keys.</p>
+     */
+    inline ListKeysRequest& WithFilter(const ApiKeyFilter& value) { SetFilter(value); return *this;}
+
+    /**
+     * <p>Optionally filter the list to only <code>Active</code> or
+     * <code>Expired</code> API keys.</p>
+     */
+    inline ListKeysRequest& WithFilter(ApiKeyFilter&& value) { SetFilter(std::move(value)); return *this;}
+
+  private:
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    ApiKeyFilter m_filter;
+    bool m_filterHasBeenSet = false;
   };
 
 } // namespace Model

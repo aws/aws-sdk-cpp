@@ -33,6 +33,47 @@ namespace Model
 
 
     /**
+     * <p>The name of the tracker resource to be dissociated from the consumer.</p>
+     */
+    inline const Aws::String& GetTrackerName() const{ return m_trackerName; }
+
+    /**
+     * <p>The name of the tracker resource to be dissociated from the consumer.</p>
+     */
+    inline bool TrackerNameHasBeenSet() const { return m_trackerNameHasBeenSet; }
+
+    /**
+     * <p>The name of the tracker resource to be dissociated from the consumer.</p>
+     */
+    inline void SetTrackerName(const Aws::String& value) { m_trackerNameHasBeenSet = true; m_trackerName = value; }
+
+    /**
+     * <p>The name of the tracker resource to be dissociated from the consumer.</p>
+     */
+    inline void SetTrackerName(Aws::String&& value) { m_trackerNameHasBeenSet = true; m_trackerName = std::move(value); }
+
+    /**
+     * <p>The name of the tracker resource to be dissociated from the consumer.</p>
+     */
+    inline void SetTrackerName(const char* value) { m_trackerNameHasBeenSet = true; m_trackerName.assign(value); }
+
+    /**
+     * <p>The name of the tracker resource to be dissociated from the consumer.</p>
+     */
+    inline DisassociateTrackerConsumerRequest& WithTrackerName(const Aws::String& value) { SetTrackerName(value); return *this;}
+
+    /**
+     * <p>The name of the tracker resource to be dissociated from the consumer.</p>
+     */
+    inline DisassociateTrackerConsumerRequest& WithTrackerName(Aws::String&& value) { SetTrackerName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the tracker resource to be dissociated from the consumer.</p>
+     */
+    inline DisassociateTrackerConsumerRequest& WithTrackerName(const char* value) { SetTrackerName(value); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection to be
      * disassociated from the tracker resource. Used when you need to specify a
      * resource across all Amazon Web Services. </p> <ul> <li> <p>Format example:
@@ -104,54 +145,13 @@ namespace Model
      */
     inline DisassociateTrackerConsumerRequest& WithConsumerArn(const char* value) { SetConsumerArn(value); return *this;}
 
-
-    /**
-     * <p>The name of the tracker resource to be dissociated from the consumer.</p>
-     */
-    inline const Aws::String& GetTrackerName() const{ return m_trackerName; }
-
-    /**
-     * <p>The name of the tracker resource to be dissociated from the consumer.</p>
-     */
-    inline bool TrackerNameHasBeenSet() const { return m_trackerNameHasBeenSet; }
-
-    /**
-     * <p>The name of the tracker resource to be dissociated from the consumer.</p>
-     */
-    inline void SetTrackerName(const Aws::String& value) { m_trackerNameHasBeenSet = true; m_trackerName = value; }
-
-    /**
-     * <p>The name of the tracker resource to be dissociated from the consumer.</p>
-     */
-    inline void SetTrackerName(Aws::String&& value) { m_trackerNameHasBeenSet = true; m_trackerName = std::move(value); }
-
-    /**
-     * <p>The name of the tracker resource to be dissociated from the consumer.</p>
-     */
-    inline void SetTrackerName(const char* value) { m_trackerNameHasBeenSet = true; m_trackerName.assign(value); }
-
-    /**
-     * <p>The name of the tracker resource to be dissociated from the consumer.</p>
-     */
-    inline DisassociateTrackerConsumerRequest& WithTrackerName(const Aws::String& value) { SetTrackerName(value); return *this;}
-
-    /**
-     * <p>The name of the tracker resource to be dissociated from the consumer.</p>
-     */
-    inline DisassociateTrackerConsumerRequest& WithTrackerName(Aws::String&& value) { SetTrackerName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the tracker resource to be dissociated from the consumer.</p>
-     */
-    inline DisassociateTrackerConsumerRequest& WithTrackerName(const char* value) { SetTrackerName(value); return *this;}
-
   private:
-
-    Aws::String m_consumerArn;
-    bool m_consumerArnHasBeenSet = false;
 
     Aws::String m_trackerName;
     bool m_trackerNameHasBeenSet = false;
+
+    Aws::String m_consumerArn;
+    bool m_consumerArnHasBeenSet = false;
   };
 
 } // namespace Model

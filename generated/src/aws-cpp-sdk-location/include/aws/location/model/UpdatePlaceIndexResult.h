@@ -34,6 +34,42 @@ namespace Model
 
 
     /**
+     * <p>The name of the updated place index resource.</p>
+     */
+    inline const Aws::String& GetIndexName() const{ return m_indexName; }
+
+    /**
+     * <p>The name of the updated place index resource.</p>
+     */
+    inline void SetIndexName(const Aws::String& value) { m_indexName = value; }
+
+    /**
+     * <p>The name of the updated place index resource.</p>
+     */
+    inline void SetIndexName(Aws::String&& value) { m_indexName = std::move(value); }
+
+    /**
+     * <p>The name of the updated place index resource.</p>
+     */
+    inline void SetIndexName(const char* value) { m_indexName.assign(value); }
+
+    /**
+     * <p>The name of the updated place index resource.</p>
+     */
+    inline UpdatePlaceIndexResult& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
+
+    /**
+     * <p>The name of the updated place index resource.</p>
+     */
+    inline UpdatePlaceIndexResult& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the updated place index resource.</p>
+     */
+    inline UpdatePlaceIndexResult& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to
      * specify a resource across Amazon Web Services.</p> <ul> <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code> </p>
@@ -88,42 +124,6 @@ namespace Model
      * </li> </ul>
      */
     inline UpdatePlaceIndexResult& WithIndexArn(const char* value) { SetIndexArn(value); return *this;}
-
-
-    /**
-     * <p>The name of the updated place index resource.</p>
-     */
-    inline const Aws::String& GetIndexName() const{ return m_indexName; }
-
-    /**
-     * <p>The name of the updated place index resource.</p>
-     */
-    inline void SetIndexName(const Aws::String& value) { m_indexName = value; }
-
-    /**
-     * <p>The name of the updated place index resource.</p>
-     */
-    inline void SetIndexName(Aws::String&& value) { m_indexName = std::move(value); }
-
-    /**
-     * <p>The name of the updated place index resource.</p>
-     */
-    inline void SetIndexName(const char* value) { m_indexName.assign(value); }
-
-    /**
-     * <p>The name of the updated place index resource.</p>
-     */
-    inline UpdatePlaceIndexResult& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
-
-    /**
-     * <p>The name of the updated place index resource.</p>
-     */
-    inline UpdatePlaceIndexResult& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the updated place index resource.</p>
-     */
-    inline UpdatePlaceIndexResult& WithIndexName(const char* value) { SetIndexName(value); return *this;}
 
 
     /**
@@ -185,9 +185,9 @@ namespace Model
 
   private:
 
-    Aws::String m_indexArn;
-
     Aws::String m_indexName;
+
+    Aws::String m_indexArn;
 
     Aws::Utils::DateTime m_updateTime;
 

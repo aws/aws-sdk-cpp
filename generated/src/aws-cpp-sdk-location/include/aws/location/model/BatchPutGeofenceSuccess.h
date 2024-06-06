@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/location/LocationService_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -37,6 +37,47 @@ namespace Model
     AWS_LOCATIONSERVICE_API BatchPutGeofenceSuccess(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API BatchPutGeofenceSuccess& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The geofence successfully stored in a geofence collection.</p>
+     */
+    inline const Aws::String& GetGeofenceId() const{ return m_geofenceId; }
+
+    /**
+     * <p>The geofence successfully stored in a geofence collection.</p>
+     */
+    inline bool GeofenceIdHasBeenSet() const { return m_geofenceIdHasBeenSet; }
+
+    /**
+     * <p>The geofence successfully stored in a geofence collection.</p>
+     */
+    inline void SetGeofenceId(const Aws::String& value) { m_geofenceIdHasBeenSet = true; m_geofenceId = value; }
+
+    /**
+     * <p>The geofence successfully stored in a geofence collection.</p>
+     */
+    inline void SetGeofenceId(Aws::String&& value) { m_geofenceIdHasBeenSet = true; m_geofenceId = std::move(value); }
+
+    /**
+     * <p>The geofence successfully stored in a geofence collection.</p>
+     */
+    inline void SetGeofenceId(const char* value) { m_geofenceIdHasBeenSet = true; m_geofenceId.assign(value); }
+
+    /**
+     * <p>The geofence successfully stored in a geofence collection.</p>
+     */
+    inline BatchPutGeofenceSuccess& WithGeofenceId(const Aws::String& value) { SetGeofenceId(value); return *this;}
+
+    /**
+     * <p>The geofence successfully stored in a geofence collection.</p>
+     */
+    inline BatchPutGeofenceSuccess& WithGeofenceId(Aws::String&& value) { SetGeofenceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The geofence successfully stored in a geofence collection.</p>
+     */
+    inline BatchPutGeofenceSuccess& WithGeofenceId(const char* value) { SetGeofenceId(value); return *this;}
 
 
     /**
@@ -83,47 +124,6 @@ namespace Model
 
 
     /**
-     * <p>The geofence successfully stored in a geofence collection.</p>
-     */
-    inline const Aws::String& GetGeofenceId() const{ return m_geofenceId; }
-
-    /**
-     * <p>The geofence successfully stored in a geofence collection.</p>
-     */
-    inline bool GeofenceIdHasBeenSet() const { return m_geofenceIdHasBeenSet; }
-
-    /**
-     * <p>The geofence successfully stored in a geofence collection.</p>
-     */
-    inline void SetGeofenceId(const Aws::String& value) { m_geofenceIdHasBeenSet = true; m_geofenceId = value; }
-
-    /**
-     * <p>The geofence successfully stored in a geofence collection.</p>
-     */
-    inline void SetGeofenceId(Aws::String&& value) { m_geofenceIdHasBeenSet = true; m_geofenceId = std::move(value); }
-
-    /**
-     * <p>The geofence successfully stored in a geofence collection.</p>
-     */
-    inline void SetGeofenceId(const char* value) { m_geofenceIdHasBeenSet = true; m_geofenceId.assign(value); }
-
-    /**
-     * <p>The geofence successfully stored in a geofence collection.</p>
-     */
-    inline BatchPutGeofenceSuccess& WithGeofenceId(const Aws::String& value) { SetGeofenceId(value); return *this;}
-
-    /**
-     * <p>The geofence successfully stored in a geofence collection.</p>
-     */
-    inline BatchPutGeofenceSuccess& WithGeofenceId(Aws::String&& value) { SetGeofenceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The geofence successfully stored in a geofence collection.</p>
-     */
-    inline BatchPutGeofenceSuccess& WithGeofenceId(const char* value) { SetGeofenceId(value); return *this;}
-
-
-    /**
      * <p>The timestamp for when the geofence was last updated in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
@@ -167,11 +167,11 @@ namespace Model
 
   private:
 
-    Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet = false;
-
     Aws::String m_geofenceId;
     bool m_geofenceIdHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createTime;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateTime;
     bool m_updateTimeHasBeenSet = false;

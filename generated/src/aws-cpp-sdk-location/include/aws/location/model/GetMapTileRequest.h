@@ -39,63 +39,6 @@ namespace Model
 
 
     /**
-     * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
-     * key</a> to authorize the request.</p>
-     */
-    inline const Aws::String& GetKey() const{ return m_key; }
-
-    /**
-     * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
-     * key</a> to authorize the request.</p>
-     */
-    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-
-    /**
-     * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
-     * key</a> to authorize the request.</p>
-     */
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-
-    /**
-     * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
-     * key</a> to authorize the request.</p>
-     */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-
-    /**
-     * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
-     * key</a> to authorize the request.</p>
-     */
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-
-    /**
-     * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
-     * key</a> to authorize the request.</p>
-     */
-    inline GetMapTileRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-
-    /**
-     * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
-     * key</a> to authorize the request.</p>
-     */
-    inline GetMapTileRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
-     * key</a> to authorize the request.</p>
-     */
-    inline GetMapTileRequest& WithKey(const char* value) { SetKey(value); return *this;}
-
-
-    /**
      * <p>The map resource to retrieve the map tiles from.</p>
      */
     inline const Aws::String& GetMapName() const{ return m_mapName; }
@@ -134,6 +77,47 @@ namespace Model
      * <p>The map resource to retrieve the map tiles from.</p>
      */
     inline GetMapTileRequest& WithMapName(const char* value) { SetMapName(value); return *this;}
+
+
+    /**
+     * <p>The zoom value for the map tile.</p>
+     */
+    inline const Aws::String& GetZ() const{ return m_z; }
+
+    /**
+     * <p>The zoom value for the map tile.</p>
+     */
+    inline bool ZHasBeenSet() const { return m_zHasBeenSet; }
+
+    /**
+     * <p>The zoom value for the map tile.</p>
+     */
+    inline void SetZ(const Aws::String& value) { m_zHasBeenSet = true; m_z = value; }
+
+    /**
+     * <p>The zoom value for the map tile.</p>
+     */
+    inline void SetZ(Aws::String&& value) { m_zHasBeenSet = true; m_z = std::move(value); }
+
+    /**
+     * <p>The zoom value for the map tile.</p>
+     */
+    inline void SetZ(const char* value) { m_zHasBeenSet = true; m_z.assign(value); }
+
+    /**
+     * <p>The zoom value for the map tile.</p>
+     */
+    inline GetMapTileRequest& WithZ(const Aws::String& value) { SetZ(value); return *this;}
+
+    /**
+     * <p>The zoom value for the map tile.</p>
+     */
+    inline GetMapTileRequest& WithZ(Aws::String&& value) { SetZ(std::move(value)); return *this;}
+
+    /**
+     * <p>The zoom value for the map tile.</p>
+     */
+    inline GetMapTileRequest& WithZ(const char* value) { SetZ(value); return *this;}
 
 
     /**
@@ -219,52 +203,68 @@ namespace Model
 
 
     /**
-     * <p>The zoom value for the map tile.</p>
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
      */
-    inline const Aws::String& GetZ() const{ return m_z; }
+    inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * <p>The zoom value for the map tile.</p>
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
      */
-    inline bool ZHasBeenSet() const { return m_zHasBeenSet; }
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
-     * <p>The zoom value for the map tile.</p>
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
      */
-    inline void SetZ(const Aws::String& value) { m_zHasBeenSet = true; m_z = value; }
+    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p>The zoom value for the map tile.</p>
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
      */
-    inline void SetZ(Aws::String&& value) { m_zHasBeenSet = true; m_z = std::move(value); }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p>The zoom value for the map tile.</p>
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
      */
-    inline void SetZ(const char* value) { m_zHasBeenSet = true; m_z.assign(value); }
+    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * <p>The zoom value for the map tile.</p>
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
      */
-    inline GetMapTileRequest& WithZ(const Aws::String& value) { SetZ(value); return *this;}
+    inline GetMapTileRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * <p>The zoom value for the map tile.</p>
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
      */
-    inline GetMapTileRequest& WithZ(Aws::String&& value) { SetZ(std::move(value)); return *this;}
+    inline GetMapTileRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * <p>The zoom value for the map tile.</p>
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
      */
-    inline GetMapTileRequest& WithZ(const char* value) { SetZ(value); return *this;}
+    inline GetMapTileRequest& WithKey(const char* value) { SetKey(value); return *this;}
 
   private:
 
-    Aws::String m_key;
-    bool m_keyHasBeenSet = false;
-
     Aws::String m_mapName;
     bool m_mapNameHasBeenSet = false;
+
+    Aws::String m_z;
+    bool m_zHasBeenSet = false;
 
     Aws::String m_x;
     bool m_xHasBeenSet = false;
@@ -272,8 +272,8 @@ namespace Model
     Aws::String m_y;
     bool m_yHasBeenSet = false;
 
-    Aws::String m_z;
-    bool m_zHasBeenSet = false;
+    Aws::String m_key;
+    bool m_keyHasBeenSet = false;
   };
 
 } // namespace Model

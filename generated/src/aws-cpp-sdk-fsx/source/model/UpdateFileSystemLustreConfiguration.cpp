@@ -30,7 +30,8 @@ UpdateFileSystemLustreConfiguration::UpdateFileSystemLustreConfiguration() :
     m_logConfigurationHasBeenSet(false),
     m_rootSquashConfigurationHasBeenSet(false),
     m_perUnitStorageThroughput(0),
-    m_perUnitStorageThroughputHasBeenSet(false)
+    m_perUnitStorageThroughputHasBeenSet(false),
+    m_metadataConfigurationHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ UpdateFileSystemLustreConfiguration::UpdateFileSystemLustreConfiguration(JsonVie
     m_logConfigurationHasBeenSet(false),
     m_rootSquashConfigurationHasBeenSet(false),
     m_perUnitStorageThroughput(0),
-    m_perUnitStorageThroughputHasBeenSet(false)
+    m_perUnitStorageThroughputHasBeenSet(false),
+    m_metadataConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -109,6 +111,13 @@ UpdateFileSystemLustreConfiguration& UpdateFileSystemLustreConfiguration::operat
     m_perUnitStorageThroughputHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MetadataConfiguration"))
+  {
+    m_metadataConfiguration = jsonValue.GetObject("MetadataConfiguration");
+
+    m_metadataConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -159,6 +168,12 @@ JsonValue UpdateFileSystemLustreConfiguration::Jsonize() const
   if(m_perUnitStorageThroughputHasBeenSet)
   {
    payload.WithInteger("PerUnitStorageThroughput", m_perUnitStorageThroughput);
+
+  }
+
+  if(m_metadataConfigurationHasBeenSet)
+  {
+   payload.WithObject("MetadataConfiguration", m_metadataConfiguration.Jsonize());
 
   }
 

@@ -5,11 +5,11 @@
 
 #pragma once
 #include <aws/location/LocationService_EXPORTS.h>
-#include <aws/location/model/PositionalAccuracy.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/location/model/PositionalAccuracy.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -34,32 +34,6 @@ namespace Model
     AWS_LOCATIONSERVICE_API GetDevicePositionResult();
     AWS_LOCATIONSERVICE_API GetDevicePositionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOCATIONSERVICE_API GetDevicePositionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>The accuracy of the device position.</p>
-     */
-    inline const PositionalAccuracy& GetAccuracy() const{ return m_accuracy; }
-
-    /**
-     * <p>The accuracy of the device position.</p>
-     */
-    inline void SetAccuracy(const PositionalAccuracy& value) { m_accuracy = value; }
-
-    /**
-     * <p>The accuracy of the device position.</p>
-     */
-    inline void SetAccuracy(PositionalAccuracy&& value) { m_accuracy = std::move(value); }
-
-    /**
-     * <p>The accuracy of the device position.</p>
-     */
-    inline GetDevicePositionResult& WithAccuracy(const PositionalAccuracy& value) { SetAccuracy(value); return *this;}
-
-    /**
-     * <p>The accuracy of the device position.</p>
-     */
-    inline GetDevicePositionResult& WithAccuracy(PositionalAccuracy&& value) { SetAccuracy(std::move(value)); return *this;}
 
 
     /**
@@ -99,6 +73,78 @@ namespace Model
 
 
     /**
+     * <p>The timestamp at which the device's position was determined. Uses <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     */
+    inline const Aws::Utils::DateTime& GetSampleTime() const{ return m_sampleTime; }
+
+    /**
+     * <p>The timestamp at which the device's position was determined. Uses <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     */
+    inline void SetSampleTime(const Aws::Utils::DateTime& value) { m_sampleTime = value; }
+
+    /**
+     * <p>The timestamp at which the device's position was determined. Uses <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     */
+    inline void SetSampleTime(Aws::Utils::DateTime&& value) { m_sampleTime = std::move(value); }
+
+    /**
+     * <p>The timestamp at which the device's position was determined. Uses <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     */
+    inline GetDevicePositionResult& WithSampleTime(const Aws::Utils::DateTime& value) { SetSampleTime(value); return *this;}
+
+    /**
+     * <p>The timestamp at which the device's position was determined. Uses <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     */
+    inline GetDevicePositionResult& WithSampleTime(Aws::Utils::DateTime&& value) { SetSampleTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The timestamp for when the tracker resource received the device position.
+     * Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601
+     * </a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     */
+    inline const Aws::Utils::DateTime& GetReceivedTime() const{ return m_receivedTime; }
+
+    /**
+     * <p>The timestamp for when the tracker resource received the device position.
+     * Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601
+     * </a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     */
+    inline void SetReceivedTime(const Aws::Utils::DateTime& value) { m_receivedTime = value; }
+
+    /**
+     * <p>The timestamp for when the tracker resource received the device position.
+     * Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601
+     * </a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     */
+    inline void SetReceivedTime(Aws::Utils::DateTime&& value) { m_receivedTime = std::move(value); }
+
+    /**
+     * <p>The timestamp for when the tracker resource received the device position.
+     * Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601
+     * </a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     */
+    inline GetDevicePositionResult& WithReceivedTime(const Aws::Utils::DateTime& value) { SetReceivedTime(value); return *this;}
+
+    /**
+     * <p>The timestamp for when the tracker resource received the device position.
+     * Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601
+     * </a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     */
+    inline GetDevicePositionResult& WithReceivedTime(Aws::Utils::DateTime&& value) { SetReceivedTime(std::move(value)); return *this;}
+
+
+    /**
      * <p>The last known device position.</p>
      */
     inline const Aws::Vector<double>& GetPosition() const{ return m_position; }
@@ -127,6 +173,32 @@ namespace Model
      * <p>The last known device position.</p>
      */
     inline GetDevicePositionResult& AddPosition(double value) { m_position.push_back(value); return *this; }
+
+
+    /**
+     * <p>The accuracy of the device position.</p>
+     */
+    inline const PositionalAccuracy& GetAccuracy() const{ return m_accuracy; }
+
+    /**
+     * <p>The accuracy of the device position.</p>
+     */
+    inline void SetAccuracy(const PositionalAccuracy& value) { m_accuracy = value; }
+
+    /**
+     * <p>The accuracy of the device position.</p>
+     */
+    inline void SetAccuracy(PositionalAccuracy&& value) { m_accuracy = std::move(value); }
+
+    /**
+     * <p>The accuracy of the device position.</p>
+     */
+    inline GetDevicePositionResult& WithAccuracy(const PositionalAccuracy& value) { SetAccuracy(value); return *this;}
+
+    /**
+     * <p>The accuracy of the device position.</p>
+     */
+    inline GetDevicePositionResult& WithAccuracy(PositionalAccuracy&& value) { SetAccuracy(std::move(value)); return *this;}
 
 
     /**
@@ -190,78 +262,6 @@ namespace Model
     inline GetDevicePositionResult& AddPositionProperties(const char* key, const char* value) { m_positionProperties.emplace(key, value); return *this; }
 
 
-    /**
-     * <p>The timestamp for when the tracker resource received the device position in
-     * <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-     */
-    inline const Aws::Utils::DateTime& GetReceivedTime() const{ return m_receivedTime; }
-
-    /**
-     * <p>The timestamp for when the tracker resource received the device position in
-     * <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-     */
-    inline void SetReceivedTime(const Aws::Utils::DateTime& value) { m_receivedTime = value; }
-
-    /**
-     * <p>The timestamp for when the tracker resource received the device position in
-     * <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-     */
-    inline void SetReceivedTime(Aws::Utils::DateTime&& value) { m_receivedTime = std::move(value); }
-
-    /**
-     * <p>The timestamp for when the tracker resource received the device position in
-     * <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-     */
-    inline GetDevicePositionResult& WithReceivedTime(const Aws::Utils::DateTime& value) { SetReceivedTime(value); return *this;}
-
-    /**
-     * <p>The timestamp for when the tracker resource received the device position in
-     * <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-     */
-    inline GetDevicePositionResult& WithReceivedTime(Aws::Utils::DateTime&& value) { SetReceivedTime(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The timestamp at which the device's position was determined. Uses <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-     */
-    inline const Aws::Utils::DateTime& GetSampleTime() const{ return m_sampleTime; }
-
-    /**
-     * <p>The timestamp at which the device's position was determined. Uses <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-     */
-    inline void SetSampleTime(const Aws::Utils::DateTime& value) { m_sampleTime = value; }
-
-    /**
-     * <p>The timestamp at which the device's position was determined. Uses <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-     */
-    inline void SetSampleTime(Aws::Utils::DateTime&& value) { m_sampleTime = std::move(value); }
-
-    /**
-     * <p>The timestamp at which the device's position was determined. Uses <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-     */
-    inline GetDevicePositionResult& WithSampleTime(const Aws::Utils::DateTime& value) { SetSampleTime(value); return *this;}
-
-    /**
-     * <p>The timestamp at which the device's position was determined. Uses <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-     */
-    inline GetDevicePositionResult& WithSampleTime(Aws::Utils::DateTime&& value) { SetSampleTime(std::move(value)); return *this;}
-
-
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -285,17 +285,17 @@ namespace Model
 
   private:
 
-    PositionalAccuracy m_accuracy;
-
     Aws::String m_deviceId;
 
-    Aws::Vector<double> m_position;
-
-    Aws::Map<Aws::String, Aws::String> m_positionProperties;
+    Aws::Utils::DateTime m_sampleTime;
 
     Aws::Utils::DateTime m_receivedTime;
 
-    Aws::Utils::DateTime m_sampleTime;
+    Aws::Vector<double> m_position;
+
+    PositionalAccuracy m_accuracy;
+
+    Aws::Map<Aws::String, Aws::String> m_positionProperties;
 
     Aws::String m_requestId;
   };

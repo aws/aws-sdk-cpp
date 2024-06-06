@@ -128,6 +128,60 @@ namespace Model
 
 
     /**
+     * <p>The count of cells in the route matrix. Equal to the number of
+     * <code>DeparturePositions</code> multiplied by the number of
+     * <code>DestinationPositions</code>.</p>
+     */
+    inline int GetRouteCount() const{ return m_routeCount; }
+
+    /**
+     * <p>The count of cells in the route matrix. Equal to the number of
+     * <code>DeparturePositions</code> multiplied by the number of
+     * <code>DestinationPositions</code>.</p>
+     */
+    inline bool RouteCountHasBeenSet() const { return m_routeCountHasBeenSet; }
+
+    /**
+     * <p>The count of cells in the route matrix. Equal to the number of
+     * <code>DeparturePositions</code> multiplied by the number of
+     * <code>DestinationPositions</code>.</p>
+     */
+    inline void SetRouteCount(int value) { m_routeCountHasBeenSet = true; m_routeCount = value; }
+
+    /**
+     * <p>The count of cells in the route matrix. Equal to the number of
+     * <code>DeparturePositions</code> multiplied by the number of
+     * <code>DestinationPositions</code>.</p>
+     */
+    inline CalculateRouteMatrixSummary& WithRouteCount(int value) { SetRouteCount(value); return *this;}
+
+
+    /**
+     * <p>The count of error results in the route matrix. If this number is 0, all
+     * routes were calculated successfully.</p>
+     */
+    inline int GetErrorCount() const{ return m_errorCount; }
+
+    /**
+     * <p>The count of error results in the route matrix. If this number is 0, all
+     * routes were calculated successfully.</p>
+     */
+    inline bool ErrorCountHasBeenSet() const { return m_errorCountHasBeenSet; }
+
+    /**
+     * <p>The count of error results in the route matrix. If this number is 0, all
+     * routes were calculated successfully.</p>
+     */
+    inline void SetErrorCount(int value) { m_errorCountHasBeenSet = true; m_errorCount = value; }
+
+    /**
+     * <p>The count of error results in the route matrix. If this number is 0, all
+     * routes were calculated successfully.</p>
+     */
+    inline CalculateRouteMatrixSummary& WithErrorCount(int value) { SetErrorCount(value); return *this;}
+
+
+    /**
      * <p>The unit of measurement for route distances.</p>
      */
     inline const DistanceUnit& GetDistanceUnit() const{ return m_distanceUnit; }
@@ -157,73 +211,19 @@ namespace Model
      */
     inline CalculateRouteMatrixSummary& WithDistanceUnit(DistanceUnit&& value) { SetDistanceUnit(std::move(value)); return *this;}
 
-
-    /**
-     * <p>The count of error results in the route matrix. If this number is 0, all
-     * routes were calculated successfully.</p>
-     */
-    inline int GetErrorCount() const{ return m_errorCount; }
-
-    /**
-     * <p>The count of error results in the route matrix. If this number is 0, all
-     * routes were calculated successfully.</p>
-     */
-    inline bool ErrorCountHasBeenSet() const { return m_errorCountHasBeenSet; }
-
-    /**
-     * <p>The count of error results in the route matrix. If this number is 0, all
-     * routes were calculated successfully.</p>
-     */
-    inline void SetErrorCount(int value) { m_errorCountHasBeenSet = true; m_errorCount = value; }
-
-    /**
-     * <p>The count of error results in the route matrix. If this number is 0, all
-     * routes were calculated successfully.</p>
-     */
-    inline CalculateRouteMatrixSummary& WithErrorCount(int value) { SetErrorCount(value); return *this;}
-
-
-    /**
-     * <p>The count of cells in the route matrix. Equal to the number of
-     * <code>DeparturePositions</code> multiplied by the number of
-     * <code>DestinationPositions</code>.</p>
-     */
-    inline int GetRouteCount() const{ return m_routeCount; }
-
-    /**
-     * <p>The count of cells in the route matrix. Equal to the number of
-     * <code>DeparturePositions</code> multiplied by the number of
-     * <code>DestinationPositions</code>.</p>
-     */
-    inline bool RouteCountHasBeenSet() const { return m_routeCountHasBeenSet; }
-
-    /**
-     * <p>The count of cells in the route matrix. Equal to the number of
-     * <code>DeparturePositions</code> multiplied by the number of
-     * <code>DestinationPositions</code>.</p>
-     */
-    inline void SetRouteCount(int value) { m_routeCountHasBeenSet = true; m_routeCount = value; }
-
-    /**
-     * <p>The count of cells in the route matrix. Equal to the number of
-     * <code>DeparturePositions</code> multiplied by the number of
-     * <code>DestinationPositions</code>.</p>
-     */
-    inline CalculateRouteMatrixSummary& WithRouteCount(int value) { SetRouteCount(value); return *this;}
-
   private:
 
     Aws::String m_dataSource;
     bool m_dataSourceHasBeenSet = false;
 
-    DistanceUnit m_distanceUnit;
-    bool m_distanceUnitHasBeenSet = false;
+    int m_routeCount;
+    bool m_routeCountHasBeenSet = false;
 
     int m_errorCount;
     bool m_errorCountHasBeenSet = false;
 
-    int m_routeCount;
-    bool m_routeCountHasBeenSet = false;
+    DistanceUnit m_distanceUnit;
+    bool m_distanceUnitHasBeenSet = false;
   };
 
 } // namespace Model

@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/location/model/BatchItemError.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/location/model/BatchItemError.h>
 #include <utility>
 
 namespace Aws
@@ -82,43 +82,6 @@ namespace Model
 
 
     /**
-     * <p>Contains details related to the error code such as the error code and error
-     * message.</p>
-     */
-    inline const BatchItemError& GetError() const{ return m_error; }
-
-    /**
-     * <p>Contains details related to the error code such as the error code and error
-     * message.</p>
-     */
-    inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-
-    /**
-     * <p>Contains details related to the error code such as the error code and error
-     * message.</p>
-     */
-    inline void SetError(const BatchItemError& value) { m_errorHasBeenSet = true; m_error = value; }
-
-    /**
-     * <p>Contains details related to the error code such as the error code and error
-     * message.</p>
-     */
-    inline void SetError(BatchItemError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-
-    /**
-     * <p>Contains details related to the error code such as the error code and error
-     * message.</p>
-     */
-    inline BatchUpdateDevicePositionError& WithError(const BatchItemError& value) { SetError(value); return *this;}
-
-    /**
-     * <p>Contains details related to the error code such as the error code and error
-     * message.</p>
-     */
-    inline BatchUpdateDevicePositionError& WithError(BatchItemError&& value) { SetError(std::move(value)); return *this;}
-
-
-    /**
      * <p>The timestamp at which the device position was determined. Uses <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
@@ -160,16 +123,53 @@ namespace Model
      */
     inline BatchUpdateDevicePositionError& WithSampleTime(Aws::Utils::DateTime&& value) { SetSampleTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Contains details related to the error code such as the error code and error
+     * message.</p>
+     */
+    inline const BatchItemError& GetError() const{ return m_error; }
+
+    /**
+     * <p>Contains details related to the error code such as the error code and error
+     * message.</p>
+     */
+    inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
+
+    /**
+     * <p>Contains details related to the error code such as the error code and error
+     * message.</p>
+     */
+    inline void SetError(const BatchItemError& value) { m_errorHasBeenSet = true; m_error = value; }
+
+    /**
+     * <p>Contains details related to the error code such as the error code and error
+     * message.</p>
+     */
+    inline void SetError(BatchItemError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
+
+    /**
+     * <p>Contains details related to the error code such as the error code and error
+     * message.</p>
+     */
+    inline BatchUpdateDevicePositionError& WithError(const BatchItemError& value) { SetError(value); return *this;}
+
+    /**
+     * <p>Contains details related to the error code such as the error code and error
+     * message.</p>
+     */
+    inline BatchUpdateDevicePositionError& WithError(BatchItemError&& value) { SetError(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_deviceId;
     bool m_deviceIdHasBeenSet = false;
 
-    BatchItemError m_error;
-    bool m_errorHasBeenSet = false;
-
     Aws::Utils::DateTime m_sampleTime;
     bool m_sampleTimeHasBeenSet = false;
+
+    BatchItemError m_error;
+    bool m_errorHasBeenSet = false;
   };
 
 } // namespace Model

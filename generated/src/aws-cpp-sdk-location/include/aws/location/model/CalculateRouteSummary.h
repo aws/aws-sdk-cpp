@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/location/LocationService_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/location/model/DistanceUnit.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -37,6 +37,112 @@ namespace Model
     AWS_LOCATIONSERVICE_API CalculateRouteSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API CalculateRouteSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>Specifies a geographical box surrounding a route. Used to zoom into a route
+     * when displaying it in a map. For example, <code>[min x, min y, max x, max
+     * y]</code>.</p> <p>The first 2 <code>bbox</code> parameters describe the lower
+     * southwest corner: </p> <ul> <li> <p>The first <code>bbox</code> position is the
+     * X coordinate or longitude of the lower southwest corner. </p> </li> <li> <p>The
+     * second <code>bbox</code> position is the Y coordinate or latitude of the lower
+     * southwest corner. </p> </li> </ul> <p>The next 2 <code>bbox</code> parameters
+     * describe the upper northeast corner: </p> <ul> <li> <p>The third
+     * <code>bbox</code> position is the X coordinate, or longitude of the upper
+     * northeast corner. </p> </li> <li> <p>The fourth <code>bbox</code> position is
+     * the Y coordinate, or latitude of the upper northeast corner. </p> </li> </ul>
+     */
+    inline const Aws::Vector<double>& GetRouteBBox() const{ return m_routeBBox; }
+
+    /**
+     * <p>Specifies a geographical box surrounding a route. Used to zoom into a route
+     * when displaying it in a map. For example, <code>[min x, min y, max x, max
+     * y]</code>.</p> <p>The first 2 <code>bbox</code> parameters describe the lower
+     * southwest corner: </p> <ul> <li> <p>The first <code>bbox</code> position is the
+     * X coordinate or longitude of the lower southwest corner. </p> </li> <li> <p>The
+     * second <code>bbox</code> position is the Y coordinate or latitude of the lower
+     * southwest corner. </p> </li> </ul> <p>The next 2 <code>bbox</code> parameters
+     * describe the upper northeast corner: </p> <ul> <li> <p>The third
+     * <code>bbox</code> position is the X coordinate, or longitude of the upper
+     * northeast corner. </p> </li> <li> <p>The fourth <code>bbox</code> position is
+     * the Y coordinate, or latitude of the upper northeast corner. </p> </li> </ul>
+     */
+    inline bool RouteBBoxHasBeenSet() const { return m_routeBBoxHasBeenSet; }
+
+    /**
+     * <p>Specifies a geographical box surrounding a route. Used to zoom into a route
+     * when displaying it in a map. For example, <code>[min x, min y, max x, max
+     * y]</code>.</p> <p>The first 2 <code>bbox</code> parameters describe the lower
+     * southwest corner: </p> <ul> <li> <p>The first <code>bbox</code> position is the
+     * X coordinate or longitude of the lower southwest corner. </p> </li> <li> <p>The
+     * second <code>bbox</code> position is the Y coordinate or latitude of the lower
+     * southwest corner. </p> </li> </ul> <p>The next 2 <code>bbox</code> parameters
+     * describe the upper northeast corner: </p> <ul> <li> <p>The third
+     * <code>bbox</code> position is the X coordinate, or longitude of the upper
+     * northeast corner. </p> </li> <li> <p>The fourth <code>bbox</code> position is
+     * the Y coordinate, or latitude of the upper northeast corner. </p> </li> </ul>
+     */
+    inline void SetRouteBBox(const Aws::Vector<double>& value) { m_routeBBoxHasBeenSet = true; m_routeBBox = value; }
+
+    /**
+     * <p>Specifies a geographical box surrounding a route. Used to zoom into a route
+     * when displaying it in a map. For example, <code>[min x, min y, max x, max
+     * y]</code>.</p> <p>The first 2 <code>bbox</code> parameters describe the lower
+     * southwest corner: </p> <ul> <li> <p>The first <code>bbox</code> position is the
+     * X coordinate or longitude of the lower southwest corner. </p> </li> <li> <p>The
+     * second <code>bbox</code> position is the Y coordinate or latitude of the lower
+     * southwest corner. </p> </li> </ul> <p>The next 2 <code>bbox</code> parameters
+     * describe the upper northeast corner: </p> <ul> <li> <p>The third
+     * <code>bbox</code> position is the X coordinate, or longitude of the upper
+     * northeast corner. </p> </li> <li> <p>The fourth <code>bbox</code> position is
+     * the Y coordinate, or latitude of the upper northeast corner. </p> </li> </ul>
+     */
+    inline void SetRouteBBox(Aws::Vector<double>&& value) { m_routeBBoxHasBeenSet = true; m_routeBBox = std::move(value); }
+
+    /**
+     * <p>Specifies a geographical box surrounding a route. Used to zoom into a route
+     * when displaying it in a map. For example, <code>[min x, min y, max x, max
+     * y]</code>.</p> <p>The first 2 <code>bbox</code> parameters describe the lower
+     * southwest corner: </p> <ul> <li> <p>The first <code>bbox</code> position is the
+     * X coordinate or longitude of the lower southwest corner. </p> </li> <li> <p>The
+     * second <code>bbox</code> position is the Y coordinate or latitude of the lower
+     * southwest corner. </p> </li> </ul> <p>The next 2 <code>bbox</code> parameters
+     * describe the upper northeast corner: </p> <ul> <li> <p>The third
+     * <code>bbox</code> position is the X coordinate, or longitude of the upper
+     * northeast corner. </p> </li> <li> <p>The fourth <code>bbox</code> position is
+     * the Y coordinate, or latitude of the upper northeast corner. </p> </li> </ul>
+     */
+    inline CalculateRouteSummary& WithRouteBBox(const Aws::Vector<double>& value) { SetRouteBBox(value); return *this;}
+
+    /**
+     * <p>Specifies a geographical box surrounding a route. Used to zoom into a route
+     * when displaying it in a map. For example, <code>[min x, min y, max x, max
+     * y]</code>.</p> <p>The first 2 <code>bbox</code> parameters describe the lower
+     * southwest corner: </p> <ul> <li> <p>The first <code>bbox</code> position is the
+     * X coordinate or longitude of the lower southwest corner. </p> </li> <li> <p>The
+     * second <code>bbox</code> position is the Y coordinate or latitude of the lower
+     * southwest corner. </p> </li> </ul> <p>The next 2 <code>bbox</code> parameters
+     * describe the upper northeast corner: </p> <ul> <li> <p>The third
+     * <code>bbox</code> position is the X coordinate, or longitude of the upper
+     * northeast corner. </p> </li> <li> <p>The fourth <code>bbox</code> position is
+     * the Y coordinate, or latitude of the upper northeast corner. </p> </li> </ul>
+     */
+    inline CalculateRouteSummary& WithRouteBBox(Aws::Vector<double>&& value) { SetRouteBBox(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies a geographical box surrounding a route. Used to zoom into a route
+     * when displaying it in a map. For example, <code>[min x, min y, max x, max
+     * y]</code>.</p> <p>The first 2 <code>bbox</code> parameters describe the lower
+     * southwest corner: </p> <ul> <li> <p>The first <code>bbox</code> position is the
+     * X coordinate or longitude of the lower southwest corner. </p> </li> <li> <p>The
+     * second <code>bbox</code> position is the Y coordinate or latitude of the lower
+     * southwest corner. </p> </li> </ul> <p>The next 2 <code>bbox</code> parameters
+     * describe the upper northeast corner: </p> <ul> <li> <p>The third
+     * <code>bbox</code> position is the X coordinate, or longitude of the upper
+     * northeast corner. </p> </li> <li> <p>The fourth <code>bbox</code> position is
+     * the Y coordinate, or latitude of the upper northeast corner. </p> </li> </ul>
+     */
+    inline CalculateRouteSummary& AddRouteBBox(double value) { m_routeBBoxHasBeenSet = true; m_routeBBox.push_back(value); return *this; }
 
 
     /**
@@ -166,6 +272,31 @@ namespace Model
 
 
     /**
+     * <p>The total travel time for the route measured in seconds. The sum of the
+     * travel time between every stop on the route.</p>
+     */
+    inline double GetDurationSeconds() const{ return m_durationSeconds; }
+
+    /**
+     * <p>The total travel time for the route measured in seconds. The sum of the
+     * travel time between every stop on the route.</p>
+     */
+    inline bool DurationSecondsHasBeenSet() const { return m_durationSecondsHasBeenSet; }
+
+    /**
+     * <p>The total travel time for the route measured in seconds. The sum of the
+     * travel time between every stop on the route.</p>
+     */
+    inline void SetDurationSeconds(double value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
+
+    /**
+     * <p>The total travel time for the route measured in seconds. The sum of the
+     * travel time between every stop on the route.</p>
+     */
+    inline CalculateRouteSummary& WithDurationSeconds(double value) { SetDurationSeconds(value); return *this;}
+
+
+    /**
      * <p>The unit of measurement for route distances.</p>
      */
     inline const DistanceUnit& GetDistanceUnit() const{ return m_distanceUnit; }
@@ -195,138 +326,10 @@ namespace Model
      */
     inline CalculateRouteSummary& WithDistanceUnit(DistanceUnit&& value) { SetDistanceUnit(std::move(value)); return *this;}
 
-
-    /**
-     * <p>The total travel time for the route measured in seconds. The sum of the
-     * travel time between every stop on the route.</p>
-     */
-    inline double GetDurationSeconds() const{ return m_durationSeconds; }
-
-    /**
-     * <p>The total travel time for the route measured in seconds. The sum of the
-     * travel time between every stop on the route.</p>
-     */
-    inline bool DurationSecondsHasBeenSet() const { return m_durationSecondsHasBeenSet; }
-
-    /**
-     * <p>The total travel time for the route measured in seconds. The sum of the
-     * travel time between every stop on the route.</p>
-     */
-    inline void SetDurationSeconds(double value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
-
-    /**
-     * <p>The total travel time for the route measured in seconds. The sum of the
-     * travel time between every stop on the route.</p>
-     */
-    inline CalculateRouteSummary& WithDurationSeconds(double value) { SetDurationSeconds(value); return *this;}
-
-
-    /**
-     * <p>Specifies a geographical box surrounding a route. Used to zoom into a route
-     * when displaying it in a map. For example, <code>[min x, min y, max x, max
-     * y]</code>.</p> <p>The first 2 <code>bbox</code> parameters describe the lower
-     * southwest corner: </p> <ul> <li> <p>The first <code>bbox</code> position is the
-     * X coordinate or longitude of the lower southwest corner. </p> </li> <li> <p>The
-     * second <code>bbox</code> position is the Y coordinate or latitude of the lower
-     * southwest corner. </p> </li> </ul> <p>The next 2 <code>bbox</code> parameters
-     * describe the upper northeast corner: </p> <ul> <li> <p>The third
-     * <code>bbox</code> position is the X coordinate, or longitude of the upper
-     * northeast corner. </p> </li> <li> <p>The fourth <code>bbox</code> position is
-     * the Y coordinate, or latitude of the upper northeast corner. </p> </li> </ul>
-     */
-    inline const Aws::Vector<double>& GetRouteBBox() const{ return m_routeBBox; }
-
-    /**
-     * <p>Specifies a geographical box surrounding a route. Used to zoom into a route
-     * when displaying it in a map. For example, <code>[min x, min y, max x, max
-     * y]</code>.</p> <p>The first 2 <code>bbox</code> parameters describe the lower
-     * southwest corner: </p> <ul> <li> <p>The first <code>bbox</code> position is the
-     * X coordinate or longitude of the lower southwest corner. </p> </li> <li> <p>The
-     * second <code>bbox</code> position is the Y coordinate or latitude of the lower
-     * southwest corner. </p> </li> </ul> <p>The next 2 <code>bbox</code> parameters
-     * describe the upper northeast corner: </p> <ul> <li> <p>The third
-     * <code>bbox</code> position is the X coordinate, or longitude of the upper
-     * northeast corner. </p> </li> <li> <p>The fourth <code>bbox</code> position is
-     * the Y coordinate, or latitude of the upper northeast corner. </p> </li> </ul>
-     */
-    inline bool RouteBBoxHasBeenSet() const { return m_routeBBoxHasBeenSet; }
-
-    /**
-     * <p>Specifies a geographical box surrounding a route. Used to zoom into a route
-     * when displaying it in a map. For example, <code>[min x, min y, max x, max
-     * y]</code>.</p> <p>The first 2 <code>bbox</code> parameters describe the lower
-     * southwest corner: </p> <ul> <li> <p>The first <code>bbox</code> position is the
-     * X coordinate or longitude of the lower southwest corner. </p> </li> <li> <p>The
-     * second <code>bbox</code> position is the Y coordinate or latitude of the lower
-     * southwest corner. </p> </li> </ul> <p>The next 2 <code>bbox</code> parameters
-     * describe the upper northeast corner: </p> <ul> <li> <p>The third
-     * <code>bbox</code> position is the X coordinate, or longitude of the upper
-     * northeast corner. </p> </li> <li> <p>The fourth <code>bbox</code> position is
-     * the Y coordinate, or latitude of the upper northeast corner. </p> </li> </ul>
-     */
-    inline void SetRouteBBox(const Aws::Vector<double>& value) { m_routeBBoxHasBeenSet = true; m_routeBBox = value; }
-
-    /**
-     * <p>Specifies a geographical box surrounding a route. Used to zoom into a route
-     * when displaying it in a map. For example, <code>[min x, min y, max x, max
-     * y]</code>.</p> <p>The first 2 <code>bbox</code> parameters describe the lower
-     * southwest corner: </p> <ul> <li> <p>The first <code>bbox</code> position is the
-     * X coordinate or longitude of the lower southwest corner. </p> </li> <li> <p>The
-     * second <code>bbox</code> position is the Y coordinate or latitude of the lower
-     * southwest corner. </p> </li> </ul> <p>The next 2 <code>bbox</code> parameters
-     * describe the upper northeast corner: </p> <ul> <li> <p>The third
-     * <code>bbox</code> position is the X coordinate, or longitude of the upper
-     * northeast corner. </p> </li> <li> <p>The fourth <code>bbox</code> position is
-     * the Y coordinate, or latitude of the upper northeast corner. </p> </li> </ul>
-     */
-    inline void SetRouteBBox(Aws::Vector<double>&& value) { m_routeBBoxHasBeenSet = true; m_routeBBox = std::move(value); }
-
-    /**
-     * <p>Specifies a geographical box surrounding a route. Used to zoom into a route
-     * when displaying it in a map. For example, <code>[min x, min y, max x, max
-     * y]</code>.</p> <p>The first 2 <code>bbox</code> parameters describe the lower
-     * southwest corner: </p> <ul> <li> <p>The first <code>bbox</code> position is the
-     * X coordinate or longitude of the lower southwest corner. </p> </li> <li> <p>The
-     * second <code>bbox</code> position is the Y coordinate or latitude of the lower
-     * southwest corner. </p> </li> </ul> <p>The next 2 <code>bbox</code> parameters
-     * describe the upper northeast corner: </p> <ul> <li> <p>The third
-     * <code>bbox</code> position is the X coordinate, or longitude of the upper
-     * northeast corner. </p> </li> <li> <p>The fourth <code>bbox</code> position is
-     * the Y coordinate, or latitude of the upper northeast corner. </p> </li> </ul>
-     */
-    inline CalculateRouteSummary& WithRouteBBox(const Aws::Vector<double>& value) { SetRouteBBox(value); return *this;}
-
-    /**
-     * <p>Specifies a geographical box surrounding a route. Used to zoom into a route
-     * when displaying it in a map. For example, <code>[min x, min y, max x, max
-     * y]</code>.</p> <p>The first 2 <code>bbox</code> parameters describe the lower
-     * southwest corner: </p> <ul> <li> <p>The first <code>bbox</code> position is the
-     * X coordinate or longitude of the lower southwest corner. </p> </li> <li> <p>The
-     * second <code>bbox</code> position is the Y coordinate or latitude of the lower
-     * southwest corner. </p> </li> </ul> <p>The next 2 <code>bbox</code> parameters
-     * describe the upper northeast corner: </p> <ul> <li> <p>The third
-     * <code>bbox</code> position is the X coordinate, or longitude of the upper
-     * northeast corner. </p> </li> <li> <p>The fourth <code>bbox</code> position is
-     * the Y coordinate, or latitude of the upper northeast corner. </p> </li> </ul>
-     */
-    inline CalculateRouteSummary& WithRouteBBox(Aws::Vector<double>&& value) { SetRouteBBox(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies a geographical box surrounding a route. Used to zoom into a route
-     * when displaying it in a map. For example, <code>[min x, min y, max x, max
-     * y]</code>.</p> <p>The first 2 <code>bbox</code> parameters describe the lower
-     * southwest corner: </p> <ul> <li> <p>The first <code>bbox</code> position is the
-     * X coordinate or longitude of the lower southwest corner. </p> </li> <li> <p>The
-     * second <code>bbox</code> position is the Y coordinate or latitude of the lower
-     * southwest corner. </p> </li> </ul> <p>The next 2 <code>bbox</code> parameters
-     * describe the upper northeast corner: </p> <ul> <li> <p>The third
-     * <code>bbox</code> position is the X coordinate, or longitude of the upper
-     * northeast corner. </p> </li> <li> <p>The fourth <code>bbox</code> position is
-     * the Y coordinate, or latitude of the upper northeast corner. </p> </li> </ul>
-     */
-    inline CalculateRouteSummary& AddRouteBBox(double value) { m_routeBBoxHasBeenSet = true; m_routeBBox.push_back(value); return *this; }
-
   private:
+
+    Aws::Vector<double> m_routeBBox;
+    bool m_routeBBoxHasBeenSet = false;
 
     Aws::String m_dataSource;
     bool m_dataSourceHasBeenSet = false;
@@ -334,14 +337,11 @@ namespace Model
     double m_distance;
     bool m_distanceHasBeenSet = false;
 
-    DistanceUnit m_distanceUnit;
-    bool m_distanceUnitHasBeenSet = false;
-
     double m_durationSeconds;
     bool m_durationSecondsHasBeenSet = false;
 
-    Aws::Vector<double> m_routeBBox;
-    bool m_routeBBoxHasBeenSet = false;
+    DistanceUnit m_distanceUnit;
+    bool m_distanceUnitHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,7 +19,11 @@ UpdateTableRequest::UpdateTableRequest() :
     m_skipArchive(false),
     m_skipArchiveHasBeenSet(false),
     m_transactionIdHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
+    m_versionIdHasBeenSet(false),
+    m_viewUpdateAction(ViewUpdateAction::NOT_SET),
+    m_viewUpdateActionHasBeenSet(false),
+    m_force(false),
+    m_forceHasBeenSet(false)
 {
 }
 
@@ -60,6 +64,17 @@ Aws::String UpdateTableRequest::SerializePayload() const
   if(m_versionIdHasBeenSet)
   {
    payload.WithString("VersionId", m_versionId);
+
+  }
+
+  if(m_viewUpdateActionHasBeenSet)
+  {
+   payload.WithString("ViewUpdateAction", ViewUpdateActionMapper::GetNameForViewUpdateAction(m_viewUpdateAction));
+  }
+
+  if(m_forceHasBeenSet)
+  {
+   payload.WithBool("Force", m_force);
 
   }
 

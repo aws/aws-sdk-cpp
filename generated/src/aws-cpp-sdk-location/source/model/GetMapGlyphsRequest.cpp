@@ -16,10 +16,10 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 GetMapGlyphsRequest::GetMapGlyphsRequest() : 
+    m_mapNameHasBeenSet(false),
     m_fontStackHasBeenSet(false),
     m_fontUnicodeRangeHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_mapNameHasBeenSet(false)
+    m_keyHasBeenSet(false)
 {
 }
 

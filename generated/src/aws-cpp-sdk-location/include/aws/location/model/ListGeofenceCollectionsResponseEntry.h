@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the geofence collection details.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the geofence collection details.</p>  <p>The returned geometry
+   * will always match the geometry format used when the geofence was created.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListGeofenceCollectionsResponseEntry">AWS
    * API Reference</a></p>
    */
@@ -80,6 +82,47 @@ namespace Model
 
 
     /**
+     * <p>The description for the geofence collection</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description for the geofence collection</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description for the geofence collection</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>The description for the geofence collection</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>The description for the geofence collection</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>The description for the geofence collection</p>
+     */
+    inline ListGeofenceCollectionsResponseEntry& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>The description for the geofence collection</p>
+     */
+    inline ListGeofenceCollectionsResponseEntry& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>The description for the geofence collection</p>
+     */
+    inline ListGeofenceCollectionsResponseEntry& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
      * <p>The timestamp for when the geofence collection was created in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
@@ -120,47 +163,6 @@ namespace Model
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
      */
     inline ListGeofenceCollectionsResponseEntry& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The description for the geofence collection</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The description for the geofence collection</p>
-     */
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The description for the geofence collection</p>
-     */
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The description for the geofence collection</p>
-     */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The description for the geofence collection</p>
-     */
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The description for the geofence collection</p>
-     */
-    inline ListGeofenceCollectionsResponseEntry& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The description for the geofence collection</p>
-     */
-    inline ListGeofenceCollectionsResponseEntry& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The description for the geofence collection</p>
-     */
-    inline ListGeofenceCollectionsResponseEntry& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
@@ -210,11 +212,11 @@ namespace Model
     Aws::String m_collectionName;
     bool m_collectionNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet = false;
-
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createTime;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateTime;
     bool m_updateTimeHasBeenSet = false;

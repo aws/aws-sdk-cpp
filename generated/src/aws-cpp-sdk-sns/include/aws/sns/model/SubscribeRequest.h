@@ -386,15 +386,15 @@ namespace Model
      * server errors (for example, when the service that powers the subscribed endpoint
      * becomes unavailable) are held in the dead-letter queue for further analysis or
      * reprocessing.</p> </li> </ul> <p>The following attribute applies only to Amazon
-     * Kinesis Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
+     * Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
      * <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the
-     * following:</p> <ul> <li> <p>Permission to write to the Kinesis Data Firehose
-     * delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p>
-     * </li> </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis
-     * Data Firehose delivery stream subscriptions. For more information, see <a
+     * following:</p> <ul> <li> <p>Permission to write to the Firehose delivery
+     * stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p> </li> </ul>
+     * <p>Specifying a valid ARN for this attribute is required for Firehose delivery
+     * stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul> <p>The following attributes apply only to <a
+     * to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+     * </li> </ul> <p>The following attributes apply only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
      * topics</a>:</p> <ul> <li> <p> <code>ReplayPolicy</code> – Adds or updates an
      * inline policy document for a subscription to replay messages stored in the
@@ -434,15 +434,15 @@ namespace Model
      * server errors (for example, when the service that powers the subscribed endpoint
      * becomes unavailable) are held in the dead-letter queue for further analysis or
      * reprocessing.</p> </li> </ul> <p>The following attribute applies only to Amazon
-     * Kinesis Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
+     * Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
      * <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the
-     * following:</p> <ul> <li> <p>Permission to write to the Kinesis Data Firehose
-     * delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p>
-     * </li> </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis
-     * Data Firehose delivery stream subscriptions. For more information, see <a
+     * following:</p> <ul> <li> <p>Permission to write to the Firehose delivery
+     * stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p> </li> </ul>
+     * <p>Specifying a valid ARN for this attribute is required for Firehose delivery
+     * stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul> <p>The following attributes apply only to <a
+     * to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+     * </li> </ul> <p>The following attributes apply only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
      * topics</a>:</p> <ul> <li> <p> <code>ReplayPolicy</code> – Adds or updates an
      * inline policy document for a subscription to replay messages stored in the
@@ -482,15 +482,15 @@ namespace Model
      * server errors (for example, when the service that powers the subscribed endpoint
      * becomes unavailable) are held in the dead-letter queue for further analysis or
      * reprocessing.</p> </li> </ul> <p>The following attribute applies only to Amazon
-     * Kinesis Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
+     * Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
      * <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the
-     * following:</p> <ul> <li> <p>Permission to write to the Kinesis Data Firehose
-     * delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p>
-     * </li> </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis
-     * Data Firehose delivery stream subscriptions. For more information, see <a
+     * following:</p> <ul> <li> <p>Permission to write to the Firehose delivery
+     * stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p> </li> </ul>
+     * <p>Specifying a valid ARN for this attribute is required for Firehose delivery
+     * stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul> <p>The following attributes apply only to <a
+     * to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+     * </li> </ul> <p>The following attributes apply only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
      * topics</a>:</p> <ul> <li> <p> <code>ReplayPolicy</code> – Adds or updates an
      * inline policy document for a subscription to replay messages stored in the
@@ -530,15 +530,15 @@ namespace Model
      * server errors (for example, when the service that powers the subscribed endpoint
      * becomes unavailable) are held in the dead-letter queue for further analysis or
      * reprocessing.</p> </li> </ul> <p>The following attribute applies only to Amazon
-     * Kinesis Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
+     * Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
      * <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the
-     * following:</p> <ul> <li> <p>Permission to write to the Kinesis Data Firehose
-     * delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p>
-     * </li> </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis
-     * Data Firehose delivery stream subscriptions. For more information, see <a
+     * following:</p> <ul> <li> <p>Permission to write to the Firehose delivery
+     * stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p> </li> </ul>
+     * <p>Specifying a valid ARN for this attribute is required for Firehose delivery
+     * stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul> <p>The following attributes apply only to <a
+     * to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+     * </li> </ul> <p>The following attributes apply only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
      * topics</a>:</p> <ul> <li> <p> <code>ReplayPolicy</code> – Adds or updates an
      * inline policy document for a subscription to replay messages stored in the
@@ -578,15 +578,15 @@ namespace Model
      * server errors (for example, when the service that powers the subscribed endpoint
      * becomes unavailable) are held in the dead-letter queue for further analysis or
      * reprocessing.</p> </li> </ul> <p>The following attribute applies only to Amazon
-     * Kinesis Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
+     * Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
      * <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the
-     * following:</p> <ul> <li> <p>Permission to write to the Kinesis Data Firehose
-     * delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p>
-     * </li> </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis
-     * Data Firehose delivery stream subscriptions. For more information, see <a
+     * following:</p> <ul> <li> <p>Permission to write to the Firehose delivery
+     * stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p> </li> </ul>
+     * <p>Specifying a valid ARN for this attribute is required for Firehose delivery
+     * stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul> <p>The following attributes apply only to <a
+     * to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+     * </li> </ul> <p>The following attributes apply only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
      * topics</a>:</p> <ul> <li> <p> <code>ReplayPolicy</code> – Adds or updates an
      * inline policy document for a subscription to replay messages stored in the
@@ -626,15 +626,15 @@ namespace Model
      * server errors (for example, when the service that powers the subscribed endpoint
      * becomes unavailable) are held in the dead-letter queue for further analysis or
      * reprocessing.</p> </li> </ul> <p>The following attribute applies only to Amazon
-     * Kinesis Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
+     * Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
      * <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the
-     * following:</p> <ul> <li> <p>Permission to write to the Kinesis Data Firehose
-     * delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p>
-     * </li> </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis
-     * Data Firehose delivery stream subscriptions. For more information, see <a
+     * following:</p> <ul> <li> <p>Permission to write to the Firehose delivery
+     * stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p> </li> </ul>
+     * <p>Specifying a valid ARN for this attribute is required for Firehose delivery
+     * stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul> <p>The following attributes apply only to <a
+     * to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+     * </li> </ul> <p>The following attributes apply only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
      * topics</a>:</p> <ul> <li> <p> <code>ReplayPolicy</code> – Adds or updates an
      * inline policy document for a subscription to replay messages stored in the
@@ -674,15 +674,15 @@ namespace Model
      * server errors (for example, when the service that powers the subscribed endpoint
      * becomes unavailable) are held in the dead-letter queue for further analysis or
      * reprocessing.</p> </li> </ul> <p>The following attribute applies only to Amazon
-     * Kinesis Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
+     * Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
      * <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the
-     * following:</p> <ul> <li> <p>Permission to write to the Kinesis Data Firehose
-     * delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p>
-     * </li> </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis
-     * Data Firehose delivery stream subscriptions. For more information, see <a
+     * following:</p> <ul> <li> <p>Permission to write to the Firehose delivery
+     * stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p> </li> </ul>
+     * <p>Specifying a valid ARN for this attribute is required for Firehose delivery
+     * stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul> <p>The following attributes apply only to <a
+     * to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+     * </li> </ul> <p>The following attributes apply only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
      * topics</a>:</p> <ul> <li> <p> <code>ReplayPolicy</code> – Adds or updates an
      * inline policy document for a subscription to replay messages stored in the
@@ -722,15 +722,15 @@ namespace Model
      * server errors (for example, when the service that powers the subscribed endpoint
      * becomes unavailable) are held in the dead-letter queue for further analysis or
      * reprocessing.</p> </li> </ul> <p>The following attribute applies only to Amazon
-     * Kinesis Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
+     * Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
      * <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the
-     * following:</p> <ul> <li> <p>Permission to write to the Kinesis Data Firehose
-     * delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p>
-     * </li> </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis
-     * Data Firehose delivery stream subscriptions. For more information, see <a
+     * following:</p> <ul> <li> <p>Permission to write to the Firehose delivery
+     * stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p> </li> </ul>
+     * <p>Specifying a valid ARN for this attribute is required for Firehose delivery
+     * stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul> <p>The following attributes apply only to <a
+     * to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+     * </li> </ul> <p>The following attributes apply only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
      * topics</a>:</p> <ul> <li> <p> <code>ReplayPolicy</code> – Adds or updates an
      * inline policy document for a subscription to replay messages stored in the
@@ -770,15 +770,15 @@ namespace Model
      * server errors (for example, when the service that powers the subscribed endpoint
      * becomes unavailable) are held in the dead-letter queue for further analysis or
      * reprocessing.</p> </li> </ul> <p>The following attribute applies only to Amazon
-     * Kinesis Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
+     * Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
      * <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the
-     * following:</p> <ul> <li> <p>Permission to write to the Kinesis Data Firehose
-     * delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p>
-     * </li> </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis
-     * Data Firehose delivery stream subscriptions. For more information, see <a
+     * following:</p> <ul> <li> <p>Permission to write to the Firehose delivery
+     * stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p> </li> </ul>
+     * <p>Specifying a valid ARN for this attribute is required for Firehose delivery
+     * stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul> <p>The following attributes apply only to <a
+     * to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+     * </li> </ul> <p>The following attributes apply only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
      * topics</a>:</p> <ul> <li> <p> <code>ReplayPolicy</code> – Adds or updates an
      * inline policy document for a subscription to replay messages stored in the
@@ -818,15 +818,15 @@ namespace Model
      * server errors (for example, when the service that powers the subscribed endpoint
      * becomes unavailable) are held in the dead-letter queue for further analysis or
      * reprocessing.</p> </li> </ul> <p>The following attribute applies only to Amazon
-     * Kinesis Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
+     * Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
      * <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the
-     * following:</p> <ul> <li> <p>Permission to write to the Kinesis Data Firehose
-     * delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p>
-     * </li> </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis
-     * Data Firehose delivery stream subscriptions. For more information, see <a
+     * following:</p> <ul> <li> <p>Permission to write to the Firehose delivery
+     * stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p> </li> </ul>
+     * <p>Specifying a valid ARN for this attribute is required for Firehose delivery
+     * stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul> <p>The following attributes apply only to <a
+     * to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+     * </li> </ul> <p>The following attributes apply only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
      * topics</a>:</p> <ul> <li> <p> <code>ReplayPolicy</code> – Adds or updates an
      * inline policy document for a subscription to replay messages stored in the
@@ -866,15 +866,15 @@ namespace Model
      * server errors (for example, when the service that powers the subscribed endpoint
      * becomes unavailable) are held in the dead-letter queue for further analysis or
      * reprocessing.</p> </li> </ul> <p>The following attribute applies only to Amazon
-     * Kinesis Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
+     * Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
      * <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the
-     * following:</p> <ul> <li> <p>Permission to write to the Kinesis Data Firehose
-     * delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p>
-     * </li> </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis
-     * Data Firehose delivery stream subscriptions. For more information, see <a
+     * following:</p> <ul> <li> <p>Permission to write to the Firehose delivery
+     * stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p> </li> </ul>
+     * <p>Specifying a valid ARN for this attribute is required for Firehose delivery
+     * stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul> <p>The following attributes apply only to <a
+     * to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+     * </li> </ul> <p>The following attributes apply only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
      * topics</a>:</p> <ul> <li> <p> <code>ReplayPolicy</code> – Adds or updates an
      * inline policy document for a subscription to replay messages stored in the
@@ -914,15 +914,15 @@ namespace Model
      * server errors (for example, when the service that powers the subscribed endpoint
      * becomes unavailable) are held in the dead-letter queue for further analysis or
      * reprocessing.</p> </li> </ul> <p>The following attribute applies only to Amazon
-     * Kinesis Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
+     * Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
      * <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the
-     * following:</p> <ul> <li> <p>Permission to write to the Kinesis Data Firehose
-     * delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p>
-     * </li> </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis
-     * Data Firehose delivery stream subscriptions. For more information, see <a
+     * following:</p> <ul> <li> <p>Permission to write to the Firehose delivery
+     * stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p> </li> </ul>
+     * <p>Specifying a valid ARN for this attribute is required for Firehose delivery
+     * stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul> <p>The following attributes apply only to <a
+     * to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+     * </li> </ul> <p>The following attributes apply only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
      * topics</a>:</p> <ul> <li> <p> <code>ReplayPolicy</code> – Adds or updates an
      * inline policy document for a subscription to replay messages stored in the
@@ -962,15 +962,15 @@ namespace Model
      * server errors (for example, when the service that powers the subscribed endpoint
      * becomes unavailable) are held in the dead-letter queue for further analysis or
      * reprocessing.</p> </li> </ul> <p>The following attribute applies only to Amazon
-     * Kinesis Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
+     * Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
      * <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the
-     * following:</p> <ul> <li> <p>Permission to write to the Kinesis Data Firehose
-     * delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p>
-     * </li> </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis
-     * Data Firehose delivery stream subscriptions. For more information, see <a
+     * following:</p> <ul> <li> <p>Permission to write to the Firehose delivery
+     * stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p> </li> </ul>
+     * <p>Specifying a valid ARN for this attribute is required for Firehose delivery
+     * stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul> <p>The following attributes apply only to <a
+     * to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+     * </li> </ul> <p>The following attributes apply only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
      * topics</a>:</p> <ul> <li> <p> <code>ReplayPolicy</code> – Adds or updates an
      * inline policy document for a subscription to replay messages stored in the

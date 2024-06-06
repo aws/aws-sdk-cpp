@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/location/LocationServiceRequest.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -37,6 +37,96 @@ namespace Model
     AWS_LOCATIONSERVICE_API Aws::String SerializePayload() const override;
 
     AWS_LOCATIONSERVICE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+
+    /**
+     * <p>The name of the place index resource you want to use for the search.</p>
+     */
+    inline const Aws::String& GetIndexName() const{ return m_indexName; }
+
+    /**
+     * <p>The name of the place index resource you want to use for the search.</p>
+     */
+    inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
+
+    /**
+     * <p>The name of the place index resource you want to use for the search.</p>
+     */
+    inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
+
+    /**
+     * <p>The name of the place index resource you want to use for the search.</p>
+     */
+    inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
+
+    /**
+     * <p>The name of the place index resource you want to use for the search.</p>
+     */
+    inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
+
+    /**
+     * <p>The name of the place index resource you want to use for the search.</p>
+     */
+    inline SearchPlaceIndexForTextRequest& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
+
+    /**
+     * <p>The name of the place index resource you want to use for the search.</p>
+     */
+    inline SearchPlaceIndexForTextRequest& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the place index resource you want to use for the search.</p>
+     */
+    inline SearchPlaceIndexForTextRequest& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+
+
+    /**
+     * <p>The address, name, city, or region to be used in the search in free-form text
+     * format. For example, <code>123 Any Street</code>.</p>
+     */
+    inline const Aws::String& GetText() const{ return m_text; }
+
+    /**
+     * <p>The address, name, city, or region to be used in the search in free-form text
+     * format. For example, <code>123 Any Street</code>.</p>
+     */
+    inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
+
+    /**
+     * <p>The address, name, city, or region to be used in the search in free-form text
+     * format. For example, <code>123 Any Street</code>.</p>
+     */
+    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
+
+    /**
+     * <p>The address, name, city, or region to be used in the search in free-form text
+     * format. For example, <code>123 Any Street</code>.</p>
+     */
+    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
+
+    /**
+     * <p>The address, name, city, or region to be used in the search in free-form text
+     * format. For example, <code>123 Any Street</code>.</p>
+     */
+    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
+
+    /**
+     * <p>The address, name, city, or region to be used in the search in free-form text
+     * format. For example, <code>123 Any Street</code>.</p>
+     */
+    inline SearchPlaceIndexForTextRequest& WithText(const Aws::String& value) { SetText(value); return *this;}
+
+    /**
+     * <p>The address, name, city, or region to be used in the search in free-form text
+     * format. For example, <code>123 Any Street</code>.</p>
+     */
+    inline SearchPlaceIndexForTextRequest& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
+
+    /**
+     * <p>The address, name, city, or region to be used in the search in free-form text
+     * format. For example, <code>123 Any Street</code>.</p>
+     */
+    inline SearchPlaceIndexForTextRequest& WithText(const char* value) { SetText(value); return *this;}
 
 
     /**
@@ -245,97 +335,6 @@ namespace Model
 
 
     /**
-     * <p>A list of one or more Amazon Location categories to filter the returned
-     * places. If you include more than one category, the results will include results
-     * that match <i>any</i> of the categories listed.</p> <p>For more information
-     * about using categories, including a list of Amazon Location categories, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
-     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetFilterCategories() const{ return m_filterCategories; }
-
-    /**
-     * <p>A list of one or more Amazon Location categories to filter the returned
-     * places. If you include more than one category, the results will include results
-     * that match <i>any</i> of the categories listed.</p> <p>For more information
-     * about using categories, including a list of Amazon Location categories, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
-     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
-     */
-    inline bool FilterCategoriesHasBeenSet() const { return m_filterCategoriesHasBeenSet; }
-
-    /**
-     * <p>A list of one or more Amazon Location categories to filter the returned
-     * places. If you include more than one category, the results will include results
-     * that match <i>any</i> of the categories listed.</p> <p>For more information
-     * about using categories, including a list of Amazon Location categories, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
-     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
-     */
-    inline void SetFilterCategories(const Aws::Vector<Aws::String>& value) { m_filterCategoriesHasBeenSet = true; m_filterCategories = value; }
-
-    /**
-     * <p>A list of one or more Amazon Location categories to filter the returned
-     * places. If you include more than one category, the results will include results
-     * that match <i>any</i> of the categories listed.</p> <p>For more information
-     * about using categories, including a list of Amazon Location categories, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
-     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
-     */
-    inline void SetFilterCategories(Aws::Vector<Aws::String>&& value) { m_filterCategoriesHasBeenSet = true; m_filterCategories = std::move(value); }
-
-    /**
-     * <p>A list of one or more Amazon Location categories to filter the returned
-     * places. If you include more than one category, the results will include results
-     * that match <i>any</i> of the categories listed.</p> <p>For more information
-     * about using categories, including a list of Amazon Location categories, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
-     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
-     */
-    inline SearchPlaceIndexForTextRequest& WithFilterCategories(const Aws::Vector<Aws::String>& value) { SetFilterCategories(value); return *this;}
-
-    /**
-     * <p>A list of one or more Amazon Location categories to filter the returned
-     * places. If you include more than one category, the results will include results
-     * that match <i>any</i> of the categories listed.</p> <p>For more information
-     * about using categories, including a list of Amazon Location categories, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
-     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
-     */
-    inline SearchPlaceIndexForTextRequest& WithFilterCategories(Aws::Vector<Aws::String>&& value) { SetFilterCategories(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of one or more Amazon Location categories to filter the returned
-     * places. If you include more than one category, the results will include results
-     * that match <i>any</i> of the categories listed.</p> <p>For more information
-     * about using categories, including a list of Amazon Location categories, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
-     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
-     */
-    inline SearchPlaceIndexForTextRequest& AddFilterCategories(const Aws::String& value) { m_filterCategoriesHasBeenSet = true; m_filterCategories.push_back(value); return *this; }
-
-    /**
-     * <p>A list of one or more Amazon Location categories to filter the returned
-     * places. If you include more than one category, the results will include results
-     * that match <i>any</i> of the categories listed.</p> <p>For more information
-     * about using categories, including a list of Amazon Location categories, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
-     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
-     */
-    inline SearchPlaceIndexForTextRequest& AddFilterCategories(Aws::String&& value) { m_filterCategoriesHasBeenSet = true; m_filterCategories.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of one or more Amazon Location categories to filter the returned
-     * places. If you include more than one category, the results will include results
-     * that match <i>any</i> of the categories listed.</p> <p>For more information
-     * about using categories, including a list of Amazon Location categories, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
-     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
-     */
-    inline SearchPlaceIndexForTextRequest& AddFilterCategories(const char* value) { m_filterCategoriesHasBeenSet = true; m_filterCategories.push_back(value); return *this; }
-
-
-    /**
      * <p>An optional parameter that limits the search results by returning only places
      * that are in a specified list of countries.</p> <ul> <li> <p>Valid values include
      * <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit
@@ -418,101 +417,28 @@ namespace Model
 
 
     /**
-     * <p>The name of the place index resource you want to use for the search.</p>
+     * <p>An optional parameter. The maximum number of results returned per request.
+     * </p> <p>The default: <code>50</code> </p>
      */
-    inline const Aws::String& GetIndexName() const{ return m_indexName; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The name of the place index resource you want to use for the search.</p>
+     * <p>An optional parameter. The maximum number of results returned per request.
+     * </p> <p>The default: <code>50</code> </p>
      */
-    inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The name of the place index resource you want to use for the search.</p>
+     * <p>An optional parameter. The maximum number of results returned per request.
+     * </p> <p>The default: <code>50</code> </p>
      */
-    inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The name of the place index resource you want to use for the search.</p>
+     * <p>An optional parameter. The maximum number of results returned per request.
+     * </p> <p>The default: <code>50</code> </p>
      */
-    inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
-
-    /**
-     * <p>The name of the place index resource you want to use for the search.</p>
-     */
-    inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
-
-    /**
-     * <p>The name of the place index resource you want to use for the search.</p>
-     */
-    inline SearchPlaceIndexForTextRequest& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
-
-    /**
-     * <p>The name of the place index resource you want to use for the search.</p>
-     */
-    inline SearchPlaceIndexForTextRequest& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the place index resource you want to use for the search.</p>
-     */
-    inline SearchPlaceIndexForTextRequest& WithIndexName(const char* value) { SetIndexName(value); return *this;}
-
-
-    /**
-     * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
-     * key</a> to authorize the request.</p>
-     */
-    inline const Aws::String& GetKey() const{ return m_key; }
-
-    /**
-     * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
-     * key</a> to authorize the request.</p>
-     */
-    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-
-    /**
-     * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
-     * key</a> to authorize the request.</p>
-     */
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-
-    /**
-     * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
-     * key</a> to authorize the request.</p>
-     */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-
-    /**
-     * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
-     * key</a> to authorize the request.</p>
-     */
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-
-    /**
-     * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
-     * key</a> to authorize the request.</p>
-     */
-    inline SearchPlaceIndexForTextRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-
-    /**
-     * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
-     * key</a> to authorize the request.</p>
-     */
-    inline SearchPlaceIndexForTextRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The optional <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
-     * key</a> to authorize the request.</p>
-     */
-    inline SearchPlaceIndexForTextRequest& WithKey(const char* value) { SetKey(value); return *this;}
+    inline SearchPlaceIndexForTextRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
@@ -645,79 +571,159 @@ namespace Model
 
 
     /**
-     * <p>An optional parameter. The maximum number of results returned per request.
-     * </p> <p>The default: <code>50</code> </p>
+     * <p>A list of one or more Amazon Location categories to filter the returned
+     * places. If you include more than one category, the results will include results
+     * that match <i>any</i> of the categories listed.</p> <p>For more information
+     * about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline const Aws::Vector<Aws::String>& GetFilterCategories() const{ return m_filterCategories; }
 
     /**
-     * <p>An optional parameter. The maximum number of results returned per request.
-     * </p> <p>The default: <code>50</code> </p>
+     * <p>A list of one or more Amazon Location categories to filter the returned
+     * places. If you include more than one category, the results will include results
+     * that match <i>any</i> of the categories listed.</p> <p>For more information
+     * about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
      */
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline bool FilterCategoriesHasBeenSet() const { return m_filterCategoriesHasBeenSet; }
 
     /**
-     * <p>An optional parameter. The maximum number of results returned per request.
-     * </p> <p>The default: <code>50</code> </p>
+     * <p>A list of one or more Amazon Location categories to filter the returned
+     * places. If you include more than one category, the results will include results
+     * that match <i>any</i> of the categories listed.</p> <p>For more information
+     * about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
      */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetFilterCategories(const Aws::Vector<Aws::String>& value) { m_filterCategoriesHasBeenSet = true; m_filterCategories = value; }
 
     /**
-     * <p>An optional parameter. The maximum number of results returned per request.
-     * </p> <p>The default: <code>50</code> </p>
+     * <p>A list of one or more Amazon Location categories to filter the returned
+     * places. If you include more than one category, the results will include results
+     * that match <i>any</i> of the categories listed.</p> <p>For more information
+     * about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
      */
-    inline SearchPlaceIndexForTextRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    inline void SetFilterCategories(Aws::Vector<Aws::String>&& value) { m_filterCategoriesHasBeenSet = true; m_filterCategories = std::move(value); }
+
+    /**
+     * <p>A list of one or more Amazon Location categories to filter the returned
+     * places. If you include more than one category, the results will include results
+     * that match <i>any</i> of the categories listed.</p> <p>For more information
+     * about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+     */
+    inline SearchPlaceIndexForTextRequest& WithFilterCategories(const Aws::Vector<Aws::String>& value) { SetFilterCategories(value); return *this;}
+
+    /**
+     * <p>A list of one or more Amazon Location categories to filter the returned
+     * places. If you include more than one category, the results will include results
+     * that match <i>any</i> of the categories listed.</p> <p>For more information
+     * about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+     */
+    inline SearchPlaceIndexForTextRequest& WithFilterCategories(Aws::Vector<Aws::String>&& value) { SetFilterCategories(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of one or more Amazon Location categories to filter the returned
+     * places. If you include more than one category, the results will include results
+     * that match <i>any</i> of the categories listed.</p> <p>For more information
+     * about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+     */
+    inline SearchPlaceIndexForTextRequest& AddFilterCategories(const Aws::String& value) { m_filterCategoriesHasBeenSet = true; m_filterCategories.push_back(value); return *this; }
+
+    /**
+     * <p>A list of one or more Amazon Location categories to filter the returned
+     * places. If you include more than one category, the results will include results
+     * that match <i>any</i> of the categories listed.</p> <p>For more information
+     * about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+     */
+    inline SearchPlaceIndexForTextRequest& AddFilterCategories(Aws::String&& value) { m_filterCategoriesHasBeenSet = true; m_filterCategories.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of one or more Amazon Location categories to filter the returned
+     * places. If you include more than one category, the results will include results
+     * that match <i>any</i> of the categories listed.</p> <p>For more information
+     * about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+     */
+    inline SearchPlaceIndexForTextRequest& AddFilterCategories(const char* value) { m_filterCategoriesHasBeenSet = true; m_filterCategories.push_back(value); return *this; }
 
 
     /**
-     * <p>The address, name, city, or region to be used in the search in free-form text
-     * format. For example, <code>123 Any Street</code>.</p>
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * <p>The address, name, city, or region to be used in the search in free-form text
-     * format. For example, <code>123 Any Street</code>.</p>
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
      */
-    inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
-     * <p>The address, name, city, or region to be used in the search in free-form text
-     * format. For example, <code>123 Any Street</code>.</p>
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
      */
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
+    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p>The address, name, city, or region to be used in the search in free-form text
-     * format. For example, <code>123 Any Street</code>.</p>
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
      */
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p>The address, name, city, or region to be used in the search in free-form text
-     * format. For example, <code>123 Any Street</code>.</p>
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
      */
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
+    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * <p>The address, name, city, or region to be used in the search in free-form text
-     * format. For example, <code>123 Any Street</code>.</p>
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
      */
-    inline SearchPlaceIndexForTextRequest& WithText(const Aws::String& value) { SetText(value); return *this;}
+    inline SearchPlaceIndexForTextRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * <p>The address, name, city, or region to be used in the search in free-form text
-     * format. For example, <code>123 Any Street</code>.</p>
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
      */
-    inline SearchPlaceIndexForTextRequest& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
+    inline SearchPlaceIndexForTextRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * <p>The address, name, city, or region to be used in the search in free-form text
-     * format. For example, <code>123 Any Street</code>.</p>
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
      */
-    inline SearchPlaceIndexForTextRequest& WithText(const char* value) { SetText(value); return *this;}
+    inline SearchPlaceIndexForTextRequest& WithKey(const char* value) { SetKey(value); return *this;}
 
   private:
+
+    Aws::String m_indexName;
+    bool m_indexNameHasBeenSet = false;
+
+    Aws::String m_text;
+    bool m_textHasBeenSet = false;
 
     Aws::Vector<double> m_biasPosition;
     bool m_biasPositionHasBeenSet = false;
@@ -725,26 +731,20 @@ namespace Model
     Aws::Vector<double> m_filterBBox;
     bool m_filterBBoxHasBeenSet = false;
 
-    Aws::Vector<Aws::String> m_filterCategories;
-    bool m_filterCategoriesHasBeenSet = false;
-
     Aws::Vector<Aws::String> m_filterCountries;
     bool m_filterCountriesHasBeenSet = false;
-
-    Aws::String m_indexName;
-    bool m_indexNameHasBeenSet = false;
-
-    Aws::String m_key;
-    bool m_keyHasBeenSet = false;
-
-    Aws::String m_language;
-    bool m_languageHasBeenSet = false;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
 
-    Aws::String m_text;
-    bool m_textHasBeenSet = false;
+    Aws::String m_language;
+    bool m_languageHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_filterCategories;
+    bool m_filterCategoriesHasBeenSet = false;
+
+    Aws::String m_key;
+    bool m_keyHasBeenSet = false;
   };
 
 } // namespace Model

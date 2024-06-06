@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/location/LocationServiceRequest.h>
-#include <aws/location/model/MapConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/location/model/MapConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -32,6 +32,79 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "CreateMap"; }
 
     AWS_LOCATIONSERVICE_API Aws::String SerializePayload() const override;
+
+
+    /**
+     * <p>The name for the map resource.</p> <p>Requirements:</p> <ul> <li> <p>Must
+     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.),
+     * and underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
+     * </li> <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
+     * </ul>
+     */
+    inline const Aws::String& GetMapName() const{ return m_mapName; }
+
+    /**
+     * <p>The name for the map resource.</p> <p>Requirements:</p> <ul> <li> <p>Must
+     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.),
+     * and underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
+     * </li> <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
+     * </ul>
+     */
+    inline bool MapNameHasBeenSet() const { return m_mapNameHasBeenSet; }
+
+    /**
+     * <p>The name for the map resource.</p> <p>Requirements:</p> <ul> <li> <p>Must
+     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.),
+     * and underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
+     * </li> <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
+     * </ul>
+     */
+    inline void SetMapName(const Aws::String& value) { m_mapNameHasBeenSet = true; m_mapName = value; }
+
+    /**
+     * <p>The name for the map resource.</p> <p>Requirements:</p> <ul> <li> <p>Must
+     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.),
+     * and underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
+     * </li> <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
+     * </ul>
+     */
+    inline void SetMapName(Aws::String&& value) { m_mapNameHasBeenSet = true; m_mapName = std::move(value); }
+
+    /**
+     * <p>The name for the map resource.</p> <p>Requirements:</p> <ul> <li> <p>Must
+     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.),
+     * and underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
+     * </li> <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
+     * </ul>
+     */
+    inline void SetMapName(const char* value) { m_mapNameHasBeenSet = true; m_mapName.assign(value); }
+
+    /**
+     * <p>The name for the map resource.</p> <p>Requirements:</p> <ul> <li> <p>Must
+     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.),
+     * and underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
+     * </li> <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
+     * </ul>
+     */
+    inline CreateMapRequest& WithMapName(const Aws::String& value) { SetMapName(value); return *this;}
+
+    /**
+     * <p>The name for the map resource.</p> <p>Requirements:</p> <ul> <li> <p>Must
+     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.),
+     * and underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
+     * </li> <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
+     * </ul>
+     */
+    inline CreateMapRequest& WithMapName(Aws::String&& value) { SetMapName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name for the map resource.</p> <p>Requirements:</p> <ul> <li> <p>Must
+     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.),
+     * and underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
+     * </li> <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
+     * </ul>
+     */
+    inline CreateMapRequest& WithMapName(const char* value) { SetMapName(value); return *this;}
 
 
     /**
@@ -116,79 +189,6 @@ namespace Model
      * <p>An optional description for the map resource.</p>
      */
     inline CreateMapRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
-
-
-    /**
-     * <p>The name for the map resource.</p> <p>Requirements:</p> <ul> <li> <p>Must
-     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.),
-     * and underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
-     * </li> <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
-     * </ul>
-     */
-    inline const Aws::String& GetMapName() const{ return m_mapName; }
-
-    /**
-     * <p>The name for the map resource.</p> <p>Requirements:</p> <ul> <li> <p>Must
-     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.),
-     * and underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
-     * </li> <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
-     * </ul>
-     */
-    inline bool MapNameHasBeenSet() const { return m_mapNameHasBeenSet; }
-
-    /**
-     * <p>The name for the map resource.</p> <p>Requirements:</p> <ul> <li> <p>Must
-     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.),
-     * and underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
-     * </li> <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
-     * </ul>
-     */
-    inline void SetMapName(const Aws::String& value) { m_mapNameHasBeenSet = true; m_mapName = value; }
-
-    /**
-     * <p>The name for the map resource.</p> <p>Requirements:</p> <ul> <li> <p>Must
-     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.),
-     * and underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
-     * </li> <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
-     * </ul>
-     */
-    inline void SetMapName(Aws::String&& value) { m_mapNameHasBeenSet = true; m_mapName = std::move(value); }
-
-    /**
-     * <p>The name for the map resource.</p> <p>Requirements:</p> <ul> <li> <p>Must
-     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.),
-     * and underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
-     * </li> <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
-     * </ul>
-     */
-    inline void SetMapName(const char* value) { m_mapNameHasBeenSet = true; m_mapName.assign(value); }
-
-    /**
-     * <p>The name for the map resource.</p> <p>Requirements:</p> <ul> <li> <p>Must
-     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.),
-     * and underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
-     * </li> <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
-     * </ul>
-     */
-    inline CreateMapRequest& WithMapName(const Aws::String& value) { SetMapName(value); return *this;}
-
-    /**
-     * <p>The name for the map resource.</p> <p>Requirements:</p> <ul> <li> <p>Must
-     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.),
-     * and underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
-     * </li> <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
-     * </ul>
-     */
-    inline CreateMapRequest& WithMapName(Aws::String&& value) { SetMapName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name for the map resource.</p> <p>Requirements:</p> <ul> <li> <p>Must
-     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.),
-     * and underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
-     * </li> <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
-     * </ul>
-     */
-    inline CreateMapRequest& WithMapName(const char* value) { SetMapName(value); return *this;}
 
 
     /**
@@ -362,14 +362,14 @@ namespace Model
 
   private:
 
+    Aws::String m_mapName;
+    bool m_mapNameHasBeenSet = false;
+
     MapConfiguration m_configuration;
     bool m_configurationHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
-
-    Aws::String m_mapName;
-    bool m_mapNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

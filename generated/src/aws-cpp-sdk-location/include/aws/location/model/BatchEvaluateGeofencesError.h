@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/location/model/BatchItemError.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/location/model/BatchItemError.h>
 #include <utility>
 
 namespace Aws
@@ -83,37 +83,6 @@ namespace Model
 
 
     /**
-     * <p>Contains details associated to the batch error.</p>
-     */
-    inline const BatchItemError& GetError() const{ return m_error; }
-
-    /**
-     * <p>Contains details associated to the batch error.</p>
-     */
-    inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-
-    /**
-     * <p>Contains details associated to the batch error.</p>
-     */
-    inline void SetError(const BatchItemError& value) { m_errorHasBeenSet = true; m_error = value; }
-
-    /**
-     * <p>Contains details associated to the batch error.</p>
-     */
-    inline void SetError(BatchItemError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-
-    /**
-     * <p>Contains details associated to the batch error.</p>
-     */
-    inline BatchEvaluateGeofencesError& WithError(const BatchItemError& value) { SetError(value); return *this;}
-
-    /**
-     * <p>Contains details associated to the batch error.</p>
-     */
-    inline BatchEvaluateGeofencesError& WithError(BatchItemError&& value) { SetError(std::move(value)); return *this;}
-
-
-    /**
      * <p>Specifies a timestamp for when the error occurred in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
@@ -155,16 +124,47 @@ namespace Model
      */
     inline BatchEvaluateGeofencesError& WithSampleTime(Aws::Utils::DateTime&& value) { SetSampleTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Contains details associated to the batch error.</p>
+     */
+    inline const BatchItemError& GetError() const{ return m_error; }
+
+    /**
+     * <p>Contains details associated to the batch error.</p>
+     */
+    inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
+
+    /**
+     * <p>Contains details associated to the batch error.</p>
+     */
+    inline void SetError(const BatchItemError& value) { m_errorHasBeenSet = true; m_error = value; }
+
+    /**
+     * <p>Contains details associated to the batch error.</p>
+     */
+    inline void SetError(BatchItemError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
+
+    /**
+     * <p>Contains details associated to the batch error.</p>
+     */
+    inline BatchEvaluateGeofencesError& WithError(const BatchItemError& value) { SetError(value); return *this;}
+
+    /**
+     * <p>Contains details associated to the batch error.</p>
+     */
+    inline BatchEvaluateGeofencesError& WithError(BatchItemError&& value) { SetError(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_deviceId;
     bool m_deviceIdHasBeenSet = false;
 
-    BatchItemError m_error;
-    bool m_errorHasBeenSet = false;
-
     Aws::Utils::DateTime m_sampleTime;
     bool m_sampleTimeHasBeenSet = false;
+
+    BatchItemError m_error;
+    bool m_errorHasBeenSet = false;
   };
 
 } // namespace Model

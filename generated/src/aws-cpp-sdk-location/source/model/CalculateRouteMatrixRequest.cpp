@@ -17,36 +17,24 @@ using namespace Aws::Http;
 
 CalculateRouteMatrixRequest::CalculateRouteMatrixRequest() : 
     m_calculatorNameHasBeenSet(false),
-    m_carModeOptionsHasBeenSet(false),
-    m_departNow(false),
-    m_departNowHasBeenSet(false),
     m_departurePositionsHasBeenSet(false),
-    m_departureTimeHasBeenSet(false),
     m_destinationPositionsHasBeenSet(false),
-    m_distanceUnit(DistanceUnit::NOT_SET),
-    m_distanceUnitHasBeenSet(false),
-    m_keyHasBeenSet(false),
     m_travelMode(TravelMode::NOT_SET),
     m_travelModeHasBeenSet(false),
-    m_truckModeOptionsHasBeenSet(false)
+    m_departureTimeHasBeenSet(false),
+    m_departNow(false),
+    m_departNowHasBeenSet(false),
+    m_distanceUnit(DistanceUnit::NOT_SET),
+    m_distanceUnitHasBeenSet(false),
+    m_carModeOptionsHasBeenSet(false),
+    m_truckModeOptionsHasBeenSet(false),
+    m_keyHasBeenSet(false)
 {
 }
 
 Aws::String CalculateRouteMatrixRequest::SerializePayload() const
 {
   JsonValue payload;
-
-  if(m_carModeOptionsHasBeenSet)
-  {
-   payload.WithObject("CarModeOptions", m_carModeOptions.Jsonize());
-
-  }
-
-  if(m_departNowHasBeenSet)
-  {
-   payload.WithBool("DepartNow", m_departNow);
-
-  }
 
   if(m_departurePositionsHasBeenSet)
   {
@@ -62,11 +50,6 @@ Aws::String CalculateRouteMatrixRequest::SerializePayload() const
    }
    payload.WithArray("DeparturePositions", std::move(departurePositionsJsonList));
 
-  }
-
-  if(m_departureTimeHasBeenSet)
-  {
-   payload.WithString("DepartureTime", m_departureTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_destinationPositionsHasBeenSet)
@@ -85,14 +68,31 @@ Aws::String CalculateRouteMatrixRequest::SerializePayload() const
 
   }
 
+  if(m_travelModeHasBeenSet)
+  {
+   payload.WithString("TravelMode", TravelModeMapper::GetNameForTravelMode(m_travelMode));
+  }
+
+  if(m_departureTimeHasBeenSet)
+  {
+   payload.WithString("DepartureTime", m_departureTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_departNowHasBeenSet)
+  {
+   payload.WithBool("DepartNow", m_departNow);
+
+  }
+
   if(m_distanceUnitHasBeenSet)
   {
    payload.WithString("DistanceUnit", DistanceUnitMapper::GetNameForDistanceUnit(m_distanceUnit));
   }
 
-  if(m_travelModeHasBeenSet)
+  if(m_carModeOptionsHasBeenSet)
   {
-   payload.WithString("TravelMode", TravelModeMapper::GetNameForTravelMode(m_travelMode));
+   payload.WithObject("CarModeOptions", m_carModeOptions.Jsonize());
+
   }
 
   if(m_truckModeOptionsHasBeenSet)

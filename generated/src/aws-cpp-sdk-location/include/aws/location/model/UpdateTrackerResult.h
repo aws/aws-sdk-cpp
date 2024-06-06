@@ -34,6 +34,42 @@ namespace Model
 
 
     /**
+     * <p>The name of the updated tracker resource.</p>
+     */
+    inline const Aws::String& GetTrackerName() const{ return m_trackerName; }
+
+    /**
+     * <p>The name of the updated tracker resource.</p>
+     */
+    inline void SetTrackerName(const Aws::String& value) { m_trackerName = value; }
+
+    /**
+     * <p>The name of the updated tracker resource.</p>
+     */
+    inline void SetTrackerName(Aws::String&& value) { m_trackerName = std::move(value); }
+
+    /**
+     * <p>The name of the updated tracker resource.</p>
+     */
+    inline void SetTrackerName(const char* value) { m_trackerName.assign(value); }
+
+    /**
+     * <p>The name of the updated tracker resource.</p>
+     */
+    inline UpdateTrackerResult& WithTrackerName(const Aws::String& value) { SetTrackerName(value); return *this;}
+
+    /**
+     * <p>The name of the updated tracker resource.</p>
+     */
+    inline UpdateTrackerResult& WithTrackerName(Aws::String&& value) { SetTrackerName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the updated tracker resource.</p>
+     */
+    inline UpdateTrackerResult& WithTrackerName(const char* value) { SetTrackerName(value); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) of the updated tracker resource. Used to
      * specify a resource across AWS.</p> <ul> <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
@@ -88,42 +124,6 @@ namespace Model
      * </ul>
      */
     inline UpdateTrackerResult& WithTrackerArn(const char* value) { SetTrackerArn(value); return *this;}
-
-
-    /**
-     * <p>The name of the updated tracker resource.</p>
-     */
-    inline const Aws::String& GetTrackerName() const{ return m_trackerName; }
-
-    /**
-     * <p>The name of the updated tracker resource.</p>
-     */
-    inline void SetTrackerName(const Aws::String& value) { m_trackerName = value; }
-
-    /**
-     * <p>The name of the updated tracker resource.</p>
-     */
-    inline void SetTrackerName(Aws::String&& value) { m_trackerName = std::move(value); }
-
-    /**
-     * <p>The name of the updated tracker resource.</p>
-     */
-    inline void SetTrackerName(const char* value) { m_trackerName.assign(value); }
-
-    /**
-     * <p>The name of the updated tracker resource.</p>
-     */
-    inline UpdateTrackerResult& WithTrackerName(const Aws::String& value) { SetTrackerName(value); return *this;}
-
-    /**
-     * <p>The name of the updated tracker resource.</p>
-     */
-    inline UpdateTrackerResult& WithTrackerName(Aws::String&& value) { SetTrackerName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the updated tracker resource.</p>
-     */
-    inline UpdateTrackerResult& WithTrackerName(const char* value) { SetTrackerName(value); return *this;}
 
 
     /**
@@ -185,9 +185,9 @@ namespace Model
 
   private:
 
-    Aws::String m_trackerArn;
-
     Aws::String m_trackerName;
+
+    Aws::String m_trackerArn;
 
     Aws::Utils::DateTime m_updateTime;
 

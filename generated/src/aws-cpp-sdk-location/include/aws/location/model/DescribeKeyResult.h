@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/location/LocationService_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/location/model/ApiKeyRestrictions.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -33,114 +33,6 @@ namespace Model
     AWS_LOCATIONSERVICE_API DescribeKeyResult();
     AWS_LOCATIONSERVICE_API DescribeKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOCATIONSERVICE_API DescribeKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>The timestamp for when the API key resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-     */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
-
-    /**
-     * <p>The timestamp for when the API key resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-     */
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTime = value; }
-
-    /**
-     * <p>The timestamp for when the API key resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-     */
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTime = std::move(value); }
-
-    /**
-     * <p>The timestamp for when the API key resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-     */
-    inline DescribeKeyResult& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
-
-    /**
-     * <p>The timestamp for when the API key resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-     */
-    inline DescribeKeyResult& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The optional description for the API key resource.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The optional description for the API key resource.</p>
-     */
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-
-    /**
-     * <p>The optional description for the API key resource.</p>
-     */
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-
-    /**
-     * <p>The optional description for the API key resource.</p>
-     */
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-
-    /**
-     * <p>The optional description for the API key resource.</p>
-     */
-    inline DescribeKeyResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The optional description for the API key resource.</p>
-     */
-    inline DescribeKeyResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The optional description for the API key resource.</p>
-     */
-    inline DescribeKeyResult& WithDescription(const char* value) { SetDescription(value); return *this;}
-
-
-    /**
-     * <p>The timestamp for when the API key resource will expire in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-     */
-    inline const Aws::Utils::DateTime& GetExpireTime() const{ return m_expireTime; }
-
-    /**
-     * <p>The timestamp for when the API key resource will expire in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-     */
-    inline void SetExpireTime(const Aws::Utils::DateTime& value) { m_expireTime = value; }
-
-    /**
-     * <p>The timestamp for when the API key resource will expire in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-     */
-    inline void SetExpireTime(Aws::Utils::DateTime&& value) { m_expireTime = std::move(value); }
-
-    /**
-     * <p>The timestamp for when the API key resource will expire in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-     */
-    inline DescribeKeyResult& WithExpireTime(const Aws::Utils::DateTime& value) { SetExpireTime(value); return *this;}
-
-    /**
-     * <p>The timestamp for when the API key resource will expire in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-     */
-    inline DescribeKeyResult& WithExpireTime(Aws::Utils::DateTime&& value) { SetExpireTime(std::move(value)); return *this;}
 
 
     /**
@@ -289,6 +181,150 @@ namespace Model
 
 
     /**
+     * <p>The timestamp for when the API key resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     */
+    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+
+    /**
+     * <p>The timestamp for when the API key resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     */
+    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTime = value; }
+
+    /**
+     * <p>The timestamp for when the API key resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     */
+    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTime = std::move(value); }
+
+    /**
+     * <p>The timestamp for when the API key resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     */
+    inline DescribeKeyResult& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
+
+    /**
+     * <p>The timestamp for when the API key resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     */
+    inline DescribeKeyResult& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The timestamp for when the API key resource will expire in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     */
+    inline const Aws::Utils::DateTime& GetExpireTime() const{ return m_expireTime; }
+
+    /**
+     * <p>The timestamp for when the API key resource will expire in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     */
+    inline void SetExpireTime(const Aws::Utils::DateTime& value) { m_expireTime = value; }
+
+    /**
+     * <p>The timestamp for when the API key resource will expire in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     */
+    inline void SetExpireTime(Aws::Utils::DateTime&& value) { m_expireTime = std::move(value); }
+
+    /**
+     * <p>The timestamp for when the API key resource will expire in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     */
+    inline DescribeKeyResult& WithExpireTime(const Aws::Utils::DateTime& value) { SetExpireTime(value); return *this;}
+
+    /**
+     * <p>The timestamp for when the API key resource will expire in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     */
+    inline DescribeKeyResult& WithExpireTime(Aws::Utils::DateTime&& value) { SetExpireTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The timestamp for when the API key resource was last updated in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     */
+    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
+
+    /**
+     * <p>The timestamp for when the API key resource was last updated in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     */
+    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTime = value; }
+
+    /**
+     * <p>The timestamp for when the API key resource was last updated in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     */
+    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTime = std::move(value); }
+
+    /**
+     * <p>The timestamp for when the API key resource was last updated in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     */
+    inline DescribeKeyResult& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
+
+    /**
+     * <p>The timestamp for when the API key resource was last updated in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     */
+    inline DescribeKeyResult& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The optional description for the API key resource.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The optional description for the API key resource.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_description = value; }
+
+    /**
+     * <p>The optional description for the API key resource.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
+
+    /**
+     * <p>The optional description for the API key resource.</p>
+     */
+    inline void SetDescription(const char* value) { m_description.assign(value); }
+
+    /**
+     * <p>The optional description for the API key resource.</p>
+     */
+    inline DescribeKeyResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>The optional description for the API key resource.</p>
+     */
+    inline DescribeKeyResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>The optional description for the API key resource.</p>
+     */
+    inline DescribeKeyResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
      * <p>Tags associated with the API key resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -349,42 +385,6 @@ namespace Model
     inline DescribeKeyResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
 
-    /**
-     * <p>The timestamp for when the API key resource was last updated in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-     */
-    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
-
-    /**
-     * <p>The timestamp for when the API key resource was last updated in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-     */
-    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTime = value; }
-
-    /**
-     * <p>The timestamp for when the API key resource was last updated in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-     */
-    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTime = std::move(value); }
-
-    /**
-     * <p>The timestamp for when the API key resource was last updated in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-     */
-    inline DescribeKeyResult& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
-
-    /**
-     * <p>The timestamp for when the API key resource was last updated in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-     */
-    inline DescribeKeyResult& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
-
-
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -408,12 +408,6 @@ namespace Model
 
   private:
 
-    Aws::Utils::DateTime m_createTime;
-
-    Aws::String m_description;
-
-    Aws::Utils::DateTime m_expireTime;
-
     Aws::String m_key;
 
     Aws::String m_keyArn;
@@ -422,9 +416,15 @@ namespace Model
 
     ApiKeyRestrictions m_restrictions;
 
-    Aws::Map<Aws::String, Aws::String> m_tags;
+    Aws::Utils::DateTime m_createTime;
+
+    Aws::Utils::DateTime m_expireTime;
 
     Aws::Utils::DateTime m_updateTime;
+
+    Aws::String m_description;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
 
     Aws::String m_requestId;
   };

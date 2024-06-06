@@ -785,12 +785,16 @@ namespace SQS
         /**
          * <p>Delivers a message to the specified queue.</p>  <p>A message can
          * include only XML, JSON, and unformatted text. The following Unicode characters
-         * are allowed:</p> <p> <code>#x9</code> | <code>#xA</code> | <code>#xD</code> |
+         * are allowed. For more information, see the <a
+         * href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for
+         * characters</a>.</p> <p> <code>#x9</code> | <code>#xA</code> | <code>#xD</code> |
          * <code>#x20</code> to <code>#xD7FF</code> | <code>#xE000</code> to
-         * <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code> </p> <p>Any
-         * characters not included in this list will be rejected. For more information, see
-         * the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for
-         * characters</a>.</p> <p><h3>See Also:</h3>   <a
+         * <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code> </p>
+         * <p>Amazon SQS does not throw an exception or completely reject the message if it
+         * contains invalid characters. Instead, it replaces those invalid characters with
+         * <code>U+FFFD</code> before storing the message in the queue, as long as the
+         * message body contains at least one valid character.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessage">AWS API
          * Reference</a></p>
          */
@@ -827,15 +831,17 @@ namespace SQS
          * maximum total payload size (the sum of the individual lengths of all of the
          * batched messages) are both 256 KiB (262,144 bytes).</p>  <p>A message
          * can include only XML, JSON, and unformatted text. The following Unicode
-         * characters are allowed:</p> <p> <code>#x9</code> | <code>#xA</code> |
-         * <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
-         * <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to
-         * <code>#x10FFFF</code> </p> <p>Any characters not included in this list will be
-         * rejected. For more information, see the <a
+         * characters are allowed. For more information, see the <a
          * href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for
-         * characters</a>.</p>  <p>If you don't specify the
-         * <code>DelaySeconds</code> parameter for an entry, Amazon SQS uses the default
-         * value for the queue.</p><p><h3>See Also:</h3>   <a
+         * characters</a>.</p> <p> <code>#x9</code> | <code>#xA</code> | <code>#xD</code> |
+         * <code>#x20</code> to <code>#xD7FF</code> | <code>#xE000</code> to
+         * <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code> </p>
+         * <p>Amazon SQS does not throw an exception or completely reject the message if it
+         * contains invalid characters. Instead, it replaces those invalid characters with
+         * <code>U+FFFD</code> before storing the message in the queue, as long as the
+         * message body contains at least one valid character.</p>  <p>If you
+         * don't specify the <code>DelaySeconds</code> parameter for an entry, Amazon SQS
+         * uses the default value for the queue.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatch">AWS
          * API Reference</a></p>
          */

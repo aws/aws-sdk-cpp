@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/location/LocationService_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -40,46 +40,85 @@ namespace Model
 
 
     /**
-     * <p>The timestamp for when the place index resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     * <p>The name of the place index resource.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+    inline const Aws::String& GetIndexName() const{ return m_indexName; }
 
     /**
-     * <p>The timestamp for when the place index resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     * <p>The name of the place index resource.</p>
      */
-    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
+    inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
 
     /**
-     * <p>The timestamp for when the place index resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     * <p>The name of the place index resource.</p>
      */
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+    inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
 
     /**
-     * <p>The timestamp for when the place index resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     * <p>The name of the place index resource.</p>
      */
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
+    inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
 
     /**
-     * <p>The timestamp for when the place index resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     * <p>The name of the place index resource.</p>
      */
-    inline ListPlaceIndexesResponseEntry& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
+    inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
 
     /**
-     * <p>The timestamp for when the place index resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+     * <p>The name of the place index resource.</p>
      */
-    inline ListPlaceIndexesResponseEntry& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    inline ListPlaceIndexesResponseEntry& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
+
+    /**
+     * <p>The name of the place index resource.</p>
+     */
+    inline ListPlaceIndexesResponseEntry& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the place index resource.</p>
+     */
+    inline ListPlaceIndexesResponseEntry& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+
+
+    /**
+     * <p>The optional description for the place index resource.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The optional description for the place index resource.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The optional description for the place index resource.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>The optional description for the place index resource.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>The optional description for the place index resource.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>The optional description for the place index resource.</p>
+     */
+    inline ListPlaceIndexesResponseEntry& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>The optional description for the place index resource.</p>
+     */
+    inline ListPlaceIndexesResponseEntry& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>The optional description for the place index resource.</p>
+     */
+    inline ListPlaceIndexesResponseEntry& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
@@ -164,85 +203,46 @@ namespace Model
 
 
     /**
-     * <p>The optional description for the place index resource.</p>
+     * <p>The timestamp for when the place index resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
 
     /**
-     * <p>The optional description for the place index resource.</p>
+     * <p>The timestamp for when the place index resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
 
     /**
-     * <p>The optional description for the place index resource.</p>
+     * <p>The timestamp for when the place index resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
     /**
-     * <p>The optional description for the place index resource.</p>
+     * <p>The timestamp for when the place index resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
 
     /**
-     * <p>The optional description for the place index resource.</p>
+     * <p>The timestamp for when the place index resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+    inline ListPlaceIndexesResponseEntry& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
 
     /**
-     * <p>The optional description for the place index resource.</p>
+     * <p>The timestamp for when the place index resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
-    inline ListPlaceIndexesResponseEntry& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The optional description for the place index resource.</p>
-     */
-    inline ListPlaceIndexesResponseEntry& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The optional description for the place index resource.</p>
-     */
-    inline ListPlaceIndexesResponseEntry& WithDescription(const char* value) { SetDescription(value); return *this;}
-
-
-    /**
-     * <p>The name of the place index resource.</p>
-     */
-    inline const Aws::String& GetIndexName() const{ return m_indexName; }
-
-    /**
-     * <p>The name of the place index resource.</p>
-     */
-    inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
-
-    /**
-     * <p>The name of the place index resource.</p>
-     */
-    inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
-
-    /**
-     * <p>The name of the place index resource.</p>
-     */
-    inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
-
-    /**
-     * <p>The name of the place index resource.</p>
-     */
-    inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
-
-    /**
-     * <p>The name of the place index resource.</p>
-     */
-    inline ListPlaceIndexesResponseEntry& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
-
-    /**
-     * <p>The name of the place index resource.</p>
-     */
-    inline ListPlaceIndexesResponseEntry& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the place index resource.</p>
-     */
-    inline ListPlaceIndexesResponseEntry& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+    inline ListPlaceIndexesResponseEntry& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
 
 
     /**
@@ -289,17 +289,17 @@ namespace Model
 
   private:
 
-    Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet = false;
-
-    Aws::String m_dataSource;
-    bool m_dataSourceHasBeenSet = false;
+    Aws::String m_indexName;
+    bool m_indexNameHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Aws::String m_indexName;
-    bool m_indexNameHasBeenSet = false;
+    Aws::String m_dataSource;
+    bool m_dataSourceHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createTime;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateTime;
     bool m_updateTimeHasBeenSet = false;

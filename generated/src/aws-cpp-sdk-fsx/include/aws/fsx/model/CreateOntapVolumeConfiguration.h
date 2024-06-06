@@ -105,21 +105,18 @@ namespace Model
      * <p>Specifies the security style for the volume. If a volume's security style is
      * not specified, it is automatically set to the root volume's security style. The
      * security style determines the type of permissions that FSx for ONTAP uses to
-     * control data access. For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style">Volume
-     * security style</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>. Specify
-     * one of the following values:</p> <ul> <li> <p> <code>UNIX</code> if the file
-     * system is managed by a UNIX administrator, the majority of users are NFS
-     * clients, and an application accessing the data uses a UNIX user as the service
-     * account. </p> </li> <li> <p> <code>NTFS</code> if the file system is managed by
-     * a Windows administrator, the majority of users are SMB clients, and an
-     * application accessing the data uses a Windows user as the service account.</p>
-     * </li> <li> <p> <code>MIXED</code> This is an advanced setting. For more
-     * information, see the topic <a
+     * control data access. Specify one of the following values:</p> <ul> <li> <p>
+     * <code>UNIX</code> if the file system is managed by a UNIX administrator, the
+     * majority of users are NFS clients, and an application accessing the data uses a
+     * UNIX user as the service account. </p> </li> <li> <p> <code>NTFS</code> if the
+     * file system is managed by a Windows administrator, the majority of users are SMB
+     * clients, and an application accessing the data uses a Windows user as the
+     * service account.</p> </li> <li> <p> <code>MIXED</code> This is an advanced
+     * setting. For more information, see the topic <a
      * href="https://docs.netapp.com/us-en/ontap/nfs-admin/security-styles-their-effects-concept.html">What
      * the security styles and their effects are</a> in the NetApp Documentation
      * Center.</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style.html">Volume
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-security-style">Volume
      * security style</a> in the FSx for ONTAP User Guide.</p>
      */
     inline const SecurityStyle& GetSecurityStyle() const{ return m_securityStyle; }
@@ -128,21 +125,18 @@ namespace Model
      * <p>Specifies the security style for the volume. If a volume's security style is
      * not specified, it is automatically set to the root volume's security style. The
      * security style determines the type of permissions that FSx for ONTAP uses to
-     * control data access. For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style">Volume
-     * security style</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>. Specify
-     * one of the following values:</p> <ul> <li> <p> <code>UNIX</code> if the file
-     * system is managed by a UNIX administrator, the majority of users are NFS
-     * clients, and an application accessing the data uses a UNIX user as the service
-     * account. </p> </li> <li> <p> <code>NTFS</code> if the file system is managed by
-     * a Windows administrator, the majority of users are SMB clients, and an
-     * application accessing the data uses a Windows user as the service account.</p>
-     * </li> <li> <p> <code>MIXED</code> This is an advanced setting. For more
-     * information, see the topic <a
+     * control data access. Specify one of the following values:</p> <ul> <li> <p>
+     * <code>UNIX</code> if the file system is managed by a UNIX administrator, the
+     * majority of users are NFS clients, and an application accessing the data uses a
+     * UNIX user as the service account. </p> </li> <li> <p> <code>NTFS</code> if the
+     * file system is managed by a Windows administrator, the majority of users are SMB
+     * clients, and an application accessing the data uses a Windows user as the
+     * service account.</p> </li> <li> <p> <code>MIXED</code> This is an advanced
+     * setting. For more information, see the topic <a
      * href="https://docs.netapp.com/us-en/ontap/nfs-admin/security-styles-their-effects-concept.html">What
      * the security styles and their effects are</a> in the NetApp Documentation
      * Center.</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style.html">Volume
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-security-style">Volume
      * security style</a> in the FSx for ONTAP User Guide.</p>
      */
     inline bool SecurityStyleHasBeenSet() const { return m_securityStyleHasBeenSet; }
@@ -151,21 +145,18 @@ namespace Model
      * <p>Specifies the security style for the volume. If a volume's security style is
      * not specified, it is automatically set to the root volume's security style. The
      * security style determines the type of permissions that FSx for ONTAP uses to
-     * control data access. For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style">Volume
-     * security style</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>. Specify
-     * one of the following values:</p> <ul> <li> <p> <code>UNIX</code> if the file
-     * system is managed by a UNIX administrator, the majority of users are NFS
-     * clients, and an application accessing the data uses a UNIX user as the service
-     * account. </p> </li> <li> <p> <code>NTFS</code> if the file system is managed by
-     * a Windows administrator, the majority of users are SMB clients, and an
-     * application accessing the data uses a Windows user as the service account.</p>
-     * </li> <li> <p> <code>MIXED</code> This is an advanced setting. For more
-     * information, see the topic <a
+     * control data access. Specify one of the following values:</p> <ul> <li> <p>
+     * <code>UNIX</code> if the file system is managed by a UNIX administrator, the
+     * majority of users are NFS clients, and an application accessing the data uses a
+     * UNIX user as the service account. </p> </li> <li> <p> <code>NTFS</code> if the
+     * file system is managed by a Windows administrator, the majority of users are SMB
+     * clients, and an application accessing the data uses a Windows user as the
+     * service account.</p> </li> <li> <p> <code>MIXED</code> This is an advanced
+     * setting. For more information, see the topic <a
      * href="https://docs.netapp.com/us-en/ontap/nfs-admin/security-styles-their-effects-concept.html">What
      * the security styles and their effects are</a> in the NetApp Documentation
      * Center.</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style.html">Volume
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-security-style">Volume
      * security style</a> in the FSx for ONTAP User Guide.</p>
      */
     inline void SetSecurityStyle(const SecurityStyle& value) { m_securityStyleHasBeenSet = true; m_securityStyle = value; }
@@ -174,21 +165,18 @@ namespace Model
      * <p>Specifies the security style for the volume. If a volume's security style is
      * not specified, it is automatically set to the root volume's security style. The
      * security style determines the type of permissions that FSx for ONTAP uses to
-     * control data access. For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style">Volume
-     * security style</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>. Specify
-     * one of the following values:</p> <ul> <li> <p> <code>UNIX</code> if the file
-     * system is managed by a UNIX administrator, the majority of users are NFS
-     * clients, and an application accessing the data uses a UNIX user as the service
-     * account. </p> </li> <li> <p> <code>NTFS</code> if the file system is managed by
-     * a Windows administrator, the majority of users are SMB clients, and an
-     * application accessing the data uses a Windows user as the service account.</p>
-     * </li> <li> <p> <code>MIXED</code> This is an advanced setting. For more
-     * information, see the topic <a
+     * control data access. Specify one of the following values:</p> <ul> <li> <p>
+     * <code>UNIX</code> if the file system is managed by a UNIX administrator, the
+     * majority of users are NFS clients, and an application accessing the data uses a
+     * UNIX user as the service account. </p> </li> <li> <p> <code>NTFS</code> if the
+     * file system is managed by a Windows administrator, the majority of users are SMB
+     * clients, and an application accessing the data uses a Windows user as the
+     * service account.</p> </li> <li> <p> <code>MIXED</code> This is an advanced
+     * setting. For more information, see the topic <a
      * href="https://docs.netapp.com/us-en/ontap/nfs-admin/security-styles-their-effects-concept.html">What
      * the security styles and their effects are</a> in the NetApp Documentation
      * Center.</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style.html">Volume
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-security-style">Volume
      * security style</a> in the FSx for ONTAP User Guide.</p>
      */
     inline void SetSecurityStyle(SecurityStyle&& value) { m_securityStyleHasBeenSet = true; m_securityStyle = std::move(value); }
@@ -197,21 +185,18 @@ namespace Model
      * <p>Specifies the security style for the volume. If a volume's security style is
      * not specified, it is automatically set to the root volume's security style. The
      * security style determines the type of permissions that FSx for ONTAP uses to
-     * control data access. For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style">Volume
-     * security style</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>. Specify
-     * one of the following values:</p> <ul> <li> <p> <code>UNIX</code> if the file
-     * system is managed by a UNIX administrator, the majority of users are NFS
-     * clients, and an application accessing the data uses a UNIX user as the service
-     * account. </p> </li> <li> <p> <code>NTFS</code> if the file system is managed by
-     * a Windows administrator, the majority of users are SMB clients, and an
-     * application accessing the data uses a Windows user as the service account.</p>
-     * </li> <li> <p> <code>MIXED</code> This is an advanced setting. For more
-     * information, see the topic <a
+     * control data access. Specify one of the following values:</p> <ul> <li> <p>
+     * <code>UNIX</code> if the file system is managed by a UNIX administrator, the
+     * majority of users are NFS clients, and an application accessing the data uses a
+     * UNIX user as the service account. </p> </li> <li> <p> <code>NTFS</code> if the
+     * file system is managed by a Windows administrator, the majority of users are SMB
+     * clients, and an application accessing the data uses a Windows user as the
+     * service account.</p> </li> <li> <p> <code>MIXED</code> This is an advanced
+     * setting. For more information, see the topic <a
      * href="https://docs.netapp.com/us-en/ontap/nfs-admin/security-styles-their-effects-concept.html">What
      * the security styles and their effects are</a> in the NetApp Documentation
      * Center.</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style.html">Volume
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-security-style">Volume
      * security style</a> in the FSx for ONTAP User Guide.</p>
      */
     inline CreateOntapVolumeConfiguration& WithSecurityStyle(const SecurityStyle& value) { SetSecurityStyle(value); return *this;}
@@ -220,21 +205,18 @@ namespace Model
      * <p>Specifies the security style for the volume. If a volume's security style is
      * not specified, it is automatically set to the root volume's security style. The
      * security style determines the type of permissions that FSx for ONTAP uses to
-     * control data access. For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style">Volume
-     * security style</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>. Specify
-     * one of the following values:</p> <ul> <li> <p> <code>UNIX</code> if the file
-     * system is managed by a UNIX administrator, the majority of users are NFS
-     * clients, and an application accessing the data uses a UNIX user as the service
-     * account. </p> </li> <li> <p> <code>NTFS</code> if the file system is managed by
-     * a Windows administrator, the majority of users are SMB clients, and an
-     * application accessing the data uses a Windows user as the service account.</p>
-     * </li> <li> <p> <code>MIXED</code> This is an advanced setting. For more
-     * information, see the topic <a
+     * control data access. Specify one of the following values:</p> <ul> <li> <p>
+     * <code>UNIX</code> if the file system is managed by a UNIX administrator, the
+     * majority of users are NFS clients, and an application accessing the data uses a
+     * UNIX user as the service account. </p> </li> <li> <p> <code>NTFS</code> if the
+     * file system is managed by a Windows administrator, the majority of users are SMB
+     * clients, and an application accessing the data uses a Windows user as the
+     * service account.</p> </li> <li> <p> <code>MIXED</code> This is an advanced
+     * setting. For more information, see the topic <a
      * href="https://docs.netapp.com/us-en/ontap/nfs-admin/security-styles-their-effects-concept.html">What
      * the security styles and their effects are</a> in the NetApp Documentation
      * Center.</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style.html">Volume
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-security-style">Volume
      * security style</a> in the FSx for ONTAP User Guide.</p>
      */
     inline CreateOntapVolumeConfiguration& WithSecurityStyle(SecurityStyle&& value) { SetSecurityStyle(std::move(value)); return *this;}
@@ -344,7 +326,7 @@ namespace Model
      * data-protection volume. A <code>DP</code> volume is read-only and can be used as
      * the destination of a NetApp SnapMirror relationship.</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types">Volume
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-types">Volume
      * types</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
      */
     inline const InputOntapVolumeType& GetOntapVolumeType() const{ return m_ontapVolumeType; }
@@ -356,7 +338,7 @@ namespace Model
      * data-protection volume. A <code>DP</code> volume is read-only and can be used as
      * the destination of a NetApp SnapMirror relationship.</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types">Volume
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-types">Volume
      * types</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
      */
     inline bool OntapVolumeTypeHasBeenSet() const { return m_ontapVolumeTypeHasBeenSet; }
@@ -368,7 +350,7 @@ namespace Model
      * data-protection volume. A <code>DP</code> volume is read-only and can be used as
      * the destination of a NetApp SnapMirror relationship.</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types">Volume
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-types">Volume
      * types</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
      */
     inline void SetOntapVolumeType(const InputOntapVolumeType& value) { m_ontapVolumeTypeHasBeenSet = true; m_ontapVolumeType = value; }
@@ -380,7 +362,7 @@ namespace Model
      * data-protection volume. A <code>DP</code> volume is read-only and can be used as
      * the destination of a NetApp SnapMirror relationship.</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types">Volume
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-types">Volume
      * types</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
      */
     inline void SetOntapVolumeType(InputOntapVolumeType&& value) { m_ontapVolumeTypeHasBeenSet = true; m_ontapVolumeType = std::move(value); }
@@ -392,7 +374,7 @@ namespace Model
      * data-protection volume. A <code>DP</code> volume is read-only and can be used as
      * the destination of a NetApp SnapMirror relationship.</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types">Volume
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-types">Volume
      * types</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
      */
     inline CreateOntapVolumeConfiguration& WithOntapVolumeType(const InputOntapVolumeType& value) { SetOntapVolumeType(value); return *this;}
@@ -404,7 +386,7 @@ namespace Model
      * data-protection volume. A <code>DP</code> volume is read-only and can be used as
      * the destination of a NetApp SnapMirror relationship.</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types">Volume
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-types">Volume
      * types</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
      */
     inline CreateOntapVolumeConfiguration& WithOntapVolumeType(InputOntapVolumeType&& value) { SetOntapVolumeType(std::move(value)); return *this;}
@@ -635,7 +617,7 @@ namespace Model
      * <p>Use to specify the style of an ONTAP volume. FSx for ONTAP offers two styles
      * of volumes that you can use for different purposes, FlexVol and FlexGroup
      * volumes. For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-styles.html">Volume
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-styles">Volume
      * styles</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
      */
     inline const VolumeStyle& GetVolumeStyle() const{ return m_volumeStyle; }
@@ -644,7 +626,7 @@ namespace Model
      * <p>Use to specify the style of an ONTAP volume. FSx for ONTAP offers two styles
      * of volumes that you can use for different purposes, FlexVol and FlexGroup
      * volumes. For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-styles.html">Volume
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-styles">Volume
      * styles</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
      */
     inline bool VolumeStyleHasBeenSet() const { return m_volumeStyleHasBeenSet; }
@@ -653,7 +635,7 @@ namespace Model
      * <p>Use to specify the style of an ONTAP volume. FSx for ONTAP offers two styles
      * of volumes that you can use for different purposes, FlexVol and FlexGroup
      * volumes. For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-styles.html">Volume
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-styles">Volume
      * styles</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
      */
     inline void SetVolumeStyle(const VolumeStyle& value) { m_volumeStyleHasBeenSet = true; m_volumeStyle = value; }
@@ -662,7 +644,7 @@ namespace Model
      * <p>Use to specify the style of an ONTAP volume. FSx for ONTAP offers two styles
      * of volumes that you can use for different purposes, FlexVol and FlexGroup
      * volumes. For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-styles.html">Volume
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-styles">Volume
      * styles</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
      */
     inline void SetVolumeStyle(VolumeStyle&& value) { m_volumeStyleHasBeenSet = true; m_volumeStyle = std::move(value); }
@@ -671,7 +653,7 @@ namespace Model
      * <p>Use to specify the style of an ONTAP volume. FSx for ONTAP offers two styles
      * of volumes that you can use for different purposes, FlexVol and FlexGroup
      * volumes. For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-styles.html">Volume
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-styles">Volume
      * styles</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
      */
     inline CreateOntapVolumeConfiguration& WithVolumeStyle(const VolumeStyle& value) { SetVolumeStyle(value); return *this;}
@@ -680,7 +662,7 @@ namespace Model
      * <p>Use to specify the style of an ONTAP volume. FSx for ONTAP offers two styles
      * of volumes that you can use for different purposes, FlexVol and FlexGroup
      * volumes. For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-styles.html">Volume
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-styles">Volume
      * styles</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
      */
     inline CreateOntapVolumeConfiguration& WithVolumeStyle(VolumeStyle&& value) { SetVolumeStyle(std::move(value)); return *this;}

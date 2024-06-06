@@ -31,7 +31,8 @@ SplunkDestinationDescription::SplunkDestinationDescription() :
     m_s3DestinationDescriptionHasBeenSet(false),
     m_processingConfigurationHasBeenSet(false),
     m_cloudWatchLoggingOptionsHasBeenSet(false),
-    m_bufferingHintsHasBeenSet(false)
+    m_bufferingHintsHasBeenSet(false),
+    m_secretsManagerConfigurationHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ SplunkDestinationDescription::SplunkDestinationDescription(JsonView jsonValue) :
     m_s3DestinationDescriptionHasBeenSet(false),
     m_processingConfigurationHasBeenSet(false),
     m_cloudWatchLoggingOptionsHasBeenSet(false),
-    m_bufferingHintsHasBeenSet(false)
+    m_bufferingHintsHasBeenSet(false),
+    m_secretsManagerConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -125,6 +127,13 @@ SplunkDestinationDescription& SplunkDestinationDescription::operator =(JsonView 
     m_bufferingHintsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SecretsManagerConfiguration"))
+  {
+    m_secretsManagerConfiguration = jsonValue.GetObject("SecretsManagerConfiguration");
+
+    m_secretsManagerConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -187,6 +196,12 @@ JsonValue SplunkDestinationDescription::Jsonize() const
   if(m_bufferingHintsHasBeenSet)
   {
    payload.WithObject("BufferingHints", m_bufferingHints.Jsonize());
+
+  }
+
+  if(m_secretsManagerConfigurationHasBeenSet)
+  {
+   payload.WithObject("SecretsManagerConfiguration", m_secretsManagerConfiguration.Jsonize());
 
   }
 

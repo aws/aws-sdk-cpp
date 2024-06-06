@@ -34,6 +34,42 @@ namespace Model
 
 
     /**
+     * <p>The name for the geofence collection.</p>
+     */
+    inline const Aws::String& GetCollectionName() const{ return m_collectionName; }
+
+    /**
+     * <p>The name for the geofence collection.</p>
+     */
+    inline void SetCollectionName(const Aws::String& value) { m_collectionName = value; }
+
+    /**
+     * <p>The name for the geofence collection.</p>
+     */
+    inline void SetCollectionName(Aws::String&& value) { m_collectionName = std::move(value); }
+
+    /**
+     * <p>The name for the geofence collection.</p>
+     */
+    inline void SetCollectionName(const char* value) { m_collectionName.assign(value); }
+
+    /**
+     * <p>The name for the geofence collection.</p>
+     */
+    inline CreateGeofenceCollectionResult& WithCollectionName(const Aws::String& value) { SetCollectionName(value); return *this;}
+
+    /**
+     * <p>The name for the geofence collection.</p>
+     */
+    inline CreateGeofenceCollectionResult& WithCollectionName(Aws::String&& value) { SetCollectionName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name for the geofence collection.</p>
+     */
+    inline CreateGeofenceCollectionResult& WithCollectionName(const char* value) { SetCollectionName(value); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used
      * when you need to specify a resource across all Amazon Web Services. </p> <ul>
      * <li> <p>Format example:
@@ -98,42 +134,6 @@ namespace Model
 
 
     /**
-     * <p>The name for the geofence collection.</p>
-     */
-    inline const Aws::String& GetCollectionName() const{ return m_collectionName; }
-
-    /**
-     * <p>The name for the geofence collection.</p>
-     */
-    inline void SetCollectionName(const Aws::String& value) { m_collectionName = value; }
-
-    /**
-     * <p>The name for the geofence collection.</p>
-     */
-    inline void SetCollectionName(Aws::String&& value) { m_collectionName = std::move(value); }
-
-    /**
-     * <p>The name for the geofence collection.</p>
-     */
-    inline void SetCollectionName(const char* value) { m_collectionName.assign(value); }
-
-    /**
-     * <p>The name for the geofence collection.</p>
-     */
-    inline CreateGeofenceCollectionResult& WithCollectionName(const Aws::String& value) { SetCollectionName(value); return *this;}
-
-    /**
-     * <p>The name for the geofence collection.</p>
-     */
-    inline CreateGeofenceCollectionResult& WithCollectionName(Aws::String&& value) { SetCollectionName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name for the geofence collection.</p>
-     */
-    inline CreateGeofenceCollectionResult& WithCollectionName(const char* value) { SetCollectionName(value); return *this;}
-
-
-    /**
      * <p>The timestamp for when the geofence collection was created in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
@@ -192,9 +192,9 @@ namespace Model
 
   private:
 
-    Aws::String m_collectionArn;
-
     Aws::String m_collectionName;
+
+    Aws::String m_collectionArn;
 
     Aws::Utils::DateTime m_createTime;
 

@@ -13,8 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 AssociateTrackerConsumerRequest::AssociateTrackerConsumerRequest() : 
-    m_consumerArnHasBeenSet(false),
-    m_trackerNameHasBeenSet(false)
+    m_trackerNameHasBeenSet(false),
+    m_consumerArnHasBeenSet(false)
 {
 }
 

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/location/LocationService_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -37,6 +37,129 @@ namespace Model
     AWS_LOCATIONSERVICE_API ListMapsResponseEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API ListMapsResponseEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The name of the associated map resource.</p>
+     */
+    inline const Aws::String& GetMapName() const{ return m_mapName; }
+
+    /**
+     * <p>The name of the associated map resource.</p>
+     */
+    inline bool MapNameHasBeenSet() const { return m_mapNameHasBeenSet; }
+
+    /**
+     * <p>The name of the associated map resource.</p>
+     */
+    inline void SetMapName(const Aws::String& value) { m_mapNameHasBeenSet = true; m_mapName = value; }
+
+    /**
+     * <p>The name of the associated map resource.</p>
+     */
+    inline void SetMapName(Aws::String&& value) { m_mapNameHasBeenSet = true; m_mapName = std::move(value); }
+
+    /**
+     * <p>The name of the associated map resource.</p>
+     */
+    inline void SetMapName(const char* value) { m_mapNameHasBeenSet = true; m_mapName.assign(value); }
+
+    /**
+     * <p>The name of the associated map resource.</p>
+     */
+    inline ListMapsResponseEntry& WithMapName(const Aws::String& value) { SetMapName(value); return *this;}
+
+    /**
+     * <p>The name of the associated map resource.</p>
+     */
+    inline ListMapsResponseEntry& WithMapName(Aws::String&& value) { SetMapName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the associated map resource.</p>
+     */
+    inline ListMapsResponseEntry& WithMapName(const char* value) { SetMapName(value); return *this;}
+
+
+    /**
+     * <p>The description for the map resource.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description for the map resource.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description for the map resource.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>The description for the map resource.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>The description for the map resource.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>The description for the map resource.</p>
+     */
+    inline ListMapsResponseEntry& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>The description for the map resource.</p>
+     */
+    inline ListMapsResponseEntry& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>The description for the map resource.</p>
+     */
+    inline ListMapsResponseEntry& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
+     * <p>Specifies the data provider for the associated map tiles.</p>
+     */
+    inline const Aws::String& GetDataSource() const{ return m_dataSource; }
+
+    /**
+     * <p>Specifies the data provider for the associated map tiles.</p>
+     */
+    inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
+
+    /**
+     * <p>Specifies the data provider for the associated map tiles.</p>
+     */
+    inline void SetDataSource(const Aws::String& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
+
+    /**
+     * <p>Specifies the data provider for the associated map tiles.</p>
+     */
+    inline void SetDataSource(Aws::String&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
+
+    /**
+     * <p>Specifies the data provider for the associated map tiles.</p>
+     */
+    inline void SetDataSource(const char* value) { m_dataSourceHasBeenSet = true; m_dataSource.assign(value); }
+
+    /**
+     * <p>Specifies the data provider for the associated map tiles.</p>
+     */
+    inline ListMapsResponseEntry& WithDataSource(const Aws::String& value) { SetDataSource(value); return *this;}
+
+    /**
+     * <p>Specifies the data provider for the associated map tiles.</p>
+     */
+    inline ListMapsResponseEntry& WithDataSource(Aws::String&& value) { SetDataSource(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the data provider for the associated map tiles.</p>
+     */
+    inline ListMapsResponseEntry& WithDataSource(const char* value) { SetDataSource(value); return *this;}
 
 
     /**
@@ -83,129 +206,6 @@ namespace Model
 
 
     /**
-     * <p>Specifies the data provider for the associated map tiles.</p>
-     */
-    inline const Aws::String& GetDataSource() const{ return m_dataSource; }
-
-    /**
-     * <p>Specifies the data provider for the associated map tiles.</p>
-     */
-    inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
-
-    /**
-     * <p>Specifies the data provider for the associated map tiles.</p>
-     */
-    inline void SetDataSource(const Aws::String& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
-
-    /**
-     * <p>Specifies the data provider for the associated map tiles.</p>
-     */
-    inline void SetDataSource(Aws::String&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
-
-    /**
-     * <p>Specifies the data provider for the associated map tiles.</p>
-     */
-    inline void SetDataSource(const char* value) { m_dataSourceHasBeenSet = true; m_dataSource.assign(value); }
-
-    /**
-     * <p>Specifies the data provider for the associated map tiles.</p>
-     */
-    inline ListMapsResponseEntry& WithDataSource(const Aws::String& value) { SetDataSource(value); return *this;}
-
-    /**
-     * <p>Specifies the data provider for the associated map tiles.</p>
-     */
-    inline ListMapsResponseEntry& WithDataSource(Aws::String&& value) { SetDataSource(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the data provider for the associated map tiles.</p>
-     */
-    inline ListMapsResponseEntry& WithDataSource(const char* value) { SetDataSource(value); return *this;}
-
-
-    /**
-     * <p>The description for the map resource.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The description for the map resource.</p>
-     */
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The description for the map resource.</p>
-     */
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The description for the map resource.</p>
-     */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The description for the map resource.</p>
-     */
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The description for the map resource.</p>
-     */
-    inline ListMapsResponseEntry& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The description for the map resource.</p>
-     */
-    inline ListMapsResponseEntry& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The description for the map resource.</p>
-     */
-    inline ListMapsResponseEntry& WithDescription(const char* value) { SetDescription(value); return *this;}
-
-
-    /**
-     * <p>The name of the associated map resource.</p>
-     */
-    inline const Aws::String& GetMapName() const{ return m_mapName; }
-
-    /**
-     * <p>The name of the associated map resource.</p>
-     */
-    inline bool MapNameHasBeenSet() const { return m_mapNameHasBeenSet; }
-
-    /**
-     * <p>The name of the associated map resource.</p>
-     */
-    inline void SetMapName(const Aws::String& value) { m_mapNameHasBeenSet = true; m_mapName = value; }
-
-    /**
-     * <p>The name of the associated map resource.</p>
-     */
-    inline void SetMapName(Aws::String&& value) { m_mapNameHasBeenSet = true; m_mapName = std::move(value); }
-
-    /**
-     * <p>The name of the associated map resource.</p>
-     */
-    inline void SetMapName(const char* value) { m_mapNameHasBeenSet = true; m_mapName.assign(value); }
-
-    /**
-     * <p>The name of the associated map resource.</p>
-     */
-    inline ListMapsResponseEntry& WithMapName(const Aws::String& value) { SetMapName(value); return *this;}
-
-    /**
-     * <p>The name of the associated map resource.</p>
-     */
-    inline ListMapsResponseEntry& WithMapName(Aws::String&& value) { SetMapName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the associated map resource.</p>
-     */
-    inline ListMapsResponseEntry& WithMapName(const char* value) { SetMapName(value); return *this;}
-
-
-    /**
      * <p>The timestamp for when the map resource was last updated in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
@@ -249,17 +249,17 @@ namespace Model
 
   private:
 
-    Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet = false;
-
-    Aws::String m_dataSource;
-    bool m_dataSourceHasBeenSet = false;
+    Aws::String m_mapName;
+    bool m_mapNameHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Aws::String m_mapName;
-    bool m_mapNameHasBeenSet = false;
+    Aws::String m_dataSource;
+    bool m_dataSourceHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createTime;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateTime;
     bool m_updateTimeHasBeenSet = false;

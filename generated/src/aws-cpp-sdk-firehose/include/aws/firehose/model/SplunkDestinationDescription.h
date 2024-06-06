@@ -13,6 +13,7 @@
 #include <aws/firehose/model/ProcessingConfiguration.h>
 #include <aws/firehose/model/CloudWatchLoggingOptions.h>
 #include <aws/firehose/model/SplunkBufferingHints.h>
+#include <aws/firehose/model/SecretsManagerConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -433,6 +434,37 @@ namespace Model
      */
     inline SplunkDestinationDescription& WithBufferingHints(SplunkBufferingHints&& value) { SetBufferingHints(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The configuration that defines how you access secrets for Splunk. </p>
+     */
+    inline const SecretsManagerConfiguration& GetSecretsManagerConfiguration() const{ return m_secretsManagerConfiguration; }
+
+    /**
+     * <p> The configuration that defines how you access secrets for Splunk. </p>
+     */
+    inline bool SecretsManagerConfigurationHasBeenSet() const { return m_secretsManagerConfigurationHasBeenSet; }
+
+    /**
+     * <p> The configuration that defines how you access secrets for Splunk. </p>
+     */
+    inline void SetSecretsManagerConfiguration(const SecretsManagerConfiguration& value) { m_secretsManagerConfigurationHasBeenSet = true; m_secretsManagerConfiguration = value; }
+
+    /**
+     * <p> The configuration that defines how you access secrets for Splunk. </p>
+     */
+    inline void SetSecretsManagerConfiguration(SecretsManagerConfiguration&& value) { m_secretsManagerConfigurationHasBeenSet = true; m_secretsManagerConfiguration = std::move(value); }
+
+    /**
+     * <p> The configuration that defines how you access secrets for Splunk. </p>
+     */
+    inline SplunkDestinationDescription& WithSecretsManagerConfiguration(const SecretsManagerConfiguration& value) { SetSecretsManagerConfiguration(value); return *this;}
+
+    /**
+     * <p> The configuration that defines how you access secrets for Splunk. </p>
+     */
+    inline SplunkDestinationDescription& WithSecretsManagerConfiguration(SecretsManagerConfiguration&& value) { SetSecretsManagerConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_hECEndpoint;
@@ -464,6 +496,9 @@ namespace Model
 
     SplunkBufferingHints m_bufferingHints;
     bool m_bufferingHintsHasBeenSet = false;
+
+    SecretsManagerConfiguration m_secretsManagerConfiguration;
+    bool m_secretsManagerConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

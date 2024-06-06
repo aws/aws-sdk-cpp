@@ -29,27 +29,9 @@ DescribeMapResult::DescribeMapResult(const Aws::AmazonWebServiceResult<JsonValue
 DescribeMapResult& DescribeMapResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Configuration"))
+  if(jsonValue.ValueExists("MapName"))
   {
-    m_configuration = jsonValue.GetObject("Configuration");
-
-  }
-
-  if(jsonValue.ValueExists("CreateTime"))
-  {
-    m_createTime = jsonValue.GetString("CreateTime");
-
-  }
-
-  if(jsonValue.ValueExists("DataSource"))
-  {
-    m_dataSource = jsonValue.GetString("DataSource");
-
-  }
-
-  if(jsonValue.ValueExists("Description"))
-  {
-    m_description = jsonValue.GetString("Description");
+    m_mapName = jsonValue.GetString("MapName");
 
   }
 
@@ -59,9 +41,21 @@ DescribeMapResult& DescribeMapResult::operator =(const Aws::AmazonWebServiceResu
 
   }
 
-  if(jsonValue.ValueExists("MapName"))
+  if(jsonValue.ValueExists("DataSource"))
   {
-    m_mapName = jsonValue.GetString("MapName");
+    m_dataSource = jsonValue.GetString("DataSource");
+
+  }
+
+  if(jsonValue.ValueExists("Configuration"))
+  {
+    m_configuration = jsonValue.GetObject("Configuration");
+
+  }
+
+  if(jsonValue.ValueExists("Description"))
+  {
+    m_description = jsonValue.GetString("Description");
 
   }
 
@@ -72,6 +66,12 @@ DescribeMapResult& DescribeMapResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+  }
+
+  if(jsonValue.ValueExists("CreateTime"))
+  {
+    m_createTime = jsonValue.GetString("CreateTime");
+
   }
 
   if(jsonValue.ValueExists("UpdateTime"))

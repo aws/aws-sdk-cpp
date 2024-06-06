@@ -31,6 +31,7 @@ namespace Aws
         static const int MemoryError_HASH = HashingUtils::HashString("MemoryError");
         static const int MICError_HASH = HashingUtils::HashString("MICError");
         static const int Successful_HASH = HashingUtils::HashString("Successful");
+        static const int Device_exist_in_conflict_fuota_task_HASH = HashingUtils::HashString("Device_exist_in_conflict_fuota_task");
 
 
         FuotaDeviceStatus GetFuotaDeviceStatusForName(const Aws::String& name)
@@ -80,6 +81,10 @@ namespace Aws
           {
             return FuotaDeviceStatus::Successful;
           }
+          else if (hashCode == Device_exist_in_conflict_fuota_task_HASH)
+          {
+            return FuotaDeviceStatus::Device_exist_in_conflict_fuota_task;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -118,6 +123,8 @@ namespace Aws
             return "MICError";
           case FuotaDeviceStatus::Successful:
             return "Successful";
+          case FuotaDeviceStatus::Device_exist_in_conflict_fuota_task:
+            return "Device_exist_in_conflict_fuota_task";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

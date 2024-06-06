@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/location/LocationServiceRequest.h>
-#include <aws/location/model/DataSourceConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/location/model/DataSourceConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -34,34 +34,44 @@ namespace Model
 
 
     /**
-     * <p>Updates the data storage option for the place index resource.</p>
+     * <p>The name of the place index resource to update.</p>
      */
-    inline const DataSourceConfiguration& GetDataSourceConfiguration() const{ return m_dataSourceConfiguration; }
+    inline const Aws::String& GetIndexName() const{ return m_indexName; }
 
     /**
-     * <p>Updates the data storage option for the place index resource.</p>
+     * <p>The name of the place index resource to update.</p>
      */
-    inline bool DataSourceConfigurationHasBeenSet() const { return m_dataSourceConfigurationHasBeenSet; }
+    inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
 
     /**
-     * <p>Updates the data storage option for the place index resource.</p>
+     * <p>The name of the place index resource to update.</p>
      */
-    inline void SetDataSourceConfiguration(const DataSourceConfiguration& value) { m_dataSourceConfigurationHasBeenSet = true; m_dataSourceConfiguration = value; }
+    inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
 
     /**
-     * <p>Updates the data storage option for the place index resource.</p>
+     * <p>The name of the place index resource to update.</p>
      */
-    inline void SetDataSourceConfiguration(DataSourceConfiguration&& value) { m_dataSourceConfigurationHasBeenSet = true; m_dataSourceConfiguration = std::move(value); }
+    inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
 
     /**
-     * <p>Updates the data storage option for the place index resource.</p>
+     * <p>The name of the place index resource to update.</p>
      */
-    inline UpdatePlaceIndexRequest& WithDataSourceConfiguration(const DataSourceConfiguration& value) { SetDataSourceConfiguration(value); return *this;}
+    inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
 
     /**
-     * <p>Updates the data storage option for the place index resource.</p>
+     * <p>The name of the place index resource to update.</p>
      */
-    inline UpdatePlaceIndexRequest& WithDataSourceConfiguration(DataSourceConfiguration&& value) { SetDataSourceConfiguration(std::move(value)); return *this;}
+    inline UpdatePlaceIndexRequest& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
+
+    /**
+     * <p>The name of the place index resource to update.</p>
+     */
+    inline UpdatePlaceIndexRequest& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the place index resource to update.</p>
+     */
+    inline UpdatePlaceIndexRequest& WithIndexName(const char* value) { SetIndexName(value); return *this;}
 
 
     /**
@@ -106,55 +116,45 @@ namespace Model
 
 
     /**
-     * <p>The name of the place index resource to update.</p>
+     * <p>Updates the data storage option for the place index resource.</p>
      */
-    inline const Aws::String& GetIndexName() const{ return m_indexName; }
+    inline const DataSourceConfiguration& GetDataSourceConfiguration() const{ return m_dataSourceConfiguration; }
 
     /**
-     * <p>The name of the place index resource to update.</p>
+     * <p>Updates the data storage option for the place index resource.</p>
      */
-    inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
+    inline bool DataSourceConfigurationHasBeenSet() const { return m_dataSourceConfigurationHasBeenSet; }
 
     /**
-     * <p>The name of the place index resource to update.</p>
+     * <p>Updates the data storage option for the place index resource.</p>
      */
-    inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
+    inline void SetDataSourceConfiguration(const DataSourceConfiguration& value) { m_dataSourceConfigurationHasBeenSet = true; m_dataSourceConfiguration = value; }
 
     /**
-     * <p>The name of the place index resource to update.</p>
+     * <p>Updates the data storage option for the place index resource.</p>
      */
-    inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
+    inline void SetDataSourceConfiguration(DataSourceConfiguration&& value) { m_dataSourceConfigurationHasBeenSet = true; m_dataSourceConfiguration = std::move(value); }
 
     /**
-     * <p>The name of the place index resource to update.</p>
+     * <p>Updates the data storage option for the place index resource.</p>
      */
-    inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
+    inline UpdatePlaceIndexRequest& WithDataSourceConfiguration(const DataSourceConfiguration& value) { SetDataSourceConfiguration(value); return *this;}
 
     /**
-     * <p>The name of the place index resource to update.</p>
+     * <p>Updates the data storage option for the place index resource.</p>
      */
-    inline UpdatePlaceIndexRequest& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
-
-    /**
-     * <p>The name of the place index resource to update.</p>
-     */
-    inline UpdatePlaceIndexRequest& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the place index resource to update.</p>
-     */
-    inline UpdatePlaceIndexRequest& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+    inline UpdatePlaceIndexRequest& WithDataSourceConfiguration(DataSourceConfiguration&& value) { SetDataSourceConfiguration(std::move(value)); return *this;}
 
   private:
 
-    DataSourceConfiguration m_dataSourceConfiguration;
-    bool m_dataSourceConfigurationHasBeenSet = false;
+    Aws::String m_indexName;
+    bool m_indexNameHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Aws::String m_indexName;
-    bool m_indexNameHasBeenSet = false;
+    DataSourceConfiguration m_dataSourceConfiguration;
+    bool m_dataSourceConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

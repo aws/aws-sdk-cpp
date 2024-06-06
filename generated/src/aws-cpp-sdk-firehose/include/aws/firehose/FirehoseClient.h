@@ -20,7 +20,7 @@ namespace Firehose
    * previously known as Amazon Kinesis Data Firehose.</p>  <p>Amazon Data
    * Firehose is a fully managed service that delivers real-time streaming data to
    * destinations such as Amazon Simple Storage Service (Amazon S3), Amazon
-   * OpenSearch Service, Amazon Redshift, Splunk, and various other supportd
+   * OpenSearch Service, Amazon Redshift, Splunk, and various other supported
    * destinations.</p>
    */
   class AWS_FIREHOSE_API FirehoseClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<FirehoseClient>
@@ -471,7 +471,7 @@ namespace Firehose
          * old CMK for retirement. If the new CMK is of type
          * <code>CUSTOMER_MANAGED_CMK</code>, Firehose creates a grant that enables it to
          * use the new CMK to encrypt and decrypt data and to manage the grant.</p> <p>For
-         * the KMS grant creation to be successful, Firehose APIs
+         * the KMS grant creation to be successful, the Firehose API operations
          * <code>StartDeliveryStreamEncryption</code> and <code>CreateDeliveryStream</code>
          * should not be called with session credentials that are more than 6 hours
          * old.</p> <p>If a delivery stream already has encryption enabled and then you

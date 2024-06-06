@@ -258,6 +258,55 @@ namespace Model
 
 
     /**
+     * <p>The name of the connection to be used to validate the specific representation
+     * of the view.</p>
+     */
+    inline const Aws::String& GetValidationConnection() const{ return m_validationConnection; }
+
+    /**
+     * <p>The name of the connection to be used to validate the specific representation
+     * of the view.</p>
+     */
+    inline bool ValidationConnectionHasBeenSet() const { return m_validationConnectionHasBeenSet; }
+
+    /**
+     * <p>The name of the connection to be used to validate the specific representation
+     * of the view.</p>
+     */
+    inline void SetValidationConnection(const Aws::String& value) { m_validationConnectionHasBeenSet = true; m_validationConnection = value; }
+
+    /**
+     * <p>The name of the connection to be used to validate the specific representation
+     * of the view.</p>
+     */
+    inline void SetValidationConnection(Aws::String&& value) { m_validationConnectionHasBeenSet = true; m_validationConnection = std::move(value); }
+
+    /**
+     * <p>The name of the connection to be used to validate the specific representation
+     * of the view.</p>
+     */
+    inline void SetValidationConnection(const char* value) { m_validationConnectionHasBeenSet = true; m_validationConnection.assign(value); }
+
+    /**
+     * <p>The name of the connection to be used to validate the specific representation
+     * of the view.</p>
+     */
+    inline ViewRepresentation& WithValidationConnection(const Aws::String& value) { SetValidationConnection(value); return *this;}
+
+    /**
+     * <p>The name of the connection to be used to validate the specific representation
+     * of the view.</p>
+     */
+    inline ViewRepresentation& WithValidationConnection(Aws::String&& value) { SetValidationConnection(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the connection to be used to validate the specific representation
+     * of the view.</p>
+     */
+    inline ViewRepresentation& WithValidationConnection(const char* value) { SetValidationConnection(value); return *this;}
+
+
+    /**
      * <p>Dialects marked as stale are no longer valid and must be updated before they
      * can be queried in their respective query engines.</p>
      */
@@ -294,6 +343,9 @@ namespace Model
 
     Aws::String m_viewExpandedText;
     bool m_viewExpandedTextHasBeenSet = false;
+
+    Aws::String m_validationConnection;
+    bool m_validationConnectionHasBeenSet = false;
 
     bool m_isStale;
     bool m_isStaleHasBeenSet = false;

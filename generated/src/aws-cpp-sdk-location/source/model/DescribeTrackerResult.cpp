@@ -18,16 +18,16 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeTrackerResult::DescribeTrackerResult() : 
+    m_positionFiltering(PositionFiltering::NOT_SET),
     m_eventBridgeEnabled(false),
-    m_kmsKeyEnableGeospatialQueries(false),
-    m_positionFiltering(PositionFiltering::NOT_SET)
+    m_kmsKeyEnableGeospatialQueries(false)
 {
 }
 
 DescribeTrackerResult::DescribeTrackerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_positionFiltering(PositionFiltering::NOT_SET),
     m_eventBridgeEnabled(false),
-    m_kmsKeyEnableGeospatialQueries(false),
-    m_positionFiltering(PositionFiltering::NOT_SET)
+    m_kmsKeyEnableGeospatialQueries(false)
 {
   *this = result;
 }
@@ -35,9 +35,15 @@ DescribeTrackerResult::DescribeTrackerResult(const Aws::AmazonWebServiceResult<J
 DescribeTrackerResult& DescribeTrackerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("CreateTime"))
+  if(jsonValue.ValueExists("TrackerName"))
   {
-    m_createTime = jsonValue.GetString("CreateTime");
+    m_trackerName = jsonValue.GetString("TrackerName");
+
+  }
+
+  if(jsonValue.ValueExists("TrackerArn"))
+  {
+    m_trackerArn = jsonValue.GetString("TrackerArn");
 
   }
 
@@ -47,15 +53,24 @@ DescribeTrackerResult& DescribeTrackerResult::operator =(const Aws::AmazonWebSer
 
   }
 
-  if(jsonValue.ValueExists("EventBridgeEnabled"))
+  if(jsonValue.ValueExists("Tags"))
   {
-    m_eventBridgeEnabled = jsonValue.GetBool("EventBridgeEnabled");
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+  }
+
+  if(jsonValue.ValueExists("CreateTime"))
+  {
+    m_createTime = jsonValue.GetString("CreateTime");
 
   }
 
-  if(jsonValue.ValueExists("KmsKeyEnableGeospatialQueries"))
+  if(jsonValue.ValueExists("UpdateTime"))
   {
-    m_kmsKeyEnableGeospatialQueries = jsonValue.GetBool("KmsKeyEnableGeospatialQueries");
+    m_updateTime = jsonValue.GetString("UpdateTime");
 
   }
 
@@ -71,30 +86,15 @@ DescribeTrackerResult& DescribeTrackerResult::operator =(const Aws::AmazonWebSer
 
   }
 
-  if(jsonValue.ValueExists("Tags"))
+  if(jsonValue.ValueExists("EventBridgeEnabled"))
   {
-    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
-      m_tags[tagsItem.first] = tagsItem.second.AsString();
-    }
-  }
-
-  if(jsonValue.ValueExists("TrackerArn"))
-  {
-    m_trackerArn = jsonValue.GetString("TrackerArn");
+    m_eventBridgeEnabled = jsonValue.GetBool("EventBridgeEnabled");
 
   }
 
-  if(jsonValue.ValueExists("TrackerName"))
+  if(jsonValue.ValueExists("KmsKeyEnableGeospatialQueries"))
   {
-    m_trackerName = jsonValue.GetString("TrackerName");
-
-  }
-
-  if(jsonValue.ValueExists("UpdateTime"))
-  {
-    m_updateTime = jsonValue.GetString("UpdateTime");
+    m_kmsKeyEnableGeospatialQueries = jsonValue.GetBool("KmsKeyEnableGeospatialQueries");
 
   }
 

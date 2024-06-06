@@ -13,22 +13,16 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListKeysRequest::ListKeysRequest() : 
-    m_filterHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_filterHasBeenSet(false)
 {
 }
 
 Aws::String ListKeysRequest::SerializePayload() const
 {
   JsonValue payload;
-
-  if(m_filterHasBeenSet)
-  {
-   payload.WithObject("Filter", m_filter.Jsonize());
-
-  }
 
   if(m_maxResultsHasBeenSet)
   {
@@ -39,6 +33,12 @@ Aws::String ListKeysRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("NextToken", m_nextToken);
+
+  }
+
+  if(m_filterHasBeenSet)
+  {
+   payload.WithObject("Filter", m_filter.Jsonize());
 
   }
 

@@ -16,22 +16,28 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 SearchPlaceIndexForTextRequest::SearchPlaceIndexForTextRequest() : 
+    m_indexNameHasBeenSet(false),
+    m_textHasBeenSet(false),
     m_biasPositionHasBeenSet(false),
     m_filterBBoxHasBeenSet(false),
-    m_filterCategoriesHasBeenSet(false),
     m_filterCountriesHasBeenSet(false),
-    m_indexNameHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_languageHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_textHasBeenSet(false)
+    m_languageHasBeenSet(false),
+    m_filterCategoriesHasBeenSet(false),
+    m_keyHasBeenSet(false)
 {
 }
 
 Aws::String SearchPlaceIndexForTextRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_textHasBeenSet)
+  {
+   payload.WithString("Text", m_text);
+
+  }
 
   if(m_biasPositionHasBeenSet)
   {
@@ -55,17 +61,6 @@ Aws::String SearchPlaceIndexForTextRequest::SerializePayload() const
 
   }
 
-  if(m_filterCategoriesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> filterCategoriesJsonList(m_filterCategories.size());
-   for(unsigned filterCategoriesIndex = 0; filterCategoriesIndex < filterCategoriesJsonList.GetLength(); ++filterCategoriesIndex)
-   {
-     filterCategoriesJsonList[filterCategoriesIndex].AsString(m_filterCategories[filterCategoriesIndex]);
-   }
-   payload.WithArray("FilterCategories", std::move(filterCategoriesJsonList));
-
-  }
-
   if(m_filterCountriesHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> filterCountriesJsonList(m_filterCountries.size());
@@ -77,21 +72,26 @@ Aws::String SearchPlaceIndexForTextRequest::SerializePayload() const
 
   }
 
-  if(m_languageHasBeenSet)
-  {
-   payload.WithString("Language", m_language);
-
-  }
-
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("MaxResults", m_maxResults);
 
   }
 
-  if(m_textHasBeenSet)
+  if(m_languageHasBeenSet)
   {
-   payload.WithString("Text", m_text);
+   payload.WithString("Language", m_language);
+
+  }
+
+  if(m_filterCategoriesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> filterCategoriesJsonList(m_filterCategories.size());
+   for(unsigned filterCategoriesIndex = 0; filterCategoriesIndex < filterCategoriesJsonList.GetLength(); ++filterCategoriesIndex)
+   {
+     filterCategoriesJsonList[filterCategoriesIndex].AsString(m_filterCategories[filterCategoriesIndex]);
+   }
+   payload.WithArray("FilterCategories", std::move(filterCategoriesJsonList));
 
   }
 

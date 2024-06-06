@@ -34,6 +34,55 @@ namespace Model
 
 
     /**
+     * <p>The tracker resource receiving the request for the device position
+     * history.</p>
+     */
+    inline const Aws::String& GetTrackerName() const{ return m_trackerName; }
+
+    /**
+     * <p>The tracker resource receiving the request for the device position
+     * history.</p>
+     */
+    inline bool TrackerNameHasBeenSet() const { return m_trackerNameHasBeenSet; }
+
+    /**
+     * <p>The tracker resource receiving the request for the device position
+     * history.</p>
+     */
+    inline void SetTrackerName(const Aws::String& value) { m_trackerNameHasBeenSet = true; m_trackerName = value; }
+
+    /**
+     * <p>The tracker resource receiving the request for the device position
+     * history.</p>
+     */
+    inline void SetTrackerName(Aws::String&& value) { m_trackerNameHasBeenSet = true; m_trackerName = std::move(value); }
+
+    /**
+     * <p>The tracker resource receiving the request for the device position
+     * history.</p>
+     */
+    inline void SetTrackerName(const char* value) { m_trackerNameHasBeenSet = true; m_trackerName.assign(value); }
+
+    /**
+     * <p>The tracker resource receiving the request for the device position
+     * history.</p>
+     */
+    inline GetDevicePositionHistoryRequest& WithTrackerName(const Aws::String& value) { SetTrackerName(value); return *this;}
+
+    /**
+     * <p>The tracker resource receiving the request for the device position
+     * history.</p>
+     */
+    inline GetDevicePositionHistoryRequest& WithTrackerName(Aws::String&& value) { SetTrackerName(std::move(value)); return *this;}
+
+    /**
+     * <p>The tracker resource receiving the request for the device position
+     * history.</p>
+     */
+    inline GetDevicePositionHistoryRequest& WithTrackerName(const char* value) { SetTrackerName(value); return *this;}
+
+
+    /**
      * <p>The device whose position history you want to retrieve.</p>
      */
     inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
@@ -72,92 +121,6 @@ namespace Model
      * <p>The device whose position history you want to retrieve.</p>
      */
     inline GetDevicePositionHistoryRequest& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
-
-
-    /**
-     * <p>Specify the end time for the position history in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the
-     * time that the request is made.</p> <p>Requirement:</p> <ul> <li> <p>The time
-     * specified for <code>EndTimeExclusive</code> must be after the time for
-     * <code>StartTimeInclusive</code>.</p> </li> </ul>
-     */
-    inline const Aws::Utils::DateTime& GetEndTimeExclusive() const{ return m_endTimeExclusive; }
-
-    /**
-     * <p>Specify the end time for the position history in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the
-     * time that the request is made.</p> <p>Requirement:</p> <ul> <li> <p>The time
-     * specified for <code>EndTimeExclusive</code> must be after the time for
-     * <code>StartTimeInclusive</code>.</p> </li> </ul>
-     */
-    inline bool EndTimeExclusiveHasBeenSet() const { return m_endTimeExclusiveHasBeenSet; }
-
-    /**
-     * <p>Specify the end time for the position history in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the
-     * time that the request is made.</p> <p>Requirement:</p> <ul> <li> <p>The time
-     * specified for <code>EndTimeExclusive</code> must be after the time for
-     * <code>StartTimeInclusive</code>.</p> </li> </ul>
-     */
-    inline void SetEndTimeExclusive(const Aws::Utils::DateTime& value) { m_endTimeExclusiveHasBeenSet = true; m_endTimeExclusive = value; }
-
-    /**
-     * <p>Specify the end time for the position history in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the
-     * time that the request is made.</p> <p>Requirement:</p> <ul> <li> <p>The time
-     * specified for <code>EndTimeExclusive</code> must be after the time for
-     * <code>StartTimeInclusive</code>.</p> </li> </ul>
-     */
-    inline void SetEndTimeExclusive(Aws::Utils::DateTime&& value) { m_endTimeExclusiveHasBeenSet = true; m_endTimeExclusive = std::move(value); }
-
-    /**
-     * <p>Specify the end time for the position history in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the
-     * time that the request is made.</p> <p>Requirement:</p> <ul> <li> <p>The time
-     * specified for <code>EndTimeExclusive</code> must be after the time for
-     * <code>StartTimeInclusive</code>.</p> </li> </ul>
-     */
-    inline GetDevicePositionHistoryRequest& WithEndTimeExclusive(const Aws::Utils::DateTime& value) { SetEndTimeExclusive(value); return *this;}
-
-    /**
-     * <p>Specify the end time for the position history in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the
-     * time that the request is made.</p> <p>Requirement:</p> <ul> <li> <p>The time
-     * specified for <code>EndTimeExclusive</code> must be after the time for
-     * <code>StartTimeInclusive</code>.</p> </li> </ul>
-     */
-    inline GetDevicePositionHistoryRequest& WithEndTimeExclusive(Aws::Utils::DateTime&& value) { SetEndTimeExclusive(std::move(value)); return *this;}
-
-
-    /**
-     * <p>An optional limit for the number of device positions returned in a single
-     * call.</p> <p>Default value: <code>100</code> </p>
-     */
-    inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>An optional limit for the number of device positions returned in a single
-     * call.</p> <p>Default value: <code>100</code> </p>
-     */
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>An optional limit for the number of device positions returned in a single
-     * call.</p> <p>Default value: <code>100</code> </p>
-     */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>An optional limit for the number of device positions returned in a single
-     * call.</p> <p>Default value: <code>100</code> </p>
-     */
-    inline GetDevicePositionHistoryRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
@@ -279,63 +242,97 @@ namespace Model
 
 
     /**
-     * <p>The tracker resource receiving the request for the device position
-     * history.</p>
+     * <p>Specify the end time for the position history in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the
+     * time that the request is made.</p> <p>Requirement:</p> <ul> <li> <p>The time
+     * specified for <code>EndTimeExclusive</code> must be after the time for
+     * <code>StartTimeInclusive</code>.</p> </li> </ul>
      */
-    inline const Aws::String& GetTrackerName() const{ return m_trackerName; }
+    inline const Aws::Utils::DateTime& GetEndTimeExclusive() const{ return m_endTimeExclusive; }
 
     /**
-     * <p>The tracker resource receiving the request for the device position
-     * history.</p>
+     * <p>Specify the end time for the position history in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the
+     * time that the request is made.</p> <p>Requirement:</p> <ul> <li> <p>The time
+     * specified for <code>EndTimeExclusive</code> must be after the time for
+     * <code>StartTimeInclusive</code>.</p> </li> </ul>
      */
-    inline bool TrackerNameHasBeenSet() const { return m_trackerNameHasBeenSet; }
+    inline bool EndTimeExclusiveHasBeenSet() const { return m_endTimeExclusiveHasBeenSet; }
 
     /**
-     * <p>The tracker resource receiving the request for the device position
-     * history.</p>
+     * <p>Specify the end time for the position history in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the
+     * time that the request is made.</p> <p>Requirement:</p> <ul> <li> <p>The time
+     * specified for <code>EndTimeExclusive</code> must be after the time for
+     * <code>StartTimeInclusive</code>.</p> </li> </ul>
      */
-    inline void SetTrackerName(const Aws::String& value) { m_trackerNameHasBeenSet = true; m_trackerName = value; }
+    inline void SetEndTimeExclusive(const Aws::Utils::DateTime& value) { m_endTimeExclusiveHasBeenSet = true; m_endTimeExclusive = value; }
 
     /**
-     * <p>The tracker resource receiving the request for the device position
-     * history.</p>
+     * <p>Specify the end time for the position history in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the
+     * time that the request is made.</p> <p>Requirement:</p> <ul> <li> <p>The time
+     * specified for <code>EndTimeExclusive</code> must be after the time for
+     * <code>StartTimeInclusive</code>.</p> </li> </ul>
      */
-    inline void SetTrackerName(Aws::String&& value) { m_trackerNameHasBeenSet = true; m_trackerName = std::move(value); }
+    inline void SetEndTimeExclusive(Aws::Utils::DateTime&& value) { m_endTimeExclusiveHasBeenSet = true; m_endTimeExclusive = std::move(value); }
 
     /**
-     * <p>The tracker resource receiving the request for the device position
-     * history.</p>
+     * <p>Specify the end time for the position history in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the
+     * time that the request is made.</p> <p>Requirement:</p> <ul> <li> <p>The time
+     * specified for <code>EndTimeExclusive</code> must be after the time for
+     * <code>StartTimeInclusive</code>.</p> </li> </ul>
      */
-    inline void SetTrackerName(const char* value) { m_trackerNameHasBeenSet = true; m_trackerName.assign(value); }
+    inline GetDevicePositionHistoryRequest& WithEndTimeExclusive(const Aws::Utils::DateTime& value) { SetEndTimeExclusive(value); return *this;}
 
     /**
-     * <p>The tracker resource receiving the request for the device position
-     * history.</p>
+     * <p>Specify the end time for the position history in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the
+     * time that the request is made.</p> <p>Requirement:</p> <ul> <li> <p>The time
+     * specified for <code>EndTimeExclusive</code> must be after the time for
+     * <code>StartTimeInclusive</code>.</p> </li> </ul>
      */
-    inline GetDevicePositionHistoryRequest& WithTrackerName(const Aws::String& value) { SetTrackerName(value); return *this;}
+    inline GetDevicePositionHistoryRequest& WithEndTimeExclusive(Aws::Utils::DateTime&& value) { SetEndTimeExclusive(std::move(value)); return *this;}
+
 
     /**
-     * <p>The tracker resource receiving the request for the device position
-     * history.</p>
+     * <p>An optional limit for the number of device positions returned in a single
+     * call.</p> <p>Default value: <code>100</code> </p>
      */
-    inline GetDevicePositionHistoryRequest& WithTrackerName(Aws::String&& value) { SetTrackerName(std::move(value)); return *this;}
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The tracker resource receiving the request for the device position
-     * history.</p>
+     * <p>An optional limit for the number of device positions returned in a single
+     * call.</p> <p>Default value: <code>100</code> </p>
      */
-    inline GetDevicePositionHistoryRequest& WithTrackerName(const char* value) { SetTrackerName(value); return *this;}
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>An optional limit for the number of device positions returned in a single
+     * call.</p> <p>Default value: <code>100</code> </p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>An optional limit for the number of device positions returned in a single
+     * call.</p> <p>Default value: <code>100</code> </p>
+     */
+    inline GetDevicePositionHistoryRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
 
+    Aws::String m_trackerName;
+    bool m_trackerNameHasBeenSet = false;
+
     Aws::String m_deviceId;
     bool m_deviceIdHasBeenSet = false;
-
-    Aws::Utils::DateTime m_endTimeExclusive;
-    bool m_endTimeExclusiveHasBeenSet = false;
-
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
@@ -343,8 +340,11 @@ namespace Model
     Aws::Utils::DateTime m_startTimeInclusive;
     bool m_startTimeInclusiveHasBeenSet = false;
 
-    Aws::String m_trackerName;
-    bool m_trackerNameHasBeenSet = false;
+    Aws::Utils::DateTime m_endTimeExclusive;
+    bool m_endTimeExclusiveHasBeenSet = false;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

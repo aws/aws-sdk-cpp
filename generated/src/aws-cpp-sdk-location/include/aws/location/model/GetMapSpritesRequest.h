@@ -39,6 +39,47 @@ namespace Model
 
 
     /**
+     * <p>The map resource associated with the sprite ﬁle.</p>
+     */
+    inline const Aws::String& GetMapName() const{ return m_mapName; }
+
+    /**
+     * <p>The map resource associated with the sprite ﬁle.</p>
+     */
+    inline bool MapNameHasBeenSet() const { return m_mapNameHasBeenSet; }
+
+    /**
+     * <p>The map resource associated with the sprite ﬁle.</p>
+     */
+    inline void SetMapName(const Aws::String& value) { m_mapNameHasBeenSet = true; m_mapName = value; }
+
+    /**
+     * <p>The map resource associated with the sprite ﬁle.</p>
+     */
+    inline void SetMapName(Aws::String&& value) { m_mapNameHasBeenSet = true; m_mapName = std::move(value); }
+
+    /**
+     * <p>The map resource associated with the sprite ﬁle.</p>
+     */
+    inline void SetMapName(const char* value) { m_mapNameHasBeenSet = true; m_mapName.assign(value); }
+
+    /**
+     * <p>The map resource associated with the sprite ﬁle.</p>
+     */
+    inline GetMapSpritesRequest& WithMapName(const Aws::String& value) { SetMapName(value); return *this;}
+
+    /**
+     * <p>The map resource associated with the sprite ﬁle.</p>
+     */
+    inline GetMapSpritesRequest& WithMapName(Aws::String&& value) { SetMapName(std::move(value)); return *this;}
+
+    /**
+     * <p>The map resource associated with the sprite ﬁle.</p>
+     */
+    inline GetMapSpritesRequest& WithMapName(const char* value) { SetMapName(value); return *this;}
+
+
+    /**
      * <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite
      * sheet:</p> <ul> <li> <p> <code>sprites.png</code> </p> </li> <li> <p>
      * <code>sprites@2x.png</code> for high pixel density displays</p> </li> </ul>
@@ -175,57 +216,16 @@ namespace Model
      */
     inline GetMapSpritesRequest& WithKey(const char* value) { SetKey(value); return *this;}
 
-
-    /**
-     * <p>The map resource associated with the sprite ﬁle.</p>
-     */
-    inline const Aws::String& GetMapName() const{ return m_mapName; }
-
-    /**
-     * <p>The map resource associated with the sprite ﬁle.</p>
-     */
-    inline bool MapNameHasBeenSet() const { return m_mapNameHasBeenSet; }
-
-    /**
-     * <p>The map resource associated with the sprite ﬁle.</p>
-     */
-    inline void SetMapName(const Aws::String& value) { m_mapNameHasBeenSet = true; m_mapName = value; }
-
-    /**
-     * <p>The map resource associated with the sprite ﬁle.</p>
-     */
-    inline void SetMapName(Aws::String&& value) { m_mapNameHasBeenSet = true; m_mapName = std::move(value); }
-
-    /**
-     * <p>The map resource associated with the sprite ﬁle.</p>
-     */
-    inline void SetMapName(const char* value) { m_mapNameHasBeenSet = true; m_mapName.assign(value); }
-
-    /**
-     * <p>The map resource associated with the sprite ﬁle.</p>
-     */
-    inline GetMapSpritesRequest& WithMapName(const Aws::String& value) { SetMapName(value); return *this;}
-
-    /**
-     * <p>The map resource associated with the sprite ﬁle.</p>
-     */
-    inline GetMapSpritesRequest& WithMapName(Aws::String&& value) { SetMapName(std::move(value)); return *this;}
-
-    /**
-     * <p>The map resource associated with the sprite ﬁle.</p>
-     */
-    inline GetMapSpritesRequest& WithMapName(const char* value) { SetMapName(value); return *this;}
-
   private:
+
+    Aws::String m_mapName;
+    bool m_mapNameHasBeenSet = false;
 
     Aws::String m_fileName;
     bool m_fileNameHasBeenSet = false;
 
     Aws::String m_key;
     bool m_keyHasBeenSet = false;
-
-    Aws::String m_mapName;
-    bool m_mapNameHasBeenSet = false;
   };
 
 } // namespace Model

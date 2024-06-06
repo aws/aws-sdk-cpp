@@ -39,47 +39,6 @@ namespace Model
 
 
     /**
-     * <p>A message with the reason for the validation exception error.</p>
-     */
-    inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>A message with the reason for the validation exception error.</p>
-     */
-    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>A message with the reason for the validation exception error.</p>
-     */
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>A message with the reason for the validation exception error.</p>
-     */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>A message with the reason for the validation exception error.</p>
-     */
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>A message with the reason for the validation exception error.</p>
-     */
-    inline ValidationExceptionField& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>A message with the reason for the validation exception error.</p>
-     */
-    inline ValidationExceptionField& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>A message with the reason for the validation exception error.</p>
-     */
-    inline ValidationExceptionField& WithMessage(const char* value) { SetMessage(value); return *this;}
-
-
-    /**
      * <p>The field name where the invalid entry was detected.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -119,13 +78,54 @@ namespace Model
      */
     inline ValidationExceptionField& WithName(const char* value) { SetName(value); return *this;}
 
-  private:
 
-    Aws::String m_message;
-    bool m_messageHasBeenSet = false;
+    /**
+     * <p>A message with the reason for the validation exception error.</p>
+     */
+    inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>A message with the reason for the validation exception error.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+
+    /**
+     * <p>A message with the reason for the validation exception error.</p>
+     */
+    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
+
+    /**
+     * <p>A message with the reason for the validation exception error.</p>
+     */
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
+
+    /**
+     * <p>A message with the reason for the validation exception error.</p>
+     */
+    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
+
+    /**
+     * <p>A message with the reason for the validation exception error.</p>
+     */
+    inline ValidationExceptionField& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+
+    /**
+     * <p>A message with the reason for the validation exception error.</p>
+     */
+    inline ValidationExceptionField& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>A message with the reason for the validation exception error.</p>
+     */
+    inline ValidationExceptionField& WithMessage(const char* value) { SetMessage(value); return *this;}
+
+  private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::String m_message;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

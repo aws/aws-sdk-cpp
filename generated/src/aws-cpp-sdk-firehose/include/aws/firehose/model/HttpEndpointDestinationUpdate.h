@@ -14,6 +14,7 @@
 #include <aws/firehose/model/HttpEndpointRetryOptions.h>
 #include <aws/firehose/model/HttpEndpointS3BackupMode.h>
 #include <aws/firehose/model/S3DestinationUpdate.h>
+#include <aws/firehose/model/SecretsManagerConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -372,6 +373,43 @@ namespace Model
     
     inline HttpEndpointDestinationUpdate& WithS3Update(S3DestinationUpdate&& value) { SetS3Update(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The configuration that defines how you access secrets for HTTP Endpoint
+     * destination. </p>
+     */
+    inline const SecretsManagerConfiguration& GetSecretsManagerConfiguration() const{ return m_secretsManagerConfiguration; }
+
+    /**
+     * <p> The configuration that defines how you access secrets for HTTP Endpoint
+     * destination. </p>
+     */
+    inline bool SecretsManagerConfigurationHasBeenSet() const { return m_secretsManagerConfigurationHasBeenSet; }
+
+    /**
+     * <p> The configuration that defines how you access secrets for HTTP Endpoint
+     * destination. </p>
+     */
+    inline void SetSecretsManagerConfiguration(const SecretsManagerConfiguration& value) { m_secretsManagerConfigurationHasBeenSet = true; m_secretsManagerConfiguration = value; }
+
+    /**
+     * <p> The configuration that defines how you access secrets for HTTP Endpoint
+     * destination. </p>
+     */
+    inline void SetSecretsManagerConfiguration(SecretsManagerConfiguration&& value) { m_secretsManagerConfigurationHasBeenSet = true; m_secretsManagerConfiguration = std::move(value); }
+
+    /**
+     * <p> The configuration that defines how you access secrets for HTTP Endpoint
+     * destination. </p>
+     */
+    inline HttpEndpointDestinationUpdate& WithSecretsManagerConfiguration(const SecretsManagerConfiguration& value) { SetSecretsManagerConfiguration(value); return *this;}
+
+    /**
+     * <p> The configuration that defines how you access secrets for HTTP Endpoint
+     * destination. </p>
+     */
+    inline HttpEndpointDestinationUpdate& WithSecretsManagerConfiguration(SecretsManagerConfiguration&& value) { SetSecretsManagerConfiguration(std::move(value)); return *this;}
+
   private:
 
     HttpEndpointConfiguration m_endpointConfiguration;
@@ -400,6 +438,9 @@ namespace Model
 
     S3DestinationUpdate m_s3Update;
     bool m_s3UpdateHasBeenSet = false;
+
+    SecretsManagerConfiguration m_secretsManagerConfiguration;
+    bool m_secretsManagerConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

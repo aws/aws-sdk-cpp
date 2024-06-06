@@ -54,65 +54,67 @@ namespace Model
 
 
     /**
-     * <p>The distance between the leg's <code>StartPosition</code> and
-     * <code>EndPosition</code> along a calculated route. </p> <ul> <li> <p>The default
-     * measurement is <code>Kilometers</code> unless the request specifies a
-     * <code>DistanceUnit</code> of <code>Miles</code>.</p> </li> </ul>
+     * <p>The starting position of the leg. Follows the format
+     * <code>[longitude,latitude]</code>.</p>  <p>If the
+     * <code>StartPosition</code> isn't located on a road, it's <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped
+     * to a nearby road</a>. </p> 
      */
-    inline double GetDistance() const{ return m_distance; }
+    inline const Aws::Vector<double>& GetStartPosition() const{ return m_startPosition; }
 
     /**
-     * <p>The distance between the leg's <code>StartPosition</code> and
-     * <code>EndPosition</code> along a calculated route. </p> <ul> <li> <p>The default
-     * measurement is <code>Kilometers</code> unless the request specifies a
-     * <code>DistanceUnit</code> of <code>Miles</code>.</p> </li> </ul>
+     * <p>The starting position of the leg. Follows the format
+     * <code>[longitude,latitude]</code>.</p>  <p>If the
+     * <code>StartPosition</code> isn't located on a road, it's <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped
+     * to a nearby road</a>. </p> 
      */
-    inline bool DistanceHasBeenSet() const { return m_distanceHasBeenSet; }
+    inline bool StartPositionHasBeenSet() const { return m_startPositionHasBeenSet; }
 
     /**
-     * <p>The distance between the leg's <code>StartPosition</code> and
-     * <code>EndPosition</code> along a calculated route. </p> <ul> <li> <p>The default
-     * measurement is <code>Kilometers</code> unless the request specifies a
-     * <code>DistanceUnit</code> of <code>Miles</code>.</p> </li> </ul>
+     * <p>The starting position of the leg. Follows the format
+     * <code>[longitude,latitude]</code>.</p>  <p>If the
+     * <code>StartPosition</code> isn't located on a road, it's <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped
+     * to a nearby road</a>. </p> 
      */
-    inline void SetDistance(double value) { m_distanceHasBeenSet = true; m_distance = value; }
+    inline void SetStartPosition(const Aws::Vector<double>& value) { m_startPositionHasBeenSet = true; m_startPosition = value; }
 
     /**
-     * <p>The distance between the leg's <code>StartPosition</code> and
-     * <code>EndPosition</code> along a calculated route. </p> <ul> <li> <p>The default
-     * measurement is <code>Kilometers</code> unless the request specifies a
-     * <code>DistanceUnit</code> of <code>Miles</code>.</p> </li> </ul>
+     * <p>The starting position of the leg. Follows the format
+     * <code>[longitude,latitude]</code>.</p>  <p>If the
+     * <code>StartPosition</code> isn't located on a road, it's <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped
+     * to a nearby road</a>. </p> 
      */
-    inline Leg& WithDistance(double value) { SetDistance(value); return *this;}
-
-
-    /**
-     * <p>The estimated travel time between the leg's <code>StartPosition</code> and
-     * <code>EndPosition</code>. The travel mode and departure time that you specify in
-     * the request determines the calculated time.</p>
-     */
-    inline double GetDurationSeconds() const{ return m_durationSeconds; }
+    inline void SetStartPosition(Aws::Vector<double>&& value) { m_startPositionHasBeenSet = true; m_startPosition = std::move(value); }
 
     /**
-     * <p>The estimated travel time between the leg's <code>StartPosition</code> and
-     * <code>EndPosition</code>. The travel mode and departure time that you specify in
-     * the request determines the calculated time.</p>
+     * <p>The starting position of the leg. Follows the format
+     * <code>[longitude,latitude]</code>.</p>  <p>If the
+     * <code>StartPosition</code> isn't located on a road, it's <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped
+     * to a nearby road</a>. </p> 
      */
-    inline bool DurationSecondsHasBeenSet() const { return m_durationSecondsHasBeenSet; }
+    inline Leg& WithStartPosition(const Aws::Vector<double>& value) { SetStartPosition(value); return *this;}
 
     /**
-     * <p>The estimated travel time between the leg's <code>StartPosition</code> and
-     * <code>EndPosition</code>. The travel mode and departure time that you specify in
-     * the request determines the calculated time.</p>
+     * <p>The starting position of the leg. Follows the format
+     * <code>[longitude,latitude]</code>.</p>  <p>If the
+     * <code>StartPosition</code> isn't located on a road, it's <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped
+     * to a nearby road</a>. </p> 
      */
-    inline void SetDurationSeconds(double value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
+    inline Leg& WithStartPosition(Aws::Vector<double>&& value) { SetStartPosition(std::move(value)); return *this;}
 
     /**
-     * <p>The estimated travel time between the leg's <code>StartPosition</code> and
-     * <code>EndPosition</code>. The travel mode and departure time that you specify in
-     * the request determines the calculated time.</p>
+     * <p>The starting position of the leg. Follows the format
+     * <code>[longitude,latitude]</code>.</p>  <p>If the
+     * <code>StartPosition</code> isn't located on a road, it's <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped
+     * to a nearby road</a>. </p> 
      */
-    inline Leg& WithDurationSeconds(double value) { SetDurationSeconds(value); return *this;}
+    inline Leg& AddStartPosition(double value) { m_startPositionHasBeenSet = true; m_startPosition.push_back(value); return *this; }
 
 
     /**
@@ -180,6 +182,68 @@ namespace Model
 
 
     /**
+     * <p>The distance between the leg's <code>StartPosition</code> and
+     * <code>EndPosition</code> along a calculated route. </p> <ul> <li> <p>The default
+     * measurement is <code>Kilometers</code> unless the request specifies a
+     * <code>DistanceUnit</code> of <code>Miles</code>.</p> </li> </ul>
+     */
+    inline double GetDistance() const{ return m_distance; }
+
+    /**
+     * <p>The distance between the leg's <code>StartPosition</code> and
+     * <code>EndPosition</code> along a calculated route. </p> <ul> <li> <p>The default
+     * measurement is <code>Kilometers</code> unless the request specifies a
+     * <code>DistanceUnit</code> of <code>Miles</code>.</p> </li> </ul>
+     */
+    inline bool DistanceHasBeenSet() const { return m_distanceHasBeenSet; }
+
+    /**
+     * <p>The distance between the leg's <code>StartPosition</code> and
+     * <code>EndPosition</code> along a calculated route. </p> <ul> <li> <p>The default
+     * measurement is <code>Kilometers</code> unless the request specifies a
+     * <code>DistanceUnit</code> of <code>Miles</code>.</p> </li> </ul>
+     */
+    inline void SetDistance(double value) { m_distanceHasBeenSet = true; m_distance = value; }
+
+    /**
+     * <p>The distance between the leg's <code>StartPosition</code> and
+     * <code>EndPosition</code> along a calculated route. </p> <ul> <li> <p>The default
+     * measurement is <code>Kilometers</code> unless the request specifies a
+     * <code>DistanceUnit</code> of <code>Miles</code>.</p> </li> </ul>
+     */
+    inline Leg& WithDistance(double value) { SetDistance(value); return *this;}
+
+
+    /**
+     * <p>The estimated travel time between the leg's <code>StartPosition</code> and
+     * <code>EndPosition</code>. The travel mode and departure time that you specify in
+     * the request determines the calculated time.</p>
+     */
+    inline double GetDurationSeconds() const{ return m_durationSeconds; }
+
+    /**
+     * <p>The estimated travel time between the leg's <code>StartPosition</code> and
+     * <code>EndPosition</code>. The travel mode and departure time that you specify in
+     * the request determines the calculated time.</p>
+     */
+    inline bool DurationSecondsHasBeenSet() const { return m_durationSecondsHasBeenSet; }
+
+    /**
+     * <p>The estimated travel time between the leg's <code>StartPosition</code> and
+     * <code>EndPosition</code>. The travel mode and departure time that you specify in
+     * the request determines the calculated time.</p>
+     */
+    inline void SetDurationSeconds(double value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
+
+    /**
+     * <p>The estimated travel time between the leg's <code>StartPosition</code> and
+     * <code>EndPosition</code>. The travel mode and departure time that you specify in
+     * the request determines the calculated time.</p>
+     */
+    inline Leg& WithDurationSeconds(double value) { SetDurationSeconds(value); return *this;}
+
+
+    /**
      * <p>Contains the calculated route's path as a linestring geometry.</p>
      */
     inline const LegGeometry& GetGeometry() const{ return m_geometry; }
@@ -208,70 +272,6 @@ namespace Model
      * <p>Contains the calculated route's path as a linestring geometry.</p>
      */
     inline Leg& WithGeometry(LegGeometry&& value) { SetGeometry(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The starting position of the leg. Follows the format
-     * <code>[longitude,latitude]</code>.</p>  <p>If the
-     * <code>StartPosition</code> isn't located on a road, it's <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped
-     * to a nearby road</a>. </p> 
-     */
-    inline const Aws::Vector<double>& GetStartPosition() const{ return m_startPosition; }
-
-    /**
-     * <p>The starting position of the leg. Follows the format
-     * <code>[longitude,latitude]</code>.</p>  <p>If the
-     * <code>StartPosition</code> isn't located on a road, it's <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped
-     * to a nearby road</a>. </p> 
-     */
-    inline bool StartPositionHasBeenSet() const { return m_startPositionHasBeenSet; }
-
-    /**
-     * <p>The starting position of the leg. Follows the format
-     * <code>[longitude,latitude]</code>.</p>  <p>If the
-     * <code>StartPosition</code> isn't located on a road, it's <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped
-     * to a nearby road</a>. </p> 
-     */
-    inline void SetStartPosition(const Aws::Vector<double>& value) { m_startPositionHasBeenSet = true; m_startPosition = value; }
-
-    /**
-     * <p>The starting position of the leg. Follows the format
-     * <code>[longitude,latitude]</code>.</p>  <p>If the
-     * <code>StartPosition</code> isn't located on a road, it's <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped
-     * to a nearby road</a>. </p> 
-     */
-    inline void SetStartPosition(Aws::Vector<double>&& value) { m_startPositionHasBeenSet = true; m_startPosition = std::move(value); }
-
-    /**
-     * <p>The starting position of the leg. Follows the format
-     * <code>[longitude,latitude]</code>.</p>  <p>If the
-     * <code>StartPosition</code> isn't located on a road, it's <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped
-     * to a nearby road</a>. </p> 
-     */
-    inline Leg& WithStartPosition(const Aws::Vector<double>& value) { SetStartPosition(value); return *this;}
-
-    /**
-     * <p>The starting position of the leg. Follows the format
-     * <code>[longitude,latitude]</code>.</p>  <p>If the
-     * <code>StartPosition</code> isn't located on a road, it's <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped
-     * to a nearby road</a>. </p> 
-     */
-    inline Leg& WithStartPosition(Aws::Vector<double>&& value) { SetStartPosition(std::move(value)); return *this;}
-
-    /**
-     * <p>The starting position of the leg. Follows the format
-     * <code>[longitude,latitude]</code>.</p>  <p>If the
-     * <code>StartPosition</code> isn't located on a road, it's <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped
-     * to a nearby road</a>. </p> 
-     */
-    inline Leg& AddStartPosition(double value) { m_startPositionHasBeenSet = true; m_startPosition.push_back(value); return *this; }
 
 
     /**
@@ -340,20 +340,20 @@ namespace Model
 
   private:
 
+    Aws::Vector<double> m_startPosition;
+    bool m_startPositionHasBeenSet = false;
+
+    Aws::Vector<double> m_endPosition;
+    bool m_endPositionHasBeenSet = false;
+
     double m_distance;
     bool m_distanceHasBeenSet = false;
 
     double m_durationSeconds;
     bool m_durationSecondsHasBeenSet = false;
 
-    Aws::Vector<double> m_endPosition;
-    bool m_endPositionHasBeenSet = false;
-
     LegGeometry m_geometry;
     bool m_geometryHasBeenSet = false;
-
-    Aws::Vector<double> m_startPosition;
-    bool m_startPositionHasBeenSet = false;
 
     Aws::Vector<Step> m_steps;
     bool m_stepsHasBeenSet = false;

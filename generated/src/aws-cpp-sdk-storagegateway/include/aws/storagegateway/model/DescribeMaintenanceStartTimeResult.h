@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/storagegateway/model/SoftwareUpdatePreferences.h>
 #include <utility>
 
 namespace Aws
@@ -26,8 +27,9 @@ namespace Model
 {
   /**
    * <p>A JSON object containing the following fields:</p> <ul> <li> <p>
-   * <a>DescribeMaintenanceStartTimeOutput$DayOfMonth</a> </p> </li> <li> <p>
-   * <a>DescribeMaintenanceStartTimeOutput$DayOfWeek</a> </p> </li> <li> <p>
+   * <a>DescribeMaintenanceStartTimeOutput$SoftwareUpdatePreferences</a> </p> </li>
+   * <li> <p> <a>DescribeMaintenanceStartTimeOutput$DayOfMonth</a> </p> </li> <li>
+   * <p> <a>DescribeMaintenanceStartTimeOutput$DayOfWeek</a> </p> </li> <li> <p>
    * <a>DescribeMaintenanceStartTimeOutput$HourOfDay</a> </p> </li> <li> <p>
    * <a>DescribeMaintenanceStartTimeOutput$MinuteOfHour</a> </p> </li> <li> <p>
    * <a>DescribeMaintenanceStartTimeOutput$Timezone</a> </p> </li> </ul><p><h3>See
@@ -133,22 +135,25 @@ namespace Model
 
     /**
      * <p>The day of the month component of the maintenance start time represented as
-     * an ordinal number from 1 to 28, where 1 represents the first day of the month
-     * and 28 represents the last day of the month.</p>
+     * an ordinal number from 1 to 28, where 1 represents the first day of the month.
+     * It is not possible to set the maintenance schedule to start on days 29 through
+     * 31.</p>
      */
     inline int GetDayOfMonth() const{ return m_dayOfMonth; }
 
     /**
      * <p>The day of the month component of the maintenance start time represented as
-     * an ordinal number from 1 to 28, where 1 represents the first day of the month
-     * and 28 represents the last day of the month.</p>
+     * an ordinal number from 1 to 28, where 1 represents the first day of the month.
+     * It is not possible to set the maintenance schedule to start on days 29 through
+     * 31.</p>
      */
     inline void SetDayOfMonth(int value) { m_dayOfMonth = value; }
 
     /**
      * <p>The day of the month component of the maintenance start time represented as
-     * an ordinal number from 1 to 28, where 1 represents the first day of the month
-     * and 28 represents the last day of the month.</p>
+     * an ordinal number from 1 to 28, where 1 represents the first day of the month.
+     * It is not possible to set the maintenance schedule to start on days 29 through
+     * 31.</p>
      */
     inline DescribeMaintenanceStartTimeResult& WithDayOfMonth(int value) { SetDayOfMonth(value); return *this;}
 
@@ -196,6 +201,52 @@ namespace Model
     inline DescribeMaintenanceStartTimeResult& WithTimezone(const char* value) { SetTimezone(value); return *this;}
 
 
+    /**
+     * <p>A set of variables indicating the software update preferences for the
+     * gateway.</p> <p>Includes <code>AutomaticUpdatePolicy</code> field with the
+     * following inputs:</p> <p> <code>ALL_VERSIONS</code> - Enables regular gateway
+     * maintenance updates.</p> <p> <code>EMERGENCY_VERSIONS_ONLY</code> - Disables
+     * regular gateway maintenance updates.</p>
+     */
+    inline const SoftwareUpdatePreferences& GetSoftwareUpdatePreferences() const{ return m_softwareUpdatePreferences; }
+
+    /**
+     * <p>A set of variables indicating the software update preferences for the
+     * gateway.</p> <p>Includes <code>AutomaticUpdatePolicy</code> field with the
+     * following inputs:</p> <p> <code>ALL_VERSIONS</code> - Enables regular gateway
+     * maintenance updates.</p> <p> <code>EMERGENCY_VERSIONS_ONLY</code> - Disables
+     * regular gateway maintenance updates.</p>
+     */
+    inline void SetSoftwareUpdatePreferences(const SoftwareUpdatePreferences& value) { m_softwareUpdatePreferences = value; }
+
+    /**
+     * <p>A set of variables indicating the software update preferences for the
+     * gateway.</p> <p>Includes <code>AutomaticUpdatePolicy</code> field with the
+     * following inputs:</p> <p> <code>ALL_VERSIONS</code> - Enables regular gateway
+     * maintenance updates.</p> <p> <code>EMERGENCY_VERSIONS_ONLY</code> - Disables
+     * regular gateway maintenance updates.</p>
+     */
+    inline void SetSoftwareUpdatePreferences(SoftwareUpdatePreferences&& value) { m_softwareUpdatePreferences = std::move(value); }
+
+    /**
+     * <p>A set of variables indicating the software update preferences for the
+     * gateway.</p> <p>Includes <code>AutomaticUpdatePolicy</code> field with the
+     * following inputs:</p> <p> <code>ALL_VERSIONS</code> - Enables regular gateway
+     * maintenance updates.</p> <p> <code>EMERGENCY_VERSIONS_ONLY</code> - Disables
+     * regular gateway maintenance updates.</p>
+     */
+    inline DescribeMaintenanceStartTimeResult& WithSoftwareUpdatePreferences(const SoftwareUpdatePreferences& value) { SetSoftwareUpdatePreferences(value); return *this;}
+
+    /**
+     * <p>A set of variables indicating the software update preferences for the
+     * gateway.</p> <p>Includes <code>AutomaticUpdatePolicy</code> field with the
+     * following inputs:</p> <p> <code>ALL_VERSIONS</code> - Enables regular gateway
+     * maintenance updates.</p> <p> <code>EMERGENCY_VERSIONS_ONLY</code> - Disables
+     * regular gateway maintenance updates.</p>
+     */
+    inline DescribeMaintenanceStartTimeResult& WithSoftwareUpdatePreferences(SoftwareUpdatePreferences&& value) { SetSoftwareUpdatePreferences(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -230,6 +281,8 @@ namespace Model
     int m_dayOfMonth;
 
     Aws::String m_timezone;
+
+    SoftwareUpdatePreferences m_softwareUpdatePreferences;
 
     Aws::String m_requestId;
   };

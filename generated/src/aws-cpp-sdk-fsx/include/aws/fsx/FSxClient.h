@@ -436,7 +436,7 @@ namespace FSx
          * parameters don't match, this call returns
          * <code>IncompatibleParameterError</code>. If a file system with the specified
          * client request token doesn't exist, <code>CreateFileSystem</code> does the
-         * following: </p> <ul> <li> <p>Creates a new, empty Amazon FSx file system with an
+         * following:</p> <ul> <li> <p>Creates a new, empty Amazon FSx file system with an
          * assigned ID, and an initial lifecycle state of <code>CREATING</code>.</p> </li>
          * <li> <p>Returns the description of the file system in JSON format.</p> </li>
          * </ul>  <p>The <code>CreateFileSystem</code> call returns while the file
@@ -742,15 +742,15 @@ namespace FSx
          * deleted.</p> <p>To delete an Amazon FSx for NetApp ONTAP file system, first
          * delete all the volumes and storage virtual machines (SVMs) on the file system.
          * Then provide a <code>FileSystemId</code> value to the
-         * <code>DeleFileSystem</code> operation.</p> <p>By default, when you delete an
+         * <code>DeleteFileSystem</code> operation.</p> <p>By default, when you delete an
          * Amazon FSx for Windows File Server file system, a final backup is created upon
          * deletion. This final backup isn't subject to the file system's retention policy,
          * and must be manually deleted.</p> <p>To delete an Amazon FSx for Lustre file
          * system, first <a
          * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/unmounting-fs.html">unmount</a>
          * it from every connected Amazon EC2 instance, then provide a
-         * <code>FileSystemId</code> value to the <code>DeleFileSystem</code> operation. By
-         * default, Amazon FSx will not take a final backup when the
+         * <code>FileSystemId</code> value to the <code>DeleteFileSystem</code> operation.
+         * By default, Amazon FSx will not take a final backup when the
          * <code>DeleteFileSystem</code> operation is invoked. On file systems not linked
          * to an Amazon S3 bucket, set <code>SkipFinalBackup</code> to <code>false</code>
          * to take a final backup of the file system you are deleting. Backups cannot be
@@ -1532,6 +1532,7 @@ namespace FSx
          * <code>DataCompressionType</code> </p> </li> <li> <p>
          * <code>LogConfiguration</code> </p> </li> <li> <p>
          * <code>LustreRootSquashConfiguration</code> </p> </li> <li> <p>
+         * <code>MetadataConfiguration</code> </p> </li> <li> <p>
          * <code>PerUnitStorageThroughput</code> </p> </li> <li> <p>
          * <code>StorageCapacity</code> </p> </li> <li> <p>
          * <code>WeeklyMaintenanceStartTime</code> </p> </li> </ul> <p>For FSx for ONTAP

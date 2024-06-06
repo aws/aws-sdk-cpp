@@ -73,6 +73,12 @@ DescribeMaintenanceStartTimeResult& DescribeMaintenanceStartTimeResult::operator
 
   }
 
+  if(jsonValue.ValueExists("SoftwareUpdatePreferences"))
+  {
+    m_softwareUpdatePreferences = jsonValue.GetObject("SoftwareUpdatePreferences");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

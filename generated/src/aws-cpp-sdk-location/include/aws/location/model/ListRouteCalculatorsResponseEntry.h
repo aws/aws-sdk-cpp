@@ -81,52 +81,44 @@ namespace Model
 
 
     /**
-     * <p>The timestamp when the route calculator resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>For example,
-     * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
+     * <p>The optional description of the route calculator resource.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+    inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The timestamp when the route calculator resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>For example,
-     * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
+     * <p>The optional description of the route calculator resource.</p>
      */
-    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The timestamp when the route calculator resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>For example,
-     * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
+     * <p>The optional description of the route calculator resource.</p>
      */
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The timestamp when the route calculator resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>For example,
-     * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
+     * <p>The optional description of the route calculator resource.</p>
      */
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The timestamp when the route calculator resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>For example,
-     * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
+     * <p>The optional description of the route calculator resource.</p>
      */
-    inline ListRouteCalculatorsResponseEntry& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The timestamp when the route calculator resource was created in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>For example,
-     * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
+     * <p>The optional description of the route calculator resource.</p>
      */
-    inline ListRouteCalculatorsResponseEntry& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    inline ListRouteCalculatorsResponseEntry& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>The optional description of the route calculator resource.</p>
+     */
+    inline ListRouteCalculatorsResponseEntry& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>The optional description of the route calculator resource.</p>
+     */
+    inline ListRouteCalculatorsResponseEntry& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
@@ -211,44 +203,52 @@ namespace Model
 
 
     /**
-     * <p>The optional description of the route calculator resource.</p>
+     * <p>The timestamp when the route calculator resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>For example,
+     * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
 
     /**
-     * <p>The optional description of the route calculator resource.</p>
+     * <p>The timestamp when the route calculator resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>For example,
+     * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
      */
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
 
     /**
-     * <p>The optional description of the route calculator resource.</p>
+     * <p>The timestamp when the route calculator resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>For example,
+     * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
      */
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
     /**
-     * <p>The optional description of the route calculator resource.</p>
+     * <p>The timestamp when the route calculator resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>For example,
+     * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
 
     /**
-     * <p>The optional description of the route calculator resource.</p>
+     * <p>The timestamp when the route calculator resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>For example,
+     * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
      */
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+    inline ListRouteCalculatorsResponseEntry& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
 
     /**
-     * <p>The optional description of the route calculator resource.</p>
+     * <p>The timestamp when the route calculator resource was created in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>For example,
+     * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
      */
-    inline ListRouteCalculatorsResponseEntry& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The optional description of the route calculator resource.</p>
-     */
-    inline ListRouteCalculatorsResponseEntry& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The optional description of the route calculator resource.</p>
-     */
-    inline ListRouteCalculatorsResponseEntry& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline ListRouteCalculatorsResponseEntry& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
 
 
     /**
@@ -304,14 +304,14 @@ namespace Model
     Aws::String m_calculatorName;
     bool m_calculatorNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet = false;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_dataSource;
     bool m_dataSourceHasBeenSet = false;
 
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
+    Aws::Utils::DateTime m_createTime;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateTime;
     bool m_updateTimeHasBeenSet = false;

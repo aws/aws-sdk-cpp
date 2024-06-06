@@ -29,21 +29,21 @@ BatchGetDevicePositionResult::BatchGetDevicePositionResult(const Aws::AmazonWebS
 BatchGetDevicePositionResult& BatchGetDevicePositionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("DevicePositions"))
-  {
-    Aws::Utils::Array<JsonView> devicePositionsJsonList = jsonValue.GetArray("DevicePositions");
-    for(unsigned devicePositionsIndex = 0; devicePositionsIndex < devicePositionsJsonList.GetLength(); ++devicePositionsIndex)
-    {
-      m_devicePositions.push_back(devicePositionsJsonList[devicePositionsIndex].AsObject());
-    }
-  }
-
   if(jsonValue.ValueExists("Errors"))
   {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
     for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("DevicePositions"))
+  {
+    Aws::Utils::Array<JsonView> devicePositionsJsonList = jsonValue.GetArray("DevicePositions");
+    for(unsigned devicePositionsIndex = 0; devicePositionsIndex < devicePositionsJsonList.GetLength(); ++devicePositionsIndex)
+    {
+      m_devicePositions.push_back(devicePositionsJsonList[devicePositionsIndex].AsObject());
     }
   }
 

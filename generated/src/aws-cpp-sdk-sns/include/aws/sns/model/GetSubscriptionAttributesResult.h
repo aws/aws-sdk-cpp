@@ -71,16 +71,15 @@ namespace Model
      * reprocessing.</p> </li> <li> <p> <code>SubscriptionArn</code> – The
      * subscription's ARN.</p> </li> <li> <p> <code>TopicArn</code> – The topic ARN
      * that the subscription is associated with.</p> </li> </ul> <p>The following
-     * attribute applies only to Amazon Kinesis Data Firehose delivery stream
+     * attribute applies only to Amazon Data Firehose delivery stream
      * subscriptions:</p> <ul> <li> <p> <code>SubscriptionRoleArn</code> – The ARN of
      * the IAM role that has the following:</p> <ul> <li> <p>Permission to write to the
-     * Kinesis Data Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a
-     * trusted entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is
-     * required for Kinesis Data Firehose delivery stream subscriptions. For more
-     * information, see <a
+     * Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted
+     * entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is required
+     * for Firehose delivery stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul>
+     * to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+     * </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
 
@@ -116,16 +115,15 @@ namespace Model
      * reprocessing.</p> </li> <li> <p> <code>SubscriptionArn</code> – The
      * subscription's ARN.</p> </li> <li> <p> <code>TopicArn</code> – The topic ARN
      * that the subscription is associated with.</p> </li> </ul> <p>The following
-     * attribute applies only to Amazon Kinesis Data Firehose delivery stream
+     * attribute applies only to Amazon Data Firehose delivery stream
      * subscriptions:</p> <ul> <li> <p> <code>SubscriptionRoleArn</code> – The ARN of
      * the IAM role that has the following:</p> <ul> <li> <p>Permission to write to the
-     * Kinesis Data Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a
-     * trusted entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is
-     * required for Kinesis Data Firehose delivery stream subscriptions. For more
-     * information, see <a
+     * Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted
+     * entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is required
+     * for Firehose delivery stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul>
+     * to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+     * </li> </ul>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributes = value; }
 
@@ -161,16 +159,15 @@ namespace Model
      * reprocessing.</p> </li> <li> <p> <code>SubscriptionArn</code> – The
      * subscription's ARN.</p> </li> <li> <p> <code>TopicArn</code> – The topic ARN
      * that the subscription is associated with.</p> </li> </ul> <p>The following
-     * attribute applies only to Amazon Kinesis Data Firehose delivery stream
+     * attribute applies only to Amazon Data Firehose delivery stream
      * subscriptions:</p> <ul> <li> <p> <code>SubscriptionRoleArn</code> – The ARN of
      * the IAM role that has the following:</p> <ul> <li> <p>Permission to write to the
-     * Kinesis Data Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a
-     * trusted entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is
-     * required for Kinesis Data Firehose delivery stream subscriptions. For more
-     * information, see <a
+     * Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted
+     * entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is required
+     * for Firehose delivery stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul>
+     * to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+     * </li> </ul>
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributes = std::move(value); }
 
@@ -206,16 +203,15 @@ namespace Model
      * reprocessing.</p> </li> <li> <p> <code>SubscriptionArn</code> – The
      * subscription's ARN.</p> </li> <li> <p> <code>TopicArn</code> – The topic ARN
      * that the subscription is associated with.</p> </li> </ul> <p>The following
-     * attribute applies only to Amazon Kinesis Data Firehose delivery stream
+     * attribute applies only to Amazon Data Firehose delivery stream
      * subscriptions:</p> <ul> <li> <p> <code>SubscriptionRoleArn</code> – The ARN of
      * the IAM role that has the following:</p> <ul> <li> <p>Permission to write to the
-     * Kinesis Data Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a
-     * trusted entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is
-     * required for Kinesis Data Firehose delivery stream subscriptions. For more
-     * information, see <a
+     * Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted
+     * entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is required
+     * for Firehose delivery stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul>
+     * to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+     * </li> </ul>
      */
     inline GetSubscriptionAttributesResult& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
 
@@ -251,16 +247,15 @@ namespace Model
      * reprocessing.</p> </li> <li> <p> <code>SubscriptionArn</code> – The
      * subscription's ARN.</p> </li> <li> <p> <code>TopicArn</code> – The topic ARN
      * that the subscription is associated with.</p> </li> </ul> <p>The following
-     * attribute applies only to Amazon Kinesis Data Firehose delivery stream
+     * attribute applies only to Amazon Data Firehose delivery stream
      * subscriptions:</p> <ul> <li> <p> <code>SubscriptionRoleArn</code> – The ARN of
      * the IAM role that has the following:</p> <ul> <li> <p>Permission to write to the
-     * Kinesis Data Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a
-     * trusted entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is
-     * required for Kinesis Data Firehose delivery stream subscriptions. For more
-     * information, see <a
+     * Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted
+     * entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is required
+     * for Firehose delivery stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul>
+     * to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+     * </li> </ul>
      */
     inline GetSubscriptionAttributesResult& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
@@ -296,16 +291,15 @@ namespace Model
      * reprocessing.</p> </li> <li> <p> <code>SubscriptionArn</code> – The
      * subscription's ARN.</p> </li> <li> <p> <code>TopicArn</code> – The topic ARN
      * that the subscription is associated with.</p> </li> </ul> <p>The following
-     * attribute applies only to Amazon Kinesis Data Firehose delivery stream
+     * attribute applies only to Amazon Data Firehose delivery stream
      * subscriptions:</p> <ul> <li> <p> <code>SubscriptionRoleArn</code> – The ARN of
      * the IAM role that has the following:</p> <ul> <li> <p>Permission to write to the
-     * Kinesis Data Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a
-     * trusted entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is
-     * required for Kinesis Data Firehose delivery stream subscriptions. For more
-     * information, see <a
+     * Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted
+     * entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is required
+     * for Firehose delivery stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul>
+     * to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+     * </li> </ul>
      */
     inline GetSubscriptionAttributesResult& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributes.emplace(key, value); return *this; }
 
@@ -341,16 +335,15 @@ namespace Model
      * reprocessing.</p> </li> <li> <p> <code>SubscriptionArn</code> – The
      * subscription's ARN.</p> </li> <li> <p> <code>TopicArn</code> – The topic ARN
      * that the subscription is associated with.</p> </li> </ul> <p>The following
-     * attribute applies only to Amazon Kinesis Data Firehose delivery stream
+     * attribute applies only to Amazon Data Firehose delivery stream
      * subscriptions:</p> <ul> <li> <p> <code>SubscriptionRoleArn</code> – The ARN of
      * the IAM role that has the following:</p> <ul> <li> <p>Permission to write to the
-     * Kinesis Data Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a
-     * trusted entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is
-     * required for Kinesis Data Firehose delivery stream subscriptions. For more
-     * information, see <a
+     * Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted
+     * entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is required
+     * for Firehose delivery stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul>
+     * to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+     * </li> </ul>
      */
     inline GetSubscriptionAttributesResult& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributes.emplace(std::move(key), value); return *this; }
 
@@ -386,16 +379,15 @@ namespace Model
      * reprocessing.</p> </li> <li> <p> <code>SubscriptionArn</code> – The
      * subscription's ARN.</p> </li> <li> <p> <code>TopicArn</code> – The topic ARN
      * that the subscription is associated with.</p> </li> </ul> <p>The following
-     * attribute applies only to Amazon Kinesis Data Firehose delivery stream
+     * attribute applies only to Amazon Data Firehose delivery stream
      * subscriptions:</p> <ul> <li> <p> <code>SubscriptionRoleArn</code> – The ARN of
      * the IAM role that has the following:</p> <ul> <li> <p>Permission to write to the
-     * Kinesis Data Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a
-     * trusted entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is
-     * required for Kinesis Data Firehose delivery stream subscriptions. For more
-     * information, see <a
+     * Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted
+     * entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is required
+     * for Firehose delivery stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul>
+     * to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+     * </li> </ul>
      */
     inline GetSubscriptionAttributesResult& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributes.emplace(key, std::move(value)); return *this; }
 
@@ -431,16 +423,15 @@ namespace Model
      * reprocessing.</p> </li> <li> <p> <code>SubscriptionArn</code> – The
      * subscription's ARN.</p> </li> <li> <p> <code>TopicArn</code> – The topic ARN
      * that the subscription is associated with.</p> </li> </ul> <p>The following
-     * attribute applies only to Amazon Kinesis Data Firehose delivery stream
+     * attribute applies only to Amazon Data Firehose delivery stream
      * subscriptions:</p> <ul> <li> <p> <code>SubscriptionRoleArn</code> – The ARN of
      * the IAM role that has the following:</p> <ul> <li> <p>Permission to write to the
-     * Kinesis Data Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a
-     * trusted entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is
-     * required for Kinesis Data Firehose delivery stream subscriptions. For more
-     * information, see <a
+     * Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted
+     * entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is required
+     * for Firehose delivery stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul>
+     * to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+     * </li> </ul>
      */
     inline GetSubscriptionAttributesResult& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -476,16 +467,15 @@ namespace Model
      * reprocessing.</p> </li> <li> <p> <code>SubscriptionArn</code> – The
      * subscription's ARN.</p> </li> <li> <p> <code>TopicArn</code> – The topic ARN
      * that the subscription is associated with.</p> </li> </ul> <p>The following
-     * attribute applies only to Amazon Kinesis Data Firehose delivery stream
+     * attribute applies only to Amazon Data Firehose delivery stream
      * subscriptions:</p> <ul> <li> <p> <code>SubscriptionRoleArn</code> – The ARN of
      * the IAM role that has the following:</p> <ul> <li> <p>Permission to write to the
-     * Kinesis Data Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a
-     * trusted entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is
-     * required for Kinesis Data Firehose delivery stream subscriptions. For more
-     * information, see <a
+     * Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted
+     * entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is required
+     * for Firehose delivery stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul>
+     * to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+     * </li> </ul>
      */
     inline GetSubscriptionAttributesResult& AddAttributes(const char* key, Aws::String&& value) { m_attributes.emplace(key, std::move(value)); return *this; }
 
@@ -521,16 +511,15 @@ namespace Model
      * reprocessing.</p> </li> <li> <p> <code>SubscriptionArn</code> – The
      * subscription's ARN.</p> </li> <li> <p> <code>TopicArn</code> – The topic ARN
      * that the subscription is associated with.</p> </li> </ul> <p>The following
-     * attribute applies only to Amazon Kinesis Data Firehose delivery stream
+     * attribute applies only to Amazon Data Firehose delivery stream
      * subscriptions:</p> <ul> <li> <p> <code>SubscriptionRoleArn</code> – The ARN of
      * the IAM role that has the following:</p> <ul> <li> <p>Permission to write to the
-     * Kinesis Data Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a
-     * trusted entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is
-     * required for Kinesis Data Firehose delivery stream subscriptions. For more
-     * information, see <a
+     * Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted
+     * entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is required
+     * for Firehose delivery stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul>
+     * to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+     * </li> </ul>
      */
     inline GetSubscriptionAttributesResult& AddAttributes(Aws::String&& key, const char* value) { m_attributes.emplace(std::move(key), value); return *this; }
 
@@ -566,16 +555,15 @@ namespace Model
      * reprocessing.</p> </li> <li> <p> <code>SubscriptionArn</code> – The
      * subscription's ARN.</p> </li> <li> <p> <code>TopicArn</code> – The topic ARN
      * that the subscription is associated with.</p> </li> </ul> <p>The following
-     * attribute applies only to Amazon Kinesis Data Firehose delivery stream
+     * attribute applies only to Amazon Data Firehose delivery stream
      * subscriptions:</p> <ul> <li> <p> <code>SubscriptionRoleArn</code> – The ARN of
      * the IAM role that has the following:</p> <ul> <li> <p>Permission to write to the
-     * Kinesis Data Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a
-     * trusted entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is
-     * required for Kinesis Data Firehose delivery stream subscriptions. For more
-     * information, see <a
+     * Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted
+     * entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is required
+     * for Firehose delivery stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul>
+     * to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+     * </li> </ul>
      */
     inline GetSubscriptionAttributesResult& AddAttributes(const char* key, const char* value) { m_attributes.emplace(key, value); return *this; }
 

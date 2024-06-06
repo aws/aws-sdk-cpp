@@ -102,16 +102,15 @@ namespace Model
      * subscribed endpoint is unreachable) or server errors (for example, when the
      * service that powers the subscribed endpoint becomes unavailable) are held in the
      * dead-letter queue for further analysis or reprocessing.</p> </li> </ul> <p>The
-     * following attribute applies only to Amazon Kinesis Data Firehose delivery stream
+     * following attribute applies only to Amazon Data Firehose delivery stream
      * subscriptions:</p> <ul> <li> <p> <code>SubscriptionRoleArn</code> – The ARN of
      * the IAM role that has the following:</p> <ul> <li> <p>Permission to write to the
-     * Kinesis Data Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a
-     * trusted entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is
-     * required for Kinesis Data Firehose delivery stream subscriptions. For more
-     * information, see <a
+     * Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted
+     * entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is required
+     * for Firehose delivery stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul>
+     * to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
 
@@ -137,16 +136,15 @@ namespace Model
      * subscribed endpoint is unreachable) or server errors (for example, when the
      * service that powers the subscribed endpoint becomes unavailable) are held in the
      * dead-letter queue for further analysis or reprocessing.</p> </li> </ul> <p>The
-     * following attribute applies only to Amazon Kinesis Data Firehose delivery stream
+     * following attribute applies only to Amazon Data Firehose delivery stream
      * subscriptions:</p> <ul> <li> <p> <code>SubscriptionRoleArn</code> – The ARN of
      * the IAM role that has the following:</p> <ul> <li> <p>Permission to write to the
-     * Kinesis Data Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a
-     * trusted entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is
-     * required for Kinesis Data Firehose delivery stream subscriptions. For more
-     * information, see <a
+     * Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted
+     * entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is required
+     * for Firehose delivery stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul>
+     * to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+     * </li> </ul>
      */
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
 
@@ -172,16 +170,15 @@ namespace Model
      * subscribed endpoint is unreachable) or server errors (for example, when the
      * service that powers the subscribed endpoint becomes unavailable) are held in the
      * dead-letter queue for further analysis or reprocessing.</p> </li> </ul> <p>The
-     * following attribute applies only to Amazon Kinesis Data Firehose delivery stream
+     * following attribute applies only to Amazon Data Firehose delivery stream
      * subscriptions:</p> <ul> <li> <p> <code>SubscriptionRoleArn</code> – The ARN of
      * the IAM role that has the following:</p> <ul> <li> <p>Permission to write to the
-     * Kinesis Data Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a
-     * trusted entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is
-     * required for Kinesis Data Firehose delivery stream subscriptions. For more
-     * information, see <a
+     * Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted
+     * entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is required
+     * for Firehose delivery stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul>
+     * to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+     * </li> </ul>
      */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
@@ -207,16 +204,15 @@ namespace Model
      * subscribed endpoint is unreachable) or server errors (for example, when the
      * service that powers the subscribed endpoint becomes unavailable) are held in the
      * dead-letter queue for further analysis or reprocessing.</p> </li> </ul> <p>The
-     * following attribute applies only to Amazon Kinesis Data Firehose delivery stream
+     * following attribute applies only to Amazon Data Firehose delivery stream
      * subscriptions:</p> <ul> <li> <p> <code>SubscriptionRoleArn</code> – The ARN of
      * the IAM role that has the following:</p> <ul> <li> <p>Permission to write to the
-     * Kinesis Data Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a
-     * trusted entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is
-     * required for Kinesis Data Firehose delivery stream subscriptions. For more
-     * information, see <a
+     * Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted
+     * entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is required
+     * for Firehose delivery stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul>
+     * to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+     * </li> </ul>
      */
     inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
 
@@ -242,16 +238,15 @@ namespace Model
      * subscribed endpoint is unreachable) or server errors (for example, when the
      * service that powers the subscribed endpoint becomes unavailable) are held in the
      * dead-letter queue for further analysis or reprocessing.</p> </li> </ul> <p>The
-     * following attribute applies only to Amazon Kinesis Data Firehose delivery stream
+     * following attribute applies only to Amazon Data Firehose delivery stream
      * subscriptions:</p> <ul> <li> <p> <code>SubscriptionRoleArn</code> – The ARN of
      * the IAM role that has the following:</p> <ul> <li> <p>Permission to write to the
-     * Kinesis Data Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a
-     * trusted entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is
-     * required for Kinesis Data Firehose delivery stream subscriptions. For more
-     * information, see <a
+     * Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted
+     * entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is required
+     * for Firehose delivery stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul>
+     * to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+     * </li> </ul>
      */
     inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
 
@@ -277,16 +272,15 @@ namespace Model
      * subscribed endpoint is unreachable) or server errors (for example, when the
      * service that powers the subscribed endpoint becomes unavailable) are held in the
      * dead-letter queue for further analysis or reprocessing.</p> </li> </ul> <p>The
-     * following attribute applies only to Amazon Kinesis Data Firehose delivery stream
+     * following attribute applies only to Amazon Data Firehose delivery stream
      * subscriptions:</p> <ul> <li> <p> <code>SubscriptionRoleArn</code> – The ARN of
      * the IAM role that has the following:</p> <ul> <li> <p>Permission to write to the
-     * Kinesis Data Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a
-     * trusted entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is
-     * required for Kinesis Data Firehose delivery stream subscriptions. For more
-     * information, see <a
+     * Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted
+     * entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is required
+     * for Firehose delivery stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul>
+     * to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+     * </li> </ul>
      */
     inline SetSubscriptionAttributesRequest& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
 
@@ -312,16 +306,15 @@ namespace Model
      * subscribed endpoint is unreachable) or server errors (for example, when the
      * service that powers the subscribed endpoint becomes unavailable) are held in the
      * dead-letter queue for further analysis or reprocessing.</p> </li> </ul> <p>The
-     * following attribute applies only to Amazon Kinesis Data Firehose delivery stream
+     * following attribute applies only to Amazon Data Firehose delivery stream
      * subscriptions:</p> <ul> <li> <p> <code>SubscriptionRoleArn</code> – The ARN of
      * the IAM role that has the following:</p> <ul> <li> <p>Permission to write to the
-     * Kinesis Data Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a
-     * trusted entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is
-     * required for Kinesis Data Firehose delivery stream subscriptions. For more
-     * information, see <a
+     * Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted
+     * entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is required
+     * for Firehose delivery stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul>
+     * to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+     * </li> </ul>
      */
     inline SetSubscriptionAttributesRequest& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
 
@@ -347,16 +340,15 @@ namespace Model
      * subscribed endpoint is unreachable) or server errors (for example, when the
      * service that powers the subscribed endpoint becomes unavailable) are held in the
      * dead-letter queue for further analysis or reprocessing.</p> </li> </ul> <p>The
-     * following attribute applies only to Amazon Kinesis Data Firehose delivery stream
+     * following attribute applies only to Amazon Data Firehose delivery stream
      * subscriptions:</p> <ul> <li> <p> <code>SubscriptionRoleArn</code> – The ARN of
      * the IAM role that has the following:</p> <ul> <li> <p>Permission to write to the
-     * Kinesis Data Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a
-     * trusted entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is
-     * required for Kinesis Data Firehose delivery stream subscriptions. For more
-     * information, see <a
+     * Firehose delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted
+     * entity</p> </li> </ul> <p>Specifying a valid ARN for this attribute is required
+     * for Firehose delivery stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
-     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul>
+     * to Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+     * </li> </ul>
      */
     inline SetSubscriptionAttributesRequest& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
 

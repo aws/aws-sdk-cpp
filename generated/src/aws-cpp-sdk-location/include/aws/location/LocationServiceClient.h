@@ -927,6 +927,39 @@ namespace LocationService
         }
 
         /**
+         * <p>Evaluates device positions against geofence geometries from a given geofence
+         * collection. The event forecasts three states for which a device can be in
+         * relative to a geofence:</p> <p> <code>ENTER</code>: If a device is outside of a
+         * geofence, but would breach the fence if the device is moving at its current
+         * speed within time horizon window.</p> <p> <code>EXIT</code>: If a device is
+         * inside of a geofence, but would breach the fence if the device is moving at its
+         * current speed within time horizon window.</p> <p> <code>IDLE</code>: If a device
+         * is inside of a geofence, and the device is not moving.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ForecastGeofenceEvents">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ForecastGeofenceEventsOutcome ForecastGeofenceEvents(const Model::ForecastGeofenceEventsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ForecastGeofenceEvents that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ForecastGeofenceEventsRequestT = Model::ForecastGeofenceEventsRequest>
+        Model::ForecastGeofenceEventsOutcomeCallable ForecastGeofenceEventsCallable(const ForecastGeofenceEventsRequestT& request) const
+        {
+            return SubmitCallable(&LocationServiceClient::ForecastGeofenceEvents, request);
+        }
+
+        /**
+         * An Async wrapper for ForecastGeofenceEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ForecastGeofenceEventsRequestT = Model::ForecastGeofenceEventsRequest>
+        void ForecastGeofenceEventsAsync(const ForecastGeofenceEventsRequestT& request, const ForecastGeofenceEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LocationServiceClient::ForecastGeofenceEvents, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves a device's most recent position according to its sample time.</p>
          *  <p>Device positions are deleted after 30 days.</p> <p><h3>See
          * Also:</h3>   <a
@@ -981,8 +1014,9 @@ namespace LocationService
         }
 
         /**
-         * <p>Retrieves the geofence details from a geofence collection.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the geofence details from a geofence collection.</p>  <p>The
+         * returned geometry will always match the geometry format used when the geofence
+         * was created.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/GetGeofence">AWS
          * API Reference</a></p>
          */
@@ -1744,6 +1778,33 @@ namespace LocationService
         void UpdateTrackerAsync(const UpdateTrackerRequestT& request, const UpdateTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LocationServiceClient::UpdateTracker, request, handler, context);
+        }
+
+        /**
+         * <p>Verifies the integrity of the device's position by determining if it was
+         * reported behind a proxy, and by comparing it to an inferred position estimated
+         * based on the device's state.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/VerifyDevicePosition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::VerifyDevicePositionOutcome VerifyDevicePosition(const Model::VerifyDevicePositionRequest& request) const;
+
+        /**
+         * A Callable wrapper for VerifyDevicePosition that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename VerifyDevicePositionRequestT = Model::VerifyDevicePositionRequest>
+        Model::VerifyDevicePositionOutcomeCallable VerifyDevicePositionCallable(const VerifyDevicePositionRequestT& request) const
+        {
+            return SubmitCallable(&LocationServiceClient::VerifyDevicePosition, request);
+        }
+
+        /**
+         * An Async wrapper for VerifyDevicePosition that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename VerifyDevicePositionRequestT = Model::VerifyDevicePositionRequest>
+        void VerifyDevicePositionAsync(const VerifyDevicePositionRequestT& request, const VerifyDevicePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LocationServiceClient::VerifyDevicePosition, request, handler, context);
         }
 
 

@@ -152,7 +152,7 @@ namespace Model
      * gibibytes (GiB).</p> <p> <b>FSx for Lustre file systems</b> - The amount of
      * storage capacity that you can configure depends on the value that you set for
      * <code>StorageType</code> and the Lustre <code>DeploymentType</code>, as
-     * follows:</p> <ul> <li> <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_2</code>
+     * follows:</p> <ul> <li> <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_2</code>,
      * and <code>PERSISTENT_1</code> deployment types using SSD storage type, the valid
      * values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p> </li> <li> <p>For
      * <code>PERSISTENT_1</code> HDD file systems, valid values are increments of 6000
@@ -178,7 +178,7 @@ namespace Model
      * gibibytes (GiB).</p> <p> <b>FSx for Lustre file systems</b> - The amount of
      * storage capacity that you can configure depends on the value that you set for
      * <code>StorageType</code> and the Lustre <code>DeploymentType</code>, as
-     * follows:</p> <ul> <li> <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_2</code>
+     * follows:</p> <ul> <li> <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_2</code>,
      * and <code>PERSISTENT_1</code> deployment types using SSD storage type, the valid
      * values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p> </li> <li> <p>For
      * <code>PERSISTENT_1</code> HDD file systems, valid values are increments of 6000
@@ -204,7 +204,7 @@ namespace Model
      * gibibytes (GiB).</p> <p> <b>FSx for Lustre file systems</b> - The amount of
      * storage capacity that you can configure depends on the value that you set for
      * <code>StorageType</code> and the Lustre <code>DeploymentType</code>, as
-     * follows:</p> <ul> <li> <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_2</code>
+     * follows:</p> <ul> <li> <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_2</code>,
      * and <code>PERSISTENT_1</code> deployment types using SSD storage type, the valid
      * values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p> </li> <li> <p>For
      * <code>PERSISTENT_1</code> HDD file systems, valid values are increments of 6000
@@ -230,7 +230,7 @@ namespace Model
      * gibibytes (GiB).</p> <p> <b>FSx for Lustre file systems</b> - The amount of
      * storage capacity that you can configure depends on the value that you set for
      * <code>StorageType</code> and the Lustre <code>DeploymentType</code>, as
-     * follows:</p> <ul> <li> <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_2</code>
+     * follows:</p> <ul> <li> <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_2</code>,
      * and <code>PERSISTENT_1</code> deployment types using SSD storage type, the valid
      * values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p> </li> <li> <p>For
      * <code>PERSISTENT_1</code> HDD file systems, valid values are increments of 6000
@@ -260,7 +260,7 @@ namespace Model
      * <code>HDD</code> to use hard disk drive storage. HDD is supported on
      * <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> Windows file system
      * deployment types, and on <code>PERSISTENT_1</code> Lustre file system deployment
-     * types. </p> </li> </ul> <p>Default value is <code>SSD</code>. For more
+     * types.</p> </li> </ul> <p>Default value is <code>SSD</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
      * Storage type options</a> in the <i>FSx for Windows File Server User Guide</i>
@@ -278,7 +278,7 @@ namespace Model
      * <code>HDD</code> to use hard disk drive storage. HDD is supported on
      * <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> Windows file system
      * deployment types, and on <code>PERSISTENT_1</code> Lustre file system deployment
-     * types. </p> </li> </ul> <p>Default value is <code>SSD</code>. For more
+     * types.</p> </li> </ul> <p>Default value is <code>SSD</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
      * Storage type options</a> in the <i>FSx for Windows File Server User Guide</i>
@@ -296,7 +296,7 @@ namespace Model
      * <code>HDD</code> to use hard disk drive storage. HDD is supported on
      * <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> Windows file system
      * deployment types, and on <code>PERSISTENT_1</code> Lustre file system deployment
-     * types. </p> </li> </ul> <p>Default value is <code>SSD</code>. For more
+     * types.</p> </li> </ul> <p>Default value is <code>SSD</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
      * Storage type options</a> in the <i>FSx for Windows File Server User Guide</i>
@@ -314,7 +314,7 @@ namespace Model
      * <code>HDD</code> to use hard disk drive storage. HDD is supported on
      * <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> Windows file system
      * deployment types, and on <code>PERSISTENT_1</code> Lustre file system deployment
-     * types. </p> </li> </ul> <p>Default value is <code>SSD</code>. For more
+     * types.</p> </li> </ul> <p>Default value is <code>SSD</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
      * Storage type options</a> in the <i>FSx for Windows File Server User Guide</i>
@@ -332,7 +332,7 @@ namespace Model
      * <code>HDD</code> to use hard disk drive storage. HDD is supported on
      * <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> Windows file system
      * deployment types, and on <code>PERSISTENT_1</code> Lustre file system deployment
-     * types. </p> </li> </ul> <p>Default value is <code>SSD</code>. For more
+     * types.</p> </li> </ul> <p>Default value is <code>SSD</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
      * Storage type options</a> in the <i>FSx for Windows File Server User Guide</i>
@@ -350,7 +350,7 @@ namespace Model
      * <code>HDD</code> to use hard disk drive storage. HDD is supported on
      * <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> Windows file system
      * deployment types, and on <code>PERSISTENT_1</code> Lustre file system deployment
-     * types. </p> </li> </ul> <p>Default value is <code>SSD</code>. For more
+     * types.</p> </li> </ul> <p>Default value is <code>SSD</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
      * Storage type options</a> in the <i>FSx for Windows File Server User Guide</i>
@@ -765,130 +765,138 @@ namespace Model
 
 
     /**
-     * <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the
-     * file system that you're creating. Valid values are <code>2.10</code>,
-     * <code>2.12</code>, and <code>2.15</code>:</p> <ul> <li> <p>2.10 is supported by
-     * the Scratch and Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 and
-     * 2.15 are supported by all Lustre deployment types. <code>2.12</code> or
-     * <code>2.15</code> is required when setting FSx for Lustre
-     * <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
-     * <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is
-     * set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p>
-     *  <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for
-     * a <code>PERSISTENT_2</code> Lustre deployment type, the
-     * <code>CreateFileSystem</code> operation fails.</p> 
+     * <p>For FSx for Lustre file systems, sets the Lustre version for the file system
+     * that you're creating. Valid values are <code>2.10</code>, <code>2.12</code>, and
+     * <code>2.15</code>:</p> <ul> <li> <p> <code>2.10</code> is supported by the
+     * Scratch and Persistent_1 Lustre deployment types.</p> </li> <li> <p>
+     * <code>2.12</code> is supported by all Lustre deployment types, except for
+     * <code>PERSISTENT_2</code> with a metadata configuration mode.</p> </li> <li> <p>
+     * <code>2.15</code> is supported by all Lustre deployment types and is recommended
+     * for all new file systems.</p> </li> </ul> <p>Default value is <code>2.10</code>,
+     * except for the following deployments:</p> <ul> <li> <p>Default value is
+     * <code>2.12</code> when <code>DeploymentType</code> is set to
+     * <code>PERSISTENT_2</code> without a metadata configuration mode.</p> </li> <li>
+     * <p>Default value is <code>2.15</code> when <code>DeploymentType</code> is set to
+     * <code>PERSISTENT_2</code> with a metadata configuration mode.</p> </li> </ul>
      */
     inline const Aws::String& GetFileSystemTypeVersion() const{ return m_fileSystemTypeVersion; }
 
     /**
-     * <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the
-     * file system that you're creating. Valid values are <code>2.10</code>,
-     * <code>2.12</code>, and <code>2.15</code>:</p> <ul> <li> <p>2.10 is supported by
-     * the Scratch and Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 and
-     * 2.15 are supported by all Lustre deployment types. <code>2.12</code> or
-     * <code>2.15</code> is required when setting FSx for Lustre
-     * <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
-     * <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is
-     * set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p>
-     *  <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for
-     * a <code>PERSISTENT_2</code> Lustre deployment type, the
-     * <code>CreateFileSystem</code> operation fails.</p> 
+     * <p>For FSx for Lustre file systems, sets the Lustre version for the file system
+     * that you're creating. Valid values are <code>2.10</code>, <code>2.12</code>, and
+     * <code>2.15</code>:</p> <ul> <li> <p> <code>2.10</code> is supported by the
+     * Scratch and Persistent_1 Lustre deployment types.</p> </li> <li> <p>
+     * <code>2.12</code> is supported by all Lustre deployment types, except for
+     * <code>PERSISTENT_2</code> with a metadata configuration mode.</p> </li> <li> <p>
+     * <code>2.15</code> is supported by all Lustre deployment types and is recommended
+     * for all new file systems.</p> </li> </ul> <p>Default value is <code>2.10</code>,
+     * except for the following deployments:</p> <ul> <li> <p>Default value is
+     * <code>2.12</code> when <code>DeploymentType</code> is set to
+     * <code>PERSISTENT_2</code> without a metadata configuration mode.</p> </li> <li>
+     * <p>Default value is <code>2.15</code> when <code>DeploymentType</code> is set to
+     * <code>PERSISTENT_2</code> with a metadata configuration mode.</p> </li> </ul>
      */
     inline bool FileSystemTypeVersionHasBeenSet() const { return m_fileSystemTypeVersionHasBeenSet; }
 
     /**
-     * <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the
-     * file system that you're creating. Valid values are <code>2.10</code>,
-     * <code>2.12</code>, and <code>2.15</code>:</p> <ul> <li> <p>2.10 is supported by
-     * the Scratch and Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 and
-     * 2.15 are supported by all Lustre deployment types. <code>2.12</code> or
-     * <code>2.15</code> is required when setting FSx for Lustre
-     * <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
-     * <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is
-     * set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p>
-     *  <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for
-     * a <code>PERSISTENT_2</code> Lustre deployment type, the
-     * <code>CreateFileSystem</code> operation fails.</p> 
+     * <p>For FSx for Lustre file systems, sets the Lustre version for the file system
+     * that you're creating. Valid values are <code>2.10</code>, <code>2.12</code>, and
+     * <code>2.15</code>:</p> <ul> <li> <p> <code>2.10</code> is supported by the
+     * Scratch and Persistent_1 Lustre deployment types.</p> </li> <li> <p>
+     * <code>2.12</code> is supported by all Lustre deployment types, except for
+     * <code>PERSISTENT_2</code> with a metadata configuration mode.</p> </li> <li> <p>
+     * <code>2.15</code> is supported by all Lustre deployment types and is recommended
+     * for all new file systems.</p> </li> </ul> <p>Default value is <code>2.10</code>,
+     * except for the following deployments:</p> <ul> <li> <p>Default value is
+     * <code>2.12</code> when <code>DeploymentType</code> is set to
+     * <code>PERSISTENT_2</code> without a metadata configuration mode.</p> </li> <li>
+     * <p>Default value is <code>2.15</code> when <code>DeploymentType</code> is set to
+     * <code>PERSISTENT_2</code> with a metadata configuration mode.</p> </li> </ul>
      */
     inline void SetFileSystemTypeVersion(const Aws::String& value) { m_fileSystemTypeVersionHasBeenSet = true; m_fileSystemTypeVersion = value; }
 
     /**
-     * <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the
-     * file system that you're creating. Valid values are <code>2.10</code>,
-     * <code>2.12</code>, and <code>2.15</code>:</p> <ul> <li> <p>2.10 is supported by
-     * the Scratch and Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 and
-     * 2.15 are supported by all Lustre deployment types. <code>2.12</code> or
-     * <code>2.15</code> is required when setting FSx for Lustre
-     * <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
-     * <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is
-     * set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p>
-     *  <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for
-     * a <code>PERSISTENT_2</code> Lustre deployment type, the
-     * <code>CreateFileSystem</code> operation fails.</p> 
+     * <p>For FSx for Lustre file systems, sets the Lustre version for the file system
+     * that you're creating. Valid values are <code>2.10</code>, <code>2.12</code>, and
+     * <code>2.15</code>:</p> <ul> <li> <p> <code>2.10</code> is supported by the
+     * Scratch and Persistent_1 Lustre deployment types.</p> </li> <li> <p>
+     * <code>2.12</code> is supported by all Lustre deployment types, except for
+     * <code>PERSISTENT_2</code> with a metadata configuration mode.</p> </li> <li> <p>
+     * <code>2.15</code> is supported by all Lustre deployment types and is recommended
+     * for all new file systems.</p> </li> </ul> <p>Default value is <code>2.10</code>,
+     * except for the following deployments:</p> <ul> <li> <p>Default value is
+     * <code>2.12</code> when <code>DeploymentType</code> is set to
+     * <code>PERSISTENT_2</code> without a metadata configuration mode.</p> </li> <li>
+     * <p>Default value is <code>2.15</code> when <code>DeploymentType</code> is set to
+     * <code>PERSISTENT_2</code> with a metadata configuration mode.</p> </li> </ul>
      */
     inline void SetFileSystemTypeVersion(Aws::String&& value) { m_fileSystemTypeVersionHasBeenSet = true; m_fileSystemTypeVersion = std::move(value); }
 
     /**
-     * <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the
-     * file system that you're creating. Valid values are <code>2.10</code>,
-     * <code>2.12</code>, and <code>2.15</code>:</p> <ul> <li> <p>2.10 is supported by
-     * the Scratch and Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 and
-     * 2.15 are supported by all Lustre deployment types. <code>2.12</code> or
-     * <code>2.15</code> is required when setting FSx for Lustre
-     * <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
-     * <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is
-     * set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p>
-     *  <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for
-     * a <code>PERSISTENT_2</code> Lustre deployment type, the
-     * <code>CreateFileSystem</code> operation fails.</p> 
+     * <p>For FSx for Lustre file systems, sets the Lustre version for the file system
+     * that you're creating. Valid values are <code>2.10</code>, <code>2.12</code>, and
+     * <code>2.15</code>:</p> <ul> <li> <p> <code>2.10</code> is supported by the
+     * Scratch and Persistent_1 Lustre deployment types.</p> </li> <li> <p>
+     * <code>2.12</code> is supported by all Lustre deployment types, except for
+     * <code>PERSISTENT_2</code> with a metadata configuration mode.</p> </li> <li> <p>
+     * <code>2.15</code> is supported by all Lustre deployment types and is recommended
+     * for all new file systems.</p> </li> </ul> <p>Default value is <code>2.10</code>,
+     * except for the following deployments:</p> <ul> <li> <p>Default value is
+     * <code>2.12</code> when <code>DeploymentType</code> is set to
+     * <code>PERSISTENT_2</code> without a metadata configuration mode.</p> </li> <li>
+     * <p>Default value is <code>2.15</code> when <code>DeploymentType</code> is set to
+     * <code>PERSISTENT_2</code> with a metadata configuration mode.</p> </li> </ul>
      */
     inline void SetFileSystemTypeVersion(const char* value) { m_fileSystemTypeVersionHasBeenSet = true; m_fileSystemTypeVersion.assign(value); }
 
     /**
-     * <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the
-     * file system that you're creating. Valid values are <code>2.10</code>,
-     * <code>2.12</code>, and <code>2.15</code>:</p> <ul> <li> <p>2.10 is supported by
-     * the Scratch and Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 and
-     * 2.15 are supported by all Lustre deployment types. <code>2.12</code> or
-     * <code>2.15</code> is required when setting FSx for Lustre
-     * <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
-     * <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is
-     * set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p>
-     *  <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for
-     * a <code>PERSISTENT_2</code> Lustre deployment type, the
-     * <code>CreateFileSystem</code> operation fails.</p> 
+     * <p>For FSx for Lustre file systems, sets the Lustre version for the file system
+     * that you're creating. Valid values are <code>2.10</code>, <code>2.12</code>, and
+     * <code>2.15</code>:</p> <ul> <li> <p> <code>2.10</code> is supported by the
+     * Scratch and Persistent_1 Lustre deployment types.</p> </li> <li> <p>
+     * <code>2.12</code> is supported by all Lustre deployment types, except for
+     * <code>PERSISTENT_2</code> with a metadata configuration mode.</p> </li> <li> <p>
+     * <code>2.15</code> is supported by all Lustre deployment types and is recommended
+     * for all new file systems.</p> </li> </ul> <p>Default value is <code>2.10</code>,
+     * except for the following deployments:</p> <ul> <li> <p>Default value is
+     * <code>2.12</code> when <code>DeploymentType</code> is set to
+     * <code>PERSISTENT_2</code> without a metadata configuration mode.</p> </li> <li>
+     * <p>Default value is <code>2.15</code> when <code>DeploymentType</code> is set to
+     * <code>PERSISTENT_2</code> with a metadata configuration mode.</p> </li> </ul>
      */
     inline CreateFileSystemRequest& WithFileSystemTypeVersion(const Aws::String& value) { SetFileSystemTypeVersion(value); return *this;}
 
     /**
-     * <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the
-     * file system that you're creating. Valid values are <code>2.10</code>,
-     * <code>2.12</code>, and <code>2.15</code>:</p> <ul> <li> <p>2.10 is supported by
-     * the Scratch and Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 and
-     * 2.15 are supported by all Lustre deployment types. <code>2.12</code> or
-     * <code>2.15</code> is required when setting FSx for Lustre
-     * <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
-     * <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is
-     * set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p>
-     *  <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for
-     * a <code>PERSISTENT_2</code> Lustre deployment type, the
-     * <code>CreateFileSystem</code> operation fails.</p> 
+     * <p>For FSx for Lustre file systems, sets the Lustre version for the file system
+     * that you're creating. Valid values are <code>2.10</code>, <code>2.12</code>, and
+     * <code>2.15</code>:</p> <ul> <li> <p> <code>2.10</code> is supported by the
+     * Scratch and Persistent_1 Lustre deployment types.</p> </li> <li> <p>
+     * <code>2.12</code> is supported by all Lustre deployment types, except for
+     * <code>PERSISTENT_2</code> with a metadata configuration mode.</p> </li> <li> <p>
+     * <code>2.15</code> is supported by all Lustre deployment types and is recommended
+     * for all new file systems.</p> </li> </ul> <p>Default value is <code>2.10</code>,
+     * except for the following deployments:</p> <ul> <li> <p>Default value is
+     * <code>2.12</code> when <code>DeploymentType</code> is set to
+     * <code>PERSISTENT_2</code> without a metadata configuration mode.</p> </li> <li>
+     * <p>Default value is <code>2.15</code> when <code>DeploymentType</code> is set to
+     * <code>PERSISTENT_2</code> with a metadata configuration mode.</p> </li> </ul>
      */
     inline CreateFileSystemRequest& WithFileSystemTypeVersion(Aws::String&& value) { SetFileSystemTypeVersion(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the
-     * file system that you're creating. Valid values are <code>2.10</code>,
-     * <code>2.12</code>, and <code>2.15</code>:</p> <ul> <li> <p>2.10 is supported by
-     * the Scratch and Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 and
-     * 2.15 are supported by all Lustre deployment types. <code>2.12</code> or
-     * <code>2.15</code> is required when setting FSx for Lustre
-     * <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
-     * <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is
-     * set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p>
-     *  <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for
-     * a <code>PERSISTENT_2</code> Lustre deployment type, the
-     * <code>CreateFileSystem</code> operation fails.</p> 
+     * <p>For FSx for Lustre file systems, sets the Lustre version for the file system
+     * that you're creating. Valid values are <code>2.10</code>, <code>2.12</code>, and
+     * <code>2.15</code>:</p> <ul> <li> <p> <code>2.10</code> is supported by the
+     * Scratch and Persistent_1 Lustre deployment types.</p> </li> <li> <p>
+     * <code>2.12</code> is supported by all Lustre deployment types, except for
+     * <code>PERSISTENT_2</code> with a metadata configuration mode.</p> </li> <li> <p>
+     * <code>2.15</code> is supported by all Lustre deployment types and is recommended
+     * for all new file systems.</p> </li> </ul> <p>Default value is <code>2.10</code>,
+     * except for the following deployments:</p> <ul> <li> <p>Default value is
+     * <code>2.12</code> when <code>DeploymentType</code> is set to
+     * <code>PERSISTENT_2</code> without a metadata configuration mode.</p> </li> <li>
+     * <p>Default value is <code>2.15</code> when <code>DeploymentType</code> is set to
+     * <code>PERSISTENT_2</code> with a metadata configuration mode.</p> </li> </ul>
      */
     inline CreateFileSystemRequest& WithFileSystemTypeVersion(const char* value) { SetFileSystemTypeVersion(value); return *this;}
 

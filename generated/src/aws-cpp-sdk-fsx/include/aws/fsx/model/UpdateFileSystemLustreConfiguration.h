@@ -10,6 +10,7 @@
 #include <aws/fsx/model/DataCompressionType.h>
 #include <aws/fsx/model/LustreLogCreateConfiguration.h>
 #include <aws/fsx/model/LustreRootSquashConfiguration.h>
+#include <aws/fsx/model/UpdateFileSystemLustreMetadataConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -525,6 +526,55 @@ namespace Model
      */
     inline UpdateFileSystemLustreConfiguration& WithPerUnitStorageThroughput(int value) { SetPerUnitStorageThroughput(value); return *this;}
 
+
+    /**
+     * <p>The Lustre metadata performance configuration for an Amazon FSx for Lustre
+     * file system using a <code>PERSISTENT_2</code> deployment type. When this
+     * configuration is enabled, the file system supports increasing metadata
+     * performance.</p>
+     */
+    inline const UpdateFileSystemLustreMetadataConfiguration& GetMetadataConfiguration() const{ return m_metadataConfiguration; }
+
+    /**
+     * <p>The Lustre metadata performance configuration for an Amazon FSx for Lustre
+     * file system using a <code>PERSISTENT_2</code> deployment type. When this
+     * configuration is enabled, the file system supports increasing metadata
+     * performance.</p>
+     */
+    inline bool MetadataConfigurationHasBeenSet() const { return m_metadataConfigurationHasBeenSet; }
+
+    /**
+     * <p>The Lustre metadata performance configuration for an Amazon FSx for Lustre
+     * file system using a <code>PERSISTENT_2</code> deployment type. When this
+     * configuration is enabled, the file system supports increasing metadata
+     * performance.</p>
+     */
+    inline void SetMetadataConfiguration(const UpdateFileSystemLustreMetadataConfiguration& value) { m_metadataConfigurationHasBeenSet = true; m_metadataConfiguration = value; }
+
+    /**
+     * <p>The Lustre metadata performance configuration for an Amazon FSx for Lustre
+     * file system using a <code>PERSISTENT_2</code> deployment type. When this
+     * configuration is enabled, the file system supports increasing metadata
+     * performance.</p>
+     */
+    inline void SetMetadataConfiguration(UpdateFileSystemLustreMetadataConfiguration&& value) { m_metadataConfigurationHasBeenSet = true; m_metadataConfiguration = std::move(value); }
+
+    /**
+     * <p>The Lustre metadata performance configuration for an Amazon FSx for Lustre
+     * file system using a <code>PERSISTENT_2</code> deployment type. When this
+     * configuration is enabled, the file system supports increasing metadata
+     * performance.</p>
+     */
+    inline UpdateFileSystemLustreConfiguration& WithMetadataConfiguration(const UpdateFileSystemLustreMetadataConfiguration& value) { SetMetadataConfiguration(value); return *this;}
+
+    /**
+     * <p>The Lustre metadata performance configuration for an Amazon FSx for Lustre
+     * file system using a <code>PERSISTENT_2</code> deployment type. When this
+     * configuration is enabled, the file system supports increasing metadata
+     * performance.</p>
+     */
+    inline UpdateFileSystemLustreConfiguration& WithMetadataConfiguration(UpdateFileSystemLustreMetadataConfiguration&& value) { SetMetadataConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_weeklyMaintenanceStartTime;
@@ -550,6 +600,9 @@ namespace Model
 
     int m_perUnitStorageThroughput;
     bool m_perUnitStorageThroughputHasBeenSet = false;
+
+    UpdateFileSystemLustreMetadataConfiguration m_metadataConfiguration;
+    bool m_metadataConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

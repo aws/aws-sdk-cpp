@@ -19,24 +19,38 @@ namespace Model
 {
 
 SearchForSuggestionsResult::SearchForSuggestionsResult() : 
-    m_categoriesHasBeenSet(false),
+    m_textHasBeenSet(false),
     m_placeIdHasBeenSet(false),
-    m_supplementalCategoriesHasBeenSet(false),
-    m_textHasBeenSet(false)
+    m_categoriesHasBeenSet(false),
+    m_supplementalCategoriesHasBeenSet(false)
 {
 }
 
 SearchForSuggestionsResult::SearchForSuggestionsResult(JsonView jsonValue) : 
-    m_categoriesHasBeenSet(false),
+    m_textHasBeenSet(false),
     m_placeIdHasBeenSet(false),
-    m_supplementalCategoriesHasBeenSet(false),
-    m_textHasBeenSet(false)
+    m_categoriesHasBeenSet(false),
+    m_supplementalCategoriesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 SearchForSuggestionsResult& SearchForSuggestionsResult::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("Text"))
+  {
+    m_text = jsonValue.GetString("Text");
+
+    m_textHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PlaceId"))
+  {
+    m_placeId = jsonValue.GetString("PlaceId");
+
+    m_placeIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Categories"))
   {
     Aws::Utils::Array<JsonView> categoriesJsonList = jsonValue.GetArray("Categories");
@@ -45,13 +59,6 @@ SearchForSuggestionsResult& SearchForSuggestionsResult::operator =(JsonView json
       m_categories.push_back(categoriesJsonList[categoriesIndex].AsString());
     }
     m_categoriesHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("PlaceId"))
-  {
-    m_placeId = jsonValue.GetString("PlaceId");
-
-    m_placeIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SupplementalCategories"))
@@ -64,19 +71,24 @@ SearchForSuggestionsResult& SearchForSuggestionsResult::operator =(JsonView json
     m_supplementalCategoriesHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("Text"))
-  {
-    m_text = jsonValue.GetString("Text");
-
-    m_textHasBeenSet = true;
-  }
-
   return *this;
 }
 
 JsonValue SearchForSuggestionsResult::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_textHasBeenSet)
+  {
+   payload.WithString("Text", m_text);
+
+  }
+
+  if(m_placeIdHasBeenSet)
+  {
+   payload.WithString("PlaceId", m_placeId);
+
+  }
 
   if(m_categoriesHasBeenSet)
   {
@@ -89,12 +101,6 @@ JsonValue SearchForSuggestionsResult::Jsonize() const
 
   }
 
-  if(m_placeIdHasBeenSet)
-  {
-   payload.WithString("PlaceId", m_placeId);
-
-  }
-
   if(m_supplementalCategoriesHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> supplementalCategoriesJsonList(m_supplementalCategories.size());
@@ -103,12 +109,6 @@ JsonValue SearchForSuggestionsResult::Jsonize() const
      supplementalCategoriesJsonList[supplementalCategoriesIndex].AsString(m_supplementalCategories[supplementalCategoriesIndex]);
    }
    payload.WithArray("SupplementalCategories", std::move(supplementalCategoriesJsonList));
-
-  }
-
-  if(m_textHasBeenSet)
-  {
-   payload.WithString("Text", m_text);
 
   }
 

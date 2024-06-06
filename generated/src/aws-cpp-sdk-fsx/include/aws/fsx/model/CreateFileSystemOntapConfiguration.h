@@ -619,7 +619,7 @@ namespace Model
      * pairs. The value of this property affects the values of
      * <code>StorageCapacity</code>, <code>Iops</code>, and
      * <code>ThroughputCapacity</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/HA-pairs.html">High-availability
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/administering-file-systems.html#HA-pairs">High-availability
      * (HA) pairs</a> in the FSx for ONTAP user guide.</p> <p>Amazon FSx responds with
      * an HTTP status code 400 (Bad Request) for the following conditions:</p> <ul>
      * <li> <p>The value of <code>HAPairs</code> is less than 1 or greater than 12.</p>
@@ -636,7 +636,7 @@ namespace Model
      * pairs. The value of this property affects the values of
      * <code>StorageCapacity</code>, <code>Iops</code>, and
      * <code>ThroughputCapacity</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/HA-pairs.html">High-availability
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/administering-file-systems.html#HA-pairs">High-availability
      * (HA) pairs</a> in the FSx for ONTAP user guide.</p> <p>Amazon FSx responds with
      * an HTTP status code 400 (Bad Request) for the following conditions:</p> <ul>
      * <li> <p>The value of <code>HAPairs</code> is less than 1 or greater than 12.</p>
@@ -653,7 +653,7 @@ namespace Model
      * pairs. The value of this property affects the values of
      * <code>StorageCapacity</code>, <code>Iops</code>, and
      * <code>ThroughputCapacity</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/HA-pairs.html">High-availability
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/administering-file-systems.html#HA-pairs">High-availability
      * (HA) pairs</a> in the FSx for ONTAP user guide.</p> <p>Amazon FSx responds with
      * an HTTP status code 400 (Bad Request) for the following conditions:</p> <ul>
      * <li> <p>The value of <code>HAPairs</code> is less than 1 or greater than 12.</p>
@@ -670,7 +670,7 @@ namespace Model
      * pairs. The value of this property affects the values of
      * <code>StorageCapacity</code>, <code>Iops</code>, and
      * <code>ThroughputCapacity</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/HA-pairs.html">High-availability
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/administering-file-systems.html#HA-pairs">High-availability
      * (HA) pairs</a> in the FSx for ONTAP user guide.</p> <p>Amazon FSx responds with
      * an HTTP status code 400 (Bad Request) for the following conditions:</p> <ul>
      * <li> <p>The value of <code>HAPairs</code> is less than 1 or greater than 12.</p>

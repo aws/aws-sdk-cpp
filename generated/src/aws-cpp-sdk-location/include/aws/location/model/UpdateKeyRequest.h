@@ -35,6 +35,47 @@ namespace Model
 
 
     /**
+     * <p>The name of the API key resource to update.</p>
+     */
+    inline const Aws::String& GetKeyName() const{ return m_keyName; }
+
+    /**
+     * <p>The name of the API key resource to update.</p>
+     */
+    inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
+
+    /**
+     * <p>The name of the API key resource to update.</p>
+     */
+    inline void SetKeyName(const Aws::String& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
+
+    /**
+     * <p>The name of the API key resource to update.</p>
+     */
+    inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = std::move(value); }
+
+    /**
+     * <p>The name of the API key resource to update.</p>
+     */
+    inline void SetKeyName(const char* value) { m_keyNameHasBeenSet = true; m_keyName.assign(value); }
+
+    /**
+     * <p>The name of the API key resource to update.</p>
+     */
+    inline UpdateKeyRequest& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
+
+    /**
+     * <p>The name of the API key resource to update.</p>
+     */
+    inline UpdateKeyRequest& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the API key resource to update.</p>
+     */
+    inline UpdateKeyRequest& WithKeyName(const char* value) { SetKeyName(value); return *this;}
+
+
+    /**
      * <p>Updates the description for the API key resource.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -119,6 +160,31 @@ namespace Model
 
 
     /**
+     * <p>Whether the API key should expire. Set to <code>true</code> to set the API
+     * key to have no expiration time.</p>
+     */
+    inline bool GetNoExpiry() const{ return m_noExpiry; }
+
+    /**
+     * <p>Whether the API key should expire. Set to <code>true</code> to set the API
+     * key to have no expiration time.</p>
+     */
+    inline bool NoExpiryHasBeenSet() const { return m_noExpiryHasBeenSet; }
+
+    /**
+     * <p>Whether the API key should expire. Set to <code>true</code> to set the API
+     * key to have no expiration time.</p>
+     */
+    inline void SetNoExpiry(bool value) { m_noExpiryHasBeenSet = true; m_noExpiry = value; }
+
+    /**
+     * <p>Whether the API key should expire. Set to <code>true</code> to set the API
+     * key to have no expiration time.</p>
+     */
+    inline UpdateKeyRequest& WithNoExpiry(bool value) { SetNoExpiry(value); return *this;}
+
+
+    /**
      * <p>The boolean flag to be included for updating <code>ExpireTime</code> or
      * <code>Restrictions</code> details.</p> <p>Must be set to <code>true</code> to
      * update an API key resource that has been used in the past 7 days.</p> <p>
@@ -156,72 +222,6 @@ namespace Model
 
 
     /**
-     * <p>The name of the API key resource to update.</p>
-     */
-    inline const Aws::String& GetKeyName() const{ return m_keyName; }
-
-    /**
-     * <p>The name of the API key resource to update.</p>
-     */
-    inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
-
-    /**
-     * <p>The name of the API key resource to update.</p>
-     */
-    inline void SetKeyName(const Aws::String& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
-
-    /**
-     * <p>The name of the API key resource to update.</p>
-     */
-    inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = std::move(value); }
-
-    /**
-     * <p>The name of the API key resource to update.</p>
-     */
-    inline void SetKeyName(const char* value) { m_keyNameHasBeenSet = true; m_keyName.assign(value); }
-
-    /**
-     * <p>The name of the API key resource to update.</p>
-     */
-    inline UpdateKeyRequest& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
-
-    /**
-     * <p>The name of the API key resource to update.</p>
-     */
-    inline UpdateKeyRequest& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the API key resource to update.</p>
-     */
-    inline UpdateKeyRequest& WithKeyName(const char* value) { SetKeyName(value); return *this;}
-
-
-    /**
-     * <p>Whether the API key should expire. Set to <code>true</code> to set the API
-     * key to have no expiration time.</p>
-     */
-    inline bool GetNoExpiry() const{ return m_noExpiry; }
-
-    /**
-     * <p>Whether the API key should expire. Set to <code>true</code> to set the API
-     * key to have no expiration time.</p>
-     */
-    inline bool NoExpiryHasBeenSet() const { return m_noExpiryHasBeenSet; }
-
-    /**
-     * <p>Whether the API key should expire. Set to <code>true</code> to set the API
-     * key to have no expiration time.</p>
-     */
-    inline void SetNoExpiry(bool value) { m_noExpiryHasBeenSet = true; m_noExpiry = value; }
-
-    /**
-     * <p>Whether the API key should expire. Set to <code>true</code> to set the API
-     * key to have no expiration time.</p>
-     */
-    inline UpdateKeyRequest& WithNoExpiry(bool value) { SetNoExpiry(value); return *this;}
-
-
-    /**
      * <p>Updates the API key restrictions for the API key resource.</p>
      */
     inline const ApiKeyRestrictions& GetRestrictions() const{ return m_restrictions; }
@@ -253,20 +253,20 @@ namespace Model
 
   private:
 
+    Aws::String m_keyName;
+    bool m_keyNameHasBeenSet = false;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_expireTime;
     bool m_expireTimeHasBeenSet = false;
 
-    bool m_forceUpdate;
-    bool m_forceUpdateHasBeenSet = false;
-
-    Aws::String m_keyName;
-    bool m_keyNameHasBeenSet = false;
-
     bool m_noExpiry;
     bool m_noExpiryHasBeenSet = false;
+
+    bool m_forceUpdate;
+    bool m_forceUpdateHasBeenSet = false;
 
     ApiKeyRestrictions m_restrictions;
     bool m_restrictionsHasBeenSet = false;
