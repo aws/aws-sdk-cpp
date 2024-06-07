@@ -34,7 +34,9 @@ Control::Control() :
     m_lastUpdatedAtHasBeenSet(false),
     m_createdByHasBeenSet(false),
     m_lastUpdatedByHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_state(ControlState::NOT_SET),
+    m_stateHasBeenSet(false)
 {
 }
 
@@ -54,7 +56,9 @@ Control::Control(JsonView jsonValue) :
     m_lastUpdatedAtHasBeenSet(false),
     m_createdByHasBeenSet(false),
     m_lastUpdatedByHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_state(ControlState::NOT_SET),
+    m_stateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -172,6 +176,13 @@ Control& Control::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("state"))
+  {
+    m_state = ControlStateMapper::GetControlStateForName(jsonValue.GetString("state"));
+
+    m_stateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -274,6 +285,11 @@ JsonValue Control::Jsonize() const
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
 
+  }
+
+  if(m_stateHasBeenSet)
+  {
+   payload.WithString("state", ControlStateMapper::GetNameForControlState(m_state));
   }
 
   return payload;

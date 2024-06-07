@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     COMMIT_ID,
     IMAGE_DIGEST,
-    S3_OBJECT_VERSION_ID
+    S3_OBJECT_VERSION_ID,
+    S3_OBJECT_KEY
   };
 
 namespace SourceRevisionTypeMapper

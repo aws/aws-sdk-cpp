@@ -34,42 +34,42 @@ namespace Model
 
 
     /**
-     * <p> The list of keywords for the event mapping source. </p>
+     * <p>The list of keywords for the control mapping source.</p>
      */
     inline const Aws::Vector<Aws::String>& GetKeywords() const{ return m_keywords; }
 
     /**
-     * <p> The list of keywords for the event mapping source. </p>
+     * <p>The list of keywords for the control mapping source.</p>
      */
     inline void SetKeywords(const Aws::Vector<Aws::String>& value) { m_keywords = value; }
 
     /**
-     * <p> The list of keywords for the event mapping source. </p>
+     * <p>The list of keywords for the control mapping source.</p>
      */
     inline void SetKeywords(Aws::Vector<Aws::String>&& value) { m_keywords = std::move(value); }
 
     /**
-     * <p> The list of keywords for the event mapping source. </p>
+     * <p>The list of keywords for the control mapping source.</p>
      */
     inline ListKeywordsForDataSourceResult& WithKeywords(const Aws::Vector<Aws::String>& value) { SetKeywords(value); return *this;}
 
     /**
-     * <p> The list of keywords for the event mapping source. </p>
+     * <p>The list of keywords for the control mapping source.</p>
      */
     inline ListKeywordsForDataSourceResult& WithKeywords(Aws::Vector<Aws::String>&& value) { SetKeywords(std::move(value)); return *this;}
 
     /**
-     * <p> The list of keywords for the event mapping source. </p>
+     * <p>The list of keywords for the control mapping source.</p>
      */
     inline ListKeywordsForDataSourceResult& AddKeywords(const Aws::String& value) { m_keywords.push_back(value); return *this; }
 
     /**
-     * <p> The list of keywords for the event mapping source. </p>
+     * <p>The list of keywords for the control mapping source.</p>
      */
     inline ListKeywordsForDataSourceResult& AddKeywords(Aws::String&& value) { m_keywords.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> The list of keywords for the event mapping source. </p>
+     * <p>The list of keywords for the control mapping source.</p>
      */
     inline ListKeywordsForDataSourceResult& AddKeywords(const char* value) { m_keywords.push_back(value); return *this; }
 

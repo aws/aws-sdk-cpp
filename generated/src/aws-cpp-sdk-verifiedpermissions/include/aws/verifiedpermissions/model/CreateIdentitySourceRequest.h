@@ -232,55 +232,37 @@ namespace Model
 
     /**
      * <p>Specifies the details required to communicate with the identity provider
-     * (IdP) associated with this identity source.</p>  <p>At this time, the only
-     * valid member of this structure is a Amazon Cognito user pool configuration.</p>
-     * <p>You must specify a <code>UserPoolArn</code>, and optionally, a
-     * <code>ClientId</code>.</p> 
+     * (IdP) associated with this identity source.</p>
      */
     inline const Configuration& GetConfiguration() const{ return m_configuration; }
 
     /**
      * <p>Specifies the details required to communicate with the identity provider
-     * (IdP) associated with this identity source.</p>  <p>At this time, the only
-     * valid member of this structure is a Amazon Cognito user pool configuration.</p>
-     * <p>You must specify a <code>UserPoolArn</code>, and optionally, a
-     * <code>ClientId</code>.</p> 
+     * (IdP) associated with this identity source.</p>
      */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
      * <p>Specifies the details required to communicate with the identity provider
-     * (IdP) associated with this identity source.</p>  <p>At this time, the only
-     * valid member of this structure is a Amazon Cognito user pool configuration.</p>
-     * <p>You must specify a <code>UserPoolArn</code>, and optionally, a
-     * <code>ClientId</code>.</p> 
+     * (IdP) associated with this identity source.</p>
      */
     inline void SetConfiguration(const Configuration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
     /**
      * <p>Specifies the details required to communicate with the identity provider
-     * (IdP) associated with this identity source.</p>  <p>At this time, the only
-     * valid member of this structure is a Amazon Cognito user pool configuration.</p>
-     * <p>You must specify a <code>UserPoolArn</code>, and optionally, a
-     * <code>ClientId</code>.</p> 
+     * (IdP) associated with this identity source.</p>
      */
     inline void SetConfiguration(Configuration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
 
     /**
      * <p>Specifies the details required to communicate with the identity provider
-     * (IdP) associated with this identity source.</p>  <p>At this time, the only
-     * valid member of this structure is a Amazon Cognito user pool configuration.</p>
-     * <p>You must specify a <code>UserPoolArn</code>, and optionally, a
-     * <code>ClientId</code>.</p> 
+     * (IdP) associated with this identity source.</p>
      */
     inline CreateIdentitySourceRequest& WithConfiguration(const Configuration& value) { SetConfiguration(value); return *this;}
 
     /**
      * <p>Specifies the details required to communicate with the identity provider
-     * (IdP) associated with this identity source.</p>  <p>At this time, the only
-     * valid member of this structure is a Amazon Cognito user pool configuration.</p>
-     * <p>You must specify a <code>UserPoolArn</code>, and optionally, a
-     * <code>ClientId</code>.</p> 
+     * (IdP) associated with this identity source.</p>
      */
     inline CreateIdentitySourceRequest& WithConfiguration(Configuration&& value) { SetConfiguration(std::move(value)); return *this;}
 

@@ -20,7 +20,9 @@ namespace Model
     AWS_Config,
     AWS_Security_Hub,
     AWS_API_Call,
-    MANUAL
+    MANUAL,
+    Common_Control,
+    Core_Control
   };
 
 namespace SourceTypeMapper

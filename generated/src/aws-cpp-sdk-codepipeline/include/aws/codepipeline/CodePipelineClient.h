@@ -652,8 +652,10 @@ namespace CodePipeline
         }
 
         /**
-         * <p>Gets a summary of the most recent executions for a pipeline.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets a summary of the most recent executions for a pipeline.</p> 
+         * <p>When applying the filter for pipeline executions that have succeeded in the
+         * stage, the operation returns all executions in the current pipeline version
+         * beginning on February 1, 2024.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelineExecutions">AWS
          * API Reference</a></p>
          */

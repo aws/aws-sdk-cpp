@@ -1088,13 +1088,17 @@ namespace AuditManager
         }
 
         /**
-         * <p>Gets a list of all of the Amazon Web Services that you can choose to include
-         * in your assessment. When you <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_CreateAssessment.html">create
-         * an assessment</a>, specify which of these services you want to include to narrow
-         * the assessment's <a
-         * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_Scope.html">scope</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets a list of the Amazon Web Services from which Audit Manager can collect
+         * evidence. </p> <p>Audit Manager defines which Amazon Web Services are in scope
+         * for an assessment. Audit Manager infers this scope by examining the assessment’s
+         * controls and their data sources, and then mapping this information to one or
+         * more of the corresponding Amazon Web Services that are in this list.</p> 
+         * <p>For information about why it's no longer possible to specify services in
+         * scope manually, see <a
+         * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/evidence-collection-issues.html#unable-to-edit-services">I
+         * can't edit the services in scope for my assessment</a> in the
+         * <i>Troubleshooting</i> section of the Audit Manager user guide.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetServicesInScope">AWS
          * API Reference</a></p>
          */
@@ -1281,11 +1285,15 @@ namespace AuditManager
 
         /**
          * <p>Lists the latest analytics data for control domains across all of your active
-         * assessments. </p>  <p>A control domain is listed only if at least one of
-         * the controls within that domain collected evidence on the
-         * <code>lastUpdated</code> date of <code>controlDomainInsights</code>. If this
-         * condition isn’t met, no data is listed for that control domain.</p>
-         * <p><h3>See Also:</h3>   <a
+         * assessments. </p> <p>Audit Manager supports the control domains that are
+         * provided by Amazon Web Services Control Catalog. For information about how to
+         * find a list of available control domains, see <a
+         * href="https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html">
+         * <code>ListDomains</code> </a> in the Amazon Web Services Control Catalog API
+         * Reference.</p>  <p>A control domain is listed only if at least one of the
+         * controls within that domain collected evidence on the <code>lastUpdated</code>
+         * date of <code>controlDomainInsights</code>. If this condition isn’t met, no data
+         * is listed for that control domain.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControlDomainInsights">AWS
          * API Reference</a></p>
          */
@@ -1311,7 +1319,12 @@ namespace AuditManager
 
         /**
          * <p>Lists analytics data for control domains within a specified active
-         * assessment.</p>  <p>A control domain is listed only if at least one of the
+         * assessment.</p> <p>Audit Manager supports the control domains that are provided
+         * by Amazon Web Services Control Catalog. For information about how to find a list
+         * of available control domains, see <a
+         * href="https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html">
+         * <code>ListDomains</code> </a> in the Amazon Web Services Control Catalog API
+         * Reference.</p>  <p>A control domain is listed only if at least one of the
          * controls within that domain collected evidence on the <code>lastUpdated</code>
          * date of <code>controlDomainInsights</code>. If this condition isn’t met, no data
          * is listed for that domain.</p> <p><h3>See Also:</h3>   <a
@@ -1395,8 +1408,8 @@ namespace AuditManager
         }
 
         /**
-         * <p> Returns a list of keywords that are pre-mapped to the specified control data
-         * source. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of keywords that are pre-mapped to the specified control data
+         * source.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListKeywordsForDataSource">AWS
          * API Reference</a></p>
          */

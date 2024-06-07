@@ -39,42 +39,82 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for the control domain. </p>
+     * <p>The unique identifier for the control domain. </p> <p>Audit Manager supports
+     * the control domains that are provided by Amazon Web Services Control Catalog.
+     * For information about how to find a list of available control domains, see <a
+     * href="https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html">
+     * <code>ListDomains</code> </a> in the Amazon Web Services Control Catalog API
+     * Reference.</p>
      */
     inline const Aws::String& GetControlDomainId() const{ return m_controlDomainId; }
 
     /**
-     * <p>The unique identifier for the control domain. </p>
+     * <p>The unique identifier for the control domain. </p> <p>Audit Manager supports
+     * the control domains that are provided by Amazon Web Services Control Catalog.
+     * For information about how to find a list of available control domains, see <a
+     * href="https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html">
+     * <code>ListDomains</code> </a> in the Amazon Web Services Control Catalog API
+     * Reference.</p>
      */
     inline bool ControlDomainIdHasBeenSet() const { return m_controlDomainIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier for the control domain. </p>
+     * <p>The unique identifier for the control domain. </p> <p>Audit Manager supports
+     * the control domains that are provided by Amazon Web Services Control Catalog.
+     * For information about how to find a list of available control domains, see <a
+     * href="https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html">
+     * <code>ListDomains</code> </a> in the Amazon Web Services Control Catalog API
+     * Reference.</p>
      */
     inline void SetControlDomainId(const Aws::String& value) { m_controlDomainIdHasBeenSet = true; m_controlDomainId = value; }
 
     /**
-     * <p>The unique identifier for the control domain. </p>
+     * <p>The unique identifier for the control domain. </p> <p>Audit Manager supports
+     * the control domains that are provided by Amazon Web Services Control Catalog.
+     * For information about how to find a list of available control domains, see <a
+     * href="https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html">
+     * <code>ListDomains</code> </a> in the Amazon Web Services Control Catalog API
+     * Reference.</p>
      */
     inline void SetControlDomainId(Aws::String&& value) { m_controlDomainIdHasBeenSet = true; m_controlDomainId = std::move(value); }
 
     /**
-     * <p>The unique identifier for the control domain. </p>
+     * <p>The unique identifier for the control domain. </p> <p>Audit Manager supports
+     * the control domains that are provided by Amazon Web Services Control Catalog.
+     * For information about how to find a list of available control domains, see <a
+     * href="https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html">
+     * <code>ListDomains</code> </a> in the Amazon Web Services Control Catalog API
+     * Reference.</p>
      */
     inline void SetControlDomainId(const char* value) { m_controlDomainIdHasBeenSet = true; m_controlDomainId.assign(value); }
 
     /**
-     * <p>The unique identifier for the control domain. </p>
+     * <p>The unique identifier for the control domain. </p> <p>Audit Manager supports
+     * the control domains that are provided by Amazon Web Services Control Catalog.
+     * For information about how to find a list of available control domains, see <a
+     * href="https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html">
+     * <code>ListDomains</code> </a> in the Amazon Web Services Control Catalog API
+     * Reference.</p>
      */
     inline ListAssessmentControlInsightsByControlDomainRequest& WithControlDomainId(const Aws::String& value) { SetControlDomainId(value); return *this;}
 
     /**
-     * <p>The unique identifier for the control domain. </p>
+     * <p>The unique identifier for the control domain. </p> <p>Audit Manager supports
+     * the control domains that are provided by Amazon Web Services Control Catalog.
+     * For information about how to find a list of available control domains, see <a
+     * href="https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html">
+     * <code>ListDomains</code> </a> in the Amazon Web Services Control Catalog API
+     * Reference.</p>
      */
     inline ListAssessmentControlInsightsByControlDomainRequest& WithControlDomainId(Aws::String&& value) { SetControlDomainId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the control domain. </p>
+     * <p>The unique identifier for the control domain. </p> <p>Audit Manager supports
+     * the control domains that are provided by Amazon Web Services Control Catalog.
+     * For information about how to find a list of available control domains, see <a
+     * href="https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html">
+     * <code>ListDomains</code> </a> in the Amazon Web Services Control Catalog API
+     * Reference.</p>
      */
     inline ListAssessmentControlInsightsByControlDomainRequest& WithControlDomainId(const char* value) { SetControlDomainId(value); return *this;}
 

@@ -6,7 +6,7 @@
 #pragma once
 #include <aws/auditmanager/AuditManager_EXPORTS.h>
 #include <aws/auditmanager/AuditManagerRequest.h>
-#include <aws/auditmanager/model/SourceType.h>
+#include <aws/auditmanager/model/DataSourceType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -40,34 +40,34 @@ namespace Model
 
 
     /**
-     * <p> The control mapping data source that the keywords apply to. </p>
+     * <p>The control mapping data source that the keywords apply to. </p>
      */
-    inline const SourceType& GetSource() const{ return m_source; }
+    inline const DataSourceType& GetSource() const{ return m_source; }
 
     /**
-     * <p> The control mapping data source that the keywords apply to. </p>
+     * <p>The control mapping data source that the keywords apply to. </p>
      */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
 
     /**
-     * <p> The control mapping data source that the keywords apply to. </p>
+     * <p>The control mapping data source that the keywords apply to. </p>
      */
-    inline void SetSource(const SourceType& value) { m_sourceHasBeenSet = true; m_source = value; }
+    inline void SetSource(const DataSourceType& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
-     * <p> The control mapping data source that the keywords apply to. </p>
+     * <p>The control mapping data source that the keywords apply to. </p>
      */
-    inline void SetSource(SourceType&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
+    inline void SetSource(DataSourceType&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
 
     /**
-     * <p> The control mapping data source that the keywords apply to. </p>
+     * <p>The control mapping data source that the keywords apply to. </p>
      */
-    inline ListKeywordsForDataSourceRequest& WithSource(const SourceType& value) { SetSource(value); return *this;}
+    inline ListKeywordsForDataSourceRequest& WithSource(const DataSourceType& value) { SetSource(value); return *this;}
 
     /**
-     * <p> The control mapping data source that the keywords apply to. </p>
+     * <p>The control mapping data source that the keywords apply to. </p>
      */
-    inline ListKeywordsForDataSourceRequest& WithSource(SourceType&& value) { SetSource(std::move(value)); return *this;}
+    inline ListKeywordsForDataSourceRequest& WithSource(DataSourceType&& value) { SetSource(std::move(value)); return *this;}
 
 
     /**
@@ -137,7 +137,7 @@ namespace Model
 
   private:
 
-    SourceType m_source;
+    DataSourceType m_source;
     bool m_sourceHasBeenSet = false;
 
     Aws::String m_nextToken;

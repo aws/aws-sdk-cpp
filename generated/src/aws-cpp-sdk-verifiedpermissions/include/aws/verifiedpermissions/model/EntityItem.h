@@ -139,42 +139,90 @@ namespace Model
 
 
     /**
-     * <p>The parents in the hierarchy that contains the entity.</p>
+     * <p>The parent entities in the hierarchy that contains the entity. A principal or
+     * resource entity can be defined with at most 99 <i>transitive parents</i> per
+     * authorization request. </p> <p>A transitive parent is an entity in the hierarchy
+     * of entities including all direct parents, and parents of parents. For example, a
+     * user can be a member of 91 groups if one of those groups is a member of eight
+     * groups, for a total of 100: one entity, 91 entity parents, and eight parents of
+     * parents. </p>
      */
     inline const Aws::Vector<EntityIdentifier>& GetParents() const{ return m_parents; }
 
     /**
-     * <p>The parents in the hierarchy that contains the entity.</p>
+     * <p>The parent entities in the hierarchy that contains the entity. A principal or
+     * resource entity can be defined with at most 99 <i>transitive parents</i> per
+     * authorization request. </p> <p>A transitive parent is an entity in the hierarchy
+     * of entities including all direct parents, and parents of parents. For example, a
+     * user can be a member of 91 groups if one of those groups is a member of eight
+     * groups, for a total of 100: one entity, 91 entity parents, and eight parents of
+     * parents. </p>
      */
     inline bool ParentsHasBeenSet() const { return m_parentsHasBeenSet; }
 
     /**
-     * <p>The parents in the hierarchy that contains the entity.</p>
+     * <p>The parent entities in the hierarchy that contains the entity. A principal or
+     * resource entity can be defined with at most 99 <i>transitive parents</i> per
+     * authorization request. </p> <p>A transitive parent is an entity in the hierarchy
+     * of entities including all direct parents, and parents of parents. For example, a
+     * user can be a member of 91 groups if one of those groups is a member of eight
+     * groups, for a total of 100: one entity, 91 entity parents, and eight parents of
+     * parents. </p>
      */
     inline void SetParents(const Aws::Vector<EntityIdentifier>& value) { m_parentsHasBeenSet = true; m_parents = value; }
 
     /**
-     * <p>The parents in the hierarchy that contains the entity.</p>
+     * <p>The parent entities in the hierarchy that contains the entity. A principal or
+     * resource entity can be defined with at most 99 <i>transitive parents</i> per
+     * authorization request. </p> <p>A transitive parent is an entity in the hierarchy
+     * of entities including all direct parents, and parents of parents. For example, a
+     * user can be a member of 91 groups if one of those groups is a member of eight
+     * groups, for a total of 100: one entity, 91 entity parents, and eight parents of
+     * parents. </p>
      */
     inline void SetParents(Aws::Vector<EntityIdentifier>&& value) { m_parentsHasBeenSet = true; m_parents = std::move(value); }
 
     /**
-     * <p>The parents in the hierarchy that contains the entity.</p>
+     * <p>The parent entities in the hierarchy that contains the entity. A principal or
+     * resource entity can be defined with at most 99 <i>transitive parents</i> per
+     * authorization request. </p> <p>A transitive parent is an entity in the hierarchy
+     * of entities including all direct parents, and parents of parents. For example, a
+     * user can be a member of 91 groups if one of those groups is a member of eight
+     * groups, for a total of 100: one entity, 91 entity parents, and eight parents of
+     * parents. </p>
      */
     inline EntityItem& WithParents(const Aws::Vector<EntityIdentifier>& value) { SetParents(value); return *this;}
 
     /**
-     * <p>The parents in the hierarchy that contains the entity.</p>
+     * <p>The parent entities in the hierarchy that contains the entity. A principal or
+     * resource entity can be defined with at most 99 <i>transitive parents</i> per
+     * authorization request. </p> <p>A transitive parent is an entity in the hierarchy
+     * of entities including all direct parents, and parents of parents. For example, a
+     * user can be a member of 91 groups if one of those groups is a member of eight
+     * groups, for a total of 100: one entity, 91 entity parents, and eight parents of
+     * parents. </p>
      */
     inline EntityItem& WithParents(Aws::Vector<EntityIdentifier>&& value) { SetParents(std::move(value)); return *this;}
 
     /**
-     * <p>The parents in the hierarchy that contains the entity.</p>
+     * <p>The parent entities in the hierarchy that contains the entity. A principal or
+     * resource entity can be defined with at most 99 <i>transitive parents</i> per
+     * authorization request. </p> <p>A transitive parent is an entity in the hierarchy
+     * of entities including all direct parents, and parents of parents. For example, a
+     * user can be a member of 91 groups if one of those groups is a member of eight
+     * groups, for a total of 100: one entity, 91 entity parents, and eight parents of
+     * parents. </p>
      */
     inline EntityItem& AddParents(const EntityIdentifier& value) { m_parentsHasBeenSet = true; m_parents.push_back(value); return *this; }
 
     /**
-     * <p>The parents in the hierarchy that contains the entity.</p>
+     * <p>The parent entities in the hierarchy that contains the entity. A principal or
+     * resource entity can be defined with at most 99 <i>transitive parents</i> per
+     * authorization request. </p> <p>A transitive parent is an entity in the hierarchy
+     * of entities including all direct parents, and parents of parents. For example, a
+     * user can be a member of 91 groups if one of those groups is a member of eight
+     * groups, for a total of 100: one entity, 91 entity parents, and eight parents of
+     * parents. </p>
      */
     inline EntityItem& AddParents(EntityIdentifier&& value) { m_parentsHasBeenSet = true; m_parents.push_back(std::move(value)); return *this; }
 

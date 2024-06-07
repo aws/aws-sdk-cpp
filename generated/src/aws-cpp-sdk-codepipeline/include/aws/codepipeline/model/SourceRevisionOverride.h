@@ -28,7 +28,10 @@ namespace Model
    * <p>A list that allows you to specify, or override, the source revision for a
    * pipeline execution that's being started. A source revision is the version with
    * all the changes to your application code, or source artifact, for the pipeline
-   * execution.</p><p><h3>See Also:</h3>   <a
+   * execution.</p>  <p>For the <code>S3_OBJECT_VERSION_ID</code> and
+   * <code>S3_OBJECT_KEY</code> types of source revisions, either of the types can be
+   * used independently, or they can be used together to override the source with a
+   * specific ObjectKey and VersionID.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/SourceRevisionOverride">AWS
    * API Reference</a></p>
    */

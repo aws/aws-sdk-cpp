@@ -28,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p> The control mapping fields that represent the source for evidence
-   * collection, along with related parameters and metadata. This doesn't contain
+   * <p>The mapping attributes that determine the evidence source for a given
+   * control, along with related parameters and metadata. This doesn't contain
    * <code>mappingID</code>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/CreateControlMappingSource">AWS
    * API Reference</a></p>
@@ -134,75 +134,117 @@ namespace Model
 
 
     /**
-     * <p> The setup option for the data source, which reflects if the evidence
-     * collection is automated or manual. </p>
+     * <p>The setup option for the data source. This option reflects if the evidence
+     * collection method is automated or manual. If you don’t provide a value for
+     * <code>sourceSetUpOption</code>, Audit Manager automatically infers and populates
+     * the correct value based on the <code>sourceType</code> that you specify.</p>
      */
     inline const SourceSetUpOption& GetSourceSetUpOption() const{ return m_sourceSetUpOption; }
 
     /**
-     * <p> The setup option for the data source, which reflects if the evidence
-     * collection is automated or manual. </p>
+     * <p>The setup option for the data source. This option reflects if the evidence
+     * collection method is automated or manual. If you don’t provide a value for
+     * <code>sourceSetUpOption</code>, Audit Manager automatically infers and populates
+     * the correct value based on the <code>sourceType</code> that you specify.</p>
      */
     inline bool SourceSetUpOptionHasBeenSet() const { return m_sourceSetUpOptionHasBeenSet; }
 
     /**
-     * <p> The setup option for the data source, which reflects if the evidence
-     * collection is automated or manual. </p>
+     * <p>The setup option for the data source. This option reflects if the evidence
+     * collection method is automated or manual. If you don’t provide a value for
+     * <code>sourceSetUpOption</code>, Audit Manager automatically infers and populates
+     * the correct value based on the <code>sourceType</code> that you specify.</p>
      */
     inline void SetSourceSetUpOption(const SourceSetUpOption& value) { m_sourceSetUpOptionHasBeenSet = true; m_sourceSetUpOption = value; }
 
     /**
-     * <p> The setup option for the data source, which reflects if the evidence
-     * collection is automated or manual. </p>
+     * <p>The setup option for the data source. This option reflects if the evidence
+     * collection method is automated or manual. If you don’t provide a value for
+     * <code>sourceSetUpOption</code>, Audit Manager automatically infers and populates
+     * the correct value based on the <code>sourceType</code> that you specify.</p>
      */
     inline void SetSourceSetUpOption(SourceSetUpOption&& value) { m_sourceSetUpOptionHasBeenSet = true; m_sourceSetUpOption = std::move(value); }
 
     /**
-     * <p> The setup option for the data source, which reflects if the evidence
-     * collection is automated or manual. </p>
+     * <p>The setup option for the data source. This option reflects if the evidence
+     * collection method is automated or manual. If you don’t provide a value for
+     * <code>sourceSetUpOption</code>, Audit Manager automatically infers and populates
+     * the correct value based on the <code>sourceType</code> that you specify.</p>
      */
     inline CreateControlMappingSource& WithSourceSetUpOption(const SourceSetUpOption& value) { SetSourceSetUpOption(value); return *this;}
 
     /**
-     * <p> The setup option for the data source, which reflects if the evidence
-     * collection is automated or manual. </p>
+     * <p>The setup option for the data source. This option reflects if the evidence
+     * collection method is automated or manual. If you don’t provide a value for
+     * <code>sourceSetUpOption</code>, Audit Manager automatically infers and populates
+     * the correct value based on the <code>sourceType</code> that you specify.</p>
      */
     inline CreateControlMappingSource& WithSourceSetUpOption(SourceSetUpOption&& value) { SetSourceSetUpOption(std::move(value)); return *this;}
 
 
     /**
-     * <p> Specifies one of the five types of data sources for evidence collection.
-     * </p>
+     * <p> Specifies which type of data source is used to collect evidence. </p> <ul>
+     * <li> <p>The source can be an individual data source type, such as
+     * <code>AWS_Cloudtrail</code>, <code>AWS_Config</code>,
+     * <code>AWS_Security_Hub</code>, <code>AWS_API_Call</code>, or
+     * <code>MANUAL</code>. </p> </li> <li> <p>The source can also be a managed
+     * grouping of data sources, such as a <code>Core_Control</code> or a
+     * <code>Common_Control</code>.</p> </li> </ul>
      */
     inline const SourceType& GetSourceType() const{ return m_sourceType; }
 
     /**
-     * <p> Specifies one of the five types of data sources for evidence collection.
-     * </p>
+     * <p> Specifies which type of data source is used to collect evidence. </p> <ul>
+     * <li> <p>The source can be an individual data source type, such as
+     * <code>AWS_Cloudtrail</code>, <code>AWS_Config</code>,
+     * <code>AWS_Security_Hub</code>, <code>AWS_API_Call</code>, or
+     * <code>MANUAL</code>. </p> </li> <li> <p>The source can also be a managed
+     * grouping of data sources, such as a <code>Core_Control</code> or a
+     * <code>Common_Control</code>.</p> </li> </ul>
      */
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
 
     /**
-     * <p> Specifies one of the five types of data sources for evidence collection.
-     * </p>
+     * <p> Specifies which type of data source is used to collect evidence. </p> <ul>
+     * <li> <p>The source can be an individual data source type, such as
+     * <code>AWS_Cloudtrail</code>, <code>AWS_Config</code>,
+     * <code>AWS_Security_Hub</code>, <code>AWS_API_Call</code>, or
+     * <code>MANUAL</code>. </p> </li> <li> <p>The source can also be a managed
+     * grouping of data sources, such as a <code>Core_Control</code> or a
+     * <code>Common_Control</code>.</p> </li> </ul>
      */
     inline void SetSourceType(const SourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
-     * <p> Specifies one of the five types of data sources for evidence collection.
-     * </p>
+     * <p> Specifies which type of data source is used to collect evidence. </p> <ul>
+     * <li> <p>The source can be an individual data source type, such as
+     * <code>AWS_Cloudtrail</code>, <code>AWS_Config</code>,
+     * <code>AWS_Security_Hub</code>, <code>AWS_API_Call</code>, or
+     * <code>MANUAL</code>. </p> </li> <li> <p>The source can also be a managed
+     * grouping of data sources, such as a <code>Core_Control</code> or a
+     * <code>Common_Control</code>.</p> </li> </ul>
      */
     inline void SetSourceType(SourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
 
     /**
-     * <p> Specifies one of the five types of data sources for evidence collection.
-     * </p>
+     * <p> Specifies which type of data source is used to collect evidence. </p> <ul>
+     * <li> <p>The source can be an individual data source type, such as
+     * <code>AWS_Cloudtrail</code>, <code>AWS_Config</code>,
+     * <code>AWS_Security_Hub</code>, <code>AWS_API_Call</code>, or
+     * <code>MANUAL</code>. </p> </li> <li> <p>The source can also be a managed
+     * grouping of data sources, such as a <code>Core_Control</code> or a
+     * <code>Common_Control</code>.</p> </li> </ul>
      */
     inline CreateControlMappingSource& WithSourceType(const SourceType& value) { SetSourceType(value); return *this;}
 
     /**
-     * <p> Specifies one of the five types of data sources for evidence collection.
-     * </p>
+     * <p> Specifies which type of data source is used to collect evidence. </p> <ul>
+     * <li> <p>The source can be an individual data source type, such as
+     * <code>AWS_Cloudtrail</code>, <code>AWS_Config</code>,
+     * <code>AWS_Security_Hub</code>, <code>AWS_API_Call</code>, or
+     * <code>MANUAL</code>. </p> </li> <li> <p>The source can also be a managed
+     * grouping of data sources, such as a <code>Core_Control</code> or a
+     * <code>Common_Control</code>.</p> </li> </ul>
      */
     inline CreateControlMappingSource& WithSourceType(SourceType&& value) { SetSourceType(std::move(value)); return *this;}
 

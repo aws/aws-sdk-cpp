@@ -12,6 +12,7 @@
 #include <aws/sagemaker/model/ProductionVariantServerlessConfig.h>
 #include <aws/sagemaker/model/ProductionVariantManagedInstanceScaling.h>
 #include <aws/sagemaker/model/ProductionVariantRoutingConfig.h>
+#include <aws/sagemaker/model/ProductionVariantInferenceAmiVersion.h>
 #include <utility>
 
 namespace Aws
@@ -561,6 +562,73 @@ namespace Model
      */
     inline ProductionVariant& WithRoutingConfig(ProductionVariantRoutingConfig&& value) { SetRoutingConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies an option from a collection of preconfigured Amazon Machine Image
+     * (AMI) images. Each image is configured by Amazon Web Services with a set of
+     * software and driver versions. Amazon Web Services optimizes these configurations
+     * for different machine learning workloads.</p> <p>By selecting an AMI version,
+     * you can ensure that your inference environment is compatible with specific
+     * software requirements, such as CUDA driver versions, Linux kernel versions, or
+     * Amazon Web Services Neuron driver versions.</p>
+     */
+    inline const ProductionVariantInferenceAmiVersion& GetInferenceAmiVersion() const{ return m_inferenceAmiVersion; }
+
+    /**
+     * <p>Specifies an option from a collection of preconfigured Amazon Machine Image
+     * (AMI) images. Each image is configured by Amazon Web Services with a set of
+     * software and driver versions. Amazon Web Services optimizes these configurations
+     * for different machine learning workloads.</p> <p>By selecting an AMI version,
+     * you can ensure that your inference environment is compatible with specific
+     * software requirements, such as CUDA driver versions, Linux kernel versions, or
+     * Amazon Web Services Neuron driver versions.</p>
+     */
+    inline bool InferenceAmiVersionHasBeenSet() const { return m_inferenceAmiVersionHasBeenSet; }
+
+    /**
+     * <p>Specifies an option from a collection of preconfigured Amazon Machine Image
+     * (AMI) images. Each image is configured by Amazon Web Services with a set of
+     * software and driver versions. Amazon Web Services optimizes these configurations
+     * for different machine learning workloads.</p> <p>By selecting an AMI version,
+     * you can ensure that your inference environment is compatible with specific
+     * software requirements, such as CUDA driver versions, Linux kernel versions, or
+     * Amazon Web Services Neuron driver versions.</p>
+     */
+    inline void SetInferenceAmiVersion(const ProductionVariantInferenceAmiVersion& value) { m_inferenceAmiVersionHasBeenSet = true; m_inferenceAmiVersion = value; }
+
+    /**
+     * <p>Specifies an option from a collection of preconfigured Amazon Machine Image
+     * (AMI) images. Each image is configured by Amazon Web Services with a set of
+     * software and driver versions. Amazon Web Services optimizes these configurations
+     * for different machine learning workloads.</p> <p>By selecting an AMI version,
+     * you can ensure that your inference environment is compatible with specific
+     * software requirements, such as CUDA driver versions, Linux kernel versions, or
+     * Amazon Web Services Neuron driver versions.</p>
+     */
+    inline void SetInferenceAmiVersion(ProductionVariantInferenceAmiVersion&& value) { m_inferenceAmiVersionHasBeenSet = true; m_inferenceAmiVersion = std::move(value); }
+
+    /**
+     * <p>Specifies an option from a collection of preconfigured Amazon Machine Image
+     * (AMI) images. Each image is configured by Amazon Web Services with a set of
+     * software and driver versions. Amazon Web Services optimizes these configurations
+     * for different machine learning workloads.</p> <p>By selecting an AMI version,
+     * you can ensure that your inference environment is compatible with specific
+     * software requirements, such as CUDA driver versions, Linux kernel versions, or
+     * Amazon Web Services Neuron driver versions.</p>
+     */
+    inline ProductionVariant& WithInferenceAmiVersion(const ProductionVariantInferenceAmiVersion& value) { SetInferenceAmiVersion(value); return *this;}
+
+    /**
+     * <p>Specifies an option from a collection of preconfigured Amazon Machine Image
+     * (AMI) images. Each image is configured by Amazon Web Services with a set of
+     * software and driver versions. Amazon Web Services optimizes these configurations
+     * for different machine learning workloads.</p> <p>By selecting an AMI version,
+     * you can ensure that your inference environment is compatible with specific
+     * software requirements, such as CUDA driver versions, Linux kernel versions, or
+     * Amazon Web Services Neuron driver versions.</p>
+     */
+    inline ProductionVariant& WithInferenceAmiVersion(ProductionVariantInferenceAmiVersion&& value) { SetInferenceAmiVersion(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_variantName;
@@ -604,6 +672,9 @@ namespace Model
 
     ProductionVariantRoutingConfig m_routingConfig;
     bool m_routingConfigHasBeenSet = false;
+
+    ProductionVariantInferenceAmiVersion m_inferenceAmiVersion;
+    bool m_inferenceAmiVersionHasBeenSet = false;
   };
 
 } // namespace Model

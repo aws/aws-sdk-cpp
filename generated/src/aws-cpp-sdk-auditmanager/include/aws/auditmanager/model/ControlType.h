@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     Standard,
-    Custom
+    Custom,
+    Core
   };
 
 namespace ControlTypeMapper
