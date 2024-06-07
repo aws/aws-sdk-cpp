@@ -1158,8 +1158,11 @@ namespace Model
      * <code>ModelCard</code>. The <code>ModelPackageModelCard</code> schema does not
      * include <code>model_package_details</code>, and <code>model_overview</code> is
      * composed of the <code>model_creator</code> and <code>model_artifact</code>
-     * properties. For more information about the model card associated with the model
-     * package, see <a
+     * properties. For more information about the model package model card schema, see
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html#model-card-schema">Model
+     * package model card schema</a>. For more information about the model card
+     * associated with the model package, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html">View
      * the Details of a Model Version</a>.</p>
      */
@@ -1172,8 +1175,11 @@ namespace Model
      * <code>ModelCard</code>. The <code>ModelPackageModelCard</code> schema does not
      * include <code>model_package_details</code>, and <code>model_overview</code> is
      * composed of the <code>model_creator</code> and <code>model_artifact</code>
-     * properties. For more information about the model card associated with the model
-     * package, see <a
+     * properties. For more information about the model package model card schema, see
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html#model-card-schema">Model
+     * package model card schema</a>. For more information about the model card
+     * associated with the model package, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html">View
      * the Details of a Model Version</a>.</p>
      */
@@ -1186,8 +1192,11 @@ namespace Model
      * <code>ModelCard</code>. The <code>ModelPackageModelCard</code> schema does not
      * include <code>model_package_details</code>, and <code>model_overview</code> is
      * composed of the <code>model_creator</code> and <code>model_artifact</code>
-     * properties. For more information about the model card associated with the model
-     * package, see <a
+     * properties. For more information about the model package model card schema, see
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html#model-card-schema">Model
+     * package model card schema</a>. For more information about the model card
+     * associated with the model package, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html">View
      * the Details of a Model Version</a>.</p>
      */
@@ -1200,8 +1209,11 @@ namespace Model
      * <code>ModelCard</code>. The <code>ModelPackageModelCard</code> schema does not
      * include <code>model_package_details</code>, and <code>model_overview</code> is
      * composed of the <code>model_creator</code> and <code>model_artifact</code>
-     * properties. For more information about the model card associated with the model
-     * package, see <a
+     * properties. For more information about the model package model card schema, see
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html#model-card-schema">Model
+     * package model card schema</a>. For more information about the model card
+     * associated with the model package, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html">View
      * the Details of a Model Version</a>.</p>
      */
@@ -1214,8 +1226,11 @@ namespace Model
      * <code>ModelCard</code>. The <code>ModelPackageModelCard</code> schema does not
      * include <code>model_package_details</code>, and <code>model_overview</code> is
      * composed of the <code>model_creator</code> and <code>model_artifact</code>
-     * properties. For more information about the model card associated with the model
-     * package, see <a
+     * properties. For more information about the model package model card schema, see
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html#model-card-schema">Model
+     * package model card schema</a>. For more information about the model card
+     * associated with the model package, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html">View
      * the Details of a Model Version</a>.</p>
      */
@@ -1228,8 +1243,11 @@ namespace Model
      * <code>ModelCard</code>. The <code>ModelPackageModelCard</code> schema does not
      * include <code>model_package_details</code>, and <code>model_overview</code> is
      * composed of the <code>model_creator</code> and <code>model_artifact</code>
-     * properties. For more information about the model card associated with the model
-     * package, see <a
+     * properties. For more information about the model package model card schema, see
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html#model-card-schema">Model
+     * package model card schema</a>. For more information about the model card
+     * associated with the model package, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html">View
      * the Details of a Model Version</a>.</p>
      */

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/verifiedpermissions/VerifiedPermissions_EXPORTS.h>
 #include <aws/verifiedpermissions/model/CognitoUserPoolConfiguration.h>
+#include <aws/verifiedpermissions/model/OpenIdConnectConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -25,11 +26,7 @@ namespace Model
 
   /**
    * <p>Contains configuration information used when creating a new identity
-   * source.</p>  <p>At this time, the only valid member of this structure is a
-   * Amazon Cognito user pool configuration.</p> <p>Specifies a
-   * <code>userPoolArn</code>, a <code>groupConfiguration</code>, and a
-   * <code>ClientId</code>.</p>  <p>This data type is used as a request
-   * parameter for the <a
+   * source.</p> <p>This data type is used as a request parameter for the <a
    * href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_CreateIdentitySource.html">CreateIdentitySource</a>
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/Configuration">AWS
@@ -122,10 +119,74 @@ namespace Model
      */
     inline Configuration& WithCognitoUserPoolConfiguration(CognitoUserPoolConfiguration&& value) { SetCognitoUserPoolConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Contains configuration details of an OpenID Connect (OIDC) identity provider,
+     * or identity source, that Verified Permissions can use to generate entities from
+     * authenticated identities. It specifies the issuer URL, token type that you want
+     * to use, and policy store entity details.</p>
+     * <p>Example:<code>"configuration":{"openIdConnectConfiguration":{"issuer":"https://auth.example.com","tokenSelection":{"accessTokenOnly":{"audiences":["https://myapp.example.com","https://myapp2.example.com"],"principalIdClaim":"sub"}},"entityIdPrefix":"MyOIDCProvider","groupConfiguration":{"groupClaim":"groups","groupEntityType":"MyCorp::UserGroup"}}}</code>
+     * </p>
+     */
+    inline const OpenIdConnectConfiguration& GetOpenIdConnectConfiguration() const{ return m_openIdConnectConfiguration; }
+
+    /**
+     * <p>Contains configuration details of an OpenID Connect (OIDC) identity provider,
+     * or identity source, that Verified Permissions can use to generate entities from
+     * authenticated identities. It specifies the issuer URL, token type that you want
+     * to use, and policy store entity details.</p>
+     * <p>Example:<code>"configuration":{"openIdConnectConfiguration":{"issuer":"https://auth.example.com","tokenSelection":{"accessTokenOnly":{"audiences":["https://myapp.example.com","https://myapp2.example.com"],"principalIdClaim":"sub"}},"entityIdPrefix":"MyOIDCProvider","groupConfiguration":{"groupClaim":"groups","groupEntityType":"MyCorp::UserGroup"}}}</code>
+     * </p>
+     */
+    inline bool OpenIdConnectConfigurationHasBeenSet() const { return m_openIdConnectConfigurationHasBeenSet; }
+
+    /**
+     * <p>Contains configuration details of an OpenID Connect (OIDC) identity provider,
+     * or identity source, that Verified Permissions can use to generate entities from
+     * authenticated identities. It specifies the issuer URL, token type that you want
+     * to use, and policy store entity details.</p>
+     * <p>Example:<code>"configuration":{"openIdConnectConfiguration":{"issuer":"https://auth.example.com","tokenSelection":{"accessTokenOnly":{"audiences":["https://myapp.example.com","https://myapp2.example.com"],"principalIdClaim":"sub"}},"entityIdPrefix":"MyOIDCProvider","groupConfiguration":{"groupClaim":"groups","groupEntityType":"MyCorp::UserGroup"}}}</code>
+     * </p>
+     */
+    inline void SetOpenIdConnectConfiguration(const OpenIdConnectConfiguration& value) { m_openIdConnectConfigurationHasBeenSet = true; m_openIdConnectConfiguration = value; }
+
+    /**
+     * <p>Contains configuration details of an OpenID Connect (OIDC) identity provider,
+     * or identity source, that Verified Permissions can use to generate entities from
+     * authenticated identities. It specifies the issuer URL, token type that you want
+     * to use, and policy store entity details.</p>
+     * <p>Example:<code>"configuration":{"openIdConnectConfiguration":{"issuer":"https://auth.example.com","tokenSelection":{"accessTokenOnly":{"audiences":["https://myapp.example.com","https://myapp2.example.com"],"principalIdClaim":"sub"}},"entityIdPrefix":"MyOIDCProvider","groupConfiguration":{"groupClaim":"groups","groupEntityType":"MyCorp::UserGroup"}}}</code>
+     * </p>
+     */
+    inline void SetOpenIdConnectConfiguration(OpenIdConnectConfiguration&& value) { m_openIdConnectConfigurationHasBeenSet = true; m_openIdConnectConfiguration = std::move(value); }
+
+    /**
+     * <p>Contains configuration details of an OpenID Connect (OIDC) identity provider,
+     * or identity source, that Verified Permissions can use to generate entities from
+     * authenticated identities. It specifies the issuer URL, token type that you want
+     * to use, and policy store entity details.</p>
+     * <p>Example:<code>"configuration":{"openIdConnectConfiguration":{"issuer":"https://auth.example.com","tokenSelection":{"accessTokenOnly":{"audiences":["https://myapp.example.com","https://myapp2.example.com"],"principalIdClaim":"sub"}},"entityIdPrefix":"MyOIDCProvider","groupConfiguration":{"groupClaim":"groups","groupEntityType":"MyCorp::UserGroup"}}}</code>
+     * </p>
+     */
+    inline Configuration& WithOpenIdConnectConfiguration(const OpenIdConnectConfiguration& value) { SetOpenIdConnectConfiguration(value); return *this;}
+
+    /**
+     * <p>Contains configuration details of an OpenID Connect (OIDC) identity provider,
+     * or identity source, that Verified Permissions can use to generate entities from
+     * authenticated identities. It specifies the issuer URL, token type that you want
+     * to use, and policy store entity details.</p>
+     * <p>Example:<code>"configuration":{"openIdConnectConfiguration":{"issuer":"https://auth.example.com","tokenSelection":{"accessTokenOnly":{"audiences":["https://myapp.example.com","https://myapp2.example.com"],"principalIdClaim":"sub"}},"entityIdPrefix":"MyOIDCProvider","groupConfiguration":{"groupClaim":"groups","groupEntityType":"MyCorp::UserGroup"}}}</code>
+     * </p>
+     */
+    inline Configuration& WithOpenIdConnectConfiguration(OpenIdConnectConfiguration&& value) { SetOpenIdConnectConfiguration(std::move(value)); return *this;}
+
   private:
 
     CognitoUserPoolConfiguration m_cognitoUserPoolConfiguration;
     bool m_cognitoUserPoolConfigurationHasBeenSet = false;
+
+    OpenIdConnectConfiguration m_openIdConnectConfiguration;
+    bool m_openIdConnectConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -40,7 +40,9 @@ ProductionVariant::ProductionVariant() :
     m_enableSSMAccess(false),
     m_enableSSMAccessHasBeenSet(false),
     m_managedInstanceScalingHasBeenSet(false),
-    m_routingConfigHasBeenSet(false)
+    m_routingConfigHasBeenSet(false),
+    m_inferenceAmiVersion(ProductionVariantInferenceAmiVersion::NOT_SET),
+    m_inferenceAmiVersionHasBeenSet(false)
 {
 }
 
@@ -66,7 +68,9 @@ ProductionVariant::ProductionVariant(JsonView jsonValue) :
     m_enableSSMAccess(false),
     m_enableSSMAccessHasBeenSet(false),
     m_managedInstanceScalingHasBeenSet(false),
-    m_routingConfigHasBeenSet(false)
+    m_routingConfigHasBeenSet(false),
+    m_inferenceAmiVersion(ProductionVariantInferenceAmiVersion::NOT_SET),
+    m_inferenceAmiVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -171,6 +175,13 @@ ProductionVariant& ProductionVariant::operator =(JsonView jsonValue)
     m_routingConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InferenceAmiVersion"))
+  {
+    m_inferenceAmiVersion = ProductionVariantInferenceAmiVersionMapper::GetProductionVariantInferenceAmiVersionForName(jsonValue.GetString("InferenceAmiVersion"));
+
+    m_inferenceAmiVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -258,6 +269,11 @@ JsonValue ProductionVariant::Jsonize() const
   {
    payload.WithObject("RoutingConfig", m_routingConfig.Jsonize());
 
+  }
+
+  if(m_inferenceAmiVersionHasBeenSet)
+  {
+   payload.WithString("InferenceAmiVersion", ProductionVariantInferenceAmiVersionMapper::GetNameForProductionVariantInferenceAmiVersion(m_inferenceAmiVersion));
   }
 
   return payload;

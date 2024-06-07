@@ -19,12 +19,14 @@ namespace Model
 {
 
 Configuration::Configuration() : 
-    m_cognitoUserPoolConfigurationHasBeenSet(false)
+    m_cognitoUserPoolConfigurationHasBeenSet(false),
+    m_openIdConnectConfigurationHasBeenSet(false)
 {
 }
 
 Configuration::Configuration(JsonView jsonValue) : 
-    m_cognitoUserPoolConfigurationHasBeenSet(false)
+    m_cognitoUserPoolConfigurationHasBeenSet(false),
+    m_openIdConnectConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ Configuration& Configuration::operator =(JsonView jsonValue)
     m_cognitoUserPoolConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("openIdConnectConfiguration"))
+  {
+    m_openIdConnectConfiguration = jsonValue.GetObject("openIdConnectConfiguration");
+
+    m_openIdConnectConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue Configuration::Jsonize() const
   if(m_cognitoUserPoolConfigurationHasBeenSet)
   {
    payload.WithObject("cognitoUserPoolConfiguration", m_cognitoUserPoolConfiguration.Jsonize());
+
+  }
+
+  if(m_openIdConnectConfigurationHasBeenSet)
+  {
+   payload.WithObject("openIdConnectConfiguration", m_openIdConnectConfiguration.Jsonize());
 
   }
 

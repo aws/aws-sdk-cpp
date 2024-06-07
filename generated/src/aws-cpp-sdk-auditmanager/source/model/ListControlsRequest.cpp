@@ -20,7 +20,8 @@ ListControlsRequest::ListControlsRequest() :
     m_controlTypeHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_controlCatalogIdHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,13 @@ void ListControlsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_maxResults;
       uri.AddQueryStringParameter("maxResults", ss.str());
+      ss.str("");
+    }
+
+    if(m_controlCatalogIdHasBeenSet)
+    {
+      ss << m_controlCatalogId;
+      uri.AddQueryStringParameter("controlCatalogId", ss.str());
       ss.str("");
     }
 

@@ -22,6 +22,7 @@ namespace Aws
 
         static const int Standard_HASH = HashingUtils::HashString("Standard");
         static const int Custom_HASH = HashingUtils::HashString("Custom");
+        static const int Core_HASH = HashingUtils::HashString("Core");
 
 
         ControlType GetControlTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == Custom_HASH)
           {
             return ControlType::Custom;
+          }
+          else if (hashCode == Core_HASH)
+          {
+            return ControlType::Core;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "Standard";
           case ControlType::Custom:
             return "Custom";
+          case ControlType::Core:
+            return "Core";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

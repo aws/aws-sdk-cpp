@@ -31,8 +31,11 @@ namespace Model
    * <code>ModelCard</code>. The <code>ModelPackageModelCard</code> schema does not
    * include <code>model_package_details</code>, and <code>model_overview</code> is
    * composed of the <code>model_creator</code> and <code>model_artifact</code>
-   * properties. For more information about the model card associated with the model
-   * package, see <a
+   * properties. For more information about the model package model card schema, see
+   * <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html#model-card-schema">Model
+   * package model card schema</a>. For more information about the model card
+   * associated with the model package, see <a
    * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html">View
    * the Details of a Model Version</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ModelPackageModelCard">AWS
@@ -48,42 +51,66 @@ namespace Model
 
 
     /**
-     * <p>The content of the model card.</p>
+     * <p>The content of the model card. The content must follow the schema described
+     * in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html#model-card-schema">Model
+     * Package Model Card Schema</a>.</p>
      */
     inline const Aws::String& GetModelCardContent() const{ return m_modelCardContent; }
 
     /**
-     * <p>The content of the model card.</p>
+     * <p>The content of the model card. The content must follow the schema described
+     * in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html#model-card-schema">Model
+     * Package Model Card Schema</a>.</p>
      */
     inline bool ModelCardContentHasBeenSet() const { return m_modelCardContentHasBeenSet; }
 
     /**
-     * <p>The content of the model card.</p>
+     * <p>The content of the model card. The content must follow the schema described
+     * in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html#model-card-schema">Model
+     * Package Model Card Schema</a>.</p>
      */
     inline void SetModelCardContent(const Aws::String& value) { m_modelCardContentHasBeenSet = true; m_modelCardContent = value; }
 
     /**
-     * <p>The content of the model card.</p>
+     * <p>The content of the model card. The content must follow the schema described
+     * in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html#model-card-schema">Model
+     * Package Model Card Schema</a>.</p>
      */
     inline void SetModelCardContent(Aws::String&& value) { m_modelCardContentHasBeenSet = true; m_modelCardContent = std::move(value); }
 
     /**
-     * <p>The content of the model card.</p>
+     * <p>The content of the model card. The content must follow the schema described
+     * in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html#model-card-schema">Model
+     * Package Model Card Schema</a>.</p>
      */
     inline void SetModelCardContent(const char* value) { m_modelCardContentHasBeenSet = true; m_modelCardContent.assign(value); }
 
     /**
-     * <p>The content of the model card.</p>
+     * <p>The content of the model card. The content must follow the schema described
+     * in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html#model-card-schema">Model
+     * Package Model Card Schema</a>.</p>
      */
     inline ModelPackageModelCard& WithModelCardContent(const Aws::String& value) { SetModelCardContent(value); return *this;}
 
     /**
-     * <p>The content of the model card.</p>
+     * <p>The content of the model card. The content must follow the schema described
+     * in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html#model-card-schema">Model
+     * Package Model Card Schema</a>.</p>
      */
     inline ModelPackageModelCard& WithModelCardContent(Aws::String&& value) { SetModelCardContent(std::move(value)); return *this;}
 
     /**
-     * <p>The content of the model card.</p>
+     * <p>The content of the model card. The content must follow the schema described
+     * in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html#model-card-schema">Model
+     * Package Model Card Schema</a>.</p>
      */
     inline ModelPackageModelCard& WithModelCardContent(const char* value) { SetModelCardContent(value); return *this;}
 

@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/auditmanager/model/ControlState.h>
 #include <aws/auditmanager/model/ControlMappingSource.h>
 #include <utility>
 
@@ -667,6 +668,55 @@ namespace Model
      */
     inline Control& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The state of the control. The <code>END_OF_SUPPORT</code> state is applicable
+     * to standard controls only. This state indicates that the standard control can
+     * still be used to collect evidence, but Audit Manager is no longer updating or
+     * maintaining that control.</p>
+     */
+    inline const ControlState& GetState() const{ return m_state; }
+
+    /**
+     * <p>The state of the control. The <code>END_OF_SUPPORT</code> state is applicable
+     * to standard controls only. This state indicates that the standard control can
+     * still be used to collect evidence, but Audit Manager is no longer updating or
+     * maintaining that control.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The state of the control. The <code>END_OF_SUPPORT</code> state is applicable
+     * to standard controls only. This state indicates that the standard control can
+     * still be used to collect evidence, but Audit Manager is no longer updating or
+     * maintaining that control.</p>
+     */
+    inline void SetState(const ControlState& value) { m_stateHasBeenSet = true; m_state = value; }
+
+    /**
+     * <p>The state of the control. The <code>END_OF_SUPPORT</code> state is applicable
+     * to standard controls only. This state indicates that the standard control can
+     * still be used to collect evidence, but Audit Manager is no longer updating or
+     * maintaining that control.</p>
+     */
+    inline void SetState(ControlState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
+
+    /**
+     * <p>The state of the control. The <code>END_OF_SUPPORT</code> state is applicable
+     * to standard controls only. This state indicates that the standard control can
+     * still be used to collect evidence, but Audit Manager is no longer updating or
+     * maintaining that control.</p>
+     */
+    inline Control& WithState(const ControlState& value) { SetState(value); return *this;}
+
+    /**
+     * <p>The state of the control. The <code>END_OF_SUPPORT</code> state is applicable
+     * to standard controls only. This state indicates that the standard control can
+     * still be used to collect evidence, but Audit Manager is no longer updating or
+     * maintaining that control.</p>
+     */
+    inline Control& WithState(ControlState&& value) { SetState(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -713,6 +763,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    ControlState m_state;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model
