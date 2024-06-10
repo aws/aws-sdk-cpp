@@ -1519,10 +1519,13 @@ namespace ECS
          * <code>SIGTERM</code> value and a default 30-second timeout, after which the
          * <code>SIGKILL</code> value is sent and the containers are forcibly stopped. If
          * the container handles the <code>SIGTERM</code> value gracefully and exits within
-         * 30 seconds from receiving it, no <code>SIGKILL</code> value is sent.</p> 
-         * <p>The default 30-second timeout can be configured on the Amazon ECS container
-         * agent with the <code>ECS_CONTAINER_STOP_TIMEOUT</code> variable. For more
-         * information, see <a
+         * 30 seconds from receiving it, no <code>SIGKILL</code> value is sent.</p> <p>For
+         * Windows containers, POSIX signals do not work and runtime stops the container by
+         * sending a <code>CTRL_SHUTDOWN_EVENT</code>. For more information, see <a
+         * href="https://github.com/moby/moby/issues/25982">Unable to react to graceful
+         * shutdown of (Windows) container #25982</a> on GitHub.</p>  <p>The default
+         * 30-second timeout can be configured on the Amazon ECS container agent with the
+         * <code>ECS_CONTAINER_STOP_TIMEOUT</code> variable. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
          * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
          * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a

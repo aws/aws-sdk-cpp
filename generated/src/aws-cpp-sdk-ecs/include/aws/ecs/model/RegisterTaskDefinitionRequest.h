@@ -1909,49 +1909,37 @@ namespace Model
 
     /**
      * <p>The operating system that your tasks definitions run on. A platform family is
-     * specified only for tasks using the Fargate launch type. </p> <p>When you specify
-     * a task definition in a service, this value must match the
-     * <code>runtimePlatform</code> value of the service.</p>
+     * specified only for tasks using the Fargate launch type. </p>
      */
     inline const RuntimePlatform& GetRuntimePlatform() const{ return m_runtimePlatform; }
 
     /**
      * <p>The operating system that your tasks definitions run on. A platform family is
-     * specified only for tasks using the Fargate launch type. </p> <p>When you specify
-     * a task definition in a service, this value must match the
-     * <code>runtimePlatform</code> value of the service.</p>
+     * specified only for tasks using the Fargate launch type. </p>
      */
     inline bool RuntimePlatformHasBeenSet() const { return m_runtimePlatformHasBeenSet; }
 
     /**
      * <p>The operating system that your tasks definitions run on. A platform family is
-     * specified only for tasks using the Fargate launch type. </p> <p>When you specify
-     * a task definition in a service, this value must match the
-     * <code>runtimePlatform</code> value of the service.</p>
+     * specified only for tasks using the Fargate launch type. </p>
      */
     inline void SetRuntimePlatform(const RuntimePlatform& value) { m_runtimePlatformHasBeenSet = true; m_runtimePlatform = value; }
 
     /**
      * <p>The operating system that your tasks definitions run on. A platform family is
-     * specified only for tasks using the Fargate launch type. </p> <p>When you specify
-     * a task definition in a service, this value must match the
-     * <code>runtimePlatform</code> value of the service.</p>
+     * specified only for tasks using the Fargate launch type. </p>
      */
     inline void SetRuntimePlatform(RuntimePlatform&& value) { m_runtimePlatformHasBeenSet = true; m_runtimePlatform = std::move(value); }
 
     /**
      * <p>The operating system that your tasks definitions run on. A platform family is
-     * specified only for tasks using the Fargate launch type. </p> <p>When you specify
-     * a task definition in a service, this value must match the
-     * <code>runtimePlatform</code> value of the service.</p>
+     * specified only for tasks using the Fargate launch type. </p>
      */
     inline RegisterTaskDefinitionRequest& WithRuntimePlatform(const RuntimePlatform& value) { SetRuntimePlatform(value); return *this;}
 
     /**
      * <p>The operating system that your tasks definitions run on. A platform family is
-     * specified only for tasks using the Fargate launch type. </p> <p>When you specify
-     * a task definition in a service, this value must match the
-     * <code>runtimePlatform</code> value of the service.</p>
+     * specified only for tasks using the Fargate launch type. </p>
      */
     inline RegisterTaskDefinitionRequest& WithRuntimePlatform(RuntimePlatform&& value) { SetRuntimePlatform(std::move(value)); return *this;}
 

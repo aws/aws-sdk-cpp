@@ -12,6 +12,7 @@
 #include <aws/ecs/model/NetworkConfiguration.h>
 #include <aws/ecs/model/DeploymentRolloutState.h>
 #include <aws/ecs/model/ServiceConnectConfiguration.h>
+#include <aws/ecs/model/DeploymentEphemeralStorage.h>
 #include <aws/ecs/model/CapacityProviderStrategyItem.h>
 #include <aws/ecs/model/ServiceConnectServiceResource.h>
 #include <aws/ecs/model/ServiceVolumeConfiguration.h>
@@ -1064,6 +1065,37 @@ namespace Model
      */
     inline Deployment& AddVolumeConfigurations(ServiceVolumeConfiguration&& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The Fargate ephemeral storage settings for the deployment.</p>
+     */
+    inline const DeploymentEphemeralStorage& GetFargateEphemeralStorage() const{ return m_fargateEphemeralStorage; }
+
+    /**
+     * <p>The Fargate ephemeral storage settings for the deployment.</p>
+     */
+    inline bool FargateEphemeralStorageHasBeenSet() const { return m_fargateEphemeralStorageHasBeenSet; }
+
+    /**
+     * <p>The Fargate ephemeral storage settings for the deployment.</p>
+     */
+    inline void SetFargateEphemeralStorage(const DeploymentEphemeralStorage& value) { m_fargateEphemeralStorageHasBeenSet = true; m_fargateEphemeralStorage = value; }
+
+    /**
+     * <p>The Fargate ephemeral storage settings for the deployment.</p>
+     */
+    inline void SetFargateEphemeralStorage(DeploymentEphemeralStorage&& value) { m_fargateEphemeralStorageHasBeenSet = true; m_fargateEphemeralStorage = std::move(value); }
+
+    /**
+     * <p>The Fargate ephemeral storage settings for the deployment.</p>
+     */
+    inline Deployment& WithFargateEphemeralStorage(const DeploymentEphemeralStorage& value) { SetFargateEphemeralStorage(value); return *this;}
+
+    /**
+     * <p>The Fargate ephemeral storage settings for the deployment.</p>
+     */
+    inline Deployment& WithFargateEphemeralStorage(DeploymentEphemeralStorage&& value) { SetFargateEphemeralStorage(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -1122,6 +1154,9 @@ namespace Model
 
     Aws::Vector<ServiceVolumeConfiguration> m_volumeConfigurations;
     bool m_volumeConfigurationsHasBeenSet = false;
+
+    DeploymentEphemeralStorage m_fargateEphemeralStorage;
+    bool m_fargateEphemeralStorageHasBeenSet = false;
   };
 
 } // namespace Model

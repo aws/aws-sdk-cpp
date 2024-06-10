@@ -12,6 +12,7 @@
 #include <aws/ecs/model/NetworkConfiguration.h>
 #include <aws/ecs/model/Scale.h>
 #include <aws/ecs/model/StabilityStatus.h>
+#include <aws/ecs/model/DeploymentEphemeralStorage.h>
 #include <aws/ecs/model/CapacityProviderStrategyItem.h>
 #include <aws/ecs/model/LoadBalancer.h>
 #include <aws/ecs/model/ServiceRegistry.h>
@@ -1341,6 +1342,37 @@ namespace Model
      */
     inline TaskSet& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The Fargate ephemeral storage settings for the task set.</p>
+     */
+    inline const DeploymentEphemeralStorage& GetFargateEphemeralStorage() const{ return m_fargateEphemeralStorage; }
+
+    /**
+     * <p>The Fargate ephemeral storage settings for the task set.</p>
+     */
+    inline bool FargateEphemeralStorageHasBeenSet() const { return m_fargateEphemeralStorageHasBeenSet; }
+
+    /**
+     * <p>The Fargate ephemeral storage settings for the task set.</p>
+     */
+    inline void SetFargateEphemeralStorage(const DeploymentEphemeralStorage& value) { m_fargateEphemeralStorageHasBeenSet = true; m_fargateEphemeralStorage = value; }
+
+    /**
+     * <p>The Fargate ephemeral storage settings for the task set.</p>
+     */
+    inline void SetFargateEphemeralStorage(DeploymentEphemeralStorage&& value) { m_fargateEphemeralStorageHasBeenSet = true; m_fargateEphemeralStorage = std::move(value); }
+
+    /**
+     * <p>The Fargate ephemeral storage settings for the task set.</p>
+     */
+    inline TaskSet& WithFargateEphemeralStorage(const DeploymentEphemeralStorage& value) { SetFargateEphemeralStorage(value); return *this;}
+
+    /**
+     * <p>The Fargate ephemeral storage settings for the task set.</p>
+     */
+    inline TaskSet& WithFargateEphemeralStorage(DeploymentEphemeralStorage&& value) { SetFargateEphemeralStorage(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -1414,6 +1446,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    DeploymentEphemeralStorage m_fargateEphemeralStorage;
+    bool m_fargateEphemeralStorageHasBeenSet = false;
   };
 
 } // namespace Model

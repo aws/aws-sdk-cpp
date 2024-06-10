@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>An object that represents the configuration for Service Connect
+   * <p>The key that encrypts and decrypts your resources for Service Connect
    * TLS.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ServiceConnectTlsConfiguration">AWS
    * API Reference</a></p>

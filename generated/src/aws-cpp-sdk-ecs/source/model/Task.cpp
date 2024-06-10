@@ -60,7 +60,8 @@ Task::Task() :
     m_taskDefinitionArnHasBeenSet(false),
     m_version(0),
     m_versionHasBeenSet(false),
-    m_ephemeralStorageHasBeenSet(false)
+    m_ephemeralStorageHasBeenSet(false),
+    m_fargateEphemeralStorageHasBeenSet(false)
 {
 }
 
@@ -106,7 +107,8 @@ Task::Task(JsonView jsonValue) :
     m_taskDefinitionArnHasBeenSet(false),
     m_version(0),
     m_versionHasBeenSet(false),
-    m_ephemeralStorageHasBeenSet(false)
+    m_ephemeralStorageHasBeenSet(false),
+    m_fargateEphemeralStorageHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -380,6 +382,13 @@ Task& Task::operator =(JsonView jsonValue)
     m_ephemeralStorageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("fargateEphemeralStorage"))
+  {
+    m_fargateEphemeralStorage = jsonValue.GetObject("fargateEphemeralStorage");
+
+    m_fargateEphemeralStorageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -613,6 +622,12 @@ JsonValue Task::Jsonize() const
   if(m_ephemeralStorageHasBeenSet)
   {
    payload.WithObject("ephemeralStorage", m_ephemeralStorage.Jsonize());
+
+  }
+
+  if(m_fargateEphemeralStorageHasBeenSet)
+  {
+   payload.WithObject("fargateEphemeralStorage", m_fargateEphemeralStorage.Jsonize());
 
   }
 
