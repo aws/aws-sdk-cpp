@@ -43,7 +43,8 @@ Deployment::Deployment() :
     m_rolloutStateReasonHasBeenSet(false),
     m_serviceConnectConfigurationHasBeenSet(false),
     m_serviceConnectResourcesHasBeenSet(false),
-    m_volumeConfigurationsHasBeenSet(false)
+    m_volumeConfigurationsHasBeenSet(false),
+    m_fargateEphemeralStorageHasBeenSet(false)
 {
 }
 
@@ -72,7 +73,8 @@ Deployment::Deployment(JsonView jsonValue) :
     m_rolloutStateReasonHasBeenSet(false),
     m_serviceConnectConfigurationHasBeenSet(false),
     m_serviceConnectResourcesHasBeenSet(false),
-    m_volumeConfigurationsHasBeenSet(false)
+    m_volumeConfigurationsHasBeenSet(false),
+    m_fargateEphemeralStorageHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -221,6 +223,13 @@ Deployment& Deployment::operator =(JsonView jsonValue)
     m_volumeConfigurationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("fargateEphemeralStorage"))
+  {
+    m_fargateEphemeralStorage = jsonValue.GetObject("fargateEphemeralStorage");
+
+    m_fargateEphemeralStorageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -350,6 +359,12 @@ JsonValue Deployment::Jsonize() const
      volumeConfigurationsJsonList[volumeConfigurationsIndex].AsObject(m_volumeConfigurations[volumeConfigurationsIndex].Jsonize());
    }
    payload.WithArray("volumeConfigurations", std::move(volumeConfigurationsJsonList));
+
+  }
+
+  if(m_fargateEphemeralStorageHasBeenSet)
+  {
+   payload.WithObject("fargateEphemeralStorage", m_fargateEphemeralStorage.Jsonize());
 
   }
 

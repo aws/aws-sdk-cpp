@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>An object that represents the Amazon Web Services Private Certificate
-   * Authority certificate.</p><p><h3>See Also:</h3>   <a
+   * <p>The certificate root authority that secures your service.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ServiceConnectTlsCertificateAuthority">AWS
    * API Reference</a></p>
    */

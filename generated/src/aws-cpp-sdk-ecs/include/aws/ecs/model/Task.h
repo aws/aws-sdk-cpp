@@ -14,6 +14,7 @@
 #include <aws/ecs/model/TaskOverride.h>
 #include <aws/ecs/model/TaskStopCode.h>
 #include <aws/ecs/model/EphemeralStorage.h>
+#include <aws/ecs/model/TaskEphemeralStorage.h>
 #include <aws/ecs/model/Attachment.h>
 #include <aws/ecs/model/Attribute.h>
 #include <aws/ecs/model/Container.h>
@@ -2137,6 +2138,37 @@ namespace Model
      */
     inline Task& WithEphemeralStorage(EphemeralStorage&& value) { SetEphemeralStorage(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Fargate ephemeral storage settings for the task.</p>
+     */
+    inline const TaskEphemeralStorage& GetFargateEphemeralStorage() const{ return m_fargateEphemeralStorage; }
+
+    /**
+     * <p>The Fargate ephemeral storage settings for the task.</p>
+     */
+    inline bool FargateEphemeralStorageHasBeenSet() const { return m_fargateEphemeralStorageHasBeenSet; }
+
+    /**
+     * <p>The Fargate ephemeral storage settings for the task.</p>
+     */
+    inline void SetFargateEphemeralStorage(const TaskEphemeralStorage& value) { m_fargateEphemeralStorageHasBeenSet = true; m_fargateEphemeralStorage = value; }
+
+    /**
+     * <p>The Fargate ephemeral storage settings for the task.</p>
+     */
+    inline void SetFargateEphemeralStorage(TaskEphemeralStorage&& value) { m_fargateEphemeralStorageHasBeenSet = true; m_fargateEphemeralStorage = std::move(value); }
+
+    /**
+     * <p>The Fargate ephemeral storage settings for the task.</p>
+     */
+    inline Task& WithFargateEphemeralStorage(const TaskEphemeralStorage& value) { SetFargateEphemeralStorage(value); return *this;}
+
+    /**
+     * <p>The Fargate ephemeral storage settings for the task.</p>
+     */
+    inline Task& WithFargateEphemeralStorage(TaskEphemeralStorage&& value) { SetFargateEphemeralStorage(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<Attachment> m_attachments;
@@ -2246,6 +2278,9 @@ namespace Model
 
     EphemeralStorage m_ephemeralStorage;
     bool m_ephemeralStorageHasBeenSet = false;
+
+    TaskEphemeralStorage m_fargateEphemeralStorage;
+    bool m_fargateEphemeralStorageHasBeenSet = false;
   };
 
 } // namespace Model
