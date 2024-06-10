@@ -110,6 +110,7 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
 
         // Add ID2 and RequestId to GetObjectResult
         hackGetObjectOutputResponse(serviceModel);
+        addExpiresCustomization(serviceModel);
 
         //size and content length should ALWAYS be 64 bit integers, if they aren't set them as that now.
         serviceModel.getShapes().entrySet().stream().filter(shapeEntry -> shapeEntry.getKey().toLowerCase().equals("contentlength") || shapeEntry.getKey().toLowerCase().equals("size"))
@@ -304,6 +305,60 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
         if (getObjectResult.getMembers().get("RequestId") == null) {
             getObjectResult.getMembers().put("RequestId", requestIdShapeMember);
         }
+    }
+
+    /**
+     * Originally, Expires shape member was modeled as a timestamp without a timestamp format specified.
+     * This customization creates an "ExpiresString" shape and members in the model to hold the same response value
+     * as a string.
+     * Original "Expires" members will be-remodelled into a "string" type in some future model update
+     * and this is a customization to keep the SDK backward compatible with existing applications.
+     * @param serviceModel
+     */
+    protected void addExpiresCustomization(ServiceModel serviceModel) {
+        final String EXPIRES = "Expires";
+        final String EXPIRES_STRING = "ExpiresString";
+
+        // Existing SDKs that currently model Expires as timestamp MUST add customization to ensure it stays as timestamp
+        serviceModel.getShapes().get(EXPIRES).setType("timestamp");
+
+        // The SDKs MUST add a customization to generate a synthetic member,
+        // named ExpiresString that returns the unparsed value of Expires
+        Shape expiresString = new Shape();
+        expiresString.setName(EXPIRES_STRING);
+        expiresString.setType("string");
+        serviceModel.getShapes().put(EXPIRES_STRING, expiresString);
+
+        // MUST only target structures that contain a member named Expires AND are used as the _output_ of an operation
+        serviceModel.getOperations().values().stream()
+                .filter(operation -> operation.getResult() != null)
+                .map(Operation::getResult)
+                .map(ShapeMember::getShape)
+                .filter(shape -> shape.hasMember(EXPIRES))
+                .forEach(shape->{
+                    ShapeMember expiresStringMember = shape.getMembers().get(EXPIRES).toBuilder().build();
+                    expiresStringMember.setShape(expiresString);
+                    shape.getMembers().put(EXPIRES_STRING, expiresStringMember);
+                });
+
+        // Add deprecated notice
+        Set<ShapeMember> expiresMembers =
+                serviceModel.getOperations().values().stream()
+                        .filter(operation -> operation.getResult() != null)
+                        .map(Operation::getResult)
+                        .map(ShapeMember::getShape)
+                        .filter(shape -> shape.hasMember(EXPIRES))
+                        .map(shape-> shape.getMembers().get(EXPIRES))
+                        .collect(Collectors.toSet());
+
+        expiresMembers.parallelStream()
+                .forEach(shapeMember -> {
+                    String doc = shapeMember.getDocumentation();
+                    if (!doc.toLowerCase().contains("deprecated")) {
+                        shapeMember.setDocumentation("Deprecated: Please use ExpiresString instead. " +
+                                                     System.lineSeparator() + "     * " + doc);
+                    }
+                });
     }
 
     @Override

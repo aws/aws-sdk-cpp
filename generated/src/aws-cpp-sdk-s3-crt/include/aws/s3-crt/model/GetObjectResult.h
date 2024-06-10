@@ -902,26 +902,31 @@ namespace Model
 
 
     /**
+     * Deprecated: Please use ExpiresString instead. 
      * <p>The date and time at which the object is no longer cacheable.</p>
      */
     inline const Aws::Utils::DateTime& GetExpires() const{ return m_expires; }
 
     /**
+     * Deprecated: Please use ExpiresString instead. 
      * <p>The date and time at which the object is no longer cacheable.</p>
      */
     inline void SetExpires(const Aws::Utils::DateTime& value) { m_expires = value; }
 
     /**
+     * Deprecated: Please use ExpiresString instead. 
      * <p>The date and time at which the object is no longer cacheable.</p>
      */
     inline void SetExpires(Aws::Utils::DateTime&& value) { m_expires = std::move(value); }
 
     /**
+     * Deprecated: Please use ExpiresString instead. 
      * <p>The date and time at which the object is no longer cacheable.</p>
      */
     inline GetObjectResult& WithExpires(const Aws::Utils::DateTime& value) { SetExpires(value); return *this;}
 
     /**
+     * Deprecated: Please use ExpiresString instead. 
      * <p>The date and time at which the object is no longer cacheable.</p>
      */
     inline GetObjectResult& WithExpires(Aws::Utils::DateTime&& value) { SetExpires(std::move(value)); return *this;}
@@ -1561,6 +1566,42 @@ namespace Model
     
     inline GetObjectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
+
+    /**
+     * <p>The date and time at which the object is no longer cacheable.</p>
+     */
+    inline const Aws::String& GetExpiresString() const{ return m_expiresString; }
+
+    /**
+     * <p>The date and time at which the object is no longer cacheable.</p>
+     */
+    inline void SetExpiresString(const Aws::String& value) { m_expiresString = value; }
+
+    /**
+     * <p>The date and time at which the object is no longer cacheable.</p>
+     */
+    inline void SetExpiresString(Aws::String&& value) { m_expiresString = std::move(value); }
+
+    /**
+     * <p>The date and time at which the object is no longer cacheable.</p>
+     */
+    inline void SetExpiresString(const char* value) { m_expiresString.assign(value); }
+
+    /**
+     * <p>The date and time at which the object is no longer cacheable.</p>
+     */
+    inline GetObjectResult& WithExpiresString(const Aws::String& value) { SetExpiresString(value); return *this;}
+
+    /**
+     * <p>The date and time at which the object is no longer cacheable.</p>
+     */
+    inline GetObjectResult& WithExpiresString(Aws::String&& value) { SetExpiresString(std::move(value)); return *this;}
+
+    /**
+     * <p>The date and time at which the object is no longer cacheable.</p>
+     */
+    inline GetObjectResult& WithExpiresString(const char* value) { SetExpiresString(value); return *this;}
+
   private:
 
     Aws::Utils::Stream::ResponseStream m_body;
@@ -1638,6 +1679,8 @@ namespace Model
     Aws::String m_id2;
 
     Aws::String m_requestId;
+
+    Aws::String m_expiresString;
   };
 
 } // namespace Model

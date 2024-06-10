@@ -170,7 +170,7 @@ public class Shape {
     }
 
     public boolean hasMember(String member) {
-        return members.keySet().stream().anyMatch(key -> key.equals(member));
+        return members != null && members.keySet().stream().anyMatch(key -> key.equals(member));
     }
 
     public ShapeMember getMemberByLocationName(String locationName) {

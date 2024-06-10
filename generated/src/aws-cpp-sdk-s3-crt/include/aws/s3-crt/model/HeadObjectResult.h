@@ -1829,6 +1829,42 @@ namespace Model
     inline HeadObjectResult& WithObjectLockLegalHoldStatus(ObjectLockLegalHoldStatus&& value) { SetObjectLockLegalHoldStatus(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The date and time at which the object is no longer cacheable.</p>
+     */
+    inline const Aws::String& GetExpiresString() const{ return m_expiresString; }
+
+    /**
+     * <p>The date and time at which the object is no longer cacheable.</p>
+     */
+    inline void SetExpiresString(const Aws::String& value) { m_expiresString = value; }
+
+    /**
+     * <p>The date and time at which the object is no longer cacheable.</p>
+     */
+    inline void SetExpiresString(Aws::String&& value) { m_expiresString = std::move(value); }
+
+    /**
+     * <p>The date and time at which the object is no longer cacheable.</p>
+     */
+    inline void SetExpiresString(const char* value) { m_expiresString.assign(value); }
+
+    /**
+     * <p>The date and time at which the object is no longer cacheable.</p>
+     */
+    inline HeadObjectResult& WithExpiresString(const Aws::String& value) { SetExpiresString(value); return *this;}
+
+    /**
+     * <p>The date and time at which the object is no longer cacheable.</p>
+     */
+    inline HeadObjectResult& WithExpiresString(Aws::String&& value) { SetExpiresString(std::move(value)); return *this;}
+
+    /**
+     * <p>The date and time at which the object is no longer cacheable.</p>
+     */
+    inline HeadObjectResult& WithExpiresString(const char* value) { SetExpiresString(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -1919,6 +1955,8 @@ namespace Model
     Aws::Utils::DateTime m_objectLockRetainUntilDate;
 
     ObjectLockLegalHoldStatus m_objectLockLegalHoldStatus;
+
+    Aws::String m_expiresString;
 
     Aws::String m_requestId;
   };
