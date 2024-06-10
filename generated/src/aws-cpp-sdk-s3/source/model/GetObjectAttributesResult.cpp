@@ -78,6 +78,10 @@ GetObjectAttributesResult& GetObjectAttributesResult::operator =(const Aws::Amaz
   if(lastModifiedIter != headers.end())
   {
     m_lastModified = DateTime(lastModifiedIter->second, Aws::Utils::DateFormat::RFC822);
+    if(!m_lastModified.WasParseSuccessful())
+    {
+      AWS_LOGSTREAM_WARN("S3::GetObjectAttributesResult", "Failed to parse lastModified header as an RFC822 timestamp: " << lastModifiedIter->second.c_str());
+    }
   }
 
   const auto& versionIdIter = headers.find("x-amz-version-id");

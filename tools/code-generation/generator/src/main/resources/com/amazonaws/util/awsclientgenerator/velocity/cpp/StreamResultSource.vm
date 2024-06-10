@@ -86,6 +86,10 @@ ${typeInfo.className}& ${typeInfo.className}::operator =(Aws::AmazonWebServiceRe
     ${memberVarName} = ${memberEntry.value.shape.name}Mapper::Get${memberEntry.value.shape.name}ForName(${varName}Iter->second);
 #elseif($memberEntry.value.shape.timeStamp)
     ${memberVarName} = DateTime(${varName}Iter->second, Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInHeader($memberEntry.value.shape));
+    if(!${memberVarName}.WasParseSuccessful())
+    {
+      AWS_LOGSTREAM_WARN("${serviceNamespace}::${typeInfo.className}", "Failed to parse ${varName} header as an $CppViewHelper.computeTimestampFormatInHeader($memberEntry.value.shape) timestamp: " << ${varName}Iter->second.c_str());
+    }
 #elseif($memberEntry.value.shape.blob)
     ${memberVarName} = HashingUtils::Base64Decode(StringUtils::Trim(${varName}Iter->second.c_str()));
 #elseif($memberEntry.value.shape.primitive)

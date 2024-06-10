@@ -93,6 +93,10 @@ HeadObjectResult& HeadObjectResult::operator =(const Aws::AmazonWebServiceResult
   if(lastModifiedIter != headers.end())
   {
     m_lastModified = DateTime(lastModifiedIter->second, Aws::Utils::DateFormat::RFC822);
+    if(!m_lastModified.WasParseSuccessful())
+    {
+      AWS_LOGSTREAM_WARN("S3Crt::HeadObjectResult", "Failed to parse lastModified header as an RFC822 timestamp: " << lastModifiedIter->second.c_str());
+    }
   }
 
   const auto& contentLengthIter = headers.find("content-length");
@@ -177,6 +181,10 @@ HeadObjectResult& HeadObjectResult::operator =(const Aws::AmazonWebServiceResult
   if(expiresIter != headers.end())
   {
     m_expires = DateTime(expiresIter->second, Aws::Utils::DateFormat::RFC822);
+    if(!m_expires.WasParseSuccessful())
+    {
+      AWS_LOGSTREAM_WARN("S3Crt::HeadObjectResult", "Failed to parse expires header as an RFC822 timestamp: " << expiresIter->second.c_str());
+    }
   }
 
   const auto& websiteRedirectLocationIter = headers.find("x-amz-website-redirect-location");
@@ -260,12 +268,22 @@ HeadObjectResult& HeadObjectResult::operator =(const Aws::AmazonWebServiceResult
   if(objectLockRetainUntilDateIter != headers.end())
   {
     m_objectLockRetainUntilDate = DateTime(objectLockRetainUntilDateIter->second, Aws::Utils::DateFormat::ISO_8601);
+    if(!m_objectLockRetainUntilDate.WasParseSuccessful())
+    {
+      AWS_LOGSTREAM_WARN("S3Crt::HeadObjectResult", "Failed to parse objectLockRetainUntilDate header as an ISO_8601 timestamp: " << objectLockRetainUntilDateIter->second.c_str());
+    }
   }
 
   const auto& objectLockLegalHoldStatusIter = headers.find("x-amz-object-lock-legal-hold");
   if(objectLockLegalHoldStatusIter != headers.end())
   {
     m_objectLockLegalHoldStatus = ObjectLockLegalHoldStatusMapper::GetObjectLockLegalHoldStatusForName(objectLockLegalHoldStatusIter->second);
+  }
+
+  const auto& expiresStringIter = headers.find("expires");
+  if(expiresStringIter != headers.end())
+  {
+    m_expiresString = expiresStringIter->second;
   }
 
   const auto& requestIdIter = headers.find("x-amz-request-id");
