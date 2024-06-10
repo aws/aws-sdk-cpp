@@ -7,6 +7,7 @@
 
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/logging/LogMacros.h>
 #include <chrono>
 
 namespace Aws

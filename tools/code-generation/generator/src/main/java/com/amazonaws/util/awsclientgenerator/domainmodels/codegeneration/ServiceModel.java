@@ -32,16 +32,6 @@ public class ServiceModel {
     boolean enableVirtualOperations;
     Collection<Error> serviceErrors;
 
-    @Getter(AccessLevel.PRIVATE)
-    @Setter(AccessLevel.PRIVATE)
-    Set<String> inputShapes = new HashSet<>();
-
-    @Getter(AccessLevel.PRIVATE)
-    @Setter(AccessLevel.PRIVATE)
-    Set<String> outputShapes = new HashSet<>();
-
-
-
     public boolean hasStreamingRequestShapes() {
         return shapes.values().parallelStream().anyMatch(shape -> shape.isRequest() && (shape.hasStreamMembers() || shape.hasEventStreamMembers()));
     }

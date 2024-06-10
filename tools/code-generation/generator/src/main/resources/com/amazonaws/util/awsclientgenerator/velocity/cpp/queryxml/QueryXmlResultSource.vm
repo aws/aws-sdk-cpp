@@ -86,6 +86,10 @@ ${typeInfo.className}& ${typeInfo.className}::operator =(const Aws::AmazonWebSer
     ${memberVarName} = ${varName}Iter->second;
 #elseif($memberEntry.value.shape.timeStamp)
     ${memberVarName} = DateTime(${varName}Iter->second.c_str(), Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInHeader($memberEntry.value.shape));
+    if(!${memberVarName}.WasParseSuccessful())
+    {
+      AWS_LOGSTREAM_WARN("${serviceNamespace}::${typeInfo.className}", "Failed to parse ${varName} header as an $CppViewHelper.computeTimestampFormatInHeader($memberEntry.value.shape) timestamp: " << ${varName}Iter->second.c_str());
+    }
 #elseif($memberEntry.value.shape.enum)
     ${memberVarName} = ${memberEntry.value.shape.name}Mapper::Get${memberEntry.value.shape.name}ForName(${varName}Iter->second);
 #elseif($memberEntry.value.shape.primitive)
